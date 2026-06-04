@@ -108,9 +108,20 @@ function esc(str) {
 }
 
 /* ===== TOPICS ===== */
-function buildTopicChips(cards) {
+function buildTopicChips(cards, activeLevel) {
+  // Zobraz jen témata dostupná v aktuálním levelu
+  const filtered = activeLevel && activeLevel !== 'all'
+    ? cards.filter(c => c.level === activeLevel)
+    : cards;
+
   const topics = new Set();
-  cards.forEach(c => { if (c.topic) topics.add(c.topic); });
+  filtered.forEach(c => { if (c.topic) topics.add(c.topic); });
+
+  // Reset topic filter pokud aktuální topic v novém levelu neexistuje
+  if (state.topic !== 'all' && !topics.has(state.topic)) {
+    state.topic = 'all';
+  }
+
   const chips = $('topic-chips');
   chips.innerHTML = `<button class="chip${state.topic === 'all' ? ' active' : ''}" data-topic="all">Vše</button>`;
   topics.forEach(t => {
@@ -159,35 +170,49 @@ async function loadToday() {
 
   try {
     const data = await fetchJSON('/data/today.json');
-    state.today = data;
 
-    hide('loading-today');
-
-    const cards = data.cards || [];
-    if (cards.length === 0) {
-      show('empty-today');
+    if ((data.cards || []).length > 0) {
+      state.today = data;
+      hide('loading-today');
+      updateHeader(data, false);
+      buildTopicChips(data.cards, state.level);
+      renderCards(data.cards, 'cards-today', data.resurfacing || null);
       return;
     }
 
-    updateHeader(data);
-    buildTopicChips(cards);
-    renderCards(cards, 'cards-today', data.resurfacing || null);
+    // Dnesni digest jeste nevysel — nacteme vcerejsek
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yStr = yesterday.toISOString().slice(0, 10);
+
+    try {
+      const yData = await fetchJSON(`/data/archive/${yStr}.json`);
+      state.today = yData;
+      state.archiveCache[yStr] = yData;
+      hide('loading-today');
+      updateHeader(yData, true);
+      buildTopicChips(yData.cards || [], state.level);
+      renderCards(yData.cards || [], 'cards-today', yData.resurfacing || null);
+    } catch {
+      hide('loading-today');
+      show('empty-today');
+    }
   } catch {
     hide('loading-today');
     show('empty-today');
   }
 }
 
-function updateHeader(data) {
+function updateHeader(data, isYesterday) {
   const dateStr = data.date || new Date().toISOString().slice(0, 10);
   const count = (data.cards || []).length;
   const hasResurfacing = !!data.resurfacing;
 
-  $('header-date').textContent = formatDateLong(dateStr);
+  $('header-date').textContent = (isYesterday ? 'Včera — ' : '') + formatDateLong(dateStr);
 
   const badge = $('live-badge');
   badge.classList.remove('hidden');
-  $('live-count').textContent = `Dnes ${count + (hasResurfacing ? 1 : 0)} poznatků`;
+  $('live-count').textContent = `${isYesterday ? 'Včera' : 'Dnes'} ${count + (hasResurfacing ? 1 : 0)} poznatků`;
 }
 
 /* ===== ARCHIVE VIEW ===== */
@@ -406,12 +431,62 @@ function findCard(id) {
 }
 
 function bodyToHTML(text) {
-  return text
-    .split('\n\n')
-    .map(p => p.trim())
-    .filter(Boolean)
-    .map(p => `<p>${esc(p)}</p>`)
-    .join('');
+  if (!text) return '';
+
+  const lines = text.split('\n');
+  const out = [];
+  let inList = false;
+
+  for (const raw of lines) {
+    const line = raw.trimEnd();
+
+    // Headings
+    if (/^### /.test(line)) {
+      if (inList) { out.push('</ul>'); inList = false; }
+      out.push(`<h4>${inlineMarkdown(line.slice(4))}</h4>`);
+      continue;
+    }
+    if (/^## /.test(line)) {
+      if (inList) { out.push('</ul>'); inList = false; }
+      out.push(`<h3>${inlineMarkdown(line.slice(3))}</h3>`);
+      continue;
+    }
+
+    // List items
+    if (/^[-*] /.test(line)) {
+      if (!inList) { out.push('<ul>'); inList = true; }
+      out.push(`<li>${inlineMarkdown(line.slice(2))}</li>`);
+      continue;
+    }
+
+    // Numbered list
+    if (/^\d+\. /.test(line)) {
+      if (inList) { out.push('</ul>'); inList = false; }
+      if (!inList) { out.push('<ol>'); inList = 'ol'; }
+      out.push(`<li>${inlineMarkdown(line.replace(/^\d+\. /, ''))}</li>`);
+      continue;
+    }
+
+    // Empty line — paragraph break
+    if (line.trim() === '') {
+      if (inList) { out.push(inList === 'ol' ? '</ol>' : '</ul>'); inList = false; }
+      continue;
+    }
+
+    // Regular paragraph line
+    if (inList) { out.push(inList === 'ol' ? '</ol>' : '</ul>'); inList = false; }
+    out.push(`<p>${inlineMarkdown(line)}</p>`);
+  }
+
+  if (inList) out.push(inList === 'ol' ? '</ol>' : '</ul>');
+  return out.join('');
+}
+
+function inlineMarkdown(text) {
+  return esc(text)
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/`(.+?)`/g, '<code>$1</code>');
 }
 
 /* ===== TRANSCRIPT VIEW ===== */
@@ -550,6 +625,13 @@ function onLevelChange(level) {
     btn.classList.toggle('active', btn.dataset.level === level);
     btn.setAttribute('aria-selected', btn.dataset.level === level ? 'true' : 'false');
   });
+
+  // Přestavíme topic chips na témata dostupná v novém levelu
+  const currentCards = state.view === 'archive' && state.archiveDate
+    ? (state.archiveCache[state.archiveDate]?.cards || [])
+    : (state.today?.cards || []);
+  buildTopicChips(currentCards, level);
+
   rerenderCurrentView();
 }
 
