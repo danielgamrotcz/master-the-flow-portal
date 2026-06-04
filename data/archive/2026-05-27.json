@@ -1,0 +1,132 @@
+{
+  "date": "2026-05-27",
+  "generated_at": "2026-06-04T15:01:06Z",
+  "stats": {
+    "messages": 12,
+    "groups": 2,
+    "members": 3
+  },
+  "cards": [
+    {
+      "id": "2026-05-27-01",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Produktivita s AI",
+      "title": "Česky promptuj, anglicky nastav instrukce",
+      "excerpt": "Víc členů komunity konverguje k hybridnímu přístupu. Samotné zadávání probíhá v češtině, veškerá nastavení, MD soubory a dokumentace jsou v angličtině. Kombinace přináší výhody obou jazyků najednou.",
+      "body": "V diskuzi se opakoval stejný vzorec. Češtinu pro promptování volí ti, co diktují, nebo kdo si cení přesnosti skloňování při zadávání. Angličtinu pak používají pro veškerý systémový setup, CLAUDE.md soubory, instrukce, rules a komentáře v kódu.\n\nProč toto rozdělení dává smysl? Diktování v češtině je přirozené a rychlé. Angličtina v instrukcích je kompaktnější a AI nástroje jsou na ni lépe natrénovány, takže nastavení bývá spolehlivěji interpretováno.\n\nDalším argumentem pro češtinu v promptování je přesnost vyjádření. Skloňování přirozeně zpřesňuje vztahy mezi slovy, takže zadání bývá méně dvojznačné než anglický překlad. Navíc odpadá riziko, že se při překladu záměr ztratí nebo změní.\n\nVíc členů komunity zmínilo, že výsledky jsou s tímto přístupem lepší než při čistě jednom jazyce. Stojí za to vyzkoušet, zvláště pokud pracujete v Claude Code nebo s delšími projekty.",
+      "read_minutes": 2,
+      "source_date": "2026-05-27"
+    },
+    {
+      "id": "2026-05-27-02",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Claude Code",
+      "title": "Čeština nekrátí token limit, krátí prostor v session",
+      "excerpt": "Časté nedorozumění je, že čeština plýtvá tokeny z měsíčního limitu. Zkušenější člen upřesnil rozdíl. Měsíční limit to téměř neovlivní, ale kontextové okno jedné session ano.",
+      "body": "Text v češtině je zhruba o třetinu delší než ekvivalentní anglický text. V rámci jedné dlouhé session s AI máte proto méně prostoru pro kontext, kód, dokumenty nebo historii konverzace.\n\nMěsíční nebo denní token limit to prakticky nezasáhne. Textový vstup a výstup jsou vzhledem k celkovému využití minimální, takže tady čeština nevadí.\n\nKde se to skutečně projeví, jsou delší projekty s desítkami nebo stovkami zpráv, kde do kontextu přikládáte soubory, kód nebo dokumentaci. Tam ta třetina navíc začne hrát roli dřív, než byste čekali.\n\nPraktický závěr: u kratších úkolů a diktování je čeština bez problémů. U delších architektonických prací nebo projektů s hodně dokumenty zvažte angličtinu alespoň pro klíčové instrukce a system prompt.",
+      "read_minutes": 2,
+      "source_date": "2026-05-27"
+    },
+    {
+      "id": "2026-05-27-03",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Diktování",
+      "title": "SuperWhisper umí přeložit diktát do angličtiny automaticky",
+      "excerpt": "Jeden člen zmínil nenápadnou funkci SuperWhisperu. Aplikaci lze nastavit tak, aby přijala českou řeč a výstup rovnou přeložila do angličtiny. Diktujete přirozeně česky, AI dostane anglický text.",
+      "body": "SuperWhisper je macOS aplikace pro hlasové diktování, která výstup posílá přímo do aktivního textového pole. Méně známá funkce je live překlad. Nastavíte cílový jazyk jako angličtinu a SuperWhisper automaticky přeloží vše, co nadiktujete česky.\n\nČlen, který to zmínil, přiznal, že tuto funkci sám nepoužívá. Ale jako workflow dává smysl pro ty, kdo chtějí výhody českého diktování a zároveň výhody anglického promptování, bez nutnosti přepínat jazyk nebo manuálně překládat.\n\nV praxi to znamená, že mluvíte přirozeně, myslíte česky a AI dostane kompaktnější anglický vstup s větším kontextovým prostorem v session. Pokud SuperWhisper používáte a tahle možnost vás zajímá, stojí za to ji otestovat na delším projektu.",
+      "read_minutes": 1,
+      "source_date": "2026-05-27"
+    },
+    {
+      "id": "2026-05-27-04",
+      "type": "NÁSTROJE",
+      "level": "Expert",
+      "topic": "Bezpečnost",
+      "title": "Zranitelnost v Anthropic MCP umožňuje vzdálené spuštění kódu",
+      "excerpt": "Výzkumníci z OX Security zveřejnili závažnou bezpečnostní zranitelnost v Model Context Protocol od Anthropic. Chyba v architektuře SDK umožňuje vzdálené spuštění kódu přes dodavatelský řetězec AI. V ohrožení jsou mimo jiné nástroje Cursor a Windsurf.",
+      "body": "Tým OX Security odhalil architektonickou vadu v oficiálních SDK pro Model Context Protocol (MCP). Problém spočívá v nebezpečném zpracování parametrů, které útočníkům umožňuje vzdáleně spustit kód na systémech provozujících MCP servery.\n\nOhrožení je rozsáhlé. Odhaduje se, že zranitelných je přes 200 000 serverů. Zasaženy jsou i populární vývojářské nástroje jako Cursor a Windsurf, které MCP využívají.\n\nÚtočníci mohou zneužít více vektorů. Patří mezi ně injekce přes uživatelské rozhraní, manipulace s registry doplňků a prompt injection útok bez nutnosti jakékoli interakce uživatele.\n\nV komunitní diskuzi byl zveřejněn popis zranitelnosti, ale odkaz na původní výzkum chyběl. Pokud provozujete MCP servery nebo používáte nástroje na nich postavené, sledujte bezpečnostní aktualizace od Anthropic a výrobců konkrétních nástrojů.",
+      "read_minutes": 3,
+      "source_date": "2026-05-27"
+    }
+  ],
+  "resurfacing": null,
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspirace--diskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "15:11",
+            "author": "člen komunity",
+            "text": "Používáte k promptování češtinu nebo angličtinu? A pokud používáte angličtinu, je tam nějaký rozdíl v kvalitě výstupů oproti češtině?"
+          },
+          {
+            "time": "15:12",
+            "author": "člen komunity",
+            "text": "Anglictina. Kvalitativni rozdil jsem nikdy nezpozoroval, ale cestina spotrebovava vice tokenu."
+          },
+          {
+            "time": "15:17",
+            "author": "člen komunity",
+            "text": "Na větší věci určitě angličtina (méně tokenů na stejnou myšlenku –> větší kontextové okno), na menší jak se mi zrovna chce. Jen mi pak Claude dělá to, že na mě i v čistě EN vláknech občas z ničeho nic začne mluvit česky 😀"
+          },
+          {
+            "time": "15:30",
+            "author": "člen komunity",
+            "text": "Česky 🤷🏻‍♂️ je to rychlejší, než bych to napsal anglicky… 🤨🤔 Ale asi se nad sebou zamyslím. Byť je fakt, že od přechodu na Max mi Claude nevyčerpal tokeny…"
+          },
+          {
+            "time": "15:36",
+            "author": "člen komunity",
+            "text": "Ještě pak jde diktovat v češtině a nechat SuperWhisper překládat do angličtiny 🙂 Nedělám, ale stálo by za to"
+          },
+          {
+            "time": "15:38",
+            "author": "člen komunity",
+            "text": "ono nejde ani tak o vyčerpání tokenů v limitu, tam ten input a textový output dělá minimální rozdíl – kde to ale může být znát, je kontextové okno jedné session"
+          },
+          {
+            "time": "15:44",
+            "author": "člen komunity",
+            "text": "Já preferuju češtinu (přestože anglicky mluvím plynně), i když žere víc tokenů. Je to rychlejší na diktování, a přijde mi přesnější ve vyjádření zadání (podle mě díky skloňování) a mám s tím lepší výsledky. Navíc odstraním případné nedorozumění/nepochopení při mém výkladu překladu. Veškeré artefakty ale, co si pak AI dělá, mám v angličtině (rules, md soubory, dokumentaci, komentáře v kódu, atd.)."
+          },
+          {
+            "time": "15:45",
+            "author": "člen komunity",
+            "text": "Výhradně čeština."
+          },
+          {
+            "time": "16:48",
+            "author": "člen komunity",
+            "text": "Čeština.\nMoje zadání i md soubory pro nastavení CC."
+          },
+          {
+            "time": "17:00",
+            "author": "člen komunity",
+            "text": "Promptovani prevazne v cestine, vystupy dle toho, kde je plánuju pouzit, instrukce a MD soubory vyhradne AJ."
+          }
+        ]
+      },
+      {
+        "slug": "vibe-coding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "09:18",
+            "author": "člen komunity",
+            "text": "Bezpečnostní experti z týmu OX Security odhalili v Model Context Protocol (MCP) od společnosti Anthropic architektonickou vadu umožňující vzdálené spuštění kódu (RCE) napříč celým dodavatelským řetězcem AI. Tato zranitelnost založena na nebezpečném zpracování parametrů v oficiálních SDK vystavuje riziku převzetí systému více než 200 000 serverů a populární nástroje jako jsou například Cursor nebo Windsurf. Útočníci mohou k infiltraci využít různorodé vektory včetně injekce do uživatelského rozhraní, manipulace s registry doplňků nebo útoků typu prompt injection s nulovou nutností interakce uživatele."
+          },
+          {
+            "time": "21:59",
+            "author": "člen komunity",
+            "text": "Prosím, dáte sem aj zdroj?"
+          }
+        ]
+      }
+    ]
+  }
+}
