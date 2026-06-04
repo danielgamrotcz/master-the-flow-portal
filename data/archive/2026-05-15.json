@@ -1,0 +1,348 @@
+{
+  "date": "2026-05-15",
+  "generated_at": "2026-06-04T17:39:26Z",
+  "stats": {
+    "messages": 53,
+    "groups": 2,
+    "members": 6
+  },
+  "cards": [
+    {
+      "id": "2026-05-15-01",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "AI a právní dokumenty",
+      "title": "Proč AI bloudí ve výkladu zákonů",
+      "excerpt": "I prémiové modely dokážou sebevědomě tvrdit věci, které jsou špatně nebo už neplatí. Pletou si různé verze zákonů v čase a ani rozšířené uvažování to spolehlivě nespraví.",
+      "body": "Tohle se v diskuzi potvrdilo opakovaně a z víc stran, včetně lidí z advokacie. Jazykové modely nejsou trénované na aktuální znění zákonů. A nemají žádný mechanismus, který by je nutil ověřovat citace.\n\nVýsledek je dost nebezpečný: model odpoví sebejistě a odkáže na paragraf, který buď vůbec neexistuje, nebo byl zrušený už před lety. Jeden člen psal, že mu ChatGPT tvrdil, že nošení boxeru je v ČR zakázané.\n\nSpolehlivě to neřeší ani Thinking mód, ani Extended thinking, ani Opus 4.7. Model sice může projít delší kontext, ale když v trénovacích datech převážilo staré znění zákona, odpověď bude špatně.\n\nZákladní pravidlo pro práci s AI a legislativou: vždy chtějte přesnou citaci s číslem paragrafu a odstavce. A pak si ji ověřte v primárním zdroji. Tohle za vás AI zatím neudělá.",
+      "read_minutes": 2,
+      "source_date": "2026-05-15"
+    },
+    {
+      "id": "2026-05-15-02",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "NotebookLM pro legislativu",
+      "title": "NotebookLM jako izolovaný právní asistent",
+      "excerpt": "Nahrajte do NotebookLM jen konkrétní zákony a vyhlášky a pracujte výhradně s tímhle uzavřeným zdrojem. AI pak ví, z čeho má vycházet, a když něco neví, řekne to.",
+      "body": "Hlavní poznatek z diskuze: problém s AI a právem není jen v samotném modelu, ale hlavně v tom, k čemu má přístup. Když vidí celý internet, míchá dohromady aktuální znění zákonů, starší verze, komentáře i zahraniční právní systémy.\n\nNotebookLM na to jde jinak. Nahrajete do něj přesně ty dokumenty, se kterými chcete pracovat, a model odpovídá jen podle nich. Když odpověď v dokumentech nenajde, řekne, že neví.\n\nTenhle postup v diskuzi potvrzovali lidé z advokacie i z dalších oborů, kde je přesná legislativa zásadní.\n\nDoporučený postup: založit si samostatný notebook pro každou právní oblast — třeba stavební zákon, zákoník práce nebo GDPR — a pravidelně ho aktualizovat po novelách. Po modelu vždy chtít přesný odkaz na paragraf a odstavec.\n\nVýhoda je i v tom, že máte větší klid. Přesně víte, z čeho model vychází, a nemusíte hádat, odkud svou odpověď vzal.",
+      "read_minutes": 2,
+      "source_date": "2026-05-15"
+    },
+    {
+      "id": "2026-05-15-03",
+      "type": "NÁSTROJE",
+      "level": "Začátečník",
+      "topic": "Raycast",
+      "title": "Raycast jako první aplikace na každém Macu",
+      "excerpt": "Jeden z power userů v komunitě říká, že Raycast instaluje jako první věc na každý nový Mac. Nahradí mu desítky dalších nástrojů a šetří zbytečné přepínání mezi aplikacemi.",
+      "body": "Raycast je launcher pro macOS, ale tím slovem se dost podceňuje, co všechno umí. V praxi nahradí hromadu dalších nástrojů: hledání souborů, správu schránky, kalkulačku, překlad, ovládání hudby, kontrolu kalendáře i vlastní skripty. Všechno z jednoho místa, přes klávesnici, bez sahání na myš.\n\nV diskuzi padl i praktický tip: diktování v macOS jde spustit dvojitým stiskem klávesy ⌃ Control. Funguje to i na externích klávesnicích, kde jako spouštěč nefunguje fn. Raycast to nijak neblokuje a dobře se s tím doplňuje. Na YouTube kanále Raycastu je navíc spousta tipů pro začátečníky i pokročilé.\n\nPokud jste na Macu a u rutinních věcí pořád často saháte po myši, dejte Raycastu půl hodiny na nastavení.",
+      "read_minutes": 2,
+      "source_date": "2026-05-15"
+    },
+    {
+      "id": "2026-05-15-04",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Přepisy a transkripce",
+      "title": "Plaud a Sionox pro přepisy v češtině a slovenštině",
+      "excerpt": "Padl dotaz na alternativu k Fireflies pro slovenské přepisy. Komunita doporučila Plaud kvůli kvalitě a vlastním šablonám. Na meetingy, kde se střídají jazyky, pak Sionox.",
+      "body": "Fireflies je oblíbený nástroj na přepisy meetingů, ale se slovenštinou nebo hovory, kde lidé přepínají mezi jazyky, si ne vždy poradí.\n\nZ diskuze vzešla dvě doporučení. Plaud dělá kvalitní přepisy i v češtině a slovenštině. Podporuje vlastní šablony pro výstup a umí pracovat s klíčovými slovy, která chcete v přepisu zvýraznit nebo sledovat. Hodí se hlavně pro běžné meetingy s jedním hlavním jazykem.\n\nSionox se zaměřuje na vícejazyčné meetingy, kde účastníci během jednoho hovoru přepínají mezi jazyky. Každou část zvládne přepsat ve správném jazyce bez ručního nastavování.\n\nU obou nástrojů ale platí jedno: i velmi přesný přepis je dobré zkontrolovat. Vlastní jména, odborné termíny a čísla si vždy ověřte ručně.",
+      "read_minutes": 2,
+      "source_date": "2026-05-15"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-04-26-03",
+    "type": "INSIGHT",
+    "level": "Expert",
+    "topic": "Data management",
+    "title": "Markdown v gitu jako datová vrstva pro AI",
+    "excerpt": "Jeden člen přestal koukat přímo do dat a místo toho se na všechno ptá Clauda. Tvrdí, že markdownové soubory v gitu jsou pro AI nejlepší struktura, se kterou se jí dobře pracuje. Inspirovalo to dalšího člena, aby přešel na CRM v Markdownu.",
+    "body": "Jeden člen komunity popsal, jak změnil přístup ke svým datům. Nepoužívá grafické rozhraní ani aplikace. Všechno má v Markdown souborech v gitu. Důvod je jednoduchý: stejně se na data nedívá přímo, na všechno se ptá Clauda. A Claude si s Markdownem rozumí nejlíp.\n\nJe to přirozené pokračování filozofie plain text. Markdown přečte člověk i stroj, dá se verzovat a snadno přenášet. Git k tomu přidá historii změn a zálohu. Claude pak slouží jako rozhraní: prohledává, shrnuje a aktualizuje.\n\nMá to i svoje limity. Nehodí se to pro velké objemy strukturovaných dat, pro týmy bez technického zázemí a vyžaduje to pořádek v názvech souborů i struktuře. Pro osobní knowledge management nebo jednoduché CRM to ale může být elegantnější řešení než řada komerčních nástrojů.\n\nV diskuzi to inspirovalo dalšího člena k přechodu na CRM v Markdownu. Hezký příklad toho, jak sdílení konkrétních postupů v komunitě mění způsob práce.",
+    "read_minutes": 2,
+    "source_date": "2026-04-26",
+    "resurfaced_from": "2026-04-26"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "06:45",
+            "author": "Daniel",
+            "text": "Jsem zvědavý. Hlavně na to diktování, jak jinak. 😅\nZkoušel si to?"
+          },
+          {
+            "time": "07:13",
+            "author": "člen komunity",
+            "text": "Ještě ne, dnes to nevidím a na diktování jsem zvědavý taky"
+          },
+          {
+            "time": "09:02",
+            "author": "člen komunity",
+            "text": "tak už ano ♥️"
+          },
+          {
+            "time": "09:05",
+            "author": "člen komunity",
+            "text": "💪\nUse the fn key on its own as a single-tap modifier, perfect for a quick shortcut without holding multiple keys.\nSupport for single-tap fn key and double tap modifiers."
+          },
+          {
+            "time": "09:47",
+            "author": "člen komunity",
+            "text": "Dane, doufám, že nevadí, že jsem tu dal dotazník"
+          },
+          {
+            "time": "09:50",
+            "author": "člen komunity",
+            "text": "Jen me zajímá, k čemu vám ta informace bude? Jsem zvedava. :)"
+          },
+          {
+            "time": "09:51",
+            "author": "člen komunity",
+            "text": "jen tak ze zvědavosti, jestli má smysl tady Raycast sdílet nebo raději nespamovat."
+          },
+          {
+            "time": "09:52",
+            "author": "člen komunity",
+            "text": "Vím, že Dan Raycast používá, pak jsem zaregistroval nějaké reakce na komentáře. Tak proto."
+          },
+          {
+            "time": "10:16",
+            "author": "člen komunity",
+            "text": "Filipe, spamuj ;)\nJeste jsem se k tomu nedostala, ale moc uvitam nejakou rychloukazku od Tebe 😉"
+          },
+          {
+            "time": "10:17",
+            "author": "člen komunity",
+            "text": "To mě těší, ale Dan měl na to tuším dobrý kurz, že jo @člen 🙂"
+          },
+          {
+            "time": "10:47",
+            "author": "Daniel",
+            "text": "Jednou za čas je to za mě úplně v pohodě. Pro mě taky docela zajímavá informace."
+          },
+          {
+            "time": "10:48",
+            "author": "Daniel",
+            "text": "A jak to funguje? Nainstaluju to ve vlaku a vyzkouším to sám. 😅"
+          },
+          {
+            "time": "10:50",
+            "author": "Daniel",
+            "text": "Dělal jsem stream na LI tuším. Připnu to sem."
+          },
+          {
+            "time": "10:53",
+            "author": "člen komunity",
+            "text": "na originální klávesnici apple (například integrované v macbooku) funguje fn (spíš právě 🌐), ale na externí klávesnici Fn jako trigger nefunguje :-/ . já tedy spouštím dictate přes 2x ⌃ a funguje to rychle a kvalitně přepisuje (zatím málo zkušeností pochopitelně) :-)"
+          },
+          {
+            "time": "10:54",
+            "author": "člen komunity",
+            "text": "ten jsem myslel 👍"
+          },
+          {
+            "time": "15:09",
+            "author": "Daniel",
+            "text": "Super! Všechno schvaluju."
+          },
+          {
+            "time": "21:36",
+            "author": "člen komunity",
+            "text": "Díky za vyplnění 🫡\nRaycast je první apka, kterou vždy instaluji. Dělám přes to hromadu akcí, která by jinak vyžadovala řadu dalších aplikací a kilometry tahů myší.\nOpravdu všem doporučuji (na YT kanále mají i hodně tipů).\nHezký víkend ✌️"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "13:47",
+            "author": "člen komunity",
+            "text": "Jojo, překvapena nejsem, běžný stav :) Možná by ale pomohl Legal Plug-in (nemám ještě otestováno)."
+          },
+          {
+            "time": "13:47",
+            "author": "člen komunity",
+            "text": "Legal Plug-in? Dobrý tip, děkuji!"
+          },
+          {
+            "time": "13:48",
+            "author": "člen komunity",
+            "text": "Připomíná mi to, jak mi chatGPT tvrdil, že nošení boxera je v ČR zakázané. Ani Thinking mód a Extended nepomohou vždy. Chápu, že v dlouhém dokumentu si nemusí všimnout větičky na začátku: \"zrušeno 1972\". Ale ani Opus 4.7+Adaptive nestačí, aby trval na citaci věty ze zákona, která je halucinace."
+          },
+          {
+            "time": "13:50",
+            "author": "člen komunity",
+            "text": "Pavel Minar na to mel videotip se svoji manzelkou, ktera je projektantka a pouziva NotebookLM. Nahraje si tam vsechny zakony, vyhlasky, atd. a vi, ze to pracuje pouze s temi dokumenty. Pokud to nevi, napise, ze nevi."
+          },
+          {
+            "time": "13:51",
+            "author": "člen komunity",
+            "text": "https://m.youtube.com/watch?v=JTKL8j8ZtoI&feature=youtu.be"
+          },
+          {
+            "time": "13:51",
+            "author": "člen komunity",
+            "text": "Tady je jeste odkaz na video"
+          },
+          {
+            "time": "13:54",
+            "author": "člen komunity",
+            "text": "Tohle je správná odpověď. Někde (klidně v NotebookLM) mít uloženou celou legislativní základnu a nepustit agenta nikam mimo ni. Chtít přesný odkazy a odpověď “nevim”.\nBtw, NotebookLM jde přes notebooklm-py knihovnu napojit do Claude Code naprimo."
+          },
+          {
+            "time": "13:54",
+            "author": "člen komunity",
+            "text": "Ráda se podívám, trochu by mě překvapilo, kdyby tohle stačilo k absenci blouznění, ale ráda se nechám překvapit :)"
+          },
+          {
+            "time": "13:55",
+            "author": "člen komunity",
+            "text": "My máme v práci v notebook lm všechny postupy a když něco potřebuju tak to rychle najdu. Notebook lm je super nástroj na toto.\nA ještě to umí pomoc i nováčkům otestovat znalosti"
+          },
+          {
+            "time": "14:05",
+            "author": "člen komunity",
+            "text": "Notebook je skvělý. On čerpá jen z toho co mu dáš, nekouká jinam, takže nečte bludy na internetu. Ale samozřejmě záleží na podkladech a na zadání (otázkách) Používám na velké tech.manuály které se mi nechce překládat a číst celé, porovnávání dokumentů, hledání odpovědí v rozsáhlých textech…"
+          },
+          {
+            "time": "14:07",
+            "author": "člen komunity",
+            "text": "Potvrdzujem, akurat vyklad zakona je niekedy spatne, napriek tomu ze vychadza iba priamo zo zakona, da zly zaver."
+          },
+          {
+            "time": "14:25",
+            "author": "člen komunity",
+            "text": "Těším se, až otestuju, zatím jsem pracovala spíše se specializovanými právními systémy."
+          },
+          {
+            "time": "15:31",
+            "author": "člen komunity",
+            "text": "Pro ucely advokacie nyni testuji libratech.ai a jeste jsem poptala Codexis AI. Vystupy z beznych AI byvaji jedna velka pohadka. Tvari se sebevedome, ale neumi pracovat s casovymi verzemi zakonu, plete pate pres devate, atd. Nejhorsi je, kdyz mi klient posle ke kontrole smlouvu, kterou si vyrobil v chatgpt, ze by ji chtel jen \"ucesat\". Pak se domluvime, ze jako souhrn predstavy a faktu je to bezva a pak udelam poradnou smlouvu. Takze opatrne, pokud chcete kvalitni vystup."
+          },
+          {
+            "time": "15:33",
+            "author": "člen komunity",
+            "text": "I specializovane pravni AI sekaji chyby, proste furt to chce mozek pravnika, ktery rozumi souvislostem."
+          },
+          {
+            "time": "15:36",
+            "author": "člen komunity",
+            "text": "Je to jako se zdravotnimi zalezitostmi. Rymu clovek zvladne svepomoci, ale obtiznejsi zdravotni veci uz chteji specialistu. Clovek se nebude sam operovat, kdyz uz jde o vaznou vec. To plati i v pravu. Hezky vikend. 🙂"
+          },
+          {
+            "time": "15:51",
+            "author": "člen komunity",
+            "text": "Já pracuji s Codexis a mám s ním dobré zkušenosti. Pracuje s aktuálními zákony, na které dá odkaz do blbostí se nepouští. Za mě velká pomoc. Zvládá i směrnice, dodatky.."
+          },
+          {
+            "time": "15:53",
+            "author": "člen komunity",
+            "text": "Na Codexis vcetne jejich AI ted slysim samou chvalu. 🙂"
+          },
+          {
+            "time": "16:00",
+            "author": "člen komunity",
+            "text": "Taky delam kazdodenne v Codexis a velka spokojenost."
+          },
+          {
+            "time": "16:03",
+            "author": "člen komunity",
+            "text": "Bezva slyset, tesim se, ze s nim zacnu pracovat. K libratech.ai (Wolters Kluwer) mam jiste vyhrady."
+          },
+          {
+            "time": "16:12",
+            "author": "člen komunity",
+            "text": "Já mám trochu výhrady k izolovanosti těch právních AI systémů. Na rešerši to ještě jde, ale představovala bych si větší integraci s vlastním systémem.\nJinak ale názory Libra vs. Codexis odpovídají tomu, co ve svých kruzích/zkušenostech potkávám já.\nHodně zajímavá je pro mě Legora, ráda bych srovnala také s Harveym, tam nemám uživatelské info zatím žádné."
+          },
+          {
+            "time": "16:14",
+            "author": "člen komunity",
+            "text": "Zdravim vsetkych, mam otazku k teme Plaud.ai, ktora tu rezonuje.\nAktualne pouzivam na prepis meetingov platformu Fireflies.ai a mam s nou zakladny problem, ze robi nepresny prepis v slovenskom jazyku. Rovnako zlu kvalitu dosahujem aj pri macWhisper a podobnych nastrojoch, aj ked som vyriesil problem s kvalitou nahravky.\nNaproti tomu, plaud.ai ma takmer dokonaly prepis v slovenskom jazyku a to je dovod, pre ktory ho zvazujem zakupit (aj s predplatnym).\nA potreboval by som reality-check. Fireflies.ai tie meetingy nejak prepise a zosumarizuje a v podstate to sedi, ale je to genericke. Myslel som, ze ked budem mat kvalitnejsi prepis (cez plaud.ai), tak to zvysi kvalitu zapisov z meetingov ale ako citam vasu konverzaciu, chapem to tak, ze tych 85% co dosahujete cez macWhisper a podobne nastroje uplne staci a tych zvysnych 15% za lepsi prepis proste nestoji.\nChapem to spravne? Dakujem za rady a komentare. 🙏"
+          },
+          {
+            "time": "16:34",
+            "author": "člen komunity",
+            "text": "Plaud má hodně kvalitní přepisy, hlavně i dle vlastní šablony. Na to, že má malé mikrofony, umí hodně.\nOsobně ho mám v šuplíku vic jak půl roku, protože používám hlavně Tana.inc.\nVětšina nástrojů má však problém s kombinací češtiny a slovenštiny (například angličtina s češtinou jsou lépe rozpoznatelné)."
+          },
+          {
+            "time": "16:35",
+            "author": "člen komunity",
+            "text": "U Plaud (ale i v jiných nástrojích) je dobré si přednastavit klíčové slova, značky a zkratky, výstupy jsou pak mnohem přesnější."
+          },
+          {
+            "time": "16:36",
+            "author": "člen komunity",
+            "text": "Integrovali jsme nyni do zasedacky HW za 160K a rozpoznání řeči má horší jak Plaud 🫣"
+          },
+          {
+            "time": "16:44",
+            "author": "člen komunity",
+            "text": "Co se týká Codexis a podobných nástrojů, prostě fungují \"stejně\" jako notebook lm,akorát data připravuje automat"
+          },
+          {
+            "time": "16:55",
+            "author": "člen komunity",
+            "text": "Tomuto nazoru uplne nerozumim Codexis je odborna sluzba existujici jiz dlouho, kterou pouzivaji advokati a pravnici s tim, ze ted tyto odborne informace jsou propojene s AI zamerenym na praci s odbornymi informacemi, ktere nejsou pro verejnost bezne dostupne, vcetne odbornych clanku, komentaru, literatury, aktualni zakony, atd.. Jak to tedy myslite? Dekuji."
+          },
+          {
+            "time": "16:56",
+            "author": "člen komunity",
+            "text": "Dekuji za sdileni, to je cenne. Ano, vlastni reseni by bylo idealni. Vetsi firmy to maji, ale je to drahe."
+          },
+          {
+            "time": "16:58",
+            "author": "člen komunity",
+            "text": "Ja mavam bud anglicke alebo len slovenske meetingy.\nA tana.inc miesto plaud pretoze...?"
+          },
+          {
+            "time": "17:01",
+            "author": "člen komunity",
+            "text": "Až jsem si říkala, že když se nás tu advokátek/advokatů sešlo tolik, možná bychom si mohli založit neformální podskupinu pro kombinaci našich “úchylek” :))"
+          },
+          {
+            "time": "17:04",
+            "author": "člen komunity",
+            "text": "No myslim to přesně tak, jak to popisujete🙂. Mají datovou strukturu ze které čerpají data a přes AI si dotazovatelé ta data tahají. Prostě Notebook LM ve velkém🙂"
+          },
+          {
+            "time": "17:11",
+            "author": "člen komunity",
+            "text": "Ano, prosiiiim. 😁"
+          },
+          {
+            "time": "17:12",
+            "author": "člen komunity",
+            "text": "Rozumim, dekuji. 🙂"
+          },
+          {
+            "time": "18:30",
+            "author": "člen komunity",
+            "text": "Je to mé PKM, má tzv #supertagy, se kterými umí velmi efektivně pracovat a žádný jiný nástroj toto nemá. Kromě toho má právě dobrý přepis s agentickým zpracováním a okamžitým zapracováním do úkolů, delegovaných úkolů, položek k diskuzi, ...(You name it). Vyzkoušel jsem tak 20 různých PKM/Second brain a Tana mi sedí nejvíc (ale je složitý na učení a adaptaci)."
+          },
+          {
+            "time": "19:58",
+            "author": "Daniel",
+            "text": "Hehe, zatím, prosím, ne. Nechci to moc tříštit. Podobných skupin by tu určitě mohlo bylo více.\nAle jsem rád, že jste se našly (našli?)."
+          },
+          {
+            "time": "20:00",
+            "author": "Daniel",
+            "text": "Jinak k těm multijazyčným přepisům - fakt doporučuju Soniox. Mám ho třeba v Uttero. Můžete střídat jazyky jak chcete. A detekuje to speakery. CZ je super. A mají realtime přepisy."
+          },
+          {
+            "time": "20:11",
+            "author": "člen komunity",
+            "text": "Jasně, chápu a respektuju. Trochu jsem si nebyla jistá, jestli naše pindy budou zajímat ostatní :))"
+          }
+        ]
+      }
+    ]
+  }
+}

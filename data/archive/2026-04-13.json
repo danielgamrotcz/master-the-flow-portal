@@ -1,0 +1,118 @@
+{
+  "date": "2026-04-13",
+  "generated_at": "2026-06-04T16:45:22Z",
+  "stats": {
+    "messages": 7,
+    "groups": 2,
+    "members": 4
+  },
+  "cards": [
+    {
+      "id": "2026-04-13-01",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "iOS / diktování",
+      "title": "iOS aplikace pro diktování jde do testování",
+      "excerpt": "Jeden z členů komunity dokončil iOS verzi diktofonní aplikace a postupně pouští lidi do testování přes TestFlight. Prvních 20 míst je volných tento týden, dalších 70 přibude příští týden. Testování je zdarma a zatím jen pro naši komunitu.",
+      "body": "Aplikace má za sebou první interní testování a teď se otevírá většímu okruhu testerů. Kapacita se zvedá postupně schválně. Autor chce sbírat zpětnou vazbu po částech, ne zahltit podporu najednou.\n\nKdo se chce zapojit, zadá své Apple ID přes formulář na webu a do 48 hodin mu přijde pozvánka do TestFlightu. Na webu je taky video s ukázkou fungování aplikace.\n\nTestování má jasně nastavený způsob. Autor žádá, aby testeři posílali zpětnou vazbu přes tlačítko přímo v nastavení aplikace. Zároveň prosí, aby to brali vážně, ale s odstupem. Nejde o chválení hotového produktu. Jde o to zjistit, jestli by tuhle aplikaci lidé opravdu používali každý den.\n\nAplikace teď běží na autorově kreditu, proto doporučuje nahrávky držet v rozumné délce.",
+      "read_minutes": 2,
+      "source_date": "2026-04-13"
+    },
+    {
+      "id": "2026-04-13-02",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Claude vs Gemini",
+      "title": "Claude nebo Gemini v Google Workspace",
+      "excerpt": "Mít Google Workspace neznamená, že musíte psát v Gemini. Jeden člen popsal, proč na tvorbu textů používá Claude, i když má celý workflow postavený na Google ekosystému.",
+      "body": "Logika říká: máš Gmail, Docs a Drive, tak používej Gemini. Je zabudovaný, pohodlný a nemusíš přepínat mezi nástroji.\n\nJenže pohodlí a kvalita výsledku nejsou totéž. Jeden člen komunity popsal, jak to řeší on. E-maily si přes Google skripty upraví ještě před odesláním do AI. Na samotné psaní textů pak přepíná do Claude. Proč? Výstupy má lepší a prostředí mu víc vyhovuje.\n\nJe to dobrý příklad toho, že integrace pomáhá, ale nemá smysl kvůli ní obětovat kvalitu. Nástroje se dají v klidu kombinovat napříč ekosystémy.\n\nPokud řešíte podobné rozhodnutí, otestujte oba modely na typu textu, který píšete nejčastěji. Marketingový e-mail, interní zpráva, nabídka. Výsledek se bude lišit podle člověka, zadání i jazyka.",
+      "read_minutes": 2,
+      "source_date": "2026-04-13"
+    },
+    {
+      "id": "2026-04-13-03",
+      "type": "INSIGHT",
+      "level": "Expert",
+      "topic": "Lokální AI / ochrana dat",
+      "title": "Lokální AI pro citlivá data",
+      "excerpt": "Když AI model běží lokálně, řeší to jednu zásadní věc: data zůstanou u vás v počítači. Jenže bez dost výkonného hardwaru to pořádně nepojede. A návody to většinou dopředu neřeknou.",
+      "body": "Lokální modely řeší oprávněnou obavu: co se děje s daty, která posíláte do cloudu. U citlivých dokumentů, smluv nebo interní komunikace to dává smysl řešit.\n\nHáček je v hardwaru. Průměrný firemní počítač většinou nestačí. Hodí se aspoň 32 GB RAM, rychlý disk a ideálně samostatná grafická karta. Jinak model buď nespustíte vůbec, nebo poběží tak pomalu, že se s ním nedá rozumně pracovat.\n\nJedna členka komunity psala, že všechno správně nainstalovala, ale její stolní PC to neutáhl. To se stává často. Návody většinou řeknou, co nainstalovat, ale už neřeší, jak silný počítač k tomu potřebujete.\n\nNejčastěji se pro lokální provoz používají Ollama a LM Studio. Modely jako Llama 3, Mistral nebo Phi-3 jsou zdarma a fungují offline. Než do toho dáte čas, zkontrolujte si parametry svého počítače.\n\nPokud takový hardware nemáte, ale soukromí dat řešit chcete, podívejte se na podmínky konkrétní cloudové služby. Řada z nich data nepoužívá k trénování modelů.",
+      "read_minutes": 3,
+      "source_date": "2026-04-13"
+    },
+    {
+      "id": "2026-04-13-04",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Začátečník",
+      "topic": "Automatizace / skripty",
+      "title": "Kdy začít se skripty a automatizací",
+      "excerpt": "Víc členů komunity přiznalo, že skriptům a automatizaci zatím moc nerozumí a radši počkají, než aby něco pokazili. Je to rozumný přístup, ale často kvůli tomu zbytečně odkládají věci, do kterých by se mohli pustit.",
+      "body": "V dnešní debatě to zmínilo víc členů najednou. U skriptů a technických věcí radši počkají na školení, než aby sami něco rozbili. Chápu to. Jenže někdy nás tenhle přístup brzdí víc, než je nutné.\n\nPár věcí k zamyšlení:\n\n- Většina automatizací kolem e-mailů nebo dokumentů neznamená psát kód od nuly. Nástroje jako Make nebo Zapier to zvládnou bez jediného řádku kódu.\n- Skripty dávají smysl až ve chvíli, kdy chcete něco, co hotové nástroje neumí, nebo když toho děláte tolik, že se ruční práce nevyplatí.\n- Claude Code nebo ChatGPT vám kód napíšou. Nemusíte mu rozumět do posledního detailu. Stačí vědět, co má dělat, a ověřit si, že to opravdu dělá.\n\nA teď přímo k vám: kde je vaše skutečná hranice? Co konkrétně se bojíte pokazit?",
+      "read_minutes": 2,
+      "source_date": "2026-04-13"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-03-23-03",
+    "type": "INSIGHT",
+    "level": "Builder",
+    "topic": "Claude Code workflow",
+    "title": "Nejdřív nastavení, pak projekty",
+    "excerpt": "Efektivní práce v Claude Code začíná nastavením — skills, pravidla, kontext. Až potom dává smysl pustit se do samotných projektů. Pořadí ovlivní výsledky i spotřebu tokenů.",
+    "body": "Jeden člen komunity popsal svůj postup: nejdřív si v Claude Code nastavil skills a pravidla a až potom se pustil do konkrétních projektů. Nebyla to náhoda ani jen zvyk. Dává to smysl.\n\nSkills a pravidla v CLAUDE.md jsou investice do kontextu. Čím líp model ví, jak pracujete, co vám vyhovuje a jaký výstup čekáte, tím míň pak opravujete. A tím míň tokenů padne na zpětnou vazbu a další kolečka úprav.\n\nNastavení na začátku sezení má ještě jednu výhodu: donutí vás ujasnit si, co vlastně chcete udělat. Než napíšete pravidlo nebo skill, musíte ho nejdřív pojmenovat a formulovat. Už tím zpřesníte zadání, se kterým pak model pracuje.\n\nPrakticky: pokud s Claude Code začínáte, krok s CLAUDE.md nepřeskakujte. Pár hodin nad nastavením se vám vrátí v každém dalším sezení. A pokud už ho máte, občas se k němu vraťte a zkontrolujte, jestli pořád odpovídá tomu, jak teď pracujete.",
+    "read_minutes": 2,
+    "source_date": "2026-03-23",
+    "resurfaced_from": "2026-03-23"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "mastertheflow—hlavní",
+        "name": "Master the Flow — hlavní",
+        "messages": [
+          {
+            "time": "10:05",
+            "author": "Daniel",
+            "text": "📱 UTTERO PRO IOS K OTESTOVÁNÍ ZDARMA\n10 lidí už ho testuje, já jsem jedenáctý. A protože se mi se Soniox podařilo domluvit navýšení kvóty pro testy, můžu postupně přizvat další lidi.\nNebudu to zatím pouštět, až na výjimky, mimo komunitu.\nCelkem mám 100 slotů na testování. 10 už jsem otevřel. Dalších 20 otevřu pro tento týden. Zbylých 70, pokud vše poběží, jak má, tak příští týden. Neslibuju nic, ale šance jsou velké.\nChcete si zdarma otestovat Uttero pro iOS? Běžte na https://danielgamrot.cz/nastroje/uttero-ios/ a vložte mi tam své Apple ID. Během 48 hodit vám přijde pozvánka na TestFlight. Na webu je i video ukázka, jak to funguje.\nMoje prosba:\n1. Bude tam v nastavení tlačítko pro ZV, posílejte ji, prosím.\n2. ⁠Máte to zdarma, běží to z mého kreditu, nepřepisujte přes to celovečerní filmy nebo zasedání Poslanecké sněmovny.\n3. ⁠Berte to jako experiment s potenciálem aplikace, kterou budete používat každý den. Takže s rezervou, ale zároveň dost přísně. :)\nA kdyby něco, pište soukromou zprávu.\nDíky moc.\nD."
+          }
+        ]
+      },
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "07:37",
+            "author": "Daniel",
+            "text": "Já to nepouštím z Google Workspace. Bylo by moc hezké používat na ty tvorby textů a podobně Claude. Jsem v tom systému více doma a i kvalita textů je ve finále lepší.\nHodně věcí v těch e-mailech se upravuje, ještě před odesláním do Gemini, přes Google skripty. Ale tohle je asi trošku na dýl. Zkusím to někdy popsat.\nKaždopádně, určitě budu mít v budoucnu, což nebude, doufám, za moc dlouho, zkušenost s tímhle v rámci lokálního modelu. Teď na to samozřejmě nemůžu sehnat hardware tak, abych byl spoko. Mám to otestované na svém MacBooku Pro a funguje to suprově. Jen prostě MacBook Pro není pořád zapnutý."
+          },
+          {
+            "time": "08:10",
+            "author": "člen komunity",
+            "text": "Na cem to mate? Hardware a tak? Zkousela jsem rozjet AI pred par mesici lokalne prave kvuli bezpecnosti dat v konkretnich pripadech, vse jsem nainstalovala dle navodu, ale muj PC (klasika pevny pocitac, kde mohu cokoliv upgradovat) to nedal. Tak budu rada za doporuceni na minimalni vybavu."
+          },
+          {
+            "time": "08:15",
+            "author": "člen komunity",
+            "text": "Skvělé, Dane, moc moc díky za odpověď!\nTím pádem to ještě nějakou chvíli odložím, než se do toho pustím, protože se bojím, že bych to mohla pokazit.\nSkripty a podobně jsou přesně oblasti, kdy tomu ještě úplně nerozumím, tak si zatím budu hrát jenom s vlastními daty. 😀 a mailovat prostě osobně.\nale kdyby k tomuhle byl nějaký webinář/workshop, hned se hlásím. 🙂"
+          },
+          {
+            "time": "08:16",
+            "author": "Daniel",
+            "text": "Připravuju. Na tom Pod kapotou, který bude za necelý měsíc, nepůjdu až ta do technické hloubky, jako spíše do workflow. Ale připravuju Claude Code Master(y)Class, tak dám pak vědět."
+          },
+          {
+            "time": "08:18",
+            "author": "člen komunity",
+            "text": "skvělý, budu tam a těším se na další! 😍 moc děkuju!"
+          },
+          {
+            "time": "08:28",
+            "author": "člen komunity",
+            "text": "Taky budu a těším se, Dane 🤓🤠"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "date": "2026-05-30",
+  "generated_at": "2026-06-04T18:11:46Z",
+  "stats": {
+    "messages": 5,
+    "groups": 2,
+    "members": 2
+  },
+  "cards": [
+    {
+      "id": "2026-05-30-01",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Claude modely",
+      "title": "Opus 4.6 může být lepší volba než novější verze",
+      "excerpt": "Novější verze automaticky neznamená lepší výsledky za rozumnou cenu. Opus 4.7 a 4.8 přišly o extended thinking a na stejný text spotřebují až o 35 % víc tokenů.",
+      "body": "Jeden člen komunity upozornil na detail, který se při výběru modelu snadno přehlédne. Opus 4.7 a 4.8 přišly o extended thinking, tedy schopnost modelu projít si reasoning krok za krokem ještě před odpovědí. Místo toho mají adaptive thinking, kdy si model sám rozhodne, jestli vůbec bude „přemýšlet“. Opus 4.6 má obojí.\n\nDo toho přichází cenový paradox. Cena za token je u všech verzí Opusu stejná, jenže novější modely na stejný text spotřebují až o 35 % víc tokenů. Ve výsledku tedy platíte víc, ne míň.\n\nPro většinu běžné práce — kódování, psaní, analýzy — se Opus 4.6 chová srovnatelně nebo líp. Pokud chcete model s předvídatelným uvažováním a lepším poměrem cena/výkon, Opus 4.6 pořád dává smysl. Jen o něm musíte vědět dřív, než automaticky sáhnete po nejnovějším modelu.",
+      "read_minutes": 2,
+      "source_date": "2026-05-30"
+    },
+    {
+      "id": "2026-05-30-02",
+      "type": "INSIGHT",
+      "level": "Expert",
+      "topic": "Claude Code",
+      "title": "Jak spustit Opus 4.6 v Claude Code terminálu",
+      "excerpt": "Claude Code Opus 4.6 v menu normálně neuvidíte, ale dá se to obejít přes příkazový řádek. Funguje to jednorázově i jako trvalý alias v `.zshrc`.",
+      "body": "Claude Code v terminálu nabízí v menu jen Opus 4.8, Sonnet a Haiku. Opus 4.6 tam ve výchozím nastavení není. Dá se to obejít přímo při spuštění.\n\nJednorázový start:\n```bash\nclaude --model claude-opus-4-6\n```\n\nNatrvalo — alias v `~/.zshrc`:\n```bash\necho \"alias claude-opus46='claude --model claude-opus-4-6'\" >> ~/.zshrc && source ~/.zshrc\n```\n\nPo přidání aliasu pak stačí napsat `claude-opus46`. Opus 4.6 se v menu ukáže jako pátá možnost.\n\nVýjimka: v Claude.ai Coworku, tedy ve webovém rozhraní, model vybírá Anthropic, ne vy. Tam tenhle postup nefunguje. V terminálu ale běží bez problémů.\n\nProč ho zkusit? Opus 4.6 pořád nabízí extended thinking, který novější verze nemají. Viz karta o rozdílech mezi verzemi Opusu.",
+      "read_minutes": 2,
+      "source_date": "2026-05-30"
+    },
+    {
+      "id": "2026-05-30-03",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Builder",
+      "topic": "AI nástroje",
+      "title": "Vybíráte model podle čísla verze, nebo podle chování",
+      "excerpt": "Automaticky sáhnout po nejnovějším modelu je lákavé, ale pro konkrétní použití to nemusí být nejlepší volba. Jak to máte vy?",
+      "body": "V komunitě se otevřelo téma, které vypadá jednoduše, ale není. Často bereme jako samozřejmost, že vyšší číslo verze znamená lepší výsledky. U jazykových modelů to tak přímočaré není.\n\nKaždý model je laděný na něco jiného. Jeden líp zvládá reasoning, druhý je rychlejší, třetí vyjde levněji na tokeny. A ne všechno se automaticky přenese do další verze. Dobře to ukázal příklad extended thinking u Opusu.\n\nOtázka pro komunitu: používáte na různé typy práce různé modely? Nebo jedete pořád na jeden a spoléháte, že to bude stačit? A jak poznáte, že už nestačí? Čekáte, až dá špatnou odpověď, nebo si ho testujete dopředu?",
+      "read_minutes": 1,
+      "source_date": "2026-05-30"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-05-11-04",
+    "type": "INSIGHT",
+    "level": "Expert",
+    "topic": "AI agenti",
+    "title": "Sdílený state.md pro přepínání mezi agenty",
+    "excerpt": "Jeden developer střídá Claude Code a Codex a kontext si drží ve sdíleném souboru state.md. Jednoduchý postup, který řeší jeden z hlavních problémů při práci s více agenty.",
+    "body": "Jeden z developerů v komunitě popsal, jak pracuje s víc AI agenty najednou. Aby jim nemusel pořád dokola vysvětlovat kontext, vede si soubor state.md. Do něj zapisuje aktuální stav projektu, otevřené úkoly a hlavní rozhodnutí.\n\nKdyž přepíná mezi Claude Code a Codexem, začne tím, že nového agenta nechá přečíst state.md. Agent tak hned ví, kde projekt stojí, bez půlhodinového onboardingu.\n\nFunguje to proto, že část kontextu — co se dělalo, proč a co ještě zbývá — se přes prompt předává blbě. V souboru to zůstává, dá se to číst strojově a kdykoli upravit.\n\nZároveň je to pojistka proti nekonzistenci. Každý agent má trochu jiný kontext a může dělat jiná rozhodnutí. Sdílený state.md to pomáhá srovnat.\n\nČlen teď plánuje otestovat Goose jako další agent framework. Stejný pattern chce použít jako most mezi Goose a ostatními nástroji.",
+    "read_minutes": 2,
+    "source_date": "2026-05-11",
+    "resurfaced_from": "2026-05-11"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "11:57",
+            "author": "člen komunity",
+            "text": "Vím, že to mnozí víte. Ale jsem zelenáč — sdílím pro ostatní zelenáče. Řešil se to Caveman přístup apod, ale možná ještě víc je třeba zvážit modely co používat. Za sebe jde zjistil, že Opus 4.7 ani 4.8 nepotřebuju. Navíc jsou výrazně hladovější — stejná cena za token, ale až 35 % víc tokenů za stejný text. Reálně dražší. A navíc ztratily extended thinking: model si před odpovědí explicitně projde celý reasoning krok za krokem. Opus 4.7 a 4.8 mají jen adaptive thinking — to znamená, že model sám rozhodne, jestli vůbec přemýšlet. Opus 4.6 má obojí, za stejné peníze.\nHáček: v Claude Code command line (terminál) Opus 4.6 normálně v menu není. Zkuste /model — uvidíte jen Opus 4.8, Sonnet, Haiku. Ale jde to obejít přímo v command line.\nJednorázově:\nV terminálu bash\nclaude --model claude-opus-4-6\nNatrvalo — přidejte alias do ~/.zshrc:\necho \"alias claude-opus46='claude --model claude-opus-4-6'\" >> ~/.zshrc && source ~/.zshrc\nPak stačí psát claude-opus46 a jedete na Opus 4.6. V menu se ukáže jako option 5.\nV Coworku to nefunguje, tam model určuje Anthropic. Ale v command line jede krásně. 🙂"
+          },
+          {
+            "time": "11:59",
+            "author": "člen komunity",
+            "text": "Jirko, jestli Ty jsi zelenáč, tak ja jsem ještě nerozdelal ani oheň 😂🙈"
+          },
+          {
+            "time": "12:02",
+            "author": "člen komunity",
+            "text": "Ale jsem. To jen s tou vědmou v zádech vypadáme všichni strašně chytrý, ale to je fligna 😉"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "12:34",
+            "author": "člen komunity",
+            "text": "Pecka! Diky moc, pomohlo mi to. Vedel jsem, ze tu nejakeho kouzelnika najdu. At se ti dari! 😉👍"
+          },
+          {
+            "time": "12:35",
+            "author": "člen komunity",
+            "text": "happy to serve"
+          }
+        ]
+      }
+    ]
+  }
+}

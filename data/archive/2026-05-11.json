@@ -1,0 +1,286 @@
+{
+  "date": "2026-05-11",
+  "generated_at": "2026-06-04T17:29:17Z",
+  "stats": {
+    "messages": 36,
+    "groups": 4,
+    "members": 7
+  },
+  "cards": [
+    {
+      "id": "2026-05-11-01",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Claude Code",
+      "title": "/btw: otázky mimo frontu v Claude Code",
+      "excerpt": "Uprostřed rozdělané úlohy vám přijde vedlejší otázka. Nemusíte čekat ani přerušovat práci. Příkaz /btw otevře samostatné vlákno a hlavní úloha běží dál.",
+      "body": "Jeden z členů sdílel tip, který vám může dost změnit práci s Claude Code u delších úloh. Když Claude řeší větší zadání a vám mezitím naskočí jiná otázka, napište /btw. Claude si otevře odbočku, odpoví a pak se vrátí přesně tam, kde skončil.\n\nBez toho máte dvě otravné možnosti: buď čekat, až hlavní úloha doběhne, nebo ji přerušit a riskovat, že se ztratí kontext. /btw tohle řeší čistě.\n\nHodí se hlavně u delších generovacích úloh, kdy Claude prochází víc souborů nebo píše delší dokument. Nemusíte čekat ani si vedlejší dotazy odkládat bokem. Odpověď dostanete rovnou.\n\nZkuste to příště v praxi: až budete čekat na dokončení větší analýzy a napadne vás vedlejší dotaz, napište /btw a sledujte, co se stane.",
+      "read_minutes": 1,
+      "source_date": "2026-05-11"
+    },
+    {
+      "id": "2026-05-11-02",
+      "type": "NÁSTROJE",
+      "level": "Začátečník",
+      "topic": "AI nástroje",
+      "title": "Claude Cowork nebo Claude Code: co vybrat",
+      "excerpt": "Dnes se v komunitě řešilo, jestli pro práci s AI použít Claude Cowork, nebo Claude Code. Shoda byla jasná: záleží na tom, co děláte a jak moc se cítíte technicky.",
+      "body": "Claude Cowork a Claude Code vypadají na první pohled podobně, ale každý se hodí pro jiné lidi a jiné situace.\n\nClaude Code je silnější. Umí pracovat se soubory, spouštět skripty, stavět aplikace a projít celou codebase. Počítá ale s tím, že máte aspoň základní technický cit, nebo jste ochotní se to naučit.\n\nClaude Cowork je přístupnější. Funguje spíš jako prostředí pro spolupráci na konkrétních úkolech. Nemusíte řešit, co se děje pod kapotou. Hodí se pro HR manažery, účetní nebo obchodní stratégy.\n\nDnes padly třeba tyhle use cases: zpracování dokladů a párování s bankovními výpisy, příprava podkladů pro firemní školení nebo první MVP interních automatizací.\n\nPrakticky pro vás: pokud řešíte, kde začít, zkuste nejdřív Cowork. Nástup je jednodušší. Když zjistíte, že chcete víc kontroly nebo stavíte vlastní věci, přejděte na Claude Code.",
+      "read_minutes": 2,
+      "source_date": "2026-05-11"
+    },
+    {
+      "id": "2026-05-11-03",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Claude Code",
+      "title": "Příkaz /init: kdy ho použít a kdy ne",
+      "excerpt": "Příkaz /init v Claude Code se hodí na začátek nového projektu nebo při procházení cizí codebase. U rozpracovaného projektu, kde už máte promyšlený CLAUDE.md, ho ale spouštět nechcete.",
+      "body": "V komunitě dnes padla otázka k příkazu `/init`.\n\nTenhle příkaz slouží k inicializaci projektu. Claude si projekt projde, pochopí jeho strukturu a vytvoří nebo doplní soubor `CLAUDE.md`. Ten pak používá jako svůj referenční rámec.\n\nKdy ho použít:\n\n– Začínáte nový projekt a chcete, aby měl Claude kontext hned od začátku.  \n– Přebíráte existující codebase a Claude se potřebuje zorientovat v tom, jak je poskládaná.  \n– `CLAUDE.md` zatím neexistuje nebo je prázdný.\n\nKdy ho nepoužívat:\n\n– Máte rozběhlý projekt s detailním `CLAUDE.md`, který jste si pečlivě nastavili. `/init` by mohl přepsat nebo rozmělnit věci, které tam máte schválně.  \n– Projekt má specifická pravidla nebo kontext, který chcete zachovat přesně tak, jak je.\n\nAlternativa: popište Claudovi kontext ručně na začátku konverzace. Je to víc práce, ale máte plnou kontrolu nad tím, co dostane jako vstup.",
+      "read_minutes": 2,
+      "source_date": "2026-05-11"
+    },
+    {
+      "id": "2026-05-11-04",
+      "type": "INSIGHT",
+      "level": "Expert",
+      "topic": "AI agenti",
+      "title": "Sdílený state.md pro přepínání mezi agenty",
+      "excerpt": "Jeden developer střídá Claude Code a Codex a kontext si drží ve sdíleném souboru state.md. Jednoduchý postup, který řeší jeden z hlavních problémů při práci s více agenty.",
+      "body": "Jeden z developerů v komunitě popsal, jak pracuje s víc AI agenty najednou. Aby jim nemusel pořád dokola vysvětlovat kontext, vede si soubor state.md. Do něj zapisuje aktuální stav projektu, otevřené úkoly a hlavní rozhodnutí.\n\nKdyž přepíná mezi Claude Code a Codexem, začne tím, že nového agenta nechá přečíst state.md. Agent tak hned ví, kde projekt stojí, bez půlhodinového onboardingu.\n\nFunguje to proto, že část kontextu — co se dělalo, proč a co ještě zbývá — se přes prompt předává blbě. V souboru to zůstává, dá se to číst strojově a kdykoli upravit.\n\nZároveň je to pojistka proti nekonzistenci. Každý agent má trochu jiný kontext a může dělat jiná rozhodnutí. Sdílený state.md to pomáhá srovnat.\n\nČlen teď plánuje otestovat Goose jako další agent framework. Stejný pattern chce použít jako most mezi Goose a ostatními nástroji.",
+      "read_minutes": 2,
+      "source_date": "2026-05-11"
+    },
+    {
+      "id": "2026-05-11-05",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "Osobní automatizace",
+      "title": "Lokální Plaud setup bez měsíčního předplatného",
+      "excerpt": "Jeden člen si postavil vlastní systém na zpracování nahrávek z diktafonu: přepis přes Whisper, AI shrnutí a výsledek se rovnou ukládá do Obsidianu. Roční předplatné Plaudu zrušil.",
+      "body": "Diktafon zůstal, jen celé zpracování běží lokálně na Mac Mini. Funguje to takhle: každou hodinu se automaticky zkontroluje, jestli přibyl nový záznam. Když ano, spustí se Whisper, tedy lokální model na přepis řeči. Ten udělá přepis, AI z něj připraví sumář a hotový soubor se automaticky uloží do Obsidianu.\n\nPlaud má hodně lidí rádo hlavně kvůli celému ekosystému: fyzické zařízení, hotové šablony a minimum starostí. Spoustu lidí ale odradí kvalita přepisu a měsíční platba.\n\nTenhle setup řeší oboje. Přepis přes Whisper je srovnatelný nebo lepší, model běží lokálně, takže data nikam neodcházejí, a po jednorázovém nastavení jede všechno automaticky.\n\nHlasová poznámka z cesty → diktafon → Mac Mini → Obsidian. Bez klikání, bez ručního přepisování, bez předplatného.\n\nPokud vás to zaujalo a chcete podobný setup, hledejte v komunitě téma lokálního Whisperu. Dá se to zvládnout i bez programátorských zkušeností, jen to chce trochu trpělivosti při nastavování.",
+      "read_minutes": 2,
+      "source_date": "2026-05-11"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-04-13-03",
+    "type": "INSIGHT",
+    "level": "Expert",
+    "topic": "Lokální AI / ochrana dat",
+    "title": "Lokální AI pro citlivá data",
+    "excerpt": "Když AI model běží lokálně, řeší to jednu zásadní věc: data zůstanou u vás v počítači. Jenže bez dost výkonného hardwaru to pořádně nepojede. A návody to většinou dopředu neřeknou.",
+    "body": "Lokální modely řeší oprávněnou obavu: co se děje s daty, která posíláte do cloudu. U citlivých dokumentů, smluv nebo interní komunikace to dává smysl řešit.\n\nHáček je v hardwaru. Průměrný firemní počítač většinou nestačí. Hodí se aspoň 32 GB RAM, rychlý disk a ideálně samostatná grafická karta. Jinak model buď nespustíte vůbec, nebo poběží tak pomalu, že se s ním nedá rozumně pracovat.\n\nJedna členka komunity psala, že všechno správně nainstalovala, ale její stolní PC to neutáhl. To se stává často. Návody většinou řeknou, co nainstalovat, ale už neřeší, jak silný počítač k tomu potřebujete.\n\nNejčastěji se pro lokální provoz používají Ollama a LM Studio. Modely jako Llama 3, Mistral nebo Phi-3 jsou zdarma a fungují offline. Než do toho dáte čas, zkontrolujte si parametry svého počítače.\n\nPokud takový hardware nemáte, ale soukromí dat řešit chcete, podívejte se na podmínky konkrétní cloudové služby. Řada z nich data nepoužívá k trénování modelů.",
+    "read_minutes": 3,
+    "source_date": "2026-04-13",
+    "resurfaced_from": "2026-04-13"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "mastertheflow—hlavní",
+        "name": "Master the Flow — hlavní",
+        "messages": [
+          {
+            "time": "08:09",
+            "author": "Daniel",
+            "text": "📅 TÝDENNÍ SOUHRN (4.5. - 10.5.)\nWebinář „Pod kapotou“, balíček materiálů, sto nových lidí ve skupině a pár dalších projektů ve Vibe Codingu. Tak vypadal uplynulý týden.\nTahle zpráva chodí jednou týdně hlavně pro vás, kdo jste tady čerstvě. WhatsApp skrytou historii nezobrazí, takže přehled vám dá jen takovýhle souhrn. Master the Flow má čtyři skupiny. Oznámení (hlavní obsah, sem píšu já), Inspirace & Diskuze (otázky a sdílení), Vibe Coding (stavění aplikací s AI, klidně bez programátorského zázemí) a Webináře & Workshopy. Komunita vznikla v březnu z webináře o vibe codingu, proto sem dominuje AI a stavění apek, ale klidně přidávejte cokoliv kolem (digi) produktivity.\nTentokrát to projdu po skupinách, ať máte představu, kde se co dělo.\n*Ve Vibe Codingu pokračovalo sdílení*\nPo minulé vlně se přidalo pár dalších projektů. Někdo staví systém na tvorbu technické dokumentace pro zdravotnické a in vitro přístroje, frontend zatím prototyp, ale dema už šlapou. Jiný si pro výcvik, který vede, postavil apku na zapisování domácích úkolů a k tomu landing page přes Claude Code (napoprvé to moc nešlo, napodruhé, když to opřel o screenshoty místo textu, dopadlo to skvěle). Někdo zase za tři hodiny postavil formulář pro plán výroby v Google Sheets s App Scriptem, padesát projektů, drag & drop, posuny, přepis do tabulky.\nDál kalkulačka spotřeby elektřiny v Google AI Studiu, astro přehled na sledování astronomických událostí a jedna členka má apku na to-do, do které si průběžně přidává funkce. Aktuálně řeší, jak pracovat s vlastními zdroji pro chystanou knihu. Kdyby měl někdo zkušenost s researchem pro vědecké články nebo knihy, určitě se jí ozvěte v Inspiraci.\nJá jsem mezitím dotáhl dvě věci. Automatické stahování účtenek a faktur z mailu (14 let mě živí produktivita a tohle jsem klikal ručně, dost trapas). A vlastní Plaud-like setup. Diktafon zůstává, ale zpracování běží lokálně na Mac Mini doma. Každou hodinu zkontroluje, jestli přibyl nový záznam, Whisperem ho přepíše, AI udělá sumář a soubor mi spadne do Obsidianu. Roční předplatné Plaud Unlimited jsem zrušil.\n*V Inspiraci & Diskuze rezonovaly dvě věci*\nJedna členka popsala konkrétní bolest. 50 až 80 mailů denně mezi vlastním Gmailem, druhým Gmailem a klientským Google Workspace. K tomu děti, kroužky, podnikání. Hledala návod, jak nastavit Gmail asistenta na šablony a dávkové zpracování. Popsal jsem princip, který používám u svého Gmail Responderu. Kontext (co a komu, popsané a uložené tam, kde je to potřeba) → proces (návrh odpovědi) → schvalování člověkem. K důležitějším mailům pořád píšu sám, jen místo psaní rukou diktuju přes Uttero. Téma, ke kterému se chci vracet.\nDruhá vlna byla kolem Plaudu. Hodnota je v ekosystému (fyzické zařízení, šablony, bezproblémovost), ale kvalita doslovného přepisu a měsíční placení mnohé odrazují. Pro videohovory padl tip na Fireflies, ten se ovšem přerušuje během příchozího hovoru. Padla i otázka, jestli Plaud někde nepoužívá čínské modely. Oficiálně to v dokumentaci nikde explicitně uvedené není.\nZ menších věcí v Inspiraci. Tip na úklid fotek pomocí Coworku (projel složky a rozdělil podle roku pořízení). Moje poznámka o sebevzdělávání s AI a třech průšvizích (pasivní konzumace, kognitivní outsourcing, žádné testování) a o tom, co dělat místo „shrň mi to“. A poznámka o dvou osách (zápal × zdatnost) jako mini filtr, co dělat sám, co automatizovat a co rovnou škrtnout. Plus drobný tip na Obsidian plugin Another Quick Switcher pro rychlé otevírání složek (CMD+SHIFT+O).\n*V Oznámení a ve Webinářích bylo všechno kolem „Pod kapotou“*\nWebinář jsem jel ve čtvrtek 7. května, po dvou letech naživo, bez slidů. Reálný setup, jak řídím desítky projektů hlasem, co jsem ze svého postupu zahodil, co používám každý den a jak ukládám a hledám informace. Účastníci dostali záznam (necelé tři hodiny), doslovný přepis, sumarizaci, eBook na 16 stran, AI sketchnotes, 18 skillů pro Claude Code, mindmapu a několik dalších věcí. Pokud jste se nestihli, dá se pořídit záznam s celým balíčkem. Kód MASTERTHEFLOW se slevou 500 Kč pro vás pořád platí.\nK tomu jsem připnul PDF sumář komunity, 11 stran, aby měli nově příchozí, kde si pročíst kontext, dokud nepřijde další recap. A v pátek jsem otevřel přístup, abyste mohli do komunity pozvat někoho dalšího sami. Ne na sílu, jen pokud máte kolem sebe někoho, komu by to dávalo smysl.\n*Odkazy z týdne*\nWebinář „Pod kapotou“, záznam plus balíček materiálů\nhttps://danielgamrot.cz/webinar/pod-kapotou/\nAstro přehled (od člena komunity)\nhttps://www.marekprichystal.cz/astro-prehled/\nProcvičování pro výcvik (od člena komunity)\nhttps://www.jirkamartisek.cz/procvicovani/\nLokální Whisper setup pro česká i anglická slova\nhttps://github.com/faborsky/whisper-cz-en\nAnthropic, větší limity pro Claude (spolupráce se SpaceX)\nhttps://www.anthropic.com/news/higher-limits-spacex\nJak dostat z AI kvalitní české texty (Matěj Matolín)\nhttps://www.linkedin.com/posts/matejmatolin_jak-dostat-z-ai-kvalitn%C3%AD-%C4%8Desk%C3%A9-texty-share-7457706879931289600-BGhB\nObsidian plugin Another Quick Switcher\nobsidian://show-plugin?id=obsidian-another-quick-switcher\nDrobnost na konec. Pokud jen čtete a nic nepíšete, je to naprosto v pohodě. A jestli někdy začnete něco zkoušet nebo stavět, nebojte se to sem hodit. To (podle mě) nej v téhle skupině je to, že lidi sdílí, co dělají.\nD."
+          }
+        ]
+      },
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "08:24",
+            "author": "Daniel",
+            "text": "Moc fajn úvod do Claude Cowork. Cca dvacet mi minut ukazuje TIna Huang jednoduché nastavení a automatizace - úklid souborů a složek, dashboard z výpisů kreditky nebo ranní brief z kalendáře a e-mailů. Bez Claude Code, jen s Coworkem.\nBTW používáte Cowork? Jak?\nhttps://youtu.be/uGwDuvSqgYI?si=uawpTMr4PX4jaM1-"
+          },
+          {
+            "time": "08:37",
+            "author": "člen komunity",
+            "text": "Zrovna si ho jdu zapnout:)\nPoužívám, mám tam projekty nad složkami, ve kterých mám v mdčkách obecné nastavení i nastavení pro daný projekt. Přes MCP propojené do Notion a Canvy. Každý můj projekt má takhle projekt v Coworku.\nChtělo to velký kus práce na začátku a pořád si zvykám na změněné workflow mojí práce, ale je to fakt skvělé."
+          },
+          {
+            "time": "08:41",
+            "author": "Daniel",
+            "text": "Super, přiznám se, že jsem mu ještě nepropadl a zatím nevím, proč bych po něm chtěl sáhnout. Ale ještě jsem, přiznám se, nedělal pořádný research na to, jak bych to využit nad rámec CC."
+          },
+          {
+            "time": "08:43",
+            "author": "člen komunity",
+            "text": "Ahoj Dane. Tady k tomu Gmail Responderu. Obešel jsi nějak to, že drafty mailů to neumí dělat přímo v odpovědi na daný mail a vždy to jde jen formou zcela nového konceptu? Resp já nepřišel jak na to.\nNa základě analýzy mého gmailu to umí slušně navrhovat. Ale je to pro mě prakticky nepoužitelné, když je to bez té původní zprávy/vlákna"
+          },
+          {
+            "time": "08:43",
+            "author": "člen komunity",
+            "text": "Zatím nepoužívám a možná, že ho mám zařazený špatně. Já ale Cowork vnímám jako něco podobného Claude Code, jen pro lidi, kteří nemají tak technické vzdělání. Nebo se nechtějí ponořovat hlouběji do tajů Claude Code a stavet a programovat si vlastni aplikace a workflows."
+          },
+          {
+            "time": "08:46",
+            "author": "člen komunity",
+            "text": "Já ještě nepřešla na Code, takže neporovnám. Klíčové pro mě bylo a je uklidit si v datech a přitom dál pracovat na svých projektech. A v obojím mi Cowork dává super podporu. Code je v plánu, ale postupně."
+          },
+          {
+            "time": "08:49",
+            "author": "člen komunity",
+            "text": "Používám. Ale nepoužívám CC.\nMám v tom projekty, kde u každého jsou jiný skills a jiná role.\nNapříklad zpracování dokladů pro účetní. Včetně párování s bankovním výpisem.\nDále příprava podkladů pro školení produktového managementu. Každý týden mi pomáhá připravit podklady na téma, které spolu rozebereme. Díky coworku jsem srazil čas přípravy o dvě třetiny."
+          },
+          {
+            "time": "09:33",
+            "author": "Daniel",
+            "text": "Až budu u počítače, vytáhnu ti to z těch skriptů. Dělá to odpovědi normálně ve vlákně."
+          },
+          {
+            "time": "09:36",
+            "author": "Daniel",
+            "text": "Já právě ještě nepřišel na scénář, kde bych si nevystačil s Claude Code. Raději to pojedu všechno přes něj, než to tříštit do dvou nástrojů. Některé workflows by možná mohly být v coworku rychlejší, ale jak říkám, ještě jsem to netestoval."
+          },
+          {
+            "time": "09:46",
+            "author": "člen komunity",
+            "text": "Code jsem nikdy nerozjel. Cowork byla novinka a byl jsem zvědavý.\nPřed tím jsem používal většinou jen ChatGPT. I když jsem rok platil Claude.\nNa Claude Code se teprve podívám.\nAnthropic představuje novinku za novinkou. Nestíhám to ani studovat."
+          },
+          {
+            "time": "10:04",
+            "author": "člen komunity",
+            "text": "Věřím tomu, že jakmile si člověk jednou rozjede Claude Code, tak jako sis ho rozjel ty, tak Cowork je pro něj zbytečný. Pro nás ostatní smrtelníky může být Cowork přístupnější cesta pro to, jak automatizace rozjet. 😂"
+          },
+          {
+            "time": "10:55",
+            "author": "člen komunity",
+            "text": "Osobně denně a dělám v nich MVPs pro řešení firemních AI automatizací. Trénuji tam s uživateli skills a agenty (workshop + heartbeat), pak to s IT zapracováváme do workflow."
+          },
+          {
+            "time": "11:33",
+            "author": "Daniel",
+            "text": "Super, vlastně mi to pro tohle využití dává mega smysl. Díky moc za nasdílení."
+          },
+          {
+            "time": "12:39",
+            "author": "Daniel",
+            "text": "Posílám do SZ, tady by to asi nemělo moc význam, ať to tu nezahlcujeme"
+          },
+          {
+            "time": "12:59",
+            "author": "člen komunity",
+            "text": "Taky bych se rád podíval"
+          },
+          {
+            "time": "13:18",
+            "author": "člen komunity",
+            "text": "Souhlasím :) taky bych chtěla vidět."
+          },
+          {
+            "time": "13:44",
+            "author": "Daniel",
+            "text": "@člen & @člen & další 🙂 Vlepím sem část té SZ:\nDrafty jdou jako pravé odpovědi ve vlákně, jen to chce trojkombinaci. Bez kterékoliv z těchto tří věcí Gmail draft sice spáruje na thread, ale ukáže ho jako samostatný koncept místo reply.\nCo musíš udělat při volání users().drafts().create()\n1.⁠ ⁠Do těla draftu poslat threadId původní zprávy.\ndraft_body = {\"message\": {\"raw\": raw, \"threadId\": original_thread_id}}\n2.⁠ ⁠Do MIME hlavičky přidat In-Reply-To a References s RFC822 Message-ID z hlavičky původní zprávy. Pozor, ne Gmail interní message.id, to jsou dva úplně různé identifikátory. Message-ID musí být v původním formátu i s úhlovými závorkami, například <CABcd123@mail.gmail.com>.\nmessage[\"In-Reply-To\"] = original_message_id_header\nmessage[\"References\"] = original_message_id_header\n3.⁠ ⁠Subject nechat stejný jako původní, jen s prefixem Re: pokud tam ještě není.\nHotový prompt do Claude Code:\nV mém Gmail draftu chci, aby se vytvářel jako pravá odpověď ve vlákně, ne jako samostatný koncept. Uprav funkci, která draft vytváří, tak aby:\n1.⁠ ⁠Do těla draftu přidala threadId původní zprávy.\n2.⁠ ⁠Do MIME zprávy vložila hlavičky In-Reply-To a References s hodnotou Message-ID hlavičky z payload.headers (název hlavičky Message-ID, ne Gmail interní message.id, to jsou různé věci, Message-ID musí zůstat ve formátu <...@domain>).\n3.⁠ ⁠Subject nechala stejný, jen přidala prefix Re: pokud tam ještě není.\nSanitizuj subject proti MIME header injection (strip \\r\\n).\nU mě konkrétně se to děje v src/gmail/client.py, funkce create_draft."
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "12:41",
+            "author": "Daniel",
+            "text": "Šmarja to je krásné, díky moc za sdílení. 🙂"
+          },
+          {
+            "time": "13:30",
+            "author": "Daniel",
+            "text": "skill-creator-SKILL"
+          },
+          {
+            "time": "13:43",
+            "author": "Daniel",
+            "text": "Mají ho super, dalo by se na něj odkazovat a některý věci z toho mám vytahaný (token economy apod.). Chtěl jsem tam personalizaci (nemám tým, je to pro mě) + decision tree na začátku „je to vůbec skill, nebo to patří do memory/CLAUDE.md/hooku“. Tuším, že když jsem to řešil, tam tohle nebylo, ale možná jsem jen blbě procházel nebo se něco změnilo. A pro mě – jsem rád, když mě CC navede na to, že ten skill je zbytečný nebo že bych duplikoval něco, co už mám. Plus zná mou infrastrukturu. Ale to je zase personalizace.\nA rozhodně nebude lepší, než ten od Anthropic.\nA tykání je naprosto v pohodě."
+          },
+          {
+            "time": "14:06",
+            "author": "člen komunity",
+            "text": "Vědět co je uvnitř je nejlepší. Díky za sdílení.\nTen Antropický skill je tak komplikovaný (ale docela chytrý), že s ním tvorba skillu trvá i půl hodiny, přesto s ním mám dobrou zkušenost pro ty MVP (1st try, ale pak je ladím)."
+          },
+          {
+            "time": "14:09",
+            "author": "člen komunity",
+            "text": "A už jste v Claude code testovali příkaz /init. To je dobrý základ pro claude.md. nebo si udělám obsah a z toho základní claude.md"
+          },
+          {
+            "time": "14:14",
+            "author": "člen komunity",
+            "text": "Ano, ale je to tak týden co jsem na to narazil v nějakém videu, super věc. 👍"
+          },
+          {
+            "time": "14:16",
+            "author": "člen komunity",
+            "text": "init je tam už dlouho, ale není vždy dobré ho použít, hlavně ne nad již rozpracovaným projektem, protože jeho claude.md může přepsat a zahodit/změnit kontext. Je to ale dobrý pro start. 👍"
+          },
+          {
+            "time": "14:18",
+            "author": "člen komunity",
+            "text": "dobrý je však /btw, který umožňuje ptát se (třeba na nastavení nějakého souboru v projektu), zatím co hlavní vlákno jede (obejde to frontu - jede to jako separátní vlákno)"
+          },
+          {
+            "time": "14:56",
+            "author": "člen komunity",
+            "text": "Dozvěděl jsem se to pozdě. Již jsem měl tou dobou dost nastavení hotových. Takže jsem to nezkoušel.\nProč ale odepisuji.\nI bez použití tohoto skillu/příkazu to Claude Code zvládne, když jsem mu řekl, že jdeme nastavovat. Ja jsem mu hned na začátek dal kontext z tohoto webu.\nhttps://www.iwoszapar.com/resources/claude-code-tutorial"
+          },
+          {
+            "time": "14:59",
+            "author": "člen komunity",
+            "text": "Jj. Výhoda skillů je právě to, že je nemusíme volat přes jejich příkaz/skill, ale mechanismus spouštění je popsany v descriltion daného skillu.\nTzn, občas to použije skill (třeba integrovaný) bez vědomí uživatele."
+          },
+          {
+            "time": "15:30",
+            "author": "člen komunity",
+            "text": "to vypadá užitečně pro automation agent system (typu OpenClaw, Hermes apod). díky"
+          },
+          {
+            "time": "15:30",
+            "author": "člen komunity",
+            "text": "jj ja to pouzivam pro swarm agentu prave"
+          },
+          {
+            "time": "15:31",
+            "author": "člen komunity",
+            "text": "a prepinam mezi claude code a codex a timhle si udrzim kontext napric projekty"
+          },
+          {
+            "time": "15:34",
+            "author": "člen komunity",
+            "text": "super, já jdu tento týden testovat Goose (https://goose-docs.ai/docs/quickstart)"
+          },
+          {
+            "time": "17:14",
+            "author": "člen komunity",
+            "text": "Ja mam vlastni sablonu claude.md, ktera resi jak spolupracujeme, kontext o stavu projektu si resim vedle v state.md, na to mam taky sablonu. zacinam vetsinou projekty from scratch. Init je dobrej kdyz se spousti nad nejakou existujici codebase, nebo predem pripravenym kontextem projektu = ruzne soubory, ale funguje dobre"
+          },
+          {
+            "time": "17:16",
+            "author": "Daniel",
+            "text": "Jj, je to super. A odvodil jsem si z něj svůj skill /startup, který jede to nastavení s mým kontextem."
+          }
+        ]
+      },
+      {
+        "slug": "webinářeworkshopy",
+        "name": "Webináře & Workshopy",
+        "messages": [
+          {
+            "time": "10:12",
+            "author": "člen komunity",
+            "text": "Mně to teď prošlo v pořádku."
+          },
+          {
+            "time": "10:27",
+            "author": "člen komunity",
+            "text": "Teraz mi to už ide. Nebol tam žiadny preklep a nefungovalo to. Ďakujem"
+          }
+        ]
+      }
+    ]
+  }
+}

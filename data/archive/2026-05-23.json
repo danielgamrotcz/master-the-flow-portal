@@ -1,0 +1,225 @@
+{
+  "date": "2026-05-23",
+  "generated_at": "2026-06-04T18:03:05Z",
+  "stats": {
+    "messages": 24,
+    "groups": 2,
+    "members": 5
+  },
+  "cards": [
+    {
+      "id": "2026-05-23-01",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Task management",
+      "title": "Claude spravuje úkoly v Things přes AppleScript",
+      "excerpt": "Todoist má konektor pro Claude, Things zatím ne. Na dodavatele ale čekat nemusíte. Jeden člen nechal Clauda, ať si napojení přes AppleScript vymyslí sám — a funguje to.",
+      "body": "Když nástroj, který používáte, nemá přímý konektor na Claude, ještě to neznamená, že ho nejde napojit. Jeden člen komunity prostě Claudovi řekl, ať si připojení na Things vymyslí sám. Výsledek? Automatizace přes AppleScript, kterou Claude napsal celou sám. Bez jediné ručně napsané řádky kódu.\n\nClaude umí přidávat úkoly do inboxu, nastavovat tagy i deadliny. Zařazování do konkrétních projektů zatím není úplně spolehlivé, ale to zas tak nevadí. Pro spoustu lidí je inbox jako výchozí místo a ruční roztřídění úplně přirozený workflow.\n\nFunguje to proto, že Mac má AppleScript jako scriptovací vrstvu nad desítkami aplikací. A Claude umí AppleScript psát. Stačí mu říct, co chcete automatizovat.\n\nTakže pokud přemýšlíte o přechodu na Todoist jen kvůli konektoru, možná ještě chvíli počkejte. Třeba je jednodušší najít cestu tam, kde už jste.",
+      "read_minutes": 2,
+      "source_date": "2026-05-23"
+    },
+    {
+      "id": "2026-05-23-02",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "Webové projekty",
+      "title": "Web z Lovable na GitHub za pár hodin",
+      "excerpt": "Jedna členka přesunula svůj web z Lovable na Claude a GitHub. Už není závislá na jedné platformě, platí jen za Claude a má plnou kontrolu nad kódem.",
+      "body": "Lovable je skvělý odrazový můstek. Jakmile si ale chcete web upravit opravdu po svém, rychle narazíte na limity platformy. Jedna členka komunity se proto rozhodla přejít jinam. Vzala web tak, jak byl, přesunula ho do Clauda a na GitHub a celý přesun měla za pár hodin hotový.\n\nCo tím získala? Plnou kontrolu. Teď může s Claudem upravovat cokoliv, změny commitovat na GitHub a nasazovat bez prostředníka. Platí jen jedno předplatné.\n\nZároveň si začala stavět vlastní knowledge base v Obsidianu, kterou chce s projektem propojit.\n\nProč to sdílela? Aby dodala odvahu lidem, kteří váhají. Přechod z no-code nástroje na vlastní kontrolu nad kódem může znít děsivě. V praxi se to ale dá zvládnout i bez technického zázemí. Stačí mít po ruce Clauda.",
+      "read_minutes": 2,
+      "source_date": "2026-05-23"
+    },
+    {
+      "id": "2026-05-23-03",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "Vibe Coding",
+      "title": "Vlastní fakturace místo drahého tarifu za hodinu",
+      "excerpt": "iDoklad v základním tarifu nechtěl zpřístupnit potřebné funkce. Jeden člen si proto s Codexem za hodinu a půl postavil vlastní fakturační systém — se vším, co potřeboval.",
+      "body": "Frustrující situace: platíte za nástroj, ale funkce, které fakt potřebujete, jsou schované až v dražším tarifu. Přesně tohle řešil jeden člen komunity s iDokladem. Místo aby dál připlácel, vzal to do vlastních rukou — s pomocí Codexu si za hodinu a půl postavil vlastní fakturační systém přesně podle svých potřeb.\n\nDobrý příklad toho, jak se věci s AI nástroji posouvají. Dřív by vlastní fakturační systém znamenal týdny nebo měsíce práce. Teď to může být hotové za jedno odpoledne.\n\nPíše, že výsledek chce ještě porovnat s Claude Code. I tak je ale podle něj výsledek boží.\n\nPointa: když vás SaaS nástroj drží pod krkem paywallem, zkuste si spočítat, jestli nebude rychlejší postavit si vlastní řešení. V roce 2026 to může stát hodiny, ne měsíce.",
+      "read_minutes": 2,
+      "source_date": "2026-05-23"
+    },
+    {
+      "id": "2026-05-23-04",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Soniox",
+      "title": "Přepisy podcastů se Soniox za 30 minut",
+      "excerpt": "Jedna členka potřebovala přepsat svoje podcasty včetně časových značek a rozlišení mluvčích. Za půl hodiny měla hotový funkční skript.",
+      "body": "Pokud tvoříte audio nebo video a chcete z něj dostat text — pro SEO, blog nebo archiv — Soniox stojí za vyzkoušení.\n\nJedna členka komunity si za 30 minut postavila pipeline, která zvládá tři věci najednou: vytáhne audio z MP4 souboru, přepíše ho přes Soniox s přesnými časovými značkami a rozpozná jednotlivé mluvčí. Výstup si pak naformátuje podle potřeby.\n\nProč Soniox a ne jiný nástroj? Má silné rozpoznávání mluvčích (diarization) a dobře podporuje češtinu. V tomhle spousta dalších nástrojů pořád pokulhává.\n\nPostup byl jednoduchý: Claude napsal skript, Soniox udělal přepis. Bez ručního klikání a bez manuálního nahrávání do webového rozhraní. Celý proces jde automatizovat a pouštět znovu na libovolném počtu souborů.",
+      "read_minutes": 2,
+      "source_date": "2026-05-23"
+    },
+    {
+      "id": "2026-05-23-05",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "Vibe Coding",
+      "title": "CRM pro elektro zakázky postavené s AI",
+      "excerpt": "Jeden elektrikář si staví vlastní systém na správu zakázek. Výkazy práce, ekonomika, denní záznamy, adresář i reporty — všechno má pohromadě v jednom nástroji.",
+      "body": "Elektrikáři, stavební firmy, živnostníci obecně — mají potřeby, které běžné CRM systémy řeší jen částečně. Právě proto si jeden člen komunity staví vlastní systém.\n\nUmí správu zakázek, ekonomiku, to-do listy, denní záznamy, adresář, reporty, výkazy práce i výkazy víceprací. Zatím běží lokálně a ladí se na reálných datech. Veřejně nasazený ještě není.\n\nNení to rychlý prototyp. Je to poctivý nástroj pro běžný pracovní provoz. Něco podobného by jinak stálo hodně peněz za licenci, nebo měsíce vývoje. S AI se to dá posunout za pár víkendů.\n\nDalší člen ze stavebnictví psal, že dřív dělal na podobném projektu pro výpočet rizik, ale nedotáhl ho. Je vidět, že tohle téma lidi řeší. Specifický software pro konkrétní řemesla často chybí, takže si ho začínají stavět sami.",
+      "read_minutes": 3,
+      "source_date": "2026-05-23"
+    },
+    {
+      "id": "2026-05-23-06",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Builder",
+      "topic": "RAG / studium",
+      "title": "Vlastní NotebookLM s hlasem pro státnice",
+      "excerpt": "Student před státnicemi si chce postavit vlastní verzi NotebookLM se Sonioxem, hlasovým vstupem i výstupem. Shání reálné zkušenosti od lidí, kteří něco podobného zkoušeli.",
+      "body": "NotebookLM od Googlu je oblíbený nástroj na učení z dokumentů, ale má svoje limity. Student z komunity, který se připravuje na státnice, chce zajít dál: postavit si vlastní verzi s hlasovým vstupem a výstupem přes Soniox.\n\nPředstava je jednoduchá: místo čtení a psaní by se svými studijními materiály mluvil. Hlasem by pokládal otázky, dostával hlasové odpovědi a procházel látku formou konverzace.\n\nKomunitě položil pár otázek:\n\n- Dá se to v praxi opravdu používat, nebo to dobře zní jen na papíře?\n- Kolik to reálně stojí — Soniox, tokeny, inference?\n- Jak to celé technicky poskládat?\n\nSám to vystihl přesně: tohle mu žádné LLM pořádně nepopíše, protože odpověď závisí na reálné zkušenosti, ne na tréninkových datech. Pokud máte s podobným projektem zkušenost — se Sonioxem nebo s jiným hlasovým RAG řešením — bude hodně cenné, když se podělíte.",
+      "read_minutes": 2,
+      "source_date": "2026-05-23"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-04-26-03",
+    "type": "INSIGHT",
+    "level": "Expert",
+    "topic": "Data management",
+    "title": "Markdown v gitu jako datová vrstva pro AI",
+    "excerpt": "Jeden člen přestal koukat přímo do dat a místo toho se na všechno ptá Clauda. Tvrdí, že markdownové soubory v gitu jsou pro AI nejlepší struktura, se kterou se jí dobře pracuje. Inspirovalo to dalšího člena, aby přešel na CRM v Markdownu.",
+    "body": "Jeden člen komunity popsal, jak změnil přístup ke svým datům. Nepoužívá grafické rozhraní ani aplikace. Všechno má v Markdown souborech v gitu. Důvod je jednoduchý: stejně se na data nedívá přímo, na všechno se ptá Clauda. A Claude si s Markdownem rozumí nejlíp.\n\nJe to přirozené pokračování filozofie plain text. Markdown přečte člověk i stroj, dá se verzovat a snadno přenášet. Git k tomu přidá historii změn a zálohu. Claude pak slouží jako rozhraní: prohledává, shrnuje a aktualizuje.\n\nMá to i svoje limity. Nehodí se to pro velké objemy strukturovaných dat, pro týmy bez technického zázemí a vyžaduje to pořádek v názvech souborů i struktuře. Pro osobní knowledge management nebo jednoduché CRM to ale může být elegantnější řešení než řada komerčních nástrojů.\n\nV diskuzi to inspirovalo dalšího člena k přechodu na CRM v Markdownu. Hezký příklad toho, jak sdílení konkrétních postupů v komunitě mění způsob práce.",
+    "read_minutes": 2,
+    "source_date": "2026-04-26",
+    "resurfaced_from": "2026-04-26"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "13:58",
+            "author": "člen komunity",
+            "text": "Muzu se zeptat, proč Discord ne? (Viděl jsem někde zprávu kvůli usnadnění lidem přístup sem, ale když už si hrajeme se spoustou technologií, Discord už je jen krůček) Protože ten v podstatě všechny problémy už vyřešil a díky Webhooks je snadný ho napojit i jinam, tak by ti (a všem) mohlo sedět"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "10:11",
+            "author": "člen komunity",
+            "text": "Jak máš napojené Things? Já přemýšlím, jestli nepřejít na Todoist, který už má konektor pro Claude a pracuje na konektoru pro ChatGPT."
+          },
+          {
+            "time": "13:06",
+            "author": "člen komunity",
+            "text": "To je na tom nejvtipnější, nijak 😃 řekla jsem claudovi, ať to nějak vymyslí a připojuje se tam sám přes Apple script. Moc mu nejde dávat tasky do konkrétních projektů, ale to mi nevadí, hází je většinou do inboxu a já si je odtamtud rozházím. Zvládá přiřadit i tagy a deadlines"
+          },
+          {
+            "time": "13:08",
+            "author": "člen komunity",
+            "text": "Díky moc, zkusím."
+          },
+          {
+            "time": "14:03",
+            "author": "člen komunity",
+            "text": "Ahoj, mám čekají mě za nedlouho státnice a napadlo mě využít Soniox a udělat si vlastní NotebookLM s hlasovým vstupem/vystupem, pro zefektivnění učení.\nJsem si jistý že je tu spousta lidí, co už něco takového má a tak mě zajímají vaše zkušenosti (jestli je to skutečně použitelný, kolik to reálně stojí, jak je to postavený atp.), protože to my žádné LLMko nepopíše 😅\nMůžete do mě hustit konkrétní názvy a technologie :)"
+          },
+          {
+            "time": "15:14",
+            "author": "člen komunity",
+            "text": "Malé radosti dne: převedla jsem svůj web z Lovable. Teď už na něm můžu vyšívat jen s Claudem a GitHubem. Pro všechny, kteří z toho mají bobky, byla to otázka pár hodin :)\nVlna platím jen Claude. Jdu si hrát se svou knowledge base v Obsidianu. Tak ať vám to vyšívá při sobotě. :) To jen mý radosti a vzpruha pro každýho, kdo váhá."
+          },
+          {
+            "time": "15:17",
+            "author": "člen komunity",
+            "text": "Sobota, venku tricet, lidi na plovarnach a par blaznu buildi doma ve svych slujich - vcetne me ;-)"
+          },
+          {
+            "time": "15:18",
+            "author": "člen komunity",
+            "text": "Well :)) s pivkem, neber to Jiří :) cheers"
+          },
+          {
+            "time": "15:19",
+            "author": "člen komunity",
+            "text": "Dobře ty 😁 Já vyšívám s CC vymazlenou webovou aplikaci na Projekty elektro.. Ale za chvíli cheesecake, káva a později brusle 🤓"
+          },
+          {
+            "time": "15:21",
+            "author": "člen komunity",
+            "text": "Fůha. Paráda! Tak nahoď pak update, jak se daří. Ať nakouknu třebas. Užívej, ráda bych řekla brusle. Ale mám: raději claude, ne brusle :D"
+          },
+          {
+            "time": "15:24",
+            "author": "člen komunity",
+            "text": "Jedu na lokálu, ven to zatím pouštět nebudu, ale udělám screeny když tak.. Nebo nechám Clauda udělat přehled funkcí, co to všechno umí.. A jako fakt toho není málo 😀"
+          },
+          {
+            "time": "15:26",
+            "author": "člen komunity",
+            "text": "💪yes, rada mrknu takhle ☺️"
+          },
+          {
+            "time": "15:36",
+            "author": "člen komunity",
+            "text": "Ladím funkce a provoz na reálných datech, tak pak dám vědět 🤓 A ty dej taky vědět, jak jde sobotní vyšívání 🤭"
+          },
+          {
+            "time": "15:37",
+            "author": "člen komunity",
+            "text": "Přesunula jsem se do vytváření přepisů z mých podcastů se Soniox :) tohle je nyní pro mě priorita número uno. Tak si držím palce :)"
+          },
+          {
+            "time": "15:45",
+            "author": "člen komunity",
+            "text": "Projekty elektro? Tome jako stavaře zajímá, já jsem před časem dělal spolu na výpočet rizik, ale nedodelal"
+          },
+          {
+            "time": "15:50",
+            "author": "člen komunity",
+            "text": "Komplexní systém pro Projekty elektro > Zakázky, ekonomika, to-do listy, denní záznamy, adresář, reporty, výkazy práce, výkazy víceprací.. A mnohem víc.."
+          },
+          {
+            "time": "16:04",
+            "author": "člen komunity",
+            "text": "Takže CRM s něčím navíc🙂, až to budeš mít postavené rád se podivam"
+          },
+          {
+            "time": "16:18",
+            "author": "člen komunity",
+            "text": "Pak jsem měl vtipné dostaveníčko s iDokladem.. Dotaz na podporu, pak dotazník na spokojenost.. Tak jsem jim napsal, že jsem nespokojený a že si v době VC docela troufají 😃 Funkce, které bych rád, nemají dostupné v mém placeném tarifu a připlácet nebudu.. Tak jsem s Codexem za hodinu a půl postavil systém na fakturace, kde vše, co potřebuju, mám 😈 Zkusím to ještě s CC, ale i tak je výsledek boží.."
+          },
+          {
+            "time": "16:22",
+            "author": "člen komunity",
+            "text": "Tohle jsem si nechal vyrobit při řízení v autě... Meditace Vibe codingem 🤣\nhttps://claude.ai/public/artifacts/cda7d12e-7e1d-4882-bed9-66476b761d01"
+          },
+          {
+            "time": "16:22",
+            "author": "člen komunity",
+            "text": "Takže, kdo tu váhal a potřeboval pracovat s contentem a dělat přepisy s časovými značkami, rozpoznávat mluvčí a formátovat dle vlastní potřeby jako já.\n30 minut a mám hotovo.\n1/ Skript vytáhne z mp4 audio.\n2/ Přepíšem se Soniox.\n3/ Skript stáhne výsledek a naformátuje ho dle mých potřeb.\n4/ uloží do Obsidianu. A můžu s tím pracovat.\nJdu smazat předplatný Turboscribe :) Ciao :)"
+          },
+          {
+            "time": "18:07",
+            "author": "člen komunity",
+            "text": "Lovable a podobné nástroje už nedávají smysl, že? To měly jepičí život…"
+          },
+          {
+            "time": "18:12",
+            "author": "člen komunity",
+            "text": "Vůbec. V podstatě žádný z nástrojů, který jsem používala. Lovable, Turboscribe, Canva. Vše si dokážu vytvořit, aby fungovalo tak, jak potřebuju já :) je to boží :)"
+          },
+          {
+            "time": "18:20",
+            "author": "člen komunity",
+            "text": "I Canvu? Jak? Na editaci grafiky je supr. A cenově ok. Jedu kombo Canva + Affinity a těším se až ukončím úplně Adobe (kde mám teda už 10+ let studentskou cenu naštěstí 😅)"
+          },
+          {
+            "time": "18:28",
+            "author": "člen komunity",
+            "text": "Canvu mám nyní na programu, takže řeknu následně. Ale ano, půjde to. To vím jistě. Všechny placený nástroje přetavím ve svý nástroje :) Pro mé využívání, jak potřebuju já. :) dám vědět."
+          }
+        ]
+      }
+    ]
+  }
+}

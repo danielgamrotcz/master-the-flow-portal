@@ -1,0 +1,173 @@
+{
+  "date": "2026-03-24",
+  "generated_at": "2026-06-04T16:01:13Z",
+  "stats": {
+    "messages": 18,
+    "groups": 2,
+    "members": 6
+  },
+  "cards": [
+    {
+      "id": "2026-03-24-01",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "Vlastní nástroje",
+      "title": "Time tracker na míru místo přeplněného Togglu",
+      "excerpt": "Jedna z členek přestala platit za nástroj, který z 90 % vůbec nepoužívala. Místo toho si postavila vlastní time tracker s úkolníčkem, přesně podle toho, jak pracuje s klienty.",
+      "body": "Toggl je skvělý nástroj, jenže má spoustu funkcí, které freelancerka nebo asistentka vůbec nepoužije. Jedna členka komunity to proto vzala po svém. Místo hledání dalšího nástroje si postavila vlastní.\n\nVznikla webová aplikace, která má jen to, co opravdu potřebuje. Seznam klientů s hodinovou sazbou. Časovač, který spustí a zastaví. Automaticky vygenerovaný report pro klienta. A přímý odkaz do Fakturovače pro vystavení faktury.\n\nNic navíc. Žádné dashboardy, které nikdo nečte. Žádné integrace, které si stejně nikdy nenastaví.\n\nAplikaci teď ladí a chce ji dát vyzkoušet dalším asistentkám, aby získala zpětnou vazbu z praxe. Přesně takhle se produkt posouvá nejlíp: pustit ho mezi lidi, kteří ho budou opravdu používat, a sbírat konkrétní připomínky.",
+      "read_minutes": 2,
+      "source_date": "2026-03-24"
+    },
+    {
+      "id": "2026-03-24-02",
+      "type": "POSTAVIL JSEM",
+      "level": "Expert",
+      "topic": "Vlastní nástroje",
+      "title": "iOS poznámkovač na 4 prompty s vlastní synchronizací",
+      "excerpt": "Člen komunity dodělal iOS verzi svého poznámkovače na čtyři prompty. Data má uložená lokálně, synchronizovaná mezi zařízeními a napojená na celý svůj ekosystém nástrojů.",
+      "body": "Místo Apple Notes, Notionu nebo Obsidianu si jeden z členů postavil vlastní poznámkovač. Dnes ho má i jako iOS aplikaci. Stačily mu na to čtyři prompty.\n\nV čem se liší od hotových řešení? Hlavně v práci s daty. Poznámky má uložené lokálně na svých zařízeních jako Markdown soubory a mezi zařízeními se mu synchronizují. Vlastníkem je on, nikdo jiný.\n\nNa tom stojí celý systém. Na stejná data má napojené vlastní nástroje: content creator, Gmail asistenta a nástroje pro tvorbu nabídek. Všechny pracují se stejnými informacemi, bez ručního kopírování nebo importů.\n\nVizuál ještě ladí, ale funkčně to běží. Cíl byl od začátku jasný: systém, který funguje a má ho plně pod kontrolou.",
+      "read_minutes": 2,
+      "source_date": "2026-03-24"
+    },
+    {
+      "id": "2026-03-24-03",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Knowledge management",
+      "title": "Proč mít poznámky v systému, který vlastníte",
+      "excerpt": "Notion i Obsidian jsou fajn nástroje, ale data v nich máte buď u někoho v cloudu, nebo odříznutá od ostatních nástrojů. Vlastní systém tohle řeší.",
+      "body": "Otázka přišla úplně přirozeně: proč si stavět vlastní systém na poznámky, když existuje Notion nebo Obsidian?\n\nOdpověď není ve funkcích. Je v přístupu.\n\nKdyž máte data ve vlastním systému — třeba jako Markdown soubory někde, kde nad nimi máte kontrolu — otevře vám to možnosti, které hotové nástroje často nedají. Můžete na ně napojit vlastní boty a skripty. Můžete je číst i upravovat z víc nástrojů najednou. Verzovat je, zálohovat a přenášet bez toho, abyste byli závislí na jedné konkrétní platformě.\n\nPraktický příklad: jeden z členů si přes Telegram bota diktuje výsledky deep research a ukládá je rovnou do svých poznámek, včetně doplněných detailů. Celý workflow bez otevření aplikace.\n\nNení to řešení pro každého. Hotové nástroje jsou rychlejší na rozjezd a jistější volba, pokud nechcete nic spravovat. Pokud ale chcete, aby vaše poznámky byly opravdu vaše — a fungovaly jako součást většího systému — vlastní přístup dává smysl.",
+      "read_minutes": 2,
+      "source_date": "2026-03-24"
+    },
+    {
+      "id": "2026-03-24-04",
+      "type": "INSIGHT",
+      "level": "Expert",
+      "topic": "Workflow",
+      "title": "Telegram bot jako vstupní bod do poznámek",
+      "excerpt": "Místo otevírání aplikace a ručního ukládání stačí napsat botovi na Telegramu. Udělá deep research a výsledek uloží rovnou do poznámek. Jeden příkaz a hotovo.",
+      "body": "Vlastní systém poznámek má největší sílu ve chvíli, kdy neslouží jen jako místo, kam si ručně ukládáte věci, ale jako hub, se kterým pracují vaši automatizovaní asistenti.\n\nKonkrétní workflow: člen komunity použije Telegram bota, zadá téma — třeba analýzu konkrétní komunity nebo trhu — a bot udělá deep research. Výsledek pak sám uloží do poznámkového systému a přidá k němu další kontext.\n\nProč Telegram, a ne samostatná aplikace? Telegram máte po ruce odkudkoli, nemusíte přepínat do jiného prostředí a zadávání úkolů botům v něm působí přirozeně.\n\nAby to fungovalo, musí být poznámky v systému, do kterého se dá programově zapisovat. Tedy ve vlastních souborech, ne v uzavřeném cloudu jiné firmy. Právě tahle vrstva celé řešení propojuje.\n\nVýsledek: knowledge systém, do kterého nepřispíváte jen vy, ale i vaši AI asistenti. A bez zbytečného přepínání mezi aplikacemi.",
+      "read_minutes": 2,
+      "source_date": "2026-03-24"
+    },
+    {
+      "id": "2026-03-24-05",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Začátečník",
+      "topic": "AI nástroje",
+      "title": "Claude nebo Cursor: co se vyplatí učit",
+      "excerpt": "Jeden z členů se ptal, jaký je rozdíl mezi Claudem a Cursorem. Tahle otázka se objevuje často — a odpověď záleží na tom, co s nimi chcete dělat.",
+      "body": "Claude a Cursor můžou zvenku působit podobně. Oba pracují s AI a oběma můžete říkat, co mají dělat. Ve skutečnosti se ale hodí na jiné situace.\n\nCursor je IDE postavené na VS Code. Slouží hlavně k psaní kódu. Dává smysl pro vývojáře nebo pro lidi, kteří se chtějí naučit programovat a chtějí mít nad kódem větší kontrolu.\n\nClaude, hlavně Claude Code, je univerzálnější. Umí psát kód, ale taky analyzovat dokumenty, pomáhat s texty, plánovat workflow nebo automatizovat opakující se úkoly. Pro základní používání nemusíte umět programovat.\n\nPokud nemáte technické zázemí, většinou dává smysl začít s Claudem. Naučíte se líp zadávat úkoly, chápat výstupy a pracovat s AI formou běžné konverzace. Cursor má smysl přidat ve chvíli, kdy už víte, co přesně od kódu chcete.\n\nA co chcete s AI řešit vy? Podle toho se pozná, kde začít.",
+      "read_minutes": 2,
+      "source_date": "2026-03-24"
+    }
+  ],
+  "resurfacing": null,
+  "transcript": {
+    "groups": [
+      {
+        "slug": "mastertheflow—hlavní",
+        "name": "Master the Flow — hlavní",
+        "messages": [
+          {
+            "time": "06:30",
+            "author": "Daniel",
+            "text": "=== 📹 MATERIÁLY Z FOLLOW-UP ===\nVšechno najdete na Google Disku. Pokud k tomu nemáte nějaký speciální důvod, tak to prosím nesdílejte dál a nechte to tady v komunitě.\nLINK: https://drive.google.com/drive/folders/1z98pG8qK5dOUo5Ws3mFsq7azcqrpQ94C?usp=sharing\nNa ostatní, kdo nejsou tady na WhatsApp, to budu posílat taky přes e-mailovou notifikaci. Vám to tedy přijde dvakrát.\nKde by vám cokoliv chybělo, tak dejte prosím vědět."
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "03:06",
+            "author": "Daniel",
+            "text": "Kdyby se vám to ještě někdy v budoucnu stalo, tady je řešení.\nhttps://token-break.pages.dev/"
+          },
+          {
+            "time": "07:04",
+            "author": "Daniel",
+            "text": "Ještě jsem na to nekoukal, ale doufám, že to bude ovládané hlasem a nebudu muset mačkat červené tlačítko ve chvíli, kdy mi to bude chtít smazat moje nelegálně stažené filmy z Google Disku. Prostě chci říct jen STOP nebo něco takového."
+          },
+          {
+            "time": "07:11",
+            "author": "člen komunity",
+            "text": "Řekla bych, ať vypojíš kabel, ale to u notebooku taky nejde. 😅"
+          },
+          {
+            "time": "10:16",
+            "author": "člen komunity",
+            "text": "Chci se podělit ještě o jeden mininástroj, který jsem udělala pro sebe. Hlavně proto, že trekuju v Togglu a ten má spoustu věcí, které vůbec nevyužívám a chtěla jsem to mít vše na jednom místě.\nJe to takový time tracker s úkolníčkem, který jsem si udělala pro spolupráce s klienty. Je tam seznam mých klientů, u každého hodinová sazba, časovač a zároveň i odeslání reportu klientovi a odkaz na Fakturovač. Má to chybičky, ještě ladím mouchy, budu ráda i za zpětnou vazbu, kdyby se to někomu chtělo proklikat. 😊\nhttps://testerky.velin-i7u.pages.dev/"
+          },
+          {
+            "time": "10:24",
+            "author": "člen komunity",
+            "text": "To je hodně pěkná věc!"
+          },
+          {
+            "time": "10:38",
+            "author": "člen komunity",
+            "text": "Moc díky, pořád iteruju a pošlu to pár asistentkám i na vyzkoušení, abych měla ZV a doplnila vše potřebné. 😊"
+          },
+          {
+            "time": "10:44",
+            "author": "Daniel",
+            "text": "Super! Dělám to taky tak. Vytáhnu to nej, co používám. Zbytek zahodím. Dnes jsem na 4 prompty udělal konečně iOS verzi svého poznámkovače. Vizuál budu ladit. Potřeboval jsem jen, aby to konečně fungovalo a synchronizace byla v cajku."
+          },
+          {
+            "time": "11:14",
+            "author": "člen komunity",
+            "text": "Co je na něm unikátní? Jakože třeba od poznámek na Applu? Co sis tam domazlil?"
+          },
+          {
+            "time": "11:23",
+            "author": "Daniel",
+            "text": "Je tam toho více. Třeba to, že ty data mám lokálně a synchronizovaný, a zároveň na místě, kde nad tím mám plnou kontrolu, aby se to synchronizovalo mezi zařízeními.\nZároveň na to můžu napojovat vlastní systémy pro tvorbu nabídek, přehledů, publikaci obsahu a podobně.\nPracuje s tím můj content creator, Gmail asistent, a nástroje, které dělají věci, které já dělám nerad.\nV MD souborech, které mám v tom svým systému, jsou kompletní informace, které celý můj ekosystém potřebuje pro co nejsamostatnější práci."
+          },
+          {
+            "time": "11:38",
+            "author": "člen komunity",
+            "text": "Diky za inspiraci. Udelalam si neco pro sebe. Vypada to velmi dobre a funkcne."
+          },
+          {
+            "time": "11:41",
+            "author": "člen komunity",
+            "text": "Jo. Já teď na synchronizaci mezi zřízeními řeším sync přes iCloud."
+          },
+          {
+            "time": "12:12",
+            "author": "člen komunity",
+            "text": "Vidím P.A.R.A! 🙂"
+          },
+          {
+            "time": "12:18",
+            "author": "Daniel",
+            "text": "Což je v pohodě, jenom když to mám u sebe, v uvozovkách, tak jsem teď schopnej k tomu přistupovat třeba přes Telegram a říct botovi, který mi udělal deep research v rámci nějakýho tématu, třeba WhatsApp community, že mi to má uložit mezi mé poznámky a přidat k tomu potom nějaké další detaily.\nProstě je to flexibilnější. Pro mě.\nA to je jenom jeden a myslím si, že ten nejdrobnější příklad."
+          },
+          {
+            "time": "12:19",
+            "author": "Daniel",
+            "text": "Tohle jediné jsem ještě nehacknul po svém, a asi zatím ani nebudu. Funguje to skvěle."
+          },
+          {
+            "time": "13:38",
+            "author": "člen komunity",
+            "text": "Nahradil jsi timto svuj Notion/Obsidian?\nJinak chapu spravne, ze tvuj poznamkovy system je vlastne struktura slozek a ze co poznamka to jeden MD soubor?\nCo printscreeny nebo vlozene skeny?"
+          },
+          {
+            "time": "14:27",
+            "author": "člen komunity",
+            "text": "Tak zrovna včera jsem sledoval toto video na stejné téma. Notion/Obsidian je možné již vyhodit, a nahradit s Claude Code.\nJe to trochu dlouhé, ale zajímavá inspirace https://www.youtube.com/watch?v=geIKyDaXwGg&t=3070s"
+          },
+          {
+            "time": "20:48",
+            "author": "člen komunity",
+            "text": "Ahojky Jen technická - v čem je lepší claude od cursoru … prý je lepší cursor? Jen to neumím posoudit. A jen at se neučím blbosti? Dik"
+          }
+        ]
+      }
+    ]
+  }
+}

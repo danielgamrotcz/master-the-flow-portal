@@ -1,0 +1,211 @@
+{
+  "date": "2026-04-28",
+  "generated_at": "2026-06-04T17:08:26Z",
+  "stats": {
+    "messages": 20,
+    "groups": 3,
+    "members": 3
+  },
+  "cards": [
+    {
+      "id": "2026-04-28-01",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Pracovní postupy",
+      "title": "Appku nepotřebuješ, stačí workflow",
+      "excerpt": "Čím dál víc členů zjišťuje, že nepotřebují vlastní aplikaci. Stačí jim jednoduchý workflow s Claudem: CRM v tabulce, Claude jako rozhraní a hotovo.",
+      "body": "V komunitě se opakuje posun v přemýšlení. Ještě před měsícem spousta lidí řešila, jakou appku si postaví. Teď čím dál častěji říkají, že žádnou appku vlastně nepotřebují.\n\nJeden člen místo trackeru reklamačních dokladů nechává Claudea procházet e-maily a ptá se ho na to, co zrovna potřebuje. Jiný má CRM v obyčejné tabulce a složitější řešení nehledá. Padl i návrh držet všechno v Markdownu a gitu, protože do souborů stejně nikdo nekouká a Claude jako rozhraní stačí.\n\nTohle dává smysl. Ne každý problém potřebuje aplikaci. Často stačí workflow, které odstraní opakované klikání. Než příště začneš stavět appku, zeptej se sám sebe, jestli by nestačilo jednoduché AI workflow.",
+      "read_minutes": 2,
+      "source_date": "2026-04-28"
+    },
+    {
+      "id": "2026-04-28-02",
+      "type": "POSTAVIL JSEM",
+      "level": "Expert",
+      "topic": "Obsidian, automatizace",
+      "title": "Scraper obsahu s automatickými poznámkami v Obsidianu",
+      "excerpt": "Jedna členka si postavila nástroj, který bere nový obsah ze zadaných zdrojů a automaticky ho ukládá do Obsidianu. Přidá k němu TLDR, tagy a místo na vlastní zpětnou vazbu.",
+      "body": "Konkrétní ukázka toho, co má spousta lidí v hlavě jako nápad, ale už to nedotáhne. Členka dá nástroji seznam zdrojů, ten pravidelně kontroluje novinky a každý nový obsah uloží do Obsidianu jako poznámku. Přidá k tomu TLDR, tagy, backlinky na související témata a místo, kam si může dopsat vlastní komentář nebo zpětnou vazbu.\n\nVýsledek: informace nepřibývají jen na hromadu, ale rovnou zpracované. Místo scrollování nekonečným seznamem záložek máš v Obsidianu strukturované poznámky připravené ke čtení nebo dalšímu navázání.\n\nPodobný systém si ladí víc lidí z komunity. Padl i nápad udělat session, kde by každý ukázal kus svého přístupu a mohli bychom je porovnat. Pokud tě to zajímá, sleduj skupinu Vibe Coding.",
+      "read_minutes": 2,
+      "source_date": "2026-04-28"
+    },
+    {
+      "id": "2026-04-28-03",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Hosting, deployment",
+      "title": "Vercel a Cloudflare Pages jako alternativa k Wedosu",
+      "excerpt": "Moderní hosting zdarma s automatickým nasazením přes GitHub. V diskuzi zazněly konkrétní tipy pro ty, kdo chtějí odejít z klasického sdíleného hostingu.",
+      "body": "V komunitě se rozjela debata o přechodu z klasického hostingu na modernější platformy. Padly konkrétní tipy na Vercel a Cloudflare Pages. Obě služby mají tarif zdarma, který na osobní projekty nebo menší weby úplně stačí.\n\nVelké plus je automatické nasazení přes GitHub. Commitneš změnu a web se sám nasadí. Bez FTP a bez ručního nahrávání souborů. Obě platformy jsou navíc výrazně rychlejší než běžný shared hosting a líp zvládají statické i dynamické weby.\n\nSmysl to dává každému, kdo má web na klasickém hostingu a chce si zjednodušit práci nebo snížit náklady. Přechod není složitý, pokud máš projekt na GitHubu nebo jsi ochotný ho tam dát. Cloudflare Pages navíc nabízí serverless funkce i pro dynamický obsah.",
+      "read_minutes": 2,
+      "source_date": "2026-04-28"
+    },
+    {
+      "id": "2026-04-28-04",
+      "type": "INSIGHT",
+      "level": "Expert",
+      "topic": "Claude Code, infrastruktura",
+      "title": "Claude Code na Mac Mini jako osobní server",
+      "excerpt": "Mac Mini s Claude Code a cron jobem běží nonstop 24/7. Tahle architektura zaujala komunitu a rozjela debatu o osobním serveru versus cloudu.",
+      "body": "V komunitě padl konkrétní setup, který vyvolal dost otázek: Claude Code běžící na Macu Mini přes cron job, pořád dostupný bez ručního spouštění. Prostě vlastní mini server pro AI agenty, který zpracovává úkoly na pozadí.\n\nOproti cloudu má výhodu v přímém napojení na lokální software, aplikace a soubory. Mac Mini M4 stojí jednorázově víc peněz, ale provoz je pak levný. Cloud je pružnější a líp škáluje, jenže pro osobní projekty a experimenty může lokální řešení úplně stačit.\n\nDebata Mac Mini versus cloud se v komunitě vrací pořád dokola. Lidi zajímala hlavně architektura: jak jsou napojené cron joby, jak se to verzuje a jak se řeší přístupy. Jestli máš podobný setup nebo si s tím hraješ, hoď to do Vibe Coding skupiny.",
+      "read_minutes": 2,
+      "source_date": "2026-04-28"
+    },
+    {
+      "id": "2026-04-28-05",
+      "type": "INSIGHT",
+      "level": "Začátečník",
+      "topic": "Tabulky, Excel",
+      "title": "AI dotáhne tabulku, kde vzorce selžou",
+      "excerpt": "Složitá excelová tabulka, která se při ručních úpravách rozsype? Jedna členka to vyřešila přes AI a nepřišla o žádné vzorce. Funguje to i v Google Sheets.",
+      "body": "Jedna členka popsala konkrétní situaci. Měla těžkou excelovou tabulku plnou vzorců a ručně ji nešlo dodělat tak, aby se něco nerozbilo. Zkusila to přes AI a tabulka byla hotová bez problémů.\n\nPodobně to jde i v Google Sheets. Přes Claude Code se dají spravovat i složitější věci, třeba vlastní CRM. Každou úpravu můžeš nechat na AI a nehrozí, že ručně něco rozhodíš.\n\nPro lidi bez programátorského zázemí je tohle jeden z nejpraktičtějších způsobů použití. Nemusíš rozumět vzorcům. Stačí popsat, co chceš, a AI to dotáhne. Hodí se to hlavně ve chvíli, kdy chybí jeden vzorec, potřebuješ přidat sloupec nebo opravit strukturu tak, aby se nerozsypala data.",
+      "read_minutes": 2,
+      "source_date": "2026-04-28"
+    },
+    {
+      "id": "2026-04-28-06",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Builder",
+      "topic": "Komunita, knowledge management",
+      "title": "Ukázali bychom si navzájem systémy na informace?",
+      "excerpt": "Padl nápad udělat session, kde by každý ukázal kousek svého systému na zpracování informací a porovnali bychom různé přístupy. Dává to smysl?",
+      "body": "Více členů si staví podobné věci: scrapery obsahu, systémy v Obsidianu, personalizovaná doporučení ze zdrojů nebo automatické zpracování newsletterů. Každý na to jde trochu jinak, ale spousta postupů se dost překrývá.\n\nPadl konkrétní nápad udělat online session, kde by každý ukázal kousek svého systému a porovnali bychom, jak k tomu kdo přistupuje. Žádná přednáška. Spíš sdílení toho, co funguje, co ne a jak to kdo řeší.\n\nOtázka na komunitu: byl by o to zájem? A co by ses chtěl od ostatních dozvědět, případně co bys sám ukázal? Praktické systémy bývají v komunitě jedním z nejužitečnějších témat. Každý řeší trochu jiný problém, ale řešení se často dají přenést jinam.",
+      "read_minutes": 2,
+      "source_date": "2026-04-28"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-03-31-02",
+    "type": "INSIGHT",
+    "level": "Builder",
+    "topic": "Přepis nahrávek",
+    "title": "Lokální přepis starých nahrávek za 10 minut",
+    "excerpt": "Máš složku se starými hlasovými nahrávkami a chceš je přepsat do textu? Dá se to rozjet lokálně přes Whisper model a Claude Code — bez nahrávání souborů na cizí server a bez dalšího předplatného. Celé nastavení zabere zhruba 10 minut.",
+    "body": "Whisper je open-source model od OpenAI pro přepis řeči. Běží lokálně na vlastním počítači a umí zpracovat víc souborů najednou. S Claude Code si k němu snadno uděláš jednoduchý skript, který projde složku s nahrávkami a každou uloží jako textový soubor.\n\nCo potřebuješ:\n- Claude Code, stačí běžné předplatné\n- nainstalovaný Python\n- Whisper model, ten se stáhne automaticky\n\nZáleží i na výkonu počítače. Větší modely bývají přesnější, ale jsou pomalejší. Na starším stroji může přepis trvat déle než samotná nahrávka. Na Apple Silicon, tedy M1, M2 nebo M4, to většinou běží rychleji než reálný čas záznamu.\n\nJestli chceš cloudovou variantu bez instalace, TurboScribe patří mezi často chválené placené alternativy. Pro občasné použití má dobrý poměr ceny a výkonu.\n\nDává to smysl hlavně pro lidi, kteří mají nahrávky z porad, terénních návštěv nebo vlastního diktování a chtějí v nich vyhledávat nebo s nimi dál pracovat jako s textem.",
+    "read_minutes": 2,
+    "source_date": "2026-03-31",
+    "resurfaced_from": "2026-03-31"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "mastertheflow—hlavní",
+        "name": "Master the Flow — hlavní",
+        "messages": [
+          {
+            "time": "20:38",
+            "author": "Daniel",
+            "text": "📅 TÝDENNÍ SOUHRN (20.4. - 27.4.)\nHezké úterý,\nměl jsem to posílat včera, ale pondělí jsem nějak přeskočil, podle mě ani nebylo v kalednáři.\nPosílám zápis toho, co se v komunitě za poslední týden seběhlo. Píšu to hlavně pro vás, kdo jste přišli nedávno a starší zprávy se vám v chatu nezobrazují.\nPro orientaci. Máme čtyři skupiny. Oznámení (hlavní obsah), Inspirace & Diskuze (otázky a sdílení), Webináře & Workshopy (akce) a Vibe Coding (stavění aplikací s AI, i bez programátorského zázemí).\n*Posun, který tady cítím*\nV chatech mi z více míst prosakuje jeden zajímavý mindset. Lidi, kteří ještě před měsícem řešili, jakou appku si postaví, teď čím dál častěji říkají, že vlastně appku nepotřebují. Stačí jim workflow. Jeden člen popsal, jak si místo programování trackeru reklamačních dokladů prostě nechá Claude probírat e-maily a sám se ho na to ptá.\nDalší zase, že své CRMko nechává v obyčejné tabulce a žádné nablýskanější řešení k tomu nehledá. Ano, to jsem já. Ehm.\nTřetí to posunul ještě dál, ať si to dáte všechno do Markdownu a gitu, protože do těch souborů člověk stejně nekouká a Claude jako rozhraní stačí. Mně tahle linka dává smysl. Ne všechno musí být appka. Často úplně postačí workflow, které vás odpojí od opakujících se kliknutí. A ano, pořád s tím CRM v MD koketuju.\n*Co lidi staví a sdílejí*\nJedna členka si v krátké době postavila vlastní „scraper“ obsahu. Dává mu seznam zdrojů, on pravidelně bere jen nový obsah a do Obsidianu jí ukládá poznámky s TLDR, tagy a backlinky, plus prostor na vlastní zpětnou vazbu. Prostě boží!\nPodobnou věc rozvíjím i já. Centralizuju si zdroje informací do Obsidianu s personalizovanými doporučeními. Chybí mi tam ještě špetka sebeučení a zpětné vazby, dotáhnu a ukážu 7. května na webináři. Nechcete někdy porovnat podobné systémy? Že by každý nasdílel kousek? Myslím, že by to mohla být fajn online session.\nJeden člen pak ukázal web s českými kurzy a testy ke Claude (claude-cesky.vercel.app). Inspirace oficiálními materiály Anthropicu, ale vše prošlo jeho rukama, vlastními poznámkami a iteracemi s Claudem. Pěkná ukázka toho, jak když si něco postavíte pro sebe, můžete to klidně sdílet i ostatním, kterým se to může hodit.\nA ještě jedna členka popsala, jak Cowork bez problému vyplnil těžkou excelovskou tabulku, kterou se jí nedařilo dotáhnout ručně bez rozsypání vzorců. Dělám to podobně v Google Sheets – udržuju vlastní CRMko a každou aktualizaci nechávám na Claude Code.\n*Drobné objevy*\nV Inspiraci jsem mimo techničtější věci sdílel jednu starší knížku, Inner Excellence od Jima Murphyho. Je tam technika, se kterou jsem si kdysi začal hrát a roky ji používám. Před důležitým úkolem se na pár desítek sekund podívat na sebe v hlavě, jak ten okamžik probíhá ideálně. Banální kompenzace toho, kdy mysl ráda promítá hlavně to, co se může pokazit. Funguje to fakt hezky.\nMrkněte taky na nový model OpenAI na generování obrázků. Cvičně jsem mu tam hodil doslovný přepis svého webináře a to, co lezlo v podobě grafiky s textem, je posun o velký krok.\n*Webinář*\nPřipomínám, že 7. května mám webinář „Pod kapotou“. Ukážu tam mimo jiné svůj systém na zpracování zdrojů informací (tu věc kolem Obsidianu, o které je nahoře řeč). Pro členy komunity je sleva 500 Kč s kódem MASTERTHEFLOW.\n*Odkazy z chatu*\nWebinář „Pod kapotou“, 7. května (sleva 500 Kč s kódem MASTERTHEFLOW)\nhttps://danielgamrot.cz/webinar/pod-kapotou/\nČeské kurzy a testy ke Claude (Jirka Koukal)\nhttps://claude-cesky.vercel.app\nInner Excellence, knížka Jima Murphyho\nhttps://innerexcellence.com/\nInformation overload, post Matěje Matolína (téma centralizace zdrojů informací)\nhttps://www.linkedin.com/posts/matejmatolin_information-overload-%C4%8Dlov%C4%9Bk-odeb%C3%ADr%C3%A1-share-7452995373222072320-vJhk\nUttero pro iOS, beta testování zdarma\nhttps://danielgamrot.cz/nastroje/uttero-ios/\nFajn úterý.\nD."
+          }
+        ]
+      },
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "22:59",
+            "author": "člen komunity",
+            "text": "Opět pecka, Dane.. 💪🤓  Určitě by to našlo využití vícekrát než jen jednou a pak stačilo.. Dej vědět, jak zítra.. Ať se daří 🙏🍀"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "15:56",
+            "author": "člen komunity",
+            "text": "Zahlédl jsem na LI, hodně dobrý 💪😃 A to si pro něj byl v Liberci?"
+          },
+          {
+            "time": "15:57",
+            "author": "Daniel",
+            "text": "Kdepak, potkali jsme se nakonec v Praze. Pro mě naprosto skvělý."
+          },
+          {
+            "time": "16:40",
+            "author": "člen komunity",
+            "text": "Měl jsi možnost nasdilet “návod” jak takového bota postavit? Diky"
+          },
+          {
+            "time": "16:40",
+            "author": "člen komunity",
+            "text": "Hodilo by se mi něco podobného na nemovitosti 😅"
+          },
+          {
+            "time": "16:49",
+            "author": "člen komunity",
+            "text": "Někdy si ŕíkám proč vlastně lidé tolik používají MacMinis když kdyby to hodili do kontejneru na AWS tak je to vyjde 1000x levněj."
+          },
+          {
+            "time": "16:50",
+            "author": "člen komunity",
+            "text": "Protože znalosti možností a přístupnost (náročnost nastavit si to)"
+          },
+          {
+            "time": "16:56",
+            "author": "člen komunity",
+            "text": "Ok, to beru.  Ono to jen v té velké škále co se to děje působí zvláštně.\nNěkdo říká že pro ně je důležitá integrace s klasickým softem na MM."
+          },
+          {
+            "time": "16:57",
+            "author": "člen komunity",
+            "text": "Hodně lidí má horizont toho, co znají / dohlédnou strašně malý.\nKlasický bias IT bubliny :D"
+          },
+          {
+            "time": "17:05",
+            "author": "Daniel",
+            "text": "Souhlas, bylo to ve hře. Ve finále „vyhrálo“ to mít ty věci u sebe. A jo, drahý to je. Plus vlastní experimenty."
+          },
+          {
+            "time": "19:15",
+            "author": "člen komunity",
+            "text": "Můžeš prosím rozvést bod 9? To je případ kdy běží Claude Code někde na Macu 24/7? Nebo to jsou Routines? Nebo něco jiného?"
+          },
+          {
+            "time": "19:16",
+            "author": "Daniel",
+            "text": "Jj, Mac Mini. Cron job."
+          },
+          {
+            "time": "20:45",
+            "author": "člen komunity",
+            "text": "Ahoj vsem, ja mam asi mene sofistikovany dotaz, ale tyka se vibecodingu 😀 Mam one page webovku, kterou jsem kodovala ( html, css - sass) a s .js ozivila tri roky zpatky, hosting je na Wedosu. Udelala jsem vizualni upgrade pres Lovable. Kod mam ted na Githubu. A chci jej pouzit a nahradit ten stavajici. No a me zajima, na jake pasti se nachystat, az budu ten LB kod nahravat na hosting. S mou znalosti bohuzel me napada jen vliv na SEO a GA. Doufam, ze dotaz neni uplne mimo 😂."
+          },
+          {
+            "time": "20:57",
+            "author": "člen komunity",
+            "text": "A je ten kód čistě statika? + otázka, proč to nahrávat na Wedos hosting? Kdybys chtěla poradit víc, klidně napiš do DMs 👍🏼"
+          },
+          {
+            "time": "21:08",
+            "author": "člen komunity",
+            "text": "Neni staticky. Wedos - jen protoze puvodni zaplacene reseni ( ne moje, neni to “muj” web). Mam vybrat netlify apod nebo kam miris? Vim, ze muzu hostovat i pres Lovable. Ale to je nakladove tento rok nekde jinde. Promin, ze nepisu do DM, ale mozna takto na zacatku to muze byt zajimave treba i pro nekoho jineho?"
+          },
+          {
+            "time": "21:09",
+            "author": "člen komunity",
+            "text": "Vybral bych Vercel nebo Cloudflare, kde se dá takový projekt _hostovat_ zdarma."
+          },
+          {
+            "time": "21:10",
+            "author": "člen komunity",
+            "text": "V případě obav o SEO bych co nejlépe pokryl existující cesty 1:1, pokud nelze, tak min. vyřešil redirecty, ať s novým webem projekt trpí co nejméně."
+          },
+          {
+            "time": "21:12",
+            "author": "člen komunity",
+            "text": "Mám ve správě cca 20 domén, z toho na wedosu přes webhosting jen 2 weby. Téměř vše už mám na Cloudflare pages, protože to lze nasadit z Githubu. Stačí, aby tam přišla nová verze a automaticky se spouští deploy. (to může být i riziko, pokud člověk jede YOLO a neví jak git používat a vše dělá slepě skrz AI)\nVercel funguje stejně.\nV hodně omezeném režimu umožňují provoz i Github Pages."
+          },
+          {
+            "time": "21:24",
+            "author": "člen komunity",
+            "text": "Moc dekuju za tipy. Mrknu na to. Muzu si kazdopadne nechat stale otevrenou moznost DMs? Az den D prijde? 🙂"
+          }
+        ]
+      }
+    ]
+  }
+}

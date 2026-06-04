@@ -1,0 +1,285 @@
+{
+  "date": "2026-05-22",
+  "generated_at": "2026-06-04T17:59:50Z",
+  "stats": {
+    "messages": 37,
+    "groups": 3,
+    "members": 6
+  },
+  "cards": [
+    {
+      "id": "2026-05-22-01",
+      "type": "TÉMA TÝDNE",
+      "level": "Builder",
+      "topic": "Speech-to-text",
+      "title": "Speech-to-text dominuje diskuzi v komunite",
+      "excerpt": "Diktování a přepisy ze schůzek. Komunita sdílí zkušenosti s Utterem, WisprFlow a betou Raycastu 2.0. Výběr nástroje záleží hlavně na operačním systému a na tom, jak složitý workflow chcete.",
+      "body": "Velká část diskuze v Inspiraci se točila kolem speech-to-text nástrojů. Od diktování do mobilu až po přepisy meetingů.\n\nUttero vede v přesnosti i rozpoznávání jazyků, včetně francouzštiny. Funguje hlavně na Macu a iOS. Lidi ze skupiny si ho chválí, hlavně když míchají víc jazyků.\n\nWisprFlow je nejlepší alternativa pro Windows. Má méně funkcí, ale solidní základ a dobrou přesnost.\n\nRaycast 2.0 beta přidává diktování, které prý hodně připomíná Uttero. Pokud už Raycast používáte, dává smysl ho vyzkoušet. Obě aplikace se aktivně vyvíjejí a nejspíš se budou dál přibližovat.\n\nPlaud řeší něco jiného: přepisy schůzek, ne diktování. Hardware se připojí k telefonu, software pak všechno organizuje v počítači.\n\nSpolečná linka je jasná: speech-to-text už není jen prémiová funkce pro power users. Čím dál víc lidí ho používá v běžné práci, ať už na psaní, nebo na záznamy ze schůzek.",
+      "read_minutes": 2,
+      "source_date": "2026-05-22"
+    },
+    {
+      "id": "2026-05-22-02",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Přepisy z meetingů",
+      "title": "Plaud jako hardware i software pro přepisy",
+      "excerpt": "Plaud je fyzický záznamník a zároveň software do počítače. Dohromady fungují tak, že se nahraný meeting rovnou uloží jako přepis na jednom místě, bez ručního exportu.",
+      "body": "Plaud je fyzické zařízení, které připojíte k telefonu. Nahrává zvuk přímo z reproduktoru nebo mikrofonu. K tomu má aplikaci pro počítač, kde se přepisy ukládají a třídí.\n\nFunguje to jednoduše: přijdete na meeting, nahráváte přes Plaud hardware a přepis se vám automaticky objeví v aplikaci. Nemusíte nic ručně exportovat ani řešit, kam uložit soubory.\n\nPodle zkušeností z komunity jsou přepisy hodně přesné. Platí to i u delších nahrávek a u smíšeného obsahu.\n\nDalší možnost je postavit si vlastní řešení nad některým AI API pro přepis. Získáte tím větší kontrolu a často lepší výsledky při míchání jazyků. Na druhou stranu to chce technické znalosti a čas na vývoj.\n\nPro většinu lidí, kteří chtějí jednoduše dostat přepis z meetingu rovnou do textu bez ručního stahování, je Plaud dobrá volba.",
+      "read_minutes": 2,
+      "source_date": "2026-05-22"
+    },
+    {
+      "id": "2026-05-22-03",
+      "type": "INSIGHT",
+      "level": "Expert",
+      "topic": "Vibe Coding",
+      "title": "Jak strukturovat konec Vibe Coding session",
+      "excerpt": "Jak správně ukončit práci s Claude Code? V komunitě na to lidi jdou různě: někdo používá ruční vícekrokové skilly, jiný automatické hooky a další ukládá stav session do JSONu. Každý přístup řeší trochu jiný problém.",
+      "body": "Ve skupině Vibe Coding se rozjela dlouhá diskuze o tom, jak správně ukončit práci s Claude Code. Nakonec z toho bylo větší téma, než se na první pohled zdálo.\n\nPřístupy, které v diskuzi padly:\n\nMultikrokový skill: strukturovaný seznam kroků na konec session. Uložit stav, udělat commit, zapsat poznámky, připravit plán na příště. Pomáhá ohlídat, že na nic nezapomenete.\n\nMemplace + /save hook: automatické ukládání stavu session do paměti. Hook se spustí sám, takže na to nemusíte myslet.\n\n /wrap flow: kombinace zápisů do Obsidianu, Things a Notion. Hodí se pro lidi, kteří mají složitější systém postavený na více nástrojích.\n\nProjekt-state.json a cross-projektové závislosti: pokročilejší přístup, ve kterém si Claude drží stav napříč projekty. Když se vrátíte k projektu B, víte, co může ovlivnit projekt A.\n\nHlavní otázka při výběru je jednoduchá: chcete session zavírat ručně, kdy práci vědomě ukončíte, nebo automaticky, kdy to za vás udělá hook? Funguje oboje. Jen z toho budete mít jiný pocit při práci.",
+      "read_minutes": 2,
+      "source_date": "2026-05-22"
+    },
+    {
+      "id": "2026-05-22-04",
+      "type": "NÁSTROJE",
+      "level": "Expert",
+      "topic": "Bezpečnost",
+      "title": "Bezpečnostní audit vibe-coded aplikace před produkcí",
+      "excerpt": "Pustit vibe-coded aplikaci do produkce bez bezpečnostního auditu je risk. V komunitě se řešily dva nástroje: vibeaudit.cz a grovetechai.com/scanner. Recenze jsou ale smíšené a pořád se diskutuje, co funguje nejlíp.",
+      "body": "Vibe coding je skvělý způsob, jak rychle rozjet aplikaci. Než ji ale pustíte k reálným uživatelům, vyplatí se udělat bezpečnostní kontrolu. Hlavně pokud pracuje s citlivými daty nebo penězi.\n\nV komunitě padly dva nástroje:\n\nvibeaudit.cz: nástroj zaměřený přímo na vibe-coded aplikace. Ohlasy v komunitě jsou smíšené. Někomu pomohl, jiný měl pocit, že výstupy jsou moc obecné.\n\ngrovetechai.com/scanner: další automatizovaný scanner. Podobně může posloužit jako první kontrola, ale nechytí všechno.\n\nOba nástroje dávají smysl jako základní automatizovaný check. U aplikace, která jde do produkce a pracuje s citlivými daty, ale stojí za to brát smíšené recenze vážně.\n\nLepší může být kombinace: nejdřív automatický scanner na snadno odhalitelné chyby, potom ruční review od někoho, kdo má zkušenost se security. Komunita teď aktivně řeší, co v téhle oblasti funguje nejlíp.",
+      "read_minutes": 2,
+      "source_date": "2026-05-22"
+    },
+    {
+      "id": "2026-05-22-05",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Začátečník",
+      "topic": "Komunita",
+      "title": "Jak nepřijít o důležité věci ve velké skupině",
+      "excerpt": "Zpráv přibývá, ale přechod na Discord nebo Slack se neplánuje. Jak zůstat v obraze a nestrávit hodiny scrollováním? Komunita navrhla tři možnosti, jasná odpověď zatím není.",
+      "body": "Otázka, kterou řeší skoro každý v aktivní komunitě: jak neztratit důležité věci, když zpráv přibývá, ale přesun na Discord nebo Slack nedává smysl.\n\nZ komunity padly tři směry:\n\nDigest nástroje, třeba noscroll.com: projdou skupinu a pošlou vám výcuc toho podstatného. Nemusíte scrollovat a dostanete rychlý přehled.\n\nPřímé napojení WhatsAppu na LLM: AI sleduje skupinu a automaticky shrnuje nebo třídí zprávy. Je to technicky náročnější, ale řeší to problém systémově.\n\nVíce skupin: rozdělit komunitu podle témat, aby každá skupina měla jasné zaměření. V každé je pak méně šumu.\n\nJasný závěr z diskuze zatím není. Digest je pasivní a člověk může přijít o kontext. Více skupin tříští konverzaci. Napojení na LLM je technicky složité.\n\nTéma je pořád otevřené. Pokud máte vlastní způsob, jak zvládáte velkou skupinu, přidejte se do diskuze.",
+      "read_minutes": 2,
+      "source_date": "2026-05-22"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-04-26-03",
+    "type": "INSIGHT",
+    "level": "Expert",
+    "topic": "Data management",
+    "title": "Markdown v gitu jako datová vrstva pro AI",
+    "excerpt": "Jeden člen přestal koukat přímo do dat a místo toho se na všechno ptá Clauda. Tvrdí, že markdownové soubory v gitu jsou pro AI nejlepší struktura, se kterou se jí dobře pracuje. Inspirovalo to dalšího člena, aby přešel na CRM v Markdownu.",
+    "body": "Jeden člen komunity popsal, jak změnil přístup ke svým datům. Nepoužívá grafické rozhraní ani aplikace. Všechno má v Markdown souborech v gitu. Důvod je jednoduchý: stejně se na data nedívá přímo, na všechno se ptá Clauda. A Claude si s Markdownem rozumí nejlíp.\n\nJe to přirozené pokračování filozofie plain text. Markdown přečte člověk i stroj, dá se verzovat a snadno přenášet. Git k tomu přidá historii změn a zálohu. Claude pak slouží jako rozhraní: prohledává, shrnuje a aktualizuje.\n\nMá to i svoje limity. Nehodí se to pro velké objemy strukturovaných dat, pro týmy bez technického zázemí a vyžaduje to pořádek v názvech souborů i struktuře. Pro osobní knowledge management nebo jednoduché CRM to ale může být elegantnější řešení než řada komerčních nástrojů.\n\nV diskuzi to inspirovalo dalšího člena k přechodu na CRM v Markdownu. Hezký příklad toho, jak sdílení konkrétních postupů v komunitě mění způsob práce.",
+    "read_minutes": 2,
+    "source_date": "2026-04-26",
+    "resurfaced_from": "2026-04-26"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "09:32",
+            "author": "Daniel",
+            "text": "Jenom k pár tématům, o kterých se tady včera psalo. Primárně jde o speech-to-text, asi tušíte, že diktuju o 106. Třeba i tento příspěvek jedu přes Uttero. Občas ho někomu natlačím a lidi si ho fakt chválí.\nAle za mě, i kdybyste Uttero nevyužívali kvůli kompatibilitě s operačním systémem nebo z jakéhokoliv jiného důvodu, tak WisprFlow je za mě fajn.\nNicméně si myslím, že Raycast v poslední beta verzi WisprFlow dost řízne. Jasně, budou se potom do budoucna předhánět, ale to jejich diktování je fakt super a hodně mi to připomíná to, jak jsem postavil Uttero.\nK těm přepisům z meetingů používám Plaud jako hardware, ale zároveň používám Plaud i jako software v počítači. Je to za mě asi nejjednodušší varianta, jak to mít všechno na jednom místě. Ta přesnost je moc fajn. Jasně, že přemýšlím nad tím, že si k tomu postavím vlastní nástroj, který poběží na Soniox, hlavně kvůli míchání jazyků a podobně. Ale to je ještě vzdálená budoucnost."
+          },
+          {
+            "time": "10:00",
+            "author": "člen komunity",
+            "text": "@člen Uttero zkouším necelý týden na iPhone a fakt super, doporučuji.\nPro nás neMacové, pro Windows bys alternativu neměl? je to návykové 😉"
+          },
+          {
+            "time": "10:15",
+            "author": "člen komunity",
+            "text": "Utero jednoznacne vede pri akuratnosti a rozpoznavani jazyku - neuveritelne vcetne Fr. Jen jsem nerozchodil preklad do custom jazyku do on the fly. V Settings jsem to nastavoval, asi to mam blbe"
+          },
+          {
+            "time": "11:04",
+            "author": "Daniel",
+            "text": "Jedině ten WisprFlow nebo počkat na Raycast 2.0"
+          },
+          {
+            "time": "11:05",
+            "author": "Daniel",
+            "text": "V Settings se nastavují jen přepisy v daném jazyce. Pro zvýšení přesnosti. Live Translate jsem vypnul, ale možná to zase zapnu. Jen potřebuju vědět, jak to zakonponovat."
+          },
+          {
+            "time": "12:29",
+            "author": "člen komunity",
+            "text": "Pardon náročný týden. Pošli solo zprávu nebo přes linkáč https://www.linkedin.com/in/jirisoljak/"
+          },
+          {
+            "time": "12:30",
+            "author": "člen komunity",
+            "text": "https://www.wired.com/story/meet-the-sad-wives-of-ai/\nAť to tu není jen bezbřehý optimismus. Tohoto si stále časněji všímám i ve svém okolí…tak jen připomínám důležitost vztahů a real světa. 😉"
+          },
+          {
+            "time": "13:04",
+            "author": "člen komunity",
+            "text": "Ahoj 👋 sháníme k nám do Kogi externího konzultanta/ku, kteří mají zkušenosti s Microsoft universe, Copilotem apod. Stavíme svá vlastní AI řešení a dostali jsme se do okamžiku, kdy by nás takovýhle specialista zásadně posunul. Prosím, nemáte nějaký tip?"
+          },
+          {
+            "time": "14:42",
+            "author": "člen komunity",
+            "text": "To by bylo super, ziju v mezinarodni komunite a chci zkontrolat to v tech jazycich znam, nez to reknu u slozitych temat"
+          },
+          {
+            "time": "17:47",
+            "author": "Daniel",
+            "text": "Tohle je pro mě. Vím, že je tu mega moc zpráv. Já na to mám systém, který mi dává výcuc toho, co se děje (a co dělat). Ale od vás…\nMáte nějaké náměty na to, jak to zpřehlednit? Migraci na Discord/Slack nechci.\nSpíš, co byste rádi, co by vám pomohlo, ale tady v tom našem WA prostředí.\nDěkuju. 🙏\n(BTW ta emotikona – znáte “wai”? V Thajsku naprosto běžné a uctivé. A ano, dělám to nevědomky i tady.)"
+          },
+          {
+            "time": "17:48",
+            "author": "člen komunity",
+            "text": "Ahoj, tip pro ty, kterým se nechce nebo nemůžou tvořit vlastní scrapovací automatizace 😊 mrkněte na noscroll, udělá to za vás.\nV konverzaci mu řeknete jaký témata vás zajímají a on vám každej den pošle digest, co se děje novýho. V průběhu mu dáváte kdykoliv zpětnou vazbu a digest si tak ladíte. Mají týden trial, já už jsem za a rozhodla jsem se pro placenou verzi, i když jsem si vytvořila vlastní digest - je to prostě pohodlnější a za 2 stovky mi to stojí :)) navíc má hrozně příjemnou personality, je vtipnej. https://noscroll.com/"
+          },
+          {
+            "time": "17:48",
+            "author": "člen komunity",
+            "text": "Namasté. 🙏 Možná více skupin?"
+          },
+          {
+            "time": "17:53",
+            "author": "člen komunity",
+            "text": "Možná by stačil tip jak si WA napojit na své LLM. Me se to zatím jennechtelo dohledávat.\nKaždý by si to pak přizpůsobil jak potřebuje.\n🤔"
+          },
+          {
+            "time": "17:55",
+            "author": "člen komunity",
+            "text": "Vím, že se mohu zeptat AI. Rad bych přeskočil fázi mnoha polofunkčních verzí a iterací"
+          },
+          {
+            "time": "19:11",
+            "author": "člen komunity",
+            "text": "Ahoj, chtěla jsem se zeptat, jestli je tady někdo, kdo by mi byl schopen udělat security audit aplikace před ostrou produkcí.\nMomentálně mi aplikaci testuje patnáct lidí. Ale chtěla bych jí pustit víc do světa a vzhledem k záludnostem vibecodingu si teď úplně netroufám vzít na triko veškerá rizika bez toho, aby se mi na to někdo pořádně podíval.\nZatím na mě na LI vykoukl Ondřej Hájek (možná tady i je?😀), který má vibeaudit.cz, tak přemýšlím, jestli investovat do toho nebo ještě zvážit možnosti. 😊 Moc díky za případné tipy a rady. 🙏"
+          },
+          {
+            "time": "19:24",
+            "author": "člen komunity",
+            "text": "https://grovetechai.com/scanner"
+          },
+          {
+            "time": "19:26",
+            "author": "člen komunity",
+            "text": "Vibe coding scan jednou za mesic free"
+          },
+          {
+            "time": "19:33",
+            "author": "člen komunity",
+            "text": "Diky, ja na tohle úplně zapomněla. Na weby jsem doteď používala, tak zkusím i na app. 🙏"
+          },
+          {
+            "time": "19:40",
+            "author": "člen komunity",
+            "text": "A to je fakt spolehlive? Ta stranka sama o sobe vypada taky jako produkt petiminutoveho vibecodingu. 😁"
+          },
+          {
+            "time": "19:52",
+            "author": "člen komunity",
+            "text": "Myslis ten vibeaudit?"
+          },
+          {
+            "time": "20:21",
+            "author": "člen komunity",
+            "text": "Ano"
+          },
+          {
+            "time": "20:30",
+            "author": "člen komunity",
+            "text": "Já s tímhle nástrojem nemám moc dobrou zkušenost, výsledky auditu byly v mnoha věcech úplně mimo"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "06:44",
+            "author": "člen komunity",
+            "text": "K tomu Claude Code. Používal jsem teď víc než půl roku jen Claude Code. Nicméně s releasem Opusu 4.7 jsem začal mít pocit, že ty výstupy nejsou tak dobré, jak bývaly. A tak jsem zkusil znova po dlouhé době ChatGPT a mám pocit, že Codex dává o hodně lepší výstupy teď než CC. Pozorujete to někdo taky?"
+          },
+          {
+            "time": "06:48",
+            "author": "člen komunity",
+            "text": "Ano, mám stejný pocit, navíc claude má zase výpadek :-/"
+          },
+          {
+            "time": "07:01",
+            "author": "člen komunity",
+            "text": "Z mojí zkušenosti jak v čem. Četl jsem k tomu několik článků a vláken a víckrát tam padlo, že Opus lidem udělá plán a Codex to pak napíše.\nCo se mi potvrdilo – Opus 4.7 bere zadání mnohem víc doslovně než předchozí verze. A když už mu přijde, že v tom zadání něco chybí, navrhne to k řešení (dřív by to prostě nějak udělal).\nCož mně osobně třeba docela vyhovuje, vždycky jsem nesnášel, když si programátoři domýšleli fíčury (nebo zásadní rozhodnutí), které jsem po nich vůbec nechtěl 😀"
+          },
+          {
+            "time": "08:30",
+            "author": "člen komunity",
+            "text": "Jj taky mi to tak přijde, ale je to o tom, na co se to používá. Ja jedu v kódování Pythonu a tam mi přijde že CC je nastavený uvnitř, aby prostě splnil úkol (a uspokojil zadavatele) a moc nekouká okolo.\nKdyž to samé dám do Codexu je schopný kód víc pochopit a podle toho rozhodnout - ještě s ohledem na možná rizika. Codex mi často nadhazuje co by se dalo na tom ještě vylepšit, CC nikdy."
+          },
+          {
+            "time": "09:02",
+            "author": "člen komunity",
+            "text": "Jaké modely v něm používáš? Codex mi vypověděl po chvíli kvůli tokkenum a cc tam asi nedostanu přes subscription."
+          },
+          {
+            "time": "09:36",
+            "author": "Daniel",
+            "text": "Moje zkušenost po včerejších sessions, které jsem jel na dálku z mobilu. Bylo to téměř bezchybné. Dělal jsem velký update knowledge base, se kterou pracuje Claude Code a další nástroje, které na tom mám postavené. Super spolupráce.\nKdyž jsem tohle řešil posledně přes Termius/tmux, bylo to kostrbaté, ale možná to bylo jenom nastavením nebo něčím podobným. Každopádně ta „spolupráce“ Mac Mini a remote-control je zatím fajn."
+          },
+          {
+            "time": "09:38",
+            "author": "Daniel",
+            "text": "Zkoušel jsem frčet 24 hodin na Codexu a bylo to super.\nJen je pro mě důležitější doručovat ty výsledky a neřešit tolik nástroj každý měsíc, kdy vyjde nová verze.\nTakže ho přenechávám ostatním. 😅"
+          },
+          {
+            "time": "15:14",
+            "author": "člen komunity",
+            "text": "Různě experimentuju, teď zkouším regolo.ai. Open source modely běžící lokálně v EU. Teď mám zvolenou gemma4, není tak chytrá, ale ani tak hloupá.\nNa claude Code zatím stále Opus 4.6. Na deep work. Moje práce není tolik kódu jako spíš drobné změny v infra tak, aby to nic z desítek závislostí nerozbilo.\nJeště jsem nezkoušel ChatGPT subscripci ale podle toho co píšete asi zkusím, přinejmenším bych na to mohl napojit hermese přímo.\nTady mi trochu vadí přístup Anthropicu, přes subscripci jen nativní nástroje, takže ač je hermes subjektivně lepší harness, tak jen API. Zkoušel jsem, moc nákladné."
+          },
+          {
+            "time": "15:46",
+            "author": "Daniel",
+            "text": "Máte v Claude Code nějaký “bye” skill? Pomáhá mi to nezapomínat na věci, dávám ho místo /exit. Pokud něco takového máte, co tam máte navíc? Případně jak jinak to řešíte?\n*Můj /bye skill*\n1. Najde aktuální git repo\n2. ⁠Zkontroluje uncommitted soubory + neodeslané commity\n3. ⁠Pokud projekt nemá remote, nabídne vytvoření GitHub repo\n4. ⁠Je-li vše čisté, řekne “projekt je uložený”\n5. ⁠Jinak ukáže co čeká a zeptá se, jestli to vyřešit\n6. ⁠Commitne (čeká na souhlas + název)\n7. ⁠Pushne (čeká na souhlas)\n8. ⁠Zeptá se, jestli něco patří do second brainu\n9. ⁠Řekne ”hotovo, /exit”\nDíky!"
+          },
+          {
+            "time": "16:05",
+            "author": "člen komunity",
+            "text": "Mám nakonfigurovaný mempalace a používám /save aby tam claude uložil co jsme udělali, objevili apod.\nMám na serveru několik projektů, každý v rámci mempalace zapisuje do své části. Muj hlavní agent čte pak skrze všechny co se dělo.\n/save je podobně definovaný jako /exit jen na mempalace a ne git."
+          },
+          {
+            "time": "16:06",
+            "author": "člen komunity",
+            "text": "Zároveň mám hook, který každých 15 kroků udělá /save automaticky."
+          },
+          {
+            "time": "17:34",
+            "author": "člen komunity",
+            "text": "Mám /wrap - projde si celou session, co je nový a důležitý zpracuje a zatridi jako novou obsidian note, co je menší uloží do příslušný note/memory/claude.md. Navrhne a vytvoří tasky do Things s next steps, případně aktualizuje Notion nebo HTML Dashboard. Na konci ještě zapíše jednu větu o tom, co jsme dělali, do poznámky v obsidianu, kterou každej tejden kontroluje a co se opakuje víckrát pak přetváříme na skill"
+          },
+          {
+            "time": "17:41",
+            "author": "Daniel",
+            "text": "Boží inspirace. Děkuju!"
+          },
+          {
+            "time": "18:53",
+            "author": "člen komunity",
+            "text": "Já to mám rozdělené podle povahy věci:\nProjektové věci → muj system-architect skill:\nKaždý projekt má vlastní strukturu: master brief, architecture map, session log a project-state.json. Na konci session skill provede SESSION CLOSE — shrnutí co jsem udělal, aktualizuje statusy komponent, zapíše do session logu a commitne strukturovanou zprávou. Git jako stavební deník, nikdy necommituji manuálně.\nDůvod proč jsem nešel cestou jednoduchého /bye je že skill zároveň drží přehled přes všechny projekty — vidí závislosti, hlídá kdy jeden projekt blokuje jiný a při SESSION CLOSE aktualizuje centrální registry. Takže na začátku každé session vím nejen kde jsem skončil v tomhle projektu, ale i co se děje jinde.\nNeprojektové věci → idea-inbox + triage\nCokoliv co není součástí existujícího projektu jde do idea-inboxu. Pak to posuzuje triage skill — vrátí verdict NOW / BUILD / LATER / VAULT / KILL / DELEGATE. Teprve po triáži věc dostane domov: projekt, wiki, nebo archiv.\nTakže nemám jeden /bye — mám SESSION CLOSE pro projekty a idea-inbox + triage pro vše ostatní.\nJak to máte vy? Hlavně mě zajímá jak hlídáte průběh projektů — jestli nějak sledujete závislosti mezi nimi nebo každý projekt žije samostatně?"
+          }
+        ]
+      },
+      {
+        "slug": "webinářeworkshopy",
+        "name": "Webináře & Workshopy",
+        "messages": [
+          {
+            "time": "09:26",
+            "author": "Daniel",
+            "text": "*Kód: MASTERTHEFLOW*\nV neděli o půlnoci stáhnu z webu prodej záznamu webináře „Pod kapotou“.\nKdybyste ho chtěli ještě dokoupit, s tím kódem nahoře ho budete mít 500 Kč slevou.\nhttps://danielgamrot.cz/webinar/pod-kapotou/"
+          }
+        ]
+      }
+    ]
+  }
+}

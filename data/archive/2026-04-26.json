@@ -1,0 +1,143 @@
+{
+  "date": "2026-04-26",
+  "generated_at": "2026-06-04T17:04:07Z",
+  "stats": {
+    "messages": 11,
+    "groups": 1,
+    "members": 4
+  },
+  "cards": [
+    {
+      "id": "2026-04-26-01",
+      "type": "INSIGHT",
+      "level": "Začátečník",
+      "topic": "Tabulky",
+      "title": "AI vyplní Excel bez rozhozeného formátování",
+      "excerpt": "Složitá tabulka se vzorci, které se nesmí rozbít. Jedna členka ji místo ručního vyplňování svěřila AI a výsledek byl čistý. Stejný postup funguje i v Google Sheets.",
+      "body": "Jedna členka komunity dostala k vyplnění složitou excelovou tabulku plnou vzorců a speciálního formátování. Bálo se jí do ní sáhnout, aby nerozbila strukturu, a hledala bezpečný postup. Nakonec to zkusila nechat na AI. Ta tabulku vyplnila, uložila a formátování zůstalo beze změny.\n\nPodobně to jde i v Google Sheets. Jeden člen komunity si takhle pravidelně aktualizuje vlastní CRM. Místo ručního přidávání sloupců pustí Claude Code a za dvě minuty má hotovo. Důležité je nechat AI pracovat přímo se souborem, ne kopírovat data do chatu.\n\nPraktický tip: když dostanete tabulku, do které se bojíte sáhnout, zkuste ji poslat AI s jasným zadáním. Napište, co se má vyplnit a co se nesmí změnit. Výsledek bývá překvapivě čistý.",
+      "read_minutes": 2,
+      "source_date": "2026-04-26"
+    },
+    {
+      "id": "2026-04-26-02",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "CRM",
+      "title": "CRM v tabulce aktualizované přes Claude Code",
+      "excerpt": "Jeden člen si vede celé CRM v Google Sheets a aktualizuje ho přes Claude Code. Žádný SaaS nástroj, žádné měsíční platby — jen tabulka a AI.",
+      "body": "Jeden člen komunity popsal, jak řeší kontakty a obchodní data. Nemá na CRM žádný speciální nástroj. Všechno vede v Google Sheets. Změna, která mu dřív zabrala čtvrt hodiny ručního klikání, teď trvá dvě minuty. Spustí Claude Code, napíše, co se má upravit, a je hotovo.\n\nMožná to zní zvláštně, ale dává to smysl. Tabulka je přehledná, dá se snadno exportovat, nevzniká vendor lock-in a Claude s ní umí dobře pracovat. Zná její strukturu, přidává sloupce, filtruje záznamy a hledá v datech podle běžně napsaného dotazu.\n\nPodobný vzorec se v komunitě objevuje častěji: jednoduchý nástroj a AI jako operátor. Nemusí jít jen o CRM. Stejně se dá řešit správa projektů, evidence faktur nebo sledování úkolů. Hodnota není v komplikovaném softwaru, ale v tom, že AI ví, kde data leží a co s nimi má udělat.",
+      "read_minutes": 2,
+      "source_date": "2026-04-26"
+    },
+    {
+      "id": "2026-04-26-03",
+      "type": "INSIGHT",
+      "level": "Expert",
+      "topic": "Data management",
+      "title": "Markdown v gitu jako datová vrstva pro AI",
+      "excerpt": "Jeden člen přestal koukat přímo do dat a místo toho se na všechno ptá Clauda. Tvrdí, že markdownové soubory v gitu jsou pro AI nejlepší struktura, se kterou se jí dobře pracuje. Inspirovalo to dalšího člena, aby přešel na CRM v Markdownu.",
+      "body": "Jeden člen komunity popsal, jak změnil přístup ke svým datům. Nepoužívá grafické rozhraní ani aplikace. Všechno má v Markdown souborech v gitu. Důvod je jednoduchý: stejně se na data nedívá přímo, na všechno se ptá Clauda. A Claude si s Markdownem rozumí nejlíp.\n\nJe to přirozené pokračování filozofie plain text. Markdown přečte člověk i stroj, dá se verzovat a snadno přenášet. Git k tomu přidá historii změn a zálohu. Claude pak slouží jako rozhraní: prohledává, shrnuje a aktualizuje.\n\nMá to i svoje limity. Nehodí se to pro velké objemy strukturovaných dat, pro týmy bez technického zázemí a vyžaduje to pořádek v názvech souborů i struktuře. Pro osobní knowledge management nebo jednoduché CRM to ale může být elegantnější řešení než řada komerčních nástrojů.\n\nV diskuzi to inspirovalo dalšího člena k přechodu na CRM v Markdownu. Hezký příklad toho, jak sdílení konkrétních postupů v komunitě mění způsob práce.",
+      "read_minutes": 2,
+      "source_date": "2026-04-26"
+    },
+    {
+      "id": "2026-04-26-04",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Builder",
+      "topic": "Týmové nasazení AI",
+      "title": "Drive connector nebo Drive for Desktop pro sdílenou znalostní bázi",
+      "excerpt": "Firma nasazuje Claude Team pro sedm lidí a řeší, jak k němu připojit centrální znalostní bázi z Google Disku. Má použít konektor, nebo lokální synchronizaci přes Drive for Desktop?",
+      "body": "Jedna členka komunity nasazuje licenci Claude Team pro sedmičlenný tým. Centrální znalostní bázi budou mít na Google Disku: metodiky, legislativu, interní postupy a šablony. Tým z ní bude číst a zároveň do ní ukládat výstupy.\n\nNa komunitu se obrátila s otázkou: je lepší propojit Claude s Google Diskem přes nativní konektor, nebo přes Drive for Desktop, tedy lokální synchronizaci souborů?\n\nNejde jen o technický detail. Drive konektor se snáz spravuje, není nutné ho instalovat na každý počítač a běží přes cloudové API. Drive for Desktop naopak synchronizuje soubory do počítače. AI pak pracuje přímo se soubory na disku, což může být rychlejší a stabilnější u větších objemů dat nebo při práci offline. Instalace u kolegů je jednorázová práce.\n\nPři 100–200 dokumentech měsíčně a větší znalostní bázi je to otázka, kterou bude řešit nejeden tým při zavádění AI nástrojů ve firmě. Pokud máte zkušenost s jednou nebo druhou variantou, podělte se.",
+      "read_minutes": 2,
+      "source_date": "2026-04-26"
+    },
+    {
+      "id": "2026-04-26-05",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Vibe coding",
+      "title": "Nástroje bez GUI fungují spolehlivěji na pozadí",
+      "excerpt": "Většina věcí, které jeden člen postavil s AI, nemá žádné grafické rozhraní. Běží na pozadí, dělají svou práci a UI se u nich neřeší.",
+      "body": "Jeden člen komunity říkal, že většina nástrojů, které si postavil s pomocí AI, nemá žádný grafický design. Prostě běží na pozadí a žádné rozhraní neřeší.\n\nNa první dobrou to může znít jako kompromis. Ve skutečnosti je to záměr. GUI žere čas: návrh, implementace, ladění. Když se místo toho udělá skript nebo automatizace bez rozhraní, ušetří to desítky hodin. A výsledek často přinese víc, protože pozornost šla do funkce, ne do vzhledu.\n\nTenhle přístup sedí hlavně na osobní nástroje, automatizace pro rodinu nebo klienty a věci, které řeší konkrétní opakující se problém. Nemusí to být hezké. Musí to fungovat.\n\nPro builder mindset je to dobrý posun v hlavě: ne každý nástroj musí být produkt. Někdy stačí skript, který tiše maká na pozadí a uvolní ruce na věci, které mají skutečnou hodnotu.",
+      "read_minutes": 1,
+      "source_date": "2026-04-26"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-03-31-04",
+    "type": "OTEVŘENÁ OTÁZKA",
+    "level": "Builder",
+    "topic": "Automatizace",
+    "title": "Jak automatizovat Claude Code bez navíc za API",
+    "excerpt": "Jeden člen řeší dilema: chce mít všechny automatizace pohromadě v Claude Code, ale nechce si k předplatnému ještě připlácet za API volání. Headless Claude Code neumí načítat skills, Task Scheduler spouští terminál. Kde je hranice mezi slepou uličkou a řešením, které fakt funguje?",
+    "body": "Tohle řeší asi každý, kdo už nechce pouštět skripty ručně. V diskuzi padlo několik možností, každá má nějaký háček.\n\nAktuálně dostupné varianty:\n\n- n8n / Make — vizuální automatizace, ale mimo ekosystém Claude Code\n- Claude Code skills pouštěné ručně — funguje, ale automatizace to není\n- Task Scheduler ve Windows + spuštění Claude Code s parametry — komunitní pokus, výsledky zatím nejsou jasné\n- Headless Claude Code — neumí načítat skills, takže workflow postavené na skills nefunguje\n- GitHub + Railway + cronjob — ověřený setup pro cloudovou automatizaci\n- integrovaný `/schedule` v Claude Code — spouští remote agenty, ale je to jiný model než lokální skills\n\nHlavní otázka pořád nemá jasnou odpověď: jde spouštět skills automaticky bez API klíče a bez ručního zásahu?\n\nPokud to řešíš nebo jsi na něco přišel, hoď postup do diskuze. Pomůže to víc lidem.",
+    "read_minutes": 2,
+    "source_date": "2026-03-31",
+    "resurfaced_from": "2026-03-31"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "12:36",
+            "author": "člen komunity",
+            "text": "Já teď po dlouhé době, kdy používám výhradně Apple ekosystém, dostala k vyplnění složitou excelovskou tabulku. Pořád jsem koumala, jak ji vyplnit, aniž by se mi rozhodilo formátování a vzorce, až mě napadlo nechat to udělat Cowork. Vyplnil, uložil a bylo to v pohodě. 🙂"
+          },
+          {
+            "time": "12:38",
+            "author": "Daniel",
+            "text": "Tohle je úplně skvělý. Rád bych doplnil, že to funguje i v Google Sheets, takto si aktualizuju své CRMko. Dříve jsem manuálně přidával sloupečky, dnes na to pustím Claude Code a je to za 2 minuty hotové.\nAno, mám CRMko v tabulce. A ne, nechci to měnit. 😀"
+          },
+          {
+            "time": "15:43",
+            "author": "člen komunity",
+            "text": "Další level je mít všechno v MD v gitu. protože už do toho stejně nekoukám a na všecko se ptám Clauda a pro něj je to nejlepší struktura"
+          },
+          {
+            "time": "16:19",
+            "author": "člen komunity",
+            "text": "Ahojte, už týždeň skúmam Claude, brutal výsledky, Cowork je skvelý, konečne mám riešenia, s ktorými bojujem už dlho 😊... idem to implementovať do celej firmy, takže nasadzujem Team licenciu (7 ľudí).\nV tíme bude veľké množstvo znalostnej bázy zdieľané, už mám predstavu ako sa to bude celé prepájať atď..to nie je predmetom otázky... to čo potrebujem poradiť je:\nVšetka znalostná báza bude na google, lebo ako firma sme v google workspace prostredí.\nAkurát s claudom riešim, či bude postačovať mať to spojené len cez konektor google drive alebo bude rýchlejšie fungovať cez Drive for Desktop.\nCieľ je, aby každý v tíme mohol mať vo svojich cowork projektoch prístup k centrálnej znalostnej báze (metodiky, legislatíva, naše interné postupy, šablóny,...), lebo ju chcem udržiavať len na jednom mieste a každý projekt má mať rovnaké inštrukcie (ktoré má zmysel mať rovnaké). Zároveň celý tím počas práce generuje aj výstupy (wordy, excely), ktoré keď sú final, budú sa ukladať centrálne na google disk. Takže coworky si z google disku dáta aj čítajú aj naň ukladajú.\nV tíme je nás 7, dokumentov netvoríme tisícky, je to 100-200 dokumentov mesačne.\nAle znalostná báza bude mať obrovský rozsah...\nMoja otázka:\nMáte skúsenosť v rozdieloch pri Drive for Desktop vs Drive konektor? Čo by ste volili?\nPovinnosti pri Drive for desktop o inštalácii a nastavení u kolegov registrujem, je to jednorazová vec, ktorá nehrá rolu v rozhodovaní, lebo ak to má pomôcť celku, tak toto je zanedbateľný detail."
+          },
+          {
+            "time": "17:32",
+            "author": "Daniel",
+            "text": "Ty jo, děkuju moc za nasazení brouka do hlavy. Protože CRMko v Markdown souborech je něco, co zní, jakože chci mít do konce týdne.\nNaštěstí už je neděle, takže se k tomu nedostanu. Ale do konce příštího týdne by to mohlo být. 🤔"
+          },
+          {
+            "time": "19:11",
+            "author": "člen komunity",
+            "text": "Kdo bude zítra na HYW?"
+          },
+          {
+            "time": "20:43",
+            "author": "Daniel",
+            "text": "Oholil jsem si na to i hlavu."
+          },
+          {
+            "time": "21:12",
+            "author": "člen komunity",
+            "text": "To bychom mohli dát Master the Flow srázek. 😁"
+          },
+          {
+            "time": "21:14",
+            "author": "Daniel",
+            "text": "Myslím, že jsem to říkal i na tom webináři k vibe codingu, naprostá většina těch věcí, které jsem postavil, běží na pozadí a nemá žádný grafický design. A je to úplně boží, protože mi to jednak šetří mraky času a pak mi to taky pomáhá vytvářet věci, které jsou hodnotné pro mě, blízké, rodinu, klienty,"
+          },
+          {
+            "time": "21:14",
+            "author": "Daniel",
+            "text": "Počítám s tebou, budu ten v koutě."
+          },
+          {
+            "time": "21:56",
+            "author": "člen komunity",
+            "text": "Ja se zatim chystám sama tak kdybyste to s tim srazem mysleli vážně, rada se zastavim socializovat 😅"
+          }
+        ]
+      }
+    ]
+  }
+}

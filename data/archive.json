@@ -1,6 +1,159 @@
 {
   "dates": [
     {
+      "date": "2026-03-14",
+      "card_count": 5,
+      "topics": [
+        "Vlastní nástroje",
+        "Windows workflow",
+        "Výběr nástrojů",
+        "NotebookLM",
+        "Claude Code"
+      ]
+    },
+    {
+      "date": "2026-03-23",
+      "card_count": 3,
+      "topics": [
+        "Claude Code limity",
+        "Claude Code workflow",
+        "Vibe coding flow state"
+      ]
+    },
+    {
+      "date": "2026-03-24",
+      "card_count": 5,
+      "topics": [
+        "Workflow",
+        "AI nástroje",
+        "Vlastní nástroje",
+        "Knowledge management"
+      ]
+    },
+    {
+      "date": "2026-03-31",
+      "card_count": 4,
+      "topics": [
+        "Automatizace",
+        "Zápisy ze schůzek",
+        "Přepis nahrávek"
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "card_count": 5,
+      "topics": [
+        "Workflow",
+        "Perplexity",
+        "Bezpečnost",
+        "Bezpečnost v AI projektech",
+        "Správa závislostí"
+      ]
+    },
+    {
+      "date": "2026-04-13",
+      "card_count": 4,
+      "topics": [
+        "Claude vs Gemini",
+        "Lokální AI / ochrana dat",
+        "iOS / diktování",
+        "Automatizace / skripty"
+      ]
+    },
+    {
+      "date": "2026-04-16",
+      "card_count": 1,
+      "topics": [
+        "Uttero"
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "card_count": 5,
+      "topics": [
+        "Data management",
+        "Tabulky",
+        "CRM",
+        "Týmové nasazení AI",
+        "Vibe coding"
+      ]
+    },
+    {
+      "date": "2026-04-28",
+      "card_count": 6,
+      "topics": [
+        "Pracovní postupy",
+        "Tabulky, Excel",
+        "Obsidian, automatizace",
+        "Hosting, deployment",
+        "Claude Code, infrastruktura",
+        "Komunita, knowledge management"
+      ]
+    },
+    {
+      "date": "2026-05-05",
+      "card_count": 5,
+      "topics": [
+        "Produktivita v korporátu",
+        "Claude Code a automatizace",
+        "Vibe coding",
+        "AI a organizace souborů",
+        "Sdílení znalostí"
+      ]
+    },
+    {
+      "date": "2026-05-11",
+      "card_count": 5,
+      "topics": [
+        "Osobní automatizace",
+        "AI nástroje",
+        "Claude Code",
+        "AI agenti"
+      ]
+    },
+    {
+      "date": "2026-05-12",
+      "card_count": 4,
+      "topics": [
+        "Claude Code + Claude Projects",
+        "Claude Code",
+        "Platební brány",
+        "Platební terminály"
+      ]
+    },
+    {
+      "date": "2026-05-15",
+      "card_count": 4,
+      "topics": [
+        "NotebookLM pro legislativu",
+        "AI a právní dokumenty",
+        "Raycast",
+        "Přepisy a transkripce"
+      ]
+    },
+    {
+      "date": "2026-05-22",
+      "card_count": 5,
+      "topics": [
+        "Komunita",
+        "Bezpečnost",
+        "Vibe Coding",
+        "Přepisy z meetingů",
+        "Speech-to-text"
+      ]
+    },
+    {
+      "date": "2026-05-23",
+      "card_count": 6,
+      "topics": [
+        "Task management",
+        "Soniox",
+        "Webové projekty",
+        "RAG / studium",
+        "Vibe Coding"
+      ]
+    },
+    {
       "date": "2026-05-26",
       "card_count": 5,
       "topics": [
@@ -19,6 +172,15 @@
         "Produktivita s AI",
         "Claude Code",
         "Bezpečnost"
+      ]
+    },
+    {
+      "date": "2026-05-30",
+      "card_count": 3,
+      "topics": [
+        "AI nástroje",
+        "Claude Code",
+        "Claude modely"
       ]
     },
     {
