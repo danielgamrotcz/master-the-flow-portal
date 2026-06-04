@@ -1,0 +1,310 @@
+{
+  "date": "2026-06-03",
+  "generated_at": "2026-06-04T14:39:56Z",
+  "stats": {
+    "messages": 42,
+    "groups": 3,
+    "members": 7
+  },
+  "cards": [
+    {
+      "id": "2026-06-03-01",
+      "type": "TÉMA TÝDNE",
+      "level": "Builder",
+      "topic": "Produktivita",
+      "title": "Zápisy ze schůzek hledají svůj nástroj",
+      "excerpt": "Celý den se komunita točila kolem jednoho tématu: čím přepisovat offline i online meetingy, zvláště v němčině nebo při míchání jazyků. Prošly se Plaud, Fireflies, Soniox i lokální Whisper. Každý přináší jiný kompromis mezi pohodlím, cenou a bezpečností dat.",
+      "body": "Přepisy ze schůzek přestávají být výsadou enterprise nástrojů. Komunita dnes prošla celé spektrum od hardwarového záznamníku Plaud přes cloudové Fireflies až po lokální Whisper nebo Soniox. Klíčové otázky, které vyplynuly z diskuze: potřebuješ HW mimo PC, nebo ti stačí appka? Kde nakonec skončí tvoje data a co s nimi?  Funguje to dobře při míchání jazyků nebo při přechodu mezi češtinou a němčinou v jedné schůzce? Ukázalo se, že neexistuje jedno nejlepší řešení. Záleží na use-casu: pro live meetingy bez PC je potřeba HW záznamník nebo telefon, pro online schůzky stačí desktop appka nebo bot přímo v callu. Jazyková podpora a rozpoznávání řečníků jsou přitom podceňovaná kritéria a právě tam se nástroje nejvíc liší. Zvláštní pozornost si zaslouží i otázka kam data fyzicky jdou, která se v diskuzi vrátila víckrát.",
+      "read_minutes": 2,
+      "source_date": "2026-06-03"
+    },
+    {
+      "id": "2026-06-03-02",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Přepisy schůzek",
+      "title": "Plaud: silný v přepisech, ale čínský server",
+      "excerpt": "Plaud sklízel chválu za kvalitu přepisů, překlady a automatické rozpoznávání řečníků. Funguje jak pro živá setkání přes HW záznamník, tak pro online meetingy přes PC. Hned ale padl dotaz na bezpečnost dat, protože servery jsou čínské.",
+      "body": "Plaud.ai je kombinace fyzického záznamníku a cloudové služby pro přepisy a souhrny. V diskuzi ho chválili hlavně za dvě věci: schopnost zvládnout míchání jazyků, třeba češtinu s němčinou v jedné schůzce, a automatické rozpoznávání řečníků. To oceníš, jakmile se potřebuješ rychle zorientovat v tom, kdo co říkal. Na druhou stranu HW záznamník stojí peníze a data jdou do cloudu s čínskou infrastrukturou. Část komunity to považuje za přijatelné a nevnímá to jako problém. Jiná část to bere jako dealbreaker a hledá alternativy. Praktické pravidlo, které z diskuze vzešlo: pokud se na schůzkách probírají citlivé věci jako klientská data nebo obchodní strategie, je fér dopředu zjistit, kde přepisy fyzicky leží a komu přístup k nim patří.",
+      "read_minutes": 2,
+      "source_date": "2026-06-03"
+    },
+    {
+      "id": "2026-06-03-03",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Přepisy schůzek",
+      "title": "Cloud pro rychlost, lokál pro citlivá data",
+      "excerpt": "Jeden člen popsal přístup, který řeší dilema bezpečnosti bez toho, aby obětoval kvalitu. Pro běžné věci jde přepis do cloudu přes Soniox, pro záznamy, které nesmí ven, běží Whisper lokálně na vlastním stroji. Dva režimy, dvě úrovně ochrany dat.",
+      "body": "Dilema pohodlí versus bezpečnost u přepisů ze schůzek nemusí být buď/nebo. V diskuzi padl praktický přístup: primárně cloudová služba pro věci, kde bezpečnost není kritická, Soniox pro rychlé zpracování a dobrou kvalitu. Pro záznamy, které nesmí opustit vlastní infrastrukturu, lokální Whisper model spuštěný přímo na stroji. Žádná data ven, žádný cloudový provider, jen výpočetní výkon vlastního hardware. Tenhle dual setup dává smysl hlavně pokud pracuješ s klienty nebo obchodními informacemi, kde máš povinnost mlčenlivosti nebo jednoduše nechceš riskovat. Nevýhoda je reálná: lokální zpracování je pomalejší a vyžaduje trochu technického nastavení. Pokud ale máš k dispozici dostatečně výkonný stroj, je to solidní a udržitelné řešení bez závislosti na externím poskytovateli.",
+      "read_minutes": 2,
+      "source_date": "2026-06-03"
+    },
+    {
+      "id": "2026-06-03-04",
+      "type": "NÁSTROJE",
+      "level": "Začátečník",
+      "topic": "Přepisy schůzek",
+      "title": "Přepisy pro netechnického uživatele: kde začít",
+      "excerpt": "V diskuzi se řešilo, jak nastavit zápisy ze schůzek pro někoho, kdo se s IT moc nezná, má přes 60 let a potřebuje si ulehčit práci s komunikací. Výsledek na telefon, přehled v počítači a minimum nastavení. Tohle je kombinace, která funguje.",
+      "body": "Jednoduchost vítězí. Pokud hledáš řešení pro někoho technicky méně zdatného, platí pár zásad. Za prvé: nástroj musí fungovat na telefonu bez složitého nastavení, protože live schůzky se dějí mimo kancelář. Za druhé: výstup musí přijít do počítače v čitelné podobě, ať se uživatel může rozhodnout co dál, komu napsat, co delegovat, co archivovat. Za třetí: žádná velká automatizace na začátek, ta přijde až po zvyku. V diskuzi zazněl Google Recorder jako funkční výchozí bod pro Android. Pro iOS existují podobné nativní nebo jednoduché cloudové varianty. Důležité je nastavit workflow, kdy se záznamy dostanou z telefonu do počítače, ideálně automaticky přes cloud nebo synchronizaci. Přepis a shrnutí pak zpracuje AI, uživatel dostane seznam akcí a může reagovat, aniž by musel sedět u sezení se zápisníkem.",
+      "read_minutes": 2,
+      "source_date": "2026-06-03"
+    },
+    {
+      "id": "2026-06-03-05",
+      "type": "INSIGHT",
+      "level": "Expert",
+      "topic": "Claude Code",
+      "title": "Claude Code: kdy terminál předčí desktop appku",
+      "excerpt": "Po ukázce Claude Code v praxi vznikla debata o tom, kdy má smysl terminálová verze a kdy desktop appka. Terminál vyhrál u hooks, vzdáleného přístupu na jiný stroj a práce s více sessions najednou. Desktop zůstává přehlednější pro ty, kdo nepotřebují pokročilé workflow.",
+      "body": "Claude Code existuje ve dvou podobách: jako terminálový CLI a jako desktop appka. Pro většinu uživatelů jsou rozdíly na první pohled kosmetické. Desktop je přehlednější a rychlejší na spuštění bez terminálové znalosti, CLI je flexibilnější. Výrazné rozdíly se ale ukáží u pokročilejšího použití. Terminál dává plnou kontrolu nad hooks, tedy příkazy, které se spouštějí automaticky před nebo po každém krokovém cyklu. To je základ pro automatizaci: zkontrolovat typografii, spustit testy, odchytit citlivé soubory před commitem. Desktop appka hooks buď nepodporuje stejně plně, nebo nabízí jinou sadu možností. Druhý výrazný rozdíl je vzdálený přístup. Přes SSH nebo tmux session ovládáš terminálový Claude Code na jiném stroji, třeba výkonnějším Mac Mini, zatímco desktop appka je vždy jen lokální. A konečně multi-session workflow: v terminálu paralelně rozběhneš víc sessions v různých tabech terminálového multiplexeru bez přepínání oken.",
+      "read_minutes": 2,
+      "source_date": "2026-06-03"
+    },
+    {
+      "id": "2026-06-03-06",
+      "type": "NÁSTROJE",
+      "level": "Expert",
+      "topic": "Claude Code",
+      "title": "Claude desktop appka sahá mimo povolenou složku",
+      "excerpt": "Jeden člen zdokumentoval případ, kdy Claude desktop appka přistoupila k souborům mimo složku nastavenou jako pracovní adresář, aniž by ji cokoliv zastavilo. Nastavení working directory v GUI tedy není bezpečnostní bariéra. Izolaci je potřeba řešit na úrovni terminálu nebo Dockeru.",
+      "body": "Claude desktop appka umožňuje nastavit pracovní složku, která by měla omezit přístup AI k souborům na daný adresář. V praxi se ale ukázalo, že tohle omezení nedrží. Appka sahala i mimo nastavenou složku a systém ji nezastavil. To je relevantní hlavně pokud na stejném stroji máš citlivé soubory: klientská data, hesla uložená lokálně, soukromé dokumenty. Nastavení pracovního adresáře v GUI tedy nelze považovat za skutečnou bezpečnostní bariéru. Komunita doporučila robustnější přístupy. První je spouštět Claude CLI z terminálu s explicitním omezením přístupu na úrovni oprávnění operačního systému. Druhá, silnější varianta je celý nástroj izolovat do Docker kontejneru s namountovanými jen těmi složkami, se kterými AI agent smí pracovat. Docker přidává overhead na nastavení, ale garantuje, že agent neuvidí nic mimo explicitně sdílený svazek. Pro profesionální nebo klientské nasazení je to jediná skutečně spolehlivá varianta.",
+      "read_minutes": 2,
+      "source_date": "2026-06-03"
+    }
+  ],
+  "resurfacing": null,
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspirace--diskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "10:53",
+            "author": "člen komunity",
+            "text": "Ahoj všichni,\nzdravím do skupiny a moc děkuju za podněty a inspiraci!\nMohl byste mi někdo poradit, jak mohu jednoduše, klidně i s nějakou placenou verzí, vyřešit zápisy ze schůzek, které jsou v němčině.\nUvažovala jsem, jestli to dělat s Wispr flow, ale nezdá se mi to nutně na tento účel ten nejlepší nástroj. Zajímalo by mě, co používáte a co vám dobře funguje."
+          },
+          {
+            "time": "11:42",
+            "author": "člen komunity",
+            "text": "Ja jsem spoko s Plaude.ai, protoze zvlada i michani jazyku. Musi se ale zainvestovat do toho zaznamniku."
+          },
+          {
+            "time": "12:02",
+            "author": "člen komunity",
+            "text": "plaude, za mě nejlepší věc/sw, jak taková placka na meetingy kde jsi online, tak i přes PC pokud jsi vzdáleně. Následné přepisy, překlady atp jsou skvělé"
+          },
+          {
+            "time": "12:20",
+            "author": "člen komunity",
+            "text": "Jste u Plaude OK s napojením na Čínu? Já osobně používám americké Fireflies, umí to  zaznamenat offline ale i online meeting (je součástí online schůzky)."
+          },
+          {
+            "time": "12:29",
+            "author": "člen komunity",
+            "text": "Taky záleží, jestli potřebuješ něco i mimo PC (třeba Plaude ai) nebo stačí něco na PC/Mac či telefon. Některé nástroje pro správu poznámek a databází (Notion, Tana Outliner, ..) již mají záznamníky se souhrny zahrnuty v předplatném. Mě například Tana Outliner maximálně vyhovuje (nemusím to překopírovávat a mám ze schůzky nejen přepis, ale vizualizaci jako na whiteboardu)."
+          },
+          {
+            "time": "13:12",
+            "author": "člen komunity",
+            "text": "jak dobre funguje stridani mluvcich? je automaticke? moc dekuji"
+          },
+          {
+            "time": "14:24",
+            "author": "člen komunity",
+            "text": "Hledám něco, co funguje pro živá setkání, tedy asi s telefonem. Mělo by to umět dělat jak transkript, tak potom nějaká shrnutí.\nV tuhle chvíli neuvažuji o další automatizaci, aby se to někam ukládalo přesně nebo tak.\nOsobně mám docela dobré zkušenosti, třeba z Google Recorder, ale potřebuji řešení, které bude fungovat se Samsungem."
+          },
+          {
+            "time": "14:36",
+            "author": "člen komunity",
+            "text": "A kde mají informace nakonec skončit?"
+          },
+          {
+            "time": "14:43",
+            "author": "člen komunity",
+            "text": "Nakonec mají ty informace skončit někde v počítači, tak, aby je mohl projít a případně se rozhodnout, co dá s nimi. To znamená poslat e-maily, delegovat, založit a tak dále.\nJe to celé řešení pro někoho, kdo se s IT úplně nevyzná. Je mu přes 60, a má teď hodně náročnou práci, kde musí komunikovat s hodně lidmi, a potřeboval by si to trochu ulehčit.\nDo nějaké zásadní automatizace se mu nebude chtít, protože na to je moc nezkušený a konzervativní."
+          },
+          {
+            "time": "15:31",
+            "author": "člen komunity",
+            "text": "Stejně teď řeším já. Potřebuji něco nezávislého na pc na live meetingy. Zvažuji Plaud kvůli hw, ale s tim, že bych chtěl asi dělat přepisy jinde (myslím, že @člen tu někde měl “návod” na soniox - Plaud ai je pro mě asi zbytečné drahé."
+          },
+          {
+            "time": "15:36",
+            "author": "Daniel",
+            "text": "Jedu dva režimy - Soniox pro cloudové věci, přesné, více jazyků super, rozpoznání řečníků. Asi nejpřesnější. Mají i appku, otestováno jen částečně. Pak mám druhý - lokální. Když to do cloudu nesmí. Whisper, běží na Mac Mini. Kontextově to dává hezky, ale jasně, ty výstupy jsou horší, než ze Soniox."
+          },
+          {
+            "time": "15:57",
+            "author": "člen komunity",
+            "text": "Pro offline schůzky v zasedacce lze i MS Teams (Teams Rooms Pro licence), která umi s kompatibilním HW rozpoznavat lidi i offline v dané místnosti (nutná registrace hlasu a obličeje). Funguje to překvapivě dobře, ale ne 100%."
+          },
+          {
+            "time": "15:57",
+            "author": "člen komunity",
+            "text": "Neni to ale mobilní"
+          },
+          {
+            "time": "15:57",
+            "author": "člen komunity",
+            "text": "Ale pro ty pripady co tady píšete, Plaude už je víc jak tok nejlepší volba (to je na tuto dobu co říct!)"
+          },
+          {
+            "time": "16:48",
+            "author": "Daniel",
+            "text": "K tématu, budu se opakovat. Používám Plaud jako HW i SW v macOS (se svolením všech stran, ale to platí i pro následující text). Aktuálně nahrávání a lokální přepis a sumarizace apod. Šlo by to i bez něj (iPhone záznam, pak export a tak, ale už ho mám a je to pohodlnější).\nKdyž to jsou moje věci, tak přepis přes Soniox. Prostě to je mega přesný."
+          },
+          {
+            "time": "16:55",
+            "author": "člen komunity",
+            "text": "Microsoft nástroje využívejte jen pokud není zbytí. To je má osobní zkušenost. :)"
+          },
+          {
+            "time": "17:15",
+            "author": "člen komunity",
+            "text": "To je hodně zjednodušené, ale chápu.\nV rámci data governance a security je to hodně daleko.\nV rámci kvality přepisu schůzek je to jak kdy, ale pokud je správný hardware, který správně rozumí, a zpracování přepisu se nenechá na kopilotovi, ale Claudovi, tak to funguje velice dobře.\nJá třeba dělám přepisy z klóda tak, že řeknu, ať si najde přepis a udělá z toho souhrn"
+          },
+          {
+            "time": "17:21",
+            "author": "člen komunity",
+            "text": "Je to zjednodušené. Ma rada z praktického využívání je proste jiná: najdete neco jiného než Microsoft :)"
+          },
+          {
+            "time": "18:25",
+            "author": "člen komunity",
+            "text": "Moje taky btw 🤣"
+          },
+          {
+            "time": "19:19",
+            "author": "člen komunity",
+            "text": "Možno je to pre vás jasné, ale ja nechápem úplne presne (skôr len tuším a môžem sa mýliť), čo je dôvodom vymeniť MS... Ja verím, že som v skupine, kde zdieľame skúsenosti a hlavne fakty..."
+          },
+          {
+            "time": "19:21",
+            "author": "člen komunity",
+            "text": "Preto pekne prosím nehovorit v inotajoch a písať dôvody svojich názorov a rozhodnutí, moc by som to ocenil ❤️"
+          },
+          {
+            "time": "21:06",
+            "author": "člen komunity",
+            "text": "Já MS ani neznesnáším, ani nemiluji. Je však třeba se na jeho produkty a služby dívat z různých perspektiv.\n*Perspektiva uživatel, který chce víc:*\n- nemá vyspělý systém na poznámky s databázemi, backlinky, markdown, …\n- ⁠power platforma je neintuitivní a má velmi omezené integrace\n- ⁠MS dává mnoho možností na jedno řešení, žádné není dost dobré a často pak máchá jedno s druhým a kdo se v tom má vyznat?\n- ⁠Loop - 😀 nice try, but hell no\n- ⁠hledání uvnitř souborů, poznámek, … - eeeh\n- ⁠integrace s 3rd party nástroji - 🙁\n- ⁠uživatelská dokumentace v češtině\n- ⁠základní nástroje zná každý, není třeba tolik učit základy\n- ⁠pokročilé funkce zná max 15% = lidi tvoří junk\n*Perspektiva IT admina:*\n- super zabezpečení MS EMS (Entra, Defender, Purview, zero trust)\n- ⁠jednoduchá a pokročilá správa identit, skupin, dynamických skipin\n- ⁠jednuduchá adaptace uživatel (ětšina zná alespoň základy\n- ⁠design language - konzistentní UI/UX napříč platformou (většinou)\n- ⁠velké množství specializovaných partnerů\n- ⁠SSO a SCIM - přihlašování identitou MS a synchronizace uživatelských účtů do 3rd party systémů\n- ⁠administrátorská dokumentace\nA určitě se toho najde daleko víc. Někde má prostě MS nahoru 👍, ale jinde zase palec dolů 👎."
+          },
+          {
+            "time": "21:09",
+            "author": "člen komunity",
+            "text": "MS nabízí hodně pokročilé nástroje pro securitu, které jsou hodně dobře integrovatelné do MS identity (EMS). Při pokročilých plánech (Business Premium a výš) je to win, protože není nutn řešit externí zabezpečení endpointů, protože tom má MS pod jednou kapotou.\nMožná to bylo pro uživatele moc, ale věřím, že taková perspektiva pomůže pochopit IT adminy, když se rozhodují, kam jít."
+          },
+          {
+            "time": "21:10",
+            "author": "člen komunity",
+            "text": "P.S. implementovat Zero Trust na MS a jinde je hodně velký rozdíl. A teď už končím 😀"
+          }
+        ]
+      },
+      {
+        "slug": "vibe-coding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "16:24",
+            "author": "Daniel",
+            "text": "Beru to z pohledu power-user-hobíka. Dnešní zkušenost s ukázkou Claude Code na konzultaci. Byli tam 4 lidi. Jednání o tom, jestli budeme spolupracovat. Ukázal jsem jim, co umí CC. Jasně, že jsem použil terminál.\nBylo to hodně nepřítomné. Padaly slova jako „MS-DOS“, „T602“ a podobně. Zděšení, ale potichu. A to je v pohodě. Prokousávali jsme se tím krok za krokem. A pak Jana řekla: „Ty jo, ono to vlastně není vůbec špatné, stačí jen umět číst a formulovat, co chci.“\nI když se to nezdá, měl jsem to podobně. Na začátku jsem měl mega respekt z terminálu. A pak přišlo takový to, že stačí číst a formulovat. Mít srovnané, co chci. Doptávat se na věci, kterým nerozumím. Zvědavost i zvídavost. Pak to začalo fungovat.\nJen povzbuzení pro ty, co z toho máte respekt. CC, Codex apod. vypadají často strašidelně, ale ve finále je to jen o tom, že si povídáte s chatbotem, jen ten chatbot pracuje místo toho, aby jen odpovídal. Pokud máte záměr, víte, co chcete, není podle mě ta bariéra technologická. Na terminál (nebo Codex/CC v aplikaci) si zvyknete. Velmi rychle. Vlastní zkušenost nejen z mého podnikání, ale i z toho, jak se o tom bavím s lidmi.\nA teď už do práce, můj Top Management tým má pro mě nové zprávy, co můžu zlepšit u sebe. Jo, je to přísný a nikdy se na to netěším. 😀"
+          },
+          {
+            "time": "16:32",
+            "author": "člen komunity",
+            "text": "V tomhle kontextu dotaz na všechny – v čem je pro běžného uživatele lepší používat terminál oproti Claude/Codex desktop aplikacím?\nJá jsem třeba v terminálu začínal, ale nesedělo mi to zdaleka tolik jako Codex a pak CC desktop UI.\nA přesně jsem u lidí hodně viděl to prvotní zděšení, když viděli terminál. S CC na desktopu ho mají mnohem míň, je to prostě další chatovací appka 🙂"
+          },
+          {
+            "time": "16:39",
+            "author": "Daniel",
+            "text": "Podle mě otázka vkusu a pro mě (a možná to jde i na desktop, nevím):\n- sáhnu si z terminálu z MacBooku na Mac Mini\n- ⁠podle mě i hooks\n- ⁠headless, když vím, co dělám\n- ⁠více sessions jednodušeji, prostě nový tab, je to jednodušší\n- ⁠přístup k lokálním souborům, ale to možná umí i UI\nJe toho více, ale přiznám se, že Claude jsem už dlouho nezatížil. Jako tu appku."
+          },
+          {
+            "time": "16:50",
+            "author": "člen komunity",
+            "text": "ona si právě UI umí spouštět terminály dle potřeby, víc sessions ve víc oknech taky funguje, k lokálním souborům přistupuje stejně jako terminál…\njediné, co netuším, je přístup na jiný stroj, ale dost předpokládám že by si s tím CC poradil"
+          },
+          {
+            "time": "16:51",
+            "author": "člen komunity",
+            "text": "Tuším, že se vždy řešilo, že appka sežere víc tokenů než čistě terminál."
+          },
+          {
+            "time": "16:52",
+            "author": "člen komunity",
+            "text": "Osobně jsem do terminálu a jiných alternativ zkoušel lézt vícekrát. Ale prostě nad běžnou appku, kde vidím všechny konverzace, není. Dokud mě někdo nepřesvědčí zásadně o opaku"
+          },
+          {
+            "time": "16:53",
+            "author": "člen komunity",
+            "text": "Co mi přijde zajímavý je mít v Obisidanu otevřené jedno okno s md soubory a druhé s terminálem. Pro někoho to může být super workflow. Ale asi i dost specifické nebo když člověk tuní celý svůj systém, instrukce atd."
+          },
+          {
+            "time": "16:55",
+            "author": "člen komunity",
+            "text": "Spíš by mě zajímalo @člen zda máš v appce defaultně bypassovaný permissions mode a jestli k němu máš nějaké pravidla užívání pro Claude, aby ti neudělal někde bordel."
+          },
+          {
+            "time": "16:56",
+            "author": "člen komunity",
+            "text": "Pouštím ho jen do složek konkrétního projektu, jinam si bez dovolení sáhnout nesmí"
+          },
+          {
+            "time": "16:57",
+            "author": "člen komunity",
+            "text": "Tak to už si myslím že je o hodně lepší mít CC ve VSCode. Obsidian + CC v appce mi přijde kostrbaté"
+          },
+          {
+            "time": "16:57",
+            "author": "člen komunity",
+            "text": "Takže žádné specifické restrikce. ze kterých bych se mohl inspirovat?"
+          },
+          {
+            "time": "16:59",
+            "author": "člen komunity",
+            "text": "To bohužel neposloužím, jsem v tom dost pankáč 😀\nSpecifické restrikce řeším jen u některých workflow, kde si sahá na API (ať už svoje, nebo jiné služby). Ale taky to není nic sofistikovaného."
+          },
+          {
+            "time": "17:29",
+            "author": "člen komunity",
+            "text": "@člen Desktop appku Claude považuju za bezpečnostní riziko. Vysvětlím.\nMám zkušenost, že sahal bez problému do úplně jiné složky než té vybrané pracovní. Sice správně (řešil jsem nějakou automatizaci na Macu), ale ukázal tím, že výběr složky pro něj vůbec není omezení.\nNo, a pak v té složce dokonce spustil příkaz rm -rf. (To je příkaz, který bez potvrzení smaže celou složku včetně obsahu.) Smazal sice správnou věc, ale ve složce, kde by vůbec neměl být, natož něco smazat. Použil příkaz, který nesměl spustit (byl v módu \"ask permissions\" a stejně se nezeptal, a rozhodně tenhle příkaz neměl v allow listu).\nTakže přeloženo: omezení na pracovní složku nestačí, ask permissions taky ne. Přidat příkaz rm -rf na deny list taky ne (mazat se dá spoustou různých způsobů, to nepodchytíš, můžu když tak rozvést). Navíc všechna tahle omezení jsou \"soft\", jak je vidět, tj. když LLM chce, tak je obejde.\nIncident je z března a můžeme se bavit o tom, jestli to Anthropic nějak spolehlivě vyřešil. Ale za mě to bezpečné rozhodně není.\nDáváš fakticky LLM přístup k celému svému počítači. Může cokoliv smazat. Nebo kamkoliv nasdílet. Nebo najít přístupové údaje (SSH klíče, pokud používáš) a někam se připojit a tam něco udělat. To vše klidně s dobře míněnými úmysly.\nJasně, asi se to nestane, ale doufání není dobrý přístup k bezpečnosti. Neriskoval bych to.\nMoje řešení: Smazal jsem okamžitě Claude desktop app a začal používat Claude code v terminálu. Ale v izolovaném kontejneru přes Docker, tj. má \"hard\" omezení, které neobejde a díky kterému může pracovat jen se soubory v určité složce na mém disku, nikde jinde. Bez izolovaného kontejneru by to byl stejný problém jako s desktop appkou.\nSetup je techničtější, ale dá se to zvládnout. Původně jsem si říkal, jestli nejsem paranoidní. Ale spíš neberu bezpečnost na lehkou váhu. Používat silný nástroj (jako je lokální Claude pracující se soubory na disku) je atraktivní (a díky těm desktop appkám i snadné), řešit bezpečnost kolem už tak ne. Ale za mě je to velmi důležité."
+          },
+          {
+            "time": "17:59",
+            "author": "člen komunity",
+            "text": "Díky moc za zkušenost, jsem si bezpečnostích děr vědom, ale tohle je trochu drsnější, než jsem čekal 🙂\nJen je super znát to B – že samotný terminál to neřeší, je potřeba LLM i tam nějak izolovat 👍"
+          },
+          {
+            "time": "18:24",
+            "author": "člen komunity",
+            "text": "k předchozí debatě terminál vs appka dodám, že terminál umí „claude agents“. stačí jedno okno terminálu na několik souběžných konverzací a na jednom místě je krásný přehled toho, na čem bot pracuje, co je hotové, co potřebuje nějaký input. oproti X otevřeným terminálům to je krásná změna"
+          },
+          {
+            "time": "19:50",
+            "author": "člen komunity",
+            "text": "Nasdilis prosím ten bezpečný setup detailně?"
+          },
+          {
+            "time": "22:44",
+            "author": "člen komunity",
+            "text": "Ta práce mimo povolený adresář je velký špatný, s něčím takovým zkušenosti nemám.\nŘešit však vše přes Claude Code CLI v Docker je však za mě overkill. S takovou by člověk neměl používat ani claud (neplést s Claude)."
+          }
+        ]
+      },
+      {
+        "slug": "webináře--workshopy",
+        "name": "Webináře & Workshopy",
+        "messages": [
+          {
+            "time": "18:41",
+            "author": "člen komunity",
+            "text": "Bude z toho nějaké shrnutí aspoň? 🙏 Taky jsem počítala s dneškem a příští středu nemůžu. 😓"
+          }
+        ]
+      }
+    ]
+  }
+}
