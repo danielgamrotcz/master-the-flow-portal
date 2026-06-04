@@ -1,0 +1,49 @@
+{
+  "date": "2026-06-01",
+  "generated_at": "2026-06-04T15:06:28Z",
+  "stats": {
+    "messages": 1,
+    "groups": 1,
+    "members": 1
+  },
+  "cards": [
+    {
+      "id": "2026-06-01-01",
+      "type": "NÁSTROJE",
+      "level": "Expert",
+      "topic": "AI Agenti",
+      "title": "Fiktivní město jako test agentických modelů",
+      "excerpt": "Český experiment nechal různé AI agenty spravovat fiktivní město a sledoval, jak se chovají. Výsledek je praktické srovnání agentických modelů na stejné úloze.",
+      "body": "Honza Tyl z AlphaI postavil experiment, který vyřešil jeden z nejsložitějších problémů při výběru agentického modelu — jak je srovnat na reálné, ale kontrolované úloze. Nechal několik různých AI agentů řídit fiktivní město a zaznamenal, jak každý z nich přistupuje k rozhodování, plánování a zvládání neočekávaných situací.\n\nProč je to zajímavé? Standardní benchmarky měří výkon na izolovaných úlohách. Správa města je jiná — agent musí vyvažovat protichůdné cíle, reagovat na měnící se podmínky a dělat rozhodnutí s dlouhodobými důsledky. To je přesně ten typ chování, který v agentech potřebujete znát, než je nasadíte do reálného workflow.\n\nČlánek wychází na alphai.cz a jde přes něj vidět konkrétní rozdíly v tom, jak jednotlivé modely přemýšlejí — ne co říkají o sobě, ale co skutečně dělají pod tlakem.",
+      "read_minutes": 4,
+      "source_date": "2026-06-01"
+    },
+    {
+      "id": "2026-06-01-02",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "AI Agenti",
+      "title": "Jak testovat agenty bez produkčního prostředí",
+      "excerpt": "Před nasazením AI agenta do reálné práce potřebujete vědět, jak se chová pod tlakem. Fiktivní scénáře — město, firma, tým — jsou bezpečný způsob, jak tohle zjistit.",
+      "body": "Experiment se simulací města upozorňuje na praktický problém: jak otestovat agenta dřív, než ho pustíte do práce s vašimi daty nebo procesy?\n\nJeden přístup je vytvořit fiktivní verzi prostředí, ve kterém bude agent pracovat. Pokud řešíte zákaznický servis, dejte agentovi vymyšlené konverzace s vymyšlenými zákazníky. Pokud plánujete obsah, dejte mu smyšlený produktový brief. Cíl není ověřit výsledky — cíl je sledovat, jak agent přemýšlí, na co se ptá, kde havaruje a kde funguje lépe, než čekáte.\n\nTenhle přístup vám dá mnohem víc informací než klasické testování na izolovaných promptech. Agent v simulovaném prostředí odhalí chování, které benchmark neukáže — třeba sklon k přílišné opatrnosti, nebo naopak sebejistotu tam, kde by měl dát na pauzu a zeptat se.",
+      "read_minutes": 3,
+      "source_date": "2026-06-01"
+    }
+  ],
+  "resurfacing": null,
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspirace--diskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "07:05",
+            "author": "člen komunity",
+            "text": "Honza Tyl nechal agenty spravovat fiktivní město a můžete si na tom porovnat jednotlivé agentické modely:\nhttps://www.alphai.cz/cs/blog/2026-05-31-pet-svetu-pet-osudu-simulace-ai-agentu"
+          }
+        ]
+      }
+    ]
+  }
+}
