@@ -1,3 +1,18 @@
+/* ===== THEME ===== */
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  const isLight = theme === 'light';
+  document.getElementById('icon-sun').classList.toggle('hidden', !isLight);
+  document.getElementById('icon-moon').classList.toggle('hidden', isLight);
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme') || 'dark';
+  const next = current === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('theme', next);
+  applyTheme(next);
+}
+
 /* ===== STATE ===== */
 const state = {
   view: 'today',
@@ -658,6 +673,9 @@ function rerenderCurrentView() {
 
 /* ===== INIT ===== */
 function init() {
+  applyTheme(document.documentElement.getAttribute('data-theme') || 'dark');
+  document.getElementById('btn-theme').addEventListener('click', toggleTheme);
+
   $('header-date').textContent = formatDateLong(new Date().toISOString().slice(0, 10));
 
   document.querySelectorAll('.level-tab').forEach(btn => {

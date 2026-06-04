@@ -13,8 +13,8 @@
       "level": "Builder",
       "topic": "Claude Code",
       "title": "Automatické ukládání kontextu při práci v Claude Code",
-      "excerpt": "Když session skončí, kontext zmizí. Několik členů sdílelo konkrétní řešení, jak si stav práce uchovávají automaticky bez nutnosti ručního exportu.",
-      "body": "Větší projekty v Claude Code narážejí na jeden praktický problém: při ukončení session jde kontext pryč. Diskuze ukázala tři přístupy, jak to řešit.\n\nNejautomatičtější varianta jsou hooky, které ukládají kontext každých 15 kroků. Stav se zapíše do souboru bez toho, aby člověk musel cokoliv zadávat ručně. Druhý přístup je skill zpracovávající session při ukončení, který zároveň navrhne tasky do úkolníčku (Things, Notion nebo Obsidian). Třetí varianta sleduje závislosti mezi projekty a při přepnutí kontext zachová.\n\nSpojuje je jedno: kontext se neukládá ad hoc, ale jako součást běžného workflow. Kdo v Claude Code tráví víc hodin denně, tohle není detail, ale základ pro smysluplnou kontinuitu.",
+      "excerpt": "Když session skončí, kontext zmizí. Několik členů sdílelo konkrétní způsoby, jak si rozdělanou práci ukládají automaticky, bez ručního exportu.",
+      "body": "Větší projekty v Claude Code mají jeden praktický problém: jakmile ukončíte session, kontext zmizí. V diskuzi se objevily tři způsoby, jak to řešit.\n\nNejvíc automatická varianta jsou hooky, které ukládají kontext každých 15 kroků. Stav se zapíše do souboru a člověk nemusí nic zadávat ručně. Druhá možnost je skill, který při ukončení zpracuje session a rovnou navrhne úkoly do task manageru, třeba Things, Notionu nebo Obsidianu. Třetí varianta hlídá závislosti mezi projekty a při přepnutí kontext zachová.\n\nVšechny tři přístupy mají společné to, že se kontext neukládá náhodně, ale přímo v rámci běžného workflow. Kdo v Claude Code tráví několik hodin denně, pro toho to není drobnost, ale základ, aby se dalo plynule navázat.",
       "read_minutes": 2,
       "source_date": "2026-05-26"
     },
@@ -24,8 +24,8 @@
       "level": "Builder",
       "topic": "Vibe coding",
       "title": "Tři projekty za víkend bez nového předplatného",
-      "excerpt": "Migrace webu, vlastní CRM pro elektro zakázky a pipeline na přepisy podcastů. Tři konkrétní příklady toho, co členové postavili s AI místo placených nástrojů.",
-      "body": "Z diskuze vyšly tři projekty, které stojí za pozornost.\n\nPrvní: web přesunutý z Lovable na čistý Claude a GitHub. Pár hodin práce, žádné další předplatné. Důvod byl jednoduchý: člen potřeboval větší kontrolu nad kódem a Lovable mu ji nedávalo.\n\nDruhý: komplexní CRM systém pro elektro zakázky. Placené CRM nástroje nenabízely přesně to, co bylo potřeba, takže vznikl vlastní. Projekt, který by dřív vyžadoval programátora na týden.\n\nTřetí: pipeline pro přepisy podcastů přes Soniox. Automatizovaný přepis, strukturovaný výstup bez ručního nahrávání do externího nástroje.\n\nSpolečný jmenovatel: placené nástroje s omezenou flexibilitou postupně ztrácejí smysl, pokud si člověk dokáže postavit přesně to, co potřebuje. Tenhle posun se v komunitě opakuje čím dál víc.",
+      "excerpt": "Migrace webu, vlastní CRM na elektro zakázky a pipeline na přepisy podcastů. Tři konkrétní příklady věcí, které členové postavili s AI místo placených nástrojů.",
+      "body": "Z diskuze vzešly tři projekty, které stojí za pozornost.\n\nPrvní: web přesunutý z Lovable na čistý Claude a GitHub. Pár hodin práce a žádné další předplatné. Důvod byl jednoduchý: člen chtěl mít větší kontrolu nad kódem a Lovable mu ji nedávalo.\n\nDruhý: komplexní CRM systém pro elektro zakázky. Placené CRM nástroje neuměly přesně to, co bylo potřeba, tak vzniklo vlastní řešení. Projekt, který by dřív zabral programátorovi zhruba týden.\n\nTřetí: pipeline pro přepisy podcastů přes Soniox. Automatický přepis a strukturovaný výstup bez ručního nahrávání do externího nástroje.\n\nCo mají společné: placené nástroje s omezenou flexibilitou dávají čím dál menší smysl, když si člověk umí postavit přesně to, co potřebuje. Tenhle posun se v komunitě objevuje čím dál častěji.",
       "read_minutes": 2,
       "source_date": "2026-05-26"
     },
@@ -35,8 +35,8 @@
       "level": "Builder",
       "topic": "Nástroje a produktivita",
       "title": "Dávají ještě smysl placené nástroje jako Canva nebo Turboscribe",
-      "excerpt": "Komunita začala otevřeně srovnávat, co má smysl platit a co zvládne AI levněji nebo lépe. Výsledek není jednoznačný, ale otázka se opakuje čím dál víc.",
-      "body": "Diskuze se stočila k praktické otázce: kdy přestane mít smysl platit za specializovaný nástroj, když AI dělá 80 % téhož zdarma nebo za zlomek ceny?\n\nCanva je příklad nástroje, kde AI alternativy fungují dobře pro jednodušší grafiku, ale při komplexnějším brandu pořád zaostávají. Turboscribe naráží na silnou konkurenci od nástrojů jako Deepgram nebo lokálního Whisper, které nabízejí srovnatelnou nebo lepší kvalitu za nižší cenu.\n\nZ diskuze nevyšel jednoznačný závěr, ale zaznělo jedno užitečné kritérium: platit dává smysl, pokud nástroj šetří čas v konkrétním, opakujícím se workflow a alternativa by vyžadovala technické nastavení, ke kterému se člověk nedostane. Jakmile tenhle práh překročíte, je na místě přehodnotit.\n\nV praxi to čím dál víc členů řeší aktivně, ne jako teorii.",
+      "excerpt": "Lidi v komunitě začali otevřeně řešit, za co se ještě vyplatí platit a co AI zvládne levněji nebo líp. Jasná odpověď z toho není, ale tahle otázka se objevuje čím dál častěji.",
+      "body": "Debata se stočila k praktické otázce: kdy už nedává smysl platit za specializovaný nástroj, když AI zvládne 80 % toho samého zdarma nebo za zlomek ceny?\n\nCanva je dobrý příklad. Pro jednodušší grafiku už AI alternativy fungují dobře, ale u složitějšího brandu pořád zaostávají. Turboscribe zase naráží na silnou konkurenci nástrojů jako Deepgram nebo lokální Whisper. Ty umí nabídnout srovnatelnou, někdy i lepší kvalitu za nižší cenu.\n\nJasný závěr z diskuze nepadl. Zaznělo ale jedno užitečné pravidlo: platit má smysl, když nástroj šetří čas v konkrétním opakovaném workflow a alternativa by znamenala technické nastavování, ke kterému se člověk reálně nedostane. Jakmile tenhle práh překročíte, stojí za to nástroj znovu zvážit.\n\nV praxi to řeší čím dál víc členů. Ne teoreticky, ale rovnou na vlastních nákladech.",
       "read_minutes": 2,
       "source_date": "2026-05-26"
     },
@@ -46,8 +46,8 @@
       "level": "Začátečník",
       "topic": "Automatizace a monitoring",
       "title": "noscroll: denní digest novinek bez vlastní automatizace",
-      "excerpt": "Nastavíte témata, která vás zajímají, a každý den dostanete přehled relevantních novinek. Žádné scrapování, žádný kód.",
-      "body": "Jeden člen zmínil noscroll jako náhradu za vlastní scrapovací automatizaci. Princip je jednoduchý: řeknete nástroji, co vás zajímá (AI nástroje, marketing, konkrétní obor), a on každý den sestaví digest z relevantních zdrojů.\n\nProč to stojí za zmínku ve skupině, kde hodně lidí umí automatizovat? Protože někdy je nejchytřejší věc nestavět. Hotový nástroj bez nutnosti údržby, přihlašovacích tokenů, hlídání API limitů a oprav, když se něco rozbije.\n\nNoscroll cílí přesně na situaci, kdy člověk chce přehled novinek, ale nechce řešit pipeline. Pro ty, kdo nemají technické zázemí, je to přímočaré. Pro ty, kdo ho mají, je to vědomé rozhodnutí neplýtvat časem na něco, co existuje hotové.\n\nZmínka přišla jako tip v kontextu diskuze o tom, co ještě dává smysl stavět vlastního.",
+      "excerpt": "Vyberete si témata, která vás zajímají, a každý den dostanete přehled novinek k věci. Bez scrapování a bez kódu.",
+      "body": "Jeden člen zmínil Noscroll jako náhradu za vlastní scrapovací automatizaci. Funguje jednoduše: řeknete mu, co vás zajímá — AI nástroje, marketing nebo konkrétní obor — a každý den vám poskládá digest z relevantních zdrojů.\n\nProč to zmiňovat ve skupině, kde spousta lidí umí automatizovat? Protože někdy je nejchytřejší nic nestavět. Hotový nástroj znamená žádnou údržbu, žádné přihlašovací tokeny, hlídání API limitů ani opravy, když se něco rozbije.\n\nNoscroll sedí přesně na situaci, kdy chcete mít přehled o novinkách, ale nechcete řešit celou pipeline. Pro lidi bez technického zázemí je to přímočaré řešení. Pro technické lidi zase vědomá volba neztrácet čas něčím, co už existuje hotové.\n\nTip padl v diskuzi o tom, co ještě dává smysl stavět si vlastními silami.",
       "read_minutes": 1,
       "source_date": "2026-05-26"
     },
@@ -57,8 +57,8 @@
       "level": "Expert",
       "topic": "Security",
       "title": "Jak otestovat bezpečnost projektu před spuštěním",
-      "excerpt": "Padl dotaz, jak provést security audit vibe coding projektu před tím, než ho pustíte do produkce. Zaznělo doporučení na bezplatný scanner, ale reakce komunity byly smíšené.",
-      "body": "Jeden člen se ptal, jak otestovat bezpečnost projektu postaveného přes Claude Code nebo jiné vibe coding nástroje, než ho pustí do produkce. Jde o otázku, která se v komunitě zatím moc neřeší, i když by měla.\n\nZaznělo doporučení na grovetechai.com/scanner (Vibe Coding Scan), který je zdarma jednou měsíčně a zaměřuje se přímo na projekty vzniklé přes vibe coding. Reakce ale nebyly jednoznačně pozitivní. Jeden člen měl špatnou zkušenost s kvalitou výsledků, hlásil problémy, které buď nebyly reálné, nebo byly povrchní.\n\nTohle otvírá širší otázku: jaké jsou spolehlivé způsoby, jak projít bezpečnost projektu, který jste postavili rychle a bez tradičního code review? Automatické scannery mají limity. Manuální review vyžaduje buď zkušenosti, nebo niekoho druhého. A většina vibe coderů to aktuálně neřeší vůbec.\n\nMáte ve svém workflow zabudovaný security check před spuštěním do produkce? A pokud ano, jak konkrétně?",
+      "excerpt": "Padl dotaz, jak udělat security audit vibe coding projektu, než ho pustíte do produkce. Zaznělo doporučení na bezplatný scanner, reakce komunity ale byly smíšené.",
+      "body": "Jeden člen se ptal, jak otestovat bezpečnost projektu postaveného přes Claude Code nebo jiné vibe coding nástroje, než ho pustí do produkce. V komunitě se to zatím moc neřeší, ale řešit by se to mělo.\n\nPadlo doporučení na grovetechai.com/scanner (Vibe Coding Scan). Je zdarma jednou měsíčně a míří přímo na projekty vzniklé přes vibe coding. Reakce ale nebyly jen pozitivní. Jeden člen měl špatnou zkušenost s kvalitou výsledků. Scanner mu hlásil problémy, které buď nebyly reálné, nebo byly dost povrchní.\n\nTím se otevírá širší otázka: jak bezpečně projít projekt, který vznikl rychle a bez klasického code review? Automatické scannery mají svoje limity. Manuální review chce buď zkušenosti, nebo někoho druhého. A většina vibe coderů to teď neřeší vůbec.\n\nMáte ve svém workflow security check před spuštěním do produkce? A pokud ano, jak konkrétně?",
       "read_minutes": 3,
       "source_date": "2026-05-26"
     }

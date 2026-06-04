@@ -13,8 +13,8 @@
       "level": "Expert",
       "topic": "AI Agenti",
       "title": "Fiktivní město jako test agentických modelů",
-      "excerpt": "Český experiment nechal různé AI agenty spravovat fiktivní město a sledoval, jak se chovají. Výsledek je praktické srovnání agentických modelů na stejné úloze.",
-      "body": "Honza Tyl z AlphaI postavil experiment, který vyřešil jeden z nejsložitějších problémů při výběru agentického modelu — jak je srovnat na reálné, ale kontrolované úloze. Nechal několik různých AI agentů řídit fiktivní město a zaznamenal, jak každý z nich přistupuje k rozhodování, plánování a zvládání neočekávaných situací.\n\nProč je to zajímavé? Standardní benchmarky měří výkon na izolovaných úlohách. Správa města je jiná — agent musí vyvažovat protichůdné cíle, reagovat na měnící se podmínky a dělat rozhodnutí s dlouhodobými důsledky. To je přesně ten typ chování, který v agentech potřebujete znát, než je nasadíte do reálného workflow.\n\nČlánek wychází na alphai.cz a jde přes něj vidět konkrétní rozdíly v tom, jak jednotlivé modely přemýšlejí — ne co říkají o sobě, ale co skutečně dělají pod tlakem.",
+      "excerpt": "Český experiment svěřil různým AI agentům správu fiktivního města a sledoval, jak se chovají. Výsledkem je praktické srovnání agentických modelů na stejném úkolu.",
+      "body": "Honza Tyl z AlphaI postavil experiment, který řeší jeden z nejtěžších problémů při výběru agentického modelu: jak je porovnat na reálné, ale pořád kontrolované úloze. Nechal několik různých AI agentů řídit fiktivní město a sledoval, jak se rozhodují, plánují a zvládají nečekané situace.\n\nBěžné benchmarky měří výkon na izolovaných úlohách. Správa města je ale něco jiného. Agent musí balancovat protichůdné cíle, reagovat na změny a dělat rozhodnutí, která mají dopad až později. Přesně tohle chování chcete u agentů znát, než je pustíte do reálného workflow.\n\nČlánek vychází na alphai.cz a dobře ukazuje konkrétní rozdíly v tom, jak jednotlivé modely přemýšlejí. Ne podle toho, co o sobě říkají, ale podle toho, co opravdu dělají pod tlakem.",
       "read_minutes": 4,
       "source_date": "2026-06-01"
     },
@@ -24,8 +24,8 @@
       "level": "Builder",
       "topic": "AI Agenti",
       "title": "Jak testovat agenty bez produkčního prostředí",
-      "excerpt": "Před nasazením AI agenta do reálné práce potřebujete vědět, jak se chová pod tlakem. Fiktivní scénáře — město, firma, tým — jsou bezpečný způsob, jak tohle zjistit.",
-      "body": "Experiment se simulací města upozorňuje na praktický problém: jak otestovat agenta dřív, než ho pustíte do práce s vašimi daty nebo procesy?\n\nJeden přístup je vytvořit fiktivní verzi prostředí, ve kterém bude agent pracovat. Pokud řešíte zákaznický servis, dejte agentovi vymyšlené konverzace s vymyšlenými zákazníky. Pokud plánujete obsah, dejte mu smyšlený produktový brief. Cíl není ověřit výsledky — cíl je sledovat, jak agent přemýšlí, na co se ptá, kde havaruje a kde funguje lépe, než čekáte.\n\nTenhle přístup vám dá mnohem víc informací než klasické testování na izolovaných promptech. Agent v simulovaném prostředí odhalí chování, které benchmark neukáže — třeba sklon k přílišné opatrnosti, nebo naopak sebejistotu tam, kde by měl dát na pauzu a zeptat se.",
+      "excerpt": "Než pustíte AI agenta do ostrého provozu, musíte vědět, jak se chová pod tlakem. Fiktivní scénáře — město, firma nebo tým — jsou bezpečný způsob, jak to zjistit.",
+      "body": "Experiment se simulací města ukazuje praktický problém: jak agenta otestovat dřív, než ho pustíte k vlastním datům nebo procesům?\n\nJedna možnost je postavit fiktivní verzi prostředí, ve kterém má agent pracovat. Řešíte zákaznický servis? Dejte mu vymyšlené konverzace s vymyšlenými zákazníky. Plánujete obsah? Dejte mu smyšlený produktový brief. Nejde o to ověřit finální výstupy. Jde o to sledovat, jak agent uvažuje, na co se ptá, kde narazí a kde naopak funguje líp, než čekáte.\n\nTakhle získáte mnohem víc informací než při klasickém testování na jednotlivých promptech. Agent v simulovaném prostředí ukáže chování, které benchmark nezachytí — třeba že je až moc opatrný, nebo naopak příliš sebejistý ve chvíli, kdy by se měl zastavit a zeptat se.",
       "read_minutes": 3,
       "source_date": "2026-06-01"
     }
