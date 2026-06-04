@@ -207,12 +207,16 @@ function updateHeader(data, isYesterday) {
   const dateStr = data.date || new Date().toISOString().slice(0, 10);
   const count = (data.cards || []).length;
   const hasResurfacing = !!data.resurfacing;
+  const label = isYesterday ? 'Včera' : 'Dnes';
 
   $('header-date').textContent = (isYesterday ? 'Včera — ' : '') + formatDateLong(dateStr);
 
   const badge = $('live-badge');
   badge.classList.remove('hidden');
-  $('live-count').textContent = `${isYesterday ? 'Včera' : 'Dnes'} ${count + (hasResurfacing ? 1 : 0)} poznatků`;
+  $('live-count').textContent = `${label} ${count + (hasResurfacing ? 1 : 0)} poznatků`;
+
+  const todayBtn = document.querySelector('.nav-btn[data-view="today"]');
+  if (todayBtn) todayBtn.querySelector('span:last-child').textContent = label;
 }
 
 /* ===== ARCHIVE VIEW ===== */
