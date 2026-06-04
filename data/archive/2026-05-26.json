@@ -1,0 +1,535 @@
+{
+  "date": "2026-05-26",
+  "generated_at": "2026-06-04T14:57:59Z",
+  "stats": {
+    "messages": 88,
+    "groups": 4,
+    "members": 13
+  },
+  "cards": [
+    {
+      "id": "2026-05-26-01",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Claude Code",
+      "title": "Automatické ukládání kontextu při práci v Claude Code",
+      "excerpt": "Když session skončí, kontext zmizí. Několik členů sdílelo konkrétní řešení, jak si stav práce uchovávají automaticky bez nutnosti ručního exportu.",
+      "body": "Větší projekty v Claude Code narážejí na jeden praktický problém: při ukončení session jde kontext pryč. Diskuze ukázala tři přístupy, jak to řešit.\n\nNejautomatičtější varianta jsou hooky, které ukládají kontext každých 15 kroků. Stav se zapíše do souboru bez toho, aby člověk musel cokoliv zadávat ručně. Druhý přístup je skill zpracovávající session při ukončení, který zároveň navrhne tasky do úkolníčku (Things, Notion nebo Obsidian). Třetí varianta sleduje závislosti mezi projekty a při přepnutí kontext zachová.\n\nSpojuje je jedno: kontext se neukládá ad hoc, ale jako součást běžného workflow. Kdo v Claude Code tráví víc hodin denně, tohle není detail, ale základ pro smysluplnou kontinuitu.",
+      "read_minutes": 2,
+      "source_date": "2026-05-26"
+    },
+    {
+      "id": "2026-05-26-02",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "Vibe coding",
+      "title": "Tři projekty za víkend bez nového předplatného",
+      "excerpt": "Migrace webu, vlastní CRM pro elektro zakázky a pipeline na přepisy podcastů. Tři konkrétní příklady toho, co členové postavili s AI místo placených nástrojů.",
+      "body": "Z diskuze vyšly tři projekty, které stojí za pozornost.\n\nPrvní: web přesunutý z Lovable na čistý Claude a GitHub. Pár hodin práce, žádné další předplatné. Důvod byl jednoduchý: člen potřeboval větší kontrolu nad kódem a Lovable mu ji nedávalo.\n\nDruhý: komplexní CRM systém pro elektro zakázky. Placené CRM nástroje nenabízely přesně to, co bylo potřeba, takže vznikl vlastní. Projekt, který by dřív vyžadoval programátora na týden.\n\nTřetí: pipeline pro přepisy podcastů přes Soniox. Automatizovaný přepis, strukturovaný výstup bez ručního nahrávání do externího nástroje.\n\nSpolečný jmenovatel: placené nástroje s omezenou flexibilitou postupně ztrácejí smysl, pokud si člověk dokáže postavit přesně to, co potřebuje. Tenhle posun se v komunitě opakuje čím dál víc.",
+      "read_minutes": 2,
+      "source_date": "2026-05-26"
+    },
+    {
+      "id": "2026-05-26-03",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Nástroje a produktivita",
+      "title": "Dávají ještě smysl placené nástroje jako Canva nebo Turboscribe",
+      "excerpt": "Komunita začala otevřeně srovnávat, co má smysl platit a co zvládne AI levněji nebo lépe. Výsledek není jednoznačný, ale otázka se opakuje čím dál víc.",
+      "body": "Diskuze se stočila k praktické otázce: kdy přestane mít smysl platit za specializovaný nástroj, když AI dělá 80 % téhož zdarma nebo za zlomek ceny?\n\nCanva je příklad nástroje, kde AI alternativy fungují dobře pro jednodušší grafiku, ale při komplexnějším brandu pořád zaostávají. Turboscribe naráží na silnou konkurenci od nástrojů jako Deepgram nebo lokálního Whisper, které nabízejí srovnatelnou nebo lepší kvalitu za nižší cenu.\n\nZ diskuze nevyšel jednoznačný závěr, ale zaznělo jedno užitečné kritérium: platit dává smysl, pokud nástroj šetří čas v konkrétním, opakujícím se workflow a alternativa by vyžadovala technické nastavení, ke kterému se člověk nedostane. Jakmile tenhle práh překročíte, je na místě přehodnotit.\n\nV praxi to čím dál víc členů řeší aktivně, ne jako teorii.",
+      "read_minutes": 2,
+      "source_date": "2026-05-26"
+    },
+    {
+      "id": "2026-05-26-04",
+      "type": "NÁSTROJE",
+      "level": "Začátečník",
+      "topic": "Automatizace a monitoring",
+      "title": "noscroll: denní digest novinek bez vlastní automatizace",
+      "excerpt": "Nastavíte témata, která vás zajímají, a každý den dostanete přehled relevantních novinek. Žádné scrapování, žádný kód.",
+      "body": "Jeden člen zmínil noscroll jako náhradu za vlastní scrapovací automatizaci. Princip je jednoduchý: řeknete nástroji, co vás zajímá (AI nástroje, marketing, konkrétní obor), a on každý den sestaví digest z relevantních zdrojů.\n\nProč to stojí za zmínku ve skupině, kde hodně lidí umí automatizovat? Protože někdy je nejchytřejší věc nestavět. Hotový nástroj bez nutnosti údržby, přihlašovacích tokenů, hlídání API limitů a oprav, když se něco rozbije.\n\nNoscroll cílí přesně na situaci, kdy člověk chce přehled novinek, ale nechce řešit pipeline. Pro ty, kdo nemají technické zázemí, je to přímočaré. Pro ty, kdo ho mají, je to vědomé rozhodnutí neplýtvat časem na něco, co existuje hotové.\n\nZmínka přišla jako tip v kontextu diskuze o tom, co ještě dává smysl stavět vlastního.",
+      "read_minutes": 1,
+      "source_date": "2026-05-26"
+    },
+    {
+      "id": "2026-05-26-05",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Expert",
+      "topic": "Security",
+      "title": "Jak otestovat bezpečnost projektu před spuštěním",
+      "excerpt": "Padl dotaz, jak provést security audit vibe coding projektu před tím, než ho pustíte do produkce. Zaznělo doporučení na bezplatný scanner, ale reakce komunity byly smíšené.",
+      "body": "Jeden člen se ptal, jak otestovat bezpečnost projektu postaveného přes Claude Code nebo jiné vibe coding nástroje, než ho pustí do produkce. Jde o otázku, která se v komunitě zatím moc neřeší, i když by měla.\n\nZaznělo doporučení na grovetechai.com/scanner (Vibe Coding Scan), který je zdarma jednou měsíčně a zaměřuje se přímo na projekty vzniklé přes vibe coding. Reakce ale nebyly jednoznačně pozitivní. Jeden člen měl špatnou zkušenost s kvalitou výsledků, hlásil problémy, které buď nebyly reálné, nebo byly povrchní.\n\nTohle otvírá širší otázku: jaké jsou spolehlivé způsoby, jak projít bezpečnost projektu, který jste postavili rychle a bez tradičního code review? Automatické scannery mají limity. Manuální review vyžaduje buď zkušenosti, nebo niekoho druhého. A většina vibe coderů to aktuálně neřeší vůbec.\n\nMáte ve svém workflow zabudovaný security check před spuštěním do produkce? A pokud ano, jak konkrétně?",
+      "read_minutes": 3,
+      "source_date": "2026-05-26"
+    }
+  ],
+  "resurfacing": null,
+  "transcript": {
+    "groups": [
+      {
+        "slug": "master-the-flow-—-hlavní",
+        "name": "Master the Flow — hlavní",
+        "messages": [
+          {
+            "time": "17:25",
+            "author": "Daniel",
+            "text": "*Show & tell, 3. 6. v 18:30, na Zoomu*\nDo skupiny Webináře a Workshopy jsem dal novou událost. Zdarma. Sdílení scénářů, workflows, postupů.\nOnline na Zoom.\nChcete se připojit a ideálně nasdílet vlastní věci, na kterých (a jak) pracujete? Potvrďte mi tam, prosím, že dorazíte. Koukat můžete taky, ale ta sdílečka je nejcennější.\nOdkaz na skupinu tady: https://chat.whatsapp.com/IMlLsiBcMxj8rTrTYphMLG\nTěším se.\nD."
+          },
+          {
+            "time": "15:18",
+            "author": "Daniel",
+            "text": "*📅 TÝDENNÍ SOUHRN (18.5. - 24.5.)*\n----------\n*Co drží AI setup pohromadě.*\nJeden člen sdílel, jak si postavil celou AI architekturu jako firemní hierarchii. Šéfík, CTO, systémový architekt, projekťák a uklízeč, který vrací soubory zpět na místo. Diskuze běžela dva dny. Co skupinu zaujalo víc než role samotné bylo to, co celý systém drží pohromadě. Pojmenování souborů, folder mapa a prolinky mezi nimi.\n*Přepis mluveného slova. Co se řešilo.*\nSkupina prošla WisprFlow, MacWhisper, Apple diktování, Raycast v betě a Plaud. Taky Deepgram. Přepisuje online schůzky a rozpozná, kdo co říkal. Nabízí 200 dolarů kreditu zdarma.\ndeepgram.com\n*Úkolníček nebo Claude s MCP.*\nPadla otázka, jestli dává smysl mít separátní task manager, když Claude umí přes MCP přistupovat kamkoliv. Zazněla různá řešení. Google ekosystém, Things s Obsidianem, projektové nástroje pro tým.\n*Co jde postavit za odpoledne.*\nTři konkrétní příklady z víkendu. Jedna členka přesunula web z Lovable na Claude a GitHub. Pár hodin práce, žádné předplatné navíc. Jiný člen postavil vlastní fakturační systém za hodinu a půl s Codexem, protože placený nástroj neměl funkce, které potřeboval. Ještě jedna si to nastavila tak, že řekne do mikrofonu „zapiš mi úkol“ a Claude to přes iOS zkratku a konektor pošle do Todoistu nebo Notionu.\n*Pro ty, kdo jedou (nejen) Claude Code.*\nVe Vibe Coding skupině se sdílely přístupy, jak nepřijít o kontext při ukončení session. Automatické ukládání stavu každých 15 kroků, skill zpracovávající session s návrhem tasků do úkolníčku, nebo systém sledující závislosti přes víc projektů najednou. Kdo tohle řeší, mrkněte do Vibe Coding skupiny.\nPokud jste tu čerstvě, jsou tu čtyři skupiny. Hlavní (oznámení a kratší věci ode mě), Inspirace a Diskuze (nejaktivnější), Vibe Coding (stavění, nástroje, postupy) a Webináře a Workshopy (události).\nA ještě jedna komunitní akce zdarma - 3. 6. v 18.30 na Zoomu pořádám Show and Tell. Sdílečka scénářů a postupů. Nemusí to být appka, stačí 5 minut ukázky čehokoli, co vám šetří čas. Potvrzení ve skupině Webináře a Workshopy.\nD."
+          }
+        ]
+      },
+      {
+        "slug": "inspirace--diskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "12:30",
+            "author": "člen komunity",
+            "text": "https://www.wired.com/story/meet-the-sad-wives-of-ai/\nAť to tu není jen bezbřehý optimismus. Tohoto si stále časněji všímám i ve svém okolí…tak jen připomínám důležitost vztahů a real světa. 😉"
+          },
+          {
+            "time": "13:04",
+            "author": "člen komunity",
+            "text": "Ahoj 👋 sháníme k nám do Kogi externího konzultanta/ku, kteří mají zkušenosti s Microsoft universe, Copilotem apod. Stavíme svá vlastní AI řešení a dostali jsme se do okamžiku, kdy by nás takovýhle specialista zásadně posunul. Prosím, nemáte nějaký tip?"
+          },
+          {
+            "time": "14:42",
+            "author": "člen komunity",
+            "text": "To by bylo super, ziju v mezinarodni komunite a chci zkontrolat to v tech jazycich znam, nez to reknu u slozitych temat"
+          },
+          {
+            "time": "17:47",
+            "author": "Daniel",
+            "text": "Tohle je pro mě. Vím, že je tu mega moc zpráv. Já na to mám systém, který mi dává výcuc toho, co se děje (a co dělat). Ale od vás…\nMáte nějaké náměty na to, jak to zpřehlednit? Migraci na Discord/Slack nechci.\nSpíš, co byste rádi, co by vám pomohlo, ale tady v tom našem WA prostředí.\nDěkuju. 🙏\n(BTW ta emotikona – znáte “wai”? V Thajsku naprosto běžné a uctivé. A ano, dělám to nevědomky i tady.)"
+          },
+          {
+            "time": "17:48",
+            "author": "člen komunity",
+            "text": "Ahoj, tip pro ty, kterým se nechce nebo nemůžou tvořit vlastní scrapovací automatizace 😊 mrkněte na noscroll, udělá to za vás.\nV konverzaci mu řeknete jaký témata vás zajímají a on vám každej den pošle digest, co se děje novýho. V průběhu mu dáváte kdykoliv zpětnou vazbu a digest si tak ladíte. Mají týden trial, já už jsem za a rozhodla jsem se pro placenou verzi, i když jsem si vytvořila vlastní digest - je to prostě pohodlnější a za 2 stovky mi to stojí :)) navíc má hrozně příjemnou personality, je vtipnej. https://noscroll.com/"
+          },
+          {
+            "time": "17:48",
+            "author": "člen komunity",
+            "text": "Namasté. 🙏 Možná více skupin?"
+          },
+          {
+            "time": "17:53",
+            "author": "člen komunity",
+            "text": "Možná by stačil tip jak si WA napojit na své LLM. Me se to zatím jennechtelo dohledávat.\nKaždý by si to pak přizpůsobil jak potřebuje.\n🤔"
+          },
+          {
+            "time": "17:55",
+            "author": "člen komunity",
+            "text": "Vím, že se mohu zeptat AI. Rad bych přeskočil fázi mnoha polofunkčních verzí a iterací"
+          },
+          {
+            "time": "19:11",
+            "author": "člen komunity",
+            "text": "Ahoj, chtěla jsem se zeptat, jestli je tady někdo, kdo by mi byl schopen udělat security audit aplikace před ostrou produkcí.\nMomentálně mi aplikaci testuje patnáct lidí. Ale chtěla bych jí pustit víc do světa a vzhledem k záludnostem vibecodingu si teď úplně netroufám vzít na triko veškerá rizika bez toho, aby se mi na to někdo pořádně podíval.\nZatím na mě na LI vykoukl Ondřej Hájek (možná tady i je?😀), který má vibeaudit.cz, tak přemýšlím, jestli investovat do toho nebo ještě zvážit možnosti. 😊 Moc díky za případné tipy a rady. 🙏"
+          },
+          {
+            "time": "19:24",
+            "author": "člen komunity",
+            "text": "https://grovetechai.com/scanner"
+          },
+          {
+            "time": "19:26",
+            "author": "člen komunity",
+            "text": "Vibe coding scan jednou za mesic free"
+          },
+          {
+            "time": "19:33",
+            "author": "člen komunity",
+            "text": "Diky, ja na tohle úplně zapomněla. Na weby jsem doteď používala, tak zkusím i na app. 🙏"
+          },
+          {
+            "time": "19:40",
+            "author": "člen komunity",
+            "text": "A to je fakt spolehlive? Ta stranka sama o sobe vypada taky jako produkt petiminutoveho vibecodingu. 😁"
+          },
+          {
+            "time": "19:52",
+            "author": "člen komunity",
+            "text": "Myslis ten vibeaudit?"
+          },
+          {
+            "time": "20:21",
+            "author": "člen komunity",
+            "text": "Ano"
+          },
+          {
+            "time": "20:30",
+            "author": "člen komunity",
+            "text": "Já s tímhle nástrojem nemám moc dobrou zkušenost, výsledky auditu byly v mnoha věcech úplně mimo"
+          },
+          {
+            "time": "13:58",
+            "author": "člen komunity",
+            "text": "Muzu se zeptat, proč Discord ne? (Viděl jsem někde zprávu kvůli usnadnění lidem přístup sem, ale když už si hrajeme se spoustou technologií, Discord už je jen krůček) Protože ten v podstatě všechny problémy už vyřešil a díky Webhooks je snadný ho napojit i jinam, tak by ti (a všem) mohlo sedět"
+          },
+          {
+            "time": "22:05",
+            "author": "člen komunity",
+            "text": "Discord je pro většinu \"starších\" nepřehledný. Au, to se dotklo i mě. 😬"
+          },
+          {
+            "time": "23:43",
+            "author": "člen komunity",
+            "text": "Hlasujem za Discord....\nZa mna argument, ze je menej znamy a ludia si musia zvykat na nieco nove v skupine, kde prave prichadzaju ludia, co chcu riesit nieco nove je irelevantny.\nA jasne, ze Discord bude pre drvivu vacsinu chvilu boj (aj pre mna bol), ale je vyrazne lepsi na roztriedovanie tem, co hoho zaujima....\nTu mi teraz vadi, ze hoci si vypnem na niektore skupiny notifikacie, ak tak sa mi na PC zobrazuju prijate nove spravy. Takze mi to narusa pracovny tok, lebo cez Whatupp komunikujem aj s klientami a potom si mysli, ze mi niekto nieco pise...\nZa mna Whatsupp na taketo nieco nie je udrzatelny. A vyhoda je prave v tom, ze Discord sa zvycajne pouziva vyhradne na zaujmove skupiny a nie na vykeciavane sa s klientami a s rodinou a potom sa komunikacia nemiesa..\nOsobne mam pre kazu aplikaciu v mobile nastavene aj ine pipnutie, takze viem uz len podla zvuku, ci sa musim na mobil pozriet alebo nie."
+          },
+          {
+            "time": "00:07",
+            "author": "člen komunity",
+            "text": "Nejvyšší přínos vidím v možnosti vytvářet vlákna ze zpráv, takže se může diskuze stocit mimo a nekazí to flow původního kanálu. To my zde přijde jako hodně fajn feature (i kdybych měl všechny ostatní zahodit)"
+          },
+          {
+            "time": "06:28",
+            "author": "člen komunity",
+            "text": "Discord mám z donucení, a pokud k tomu dojde tak se holt se skupinou rozloucim :-)"
+          },
+          {
+            "time": "06:36",
+            "author": "člen komunity",
+            "text": "Discord bohužial nie, ďakujem, nebudem používať"
+          },
+          {
+            "time": "06:51",
+            "author": "člen komunity",
+            "text": "Jsem taky za Discord. Hlavně kvůli tomu rozřazování témat a možnosti dávat diskuze do threads."
+          },
+          {
+            "time": "06:52",
+            "author": "člen komunity",
+            "text": "Pro větší komunity je Discord daleko vhodnější už díky možnosti tvořit vlákna. V rámci digi hygieny občas nesleduju WA delší dobu a jen v MTF se mi nastackují desítky zpráv, které potom musím všechny projet."
+          },
+          {
+            "time": "09:07",
+            "author": "člen komunity",
+            "text": "Dobrá alternativa k Discordu, která je víc vanilla a schroupatelná pro víc lidí, je Circle. Whatsapp je ale prostě pro každýho známý prostředí bez nutnosti instalace, navíc vyskakuje jako notifikace, takže Dana chápu, že se mu odsud nechce. Jen kvůli vláknům to není úplně výhodnej tradeof.\nJá třeba mám u všech konverzací mute a můj Claude Code přes Whatsapp MCP do všech konverzací průběžně nahlíží. :)"
+          },
+          {
+            "time": "09:08",
+            "author": "člen komunity",
+            "text": "Já bych si spíš počkal, až Meta dodělá vlákna i sem na Whatsapp, s komunitama udělali docela kus práce za poslední dobu."
+          },
+          {
+            "time": "09:09",
+            "author": "člen komunity",
+            "text": "nepřehledný ? nemyslím a říkám to jako \"starší\" :) Ale samozřejmě, každý to máme jinak."
+          },
+          {
+            "time": "09:15",
+            "author": "člen komunity",
+            "text": "Oni je více možností Slack(vypadá ale podobně jako discord) telegram.."
+          },
+          {
+            "time": "09:25",
+            "author": "člen komunity",
+            "text": "Slack maže historii, to je celkem opruz. Telegram je za mě úplně no go vzhledem k postavě zakladatele a pochybnému fungování.🤷‍♀️ Ale třeba Filip Dřímalka používá pro své komunity Circle, co tu byl zmíněn. Jen netuším, jak to je s pricingem."
+          },
+          {
+            "time": "10:07",
+            "author": "člen komunity",
+            "text": "Circle OK, DIscord lepší, jedu na něm i komunikaci se svým “Jarvis” bootem."
+          },
+          {
+            "time": "10:56",
+            "author": "člen komunity",
+            "text": "Obávám se, že zaměření i tohoto chatu bude za chvíli nad můj rámec chápání a znalostí, takže se asi stejně odpojím. Jsem tu pro lidštější přístup např. k využití Claude a ne zabřednutí do technolgických vrstev, takový nadšenec nejsem. Čas u kompu i mobilních zařízení ukrajuje čas z mýho reálnýho života, takže se snažím, na rozdíl asi od většiny přispěvatelů o co největší udržitelný odstup. Máte to tady někdo stejně?"
+          },
+          {
+            "time": "11:10",
+            "author": "člen komunity",
+            "text": "Já osobně se fakt snažím to projíždět jednou denně. Ale vlastně hledám golden nuggets. Nějaké opravdu dobré hacky, odkazy, tipy na něco, co mi sedne. Občas vidím fajn inspiraci. Ale už tu i výtvory ostatních tak často nejsou… Celkově všechny ty chaty, jejich frekvence atd… trochu to naráží obecně i na omezování mého informačního overloadu…. Byl jsem tu jeden z prvních. Nechce se mi, ale zvažuji utlumení. Možná si navibecodím nějaké shrnutí jednou týdně 🙂"
+          },
+          {
+            "time": "14:24",
+            "author": "Daniel",
+            "text": "Jj, už to skládám, udělám první demo a můžeme to pak posouvat. Díky!"
+          },
+          {
+            "time": "14:28",
+            "author": "Daniel",
+            "text": "Díky moc všem za ty podněty ohledně platformy. Byl jsem teď půlden pryč na školení a pročetl jsem si to zpětně.\nPlatformu měnit nechci, chci zůstat na WA, i když jsem si vědom silných stránek Discordu, Circle apod. Sám je používám. Už když jsem to startoval, bylo na stole několik kanálů, mezi kterými jsem se rozhodoval a WA vyhrál.\nTak, prosím, pokračujme ve sdílení inspirace a toho, co nám pomáhám v (nejen) digi produktivitě.\nDíky moc. :)"
+          },
+          {
+            "time": "14:47",
+            "author": "člen komunity",
+            "text": "@člen A podělil byste se pak prosím s tím shrnutím? Taky nestíhám vše číst a taky bojuju s informačním overloadem 😅"
+          },
+          {
+            "time": "14:48",
+            "author": "člen komunity",
+            "text": "Tak jestli to připravuje Dan, určitě to udělá lépe než já a bude to pro všechny. Navíc myslím, že každý hledáme něco jiného, takže pro moji vlastní sumarizaci by to dost pravděpodobně vypadalo jinak než pro Vaši."
+          },
+          {
+            "time": "14:49",
+            "author": "člen komunity",
+            "text": "Supr. Tak doufám, že to bude dashboard. Možná by se tam daly filtrovat zájmy členů, aby mu to našlo relevantní extrakty 🙂"
+          },
+          {
+            "time": "14:52",
+            "author": "člen komunity",
+            "text": "Máte pravdu, přehlídla jsem Danovu zprávu. Prostě overload že všech stran 😅"
+          },
+          {
+            "time": "10:43",
+            "author": "člen komunity",
+            "text": "Ja mam cely virtualni management, ktery orchestruje COO. Virtualni HR reditelku jsem jeste nechal nahirovat behavioralniho ekonoma, art-directora na hlidani vystupu a pravnika se specializaci na ceske obchodni pravo :) Nekdy rikaji blbosti, ale vetsinou naopak prinesou pohled, ktery me nenapadnul."
+          },
+          {
+            "time": "11:23",
+            "author": "Daniel",
+            "text": "Tak mám zase nad čím přemýšlet. Díky moc, @člen & @člen."
+          },
+          {
+            "time": "11:33",
+            "author": "člen komunity",
+            "text": "Az zkouknu ten tvuj webinar, necham HR doplnit tym jeste o Gamrota :)"
+          },
+          {
+            "time": "11:37",
+            "author": "člen komunity",
+            "text": "Gamrota nebrat, je to pedant. Už jsem ho smazal, nedalo s e to s tím. Furt chtěl něco vylepšovat!"
+          },
+          {
+            "time": "11:37",
+            "author": "člen komunity",
+            "text": "Taky mam sam sebe zagentizovanyho, kdyz jdu spat, at agenti necekaj na \"Human-in-the-loop\" do rana :)\n> # TOM Agent\n> **Slug:** `tom-proxy`\n> **Order:** 95\n> **API:** `aiworkflow/v1` · `AgentDefinition`\n> ## Role\n> Zástupný Human-in-the-loop agent reprezentující Tomášův styl rozhodování, oponentury a prioritizace.\n> ## Mission\n> Zastupuj Tomáše jako decision a review proxy. Vyhodnocuj návrhy ostatních agentů podle reálné použitelnosti, business a technické hodnoty, dotaženosti a poměru value/effort. Koriguj příliš obecná, marketingová nebo nepraktická řešení.\n> ## Gallup profil\n> **Domény:** Strategic Thinking + Executing\n> **Talenty:** Strategic, Analytical, Achiever, Responsibility, Futuristic, Learner, Maximizer\n> **Strategic** — rychle rozlišuje mezi slepými cestami a použitelnými směry\n> **Analytical** — hledá logiku, důkazy, slabá místa a nekonzistence\n> **Achiever** — tlačí výstup do dotažené a použitelné podoby\n> **Maximizer** — nechce průměrné řešení, ale co nejlepší prakticky použitelnou verzi\n> ## Primary inputs\n> Výstupy ostatních agentů k review\n> Kontext projektu a business omezení\n> Rozpracované dokumenty, návrhy nebo prezentace\n> ## Required outputs\n> **Verdikt:** `ready` / `needs refinement` / `fundamentally weak`\n> Pojmenování slabých míst a chybějících částí\n> Návrh zpřesnění, zkrácení nebo restrukturalizace\n> Konkrétní next step nebo rovnou použitelná verze výstupu\n> ## Handoff targets\n> Orchestrator\n> Creative\n> Content Writer\n> Libovolný agent, jehož výstup potřebuje oponenturu nebo rozhodnutí\n> ## Quality gate\n> [ ] Výstup má jasný účel a cílového uživatele\n> [ ] Není vágní, marketingový ani teoretický bez vazby na praxi\n> [ ] Slabá místa jsou pojmenována napřímo\n> [ ] Verdikt je explicitní (`ready` / `needs refinement` / `fundamentally weak`)\n> [ ] Výstup by Tomáš mohl vzít a použít bez zásadního přepracování\n> ## Ask-first triggers\n> K čemu je to reálně dobré?\n> Je tohle použitelné v praxi, nebo to jen dobře zní?\n> Co chybí, aby se to dalo rovnou použít?\n> ## Extra rules\n> Nejsi pasivní schvalovač. Jsi aktivní zástupce Tomáše pro rozhodování a oponenturu.\n> Bez zbytečné omáčky a korporátního balastu.\n> Preferuj formulace, které lze rovnou vložit do dokumentu nebo zadání.\n> Odmítej marketingové fráze bez obsahu a výstupy bez priorit a bez jasného doporučení.\n> ## Lore contract\n> Pokud projekt používá `~/.lore/`:\n> **Čtení:** `grep -r ~/.lore/`\n> **Zápis:** výhradně přes `lore new <typ> \"<název>\"`\n> **Zakázáno:** přímý `git commit` do `~/.lore/`\n> **Typy a destinace:**\n> | Typ | Cíl |\n> |---|---|\n> | `gotcha`, `heuristika`, `principle`, `lesson` | `lessons/` |\n> | `workflow`, `ritual` | `processes/` |\n> | `client`, `project` | `clients/` |"
+          }
+        ]
+      },
+      {
+        "slug": "vibe-coding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "15:14",
+            "author": "člen komunity",
+            "text": "Různě experimentuju, teď zkouším regolo.ai. Open source modely běžící lokálně v EU. Teď mám zvolenou gemma4, není tak chytrá, ale ani tak hloupá.\nNa claude Code zatím stále Opus 4.6. Na deep work. Moje práce není tolik kódu jako spíš drobné změny v infra tak, aby to nic z desítek závislostí nerozbilo.\nJeště jsem nezkoušel ChatGPT subscripci ale podle toho co píšete asi zkusím, přinejmenším bych na to mohl napojit hermese přímo.\nTady mi trochu vadí přístup Anthropicu, přes subscripci jen nativní nástroje, takže ač je hermes subjektivně lepší harness, tak jen API. Zkoušel jsem, moc nákladné."
+          },
+          {
+            "time": "15:46",
+            "author": "Daniel",
+            "text": "Máte v Claude Code nějaký “bye” skill? Pomáhá mi to nezapomínat na věci, dávám ho místo /exit. Pokud něco takového máte, co tam máte navíc? Případně jak jinak to řešíte?\n*Můj /bye skill*\n1. Najde aktuální git repo\n2. ⁠Zkontroluje uncommitted soubory + neodeslané commity\n3. ⁠Pokud projekt nemá remote, nabídne vytvoření GitHub repo\n4. ⁠Je-li vše čisté, řekne “projekt je uložený”\n5. ⁠Jinak ukáže co čeká a zeptá se, jestli to vyřešit\n6. ⁠Commitne (čeká na souhlas + název)\n7. ⁠Pushne (čeká na souhlas)\n8. ⁠Zeptá se, jestli něco patří do second brainu\n9. ⁠Řekne ”hotovo, /exit”\nDíky!"
+          },
+          {
+            "time": "16:05",
+            "author": "člen komunity",
+            "text": "Mám nakonfigurovaný mempalace a používám /save aby tam claude uložil co jsme udělali, objevili apod.\nMám na serveru několik projektů, každý v rámci mempalace zapisuje do své části. Muj hlavní agent čte pak skrze všechny co se dělo.\n/save je podobně definovaný jako /exit jen na mempalace a ne git."
+          },
+          {
+            "time": "16:06",
+            "author": "člen komunity",
+            "text": "Zároveň mám hook, který každých 15 kroků udělá /save automaticky."
+          },
+          {
+            "time": "17:34",
+            "author": "člen komunity",
+            "text": "Mám /wrap - projde si celou session, co je nový a důležitý zpracuje a zatridi jako novou obsidian note, co je menší uloží do příslušný note/memory/claude.md. Navrhne a vytvoří tasky do Things s next steps, případně aktualizuje Notion nebo HTML Dashboard. Na konci ještě zapíše jednu větu o tom, co jsme dělali, do poznámky v obsidianu, kterou každej tejden kontroluje a co se opakuje víckrát pak přetváříme na skill"
+          },
+          {
+            "time": "17:41",
+            "author": "Daniel",
+            "text": "Boží inspirace. Děkuju!"
+          },
+          {
+            "time": "18:53",
+            "author": "člen komunity",
+            "text": "Já to mám rozdělené podle povahy věci:\nProjektové věci → muj system-architect skill:\nKaždý projekt má vlastní strukturu: master brief, architecture map, session log a project-state.json. Na konci session skill provede SESSION CLOSE — shrnutí co jsem udělal, aktualizuje statusy komponent, zapíše do session logu a commitne strukturovanou zprávou. Git jako stavební deník, nikdy necommituji manuálně.\nDůvod proč jsem nešel cestou jednoduchého /bye je že skill zároveň drží přehled přes všechny projekty — vidí závislosti, hlídá kdy jeden projekt blokuje jiný a při SESSION CLOSE aktualizuje centrální registry. Takže na začátku každé session vím nejen kde jsem skončil v tomhle projektu, ale i co se děje jinde.\nNeprojektové věci → idea-inbox + triage\nCokoliv co není součástí existujícího projektu jde do idea-inboxu. Pak to posuzuje triage skill — vrátí verdict NOW / BUILD / LATER / VAULT / KILL / DELEGATE. Teprve po triáži věc dostane domov: projekt, wiki, nebo archiv.\nTakže nemám jeden /bye — mám SESSION CLOSE pro projekty a idea-inbox + triage pro vše ostatní.\nJak to máte vy? Hlavně mě zajímá jak hlídáte průběh projektů — jestli nějak sledujete závislosti mezi nimi nebo každý projekt žije samostatně?"
+          },
+          {
+            "time": "10:11",
+            "author": "člen komunity",
+            "text": "Jak máš napojené Things? Já přemýšlím, jestli nepřejít na Todoist, který už má konektor pro Claude a pracuje na konektoru pro ChatGPT."
+          },
+          {
+            "time": "13:06",
+            "author": "člen komunity",
+            "text": "To je na tom nejvtipnější, nijak 😃 řekla jsem claudovi, ať to nějak vymyslí a připojuje se tam sám přes Apple script. Moc mu nejde dávat tasky do konkrétních projektů, ale to mi nevadí, hází je většinou do inboxu a já si je odtamtud rozházím. Zvládá přiřadit i tagy a deadlines"
+          },
+          {
+            "time": "13:08",
+            "author": "člen komunity",
+            "text": "Díky moc, zkusím."
+          },
+          {
+            "time": "14:03",
+            "author": "člen komunity",
+            "text": "Ahoj, mám čekají mě za nedlouho státnice a napadlo mě využít Soniox a udělat si vlastní NotebookLM s hlasovým vstupem/vystupem, pro zefektivnění učení.\nJsem si jistý že je tu spousta lidí, co už něco takového má a tak mě zajímají vaše zkušenosti (jestli je to skutečně použitelný, kolik to reálně stojí, jak je to postavený atp.), protože to my žádné LLMko nepopíše 😅\nMůžete do mě hustit konkrétní názvy a technologie :)"
+          },
+          {
+            "time": "15:14",
+            "author": "člen komunity",
+            "text": "Malé radosti dne: převedla jsem svůj web z Lovable. Teď už na něm můžu vyšívat jen s Claudem a GitHubem. Pro všechny, kteří z toho mají bobky, byla to otázka pár hodin :)\nVlna platím jen Claude. Jdu si hrát se svou knowledge base v Obsidianu. Tak ať vám to vyšívá při sobotě. :) To jen mý radosti a vzpruha pro každýho, kdo váhá."
+          },
+          {
+            "time": "15:17",
+            "author": "člen komunity",
+            "text": "Sobota, venku tricet, lidi na plovarnach a par blaznu buildi doma ve svych slujich - vcetne me ;-)"
+          },
+          {
+            "time": "15:18",
+            "author": "člen komunity",
+            "text": "Well :)) s pivkem, neber to Jiří :) cheers"
+          },
+          {
+            "time": "15:19",
+            "author": "člen komunity",
+            "text": "Dobře ty 😁 Já vyšívám s CC vymazlenou webovou aplikaci na Projekty elektro.. Ale za chvíli cheesecake, káva a později brusle 🤓"
+          },
+          {
+            "time": "15:21",
+            "author": "člen komunity",
+            "text": "Fůha. Paráda! Tak nahoď pak update, jak se daří. Ať nakouknu třebas. Užívej, ráda bych řekla brusle. Ale mám: raději claude, ne brusle :D"
+          },
+          {
+            "time": "15:24",
+            "author": "člen komunity",
+            "text": "Jedu na lokálu, ven to zatím pouštět nebudu, ale udělám screeny když tak.. Nebo nechám Clauda udělat přehled funkcí, co to všechno umí.. A jako fakt toho není málo 😀"
+          },
+          {
+            "time": "15:26",
+            "author": "člen komunity",
+            "text": "💪yes, rada mrknu takhle ☺️"
+          },
+          {
+            "time": "15:36",
+            "author": "člen komunity",
+            "text": "Ladím funkce a provoz na reálných datech, tak pak dám vědět 🤓 A ty dej taky vědět, jak jde sobotní vyšívání 🤭"
+          },
+          {
+            "time": "15:37",
+            "author": "člen komunity",
+            "text": "Přesunula jsem se do vytváření přepisů z mých podcastů se Soniox :) tohle je nyní pro mě priorita número uno. Tak si držím palce :)"
+          },
+          {
+            "time": "15:45",
+            "author": "člen komunity",
+            "text": "Projekty elektro? Tome jako stavaře zajímá, já jsem před časem dělal spolu na výpočet rizik, ale nedodelal"
+          },
+          {
+            "time": "15:50",
+            "author": "člen komunity",
+            "text": "Komplexní systém pro Projekty elektro > Zakázky, ekonomika, to-do listy, denní záznamy, adresář, reporty, výkazy práce, výkazy víceprací.. A mnohem víc.."
+          },
+          {
+            "time": "16:04",
+            "author": "člen komunity",
+            "text": "Takže CRM s něčím navíc🙂, až to budeš mít postavené rád se podivam"
+          },
+          {
+            "time": "16:18",
+            "author": "člen komunity",
+            "text": "Pak jsem měl vtipné dostaveníčko s iDokladem.. Dotaz na podporu, pak dotazník na spokojenost.. Tak jsem jim napsal, že jsem nespokojený a že si v době VC docela troufají 😃 Funkce, které bych rád, nemají dostupné v mém placeném tarifu a připlácet nebudu.. Tak jsem s Codexem za hodinu a půl postavil systém na fakturace, kde vše, co potřebuju, mám 😈 Zkusím to ještě s CC, ale i tak je výsledek boží.."
+          },
+          {
+            "time": "16:22",
+            "author": "člen komunity",
+            "text": "Tohle jsem si nechal vyrobit při řízení v autě... Meditace Vibe codingem 🤣\nhttps://claude.ai/public/artifacts/cda7d12e-7e1d-4882-bed9-66476b761d01"
+          },
+          {
+            "time": "16:22",
+            "author": "člen komunity",
+            "text": "Takže, kdo tu váhal a potřeboval pracovat s contentem a dělat přepisy s časovými značkami, rozpoznávat mluvčí a formátovat dle vlastní potřeby jako já.\n30 minut a mám hotovo.\n1/ Skript vytáhne z mp4 audio.\n2/ Přepíšem se Soniox.\n3/ Skript stáhne výsledek a naformátuje ho dle mých potřeb.\n4/ uloží do Obsidianu. A můžu s tím pracovat.\nJdu smazat předplatný Turboscribe :) Ciao :)"
+          },
+          {
+            "time": "18:07",
+            "author": "člen komunity",
+            "text": "Lovable a podobné nástroje už nedávají smysl, že? To měly jepičí život…"
+          },
+          {
+            "time": "18:12",
+            "author": "člen komunity",
+            "text": "Vůbec. V podstatě žádný z nástrojů, který jsem používala. Lovable, Turboscribe, Canva. Vše si dokážu vytvořit, aby fungovalo tak, jak potřebuju já :) je to boží :)"
+          },
+          {
+            "time": "18:20",
+            "author": "člen komunity",
+            "text": "I Canvu? Jak? Na editaci grafiky je supr. A cenově ok. Jedu kombo Canva + Affinity a těším se až ukončím úplně Adobe (kde mám teda už 10+ let studentskou cenu naštěstí 😅)"
+          },
+          {
+            "time": "18:28",
+            "author": "člen komunity",
+            "text": "Canvu mám nyní na programu, takže řeknu následně. Ale ano, půjde to. To vím jistě. Všechny placený nástroje přetavím ve svý nástroje :) Pro mé využívání, jak potřebuju já. :) dám vědět."
+          },
+          {
+            "time": "14:26",
+            "author": "člen komunity",
+            "text": "Ahoj, jen se jdu podělit s mým aktuálním pokusem. Když se to tu zakládalo, tak jsem zmiňovala, že bych moc ráda nějakou ultimátní appku, která po stisknutí akčního tlačítka na iPhone nahraje, co říkám a zvládne to správně zařadit (úkol do úkolů, nápady do nápadů atd.). Tak dlouho jsem nad tím prokrastinovala, až jsem si teď o víkendu uvědomila, že to jde vlastně celkem jednoduše 😃\nS Codexem (Claude Code se včera nechtělo moc přemýšlet) jsem si nechala vytvořit návod na zkratku, která s pomocí OpenAI API přepíše, co říkám. Jde to i jednodušeji s pomocí Dictate Text, ale Apple v tomhle tu češtinu prostě nechytá tak dobře. Ten přepis se mi v mobilu rovnou pošle do Claude jako nový chat. V něm jsem si udělala skilly zapisovac-ukolu, zapisovac-napadu a zapisovac-mouder. Úkoly jsou přes konektor napojené na Todoist, nápady a moudra na Notion. Takže řeknu buď \"zapiš mi úkol\" nebo \"mám nápad\" nebo \"mám tu citát z knížky, článku, podcastu\" a claude už pak víc, co s tím má dělat.\nMožná by to šlo i jedním skillem, ale nechci ho překombinovat. Skills k tomu určitě i nějaké přibudou pro jiné využití. @člen mi včera dala inspiraci zkusit to probojovat i s mými milovanými Things. A samozřejmě by to bylo ještě jednodušší, kdybych měla 24h aktivní comp a mohla dělat s Code nebo Coworkem, ale to zatím vynechávám.\nKaždopádně zkouším první den a zatím jsem nadšená. To tření se zapisováním aktuálních věci je pryč. Těším se, až si to budu dál zjednodušovat, ale i tohle už je skvělé.\nBtw, až při přípravě tohohle jsem si všimla, že Claude neumí češtinu ve voice control a voice chat. To by to samozřejmě zjednodušilo ještě víc."
+          },
+          {
+            "time": "15:26",
+            "author": "člen komunity",
+            "text": "Ty přepisy teda posíláš do Claude appky? Máš ji nějak synchronizovanou s terminálem? Zni to parádně, ale už všechno dělám jen v terminálu a neumím si představit jak ho do toho napojit"
+          },
+          {
+            "time": "15:44",
+            "author": "člen komunity",
+            "text": "jj, zatím je posílám do klasického chatu v appce. Ale myslím, že pro vás, co jedete v terminálu, případně komunikujete přes Telegram, by to asi mohlo být ještě jednodušší, ne?"
+          },
+          {
+            "time": "16:19",
+            "author": "člen komunity",
+            "text": "A chapu spravne, ze ten chat v Claude.ai potom pouzije spravny Skill a zaroven je ten chat napojeny na Notion a Todist pres konektory, takze dokaze zaroven rovnou i ten zapis “vykonat”. Je to tak?\nZni to paradne, taky chci neco podobneho zprovoznit, ale mam trochu “rozhodovaci paralyzu”, protože určitě existuje mnoho různých způsobů, jak to udělat, a já určitě nevyberu ten správný. 😂 Každopádně moc díky za inspiraci, nejlepší cesta asi je se do toho vrhnout. Při nejhorším si člověk nabije hubu a něco se naučí, a příště to udělá lépe."
+          },
+          {
+            "time": "16:27",
+            "author": "člen komunity",
+            "text": "Je to tak. Skill s úkoly ví, že má jít do konektoru Todoist, skilly s Nápady a Moudry ví, že mají jít zapsat do konkrétní databáze přímo v Notion. Ráda bych to měla v Obsidianu, ale tam se do toho zatím netroufám pouštět, protože nemá konektor. Takže jsem to vyřešila tak, že když sedím u počítače, tak v Coworku zapnu skill uklid-inboxu, který mi to přehodí z Notion do Obsidianu. Tohle je vlastně asi největší \"nepříjemnost\" současného stavu, kterou bez terminálu asi nevyřeším."
+          },
+          {
+            "time": "16:28",
+            "author": "člen komunity",
+            "text": "Nebo jo a někdo mi to tu řeknete 😃"
+          },
+          {
+            "time": "16:29",
+            "author": "člen komunity",
+            "text": "Všimla jsem si, že obecně mám slepotu vůči jednodušším a plynulejším řešením, takže jsem vlastně děsně pyšná, že mi došlo, že můžu zapojit ty skilly a běžný Claude chat. 😂"
+          },
+          {
+            "time": "17:04",
+            "author": "člen komunity",
+            "text": "Obsidian nepotřebuje konektor, protože pracuje jen s lokálními soubory. Claude může psát přímo do MD souborů. Dodrží šablony, které používáš. Chce to samozřejmě úvodní sadu instrukcí pro práci v konkrétním vault. Není to však nic složitého."
+          },
+          {
+            "time": "17:18",
+            "author": "člen komunity",
+            "text": "Na telefonu? (iOS) - myslím že to nepůjde přímo… Claude nemůže zapisovat do obsidiánu."
+          },
+          {
+            "time": "17:27",
+            "author": "člen komunity",
+            "text": "Aha, unikl mi kontext. Na iOS jsem to ještě nezkoušel, protože pracuji s Claude Code přes remote-control.\nA když bude vault v iCloud?"
+          },
+          {
+            "time": "17:41",
+            "author": "člen komunity",
+            "text": "Právě že proto potřebuju Cowork nebo Code a aktivní přístup k těm md souborům. Mám to v iCloud, ale to nepomůže (nebo o tom nevím). Díky tomu iCloud mám přístup ke stejnému vaultu na obou svých počítačích, ale aktivně s ním jde pracovat jen na aktivním počítači."
+          }
+        ]
+      },
+      {
+        "slug": "webináře--workshopy",
+        "name": "Webináře & Workshopy",
+        "messages": [
+          {
+            "time": "17:42",
+            "author": "člen komunity",
+            "text": "přijdu, nasdílím, těším se na inspiraci"
+          },
+          {
+            "time": "17:48",
+            "author": "Daniel",
+            "text": "Pecka, píšu si a děkuju!"
+          }
+        ]
+      }
+    ]
+  }
+}
