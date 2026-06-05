@@ -137,6 +137,9 @@ function normalizeLevel(level) {
 const MONTHS_CS = ['ledna', 'února', 'března', 'dubna', 'května', 'června',
   'července', 'srpna', 'září', 'října', 'listopadu', 'prosince'];
 
+const MONTHS_CS_NOM = ['leden', 'únor', 'březen', 'duben', 'květen', 'červen',
+  'červenec', 'srpen', 'září', 'říjen', 'listopad', 'prosinec'];
+
 const MONTHS_CS_SHORT = ['led', 'úno', 'bře', 'dub', 'kvě', 'čvn',
   'čvc', 'srp', 'zář', 'říj', 'lis', 'pro'];
 
@@ -362,11 +365,13 @@ async function loadArchiveIndex() {
 async function showArchive() {
   await loadArchiveIndex();
   renderArchiveControls();
-  if (state.archiveCards.length > 0) {
+  if (state.archivePreset === 'custom' && state.archiveFrom && state.archiveTo) {
+    await loadArchiveDateRange(state.archiveFrom, state.archiveTo);
+  } else if (state.archiveCards.length > 0) {
     buildTopicChips(state.archiveCards, state.level);
     renderCards(state.archiveCards, 'cards-archive');
   } else {
-    await loadArchivePreset(state.archivePreset);
+    await loadArchivePreset(state.archivePreset || '30d');
   }
 }
 
@@ -988,7 +993,7 @@ function buildActivityCal(monthStr, cardCountByDate) {
   let html = '<div class="activity-cal">';
   html += '<div class="activity-cal-nav">'
     + '<button class="cal-nav-btn" id="cal-prev">&#x2039;</button>'
-    + '<span class="cal-month-label">' + MONTHS_CS[m - 1] + ' ' + y + '</span>'
+    + '<span class="cal-month-label">' + MONTHS_CS_NOM[m - 1] + ' ' + y + '</span>'
     + '<button class="cal-nav-btn' + (canGoNext ? '' : ' cal-nav-disabled') + '" id="cal-next">&#x203A;</button>'
     + '</div>';
 
@@ -1111,6 +1116,16 @@ async function renderStats() {
     el.querySelectorAll('.stats-top-card[data-id]').forEach(card => {
       card.addEventListener('click', () => openCard(card.dataset.id));
     });
+    el.querySelectorAll('.cal-day-active[data-date]').forEach(day => {
+      day.addEventListener('click', () => {
+        const date = day.dataset.date;
+        state.archiveCards = [];
+        state.archivePreset = 'custom';
+        state.archiveFrom = date;
+        state.archiveTo = date;
+        switchView('archive');
+      });
+    });
   } catch {
     el.innerHTML = '';
   }
@@ -1184,7 +1199,7 @@ function handleHash() {
 /* ===== FILTER EVENTS ===== */
 function onLevelChange(level) {
   state.level = level;
-  document.querySelectorAll('.level-tab').forEach(btn => {
+  document.querySelectorAll('.level-chip').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.level === level);
     btn.setAttribute('aria-selected', btn.dataset.level === level ? 'true' : 'false');
   });
@@ -1234,7 +1249,7 @@ function init() {
   registerSW().then(() => initPushBtn());
   loadVoteMap();
 
-  document.querySelectorAll('.level-tab').forEach(btn => {
+  document.querySelectorAll('.level-chip').forEach(btn => {
     btn.addEventListener('click', () => onLevelChange(btn.dataset.level));
   });
 
