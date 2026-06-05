@@ -2,6 +2,8 @@
 // SHA-256 of "MTF2026" — změň kód pomocí: python3 -c "import hashlib; print(hashlib.sha256('NOVYKOD'.encode()).hexdigest())"
 const GATE_HASH = '5b9b2870716de15d8a6174804647360b656a25c67b1be0703f1e695ff365384d';
 const GATE_TTL = 30 * 24 * 60 * 60 * 1000;
+const VAPID_PUBLIC = 'BCub7WYDQt5wX2Jj0HUUMhK-T8VATzn4rvfc108akt7VCh8qGd_rgw6lQRJGKPIAsBDrPHwt7pagUYia1WIyEYY';
+
 
 async function sha256(str) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
@@ -543,6 +545,46 @@ function openCard(cardId) {
   $('btn-show-transcript').dataset.date = dateStr;
   $('btn-show-transcript').style.display = dateStr ? '' : 'none';
 
+  // Vote
+  const voted = hasVoted(card.id);
+  const voteBtn = $('btn-vote');
+  voteBtn.classList.toggle('voted', voted);
+  fetchVoteCount(card.id).then(c => { $('vote-count').textContent = c || ''; });
+  voteBtn.onclick = async () => {
+    if (hasVoted(card.id)) return;
+    const count = await castVote(card.id);
+    $('vote-count').textContent = count || '';
+    voteBtn.classList.add('voted');
+    showToast('Díky za hodnocení!');
+  };
+
+  // Bookmark
+  const bm = $('btn-bookmark');
+  bm.textContent = isBookmarked(card.id) ? 'Uloženo ★' : 'Uložit ☆';
+  bm.onclick = () => {
+    const now = toggleBookmark(card.id);
+    bm.textContent = now ? 'Uloženo ★' : 'Uložit ☆';
+    showToast(now ? 'Uloženo' : 'Odebráno ze záložek');
+  };
+
+  // Similar cards
+  const sim = getSimilarCards(card, 3);
+  const simEl = $('overlay-similar');
+  if (sim.length) {
+    $('overlay-similar-cards').innerHTML = sim.map(c => `
+      <div class="similar-card" data-id="${esc(c.id)}">
+        <span class="similar-date">${c.source_date ? formatDateShort(c.source_date) : ''}</span>
+        <span class="similar-title">${esc(c.title)}</span>
+      </div>
+    `).join('');
+    simEl.classList.remove('hidden');
+    simEl.querySelectorAll('.similar-card').forEach(el => {
+      el.addEventListener('click', () => openCard(el.dataset.id));
+    });
+  } else {
+    simEl.classList.add('hidden');
+  }
+
   $('card-overlay').classList.remove('hidden');
   $('overlay-body').scrollTop = 0;
   document.body.style.overflow = 'hidden';
@@ -680,7 +722,7 @@ async function showTranscript(dateStr) {
 
 /* ===== NAVIGATION ===== */
 function switchView(viewName) {
-  ['today', 'archive', 'search', 'transcript'].forEach(v => {
+  ['today', 'week', 'archive', 'search', 'transcript'].forEach(v => {
     $(`view-${v}`).classList.toggle('hidden', v !== viewName);
   });
 
@@ -692,9 +734,222 @@ function switchView(viewName) {
 
   if (viewName === 'archive') {
     showArchive();
+  } else if (viewName === 'week') {
+    showWeek();
   } else if (viewName === 'search') {
     initSearch();
     setTimeout(() => $('search-input').focus(), 100);
+  }
+}
+
+
+/* ===== SERVICE WORKER ===== */
+async function registerSW() {
+  if (!('serviceWorker' in navigator)) return null;
+  try { return await navigator.serviceWorker.register('/sw.js'); } catch { return null; }
+}
+
+function urlBase64ToUint8Array(b64) {
+  const p = '='.repeat((4 - b64.length % 4) % 4);
+  const raw = atob((b64 + p).replace(/-/g, '+').replace(/_/g, '/'));
+  return new Uint8Array([...raw].map(c => c.charCodeAt(0)));
+}
+
+async function subscribePush() {
+  const reg = await navigator.serviceWorker.ready;
+  const sub = await reg.pushManager.subscribe({
+    userVisibleOnly: true,
+    applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC),
+  });
+  await fetch('/api/subscribe', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(sub.toJSON()),
+  });
+  return sub;
+}
+
+async function unsubscribePush() {
+  const reg = await navigator.serviceWorker.ready;
+  const sub = await reg.pushManager.getSubscription();
+  if (!sub) return;
+  await fetch('/api/subscribe', {
+    method: 'DELETE', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(sub.toJSON()),
+  });
+  await sub.unsubscribe();
+}
+
+async function initPushBtn() {
+  const btn = $('btn-push');
+  if (!btn || !('PushManager' in window) || !('serviceWorker' in navigator)) {
+    if (btn) btn.style.display = 'none';
+    return;
+  }
+  const reg = await navigator.serviceWorker.ready.catch(() => null);
+  if (!reg) { btn.style.display = 'none'; return; }
+  const sub = await reg.pushManager.getSubscription();
+  setPushBtnState(btn, !!sub);
+  btn.addEventListener('click', async () => {
+    btn.disabled = true;
+    try {
+      const current = await reg.pushManager.getSubscription();
+      if (current) {
+        await unsubscribePush(); setPushBtnState(btn, false); showToast('Notifikace vypnuty');
+      } else {
+        const perm = await Notification.requestPermission();
+        if (perm !== 'granted') { showToast('Přístup k notifikacím zamítnut'); return; }
+        await subscribePush(); setPushBtnState(btn, true); showToast('Notifikace zapnuty');
+      }
+    } catch { showToast('Nepodařilo se změnit nastavení'); }
+    finally { btn.disabled = false; }
+  });
+}
+function setPushBtnState(btn, active) {
+  btn.textContent = active ? 'Notifikace: ON — vypnout' : 'Zapnout notifikace o novém digestu';
+  btn.classList.toggle('push-active', active);
+}
+
+/* ===== BOOKMARKS ===== */
+function getBookmarks() {
+  try { return JSON.parse(localStorage.getItem('mtf_bookmarks') || '[]'); } catch { return []; }
+}
+function isBookmarked(id) { return getBookmarks().includes(id); }
+function toggleBookmark(id) {
+  let bm = getBookmarks();
+  const has = bm.includes(id);
+  bm = has ? bm.filter(b => b !== id) : [id, ...bm].slice(0, 300);
+  localStorage.setItem('mtf_bookmarks', JSON.stringify(bm));
+  return !has;
+}
+
+/* ===== VOTING ===== */
+function hasVoted(id) {
+  try { return JSON.parse(localStorage.getItem('mtf_votes') || '[]').includes(id); } catch { return false; }
+}
+function markVoted(id) {
+  try {
+    const v = JSON.parse(localStorage.getItem('mtf_votes') || '[]');
+    if (!v.includes(id)) localStorage.setItem('mtf_votes', JSON.stringify([id, ...v].slice(0, 500)));
+  } catch {}
+}
+async function fetchVoteCount(id) {
+  try { const r = await fetch('/api/vote?id=' + encodeURIComponent(id)); return (await r.json()).count || 0; }
+  catch { return 0; }
+}
+async function castVote(id) {
+  try {
+    const r = await fetch('/api/vote', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id }),
+    });
+    const j = await r.json();
+    markVoted(id);
+    return j.count || 0;
+  } catch { return 0; }
+}
+
+/* ===== SIMILAR CARDS ===== */
+function getSimilarCards(card, n = 3) {
+  if (!state.searchAll.length) return [];
+  const topics = new Set(getTopics(card));
+  return state.searchAll
+    .filter(c => c.id !== card.id && getTopics(c).some(t => topics.has(t)))
+    .sort((a, b) => (b.source_date || b.date || '').localeCompare(a.source_date || a.date || ''))
+    .slice(0, n);
+}
+
+/* ===== LAST 7 DAYS ===== */
+async function showWeek() {
+  $('cards-week').innerHTML = '';
+  show('loading-week');
+  hide('empty-week');
+  $('stats-section').innerHTML = '';
+
+  await loadArchiveIndex();
+  try {
+    const allDates = (state.archiveIndex?.dates || [])
+      .map(d => typeof d === 'string' ? d : d.date)
+      .sort().reverse().slice(0, 7);
+
+    const allCards = [];
+    await Promise.all(allDates.map(async ds => {
+      try {
+        let data = state.archiveCache[ds];
+        if (!data) { data = await fetchJSON('/data/archive/' + ds + '.json'); state.archiveCache[ds] = data; }
+        (data.cards || []).forEach(c => allCards.push({ ...c, source_date: c.source_date || ds }));
+      } catch {}
+    }));
+
+    // Populate searchAll for similar cards (additive)
+    allCards.forEach(c => { if (!state.searchAll.find(s => s.id === c.id)) state.searchAll.push(c); });
+
+    hide('loading-week');
+    if (!allCards.length) { show('empty-week'); return; }
+
+    buildTopicChips(allCards, state.level);
+    renderCards(allCards, 'cards-week');
+    renderStats();
+  } catch {
+    hide('loading-week');
+    show('empty-week');
+  }
+}
+
+/* ===== COMMUNITY STATS ===== */
+async function renderStats() {
+  const el = $('stats-section');
+  if (!el) return;
+  el.innerHTML = '<div class="stats-loading">Načítám statistiky…</div>';
+
+  try {
+    const allDates = (state.archiveIndex?.dates || []).map(d => typeof d === 'string' ? d : d.date);
+    let totalCards = 0;
+    const topicCounts = {};
+
+    await Promise.all(allDates.map(async ds => {
+      try {
+        let data = state.archiveCache[ds];
+        if (!data) { data = await fetchJSON('/data/archive/' + ds + '.json'); state.archiveCache[ds] = data; }
+        totalCards += (data.cards || []).length;
+        (data.cards || []).forEach(c => getTopics(c).forEach(t => { topicCounts[t] = (topicCounts[t] || 0) + 1; }));
+      } catch {}
+    }));
+
+    const topTopics = Object.entries(topicCounts).sort((a, b) => b[1] - a[1]).slice(0, 8);
+
+    let topVotedHtml = '';
+    try {
+      const r = await fetch('/api/top');
+      const raw = await r.json();
+      const cardMap = {};
+      allDates.forEach(ds => (state.archiveCache[ds]?.cards || []).forEach(c => { cardMap[c.id] = c; }));
+      const topVoted = raw.filter(({ id, count }) => cardMap[id] && count > 0).slice(0, 10)
+        .map(({ id, count }) => ({ card: cardMap[id], count }));
+      if (topVoted.length) {
+        topVotedHtml = '<div class="stats-section-title">Nejoblíbenější poznatky</div>'
+          + '<div class="stats-top-cards">'
+          + topVoted.map(({ card, count }) => `<div class="stats-top-card" data-id="${esc(card.id)}"><span class="stats-top-heart">♥ ${count}</span><span class="stats-top-title">${esc(card.title)}</span></div>`).join('')
+          + '</div>';
+      }
+    } catch {}
+
+    el.innerHTML = `
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-num">${totalCards}</div><div class="stat-label">poznatků v archivu</div></div>
+        <div class="stat-card"><div class="stat-num">${allDates.length}</div><div class="stat-label">dní s obsahem</div></div>
+        <div class="stat-card"><div class="stat-num">400+</div><div class="stat-label">členů komunity</div></div>
+      </div>
+      ${topTopics.length ? '<div class="stats-section-title">Nejčastější témata</div><div class="stats-topics">'
+        + topTopics.map(([t, n]) => `<div class="stats-topic-row"><span>${esc(t)}</span><span class="stats-topic-count">${n}×</span></div>`).join('')
+        + '</div>' : ''}
+      ${topVotedHtml}
+    `;
+
+    el.querySelectorAll('.stats-top-card[data-id]').forEach(el => {
+      el.addEventListener('click', () => openCard(el.dataset.id));
+    });
+  } catch {
+    el.innerHTML = '';
   }
 }
 
@@ -752,6 +1007,8 @@ function handleHash() {
     }
   } else if (hash === 'archive') {
     switchView('archive');
+  } else if (hash === 'week') {
+    switchView('week');
   } else if (hash === 'search') {
     switchView('search');
   } else {
@@ -788,8 +1045,11 @@ function rerenderCurrentView() {
   if (state.view === 'today' && state.today) {
     renderCards(state.today.cards || [], 'cards-today', state.today.resurfacing || null);
   } else if (state.view === 'archive' && state.archiveDate) {
+    if (state.archiveDate === 'all') { loadArchiveAll(); return; }
     const data = state.archiveCache[state.archiveDate];
     if (data) renderCards(data.cards || [], 'cards-archive');
+  } else if (state.view === 'week') {
+    showWeek();
   }
 }
 
@@ -799,6 +1059,7 @@ function init() {
   applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
   document.getElementById('btn-theme').addEventListener('click', toggleTheme);
 
+  registerSW().then(() => initPushBtn());
   $('header-date').textContent = formatDateLong(new Date().toISOString().slice(0, 10));
 
   document.querySelectorAll('.level-tab').forEach(btn => {

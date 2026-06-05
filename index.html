@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>(function(){var saved=localStorage.getItem('theme');var t=saved||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);})()</script>
-  <!-- Cloudflare Web Analytics — nahraď TOKEN hodnotou z Cloudflare dashboardu (Analytics > Web Analytics) -->
+  <!-- Cloudflare Web Analytics -->
   <!-- <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token":"DOPLNIT_TOKEN"}'></script> -->
 </head>
 <body>
@@ -82,6 +82,20 @@
         </div>
       </div>
 
+      <div id="view-week" class="view hidden">
+        <div class="week-push-row">
+          <button id="btn-push" class="btn-push">Zapnout notifikace o novém digestu</button>
+        </div>
+        <div id="cards-week" class="cards-grid"></div>
+        <div id="loading-week" class="loading-state hidden">
+          <div class="spinner"></div>
+        </div>
+        <div id="empty-week" class="empty-state hidden">
+          <p>Žádný obsah za posledních 7 dní.</p>
+        </div>
+        <div id="stats-section" class="stats-section"></div>
+      </div>
+
       <div id="view-archive" class="view hidden">
         <div id="archive-header" class="archive-header">
           <div id="archive-date-grid" class="archive-date-grid"></div>
@@ -127,12 +141,19 @@
     </footer>
 
     <nav class="bottom-nav" role="navigation" aria-label="Hlavní navigace">
-      <button class="nav-btn active" data-view="today" aria-label="Dnes">
+      <button class="nav-btn active" data-view="today" aria-label="Včera">
         <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/>
           <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
         </svg>
-        <span>Dnes</span>
+        <span>Včera</span>
+      </button>
+      <button class="nav-btn" data-view="week" aria-label="7 dní">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 3h18v4H3z"/>
+          <path d="M3 10h4v4H3zM10 10h4v4h-4zM17 10h4v4h-4zM3 17h4v4H3zM10 17h4v4h-4z"/>
+        </svg>
+        <span>7 dní</span>
       </button>
       <button class="nav-btn" data-view="archive" aria-label="Archiv">
         <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -167,8 +188,20 @@
           </svg>
         </button>
       </div>
-      <div id="overlay-body" class="overlay-body"></div>
+      <div id="overlay-body" class="overlay-body">
+        <div id="overlay-similar" class="overlay-similar hidden">
+          <div class="overlay-similar-title">Podobné poznatky</div>
+          <div id="overlay-similar-cards"></div>
+        </div>
+      </div>
       <div class="overlay-footer">
+        <button id="btn-vote" class="btn-vote">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          <span id="vote-count"></span>
+        </button>
+        <button id="btn-bookmark" class="btn-ghost">Uložit ☆</button>
         <button id="btn-share" class="btn-secondary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/>
@@ -177,7 +210,7 @@
           </svg>
           Sdílet
         </button>
-        <button id="btn-show-transcript" class="btn-ghost">Přepis dne →</button>
+        <button id="btn-show-transcript" class="btn-ghost">Přepis →</button>
       </div>
     </div>
   </div>

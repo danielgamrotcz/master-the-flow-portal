@@ -1,0 +1,6 @@
+name = "master-the-flow-portal"
+compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "MTF_DATA"
+id = "b19b4222ee52444f98cd0495fa919816"
