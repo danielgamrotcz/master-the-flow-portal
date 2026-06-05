@@ -146,10 +146,11 @@ function renderCardEl(card, isResurfaced = false) {
   const levelClass = LEVEL_CLASSES[level] || '';
   const typeColor = TYPE_COLORS[card.type] || '#808080';
   const sourceDate = card.resurfaced_from || card.source_date || card.date || '';
-
   const cardDate = card.source_date || card.date || '';
+  const topics = getTopics(card).slice(0, 5);
+
   const resurfacedBadge = isResurfaced
-    ? `<span class="resurfacing-badge">Z archivu · ${formatDateShort(sourceDate)}</span>`
+    ? `<span class="resurfacing-badge">Z archivu · ${formatDateShort(sourceDate)}</span>`
     : '';
 
   return `
@@ -163,12 +164,12 @@ function renderCardEl(card, isResurfaced = false) {
         ${resurfacedBadge}
         <span class="card-level ${levelClass}">${esc(level)}</span>
         <span class="card-type" style="color:${typeColor}">${esc(card.type)}</span>
-        ${getTopics(card).map(t => `<span class="card-topic">${esc(t)}</span>`).join('')}
       </div>
       <div class="card-title">${esc(card.title)}</div>
       <div class="card-excerpt">${esc(card.excerpt)}</div>
+      ${topics.length ? `<div class="card-topics">${topics.map(t => `<span class="card-topic">${esc(t)}</span>`).join('')}</div>` : ''}
       <div class="card-footer">
-        <span class="card-readmore">Číst dál ↓</span>
+        <span class="card-readmore">Číst dál ↓</span>
         ${cardDate ? `<span class="card-date">${formatDateShort(cardDate)}</span>` : ''}
       </div>
     </div>
@@ -492,7 +493,21 @@ function runSearch(query) {
     return;
   }
 
-  const results = state.searchIndex.search(q);
+  let results = state.searchIndex.search(q);
+
+  // Level filter
+  if (state.level !== 'all') {
+    results = results.filter(r => normalizeLevel(r.item.level) === state.level);
+  }
+
+  // Build chips from level-filtered results
+  buildTopicChips(results.map(r => r.item), 'all');
+
+  // Topic filter
+  if (state.topic !== 'all') {
+    results = results.filter(r => getTopics(r.item).includes(state.topic));
+  }
+
   if (results.length === 0) {
     show('empty-search');
     return;
@@ -520,12 +535,11 @@ function openCard(cardId) {
     ${getTopics(card).map(t => `<span class="card-topic">${esc(t)}</span>`).join('')}
   `;
 
+  const dateStr = card.source_date || card.resurfaced_from || card.date || '';
   $('overlay-title').textContent = card.title;
   const dateLabel = $('overlay-date-label');
   if (dateLabel) dateLabel.textContent = dateStr ? formatDateLong(dateStr) : '';
   $('overlay-text').innerHTML = bodyToHTML(card.body || card.excerpt || '');
-
-  const dateStr = card.source_date || card.resurfaced_from || card.date || '';
   $('btn-show-transcript').dataset.date = dateStr;
   $('btn-show-transcript').style.display = dateStr ? '' : 'none';
 
@@ -698,6 +712,8 @@ async function showTranscript(dateStr) {
 /* ===== NAVIGATION ===== */
 function switchView(viewName) {
   const prevView = state.view;
+
+  document.getElementById('site-header').classList.toggle('stats-mode', viewName === 'stats');
 
   ['today', 'week', 'archive', 'search', 'stats', 'transcript'].forEach(v => {
     const el = $(`view-${v}`);
@@ -1049,6 +1065,10 @@ function rerenderCurrentView() {
     if (data) renderCards(data.cards || [], 'cards-archive');
   } else if (state.view === 'week') {
     showWeek();
+  } else if (state.view === 'search') {
+    const q = $('search-input').value;
+    if (q.length >= 2) runSearch(q);
+    else buildTopicChips([], 'all');
   }
 }
 
