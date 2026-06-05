@@ -11,9 +11,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>(function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})()</script>
+  <!-- Cloudflare Web Analytics — nahraď TOKEN hodnotou z Cloudflare dashboardu (Analytics > Web Analytics) -->
+  <!-- <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token":"DOPLNIT_TOKEN"}'></script> -->
 </head>
 <body>
+
+  <!-- ===== GATE ===== -->
+  <div id="gate">
+    <div class="gate-inner">
+      <div class="gate-title">Master&nbsp;the&nbsp;<span class="gate-accent">Flow</span></div>
+      <p class="gate-desc">Portál je&nbsp;přístupný pouze členům komunity. Přístupový kód najdeš ve&nbsp;WhatsApp skupině.</p>
+      <div class="gate-form">
+        <input id="gate-input" class="gate-input" type="text" inputmode="text"
+          autocomplete="off" autocorrect="off" spellcheck="false"
+          placeholder="Zadej kód" maxlength="20">
+        <button id="gate-submit" class="gate-btn">Vstoupit</button>
+        <div id="gate-error" class="gate-error"></div>
+      </div>
+      <p class="gate-hint">Přístup zůstane uložen&nbsp;30&nbsp;dní.</p>
+    </div>
+  </div>
+
   <div id="app">
+
+    <div class="disclaimer-bar">AI sumarizace WhatsApp diskuzí komunity Master the Flow &mdash; není doporučení autora ani ověřený návod. Informace si ověřujte v&nbsp;originálních konverzacích i&nbsp;mimo skupinu.</div>
 
     <header id="site-header">
       <div class="header-top">
@@ -100,6 +121,14 @@
       </div>
 
     </main>
+
+    <footer class="site-footer">
+      <div>Autor: <a href="https://danielgamrot.cz" target="_blank" rel="noopener">Daniel Gamrot</a></div>
+      <div class="footer-links">
+        <a href="https://danielgamrot.cz" target="_blank" rel="noopener">danielgamrot.cz</a>
+        <a href="https://linkedin.com/in/danielgamrot" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </footer>
 
     <nav class="bottom-nav" role="navigation" aria-label="Hlavní navigace">
       <button class="nav-btn active" data-view="today" aria-label="Dnes">

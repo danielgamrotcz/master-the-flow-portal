@@ -1,3 +1,55 @@
+/* ===== GATE ===== */
+// SHA-256 of "MTF2026" — změň kód pomocí: python3 -c "import hashlib; print(hashlib.sha256('NOVYKOD'.encode()).hexdigest())"
+const GATE_HASH = '5b9b2870716de15d8a6174804647360b656a25c67b1be0703f1e695ff365384d';
+const GATE_TTL = 30 * 24 * 60 * 60 * 1000;
+
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function isAuthenticated() {
+  try {
+    const raw = localStorage.getItem('mtf_auth');
+    if (!raw) return false;
+    const { expires } = JSON.parse(raw);
+    return Date.now() < expires;
+  } catch { return false; }
+}
+
+function storeAuth() {
+  localStorage.setItem('mtf_auth', JSON.stringify({ expires: Date.now() + GATE_TTL }));
+}
+
+function initGate() {
+  if (isAuthenticated()) {
+    document.getElementById('gate').classList.add('hidden');
+    return;
+  }
+
+  const input = document.getElementById('gate-input');
+  const btn = document.getElementById('gate-submit');
+  const err = document.getElementById('gate-error');
+
+  async function tryUnlock() {
+    const code = input.value.trim().toUpperCase();
+    if (!code) return;
+    const hash = await sha256(code);
+    if (hash === GATE_HASH) {
+      storeAuth();
+      document.getElementById('gate').classList.add('hidden');
+    } else {
+      err.textContent = 'Nesprávný kód. Zkus to znovu.';
+      input.value = '';
+      input.focus();
+    }
+  }
+
+  btn.addEventListener('click', tryUnlock);
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') tryUnlock(); });
+  input.focus();
+}
+
 /* ===== THEME ===== */
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
@@ -673,6 +725,7 @@ function rerenderCurrentView() {
 
 /* ===== INIT ===== */
 function init() {
+  initGate();
   applyTheme(document.documentElement.getAttribute('data-theme') || 'dark');
   document.getElementById('btn-theme').addEventListener('click', toggleTheme);
 
