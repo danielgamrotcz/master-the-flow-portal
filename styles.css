@@ -273,10 +273,18 @@ a:hover { text-decoration: underline; }
 
 .card-meta {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: space-between;
   gap: 8px;
   margin-bottom: 10px;
+}
+
+.card-meta-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   flex-wrap: wrap;
+  flex-shrink: 0;
 }
 
 .card-level {
@@ -305,7 +313,6 @@ a:hover { text-decoration: underline; }
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 4px;
-  margin-top: 6px;
 }
 
 .card-topic {

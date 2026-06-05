@@ -191,13 +191,15 @@ function renderCardEl(card, isResurfaced = false) {
          tabindex="0"
          aria-label="${esc(card.title)}">
       <div class="card-meta">
-        ${resurfacedBadge}
-        <span class="card-level ${levelClass}">${esc(level)}</span>
-        <span class="card-type" style="color:${typeColor}">${esc(card.type)}</span>
+        <div class="card-meta-left">
+          ${resurfacedBadge}
+          <span class="card-level ${levelClass}">${esc(level)}</span>
+          <span class="card-type" style="color:${typeColor}">${esc(card.type)}</span>
+        </div>
+        ${topics.length ? `<div class="card-topics">${topics.map(t => `<span class="card-topic">${esc(t)}</span>`).join('')}</div>` : ''}
       </div>
       <div class="card-title">${esc(card.title)}</div>
       <div class="card-excerpt">${esc(card.excerpt)}</div>
-      ${topics.length ? `<div class="card-topics">${topics.map(t => `<span class="card-topic">${esc(t)}</span>`).join('')}</div>` : ''}
       <div class="card-footer">
         <span class="card-readmore">Číst dál ↓</span>
         <span class="card-footer-right">
