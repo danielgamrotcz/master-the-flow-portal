@@ -59,7 +59,7 @@ function applyTheme(theme) {
 }
 
 function toggleTheme() {
-  const current = document.documentElement.getAttribute('data-theme') || 'dark';
+  const current = document.documentElement.getAttribute('data-theme') || 'light';
   const next = current === 'dark' ? 'light' : 'dark';
   localStorage.setItem('theme', next);
   applyTheme(next);
@@ -726,7 +726,7 @@ function rerenderCurrentView() {
 /* ===== INIT ===== */
 function init() {
   initGate();
-  applyTheme(document.documentElement.getAttribute('data-theme') || 'dark');
+  applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
   document.getElementById('btn-theme').addEventListener('click', toggleTheme);
 
   $('header-date').textContent = formatDateLong(new Date().toISOString().slice(0, 10));
