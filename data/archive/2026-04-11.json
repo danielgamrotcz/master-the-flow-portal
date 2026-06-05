@@ -1,0 +1,106 @@
+{
+  "date": "2026-04-11",
+  "generated_at": "2026-06-05T07:01:08Z",
+  "stats": {
+    "messages": 9,
+    "groups": 2,
+    "members": 3
+  },
+  "cards": [
+    {
+      "id": "2026-04-11-01",
+      "source_date": "2026-04-11",
+      "topic": "Tři fáze práce s AI",
+      "excerpt": "Daniel popsal, že AI používá ve třech fázích: šikana (tvorba), pokládání otázek a ubývání odpovědí.",
+      "body": "Daniel popsal, jak se mu práce s AI přirozeně dělí na tři části. První je tvorba, které říká „šikana“: přesně ví, co chce, a Claude Code to udělá. Chatboty na tohle skoro nepoužívá. Druhá část jsou otázky. Agent si nejdřív přečte přepisy hovorů s klientem, projde starší kontext, udělá research, ale schválně nezačne hned něco automaticky tvořit. Nejdřív se Daniela ptá na věci, které z kontextu nezná. Třetí část je míň odpovědí a víc podnětů k přemýšlení. Čím víc Daniel AI používá, tím víc přemýšlí. Až tak, že si musel zavést rituály před spaním, aby nemyslel na terminálové karty."
+    },
+    {
+      "id": "2026-04-11-02",
+      "source_date": "2026-04-11",
+      "topic": "Vícepohledové prompting — hack od Dřímalky",
+      "excerpt": "Tip na vícepohledový prompting: nechte AI najít největší světové odborníky na dané téma a nasimulovat jejich pohledy.",
+      "body": "V diskuzi padl hack původně od Dřímalky: neptat se AI rovnou, ale nechat ji nejdřív najít největší světové odborníky na dané téma a pak nasimulovat jejich pohledy. Řešilo se, který model je na to nejlepší. Nejspíš Opus s extended thinking, ale zatím to nikdo neotestoval. Při simulaci víc expertů AI většinou začne rozdílnými názory, ale nakonec dojde ke společnému pojmenování věci."
+    },
+    {
+      "id": "2026-04-11-03",
+      "source_date": "2026-04-11",
+      "topic": "Occamova břitva v debugging",
+      "excerpt": "Postřeh z vibe codingu: nejjednodušší vysvětlení chyby bývá většinou správné. Inspirace z Dr. House.",
+      "body": "Padl postřeh ze světa vibe codingu: Occamova břitva na debugging. Když něco nefunguje, nejspíš za tím bývá ta nejjednodušší chyba. Inspirace přišla z epizody House MD. Místo lovení složitých příčin je lepší začít u té nejpřímočařejší možnosti."
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-03-20-05",
+    "type": "OTEVŘENÁ OTÁZKA",
+    "level": "Začátečník",
+    "topic": "Produktivita",
+    "title": "Nástroje znám, ale systém nemám",
+    "excerpt": "Víc lidí z komunity řeší stejný problém: znají spoustu nástrojů, ale nemají systém, kde začít a jak si je roztřídit. Možná právě tohle odděluje ty, kdo AI jen zkouší, od těch, kdo ji opravdu používají. Jak jste si ten systém našli vy?",
+    "body": "V diskuzi zaznělo něco, co možná řeší víc lidí v komunitě: „Nástroje znám, ale mám v tom hrozný chaos.“\n\nZnát nástroje a mít systém jsou dvě různé věci. Nástroje jsou jako suroviny v lednici. Systém je recept. Říká, v jakém pořadí je použít, na co a kdy.\n\nBez systému se snadno stane",
+    "že": "n- Víš o patnácti nástrojích, ale pravidelně používáš nula\n- Každý týden zkusíš něco nového, ale nic nevydrží\n- Nevíš, kde začít, takže nezačneš vůbec\n\nOtázka pro komunitu: Jak jste si k systému přišli? Měli jste přehled nástrojů předem, nebo jste začali s jedním konkrétním problémem a přidávali postupně? A co vám pomohlo se v tom neztratit?\n\nV reakci na tohle téma se připravuje přehled aplikací i online průvodce úrovněmi zaměřený na Claude Code, od základní konfigurace výš. Pokud ti tahle otázka rezonuje, dej vědět v diskuzi.",
+    "read_minutes": 2,
+    "source_date": "2026-03-20",
+    "resurfaced_from": "2026-03-20"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "05:01",
+            "author": "Daniel",
+            "text": "Z ranního přemýšlení… Zajímalo by mě, jestli to máte podobně nebo jsem úplně mimo.\n1) Šikana\n2) Pokládání otázek\n3) Čím dál tím míň odpovědi\n(to bylo moje využití digi nástrojů ve zkratce)\nŠikana je, když vím, co chci. Na to mám Claude Code. „Udělej mi tohle, takhle, v tomhle stylu, takhle appka, tenhle projekt, tohle uspořádání souborů, tenhle dokument pro tisk.“ OK, říkám tomu šikana, ale v podstatě jde o tvorbu. Do chatbotů už kvůli tomu téměř vůbec nechodím. Všechno, co potřebuju vytvořit, řeším tam.\nOtázky jsou, když nevím, kde začít. Nebo když vím, ale potřebuju dotáhnout detaily zadání, na které sám nepřijdu. Třeba nabídky pro klienty. Mám na to připraveného agenta, který si nejdřív přečte přepisy z hovorů s klientem, které pořizuju samozřejmě se svolením. Projede si historický kontext, udělá research tématu i samotného klienta přes Perplexity. Má toho hodně. Ale záměrně to neběží automaticky. Agent začne tím, že se mě ptá na věci, na které i přes všechen ten kontext nezná odpověď. Protože mám v hlavě myšlenky, které tam prostě nejsou a které nedokážu nebo spíš nechci neustále sypat dopředu. Chci do té nabídky dodat sebe. V danou chvíli, v daném čase a kontextu.\nA odpovědi? Ty čím dál míň. AI mi spíš dává spoustu podnětů k přemýšlení. Což je super. Akorát ten čas na přemýšlení si musíte vyhradit sami, ten nepřijde. A je to škoda, když lidi tupě kopírují výsledky z chatbotů, asistentů nebo agentů, aniž by se nad tím zastavili.\nVlastně čím víc AI používám, tím víc přemýšlím. Dokonce jsem musel zavést staré dobré rituály před usnutím, abych nemyslel na terminálové karty nebo tunění skills v Claude Code. Ale jako dobrý, zatím to funguje a když zrovna nemám zápal plic, spím fakt dobře.\nTak jen možná i námět pro vás – pokud to neděláte, zkuste to dneska na jedné věci, kterou řešíte. „Ptej se mě na otázky o [vaše téma], dokud ti neřeknu dost.“ A jestli budete mít sdílecí náladu, hoďte sem jednou větou, na čem jste to zkusili.\nPřípadně klidně k tomu tématu sem přilepte další vaše tipy."
+          },
+          {
+            "time": "06:39",
+            "author": "člen komunity",
+            "text": "Teď mě ještě napadla jede fajn hack k otázkám (nenapadla - viděl jsem u Dřímalky 😄 ). Když potřebuji na nějakou myšlenku, nápad, téma víc úhlů pohledu, tak řeknu něco ve stylu “ na téma XY identifukuj 5 největších světových odborníků  na toto téma a nech je vést mezi sebou krotickou panelovou diskuzi”. A pak je úžasné koukat jak spolu debatují a nespuhlasí spolu, místy se dohaduji 😃"
+          },
+          {
+            "time": "08:26",
+            "author": "člen komunity",
+            "text": "Dave, prosím a klasicky v Claude chat s opusem a extended thinking? nebo který model má v tomto konkrétně nejlepší výsledky? 🙂"
+          },
+          {
+            "time": "09:17",
+            "author": "člen komunity",
+            "text": "Pravděpodobně opus s extended. To jsem nijak netestoval :)"
+          },
+          {
+            "time": "15:41",
+            "author": "Daniel",
+            "text": "Zkoušel jsem to kdysi, produktivní témata samozřejmě. Zajímavý, jak to byl pokaždé stejný scénář. Na začátku se rozešli, aby na konci vymysleli společné pojmenování dané věci."
+          },
+          {
+            "time": "23:10",
+            "author": "člen komunity",
+            "text": "zahajeni_podnikani.html"
+          },
+          {
+            "time": "23:10",
+            "author": "člen komunity",
+            "text": "pruvodce_marmelady.html"
+          },
+          {
+            "time": "23:17",
+            "author": "člen komunity",
+            "text": "Tak to je hodne dobry 🙂"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "12:34",
+            "author": "Daniel",
+            "text": "Jeden postřeh z dnešní vibe coding session. Vzpomněl jsem si na House MD a díl „Occamova břitva“ – pokud pro nějaký jev existuje vícero vysvětlení, je lépe upřednostňovat to nejméně komplikované.\nDneska jsem řešil opravu chyby v Uttero, konkrétně při připojování a odpojování sluchátek. Padalo to, nefungovalo to. Trápili jsme se s tím několik dní, pinkali si odpovědi tam a zpátky a řešili záplaty. Vždycky to nějak fungovalo, ale pak jsme zjistili, že jen sem tam. Nebo že se rozhodilo něco jiného.\nAsi před 3 hodinami jsem si řekl, že to nechám navrhnout Claude Code úplně od začátku.\nA hádejte co? Vyšlo to.\nNěkdy prostě stojí za to to všechno zahodit, navrhnout úplně od začátku a pak to vyrobit znova."
+          }
+        ]
+      }
+    ]
+  }
+}

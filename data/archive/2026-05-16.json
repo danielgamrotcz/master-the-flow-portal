@@ -1,0 +1,102 @@
+{
+  "date": "2026-05-16",
+  "generated_at": "2026-06-05T07:41:44Z",
+  "stats": {
+    "messages": 7,
+    "groups": 2,
+    "members": 2
+  },
+  "cards": [
+    {
+      "id": "2026-05-16-01",
+      "source_date": "2026-05-16",
+      "topic": "Raycast pro laiky",
+      "excerpt": "Člen komunity popsal, že mu Raycast zjednodušil práci i bez znalosti programování – buď už v základu, nebo přes pluginy.",
+      "body": "Diskuze začala otázkou: co je Raycast a k čemu se hodí člověku, který není z IT? Filip shrnul hlavní funkce: rychlé spouštění aplikací a webů, snippety s placeholdery jako datum nebo jméno adresáta, správu oken, chytrou schránku s historií, emoji a color picker, kalkulačku, převody měn, překladač a stovky dalších integrací zdarma. Všechno se ovládá jednou klávesovou zkratkou. Jako první krok doporučil Danielovo video na LinkedInu."
+    },
+    {
+      "id": "2026-05-16-02",
+      "source_date": "2026-05-16",
+      "topic": "GPT a Perplexity na překlad posterů",
+      "excerpt": "Členka komunity ukázala kolegyni, jak pomocí GPT a Perplexity překládat konferenční postery. Prakticky, přímo v reálné situaci.",
+      "body": "Příklad z praxe: překlad odborných posterů z konference. Žádné složité nastavování, žádný kód. Stačilo vědět, jaký nástroj použít a jak se správně zeptat. Přesně takové využití se dá během pár minut ukázat i ostatním."
+    },
+    {
+      "id": "2026-05-16-03",
+      "source_date": "2026-05-16",
+      "topic": "Vibe coding sledují i totální laici",
+      "excerpt": "Ve skupině Vibe Coding se ozvali i členové, kteří pro to zatím nemají konkrétní využití, ale baví je sledovat zkušenosti ostatních.",
+      "body": "Vibe coding láká i lidi, kteří zatím nemají vlastní projekt. Sledují, co funguje ostatním, a čekají, až přijde jejich chvíle. Komunita jim dává prostor se rozkoukat, než dostanou vlastní nápad."
+    },
+    {
+      "id": "2026-05-16-04",
+      "source_date": "2026-05-16",
+      "topic": "Pojmenování souborů a adresářů ve vibe codingu",
+      "excerpt": "Filip sdílel video o tom, jak správně pojmenovávat soubory. Je to základní dovednost, podle které AI líp chápe strukturu projektu.",
+      "body": "Když začínáte s vibe codingem, názvy souborů a složek nejsou žádná drobnost. AI bere název souboru jako kontext — špatný název znamená horší výsledky. Filip sdílel video přímo pro lidi mimo IT, kteří s tím teprve začínají."
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-04-19-02",
+    "type": "INSIGHT",
+    "level": "Začátečník",
+    "topic": "AI agenti",
+    "title": "Sommelier rozjel pivovar z telefonu bez kódu",
+    "excerpt": "Šedesátiletý sommelier, který v životě nenapsal ani řádek kódu, si přes AI agenta postavil automatizovaný pivovar a funkční e-shop. Všechno jen z telefonu. Bez IT znalostí a bez týmu.",
+    "body": "Tohle je přesně ten příklad, u kterého si člověk řekne: „To snad ne.“ Jenže právě o takovém posunu teď mluvíme.\n\nSommelier neuměl programovat. Ani nemusel. S AI agentem mluvil normálně. Popsal mu, co chce, a agent zařídil zbytek. Výsledek? Funkční automatizovaný pivovar a e-shop.\n\nProč je to důležité i pro vás, když pivovar neplánujete? Protože technická bariéra mizí. Agenti mění to, co zvládne člověk bez technického zázemí.\n\nKdyž máte jasnou představu o výsledku a jste ochotní s agentem mluvit a průběžně ho opravovat, postavíte věci, na které byste ještě před rokem potřebovali vývojáře nebo celé IT.\n\nZačátek je jednoduchý. Popište, co chcete, jako byste to říkali kolegovi. Ne technicky. Řekněte, jaký má být výsledek. Co má existovat? Co to má dělat? Zbytek si agent zjistí sám.",
+    "read_minutes": 2,
+    "source_date": "2026-04-19",
+    "resurfaced_from": "2026-04-19"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "10:26",
+            "author": "člen komunity",
+            "text": "Souhlasím.\nChtěl jsem vždy na počítači kopec zjednodušení a urychlení, ale zdálo se mi to komplikované. A navíc to vyžadovalo znalosti programátora.\nRaycast mi z toho kopec věci nabídl buď v základu nebo v rámci dostupných pluginů.\nNebo si pomocí AI dam napsat jednoduchý Raycast skript, který udělá co potřebuji."
+          },
+          {
+            "time": "18:47",
+            "author": "člen komunity",
+            "text": "Můžete mi, prosím, velmi jednoduše vysvětlit,  co je to Raycast a na co bych ho jako laik mohla použít? Nebo na co je nejlepší ho využívat?\nDnes jsem volunteer kolegyní učila jak využít GPT chat a Perplexity k jednoduchému překladu posters z konference.\nDěkuji za tuto diskuzní skupinku,  většinou jsem ve skupinkách,  kam může vkládat pouze vedení skupiny."
+          },
+          {
+            "time": "18:49",
+            "author": "člen komunity",
+            "text": "Doporučuji mrknout na toto, co tu Dan nedávno sdílel\nhttps://www.linkedin.com/video/event/urn:li:ugcPost:7339207642931712001"
+          },
+          {
+            "time": "19:34",
+            "author": "člen komunity",
+            "text": "Funkcí je moc, zkusím stručně:\n- rychlé spouštění aplikací nebo jejich funkcí\n- rychlé spuštění konkrétních webů ve vybraném prohlížeči (individuálně)\n- snippets (uložené úryvky textu i s placeholdery (aktuální datum, jméno adresáta, ...)\n- ovládání oken aplikací (manipulace s nimi)\n- chytrý copy/paste s historií\n- emoji picker\n- color picker\n- kalkulačka a převody měn a jednotek\n- překladač\n- spouštění skriptů (díky AI jednoduché)\n- hledání souborů na zatížení i cloude storage\n- ovládání nástrojů přes CLI (příkazový řádek)\n- stovky dalších integrací zdarma na store (instalace na kliknutí)\nVše se spouští po zadání klávesové zkratky, jako spotloght a nebo ještě lépe přímo přes klávesové zkratky.\nRaycast má na YouTube hodně videí, včetně ukázek, jak to používají různí lidé (každý to používá trochu jinak). Začal bych však Danovým videem 👍."
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "17:49",
+            "author": "člen komunity",
+            "text": "me to treba fakt zajima…. sice pro ted nemam prakticke vyuziti, ale prijde mi skvele slyset, jak to pro vas funguje…"
+          },
+          {
+            "time": "18:20",
+            "author": "člen komunity",
+            "text": "Souhlas, mě jako zvědavce a zároveň totalniho laika zajímají taky vsechny aplikace/obory/použití/zkušenosti, i kdyz se mě to třeba přímo netýká 👍"
+          },
+          {
+            "time": "21:44",
+            "author": "člen komunity",
+            "text": "Tip na názvy souborů a adresářů pro ne-IT (protože ti asi vědí).\nNarazil jsem právě na povedené video k pojmenovávání adresářů a souborů, což je sakra důležité, pokud začínáte programovat, respektive vibe-koudit.\nhttps://youtu.be/pjnSE99-cz0?is=rmS1bwsaWlXtQ_CK\nTakže, od zítřka bez speciálních znaků, diakritiky, mezer a se správnou logikou značení datumu.\n✌️"
+          }
+        ]
+      }
+    ]
+  }
+}

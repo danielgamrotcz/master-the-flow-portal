@@ -1,0 +1,229 @@
+{
+  "date": "2026-04-07",
+  "generated_at": "2026-06-05T06:47:58Z",
+  "stats": {
+    "messages": 27,
+    "groups": 2,
+    "members": 4
+  },
+  "cards": [
+    {
+      "id": "2026-04-07-01",
+      "type": "NÁSTROJE",
+      "level": "Začátečník",
+      "topic": "AI nástroje",
+      "title": "Manus zklamal v trialu, Claude je lepší start",
+      "excerpt": "Lektorka z komunity zkoušela Manus na návrhy webů a prezentací. Jenže nástroj jí začal účtovat poplatky už uprostřed bezplatného trialu. Nakonec si poradila přes ChatGPT a vytvořila jednoduchý kvíz pro svůj web na WordPressu. Zakladatel komunity jako první krok doporučuje Claude artefakty. Jsou zdarma a není potřeba umět programovat.",
+      "body": "Manus nalákal hodně lidí na bezplatný přístup. Jenže komunita teď naráží na to, že placení přijde až překvapivě brzy — klidně i během slíbeného trialu. Na vlastní kůži to zažila lektorka, která chystá přednášky. Chtěla v Manu vytvořit návrhy webu a podklady, ale nástroj ji zastavil. Nakonec si poradila přes generování HTML v ChatGPT a výsledek byl použitelný.\n\nZakladatel komunity proto doporučuje začít raději v Claude. Funkce Artefakty v Claude.ai zvládne vytvořit jednoduchou stránku, formulář nebo prezentaci bez jediného řádku vlastního kódu, a to i v bezplatné verzi. Když pak chcete u webů a aplikací pokračovat dál, dává smysl navázat v Claude Code.\n\nPraktický rozdíl oproti Manu: žádné nečekané poplatky uprostřed práce, žádná umělá překážka, která vás zastaví těsně před dokončením projektu.",
+      "read_minutes": 2,
+      "source_date": "2026-04-07"
+    },
+    {
+      "id": "2026-04-07-02",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Bezpečnost",
+      "title": "Jak bezpečně pustit AI k firemním souborům",
+      "excerpt": "Zakladatel komunity nikdy nepouští AI přímo do svého hlavního pracovního účtu. Používá místo toho druhý účet v Google Workspace a sdílené složky jako mezikrok. AI vidí jen to, co jí sám záměrně zpřístupní.",
+      "body": "Bezpečnost při práci s AI asistenty se často podceňuje. Zakladatel komunity sdílel konkrétní postup, který sám používá: přístup AI nástrojů ke svým souborům řeší přes druhý, oddělený Google Workspace účet. Sdílí jen vybrané složky. AI tak vidí pouze to, co jí vědomě povolí. Stejně postupuje i u schránky. Místo přímého přístupu k hlavnímu účtu používá sdílenou schránku jako prostředníka.\n\nProč to dělá? Kdyby AI nástroj poslal data dál nebo došlo k bezpečnostnímu incidentu, škoda se omezí jen na tenhle oddělený přístup. Hlavní pracovní účet zůstane mimo hru.\n\nPrincip minimálního přístupu znají IT týmy velmi dobře. U AI asistentů ho ale většina lidí zatím neřeší. Přitom se vyplatí myslet na to dřív, než jakémukoli nástroji dáte přístup k e-mailu, Drivu nebo firemním dokumentům.",
+      "read_minutes": 2,
+      "source_date": "2026-04-07"
+    },
+    {
+      "id": "2026-04-07-03",
+      "type": "NÁSTROJE",
+      "level": "Začátečník",
+      "topic": "Claude Code",
+      "title": "Claude Code Pro jako vstupní bod pro web",
+      "excerpt": "Člen komunity staví přes Claude Code celý web. Zakladatel komunity přes něj spravuje i ten svůj. Pro verze stačí jako vstupní bod. Hodí se na jednodušší projekty i na osahání možností, i když neumíte programovat.",
+      "body": "Claude Code si v komunitě rychle buduje silnou pozici. Hned několik lidí potvrdilo, že ho používají na tvorbu webů a aplikací, a nejsou to jen vývojáři. Jeden člen přes Claude Code staví celý web, zakladatel komunity přes něj spravuje svůj web taky.\n\nPro koho se Claude Code hodí? Pro každého, kdo chce vytvořit nebo upravit web, aplikaci nebo automatizaci, ale nechce do detailu řešit kód. Funguje jako hodně schopný programátor. Řeknete mu, co chcete, a on to postaví.\n\nZakladatel komunity doporučuje začít s Pro verzí. Na první projekty a osahání základů to stačí. Složitější a větší projekty můžou časem vyžadovat Max verzi, ale to je otázka na později, ne na první den.\n\nHlavní výhoda oproti nástrojům jako Manus: nemá skryté limity, které vás zastaví uprostřed práce.",
+      "read_minutes": 2,
+      "source_date": "2026-04-07"
+    },
+    {
+      "id": "2026-04-07-04",
+      "type": "TÉMA TÝDNE",
+      "level": "Builder",
+      "topic": "Výběr nástrojů",
+      "title": "Bez kontextu nelze doporučit správný nástroj",
+      "excerpt": "Na otázku „který AI nástroj je nejlepší“ není jedna odpověď. Záleží na tom, co chcete dělat, co chcete vytvořit a jaký způsob práce vám sedí. To, že je nějaký nástroj populární, samo o sobě nic neznamená.",
+      "body": "Diskuze v komunitě potvrdila to, co zkušení uživatelé AI nástrojů říkají pořád: porovnávat nástroje bez kontextu moc nedává smysl. Claude Code je silný hlavně na UI a projekty stavěné od nuly. Jiné nástroje ale můžou být lepší pro jiné typy práce. A když jich zkombinujete víc, výsledek může být lepší než s každým zvlášť.\n\nCo z toho plyne při výběru nástroje? Než sáhnete po tom, co vám někdo doporučil, zkuste si odpovědět na pár otázek: Co přesně chci vytvořit? Web, aplikaci, prezentaci, automatizaci? Chci se u toho něco naučit, nebo jen rychle dostat hotový výsledek? A jak moc chci mít pod kontrolou, co se děje pod kapotou?\n\nTyhle odpovědi vám napoví víc než jakýkoli žebříček nebo doporučení vytržené z kontextu. Správný nástroj je ten, který sedí vašemu konkrétnímu záměru. Ne ten, o kterém se zrovna nejvíc mluví.",
+      "read_minutes": 2,
+      "source_date": "2026-04-07"
+    },
+    {
+      "id": "2026-04-07-05",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Builder",
+      "topic": "Produkty a nástroje",
+      "title": "Jak poznat, že AI produkt má reálný dopad",
+      "excerpt": "Člen komunity pracuje na nástroji se spoustou proměnných a sám řeší, jak zařídit, aby z toho nebyla jen hračka. Komunita se shodla, že skutečný dopad to bude mít až ve chvíli, kdy bude jasné, pro koho to je a jaký konkrétní problém to řeší.",
+      "body": "V komunitě se rozjela zajímavá debata o stavění produktů s AI. Jeden člen ukázal nástroj, na kterém pracuje. Pracuje s velkým množstvím proměnných. Sám si ale klade otázku, jestli bude mít reálný dopad, nebo zůstane jen u zajímavého experimentu.\n\nZakladatel komunity k tomu dodal, že ho zajímá hlavně produkt v praxi. Co se fakt vyplatí dostat do každodenní rutiny. A co radši nechat být. Nestačí, že nástroj funguje. Musí dát jasný výstup v konkrétní situaci pro konkrétního člověka.\n\nJeden člen to vystihl přesně: udělat nástroj intuitivní, jednoduchý, účinný a opravdu užitečný je těžké. Nástroje, které to zvládnou, mají skutečný dopad. Ty ostatní jsou možná zajímavé, ale často zůstanou jen jako hračky.\n\nOtázka na vás: Stavíte nebo plánujete postavit něco s AI? Víte přesně, pro koho to je a co konkrétně jim to vyřeší?",
+      "read_minutes": 2,
+      "source_date": "2026-04-07"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-03-23-02",
+    "type": "TÉMA TÝDNE",
+    "level": "Builder",
+    "topic": "Vibe coding flow state",
+    "title": "Vibe coding pohltí a čas zmizí",
+    "excerpt": "Víc lidí z komunity popisuje stejný zážitek: sednete k projektu, najednou je pozdě večer a limit je pryč. Flow state při vibe codingu je fakt reálný a silný.",
+    "body": "Vibe coding má jednu věc, která překvapí skoro každého, kdo ho poprvé zkusí pořádně: chytne vás. Ne špatně. Jen se dostanete do flow. Věci fungují, model chápe kontext, výsledky chodí rychle a najednou neřešíte čas.\n\nV komunitě to popisuje víc lidí nezávisle na sobě. Jeden člen strávil celý den nejdřív nastavováním skillů a pravidel v Claude Code, pak dělal na dvou projektech. Že je něco špatně, mu došlo až ve chvíli, kdy model přestal odpovídat, protože došly tokeny.\n\nJe to jiný zážitek než klasické programování. Zmizí spousta věcí, které práci brzdí: syntaxe, debugging, hledání v dokumentaci. Místo toho řešíte hlavně to, co chcete postavit. A pak se snadno stane, že u toho sedíte déle, než jste chtěli.\n\nPomáhá pár jednoduchých věcí: nastavte si předem časový limit, dělejte pauzy jako u jiné soustředěné práce a náročnější úkoly si nechte na začátek sezení, kdy máte ještě tokeny i energii. Vibe coding je silný nástroj. Pracuje pro vás, ne místo vás.",
+    "read_minutes": 2,
+    "source_date": "2026-03-23",
+    "resurfaced_from": "2026-03-23"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "12:45",
+            "author": "Daniel",
+            "text": "Za mě je spousta těch věcí skvělý zadání pro Antigravity nebo Claude Code. Tyhle dva vybírám jenom na základě toho, co jsi psal ohledně preferencí.\nJasně, neznám tvá omezení. Ale zkusil bych jednou za čas naházet tady tyhle myšlenky do jednoho z těch nástrojů a postupně to v rámci projektu rozvíjet. Ono to z toho začne vypadávat."
+          },
+          {
+            "time": "13:06",
+            "author": "člen komunity",
+            "text": "Díky, pustím se do toho a dám vědět, jak se to vyvíjí 🙂"
+          },
+          {
+            "time": "13:14",
+            "author": "Daniel",
+            "text": "Jo, jo, super, s tím souhlas.\nMyslel jsem spíš na to zahrnout tam ty další proměnné, kterých je extrémní hromada. Ono ten matrix je mega zjednodušující.\nJá jen, že by mě zajímalo ten produkt vidět, že funguje. Co se fakt vyplatí dát do „rutiny“ a co nechat být."
+          },
+          {
+            "time": "13:21",
+            "author": "člen komunity",
+            "text": "jojo, chápu … chce se hluboce zamyslet, aby to mělo reálný dopad, aby to nebyla jen hračka. a pro koho by to mělo být - obecné nebo cílené. víte sám velmi dobře, že udělat nástroj intuitivní a jednoduchý … a zároveň účinný a „pomáhající“ je velká výzva. vaše nástroje jsou důkazem toho, že víte jak na to :). nicméně, zkusím nad tím zapřemýšlet a když mě políbí múza, zkusím sem přispět…"
+          },
+          {
+            "time": "13:25",
+            "author": "Daniel",
+            "text": "Jasan. Děkuju! :)"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "12:58",
+            "author": "člen komunity",
+            "text": "Diky, ze tu mohu byt. Posledni dny jsem si hrala s nastrojem Manus a byla nadsena do doby, nez chtel kazdou chvili priplatit za dalsi pouzivani, i prestoze mam mit na 7 dnu trial zdarma. Zkousela jsem tam nejake nastrely webovek a prezentace pro prednasky, ktere chystam. Pak mne Manus stopnul, takze nic. Ale aspon jsem nakonec pres html v ramci chatgpt vytvorila jednoduchy testik pro zeny na svuj web, ktery mam ve wordpressu, a vlozila to tam. Je to furt vibecoding, kdyz jde o neco takto jednodussiho?"
+          },
+          {
+            "time": "12:58",
+            "author": "člen komunity",
+            "text": "Mohu zde dat odkaz?"
+          },
+          {
+            "time": "13:01",
+            "author": "Daniel",
+            "text": "Manus má od začátku dost pro zákaznické mezery. Hodně nalákal na používání zdarma, a pak se dost rozjeli. Přiznám se, že jsem tam dlouho nebyl.\nJinak jako první krok udělat si třeba v Claude svůj artefakt, je úplně super. Jde to i zdarma a na osahání si toho, co umím s kódem. Bez nutnosti psát kód, je to moc fajn.\nU ChatGPT nevím, jaký jsou teď možnosti. Ale očividně to taky jde. :)"
+          },
+          {
+            "time": "13:01",
+            "author": "Daniel",
+            "text": "Jasná věc!"
+          },
+          {
+            "time": "13:02",
+            "author": "člen komunity",
+            "text": "https://www.martinacinkova.cz/diagnostika-sluzby-produktu/"
+          },
+          {
+            "time": "13:03",
+            "author": "Daniel",
+            "text": "Pouštím, ale pouze přes prostředníka. Sdílené složky a sdílená schránka."
+          },
+          {
+            "time": "13:06",
+            "author": "člen komunity",
+            "text": "Pardon, nerozumím\n🤦🏻‍♂️"
+          },
+          {
+            "time": "13:07",
+            "author": "člen komunity",
+            "text": "Moc diky. 🙂 Je Claude Code ok i pro jiz slozitejsi veci? Nebo bys doporucil jiny nastroj? ."
+          },
+          {
+            "time": "13:08",
+            "author": "Daniel",
+            "text": "Claude Code je samozřejmě top. Za mě. Start klidně Pro verze. U složitějších věci to stačit asi nebude, ale na tyhle případy a osahání si základů to bude fajn start."
+          },
+          {
+            "time": "13:09",
+            "author": "člen komunity",
+            "text": "Super, dekuji."
+          },
+          {
+            "time": "13:09",
+            "author": "člen komunity",
+            "text": "Ahoj Marti, v Claude Code právě vibecoduju celý web. 🙂"
+          },
+          {
+            "time": "13:09",
+            "author": "člen komunity",
+            "text": "Ahoj Hani, rada Te tu vidim. A diky za sdileni, ze mas dobrou zkusenost. 🙂"
+          },
+          {
+            "time": "13:10",
+            "author": "Daniel",
+            "text": "Můj Claude Code různými cestami přistupuje k různým místům v mém Google Workspace. Nikdy ne přímo na ostrý účet, mám to postavené tak, že ostrý účet sdílí složky s Google Drive, e-maily z e-mailové schránky, anebo události z kalendáře na můj druhý účet. Oba dva jsou v rámci Google Workspace.\nMně se tak nikdy nemůže stát, že bych omylem pod vlivem nebo v rámci momentálního rozpoložení, kdy nemám rád digitální technologie, smazal cokoliv jedním příkazem.\nHodně přeháním, ale jednoduše přistupuju k těm datům tak, že jsou vždycky aktuální, ale je tam mnohem nižší riziko toho, že něco pokazím."
+          },
+          {
+            "time": "13:11",
+            "author": "Daniel",
+            "text": "Můj web je udělaný a spravovaný komplet přes Claude Code."
+          },
+          {
+            "time": "13:13",
+            "author": "člen komunity",
+            "text": "Ohledně Vibe codingu mi docela funguje kombinace Claude a Lovable. Zatím s tím mám lepší výsledky než jen čistě s CC. Mám (snad) dobře nastavený Claude a po iteracích mi dokáže připravit skvělý prompt pro Lovable. Ví, že prompt dělá pro L. a mám pocit, že s tím dobře umí pracovat - naučil jsem ho co má/nemá dělat, aby aktualizoval info a dokumentaci L. atd. …"
+          },
+          {
+            "time": "13:25",
+            "author": "člen komunity",
+            "text": "Moje zkušenost následující:\n- Claude Code dává nejefektivněji dobré výsledky pro UI based věci (weby, prezentace, reporty, jednoduché appky,…) a v případě kdy začínám něco from scratch (nová appka na zelené louce).\n- ⁠OpenAI Codex mi funguje lépe na komplexnější backendové věci (datový podvozek i se složitější aplikační a výpočetní logikou) a při navázání na již existující repozitář.\n- Gemini CLI / google Antigravity také pomalu vystrkuje růžky. V poslední době jsem zkoušel jen okrajově na jednu jednoduchou web appku, kterou jsem paralelně stavěl i v Claude Code. A dostal jsem od něj překvapivě dobrý výsledek (i co se týká kvality kódu a řešení obecně)\nAd složitější věci: v každém z těchto nástrojů se dají udělat i “složitější věci”. Ale je lepší k tomu doiterovat po kouskách (třeba tak jak @člen ukazoval na webináři). A také už se hodí tomu pak rozumět z programátorského hlediska a mít trochu vhled do architektur dnešního software vývoje - to abys mohla Claude plácat přes prsty, když ti třeba hard-kóduje credentials do plain textu 😉."
+          },
+          {
+            "time": "13:26",
+            "author": "člen komunity",
+            "text": "Moc děkuji za detaily. Teď tomu rozumím.\nOtázku bezpečnosti při práci s CC řeším hodně, ale takto to aplikovat mě ještě nenapadlo. Ja se ho snažím omezovat přes pravidla a hooks"
+          },
+          {
+            "time": "13:28",
+            "author": "člen komunity",
+            "text": "Na design doporučuju vyzkoušet Stitch od Google"
+          },
+          {
+            "time": "13:33",
+            "author": "člen komunity",
+            "text": "Možná bych ještě doplnil jednu drobnou, ale klíčovou 🗝️věc. Když se někdo zeptá, jaký je dobrý/vhodný/nejlepší nástroj - z logiky věci nelze odpovědět správně, pokud nebudeme znát kontext. Je to jako iterovat s AI (a vlastně kdykoli s kýmkoli…). Naučil jsem se prudit lidi tím, že se jich hodně doptávám … co chceš dělat/vytvářet, je to na hraní nebo na business, máš už s něčím zkušenost, máš placené nástroje/nějaký budget, kolik času tím chceš trávit… často jde o to použít více nástrojů. Chápu, v principu všichni hledáme zkratky a rychlá řešení (v tom nejsem jiný), ale pokud nebude dotaz dostatečně široký, obávám se, že odpověď bude vždy trochu generická 🤷‍♂️😉"
+          },
+          {
+            "time": "13:45",
+            "author": "člen komunity",
+            "text": "Mam tez dobrou zkusenost. Proste kombinace vice nastroju."
+          },
+          {
+            "time": "13:45",
+            "author": "člen komunity",
+            "text": "Dekuji. Super. 🙂"
+          },
+          {
+            "time": "14:35",
+            "author": "Daniel",
+            "text": "Jo! A hlavně i v rámci každodenního posunu technologií to nejde. Souhlas a fajn přístup. BTW ty zkratky jsou pro kontext super, i když nefungují. 🙂"
+          }
+        ]
+      }
+    ]
+  }
+}

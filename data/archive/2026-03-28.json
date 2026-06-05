@@ -1,0 +1,101 @@
+{
+  "date": "2026-03-28",
+  "generated_at": "2026-06-05T06:27:28Z",
+  "stats": {
+    "messages": 7,
+    "groups": 1,
+    "members": 2
+  },
+  "cards": [
+    {
+      "id": "2026-03-28-01",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Claude Code",
+      "title": "Kontext v Claude Code: jak nepromarnit paměť sešny",
+      "excerpt": "Kontext je paměť, se kterou Claude Code pracuje během jedné seance. Ještě nedávno byla oproti dnešku asi pětinová a u větších projektů se vyčerpala dost rychle. Dnes má Opus milion tokenů, ale i ten se dá snadno vyplýtvat, když nevíte, co ho požírá.",
+      "body": "Hodně lidí bere milion tokenů jako něco, co nejde vyčerpat. Jenže jde. Velké soubory, dlouhé konverzace, vložené obrázky i dokumentace ukrajují z kontextu. A když se kontext začne plnit, Claude Code začne „zapomínat“. Opakuje kroky, přehlíží dřívější instrukce nebo odpovídá míň přesně.\n\nUžitečné příkazy pro práci s kontextem:\n\n- `/context` — ukáže, kolik kontextu právě používáte\n- `/compact` — zkomprimuje historii konverzace a ušetří místo\n- `/doctor` — zkontroluje stav session\n- Subagenti — Claude Code rozdělí práci mezi víc agentů, každý má čistší kontext\n- Auto mode — CC sám rozhodne, kdy použít subagenta\n\nJeště nedávno byl kontext jen pětinový oproti dnešku. Teď už to tolik nebolí, ale základní hygiena kontextu se pořád vyplatí. Hlavně u větších projektů nebo dlouhých session. Jeden člen komunity sdílel video v pomalém a srozumitelném tempu, kde to celé vysvětluje. Doporučuju každému, kdo s CC pracuje víc než jen občas.",
+      "read_minutes": 2,
+      "source_date": "2026-03-28"
+    },
+    {
+      "id": "2026-03-28-02",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Vibe Coding",
+      "title": "Mapa, poloha a checklist v jedné aplikaci",
+      "excerpt": "Jeden člen řeší interaktivní aplikaci pro detailing auta. Byla by napojená na web detailera a měla by v sobě mapu, polohu i checklist. Stejný princip se dá použít i u vaření nebo u jakéhokoli postupu, který závisí na kontextu.",
+      "body": "Nápad je jednoduchý. Zákazník otevře stránku, uvidí checklist péče o auto, aplikace zná jeho polohu, ukáže nejbližší servis nebo produkt a přímo z rozhraní může zavolat.\n\nZajímavé je, že se tu spojují tři věci: checklist, tedy co udělat, poloha, tedy kde jsem a co mám poblíž, a přímý kontakt, tedy zavolání bez přepínání mezi aplikacemi. Každá z těch věcí už existuje sama o sobě. Dohromady ale dávají smysl přesně ve chvíli, kdy je člověk potřebuje.\n\nStejná logika funguje i u vaření: recept, ingredience v okolí a dodávka. Nebo u DIY oprav a tréninkových plánů.\n\nTechnicky to není nic složitého. Claude Code zvládne vygenerovat interaktivní HTML checklist za hodinu. Napojení na Google Maps přes statické URL je otázka jednoho kroku. A `tel:` odkaz pro volání přidáte jedním řádkem. Těžší je dobře určit, co má uživatel v každém kroku vidět a udělat. Nemusíte stavět celou aplikaci. Stačí statická HTML stránka, která se chová jako appka.",
+      "read_minutes": 2,
+      "source_date": "2026-03-28"
+    },
+    {
+      "id": "2026-03-28-03",
+      "type": "INSIGHT",
+      "level": "Začátečník",
+      "topic": "Claude Code",
+      "title": "Sdílíte výsledek práce? Screenshot bývá spolehlivější",
+      "excerpt": "Live náhled HTML stránky z Claude Code se může příjemci zobrazit jen jako bílá stránka. Screenshot ukáže přesně to, co vidíte vy — bez závislosti na lokálním serveru nebo nastavení prostředí.",
+      "body": "Když sdílíte výsledek z Claude Code nebo jiného vibe coding nástroje, často narazíte na tohle: pošlete soubor nebo odkaz, druhý člověk ho otevře v prohlížeči — a vidí jen bílou stránku. Web se nenačte, protože čeká na lokální server, chybí mu soubor nebo běží v prostředí, které příjemce nemá nastavené.\n\nScreenshot tohle řeší. Vyfotíte přesně to, co vidíte vy. Příjemce to hned uvidí taky, bez nastavování.\n\nKdy screenshot nestačí:\n- Chcete ukázat interakci: klikání, formuláře, animace\n- Příjemce má stránku opravdu používat, ne se na ni jen podívat\n\nV takovém případě je lepší dát projekt na hosting, třeba Netlify nebo GitHub Pages. Případně pošlete záznam obrazovky.\n\nPro rychlé sdílení výsledku v komunitě nebo s klientem je ale screenshot nejrychlejší a nejjistější volba. Na Macu ho uděláte za dvě vteřiny: Cmd+Shift+4.",
+      "read_minutes": 1,
+      "source_date": "2026-03-28"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-03-14-04",
+    "type": "NÁSTROJE",
+    "level": "Expert",
+    "topic": "NotebookLM",
+    "title": "NotebookLM má neoficiální Python API",
+    "excerpt": "V diskuzi se objevil odkaz na open-source knihovnu, přes kterou jde NotebookLM používat z Pythonu. Kdo pracuje s velkým množstvím zdrojů, může si díky ní automatizovat práci, aniž by musel stavět vlastní systém.",
+    "body": "NotebookLM od Googlu nemá oficiální API. Existuje ale neoficiální open-source knihovna pro Python, která ho napodobuje. Díky ní můžeš programově přidávat zdroje, pokládat dotazy a pracovat s notebooky bez klikání v prohlížeči.\n\nK čemu se to hodí? Pokud NotebookLM aktivně používáš na organizaci většího množství dokumentů, třeba pro výzkum, podklady k projektům nebo firemní znalostní bázi, může ti tahle knihovna dost zrychlit práci. Místo ručního nahrávání zdrojů to zvládneš automatizovat skriptem.\n\nPokud NotebookLM zatím nepoužíváš, přínos nemusí být hned jasný. Nejdřív si samotný nástroj vyzkoušej a zjisti, jestli ti zapadá do workflow. Až potom má smysl řešit automatizaci.\n\nKnihovnu najdeš na GitHubu pod profilem teng-lin.",
+    "read_minutes": 2,
+    "source_date": "2026-03-14",
+    "resurfaced_from": "2026-03-14"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "07:59",
+            "author": "Daniel",
+            "text": "Patrik Zandl natočil fajn video o kontextu v Claude Code.\nKontext je paměť, se kterou Claude Code pracuje během vaší „sešny“. Ještě nedávno byla velikost kontextu pětinová oproti současnosti. A vy jste ho vyčerpali docela rychle, hlavně u větších věcí. Tudíž pak CC začal trošku „zapomínat“.\nDneska má Opus milion tokenů, takže se to neděje až tak často. Ale je dobrý vědět, co ten kontext zabírá a jak s ním pracovat (i milion se dá rozházet, když nevíte, co děláte).\nJsou tam zmínky o auto mode, subagentech, /context, /doctor nebo /compact apod.\nA je to v docela pomalém prima tempu.\nhttps://youtu.be/3oIxzRPbr4I?si=eI4j6E54HVh3FvUa"
+          },
+          {
+            "time": "14:51",
+            "author": "Daniel",
+            "text": "Paráda. Já teda vidím jenom bílou stránku, ale věřím, že v praxi to vypadalo mnohem líp. Super."
+          },
+          {
+            "time": "14:55",
+            "author": "člen komunity",
+            "text": "možná apple něco z toho zařeže"
+          },
+          {
+            "time": "14:55",
+            "author": "člen komunity",
+            "text": "my jsme android rodinka 😁"
+          },
+          {
+            "time": "15:09",
+            "author": "člen komunity",
+            "text": "noviny-stenovice_oprava.html"
+          },
+          {
+            "time": "15:20",
+            "author": "Daniel",
+            "text": "Screenshot bude podle mě jistější a rychlejší.😅"
+          },
+          {
+            "time": "17:03",
+            "author": "člen komunity",
+            "text": "Super napad, kombinaci mapy, polohy, telefonu a checklistu. Dik za inspiraci, co je mozne. Uvazoval jsem nad interaktivni aplikaci na cisteni auta,\nktera by vychazela z webu detailera a nebo stejna vec ale na vareni."
+          }
+        ]
+      }
+    ]
+  }
+}

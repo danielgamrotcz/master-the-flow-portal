@@ -1,0 +1,79 @@
+{
+  "date": "2026-04-29",
+  "generated_at": "2026-06-05T07:23:14Z",
+  "stats": {
+    "messages": 5,
+    "groups": 1,
+    "members": 2
+  },
+  "cards": [
+    {
+      "id": "2026-04-29-01",
+      "source_date": "2026-04-29",
+      "topic": "Příprava na vystoupení",
+      "excerpt": "Tři hodiny před svým blokem překopal celou přípravu. Akce dopadla jako bomba.",
+      "body": "Daniel vystupoval na živé akci a tři hodiny před svým blokem se rozhodl, že chce víc. I když byl nervózní a měl pocit, že je hlavou úplně jinde, akce dopadla skvěle. Pak o ní napsal příspěvek na LinkedIn. Zmínil i feedback od účastníků, ale nakonec ho nepřidal. Prý by to vzalo celému momentu kouzlo. Autenticita pro něj byla víc než potvrzení od publika."
+    },
+    {
+      "id": "2026-04-29-02",
+      "source_date": "2026-04-29",
+      "topic": "Autenticita vs. potvrzení",
+      "excerpt": "Přidat feedback od účastníků, nebo ne? Daniel vsadil na autenticitu okamžiku.",
+      "body": "Nikol navrhla Danielovi, aby k příspěvku na LinkedIn přidal zpětnou vazbu účastníků. Odmítl to — podle něj by tím příspěvek ztratil kouzlo. Bylo to vědomé rozhodnutí: sdílet zážitek tak, jak ho člověk prožívá, ne tak, jak ho potvrzují ostatní. Ten moment má hodnotu i bez cizího potvrzení."
+    },
+    {
+      "id": "2026-04-29-03",
+      "source_date": "2026-04-29",
+      "topic": "Jak vypadáme vs. jak fungujeme",
+      "excerpt": "Nikol si všimla, že je Daniel roztržitý. Účastníci to ale viděli úplně jinak.",
+      "body": "Nikol si v pondělí všimla, že Daniel působil roztržitě. Účastníci akce to ale viděli jinak. Zná to každý, kdo někdy vystupoval: to, co člověk prožívá uvnitř, a to, jak působí navenek, se často liší. Soustředění, které může vypadat jako nervozita, si publikum klidně přečte jako plnou přítomnost."
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-04-13-01",
+    "type": "POSTAVIL JSEM",
+    "level": "Builder",
+    "topic": "iOS / diktování",
+    "title": "iOS aplikace pro diktování jde do testování",
+    "excerpt": "Jeden z členů komunity dokončil iOS verzi diktofonní aplikace a postupně pouští lidi do testování přes TestFlight. Prvních 20 míst je volných tento týden, dalších 70 přibude příští týden. Testování je zdarma a zatím jen pro naši komunitu.",
+    "body": "Aplikace má za sebou první interní testování a teď se otevírá většímu okruhu testerů. Kapacita se zvedá postupně schválně. Autor chce sbírat zpětnou vazbu po částech, ne zahltit podporu najednou.\n\nKdo se chce zapojit, zadá své Apple ID přes formulář na webu a do 48 hodin mu přijde pozvánka do TestFlightu. Na webu je taky video s ukázkou fungování aplikace.\n\nTestování má jasně nastavený způsob. Autor žádá, aby testeři posílali zpětnou vazbu přes tlačítko přímo v nastavení aplikace. Zároveň prosí, aby to brali vážně, ale s odstupem. Nejde o chválení hotového produktu. Jde o to zjistit, jestli by tuhle aplikaci lidé opravdu používali každý den.\n\nAplikace teď běží na autorově kreditu, proto doporučuje nahrávky držet v rozumné délce.",
+    "read_minutes": 2,
+    "source_date": "2026-04-13",
+    "resurfaced_from": "2026-04-13"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "10:55",
+            "author": "Daniel",
+            "text": "Díky moc za 2 hodiny. Uvidíme, jestli to bude boží, anebo trapas. 😅"
+          },
+          {
+            "time": "19:36",
+            "author": "člen komunity",
+            "text": "Tak jak to dopadlo? 😁"
+          },
+          {
+            "time": "19:42",
+            "author": "Daniel",
+            "text": "Byla to bomba. Dokud jsem si 3 hodiny před mým blokem nerozmyslel, že chci víc. :D\nhttps://www.linkedin.com/posts/danielgamrot_hackyourway-hrlove-hyw-share-7455309846054289408-HH-N"
+          },
+          {
+            "time": "19:49",
+            "author": "člen komunity",
+            "text": "😅😅 Jo, v pondělí jsi vypadal, že jsi hlavou jinde. 😄 Ale účastníci by to dneska určitě popsali jinak. Měl bys tam přidat jejich feedback. 😁"
+          },
+          {
+            "time": "19:50",
+            "author": "Daniel",
+            "text": "To by ztratilo to kouzlo. Jako lidi byli zlatí a ta akce fakt boží. 🧡"
+          }
+        ]
+      }
+    ]
+  }
+}

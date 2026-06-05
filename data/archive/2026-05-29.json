@@ -1,0 +1,127 @@
+{
+  "date": "2026-05-29",
+  "generated_at": "2026-06-05T08:11:37Z",
+  "stats": {
+    "messages": 11,
+    "groups": 2,
+    "members": 2
+  },
+  "cards": [
+    {
+      "id": "2026-05-29-01",
+      "type": "NÁSTROJE",
+      "level": "Začátečník",
+      "topic": "PDF export",
+      "title": "Chrome rozšíření pro PDF z celé stránky",
+      "excerpt": "Webovku do PDF můžete uložit tak, aby nevypadala jako zmuchlaný papír, i bez kódu. Stačí tři rozšíření do Chromu. Fungují rychle a bez složitého nastavování.",
+      "body": "Weby nejsou dělané na tisk, takže výsledné PDF bývá zkrácené nebo rozházené. Když nepotřebujete perfektní stránkování a chcete jen rychlý export, pomůžou tři rozšíření pro Chrome.\n\nGoFullPage uloží celou stránku jako snímek a vyexportuje ji do PDF nebo PNG. Je stabilní, ověřené a zvládá i dlouhé stránky.\n\nFireshot umí totéž. Navíc dovolí exportovat jen vybranou část stránky nebo rovnou obrázek.\n\nAwesome Screenshot není jen rozšíření, ale i webový nástroj. Umí celostránkové snímky i anotace.\n\nNa jednorázové sdílení interního dokumentu nebo rychlý výstup tyhle nástroje stačí. Pokud ale má výstup vypadat jako opravdový tiskový dokument, se správně zalomenými tabulkami a stránkami, je lepší použít CSS media print — viz druhá karta.",
+      "read_minutes": 2,
+      "source_date": "2026-05-29"
+    },
+    {
+      "id": "2026-05-29-02",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "PDF export",
+      "title": "Nechte AI přidat tiskový mód přímo do HTML",
+      "excerpt": "Nemusíte ručně ladit stránkování v editoru. Stačí AI zadat přesná pravidla pro @media print. Výsledkem je samostatný tiskový výstup, který nijak nenaruší webovou verzi.",
+      "body": "Webová stránka navržená v Claude Code nebo Lovable může na obrazovce vypadat skvěle, ale při exportu do PDF často narazíte. Ručně odhadovat, kde skončí stránka, je otrava a výsledek bývá nejistý.\n\nLepší postup: už při generování HTML dokumentu řekněte AI, že chcete samostatný tiskový režim. Zadání může vypadat třeba takhle:\n\nPřidej tlačítko Uložit jako PDF pomocí window.print(). Veškerou logiku pro tisk řeš přes @media print, ať kvůli PDF nemusím sahat do hlavního designu. V tisku skryj interaktivní prvky — přepínače, hover tooltipy a navigaci. Tabulky a karty nerozděluj přes konec stránky pomocí break-inside: avoid. Nadpis vždy drž pohromadě s obsahem pod ním.\n\nVýsledkem je HTML soubor, kde webová a tisková verze fungují odděleně. Vzhled PDF pak upravujete jen v print sekci, aniž byste rozbili samotnou stránku. Hodí se to pro jednoduché dokumenty, ceníky, nabídky nebo interní reporty.",
+      "read_minutes": 2,
+      "source_date": "2026-05-29"
+    },
+    {
+      "id": "2026-05-29-03",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Claude Projects",
+      "title": "Granularita úkolů v Claude Projects závisí na zadání",
+      "excerpt": "Claude často rozseká smysluplný úkol na kroky, které spíš překážejí, než pomáhají. Problém není v AI, ale v tom, kolik prostoru pro vlastní výklad jí necháte.",
+      "body": "Jeden člen si všiml otravného vzorce: zadá AI „vytvořit nabídku“ a ona z toho udělá pět kroků — vytvořit e-mail, odeslat e-mail, odškrtnout hotovo. Taková míra detailu bere soustředění a zpomaluje celý workflow.\n\nDůvod je jednoduchý: čím obecnější zadání, tím víc si AI domýšlí strukturu sama. A její představa kroků se nemusí potkat s tím, jak nad prací přemýšlíte vy.\n\nJednoduché pravidlo: pište konkrétně a nenechte AI hádat. Místo „vytvořit nabídku“ napište rovnou, co má být výsledkem — jaký dokument, co v něm má být a pro koho je. AI pak nemusí vymýšlet mezikroky a úroveň detailu líp odpovídá realitě.\n\nStejně to funguje při diktování next steps z poznámek: konkrétní formulace vede ke konkrétním výsledkům. Obecný cíl vede ke generické struktuře, která sedí na všechno a zároveň na nic.",
+      "read_minutes": 2,
+      "source_date": "2026-05-29"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-05-11-04",
+    "type": "INSIGHT",
+    "level": "Expert",
+    "topic": "AI agenti",
+    "title": "Sdílený state.md pro přepínání mezi agenty",
+    "excerpt": "Jeden developer střídá Claude Code a Codex a kontext si drží ve sdíleném souboru state.md. Jednoduchý postup, který řeší jeden z hlavních problémů při práci s více agenty.",
+    "body": "Jeden z developerů v komunitě popsal, jak pracuje s víc AI agenty najednou. Aby jim nemusel pořád dokola vysvětlovat kontext, vede si soubor state.md. Do něj zapisuje aktuální stav projektu, otevřené úkoly a hlavní rozhodnutí.\n\nKdyž přepíná mezi Claude Code a Codexem, začne tím, že nového agenta nechá přečíst state.md. Agent tak hned ví, kde projekt stojí, bez půlhodinového onboardingu.\n\nFunguje to proto, že část kontextu — co se dělalo, proč a co ještě zbývá — se přes prompt předává blbě. V souboru to zůstává, dá se to číst strojově a kdykoli upravit.\n\nZároveň je to pojistka proti nekonzistenci. Každý agent má trochu jiný kontext a může dělat jiná rozhodnutí. Sdílený state.md to pomáhá srovnat.\n\nČlen teď plánuje otestovat Goose jako další agent framework. Stejný pattern chce použít jako most mezi Goose a ostatními nástroji.",
+    "read_minutes": 2,
+    "source_date": "2026-05-11",
+    "resurfaced_from": "2026-05-11"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "13:51",
+            "author": "člen komunity",
+            "text": "Dane, jak si poradí s tím, co jako úkol zapsat a co ne? Docela s tim bojuju u Clauda, kterej má tendence věc jako “vytvořit nabídku” rozsekat na takový malichernosti jako “vytvořit email” “odeslat email” “odškrtnout ze je hotovo” a mě takovej level detailu zabíjí 🫠"
+          },
+          {
+            "time": "16:42",
+            "author": "Daniel",
+            "text": "Zkoušel jsem na triviálních seznamech, kdy jsem diktoval z reMarkable poznámek next steps. Byl jsem konkrétní. Nenechal jsem ho, aby si domýšlel. A bylo to naprosto v pohodě. Tu funkci subtasks s AI jsem netestoval."
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "14:11",
+            "author": "člen komunity",
+            "text": "Hledám pomoc kouzelníka. Protože některé věci jsou otázkou magie a tu ještě úplně nezvládám :). Jde o to, že když udělám (designově pěkně v Claude Code nebo Lovable včetně grafů a tabulek) webovou stránku (např. několikastránkovou) tak je to super. Mohu ji exportovat do PDF. Ale ouha - to x-stránkové PDF je jen na jedné A4. A upravit je to peklo. Nemáte nějaký trik, jak to udělat jednoduše? Musím totiž pokus-omylem ve VS odhadovat kde je konec stránky a … trvá to a často to ve výsledky při tisku na více A4 nevypadá jako původní webová prezentace. Snad chápete, co tím myslím… předem děkuji - abrakadabra 🙂"
+          },
+          {
+            "time": "14:24",
+            "author": "člen komunity",
+            "text": "Jestli to správně chápu, tak stačí chtít prezentaci (mně na to teď přijde nejvíc fajn Claude Design) s jasně danými A4 rozměry"
+          },
+          {
+            "time": "14:26",
+            "author": "člen komunity",
+            "text": "Webovka z principu není určená k tisku 🙂"
+          },
+          {
+            "time": "14:27",
+            "author": "člen komunity",
+            "text": "Co prostě doplněk v Chromu - Fireshot? Umí stahování celých stránek do PDF."
+          },
+          {
+            "time": "14:47",
+            "author": "člen komunity",
+            "text": "Tenhle taky: https://chromewebstore.google.com/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl (ověřeno, používám)"
+          },
+          {
+            "time": "15:30",
+            "author": "člen komunity",
+            "text": "Já používám http://www.awesomescreenshot.com/"
+          },
+          {
+            "time": "16:07",
+            "author": "člen komunity",
+            "text": "Při generování html dokumentů mu říkám ať mi přidá tlačítko print to pdf a jaká pravidla ten pdf export musí dodržet. Např. kde má / nesmí být konec stránky (třeba tabulky nerozdělit) atp. Vybastlí si k tomu vždy duplicitní sekci jen pro PDF export a já mu celkem jednoduše můžu říct co tam změnit aniž bych měnil samotný html dokument"
+          },
+          {
+            "time": "16:27",
+            "author": "člen komunity",
+            "text": "hmmm … super, díky za tipy! mám co dohánět :). díky guys 👍"
+          },
+          {
+            "time": "16:40",
+            "author": "člen komunity",
+            "text": "anonymizuju pro tebe příklad, za chvíli ho sem dam. Je to tam hezky vidět. A tohle mi sesumuroval jako zadání pro jiného Clauda/Gpt:\nZ tisku do PDF udělej samostatný výstup, který se záměrně chová jinak než obrazovková verze. Drž se těchto pravidel:\nPřidej viditelné tlačítko „Uložit jako PDF\" (window.print()).\nVeškerou tiskovou logiku řeš odděleně přes @media print (případně skrytá print-only sekce), ať kvůli vzhledu PDF nemusím sahat do hlavního webu.\nV tisku skryj interaktivní a webové prvky: přepínače, tlačítka, hover tooltipy, navigaci.\nUkaž jen vybranou konfiguraci — nezaškrtnuté/nevybrané volby v PDF úplně vynech (ne jen ztlumit); když není vybráno nic, schovej i nadpis prázdné sekce.\nNikdy nerozděl tabulku ani kartu přes konec stránky (break-inside: avoid) a nadpis drž s obsahem.\nHlídej smysluplné konce stránek a podle potřeby přeskládej layout do jednoho sloupce pro A4; okraje nastav přes @page.\nBarvy a pozadí zachovej (print-color-adjust: exact).\nNa konec mi napiš, co můžu slovně doladit (kde má / nesmí být konec stránky apod.), aniž bych měnil samotné HTML."
+          }
+        ]
+      }
+    ]
+  }
+}

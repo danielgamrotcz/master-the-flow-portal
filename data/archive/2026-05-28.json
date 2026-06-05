@@ -1,0 +1,141 @@
+{
+  "date": "2026-05-28",
+  "generated_at": "2026-06-05T08:05:31Z",
+  "stats": {
+    "messages": 14,
+    "groups": 2,
+    "members": 5
+  },
+  "cards": [
+    {
+      "id": "2026-05-28-01",
+      "source_date": "2026-05-28",
+      "topic": "AI nástroje",
+      "title": "Booking.com má vlastní MCP konektor",
+      "excerpt": "Hledání ubytka přes AI je zase o krok blíž. Booking.com spustil MCP konektor, který je v Coworku dostupný přes Connectors.",
+      "body": "Booking.com přidal vlastní MCP konektor. Najdete ho v Coworku pod záložkou Connectors. Spustili ho zhruba před měsícem spolu s dalšími consumer konektory, jako jsou Spotify, Uber a Tripadvisor.\n\nRecenze jsou zatím smíšené. Jeden člen testoval vyhledávání podle kritérií ubytování a konektor nenašel hotel, který by jim přesně odpovídal. Schéma parametru pro parkování má jen dvě hodnoty: PARKING a FREE_PARKING. Chybí třeba parkování v objektu nebo soukromé parkování. Na konkrétnější požadavky to zatím nestačí. Na rychlé doporučení oblíbených hotelů z Booking.com to ale funguje."
+    },
+    {
+      "id": "2026-05-28-02",
+      "source_date": "2026-05-28",
+      "topic": "Prompty a tokeny",
+      "title": "Čeština vs angličtina v promptech — záleží na tom?",
+      "excerpt": "Při kódování a práci s tools je skoro jedno, v jakém jazyce prompt píšeš. Komunita to spočítala.",
+      "body": "Input tokeny z promptu jsou proti tool callům a kontextu skoro nic. Konkrétní čísla z diskuze: v promptu ušetříte třeba 1–2 tokeny, zatímco tools a context můžou mít klidně 17 tisíc tokenů. Overhead jednoho dotazu pak vyjde zhruba na 0,04 USD. Jazyk má smysl řešit jen ve chvíli, kdy máte hodně textových vstupů a výstupů a zároveň byste museli přeložit všechny materiály. Při kódování ten rozdíl ve spotřebě nepoznáte."
+    },
+    {
+      "id": "2026-05-28-03",
+      "source_date": "2026-05-28",
+      "topic": "Produktivita",
+      "title": "Todoist hands-free přes Siri při řízení",
+      "excerpt": "Zapsat si úkoly za jízdy, aniž byste sahali na telefon? Jde to přes Apple Shortcuts a Siri.",
+      "body": "Thuy se ptala, jestli jde spustit Todoist zkratku přes Siri — třeba při řízení, aby si mohla hands-free zapsat úkol. V Apple Shortcuts to jde. Stačí Siri přiřadit ke konkrétní zkratce a pak ji spustit hlasem. Detaily nastavení je potřeba vyzkoušet, ale základní postup funguje. Když si takovou zkratku nastavíte, nemusíte při řízení sahat na telefon."
+    },
+    {
+      "id": "2026-05-28-04",
+      "source_date": "2026-05-28",
+      "topic": "Bezpečnost",
+      "title": "MCP a VPN — proč si dávat pozor",
+      "excerpt": "Ve skupině Vibe Coding se objevil odkaz na článek o zranitelnosti v MCP. Doporučení: přes MCP se k VPN nepřipojovat.",
+      "body": "Ve skupině Vibe Coding se sdílel článek o bezpečnostní zranitelnosti v MCP protokolu. Konkrétně se nedoporučuje pouštět MCP k nastavení nebo správě VPN. Proč je to problém a jaká zranitelnost hrozí, najdete v článku z komunity. Obecně platí: MCP konektory mají přístup k tomu, co jim povolíte. U citlivých věcí, jako je VPN nebo klíčenka, se vyplatí být opatrný."
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-05-06-01",
+    "type": "INSIGHT",
+    "level": "Builder",
+    "topic": "Učení s AI",
+    "title": "Tři průšvihy pasivního učení s AI",
+    "excerpt": "Pasivně jen číst, nechat AI přemýšlet za nás a nic si neověřovat. Tři spolehlivé způsoby, jak se s AI nic nenaučit. Problém není v nástroji, ale v tom, jak ho používáme. A řešení je překvapivě jednoduché.",
+    "body": "Hodně lidí s AI „studuje“ tak, že si nechá něco vysvětlit nebo shrnout. Výsledek? Příjemný pocit, že tomu rozumíte. Za týden je pryč.\n\n**Pasivní čtení** — AI vám téma hezky vysvětlí. Text dává smysl, takže máte pocit, že už to umíte. Jenže to je fluency illusion. Mozek si splete plynulé čtení se skutečným učením.\n\n**Přenechání přemýšlení AI** — Necháte AI, ať to shrne za vás. Jenže tím přijdete o chvíli, kdy si myšlenku propojíte s vlastní zkušeností. Bez toho se znalost moc neuchytí.\n\n**Žádné ověření** — Nezkoušíte, jestli to opravdu umíte. Přitom AI vás umí dobře prozkoušet. Přes otázky, dialog nebo kvízy.\n\nCo funguje líp? Otočte roli. Místo abyste se ptali vy AI, nechte AI ptát se vás.\n\nZkuste třeba prompt: „Vytvoř mi z toho kvíz na úrovni XYZ a jdi do hloubky.“ Nebo sokratovský styl. AI nepřednáší, ale vede vás otázkami.\n\nAnebo jednoduše: vysvětlete téma vlastními slovy. Tak, aby ho pochopil kolega, který o něm nic neví. Jakmile začnete kličkovat, víte, kde máte mezeru.",
+    "read_minutes": 2,
+    "source_date": "2026-05-06",
+    "resurfaced_from": "2026-05-06"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "00:05",
+            "author": "člen komunity",
+            "text": "Jestli nesnášíte vyhledávání ubytka tak jako já, tohle by vám mohlo udělat radost. Booking.com má vlastní MCP konektor — Stačí ho přidat v Cowork přes Connectors."
+          },
+          {
+            "time": "06:27",
+            "author": "Daniel",
+            "text": "OMG, díky! Nevíš, jak dlouho to je? Protože mám pocit, že jsem to nedávno zkoumal a ještě MCP neměli."
+          },
+          {
+            "time": "07:47",
+            "author": "člen komunity",
+            "text": "Taky jedu v češtině, rozdíl jsem nepoznal"
+          },
+          {
+            "time": "10:31",
+            "author": "člen komunity",
+            "text": "rozdíl jazyka dává smysl jen pokud máte textový vstupy /výstupy a pak je zas třeba přeskládat mu ty materiály fakt všechny. input tokeny z promptu jsou minimální v poměru k volání tools, používání skills apod. Při kódování ten rozdíl na spotřebě podle mě nepoznáte."
+          },
+          {
+            "time": "10:32",
+            "author": "člen komunity",
+            "text": "*překládat"
+          },
+          {
+            "time": "10:35",
+            "author": "člen komunity",
+            "text": "input tokenu v dotazu je třeba 7 ušetřit 20% znamená 1,4, tokenu"
+          },
+          {
+            "time": "10:36",
+            "author": "člen komunity",
+            "text": "ale tools contextu apod je třeba 17tis"
+          },
+          {
+            "time": "10:38",
+            "author": "člen komunity",
+            "text": "můj overhead třeba dává k defaultu 0.04$ per dotaz"
+          },
+          {
+            "time": "10:43",
+            "author": "člen komunity",
+            "text": "Cetl jsem to nekdy pred 14dny, ale jinak nevim."
+          },
+          {
+            "time": "11:08",
+            "author": "člen komunity",
+            "text": "Vypustili to cca před měsícem, v rámci consumer konektorů (Spotify, Uber, Tripadvisor, atd.), Mě zatím moc nenadchnul. Dělal jsem s tím tehdy pár testů, kdy jsem zadal nějaký kritéria a nenašlo to ubytko o kterým jsem věděl, že to přesně splňuje. Ale hlavně často hledám věci s parkováním, nechci někde objíždět blok a řešit, že stojím v zóně a ten konektor má v parametru facilities na parkování jen dvě možnosti: PARKING (jakékoliv) a FREE_PARKING (zdarma). Žádná hodnota typu \"parkování v objektu\", \"soukromé\" nebo \"on-site\" v tom schématu není. Takže to pak hází přesně to co nechci, parkování na ulici. Ale na nějaký rychlý najití něčeho, co doporučuje sám booking asi dobrý :)"
+          },
+          {
+            "time": "11:18",
+            "author": "člen komunity",
+            "text": "Dane @člen, funguje ve spolupráci se Siri? třeba když řídím, jen bych dala Siri pokyn, aby hodila do Todoist dané úkoly, které mě právě napadly?"
+          },
+          {
+            "time": "11:32",
+            "author": "Daniel",
+            "text": "Tahle funkce má v Apple Shortcuts možnost spuštění. Pokud si nastavíš Siri na tuhle zkratku, pak to jenom ťuknutím vypnout. Možná tam jsou i další možnosti, ale ještě jsem nad tím moc nepřemýšlel."
+          },
+          {
+            "time": "11:36",
+            "author": "člen komunity",
+            "text": "Vím, že jsi na LinkedIn sdílel všelijaké hacky na iphone/mac. Neplánuješ to všechno dát na jedno místo (web)? Nebo pokud už něco takového máš, nasdílíš prosím? 😁"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "06:47",
+            "author": "člen komunity",
+            "text": "https://www.lupa.cz/clanky/superschopny-claude-mythos-zranitelnost-v-mcp-a-proc-nesahat-na-vpn/"
+          }
+        ]
+      }
+    ]
+  }
+}

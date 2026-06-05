@@ -1,0 +1,184 @@
+{
+  "date": "2026-05-14",
+  "generated_at": "2026-06-05T07:38:07Z",
+  "stats": {
+    "messages": 21,
+    "groups": 2,
+    "members": 5
+  },
+  "cards": [
+    {
+      "id": "2026-05-14-01",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Produktivita",
+      "title": "Zápisník a dvě otázky místo stovek záložek",
+      "excerpt": "Člen komunity přiznal, že ho nával novinek kolem AI úplně zahltil. Vyřešil to obyčejným papírovým zápisníkem a tužkou. Většina nápadů u něj neprojde přes dvě kontrolní otázky.",
+      "body": "Každý den se objeví nová AI funkce, nová aplikace, nový příspěvek. Ukládáme záložky, přidáváme tasky, zakládáme složky s inspirací. A výsledek? Chaos.\n\nJeden člen komunity to řeší papírovým zápisníkem a myšlenkovou mapou. Má jednoduché pravidlo. Nápad se tam dostane jen ve chvíli, kdy projde dvěma otázkami:\n\nPosune to mě nebo firmu v nejbližší době?  \nVyužiju to teď u nějakého zákazníka nebo projektu?\n\nKdyž je odpověď na obě otázky ne, nápad letí pryč. V zápisníku zůstává jen to nejdůležitější. Věci, které chce opravdu zkusit nebo se naučit.\n\nTahle metoda nefiltruje nástroje. Filtruje záměr. A v tom je velký rozdíl. Záložky ve Firefoxu rostou donekonečna, protože při ukládání nemusíš nic rozhodnout. Zápisník tě donutí rozhodnout hned.\n\nJestli tě AI novinky zahlcují, napiš si vlastní filtrační otázky. Dvě stačí.",
+      "read_minutes": 2,
+      "source_date": "2026-05-14"
+    },
+    {
+      "id": "2026-05-14-02",
+      "type": "INSIGHT",
+      "level": "Expert",
+      "topic": "Anthropic / API",
+      "title": "Anthropic od 15. 6. odděluje subscription a SDK",
+      "excerpt": "Člen komunity upozornil, že Anthropic od 15. června mění podmínky. Subscription dál zůstává pro interaktivní používání. Automatizace přes kód dostane vlastní kredit.",
+      "body": "Doteď platilo neoficiální pravidlo: Pro, Team, Max a Enterprise subscription byl hlavně pro chat a Claude Code v terminálu. Programatické použití přes Agent SDK nebo nástroje třetích stran, třeba Hermes, technicky fungovalo. Jenže naráželo na limity subscriptionu a dlouhodobě to nedávalo moc smysl.\n\nOd 15. června to Anthropic srovnává. Subscription dál zůstává pro interaktivní použití, na tom se nic nemění. K tomu ale přibývá samostatný Agent SDK kredit pro programatické použití: vlastní agenti, `claude -p` a nástroje třetích stran postavené nad SDK.\n\nVýše kreditu se řídí tarifem. Pro a Team Standard dostanou $20, Team Premium a Max 5x $100, Max 20x a Enterprise seat Premium $200. Kredit je na uživatele. Nedá se sdílet v týmu ani převést do dalšího měsíce. Stačí ho jednou aktivovat a pak se obnovuje automaticky.\n\nPraktický dopad je jednoduchý. Nástroje jako Hermes nebo vlastní automatizace nad SDK mají od poloviny června oficiálně podporovanou cestu přes subscription. Pro větší produkční nasazení Anthropic dál doporučuje API klíč s pay-as-you-go. Pro osobní experimenty a lehčí automatizaci je ale nový kredit příjemný bonus navíc.",
+      "read_minutes": 3,
+      "source_date": "2026-05-14"
+    },
+    {
+      "id": "2026-05-14-03",
+      "type": "NÁSTROJE",
+      "level": "Začátečník",
+      "topic": "NotebookLM",
+      "title": "NotebookLM na přípravu ke zkouškám",
+      "excerpt": "Zdravotní sestra z komunity hledala pomoc s přípravou na státnice přes AI. Komunita jí doporučila NotebookLM. Bezplatná verze na to stačí.",
+      "body": "Čím se NotebookLM liší od ChatGPT nebo Clauda? Pracuje jen s materiály, které do něj nahraješ. Skripta, prezentace, poznámky, PDF. Odpovídá podle toho, co v nich najde. Při přípravě ke zkouškám se to hodí. Halucinací je minimum, protože model nemá moc prostoru vymýšlet si z vlastních znalostí.\n\nJedna zdravotní sestra z komunity se chystala na státnice a hledala AI pomocníka. Komunita jí doporučila NotebookLM. Nahraje si do něj studijní materiály a pak se ptá vlastními slovy, nechá si vysvětlit pojmy, vygenerovat kvízové otázky nebo shrnout kapitoly.\n\nBezplatná verze tohle zvládne bez omezení. Stačí se přihlásit přes Google účet, kreditní karta není potřeba.\n\nPokud máš hromadu materiálů a potřebuješ se z nich učit, ne jen hledat po internetu, NotebookLM je jeden z nejpraktičtějších bezplatných nástrojů, které teď můžeš použít.",
+      "read_minutes": 2,
+      "source_date": "2026-05-14"
+    },
+    {
+      "id": "2026-05-14-04",
+      "type": "TÉMA TÝDNE",
+      "level": "Builder",
+      "topic": "Produktivita",
+      "title": "AI informační přetížení jako sdílený problém",
+      "excerpt": "Z diskuze vyplynulo, že záplavu novinek kolem AI řeší skoro každý. Není to žádné osobní selhání. Je to nová realita a většina lidí na ni zatím nemá hotový systém.",
+      "body": "V diskuzi se řešilo téma, které zná asi hodně lidí z komunity: jak zvládat příval AI novinek a neskončit u hromady záložek a rozdělaných pokusů. Každý den přijde něco, co má být lepší než včerejší věc. Nové funkce, nové nástroje, nové benchmarky.\n\nNěkolik členů napsalo, že to aktivně řeší. Sdíleli, co jim funguje. Někdo používá papírový zápisník s otázkami, podle kterých novinky třídí. Někdo má kontextové systémy, které mu vybírají relevantní obsah. A někdo se prostě vědomě rozhodl sledovat toho míň.\n\nVšichni se ale shodli na jednom: cílem není vědět o všem. Cílem je mít systém, který vychází z tvých záměrů a projektů. Filtr musí být osobní. Co dává smysl developerovi v B2B SaaS firmě, nemusí dávat smysl HR specialistovi v korporátu.\n\nTempo kolem AI nezpomalí. Otázka není, jestli tě to bez systému zahltí, ale jak rychle si svůj systém postavíš.",
+      "read_minutes": 2,
+      "source_date": "2026-05-14"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-04-29-01",
+    "source_date": "2026-04-29",
+    "topic": "Příprava na vystoupení",
+    "excerpt": "Tři hodiny před svým blokem překopal celou přípravu. Akce dopadla jako bomba.",
+    "body": "Daniel vystupoval na živé akci a tři hodiny před svým blokem se rozhodl, že chce víc. I když byl nervózní a měl pocit, že je hlavou úplně jinde, akce dopadla skvěle. Pak o ní napsal příspěvek na LinkedIn. Zmínil i feedback od účastníků, ale nakonec ho nepřidal. Prý by to vzalo celému momentu kouzlo. Autenticita pro něj byla víc než potvrzení od publika.",
+    "resurfaced_from": "2026-04-29"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "18:47",
+            "author": "Daniel",
+            "text": "Tady jen… Tak jde čas. BTW pamatujete ten seriál? 🙂\nhttps://www.linkedin.com/posts/danielgamrot_po-14-letech-v-produktivit%C4%9B-m%C3%A1m-dnes-jednodu%C5%A1%C5%A1%C3%AD-share-7460731870285271040-VJK1"
+          },
+          {
+            "time": "19:07",
+            "author": "člen komunity",
+            "text": "Parádní článek 👍 Házím mu tam desítky nápadů denně. *Většina z nich nepřežije den.* - tak tohle mám problém čím dál víc. S AI co se valí ze všech stran, nové funkce, nové aplikace, není den, aby nebylo něco nového, co překonává ještě včera nemyslitelného a člověk jen přidává záložky, tasky, inspirace, složky na inspirace pod tíhou FOMO. Takže to dospělo do stavu kožený zapisník a tužka + myšlenková mapa. A je tam opravdu jen to nejdůležitější, co chci zkusit, naučit se. Ale musí to projít otázkami typu posune to mě/firmu v nejbližší době, využiju to teď u nějakého zákazníka. Pak se do toho pouštím detailněji."
+          },
+          {
+            "time": "19:09",
+            "author": "Daniel",
+            "text": "Parádní sdílení. Mám to podobně. Koukat na to, co chci, ideálně déle dopředu. A pak si k tomu postavit systém, který na základě kontextu filtruje věci, které jsou pro mě relevantní. To jsem tam nedal. Třeba jindy. A děkuju!"
+          },
+          {
+            "time": "21:50",
+            "author": "člen komunity",
+            "text": "Dane @člen , 👀\nhttps://youtu.be/uJ70iGerYzE?is=tA4x5-c3j47VBuTz"
+          },
+          {
+            "time": "21:54",
+            "author": "člen komunity",
+            "text": "https://www.raycast.com/blog/the-new-raycast"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "07:27",
+            "author": "Daniel",
+            "text": "Zkoušel jsi stahovat audio soubory k sobě do zařízení? A máš případně placenou verzi anebo zdarma?"
+          },
+          {
+            "time": "09:12",
+            "author": "člen komunity",
+            "text": "Včera jsem na svém domácím PC soubor stáhl. Dnes na pracovním, kde jsem si vše doinstaloval mi to nejde. Vrací se mi chyba 403. Změnil jsem bearer, od včerejška se změnil, a stále to nejde. Máme jiný antivir, takže výjimka na https asi nechodí. Zkusím to večer na svém PC."
+          },
+          {
+            "time": "09:17",
+            "author": "člen komunity",
+            "text": "Pro ty, kdo kolem Claude stavíte agenty nebo používáte třetí strany nad SDK: Anthropic od 15.6. konečně narovnal pravidla, která byla dlouho v šedé zóně.\nDosud platilo: subscription Pro/Team/Max/Enterprise byl primárně pro interaktivní použití (chat, Claude Code v terminálu, Cowork). Programatické použití přes Agent SDK nebo třetí strany typu Hermes oficiálně nebylo blessed - technicky to fungovalo, ale dusilo se to v subscription limitech a nebylo to udržitelné.\nNově:\n- Subscription = interaktivní použití (beze změny)\n- Samostatný Agent SDK kredit = vše programatické (vlastní agenti, `claude -p`, třetí strany nad SDK)\nVýše kreditu: Pro / Team Standard $20, Team Premium / Max 5x $100, Max 20x / Enterprise seat-based Premium $200. Per-user, nepoolovatelné napříč týmem, nepřevoditelné do dalšího měsíce, musíš ho jednorázově claimnout (pak se obnovuje automaticky).\nHlavní vítězství podle mě je, že nástroje jako Hermes (Nous Research) nebo vlastní automatizace nad SDK mají oficiálně podporovanou cestu na subscriptionu, ne jen API klíč s pay-as-you-go. Pro produkční automatizaci ve větším měřítku Anthropic stále doporučuje API klíč, ale pro osobní experimentování a lehkou automatizaci je tohle parádní 'free tier' navíc."
+          },
+          {
+            "time": "10:07",
+            "author": "člen komunity",
+            "text": "Čtu si tady a vstrebávám informace.  Jsem obyčejná uživatelka AI a snažím se ho používat asi jako nůž a varečku při vaření.\nDokáže mě zde někdo nasměrovat nebo poradit?\nBlíží se mi státnice,  jako zdravotní sestra s dlouhodobou personální krizí na oddělení je mého času míň než méně.  Potřebuji systém na naučení otázek ke státnicím - interkulturní a personální management.  Otázky mám zpracované AI (GPT chat  a Perplexity  - základní placená verze) . Potřebuji to posunout, aby mi to \"šlo do huby\". A abych se to zvládla naučit za 3 odpoledne.\nVíte jak na to? Jak to napromptovat/ oslovit/ nasměrovat/ naprogramovat....?\nA pokud to sem nepatří,  tak mě nekamentujte ❤️"
+          },
+          {
+            "time": "10:10",
+            "author": "člen komunity",
+            "text": "třeba by vám stačil studijní režim v chatgpt\nhttps://chatgpt.com/cs-CZ/features/study-mode/\nNebo pak materiály do notebookLM a tam také studijní mód"
+          },
+          {
+            "time": "10:10",
+            "author": "člen komunity",
+            "text": "V rychlosti nic náročného na tvorbu... použít na zpracované otázky NotebookLM a nebo případě si udělat asistenta v chatGPT nacpat otázky a použít mod učení s vedením"
+          },
+          {
+            "time": "11:57",
+            "author": "člen komunity",
+            "text": "Zkusil bych NotebookLM od Google. Má tam učícíekce, štítky, otázky apod"
+          },
+          {
+            "time": "12:55",
+            "author": "člen komunity",
+            "text": "Stopro NotebookLM. Bude se Vám líbit."
+          },
+          {
+            "time": "12:57",
+            "author": "člen komunity",
+            "text": "Souhlas NotebookLM je super pracuje jen s tím co mu dáte 🙂 … vy jste kurátor obsahu."
+          },
+          {
+            "time": "13:22",
+            "author": "člen komunity",
+            "text": "Nechci si platit dalšího \"pomocnika\". Je verze free a funguje kvalitně ( minimum halucinaci).\nMám zkušenost,  základní placená verze GPT chat funguje mnohem lépe než verze free a tím nemyslím objem dat, které zpracuje"
+          },
+          {
+            "time": "13:23",
+            "author": "člen komunity",
+            "text": "je to kvalitní i ve free verzi a pracuje jen s tím, co mu uživatel dá - což je ideál pro požadované využití. nedávat tam ale citlivá data (což platí všude)"
+          },
+          {
+            "time": "13:33",
+            "author": "člen komunity",
+            "text": "Stačí ti jen Gmail... Alespoň pro tu základní verzi"
+          },
+          {
+            "time": "13:53",
+            "author": "Daniel",
+            "text": "Přidávám se, NotebookLM za mě na tohle super."
+          },
+          {
+            "time": "14:45",
+            "author": "člen komunity",
+            "text": "Tak jestli včera bylo ok, tak dnes to nefunguje. Chyba 403 a \"npx -y @plaud-ai/mcp@latest install\" jak Plaud doporučuje v dokumentaci selhává na Autentizaci, i na domácím PC."
+          },
+          {
+            "time": "14:59",
+            "author": "Daniel",
+            "text": "Zkouším a frčí mi to, jen mi ještě neskončila ta unlimited verze."
+          },
+          {
+            "time": "15:00",
+            "author": "člen komunity",
+            "text": "Mám tu Start s Plaudem, někde jsem četl, že pro tento tarif je restrikce."
+          }
+        ]
+      }
+    ]
+  }
+}

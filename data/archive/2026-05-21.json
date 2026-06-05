@@ -1,0 +1,425 @@
+{
+  "date": "2026-05-21",
+  "generated_at": "2026-06-05T07:54:55Z",
+  "stats": {
+    "messages": 65,
+    "groups": 3,
+    "members": 8
+  },
+  "cards": [
+    {
+      "id": "2026-05-21-01",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Diktování a speech-to-text",
+      "title": "Wispr Flow vs Apple diktování vs Raycast",
+      "excerpt": "Komunita v praxi porovnávala tři způsoby převodu řeči na text. Wispr Flow vede přesností, a to i na iOS. Apple diktování funguje spolehlivě bez nastavování. Raycast přidal diktování v nejnovější verzi. Každý z těchto přístupů má ale svoje limity.",
+      "body": "Debata se stočila ke konkrétním zkušenostem s diktováním. Z těch, kdo ho zkoušeli, zatím nejlíp vychází Wispr Flow. Funguje na Macu i iPhonu a překvapivě dobře rozpoznává řeč i v místnosti, kde mluví víc lidí najednou. Na iOS má ale háček: musí běžet na pozadí a napojení na systémovou klávesnici je dost kostrbaté. Někdo zkoušel nastavit dvojité poklepání na zadní stranu telefonu pro rychlé spuštění, ale i to je spíš nouzové řešení.\n\nApple diktování funguje bez většího nastavování. Hodí se pro ty, kdo nechtějí instalovat další nástroj. Nevýhoda je, že interpunkci je potřeba diktovat ručně.\n\nRaycast v nejnovější verzi nově přidal přepis diktování. Kdo ho používá jako launcher, má tuhle funkci rovnou k dispozici. Uttero se dál vyvíjí jako nástroj přímo z komunity.\n\nKdo chce začít bez nastavování, pro toho je nejjednodušší Apple diktování. Kdo chce větší přesnost a použití napříč aplikacemi, měl by zkusit Wispr Flow.",
+      "read_minutes": 2,
+      "source_date": "2026-05-21"
+    },
+    {
+      "id": "2026-05-21-02",
+      "type": "NÁSTROJE",
+      "level": "Začátečník",
+      "topic": "Přepis schůzek",
+      "title": "Fireflies, Deepgram nebo Plaud na schůzky",
+      "excerpt": "O přepis online schůzek se zajímá čím dál víc lidí. Padly tři konkrétní nástroje. Fireflies se přidá do pozvánky a přepis pak přijde automaticky. Deepgram nabízí diarizaci a 200 dolarů kreditu zdarma na začátek.",
+      "body": "Přepisy živých schůzek řeší víc lidí z komunity. V diskuzi padly tři konkrétní nástroje.\n\nFireflies se do Google Meetu nebo Zoomu připojí jako virtuální účastník. Přepis dorazí automaticky po každé schůzce. Pro netechnické uživatele je to nejjednodušší cesta. Stačí přidat e-mail do pozvánky a dál to neřešit.\n\nDeepgram umí diarizaci, tedy rozpoznat, kdo co v přepisu říkal. Startovní kredit 200 dolarů zdarma je dobrá šance si ho vyzkoušet bez závazku. Hodí se pro ty, kdo chtějí mít větší kontrolu nad zpracováním dat.\n\nPlaud je fyzické zařízení na nahrávání. Někteří v komunitě ho zvažují jako doplněk k online nástrojům. Hlavně pro osobní schůzky, kde se nechcete spoléhat na připojení.\n\nPokud začínáte, Fireflies je nejrychlejší volba. Pokud potřebujete víc než jen textový přepis, Deepgram dá větší flexibilitu.",
+      "read_minutes": 2,
+      "source_date": "2026-05-21"
+    },
+    {
+      "id": "2026-05-21-03",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Builder",
+      "topic": "Task management",
+      "title": "Dává ještě dedikovaný task manager smysl?",
+      "excerpt": "Dnešní debata byla o tom, jestli má ještě smysl používat Things, Google Tasks nebo Evernote. Claude přes MCP zvládne číst e-maily, kalendář i soubory najednou. Může časem nahradit specializovaný nástroj?",
+      "body": "Část komunity jede minimalisticky přes Google Calendar a Google Tasks. Jiní používají Obsidian nebo hybridní setup. Zatím nikdo nepopsal funkční setup, kde by Claude přes MCP úplně nahradil samostatný task manager. Debata ale naznačuje, že se k tomu blížíme.\n\nProč si nechat samostatný nástroj: jeden přehledný pohled na úkoly, rychlý přístup bez otevírání chatu, notifikace a připomínky, které běží samy, bez ptaní.\n\nProč používat Claude přes MCP: umí vzít e-maily, kalendář a poznámky dohromady a navrhnout priority podle kontextu. To statický task manager neumí.\n\nOtázka k zamyšlení: používáte ještě samostatný task manager, nebo se vám workflow přesunulo jinam? A pokud kombinujete, co zůstalo v nástroji a co už převzala AI?",
+      "read_minutes": 2,
+      "source_date": "2026-05-21"
+    },
+    {
+      "id": "2026-05-21-04",
+      "type": "INSIGHT",
+      "level": "Expert",
+      "topic": "Claude Code",
+      "title": "Claude Code řídit z mobilu přes SSH",
+      "excerpt": "Ve skupině Vibe Coding se řešilo, jak ovládat Claude Code z mobilu, když počítač běží doma. Jde to přes Termius a SSH, případně přes Telegram bota v tmux session. Jeden člen takhle udělal velký update knowledge base a všechno proběhlo bez jediného problému.",
+      "body": "Pokud máte Mac mini doma nebo v kanceláři a chcete Claude Code ovládat na dálku, v diskuzi padlo několik možností.\n\nNejjednodušší je Termius na iOS nebo Androidu. Přihlásíte se přes SSH do Macu, otevřete tmux session a v ní pustíte Claude Code. Výhoda je plná kontrola. Nevýhoda je práce v terminálu na malém displeji mobilu.\n\nPro běžné používání je pohodlnější Telegram bot jako wrapper pro Claude Code. Bot bere zprávy z Telegramu a posílá je do Claude Code session. Výstup se vrací zpátky jako běžná zpráva v aplikaci v mobilu. Tím odpadá otravná práce s terminálem na telefonu.\n\nSlack může fungovat podobně, pokud ho používáte radši.\n\nJeden člen psal, že takhle z mobilu udělal velký update knowledge base. Bez problémů. Výsledek byl stejný jako při práci na desktopu. Základ je stabilní tmux session na Macu, která přežije odpojení.",
+      "read_minutes": 3,
+      "source_date": "2026-05-21"
+    },
+    {
+      "id": "2026-05-21-05",
+      "type": "NÁSTROJE",
+      "level": "Expert",
+      "topic": "AI coding",
+      "title": "ChatGPT Codex vs Claude Code na refaktoringu",
+      "excerpt": "Část komunity začala vedle Claude Code testovat i Codex. Opus 4.7 podle nich plní zadání až moc doslova a míň sahá do okolního kódu. Codex zatím podle prvních dojmů líp přepisuje existující kód.",
+      "body": "První srovnání z komunity ukazují zajímavý rozdíl. Claude Code s Opusem 4.7 prý bere zadání až moc doslova. Sáhne jen na to, o co si řeknete, a nechá být okolní kód, který by si taky zasloužil úklid. ChatGPT Codex podle prvních zkušeností líp přepisuje existující kód, když je potřeba ho vyčistit nebo napsat znovu.\n\nPořád jsou to ale první dojmy z konkrétních projektů. Modely se rychle mění, zkušenosti se liší projekt od projektu a obecné benchmarky vám neřeknou, jak bude nástroj fungovat zrovna na vašem kódu a ve vašem workflow.\n\nNavíc rychlé přeskakování mezi nástroji žere čas i soustředění. Testování dává smysl na konkrétním úkolu, který děláte opakovaně. Ne na náhodném kusu kódu.\n\nPokud si chcete udělat vlastní srovnání, vyberte jeden typ úkolu, udělejte ho v obou nástrojích a výsledek posuďte ve svém kontextu. Obecné dojmy z komunity berte jako start, ne jako hotový závěr.",
+      "read_minutes": 2,
+      "source_date": "2026-05-21"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-05-05-03",
+    "type": "POSTAVIL JSEM",
+    "level": "Builder",
+    "topic": "Vibe coding",
+    "title": "Tři projekty z komunity za týden",
+    "excerpt": "Appka na domácí úkoly při výcviku psa, beta projekt, který zpracovává jen změněná data, a kalkulačka daňových doplatků pro rok 2025. Komunita staví a sdílí.",
+    "body": "Z dnešní diskuze vylezly tři konkrétní projekty, které členové buď dokončili, nebo je právě dotahují:\n\n**Appka na domácí úkoly pro výcvik** — hotová je i landing page. Nejde jen o samotný nástroj, ale i o prezentaci pro možné uživatele. Dobrý příklad, že vibe coding nemusí skončit jen u prototypu.\n\n**Beta projekt s optimalizací zpracování změn** — techničtější projekt zaměřený na efektivitu. Nezpracovává celý dataset pořád dokola, ale bere jen změny. Tenhle pattern se hodí všude, kde se data mění postupně.\n\n**Kalkulačka na daňové doplatky 2025** — konkrétní sezónní utilita. Místo ručního počítání nebo hledání po webu nabídne jednoduché rozhraní, které vrátí výsledek pro vaši situaci.\n\nVšechny tři projekty dobře ukazují, k čemu se vibe coding hodí nejvíc. Na rychlé prototypy a osobní nástroje, které by jinak nejspíš nikdy nevznikly, protože by jejich vývoj byl moc drahý nebo zbytečně složitý.",
+    "read_minutes": 2,
+    "source_date": "2026-05-05",
+    "resurfaced_from": "2026-05-05"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "08:43",
+            "author": "člen komunity",
+            "text": "To by me zajimalo vic, co vsechno s tim jde delat. Jelikoz mame na Shoptetu 4 eshopy a obsluhujeme to jen z administrace krome mustku s ERP, ktery nam hlida skladove zasoby a ceny."
+          },
+          {
+            "time": "08:46",
+            "author": "člen komunity",
+            "text": "jo, jsem na tom podobně. Ale jen jeden eshop. My teda jedeme aktuálně mimo ERP, sklad mám zatím dodavatelský a lokální tam ani nemám. Importujeme si samo dodavatelské feedy .. přesněji - mám nakodovaný web, který mi skládá jeden feed do shoptetu"
+          },
+          {
+            "time": "08:47",
+            "author": "člen komunity",
+            "text": "Automatizace eshopu me taky hodne zajímá 👍"
+          },
+          {
+            "time": "09:15",
+            "author": "člen komunity",
+            "text": "taky shoptet?"
+          },
+          {
+            "time": "09:16",
+            "author": "člen komunity",
+            "text": "Taky, resp. s jiným řešením zkusenosti nemam"
+          },
+          {
+            "time": "09:18",
+            "author": "člen komunity",
+            "text": "já právě zvažovala, jestli utéct jinam, ale ono zatím moc není kam"
+          },
+          {
+            "time": "09:20",
+            "author": "člen komunity",
+            "text": "Zatím to vidim stejně. Ja jsem jeden eshop opustil, rad bych založil v budoucnu nový - zatim jako řešení vidim opět Shoptet + maximální automatizaci 🤷‍♂️"
+          },
+          {
+            "time": "09:22",
+            "author": "člen komunity",
+            "text": "jen já jim nechci dávat ranec za doplňky.. :/"
+          },
+          {
+            "time": "12:33",
+            "author": "člen komunity",
+            "text": "Já mám cca 5let Upgates. K shoptetu jsem se dostal cca před 3lety v rámci přebrání jiného projektu, ale dlouho mi to nevydrželo- ted mam už i ten u upgates. (Žádné své AI fičury tam nemam ale je to jistě oblast mého zájmu ochytření)"
+          },
+          {
+            "time": "12:43",
+            "author": "člen komunity",
+            "text": "Na Applu klasickou nativní funkci. Žádný zázrak ale používám dlouho (i teď). Na Macu jsem nedávno zprovoznil UTERO na windows zatím nic. Aktuálně řeším kombinaci se záznamem schůzek, tak zvažuji ještě  Plaud."
+          },
+          {
+            "time": "12:47",
+            "author": "člen komunity",
+            "text": "Se záznamem živých schůzek? To umí mj Fireflies (ale netestoval jsem) a tuším i Evernote psal, že to umí.\nJinak to Applí diktování je celkem fajn, jen se tam musí diktovat čárky ve větách, nebo tečky na koncích. 😅 Jo a ještě nově vlastně umí přepis diktování i Raycast v nejnovější verzi."
+          },
+          {
+            "time": "12:51",
+            "author": "člen komunity",
+            "text": "Raycast budu testovat na Macu v brzké době."
+          },
+          {
+            "time": "12:54",
+            "author": "člen komunity",
+            "text": "Uz z 90% diktuju - WisprFlow na macu i iphone. naprosta spokojenost a presnost😉"
+          },
+          {
+            "time": "12:56",
+            "author": "člen komunity",
+            "text": "Stejná zkušenost. 👍 Je překvapivé, jak přesné to je i když se v místnosti baví víc lidí, že?"
+          },
+          {
+            "time": "13:10",
+            "author": "člen komunity",
+            "text": "WhistFlow mam historicky na iOS nainstalovný, ale asi nikdy nepoužil . Musím se na něj podívat a zkusit nějak nastavit…"
+          },
+          {
+            "time": "13:12",
+            "author": "člen komunity",
+            "text": "Přidává se to jako druhá klávesnice, takže pak přepnout přes ikonku 🌐. Blbý je, že to musí být puštěné na pozadí, aby to nahrávalo. Takže pak na zamčené obrazovce běží widget… 😕 No asi limity IOS. Zkoušel jsem si nastavit i zkratku double-tap na zadní stranu telefonu pro spuštění WF, ale furt je to kostrbatý. Jinak píšu tahem, takže na to mi zas ta klávesnice od WF nefunguje."
+          },
+          {
+            "time": "13:16",
+            "author": "člen komunity",
+            "text": "Taky diktuju přes Wispr Flow, primárně na počítači, z mobilu tolik věcí neřeším. Dost často toho ted využívám tak, že u diktování chodím po bytě, líp se mi premejsli, než kdybych seděla 😃 akorát teda, a to se mi děje jak u wispru tak u Uttero - skoro pokaždé se mi na začátek zprávy přidá random věta, kterou jsem vůbec neřekla. Tak to musím kontrolovat a mazat."
+          },
+          {
+            "time": "13:21",
+            "author": "člen komunity",
+            "text": "A máte někdo porovnání Wispr Flow vs MacWhisper? v čem je jeden nebo druhý lepší?"
+          },
+          {
+            "time": "13:49",
+            "author": "člen komunity",
+            "text": "Jo, to se děje - např. Titulky vytvořil JohnyX. Ale to mi dělal víc Audiopen, WF je v tomhle ohledu vychytanej a nehalucinuje.\nDoporučuju tenhle článek, kde to David Grudl vysvětluje: https://www.umeligence.cz/blog/titulky-vytvoril-johnyx-kdyz-ai-slysi-duchy\n…a právě ta přesnost a eliminace halucinací je důvod, proč za to platím a nezkouším si udělat appku svou. Oni na tom brutálně makají, mají v týmu i lingvisty apod. aby ten výstup byl co nejlepší. To bych sám nikdy nedal."
+          },
+          {
+            "time": "14:24",
+            "author": "člen komunity",
+            "text": "Přiznám se, že mě to vysvětlení celkem uklidnilo 😃 občas ty věty navíc byly dost creepy"
+          },
+          {
+            "time": "14:24",
+            "author": "člen komunity",
+            "text": "Na Macu i iOS jedu Uttero a je to to nejlepsi, co me za posledni dobu potkalo. Jestli to Dan zabali, tak nevim, co budu delat 🤨"
+          },
+          {
+            "time": "14:29",
+            "author": "člen komunity",
+            "text": "Whisper, mě štvě nabo s ním zatím neumím. Nejlíp se to řekne všecko, všecko Chatu GPT, a on vyhodí všechny „ehm“ a napíše z toho vlastně poměrně použitelný text, včetně oprav a překlepů. A to zas, člověk musí kopírovat sem a tam, tak doufám, že to Wispr Flow brzy vychytá."
+          },
+          {
+            "time": "14:30",
+            "author": "člen komunity",
+            "text": "Každopádně zcela z jiného soudku:.\nKdyž vidíte, co dneska Claude či jiné vědmy umí — zadávat úkoly hlasem, řídit si přes to agendu, propojovat přes MCP s externími nástroji — dává vám ještě vůbec smysl používat samostatný task management tool typu Asana, Todoist, ClickUp? Ať už pro vás osobně, nebo pro vaše týmy. Nebo jste zjistili, že vám to AI pokrývá kompletně a externí úkolovník je zbytečná vrstva navíc?\nZkuste sdílet konkrétní use casy — kdy vám to ještě smysl dává a kdy už ne. Stačí krátce. Díky!"
+          },
+          {
+            "time": "14:35",
+            "author": "člen komunity",
+            "text": "Já používám pořád na úkoly Things, Claude mi tam sice přidává tasky, ale fungovat úplně bez si zatím neumím představit. Mám tam konkrétní věci co musím odbavit - napsat článek, vyřešit nabídku atd., nápady a tak mám v obsidianu. Večer kouknu, co mám na zítra, vyblokuju v kalendáři a jedu podle toho."
+          },
+          {
+            "time": "14:39",
+            "author": "člen komunity",
+            "text": "Snažím se co nejvíc eliminovat nástroje, které používám. Takže jedu na kombu:\n- Google kalendář (a tam je všechno napojené)\n- Google tasks (které vidím v kalendáři, jsou super jednoduché a docela na nich poslední dobou zamakali, mají appku, umí opakování, blokujou čas…a pomocí Gemini je můžu tvořit nebo organizovat)\n- ⁠Basecamp (na správu projektů a komunikaci s klientama / v týmu)\nTodoist je super, ale vlastně je to pro mně teď zbytečná appka. Pro práci v týmu mi tam chybí prostor pro sdílení informací (podklady, kontext), na úkoly samotné mi pak přijde zbytečné mít další aplikaci.\nTakže drobné úkoly mimo zakázky si zachytávám a dávám do Google tasks, konkrétní úkoly nad projektama jsou přiřazené lidem v Basecampu a v kalendáři mám pak vyhrazené bloky na práci pro klienty. Nebo delší Google tasks, popsané jen klientem, kterému se budu věnovat.\n* a AI nenechávám organizovat práci - chybí mu spousta informací pro to, aby to dělal efektivně. Maximálně mi píše souhrny, ale spíš je mi pomocníkem při exekutivě.\n* a jako PKM mám Evernote - na Obsidian jsem si nezvykl a nic lepšího než Evernote jsem nenašel (power user)."
+          },
+          {
+            "time": "15:02",
+            "author": "člen komunity",
+            "text": "K tomu, že ti chybí kontext, by ti vyřešil MCP na Evernote. Jen otázka, zda to chceš. Případně pak vyseparovat co mu nechces ukazovat. Obsidian ala Karpatyho Wiki LLM koncept ten kontext má velmi dobře."
+          },
+          {
+            "time": "15:03",
+            "author": "člen komunity",
+            "text": "Zatím si ho dělám u každého klienta do .md u projektů v Claude. MCP na Evernote určitě chtít budu, stejně tak i pro Basecamp. Jen ten čas… 😅🤯"
+          },
+          {
+            "time": "16:52",
+            "author": "Daniel",
+            "text": "Nic nebalím, dělám to pro sebe a pokračuju. 🙂"
+          },
+          {
+            "time": "16:53",
+            "author": "člen komunity",
+            "text": "Ahoj Dane, někdy mi Utero vyhazuje timeout u přepisu. Je tam třeba něco nastavit?"
+          },
+          {
+            "time": "16:55",
+            "author": "Daniel",
+            "text": "Kdyžtak, prosím, do soukromé zprávy. Nemělo by se to dít. Mrkneme na to."
+          },
+          {
+            "time": "16:55",
+            "author": "člen komunity",
+            "text": "Ok"
+          },
+          {
+            "time": "17:11",
+            "author": "člen komunity",
+            "text": "Super! Diky za inspiraci 👍"
+          },
+          {
+            "time": "17:19",
+            "author": "člen komunity",
+            "text": "*Nahravani a prepis online schuzky - lokalne*\nAhoj, prosim vas jaky nastroj/model/nastaveni/workflow (pro non-tech lidi) byste doporucili nekomu, kdo potrebuje nahrat online schuzku (alespon audio) a idealne rovnou to prepsat do textu, pripadne prepis udelat v jinem nastroji v dalsim kroku. Vse ovsem musi byt lokalne, bez zasilani/zpracovani v cloudu. Poradite nekdo, prosim, co vam funguje? (Mac, 24gb). Diky moc."
+          },
+          {
+            "time": "17:21",
+            "author": "člen komunity",
+            "text": "U mě zatím nejlépe vyšel deepgram neb má diarization a dá vám 200USD kredit. To ale snad nejde vyčerpat pro domácí použití."
+          },
+          {
+            "time": "20:11",
+            "author": "člen komunity",
+            "text": "Co si predstavujes pod maximalni automatizaci?👀"
+          },
+          {
+            "time": "20:38",
+            "author": "člen komunity",
+            "text": "Brigádníci na sklade bali, odevzdávaji na svozy a vsechno ostatní probíhá automaticky. Hlavně veskera administrativa - potvrzení obj., pohyby skladu, zaslání FA, kontrola plateb, etc.\nAby šlo fungovat s co nejnizsimi náklady a co nejmenším počtem lidí. Samozřejmě nemam na mysli scale typu Alza, ale  uzce specializovaný maly eshop, ktery by bylo možné skalovat spíše jako jazykove mutace na zahraniční trhy nez nejaky růst pres CZ trh a nabídku zboží od A do Z."
+          },
+          {
+            "time": "20:55",
+            "author": "člen komunity",
+            "text": "Fireflies na záznam schůzek je skvělé. Testovano i v rámci diskuse a 95 procent info skvěle zachyceno i s daty a cisly /mobilem v terénu/a tvoří i souhrny."
+          },
+          {
+            "time": "09:32",
+            "author": "Daniel",
+            "text": "Jenom k pár tématům, o kterých se tady včera psalo. Primárně jde o speech-to-text, asi tušíte, že diktuju o 106. Třeba i tento příspěvek jedu přes Uttero. Občas ho někomu natlačím a lidi si ho fakt chválí.\nAle za mě, i kdybyste Uttero nevyužívali kvůli kompatibilitě s operačním systémem nebo z jakéhokoliv jiného důvodu, tak WisprFlow je za mě fajn.\nNicméně si myslím, že Raycast v poslední beta verzi WisprFlow dost řízne. Jasně, budou se potom do budoucna předhánět, ale to jejich diktování je fakt super a hodně mi to připomíná to, jak jsem postavil Uttero.\nK těm přepisům z meetingů používám Plaud jako hardware, ale zároveň používám Plaud i jako software v počítači. Je to za mě asi nejjednodušší varianta, jak to mít všechno na jednom místě. Ta přesnost je moc fajn. Jasně, že přemýšlím nad tím, že si k tomu postavím vlastní nástroj, který poběží na Soniox, hlavně kvůli míchání jazyků a podobně. Ale to je ještě vzdálená budoucnost."
+          },
+          {
+            "time": "10:00",
+            "author": "člen komunity",
+            "text": "@člen Uttero zkouším necelý týden na iPhone a fakt super, doporučuji.\nPro nás neMacové, pro Windows bys alternativu neměl? je to návykové 😉"
+          },
+          {
+            "time": "10:15",
+            "author": "člen komunity",
+            "text": "Utero jednoznacne vede pri akuratnosti a rozpoznavani jazyku - neuveritelne vcetne Fr. Jen jsem nerozchodil preklad do custom jazyku do on the fly. V Settings jsem to nastavoval, asi to mam blbe"
+          },
+          {
+            "time": "11:04",
+            "author": "Daniel",
+            "text": "Jedině ten WisprFlow nebo počkat na Raycast 2.0"
+          },
+          {
+            "time": "11:05",
+            "author": "Daniel",
+            "text": "V Settings se nastavují jen přepisy v daném jazyce. Pro zvýšení přesnosti. Live Translate jsem vypnul, ale možná to zase zapnu. Jen potřebuju vědět, jak to zakonponovat."
+          },
+          {
+            "time": "12:29",
+            "author": "člen komunity",
+            "text": "Pardon náročný týden. Pošli solo zprávu nebo přes linkáč https://www.linkedin.com/in/jirisoljak/"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "17:10",
+            "author": "Daniel",
+            "text": "Využíváte /remote-control v Claude Code? Případně máte jiný způsob, jak něco rozjet někde a pokračovat v mobilu? Trošku inovuju svou práci „za chůze“ a zajímají mě různé možnosti."
+          },
+          {
+            "time": "17:16",
+            "author": "člen komunity",
+            "text": "Já se chystám si rozjet duálku na svém starém mac mini. Nechci žhavit mac ntb celou dobu. Otázka je jak se s tím popere icloud. Dělal jsem kolem toho nějaká DR a na reditu je toho plno,že to není dopročované řešení, ale minimálně by to měl řešit lépe obsidian sychnro placenka či github. Pak už jen klasika termius a terminál atd…ale taky mě zajímá jak to řeší ostatní."
+          },
+          {
+            "time": "17:18",
+            "author": "člen komunity",
+            "text": "Už jsem k tomu využil i cowork přes dispatch 😀 Měl jsem hotovo a odjel pryč. Noťas jsem měl ale zapnutý... Klientka hlásila nějaký problém a já jsem na to rychle z auta poslal cowork, ať se podívá na session týkající se produktu, analyzuje co se tam stalo a opraví to... a on za mě psal v tom Claude code prompty a vyřešil to... Určitě to není ideál, ale v krizovce posloužilo a fungovalo to."
+          },
+          {
+            "time": "17:21",
+            "author": "člen komunity",
+            "text": "běží mi mac mini a na něj jsem se připojoval přes Termius, synchronizace souborů primárně přes iCloud\nDispatch/remote nevyhovoval\nnicméně dnes to řeším přes Telegram bota, ten funguje dobře (po určitém vyladění)"
+          },
+          {
+            "time": "17:26",
+            "author": "člen komunity",
+            "text": "záleží hodně na tom, jaký typ problémů s Claudem řešíš"
+          },
+          {
+            "time": "17:26",
+            "author": "člen komunity",
+            "text": "Jen fakt v nouzi, když potřebuju něco dodělat. Nefunguje mi moc spolehlivě, občas se přeruší úplně, většinou mi “jen” okno neukazuje progress a musím ho pořád obnovovat. Ale je to teda o parník lepší než cowork na dálku, ten jsem vzdala, neudělal nikdy nic 😃"
+          },
+          {
+            "time": "17:27",
+            "author": "člen komunity",
+            "text": "stejná zkušenost, proto Telegram ve 24/7 zapnutém tmux okně"
+          },
+          {
+            "time": "17:28",
+            "author": "člen komunity",
+            "text": "Jj, telegram či slack jsou v plánu. Člověk se vyspí (pokud celou noc nebuildí), a ráno už má zase technický dluh ;-)"
+          },
+          {
+            "time": "17:48",
+            "author": "člen komunity",
+            "text": "Server s hermes agentem na slacku, claude code přes remote-control a matrix. Taky na serveru.\nRemote control mi většinou funguje bez problémů, slack taky.\nAle konzole mi pořád připadne jako nejsilnější."
+          },
+          {
+            "time": "18:43",
+            "author": "člen komunity",
+            "text": "Agentické AI systémy.\nAsi to pošlu raději sem, než do kanálu inspirace.\nDnes rozbíhám nový agentickým systém Hermes Agent. Je tu někdo, kdo by chtěl sdílet tuto oblast? @člen , co ty na to?\nDoporučuji i spiraci https://youtu.be/QQEgIo4Juxg?is=4LIdW5wyOtjWVYHO"
+          },
+          {
+            "time": "19:54",
+            "author": "člen komunity",
+            "text": "Což o to, hermes u mě roste víc a víc, klidně budu sdílet. Ale s rychlostí jeho updatů to nechci tady přehltit."
+          },
+          {
+            "time": "20:45",
+            "author": "člen komunity",
+            "text": "Ano, denně.\nMam nastaven CC, ze každá session má automaticky zapnutou remote-control.\nAkorát z mobilu nefunguji některé příkazy, ale bud je zavolá sám CC dle kontextu nebo mu to napíšu"
+          },
+          {
+            "time": "21:11",
+            "author": "člen komunity",
+            "text": "Ahoj. Nevim jestli se to presne ten remote, ktery mas na mysli. Mam propojeny C.ai a CC skrz mcp s notion. Tam mam backlog ukolu s prioritami a oznacenim, na co si CC muze sahnout = od C.ai dostecne kvalitne pripravene, aby to CC odbavil. Spoustim to v CC skrz skill /nxt. CC mam na railway a lokal z velke casti zrcadlim do git repa, takze muzu takto fungovat z meho macu kdyz jsem u nej, nebo z mobilu"
+          },
+          {
+            "time": "21:17",
+            "author": "člen komunity",
+            "text": "A Slack je stejně spolehlivý? Telegram odmítám z hodnotových důvodů, tak mě zajímá alternativa. 🙂"
+          },
+          {
+            "time": "06:44",
+            "author": "člen komunity",
+            "text": "K tomu Claude Code. Používal jsem teď víc než půl roku jen Claude Code. Nicméně s releasem Opusu 4.7 jsem začal mít pocit, že ty výstupy nejsou tak dobré, jak bývaly. A tak jsem zkusil znova po dlouhé době ChatGPT a mám pocit, že Codex dává o hodně lepší výstupy teď než CC. Pozorujete to někdo taky?"
+          },
+          {
+            "time": "06:48",
+            "author": "člen komunity",
+            "text": "Ano, mám stejný pocit, navíc claude má zase výpadek :-/"
+          },
+          {
+            "time": "07:01",
+            "author": "člen komunity",
+            "text": "Z mojí zkušenosti jak v čem. Četl jsem k tomu několik článků a vláken a víckrát tam padlo, že Opus lidem udělá plán a Codex to pak napíše.\nCo se mi potvrdilo – Opus 4.7 bere zadání mnohem víc doslovně než předchozí verze. A když už mu přijde, že v tom zadání něco chybí, navrhne to k řešení (dřív by to prostě nějak udělal).\nCož mně osobně třeba docela vyhovuje, vždycky jsem nesnášel, když si programátoři domýšleli fíčury (nebo zásadní rozhodnutí), které jsem po nich vůbec nechtěl 😀"
+          },
+          {
+            "time": "08:30",
+            "author": "člen komunity",
+            "text": "Jj taky mi to tak přijde, ale je to o tom, na co se to používá. Ja jedu v kódování Pythonu a tam mi přijde že CC je nastavený uvnitř, aby prostě splnil úkol (a uspokojil zadavatele) a moc nekouká okolo.\nKdyž to samé dám do Codexu je schopný kód víc pochopit a podle toho rozhodnout - ještě s ohledem na možná rizika. Codex mi často nadhazuje co by se dalo na tom ještě vylepšit, CC nikdy."
+          },
+          {
+            "time": "09:02",
+            "author": "člen komunity",
+            "text": "Jaké modely v něm používáš? Codex mi vypověděl po chvíli kvůli tokkenum a cc tam asi nedostanu přes subscription."
+          },
+          {
+            "time": "09:36",
+            "author": "Daniel",
+            "text": "Moje zkušenost po včerejších sessions, které jsem jel na dálku z mobilu. Bylo to téměř bezchybné. Dělal jsem velký update knowledge base, se kterou pracuje Claude Code a další nástroje, které na tom mám postavené. Super spolupráce.\nKdyž jsem tohle řešil posledně přes Termius/tmux, bylo to kostrbaté, ale možná to bylo jenom nastavením nebo něčím podobným. Každopádně ta „spolupráce“ Mac Mini a remote-control je zatím fajn."
+          },
+          {
+            "time": "09:38",
+            "author": "Daniel",
+            "text": "Zkoušel jsem frčet 24 hodin na Codexu a bylo to super.\nJen je pro mě důležitější doručovat ty výsledky a neřešit tolik nástroj každý měsíc, kdy vyjde nová verze.\nTakže ho přenechávám ostatním. 😅"
+          }
+        ]
+      },
+      {
+        "slug": "webinářeworkshopy",
+        "name": "Webináře & Workshopy",
+        "messages": [
+          {
+            "time": "09:26",
+            "author": "Daniel",
+            "text": "*Kód: MASTERTHEFLOW*\nV neděli o půlnoci stáhnu z webu prodej záznamu webináře „Pod kapotou“.\nKdybyste ho chtěli ještě dokoupit, s tím kódem nahoře ho budete mít 500 Kč slevou.\nhttps://danielgamrot.cz/webinar/pod-kapotou/"
+          }
+        ]
+      }
+    ]
+  }
+}

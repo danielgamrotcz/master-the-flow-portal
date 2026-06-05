@@ -1,0 +1,247 @@
+{
+  "date": "2026-04-12",
+  "generated_at": "2026-06-05T07:02:59Z",
+  "stats": {
+    "messages": 34,
+    "groups": 1,
+    "members": 5
+  },
+  "cards": [
+    {
+      "id": "2026-04-12-01",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "Vibe Coding",
+      "title": "Grant dashboard pro klienta za 3 hodiny",
+      "excerpt": "Advokátka přešla z Manusu na Claude a za tři hodiny postavila funkční webovou aplikaci na mapování dotací. Pro klienta, který zakládá novou organizaci, vytvořila interaktivní dashboard na míru. Přehledný, klikací a s reálnou hodnotou.",
+      "body": "Jedna členka ukázala, co zvládla za odpoledne s Claudem. Přešla z Manusu a rovnou ho vzala do praxe: 3 hodiny práce a výsledkem je funkční webová aplikace na mapování dotací pro konkrétního klienta.\n\nCo aplikace umí: klient zakládá novou organizaci a potřeboval přehled, o co může žádat, v jakém rozsahu a co mu dává smysl sledovat. Dashboard je interaktivní, klikací a věcně přesný. Není to šablona stažená z internetu. Je to nástroj postavený přesně pro tenhle případ.\n\nProč je to zajímavé: nejde jen o rychlost. Jde o to dodat něco opravdu na míru. Každý klient může dostat vlastní přehled podle toho, co zrovna řeší. A to mění hodnotu, kterou jako poradce nebo konzultant nabízíte.\n\nZároveň padlo i zdravé upozornění: je to experiment. Kdyby šlo o produkční nasazení s daty víc uživatelů, je na místě poradit se s někým, kdo rozumí bezpečnosti. Vibe coding je silný nástroj na prototypy a jednorázové potřeby. Jeho limity je ale potřeba znát.",
+      "read_minutes": 2,
+      "source_date": "2026-04-12"
+    },
+    {
+      "id": "2026-04-12-02",
+      "type": "INSIGHT",
+      "level": "Začátečník",
+      "topic": "AI agenti",
+      "title": "Co jsou smečky agentů v praxi",
+      "excerpt": "Termín „smečka agentů“ se ve světě AI používá čím dál častěji. Co ale znamená v praxi? Není to konkrétní nástroj, ale způsob, jak si uspořádat práci.",
+      "body": "V komunitě padla přímá otázka: co vlastně znamená „smečka agentů“? Je to konkrétní nástroj? Skilly v Claudu? Claude Code? Nebo něco úplně jiného?\n\n„Smečka agentů“ je běžný název pro situaci, kdy na jednom úkolu pracuje víc AI agentů najednou, nebo postupně po sobě. Každý má svou roli. Jeden hledá informace, druhý je třídí a analyzuje, třetí z toho napíše výstup. Výsledek pak bývá rychlejší nebo propracovanější, než kdyby všechno dělal jeden model sám.\n\nV praxi to může vypadat různě:\n\n- Claude Code si složitější úkol rozdělí a spustí menší agenty paralelně\n- nástroj jako Manus měl tenhle přístup přímo v základu: části úkolu přidělil různým specializovaným modelům\n- v pokročilejších frameworcích spolu agenti komunikují a předávají si výsledky\n\nNa začátku to nemusíte znát do detailu. Důležitá je hlavní myšlenka: místo jednoho modelu, který dělá všechno, máte tým specializovaných nástrojů, které spolupracují. Časem to začne dávat smysl samo, jak s těmi nástroji budete pracovat. Technické zázemí k tomu nepotřebujete.",
+      "read_minutes": 2,
+      "source_date": "2026-04-12"
+    },
+    {
+      "id": "2026-04-12-03",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Bezpečnost",
+      "title": "Vibe coding a bezpečnostní díry, které přehlížíme",
+      "excerpt": "Někdo sdílel na LinkedIn funkční e-shop. Za 5 minut se zkušenější člověk dostal k celé databázi. Nebyl to útok. Data byla veřejně dostupná přímo v aplikaci.",
+      "body": "V komunitě padl konkrétní případ, který stojí za zapamatování.\n\nJeden člen popsal situaci z minulého týdne. Někdo dal na LinkedIn vibe-codovaný e-shop jako ukázku toho, co dnes AI zvládne. Technicky zdatný člověk se na něj podíval a za pět minut zjistil, že celá databáze projektu je veřejně dostupná. Nebyl to útok. Ta data tam prostě ležela přímo v aplikaci, bez jakéhokoli zabezpečení.\n\nProč se to děje: vibe coding umí vyrobit kód rychle, ale bez bezpečnostního auditu. Když zadavatel neví, na co se má ptát, model tyhle problémy sám od sebe aktivně neřeší. Aplikace pak na první pohled funguje, ale pod kapotou může mít díry.\n\nCo z toho plyne:\n- Pro interní pokusy bez citlivých dat je vibe coding v pohodě\n- Jakmile v aplikaci řešíte přihlašování, platby nebo data klientů, je potřeba audit\n- Audit nemusí být drahý projekt. Klidně může jít o konzultaci a AI asistovanou analýzu kódu\n- Claude umí projít kód a najít běžné bezpečnostní problémy, když se ho na to přímo zeptáte\n\nRychlost vibe codingu je obrovská výhoda. Odpovědnost za to, co nasadíte, ale pořád zůstává na vás.",
+      "read_minutes": 3,
+      "source_date": "2026-04-12"
+    },
+    {
+      "id": "2026-04-12-04",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Builder",
+      "topic": "Vibe Coding",
+      "title": "Kde kreslíte hranici mezi experimentem a produkcí",
+      "excerpt": "Experiment, prototyp, produkce. Kde je mezi nimi hranice? A jak poznáte, že už jste ji překročili? Debata o bezpečnosti znovu otevřela otázku, která se v komunitě pořád vrací.",
+      "body": "Debata o bezpečnosti vibecodovaných aplikací otevřela otázku, na kterou není jednoduchá odpověď: kdy je to, co jste postavili, dost dobré na to, abyste to ukázali klientovi, sdíleli veřejně nebo nasadili do provozu?\n\nJedna členka to vystihla přesně: na citlivá data si dává pozor, ale v kyberbezpečnosti se nevyzná. Kde je tedy hranice, když nemáte technické zázemí?\n\nPár pohledů z diskuze:\n\n- Pokud aplikace nepracuje s daty třetích stran a slouží jen jako interaktivní přehled nebo checklist, riziko je nízké.\n- Jakmile se objeví přihlašování, platby nebo klientská data, měl by se na to podívat někdo, kdo ví, co hledat.\n- Funkční neznamená bezpečné. Aplikace může běžet skvěle, a přitom mít veřejně přístupnou databázi.\n- Rychlý test: ukažte Claudovi svůj kód a zeptejte se: „Jaké bezpečnostní problémy tady vidíš?“ Odpověď vás může překvapit.\n\nOtázka pro vás: kde tuhle hranici kreslíte vy?",
+      "read_minutes": 2,
+      "source_date": "2026-04-12"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-03-29-02",
+    "type": "INSIGHT",
+    "level": "Builder",
+    "topic": "Claude Code",
+    "title": "Claude Code na Raspberry Pi ovládaný z telefonu",
+    "excerpt": "Claude Code jde spustit i na miniaturním počítači a ovládat přes Telegram z telefonu. Jeden člen komunity tak po rozbití displeje MacBooku pracuje kompletně z iPhonu.",
+    "body": "Raspberry Pi 5 stojí zhruba tolik co levnější sluchátka a Claude Code na něm běží bez problémů. Ovládá se přes Telegram boty: z telefonu pošlete příkaz a výsledek vám přijde zpátky do chatu. Když potřebujete přímo do terminálu, funguje Termius.\n\nTím se mění představa o tom, co k práci potřebujete. Výkonný notebook už nemusí být nutnost. Pokud vám nevadí ovládání přes chat, stačí telefon a malý počítač zapojený doma nebo v kanceláři.\n\nTenhle setup má svoje limity. Raspberry Pi není žádné dělo a u složitějších projektů na ně narazíte. Jako server pro AI agenty, automatizace a pravidelné úlohy ale funguje dobře. A protože běží na slabším hardwaru, donutí vás zadávat úkoly úsporněji a přesněji.",
+    "read_minutes": 2,
+    "source_date": "2026-03-29",
+    "resurfaced_from": "2026-03-29"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "09:44",
+            "author": "člen komunity",
+            "text": "Moc pekny! Muzu se zeptat, co presne znamena “smecce agentu”?"
+          },
+          {
+            "time": "09:47",
+            "author": "člen komunity",
+            "text": "Smecka agentu je uz zabehly pojem pro tym AI agentu, ktery maka na ukolech, ktere jim zadate."
+          },
+          {
+            "time": "16:14",
+            "author": "člen komunity",
+            "text": "Za vysvětlení termínu. Asi bych se mohl zeptat AI, ale zkusím to i tady 😜 Co ten tým AI agentů prakticky znamená? To je něco přes OpenClaw, nebo jsou to skilly v Claudu a ClaudeCode, nebo něco úplně jiného?"
+          },
+          {
+            "time": "18:14",
+            "author": "člen komunity",
+            "text": "Wow, díky za inspiraci. Zatím rozhodně nejsem na téhle úrovni, ale už se těším na to, až to “secvakne”. Verim, ze dostat se tam da, jen s tim clovek potrebuje stravit dost casu."
+          },
+          {
+            "time": "18:15",
+            "author": "člen komunity",
+            "text": "tohle neumím, no nic, holt se to musím naučit 🙂"
+          },
+          {
+            "time": "18:15",
+            "author": "člen komunity",
+            "text": "@člen Jsem na tom podobně, taky začínám 🙂"
+          },
+          {
+            "time": "18:41",
+            "author": "člen komunity",
+            "text": "Dobry vecer. Presla jsem z Manusu na Claude. Dnes jsem za 3 hodiny navibecodovala webovou aplikaci pro mapovani dotaci na miru pro konkretniho klienta, ktery zaklada novou organizaci. Funkcni klikaci dashboard. Je to prehledne, funkcni, interaktivni, fakticky cenne. Jsem na sebe pysna. 🙂 Takto mohu mit vzdy na miru pro kazdeho klienta dashboard podle toho, co za organizaci budeme zakladat."
+          },
+          {
+            "time": "18:43",
+            "author": "člen komunity",
+            "text": "Pokud jde o aplikaci, která je online, jedna instance ke které přistupuje více lidí, jen mají svůj náhled, prosím opravdu dobře si pohlídejte aspekt bezpečnosti… Obzvlášť, jestli tam jde o citlivé údaje nebo důležité informace (ať už pro jednotlivce nebo pro podnikání)"
+          },
+          {
+            "time": "18:44",
+            "author": "člen komunity",
+            "text": "To samé platí i jestli dostane každý klient vlastní instanci. Bezpečnost je teď hodně přehlížená. Obzvlášť u vibecodingu, kde lidé neznají problematiku do hloubky 🙏🏼"
+          },
+          {
+            "time": "18:49",
+            "author": "člen komunity",
+            "text": "Z toho co píšete to zřejmě není problém, je to více “interaktivní checklist” na míru, než práce s nějakými daty, kt. je potřeba zabezpečit. Neznám detaily.\nTak to jen varování, než dojde na průšvih, obzvlášť u dat š. stran.\nDržím palce v dalších krocích! 👏🏼"
+          },
+          {
+            "time": "18:51",
+            "author": "člen komunity",
+            "text": "Jsem advokatka, tak jsem na citlivost dat opatrna. Nekdy az moc. 🙂 Ale je pravda, ze v kyberbezpecnosti se nevyznam, jen sleduji info, ze to bude do budoucna problem i pro hodne dobre zabezpecene systemy. Ale urcite dekuji"
+          },
+          {
+            "time": "19:24",
+            "author": "člen komunity",
+            "text": "Tohle je furt jen experiment. Kdyz to budu chtit profesionalizovat, je mi jasne, ze budu potrebovat profiky. 🙂"
+          },
+          {
+            "time": "19:26",
+            "author": "člen komunity",
+            "text": "To rozhodně. Ale nemusí to být hned raketová věda a projekt za miliony. Může to být např. audit + tipy, co je potřeba udělat. To vše už zvládne velmi dobře AI, ale když nevíme kam se dívat, těžko ty chyby hledat 🔍"
+          },
+          {
+            "time": "19:27",
+            "author": "člen komunity",
+            "text": "Proč píšu o bezpečnosti:\n2 dny zpět jeden člověk, sdílel na Li “funkční e-shop”.\nDostal od technicky znalých lidí vysvětleno, že to je dost zkreslená představa. a že to takhle jednoduše nefunguje.\nStačilo cca 5min a středně schopný člověk měl přístup k celé databázi projektu. Nešlo ani o útok. Veškeré údaje byly přístupné v samotné aplikaci. Veřejně.\nTen samý člověk nabízí i “consulting” a AI vibecode web jako službu…"
+          },
+          {
+            "time": "19:29",
+            "author": "člen komunity",
+            "text": "Tak to je samozrejme nezodpovedne, pokud uz jsou v databazi udaje klientu. V tomto je dobre delat osvetu. Mne prijde, ze vetsina lidi zabezpeceni dat vubec neresi a ani nemaji poneti o zakladnich souvislostech. To je samozrejme spatne. Bude to ted trosku dzungle."
+          },
+          {
+            "time": "19:36",
+            "author": "člen komunity",
+            "text": "Mam to vymyslene jinak, ale dekuji."
+          },
+          {
+            "time": "20:07",
+            "author": "člen komunity",
+            "text": "Krásný večer. Mohli bychom prosím to téma bezpečnosti rozebrat více? I třeba z hlediska používání coworku a propojení na gmail?\nDělají mi starost dvě věci:\nGdpr a mlčenlivosti, které musím dodržovat (mám mezi klienty korporátní firmy).\nNapadá mě xy use casu na automatizace, co by mi ulehčily práci. Nebo i méně -  Třeba jen obyčejně poslat cowork do gmailu a nechat si vytáhnout věci co jsem přehlédla nebo nějaké akční kroky k projektům/klientům atd.\nAle zároveň základní pravidlo AI je “nedávej konkrétní jména, údaje atd atd do AI” 😅🥲\nTřeba jsem jen přecitlivělá ale fakt se bojím že něco podělám nebo si nevědomky zadělám na poradny průšvih tak si o tom zatím nechávám jen zdát 😅."
+          },
+          {
+            "time": "20:08",
+            "author": "člen komunity",
+            "text": "Prosím řešíte toto někdo nějak nebo zbytečně plaším?"
+          },
+          {
+            "time": "20:12",
+            "author": "člen komunity",
+            "text": "Kazda organizace by mela mit nastavena sva pravidla pro zamestance i externi, jak s tim pracovat. Spravne by to melo byt idealne osetrene i smluvne kvuli ochrane dat a zpusobu nakladani s nimi. Ale nejsem naivni, ze v takto rychle dobe to vsichni resi."
+          },
+          {
+            "time": "20:14",
+            "author": "člen komunity",
+            "text": "A ze zamestnanci neco do AI nastroju nesypou bokem kvuli zjednoduseni prace. Jak se vubec tohle da ohlidat fakticky? Max v nejakych prisnych korporatech, kde na to maji procesy."
+          },
+          {
+            "time": "20:15",
+            "author": "člen komunity",
+            "text": "Je to asi taky o vzdelavani a svedomi kazdeho z nas"
+          },
+          {
+            "time": "20:17",
+            "author": "člen komunity",
+            "text": "Jasne no. Kdyz vezmu ty velké klienty - dostávám objednávky právě od tech přísných korporátů jako dodavatel… a v nich je toto ošetřené neprůstřelně. Defakto cokoliv může být brané jako důvěrné…\nTím pádem pokud mam v mailové schránce i maily se zástupci těchto společností (není v tom žádné know how, spíš jen organizační domluvy, nabídky, termíny…).\nTak i tak se bojím AI pustit do mailu i obecně. 😒"
+          },
+          {
+            "time": "20:18",
+            "author": "člen komunity",
+            "text": "Tak tam bych AI tim padem nepoustela"
+          },
+          {
+            "time": "20:19",
+            "author": "člen komunity",
+            "text": "Orisek"
+          },
+          {
+            "time": "20:20",
+            "author": "člen komunity",
+            "text": "Šlo by si vyřídit alias na email, který “půjde bokem” a tam AI nepouštět. Ale znamená to tříštit si poštu.\nDalší možnost nedávat AI “Celý vesmír” ale determ. předfiltrovaný osah pošty => pokud lze na 100 % vyloučit tyto klienty…"
+          },
+          {
+            "time": "20:20",
+            "author": "člen komunity",
+            "text": "No právě. A pak čtu o všech těch úžasných use casech a jak si lidé šetří práci a maji agenty na maily a tak…\nA vlastně mě to strašně mrzí, protože mi vzdycky vychází, ze je to nebezpečné. 😏\nA zároveň mi přijde ze treba gdpr apod neřeší vubec nikdo."
+          },
+          {
+            "time": "20:20",
+            "author": "člen komunity",
+            "text": "Cesty jsou, ale lusknutím prstu to nepůjde… Já osobně bych si to v takové situaci asi odepbřel a nedovolil."
+          },
+          {
+            "time": "20:21",
+            "author": "člen komunity",
+            "text": "Případně si dobře přečíst smluvní podmínky např. využívání gemini v placeném gWorkspace."
+          },
+          {
+            "time": "20:22",
+            "author": "člen komunity",
+            "text": "Ale co čtu a slýchám kolem, tak nejlépe je na tom ohledně data privacy prý Microsoft a jeho služby (os. zkušenost nemám)"
+          },
+          {
+            "time": "20:23",
+            "author": "člen komunity",
+            "text": "Geminiho k dispozici mam v placeném workspace. Jen se bojím aby to z pohledu klienta proste nebylo “AI jako AI”.\nAle snad myslim ze, @člen ma agenta na maily běžícího na Gemini ?\nJednoho klienta máme dokonce stejného 😅 tak možná Dane, můžu poprosit o váš pohled takhle na primo? 🙏🏻"
+          },
+          {
+            "time": "20:27",
+            "author": "člen komunity",
+            "text": "Mne by se libilo pouzivat agenty v Notion pro jiny muj projekt, ale odkladam to ze stejnych obav."
+          },
+          {
+            "time": "21:48",
+            "author": "člen komunity",
+            "text": "Lokální modely - Ano/Ne?\nKromě toho co uvádí Lukáš Bednařík - data a trénovatelnost. Má to nějaké výhody? Například je to levnější se srovnatelnou kvalitou oproti cloudu?\nhttps://www.linkedin.com/posts/lukasbednarik_pro%C4%8D-influence%C5%99i-pou%C5%A1t%C3%AD-ai-modely-na-mac-share-7447597078932951040-QaSv"
+          },
+          {
+            "time": "22:05",
+            "author": "člen komunity",
+            "text": "Lukáš to v postu velmi dobře shrnuje. Při opravdu velkém objemu to může dávat smysl, pokud nejde o extrémní náročnost na kapacity a _kompetence_ modelů.\nNejčastější důvod pro lokální modely bude podle mě data security viz téma výše"
+          },
+          {
+            "time": "22:06",
+            "author": "člen komunity",
+            "text": "Já mám zprovozněný lokální Gemma 4 a používám jen když potřebuju pracovat s obsahem, kde jsou citlivá data nebo experimentuju s novými nástroji a lze napojit jiný model."
+          }
+        ]
+      }
+    ]
+  }
+}

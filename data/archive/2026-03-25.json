@@ -1,0 +1,144 @@
+{
+  "date": "2026-03-25",
+  "generated_at": "2026-06-05T06:28:26Z",
+  "stats": {
+    "messages": 16,
+    "groups": 1,
+    "members": 5
+  },
+  "cards": [
+    {
+      "topic": "Výběr nástroje není rozhodnutí",
+      "excerpt": "Cursor, CC, Codex — začněte klidně s čímkoli. Porovnávat nástroje je stejná past jako porovnávat ToDo aplikace.",
+      "body": "Daniel to řekl na rovinu: je jedno, který nástroj si vyberete. Cursor, Claude Code, Codex — v různých fázích umí každý něco líp. Stejná debata se vedla u kalendářů nebo ToDo appek. Výsledek byl vždycky stejný: kdo pořád vybírá, nepracuje. Kdo začne, posouvá se dál.",
+      "id": "2026-03-25-01",
+      "source_date": "2026-03-25"
+    },
+    {
+      "topic": "Certifikáty na jedno kliknutí",
+      "excerpt": "Členka staví appku, která vezme šablonu certifikátu a Google Sheet a automaticky rozešle vyplněné certifikáty e-mailem.",
+      "body": "Praktický příklad, co vibe coding umí: klientka nahraje šablonu certifikátu a tabulku s účastníky. Appka doplní jméno i další údaje a certifikát pošle e-mailem. Všechno na jedno kliknutí. Přesně něco, co by hotové SaaS řešení buď neumělo, nebo by to schovalo mezi deset zbytečných funkcí navíc.",
+      "id": "2026-03-25-02",
+      "source_date": "2026-03-25"
+    },
+    {
+      "topic": "Proč budovat vlastní, když to už existuje",
+      "excerpt": "Obecné „to už existuje“ jako argument neberu. Přesně padnoucí řešení má cenu — a co mu chybí, si prostě dodělám.",
+      "body": "Několik členů dostalo komentář: „Proč to děláš, když podobný nástroj už existuje?“ Daniel i Radim se shodli, že taková poznámka hází všechno do jednoho pytle a neříká nic konkrétního. Hotové aplikace často obsahují funkce, které spíš překážejí. Funkci, která chybí, si do hotového produktu jen tak nedodělám. A už samotná tvorba pomáhá pochopit danou oblast způsobem, ke kterému bych se jinak nedostal.",
+      "id": "2026-03-25-03",
+      "source_date": "2026-03-25"
+    },
+    {
+      "topic": "Méně konzumovat, víc stavět",
+      "excerpt": "Jeden člen zjistil, že víc hltá informace, než něco reálně buduje. Schválně se vrátil k postupu po malých krocích.",
+      "body": "Poctivé sebepozorování: je snadné koukat na videa, číst články a mít pocit, že se někam posouváte. Člen si toho všiml a rozhodl se vědomě ubrat v příjmu informací. Místo toho udělal jeden malý krok dopředu. Postup po krůčcích není pomalost. Je to jediný způsob, jak se opravdu posunout.",
+      "id": "2026-03-25-04",
+      "source_date": "2026-03-25"
+    },
+    {
+      "topic": "75 % kreditu a bug v teleprompter appce",
+      "excerpt": "Aleš narazil na týdenní kreditní limit a zároveň řešil bug: text v teleprompterové appce se nepřizpůsoboval tempu čtení.",
+      "body": "Dva problémy najednou: Aleš vyčerpal 75 % týdenního kreditu a zároveň zjistil, že mu špatně funguje teleprompter appka. Text jel moc pomalu a nepřizpůsoboval se tempu čtení. Typická situace, kdy člověk začne nástroj víc používat a narazí na první limit. Obojí se dá vyřešit, jen počítejte s tím, že kreditové limity přijdou rychleji, než čekáte.",
+      "id": "2026-03-25-05",
+      "source_date": "2026-03-25"
+    },
+    {
+      "topic": "Příliš mnoho Claude skills se navzájem sabotuje",
+      "excerpt": "Michael sdílel článek o tom, že překrývající se Claude skills zhoršují výkon. Méně je víc.",
+      "body": "Michael vytáhl dobrý postřeh z článku: když má Claude najednou moc skills, které se překrývají, začnou si lézt do cesty a výkon jde dolů. Platí to i pro vlastní konfigurace. Čím jasněji jsou skills ohraničené a čím míň se překrývají, tím líp fungují. Menší počet přesně popsaných skills porazí velkou sbírku vágních.",
+      "id": "2026-03-25-06",
+      "source_date": "2026-03-25"
+    }
+  ],
+  "resurfacing": null,
+  "transcript": {
+    "groups": [
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "06:36",
+            "author": "Daniel",
+            "text": "Já vlastně nevím, proč bych to srovnával. V čem by měl být Cursor lepší? A proč to řešit?\nZačal bych s jakýmkoliv nástrojem. Cursor, CC, Codex…\nPro mě je to stejné jako porovnávat modely. V různých fázích roku jsou z hlediska kvality v různých oblastech různě... silné.\nAle tohle řešíme v technologiích pořád. Srovnáváme aplikace. Dělali jsme to s ToDo aplikacemi. Kalendáři.\nA za mě je fajn si vybrat jednu, a pustit se do práce."
+          },
+          {
+            "time": "06:37",
+            "author": "Daniel",
+            "text": "Třeba Obsidian může být docela fajn vrstva nad těmi daty, pokud bych je chtěl vizuálně. Já to třeba chci, protože si díky tomu trošku líp organizuju vlastní myšlenky."
+          },
+          {
+            "time": "09:21",
+            "author": "člen komunity",
+            "text": "ahooj ráda vyzkouším :)"
+          },
+          {
+            "time": "09:22",
+            "author": "člen komunity",
+            "text": "Budu moc ráda, Evi. 😊"
+          },
+          {
+            "time": "09:23",
+            "author": "člen komunity",
+            "text": "Já teď zkouším tvořit appku, kde klientka nahraje vzor certifikátu z kurzu a google sheet a appka vyplní jméno a další údaje z sheetu a odešle rovnou e-mailem vyplněný certifikát - nejlépe na jedno kliknutí :)"
+          },
+          {
+            "time": "13:27",
+            "author": "člen komunity",
+            "text": "Já jsem taky schytala komentář, že mám radši šetřit tokeny, když podobný nástroj už existuje, tak proč to dělám znovu. 😁"
+          },
+          {
+            "time": "13:33",
+            "author": "Daniel",
+            "text": "@člen @člen Já myslím, že ty reakce jsou docela logické, obzvláště protože to není až tak vyzrálé, téma. Každopádně si myslím, že i teďka v počátcích, ve chvíli, kdy tvořím nástroj, který mi dá přesný fit... tak už tohleto je důvod, proč se do něčeho takovýho pouštět. Spousta aplikací má spoustu funkcí, který člověk absolutně nevyužije a jenom překáží.\nNo a pak ten pohled z opačné strany, ve chvíli, kdy potřebuju funkci, tak si ji prostě můžu udělat.\nTakhle bychom mohli pokračovat. Skrze tuhle tvorbu se dá pochopit ta doména, respektive podstata celé té věci a tak. Je toho více.\nA samozřejmě vzniká i spousta věcí, které lidi ani nikdy nepoužijí."
+          },
+          {
+            "time": "13:35",
+            "author": "člen komunity",
+            "text": "Souhlas. Ja lidem nechci upirat nazor a o to vic, kdyz jsou to lidi, kteri se pohybuji v IT a rozumi tomu. Ale prijde mi, ze to hazi vse do jednoho pytle a jejich komentar nema zadnou pridanou hodnotu. To, ze reknu, ze je nekdo idiot, jeste neznamena, ze je idiot. Oba dva lidi, kteri mi to kritizuji vubec nerozumi oblasti, ktere se aplikace tyka, jak pak mohou hodnotit, zda je pouzitelna nebo ne 🙂"
+          },
+          {
+            "time": "13:39",
+            "author": "Daniel",
+            "text": "Pokud si o mně myslíte, že jsem magor, tak mám spoustu známých, kteří jdou ještě dál. A dokonce se za to nestydí.\nJá mám ten tým postavený trošičku jinak, ale v podstatě spousta těch věcí, který tam Filip píše, dává smysl. Je to možná inspirace pro ty z vás, kdo jste dál.\nJinak pořád stojím za tím, že tohleto je o přemýšlení, učení a nastavení.\nhttps://www.linkedin.com/posts/filippodstavec_m%C5%AFj-aktu%C3%A1ln%C3%AD-ai-dev-stack-po-del%C5%A1%C3%AD-dob%C4%9B-activity-7442268102404513792-gBBb"
+          },
+          {
+            "time": "13:47",
+            "author": "člen komunity",
+            "text": "Když čtu takové příspěvky, tak mi přijde, že rychlík už je fuč, ale pak si sednu zpět a jdu po krůčcích vpřed ve svých projektech. A teď vnímám, že více hltám informace než abych dělal reálné apky/výstupy."
+          },
+          {
+            "time": "13:50",
+            "author": "Daniel",
+            "text": "Je to fajn inspirace – pro mě třeba ty „smoke testy“. Většinou to dělám tak, že vezmu ten příspěvek, hodím ho do Claude Code a zeptám se, co z toho by pro mě mohlo být užitečné. Zeptám se trošku jinak, tady jsem to nechtěl úplně rozepisovat."
+          },
+          {
+            "time": "14:49",
+            "author": "člen komunity",
+            "text": "\"You've used 75% of your weekly limit.\" Toho jsem se trochu obával. A to jsem toho tak moc nedělal mi přijde. Dane - mám probu ohledně teleprompter - nejsem z Ostravska a přijde mi, že čtu o dost rychleji, než běží text. Plánuješ upravit rychlost čtení?"
+          },
+          {
+            "time": "14:53",
+            "author": "Daniel",
+            "text": "😀 počkej, já to vymáčkl jako první prototyp a nesnažil jsem se to nějak vylepšovat. Klidně ti to nasdílím a můžeš pokračovat. Každopádně podle všeho by to mělo jet podle toho, jak čteš. Ale testoval jsem to tak 10 minut."
+          },
+          {
+            "time": "15:05",
+            "author": "člen komunity",
+            "text": "Dal jsem text v angličtině a nějak nebral odhad na slova která zrovna čtu. Jel si svoje a to hrozně pomalu"
+          },
+          {
+            "time": "15:06",
+            "author": "člen komunity",
+            "text": "Jinak já jsem zvyklý že při testování vždycky odhalím věci, na který lidi přede mnou nepřijdou."
+          },
+          {
+            "time": "15:56",
+            "author": "člen komunity",
+            "text": "Zajímavý postřeh o tom, jak příliš mnoho překrývajících se skillů žere zdroje https://www.linkedin.com/posts/drewbrucker_your-claude-skills-are-sabotaging-each-other-ugcPost-7442254058687623168-YxLm/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAkPjZ0BR-fjN1FJSB7wMVGkyIKQ56mY60w"
+          }
+        ]
+      }
+    ]
+  }
+}

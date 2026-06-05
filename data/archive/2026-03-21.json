@@ -1,0 +1,75 @@
+{
+  "date": "2026-03-21",
+  "generated_at": "2026-06-05T06:18:19Z",
+  "stats": {
+    "messages": 5,
+    "groups": 1,
+    "members": 4
+  },
+  "cards": [
+    {
+      "id": "2026-03-21-01",
+      "source_date": "2026-03-21",
+      "topic": "Diktování v hlučném prostředí",
+      "excerpt": "Soniox zvládne přepis i v pořádném hluku — ve fitku, na ulici, prostě všude.",
+      "body": "Soniox je natrénovaný na běžné nahrávky, ne na studiové ticho. Daniel diktuje v muay thai gymu, v klasickém fitku i na ulici v Bangkoku. A přepis funguje. Pokud vás při diktování brzdí hluk kolem, tenhle nástroj si s tím poradí."
+    },
+    {
+      "id": "2026-03-21-02",
+      "source_date": "2026-03-21",
+      "topic": "AI přepis přednášek a snů",
+      "excerpt": "Aleš přepisuje přednášky z výcviku a hned po probuzení si nahrává sny.",
+      "body": "Dva fajn příklady od Aleše: přepis odborných přednášek z výcviku funguje dobře. A druhý: iPhone na nočním stolku v letovém režimu, hned po probuzení namluvit sen do diktafonu. AI ho přepíše. Věci, které by do deseti minut zmizely, zůstanou."
+    },
+    {
+      "id": "2026-03-21-03",
+      "source_date": "2026-03-21",
+      "topic": "Odkládání systémů s výmluvou na AI",
+      "excerpt": "Proč si stavět systém v Notionu, když to za nás za chvíli udělá AI? Upřímně? Je to výmluva.",
+      "body": "Eliška pojmenovala něco, co dělá spousta lidí: odkládají budování systémů, protože věří, že AI to brzy zvládne sama. Zní to rozumně. Jenže AI zatím nezná váš kontext, nezná vaše priority a systém za vás neprovozuje. Čekat na ideální nástroj místo toho, aby vám to fungovalo už teď, je klasická past."
+    },
+    {
+      "id": "2026-03-21-04",
+      "source_date": "2026-03-21",
+      "topic": "gupt.eu — univerzálnější alternativa",
+      "excerpt": "Alex nasdílel svůj projekt gupt.eu jako obecnější variantu podobného nástroje.",
+      "body": "Alex Trejtnar ukázal gupt.eu — nástroj, který umí podobné věci, jen obecněji. Sdílet vlastní projekty v komunitě se vyplácí. Dostanete zpětnou vazbu od lidí, kteří řeší podobné problémy."
+    }
+  ],
+  "resurfacing": null,
+  "transcript": {
+    "groups": [
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "02:44",
+            "author": "Daniel",
+            "text": "Soniox je právě super na tom, že je hodně trénovaný na běžných nahrávkách. Diktuju v mega hluku (muay thai gym, klasický gym, Bangkog na ulici :D)."
+          },
+          {
+            "time": "02:44",
+            "author": "Daniel",
+            "text": "Krásné a užitečné! Data neumím posoudit, na tohle jsem levý. 🙂"
+          },
+          {
+            "time": "12:57",
+            "author": "člen komunity",
+            "text": "Tohle je super argument pro mé odkládání!! Tak dlouho jsem si říkala, že si musím udělat v notion nějaký funkční systém, až to za mě brzo udělá AI 😂"
+          },
+          {
+            "time": "15:37",
+            "author": "člen komunity",
+            "text": "Jojo, podobnou jsem dělal taky jen více universální - https://www.gupt.eu/"
+          },
+          {
+            "time": "21:09",
+            "author": "člen komunity",
+            "text": "Ahoj Nikol, dal jsem přepsat přednášky z výcviku a funguje dobře. Líp, než můj druhý usecase - hned po probuzení vzpomínám na sny a nahrávám si je na diktafon na iPhone (flight mode)."
+          }
+        ]
+      }
+    ]
+  }
+}

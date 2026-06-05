@@ -1,0 +1,234 @@
+{
+  "date": "2026-04-15",
+  "generated_at": "2026-06-05T07:10:38Z",
+  "stats": {
+    "messages": 28,
+    "groups": 2,
+    "members": 5
+  },
+  "cards": [
+    {
+      "id": "2026-04-15-01",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Claude Code",
+      "title": "Claude Code projde vaše poznámky za vás",
+      "excerpt": "Máte stovky Markdown souborů a pořád není čas je projít? Claude Code zvládne projít celý adresář, ukázat, co nedává smysl, navrhnout lepší názvy a upozornit na zbytečný balast. Poslouží jako první filtr, než se do toho pustíte ručně.",
+      "body": "Jeden člen komunity sdílel, jak to používá při návratu po delší pauze. Poznámky si poctivě ukládal 5 měsíců, ale skoro s nimi nepracoval. Teď, když se vrátil naplno do provozu, přes ně pustil Claude Code, aby se v nich rychle zorientoval.\n\nV praxi to funguje takhle: Claude Code dostane cestu k adresáři s Markdown soubory a projde je. Vrátí přehled toho, co by šlo vylepšit, jak by se dalo upravit pojmenování, co nedává smysl nebo co je zastaralé. Vy pak rozhodnete, co z toho zapracujete.\n\nPodmínka je jednoduchá. Poznámky musí být v Markdownu a nejlíp uložené lokálně na disku. Cloudové poznámky v proprietárních formátech s tím fungují hůř, nebo vůbec.\n\nPokud jste doteď měli Obsidian spíš jako zásobárnu bez systému, tohle je dobrý start. Pusťte CC na složku a nechte ho navrhnout, jak ji uklidit.",
+      "read_minutes": 2,
+      "source_date": "2026-04-15"
+    },
+    {
+      "id": "2026-04-15-02",
+      "type": "NÁSTROJE",
+      "level": "Začátečník",
+      "topic": "Obsidian",
+      "title": "Obsidian se potvrdil jako komunitní standard",
+      "excerpt": "V téhle diskuzi si Obsidian v komunitě vybudoval silnou pozici jako hlavní nástroj na poznámky v Markdownu. Bear se s ním srovnával taky, ale Obsidian vede díky funkcím a flexibilitě. Hlavní důvod pro přechod je Markdown jako formát, který AI nástroje umí přirozeně číst.",
+      "body": "Obsidian je zdarma, funguje offline a data zůstávají u vás, uložená lokálně jako obyčejné textové soubory. Právě proto s nimi AI nástroje jako Claude Code umí pracovat bez zbytečných mezikroků.\n\nBear je hezčí na pohled a má lepší mobilní aplikaci. Data ale ukládá v proprietárním formátu, což spolupráci s AI omezuje. Markdown, který používá Obsidian, je dnes pro AI v podstatě přirozený jazyk. Modely ho čtou snadno a bez ztráty struktury.\n\nPro koho se Obsidian hodí? Pro každého, kdo si chce stavět vlastní knowledge base, která s ním poroste. Nemusíte se hned učit všechny funkce. Stačí začít ukládat poznámky jako Markdown soubory do jedné složky. Zbytek si osvojíte postupně.\n\nPokud vás Obsidian zaujal a nevíte, kde začít, v diskuzi padl odkaz na starší úvodní video. Základy v něm jsou pořád aktuální.",
+      "read_minutes": 2,
+      "source_date": "2026-04-15"
+    },
+    {
+      "id": "2026-04-15-03",
+      "type": "INSIGHT",
+      "level": "Začátečník",
+      "topic": "Produktivita",
+      "title": "Jak ukočírovat data roztahaná přes tři cloudy",
+      "excerpt": "Členka komunity popsala, že má data rozházená ve třech počítačích, třech e-mailech a několika cloudech. Komunita jí poradila začít tím, že se AI zeptá, co vlastně potřebuje a jak chce pracovat. Bez jasného workflow je každé sjednocování jen přesouvání chaosu na jiné místo.",
+      "body": "Než začnete cokoliv migrovat nebo mazat, nechte si od AI pomoct ujasnit, co vlastně potřebujete. Zeptejte se rovnou Claude nebo Gemini. Popište, co máte, jak pracujete a co by vám ulehčilo život. Nechte si navrhnout workflow a až potom vybírejte nástroje.\n\nZ komunity zaznělo konkrétní doporučení: Google Workspace jako jedno centrální místo. Plusy jsou sdílení napříč zařízeními, hledání v celém obsahu a jeden účet místo tří. Mínus je závislost na Googlu a menší soukromí. Pokud jedete v Apple ekosystému, dává smysl iCloud a Apple Mail. Pokud už máte Microsoft 365, tak OneDrive a Outlook.\n\nNejdůležitější je vybrat jednu cestu a držet se jí. Hybridní řešení chvíli fungují, ale chaos se vrátí. Nejlepší postup: zvolit jeden workspace, přesunout do něj aktivní věci a zbytek archivovat nebo smazat.",
+      "read_minutes": 2,
+      "source_date": "2026-04-15"
+    },
+    {
+      "id": "2026-04-15-04",
+      "type": "POSTAVIL JSEM",
+      "level": "Expert",
+      "topic": "AI development",
+      "title": "Člen staví vlastní chat klienta pro LLM",
+      "excerpt": "Jeden člen komunity se rozhodl postavit vlastní alternativu ke Gemini a ChatGPT chatům. Komunita mu potvrdila, že v téhle oblasti fakt chybí použitelné UX. Většina existujících projektů se buď už moc neudržuje, nebo je na každodenní používání zbytečně technická.",
+      "body": "Běžná chatovací rozhraní mají limity, na které power users rychle narazí. Chybí lepší práce s kontextem, vlastní systémové prompty na jedno kliknutí nebo plynulé přepínání mezi modely bez ztráty konverzace.\n\nJeden člen se to rozhodl vyřešit vlastní aplikací. Měl jasno v tom, co mu současné nástroje nedávají, a komunita mu potvrdila, že jde o reálný problém, který má smysl řešit.\n\nExistují open-source alternativy jako Open WebUI nebo Chatbox. Většina z nich je ale buď zastaralá, nebo přeplácaná funkcemi, které power user nepotřebuje. Udržovaných projektů zaměřených na jednoduchost je málo.\n\nPokud vám tohle téma sedí a taky v dostupných nástrojích cítíte UX gap, v komunitě na to běží diskuze. Výsledkem může být vlastní tool, ale klidně i lépe nastavený současný klient.",
+      "read_minutes": 2,
+      "source_date": "2026-04-15"
+    },
+    {
+      "id": "2026-04-15-05",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Claude Code",
+      "title": "Nová funkce Claude Code automatizuje opakované úkoly",
+      "excerpt": "Ve skupině Vibe Coding se objevil tip na Claude Code Routines. Je to nový způsob, jak si přímo v nástroji nastavit opakující se úkoly bez psaní shell skriptů. Komunita zatím reagovala spíš opatrně. Funkce je docela nová a ekosystém kolem ní se teprve rozjíždí.",
+      "body": "Claude Code Routines umožňují naplánovat nebo nastavit opakované akce, které CC zvládne samo. Je to posun od jednorázových promptů k trvalejší automatizaci, ke které nepotřebujete umět programovat.\n\nProč být opatrní? Funkce je nová a komunita zatím nemá dost praxe na konkrétní doporučení. Chybí reálné příklady od lidí, kteří ji používají déle než pár dní.\n\nSmysl můžou dávat třeba pravidelné kontroly souboru s poznámkami, týdenní reporty nebo automatické shrnutí projektového adresáře. To jsou úkoly, kde Routines můžou ušetřit čas, aniž byste museli psát složité skripty.\n\nPokud si to chcete vyzkoušet, začněte jednoduše. Jedno opakující se zadání, jasný výstup a výsledek, který snadno ověříte. Složitější automatizace přijde později, až pochopíte, jak Routines pracují s kontextem.",
+      "read_minutes": 3,
+      "source_date": "2026-04-15"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-03-28-01",
+    "type": "INSIGHT",
+    "level": "Builder",
+    "topic": "Claude Code",
+    "title": "Kontext v Claude Code: jak nepromarnit paměť sešny",
+    "excerpt": "Kontext je paměť, se kterou Claude Code pracuje během jedné seance. Ještě nedávno byla oproti dnešku asi pětinová a u větších projektů se vyčerpala dost rychle. Dnes má Opus milion tokenů, ale i ten se dá snadno vyplýtvat, když nevíte, co ho požírá.",
+    "body": "Hodně lidí bere milion tokenů jako něco, co nejde vyčerpat. Jenže jde. Velké soubory, dlouhé konverzace, vložené obrázky i dokumentace ukrajují z kontextu. A když se kontext začne plnit, Claude Code začne „zapomínat“. Opakuje kroky, přehlíží dřívější instrukce nebo odpovídá míň přesně.\n\nUžitečné příkazy pro práci s kontextem:\n\n- `/context` — ukáže, kolik kontextu právě používáte\n- `/compact` — zkomprimuje historii konverzace a ušetří místo\n- `/doctor` — zkontroluje stav session\n- Subagenti — Claude Code rozdělí práci mezi víc agentů, každý má čistší kontext\n- Auto mode — CC sám rozhodne, kdy použít subagenta\n\nJeště nedávno byl kontext jen pětinový oproti dnešku. Teď už to tolik nebolí, ale základní hygiena kontextu se pořád vyplatí. Hlavně u větších projektů nebo dlouhých session. Jeden člen komunity sdílel video v pomalém a srozumitelném tempu, kde to celé vysvětluje. Doporučuju každému, kdo s CC pracuje víc než jen občas.",
+    "read_minutes": 2,
+    "source_date": "2026-03-28",
+    "resurfaced_from": "2026-03-28"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "08:21",
+            "author": "Daniel",
+            "text": "POZNÁMKY A CLAUDE CODE\nZase jedna zkušenost s tím, jak pracuju dneska s Claude Code. Protože se vracím do České republiky cca za týden, tak si dělám pořádek v poznámkách, nabídkách, programech školení a podobně. S tím, že si upravuju strukturu poznámek, názvosloví, reorganizuju nebo čistím balast, protože to teď budu využívat zase 7 měsíců naplno.\nMega moc mi v tom pomáhá to, že mám poznámky v Markdownu, a zároveň, že Claude Code s tím umí moc hezky pracovat. Ty poznámky, který mám uložený, tak procházím samozřejmě i manuálně, ale Claude Code mi dělá takový ty vstupní filtry a říká mi, co by se dalo zlepšit, co by se dalo upravit, jak by se daly modifikovat názvy, a co nedává úplně smysl.\nPokud máte poznámky v Markdownu, ideálně někde lokálně na disku, zkuste do toho zapojit taky Claude Code. Ať si ty poznámky projde a řekne vám, co dělat jinak, co by vylepšil, jak by to reorganizoval a podobně.\nJe mazec vracet se po 5 měsících zpátky do provozu. Zjistil jsem, že jsem teďka 5 měsíců poznámky ukládal, ale dost málo jsem s nimi pracoval. Návyk mám, ale nebylo třeba. A teď to zase bude (asi) 7 měsíců obráceně.\nDocela se na to těším. Technologie, který dneska pomáhají v organizaci informací, jsou úžasný. A trošku se slzou oku vzpomínám na to, jak jsem objevil před 15 lety Evernote a přišlo mi to jako něco neuvěřitelnýho.😀\nMimochodem používáte Claude Code pro práci s poznámkami a s informacemi? Nebo to děláte jinak? Teď myslím na osobní úrovni."
+          },
+          {
+            "time": "09:14",
+            "author": "člen komunity",
+            "text": "@člen Ahoj Dane, moc díky za skupiny, za příspěvky ❤️ Těším na květen, protože jak to tady ve skupinách čtu, tak upřímně nevím, odkud začít, jak to nabalovat.. Začal jsem si hrát s Notion a Notion AI a ladím projekty.. Jde to pomalu, ale objevuju možnosti a nastavuju si parametry, objednávky, úkoly a taky sledovat čísla.. Něco už tvořím, tak dobré.. Ovšem těch nástrojů a možností je tolik, že je to mazec.. Když jsme u těch poznámek, používáš stále Obsidian?"
+          },
+          {
+            "time": "09:29",
+            "author": "člen komunity",
+            "text": "Diskuze o aplikacích je tu spousta rada bych ale využila možnost … fungovala jsem na 3pc, spousty dat duplicitně, lokálně , 3 emaily + mobil …jde poradit kam to nejlépe dat na jedno místo .. aby se s tím dalo pracovat? Neco je na icloudu, na OneDrive a neco na Google workspace… prosim o radu, aby se dalo dal pracovat .. třídit , najit duplicity … nejak to peklo ukočírovat… diky za radu 🫣"
+          },
+          {
+            "time": "09:50",
+            "author": "člen komunity",
+            "text": "Je potřeba napsat stručně a jasně požadavky a klidně se zeptat AI => ujasnit si potřeby a workflow. Doporučuju se ptát Claude nebo Gemini.\nZ toho co čtu bych osobně šel do Google Workspace, ale bez bližších informací těžko dát radu co nebude obecná, plytká."
+          },
+          {
+            "time": "10:07",
+            "author": "člen komunity",
+            "text": "Mate nekdo zkusenost s Obsidian? Pro rovnani myslenek? Vcera jsem na to dostala doporuceni na jednom kurzu"
+          },
+          {
+            "time": "10:10",
+            "author": "člen komunity",
+            "text": "Obsidian velký dobrý. Silně doporučuju se s tím žít. Je to nejlepší tool na správu poznámek v Makrdownu. Ve zprávě na kt. odpovídám o tom píše i Dan."
+          },
+          {
+            "time": "10:10",
+            "author": "Daniel",
+            "text": "Zkus tohle, je to starý, ale jsem tam mladší: https://youtu.be/oq3k5sS_Bvg?si=oAr6T93HbVmt0w-R\n(věřím, že většina věcí pořád aktuální, i když je to ještě doba „před ChatGPT“)"
+          },
+          {
+            "time": "10:12",
+            "author": "Daniel",
+            "text": "Jj, souhlas."
+          },
+          {
+            "time": "10:12",
+            "author": "člen komunity",
+            "text": "Markdown je akt. hlavní komunikační jazyk s AI. => snižuje to bariéry pro zapojení AI\nPS: s Markdownem se dá pracovat i v jiných toolech (už umí i Google Docs, konečně), ale pro notetaking / knowledge base je Obsidian více méně _standard_"
+          },
+          {
+            "time": "10:14",
+            "author": "Daniel",
+            "text": "Vymýšlím teď mini projekt tady v komunitě, aby to šlo i bez webináře a aby to nestálo na mě, snad se bude líbit a ujme se. Jinak se těším taky, už to ladím a chystám. Jinak vybrat nástroj a jedeme…\nK Obsidian – jj, je zpět. Teď, když si přes Vibe Coding a CC jsem schopný do Obsidian připravit cokoliv, pro mě nemá jiné řešení smysl. Vracím se do ČR a budu zase školit, takže na hrátky s vlastní aplikací už nebude moc prostor. A Obsidian je top."
+          },
+          {
+            "time": "10:15",
+            "author": "Daniel",
+            "text": "Tohle budu BTW řešit částečně i na tom webináři v květnu. 🙂"
+          },
+          {
+            "time": "10:18",
+            "author": "člen komunity",
+            "text": "Je velkej rozdíl mezi Obsidianem a Bear? I co se týká workflows, prací v terminálu? Mám teď všechny markdown poznámky v Bear, tak jestli má smysl zvažovat přechod :)"
+          },
+          {
+            "time": "10:19",
+            "author": "člen komunity",
+            "text": "Používám, a k tomu na čtení Obsidian, kterej to umí přehledněji zobrazit. Využívám toho, že pak ty markdowny múžou mít hlavičky s tagama, prolinky mezi sebou, atd… Ale většinu času si o tom všem stejně povídáme s CC 🤣 Ale je to pecka, postavil jsem si takto second brain i se skillama jak s ním pracovat."
+          },
+          {
+            "time": "10:22",
+            "author": "Daniel",
+            "text": "Jj, asi tak, vlastně ten Obsidian otevírám jen, abych mrknul na to, co mám v Inboxu. Zbytek řeší CC. Můj seznam nesplněných přání je o jednu položku kratší."
+          },
+          {
+            "time": "10:30",
+            "author": "člen komunity",
+            "text": "Já si teda začal drze číst naše-vaše chaty s Cursorem a tu aplikaci teď ladím tak, aby mi z toho vyzobávala jen pro mě zajímavé informace a týdně je ukládala do Notion :-D"
+          },
+          {
+            "time": "10:32",
+            "author": "Daniel",
+            "text": "Správně!"
+          },
+          {
+            "time": "10:34",
+            "author": "člen komunity",
+            "text": "Takze vsichni schovat prijmeni.😁 Nebo to anonymizujete?"
+          },
+          {
+            "time": "10:35",
+            "author": "člen komunity",
+            "text": "Nee, sbírám jen myšlenky a když vám budu chtít napsat, postaru se sem vrátím ;-)"
+          },
+          {
+            "time": "12:56",
+            "author": "člen komunity",
+            "text": "Díky, Dane, za tuto myšlenku. Konečně se necítím tak divně, že s vlastníma poznámkama nepracuju jen já sám. Něco Claude a něco lokální modely.\nVčera jsem našel Karpatyho příspěvek na X o LLM a Knowledge bases. Hned jsem ty informace poslal Claude Code a už to ladíme.\nObsidian používám něco přes rok. Předtím taky Evernote, který mě hrozně bavil, ale nebyl optimální. Export poznámek jednoduchý, ale import se zachováním všeho nebyl možný. Opět pomohl Claude Code.\nŘada pro hledače poznámkového nástroje.\nZačněte s Obsidian, když nemáte něco dlouhodobého (dnešní doba to ocení), nebo používejte to co máte a soustřeďte se na proces. AI však velmi ocení MD formát."
+          },
+          {
+            "time": "13:52",
+            "author": "člen komunity",
+            "text": "Včera jsem začal dělat na projektu o kterém dlouho přemýšlím. Náhrada standardního Gemini/OpenAi chatu s vlákny atd... Nevíte o projektu který tohle už řeší? Prostě lepší LLM chat."
+          },
+          {
+            "time": "13:54",
+            "author": "Daniel",
+            "text": "Nemá tohle Raycast? Od dob CC jsem ho nepoužil na LLMs, ale myslím, že to měli docela fajn."
+          },
+          {
+            "time": "14:00",
+            "author": "Daniel",
+            "text": "Ulítávám na tom poslední dny docela dost. Fakt je to skvělý a otevírá se mi zase tolik možností, že si budu muset dávat časové bloky na to prozkoumávání. Potřebuju taky spát, že?"
+          },
+          {
+            "time": "14:02",
+            "author": "člen komunity",
+            "text": "Ano, spánek teď trpí 🤦🏻‍♂️"
+          },
+          {
+            "time": "14:34",
+            "author": "člen komunity",
+            "text": "Díky. Kdyby znal někdo nějaké alternativní chaty tak se s nima."
+          },
+          {
+            "time": "14:55",
+            "author": "člen komunity",
+            "text": "Nějaké jo, ale všechny jsou buď neudržované nebo velmi specifické. Tohle téma teď hodně řeším. Je tam extrémní UX gap v tom, jaké jsou k dispozici interfaces. Co to umí a jak to funguje...\nZasekli ksme se na text-based convos..."
+          },
+          {
+            "time": "17:09",
+            "author": "člen komunity",
+            "text": "Jen pro zajímavost - jsou mezi těma specifickejma nějaký zajímavý?"
+          },
+          {
+            "time": "22:03",
+            "author": "člen komunity",
+            "text": "Hrajete si uz nekdo s routines? https://claude.com/blog/introducing-routines-in-claude-code"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "03:14",
+            "author": "Daniel",
+            "text": "Je to tak, taky jsem na to narazil. Prostě jsou asi ještě malí, nebo nevím, čím to. Přece jen ten model jede tuším od ledna."
+          }
+        ]
+      }
+    ]
+  }
+}

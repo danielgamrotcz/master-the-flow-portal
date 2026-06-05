@@ -1,0 +1,190 @@
+{
+  "date": "2026-04-09",
+  "generated_at": "2026-06-05T06:54:34Z",
+  "stats": {
+    "messages": 18,
+    "groups": 3,
+    "members": 5
+  },
+  "cards": [
+    {
+      "id": "2026-04-09-01",
+      "type": "NÁSTROJE",
+      "level": "Expert",
+      "topic": "OpenClaw",
+      "title": "OpenClaw na vlastním serveru přes Tailscale VPN",
+      "excerpt": "Jedna členka má OpenClaw na vlastním serveru. Přístup řeší přes Tailscale VPN. Data zůstávají u ní a spotřebu tokenů sleduje přes ChatGPT.",
+      "body": "OpenClaw v komunitě zaujal. Ukázalo se, že ho někdo už reálně provozuje v produkci.\n\nKonkrétní setup: vlastní server, přístup přes Tailscale VPN. Data zůstávají lokálně a nic není vystavené do internetu. Spotřeba tokenů se hlídá přes napojení na ChatGPT.\n\nTailscale je jedna z nejjednodušších možností, jak si zpřístupnit vlastní službu přes šifrovaný tunel. Není potřeba veřejná IP ani složité nastavování firewallu. Na Linuxu je instalace hotová za pár minut.\n\nMezitím další člen testoval OpenClaw na obecnějších scénářích a rešerších. Ve skupině se tak začínají sbírat první srovnatelné zkušenosti. Pokud o nasazení uvažujete, teď je dobrá chvíle přidat se do diskuze.",
+      "read_minutes": 2,
+      "source_date": "2026-04-09"
+    },
+    {
+      "id": "2026-04-09-02",
+      "type": "INSIGHT",
+      "level": "Začátečník",
+      "topic": "Práce s AI",
+      "title": "Nečekejte na hotový výsledek, korigujte průběžně",
+      "excerpt": "Místo jednoho velkého dotazu je lepší vést model postupně. Když vysvětlí, jak se k výsledku dostal, snáz poznáte, kde se to pokazilo.",
+      "body": "Jeden z hlavních postřehů z dnešní diskuze: spousta lidí pošle jeden velký dotaz a čeká, co z toho vypadne. Výsledek bývá průměrný. A opravuje se hůř, než kdybyste šli krok za krokem.\n\nLíp funguje průběžné ladění. Když model udělá krok, kterým si nejste jistí, nechte si vysvětlit, jak k němu došel. Chybu tak chytíte dřív, než se propíše do celého výstupu. A oprava je pak přesnější, protože víte, kde přesně se to pokazilo.\n\nPrakticky: místo „Napiš mi celý marketingový plán“ začněte třeba: „Jaké cílové skupiny bys zvažoval pro B2B prodej v logistice?“ Pak to vyhodnotíte, odsouhlasíte nebo opravíte. A až potom jdete dál. Na začátku je to trochu pomalejší. Celkově ale bývá výsledek výrazně lepší a vy máte proces opravdu pod kontrolou.",
+      "read_minutes": 2,
+      "source_date": "2026-04-09"
+    },
+    {
+      "id": "2026-04-09-03",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Market research",
+      "title": "Claude a Gemini jako vzájemný cross-check při rešerši",
+      "excerpt": "Po měsíci ladění promptů a doplňování kontextu o firmě začíná AI market research dávat zajímavé výsledky. Porovnání výstupů z Claude a Gemini k tomu přidává druhý pohled.",
+      "body": "Market research s AI začne dávat smysl až po delší přípravě. Potvrdila to zkušenost jednoho člena, kterou dnes sdílel v komunitě.\n\nPrvní měsíc byl hlavně o ladění promptů a postupném předávání kontextu. Odvětví, konkurence, zákazníci, produktový slovník firmy. Teprve když tohle model dostal, začaly být výstupy opravdu použitelné.\n\nDůležitý princip: kontext nedávat jednorázově, ale průběžně. Každý další prompt navazuje na to, co už model o firmě ví. Čím přesnější kontext, tím relevantnější výstup.\n\nUžitečný je i cross-check mezi Claudem a Gemini. Co jeden model označí jako klíčový trend, druhý může vidět jinak nebo úplně přehlédnout. Když se výstupy rozcházejí, je to signál. Buď je otázka položená moc vágně, nebo jde o oblast, která je fakt nejednoznačná a stojí za hlubší průzkum.\n\nDva modely jako „debatní partneři“ fungují líp než jeden model jako autorita.",
+      "read_minutes": 2,
+      "source_date": "2026-04-09"
+    },
+    {
+      "id": "2026-04-09-04",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Promptování",
+      "title": "Asistent s instrukcí ptej se dokola dokud neřeknu stop",
+      "excerpt": "U B2B akvizice v konzervativním oboru se hodí vlastní asistent se systémovým promptem. Zadání pro model: ptej se mě pořád dokola, dokud neřeknu stop.",
+      "body": "Dnes se v komunitě řešil konkrétní případ: jak použít AI pro B2B akvizici v konzervativním průmyslu, kde jsou rozhodovatelé opatrní a všechno jde přes formální kanály.\n\nPadla jednoduchá rada: nepoužívat obecný chat, ale postavit si vlastního asistenta se systémovým promptem. Do něj popíšete kontext — obor, typ zákazníka, jeho časté námitky i způsob rozhodování. Asistent pak drží stejný rámec a nemusíte mu pokaždé vysvětlovat základy.\n\nZajímavý detail: přidejte instrukci „ptej se mě pořád dokola, dokud neřeknu stop“. Model pak rozhovor vede sám a tahá z vás informace. Nemusíte přemýšlet, co ještě dodat. Výsledek bývá mnohem propracovanější než po jednom dlouhém promptu.\n\nPro tuhle práci komunita doporučila zvážit přechod z ChatGPT na Claude. Líp drží kontext v delší konverzaci a česky zní přirozeněji.",
+      "read_minutes": 2,
+      "source_date": "2026-04-09"
+    },
+    {
+      "id": "2026-04-09-05",
+      "type": "INSIGHT",
+      "level": "Začátečník",
+      "topic": "Fokus a produktivita",
+      "title": "Telefon nepatří ani do šuplíku ani na stůl",
+      "excerpt": "Mobil položený na stole zhoršuje soustředění, i když je ztlumený. Šuplík nestačí — pomůže až jiná místnost.",
+      "body": "Dnes v diskuzi padlo přirovnání, které stojí za zopakování. Mobil na stole — i když leží displejem dolů a je ztlumený — prokazatelně snižuje soustředění. Nejde o to, jestli bliká. Už jen to, že víte, že tam je, vám bere část pozornosti.\n\nVětšina lidí si myslí, že jich se to netýká. Jenže problém je, že druhou možnost nikdy nezkusili dost dlouho, aby mohli srovnávat. Týden s telefonem na stole, týden s telefonem v jiné místnosti. Teprve pak je to fér srovnání.\n\nPadlo i konkrétní doporučení: ne do šuplíku, ne do tašky, ne displejem dolů. Ideálně do jiné místnosti. Šuplík je pořád moc blízko. Rozhodnutí „vezmu ho, nebo ne?“ se pak vrací každých pět minut a pokaždé trochu bere energii. Jiná místnost tahle rozhodnutí úplně odstraní.\n\nU práce s AI to platí dvojnásob. Hluboká práce s modelem funguje líp, když nejste napůl jinde.",
+      "read_minutes": 2,
+      "source_date": "2026-04-09"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-03-22-01",
+    "type": "INSIGHT",
+    "level": "Builder",
+    "topic": "Claude Code",
+    "title": "Sobota strávená přípravou skills a rules",
+    "excerpt": "Jeden člen strávil celou sobotu přípravou vlastních skills a rules pro Claude Code. S Claudem si vygeneroval celý postup, který chce nasadit hned druhý den. Cíl je mít projekty i nápady v jednom dobře naladěném prostředí.",
+    "body": "Přizpůsobit si Claude Code vlastnímu workflow se vyplatí. Skills jsou pojmenované příkazy. Místo dlouhého promptu napíšeš /moje-skill a Claude přesně ví, co má dělat. Rules nastavují chování pro celý projekt: jakým stylem psát kód, co nikdy nedělat nebo jak pojmenovávat soubory.\n\nTady člen nemusel vymýšlet strukturu od nuly. Nechal si s Claudem vygenerovat celý plán. Pak ho přes noc nechal uležet a ráno šel rovnou implementovat.\n\nJestli máš projekty, kde pořád dokola opakuješ stejné instrukce nebo kopíruješ prompt z poznámek, skills a rules jsou pro tebe. Nastavení zabere půl dne a pak ti šetří čas každý den.",
+    "read_minutes": 2,
+    "source_date": "2026-03-22",
+    "resurfaced_from": "2026-03-22"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "03:11",
+            "author": "Daniel",
+            "text": "Michale, děkuju moc. To je hezký. Co se týče té platformy, tak je to jedna z možností. Teď v rámci bety, která bude minimálně měsíc až dva, to určitě necháme tady. Pro většinu lidí je to nejjednodušší řešení.\nTěch kanálů, které jsem chtěl, respektive ze kterých jsem vybíral, bylo více. A byť nejsem WhatsApp guy, tak volba padla právě sem. Jinak i na ta stará témata se klidně ozvěte.\nZa mě je to právě účel tady téhle skupiny. Kde by to bobtnalo až moc, tak vymyslíme, co s tím. Jinak s tou poslední věcí moc držím palce. Včera o mně syn prohlásil, že smrdím. Ať se vám nestane něco podobného. 😀"
+          },
+          {
+            "time": "03:14",
+            "author": "Daniel",
+            "text": "Jsem na to zvědavý. Každopádně pořád to beru tak, jak popisuje @člen. Anthropic mám rád, nicméně jedním z cílů je prodat a vždycky to tak beru, jakmile společnosti představují jakýkoli svůj model, produkt nebo cokoliv. Nic to nemění na tom, že je to fascinující."
+          },
+          {
+            "time": "08:14",
+            "author": "člen komunity",
+            "text": "Děkuju a trochu jsem to tušil, že je to vědomý limit 🙂\nJdu dal čichat 😄👌"
+          },
+          {
+            "time": "08:55",
+            "author": "člen komunity",
+            "text": "Ahoj vsem vykopavam tema OpenClaw. Pro me zatim neprobadane vody, ale zacal jsem si o tom zjistovat vice a jsem docela nadseny. Nez tomu propadnu, tak si chci udelat sense check a zajima me jednoducha vec: Pouzivate ANO/NE? Pokud ANO, tak na cem OpenClaw poustite a jaky je jeden nejhodnotnejsi use-case, na ktery pouzivate? DIky za inspiraci a sdileni"
+          },
+          {
+            "time": "09:12",
+            "author": "Daniel",
+            "text": "🌱 POSTŘEH Z DOMÁCÍ VÝUKY\nChudák mé dítě teď jede mou „diagnostiku“, abychom si na papíře ověřili, jak na tom je ve škole (dostali jsme na zimu plán od paní učitelky, tak úplně nechci, aby přijel na konci dubna do školy s tím, že neumí narýsovat úsečku AB, která má 45 mm).\nMáme na stole terárko s kudlankou. Asian Twig Mantis. Boží živočich. Furt visí na větvi a nic nedělá. Přesto má pozornost. Hlavně Oliverovu. Hlavně u učení. 😀 A tu je tu už druhý měsíc. No nic, chápu ho.\nNapadla mě k tomu jedna analogie a proto to sem vlastně celý píšu. Dám to sem bez dat, jsem na mobilu, pak kdyžtak dohledám odkazy.\nMobil na stole ve většině případů dost snižuje kognitivní výkon. I když má vypnutý zvuk nebo je obrácený displejem dolů. Jsem v tomhle totální průměr, protože když potřebuju focus, musím ho zahrabat někam hluboko do batohu nebo nechat v ložnici (když tam nespím). Jinak tam ty oči sjíždění, pokud zrovna nejsem fakt ponořený do něčeho mega zábavného.\nVětšina lidí si myslí, že se umí soustředit i s telefonem vedle/zapnutým/blikajícím/pípajícím… Jako ok, ale pojďme si definovat soustředění (pro každého úplně jiné téma). A pojďme si porovnat, jak to vypadá s blikajícím telefonem na stole jeden týden a s telefonem úplně mimo ten druhý. Jasně, vím, že není jen černá a bílá. Jen blbý, že lidi nikdy tu bílou ani světle šedou nezkusí.\n- Nechat telefon někde jinde, když se chci ponořit do práce\n- ⁠Ne v šuplíku, ne v tašce, ne obrácený na stole\n- ⁠Ideál jiná místnost\n- ⁠Pak si dát 90 minut hluboké práce\nIdeálně v obou případech si na místě i zpětně všímat, kolikrát vám během té doby prolítl hlavou impulz ho zkontrolovat.\nNení to appka na blokování appek. Je to zadarmo. Jen přemístíte jeden objekt o X metrů.\nV době, kdy lidi vytvářejí přes vibe coding aplikace jak na běžícím páse a paralelně jim běží šest různých terminálových oken, to vypadá jako dost oldschool. Akorát že s našim mozkem budeme muset nějak dožít. A ten funguje podle určitých principů."
+          },
+          {
+            "time": "09:14",
+            "author": "Daniel",
+            "text": "Přiznám se, že jsem rozjel obecný scénáře. Zkoušel jsem různé opakované úkoly, zadávat rešerše a podobně. A ve finále je to docela fajn.\nPustil jsem to přes prostředníka i na data, která jsem sám vybral. A pokud je člověk dostatečně opatrný, tak se mu s tím může pracovat. Na tohleto by to mohlo být taky fajn. Google Disk, Gmail, kalendář, ale hlavně ne přístup k ostrému účtu.\nBěží mi to na Raspberry Pi 5. Později jsem tu krabičku začal využívat i na další věci, takže je docela fajn. Teď mi třeba pomáhá s vibe codingem ve chvíli, kdy nemám monitor u notebooku a potřebuju něco řešit na cestách.\nKaždopádně rozhodně nejsem v tomhle expert a vůbec si netroufám cokoliv doporučovat. Myslím si, že prozkoumané to mám více než 95 procent lidí. Ale zajímaly by mě taky praktické use casy. Něco, co neudělám třeba s Claude Code a vlastními automatizacemi."
+          },
+          {
+            "time": "09:53",
+            "author": "člen komunity",
+            "text": "Ahoj, ja som sa s Openclaw trochu hrala.\nKvôli bezpečnostnému riziku ho mám na vlastnom serveri s Tailscale vpn.\nKvôli kontrole tokenov používam napojenie na ChatGPT.\nPôvodne som ho mala napojený na Discord, ale okrem bezpečnosti mi tam trochu vadilo aj prehltenie ostatnými servermi. Keďže Signál na nič iné nepoužívam, tak som ho prepojila tam.\nKvôli iným veciam som nemala čas sa do toho úplne ponoriť, takže ti nedám ultra cool vypiplaný usecase :)\nAle aspoň dve veci, v ktorých mi príde super - ma v sebe vlastne tooly, ktoré si vie aj vytvárať. Konkrétne, keď som napajala Signál, z nejakého dôvodu mi nešlo prejsť cez autentifikáciu. 2 hodiny som s tým zabila v Termináli. Skúšala všetky možné rady z YT, redditu atď.\nAž mi kamarát vraví, veď to povedz jemu, nech sa napojí.\nA prekvapivo, fakt to zvládol. Zdiagnostikoval si problém a bez môjho pričinenia skúšal, až sa za chvíľu pripojil.\nDruhá vec - komunikácia cez mobil. Mám s ním nastavené rôzne .md súbory - o mne, o ňom, čo robím, čo chcem robiť, na akých projektoch pracujeme.\nCez mobil ho môžem požiadať o čokoľvek a on si to podľa pravidiel spracuje, zatriedi a uloží.\nIdu nastaviť aj rôzne cronjoby, takže mi každý večer posiela upozornenia (konkrétne s cvičením - ma zadaný subor cvikov a každý večer mi pár z nich náhodne vyberie a pošle).\nTo nastavovanie zabralo pár hodín (sú tam občas divné not-so-obvious hacky), ale už aj s tým vie OpenClaw potom pomôcť.\nAj keď som z toho zatiaľ nevyťažila všetko čo som chcela, tak neľutujem, že som do toho išla. Ale zároveň tam je väčšie bezpečnostné riziko a je treba na to myslieť. A podľa toho sa zariadiť."
+          },
+          {
+            "time": "20:48",
+            "author": "člen komunity",
+            "text": "Dobrý den všem.\nDovolim si jako úplný začátečník požádat o radu.\nAktuálně spolupracuju s firmou, ktera se zabývá dost konzervativnim prumyslovym odvetvim, kde je dost časově náročné zacilit a ziskat zakaznika. Chtěli bychom rozvinout akvizici zákazníků na polskem a maďarskem trhu.\nZadal jsem ChatGPT prvotni průzkum trhu a vhodných firem k oslovení apod., ideálně, kdyby byl schopen vychrlit přímé kontakty k oslovení/schuzkam.\nNechal jsem si od nej naseptat vhodný prompt pro definici modelu v roli obchodního ředitele dané firmy s 30 lety zkusenosti apod., aby mimo průzkum trhu dal take návrhy na vhodnou formu business developmentu atd. Zatím mi příliš nepomohl, resp. nenavrhl nic, co by člověka s obchodní zkušeností nenapadlo.\nPar firem k oslovení navrhl, k některým dal i par pouzitelných informací, kontakty pouze z webu.\nSečteno, podtrženo tedy lepší nez nic, ale nic, co by skutečně ušetřilo tunu práce nebo hromady času - máte nekdo nápad, jak by se dal zrealizovat nejaky parťák/kapesni CEO, ktery by zvládal skutečně plnohodnotný průzkum trhu s návrhy funkční cílené akvizice nad rámec rad typu networking/cold calling/připravím Ti návrh mailu k oslovení apod.?\nNa druhou stranu samozřejmě nechci stavět agentní systém, ktery bude někde autonomne obepisovat zakazniky nebo podobně.\nPředem děkuji za jakekoli tipy 🙏"
+          },
+          {
+            "time": "21:02",
+            "author": "člen komunity",
+            "text": "No mně market research začal dávat výsledky cca po měsíci hraní si s tim, jak má vypadat výstup, učení co vlastně dělá moje firma a tedy co má hledat..teď už mi dává výsledky zajímavé , ale dělám třeba cross-check mezi Claude a Gemini , abych měl 2 pohledy...,🙈, takže i mě by docela zajímalo jak to dělat lépe."
+          },
+          {
+            "time": "21:05",
+            "author": "člen komunity",
+            "text": "Udělal bych několik kroků. Předpokládám, že malte GPT palcené\n1. Krok: tohle co jste popsal dejte nejprve do klasického chatu s tím, že cíl je vytvořit systémový prompt na GPTs asistenta (předpromptovaný GPT asistent) a nebo formou GPT projektu - tyhle dv věci znáte? Všechno co řešíte opakovaně řešte přes tyto věci. Nyní potřebuje definovat toho asistenta. A rovnou mu řekněte, že tato konverzace bude mít 3. Fáze: 1. Odladění zadání, 2. Deep research webu, 3. Vytvoření asistenta\n2. ⁠krok: odlaďte zadání a ujestěte se, že dobře pochopil Váš záměr\n3. ⁠krok: nechte si vygenerovat v tom samém vlákně prompt na deep research\n4. ⁠sudělejte v jiném chatu a ideálně i v jiných nástrojích deep research vyśledkem kterého bude synteza informací pro asistenta dle vašeho zadání\n5. ⁠vraťe výsledky z deep researche do púvodního vlákna a nechte vytvořit systémový prompt/instrukce pro GPTs nebo projekt\n6. ⁠vytvořte gpts nebo projekt\n7. ⁠v tomto projektu si už řešte konkŕetní případy, pokud jde o průzkum, vždy použijte deep research"
+          },
+          {
+            "time": "21:09",
+            "author": "člen komunity",
+            "text": "Nejdůležitější je Váš kontext + správné zadání (hack: napište nečo ve smyslu ptej se mě furt dokola na upřesnění dokud neřeknu stop) + správné využití nástrojů a modelů vč thinking módů. To je hodně důležité. Jinal doporučuju spíš claude :)"
+          },
+          {
+            "time": "21:12",
+            "author": "člen komunity",
+            "text": "A pokud jste začátečník, nechtějte zázraky hned na první dobrou. Člověk si to musí nejďrív osahat a k tomu je potřeba hodně iterakcí"
+          },
+          {
+            "time": "21:18",
+            "author": "člen komunity",
+            "text": "Moc děkuji za takto věcný postup 🙏 Vyzkouším, věřím, ze výsledky budou jinde.\nAno, Chat placený, postupně určitě zkusim Claude :) 👍"
+          },
+          {
+            "time": "21:54",
+            "author": "člen komunity",
+            "text": "Za mě k těm iteracím a hlavně v začátcích mi hodně pomohlo, když jsem viděla výstup a nebyla jsem úplně spokojena, si nechat rozepsat od modelu jak k výsledku došel a zkontrolovala jsem jednotlivé kroky nebo jsem se ještě doptala na detaily jeho postupu a pak dávala další prompty přímo k nim. ☺️"
+          },
+          {
+            "time": "22:02",
+            "author": "člen komunity",
+            "text": "A ještě doplním jeden úplně super tip co ráda sdílím a kýmkoliv kdo začíná - máte tady od Davea super návod.\nPokud nevíte, co si pod jakýmkoliv z těch kroku představit (nebo to chcete prostě jen pohodlnější 😁), můžete udělat screenshot/ zkopírovat ten navržený postup a nahrát ho do jakéhokoli llm co ma study mode (ChatGPT, Gemini, copilot… určitě je jich vic. ) ten study mode jen zapnete v plusku v promtovacim okně a reknete mu, ať vas tim procesem provede krok po kroku.\nStudy mode se chová jako super trpělivý učitel a dává i úkoly krok po kroku. ☺️"
+          },
+          {
+            "time": "22:18",
+            "author": "člen komunity",
+            "text": "Pecka, moc děkuji 🙏"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "03:02",
+            "author": "Daniel",
+            "text": "Já si myslím, že praktických ukázek není nikdy dost. Sem s tím!"
+          }
+        ]
+      },
+      {
+        "slug": "webinářeworkshopy",
+        "name": "Webináře & Workshopy",
+        "messages": [
+          {
+            "time": "03:07",
+            "author": "Daniel",
+            "text": "😀 ale na vězení to ještě není, ne?"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "date": "2026-04-24",
+  "generated_at": "2026-06-05T07:20:52Z",
+  "stats": {
+    "messages": 5,
+    "groups": 1,
+    "members": 3
+  },
+  "cards": [
+    {
+      "id": "2026-04-24-01",
+      "source_date": "2026-04-24",
+      "topic": "Obsidian a personalizovaná doporučení",
+      "excerpt": "Obsah na jednom místě v Obsidianu, konfigurace se průběžně ladí — chybí už jen automatická zpětná vazba.",
+      "body": "Daniel popisuje, jak si v Obsidianu centralizuje obsah a přidává k němu personalizovaná doporučení. Průběžně to ladí a upravuje. Zatím mu chybí automatizace v sebeučení a zpětné vazbě. To chce dotáhnout a ukázat na webináři 7. 5. Ailin se nabídla, že se na to podívají spolu."
+    },
+    {
+      "id": "2026-04-24-02",
+      "source_date": "2026-04-24",
+      "topic": "Token-friendly scraper pro sledování zdrojů",
+      "excerpt": "Členka komunity si postavila jednoduchý scraper. Pouští ho ručně, scrapuje jen nový obsah a jen témata, která ji zajímají. Výstup jí jde rovnou do Obsidianu.",
+      "body": "Členka komunity nasdílela vlastní řešení na sledování zdrojů. Spouští ho ručně přes příkaz. Scrapeuje jen nový obsah od posledního spuštění, vybírá jen témata, která ji zajímají, a v Obsidianu vytvoří note s TL;DR, tagy, backlinkama a místem na vlastní feedback. Claude.md hlídá, že ty zdroje opravdu používá. Nic složitého, ale jako první funkční vlaštovka super."
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-04-01-01",
+    "type": "INSIGHT",
+    "level": "Builder",
+    "topic": "Bezpečnost",
+    "title": "Zkontroluj vibecoding projekty po npm bezpečnostním incidentu",
+    "excerpt": "Populární JavaScriptovou knihovnu axios někdo krátce kompromitoval přes npm. Pokud máte vibecodingové projekty se závislostmi v Node.js, vyplatí se je zkontrolovat. Claude Code to zvládne sám a výsledek vám srozumitelně vysvětlí.",
+    "body": "V komunitě jsme řešili bezpečnostní incident: npm balíček axios byl krátce kompromitovaný. Většiny vibecoding projektů se to nakonec netýkalo, ale otevřelo to téma, na které hodně lidí narazilo poprvé.\n\nCo teď? Pokud víte, že váš projekt používá Node.js, typicky to poznáte podle souboru package.json ve složce projektu, nechte ho zkontrolovat. Otevřete Claude Code, vložte mu zprávu o incidentu, popište svůj setup a řekněte mu, ať vás provede kontrolou.\n\nTechničtější členové sdíleli i ruční postup: jak rychle najít všechny lock soubory na disku a ověřit konkrétní verze kompromitovaných balíčků. Pokud se v tom ale nechcete hrabat, Claude Code to zvládne za vás.\n\nAktuálně nahlášené projekty členů jsou v pořádku. Incident ale dobře připomněl, proč se hodí vědět, co v projektech máte, a mít rychlý způsob, jak si to ověřit.",
+    "read_minutes": 2,
+    "source_date": "2026-04-01",
+    "resurfaced_from": "2026-04-01"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "12:21",
+            "author": "Daniel",
+            "text": "Jo, jo, něco podobného. Nekoukal jsem na to detailně, ale centralizuje se mi to v Obsidian s personalizovanými doporučeními na základě toho, jak to průběžně nastavuju a upravuju. Chybí mi tam ještě špetka automatizace v tom sebeučení se a zpětné vazbě, ale to dotáhnu. Ukážu to pak 7. 5. na webináři."
+          },
+          {
+            "time": "12:21",
+            "author": "Daniel",
+            "text": "Mrkneme na to spolu?"
+          },
+          {
+            "time": "12:49",
+            "author": "člen komunity",
+            "text": "Ano 👍"
+          },
+          {
+            "time": "18:23",
+            "author": "člen komunity",
+            "text": "Dneska jsem si něco podobnýho vytvořila v daleko jednodušší, token friendly formě. Mám seznam kanálů a zdrojů co mě zajímají a manuálně si když chci spustím příkaz. Scrapuje to jen nový obsah od posledního scrapu, jen témata co mě zajímají a vytváří mi z nich note v obsidian s tldr, tags a backlinky a prostorem na můj feedback co mě bavilo a co ne. Claude.md mi pak hlídá, že ty zdroje fakt používám když je potřeba. Nic sofistikovanyho, ale pro začátek mi to jako první vlaštovka stačí :))"
+          },
+          {
+            "time": "18:31",
+            "author": "Daniel",
+            "text": "Je to naprosto super! (BTW za mě, jak koukám i mimo naši bublinu, hodně sofistikovaný, třeba to ostatní potvrdí)"
+          }
+        ]
+      }
+    ]
+  }
+}

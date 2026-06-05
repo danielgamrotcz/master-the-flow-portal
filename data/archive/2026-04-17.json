@@ -1,0 +1,193 @@
+{
+  "date": "2026-04-17",
+  "generated_at": "2026-06-05T07:13:39Z",
+  "stats": {
+    "messages": 21,
+    "groups": 1,
+    "members": 6
+  },
+  "cards": [
+    {
+      "id": "2026-04-17-01",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Claude Code",
+      "title": "Claude Code na tvorbu, Claude chat na analýzu",
+      "excerpt": "Jeden člen popsal, jak si dělí práci mezi Claude Code a aplikaci Claude. Claude Code bere jako pracovní prostor na tvorbu, nejen na kód, ale i na dokumenty. Claude chat a projekty pak používá na konzultace a analýzu.",
+      "body": "Přepínání mezi nástroji žere čas. A často se u toho ztratí souvislosti.\n\nJeden člen komunity popsal, jak to má on. Claude Code používá jako hlavní pracovní prostor. Tvoří v něm, píše dokumenty, plánuje projekty a generuje obsah. Nejde mu jen o kód. Claude.ai chat a Projekty bere spíš jako místo na konzultace. Chodí tam pro analýzu, zpětnou vazbu nebo rychlý průzkum tématu.\n\nProč to tak dává smysl? Každý nástroj se hodí na něco jiného. Claude Code drží kontext celého projektu. Vidí soubory, historii i strukturu. Claude chat je rychlý a interaktivní, ale kontext se v něm ztrácí rychleji.\n\nPraktické pravidlo: pokud na jedné věci děláte déle než den, dejte ji do Claude Code. Jednorázové dotazy a analýzy bez projektového kontextu nechte v Claude chatu.",
+      "read_minutes": 2,
+      "source_date": "2026-04-17"
+    },
+    {
+      "id": "2026-04-17-02",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Builder",
+      "topic": "Výběr nástrojů",
+      "title": "Claude nebo Codex: kdy má smysl přeskakovat?",
+      "excerpt": "Jeden člen se zeptal na rovinu: Proč Claude, a ne Codex po nové aktualizaci od OpenAI? Komunita se shodla, že bez pádného důvodu nemá smysl přecházet.",
+      "body": "Kacířská otázka, která se v komunitě občas vrací: Je Claude pořád nejlepší volba, nebo už ho někdo dohnal?\n\nTentokrát šlo hlavně o srovnání s Codexem po poslední aktualizaci OpenAI. Člen komunity vytáhl dvě roviny. Etiku, tedy přístup k datům a hodnoty Anthropicu vs. OpenAI. A pak praxi: limity, ekosystém, funkce.\n\nOdpovědi šly většinou jedním směrem. Pokud nemáte jasný důvod přejít, zůstaňte tam, kde jste. Skákat mezi nástroji každých 14 dní podle toho, kdo zrovna vydal novou verzi, je dobrý způsob, jak se nikam nedostat. Opravdu dobře s nástrojem začnete pracovat až časem.\n\nA pak přišel Opus 4.7, takže si ta otázka trochu odpověděla sama.\n\nMáte jasně dané, co by vás přimělo přejít na jiný nástroj?",
+      "read_minutes": 2,
+      "source_date": "2026-04-17"
+    },
+    {
+      "id": "2026-04-17-03",
+      "type": "NÁSTROJE",
+      "level": "Expert",
+      "topic": "Supabase",
+      "title": "Supabase dokumentace přes SSH pro AI agenty",
+      "excerpt": "Supabase nově zpřístupnil dokumentaci přes SSH. Podle jejich newsletteru se v ní tak AI agentům líp orientuje. Tip pro všechny, kdo Supabase používají nebo o něm uvažují.",
+      "body": "Člen komunity sdílel novinku ze Supabase newsletteru. Dokumentace je teď dostupná přes SSH. Není to funkce pro lidi, ale pro AI agenty.\n\nAgenti, kteří pracují se Supabase, třeba přes Claude Code nebo jiný nástroj, teď můžou dokumentaci prohledávat a číst přímo přes SSH připojení. Supabase říká, že je to jednodušší a přesnější než klasické scrapování webu nebo hledání v HTML.\n\nPokud stavíte agenta pro Supabase, nebo používáte Claude Code se Supabase, mrkněte na jejich blog. Můžete si ověřit, jestli tahle funkce zrychlí nebo zpřesní práci vašeho agenta s dokumentací.",
+      "read_minutes": 2,
+      "source_date": "2026-04-17"
+    },
+    {
+      "id": "2026-04-17-04",
+      "type": "INSIGHT",
+      "level": "Začátečník",
+      "topic": "Vibe coding",
+      "title": "Středoškoláci postavili funkční appku za hodinu",
+      "excerpt": "Ve finále soutěže v digitálních dovednostech zvládli studenti z různých oborů vytvořit funkční kvízovou aplikaci zhruba za hodinu. Elektrikáři, gymnazisté i ajťáci. Dobrá motivace pro každého, kdo ještě nezačal.",
+      "body": "Jedna členka komunity sdílela zážitek z finále středoškolské soutěže v digitálních dovednostech.\n\nStudenti tam mimo jiné tvořili vzdělávací obsah pro seniory, rozkrývali dezinformace a vibe codovali.\n\nVýsledek? Dost jasný.\n\nVšichni za zhruba hodinu postavili funkční kvízovou aplikaci v nástroji Macaly. Bez ohledu na obor. Elektrikáři, gymnazisté i studenti IT.\n\nRozdíly mezi nimi samozřejmě byly. Ale do cíle se dostali všichni.\n\nProč to píšeme?\n\nNejčastěji lidé nezačnou proto, že mají pocit, že toho neumí dost. Středoškoláci bez přípravy tenhle pocit vyvrátili za hodinu.\n\nJestli vás brzdí věta „nejsem technický typ“, tahle historka je přesně pro vás.\n\nZačít se dá dřív, než si myslíte.",
+      "read_minutes": 2,
+      "source_date": "2026-04-17"
+    },
+    {
+      "id": "2026-04-17-05",
+      "type": "POSTAVIL JSEM",
+      "level": "Expert",
+      "topic": "Obsidian",
+      "title": "800 poznámek v Obsidianu a agenti nad nimi",
+      "excerpt": "Jeden z členů přesunul 800 poznámek do Obsidianu a teď nad nimi staví vlastní systém agentů. Sdílel plugin Terminal a inspiraci pro agentní práci s osobními znalostmi.",
+      "body": "Člen komunity psal, že přesunul všech 800 poznámek do Obsidianu. A neskončil jen u třídění. Teď si nad nimi staví vlastní vrstvu agentů, kteří poznámky prohledávají, propojují a dál s nimi pracují.\n\nPomáhají mu hlavně dvě věci:\n\n- Obsidian plugin Terminal: díky němu může spouštět příkazy přímo z Obsidianu, bez přepínání do terminálu\n- YouTube inspirace na koncept „agentních tlup“ nad poznámkami: skupiny agentů, kde má každý jiný úkol. Jeden hledá, druhý shrnuje, třetí navrhuje propojení.\n\nJe to pokročilejší přístup ke knowledge managementu. Poznámky pak nejsou jen pasivní archiv. Stávají se z nich aktivní znalostní báze, se kterou AI umí pracovat.\n\nPokud používáte Obsidian a láká vás představa agentů nad vlastními poznámkami, plugin Terminal je dobrý první krok.",
+      "read_minutes": 3,
+      "source_date": "2026-04-17"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-03-30-04",
+    "type": "NÁSTROJE",
+    "level": "Builder",
+    "topic": "Uttero",
+    "title": "Reálné náklady na 40 hodin diktace s AI",
+    "excerpt": "Používání Uttero vyjde zhruba na 5 USD za 40 hodin aktivního diktování. Model Haiku zvládne 90 % běžných úprav, Sonnet se používá jen u složitějších případů.",
+    "body": "Jedna z nejčastějších otázek při výběru AI nástrojů je jednoduchá: kolik to opravdu stojí? U Uttero vychází cena hodně nízko. Za 40 hodin diktování zaplatíte zhruba 5 dolarů.\n\nJe to dané tím, jak aplikace pracuje s modely. Levnější Haiku zvládne většinu běžných situací, asi 90 % úprav textu. Sonnet se použije až ve chvíli, kdy je potřeba lepší porozumění nebo složitější přeformulování.\n\nU každodenního diktování je to tedy skoro zanedbatelná částka. Navíc neplatíte paušál za kapacitu, kterou třeba ani nevyužijete. Platíte jen za to, co skutečně použijete. Pro lidi, kteří diktují často a hodně, je to výrazně levnější než jakýkoli paušální tarif.",
+    "read_minutes": 2,
+    "source_date": "2026-03-30",
+    "resurfaced_from": "2026-03-30"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "02:08",
+            "author": "Daniel",
+            "text": "Já to mám tady zapnuté bez omezení, ale jenom z toho důvodu, že testuju různé funkce a chování. Taky na základě zpětné vazby uživatelů. Jakmile to doběhne, což předpokládám, bude dříve než za 18 let, tak přepínám na těch 5 minut. Přijde mi to rozumné, byť ta spotřeba baterie není nijak extrémní.\nTak samozřejmě ten běh na pozadí něco žere. A stejně tak nechcete mít svítící tečku nebo mikrofon celý den na telefonu. Jinak ta bezpečnost je to pohotovost mikrofonu. Uttero samotné nenahrává ani nic nikam neposílá."
+          },
+          {
+            "time": "02:09",
+            "author": "Daniel",
+            "text": "Super, tak budu potom moc rád za informace. Myslím, že nejen já, jsem na to zvědavý, jen není v mých silách to tak hluboce zkoumat. A to ani když mi s tím pomáhá AI."
+          },
+          {
+            "time": "06:33",
+            "author": "člen komunity",
+            "text": "Ano, svítící tečka je velké rušení. Aspoň pro mě 😂"
+          },
+          {
+            "time": "06:36",
+            "author": "člen komunity",
+            "text": "Sdílím informaci ze včerejšího Supabase newsletter. Kdo nedostává, ale Supabase používá nebo chtěl by používat. Otevřeli dokumentaci přes SSH. Pro agenty prý jednodušší na hledání.\nhttps://supabase.com/blog/supabase-docs-over-ssh"
+          },
+          {
+            "time": "07:10",
+            "author": "Daniel",
+            "text": "Bohužel, zatím nemám jiné řešení. 🤷‍♂️"
+          },
+          {
+            "time": "07:29",
+            "author": "člen komunity",
+            "text": "V pohodě. Chápu to.\nNemyslel jsem to jako výtku Tobě jako tvůrci. Spíš, takový povzdech nad mou hlavou 🤦🏻‍♂️"
+          },
+          {
+            "time": "07:33",
+            "author": "Daniel",
+            "text": "Já si to tak vůbec nevzal. Sám bych to tam nechtěl."
+          },
+          {
+            "time": "07:39",
+            "author": "člen komunity",
+            "text": "Ahoj všem,\nminulý týden jsme měli finále naší soutěže pro středoškolály v digi dovednostech, v rámci kterého tvořili vzdělávací obsah pro seniory, rozkrývali dezinfo narativy a taky vibe codovali. Jen jsem s vámi chtěla posdílet, že ačkoli mezi nimi byly rozdíly (elektrikáři, gympláci, IT obory), všichni za hoďku zvládli vytvořit funkční apku na kvízy v Macaly.\nTak jen povzbuzení pro ty, co teprve začínají. 🙂 Jindra Fáborský o tom natočil i podcast:\nhttps://youtu.be/ipPh-5AOg4s?is=BEDEXw1TWuvmeO0V"
+          },
+          {
+            "time": "08:04",
+            "author": "Daniel",
+            "text": "Nádherný!"
+          },
+          {
+            "time": "08:19",
+            "author": "člen komunity",
+            "text": "Nikol, díky za inspiraci, to bude přesně pro mě ☺️"
+          },
+          {
+            "time": "08:24",
+            "author": "člen komunity",
+            "text": "Děkuju za odkaz, rád se kouknu, rád poslechnu 🙂"
+          },
+          {
+            "time": "08:45",
+            "author": "člen komunity",
+            "text": "Ahoj. Hodím sem kacířskou myšlenku.\nProč Claude a ne Codex po nové aktualizaci?\nVnímám jednu rovinu a to je etické hledisko OpenAI vs. Anthropic a možná důvěra v tom, kam proudí naše data. To je velkej point… Pak je ta druhá praktická. Claude a neustálé limity…. A teď hledám co je na Claude o tolik lepší než na ChatGPT. Přijde mi, že ten jeho ekosystém a customizaci už Codex dohnal.\n… ale možná mi něco zásadního uniká? Kde Clauda ještě nikdo nedohnal?\nNeřešil jste to někdo?"
+          },
+          {
+            "time": "08:53",
+            "author": "člen komunity",
+            "text": "Ahoj. Ja za sebe v tom zasadne rozdily nevidim - a proto radsi zustavam kde jsem (Claude). Jinak bych menil co 14dni, az zas vyleze neco o kousek lepsi…"
+          },
+          {
+            "time": "10:33",
+            "author": "Daniel",
+            "text": "Dlouhodobě mám rád vychytávky, které dělá Anthropic, a jasně, že mě láká zkoušet všechno. Taky se tomu občas neubráním.\nAle 99 % věcí dělám v Anthropic ekosystému a nemám důvod to střídat.\nNo a hlavně už tady máme Opus 4.7 🤷‍♂️😅"
+          },
+          {
+            "time": "14:56",
+            "author": "člen komunity",
+            "text": "Ahoj, jak si dělíte práci mezi claude code a klasickej chat v app?\nNechce se mi udržovat kontext na 2 místech, ale přijde mi, že code není schopnej tak dobře pracovat s kontextem, zatímco projekty v claude app mi načítaj všechny relevantní dokumenty a neptá se mě tak často na něco, co by měl vědět.\nMáte code čistě na vibe coding a brainstorming atd. děláte jinde? Nebo existuje způsob, jak i v code pracovat s širším kontextem a na víc strategických věcech?"
+          },
+          {
+            "time": "15:52",
+            "author": "člen komunity",
+            "text": "Cloud chat a projekty používám, když potřebuji analyzovat a konzultovat. Claude Code používám, když potřebuji tvořit – nejen kód, ale i dokumenty.\nNapříklad naprosto neplánovaně a spontánně jsem přenesl všech svých 800 poznámek do Obsidianu a nad nimi, nebo vedle nich, teď válčí Claude Code. V Obsidianu je plugin, který spouští terminál přímo v okně Obsidianu a pracuje v adresáři, kde mám všechny své poznámky. Pro dělání hromadných změn v poznámkách, formátování, analýzy či doporučení, co už je staré a co bych měl smazat nebo archivovat, je to ideální věc – zamiloval jsem sedo toho.\nZatím ale na poznámky nepoužívám nic většího, žádné agenty, kteří by pracovali samostatně. Je to prostě jen můj jednoduchý pomocník."
+          },
+          {
+            "time": "16:04",
+            "author": "člen komunity",
+            "text": "Díky za sdílení. To zní dobře.\nJaky je to plugin?"
+          },
+          {
+            "time": "16:08",
+            "author": "člen komunity",
+            "text": "Jmenuje se to nápaditě. 🙂 Terminal https://github.com/polyipseity/obsidian-terminal"
+          },
+          {
+            "time": "16:09",
+            "author": "člen komunity",
+            "text": "side panel v Claude"
+          },
+          {
+            "time": "16:18",
+            "author": "člen komunity",
+            "text": "Díky"
+          },
+          {
+            "time": "16:20",
+            "author": "člen komunity",
+            "text": "Jinak, pokud chcete inspiraci na to jak mít tlupu agentů nad poznámka tak doporučuji tohoto maníka.  https://m.youtube.com/@myicor"
+          }
+        ]
+      }
+    ]
+  }
+}

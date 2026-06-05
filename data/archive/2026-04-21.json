@@ -1,0 +1,176 @@
+{
+  "date": "2026-04-21",
+  "generated_at": "2026-06-05T07:18:19Z",
+  "stats": {
+    "messages": 13,
+    "groups": 3,
+    "members": 5
+  },
+  "cards": [
+    {
+      "id": "2026-04-21-01",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "Komunita / Vzdělávání",
+      "title": "Česky psané testy o Claudovi a AI ekosystému",
+      "excerpt": "Jeden člen nasdílel web, kde si komunita může v češtině otestovat znalosti o Claudovi a AI ekosystému. Vychází z kurzů od Anthropicu a je doplněný o vlastní poznatky. Bez monetizace, čistě pro komunitu.",
+      "body": "Jeden člen dal dohromady web s testy a kvízy o Claudovi a AI ekosystému. Celé je to česky. Inspiroval se kurzy od Anthropicu, ale není to kopie. Vzal z nich základ, přidal vlastní poznámky, zkušenosti a celé to zpracoval po svém. Výsledek je samostatný projekt bez cíle na tom vydělávat.\n\nKomunita to vzala nadšeně. Padla i otázka na autorská práva. Autor vysvětlil, že jde o vlastní výklad a zpracování, ne o překlad ani kopii. Odkaz může kdokoli posílat dál.\n\nProč je to zajímavé: testy v češtině k tomuhle tématu skoro nejsou. Pokud si chcete ověřit, co o Claudovi a AI opravdu víte — a nechcete jen číst, ale taky se otestovat — je to užitečný zdroj.",
+      "read_minutes": 2,
+      "source_date": "2026-04-21"
+    },
+    {
+      "id": "2026-04-21-02",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Claude Code / Poznámky",
+      "title": "Claude Code jako průvodce po vlastních poznámkách",
+      "excerpt": "Když máte poznámky uložené lokálně v Markdownu, zkuste nad nimi pustit AI. Projde jejich strukturu, navrhne přejmenování, najde duplicity a řekne, co vyhodit. Jeden člen takhle najednou zpracoval osm set poznámek.",
+      "body": "Jeden člen sdílel workflow, ke kterému se pořád vrací: Claude Code puštěný přímo nad složkou s markdownovými poznámkami. Bere to jako audit vlastního „second brainu“.\n\nAI projde strukturu, navrhne lepší názvy souborů, najde duplicity a doporučí, co smazat nebo sloučit. Hodí se to hlavně po delší době, kdy poznámky jen přibývají a systém se začne rozpadat.\n\nV komunitě se pak řešily i nástroje. Padl Obsidian, Bear i Notion. Jeden člen přesunul osm set poznámek do Obsidianu a k tomu spustil Claude Code přes plugin Terminal přímo v okně aplikace. Jiný si nastavil AI tak, aby mu průběžně vybírala zajímavé myšlenky z chatů do Notionu.\n\nZásadní podmínka: poznámky musí být lokálně v Markdownu. Když jsou v uzavřeném formátu nebo jen v cloudu, zatím to nejde moc přímo. Ale pokud ten formát máte, je to jedna z nejpraktičtějších věcí, které se dají s AI dělat.",
+      "read_minutes": 2,
+      "source_date": "2026-04-21"
+    },
+    {
+      "id": "2026-04-21-03",
+      "type": "NÁSTROJE",
+      "level": "Expert",
+      "topic": "Claude Code / Vývojové nástroje",
+      "title": "Context7 dává AI aktuální dokumentaci místo zastaralé",
+      "excerpt": "Context7 je rozšíření, které v Claude Code tahá aktuální dokumentaci knihoven. Nespoléhá na informace z trénovacích dat. Rozdíl poznáte hlavně u nástrojů, které se rychle mění. Jen pozor: ani Context7 není bez chyb.",
+      "body": "Jeden člen upozornil na konkrétní problém při práci s Claude Code: AI zná dokumentaci ke knihovnám jen do data, na kterém byla trénovaná. Když se mezitím změnilo API, může vám poradit něco, co je technicky špatně nebo už neplatí.\n\nContext7 tohle pomáhá řešit. Je to rozšíření, konkrétně MCP server, které do Claude Code tahá aktuální dokumentaci přímo z oficiálních zdrojů. Díky tomu bývá kód přesnější a člověk míň opravuje chyby vzniklé podle zastaralých příkladů.\n\nJen pozor: zazněla i zkušenost, že Context7 není neomylný. Jeden člen narazil na chybějící model. V oficiální dokumentaci opravdu byl, ale Context7 ho neznal. Takže je to velké zlepšení, ne perfektní řešení.\n\nSmysl to dává hlavně vývojářům, kteří pracují s frameworky nebo knihovnami, kde se API mění poměrně často. Třeba Next.js, LangChain, Anthropic SDK a podobně.",
+      "read_minutes": 2,
+      "source_date": "2026-04-21"
+    },
+    {
+      "id": "2026-04-21-04",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "GDPR / Bezpečnost",
+      "title": "Jak bezpečně pouštět AI do pracovní komunikace",
+      "excerpt": "Co dělat, když chcete použít AI na e-mail nebo poznámky, ale máte v nich důvěrná data? Komunita řešila konkrétní situaci s korporátními klienty a dala dohromady pár použitelných postupů.",
+      "body": "Jedna členka popsala situaci, kterou zná hodně lidí z firem. Mezi klienty má korporáty, kde je skoro každý e-mail důvěrný. AI by jí přitom ušetřila hodiny práce, kdyby ji mohla pustit do mailů a poznámek.\n\nZ diskuze vyšly čtyři praktické možnosti:\n\n**Nepouštět AI do celé schránky.** Vybrat jen konkrétní e-maily nebo vlákna, odstranit z nich identifikátory jako jméno, firmu nebo projekt, a teprve pak použít AI na samotný obsah.\n\n**Použít lokální modely pro citlivá data.** Když data nesmí opustit firemní prostředí, dají se použít modely jako Gemma. Běží lokálně a neposílají data na externí servery.\n\n**Přečíst si podmínky placené služby.** Claude Pro, Copilot for Microsoft 365 nebo Gemini Workspace mají každý jiná pravidla pro práci s daty. Placené verze obvykle nabízejí lepší záruky než bezplatné tarify.\n\n**Neignorovat pochybnost.** Když vás u konkrétního obsahu napadne „měl/a bych to sem dávat?“, berte to jako varování. Většinou se neozve jen tak.",
+      "read_minutes": 3,
+      "source_date": "2026-04-21"
+    },
+    {
+      "id": "2026-04-21-05",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Builder",
+      "topic": "Nástroje / Workflow",
+      "title": "Přepínat na nový nástroj nebo zůstat u toho, co funguje?",
+      "excerpt": "Každé dva týdny se objeví „lepší alternativa“ k tomu, co zrovna používáte. Komunita řešila, jestli přejít z Claude na Codex — a podle čeho se při takovém rozhodování obecně řídit.",
+      "body": "V diskuzi padla konkrétní otázka: po poslední aktualizaci OpenAI Codexu přejít, nebo zůstat u Claude?\n\nZazněl názor, který se hodí skoro na každé podobné rozhodování. Pokud vám současný nástroj funguje a zvládnete s ním to, co potřebujete, nepřepínejte jen proto, že vyšel nový benchmark nebo to teď všichni řeší na LinkedInu. Každá změna nástroje stojí čas. Musíte si zvyknout na jiné chování, znovu nastavit workflow a narazíte na nové problémy.\n\nTo neznamená ignorovat vývoj. Jen je rozdíl mezi „tenhle nástroj neumí něco, co fakt potřebuju“ a „tenhle nástroj má o 3 % horší skóre v HumanEval benchmarku“.\n\nOtázka pro komunitu: podle čeho poznáte, že už má přechod smysl? Kde je pro vás hranice?",
+      "read_minutes": 2,
+      "source_date": "2026-04-21"
+    },
+    {
+      "id": "2026-04-21-06",
+      "type": "INSIGHT",
+      "level": "Začátečník",
+      "topic": "Mindset / Produktivita",
+      "title": "Technika z Inner Excellence na negativní myšlenky",
+      "excerpt": "Jeden člen sdílel postup z knihy Inner Excellence od Murphyho, jak pracovat s negativním myšlením. Nejde o to myšlenky potlačovat, ale naučit se je jen pozorovat a nereagovat na ně. Pak přidal zkušenost z vlastní praxe.",
+      "body": "V diskuzi padlo doporučení na knihu Inner Excellence od Jima Murphyho. Zaujala hlavně jedna myšlenka: negativní myšlenky nejde zastavit silou vůle. Čím víc je člověk tlačí pryč, tím víc se vrací.\n\nJiná cesta je myšlenky jen pozorovat. Jako mraky na obloze. Nechytat se jich, nebrat je jako součást sebe, ale ani je neodhánět. Jen si všimnout, že tu jsou, a nechat je projít.\n\nNa to navázala osobní zkušenost z komunity. Jeden člen popsal, že přesně s tímhle mu pomohl mindfulness. Zásadní změna pro něj byla přestat dělit myšlenky na dobré a špatné. Místo toho je začal jen registrovat.\n\nPro lidi, kteří jedou hodně intenzivně nebo fungují v prostředí plném podnětů, může být tenhle přístup praktičtější než klasické „pozitivní myšlení“. Nemusíte se totiž přesvědčovat o něčem, čemu sami nevěříte.",
+      "read_minutes": 2,
+      "source_date": "2026-04-21"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-03-24-04",
+    "type": "INSIGHT",
+    "level": "Expert",
+    "topic": "Workflow",
+    "title": "Telegram bot jako vstupní bod do poznámek",
+    "excerpt": "Místo otevírání aplikace a ručního ukládání stačí napsat botovi na Telegramu. Udělá deep research a výsledek uloží rovnou do poznámek. Jeden příkaz a hotovo.",
+    "body": "Vlastní systém poznámek má největší sílu ve chvíli, kdy neslouží jen jako místo, kam si ručně ukládáte věci, ale jako hub, se kterým pracují vaši automatizovaní asistenti.\n\nKonkrétní workflow: člen komunity použije Telegram bota, zadá téma — třeba analýzu konkrétní komunity nebo trhu — a bot udělá deep research. Výsledek pak sám uloží do poznámkového systému a přidá k němu další kontext.\n\nProč Telegram, a ne samostatná aplikace? Telegram máte po ruce odkudkoli, nemusíte přepínat do jiného prostředí a zadávání úkolů botům v něm působí přirozeně.\n\nAby to fungovalo, musí být poznámky v systému, do kterého se dá programově zapisovat. Tedy ve vlastních souborech, ne v uzavřeném cloudu jiné firmy. Právě tahle vrstva celé řešení propojuje.\n\nVýsledek: knowledge systém, do kterého nepřispíváte jen vy, ale i vaši AI asistenti. A bez zbytečného přepínání mezi aplikacemi.",
+    "read_minutes": 2,
+    "source_date": "2026-03-24",
+    "resurfaced_from": "2026-03-24"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "mastertheflow—hlavní",
+        "name": "Master the Flow — hlavní",
+        "messages": [
+          {
+            "time": "16:52",
+            "author": "Daniel",
+            "text": "📅 TÝDENNÍ SOUHRN (13.4. - 20.4.)\nHezké odpoledne,\npřichází další pravidelný zápis toho, co se za týden odehrálo napříč skupinami Master the Flow. Píšu to hlavně pro vás, kdo jste přišli nedávno a starší zprávy se vám v chatu nezobrazují.\nMáme čtyři WhatsApp skupiny. Oznámení (hlavní obsah), Inspirace & Diskuze (otázky a sdílení), Webináře & Workshopy (akce) a Vibe Coding (stavění aplikací s AI, i bez programátorského zázemí).\n*Téma, které rezonovalo*\nBezpečnost a GDPR při práci s AI. Jedna členka popsala reálnou situaci. Mezi klienty má i korporáty, kde je prakticky každý e-mail důvěrný, a zároveň by jí hromadu věcí ulehčilo, kdyby mohla AI pustit do mailu a poznámek z coworku. Rozjela se na to fajn diskuze, ze které vyšlo několik použitelných směrů. Nepouštět AI na celou schránku, ale jen na předfiltrovaný obsah. Pro citlivá data zvážit lokální modely (někdo tady lokální model Gemma). Přečíst si smluvní podmínky placených služeb. A pokud máte v hlavě pochybnost, neignorovat ji.\n*Poznámky, Markdown a Claude Code*\nSdílel jsem zkušenost, ke které se chci v budoucnu vracet, protože mi to přijde jako super užitečné téma. Vracím se za týden do Česka a dávám si do pořádku poznámky, nabídky, programy školení. Claude Code nad poznámkami v Markdownu je pro tohle luxus. Prochází strukturu, navrhuje přejmenování, hledá duplicity, říká, co bych měl vyhodit. Zase tu byla fajn diskuze, kdo co používá. Padal Obsidian, Bear, Notion. Jeden člen přenesl osm set poznámek do Obsidianu a vedle si pustil Claude Code přes plugin Terminal přímo v okně. Jiný začal nechávat AI průběžně vyzobávat zajímavé myšlenky z chatů do Notion. Pokud si poznámky někde vedete a máte je lokálně v Markdownu, zkuste nad tím zapnout AI, ať vám řekne, co s tím.\n*Co stojí za zmínku*\nDával jsem taky tip na Context7. Je to rozšíření, které AI dává aktuální dokumentaci knihoven místo té, co měla v trénovacích datech. Rozdíl je znát. Pozor ale, ani Context7 není neomylný, jeden z vás narazil na chybějící model, který v oficiální dokumentaci reálně je.\nŘešilo se taky, jestli zůstat u Claude nebo po aktualizaci přejít na Codex. Můj názor jsem dal. Když vám Claude funguje, nepřepínejte jen proto, že každých 14 dní vyjde něco o kousek lepšího. A mimochodem je venku Opus 4.7. Není dokonalý, ale pořád mě hodně baví.\nJedna členka přinesla moc fajn zprávu z finále soutěže pro středoškoláky. Elektrikáři, gympláci i iťáci za hodinu postavili funkční aplikaci na kvízy. Žádné programování v pozadí. Kdyby vám někdy přišlo, že na to nemáte, poslechněte si podcast Jindry Fáborského. Odkaz níže.\nA ještě jsem házel tip na TED od Petera Steinbergera o agentech. Šedesátiletý sommelier bez jediného řádku kódu rozjel přes telefon pivovar a e-shop. Patnáct minut, stojí to za to.\n*Claude Code Masterclass*\nPřipravuju novou Claude Code Masterclass. Webinář „Pod kapotou“ bude víc o workflow a mém každodenním systému, Masterclass pak půjde hlouběji do technických věcí týkajících se Claude Code. Kdyžtak mi napište zprávu, pokud chcete přijít na první termín. Počítám se skupinkami max 12 lidí (online).\n*Uttero pro iOS*\nNesmím zapomenout na své dítko, Uttero for iOS. Otevřel jsem 20 nových testovacích slotů. Další pustím brzy. Chtěl jsem dříve, ale ladíme chybky a pilujeme detaily. :) Opět platí, kdybyste to chtěli testnout, napište, šupnu vás mezi zájemce.\n*Odkazy z chatu*\nWebinář „Pod kapotou“ (sleva 500 Kč s kódem MASTERTHEFLOW)\nhttps://danielgamrot.cz/webinar/pod-kapotou/\nUttero pro iOS, beta testování zdarma\nhttps://danielgamrot.cz/nastroje/uttero-ios/\nContext7, aktuální dokumentace pro AI\nhttps://context7.com\nObsidian plugin Terminal (Claude Code přímo v okně)\nhttps://github.com/polyipseity/obsidian-terminal\nSoutěž středoškoláků, podcast s Jindrou Fáborským\nhttps://youtu.be/ipPh-5AOg4s\nPeter Steinberger o AI agentech (TED, 15 minut)\nhttps://www.youtube.com/watch?v=7rzYDM6vMtI\nVibe code health scanner (beta, není moje, zkuste za sebe)\nhttps://grovetechai.com/scanner\nPořád mě baví, jak se tahle parta postupně tvaruje a inspiruje. A ne, fakt jsem to před cca 6 týdny nečekal. Díky za to.\nA fajn týden přeju.\nD."
+          }
+        ]
+      },
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "10:58",
+            "author": "Daniel",
+            "text": "Dneska trošku netechnicky. Procházel jsem poznámky z knížek a narazil na Inner Excellence od p. Murphyho (není to ten, kterého „známe“ pro Murphyho zákony). Úplně novinka to není, ale třeba neznáte.\nJedna myšlenka, se kterou jsem si kdysi hrál. A roky používám v různých situacích.\nNa pár desítek sekund, ideálně ráno, kouknout na sebe při nejdůležitějším úkolu dne. Jak to jde, ideálně s ideálním výsledkem. Jen vidět ten moment, nic víc.\nMně to pomáhá před natáčeními, prezentacemi, školeními, schůzkami. Učili nás to vlastně už v rámci volejbalové přípravky. Je to taková kompenzace pro to, kdy myslivna projíždí často jen to, co by se mohlo pokazit. Banální, ale funguje to moc hezky.\nDěláte něco podobného? Klidně jiný průběh, situace… Dejte vědět.\nKniha kdyžtak tady: https://innerexcellence.com/"
+          },
+          {
+            "time": "11:48",
+            "author": "člen komunity",
+            "text": "Pěkná myšlenka. Neznal jsem.\nJá se jen proste snažím víc a víc si uvědomovat, když hlava začne roztáčet kolečko toho, co by všechno mohlo špatně dopadnout, nadechnu se a nechám to být. Nekdo by to mohl nazvat mindfullness."
+          },
+          {
+            "time": "15:31",
+            "author": "Daniel",
+            "text": "Pojďme to dořešit přes zprávy. Napíšu. ;)"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "06:01",
+            "author": "člen komunity",
+            "text": "Jj, to tam maji jako bug, staci registrace zdarma a bude to fungovat"
+          },
+          {
+            "time": "11:43",
+            "author": "člen komunity",
+            "text": "Za poslední měsíce se snažím proniknout do práce s Claudem, resp. do celého ekosystému Claude nástrojů. Primárně pro sebe jsem si udělal webovku s testy v češtině - inspiroval jsem se oficiálními kurzy, které nabízí Anthropic. Třeba to pomůže i někomu dalšímu se posunout dále…. https://claude-cesky.vercel.app. PS: Claude mě neplatí, ale je to poslední dobou (asi nejen) můj nejoblíbenější LLM nástroj 🙂"
+          },
+          {
+            "time": "11:55",
+            "author": "Daniel",
+            "text": "Uuuuuuuu! Paráda, mrknu. 🙂"
+          },
+          {
+            "time": "12:54",
+            "author": "člen komunity",
+            "text": "Jirko, velká paráda, skvělý nápad.. Moc díky 👌🤓"
+          },
+          {
+            "time": "13:03",
+            "author": "člen komunity",
+            "text": "Diky Petre, potesilo me to 😉. Kdyz tam narazite na nejakou pitomost nebo naopak nejakou myslenku na doplneni, budu rad. Je to projekt bez ambice na monetizaci, takze tam jsou nedokonalosti. Ale proc je nezlepsit, pokud je to mozne. Mejte se!"
+          },
+          {
+            "time": "13:31",
+            "author": "člen komunity",
+            "text": "Vypadá to suprově. Mám povolení šířit odkaz i mimo komunitu, nebo raději ne? Rád bych nasdílel s par lidmi."
+          },
+          {
+            "time": "13:38",
+            "author": "člen komunity",
+            "text": "Je to hezke. Ale chapu to spravne dle textu na webu, ze jste zkopiroval Claude Academy a preklopil ji do ceskeho prostredi doslovnym prekladem a jen doplnil poznatky? Jen bych byla opatrna ohledne autorskych prav."
+          },
+          {
+            "time": "13:41",
+            "author": "člen komunity",
+            "text": "S sirenim nemam zadny problem, cilem je osveta a sdileni informaci."
+          },
+          {
+            "time": "13:48",
+            "author": "člen komunity",
+            "text": "Dekuji 🙂. Nene, zadne ctrlC/ctrlV. Prosel jsem si kurzy a testy a delal si poznamky. Je tam (v originale) spousta videi, takze poslechnout, zapsat myslenky a poznamky, pridat svoje poznatky a zkusenosti... Mezitim doplnovat z ruznych zdroju aktualni info - nektere kurzy jsou totiz v originale relativne stare. Pak jsem se snazil drzet barevnost a logiku kurzu tak, aby to bylo konzistentni. A pak dloouhe iterace s Claudem, aby mi to poskladal. A pak opravy a doplneni. Takove bylo ve zkratce workflow 🤦‍♂️\nNavic to neni komercni projekt a ani original neni zpoplatneny. A vsude pisu, odkud je inspirace. I toto (autorska prava) jsem bral v uvahu a konzultoval 😉."
+          }
+        ]
+      }
+    ]
+  }
+}

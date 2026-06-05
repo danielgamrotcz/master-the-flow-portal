@@ -1,0 +1,154 @@
+{
+  "date": "2026-05-18",
+  "generated_at": "2026-06-05T07:48:49Z",
+  "stats": {
+    "messages": 12,
+    "groups": 3,
+    "members": 5
+  },
+  "cards": [
+    {
+      "id": "2026-05-18-01",
+      "source_date": "2026-05-18",
+      "topic": "Právníci a AI nástroje",
+      "excerpt": "Jedna otázka před státnicemi rozjela půldenní vlákno a ukázala, kolik právníků se v komunitě skrývá.",
+      "body": "Členka se zeptala, jak jí AI může pomoct s přípravou na státnice. Dostala víc tipů, než čekala. Pak se ukázalo, že je v komunitě spousta právníků a advokátek, kteří o sobě navzájem ani nevěděli. Řešili Codexis, Libratech, NotebookLM i specializované nástroje pro právo. Padl taky nápad založit vlastní podskupinu pro právníky."
+    },
+    {
+      "id": "2026-05-18-02",
+      "source_date": "2026-05-18",
+      "topic": "Různé úrovně jsou v pořádku",
+      "excerpt": "Datová analytika a dashboardy mají stejnou hodnotu jako stavění appek — appka je jen jeden z možných výstupů.",
+      "body": "Ve Vibe Codingu jedna členka psala, že čte, co ostatní staví, a vedle programátorů si připadá jako žabař. Odpověď byla: když někdo analyticky zpracovává data a šetří si tím čas, dělá v principu totéž, jen jinými nástroji. Appka je jen jeden možný výstup, ne cíl."
+    },
+    {
+      "id": "2026-05-18-03",
+      "source_date": "2026-05-18",
+      "topic": "Plaud MCP",
+      "excerpt": "Plaud vydal vlastní MCP. Díky němu se napojíte přímo na AI asistenta bez psaní dalšího kódu.",
+      "body": "Plaud vydal vlastní MCP server. Připojíte ho rovnou k AI asistentovi, bez dalšího kódu a s o něco míň klikáním než dřív."
+    },
+    {
+      "id": "2026-05-18-04",
+      "source_date": "2026-05-18",
+      "topic": "Soniox pro vícejazyčné přepisy",
+      "excerpt": "U přepisů, kde se střídá čeština s angličtinou, pořád nejlíp vychází Soniox.",
+      "body": "Na vícejazyčné přepisy, kde se střídá čeština, angličtina a další jazyky, pořád nejlíp vychází Soniox. Nově umí i text-to-speech. Za málo peněz hodně muziky — Daniel ho používá jako základ pro Uttero."
+    },
+    {
+      "id": "2026-05-18-05",
+      "source_date": "2026-05-18",
+      "topic": "Raycast",
+      "excerpt": "Raycast posouvá Spotlight na Macu i Windows dál: spouští appky, umí snippety, AI integrace i zkratky.",
+      "body": "V Inspiraci & Diskuzi se probíral Raycast. Je to aplikace pro Mac i Windows, která rozšiřuje možnosti Spotlightu. Umí spouštět aplikace, pracovat se snippety, má AI integrace a klávesové zkratky. Pokud vám to nic neříká, zkuste ji."
+    },
+    {
+      "id": "2026-05-18-06",
+      "source_date": "2026-05-18",
+      "topic": "Platební brány pro CZ trh",
+      "excerpt": "V diskuzi se rychle shodli: pro český trh má Comgate lepší podmínky než Stripe.",
+      "body": "V komunitě se řešily platební brány pro český trh. Shoda byla rychlá: Comgate má lepší podmínky než Stripe."
+    },
+    {
+      "id": "2026-05-18-07",
+      "source_date": "2026-05-18",
+      "topic": "Růst komunity",
+      "excerpt": "Za týden přibylo 22 nových členů a komunita se objevila v newsletteru.",
+      "body": "Za týden přibylo 22 nových členů. Komunita se objevila v newsletteru a lidi skupinu sdílí dál."
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-04-28-04",
+    "type": "INSIGHT",
+    "level": "Expert",
+    "topic": "Claude Code, infrastruktura",
+    "title": "Claude Code na Mac Mini jako osobní server",
+    "excerpt": "Mac Mini s Claude Code a cron jobem běží nonstop 24/7. Tahle architektura zaujala komunitu a rozjela debatu o osobním serveru versus cloudu.",
+    "body": "V komunitě padl konkrétní setup, který vyvolal dost otázek: Claude Code běžící na Macu Mini přes cron job, pořád dostupný bez ručního spouštění. Prostě vlastní mini server pro AI agenty, který zpracovává úkoly na pozadí.\n\nOproti cloudu má výhodu v přímém napojení na lokální software, aplikace a soubory. Mac Mini M4 stojí jednorázově víc peněz, ale provoz je pak levný. Cloud je pružnější a líp škáluje, jenže pro osobní projekty a experimenty může lokální řešení úplně stačit.\n\nDebata Mac Mini versus cloud se v komunitě vrací pořád dokola. Lidi zajímala hlavně architektura: jak jsou napojené cron joby, jak se to verzuje a jak se řeší přístupy. Jestli máš podobný setup nebo si s tím hraješ, hoď to do Vibe Coding skupiny.",
+    "read_minutes": 2,
+    "source_date": "2026-04-28",
+    "resurfaced_from": "2026-04-28"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "mastertheflow—hlavní",
+        "name": "Master the Flow — hlavní",
+        "messages": [
+          {
+            "time": "08:46",
+            "author": "Daniel",
+            "text": "*📅 TÝDENNÍ SOUHRN (11.5. - 17.5.)*\n----------\n*VIBE TADY MI PŘIJDE MOC FAJN*\nPo jedné otázce se strhla lavina. Členka se zeptala, jak ji AI pomůže před státnicemi. Tolik tipů možná ani nečekala. Dostala půldenní „vlákno“, a pak se ukázalo, že v té skupině je najednou hromada právníků a advokátek, kteří se navzájem neznali. Po zbytek dne probírali specializované právní nástroje, Codexis, Libratech, NotebookLM, věci, které většina z nás nikdy nepoužije. Bavilo mě to číst.\nNa konci vlákna padl návrh na vlastní podskupinu pro právníky. Neplánuju zatím rozšiřovat o tématické kanály, ať nám to nepřeroste. Ale je fajn, že se tady navzájem vůbec našli. Budu rád, když se spojíte mezi sebou.\nA takhle se mi ta komunita líbí nejvíc. Moc mě baví, že to je fakt zatím v tom fajn duchu, kdy ti, kdo vědí, podporují ty, co tápou.\nBylo by boží, kdyby se nám podařilo potkat i osobně na jednom místě. Ano, byla by to Praha. Jen se trošku obávám, protože poslední na poslední „sraz“, který jsem pořádal, přišli 3 lidi. 😅\n*KONEČNĚ SLOVO „NA ÚVOD“*\nPokud jste tady čerstvě, pár slov o kontextu. Master the Flow vznikla v březnu z webináře o vibe codingu, proto se tu hodně staví appky s AI. Jak jde čas, přibývají lidi s úplně jinými obory a potřebami. Jsou tu čtyři skupiny. Oznámení (tato), Inspirace & Diskuze, Vibe Coding a Webináře & Workshopy.\n*RŮZNÉ ÚROVNĚ. A TO JE V POŘÁDKU*\nVe Vibe Codingu se řešilo ještě jedno. Jedna členka napsala, že čte, co ostatní staví, a připadá si jako žabař vedle programátorů. Kdo analyticky zpracovává data, staví dashboardy a šetří si čas, dělá přesně to samé, jen jinými prostředky. Appka je jen jeden z možných výstupů, ne cíl. To zaznělo a jsem za to moc rád. Vlastně bych to nenapsal lépe.\n*PLAUD MCP, RAYCAST A DALŠÍ*\nZe stejné skupiny ještě dvě věci. Plaud vydal vlastní MCP, takže dá se napojit přímo na AI asistenta bez dalšího kódu (a o trochu méně klikání).\nNa vícejazyčné přepisy, střídání češtiny, angličtiny a dalších jazyků, pořád nejlíp vychází model Soniox. Kdo pracujete se speech-to-text (a teď vlastně umí i text-to-speech) a neznáte, vyzkoušejte. Za málo peněz hodně muziky. Používám jako základ pro vlastní aplikaci Uttero.\nV kanálu Inspirace & Diskuze se nedávno řešil Raycast. Aplikace pro Mac i Windows, která rozšiřuje možnosti Spotlight a dělá spoustu dalšího. Spouštění apek, snippety, AI integrace, klávesové zkratky. Komu to nic neříká, stojí to fakt za vyzkoušení. Raycast je hned po Uttero má druhá nejoblíbenější aplikace.\nPadla i debata o platebních bránách pro CZ trh. Comgate má výhodnější podmínky než Stripe, takový rychlý konsenzus.\n*2 MORE THINGS*\nJeště jedna věc. Spustil jsem vlastní WhatsApp kanál Gamrot, kde sdílím každodenní věci, co mi projde hlavou, co dělám přes den. Někdy toho bude víc, někdy vůbec. Kdo má zájem:\nhttps://chat.whatsapp.com/GzOuhRkwx8JFMoVzSf6JTx?mode=gi_t\nZa týden přibylo 22 nových členů. Byli jsme zmínění v newsletteru, lidi sdílí skupinu sami od sebe a přidávají další. Pokud vám tahle skupina dává smysl, klidně ji pošlete dál. Nic víc. Lidi, kteří sem chodí, za to stojí.\nD.\n---\n*Odkazy z tohoto týdne*\nDaniel o produktivitě po 14 letech (LinkedIn):\nhttps://www.linkedin.com/posts/danielgamrot_po-14-letech-v-produktivit%C4%9B-m%C3%A1m-dnes-jednodu%C5%A1%C5%A1%C3%AD-share-7460731870285271040-VJK1\nRaycast, co nového:\nhttps://www.raycast.com/blog/the-new-raycast\nStream k Raycastu od Daniela (LinkedIn):\nhttps://www.linkedin.com/video/event/urn:li:ugcPost:7339207642931712001\nNotebookLM pro legislativu (video):\nhttps://m.youtube.com/watch?v=JTKL8j8ZtoI\nGoose, alternativa k Claude Code (testovací):\nhttps://goose-docs.ai/docs/quickstart"
+          }
+        ]
+      },
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "07:42",
+            "author": "Daniel",
+            "text": "Boží, Jirko, díky moc! Navzdory tvému úvodu je to cool a zajímá mě to. 😉"
+          },
+          {
+            "time": "08:10",
+            "author": "člen komunity",
+            "text": "A co presně chceš vědět šikulo?"
+          },
+          {
+            "time": "12:10",
+            "author": "člen komunity",
+            "text": "🤔 Nebude ta UI budoucnost právě v ovládání (nejen) počítače textová/hlasová...?"
+          }
+        ]
+      },
+      {
+        "slug": "webinářeworkshopy",
+        "name": "Webináře & Workshopy",
+        "messages": [
+          {
+            "time": "10:24",
+            "author": "Daniel",
+            "text": "Kdybyste neměli zítra večer co na práci a chtěli byste se potkat na vibe coding meetupu, budu tam (dokonce moudře pohovořím, ale ještě nevím o čem).\nOrganizuje to Ondra Tyl, ex-CEO Benefit Plus, moc fajn člověk.\nTak zítra v Opero. 👋\nhttps://goout.net/cs/tuesdai/szxrqiy/"
+          },
+          {
+            "time": "11:51",
+            "author": "člen komunity",
+            "text": "přijdu, rád tě poznám osobně"
+          },
+          {
+            "time": "11:53",
+            "author": "Daniel",
+            "text": "Super 🙂 Mám to stejně."
+          },
+          {
+            "time": "11:57",
+            "author": "člen komunity",
+            "text": "Mám v kalendáři. Úterý 19.05., Den, kdy se poprvé osobně potkávám s Gamrotem 😍 #LístekKoupen"
+          },
+          {
+            "time": "11:57",
+            "author": "Daniel",
+            "text": "Super, paráda, těším se. 🙂"
+          },
+          {
+            "time": "11:59",
+            "author": "člen komunity",
+            "text": "Taky budu 🙂"
+          },
+          {
+            "time": "12:34",
+            "author": "člen komunity",
+            "text": "Vypada to skvele, rad bych dorazil, ale koncert dcery ma dle meho Zameru zitra jasnou prednost. Pokud bys ale zahral na klavir a zapival, tak bych to zacal trochu zvazovat 😜"
+          },
+          {
+            "time": "14:48",
+            "author": "člen komunity",
+            "text": "Listek koupen, tesim se."
+          }
+        ]
+      }
+    ]
+  }
+}

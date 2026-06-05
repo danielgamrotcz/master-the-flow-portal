@@ -1,0 +1,68 @@
+{
+  "date": "2026-04-05",
+  "generated_at": "2026-06-05T06:41:47Z",
+  "stats": {
+    "messages": 3,
+    "groups": 2,
+    "members": 2
+  },
+  "cards": [
+    {
+      "id": "2026-04-05-01",
+      "source_date": "2026-04-05",
+      "topic": "Kindle tip: dokumenty e-mailem",
+      "excerpt": "Každá čtečka Kindle má vlastní e-mailovou adresu. Když na ni pošleš dokument ve Wordu, převede se ti na e-book.",
+      "body": "Možná nevíš, že každá čtečka Kindle má vlastní e-mailovou adresu. Když na ni pošleš dokument ve Wordu, Amazon ho automaticky převede do formátu pro e‑knihy a pošle rovnou do čtečky. Jenže nestačí jen kliknout na Odeslat. Dokument musí být správně naformátovaný a e-mail musí být propojený s účtem Kindle. Jinak to neprojde."
+    },
+    {
+      "id": "2026-04-05-02",
+      "source_date": "2026-04-05",
+      "topic": "Vrchol tématu: pocit maxima přichází dřív než skutečný strop",
+      "excerpt": "Daniel si před rokem myslel, že Vibe Coding už je na vrcholu. Teď vidí, že prostoru je pořád obrovsky moc.",
+      "body": "Postřeh z dnešní skupiny Vibe Coding: přesně před rokem měl Daniel pocit, že se svým tématem narazil na strop. Že už z něj víc nevytáhne. Teď, o rok později, vidí, že potenciál pořád roste. Je to jeden z těch paradoxů: čím víc se tématu věnuješ, tím víc vidíš, kolik toho ještě nevíš. Ten tehdejší pocit vrcholu byl jen další mezikrok."
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-03-14-05",
+    "type": "INSIGHT",
+    "level": "Builder",
+    "topic": "Výběr nástrojů",
+    "title": "Nástroj bez API do moderního workflow nezapadne",
+    "excerpt": "V diskuzi jsme se shodli na jednom jasném kritériu pro výběr nástrojů. Když nástroj nemá API, nejde ho rozumně automatizovat ani napojit na vlastní systém. Pro pravidelné používání je to velká překážka.",
+    "body": "Dřív se API řešilo hlavně při vývoji aplikací. Dnes už je to kritérium i pro běžné uživatele, kteří chtějí z nástrojů dostat maximum.\n\nProč? Bez API používáte nástroj ručně: přihlásíte se, klikáte, zadáte vstup, zkopírujete výsledek. S API se dá celý postup automatizovat, zavolat nástroj ze skriptu, propojit ho s jinou službou nebo ho zapojit do vlastního workflow.\n\nV diskuzi to padlo jako jasné pravidlo: když nástroj nemá API, je to důvod jít dál. Ne proto, že by byl špatný, ale protože se nedá rozumně integrovat.\n\nJednoduchý test při výběru nového nástroje: Má API? Má dokumentaci? Dá se používat bez speciálního enterprise plánu? Pokud je odpověď třikrát ano, stojí za to ho zkoumat dál.",
+    "read_minutes": 2,
+    "source_date": "2026-03-14",
+    "resurfaced_from": "2026-03-14"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "12:16",
+            "author": "člen komunity",
+            "text": "Tak normálně máš adresu neco@kindle.com a tam pošleš Word document a on ti to pošle do čtečky jako ebook..ale jde to i horší cestou 😂"
+          },
+          {
+            "time": "12:18",
+            "author": "Daniel",
+            "text": "Dík moc. Příště vyzkouším. 🙌\nA teď vážně. Samozřejmě šlo o to spojení a naformátování. Ne o to odeslání, to je třešnička na dortu."
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "12:14",
+            "author": "Daniel",
+            "text": "Já jsem si ještě před rokem myslel, že mé téma už je na vrcholu, a koukám, že to má ještě hodně velké rezervy. 😅"
+          }
+        ]
+      }
+    ]
+  }
+}

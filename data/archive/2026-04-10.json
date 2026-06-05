@@ -1,0 +1,113 @@
+{
+  "date": "2026-04-10",
+  "generated_at": "2026-06-05T06:55:37Z",
+  "stats": {
+    "messages": 7,
+    "groups": 3,
+    "members": 1
+  },
+  "cards": [
+    {
+      "id": "2026-04-10-01",
+      "type": "NÁSTROJE",
+      "level": "Začátečník",
+      "topic": "Studijní nástroje",
+      "title": "Google Study Mode skončil, co místo něj",
+      "excerpt": "Google od dubna vypnul Study Mode, který pomáhal s učením krok za krokem. Dvě funkční náhrady už ale existují.",
+      "body": "Pokud jsi používal Study Mode v Googlu, teď ho v rozhraní nenajdeš. Google ho začátkem dubna potichu odstranil.\n\nNejjednodušší náhrada: přejdi do Gemini. Guided learning tam pořád je.\n\nDruhá možnost funguje v jakémkoli chatbotu: ChatGPT, Claude i Gemini. Na začátek konverzace vlož tenhle prompt:\n\n\"Act as my tutor. Don't give me direct answers. Instead, guide me step by step using Socratic questioning. Ask me questions to check my understanding before moving on. Adapt to my level. If I'm struggling, give me hints, not solutions. After each concept, give me a short practice exercise.\"\n\nAI se pak začne chovat jako učitel. Nedá ti rovnou odpověď. Bude se ptát, ověří si, jestli tomu rozumíš, a přizpůsobí se tvému tempu. Funguje to podobně jako Study Mode, jen si ho nastavíš sám.\n\nPrompt si ulož, ať ho příště nemusíš hledat.",
+      "read_minutes": 2,
+      "source_date": "2026-04-10"
+    },
+    {
+      "id": "2026-04-10-02",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Claude Code",
+      "title": "Soft vs hard omezení v Claude Code",
+      "excerpt": "Spousta lidí si do Claude Code přidá pravidlo „nesahej na produkční databázi“ a bere to jako pojistku. Jenže je to jen měkké omezení. Opravdová bezpečnost funguje jinak.",
+      "body": "Soft omezení znamená, že spoléháš na to, že Claude pravidlo dodrží. Do CLAUDE.md napíšeš: „Nemaž soubory mimo /tmp.“ A věříš, že to bude respektovat. Většinou bude. Ale pořád je to dohoda, ne zeď.\n\nHard omezení funguje jinak. Claude nemá přístup k ničemu, co mu nedáš. K databázi se nedostane bez connection stringu. Na složku mimo pracovní adresář nesáhne. Nejde to porušit, protože ta možnost prostě neexistuje.\n\nTen rozdíl je zásadní hlavně u projektů, kde chyba bolí. Přepsaná data. Smazané soubory. Přístup k citlivým klíčům.\n\nPraktický tip: před každou session si projdi, co Claude Code vidí. Jaké soubory. Jaké proměnné prostředí. Jaké přihlašovací údaje. Co vědět nepotřebuje, nesdílej. To je základ hard přístupu i bez technické infrastruktury.",
+      "read_minutes": 2,
+      "source_date": "2026-04-10"
+    },
+    {
+      "id": "2026-04-10-03",
+      "type": "INSIGHT",
+      "level": "Expert",
+      "topic": "Claude Code",
+      "title": "Docker izolace pro Claude Code na lokálním stroji",
+      "excerpt": "Když spustíš Claude Code CLI v Docker kontejneru, AI běží úplně odděleně od zbytku systému. Ty určuješ, ke kterým složkám a souborům má přístup. Ne Claude.",
+      "body": "Jeden developer ze skupiny sdílel konkrétní postup: Claude Code CLI pouští lokálně přes Docker. Celý proces tak běží v kontejneru a má přístup jen ke složkám, které mu výslovně namountuješ.\n\nNení to měkké pravidlo v `CLAUDE.md`. Je to pevná hranice na úrovni operačního systému. Claude se prostě fyzicky nedostane k ničemu, co mu při spuštění kontejneru nepředáš.\n\nNastavení je o něco techničtější než běžná instalace. Potřebuješ Docker, jednoduchý příkaz `docker run` s volume mountem a API klíčem jako environment variable. Výsledek ale stojí za to: i kdyby Claude Code udělal něco nečekaného, zůstane omezený jen na tu část souborového systému, kam ho chceš pustit.\n\nDává to smysl hlavně u projektů, kde jsou poblíž produkční databáze, klíče k jiným službám nebo cokoliv, kde by nechtěná akce mohla mít reálný dopad.",
+      "read_minutes": 3,
+      "source_date": "2026-04-10"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-03-19-02",
+    "type": "POSTAVIL JSEM",
+    "level": "Builder",
+    "topic": "Lovable",
+    "title": "Aplikace, která připomíná ozvat se blízkým",
+    "excerpt": "Jeden člen si přes Lovable postavil nástroj na udržování vztahů. Vycházelo to z jeho vlastní situace: rodina daleko, tři děti, náročná práce. A prostě mu přirozeně nedojde, že by se mohl někomu ozvat.",
+    "body": "Nápad nevznikl od stolu, ale z úplně konkrétního problému: když nestíháte a blízcí jsou daleko, vztahy se pomalu vytrácí. Ne proto, že by vám na nich nezáleželo. Prostě zapomenete.\n\nJeden člen komunity si to vyřešil vlastní aplikací postavenou v Lovable. Připomíná mu, kdy se má ozvat konkrétním lidem, a pomáhá mu držet vztahy v dobré kvalitě i při plném diáři.\n\nSdílel ji otevřeně s tím, že má ještě dost much. Přihlašování přes Google a Apple třeba zatím nebylo otestované. Ale aplikace už je vidět naživo a dá se dál iterovat.\n\nPřesně takhle vibe coding funguje nejlíp: nejdřív udělat něco, co vám fakt řeší problém. Až potom řešit polish.",
+    "read_minutes": 2,
+    "source_date": "2026-03-19",
+    "resurfaced_from": "2026-03-19"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "07:28",
+            "author": "člen komunity",
+            "text": "Dano, to je skvělá otázka! Ja totiž taky včera zjistila, že ta možnost zmizela. Mela by byt presne tady. A teď google píše, že ho snad zrušili od dubna😤\nKaždopádně těšit se to dá - buď jiný nástroj, třeba Gemini, který ho má pořád, nebo zadáním v ChatGPT promptu:\nAct as my tutor. Don't give me direct answers. Instead, gui\nde me step by step using Socratic questioning. Ask me quest\nions to check my understanding before moving on. Adapt to m\ny level. If I'm struggling, give me hints, not solutions. A\nfter each concept, give me a short practice exercise."
+          },
+          {
+            "time": "07:29",
+            "author": "člen komunity",
+            "text": "Udělá to úplně ten samý efekt. Jen mě teda pěkně naštvali jestli je fakt study mode pryč 😒"
+          },
+          {
+            "time": "07:43",
+            "author": "člen komunity",
+            "text": "Gemini stále nabízí guided learning 👌🏼"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "07:41",
+            "author": "člen komunity",
+            "text": "To jsou jen “soft” omezeni, tj. spolehas na to, ze to CC dodrzi. Ale Danuv pristup je “hard” - CC se proste nema sanci dostat k necemu, co s nim nenasdilel.\nJa treba vyuzivam Claude code CLI na lokalnim pocitaci pres Docker, trochu technictejsi, ale CC tak pracuje v izolovanem kontejneru a muze tak jen do slozky, kam ho pustim (a je to “hard” omezeni)."
+          },
+          {
+            "time": "09:07",
+            "author": "člen komunity",
+            "text": "No a i recyklačku?"
+          },
+          {
+            "time": "09:13",
+            "author": "člen komunity",
+            "text": "Omluva🫣"
+          }
+        ]
+      },
+      {
+        "slug": "webinářeworkshopy",
+        "name": "Webináře & Workshopy",
+        "messages": [
+          {
+            "time": "06:37",
+            "author": "člen komunity",
+            "text": "Přihlášeno… snad už svůj pc chaos z optimalizuji 😉"
+          }
+        ]
+      }
+    ]
+  }
+}

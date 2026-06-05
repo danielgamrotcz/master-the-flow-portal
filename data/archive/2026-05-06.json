@@ -1,0 +1,275 @@
+{
+  "date": "2026-05-06",
+  "generated_at": "2026-06-05T07:27:45Z",
+  "stats": {
+    "messages": 36,
+    "groups": 4,
+    "members": 6
+  },
+  "cards": [
+    {
+      "id": "2026-05-06-01",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Učení s AI",
+      "title": "Tři průšvihy pasivního učení s AI",
+      "excerpt": "Pasivně jen číst, nechat AI přemýšlet za nás a nic si neověřovat. Tři spolehlivé způsoby, jak se s AI nic nenaučit. Problém není v nástroji, ale v tom, jak ho používáme. A řešení je překvapivě jednoduché.",
+      "body": "Hodně lidí s AI „studuje“ tak, že si nechá něco vysvětlit nebo shrnout. Výsledek? Příjemný pocit, že tomu rozumíte. Za týden je pryč.\n\n**Pasivní čtení** — AI vám téma hezky vysvětlí. Text dává smysl, takže máte pocit, že už to umíte. Jenže to je fluency illusion. Mozek si splete plynulé čtení se skutečným učením.\n\n**Přenechání přemýšlení AI** — Necháte AI, ať to shrne za vás. Jenže tím přijdete o chvíli, kdy si myšlenku propojíte s vlastní zkušeností. Bez toho se znalost moc neuchytí.\n\n**Žádné ověření** — Nezkoušíte, jestli to opravdu umíte. Přitom AI vás umí dobře prozkoušet. Přes otázky, dialog nebo kvízy.\n\nCo funguje líp? Otočte roli. Místo abyste se ptali vy AI, nechte AI ptát se vás.\n\nZkuste třeba prompt: „Vytvoř mi z toho kvíz na úrovni XYZ a jdi do hloubky.“ Nebo sokratovský styl. AI nepřednáší, ale vede vás otázkami.\n\nAnebo jednoduše: vysvětlete téma vlastními slovy. Tak, aby ho pochopil kolega, který o něm nic neví. Jakmile začnete kličkovat, víte, kde máte mezeru.",
+      "read_minutes": 2,
+      "source_date": "2026-05-06"
+    },
+    {
+      "id": "2026-05-06-02",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Učení s AI",
+      "title": "Sokratovský model: AI vás zkouší, ne vysvětluje",
+      "excerpt": "Místo klasického „vysvětli mi X“ zkuste prompt, který z AI udělá tazatele. Místo hotového textu dostanete sérii naváděcích otázek. A téma pochopíte tak, že vám to fakt zůstane v hlavě.",
+      "body": "Konkrétní prompt, který stojí za zkoušku:\n\n„Chci pochopit, jak funguje [téma]. Nevysvětluj mi to rovnou. Pokládej mi postupně naváděcí otázky, ať si na to přijdu sám. Po každé mojí odpovědi se zeptej na něco hlubšího. Zastav se až ve chvíli, kdy pochopím základní princip.“\n\nProč to funguje? Protože si líp pamatujeme věci, na které jsme přišli sami. Ne ty, které nám někdo jen naservíroval. Sokratovský přístup tohle dobře napodobuje.\n\nDalší možnost: nechte AI vygenerovat 10 otázek, které prověří, jestli jste téma opravdu pochopili. Odpovědi diktujte nahlas. Bez koukání zpátky do materiálů. Tam, kde se zaseknete, máte mezeru v porozumění.\n\nOba postupy se dají použít skoro na cokoliv. Na technická témata, obchodní strategie i historii. Důležité je zapojit se aktivně, ne jen pasivně číst. AI vám může pomoct podobně jako dobrý lektor. Jen jí o to musíte říct napřímo.",
+      "read_minutes": 2,
+      "source_date": "2026-05-06"
+    },
+    {
+      "id": "2026-05-06-03",
+      "type": "POSTAVIL JSEM",
+      "level": "Expert",
+      "topic": "Automatizace",
+      "title": "Přepis Plaud nahrávek bez cloudového předplatného",
+      "excerpt": "Jeden člen si postavil vlastní pipeline na přepis hlasových nahrávek z Plaud zařízení. Bez nutnosti platit cloudové předplatné za 240 dolarů ročně. Dohnal ho k tomu blížící se poplatek, vyřešil to lokálním zpracováním.",
+      "body": "Plaud je oblíbené zařízení na přepis schůzek a poznámek. Jeho cloud ale stojí 240 dolarů ročně. Jeden člen komunity si proto postavil vlastní pipeline. Přepis zvládne bez cizí infrastruktury.\n\nAlternativy z diskuze:\n\n**Fireflies** — cloudová služba na přepis schůzek. Zase ale platíte předplatné a data posíláte na cizí servery.\n\n**Whisper** — open-source model od OpenAI. Přepis běží lokálně a zdarma. Chce to trochu technického nastavení, ale výsledky jsou dobré i v češtině.\n\n**NotebookLM** — nástroj od Googlu. Umí pracovat s hotovými přepisy, ale samotný přepis neřeší.\n\nVlastní pipeline znamená kontrolu nad daty a žádné průběžné náklady. Nevýhoda je čas na nastavení a průběžná údržba. Je to něco za něco. Vyplatí se hlavně při větším množství nahrávek nebo při práci s citlivými informacemi ze schůzek.\n\nPokud máte Plaud nebo podobné zařízení a vadí vám cena předplatného, Whisper je nejpřímější cesta k lokálnímu přepisu bez závislosti na cloudu.",
+      "read_minutes": 2,
+      "source_date": "2026-05-06"
+    },
+    {
+      "id": "2026-05-06-04",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "Vibe Coding",
+      "title": "Velín: time tracking pro VA vibe codingem",
+      "excerpt": "Jeden člen naší komunity si postavil vlastní nástroj na měření času pro virtuální asistenty. Alternativu k Togglu a Clockify. Aplikace vznikla vibe codingem a už běží v produkci.",
+      "body": "Toggl i Clockify jsou fajn nástroje, ale ne každému sednou do jeho workflow. Jeden člen si proto postavil vlastní řešení: aplikaci Velín, přímo pro potřeby virtuálních asistentek.\n\nVznikla vibe codingem, tedy postupným stavěním s AI bez klasického vývojového cyklu. A hned se nabízí otázka: jak je na tom taková appka s bezpečností dat?\n\nV diskuzi padly konkrétní dotazy na ochranu dat. Autor popsal, jak to má vyřešené:\n\n**Firebase Auth** — přihlašování běží přes Google infrastrukturu, takže není potřeba řešit vlastní správu loginů.\n\n**Firestore security rules** — pravidla přístupu jsou nastavená přímo v databázi, nezávisle na logice aplikace. I kdyby někdo obešel frontend, k datům se nedostane.\n\nNení to bezpečnost „omylem“. Je to vědomě nastavené ve správných vrstvách. Vibe coding neznamená automaticky zanedbanou bezpečnost. Jen je potřeba vědět, co nastavit a proč.\n\nVelín je dobrý příklad toho, že i produkt postavený bez klasického vývojáře může běžet v produkci a fungovat bezpečně.",
+      "read_minutes": 2,
+      "source_date": "2026-05-06"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-04-15-03",
+    "type": "INSIGHT",
+    "level": "Začátečník",
+    "topic": "Produktivita",
+    "title": "Jak ukočírovat data roztahaná přes tři cloudy",
+    "excerpt": "Členka komunity popsala, že má data rozházená ve třech počítačích, třech e-mailech a několika cloudech. Komunita jí poradila začít tím, že se AI zeptá, co vlastně potřebuje a jak chce pracovat. Bez jasného workflow je každé sjednocování jen přesouvání chaosu na jiné místo.",
+    "body": "Než začnete cokoliv migrovat nebo mazat, nechte si od AI pomoct ujasnit, co vlastně potřebujete. Zeptejte se rovnou Claude nebo Gemini. Popište, co máte, jak pracujete a co by vám ulehčilo život. Nechte si navrhnout workflow a až potom vybírejte nástroje.\n\nZ komunity zaznělo konkrétní doporučení: Google Workspace jako jedno centrální místo. Plusy jsou sdílení napříč zařízeními, hledání v celém obsahu a jeden účet místo tří. Mínus je závislost na Googlu a menší soukromí. Pokud jedete v Apple ekosystému, dává smysl iCloud a Apple Mail. Pokud už máte Microsoft 365, tak OneDrive a Outlook.\n\nNejdůležitější je vybrat jednu cestu a držet se jí. Hybridní řešení chvíli fungují, ale chaos se vrátí. Nejlepší postup: zvolit jeden workspace, přesunout do něj aktivní věci a zbytek archivovat nebo smazat.",
+    "read_minutes": 2,
+    "source_date": "2026-04-15",
+    "resurfaced_from": "2026-04-15"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "mastertheflow—hlavní",
+        "name": "Master the Flow — hlavní",
+        "messages": [
+          {
+            "time": "16:14",
+            "author": "Daniel",
+            "text": "sumar-master-the-flow"
+          }
+        ]
+      },
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "09:26",
+            "author": "člen komunity",
+            "text": "Tohle bych hodně chtěla taky, funguju v Google fotkách, ale od doby, co mám Mac to není úplně ideální, nedá se na fotky tak dobře koukat a nechce se mi platit icloud 😄"
+          },
+          {
+            "time": "13:18",
+            "author": "Daniel",
+            "text": "Dneska jsem měl webinář pro klienta o sebevzdělávání s AI. Tak jsem si říkal, že mini výseč hodím i sem.\nTři průšvihy, které za mě sebevzdělávání s AI přináší:\n*1. PASIVNÍ KONZUMACE*\n„Vysvětli mi LLMs“. Dostanete krásný text. Máte pocit, že tomu rozumíte. Za týden nevíte nic. Taková ta fluency illusion.\n*2. KOGNITIVNÍ OUTSOURCING*\n„Shrň mi tenhle článek do 10 bodů.“ AI to udělá hezky, ale vy přicházíte o ten moment, kdy si myšlenku napojíte na vlastní zkušenost. Bez toho se to neuchytí.\n*3. ŽÁDNÉ TESTOVÁNÍ*\nČasto si tu znalost neověřujeme, přitom mám AI, která nás z toho dokáže krásně prozkoušet. Přes otázky, dialog, ale těch možností je hromada.\n—\n*CO DĚLAT MÍSTO TOHO?*\nJe toho hodně, jak jinak. Důležité je brát sebevzdělávání jako něco, co děláte, ne jako něco, „co se děje“.\nMísto „shrň mi to“ napište „vytvoř mi z toho kvíz na úrovni XYZ, jdi do hloubky‘. Funguje všude. A pak se o tom bavte. Použijte sokratovský model vysvětlování, kdy vám místo toho, aby vás chatbot přes vysvětlení, bude klást jednu otázku po druhé, např.: „Chci porozumět tomu, jak funguje tokenizace. Místo vysvětlování mi pokládej naváděcí otázky jednu po druhé, které mi pomůžou přijít si na to sám. Po každé mé odpovědi polož hlubší follow-up. Zastav se, až pochopím jádro konceptu.“\nOtočte to. Místo abyste se ptali AI, nechte ji, ať se ptá ona vás. Prompt typu „dej mi 10 otázek, který otestujou, jestli jsem to pochopil“. Odpovědi diktujte (Uttero, mrk mrk), bez koukání zpátky.\nVysvětlujte to vlastními slovy. Diktujte to. Mluvte tak, aby to pochopil i kolega v práci nebo prostě někdo, kdo o tématu nic neví. Když začnete kličkovat, je tam prostor pro zlepšení.\nA pak samozřejmě experimentování a zkoušení v praxi. Jinak se to z hlavy vykouří raz dva.\nBTW pořád mám moc rád knihu Nauč se to. Je tenká, ale obsahově hutná.\nhttps://www.melvil.cz/kniha-nauc-se-to/?srsltid=AfmBOop6duwf525u9XCOSiyIRNJY-KxpRNc6HeDCJAlUr93UfsXGtUmI"
+          },
+          {
+            "time": "14:21",
+            "author": "člen komunity",
+            "text": "Dobry den, ahoj, nejde nejak nastavit, ze nove prichozi uvidi i historii v kanalech? Prijde mi to skoda, ze jdou videt jen nove prispevky"
+          },
+          {
+            "time": "14:23",
+            "author": "Daniel",
+            "text": "Ahoj, bohužel ne. Ale chystám teď sumář všeho, co se tady dělo."
+          },
+          {
+            "time": "14:29",
+            "author": "člen komunity",
+            "text": "Nějaký AI botík co jednou za týden / měsíc udělá sum?"
+          },
+          {
+            "time": "14:30",
+            "author": "Daniel",
+            "text": "Dávám to jednou týdně – sumář do hlavního kanálu “Master the Flow”. Většinou v úterý, protože v pondělí mám den lenoch."
+          },
+          {
+            "time": "17:50",
+            "author": "Daniel",
+            "text": "Tohle je super tip.  A doporučuju to „upgradovat“ o svůj styl. Dělá to pak divy.\nhttps://www.linkedin.com/posts/matejmatolin_jak-dostat-z-ai-kvalitn%C3%AD-%C4%8Desk%C3%A9-texty-share-7457706879931289600-BGhB"
+          },
+          {
+            "time": "19:03",
+            "author": "člen komunity",
+            "text": "@člen\nDíky moc za sumář, který jsi vygeneroval 💪👍👏 velmi užitečné pro všechny nově příchozí.\nDovolila jsem si na to reagovat, akorát v blbém okně.\nPosílám tedy kopii reakce - níže - Here 🙏\nZdravím z Brna👋 super počin 😎"
+          },
+          {
+            "time": "19:03",
+            "author": "člen komunity",
+            "text": "Danieli, moc díky za tohle shrnutí🙏💪😎😉 je to parádní, protože jsem přišla včera a díky tomu mám možnost zachytit témata, která rezonují.\nZ mé strany jich bylo víc… která vyžaduji víc koncentrace a pochopení.\nMůj aktuálně největší pain je, jak si “rychle a efektivně” nastavit gmail asistenta na reakce na maily, případně do něj nalít šablony odpovědi, a jen z nich vybirat. Aktuálně mam jak 2x gmail, tak google workspace mého největšího klienta (spolupráce minimálně na rok).\nChodi mi denne na celkem asi 3-4 maily, přibližně 15-20 mailu na každý. Ne vše vyžaduje odpověď nebo reakci. Tzn. Celkem kolem 50-80 mailu denně. Nemám šanci to uřídit běžnou energii, ale potřebuji nějaký tip / hack/ návod, jak to udělat vcelku efektivně. S laděním počítám, ted je krizové začít a udělat to.\nNějaký jednoduchý návod, jak to udělat?\n1) definování šablon\n2) role a nastavení asistenta\n3) časová dotace, kdy přesně to budu dávkově dělat.\nMozna primitivní zadání z mé strany, ale přidej k tomu telefony, děti, domácnost, školu deti, kroužky, podnikání = kdyby to pro me bylo snadné, tak uz to mám 😎\nKlíčové tedy není jeden mail zkrotit, ale snadným návodem zkrotit vsechny. 💪💪💪\nPředem díky za jakoukoliv radu."
+          },
+          {
+            "time": "20:32",
+            "author": "Daniel",
+            "text": "Já děkuju!\nA k tomu tématu, je tam hodně proměnných, které nevidím. A nemám na to odpověď na tři odstavce, což asi nečekáš.\nJedu za sebe tohle: kontext (popsat, co to chci sdělit a jak; mít to uložené tam, kde je to potřeba) → proces (to je to vytvoření odpovědi na základě kontextu, kdy ano, kdy ne). A pak rozhodnutí – co pustím ven a co ne.\nTohle všechno bych pak nasadil do systému, který používám.\nJinak… Můj Gmail Responder generuje odpovědi na základě toho, co o mě ví (kontext) a jaké jsem mu dal dopředu instrukce (workflow/proces). Poslední článek jsem já (schvaluju nebo upravuju, s tím, že se na tom učí).\nI tak hodně e-mailů, které chci, posílám sám. Pořád je tam za mě důležitý to, že píše člověk člověku. A tam se to snažím zjednodušit = Uttero, nebo obecně přepis hlasu na text."
+          },
+          {
+            "time": "20:47",
+            "author": "člen komunity",
+            "text": "Dekuji moc! 👍\nJe troufalé chtít po Tobě popis role Tvého Gmail Responderu?\nKlidne jen obecnější roli. Vytvořím si svou verzi.\n🙏🙏🙏"
+          },
+          {
+            "time": "22:27",
+            "author": "člen komunity",
+            "text": "@člen zajimal by me tvuj nazor. Kdyz si nahraju treba hodinovej meeting normalne na diktafon v iPhonu. Pak si ho naimportuju do NotebookLM - v cem bude lepsi vystup ktery si udelam pres Plaud? Bude to fakt o parniky jinde? Nebo tohle reseni co jsem popsal je dostatecne pro to abych zachytil vsechno podstatne co na meetingu zaznelo a mohl s tim dal pracovat (treba krmit vyexportovanymi poznamkami jine AI)"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "09:29",
+            "author": "člen komunity",
+            "text": "Budete to pak dávat někam na github nebo jen interně? :)"
+          },
+          {
+            "time": "09:38",
+            "author": "člen komunity",
+            "text": "Tohle by mě zajímalo, je to mega otravný dělat pořád dokola 😃"
+          },
+          {
+            "time": "09:50",
+            "author": "člen komunity",
+            "text": "Já bych chtěla sdílet, že mám postavenou appku na todocka, kterou čas od času obohacuju. Přijde mi skvělý, že když mi přestane něco fungovat, proberu to s Claudem přes Dispatch (to pro mě byl úplný začátek, kde mě nevyděsil hned terminál) nebo teďka už codem a upravím to.\nA teprve teď jsem dokoukala follow up nahrávku z března a vzala jsem si z toho hlavně mindset - nejdřív dopodrobna probrat, potom řešit řešení - často se mi stává / stávalo, že chci rovnou řešení a pak to iteruju, ale nakonec jsem z toho frustrovaná. Ale asi to k tomu patří. No tak teďka vymýšlím lepší řešení, jak pracovat se svými zdroji, ze kterých chci dávat dohromady knihu. Kdybyste někdo řešili nějaký research pro vědecké články, knihy apod, budu ráda za sdílení."
+          },
+          {
+            "time": "09:56",
+            "author": "člen komunity",
+            "text": "Je mozne nahlednout, vyzkouset?"
+          },
+          {
+            "time": "10:38",
+            "author": "člen komunity",
+            "text": "Ohlasy jsou zatím skvělé, za první tyden testování jsme navíc udělaly spoustu nových užitečných funkcí. Většina VA trekuje v Togglu popřípadě Clockify. Ve Velíně je i spousta funkcí nad rámec Togglu, takže myslím, že ta apka bude pecka. 😁"
+          },
+          {
+            "time": "11:37",
+            "author": "člen komunity",
+            "text": "Uvidíme, jak to dopadne 🙂"
+          },
+          {
+            "time": "11:58",
+            "author": "člen komunity",
+            "text": "Zni to skvele. A co zabezpeceni a ochrana pred unikem dat o klientech? Vim, ze u vibecodingu se to casto resi, ze to byva derave."
+          },
+          {
+            "time": "11:59",
+            "author": "člen komunity",
+            "text": "Ale temto vecem nerozumim, jen vim, ze tu na to tema byla debata nedavno a ze varovali pred tim IT profici. Mne jinak Tva aplikace prijde uzitecna. Bezne prave uzivan toggl."
+          },
+          {
+            "time": "12:02",
+            "author": "člen komunity",
+            "text": "Dobry den, som tu novy, no nevidim historiu chatu, o akej aplikacii je diskusia ? :)"
+          },
+          {
+            "time": "12:06",
+            "author": "člen komunity",
+            "text": "https://mujvelin.cz"
+          },
+          {
+            "time": "12:07",
+            "author": "člen komunity",
+            "text": "Vypada to zajimave, rada vyzkousim. Myslim, ze to muze byt uzitecne i pro konzultanty, ne jen VA."
+          },
+          {
+            "time": "12:12",
+            "author": "člen komunity",
+            "text": "Velín používá Firebase Auth + Firestore, takže základní zabezpečení je postavené na Googlu. V security rules mam nastaveno, že pouze přihlášený uživatel může vidět svá data.\nRáda si ale poslechnu názor někoho fundovanějšího, jestli je to dostačující. Tak kdyby byl někdo ochotný mi k tomu napsat vic, budu ráda. 😊"
+          },
+          {
+            "time": "15:10",
+            "author": "Daniel",
+            "text": "🎙️ Tohle jsem si chtěl postavit už dlouho.\nKonečně mě dotlačila blížící se roční platba za Plaud Unlimited (používám ho fakt hodně). Cca 240 dolarů za další rok cloud přepisů a sumarizací mi přišlo jako vhodný moment si trošku zavajbkódit.\nDoma mám chvlku Mac Mini Pro, který běží nonstop. Takže do něj rvu, co zvládne. Ať si na sebe postupně vydělá.\nStálo mě to cca hodinu práce, ale funguje to.\nMac Mini každých 60 minut zkontroluje, jestli mi nepřibyl nový záznam. Když přibyl, stáhne ho, lokálně přepíše přes Whisper a pošle na sumarizaci – shrnutí podle typu záznamu. Schůzka má sekce účastníci a akce. Webinář má klíčové myšlenky a citáty. Pak mi přijde notifikace na telefonu, že je hotovo (nebo že něco selhalo).\nSoubor mi spadne do Obsidian rootu. Je to můj „inbox“. Tam už to zpracovávám manuálně. Chci na to navázat další automatické akce, třeba tvorbu sumáře pro účastníky akcí, pro což teď ještě musím několikrát kliknout (samotná tvorba už je automatická).\nTeď to funguje jen s Plaud diktafonem, ale tuším, že do konce týdne to obohatím o hlasové memo z iPhonu, záznamy ze Zoom apod. A ano, dělám to vždy se svolením lidí, pokud jsou v diskuzích angažovaní.\nPlaud Unimited jsem dnes zrušil. Ty první dva dny testování vypadají líp, než jsem čekal. Šablony pro různé typy záznamů ještě budu dolaďovat, výstupy nejsou na první dobrou dokonalé. Ale s tím se počítá. Funguje to!\nDal bych sem screenshot, ale nevím čeho. 🙂"
+          },
+          {
+            "time": "15:16",
+            "author": "člen komunity",
+            "text": "Zrovna dnes jsem si něco takového taky postavil... Stack za tím je jiný... Potřebuji mít rychlý zápis, ale začátek totožný... Testovat to budu až večer, jsem ve vlaku a nechci tady dělat demo nahrávky do Plauda 😀 Ale věřím, že to bude fungovat :)"
+          },
+          {
+            "time": "15:16",
+            "author": "člen komunity",
+            "text": "Díky, Dane! Tohle téma mě zajímá.\nMá někdo nějaký lepší nástroj pro přepis několikahodinových záznamů, než je právě Plaud?\nNa Plaudu mi *vyhovuje* to fyzické zařízení, možnost vlastních šablon a celková bezproblémovost nahrávání, přenosu a přepisu.\nNaopak mě od něj částečně *odrazuje* nekvalita doslovného přepisu a pravidelná předplatná.\n*Má někdo doporučení na nějakou lepší mobilní aplikaci nebo zařízení? Anebo naopak dospěl k tomu, že je Plaud zatím to nejlepší?*"
+          },
+          {
+            "time": "15:18",
+            "author": "Daniel",
+            "text": "Super, těším se na zprávy o tom, jak to funguje!"
+          },
+          {
+            "time": "15:21",
+            "author": "člen komunity",
+            "text": "Asi záleží co myslíš tím přepis záznamů... Fireflies je super, ale když používáš appku v telefonu a někdo ti zavolá, přeruší se to... Na videohovory paráda...\nPlaud umí všechno, včetně telefonických hovorů, takže proto u mě vyhrál. Právě díky HW... a za předplatné se mi platit nechce, takže jsem to dneska postavil stejně, jako Daniel 😀  Přes API ušetřím na zpracování nahrávek raketu, oproti předplatnému Plauda"
+          },
+          {
+            "time": "15:22",
+            "author": "Daniel",
+            "text": "Ono v rámci toho setupu, který jsem tady zmínil, to běží v podstatě bez měsíčního předplatného. Alespoň doufám, že mi Plaud nestopne tu synchronizaci audia. Což by neměl. Nic jednoduššího jsem asi nenašel.\nA jak zmiňuju, tenhle setup by měl fungovat i s běžnými nahrávkami na voice memos. Kvalita doslovného přepisu pak asi hodně záleží i na dalších věcech jako jsou vstupní parametry a slovníček slov, které se špatně přepisují a který se aktualizuje.\nBude to chtít ještě hodně ladit. 🙂"
+          },
+          {
+            "time": "15:22",
+            "author": "člen komunity",
+            "text": "Ja uz se tesim na zitra, ze vice na kurzu Dana porozumim, o cem vsem tady mluvite. 😄"
+          },
+          {
+            "time": "15:23",
+            "author": "Daniel",
+            "text": "Těším se!"
+          },
+          {
+            "time": "20:53",
+            "author": "člen komunity",
+            "text": "Můžeš si zkusit postavit něco svého podobně jako Jindra (zatím jsem nezkoušela, ale mám to v plánu):\nhttps://github.com/faborsky/whisper-cz-en"
+          },
+          {
+            "time": "21:05",
+            "author": "člen komunity",
+            "text": "Díky, Nikol. Mrknu!"
+          }
+        ]
+      },
+      {
+        "slug": "webinářeworkshopy",
+        "name": "Webináře & Workshopy",
+        "messages": [
+          {
+            "time": "23:23",
+            "author": "člen komunity",
+            "text": "Daniel, prihlásenie na webinar som uz nestihol. Bolo by možné zakúpiť aspoň záznam?"
+          }
+        ]
+      }
+    ]
+  }
+}

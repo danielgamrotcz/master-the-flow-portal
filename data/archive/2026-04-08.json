@@ -1,0 +1,139 @@
+{
+  "date": "2026-04-08",
+  "generated_at": "2026-06-05T06:51:28Z",
+  "stats": {
+    "messages": 9,
+    "groups": 2,
+    "members": 4
+  },
+  "cards": [
+    {
+      "id": "2026-04-08-01",
+      "type": "INSIGHT",
+      "level": "Začátečník",
+      "topic": "Paměť chatbotů",
+      "title": "Paměť chatbota řídí, co vám doporučuje",
+      "excerpt": "Chatbot se chová podle toho, co si o vás „pamatuje“. Když vám ChatGPT nebo Claude pořád podsouvá doporučení, o která nestojíte, nejspíš za to může uložená paměť. Stačí ji zkontrolovat a může se vyřešit něco, co vás mátlo celé měsíce.",
+      "body": "Jeden člen sdílel historku ze svého okolí. ChatGPT jeho kamarádce pořád navrhoval růžovou. Na oblečení i na web. Proč? V paměti měl uložené, že růžová je její oblíbená barva. Jenže se tam dostala přes dceru, se kterou sdílela účet.\n\nChatGPT i Claude si pamatují věci o vás i mezi konverzacemi. Problém je, když jsou ty informace nepřesné, staré, nebo vůbec nejsou vaše.\n\nKde paměť zkontrolovat:\n\nChatGPT: Nastavení > Personalizace > Paměť > Spravovat  \nClaude: Settings > Privacy > Memory preferences > Manage\n\nCo hledat? Preference, zvyky, projekty. Prostě cokoliv, co může ovlivňovat odpovědi. Smazat můžete jednotlivé záznamy i celou paměť najednou.\n\nA hlavně: nesdílejte účty k chatbotům. Co sedí vám, může kazit odpovědi někomu jinému. A naopak.",
+      "read_minutes": 2,
+      "source_date": "2026-04-08"
+    },
+    {
+      "id": "2026-04-08-02",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Paměť chatbotů",
+      "title": "Proauditujte, co o vás AI opravdu uložila",
+      "excerpt": "Kouknout se do paměti ChatGPT nebo Claude je docela poučné. Najdete tam přesné informace, zastaralé věci a občas i něco, co vás překvapí. To, jak přesné údaje jsou uložené, přímo ovlivňuje kvalitu každé odpovědi.",
+      "body": "Jeden člen sdílel příklady toho, co si o něm ChatGPT uložil. Vedle jedné nebo dvou věcí, které seděly, tam bylo i tohle:\n\n— AI si myslela, že hledá informace o nezdravém chování ve vztazích  \n— měla uložené, že ho odmítli ve „více firmách“ (sám nevěděl, ve kterých)  \n— pamatovala si detailní návod na automatizaci složek přes Automator (zbytečné v každé další konverzaci)  \n— měla uložené, že chce zapomenout nedávnou konverzaci  \n\nTohle jsou věci, které chatbot bere jako kontext u každé odpovědi. Když se AI chová divně nebo dává mimo výstupy, kontrola paměti je jedna z prvních věcí, kterou zkusit.\n\nU práce s AI platí jednoduché pravidlo: garbage in, garbage out. Čistá paměť s relevantními informacemi vede ke konzistentnějším výstupům. Šum v paměti výsledky zhoršuje, často bez toho, abyste věděli proč.",
+      "read_minutes": 2,
+      "source_date": "2026-04-08"
+    },
+    {
+      "id": "2026-04-08-03",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "Vibe Coding",
+      "title": "Interaktivní hra o dluzích v jednom HTML souboru",
+      "excerpt": "Ve skupině Vibe Coding se objevil hotový projekt: hra o finančních dluzích, celá v jednom HTML souboru. Bez závislostí, bez serveru. Stačí ji otevřít v prohlížeči.",
+      "body": "Jeden člen nasdílel hotový soubor s interaktivní hrou o dluzích. Bez komentáře. Ale výsledek mluví sám za sebe.\n\nJeden HTML soubor jako celá aplikace je jeden z nejčistších výsledků vibe codingu. Nic se neinstaluje. Stačí soubor otevřít v prohlížeči. Funguje offline, snadno se sdílí a pošlete ho komukoliv.\n\nProč je to zajímavé pro buildery? Výsledek je konkrétní a použitelný. Není to jen proof of concept. Téma dluhů a finančního rozhodování navíc ukazuje, že šlo nejspíš o řešení reálného problému nebo vzdělávací záměr.\n\nKdyž chcete udělat nástroj nebo hru pro sebe nebo pro ostatní a nechcete řešit hosting ani frameworky, jednoduchý HTML soubor s JavaScriptem je pořád jeden z nejrychlejších způsobů, jak dostat nápad lidem do ruky.",
+      "read_minutes": 2,
+      "source_date": "2026-04-08"
+    },
+    {
+      "id": "2026-04-08-04",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "AI nástroje",
+      "title": "Glasswing — posun hranic, nebo marketingový tah",
+      "excerpt": "Nový AI nástroj Glasswing ve skupině zaujal. Komunita reagovala opatrně: něco to posouvá, ale spíš to vypadá na chytrý marketing než na velký technologický průlom. Jeden člen to vystihl přesně — strach se prodává nejlíp.",
+      "body": "Jedna členka nasdílela odkaz na Glasswing. Komunita zareagovala hned.\n\nShrnutí diskuze: Glasswing posouvá některé hranice. Spíš ale ty, které jsou vidět a které lidi čekají. Ne technologické. Prezentace víc pracuje s obavami uživatelů než s konkrétními schopnostmi.\n\nProč je reakce komunity cenná? Dobře ukazuje, jak číst oznámení o nových AI nástrojích. Každý týden se objeví něco, co se tváří jako průlom. Lepší otázka není „je to cool?“, ale „co přesně to dělá jinak nebo líp než nástroje, které už mám?“\n\nChecklist pro hodnocení nového AI nástroje:\n— Řeší problém, který fakt mám?\n— Je lepší než to, co už používám?\n— Jaký má byznys model a kde vydělává?\n— Kdo za tím stojí a jak dlouho to vydrží?\n\nGlasswing se vyplatí sledovat. Zatím ale není důvod měnit workflow.",
+      "read_minutes": 2,
+      "source_date": "2026-04-08"
+    },
+    {
+      "id": "2026-04-08-05",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Builder",
+      "topic": "Komunita a nástroje",
+      "title": "Stačí WhatsApp pro asynchronní komunitní diskuzi",
+      "excerpt": "Jeden člen otevřel zajímavé téma: vlákna na WhatsAppu se často uzavřou dřív, než stihne zareagovat. Navrhl jako alternativu Slack. Je WhatsApp vhodný pro hlubší diskuze, nebo kvůli němu přicházíme o hodnotná témata?",
+      "body": "Člen komunity si všiml jedné věci: zajímavé vlákno si přečetl až po pěti dnech a už se bál ozvat, protože téma působilo jako uzavřené. Navrhl Slack, kde vlákna zůstávají dostupná a dají se oživit i později.\n\nTo je u WhatsApp komunit reálný problém. Zprávy rychle zapadnou v historii a kontext se špatně dohledává. WhatsApp má ale jednu velkou výhodu: pro nové členy je bez bariér. Nemusí se nikam registrovat ani instalovat další aplikaci.\n\nSlack nebo Discord umí líp vlákna, vyhledávání i organizaci diskuzí. Jenže přesun by nejspíš odřízl část lidí, kteří si novou aplikaci nenainstalují.\n\nNěkterá témata potřebují delší diskuzi, než WhatsApp dobře zvládá. Není to ale jen technická otázka. Je to i o zvyku komunity. Jak se v ní přirozeně diskutuje? Jak dlouho udrží téma pozornost? A je Slack fakt řešení, nebo jen přesune problém jinam?",
+      "read_minutes": 2,
+      "source_date": "2026-04-08"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-03-19-01",
+    "type": "TÉMA TÝDNE",
+    "level": "Builder",
+    "topic": "Vibe Coding výzva",
+    "title": "Den 5 výzvy: hotové projekty jdou ven",
+    "excerpt": "Pátý den Vibe Coding výzvy patřil ladění a ukázkám toho, co kdo postavil. Členové sdíleli funkční aplikace z Lovable i Claude Code a reakce komunity rozhodně nebyly jen ze slušnosti.",
+    "body": "Vibe Coding výzva se dostala do nejcennější fáze: přestalo se ladit dokola a začalo se ukazovat. Den 5 byl o doladění jedné konkrétní věci a sdílení výsledku. V kanálu se objevilo víc hotových projektů najednou než za všechny předchozí dny dohromady.\n\nZajímavé bylo, jak různě k tomu lidi přistoupili. Někdo stavěl v Lovable přes vizuální rozhraní. Někdo jel v Claude Code čistě přes terminál. Fungovalo obojí. Komunita si tím sama ověřila, že na nástroji tolik nezáleží. Důležité je se do toho pustit a dotáhnout výsledek.\n\nDen 5 ukázal, že pětidenní výzva v tomhle tempu dává smysl.",
+    "read_minutes": 2,
+    "source_date": "2026-03-19",
+    "resurfaced_from": "2026-03-19"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "12:34",
+            "author": "Daniel",
+            "text": "🤖 CHATBOTI A PAMĚŤ\nPřed chvílí jsem na to narazil tady u známých v Hua Hin. Řešili jsme nějaké věci ohledně chatbotů. Já teda dost šepotem, páč zápal plic v Thajsku můžu mít fakt jenom já. A Mary prý, že jí strašně štve, že jí ChatGPT neustále nutí růžové barvy. Oblečení, homepage, všechno. Vůbec nechápala.\nSamozřejmě jsme se dopátrali toho, že měla v paměti uložené něco o tom, že růžová je její nejvíc nejoblíbenější barva. Dostalo se to tam pravděpodobně přes dceru (ponaučení = nikdy nesdílejte svůj účet, pokud nechcete měsíce řešit růžovou barvu; nebo přijít o mnohem důležitější věci). Zbytek není podstatný, každopádně…\nPokud chatbot neřeší věci, které chcete, tak jak chcete, a nutí vám dokola něco, co není vaše, můžete ho buď opustit (ano, Claude 👀) anebo se podívejte do paměti.\n👇👇👇\n————————\nCHATGPT\nNastavení > Personalizace > Paměť > Spravovat\n(v EN si určitě poradíte)\nCLAUDE\nSettings > Privacy > Memory preferences > Manage\n(do CZ to podle mě ještě nepřeložili)\n————————\nJasně, je ještě spousta dalších míst, kde můžete mít informace, které nejsou úplně v dobrém tandemu s tím, co chcete.\nKaždopádně, když už v té paměti budete, tak nezapomeňte vylovit nějaké poklady i pro nás. 😀 Občas se tam toho nastřádá docela dost. Ale ne vždycky to je nezajímavé."
+          },
+          {
+            "time": "12:37",
+            "author": "člen komunity",
+            "text": "Dane, hlavně ať je brzy líp 🍀🙏"
+          },
+          {
+            "time": "12:40",
+            "author": "Daniel",
+            "text": "Dík moc. Kdyby tady byla nějaká off-topic skupina, tak bych tam naposílal všechny drogy, které jsem dostal. Taková moc hezká taštička. Asi za 14 000 Kč. To jsou tři měsíce Claude Code Pro Max!"
+          },
+          {
+            "time": "12:48",
+            "author": "Daniel",
+            "text": "Vykopávám (sorry, v chatGPT jsem nebyl už fakt dlouho 😀):\n- Daniel hledá informace o nezdravém chování ve vztazích, ale neprojevuje takové chování ve svém životě. (🤔)\n- ⁠Daniel nebyl odmítnut ve více firmách, možná jen v jedné. (vůbec nevím)\n- ⁠Daniel chce automatizovat sbalování složky na iCloud do ZIP a její přesunutí na určité místo přes Automator, a to jednou denně, například odpoledne. (mega užitečná informace pro každodenní použití)\n- ⁠Daniel je vysoký 177 cm. (ve skutečnosti 177, 3 cm)\n- ⁠Daniel preferuje, aby se zapomnělo na nedávnou konverzaci. (🤷‍♂️)"
+          },
+          {
+            "time": "15:15",
+            "author": "člen komunity",
+            "text": "Dane vy tu necháváte takovou spoustu zajímavých témat, která s vaší členskou základnou by šlo rozebírat mnohem déle.\nJá si tohle konkrétní vlákno pročetl asi po 5 dnech a bojím se ozvat na \"asi uzavřená témata\".\nNe/plánujete Slack? 🙂\nMíněno vše v dobrém, protože vaším uvažováním začínám být taky načichlý 😄"
+          },
+          {
+            "time": "21:35",
+            "author": "člen komunity",
+            "text": "Glasswing - Už jste o tom četli?\nhttps://www.facebook.com/story.php?story_fbid=10242367235741043&id=1347070859"
+          },
+          {
+            "time": "21:48",
+            "author": "člen komunity",
+            "text": "Až teď, moc děkuju za odkaz 🙏"
+          },
+          {
+            "time": "21:57",
+            "author": "člen komunity",
+            "text": "Ano. Je to víc marketingový tah než zásadní průlom. Nicméně _nějaké_ hranice to posouvá a nastavuje. Hlavně ty \"očekávané\" a pozorované, než že by to byl gamechanger.\nJednoduše: strach nejlépe prodává."
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "17:48",
+            "author": "člen komunity",
+            "text": "dluhova-sekyra-hra.html"
+          }
+        ]
+      }
+    ]
+  }
+}

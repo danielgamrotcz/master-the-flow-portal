@@ -1,0 +1,308 @@
+{
+  "date": "2026-03-16",
+  "generated_at": "2026-06-05T06:03:17Z",
+  "stats": {
+    "messages": 45,
+    "groups": 2,
+    "members": 7
+  },
+  "cards": [
+    {
+      "id": "2026-03-16-01",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Claude Code vs Gemini",
+      "title": "Claude Code vede nad Gemini pro vibe coding",
+      "excerpt": "Jeden člen delší dobu zkoušel Gemini na vibe coding, ale nakonec zůstal u Claude Code. Výstupy jsou prostě jinde a CC má navrch. Jiný člen mezitím staví Gmail klienta, kterého řídí Gemini přes Google AI Studio.",
+      "body": "Diskuze potvrdila to, co část komunity už tušila: na vibe coding je Claude Code pořád přirozenější volba. Jeden člen Gemini testoval delší dobu, ne jen pár minut na zkoušku, a výsledek měl jasný. Výstupy jsou prostě jiné. CC vede.\n\nTo ale neznamená, že Gemini nemá svoje místo. Jiný člen mezitím staví Gmail klienta řízeného přes Gemini v Google AI Studiu. To je jiný use case a jiný přístup. Gemini dává smysl hlavně jako součást Google ekosystému. Ale jako hlavní engine na vibe coding? Tam má CC zatím navrch.\n\nPrakticky: pokud začínáte a řešíte, čemu dát čas, CC je teď jistější volba pro iterativní stavění. Gemini se vyplatí testovat hlavně ve chvíli, kdy hodně pracujete s Google produkty nebo potřebujete hlubší napojení na jejich ekosystém.",
+      "read_minutes": 2,
+      "source_date": "2026-03-16"
+    },
+    {
+      "id": "2026-03-16-02",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "Vibe Coding Challenge",
+      "title": "Den 2: pět nápadů na projekty z komunity",
+      "excerpt": "Komunita sdílela první nápady na finální produkty výzvy. Objevily se projekty kolem každodenních věcí: objednávek, kapesného, výživy nebo rozpočtu. Čím osobnější téma, tím větší chuť dotáhnout ho do konce.",
+      "body": "Druhý den výzvy přinesl to nejcennější: konkrétní nápady z běžného života. Lidi z komunity sdíleli, co je fakt štve, nebo co už dlouho chtěli postavit, jen na to nikdy nebyl čas, peníze nebo kapacity.\n\nZ diskuze vzešly tyhle projekty:\n\n- Objednávkový web na marmelády ze dvora — jednoduchý e-shop pro lokální prodej\n- Tracker kapesného pro děti navázaný na výsledky ve škole — hravý způsob, jak děti učit pracovat s penězi\n- E-mailový asistent na zpracování objednávek z kanceláře — automatizace rutinní administrativy\n- Výživový poradce propojený s Garminem a Google Kalendářem — doporučení podle pohybu a denního programu\n- Měsíční rozpočtový tracker jako webová appka — jednoduchý přehled financí bez zbytečných funkcí\n\nSpolečné mají jedno: žádný z těch projektů není „appka za milion“. Jsou to konkrétní řešení konkrétních problémů. A přesně o tom vibe coding je.",
+      "read_minutes": 2,
+      "source_date": "2026-03-16"
+    },
+    {
+      "id": "2026-03-16-03",
+      "type": "INSIGHT",
+      "level": "Začátečník",
+      "topic": "Nástroje pro začátečníky",
+      "title": "Cursor nebo VS Code pro začátečníky",
+      "excerpt": "Instalace Gitu a Claude Code CLI přes příkazovou řádku může být překážka. Člověka odradí ještě dřív, než začne něco stavět. Komunita proto navrhla Cursor nebo rozšíření do VS Code jako dostupnější alternativy se stejnou silou.",
+      "body": "Ne každému se chce začínat v příkazové řádce. Jeden člen zkoušel instalovat Git a Claude Code CLI a narazil na technické záseky, které člověka snadno odradí hned na startu.\n\nKomunita navrhla dvě alternativy:\n\n**Cursor** — editor postavený na VS Code s AI přímo uvnitř. Stáhnete, nainstalujete, otevřete složku a můžete pracovat. Terminál tam je taky, ale pro první kroky ho nepotřebujete.\n\n**VS Code s rozšířením Claude** — pokud už VS Code znáte, stačí přidat rozšíření Claude. Dostanete podobný zážitek bez další složité instalace.\n\nPro úplné začátečníky je Cursor nejspíš jednodušší start. Terminál se naučíte později, až ho budete potřebovat. Teď jde hlavně o to začít něco stavět, ne se hned učit unixové příkazy.",
+      "read_minutes": 2,
+      "source_date": "2026-03-16"
+    },
+    {
+      "id": "2026-03-16-04",
+      "type": "TÉMA TÝDNE",
+      "level": "Builder",
+      "topic": "Správa poznámek a druhý mozek",
+      "title": "Obsidian, Apple Notes nebo vlastní systém",
+      "excerpt": "Komunita otevřela téma, které řeší spousta builderů: kam ukládat nápady a znalosti, aby z toho fakt vznikl druhý mozek. Padl Obsidian, Apple Notes kvůli GDPR i vlastní systémy napojené na AI.",
+      "body": "Z diskuze vyšly tři směry:\n\n**Obsidian** — dobrá volba pro lokální Markdown soubory. Data máte u sebe, funguje offline a jde napojit na různé nástroje. Jeden člen teď zkouší zapojit vlastní nástroj na zpracování myšlenek do své appky a Obsidian má jako součást workflow.\n\n**Apple Notes** — nepadly kvůli tomu, že by to byl špatný nástroj, ale kvůli GDPR. Pro část komunity je důležité, kde data leží a komu v tomhle věří.\n\n**Vlastní systém** — varianta pro buildery, kteří chtějí plnou kontrolu a napojení na AI nástroje. Zabere víc času ho postavit, ale může dělat přesně to, co potřebujete.\n\nUniverzální odpověď tu není. Záleží, jak pracujete. Potřebujete synchronizaci mezi zařízeními? Offline přístup? Sdílení s ostatními? GDPR compliance? Odpovědi na tyhle otázky vás navedou líp než jakékoli srovnání nástrojů.",
+      "read_minutes": 2,
+      "source_date": "2026-03-16"
+    },
+    {
+      "id": "2026-03-16-05",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Builder",
+      "topic": "Komunikační nástroje",
+      "title": "Hledáme náhradu za Telegram bez kompromisů",
+      "excerpt": "Komunita hledá náhradu za Telegram. Padly návrhy jako Signal, Discord a OpenClaw. Ani jedna možnost zatím není bez kompromisů, takže se hledá dál.",
+      "body": "Část komunity hledá náhradu za Telegram. V diskuzi padli tři kandidáti:\n\n**Signal** — šifrovaný a důvěryhodný, pokud jde o soukromí. Jenže ho nepoužívá každý a přemluvit lidi k přechodu bývá oříšek.\n\n**Discord** — silný pro komunity. Má dobré kanály a vyhledávání v historii. Pro někoho je ale moc hlučný nebo až moc spojený s herní kulturou. A soukromí jako Signal nenabízí.\n\n**OpenClaw** — méně známá alternativa. V diskuzi zazněla, ale bez jasného závěru.\n\nJasný vítěz zatím není. Všude jsou kompromisy: soukromí vs. dostupnost, funkce vs. jednoduchost. Jeden člen zatím zůstává na Telegramu a příští týden vyzkouší alternativy.\n\nCo používáte vy? A co by musela splňovat ideální náhrada, abyste přešli?",
+      "read_minutes": 2,
+      "source_date": "2026-03-16"
+    }
+  ],
+  "resurfacing": null,
+  "transcript": {
+    "groups": [
+      {
+        "slug": "mastertheflow—hlavní",
+        "name": "Master the Flow — hlavní",
+        "messages": [
+          {
+            "time": "08:03",
+            "author": "Daniel",
+            "text": "💡 INFORMACE K MASTER THE FLOW\n=============================\nJen pár informací ke komunitě. Je založená jako beta, propaguju ji u sebe na webu (https://danielgamrot.cz/komunita/). Vy, co jste byli na mém webináři o vibe codingu, jste tady naprosto automaticky, pokud jste se přidali přes QR kód nebo odkaz. Jakmile skončí týdenní výzva a rozloučíme se na follow-up setkání, otevřu komunitu prvním 99 registrovaným. Vy zůstaňte, pokud vám to bude dávat smysl.\nV rámci komunity budeme řešit věci kolem digitální produktivity. Určitě se budeme hodně dotýkat i vibe codingu a pokročilých technik. V blízké době plánuju například Claude Code Mastery s hostem (možná hosty) a další věci.\nBudu rád, když zůstanete a budete se zapojovat.\nFajn pondělí přeju.\nDaniel\n#gamrot"
+          },
+          {
+            "time": "09:16",
+            "author": "Daniel",
+            "text": "Ještě jedno oznámení, protože k tomu psali dva lidé.\nKromě této hlavní skupiny s oznámeními, kam nemůžete přispívat, máme taky skupinu „Vibe Coding Challenge“, kde se spolu bavíme a sdílíme věci, které tvoříme.\nOdkaz tady: https://chat.whatsapp.com/CiVn2oRLNhIE9vVxJhfmbO?mode=gi_t"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "02:15",
+            "author": "Daniel",
+            "text": "Super, Aleši. Já, jako velký fanoušek Googlu, jsem zkoušel Gemini na vibe coding. Docela dlouho, ale ty výstupy jsou prostě jiné. CC vede. Za mě."
+          },
+          {
+            "time": "07:59",
+            "author": "Daniel",
+            "text": "💻 Den 2: NAJDĚTE SVÉ TÉMA\n========================\nPojďme poskládat dohromady nápady na finální produkt, který budete mít ve čtvrtek před sebou.\n1) NAJDĚTE SI DNESKA 10 MINUT (20, 30, 47, 67…)\nSedněte si, zavřete oči (ok, to nemusíte) a projděte si poslední týden. Co všechno jste dělali a dělat nechcete? Kde jste čekali na někoho, aby vám odpověděl? Nebo jinak, nemusí to být jenom poslední týden. Koukněte třeba i na to, co jste chtěli v minulosti vytvořit, ale neměli jste na to zdroje. A pořád je to pro vás aktuální. Teď myslím v digitálním světě. Dům nepostavíme. Zatím.\n2) SEPIŠTE SI TO. NE, NADIKTUJTE A NECHTE PŘEPSAT. VŠECHNO\nStačí na začátek tématu věty ke každému nápadu. Nemá to být „appka na milion“. Může to být „otravuje mě, že každé ráno ručně zapisuju, jak dlouho jsem spala“ nebo „nechce se mi manuálně ukládat každý faktura, který přijde do Gmailu“ nebo „chci rukou psané poznámky z reMarkable automaticky exportovat v digi podobě do své poznámkové aplikace“. Případně „už 10 let chci předělat své webovky“.\n3) SDÍLEJTE TO TADY\nJednou větou stačí. Dvě jsou bonus. Tři super. Šest odstavců už je moc.\nVěřím, že já i ostatní vás můžeme podpořit v tom, jak to téma během týdne uchopit. A ještě – čím osobnější téma, tím silnější motivace bude ho dotáhnout. Na webináři jsem ukazoval Beach Watch. Vznikl, protože jsem chodil zbytečně na pláž, která byla pod vodou. Drobnost, ale osobní a moje.\nPro vás to už teda než na začátku. Zkuste podpořit ostatní v tom řešení. Já to sem budu takhle přidávat.\nA zítra se pustíte do návrhu řešení. Vím, že někteří už začali pracovat na konkrétním produktu. Doporučuju ale nejdříve, jak jsem zmiňoval na webináři, vytvořit pořádné zadání.\nMávám z BKK.\nDaniel"
+          },
+          {
+            "time": "08:17",
+            "author": "člen komunity",
+            "text": "Žena prodává občas \"ze dvora\" marmelády a zeleninu. Není to byznys, baví ji to a tak doteď řeší všechno WhatsApp skupinami. Udělám jí objednávkový mini web s trackováním, osobníma preferencema (někdo bere vždy stejný počet stejných produktů). Zadání mám sepsaný od včerejška."
+          },
+          {
+            "time": "08:18",
+            "author": "Daniel",
+            "text": "Tohle je úplná pecka. Skvělý!!! (tři vykřičníky, protože jsem z Ostravy)"
+          },
+          {
+            "time": "09:07",
+            "author": "člen komunity",
+            "text": "Ahojte, ja som si dal cez vikend session nad temou vreckoveho pre syna. Mame na to doma mechanizmus naviazany na znamky a domace prace. Doteraz som to riesil v kombinacii papier/excel, takze idealny kandidat na vibe coding. Postavil som si to na domacom NASku (Claude si sam zadefinoval infrastrukturu, len som zapol, nastavil co chcel). Ma to dve rozhrania, pre mna web, pre syna mobil (PWA). Na prototyp si to vycuclo cely session limit na Claude Pro - cca 3h. Potom sme to so synom ladili a testovali - cca 2h, ale uz to tolko tokenov nezozralo. A vlastne to mame hotove na komplet. Tesil som sa ako dieta pod vianocnym stromcekom 😁"
+          },
+          {
+            "time": "09:11",
+            "author": "Daniel",
+            "text": "Tohle je úplně super. V tom vidím inspiraci i pro sebe. Chudák Oliver. 😀\nKaždopádně zrovna taky řeším dashboard pro „spolupráci“ s Claude Code na dálku. Bude co nevidět, pak kdyžtak nasdílím. Ale bohužel, smetí to zatím nevynese a postel neustele."
+          },
+          {
+            "time": "10:40",
+            "author": "člen komunity",
+            "text": "Pred kazdou leteckou pracovni cestou do zahranici, kdy zustavam 2-3 dny v ruznych mestech mam sadu informaci/ukolu ktere chci a potrebuju pokazde udelat. Aktualne je s tim spojenych hodne manualnich kroku (zejmena hledani ruznych informaci). Chtel bych to zautomatizovat. Postavim si na to osobniho asistenta, bude se jmenovat MILES. Kdyz se to povede, tak budu sdilet i s kolegy."
+          },
+          {
+            "time": "10:47",
+            "author": "člen komunity",
+            "text": "Z kanceláře: ve své agendě mimo jiné vytvářím požadavky na objednávky čehokoli pro své kolegy. Každé objednávce předchází miliarda e-mailů upřesňujících detaily a požadavky. Stavím si teď asistenta, který mi automaticky bude procházet maily a sestaví text objednávky, který pak už jenom vykopíruju do univerzitního systému. Ušetří mi tak čtení desítek mailů a hledání údajů k jedné objednávce. O výsledky se podělím."
+          },
+          {
+            "time": "11:10",
+            "author": "člen komunity",
+            "text": "Příprava na pracovní týden - uspořádání myšlenek a úkolů: chci si zkusit udělat apku na zpracování myšlenek, úkolů, práce.. já tomu říkám příprava na pracovní týden. Většinou v neděli večer se marně snažím projít své psané poznámky, poznámky v mobilu, poznámky v pc, kalendář a vzpomenout si na to co mě čeká nebo co bych si měl dát do task listu. Ano jsem chaotik. Chci abych mohl napsat nebo nadiktovat co mě čeká a systém mi to hodí do nějaké task listu, případně se doptá na detail (termín, komu..) a vytvoří mi nějaký system to upomínek nebo kalendáře nebo přehledného tasklistu který můžu mít na desktopu nebo na mobilu."
+          },
+          {
+            "time": "11:18",
+            "author": "Daniel",
+            "text": "Tohle je naprosto super a stoprocentně by to ocenili i lidi, kteří nejsou kolegové. Skvělej příklad."
+          },
+          {
+            "time": "11:19",
+            "author": "Daniel",
+            "text": "Kde máte ten e-mail? A víte už technicky, jak to budete dělat? Je v pořádku, jestli to je jenom nápad? Spíš mě to zajímá."
+          },
+          {
+            "time": "11:20",
+            "author": "Daniel",
+            "text": "Jo, tohle je super. Co bych za to před 15 lety dal, kdybych to mohl takhle centralizovat na jedno místo? Asi cokoliv. Dneska to fakt půjde. Držím palce a kdyžtak piš."
+          },
+          {
+            "time": "11:24",
+            "author": "člen komunity",
+            "text": "Vytvářím pro gmail klienta. Navádí mě Gemini, zrovna generuji API klíč v google ai studiu."
+          },
+          {
+            "time": "11:24",
+            "author": "Daniel",
+            "text": "Yes!"
+          },
+          {
+            "time": "11:36",
+            "author": "člen komunity",
+            "text": "Telegram z etických důvodů nepoužívám. Na Signalu to asi nepůjde, co? 🙈"
+          },
+          {
+            "time": "11:38",
+            "author": "člen komunity",
+            "text": "Mě napadlo si vytvořit takového výživového specialistu - propojení s google kalendářem (mám tam tréninky), kalorickými tabulkami (kde mám zase navázané garmin hodinky), chtěla bych si zjednodušit plánování jídel skrz správné makroživiny, podle dne, kdy mám trénink tomu přizpůsobit co jíst a naplánovat přesně ty jídla + mít k dispozici na neděli nákupní seznam na ten daný týden. Nevím jestli jsem si nevzala moc velké sousto."
+          },
+          {
+            "time": "11:38",
+            "author": "člen komunity",
+            "text": "Btw nezkoušel někdo z vás MCP server od Rohlíku? Ráda bych si co nejvíc zautomatizovala nákupy, ale tohle už vnímám jako větší projekt."
+          },
+          {
+            "time": "11:40",
+            "author": "Daniel",
+            "text": "WhatsApp funguje taky. Ale tam se mi to taky nechce dávat. Budu ještě zkoušet alternativní cesty, tohle je OpenClaw experiment."
+          },
+          {
+            "time": "11:41",
+            "author": "Daniel",
+            "text": "Naopak, já bych ještě přitlačil, ale jsem magor. Podle mě super zadání. Garmin má podle mě i API, pokud si to dobře pamatuju. Ale nechci kecat a nekoukal jsem."
+          },
+          {
+            "time": "11:42",
+            "author": "Daniel",
+            "text": "Chystám se na to, ale až budu v Praze. :D"
+          },
+          {
+            "time": "11:42",
+            "author": "člen komunity",
+            "text": "@člen Dane, mohl bys nám posdílet, co máš všechno “naprogramované” za vychytávky pro zvýšení produktivity, budování návyků, práci s poznámkami apod.? Prostě to, co učíš v tom svém velkém kurzu (to by vydalo na samostatnou kapitolu, co?😅)? 🙏"
+          },
+          {
+            "time": "11:42",
+            "author": "člen komunity",
+            "text": "Tak já počkám. 😄🙏"
+          },
+          {
+            "time": "11:44",
+            "author": "Daniel",
+            "text": "Přiznám se, že teď řeším primárně brandové věci. A to, abych chodil do postele včas, protože je to fakt návykové.\nZ těch aplikací jsem si udělal akorát vlastní sofistikovaný Markdown systém, a pár asistentů, který prostě dělají automaticky věci, který jsem dělal manuálně.\nAle chystám k tomu, myslím si, že za 14 dní nebo 3 týdny, článek. Je toho hodně, jenom to potřebuju poskládat dohromady tak, aby to mělo hlavu a patu, a nechci to generovat."
+          },
+          {
+            "time": "11:44",
+            "author": "Daniel",
+            "text": "Navrhuju, aby si byla první"
+          },
+          {
+            "time": "11:45",
+            "author": "člen komunity",
+            "text": "Kdyz se podari, rad nasdilim 😉"
+          },
+          {
+            "time": "11:46",
+            "author": "Daniel",
+            "text": "Každopádně ty nástroje, které bych klidně pustil ven po malých úpravách, jsou tady, @člen: https://danielgamrot.cz/nastroje/\nKdyžtak tam dávejte upvote, kdybyste něco z toho chtěli. Jakmile to bude mít 100 hlasů, pustím to ven. A myslete na to, že mě to stojí hodně tokenů."
+          },
+          {
+            "time": "11:48",
+            "author": "člen komunity",
+            "text": "Jinak já teď potřebuju vymyslet praktickou vibe coding disciplínu pro SŠ studenty pro finále naší celostátní soutěže v digi dovednostech. Budou na to mít dvě hoďky (část zabere zadání). Chtěla bych, aby si tam vytvořili něco užitečného (pro sebe nebo i pro prarodiče třeba) a aby měli wow efekt z toho, že je to tak přístupné dneska. Kdybyste měli jakýkoli nápad, budu ráda. 🙂🙏\nKdyž tak www.democraticon.cz (tento web je můj první vb projekt :))"
+          },
+          {
+            "time": "11:51",
+            "author": "člen komunity",
+            "text": "🙂 zrovna diskutuji s Claude jak tvůj Livescript zapracovat do své apky na zpracování myšlenek a nápadů 🙂"
+          },
+          {
+            "time": "11:53",
+            "author": "Daniel",
+            "text": "Super, dej pak vědět, jak to dopadlo. A nasdílej, co vymysleli.\nJinak proveď je tím zadáním a zbytek už pro ně bude určitě maličkost. :)"
+          },
+          {
+            "time": "11:55",
+            "author": "člen komunity",
+            "text": "Jj, Jindra Fáborský, který nám s tím pomáhá, už jim nahrál dvě videa, takže připravení snad budou dostatečně. :)"
+          },
+          {
+            "time": "11:56",
+            "author": "Daniel",
+            "text": "Pecka! :)"
+          },
+          {
+            "time": "15:13",
+            "author": "Daniel",
+            "text": "Nemá Signal výpadky? Že by to sem tam nefungovalo? Tohle byl podle mě důvod, proč jsem ho nechtěl. Signal používám, mám ho, je super. A chci ho. Jen se přiznám, že jsem to na OpenClaw nezkoušel."
+          },
+          {
+            "time": "15:15",
+            "author": "člen komunity",
+            "text": "Na to zatiaľ neviem odpovedať:) používam ho krátko a neviem ešte rozlíšiť čo je moja chyba nastavenia a čo výpadok na strane Signalu.\nJa som pôvodne OpenClaw mala na discorde, ale vadilo mi, že tam mám aj iné servery a rušilo ma to."
+          },
+          {
+            "time": "15:17",
+            "author": "Daniel",
+            "text": "Tak zatím zůstávám na Telegram. I když nerad. Ale příští týden to možná testnu."
+          },
+          {
+            "time": "15:26",
+            "author": "člen komunity",
+            "text": "jen postesk - dělám na aplikaci, ale claud code na webu mi nechtěl vzít lokální adresář a nutil mne do git hubu. OK nainstaloval jsem aplikaci claude code. Ta zase chtěla nainstalovat git. Pak nevěděla kde je.. Stejně jsem musel začít v příkazové řádce. Pak jsme zkusil nainstalovat VS code a teď přeskakuji mezi claude chat, který mi říká co mám dělat a VS code, kde to zadávám.. UF, jako neprogramátor (i když si myslím dost zkušený uživatel) dost hard job. O víkendu jsem si na Claude chat udělal hobby střelecký deník (www.streleckydenik.eu), nasadil na cloudflare, i supabase i na doménu a bylo to jendodušší protože jsem jel furt v chatu .. No nic jedu dál 🙂"
+          },
+          {
+            "time": "15:29",
+            "author": "člen komunity",
+            "text": "Nepamätám si presne ako som sa k tomu dostala, ale mala som prístup k AI modelom priamo vo VS Code. Vč Sonetu. Skús pogooglit - buď to bolo rozšírenie, github služba alebo MCP. Alebo možno ešte lepšie, ísť rovno cez Cursor."
+          },
+          {
+            "time": "15:49",
+            "author": "člen komunity",
+            "text": "Snímek obrazovky 2026-03-16 v 15.46.33.png"
+          },
+          {
+            "time": "16:03",
+            "author": "člen komunity",
+            "text": "A jak máte řešený svůj “druhý mozek” (poznámky, úkoly atd.)? Stavíte to na Obsidianu, Notionu nebo from scratch? 🙂"
+          },
+          {
+            "time": "16:05",
+            "author": "člen komunity",
+            "text": "Používám Obsidian hlavně kvůli možnosti práce na lokále s md soubory"
+          },
+          {
+            "time": "16:32",
+            "author": "člen komunity",
+            "text": "Skladuju v Apple notes. Nenašel jsem zatím GDPR compliant řešení"
+          },
+          {
+            "time": "22:09",
+            "author": "člen komunity",
+            "text": "Chci web DivorceOptimist.com přehodit z WB na Vibecoding. Jinou strukturu a i nové texty. Chci Vibecoding upravovat videa, dávat pryč výplňová slova a dělat reels. Plus apku na monitoring vztahu rodičů k dětem když hrozí “syndrom zavrženého rodiče”."
+          },
+          {
+            "time": "23:17",
+            "author": "člen komunity",
+            "text": "zajímavé"
+          },
+          {
+            "time": "23:20",
+            "author": "člen komunity",
+            "text": "Ahoj, každý měsíc trávím čas porovnáváním rozpočtu v Numbers se stavem na účtu a chci jednoduchou webovou appku v telefonu, kde vidím jedno číslo – kolik můžu ještě utratit."
+          }
+        ]
+      }
+    ]
+  }
+}

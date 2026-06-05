@@ -1,0 +1,243 @@
+{
+  "date": "2026-03-19",
+  "generated_at": "2026-06-05T06:13:22Z",
+  "stats": {
+    "messages": 32,
+    "groups": 2,
+    "members": 8
+  },
+  "cards": [
+    {
+      "id": "2026-03-19-01",
+      "type": "TÉMA TÝDNE",
+      "level": "Builder",
+      "topic": "Vibe Coding výzva",
+      "title": "Den 5 výzvy: hotové projekty jdou ven",
+      "excerpt": "Pátý den Vibe Coding výzvy patřil ladění a ukázkám toho, co kdo postavil. Členové sdíleli funkční aplikace z Lovable i Claude Code a reakce komunity rozhodně nebyly jen ze slušnosti.",
+      "body": "Vibe Coding výzva se dostala do nejcennější fáze: přestalo se ladit dokola a začalo se ukazovat. Den 5 byl o doladění jedné konkrétní věci a sdílení výsledku. V kanálu se objevilo víc hotových projektů najednou než za všechny předchozí dny dohromady.\n\nZajímavé bylo, jak různě k tomu lidi přistoupili. Někdo stavěl v Lovable přes vizuální rozhraní. Někdo jel v Claude Code čistě přes terminál. Fungovalo obojí. Komunita si tím sama ověřila, že na nástroji tolik nezáleží. Důležité je se do toho pustit a dotáhnout výsledek.\n\nDen 5 ukázal, že pětidenní výzva v tomhle tempu dává smysl.",
+      "read_minutes": 2,
+      "source_date": "2026-03-19"
+    },
+    {
+      "id": "2026-03-19-02",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "Lovable",
+      "title": "Aplikace, která připomíná ozvat se blízkým",
+      "excerpt": "Jeden člen si přes Lovable postavil nástroj na udržování vztahů. Vycházelo to z jeho vlastní situace: rodina daleko, tři děti, náročná práce. A prostě mu přirozeně nedojde, že by se mohl někomu ozvat.",
+      "body": "Nápad nevznikl od stolu, ale z úplně konkrétního problému: když nestíháte a blízcí jsou daleko, vztahy se pomalu vytrácí. Ne proto, že by vám na nich nezáleželo. Prostě zapomenete.\n\nJeden člen komunity si to vyřešil vlastní aplikací postavenou v Lovable. Připomíná mu, kdy se má ozvat konkrétním lidem, a pomáhá mu držet vztahy v dobré kvalitě i při plném diáři.\n\nSdílel ji otevřeně s tím, že má ještě dost much. Přihlašování přes Google a Apple třeba zatím nebylo otestované. Ale aplikace už je vidět naživo a dá se dál iterovat.\n\nPřesně takhle vibe coding funguje nejlíp: nejdřív udělat něco, co vám fakt řeší problém. Až potom řešit polish.",
+      "read_minutes": 2,
+      "source_date": "2026-03-19"
+    },
+    {
+      "id": "2026-03-19-03",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "Claude Code",
+      "title": "Z terminálu na vizuální rozhraní za čtyři dny",
+      "excerpt": "V sobotu běžel prototypovací asistent jen v terminálu. Ve čtvrtek už má plné vizuální rozhraní. Čtyři dny, jedna aplikace a velký skok v použitelnosti.",
+      "body": "Tohle je přesně ten moment, na kterém je dobře vidět, proč vibe coding zrychluje práci. Asistent na tvorbu prototypů začínal jako čistě terminálový nástroj. Fungoval, ale byl hlavně pro lidi, kteří se v terminálu vyznají. Čtyři dny po prvním spuštění už má vizuální rozhraní.\n\nNe proto, že si to vyžádal klient. Ne proto, že to bylo ve sprintu. Prostě to dávalo smysl jako další krok. A vibe coding umožňuje takový krok zvládnout za odpoledne. Pro komunitu je to dobrá připomínka, že tempo iterací je dnes úplně jinde než před rokem. Pokud si chcete ověřit, co to znamená v praxi, tohle je dobrý příklad.",
+      "read_minutes": 2,
+      "source_date": "2026-03-19"
+    },
+    {
+      "id": "2026-03-19-04",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Uttero",
+      "title": "Diktování přímo do textového pole, ne do schránky",
+      "excerpt": "V komunitě se řešil diktovací nástroj, který funguje jinak než ostatní. Text se zobrazuje rovnou v poli, kam píšete, nejde přes schránku. Verze pro macOS už je dostupná, iOS klávesnice se chystá.",
+      "body": "Většina nástrojů na diktování funguje tak, že něco nadiktujete, chvíli počkáte a pak text zkopírujete nebo vložíte. Jeden nástroj, který se řešil v komunitě, to dělá jinak. Text se objevuje rovnou v aktivním textovém poli, a to v reálném čase.\n\nVerze pro macOS měla dobré ohlasy od členů, kteří ji testovali. Verze pro iOS už je v pokročilé fázi vývoje a půjde cestou vlastní klávesnice. Jednoduchý koncept, jedna hlavní funkce. Jeden člen komunity se ptal na verzi pro Android. Ta by byla technicky jednodušší na distribuci, protože by stačil APK soubor bez App Storu, ale zatím není v plánu.\n\nPokud diktování používáte, nebo jste ho zkoušeli a moc vám nefungovalo, vyplatí se sledovat, kdy se iOS verze otevře testerům.",
+      "read_minutes": 2,
+      "source_date": "2026-03-19"
+    },
+    {
+      "id": "2026-03-19-05",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "App Store / distribuce aplikací",
+      "title": "Apple zamítá vibe-coded aplikace s externími API klíči",
+      "excerpt": "V komunitě se řešilo, že Apple začíná přísněji schvalovat aplikace vytvořené přes vibe coding. Nejčastěji je zamítá kvůli externím API klíčům, které jsou přímo v kódu aplikace.",
+      "body": "App Store review začíná být problém pro aplikace postavené přes vibe coding. Hlavně pro ty, které volají externí API a mají klíče uložené přímo v kódu nebo v bundlu. Apple takové aplikace zamítá.\n\nKomunita řešila dvě možnosti, jak to obejít:\n\n**TestFlight** — neveřejná beta distribuce. App Store review tu má jiná pravidla, případně vůbec neprobíhá. Pro menší skupinu uživatelů je to použitelná náhrada za veřejné vydání.\n\n**Sdílení zdrojáků** — uživatel si aplikaci sám zkompiluje a nainstaluje přes Xcode. Technicky je to čistší řešení, ale druhá strana musí mít Mac a vědět, co dělá.\n\nPro vývojáře, kteří chtějí dostat vlastní aplikaci na iPhone, je teď TestFlight nejjednodušší cesta. U aplikací s API klíči je dostat se do veřejného App Storu přes standardní review hodně těžké.",
+      "read_minutes": 3,
+      "source_date": "2026-03-19"
+    }
+  ],
+  "resurfacing": null,
+  "transcript": {
+    "groups": [
+      {
+        "slug": "mastertheflow—hlavní",
+        "name": "Master the Flow — hlavní",
+        "messages": [
+          {
+            "time": "03:33",
+            "author": "Daniel",
+            "text": "🚨 ZÍTRA V 10:00 MÁME FOLLOW-UP\n=============================\nPřipomínám jen pro ty, kteří to nestihli, že zítra máme follow-up s mikrofony a kamerami, opět na Zoomu.\nLINK: https://us06web.zoom.us/j/86729426412?pwd=IXZwvfcZtctNdmrsya66FFtsYGk1aq.1\nDejte mi prosím palcem nahoru vědět, že přijdete. případně jakoukoliv jinou emotikonou, když nepřijdete nebo chcete pouze záznam. Řeším, jestli mám rozšířit Zoom místnost, abychom se tam všichni vešli. Ale můžeme z toho samozřejmě udělat soutěž o nejkreativnější emotikonu.\nA pokud mi na WA pošlete zprávu (přímo na mé číslo - [tel]) s tím, co byste rádi vyřešili, co bych měl zmínit nebo na co bych měl odpovědět, budu rád.\nDíky moc.\nDaniel\n#gamrot"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "05:20",
+            "author": "Daniel",
+            "text": "BTW vím, že jsem to tady už sdílel, v sobotu. Ale ne každý tady od začátku byl a historie prý nejde moc vidět no.\nKaždopádně mě zase napadlo, jak je to vlastně strašně rychlý. Ještě v sobotu byl FlowBoard, což je ten můj asistent pro vytváření prototypů, jenom v terminálu. Dneska už má vizuální prostředí. Mazec."
+          },
+          {
+            "time": "05:54",
+            "author": "Daniel",
+            "text": "Právě, ono těch aplikací na diktování je spousta, ale nenašel jsem žádnou, která by to přímo zobrazovala v tom textovém poli. Třeba Raycast má to diktování super, teda zatím. Doufám, že se to nerozbije stejně, jako se to rozbilo ve Wispr Flow. A děkuju!"
+          },
+          {
+            "time": "06:01",
+            "author": "člen komunity",
+            "text": "Stahl jsem si Uttero pro MacOS a zazitek je zatim skvely. Nutne to same potrebuju i pro iOS a tahle klavesnice vypada genialne 😃"
+          },
+          {
+            "time": "06:06",
+            "author": "Daniel",
+            "text": "To je super, mám velkou radost. Každopádně, ta iOS verze je něco, na co jsem ještě pyšnější než ta macOS verze.\nJe to mnohem jednodušší, má to v podstatě jednu funkci a samozřejmě spoustu podfunkcí, ale funguje to skvěle. Jsou tam ještě nějaké drobné chybky, sem tam se to zasekne, ale není to nic, s čím by si lidi, kteří to testovali, neporadili. A to fakt byli lidi, kteří používají mobil na diktování, respektive na psaní, a na procházení sociálních sítí.\nTakže super feedback."
+          },
+          {
+            "time": "07:19",
+            "author": "člen komunity",
+            "text": "To zni jeste lip! Takze kdy a jak se k ni bude mozne dostat? 😃"
+          },
+          {
+            "time": "07:20",
+            "author": "člen komunity",
+            "text": "To me taky zajima! 😁"
+          },
+          {
+            "time": "07:20",
+            "author": "Daniel",
+            "text": "Když přijedeš do Hua Hin, tak ti ji nainstaluju. Nebo budu muset vymyslet nějakého bota, který za mě vyplní všechny ty věci, které chce Apple, alespoň proto, abych to dal na TestFlight. 😀"
+          },
+          {
+            "time": "07:46",
+            "author": "člen komunity",
+            "text": "No kdyby byla vůle vygenerovat to pro Android, tak tam je publikace jednodušší. Výsledný APK soubor se prostě nasdílí. Jako denní uživatel UTTERO ♥️bych byl nadšeným testerem. ✅ A možná se na najde víc!"
+          },
+          {
+            "time": "07:48",
+            "author": "člen komunity",
+            "text": "Já se na to třesu jak malej (iOS)"
+          },
+          {
+            "time": "07:52",
+            "author": "člen komunity",
+            "text": "Dobré ráno všem! Případně jinou část dne, dle časového pásma :)\nVyrobil jsem skrz Lovable tuto apku - na začátku primárně jako pomoc pro mě. Abych dokázal udržovat kvalitné vztahy, i když jsem časově vytížen. Rodina je daleko, děcka 3, práce náročná.. asi to taky znáte ;) a zároveň mi není úplně přirozené si vzpomenout, že bych se mohl ozvat\nMá to ještě hodně much - napr. jsem neotestoval přihlašování skrz google / apple. Každopádně je to velká zábava iterovat to, občas propadat zoufalství z nepochopení a na druhou stranu se těšit jak malé dítě, když něco nakonec zafunguje\nhttps://mindful-connections-12.lovable.app/"
+          },
+          {
+            "time": "08:00",
+            "author": "Daniel",
+            "text": "Nemá to zatím prioritu, ale uvidíme, třeba to bude chtít někdo udělat v rámci výzvy nebo nějakého dalšího projektu tady ve skupině."
+          },
+          {
+            "time": "08:01",
+            "author": "Daniel",
+            "text": "Pecka, nemáš náhodou nějaký screenshoty pro lidi, co by si tam nechtěli registrovat? Bez registrace nás v tom asi nepustí, že? Nebo je tam nějaké demo?"
+          },
+          {
+            "time": "08:07",
+            "author": "člen komunity",
+            "text": "No nechtěl jsem to říkat na první dobrou, ale rád bych se toho ujal! Díky vám jsem si od pátku na vibecodil svou první aplikaci a to rovnou pro Android.\nNechtěl jsem to říkat rovnou, protože \"autorská práva\" máte vy. 🙂"
+          },
+          {
+            "time": "08:13",
+            "author": "Daniel",
+            "text": "Pojďme to udělat jako experiment. Já pošlu specifikaci toho projektu, nebudu posílat odkaz na GitHub.\nNo a pak by bylo hezký, kdybych tam byl uvedený jako původní autor, ale více kdyžtak v soukromé zprávě.\nJinak, kdybyste to chtěl postavit úplně od základu, tak jsem s tím taky úplně v pohodě. Nemusím nic posílat. Takových klávesnic už je více."
+          },
+          {
+            "time": "11:11",
+            "author": "člen komunity",
+            "text": "To me zajímá. Co všechno od tebe Claude chce aby byl schopen připravit prezentaci která odpovídá tvým představám?"
+          },
+          {
+            "time": "11:14",
+            "author": "člen komunity",
+            "text": "Zdravim Michale, tady Frantisek. Pekna aplikace.Uz zkousim na mobilu.\nFunguje dobre."
+          },
+          {
+            "time": "11:16",
+            "author": "člen komunity",
+            "text": "Zdravim, vypada to hodne dobre. Nebul link pro otestovani a inspiraci?"
+          },
+          {
+            "time": "11:19",
+            "author": "člen komunity",
+            "text": "Já teď dělala dvě prezentace na to, co jsem vytvořila v CC, takže jsem mu jen poslala zadání (technické požadavky). Kdyby to byla obecně prezka na něco jiného, tak bych si jako první vytvořila kontext - jak dělám prezentace, jaký chci design atd. a pak už bych mu jen napsala, o čem má být atd. Udělá to v podobě webové aplikace."
+          },
+          {
+            "time": "12:00",
+            "author": "člen komunity",
+            "text": "To nebude lehké. 🙊\nhttps://9to5mac.com/2026/03/18/apple-pushing-back-on-vibe-coding-iphone-apps-developers-say/"
+          },
+          {
+            "time": "12:03",
+            "author": "člen komunity",
+            "text": "Jako v principu jo, mám to na cloudflare myslím, ale bez uživatelů, tak nevím co se ti zobrazí, plus je potřeba si tam v nastavení vložit vlastní Anthropic API key"
+          },
+          {
+            "time": "12:04",
+            "author": "Daniel",
+            "text": "Já vím, eh, nečetl jsem teda ten článek, ale test flight prý zatím v pohodě, tak uvidíme. Každopádně tam máme API klíče do externích služeb, tak uvidíme, jestli to bude procházet nebo ne. Každopádně, kdyžtak prostě nasdílím zdrojáky, a nasadíte si to přes Xcode. 🤷‍♂️😅"
+          },
+          {
+            "time": "12:05",
+            "author": "člen komunity",
+            "text": "Ahoj Frantisku. Diky za feedback i testovani :)"
+          },
+          {
+            "time": "12:11",
+            "author": "člen komunity",
+            "text": "https://mindport.pages.dev/  ok dávám link, jen mi dej vědět, jestli se ti to otevřelo bez dat nebo s mými testovacími daty a aby fungovali AI musíš vložit Anthropic API key"
+          },
+          {
+            "time": "12:17",
+            "author": "Daniel",
+            "text": "💻 DEN 5: DOLAĎTE A SDÍLEJTE\n=========================\n1) OTEVŘETE SVŮJ PROJEKT ZE VČEREJŠKA\nKdo včera nestihl, nevadí. Vraťte se o den zpátky a dodělejte to.\n2) VYBERTE SI JEDNU VĚC, KTEROU CHCETE VYLEPŠIT\nJednu. Ne pět.\n- Design vám přijde ošklivý? „Udělej to vizuálně hezčí, minimalisticky, v tmavých barvách.“\n- Chybí vám tam něco? Popište to jednou větou.\n- Něco nefunguje? Screenshot a „tohle nefunguje, oprav to.“\n- Nemáte tušení, co vylepšit? „Podívej se na ten projekt a řekni mi, co bys vylepšil jako první.“\n3) ŘÍKEJTE AI, CO SE VÁM NELÍBÍ\nKonkrétně. „Změň barvy“ je moc vágní. „Černé pozadí, bílý text, oranžové akcenty“ je přesně ono. Jo, takhle jednoduše. Čím přesnější jste, tím míň kol opravování potřebujete.\nAI nečte myšlenky. Zatím.\n4) OPAKUJTE\nKlidně pětkrát. Každý pokus bude lepší. A vy se zlepšujete taky, i když to tak možná nevypadá.\n5) HOĎTE VÝSLEDEK DO SKUPINY\nScreenshot, odkaz, video. A připište větu. Co vás za ten týden nejvíc překvapilo?\n6) KOUKNĚTE, CO UDĚLALI OSTATNÍ\nFakt koukněte. Jsou tady zajímavý věci.\nMoc díky za těch 5 dní. Mám z toho mega radost a ani trošku jsem nedoufal v to, že to tu tak rozjedete. Vím, že toho určitě máte spoustu, ať už v rámci zaměstnání, podnikání nebo doma. A každej ten drobnej krok, kterej jste udělali pro to, abyste si osahali vibe coding skills, je za mě naprosto skvělej. A hlavně jsem naprosto přesvědčený o tom, že to brzy využijete. Nebo už využíváte.\nZítra se těším na viděnou na follow-up, kde to uzavřeme.\nDaniel\n#gamrot"
+          },
+          {
+            "time": "14:46",
+            "author": "člen komunity",
+            "text": "Super! A jaké máte (všichni) ještě využití Coworku? 🙂"
+          },
+          {
+            "time": "14:49",
+            "author": "člen komunity",
+            "text": "Na toto používam Gemini-Cli. Vôbec som netušila že to zvládne už aj Claude Code 😍"
+          },
+          {
+            "time": "14:51",
+            "author": "člen komunity",
+            "text": "Inak podobný moc fajn tip je MCP playwright do Claude, ktorý vie preklikávať web (vidíte to real time) a vyhľadávať napr názvy elementov a selectorov.\nAle určite sa hodí aj pri nejakej automatizacii nakupovania a pod."
+          },
+          {
+            "time": "14:56",
+            "author": "Daniel",
+            "text": "Přesně tak, Playwright je must-have.Zrovna chystám desetiúrovňový průvodce pro Claude Code a tohle je někde uprostřed. Nejenom pro automatizaci, ale taky pro odladění webu. Je to boží na testování."
+          },
+          {
+            "time": "14:57",
+            "author": "Daniel",
+            "text": "Přiznám se, že já nemám nic, už jsem ho zase nějakou dobu neotevřel, prostě jedu všechno přes Claude Code. Nechci to tříštit do více nástrojů."
+          },
+          {
+            "time": "15:08",
+            "author": "člen komunity",
+            "text": "Ja nechavam třeba  Cowork buildit a upravovat můj Notion. Mam tam i nabídkové šablony, ze kterych je na zaklade nadiktovanych vstupu muze pripravovat pro klienty (zasilam jako online stranky, daji se snadno aktualizovat)"
+          },
+          {
+            "time": "15:08",
+            "author": "člen komunity",
+            "text": "Já jsem trochu v tom procesu zablokovaná. Mám firemní Mac a tam vůbec nenainstaluju appku, tak zkouším, co zvládnu z mobilu.\nAle mám pocit, že nekonečné možnosti a pro mě neukotvený proces mě trochu rozhazují 😅 Ale taky jsem se k tomu několik dnů vůbec nezvládla dostat, takže se snažím vyzobávat tipy, co házíte do konverzace. Díky za ně, zatím z nich mám v hlavě dost bordel, ale věřím, že až to proleju dostatkem vody, sedne si to 😄"
+          }
+        ]
+      }
+    ]
+  }
+}

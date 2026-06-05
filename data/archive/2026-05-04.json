@@ -1,0 +1,85 @@
+{
+  "date": "2026-05-04",
+  "generated_at": "2026-06-05T07:25:41Z",
+  "stats": {
+    "messages": 5,
+    "groups": 2,
+    "members": 3
+  },
+  "cards": [
+    {
+      "id": "2026-05-04-01",
+      "source_date": "2026-05-04",
+      "topic": "Komunita staví — průzkum v terénu",
+      "excerpt": "Daniel napsal čtyřem lidem ze skupiny a zjišťoval, kdo na čem maká. Výsledek ho překvapil.",
+      "body": "Spontánní průzkum: čtyři zprávy, čtyři rozhovory o tom, co kdo ze skupiny právě staví. Daniel to shrnul ve Vibe Coding skupině a přidal výzvu: pokud jste něco vytvořili, hoďte to ven. Může to inspirovat ostatní a zároveň získáte zpětnou vazbu, na které se to může posunout dál."
+    },
+    {
+      "id": "2026-05-04-02",
+      "source_date": "2026-05-04",
+      "topic": "mujvelin.cz — 15 virtuálních asistentek v pilotu",
+      "excerpt": "Jeden člen komunity testuje vlastní aplikaci na měření času a správu klientů. V pilotním provozu ji zkouší 15 virtuálních asistentek.",
+      "body": "Jeden z členů sdílel ve skupině Vibe Coding svůj projekt: aplikaci mujvelin.cz na měření času a správu klientů. Teď běží v pilotu u 15 virtuálních asistentek. Přesně ten typ výstupu, který Daniel ve výzvě hledal — konkrétní nástroj, reálný pilot a skutečný problém."
+    },
+    {
+      "id": "2026-05-04-03",
+      "source_date": "2026-05-04",
+      "topic": "Poctivá zpětná vazba přes Claude Code",
+      "excerpt": "Jeden z členů nahrál svůj výtvor do Claude Code. Výsledek ho překvapil, ale konkrétní postřehy mu nakonec pomohly.",
+      "body": "Ve skupině Inspirace & Diskuze se řešilo sdílení AI výtvorů. Radim Pelaněk zkusil nechat svůj projekt zhodnotit přes Claude Code a reakce nebyla zrovna lichotivá. Daniel přiznal, že ho to taky trochu vyděsilo. Konkrétní postřehy, které pak Radim nasdílel, ale dávaly smysl. Upřímná zpětná vazba bolí míň, když je konkrétní."
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-04-12-02",
+    "type": "INSIGHT",
+    "level": "Začátečník",
+    "topic": "AI agenti",
+    "title": "Co jsou smečky agentů v praxi",
+    "excerpt": "Termín „smečka agentů“ se ve světě AI používá čím dál častěji. Co ale znamená v praxi? Není to konkrétní nástroj, ale způsob, jak si uspořádat práci.",
+    "body": "V komunitě padla přímá otázka: co vlastně znamená „smečka agentů“? Je to konkrétní nástroj? Skilly v Claudu? Claude Code? Nebo něco úplně jiného?\n\n„Smečka agentů“ je běžný název pro situaci, kdy na jednom úkolu pracuje víc AI agentů najednou, nebo postupně po sobě. Každý má svou roli. Jeden hledá informace, druhý je třídí a analyzuje, třetí z toho napíše výstup. Výsledek pak bývá rychlejší nebo propracovanější, než kdyby všechno dělal jeden model sám.\n\nV praxi to může vypadat různě:\n\n- Claude Code si složitější úkol rozdělí a spustí menší agenty paralelně\n- nástroj jako Manus měl tenhle přístup přímo v základu: části úkolu přidělil různým specializovaným modelům\n- v pokročilejších frameworcích spolu agenti komunikují a předávají si výsledky\n\nNa začátku to nemusíte znát do detailu. Důležitá je hlavní myšlenka: místo jednoho modelu, který dělá všechno, máte tým specializovaných nástrojů, které spolupracují. Časem to začne dávat smysl samo, jak s těmi nástroji budete pracovat. Technické zázemí k tomu nepotřebujete.",
+    "read_minutes": 2,
+    "source_date": "2026-04-12",
+    "resurfaced_from": "2026-04-12"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "09:17",
+            "author": "Daniel",
+            "text": "Dík! Mrknu. A udělám to pořádně."
+          },
+          {
+            "time": "09:20",
+            "author": "člen komunity",
+            "text": "Hodil jsem to do sveho Claude Code a uplne se mu ten vytvor nelibi 🙂"
+          },
+          {
+            "time": "09:28",
+            "author": "Daniel",
+            "text": "Když jsem si to přečetl, tak jsem se trošku lekl, 😅 každopádně ty věci, které si mi pak naposílal, jsou relevantní. Díky moc."
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "18:42",
+            "author": "Daniel",
+            "text": "Jen tak spontánně jsem dneska napsal čtyřem lidem tady ze skupiny a povídali jsme si o tom, co kdo a jestli vůbec dělá za nástroje. A je to naprosto úžasný. Prosím, jestli na něčem pracujete a jestli jste v posledních týdnech něco vytvořili, nasdílejte to sem jako inspiraci.\nZa mě je to jeden z nejlepších způsobů, jak jednak ostatním ukázat, co všechno je možné, a pak taky získat zpětnou vazbu, případně otázky, na kterých to může vyrůst.\nJá třeba i přesto, že mě 14 let živí produktivita, jsem tak nějak omylem pořád manuálně ukládal účtenky a faktury, které mi chodily do e-mailu, klikáním na tlačítko stáhnout a podobně.\nNo a už je to konečně zautomatizovaný, včetně těch otravných účtenek, pro které se člověk musí proklikávat úplně mimo e-mail.\nTřikrát sláva, a kdybyste mi někdo chtěli vzít práci, vidíte, že těžké to nebude. 😅\nP.S. Jasně, že je tam i skoro samo se učící mechanismus, abych to nemusel pořád upravovat."
+          },
+          {
+            "time": "20:08",
+            "author": "člen komunity",
+            "text": "Ahoj, tak ja se taky podělím. Aktuálně 15 virtuálních asistentek testuje mou aplikaci na měření času a správu klientů. 😊\nhttps://mujvelin.cz"
+          }
+        ]
+      }
+    ]
+  }
+}

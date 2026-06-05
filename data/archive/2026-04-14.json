@@ -1,0 +1,134 @@
+{
+  "date": "2026-04-14",
+  "generated_at": "2026-06-05T07:06:08Z",
+  "stats": {
+    "messages": 9,
+    "groups": 3,
+    "members": 3
+  },
+  "cards": [
+    {
+      "id": "2026-04-14-01",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Claude Code / MCP",
+      "title": "Context7 přináší aktuální docs do AI asistenta",
+      "excerpt": "Context7 je MCP server, který AI asistentovi tahá dokumentaci knihoven a frameworků přímo z internetu. Nespoléhá na stará trénovací data, ale pracuje s aktuálními informacemi. Claude Code ho umí používat automaticky, někdy ho na něj ale musíte navést ručně.",
+      "body": "Když AI asistent pracuje s konkrétní knihovnou nebo frameworkem, vychází z toho, co se naučil při trénování. Jenže tahle data můžou být klidně rok nebo víc stará. Context7 to bere jinak. Je to MCP server, který si při každém dotazu stáhne aktuální dokumentaci z internetu a pošle ji rovnou do kontextu asistenta.\n\nV praxi se hodí hlavně při napojování technologií. Třeba když integrujete nové API nebo pracujete s frameworkem, který se rychle mění. Claude Code umí Context7 používat automaticky, ale nespoléhejte na to, že ho vždycky zapne sám. Když řešíte konkrétní technologii a odpovědi nejsou přesné, řekněte mu přímo, ať se podívá do dokumentace přes Context7.\n\nNastavení je celkem jednoduché. Přidáte Context7 jako MCP server do konfigurace Claude Code a od té chvíle ho může asistent používat. Není to žádné kouzlo. Pro běžnou práci s kódem ale znatelně zlepší přesnost odpovědí.",
+      "read_minutes": 2,
+      "source_date": "2026-04-14"
+    },
+    {
+      "id": "2026-04-14-02",
+      "type": "INSIGHT",
+      "level": "Expert",
+      "topic": "Claude Code / MCP",
+      "title": "Ani Context7 nezaručí kompletní dokumentaci",
+      "excerpt": "Context7 je užitečný nástroj, ale stažená dokumentace nemusí být vždy kompletní. Jeden člen narazil na případ, kdy Context7 nenašel model, který byl starý teprve dva měsíce.",
+      "body": "Context7 AI asistentovi výrazně pomáhá dostat se k aktuálním informacím, ale není bez omezení. Dokumentace, kterou si stáhne, nemusí být vždy kompletní. Nebo může být poskládaná jinak, než asistent čeká.\n\nZ komunity přišel konkrétní příklad. Jeden člen pracoval s technologií, kde byl model starý zhruba dva měsíce. Context7 ho stejně nenašel, protože v dostupné dokumentaci prostě nebyl. A stalo se to přesně ve chvíli, kdy by měl být Context7 nejužitečnější.\n\nZávěr je jednoduchý. Context7 je dobrý první krok. Pokud ale pracujete s úplně čerstvou verzí technologie nebo s méně běžnou knihovnou, ověřte si výsledek i přímo v oficiální dokumentaci. Slepě věřit tomu, že asistent „má aktuální data“, se může vymstít. Takové chyby se hledají hůř než běžné halucinace, protože vypadají mnohem věrohodněji.",
+      "read_minutes": 2,
+      "source_date": "2026-04-14"
+    },
+    {
+      "id": "2026-04-14-03",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Workflow / Automatizace",
+      "title": "Weekly review skupinových chatů přes export a prompt",
+      "excerpt": "Pravidelný souhrn dění ve WhatsApp skupinách jde udělat tak, že se exportují chaty a lokálně na počítači zpracují přes připravený prompt. Automatizace se ještě dolaďuje, ale základní verze funguje už teď.",
+      "body": "Weekly review vzniká z exportů chatů z WhatsAppu. Ty se pak lokálně v počítači zpracují přes připravený prompt. Výsledek je čitelný souhrn pro nové nebo méně aktivní členy, kteří nestíhají sledovat všechno hned.\n\nPostup je jednoduchý. Z každé skupiny se vyexportuje chat. WhatsApp to umí v nastavení skupiny. Texty se spojí a projdou promptem, který z nich vytáhne hlavní témata, projekty a postřehy. Ve shrnutí nejsou jména členů. Vynechávají se i provozní věci, třeba pozdravy nebo domlouvání akcí.\n\nAutomatizace celého procesu se ještě ladí. Základ ale funguje i ručně. Pokud vedete komunitu, interní tým nebo jakýkoli skupinový chat a chcete pravidelně shrnovat, co se děje, je to použitelný postup bez speciálních nástrojů. Stačí export chatů a dobře napsaný prompt.",
+      "read_minutes": 2,
+      "source_date": "2026-04-14"
+    },
+    {
+      "id": "2026-04-14-04",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "AI workflow / Produktivita",
+      "title": "Kdy přestat záplatovat a začít od začátku",
+      "excerpt": "Jeden člen strávil několik dní opravou chyby v projektu. Lepil to z jedné strany, pak z druhé, a pokaždé se rozbilo něco jiného. Nakonec nechal AI navrhnout řešení od nuly. Za pár hodin bylo hotovo.",
+      "body": "Je snadné spadnout do nekonečného záplatování. Opravíte jednu věc a rozbije se druhá. Opravíte druhou a začne padat třetí. Každý krok sám o sobě dává smysl, ale celek se pomalu sype. A čím déle v tom jste, tím víc energie pálíte na udržování kódu, který pořád nefunguje.\n\nV komunitě se osvědčilo tohle: když se stejná chyba vrátí víc než dvakrát, nebo když začnou opravy záviset jedna na druhé, zastavte se. Neptejte se „jak tohle opravím?“. Zeptejte se: „Jak bych to navrhl znovu od nuly, kdybych věděl to, co vím teď?“\n\nAI asistenti jsou v tomhle překvapivě užiteční. Nemají citovou vazbu na současné řešení. Často navrhnou jednodušší, přehlednější a líp udržovatelnou variantu. A čas utopený v záplatách bývá často delší než čas potřebný na přepis.\n\nPravidlo nezní „vždycky přepisuj“. Spíš: „Než strávíš třetí den na stejné chybě, zkus se zeptat na řešení s čistým listem.“",
+      "read_minutes": 2,
+      "source_date": "2026-04-14"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-03-28-02",
+    "type": "INSIGHT",
+    "level": "Builder",
+    "topic": "Vibe Coding",
+    "title": "Mapa, poloha a checklist v jedné aplikaci",
+    "excerpt": "Jeden člen řeší interaktivní aplikaci pro detailing auta. Byla by napojená na web detailera a měla by v sobě mapu, polohu i checklist. Stejný princip se dá použít i u vaření nebo u jakéhokoli postupu, který závisí na kontextu.",
+    "body": "Nápad je jednoduchý. Zákazník otevře stránku, uvidí checklist péče o auto, aplikace zná jeho polohu, ukáže nejbližší servis nebo produkt a přímo z rozhraní může zavolat.\n\nZajímavé je, že se tu spojují tři věci: checklist, tedy co udělat, poloha, tedy kde jsem a co mám poblíž, a přímý kontakt, tedy zavolání bez přepínání mezi aplikacemi. Každá z těch věcí už existuje sama o sobě. Dohromady ale dávají smysl přesně ve chvíli, kdy je člověk potřebuje.\n\nStejná logika funguje i u vaření: recept, ingredience v okolí a dodávka. Nebo u DIY oprav a tréninkových plánů.\n\nTechnicky to není nic složitého. Claude Code zvládne vygenerovat interaktivní HTML checklist za hodinu. Napojení na Google Maps přes statické URL je otázka jednoho kroku. A `tel:` odkaz pro volání přidáte jedním řádkem. Těžší je dobře určit, co má uživatel v každém kroku vidět a udělat. Nemusíte stavět celou aplikaci. Stačí statická HTML stránka, která se chová jako appka.",
+    "read_minutes": 2,
+    "source_date": "2026-03-28",
+    "resurfaced_from": "2026-03-28"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "mastertheflow—hlavní",
+        "name": "Master the Flow — hlavní",
+        "messages": [
+          {
+            "time": "03:48",
+            "author": "Daniel",
+            "text": "📅 WEEKLY REVIEW (6.4. - 13.4.)\nHezké ráno,\nposílám další souhrn toho, co se za poslední týden dělo napříč všemi skupinami v Master the Flow. Pokud jste tady noví a nevidíte starší zprávy, tohle vám dá přehled.\nPro orientaci. Máme čtyři skupiny. Oznámení (novinky a důležité věci), Inspirace & Diskuze (vaše otázky a sdílení), Webináře & Workshopy (akce) a Vibe Coding (stavění aplikací s AI, i bez programátorského zázemí).\n---\n*Co se v komunitě řešilo*\nHodně se diskutovalo o tom, jaké nástroje na stavění aplikací s AI vlastně používat. Jeden člen porovnával zkušenosti a shrnul to tak, že pro jednoduché webovky a rozhraní funguje skvěle Claude Code, na složitější věci pod kapotou jsou zajímavé i jiné nástroje. Další kombinuje Claude s Lovable. Proběhlo i srovnání Cursor vs Claude Code. Závěr? Záleží na tom, co chcete dělat a jak daleko v tom jste.\nJedna členka sdílela svou první zkušenost. Přes ChatGPT si vytvořila jednoduchý test pro svůj web, bez psaní kódu. Zkoušela i jiný nástroj (Manus), ale ten ji po chvíli začal přesvědčovat k dalším platbám. Další člen sdílel hru, kterou si postavil jako HTML soubor. Praktických ukázek není nikdy dost.\nŘešilo se i zabezpečení při práci s AI nástroji. Konkrétně jak nastavit věci tak, aby se nástroj nedostal k datům, ke kterým nemá. Jeden přístup je sdílení přes prostředníka, takže AI nikdy nepřistupuje přímo k ostrým datům. Druhý je izolované prostředí, kde AI pracuje jen ve složce, kterou mu povolíte.\nSdílel jsem postřeh z vlastní práce. Několik dní jsem řešil chybu v jednom projektu, záplatoval ji tam a zpátky a pokaždé se něco jiného rozbilo. Nakonec jsem to nechal navrhnout celé od začátku. Za pár hodin hotovo. Občas prostě stojí za to přestat opravovat a začít znovu.\n---\n*Nový webinář*\nOznámil jsem webinář „Pod kapotou“. Detailní pohled na moji produktivitu, konkrétní nástroje, návyky a systémy, které používám každý den. Pro členy komunity je k dispozici sleva 500 Kč s promo kódem MASTERTHEFLOW.\n---\n*Uttero pro iOS*\nUttero (moje appka na diktování pro macOS) testuju nově i na iOS. Otevřel jsem první testovací sloty pro komunitu. Kdo chce vyzkoušet zdarma, stačí zadat své Apple ID na stránce níže.\n---\n*Užitečné odkazy z chatu*\nWebinář „Pod kapotou“ (sleva 500 Kč s kódem MASTERTHEFLOW)\nhttps://danielgamrot.cz/webinar/pod-kapotou/\nUttero pro iOS, beta testování zdarma\nhttps://danielgamrot.cz/nastroje/uttero-ios/\nClaude Code, tipy na příkazy a zkratky\nhttps://www.linkedin.com/posts/ruben-hassid_26-claude-shortcut-hacks-for-faster-prompts-share-7448336718040330240-YyUP\n---\nMoc mě baví, jak různorodá tahle skupina je. Od lidí, kteří AI zkoušejí poprvé a experimentují s digi produktivitou i mimo AI, po ty, co si staví vlastní nástroje. A všichni se tady vejdou.\nJestli vás něco z recapu zaujalo a chcete k tomu konkrétní příspěvky, napište do Inspirace & Diskuze, dohledám to.\nA kdyby cokoliv, pište klidně DM.\nFajn úterý přeju.\nD."
+          }
+        ]
+      },
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "08:32",
+            "author": "člen komunity",
+            "text": "Dobre rano preji. Dane, jak prosim delas ve WhatsApp to Week Review? Je to super. 🙂 Znam to ze Slacku, ale to umi i WhatsApp?"
+          },
+          {
+            "time": "08:37",
+            "author": "Daniel",
+            "text": "Přes export chatů (zatím jsou to 4 kanály) a lokálně v MacBooku zpracování přes připravený prompt. Chci to zautomatizovat, ale potřebuju to ještě trošku ladit. A krásné ráno!"
+          },
+          {
+            "time": "08:41",
+            "author": "člen komunity",
+            "text": "Dekuji 🙂"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "07:12",
+            "author": "Daniel",
+            "text": "CONTEXT7\nTip pro všechny, kdo vibe codíte. Mrkněte na Context7. Je to rozšíření (MCP server), které vašemu AI asistentovi zpřístupní aktuální dokumentaci knihoven a frameworků. V praxi to znamená, že když AI generuje kód, pracuje s dokumentací, která platí teď, ne s tím, co měl v trénovacích datech. To je důležitý, protože knihovny se mění rychle a AI vám občas navrhne kód s API, které mezitím zmizelo nebo se změnilo.\nJá to používám denně v Claude Code a rozdíl je znát. Nastavení zabere pár minut.\nhttps://context7.com"
+          },
+          {
+            "time": "08:52",
+            "author": "člen komunity",
+            "text": "Včera jsem si ho připojila, kombinuju teď Antigravity a Claude Code. Můžeš prosím uvést nejaky konkrétní příklad, kdy Context7 použiješ?"
+          },
+          {
+            "time": "09:58",
+            "author": "Daniel",
+            "text": "Vždycky, když napojuju technologie. CC už ví, že si tam má sáhnout. Sem tam to neudělá (přistihl jsem ho asi 2x), tak ho tam pošlu. Takže když jsme včera s prckem potřebovali (nutně!) na jeden hudební projekt Suno, CC šel přes Context7."
+          },
+          {
+            "time": "12:19",
+            "author": "člen komunity",
+            "text": "Context7 řeší častý omyl \"AI tomu rozumí\"\nV IT světě se většina používaných nástrojů dál rozvíjí a posouvá. LLM modely jsou naučené k nějakému datu a ani ten není zárukou, že znají vše dost dobře.\nContext7 je nástroj, jak dát AI agentovi způsob si získat dokumentaci, která je \"up-to-date\" (je to MCP)"
+          },
+          {
+            "time": "20:39",
+            "author": "člen komunity",
+            "text": "Jo, jenom pozor, taky neni neomylny. Dneska si muj Claude code natahl dokumentaci k API Soniox a tvrdil mi, ze model v4 neexistuje. Pritom v dokumentaci je napsano, ze existuje, uz 2 mesice. Takze Context7 zrejme nemel aktualni data 🙃"
+          }
+        ]
+      }
+    ]
+  }
+}

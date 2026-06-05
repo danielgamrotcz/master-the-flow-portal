@@ -1,0 +1,349 @@
+{
+  "date": "2026-04-02",
+  "generated_at": "2026-06-05T06:38:25Z",
+  "stats": {
+    "messages": 51,
+    "groups": 2,
+    "members": 8
+  },
+  "cards": [
+    {
+      "id": "2026-04-02-01",
+      "type": "TÉMA TÝDNE",
+      "level": "Začátečník",
+      "topic": "AI náklady",
+      "title": "Kolik komunita měsíčně platí za AI",
+      "excerpt": "Celá diskuze se točila kolem jedné otázky: kolik vlastně dáváme za AI nástroje. Členové psali částky od tisícovky až po víc než 15 000 Kč měsíčně. Hodně z nich přiznalo, že přemýšlí, co zrušit nebo osekat.",
+      "body": "Jeden člen otevřel téma tím, že sdílel svůj průměr kolem 6 500 Kč měsíčně. A tím spustil vlnu přiznání od ostatních.\n\nNa jednom konci jsou lidi, kteří jedou skoro zadarmo. Google Workspace za základní poplatky, free plány AI nástrojů, žádná předplatná. Na druhém konci jsou full stacky typu Claude Max, Cursor, Perplexity a Lovable. Tam se náklady snadno dostanou přes 15 000 Kč.\n\nNejčastěji se v diskuzi opakovala kombinace Claude a ChatGPT vedle sebe. Jeden na přemýšlení a psaní, druhý kvůli obrázkům nebo prostě ze zvyku. Dost lidí ale přiznalo, že tohle zdvojení moc nedává smysl a jeden z nich zruší.\n\nZajímavé srovnání přidal profesionální vibecoder. Platí přes 500 dolarů měsíčně, ale počítá do toho databáze, hosting i desítky aktivních projektů. To už je jiná liga než hobby stack.\n\nHlavní otázka, která z diskuze zůstala: kdy nástroj opravdu ušetří tolik práce, aby se zaplatil?",
+      "read_minutes": 2,
+      "source_date": "2026-04-02"
+    },
+    {
+      "id": "2026-04-02-02",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "AI náklady",
+      "title": "Tři způsoby jak ohlídat výdaje za Claude",
+      "excerpt": "V diskuzi padlo pár konkrétních tipů, jak snížit měsíční fakturu za Claude. Na menší úkoly přepnout na Haiku, nastavit si měsíční limit nebo zvolit Max plán místo přímého API. Každá možnost funguje trochu jinak a hodí se pro jinou situaci.",
+      "body": "Ne každý úkol potřebuje nejsilnější model. Claude Haiku je mnohem levnější než Sonnet nebo Opus. Na jednoduché přepisy, shrnutí nebo formátování dat bohatě stačí. Když budete modely přepínat podle náročnosti, ušetříte rychle. A bez ztráty kvality tam, kde je opravdu důležitá.\n\nClaude Code umí nastavit měsíční limit na extra usage. Pokud jste na Max plánu a nechcete překročit určitou částku, zapněte si ho. Zastaví vás dřív, než přijde nepříjemné překvapení na faktuře.\n\nTřetí tip je o způsobu přístupu. Propojení Claude Code s měsíčním plánem vychází levněji než přímé volání přes API. API dává smysl hlavně vývojářům, kteří staví vlastní aplikace. Pro ostatní je to zbytečně drahá cesta k tomu, co už Max plán nabízí v ceně předplatného.\n\nJeden člen zmiňoval Dispatch na vzdálené ovládání počítače. Tam si radši dopředu spočítejte, kolik tokenů akce sežerou. Práce s rozhraním jich bere výrazně víc než obyčejná práce s textem.",
+      "read_minutes": 2,
+      "source_date": "2026-04-02"
+    },
+    {
+      "id": "2026-04-02-03",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "Vibe Coding",
+      "title": "Task manager navržený pro procházku s kočárkem",
+      "excerpt": "Jedna členka si vibe-codingem postavila vlastní appku na správu úkolů přesně pro svou situaci. Úkoly diktuje na procházce s miminkem a aplikace je pak doma zpracuje. Žádný hotový nástroj tenhle workflow neuměl.",
+      "body": "Tohle je dobrý příklad, proč vibe coding není jen o technickém výsledku. Jde o to, že si člověk může postavit přesně to, co potřebuje. Bez kompromisů, které mají hotové aplikace.\n\nFreelancerka s miminkem řešila konkrétní problém. Když má čas přemýšlet nad úkoly, není u počítače. Když je u počítače, má moc práce. Řešením byla appka, která na procházce vezme hlasový vstup, zpracuje ho a doma z něj připraví úkoly rovnou k práci.\n\nTenhle případ ukazuje širší vzorec. Vibe coding začíná být dostupný i lidem, kteří se nikdy nebrali jako někdo, kdo si „staví aplikace“. Hlavní posun je v tom, že nemusíte rozumět tomu, jak aplikace funguje uvnitř. Stačí popsat, co má dělat, a ladit ji, dokud nefunguje přesně podle vás.\n\nDalší člen ve stejné době ladil todo appku s oddělenými seznamy na nápady a úkoly. Zdánlivě drobnost. Ale přesně ten typ úpravy, kvůli kterému většina lidí přeskakuje mezi pěti různými aplikacemi a stejně není spokojená.",
+      "read_minutes": 2,
+      "source_date": "2026-04-02"
+    },
+    {
+      "id": "2026-04-02-04",
+      "type": "NÁSTROJE",
+      "level": "Expert",
+      "topic": "Claude MCP",
+      "title": "Claude s Notion MCP nebo Cowork — kdy co",
+      "excerpt": "V diskuzi se řešilo, jestli stačí Claude chat napojený přes MCP, nebo má smysl připlácet za Cowork. Komunita se nakonec shodla na celkem jasné odpovědi. Záleží na jedné konkrétní věci.",
+      "body": "Cowork je nadstavba nad Claudem. Umožňuje pracovat s lokálními soubory přímo z chatu, bez kopírování obsahu do okna a bez terminálu. To je její hlavní, a vlastně skoro jediná, výhoda proti samotnému MCP.\n\nClaude chat s Notion MCP funguje dobře, když pracujete s daty v Notionu. Tedy s databázemi, stránkami, tabulkami nebo propojenými záznamy. Jakmile ale potřebujete řešit PDF na disku, soubory v lokálních složkách nebo cokoli mimo Notion, samotné MCP nestačí.\n\nCowork tuhle mezeru vyplňuje. Dá Claudovi přístup k lokálnímu systému souborů, aniž by si uživatel musel nastavovat Claude Code nebo se učit terminál. Pro netechnické uživatele, kteří chtějí víc než jen chat, ale nechtějí rovnou celé vibe coding prostředí, to může být rozumný mezikrok.\n\nShoda z diskuze je zhruba taková: pokud máte všechno v Notionu nebo v cloudu, MCP stačí a Cowork nepotřebujete. Pokud ale pravidelně pracujete s lokálními soubory, Cowork se nejspíš zaplatí úsporou času při přenášení dat.",
+      "read_minutes": 2,
+      "source_date": "2026-04-02"
+    },
+    {
+      "id": "2026-04-02-05",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Dispatch",
+      "title": "Dispatch: Claude ovládá váš počítač na dálku",
+      "excerpt": "Jeden člen testoval Dispatch, nástroj, přes který Claude převezme kontrolu nad vaším počítačem a pracuje za vás. Výsledky jsou zajímavé, ale cena za jedno sezení může překvapit.",
+      "body": "Dispatch se chová jako vzdálený pracovník. Otevřete spojení, řeknete Claudovi, co má na vašem počítači udělat, a on to opravdu udělá. Kliká, píše, přepíná aplikace a otevírá soubory.\n\nV diskuzi se testovalo vibe coding sezení přes Dispatch. Výsledek fungoval, ale účet vyšel zhruba na 11 dolarů za jednu session. To samo o sobě není žádná tragédie, pokud předem víte, za co platíte. Problém je, když netušíte, kolik tokenů taková práce s obrazovkou sežere.\n\nOproti běžnému chatu s Claudem je to velký rozdíl. Každá akce na obrazovce něco stojí. Každý screenshot, každé kliknutí, každý další krok žere tokeny. Model vidí aktuální stav obrazovky jako obrázek, musí ho vyhodnotit a až potom se rozhodne, co udělá dál. Výpočetně i finančně je to násobně dražší než práce s textem.\n\nSmysl to dává hlavně lidem, kteří chtějí automatizovat opakované úkoly na počítači, ale nechtějí se učit skriptování ani terminál. Pro pravidelné používání je ale dobré nejdřív udělat testovací sezení, spočítat náklady a pak rozhodnout, jestli se to vyplatí.",
+      "read_minutes": 2,
+      "source_date": "2026-04-02"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-03-16-03",
+    "type": "INSIGHT",
+    "level": "Začátečník",
+    "topic": "Nástroje pro začátečníky",
+    "title": "Cursor nebo VS Code pro začátečníky",
+    "excerpt": "Instalace Gitu a Claude Code CLI přes příkazovou řádku může být překážka. Člověka odradí ještě dřív, než začne něco stavět. Komunita proto navrhla Cursor nebo rozšíření do VS Code jako dostupnější alternativy se stejnou silou.",
+    "body": "Ne každému se chce začínat v příkazové řádce. Jeden člen zkoušel instalovat Git a Claude Code CLI a narazil na technické záseky, které člověka snadno odradí hned na startu.\n\nKomunita navrhla dvě alternativy:\n\n**Cursor** — editor postavený na VS Code s AI přímo uvnitř. Stáhnete, nainstalujete, otevřete složku a můžete pracovat. Terminál tam je taky, ale pro první kroky ho nepotřebujete.\n\n**VS Code s rozšířením Claude** — pokud už VS Code znáte, stačí přidat rozšíření Claude. Dostanete podobný zážitek bez další složité instalace.\n\nPro úplné začátečníky je Cursor nejspíš jednodušší start. Terminál se naučíte později, až ho budete potřebovat. Teď jde hlavně o to začít něco stavět, ne se hned učit unixové příkazy.",
+    "read_minutes": 2,
+    "source_date": "2026-03-16",
+    "resurfaced_from": "2026-03-16"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "11:54",
+            "author": "Daniel",
+            "text": "Píšu nový newsletter a mám tam jedno téma – že jsem snížil počet různých předplatných a částku, kterou měsíčně posílám. Uznávám, byl jsem magor. Teď mám vlastně Claude Code (OK, je to Pro Max) + Google Workspace plus nějaké drobnosti.\n>>> Každopádně víte, kolik za nástroje utratíte? AI, úkolovníky…\nVykopávám. Já mám poslední měsíce průměr cca 6500 Kč."
+          },
+          {
+            "time": "11:56",
+            "author": "člen komunity",
+            "text": "já jsem začátečník a za úložiště a základní google nástroje do 1000,-/měsíc. teprve objevuju další možnosti 🙂"
+          },
+          {
+            "time": "11:58",
+            "author": "Daniel",
+            "text": "To je super. Pamatuju na konverzaci s Dalou Musilem (profík přes Notion, https://dalamusil.com/). Jede nebo alespoň jel vše zdarma. A byl s tím v pohodě. Inspirace. 🙂"
+          },
+          {
+            "time": "12:01",
+            "author": "člen komunity",
+            "text": "Já jsem někde na 3500 Kč/měs."
+          },
+          {
+            "time": "12:01",
+            "author": "Daniel",
+            "text": "Za co?"
+          },
+          {
+            "time": "12:03",
+            "author": "člen komunity",
+            "text": "Dneska na to téma vydal podcast Jindra Fáborský. :) Prý platí 500$ měsíčně, ale byla to špička v Thajsku, kdy fulltime vibe codoval."
+          },
+          {
+            "time": "12:03",
+            "author": "člen komunity",
+            "text": "Cursor, Claude, Perplexity, Lovable"
+          },
+          {
+            "time": "12:03",
+            "author": "Daniel",
+            "text": "Aha. Zase druhý.\nKaždopádně špičky znám. Cursor špičky. Perplexity research špičky. A tak. 😀"
+          },
+          {
+            "time": "12:04",
+            "author": "člen komunity",
+            "text": "Počítá do toho i různé dtb, Vercel apod. Má hodně projektů. 🙈"
+          },
+          {
+            "time": "12:05",
+            "author": "Daniel",
+            "text": "Jj, žere to."
+          },
+          {
+            "time": "12:05",
+            "author": "člen komunity",
+            "text": "Freelo 1700 Kč\nCanva 300 Kč - teď asi zas budu rušit\nchatGPT - cca 500 Kč?\nClaude - cca 500 Kč\nJedno z AI asi zruším, Claude jsem si založila jen kvůli tobě @Daniel Gamrot abych si zkusila vibe coding 🙂 Zatím mi bude asi jeden z nich stačit."
+          },
+          {
+            "time": "12:05",
+            "author": "člen komunity",
+            "text": "Já platím ten nejnižší Claude, ale narážím na limity. 🙈 Pak Workspace a ChatGPT Go kvůli obrázkům."
+          },
+          {
+            "time": "12:08",
+            "author": "Daniel",
+            "text": "Naprosto chápu. Limity nemám rád. A že jich je. Drž se. 🧡"
+          },
+          {
+            "time": "12:09",
+            "author": "Daniel",
+            "text": "Kdybys chtěla argumenty pro Claude, napiš. Vč. vibe codingu. Fakt. Jsem 23. 4. zpět."
+          },
+          {
+            "time": "12:15",
+            "author": "člen komunity",
+            "text": "Zdravím přítomné 🙂 S AI pracuju a zkouším ChatGPT, Claude, Perplexity.. Zatím vše ve free verzi, jedu na Google Workspace, MS 365, Todoist (ale ten zruším, protože nechutně zvedli ceny).. Takže cca 1,1k měsíčně.. Mám v hlavě toho dost, co bych všechno chtěl, ale teprve se učím, jak to převést do praxe.."
+          },
+          {
+            "time": "12:26",
+            "author": "člen komunity",
+            "text": "Takže, gpt , cursor, Google workspace, claude - s ohledem na tebe … k porovnání proti cursoru ,Perplexity free tak 3tis… nepočítám pak další appky ohledně profese, marketing,Ucto, to je další 3 tis. 🙄 no jdu redukovat 🫣kurnik"
+          },
+          {
+            "time": "12:30",
+            "author": "člen komunity",
+            "text": "Zdravím všetkých,\nClaude Max je môj hlavny pracovný nástroj, ale keďže human in the loop je elementárna zásada pri práci s AI, tak Google workspace (Gemini a Notebooklm) na validovanie výstupov a k tomu Clickup na task management, sem tam Perplexity (Comet, na rok zadarmo). Celé prepojené cez MCP, Claude idem cez IDE Cursor.\nMesačne 130€ cca 3200 Kč.\n@člen prosím ťa, je tento WhatsApp Channel napojený na AI a budeš z neho robiť štatistické analýzy a insighty? Vzniká tu zaujímavá skupina, čo sa týka skladby a veľkosti. Vďaka"
+          },
+          {
+            "time": "12:31",
+            "author": "Daniel",
+            "text": "A co konkrétně bys chtěl? Ano, jsem magor. Potřebuju to okamžitě vyřešit."
+          },
+          {
+            "time": "12:32",
+            "author": "Daniel",
+            "text": "Je to úplně v pohodě. Pohybuju se mezi třemi a patnácti tisíci. Někdy přetáhnu na dvacet. Prostě záleží na ročním období, náladě a kontokorentu."
+          },
+          {
+            "time": "12:39",
+            "author": "Daniel",
+            "text": "Super setup!\nTřeba ta vibe coding skupina byla (je!) naprosto skvělá. Spousta lidí, kteří vymysleli spoustu věcí. Chci, ať to jde do světa. Samozřejmě jen tak, aby s tím byli autoři a autorky v pohodě."
+          },
+          {
+            "time": "14:10",
+            "author": "člen komunity",
+            "text": "Ahoj.\nMěsíčně za moje nástroje co nejsou jen pracovní (často je to sdíleno i pro práci), včetně zábavy (Netflix, Apple One a pod.) 3300 Kč.\nMyslel jsem, že to bude víc. Kdysi jsem to revidoval a asi jsem to hodně ořezal."
+          },
+          {
+            "time": "18:07",
+            "author": "člen komunity",
+            "text": "Ahoj vespolek, platim si Claude,  takze do 1000 Kč za mesic a souhlasim s @člen taky toho mam dost"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "10:02",
+            "author": "člen komunity",
+            "text": "Já už to tu zmiňoval, ale Cowork mi staví kompletně Notion, pracuje s jeho daty, pracuje s projekty. Mám tam jak projekty, tak svůj second brain na práci i osobní život. Frameworky, procesy. Staví a upravuje mi tam nabídky podle mých šablon. To je pro mě zatím nejlepší use case.\nPráce se soubory nice, ale nějak nevyužiju. Teď koketuju s tím, že mi z newsletterů v Gmailu vytahuje zajímavý info hromadně. Nebo mi roztřídí takovou tu balastovou část inboxu - což jsou často aktualizace atd.\nTeď s ním řeším i automatizaci socek - vytáhne z Notionu jednotlivé nápady, které tam dumpuju a přes MCP to bude tlačit do Bufferu (to je služba na plánování automatického postování na socky).\nJeště se chci pustit do toho, aby mi v Notionu udělal kompletní revizi toho second brain, aby z něho mohl co nejefektivněji Claude tahat informace a radit mi."
+          },
+          {
+            "time": "10:05",
+            "author": "člen komunity",
+            "text": "Tohle mně dost zajímá..nevíš dá se k tomu někde něco načíst?"
+          },
+          {
+            "time": "10:20",
+            "author": "člen komunity",
+            "text": "Jedu podobný use case čistě přes Claude chat + Projects + Notion MCP. Má to nějakou výhodu, nebo přidanou hodnotu k tomu přistupovat přes Cowork? (Vlastně tím navazuji na můj včerejší dotaz)."
+          },
+          {
+            "time": "10:25",
+            "author": "člen komunity",
+            "text": "Dal bych to do Youtube :)"
+          },
+          {
+            "time": "10:25",
+            "author": "člen komunity",
+            "text": "Zajimavej dotaz. Asi bychom ho meli hodit do Clauda :) ale on mi doporučil Cowork 🤷‍♂️"
+          },
+          {
+            "time": "10:29",
+            "author": "člen komunity",
+            "text": "Nedávno jsem hledal nějaé popsané case studies a našel jsem vesměs povrchní články základní práce s Claude + Notion MCP. Osvědčilo se mi prostě “se vrhnout do vody”. Propoj si Claude se svým Notion workspace přes MCP a jedeš. Na začátku mě až trochu vystrašilo, když byl Claude schopen na obecně formulovaný dotaz najít 4 konkrétní stránky v oceánu mých teamspaců, databází a dalších nestrukturovaných pages a udělat mi z nich report. Musel jsem si ověřovat, zda to fakt sedí a … magic 🪄 - sedělo.\nNásledně jsem si pak postupnou konverzační taktikou přebudoval celý workspace k obrazu svému - PARA+, CRM, Knowledge base, Fin dashboard, Planning+projects, atd. Vše propojené tak jak potřebuji - interně v Notion i naexterní appky (Google workspace, kalendář, scheduler, messenger,…)"
+          },
+          {
+            "time": "10:30",
+            "author": "člen komunity",
+            "text": "Také jsem zkoušel. Drží mě v Chatu - dokud prý nebudu potrebovat přistupovat k fyzickým souborům a periferiím desktopu, tak tam mam zůstat 🙂"
+          },
+          {
+            "time": "10:30",
+            "author": "člen komunity",
+            "text": "Já se jdu taky pochlubit, že už jsem si taky navibecodila appku. Celý život mám problém s tím, že mi nefungují aplikace na správu úkolů. Resp. vždycky nějakou začnu, pak ji opustím, a pak začnu novou.\nTakže jsem pak začala používat Claudea, do kterýho jsem nasypala všechny úkoly, který mě napadaly, aby mi je různě třídil.\nTeďka jsem si na to vytvořila vyloženě appku. Funguje to přesně tak, jak si představuju, i když mě vždycky napadne, co by tam mohlo být lepší, tak si to upravím a je to úplně boží.\nPřipadám si jako kouzelník."
+          },
+          {
+            "time": "10:32",
+            "author": "člen komunity",
+            "text": "Během uplynulého týdne jsem k tomuto účelu otestovala Dispatch v Claudovi, a přijde mi to úplně neuvěřitelné.\nTakže diktuji na dálku a on si pracuje na počítači u mě doma"
+          },
+          {
+            "time": "10:33",
+            "author": "člen komunity",
+            "text": "Pošli screenshot. Já dělal to samé , pořád to vylepšuji."
+          },
+          {
+            "time": "10:35",
+            "author": "člen komunity",
+            "text": "Jo díky za komentář. Já nepoužívám Notion, nicméně právě mám hormady dokumentů pro market research, spuštím v claude několik procesů abych dostal výsledky a mám pocit že to dělám zbytečně komplikovaně a možná i draze z pohledu spotřeby tokenů"
+          },
+          {
+            "time": "10:38",
+            "author": "člen komunity",
+            "text": "Dobrej point. Ja tam totiz od zacatku prevadel pdfka z kompu a tak intuitivne pouzil cowork. Ale vlastne dalsi operace bez souboru budou asi levnejsi na tokeny pres chat."
+          },
+          {
+            "time": "10:39",
+            "author": "člen komunity",
+            "text": "Tak pokud máš dokumenty lokálně na disku, tak to je přesně use case pro cowork. Pusť ho do toho a on už ti z toho ty výsledky dostane."
+          },
+          {
+            "time": "10:40",
+            "author": "člen komunity",
+            "text": "no nad tím pak musí udělat research on sám a dotáhnout data a dát je do formátu který po něm chci. Ale jo máš pravdu budu to muset zkusit"
+          },
+          {
+            "time": "11:44",
+            "author": "člen komunity",
+            "text": "To by mě zajímalo :)"
+          },
+          {
+            "time": "11:58",
+            "author": "člen komunity",
+            "text": "Je to tak skvělé a mohu tomu říct, jaký typ času mám, protože já nemám úplně klasicky, že bych celý den seděla někde u počítače nebo měla tu příležitost.\nMám malé miminko, se kterým chodím na procházky s kočárkem, takže soustředěný čas mám málokdy.\nAle různé úkoly můžu dělat i přesně na mobilu. Když jdu na procházku, nebo když si miminko zrovna hraje a mám prostě pět, deset minut. Tak jsem měla velký problém s tím, že když jsem otevřela hlavní stránku nějaké apky na úkoly, tak mě to hnedka přehltilo.\nTakže mám tady úvodní stránku prostě jenom na výběr, čemu se chci věnovat. Jestli chci nadiktovat nové úkoly, což je brain dump, nebo jestli mám čas splnit nějaké úkoly, a nebo nadiktovat, jaké úkoly už jsem splnila."
+          },
+          {
+            "time": "12:40",
+            "author": "člen komunity",
+            "text": "Trochu se Peru s některými drobnostmi jako funkčními připomínkami apod"
+          },
+          {
+            "time": "12:45",
+            "author": "člen komunity",
+            "text": "Mám tam nastavený systém, aby mi to ukazovalo, co hoří.\nUkazuje mi, co mě čeká v rámci dneška, příštího týdne a v rámci následujícího měsíce.\nTo mi přijde zatím docela dobré pro moje účely."
+          },
+          {
+            "time": "12:45",
+            "author": "člen komunity",
+            "text": "Taky pracuju na todo apce. Konkrétně takové, aby ji používala celá rodina a byly tam osobní tasky i společné. Jsou tam i body, které budou sbírat děti za úkoly navíc a za které si pak můžou vybrat odměny. 😄"
+          },
+          {
+            "time": "12:46",
+            "author": "člen komunity",
+            "text": "Já už to mám jako Todo. 2 sekce nápady a úkoly. Nápady se dají měnit na úkoly a obecně. Začíná to mít smysl ale ještě to trochu  prace potřebuje. Zrovna včera jsem řešil možnost přidání fotky nebo linku na web"
+          },
+          {
+            "time": "13:16",
+            "author": "člen komunity",
+            "text": "Wow, to zní super, máme ještě moc malé děti, ale zní to parádně. Já mám teda dost old school ve všem a jsem ráda, že jsme aspoň teď přešli na Trello. 😅"
+          },
+          {
+            "time": "13:34",
+            "author": "člen komunity",
+            "text": "Hmm, tak jsem zjistila, že mi Anthropic strhnul cca 11 $ od chvíle, kdy jsem začala vibecodit 😅😅 Nemáte někdo nějaké zkušenosti s tím, jak to omezit nebo udělat levnější v Dispatch?"
+          },
+          {
+            "time": "13:48",
+            "author": "člen komunity",
+            "text": "já na drobný úkoly říkám ať přepne na haiku model, ale nevím jak se chová z Gui, jestli ti to zafunguje. V CC úplně v pohodě"
+          },
+          {
+            "time": "13:51",
+            "author": "člen komunity",
+            "text": "napr:\n# Tester\nQA engineer – validace, testy a ověření acceptance criteria.\n- **Analytical**: systematicky pokrývá happy path i edge cases\n- **Deliberative**: předvídá co se může pokazit před tím, než se pokazí\n- **Consistency**: zajišťuje reprodukovatelnost testů\n- **Restorative**: nachází bugy a navrhuje jak je reprodukovat a opravit\n- Použij na své tasky výhradně model: Haiku 4.5\nOvěřuj že výstupy splňují acceptance criteria. Navrhuj testy, zajišťuj reprodukovatelnost, eviduj nálezy.\n...."
+          },
+          {
+            "time": "16:37",
+            "author": "člen komunity",
+            "text": "Já mám Claude code propojenej s klasickým accountem, ne přes API, takže mi vibing spend jde z měsíčního plánu a když chci dělat něco navíc, dokoupím si extra usage, u tý jde nastavit měsíční limit :)"
+          },
+          {
+            "time": "18:11",
+            "author": "člen komunity",
+            "text": "Ahoj, udelal jsem si pred kurze od Daniela jednoduchou appku pres Clauda, je to vlastne html stranka, kde zadavam ukol, na ktery budu pracovat. Hodne me to pomaha zaseknout se na tematu. Co jsem ale chtel sdilet, ze jsem si tam pridaval dalsi funkce a pak jsem spis pridavam funkce a aplikaci jsem prestal pouzivat. Uz to bylo vetsi effort vyplnovat nez mi to prinaselo hodnotu. Stava se vam to taky?"
+          },
+          {
+            "time": "18:13",
+            "author": "člen komunity",
+            "text": "Jj jednu takovou apku jsem dělal tento týden a když ji mám skoro ready tak si říkám. Vlastně proč ,? 😂😂🙈🙈"
+          },
+          {
+            "time": "18:16",
+            "author": "člen komunity",
+            "text": "Ahoj, ja jsem si s claude code udelal second brain (COG - vysel jsem z repa na githubu a uzpusobil si to), a vyhovuje mi, ze tim, ze je to jen kombinace markdownu a skillu, tak si s tim vlastne jenom muzu povidat a nemusim nikde nic zadavat jak pise Frankie."
+          },
+          {
+            "time": "19:18",
+            "author": "člen komunity",
+            "text": "Já to tak asi taky mám, ale i tak 😃"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "date": "2026-06-02",
+  "generated_at": "2026-06-05T08:12:11Z",
+  "stats": {
+    "messages": 28,
+    "groups": 4,
+    "members": 5
+  },
+  "cards": [
+    {
+      "id": "2026-06-02-01",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Claude Code",
+      "title": "Upgrade v CC může znamenat přetečený kontext",
+      "excerpt": "Jeden člen komunity zjistil, že hláška v Claude Code, která vyzývala k upgradu předplatného, ve skutečnosti neznamenala vyčerpaný limit. Jen přetekl kontext session. Stačilo otevřít novou session a jet dál normálně.",
+      "body": "Claude Code může hlásit, že máte upgradovat, i když jste reálně na limit předplatného ještě nenarazili. Jeden developer to zažil na vlastní kůži. Myslel si, že musí přejít na dražší plán, ale problém byl jinde. V session se nahromadilo moc kontextu a model začal blbnout. Stačilo otevřít novou session.\n\nJak poznáte, že jde o kontext, a ne o skutečný limit? CC začne odpovídat divně. Zkracuje odpovědi, přeskakuje instrukce, ignoruje části zadání. Nová session to vyřeší bez dalšího placení.\n\nKdyž děláte na větším projektu, vyplatí se ho rozdělit na menší části a pravidelně začínat s čistou session. Předejdete tím nejen přetečení kontextu, ale i postupnému zhoršování výstupů. Model začne dělat kompromisy a vy si toho nemusíte všimnout včas.",
+      "read_minutes": 2,
+      "source_date": "2026-06-02"
+    },
+    {
+      "id": "2026-06-02-02",
+      "type": "INSIGHT",
+      "level": "Expert",
+      "topic": "Claude Code",
+      "title": "Hooks a skills zabraňují opakovaným chybám CC",
+      "excerpt": "Komunita řešila, jak přimět Claude Code, aby dodržoval pravidla i bez neustálého připomínání. Řešení se našlo ve dvou nástrojích: pre-commit hooky a skills.",
+      "body": "CC má sklony zobecňovat. Když mu nedáte jasná pravidla, která něco opravdu vynutí, rozhodne se po svém. A ne vždycky tak, jak chcete.\n\nPre-commit hook funguje jako síto. Chytí chybu ještě před uložením commitu. Příklad z diskuze: CC opakovaně přidával do commit message řádek, který tam neměl být. Hook ho automaticky odstraní, bez dalšího promptování. Chybu vyřešíte jednou a hook ji pak hlídá za vás.\n\nSkills jsou na něco jiného. Popíšete proces krok za krokem a CC ho musí projít přesně podle zadání. Tam, kde obecný přístup vede pokaždé k trochu jinému výsledku, skill drží konzistenci. Příklady z komunity: skill na generování obsahu, skill na code review, hook na detekci tajných klíčů v commitu.\n\nKombinace hooků a skills výrazně snižuje potřebu výstupy pořád dokola opravovat. Nemusíte pravidla neustále připomínat. Systém je hlídá za vás.",
+      "read_minutes": 2,
+      "source_date": "2026-06-02"
+    },
+    {
+      "id": "2026-06-02-03",
+      "type": "POSTAVIL JSEM",
+      "level": "Expert",
+      "topic": "Claude Code",
+      "title": "Nástroj na automatický střih videa s Kdenlive výstupem",
+      "excerpt": "Jeden člověk z komunity dělá nástroj, který automaticky rozseká video na scény a vygeneruje projektový soubor pro open source editor Kdenlive. Claude Code tu funguje jako stavitel nástroje, ne jako někdo, kdo přímo ovládá video.",
+      "body": "Cíl je jednoduchý. Nemuset video stříhat ručně v editoru, ale nechat AI projít obsah videa a rovnou vygenerovat hotový projekt. Kdenlive používá otevřený formát .kdenlive, což je XML soubor, který jde vytvořit skriptem.\n\nPostup vypadá takhle: Claude Code dostane přepis nebo text videa, rozdělí ho na scény, doplní časové značky a vytvoří soubor projektu s navrženým rozložením. Ten se pak otevře v Kdenlive, kde už stačí zkontrolovat střihy a exportovat.\n\nProjekt ale narazil i na praktické problémy. CC občas vrátí nepřesné časové značky nebo se u delší sekvence zasekne a přestane odpovídat. Komunita navrhla řešení: zpracovávat obsah po menších částech, po větách nebo odstavcích. Každý chunk zpracuje vlastní subagent a výstupy se potom složí do jednoho projektu.\n\nTenhle postup se zatím ukazuje jako spolehlivější než přímá práce CC s multimediálním obsahem. Místo hodin stříhání stačí pár minut oprav v editoru.",
+      "read_minutes": 3,
+      "source_date": "2026-06-02"
+    },
+    {
+      "id": "2026-06-02-04",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Builder",
+      "topic": "Claude Code",
+      "title": "Jak zvládáte situace, kdy CC udělá co chce",
+      "excerpt": "Jeden člen komunity se ptal, jak ostatní řeší, když si Claude Code dělá věci po svém. Co dělat, když model změní zadání nebo udělá něco jiného, než po něm člověk chtěl?",
+      "body": "Claude Code je silný nástroj, ale chyby dělá. Jeden developer popsal situaci, kdy CC přeskočil část zadání a udělal si to po svém. Otázka „jak s tím pracujete vy?“ rozjela diskuzi, která skončila u hooků a skills. To už je ale spíš pro lidi, kteří s CC dělají pravidelně a znají jeho typické chování.\n\nCo když s tím teprve začínáte? Zkušenosti z komunity ukazují pár jednoduchých postupů. Zadávejte kratší úkoly s jasným výstupem. Líp se to kontroluje než jeden velký příkaz. Po každém kroku si nechte od CC shrnout, co udělal. Pak to porovnejte se zadáním. U kódu pusťte testy. U textu si výstup přečtěte celý.\n\nJak to řešíte vy? Máte systém, který vám funguje?",
+      "read_minutes": 2,
+      "source_date": "2026-06-02"
+    },
+    {
+      "id": "2026-06-02-05",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "AI vzdělávání",
+      "title": "Fyzický hardware jako rozšíření AI vzdělávání",
+      "excerpt": "Jeden člen komunity chce ve výuce programování otestovat robota Reachy Mini a BBC micro:bit. Fyzické zařízení přidává k učení s AI rozměr, který samotná obrazovka nenabídne.",
+      "body": "Učit programování jen přes text a kód na obrazovce má svoje limity. Jeden člen komunity chce otestovat robota Reachy Mini a BBC micro:bit. Reachy Mini je open source humanoidní robot pro výzkum a vzdělávání. BBC micro:bit je programovatelný mikrokontrolér, který se často používá ve školách.\n\nObě věci mají blízko k AI a programování. Micro:bit podporuje Python. Reachy Mini je platforma pro fyzickou AI. Kód tak hned dostane fyzickou odezvu. Robot se pohne, LEDka blikne, senzor zareaguje. Z abstraktního kódu na obrazovce je najednou něco, co je vidět a dá se vyzkoušet.\n\nPro výuku AI je to zajímavá otázka. Mění fyzické prostředí to, jak se učíme přemýšlet o automatizaci? Podrobnosti o projektu zazní na dalším Show and Tell.",
+      "read_minutes": 2,
+      "source_date": "2026-06-02"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-05-16-02",
+    "source_date": "2026-05-16",
+    "topic": "GPT a Perplexity na překlad posterů",
+    "excerpt": "Členka komunity ukázala kolegyni, jak pomocí GPT a Perplexity překládat konferenční postery. Prakticky, přímo v reálné situaci.",
+    "body": "Příklad z praxe: překlad odborných posterů z konference. Žádné složité nastavování, žádný kód. Stačilo vědět, jaký nástroj použít a jak se správně zeptat. Přesně takové využití se dá během pár minut ukázat i ostatním.",
+    "resurfaced_from": "2026-05-16"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "mastertheflow—hlavní",
+        "name": "Master the Flow — hlavní",
+        "messages": [
+          {
+            "time": "20:45",
+            "author": "Daniel",
+            "text": "*📅 TÝDENNÍ SOUHRN (25.5. - 31.5.)*\nJirka napsal v sobotu větu, kterou jsem několikrát zkoumal. Vlastně ani ne tak tu větu, jako ten dopad z toho, když s tím začnu něco dělat. Jen upozorňuju, že jsem nadšený power hobík. A to sdělení? Opus 4.7 a 4.8 pro většinu práce nepotřebujete. Jsou o dost náročnější na tokeny. Opus 4.6 bohatě stačí. V Claude Code CLI ho spustíte přes claude --model claude-opus-4-6.\nPDF export z webu. GoFullPage nebo Fireshot prý fungují skvěle. Nemám zkušenost, ale pokud byste to řešili, tak je to třeba inspirace. Podrobnosti ve Vibe Coding skupině.\nA pak věčné „česky nebo anglicky“. Čeština zabírá víc kontextového okna než angličtina. Tento týden z toho vznikla poznámka: „Instrukce a dokumentace v angličtině, promptování v češtině.“ SuperWhisper k tomu umí diktovat česky a výstup dodat anglicky. Stejně jako Uttero. :)\nPak tady byla bezpečnostní zpráva.\nOX Security zveřejnil zprávu o architektonické zranitelnosti v Anthropic MCP, která dovoluje vzdálené spuštění kódu přes dodavatelský řetězec AI. Nikol to sdílela uprostřed týdne. Jsem mega vděčný za tyhle updates. Sám stíhám sledovat jen část těchto novinek a jsem rád za každou podobnou zmínku. Jako hobíkovi mi umožňují přemýšlet o tom, jak a co dělám nejen v kontextu toho, co dělám, ale taky o tom pozadí, které tam prostě je.\nJo a taky Thuy navrhla sbírat moje iPhone a Mac hacky na jedno místo. Pro mě to je boží nápad. Zatím tada jen nápad. :D Těch tipů mám hromadu, jen tím nechci plevelit. Zajímalo by vás to? Napište!\nPoslední info – Show and Tell bude až ve středu 10. 6. v 18.30 na Zoomu. Musel (chtěl) jsem to posunout. Každopádně to bude boží a těším se na to. Informace v sekci Webináře a Workshopy.\nUžívejte večer.\nD."
+          }
+        ]
+      },
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "07:01",
+            "author": "člen komunity",
+            "text": "Důvod, proč se ve věcech šťourám, je jednoduchý. Pracuji sám na sebe a jsem rád v pohodě. Vše, co přispívá k lepšímu pocitu, ať už se jedná o sebemenší vylepšení v oblasti AI, workflow nebo stylu práce, vítám. I malinkaté vylepšení může vést k velké radosti. 😃 V neposlední řadě mě pohání obyčejná zvědavost a neustálý úžas nad tím, co je dnes možné."
+          },
+          {
+            "time": "19:37",
+            "author": "Daniel",
+            "text": "moc krásný, děkuju"
+          },
+          {
+            "time": "19:37",
+            "author": "Daniel",
+            "text": "Jsem taky děsně línej a beru to jako výhodu. 🙂"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "00:50",
+            "author": "člen komunity",
+            "text": "2x ChatGPT Pro. CC nedává smysl, dávají naprostou almužnu ve srovnání s Codexem. :D"
+          },
+          {
+            "time": "07:14",
+            "author": "člen komunity",
+            "text": "Děkuju všem za reakce a gratuluju k downgrade na Pro. ZPětně jsem zjistil, že nepotřebuju max, ale otevřít \"New session\", protože jsem měl \"přečerpaný kontext\" v rámci session. Což mi CC dal najevo hláškou \"Upgrade\". Ani upgrade by nepomohl. Jinak jak zvládáte, když CC změní svjévolně zadání a udělá si co chce? Jak kontrolujete výstupy? Možná mám na tyhle \"svévolnosti\" smůlu jen já."
+          },
+          {
+            "time": "07:56",
+            "author": "člen komunity",
+            "text": "jakmile dělá nějakou botu často, napiš si na to buď hook - třeba mám na pre git commit aby mi necpal CoCreated w/ Claude Code do commit messages, nebo když je to celý proces tak skill kde důležitý věci musí dělat skriptem a ne genericky, např mám vlastní dlouhodobou paměť tak má skill kde má fci lore_store a to je shell script který se chová vždy stejně."
+          },
+          {
+            "time": "12:36",
+            "author": "člen komunity",
+            "text": "Wow. Já dělám zatím jednodušší věci. Třeba střih videa - kdy CC říkám: \"Tady je interview. Tady je video s otázkami. Tady je audio s odpověďmi. Tady je text jak to má jít po sobě. A stejně vynechá část odpovědí. Napíše, že vše zkontroloval. A zase znovu přijdu na část odpovědí, která tam není. Prohlásí, že vše zkontroloval a zase část slov chybí."
+          },
+          {
+            "time": "13:24",
+            "author": "člen komunity",
+            "text": "Otázka je, jestli je v tomto CC dobrej nástroj.\nResp. minimálně bych ho nechal postavit si na to vhodný nástroj, který pak bude používat."
+          },
+          {
+            "time": "14:06",
+            "author": "člen komunity",
+            "text": "Já s multimodálním contentem moc nepracuji, ale stejně jak o Aleš si myslím, že na to možná budou lepší nástroje, než čistý CC. Každopádně si dokážu představit, že multimedia žerou kontext víc a i když do kontextu Opusu se vejde 1M tokenů, stejně mám zkušeosti, že aniž by něco uteklo z kontextového okna, čím vejš(dál do historie) to je, tím větší chybovost to přináší (zapomíná, nedodržuje apod."
+          },
+          {
+            "time": "14:07",
+            "author": "člen komunity",
+            "text": "neumí něco takového Davinci Resolve?"
+          },
+          {
+            "time": "14:07",
+            "author": "člen komunity",
+            "text": "i když zůstaneš v CC, zkus s ním probrat vylepšení workflow třeba tak, že rozseká to vstupní  video / audio na chunky a ty pak foukne subagentům třeba paralelně na zpracování - když budou mít menší blok na zpracování, budou podle mě výsledky lepší"
+          },
+          {
+            "time": "14:07",
+            "author": "člen komunity",
+            "text": "Případně NVidia teď představila nějaký nový framework na omnimodal AI"
+          },
+          {
+            "time": "14:08",
+            "author": "člen komunity",
+            "text": "omnimodal? :D tvl kde se ten pokrok zastaví :D"
+          },
+          {
+            "time": "14:15",
+            "author": "člen komunity",
+            "text": "v kostce: postav si vlastní střihový editor pro ten usecase\ntrochu detailu :)\nTaké řeším střih videa a jdu na to, že cc mi udělal nástroj s GUI, kterou nechám, ať vygeneruje střihový soubor .kdenlive, kde si doladím co potřebuju (barevnost, otočení, ...). Už jsem ho donutil dělat správně střihy, kde chci. Já to mám přes analýzu obrazu (relativně jednoduchý případ) a při změně scény dělá střih. Pro audio by mělo jít něco podobně, akorát bys potřeboval pro to audio mít dobré časové značky (framy) per věta / slovo a dle toho pak stříhat video je drobnost. Na konci finální export dělám v kdenlive.\nTakže nemusí ani běžet složitá analýza videa v CC a CC negeneruje video, ale jen aplikaci na stříhání a v tvém případě i něco na přepis s časovými značkami. Export by asi už nebyl takový problém, aby ti cc udělal funkci do té utilitky, co to seká. A pak bys to mohl mít i mimo .kdenlive, ale jen nějaký obyč .json, jestli by ti to stačilo."
+          },
+          {
+            "time": "14:16",
+            "author": "člen komunity",
+            "text": "jj spojení AI a fyzična https://www.nvidia.com/en-us/omniverse/"
+          },
+          {
+            "time": "14:26",
+            "author": "člen komunity",
+            "text": "Budu se synem testovat toto https://reachymini.net/ (https://huggingface.co/spaces/pollen-robotics/Reachy_Mini#/download) 🙂 a ještě toto https://ruzovka.cz/cs/micro-bit/19636-bbc-micro-bit-v2-2-go-kit-pro-vyuku-programovani.html s tímto https://ruzovka.cz/cs/micro-bit/20664-elecfreaks-micro-bit-smart-home-kit-bez-desky-micro-bitu.html 🙂"
+          },
+          {
+            "time": "16:01",
+            "author": "člen komunity",
+            "text": "S CC jsem naprogramoval vychytávku, kdy když vložím soubor, automaticky přepíše včetně časových značek a umožní střih. Akorát s tím jak stříhat jsem to ještě nevychytal."
+          },
+          {
+            "time": "16:03",
+            "author": "člen komunity",
+            "text": "Jestli umí, tak o tom nevím. Respektive v DR si mohu sestříhat soubory sám. Stejně jako v iMovie si to můžu udělat ručně. Jen se mi nechce dělat ručně manipulaci s jedničkama a nulama. To by mohl zvládnout stroj. Když ho to dobře naučím."
+          },
+          {
+            "time": "16:07",
+            "author": "člen komunity",
+            "text": "Díky za tip. .kdenlive jsem zatím neslyšel. Mám zkušenost že ani když mám soubor s časovýma značkama tak udělá střih ještě před koncem slovo a dost mě to štve. Logicky by to měla být drobnost, není. Myslíš, že by mi vytvořil nějaký editor typu DaVinci, nebo iMovie, kdy bych na závěr ladil vše sám, než vše vysvětlovat?"
+          },
+          {
+            "time": "16:09",
+            "author": "člen komunity",
+            "text": "Určitě by to dal, pokud jde jen o střihy a přeházení pořadí.\nNebudeš tam zápasit s časováním? Audio na vteřiny vs video na framy/s?"
+          },
+          {
+            "time": "16:13",
+            "author": "člen komunity",
+            "text": "Mám převedené jak audio tak video na soubory se stejnou strukturou (.str soubor). Asi dám ty časové značky kratší, zatím jsou po cca 5 vteřinách, vypadají takhle: 1\n00:00:00,000 --> 00:00:05,599\nAbout Frank Abagnale. Frank Abagnale is a renowned security consultant and author whose life inspired\n2\n00:00:05,599 --> 00:00:10,419\nthe Spielberg-directed movie Catch Me If You Can. After serving prison time for fraud committed\n3\n00:00:10,419 --> 00:00:16,339\nbetween the ages of 16 and 21, he started lecturing for the FBI Academy and FBI field offices without\n4\n00:00:16,339 --> 00:00:21,420\nany compensation, and 40-plus years later, he is still due this and became a leading expert on\n5\n00:00:21,420 --> 00:00:26,660\nidentity theft and fraud prevention. Today, he speaks around the world on these subjects to\n6\n00:00:26,660 --> 00:00:32,280\ncorporations, financial institutions, government agencies, ET Dilal. He has dedicated much of his"
+          },
+          {
+            "time": "16:28",
+            "author": "člen komunity",
+            "text": "Těch 5s bude asi ten rozdíl. Lepší kdyby to zvládal po větách. Nebo chunky po 5s, ale chytat konce vět a dle nich si zpřesňovat i značky"
+          },
+          {
+            "time": "16:29",
+            "author": "člen komunity",
+            "text": "Tak on dělá chunky po cca 5 vteřinách. A potom to zpřesnění ustříhne jinak .Což může být problém, když jejedna odpověď jednoslovná."
+          },
+          {
+            "time": "16:29",
+            "author": "člen komunity",
+            "text": "Třeba kdyby to dělal po vteřině"
+          }
+        ]
+      },
+      {
+        "slug": "webinářeworkshopy",
+        "name": "Webináře & Workshopy",
+        "messages": [
+          {
+            "time": "07:43",
+            "author": "Daniel",
+            "text": "Krásné ráno,\njen zpráva, že zítřejší Show & tell posouváme o týden na příští středu v 18:30. Rád bych u toho prvního byl a bohužel bych se zítra přípojit nemohl.\nVěřím a budu moc vděčný, pokud se vy, co jste se přihlásili, připojíte (ještě napíšu) i příští týden.\nA vy, co jste se nepřihlásili, máte týden k dobru. :)\n(Pro ty, kdo přišli do skupiny později, info níže.)\nUžívejte den.\nD.\n---\n*Show & tell, 10. 6. v 18:30, Zoom, zdarma*\nVykopávám komunitní setkání, kde si ukážeme, na čem každý z vás poslední dobou pracuje. Workflow, nástroj, vibe coded projekt, zkratka, která vám šetří čas. Nemusí to být nic velkého ani hotového.\nKaždý, kdo sdílí, může od ostatních dostat zpětnou vazbu a nápady na to, co dělat dál. A každý, kdo sleduje, může komentovat a přispět svým pohledem. Tahle setkání fungují jen tehdy, když se lidi nebojí ukázat i nedodělky a pokusy. Ty jsou nejzajímavější.\nPokud víte, že chcete něco ukázat, napište mi předem. Budu se ozývat i sám. Čím víc nás bude sdílet, tím víc si všichni odneseme.\nZoom link sem hodím den před akcí.\nPokud k tomu máte otázky, pište.\nTěším se."
+          },
+          {
+            "time": "07:49",
+            "author": "člen komunity",
+            "text": "Dane tak to já bohužel nedám, ale mrzí mi to. Jsem na RfP"
+          },
+          {
+            "time": "07:50",
+            "author": "Daniel",
+            "text": "Jasan. Budou další. A díky! Užívej RfP. Já budu vzpomínat. :)"
+          }
+        ]
+      }
+    ]
+  }
+}

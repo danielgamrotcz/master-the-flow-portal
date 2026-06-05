@@ -1,0 +1,91 @@
+{
+  "date": "2026-05-08",
+  "generated_at": "2026-06-05T07:30:50Z",
+  "stats": {
+    "messages": 6,
+    "groups": 2,
+    "members": 3
+  },
+  "cards": [
+    {
+      "id": "2026-05-08-01",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Obsidian",
+      "title": "Rychlý přehled složky před školením nebo prezentací",
+      "excerpt": "Cmd+Shift+O v Obsidianu otevře rychlé hledání souborů. Napište název složky a hned vidíte, co v ní máte. Hodí se, když se potřebujete rychle zorientovat před hodinkou nebo webinářem.",
+      "body": "Jeden člen komunity se ptal, co přesně znamená „rychle otevírat složky“ v Obsidianu. Je to jednoduché: zkratka CMD+SHIFT+O na Macu otevře rychlý přepínač. Do něj napíšete část názvu složky nebo souboru a Obsidian vám hned ukáže obsah.\n\nK čemu je to dobré? Třeba před webinářem nebo školením si potřebujete rychle ověřit, jaké poznámky k tématu už máte. Normálně byste klikali ve stromu vlevo, hledali správnou složku a rozbalovali podsložky. S CMD+SHIFT+O to máte za pár sekund. A bez toho, abyste vypadli z myšlenky.\n\nDůležité je, že Obsidian ukazuje výsledky hned při psaní. Nemusíte znát přesný název. Stačí zhruba vědět, kde věc hledat. Hodí se to hlavně ve větším vaultu, kde máte desítky složek.",
+      "read_minutes": 2,
+      "source_date": "2026-05-08"
+    },
+    {
+      "id": "2026-05-08-02",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Obsidian",
+      "title": "Plugin pro ještě rychlejší přepínání v Obsidianu",
+      "excerpt": "Výchozí rychlý přepínač v Obsidianu má svoje limity. Plugin obsidian-another-quick-switcher umí přepínat nejen mezi soubory, ale rovnou i mezi složkami. U větší struktury vaultu je to znát.",
+      "body": "Obsidian má v základu rychlý přepínač souborů. Se složkami jako celkem si ale moc neporadí. Plugin obsidian-another-quick-switcher tuhle mezeru vyplňuje.\n\nCo umí navíc oproti výchozímu chování:\n\n- Přepínání přímo mezi složkami, ne jen mezi soubory\n- Víc nastavitelných režimů vyhledávání: soubory, složky, nadpisy, tagy\n- Lepší filtrování výsledků během psaní\n- Vlastní zkratky pro různé režimy\n\nInstalace je klasicky přes Obsidian Settings → Community Plugins → vyhledat „another quick switcher“. Plugin je aktivně udržovaný a funguje v Obsidianu 1.x.\n\nHodí se každému, kdo má v Obsidianu vault s víc projekty nebo tématy a chce mezi nimi přeskakovat bez klikání v postranním panelu. Výchozí CMD+SHIFT+O zůstane zachované. Plugin ho doplňuje, nenahrazuje.",
+      "read_minutes": 2,
+      "source_date": "2026-05-08"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-04-19-03",
+    "type": "POSTAVIL JSEM",
+    "level": "Builder",
+    "topic": "AI agenti, Telegram",
+    "title": "Malé aplikace přes Telegram přesně tehdy, kdy je potřebuji",
+    "excerpt": "Jeden člen zkouší stavět jednoúčelové aplikace přes Telegram napojený na AI agenta. Vzniknou ve chvíli, kdy jsou potřeba, a pak už se o ně klidně nemusí nikdo starat. Třeba aplikace, která navrhne domácí vědecké pokusy podle toho, co je zrovna po ruce.",
+    "body": "Telegram jako rozhraní pro AI agenta dává dost smysl. Zprávu napíšete nebo namluvíte odkudkoliv. Agent požadavek zpracuje, postaví, co potřebujete, a pošle výsledek zpátky. Bez otevírání notebooku. Bez přihlašování do dalších nástrojů.\n\nKonkrétní příklad ze sdílení: aplikace na vymýšlení domácích vědeckých pokusů. Zadání bylo jednoduché. Co mám doma a co chci zkoušet s dítětem. Výsledek? Funkční nástroj, postavený za chvíli přes chat.\n\nKdy to dává smysl? Když chcete něco jen pro danou chvíli. Nechcete to spravovat, updatovat ani udržovat. Prostě to potřebujete teď.\n\nJe to jiný přístup než klasický vývoj. Spíš výroba na míru během pár vteřin. Velkou aplikaci takhle nepostavíte. Ale pro jednoúčelové nástroje, které řeší konkrétní situaci, to funguje překvapivě dobře.",
+    "read_minutes": 2,
+    "source_date": "2026-04-19",
+    "resurfaced_from": "2026-04-19"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "11:48",
+            "author": "člen komunity",
+            "text": "Co znamená „rychle otevírat složky“?\nKterý plugin?"
+          },
+          {
+            "time": "11:54",
+            "author": "Daniel",
+            "text": "CMD+SHIFT+O, pak zadám název. Rozbalí mi to složku se soubory. Občas potřebuju rychle přehled o informacích, které tam mám. Třeba pro dané školení nebo webinář.\nobsidian://show-plugin?id=obsidian-another-quick-switcher"
+          }
+        ]
+      },
+      {
+        "slug": "webinářeworkshopy",
+        "name": "Webináře & Workshopy",
+        "messages": [
+          {
+            "time": "13:25",
+            "author": "člen komunity",
+            "text": "Pod kapotou- ahoj, včera jsem se bohužel nemohl zúčastnit online, proto mne zajímá, kdy bude přibližně k dispozici záznam. Dík."
+          },
+          {
+            "time": "13:27",
+            "author": "Daniel",
+            "text": "Dneska nejpozději. Potřebuju jen odpoledne nebo večer zkontrolovat materiály. Je toho dost. :)"
+          },
+          {
+            "time": "13:29",
+            "author": "člen komunity",
+            "text": "Těšíme se! ✌🏻️"
+          },
+          {
+            "time": "14:34",
+            "author": "člen komunity",
+            "text": "Krásná práce💪"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,565 @@
+{
+  "date": "2026-05-20",
+  "generated_at": "2026-06-05T07:51:01Z",
+  "stats": {
+    "messages": 97,
+    "groups": 3,
+    "members": 10
+  },
+  "cards": [
+    {
+      "id": "2026-05-20-01",
+      "source_date": "2026-05-20",
+      "topic": "Offline setkání",
+      "excerpt": "Brněnský meetup se rýsuje. Petra nabídla kancl a přihlásilo se už aspoň pět lidí, včetně Petra Říhy z Liberce.",
+      "body": "V Inspiraci spontánně vznikl plán na meetup v Brně. Petra Pučálková nabídla prostor a zájem potvrdilo víc než pět lidí. Daniel založil novou skupinu pro offline setkávání — Praha, Brno, Bohumín a další města."
+    },
+    {
+      "id": "2026-05-20-02",
+      "source_date": "2026-05-20",
+      "topic": "Setuper jako nová profese",
+      "excerpt": "V komunitě se pro novou roli ujalo pojmenování setuper: člověk, který freelancerům nastaví systémy, aby se mohli soustředit na tvorbu.",
+      "body": "Diskuze o Jiřího architektuře měla velký ohlas. Několik členů přiznalo, že systémová část je pro ně úplně jiný vesmír. Sám od sebe se objevil název pro novou profesní roli: setuper — člověk, který ostatním nastavuje AI infrastrukturu a pomáhá jim překonat technické překážky."
+    },
+    {
+      "id": "2026-05-20-03",
+      "source_date": "2026-05-20",
+      "topic": "Architektura a infrastruktura",
+      "excerpt": "Filip nasdílel setup n8n na Hetzneru, Jiří ukázal Obsidian podle PARA. Pak se detailně řešil Claude Cowork vs. CLI a synchronizace přes iCloud.",
+      "body": "Technická diskuze se rozjela naplno. Filip Fio Konečný popsal setup n8n na Hetzneru. Jiří Soljáka ukázal, jak pracuje s Obsidianem přes PARA strukturu. Řešily se praktické věci: vzdálené připojení k Mac Mini, synchronizace přes iCloud i rozdíly mezi Claude Cowork a CLI přístupem."
+    },
+    {
+      "id": "2026-05-20-04",
+      "source_date": "2026-05-20",
+      "topic": "Doporučené zdroje pro vibe coding",
+      "excerpt": "aifirst.cz a naprimosai.cz jsou dobrý start pro ty, kdo s vibe codingem teprve začínají.",
+      "body": "Daniel sdílel epizodu s Jindrou Fáborským a Markem Prokopem. Komunita k ní doporučila dva weby pro nováčky ve vibe codingu: aifirst.cz a naprimosai.cz."
+    },
+    {
+      "id": "2026-05-20-05",
+      "source_date": "2026-05-20",
+      "topic": "rtk-ai/rtk — snížení spotřeby tokenů",
+      "excerpt": "Ve skupině Vibe Coding testují rtk-ai/rtk. Zkušenosti jsou zatím půl na půl — jeden člen si radši nastavil vlastní styl výstupu.",
+      "body": "Ve skupině Vibe Coding se testuje rtk-ai/rtk jako způsob, jak snížit spotřebu tokenů. Výsledky jsou zatím různé. Někdo ocenil úsporu, jiný si radši nastavil vlastní output style přímo v projektu. Jeden člen mezitím napojil Meta Ads MCP, jenže API je nestabilní a blokuje účty."
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-05-05-01",
+    "type": "INSIGHT",
+    "level": "Začátečník",
+    "topic": "AI a organizace souborů",
+    "title": "AI roztřídí fotky do složek za vás",
+    "excerpt": "Automatické roztřídění tisíců fotek do podsložek podle roku funguje spolehlivě a ušetří hodiny ruční práce. Jeden člen to vyzkoušel a výsledek prošel bez problémů.",
+    "body": "Jedna členka se ptala, jestli někdo třídí fotky pomocí AI. Hned se ozval další člen se zkušeností: nechal si automaticky rozřadit celou sbírku do podsložek podle roku. Funguje mu to bez ručního zásahu.\n\nPostup je jednoduchý. AI nebo skript přečte metadata souboru, hlavně EXIF datum pořízení, případně i název fotky. Podle toho pak vytvoří složky a fotky do nich přesune. Pro běžného uživatele to nemusí být nic složitého. Existují jednoduché skripty i vizuální aplikace, které to zvládnou bez programování.\n\nPokud máte na disku nebo v cloudu hromadu fotek bez systému, tohle je jeden z nejrychlejších způsobů, jak si pomocí AI ušetřit práci. Co by ručně trvalo hodiny, může být hotové za pár minut.",
+    "read_minutes": 2,
+    "source_date": "2026-05-05",
+    "resurfaced_from": "2026-05-05"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "mastertheflow—hlavní",
+        "name": "Master the Flow — hlavní",
+        "messages": [
+          {
+            "time": "17:42",
+            "author": "Daniel",
+            "text": "🍻 Chcete se potkávat? Máme na to novou skupinu. Praha, Brno, Bohumín…\nhttps://chat.whatsapp.com/EiJufnAgcyZHwAWYkneK2h?mode=gi_t"
+          }
+        ]
+      },
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "05:59",
+            "author": "člen komunity",
+            "text": "Jirko, neplevelis. Tohle je megacase a me by moc zajimaly detaily, protoze potrebuji prakticky totez. Mohla bych se s tebou online sejit a zjistit od tebe vic?"
+          },
+          {
+            "time": "06:44",
+            "author": "člen komunity",
+            "text": "Moc pěkně. Na čem to celé stojí? OpenClaw, Hermes, Paperclip,...?"
+          },
+          {
+            "time": "06:53",
+            "author": "člen komunity",
+            "text": "Taky by mě zajímalo více."
+          },
+          {
+            "time": "07:32",
+            "author": "Daniel",
+            "text": "Přesně tohle mě zajímalo. Jenom jsem ti to zapomněl napsat a čekal jsem na to, až to probereme u oběda. Každopádně teď by mě to zajímalo i technologicky. Ale to si klidně nechme na setkání. Mám nápad. Pošlu ti ho pak."
+          },
+          {
+            "time": "07:33",
+            "author": "Daniel",
+            "text": "Z toho přece musí vzejít jen dobré věci. 🙂"
+          },
+          {
+            "time": "07:41",
+            "author": "člen komunity",
+            "text": "Pro me jinej vesmir, nez bych tohle nastavil tak umru. Myslim, ze zraje povolani setupera, kterej bezny freelancery od tohohle osvobodi. Chci tvorit a ne se babrat v systemizaci… A navic me to nebavi, jsem tu jediny s timhle mindsetem?"
+          },
+          {
+            "time": "07:44",
+            "author": "člen komunity",
+            "text": "nejste, šla jsem sem, že se nachytřím a zjistila, že rozumím tak předložkám 🫣 a že mi to přijde strašně  pracný a časově náročný, byť Daniel vždycky píše o akci na 10min 😁"
+          },
+          {
+            "time": "07:49",
+            "author": "člen komunity",
+            "text": "Je to tak, ze se v teto skupince michaji zacatecnici az znacne technologicky vyspele bytosti, takze my zacatecnici na to obcas koukame jak tele na nova vrata. 🤭 Ale i tak mne to bavi cist."
+          },
+          {
+            "time": "07:49",
+            "author": "člen komunity",
+            "text": "Díky! Jsem marketingový stratég & projektak, mentor. Moje sila je v tom, že hledám lidem jejich jedinečnost v byznyse, a na tom stavime komunikaci a prodejní linku.\nJsem kreativec, s organizačním smyslem, a potřebou procesu a systému.\nAI používám ke tvorbě, researchu, asistenty.\nBohuzel sem ještě nedošla do fáze vibe codingu, byť to v mé bublině velmi často rezonuje. Mam velky pocit FOMO, a i kdyz mě to láká, a desi zároveň, i kdyz to vypada, ze to je snadne, a zvladne krůček po krůčku každý, tak to zabírá MOC casu. Nemam ten cas. Mam pevně daný hmg, včetně deti a povinnosti, položit se do toho na čtyři hodiny, abych to nastavila, mě děsí, hlavně proto, ze jsem klasická ženská [čti: chci všechno a hned, včera bylo pozdě], a ze se znám. Převaha mé tvůrčí cerveno-zlute energie, znamena, ze me to pohltí (klidne i radostí) a bude mi stat klientská práce.\nTzn. Ne, nejsi sam! Mam to stejne.\nPotřebovala bych někoho, kdo je v tom tak dobry, ze mi nastavi presne to, co potrebuji, na prvni dobrou, bez chyb, a ja to hned muzu pouzivat.\nStřeva mě až tak nezajímají.\nJde o funkci.\nVšechno bych to chtěla. Ale nemám absolutně prostor tomu propadnout. A znám se, mě by se to stalo raz dva."
+          },
+          {
+            "time": "07:54",
+            "author": "člen komunity",
+            "text": "btw-přečtěte si od Kyši Syndikát-velmi podobnou strukturu v detektivce má 😂"
+          },
+          {
+            "time": "07:55",
+            "author": "člen komunity",
+            "text": "To je riadne premakané 💪 ja som nešla tak hlboko, len som si vytvorila agenta 0, ktorý je hlavný architekt: pozná celý zámer, drží väzby, má presný prehľad o ostatných \"subagentoch\", o architektúre, stave úloh, proste všetko a keď čokoľvek staviam, začínam tým, že to poviem agentovi 0, on mi pripraví prompt, ten potom riešum v novej session a čo treba, vraciam na kontrolu agentovi 0 aby sa to nerozpadlo a niekedy to vyzerá tak, že si jedna session píše s druhou (cezo mňa, lebo to ešte stále chcem mať pod kontrolou či sme dobre). Tým mi zastrešuje to, že tá druhá session keď niečo tvorí, neuletí mimo a agent 0 je stále v obraze a všetko kľúčové zapisuje do memory. Možno trochu overkill, ale ako non-it mám pocit, že to mám aspoň trochu pod kontrolou a zatiaľ to funguje"
+          },
+          {
+            "time": "07:57",
+            "author": "člen komunity",
+            "text": "Cestou je pozvolná adaptace. 😉 Mám problém, tak ho „AI first“ přístupem vyřeším. Protože pokud člověk fakt nezačíná od píky a nemá prostor si to v klidu všechno připravit, bude to vždycky aplikace za běhu…\nV těch praktických věcech jsem si taky nejprve uvolnil ruce od toho, co mě nejvíc zatěžovalo a až při přebytku volného času experimentuju. Takže virtuální asistentka reportující mi každé ráno co se událo a co mě čeká, alerty a souhrny před schůzkama, cenové nabídky, smlouvy…až pak zbytek 😛"
+          },
+          {
+            "time": "07:58",
+            "author": "člen komunity",
+            "text": "To zní skvěle.\nBylo by fajn, něco takového mít nastaveno.\nPro me v tuhle chvíli krásný, nereálný sen."
+          },
+          {
+            "time": "08:01",
+            "author": "člen komunity",
+            "text": "Doporučuju začít od jednoho procesu.\nAktuálně je to v Claude docela jednoduché udělat ručně jeden proces, pak mu říct:\n„udělej z toho skill“ a pak ho ve scheduleru zaplánovat.\nIdeálně samozřejmě na separátním zařízení, které je stále zaplé."
+          },
+          {
+            "time": "08:05",
+            "author": "člen komunity",
+            "text": "Co presne je mysleno tim “udelat v Claude rucne jeden proces”? Ja se obcas ztracim v tom, kdy se mluvi o Claude.ai, kdy o Claude Code, kdy o Cowork atd. Proste jeste nemam ten Claude svet tak v krvi, takze budu moc vdecny za obcasne podrobnejsi “nasmerovani”. Diky"
+          },
+          {
+            "time": "08:06",
+            "author": "člen komunity",
+            "text": "Ono to nemusí být hned o Claude nebo robustním systému.\nPokud fungujete na Google Workspace, mrkněte na https://studio.workspace.google.com/\nJe to klikačka. Umí to mj. posílat zprávy na Google Chat a scénáře jdou vypromptovat. Třeba když se blíží událost v kalendáři nebo ráno jako souhrn určitých reportů v mejlu a kalendáře na další den.\nPoužívám Beeper (https://www.beeper.com/) ať mám zprávy ze všech socek na jednom místě, tak mi to tam skáče.\n(Jde tam napojit i Slack a na Slack jdou zas napojit další infofeedy…)"
+          },
+          {
+            "time": "08:07",
+            "author": "člen komunity",
+            "text": "co znamená \"udělej z toho skill\"? Jako že jednou projde kalendář a řekne, co mě dneska čeká, a když to udělá dobře, pochválím, řeknu, ať z toho udělá skill a každý ráno pak budu mít hlášení o budoucím dni?"
+          },
+          {
+            "time": "08:08",
+            "author": "člen komunity",
+            "text": "Skoro, jako byste mluvil čínsky 😉\nNe, že bych nechapala, o čem mluvíte, ale jde o to, že jak sem psala výše, moje profese je docela proměnlivá.\nPro mě je těžké nadefinovat to, co přesně potřebuji, aby udělal stroj, neb třeba nevím, že je to možné, aby to ten stroj dělal za mě. Druhá věc je, uvědomit si správnou terminologii toho, co po něm chci, a říct mu, jaké to má mít výstupy.\nDo toho mi pořád někdo volá a píše. A do toho je třeba denně tvořit nějaké výsledky.\nTzn. Kdyz nevim přesně, jak to formulovat, ani co potrebuji, aby to dělalo za “zkratku”, tak to nemohu ani vytvořit.\nJak tady správně někdo napsal: pozice “set-upera”, je nová černá tohoto oboru.\nTen člověk by poslouchal to, co dělám, a hned by ho napadalo to, co mohu vylepšit, ale hlavně to, co mi pomůže tu práci dělat efektivněji.\nNejen, že by to identifikoval, ale hlavně by to uměl RYCHLE a efektivně nastavit.\nKrálovství za takového člověka!"
+          },
+          {
+            "time": "08:08",
+            "author": "člen komunity",
+            "text": "Celé bych to jako nováček dělal v Claude Cowork. Je uživatelsky přívětivý a pod kapotou ma Claude Code + konektory,  nástroje a plánovač."
+          },
+          {
+            "time": "08:10",
+            "author": "člen komunity",
+            "text": "díky"
+          },
+          {
+            "time": "08:10",
+            "author": "člen komunity",
+            "text": "Navíc to žere tokkeny z předplatného a není nutné platit za tokeny z API zvlášť."
+          },
+          {
+            "time": "08:11",
+            "author": "člen komunity",
+            "text": "Nechte makat AI. Pokud si s ní píšete a řešíte jednotlivé úkoly a problémy, tak mu řekněte, ať projde vaše chaty a navrhne vám automatizaci/skill, co dělat lépe. Takový audit."
+          },
+          {
+            "time": "08:13",
+            "author": "člen komunity",
+            "text": "Denně pracuji s chatem GPT, Gemini, eleven labs, notebook LM. Vse placené verze. Kazdy pro me dela neco jineho.\nTakze, neumim napojit na to nějakého agenta, ktery by to cele sledoval a vylepšil to."
+          },
+          {
+            "time": "08:28",
+            "author": "člen komunity",
+            "text": "A jeste teda jeden dotaz “Ideálně samozřejmě na separátním zařízení, které je stále zaplé.” Co si pod tim mame predstavit my trochu mene zdatni?\nA pokud je to neco jako Macmini nebo jiny “pocitac”, jak ho nejlepe napojit tak, aby mel pristup do “nasich slozek”? Ja vim, muzu se zeptat Clauda, ale obcas mi prijde, ze dava zbytecne slozite odpovedi, respektive to je mozna stale ve mne - proste tak nejak vice verim cloveku, ktery si to uz vyzkousel, nez modelu ktery generuje slova 🙂 Nebo je to moje lenost ty jeho odpovedi studovat 😀"
+          },
+          {
+            "time": "08:31",
+            "author": "člen komunity",
+            "text": "Kdyby tady náhodou byl někdo, kdo je z Brna, a mohl by mi dát pomocnou ruku v těchto věcech, tak mohu klidně posloužit jako “case study” a nebo cokoliv, co by pomohlo tomu clovekovi nastavit takovou službu, jako prodejní službu.\nNa oplátku nabízím, ze mu jako marketak pomůžu udělat cokoliv bude potřeba, aby se to dobře prodávalo.\nPS: moje doporučení je docela silná měna 😉\nPS2: pochopitelne za penize."
+          },
+          {
+            "time": "08:49",
+            "author": "člen komunity",
+            "text": "Mac mini je určitě dobrý, ale pro začátek stačí jakékoliv volné PC, které může běžet 24/7 (něco, co už máte). Pak jen nastavit v cowork, abys se neukončoval (Keep Awake)"
+          },
+          {
+            "time": "08:51",
+            "author": "člen komunity",
+            "text": "Co pouzivate na vzdalene pripojeni?"
+          },
+          {
+            "time": "08:52",
+            "author": "člen komunity",
+            "text": "já to mám na Mac Mini sdílené přes složku na iCloud a funguje to spolehlivě"
+          },
+          {
+            "time": "08:55",
+            "author": "člen komunity",
+            "text": "na tom PC by pak měly být uloženy soubory, se kterými to má pracovat, ale umí to samozřejmě cloud. Dříve jsem používal jen nanoclaw (na virtuálním serveru), ale rozhodl jsem si některé oblasti zjednodušit (a vyzkoušet alternativy) a běží mi jen Claude na starém macbook air. Tam mám plánované úlohy, které jsou napojeny pře „customize“ na nástroje a PKM + web, tedy na všechny informace, které pro dané procesy potřebuji. Na dálku to obsluhuji přes Dispatch (Claude)."
+          },
+          {
+            "time": "08:56",
+            "author": "člen komunity",
+            "text": "a funguje to vlastně hodně spolehlivě (první plánované úlohy je třeba spustit ručně a potvrzovat práva s povolení automatu pro další plánované úkoly)."
+          },
+          {
+            "time": "08:57",
+            "author": "člen komunity",
+            "text": "ano, dobré řešení. pokud je někdo víc v Microsft světě, stejně to funguje na OneDrive (ten se umí synchronizovat stejně)"
+          },
+          {
+            "time": "09:02",
+            "author": "člen komunity",
+            "text": "Já, narozdíl od většiny sdílených use-case, nemám rád pojetí „funkčního řízení“ (vertikální přes pracovní pozice a organizační strukturu) a preferuji „procesní řízení“ (horizonálně přes procesy). To pak reflektuji v definici agentických systémů (ne CTO, CEO, ale spíš - analýzy externích vlivů, interní infrastruktura, projekty interního rozvoje, strategie, …). Mám background v procesním řízení, systémové architektuře a výrobě, ale dělám CTO ve stavařině :-)"
+          },
+          {
+            "time": "09:11",
+            "author": "člen komunity",
+            "text": "Jsem nad tím zrovna ráno přemýšlel, že vidím, jak lidi staví agenty na strukturách, který se těma stejnejma nástroje disruptujou. Rád vidím, že na jdeš jinak a budeš mi muset i něco ukázat 😂"
+          },
+          {
+            "time": "09:18",
+            "author": "člen komunity",
+            "text": "Vnímám to jako kopírování lidského způsobů řízení malých firem, které nefunguje ani ve velkých. Stejně je třeba vždy vydefinovat role (agenta) přes procesy a pak nad tím dělat další mantinely pro každou sub-oblast. Tyto sub-oblast pak definují u různých agentů. Mě to takto dává větší smysl."
+          },
+          {
+            "time": "09:18",
+            "author": "člen komunity",
+            "text": "nicméně řešení Jiřího dává super smysl, jde totiž o jiný use-case."
+          },
+          {
+            "time": "09:38",
+            "author": "člen komunity",
+            "text": "Nedávno jsem o tomtéž přemýšlel a přivedlo mě to u diskuze nad AI u velkých organizací (vč. státních) na zplošťování organizačních struktur... 🤔 U těch menších a středních to je víceméně jiný příběh. Jinými slovy pozoruji, že adopce u menších organizací (u jednotlivců nemluvě) může probíhat rychleji než u větších, u kterých bych narušení organizačních struktur očekával ve větší míře. Takže pro mne je fajn, že se diskuze dotkla i tohoto tématu. 🙏🏻 Otázkou zůstává velikost rozpočtů, jak kdo na různé nástroje při dnešních cenách má a jak je to do budoucna udržitelné (limity, zlepšování modelů, výkon HW, spotřeba energie apod.). 💭"
+          },
+          {
+            "time": "09:41",
+            "author": "člen komunity",
+            "text": "Můj pohled: nechceš zaspat, investuj do lidí (neumíš sám nebo tví lidé, někoho si pozvi) do služeb i infrastruktury (online služby + lokální řešení pro pravidelný „jednodušší“ úkoly a bezpečnost citlivých informací)"
+          },
+          {
+            "time": "10:16",
+            "author": "člen komunity",
+            "text": "No to je super, ale ocenil bych kdyby mi to nekdo prodal a ja to jem krmil :-)"
+          },
+          {
+            "time": "10:21",
+            "author": "člen komunity",
+            "text": "Me na tom nejvic stve ten promarnenej cas u kompu, vidim zbytek svych aktivich dni a nechci je travit nastavovanim bez lidske hodnoty pro me. Holt si pockam az to bude stylem lepsi lopata… integrovana bezne"
+          },
+          {
+            "time": "10:24",
+            "author": "člen komunity",
+            "text": "Zkusím večer nějak konsolidovaněji odpovedět. Teď bych dostal od Eisenhowera čočku, ale technicky celé to jedu normálně v Claude Cowork (různě přepínám do CLI) kde mám asi 50 již vytvořených skillů (najděte si tam „skill creator“ ten vás tím provede) se složkama v icloud synchron. Teď jsem to nasál ještě do Obsidianu dle Karpatyho Wiki-LLM návodu. Šel jsem nejprve cestou prostě foldrů a jmenných souborových konvencí dle PARA domén a domén a mých businessů. Potřebuji být obsidian independent neb potřebuji nějaký výstupy přes MCP Google Disk či GitHub sdílet s týmem. Začínám si ale paralerně stavět na svém starém Mac mini stavět druhou CLI claude nohu, když laptop spí. Nechci ho nechávat běžet pořád. Automatizaci resp. backend část pak pomalu stavím n8n na Hetzneru, ale nejprve chci pořešit hlavně ty procesní základy, nechci to předělávat 10x. Ale jo stálo to moře času a jsem IT odkojen, ale tady jsem to budoval celé znovu tak nějak intuitivně, abych to celé pořád nepředělával a nezbláznil se z toho. Musí to být prostě Good Enough - neb jsem perfík a to pak nemá konce."
+          },
+          {
+            "time": "10:43",
+            "author": "člen komunity",
+            "text": "S většinou pomůže AI (fakt není třeba odvornost).\nSe změnou mindset nejvíc pomůžou komunity jako tato a pak dlouhodobé kurzy a domácí  úkoly (já mám dobrou zkušenost s kurzy od Filip Dřímalky).\nDůležité je taky přijmout, že ne vše vyřeší agentní systémy (nebo jestli jsou vhodné) - osobně jim taky nesvěřím to, kde já potřebuji definivat postupy, architekturu, cíle,..."
+          },
+          {
+            "time": "10:45",
+            "author": "člen komunity",
+            "text": "Je třeba si říct, kde stojí za to INVESTOVAT ČAS, který se mi vrátí (OHIO - Only handle it once). Tam kde se nevrátí, je to plýtvání nebo učení?\nKaždý jsme jiný."
+          },
+          {
+            "time": "10:49",
+            "author": "člen komunity",
+            "text": "Ten Claude Cowork je dost schopný, ale chybí mi hooks.\nObsidian vault je přece standard folder structure ne?\nDobrá pointa s n8n. Pořád je pro mnoho řešení (opakujících se procesů v jasné struktuře) vhodnější než ai agent. A taky nám s tím může pomoct n8n mcp, že 🙂"
+          },
+          {
+            "time": "13:58",
+            "author": "člen komunity",
+            "text": "V čem konkrétně pomocnou ruku?"
+          },
+          {
+            "time": "14:47",
+            "author": "člen komunity",
+            "text": "Jsem z Brna a snad jsem „pokročilý“ - klidně se mi ozvěte rád vám s nastavením pomůžu. Osobně! Bude to lepší než si sdílet obrazovky"
+          },
+          {
+            "time": "14:58",
+            "author": "člen komunity",
+            "text": "1) pomoci definovat klíčové oblasti toho, co by se dalo dělat efektivněji\n2) pomoci mi takove efektivní nástroje nastavit. Ukázat postup, a nebo rovnou “ťuknout”\nJedna věc je, ze někdo, kdo to má denně v malíku, vidí okamzite “jak jednoduché to je”, a dokáže to za hodinu.\nDruhá věc je, ze já možná dojdu ke stejnému výsledku za 4 hodiny. (Protoze to neni můj každodenní chleba )\nA já ty 4 hodiny nemam, ale mozna by mi to ted fakt dost hodne pomohlo."
+          },
+          {
+            "time": "14:59",
+            "author": "člen komunity",
+            "text": "To je skvěle! Napíšu SZ.👌🏻"
+          },
+          {
+            "time": "14:59",
+            "author": "člen komunity",
+            "text": "Můžu taky pomoct. Myslím si, že jsem celkem pokročilý. Např. mám nastavenou celou správu mého e-shopu skrze agenty v Claude Code. Tak dejte vědět 🙂"
+          },
+          {
+            "time": "15:01",
+            "author": "člen komunity",
+            "text": "Diky za proaktivitu. Cenim si toho. Uz se mi ozvali celkem 3 lide, takze jsem happy.\nTo se podaři. 💪\nSkvělá skupina. Kdyby něco, přece jen mohu být složitější oříšek, tak se ozvu 😉"
+          },
+          {
+            "time": "15:04",
+            "author": "člen komunity",
+            "text": "můžu dotaz? jaký eshop: vlastní výroba nebo nějaká krabice?"
+          },
+          {
+            "time": "15:12",
+            "author": "člen komunity",
+            "text": "S bodem 1 bojuji taky. Ptám se na to Claude Code a kombinuji s tím co vím, že jde automatizovat nebo dělat jednodušeji. Často se vlastně ptám Claude Code jak by navrhl optimální a maximálně automatizovaný proces pro „nějaký úkol“ (ten samozřejmě přesně definuji, resp. nápisu jak to dělám teď).\nNa tyto úkoly nebudu asi ten pravý. Přenechám jiným kaBrňákům."
+          },
+          {
+            "time": "15:15",
+            "author": "člen komunity",
+            "text": "KaBrňákům 🥰 díky za feedback 👍 hezký den ✨"
+          },
+          {
+            "time": "15:16",
+            "author": "člen komunity",
+            "text": "Můžeme udělat testovací schůzku v Brně?"
+          },
+          {
+            "time": "15:18",
+            "author": "člen komunity",
+            "text": "Jako ze by ses s k nam pridal?\nOk, mam prostorný kancl v Krpoli. Klidne se muzes/můžete připojit."
+          },
+          {
+            "time": "15:20",
+            "author": "člen komunity",
+            "text": "Kdybyste to v Brně chtěli víc otevřít, taky bych se přidala 😀 klidně se složme na zasedačku v Clubcu 😀"
+          },
+          {
+            "time": "15:20",
+            "author": "člen komunity",
+            "text": "Rád bych se přidal.\nA tykání je ok"
+          },
+          {
+            "time": "15:22",
+            "author": "člen komunity",
+            "text": "Ahoj Gábi! 🥰"
+          },
+          {
+            "time": "15:23",
+            "author": "člen komunity",
+            "text": "že by z toho bylo konečně odpolední Hack Your Morning pro ty z nás, co to ráno logisticky nedají? 😀"
+          },
+          {
+            "time": "15:24",
+            "author": "člen komunity",
+            "text": "Jsem na tom úplně stejně 😇"
+          },
+          {
+            "time": "15:25",
+            "author": "člen komunity",
+            "text": "bude se to jmenovat velmi inovativně Hack Your Lazy Afternoon"
+          },
+          {
+            "time": "15:27",
+            "author": "člen komunity",
+            "text": "já nedávám ráno!!! můžeme prosím založit nějakej kroužek? odpolední?"
+          },
+          {
+            "time": "15:28",
+            "author": "člen komunity",
+            "text": "To máte super, já to z Itálie nedám…"
+          },
+          {
+            "time": "15:30",
+            "author": "člen komunity",
+            "text": "Nechci Jindrovi lézt do zelí, ale jedno neformální setkání za sebe rád vykopnu, jestli nás brněnských odpoledňáků bude víc (pravidelnou organizaci určitě nedám)\nTyhle neformální setkání kolem AI za mě mají obrovský přínos – protože přesně, jak tady padá. Dneska už to není tolik o tom JAK něco udělat, ale vědět CO a PROČ chci udělat a hlavně že to vůbec jde."
+          },
+          {
+            "time": "15:36",
+            "author": "člen komunity",
+            "text": "Exactly!\nSem nevěděla, že tady můj skromný požadavek vyvolá takovou super odezvu. 🤩\nA mám z toho radost. Fakt jo.\nPak si člověk nepřipadá jako trubka. A ještě na to všechno sám."
+          },
+          {
+            "time": "15:39",
+            "author": "člen komunity",
+            "text": "Matouši! Ta poslední možnost je zcela zbytečná. 😉"
+          },
+          {
+            "time": "15:40",
+            "author": "člen komunity",
+            "text": "Na to, abych souhlasil, jsem až moc dlouho jsem žil v Praze. A bylo jasný, že se to dřív nebo později jako reakce objeví :D\nAle to už tu plevelíme diskuzi"
+          },
+          {
+            "time": "15:45",
+            "author": "člen komunity",
+            "text": "Moc dobrý nápad s neformálním odpolednem na téma AI ať už je to kdekoliv.. Taky bych na takové setkání rád dorazil, klidně se pustil i do organizace.. Jsem z Jablonce nad Nisou, blízko Liberec.. Tak kdyby někdo byl z okolí, mohli bychom něco podniknout 🙂"
+          },
+          {
+            "time": "15:54",
+            "author": "člen komunity",
+            "text": "Chápu, že Pražáci na to setkání do Brna nesmí a stejně tam netrefí, ale můžu dorazit z Olomouce?"
+          },
+          {
+            "time": "15:55",
+            "author": "člen komunity",
+            "text": "Made my day 🤣🤪\nJasne, ze muzete dorazit. Nevadi to nicemu, je to o vašem case."
+          },
+          {
+            "time": "17:04",
+            "author": "člen komunity",
+            "text": "Určitě, Dane 🙂 I takhle je to mazec, když se spustí debata na nějaké nadhozené téma 🙂 Jen mi tam chybí ostatní části republiky 😃"
+          },
+          {
+            "time": "17:37",
+            "author": "člen komunity",
+            "text": "hele to, že něco neformálko budem mít v brně se nevylučuje s tím, že určitě budou mít zájem i lidi v dalších městech.\nPlus si klidně dejme sem tam neformální sdílečku i online. Podle mě je to jen o tom, jestli bude mít dost lidí zájem. Where there’s a will, there’s a way 🙂"
+          },
+          {
+            "time": "17:38",
+            "author": "Daniel",
+            "text": "Socializace tady: https://chat.whatsapp.com/EiJufnAgcyZHwAWYkneK2h?mode=gi_t"
+          },
+          {
+            "time": "17:39",
+            "author": "Daniel",
+            "text": "Coming Soon. 😉"
+          },
+          {
+            "time": "17:39",
+            "author": "člen komunity",
+            "text": "no tak výborně 😍"
+          },
+          {
+            "time": "18:11",
+            "author": "Daniel",
+            "text": "Moc fajn rozhovor Marka Prokopa s Jindrou Fáborským. Marka sleduju od té doby, co jsem na volné noze. Baví mě jeho témata i adaptabilita. A to jsem marketingem nepolíbený.\nBTW pokud neposloucháte, Jindrův podcast je fakt plný inspirace i praktických tipů. Doporučuju si to dát od první epizody. Vzpomínám, jak jsem to hltal v gymu v Hua Hin. Až by se to mohlo jmenovat „Cvičíme s Jindrou“.\nhttps://open.spotify.com/episode/5jguj3xtXck18FFznW28Qu?si=37dc56d6776046f3"
+          },
+          {
+            "time": "19:58",
+            "author": "člen komunity",
+            "text": "Potvrzuju, je to výborný zdroj a inspirace pro vibecoding. Jindra má extrémní zápal. Dal jsem si to před pár týdny jako binge listening."
+          },
+          {
+            "time": "20:17",
+            "author": "člen komunity",
+            "text": "Já můžu velmi doporučit i celý kurz aifirsz.cz - až ten mě reálně nakopl k vibecodingu a dost prakticky provedl prvními kroky"
+          },
+          {
+            "time": "20:24",
+            "author": "člen komunity",
+            "text": "Hlavně díky Jindrovi jsem došel do stavu, že Claude Code je dost výkonný (trochu méně zkušený) člen mého jinak jednočlenného týmu :-)\nProgramuje toho minimum, ale odmaká hromadu věcí, které mě nebaví a brzdí mě v kreativní práci. Třeba kompletně připraví podklady pro newsletter (nový články, tipy na starší, výběr fotek, …), kam já si už jen dopíšu tu „svou” osobní část. Claude to pak nahodí do systému, já překontroluju a odešlu."
+          },
+          {
+            "time": "20:34",
+            "author": "člen komunity",
+            "text": "Sorry, aifirst.cz - už mi to nejde editovat"
+          },
+          {
+            "time": "21:10",
+            "author": "člen komunity",
+            "text": "Se svolením autora sdílím z AI MSK komunity pro všechny, kdo s vibe codingem začínají, super zevrubný návod: https://www.naprimosai.cz/skoleni 🙂"
+          },
+          {
+            "time": "22:26",
+            "author": "člen komunity",
+            "text": "Postavený na Shoptetu"
+          },
+          {
+            "time": "22:59",
+            "author": "člen komunity",
+            "text": "Apple Magic Car"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "13:32",
+            "author": "člen komunity",
+            "text": "plus si ho doplňte o https://github.com/rtk-ai/rtk, ten zas sníží spotřebu tokenů voláním příkazů, který CC, Codex apod používají hodně (ls, find, git, curl apod)"
+          },
+          {
+            "time": "13:33",
+            "author": "Daniel",
+            "text": "Mrknu, děkuju moc."
+          },
+          {
+            "time": "13:36",
+            "author": "člen komunity",
+            "text": "Nějakou chvíli jsem ho používal při psaní kódu. Myšlenka je dobrá, ale přišlo mi (a kolegům) že výrazně snižuje kvalitu a hlavně se ptá mnohem méně. Takže jsem to replikoval cestou vlastního output stylu, ve kterém jsem definoval aby odpovídal co nejvíc stroze, ale zároveň jsem neztratil vrstvu dotazování a jeho pochopení před prací."
+          },
+          {
+            "time": "13:39",
+            "author": "Daniel",
+            "text": "Super, díky moc za zkušenost. Nejen s Caveman, ale i s tím, jak o tom přemýšlíš. Super."
+          },
+          {
+            "time": "13:49",
+            "author": "člen komunity",
+            "text": "Ahoj, rád bych se zeptal, jestli máte někdo zkušenosti s MCP konektorem v rámci mety? 🌝"
+          },
+          {
+            "time": "14:52",
+            "author": "člen komunity",
+            "text": "Zatím ne, Meta dost účty co si MCP propojily blokovala. Chci si zkusit napojit na sekundárním účtu, který mám jako testovací, ale ještě jsem se k tomu nedostala 🏃🏻‍♀️"
+          },
+          {
+            "time": "14:53",
+            "author": "člen komunity",
+            "text": "Mám napojen Meta Ads MCP a spravuju si pomocí toho reklamy"
+          },
+          {
+            "time": "14:56",
+            "author": "člen komunity",
+            "text": "A fungovalo ti to na všech účtech, nebo děláš jenom jeden? :)"
+          },
+          {
+            "time": "14:57",
+            "author": "člen komunity",
+            "text": "S více účty zkušenost nemám. Mám jen jeden a tam mně to funguje. Je to omezené, ale umí to stahovat analytická data pro další hodnocení a v nějakém omezeném režimu vytvářet kampaně. Ty si ale musím doklikat pak sám v Meta Ads"
+          },
+          {
+            "time": "14:58",
+            "author": "člen komunity",
+            "text": "Boží, moc díky za info!"
+          },
+          {
+            "time": "15:02",
+            "author": "člen komunity",
+            "text": "MCP ne, napojil jsem si přímo API do vlastní vibecodované lokální appky – pro analytiku i vytváření kampaní.\nJen teda jejich API je obecně peklo, stejně jako celá Ads platforma. Něco, co jeden den funguje, druhej přestane. Případně to funguje jen na některých účtech. A API dokumentace má podle mě tak půl roku skluz za realitou.\nTakže jak píše @člen – kampaně je bohužel stejně vždycky potřeba minimálně ručně kontrolovat 🙁"
+          },
+          {
+            "time": "15:54",
+            "author": "člen komunity",
+            "text": "image"
+          },
+          {
+            "time": "15:58",
+            "author": "člen komunity",
+            "text": "Budu ráda za feedback, jestli to stojí za to 🙌🏻 už jsem viděla víc kurzů i přímo od anthropicu, ale málokdy tam bylo něco novýho"
+          },
+          {
+            "time": "16:08",
+            "author": "člen komunity",
+            "text": "Snad nezapomenu a snad to tento týden dokončím. Zatím jsem nepřečetl ani první text. 🤦🏻‍♂️"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "date": "2026-05-17",
+  "generated_at": "2026-06-05T07:45:52Z",
+  "stats": {
+    "messages": 24,
+    "groups": 2,
+    "members": 6
+  },
+  "cards": [
+    {
+      "id": "2026-05-17-01",
+      "source_date": "2026-05-17",
+      "topic": "Raycast beta diktování vs Uttero",
+      "excerpt": "Daniel porovnal beta diktování v Raycastu s Uttero. Vyšlo mu z toho, že kdo začíná teď, nejspíš sáhne po Raycastu. Uttero dál bere jako svůj osobní experimentální projekt s funkcemi, které Raycast zatím nemá.",
+      "body": "Raycast beta přidal diktování a funguje fakt skvěle. Daniel sdílel srovnání: rychlost i formátování jsou na jedničku s hvězdičkou. Objevila se jedna chyba se jménem v oslovení, ale dá se vyřešit promptem. Uttero má pořád svoje výhody, třeba offline diktování a živé náhledy. Komunita přidala vlastní zkušenosti a řešila, jak moc záleží na konkrétním použití."
+    },
+    {
+      "id": "2026-05-17-02",
+      "source_date": "2026-05-17",
+      "topic": "ShellBoard a terminálové nástroje",
+      "excerpt": "Člen komunity postavil vlastní projektový terminál ShellBoard s taby a rozděleným zobrazením. Zmíněný byl i Terax a ViberTerm, který Daniel kvůli jiným prioritám odložil.",
+      "body": "Při debatě o ViberTermu sdílel člen komunity vlastní řešení ShellBoard — terminál stavěný kolem projektů, se skupinami vlevo, podporou více tabů a rozdělenou obrazovkou. Odkaz na GitHub je k dispozici. Jako další alternativa padl Terax. Daniel přiznal, že VibeTerm má u něj nízkou prioritu a teď ho dál nerozvíjí."
+    },
+    {
+      "id": "2026-05-17-03",
+      "source_date": "2026-05-17",
+      "topic": "Bezpečnost MCP serverů",
+      "excerpt": "Jak poznat důvěryhodný MCP server? Komunita se shoduje: držte se oficiálních MCP serverů nebo vlastního kódu. Ze začátku radši ručně potvrzujte každý příkaz.",
+      "body": "Bezpečnost MCP serverů se začala hodně řešit. Komunita probírala, jak poznat bezpečný zdroj od možného rizika. Doporučení znělo jasně: používat buď oficiální MCP servery, nebo vlastní kód, který si člověk sám napsal. Začátečníkům se doporučovalo zapnout ruční potvrzování příkazů, dokud si neosahají, jak MCP funguje."
+    },
+    {
+      "id": "2026-05-17-04",
+      "source_date": "2026-05-17",
+      "topic": "Osobnostní CV pro AI agenty — personality priming",
+      "excerpt": "Člen komunity sdílel tip: než AI zadáte úkol, dejte jí fiktivní profesní profil. Jiný člen to používá při generování person pro usability review.",
+      "body": "Tip z komunity: místo toho, abyste AI rovnou zadali úkol, jí nejdřív dejte identitu přes fiktivní životopis nebo profesní profil. Podle zkušeností to výrazně mění tón i kvalitu výstupu. Jeden člen komunity to používá při generování person pro usability testy. Než pustí testování s reálnými uživateli, tak si takhle předem ověří, jestli design dává smysl."
+    },
+    {
+      "id": "2026-05-17-05",
+      "source_date": "2026-05-17",
+      "topic": "Anonymizace dat před vstupem do AI",
+      "excerpt": "Jak posílat citlivá data do AI bezpečně? V komunitě padly dvě konkrétní možnosti: MS Presidio a lokální Gemma běžící v Dockeru.",
+      "body": "Jeden z členů se ptal na nástroje, které anonymizují data, než je pošle do AI modelu. Padla dvě konkrétní doporučení: Microsoft Presidio, open-source knihovna pro detekci a maskování PII, a lokálně spuštěný model Gemma v Dockeru jako alternativa ke cloudovým službám. Obě možnosti umí zpracovat citlivá data bez toho, aby se originál posílal na cizí servery."
+    },
+    {
+      "id": "2026-05-17-06",
+      "source_date": "2026-05-17",
+      "topic": "Efektivita bez tlaku na automatizaci",
+      "excerpt": "Honza připomněl princip mikrovylepšení od Paula Akerse. Jiří přidal otázku pro CEO/CTO: slouží to svému účelu? Odpovídají tomu náklady? Několik členů připomnělo, že ne každý si musí vyvíjet vlastní řešení.",
+      "body": "Debata o efektivitě se stočila k zásadní otázce: kdy ještě automatizovat a řešit nástroje a kdy už prostě dělat práci. Honza zmínil princip mikrovylepšení od Paula Akerse — malá každodenní zlepšení bez tlaku na dokonalost. Jiří přidal byznysový pohled: každý nástroj nebo workflow by mělo projít jednoduchým testem — plní svůj účel? Odpovídají náklady tomu, co přináší? Komunita se shodla, že účel je důležitější než nástroje a že ne každý si musí vyvíjet vlastní software."
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-04-28-05",
+    "type": "INSIGHT",
+    "level": "Začátečník",
+    "topic": "Tabulky, Excel",
+    "title": "AI dotáhne tabulku, kde vzorce selžou",
+    "excerpt": "Složitá excelová tabulka, která se při ručních úpravách rozsype? Jedna členka to vyřešila přes AI a nepřišla o žádné vzorce. Funguje to i v Google Sheets.",
+    "body": "Jedna členka popsala konkrétní situaci. Měla těžkou excelovou tabulku plnou vzorců a ručně ji nešlo dodělat tak, aby se něco nerozbilo. Zkusila to přes AI a tabulka byla hotová bez problémů.\n\nPodobně to jde i v Google Sheets. Přes Claude Code se dají spravovat i složitější věci, třeba vlastní CRM. Každou úpravu můžeš nechat na AI a nehrozí, že ručně něco rozhodíš.\n\nPro lidi bez programátorského zázemí je tohle jeden z nejpraktičtějších způsobů použití. Nemusíš rozumět vzorcům. Stačí popsat, co chceš, a AI to dotáhne. Hodí se to hlavně ve chvíli, kdy chybí jeden vzorec, potřebuješ přidat sloupec nebo opravit strukturu tak, aby se nerozsypala data.",
+    "read_minutes": 2,
+    "source_date": "2026-04-28",
+    "resurfaced_from": "2026-04-28"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "07:50",
+            "author": "Daniel",
+            "text": "K diktování v Raycast a co na to Uttero takto (hodil jsem to na LI, sem jen copy/paste):\nRaycast beta má diktování s na jedničkou s hvězdičkou. A co na to Uttero?\nSkvělá rychlost, fajn formátování přes styly. Základní věc, kterou potřebuje 99 % lidí, funguje senzačně. Stalo se mi, že jsem nadiktoval oslovení „Karle“, ale vložilo se mi tam „Terezo“ a překopala se celá struktura e-mailu. Drobnost. Úpravou promptu vyřešitelná v pohodě. Teda asi až na to oslovení.\nKdybych dnes začínal s diktováním a ještě neměl aplikaci, sáhl bych po Raycast beta bez váhání.\nA jestli je to důvod, proč stopnout Uttero?\nUttero je experiment. Osobní projekt, na kterém zkouším vlastní věci a způsoby práce s různými nástroji. Od začátku to tak bylo a nic se na tom nezměnilo. Není to komerční projekt.\nNavíc má Uttero pár funkcí, které by mi fakt chyběly, třeba offline diktování a živé náhledy. Jasně, že to Raycast může pravděpodobně přidat v budoucnu taky. Protože pokud to můžu postavit během chvilky já, postaví to další miliony lidí.\nStejně, jako dal Raycast do svého diktování Dictate to Note. Ehm, kdyby se náhodou trošku vylepšená objevila v Uttero, je to jen shoda okolností. Nebo kdyby se v Raycast objevil třeba extension pro Uttero. :)\nKluci z Raycast jsou ušatí a pracují na tom s pečlivostí včelky. Teď jsme o tom diskutovali v Master the Flow komunitě i s anketou. Hodně lidí Raycast nezná. Za mě to je stále v rámci aplikací základ pro produktivní práci.\nTakže pokud neznáte a nezkoušeli jste, jděte do toho."
+          },
+          {
+            "time": "09:52",
+            "author": "člen komunity",
+            "text": "Ahoj Dane, zajímal by mě Tvůj VibeTerm. Kvůli tomu že často přeskakuji mezi projekty, postavil jsem si vlastní terminál ShellBoard - https://github.com/ok2cqr/shellboard také umí více tabů, rozdělení obrazovky ale hlavně je projektový, vlevo seznam skupin/projektů a vše per projekt. Ukážeš svůj terminál, prosím? Díky moc. Jinak jsem dneska zapojil do práce Uttero na macu, používám lokální model. Musím si teď pomalu zvykat na nový způsob práce, nebudu vše psát na klávesnici ale mohu i diktovat. Skvělá práce."
+          },
+          {
+            "time": "09:59",
+            "author": "člen komunity",
+            "text": "To vypadá hodně užitečně Petře 👍, díky za sdílení.\nJá včera objevil Terax a v pondělí ho začnu zkoušet.\nhttps://terax.app/"
+          },
+          {
+            "time": "10:12",
+            "author": "člen komunity",
+            "text": "Super, to vypadá o dost profesionálněji :D.  Jen se mi nelíbí mixování terminálu a code editoru, nemám otevřené jen zdrojáky ale často připojení na servery atd. Ale zkusím použít Claude Design a posunout vzhled. Taky podepsat dmg…"
+          },
+          {
+            "time": "14:34",
+            "author": "Daniel",
+            "text": "Díky moc! Já už ten projekt nechal být. Ten rozvoj neměl prioritu (nebyla tam návratnost ani výkonnostní, ani z pohledu hodnoty). 🙂"
+          },
+          {
+            "time": "17:42",
+            "author": "člen komunity",
+            "text": "Kdo nevi/nepouziva (doporucuju):\nAgent personality CV extracts\nÚčel: Personality priming pro agenty v orchestračním pipeline. Každý CV je fiktivní profesní snapshot navržený tak, aby agent vstupoval do úkolu s konkrétními profesními instinkty, pet peeves a default postoji — místo generic \"helpful AI assistant\" módu.\nJak použít: Vlož příslušný CV do system promptu daného agenta jako uvozenou pasáž typu:\nYour professional background is summarized below. These three roles shape how you instinctively approach problems — not as roleplay, but as the lens through which you read situations and form judgments.\n[CV]\nIn this conversation, you bring those instincts to the task at hand.\nNepoužívej formulaci \"you are John Smith\" — to spustí role-play mód a agent začne vymýšlet detaily. Místo toho rámcuj jako \"your professional background includes…\" a CV bude fungovat jako tichý priming, ne jako persona.\nCVs jsou v angličtině, protože agenti pracují primárně v anglickém technickém registru a personality priming přes anglické profesní idiomy (\"counter-tuned\", \"third reading\", \"boring tech criteria\") sedí lépe."
+          },
+          {
+            "time": "18:23",
+            "author": "člen komunity",
+            "text": "Pouzivam podobne v pre usability testing ( review IFU, UX, guidelines, etc…, nez se to dostane k realnejm uzivatelum na usability), ty persony nemam fixni ale generuju dle urcitych pravidel na zacatku review."
+          },
+          {
+            "time": "18:40",
+            "author": "člen komunity",
+            "text": "Jake nastroje pouzivate pro anonymizaci&pseudonymizaci dokumentu s citlivymi daty pred vlozenim do AI? Ja zkousim MS Presidio. Diky za doporuceni"
+          },
+          {
+            "time": "18:46",
+            "author": "člen komunity",
+            "text": "mám docker na noťasu s gemmou"
+          },
+          {
+            "time": "18:46",
+            "author": "člen komunity",
+            "text": "takže lokální AI"
+          },
+          {
+            "time": "20:36",
+            "author": "Daniel",
+            "text": "Jsem v Ostravě. Prší. Ale jsem tu rád. Protože kombinace dítě u prarodičů, déšť a Ostrava má vždycky něco do sebe. Ano, zažívám to poprvé, tudíž je to „vždycky“. Každopádně to kromě toho, že jsem si ráno vytvořil Raycast extension pro Uttero, přineslo taky nový text.\nDbám hodně na mikro vylepšení. Krůček po krůčku. Třeba i u (pro někoho) základů. Protože pak je tady mnohem větší skupina lidí, pro které jsou ty základy absolutní vesmír. A tohle bylo téma. Zrodilo se po nedávné diskuzi ohledně Raycast. A v rámci odpoledního vibe codingu.\nText tady https://danielgamrot.cz/clanky/nikdo-neresi-jak-ovladat-pocitac/, kdybyste chtěli mrknout."
+          },
+          {
+            "time": "20:37",
+            "author": "Daniel",
+            "text": "Jsem mega rád za tuhle skupinu. Učím se v ní skoro každý den fakt hodně nových věcí. Třeba toto. Díky!"
+          },
+          {
+            "time": "20:58",
+            "author": "člen komunity",
+            "text": "Neustálá mikro vylepšení je jeden z nejlepších mindsetů 💪🏼V Americe je toho velkým propagátorem Paul Akers - 2 second lean (na yt je o tom plno inspirace). Je to založeno na tom, že motivuje lidi, aby se každý den zamysleli nad 2 sekundovým vylepšením své práce, procesů. U všech lidí ve firmě, ať už ve výrobě, marketingu, ve skladu, u účetních. A celkově tak zlepšují každý den firmu s mindsetem, že přece dvě sekundy někde umí zefektivnit každý. Ono je to většinou teda mnohem víc ☺️ale mít v hlavě automatismus, že když se mi něco opakuje a můžu to příště udělat líp je boží."
+          },
+          {
+            "time": "21:00",
+            "author": "Daniel",
+            "text": "Naprostý souhlas, popsal si to perfektně. A díky moc za ten tip. 😉"
+          },
+          {
+            "time": "21:51",
+            "author": "člen komunity",
+            "text": "K tomu vylepšování, zkusím ještě jinej pohled. Kdybyste byli CEO firmy, tak se čas od času zeptáte CTO — vynakládáme efektivně náklady za náš vývoj. Nezajímá vás jestli je to cool. Zajímá vás jestli to slouží a zda ty náklady tomu odpovídají.\nA přesně tohle jsem si postavil. Vlastního ekonomicky smýšlejícího CTO. Skill jehož jedinej účel je mě brzdit ve nekonečným vylepšování. Reportuje mému virtuálnímu CEO a CFO. Neřeší technickou eleganci, ale byznys, zdroje a velocity.\nMusel jsem si tam dát korekce. Ta návykovost je děsivá. Člověk místo práce celej týden ladí nástroje.\nCo dělá: — \"Slouží ti tohle, nebo tě to jen zaměstnává?\" — Max 5 rozdělaný věci najednou, jinak stop — Jednou týdně přehled — co přineslo výsledek, co zabít — Pareto check — existuje jednodušší cesta? Pokud jo, jdi do ní — Je to dost dobrý? Pusť to ven a přestaň ladit\nTa smyčka je návyková jak prase a někdo mi musel říct stop - brzdi. -) A díky za skupinu."
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "09:25",
+            "author": "člen komunity",
+            "text": "Dobre rano, mel bych dotaz na MCP, protoze se to vyskytuje vic a vic. Chapu princip, funkci, ale zajima me bezpecnost. Na youtube je plno videí, co s cim spojit (coz vypada hodne zajimave ovladat vsechno z Claude Code a nemuset preskakovat mezi aplikacemi). Ale jakmile je neco na stazeni na Github a ma se zadavat API, tak mi vyskoci vykricnik 😀 jakou kdo ma zkusenost a jak se da overit bezpecnost těchto MCP?"
+          },
+          {
+            "time": "09:34",
+            "author": "člen komunity",
+            "text": "No, ono záleží opravdu na zdroji. Já používám oficiální MCPs, kde se bojím jen trochu (ze začátku raději ručně potvrzuji příkazy, než opřepnu na YOLO 😄) a pak vlastní MCP, kde kód znám (přesto jsem raději taky nechal udělat code review od Opus + GPT5.5).\nPokud potřebuješ použít MCP s Gitu, mrkni na komentáře a před nasazením možná raději nech prověřit přes LLM tvého výběru (bohužel se opravdu objevují MCP, ale i skilly, s prompt a sql injectingem - větší riziko je však pro agent harnes a agent systems)"
+          },
+          {
+            "time": "09:47",
+            "author": "člen komunity",
+            "text": "Moc diky za odpoved 👍 jeste k tem skillum, tam si to jako md soubor jsem schopen asi lepe zkontrolovat a precist, ne? U toho takovy strach nemam, byt i tam je opatrnost na miste 👾"
+          },
+          {
+            "time": "09:54",
+            "author": "člen komunity",
+            "text": "Ano, to je uživatelsky čitelné, bezpečnostní problém je ale tam, že to většina lidí nečte. Největší téma to bylo v době, kdy miliony lidí začalo používat OpenClaw a stahovali neověřené Skills, kde bylo hodně infikovaných."
+          },
+          {
+            "time": "12:15",
+            "author": "člen komunity",
+            "text": "Hustý"
+          },
+          {
+            "time": "18:09",
+            "author": "člen komunity",
+            "text": "Já když čtu, co vše budujete, připadám si jako žabař. Nástroje AI (zejména Claude) využívám k zeefktivnění práce ale zatím bez automatizací. Takže různé analýzy, prezentace, dashboardy. Zatím největší počin je konverze 3000 stran ve wordu do xls - Registr rizik (legislativní záležitost BOZP) a teď pracuji na překopání provozní dokumumentace (ochrana ovzduší) ze současné podoby do takové aby to vyhovovalo nové legislativě."
+          },
+          {
+            "time": "18:13",
+            "author": "člen komunity",
+            "text": "To jsou dobré use case! Účel je důležitější než nástroje. Je rozdíl použití nástroje pro jedinečnou potřebu a pro opakující se procesy."
+          },
+          {
+            "time": "18:40",
+            "author": "člen komunity",
+            "text": "S tím se nelamte hlavu. Nechceme přece vyvíjet jen proto, že je to in a dělá to každý.\nVždycky by to mělo začít otázkou:\n\"Jaký problém potřebuju vyřešit?\"\nS přibývajícími zkušenostmi pak jenom zjistíte, že zvládnete těch problémů vyřešit mnohem více. 😅"
+          },
+          {
+            "time": "18:42",
+            "author": "člen komunity",
+            "text": "Vůbec se tím netrapte. Vyřešíte svůj problém a to je hlavní. Každý řešíme trochu jiné problémy a proto vznikají různé nástroje a udělátka."
+          }
+        ]
+      }
+    ]
+  }
+}

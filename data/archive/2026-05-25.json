@@ -1,0 +1,201 @@
+{
+  "date": "2026-05-25",
+  "generated_at": "2026-06-05T08:01:52Z",
+  "stats": {
+    "messages": 20,
+    "groups": 2,
+    "members": 6
+  },
+  "cards": [
+    {
+      "id": "2026-05-25-01",
+      "type": "TÉMA TÝDNE",
+      "level": "Začátečník",
+      "topic": "Komunita a platformy",
+      "title": "WhatsApp nebo Discord: kde patří AI komunita",
+      "excerpt": "Debata o přesunu na Discord nebo Circle rozhýbala skupinu víc než cokoli jiného. Největší plus Discordu jsou vlákna, díky kterým se debaty nerozpadnou. Největší mínus je, že si člověk musí instalovat další aplikaci.",
+      "body": "Opakovaná frustrace z přeplněného WhatsAppu otevřela debatu, jestli komunitu nepřesunout jinam. Padl Discord, protože má vlákna, kanály a dá se v něm líp třídit obsah podle témat. Zazněl i Circle jako přívětivější varianta pro lidi, kteří znají Discord hlavně z herních komunit.\n\nČást členů přesun vítala. Vlákna by řešila konkrétní problém: když se rozjede zajímavá debata, pohřbí všechno ostatní. Informační overload je reálný. Víc lidí psalo, že nestíhají sledovat všechny zprávy a chtěli by si filtrovat jen to, co je pro ně relevantní.\n\nDruhá část komunity reagovala jasně: ne. Discord je pro spoustu lidí cizí prostředí, instalace další aplikace je bariéra a část členů by kvůli tomu ze skupiny odešla.\n\nDaniel oznámil, že komunita zůstane na WhatsAppu. Zároveň zmínil, že chystá přehled nebo dashboard, který pomůže se v obsahu líp zorientovat. WhatsApp má jednu věc, kterou Discord nemá: má ho v telefonu skoro každý a notifikace prostě přijdou.",
+      "read_minutes": 2,
+      "source_date": "2026-05-25"
+    },
+    {
+      "id": "2026-05-25-02",
+      "type": "INSIGHT",
+      "level": "Expert",
+      "topic": "AI architektura",
+      "title": "Co drží multi-agent architekturu pohromadě",
+      "excerpt": "Jeden člen ukázal AI setup postavený jako firemní hierarchii: šéfík, CTO, systémový architekt, projekťák a agent na správu souborů. Skupinu ale víc než samotné role zajímalo, co celý systém drží pohromadě.",
+      "body": "Samotné role agentů jsou jen začátek. Multi-agent setup drží pohromadě hlavně tři věci: názvy souborů, mapa složek a prolinkování mezi dokumenty.\n\nKdyž nemáš konzistentní názvy, agent neví, kam má ukládat ani odkud číst. Když chybí mapa složek, kontext se rozleze přes víc projektů a session se v tom přestane orientovat. A když nejsou propojené klíčové soubory, agent musí pořád dokola zjišťovat věci, které už jednou zjistil.\n\nTenhle přístup není nový. AI ho jen vytáhla víc na světlo. Dřív špatně pojmenovaný soubor znamenal pár minut hledání. Dneska může znamenat, že agent selže nebo vygeneruje nesmysl, protože sáhl po jiném souboru, než měl.\n\nPraktický krok, který se dá udělat hned: projít aktuální projekt a zkontrolovat, jestli struktura složek dává smysl i člověku, který ji nezná. Pokud by nový agent nebo nový kolega musel hádat, co je kde, je čas složky refaktorovat.",
+      "read_minutes": 2,
+      "source_date": "2026-05-25"
+    },
+    {
+      "id": "2026-05-25-03",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Přepis hlasu",
+      "title": "Pět nástrojů na přepis hlasu: rychlé srovnání",
+      "excerpt": "Skupina vyzkoušela WisprFlow, MacWhisper, Apple diktování, Raycast v betě i Plaud. Každý nástroj se hodí na trochu jinou situaci. Deepgram k tomu přidal zajímavou možnost: přepis online schůzek s rozlišením jednotlivých mluvčích.",
+      "body": "Přepis mluveného slova dneska řeší víc nástrojů a záleží hlavně na tom, co přesně chceš přepisovat.\n\nWisprFlow a MacWhisper jsou hlavně na diktování rovnou do aplikací nebo textového pole. Běží lokálně, jsou rychlé a hodí se na běžné psaní bez posílání zvuku na server. Apple diktování je nejdostupnější, ale s přesností je na tom hůř.\n\nRaycast má přepis zatím v betě, takže se teprve ukáže, kam se posune. Plaud je malé fyzické zařízení, které nosíš u sebe a nahrává schůzky nebo rozhovory. Hodí se, když chceš přepis offline nebo nechceš držet telefon v ruce.\n\nDeepgram je jiná kategorie. Přepisuje online schůzky a pozná, kdo co říkal. To se hodí u porad nebo záznamů rozhovorů, kde nechceš jen text, ale i přiřazení k jednotlivým lidem. Má 200 dolarů kreditu zdarma, takže vyzkoušení nic moc nebrzdí.\n\nRychlá volba: na každodenní psaní WisprFlow nebo MacWhisper, na schůzky s rozlišením mluvčích Deepgram.",
+      "read_minutes": 2,
+      "source_date": "2026-05-25"
+    },
+    {
+      "id": "2026-05-25-04",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Builder",
+      "topic": "Produktivita a nástroje",
+      "title": "Dává smysl task manager, když mám Claude?",
+      "excerpt": "Otázka z komunity: Proč si vést samostatný úkolníček, když se Claude přes MCP dostane skoro kamkoliv? Padala různá řešení. Od Google ekosystému přes Things s Obsidianem až po týmové projektové nástroje.",
+      "body": "Claude s MCP konektorem umí číst z Notionu, Todoistu nebo Google Tasks. Umí tam i zapisovat a propojovat úkoly s tím, co se řeší v konverzaci. Má pak ještě smysl mít samostatný task manager?\n\nPro task manager mluví tohle: přehledný seznam úkolů s prioritami, termíny a opakováním pořád líp funguje ve specializované aplikaci. Notifikace, widgety a mobilní používání Claude nenahradí. A v týmech je sdílený úkolníček pořád základ.\n\nPro Claude jako hlavní místo: když úkol souvisí s konverzací nebo projektem, dává smysl držet ho u zdroje. Automatizace přes hlas nebo iOS zkratku, která úkol rovnou zapíše do Notionu, je v mnoha případech rychlejší než otevírat aplikaci.\n\nSkupina se neshodla. A není to jen teorie. Záleží na tom, co konkrétnímu člověku v jeho systému ubere víc tření.",
+      "read_minutes": 2,
+      "source_date": "2026-05-25"
+    },
+    {
+      "id": "2026-05-25-05",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "Vibe coding",
+      "title": "Tři projekty za jedno odpoledne s AI",
+      "excerpt": "Za poslední týden se objevily tři konkrétní příklady: přesun webu, vlastní fakturační systém a hlasová zkratka do úkolníčku. Každý z nich vyřešil reálný problém rychleji, než by trvalo hledat hotový nástroj.",
+      "body": "Tři příklady, které stojí za pozornost.\n\nPrvní: přesun webu z Lovable na Claude a GitHub. Jedna členka tím strávila pár hodin a ušetřila si měsíční předplatné. Lovable je fajn na rychlé prototypy. Ale u webu, za který nechceš platit každý měsíc, dává vlastní hosting smysl.\n\nDruhý: vlastní fakturační systém za hodinu a půl s Codexem. Placený nástroj neměl funkce, které developer potřeboval. Takže místo hledání alternativy nebo čekání na update napsal vlastní. Investovaný čas se mu vrátí hned u první faktury, kde by jinak hodinu ručně kopíroval.\n\nTřetí: hlasová zkratka do úkolníčku. Jedna členka si nastavila iOS zkratku, která vezme hlasový vstup, pošle ho přes konektor do Notionu nebo Todoistu a přidá úkol. Řekne „zapiš mi úkol“ a za deset sekund je v systému. Bez otevírání aplikace.\n\nSpolečný jmenovatel: každý projekt řešil konkrétní tření. Nic z toho nebylo složité postavit. Bez AI by to ale trvalo výrazně déle, nebo by to nevzniklo vůbec.",
+      "read_minutes": 3,
+      "source_date": "2026-05-25"
+    },
+    {
+      "id": "2026-05-25-06",
+      "type": "INSIGHT",
+      "level": "Expert",
+      "topic": "Claude Code",
+      "title": "Jak nepřijít o kontext po zavření session",
+      "excerpt": "Ve Vibe Coding skupině se řešily tři způsoby, jak při ukončení session v Claude Code nepřijít o kontext. Automatické ukládání stavu, skill pro zpracování session a systém, který hlídá závislosti napříč více projekty najednou.",
+      "body": "Ztráta kontextu po ukončení session je při práci s Claude Code jedno z nejčastějších tření. Otevřeš novou session a agent netuší, co dělal předtím.\n\nVe skupině se objevily tři přístupy.\n\nAutomatické ukládání stavu každých 15 kroků: agent si průběžně zapisuje, co udělal, jaký je aktuální stav projektu a jaký je další krok. Při novém otevření stačí přiložit tenhle soubor a session naváže tam, kde skončila.\n\nSkill na zpracování session: po skončení práce skill session shrne a navrhne úkoly do úkolníčku. Místo ztraceného kontextu máš konkrétní seznam toho, co dělat dál.\n\nSystém, který sleduje závislosti napříč více projekty: hodí se pro složitější setupy, kde agent pracuje na více věcech najednou. Sleduje soubor závislostí, tedy kdo na čem závisí. Při pokračování agent ví nejen to, co dělal, ale i co může ovlivnit.\n\nJednoduchý začátek bez složitého nastavování: na konec každé session přidat instrukci „zapiš stav projektu do STATUS.md“. Jeden soubor, pět minut práce a příště přesně víš, kde jsi skončil.",
+      "read_minutes": 2,
+      "source_date": "2026-05-25"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-05-04-03",
+    "source_date": "2026-05-04",
+    "topic": "Poctivá zpětná vazba přes Claude Code",
+    "excerpt": "Jeden z členů nahrál svůj výtvor do Claude Code. Výsledek ho překvapil, ale konkrétní postřehy mu nakonec pomohly.",
+    "body": "Ve skupině Inspirace & Diskuze se řešilo sdílení AI výtvorů. Radim Pelaněk zkusil nechat svůj projekt zhodnotit přes Claude Code a reakce nebyla zrovna lichotivá. Daniel přiznal, že ho to taky trochu vyděsilo. Konkrétní postřehy, které pak Radim nasdílel, ale dávaly smysl. Upřímná zpětná vazba bolí míň, když je konkrétní.",
+    "resurfaced_from": "2026-05-04"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "mastertheflow—hlavní",
+        "name": "Master the Flow — hlavní",
+        "messages": [
+          {
+            "time": "15:18",
+            "author": "Daniel",
+            "text": "*📅 TÝDENNÍ SOUHRN (18.5. - 24.5.)*\n----------\n*Co drží AI setup pohromadě.*\nJeden člen sdílel, jak si postavil celou AI architekturu jako firemní hierarchii. Šéfík, CTO, systémový architekt, projekťák a uklízeč, který vrací soubory zpět na místo. Diskuze běžela dva dny. Co skupinu zaujalo víc než role samotné bylo to, co celý systém drží pohromadě. Pojmenování souborů, folder mapa a prolinky mezi nimi.\n*Přepis mluveného slova. Co se řešilo.*\nSkupina prošla WisprFlow, MacWhisper, Apple diktování, Raycast v betě a Plaud. Taky Deepgram. Přepisuje online schůzky a rozpozná, kdo co říkal. Nabízí 200 dolarů kreditu zdarma.\ndeepgram.com\n*Úkolníček nebo Claude s MCP.*\nPadla otázka, jestli dává smysl mít separátní task manager, když Claude umí přes MCP přistupovat kamkoliv. Zazněla různá řešení. Google ekosystém, Things s Obsidianem, projektové nástroje pro tým.\n*Co jde postavit za odpoledne.*\nTři konkrétní příklady z víkendu. Jedna členka přesunula web z Lovable na Claude a GitHub. Pár hodin práce, žádné předplatné navíc. Jiný člen postavil vlastní fakturační systém za hodinu a půl s Codexem, protože placený nástroj neměl funkce, které potřeboval. Ještě jedna si to nastavila tak, že řekne do mikrofonu „zapiš mi úkol“ a Claude to přes iOS zkratku a konektor pošle do Todoistu nebo Notionu.\n*Pro ty, kdo jedou (nejen) Claude Code.*\nVe Vibe Coding skupině se sdílely přístupy, jak nepřijít o kontext při ukončení session. Automatické ukládání stavu každých 15 kroků, skill zpracovávající session s návrhem tasků do úkolníčku, nebo systém sledující závislosti přes víc projektů najednou. Kdo tohle řeší, mrkněte do Vibe Coding skupiny.\nPokud jste tu čerstvě, jsou tu čtyři skupiny. Hlavní (oznámení a kratší věci ode mě), Inspirace a Diskuze (nejaktivnější), Vibe Coding (stavění, nástroje, postupy) a Webináře a Workshopy (události).\nA ještě jedna komunitní akce zdarma - 3. 6. v 18.30 na Zoomu pořádám Show and Tell. Sdílečka scénářů a postupů. Nemusí to být appka, stačí 5 minut ukázky čehokoli, co vám šetří čas. Potvrzení ve skupině Webináře a Workshopy.\nD."
+          }
+        ]
+      },
+      {
+        "slug": "inspiracediskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "00:07",
+            "author": "člen komunity",
+            "text": "Nejvyšší přínos vidím v možnosti vytvářet vlákna ze zpráv, takže se může diskuze stocit mimo a nekazí to flow původního kanálu. To my zde přijde jako hodně fajn feature (i kdybych měl všechny ostatní zahodit)"
+          },
+          {
+            "time": "06:28",
+            "author": "člen komunity",
+            "text": "Discord mám z donucení, a pokud k tomu dojde tak se holt se skupinou rozloucim :-)"
+          },
+          {
+            "time": "06:36",
+            "author": "člen komunity",
+            "text": "Discord bohužial nie, ďakujem, nebudem používať"
+          },
+          {
+            "time": "06:51",
+            "author": "člen komunity",
+            "text": "Jsem taky za Discord. Hlavně kvůli tomu rozřazování témat a možnosti dávat diskuze do threads."
+          },
+          {
+            "time": "06:52",
+            "author": "člen komunity",
+            "text": "Pro větší komunity je Discord daleko vhodnější už díky možnosti tvořit vlákna. V rámci digi hygieny občas nesleduju WA delší dobu a jen v MTF se mi nastackují desítky zpráv, které potom musím všechny projet."
+          },
+          {
+            "time": "09:07",
+            "author": "člen komunity",
+            "text": "Dobrá alternativa k Discordu, která je víc vanilla a schroupatelná pro víc lidí, je Circle. Whatsapp je ale prostě pro každýho známý prostředí bez nutnosti instalace, navíc vyskakuje jako notifikace, takže Dana chápu, že se mu odsud nechce. Jen kvůli vláknům to není úplně výhodnej tradeof.\nJá třeba mám u všech konverzací mute a můj Claude Code přes Whatsapp MCP do všech konverzací průběžně nahlíží. :)"
+          },
+          {
+            "time": "09:08",
+            "author": "člen komunity",
+            "text": "Já bych si spíš počkal, až Meta dodělá vlákna i sem na Whatsapp, s komunitama udělali docela kus práce za poslední dobu."
+          },
+          {
+            "time": "09:09",
+            "author": "člen komunity",
+            "text": "nepřehledný ? nemyslím a říkám to jako \"starší\" :) Ale samozřejmě, každý to máme jinak."
+          },
+          {
+            "time": "09:15",
+            "author": "člen komunity",
+            "text": "Oni je více možností Slack(vypadá ale podobně jako discord) telegram.."
+          },
+          {
+            "time": "09:25",
+            "author": "člen komunity",
+            "text": "Slack maže historii, to je celkem opruz. Telegram je za mě úplně no go vzhledem k postavě zakladatele a pochybnému fungování.🤷‍♀️ Ale třeba Filip Dřímalka používá pro své komunity Circle, co tu byl zmíněn. Jen netuším, jak to je s pricingem."
+          },
+          {
+            "time": "10:07",
+            "author": "člen komunity",
+            "text": "Circle OK, DIscord lepší, jedu na něm i komunikaci se svým “Jarvis” bootem."
+          },
+          {
+            "time": "10:56",
+            "author": "člen komunity",
+            "text": "Obávám se, že zaměření i tohoto chatu bude za chvíli nad můj rámec chápání a znalostí, takže se asi stejně odpojím. Jsem tu pro lidštější přístup např. k využití Claude a ne zabřednutí do technolgických vrstev, takový nadšenec nejsem. Čas u kompu i mobilních zařízení ukrajuje čas z mýho reálnýho života, takže se snažím, na rozdíl asi od většiny přispěvatelů o co největší udržitelný odstup. Máte to tady někdo stejně?"
+          },
+          {
+            "time": "11:10",
+            "author": "člen komunity",
+            "text": "Já osobně se fakt snažím to projíždět jednou denně. Ale vlastně hledám golden nuggets. Nějaké opravdu dobré hacky, odkazy, tipy na něco, co mi sedne. Občas vidím fajn inspiraci. Ale už tu i výtvory ostatních tak často nejsou… Celkově všechny ty chaty, jejich frekvence atd… trochu to naráží obecně i na omezování mého informačního overloadu…. Byl jsem tu jeden z prvních. Nechce se mi, ale zvažuji utlumení. Možná si navibecodím nějaké shrnutí jednou týdně 🙂"
+          },
+          {
+            "time": "14:24",
+            "author": "Daniel",
+            "text": "Jj, už to skládám, udělám první demo a můžeme to pak posouvat. Díky!"
+          },
+          {
+            "time": "14:28",
+            "author": "Daniel",
+            "text": "Díky moc všem za ty podněty ohledně platformy. Byl jsem teď půlden pryč na školení a pročetl jsem si to zpětně.\nPlatformu měnit nechci, chci zůstat na WA, i když jsem si vědom silných stránek Discordu, Circle apod. Sám je používám. Už když jsem to startoval, bylo na stole několik kanálů, mezi kterými jsem se rozhodoval a WA vyhrál.\nTak, prosím, pokračujme ve sdílení inspirace a toho, co nám pomáhám v (nejen) digi produktivitě.\nDíky moc. :)"
+          },
+          {
+            "time": "14:47",
+            "author": "člen komunity",
+            "text": "@člen A podělil byste se pak prosím s tím shrnutím? Taky nestíhám vše číst a taky bojuju s informačním overloadem 😅"
+          },
+          {
+            "time": "14:48",
+            "author": "člen komunity",
+            "text": "Tak jestli to připravuje Dan, určitě to udělá lépe než já a bude to pro všechny. Navíc myslím, že každý hledáme něco jiného, takže pro moji vlastní sumarizaci by to dost pravděpodobně vypadalo jinak než pro Vaši."
+          },
+          {
+            "time": "14:49",
+            "author": "člen komunity",
+            "text": "Supr. Tak doufám, že to bude dashboard. Možná by se tam daly filtrovat zájmy členů, aby mu to našlo relevantní extrakty 🙂"
+          },
+          {
+            "time": "14:52",
+            "author": "člen komunity",
+            "text": "Máte pravdu, přehlídla jsem Danovu zprávu. Prostě overload že všech stran 😅"
+          }
+        ]
+      }
+    ]
+  }
+}

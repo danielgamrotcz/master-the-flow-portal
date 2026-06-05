@@ -1,0 +1,174 @@
+{
+  "date": "2026-03-20",
+  "generated_at": "2026-06-05T06:16:22Z",
+  "stats": {
+    "messages": 18,
+    "groups": 2,
+    "members": 6
+  },
+  "cards": [
+    {
+      "id": "2026-03-20-01",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "Claude Code",
+      "title": "Aplikace na lokální přepis audia a videa",
+      "excerpt": "Jeden člen komunity si s Claude Code postavil vlastní aplikaci na lokální přepis audia a videí přímo na Macu. Cloudové nástroje mu nestačily, tak si udělal vlastní řešení. Teď chce přidat automatickou anonymizaci nahraných rozhovorů.",
+      "body": "Jeden člen komunity si s Claude Code postavil aplikaci pro lokální přepis audia a videí na Macu. Přesně ten typ projektu, kde vibe coding dává smysl. Potřebuješ nástroj, který buď neexistuje, nebo by byl moc drahý. Tak si ho uděláš sám.\n\nTeď chce přidat anonymizaci rozhovorů. Pracuje s lidmi, kteří chtějí zůstat v anonymitě, takže samotný přepis nestačí. Potřebuje ještě úpravu textu, která nahradí jména a citlivé údaje neutrálními výrazy.\n\nNa přepis Daniel doporučil Soniox nebo modely od OpenAI. Zároveň upozornil, že text je skoro vždycky potřeba ještě upravit. Ne každý mluví jasně a přepis to pak věrně ukáže. Nakonec by aplikace mohla text i přečíst syntetickým hlasem přes Eleven Labs nebo podobnou službu.\n\nTakhle vibe coding často vypadá. Začneš jednou funkcí. Pak přidáš další. A potom ještě jednu. Každou fázi ti pomůže poskládat Claude Code, i když nejsi developer.",
+      "read_minutes": 2,
+      "source_date": "2026-03-20"
+    },
+    {
+      "id": "2026-03-20-02",
+      "type": "NÁSTROJE",
+      "level": "Builder",
+      "topic": "Přepis řeči",
+      "title": "WisprFlow, Raycast a Soniox: co kdy použít",
+      "excerpt": "V komunitě jsme porovnávali nástroje na přepis mluvené řeči. WisprFlow je oblíbený, ale na iOS občas text dost zkomolí. Raycast se hodí jako záloha, Soniox spíš pro náročnější přepisy.",
+      "body": "K otázce přepisu řeči na iOS se sešlo několik zkušeností.\n\nWisprFlow je asi nejznámější volba v téhle kategorii. Na desktopu funguje dobře, ale na iOS občas text zkreslí nebo pokazí. Jako záloha se dá použít Raycast. Přepis taky umí, i když to není jeho hlavní funkce.\n\nNa přesnější nebo náročnější přepis padlo doporučení na Soniox. Případně modely od OpenAI. Jen je potřeba počítat s tím, že výstup bude chtít ještě upravit. Lidi často nemluví úplně jasně a surový přepis to prostě ukáže.\n\nKdo chce mít všechno pod kontrolou, bez cloudu a bez kreditů, může zkusit lokální post-processing přes Ollama. Běží offline přímo na Macu s čipem M3 a novějším. Je to ale složitější cesta a hodí se spíš pro technicky zdatnější uživatele.\n\nKrátké shrnutí: WisprFlow jako výchozí volba pro většinu, Raycast jako záloha na iOS, Soniox nebo OpenAI pro přesnější přepis a Ollama pro offline práci s citlivými daty.",
+      "read_minutes": 2,
+      "source_date": "2026-03-20"
+    },
+    {
+      "id": "2026-03-20-03",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "AI workflow",
+      "title": "Anonymizace přepisů přes textový post-processing",
+      "excerpt": "Přepis rozhovoru je jen půlka práce. Když nahrávka obsahuje jména nebo citlivé údaje, je potřeba je z textu vymazat ještě před dalším použitím. AI to může udělat hned potom jako další krok v procesu.",
+      "body": "Jeden člen komunity pracuje s rozhovory, kde dotazovaní chtějí zůstat v anonymitě. Nestačí proto jen převést audio na text. Přepis se musí ještě upravit: nahradit jména, firmy a další údaje, podle kterých by šel člověk poznat, neutrálními nebo vymyšlenými názvy.\n\nTady dává úprava textu pomocí AI velký smysl. Postup může vypadat takhle:\n\n1. přepis audia (Soniox, Whisper, OpenAI)\n2. vyčištění textu (oprava nesrozumitelných míst a gramatiky)\n3. anonymizace (prompt s instrukcí, co se má nahradit a čím)\n4. volitelně: vytvoření hlasu z anonymizovaného textu\n\nDůležité je, že každý krok jde automatizovat. Claude nebo jiný LLM dostane text a instrukci typu „nahraď všechna jména neutrálními označeními“ a udrží to konzistentně v celém dokumentu.\n\nPokud s rozhovory pracuješ pravidelně, vyplatí se tenhle postup jednou nastavit a pak ho jen spouštět. Hodí se pro novináře, výzkumníky, HR i kouče. Zkrátka pro každého, kdo pracuje s citlivými výpověďmi.",
+      "read_minutes": 2,
+      "source_date": "2026-03-20"
+    },
+    {
+      "id": "2026-03-20-04",
+      "type": "INSIGHT",
+      "level": "Expert",
+      "topic": "Ollama",
+      "title": "Lokální Ollama jako offline alternativa ke cloudu",
+      "excerpt": "Jeden člen komunity testuje úpravy textu lokálně přes Ollamu na Macu s čipem M3. Data nejdou do cloudu, nejsou potřeba kredity a má nad tím plnou kontrolu. Nevýhoda? Složitější nastavení a závislost na výkonu zařízení.",
+      "body": "Ne každý chce posílat nahrávky rozhovorů nebo citlivé texty do cloudu. Právě na to se hodí Ollama. Je to framework, přes který můžeš spouštět jazykové modely lokálně přímo na Macu.\n\nJeden člen komunity ji testuje na M3 MacBooku pro post-processing přepisů. Workflow má jednoduché: audio se nejdřív přepíše cloudovým nebo lokálním nástrojem. Hotový text pak projde přes lokální model v Ollamě, který udělá korekce, anonymizaci nebo jiné úpravy.\n\nCo to znamená v praxi:\n- stáhneš a nainstaluješ Ollamu (open source, zdarma)\n- vybereš model, třeba Llama 3, Mistral, Gemma nebo jiný\n- spustíš lokální server a voláš ho přes API nebo CLI\n\nVýkon záleží na čipu. M3 Pro a vyšší zvládá dobře modely zhruba do 13 miliard parametrů. Na běžný post-processing textu to stačí. U složitějších úloh, delších kontextů nebo když chceš přesnější výsledky, jsou cloudové modely pořád rychlejší.\n\nOllama dává smysl hlavně ve chvíli, kdy pracuješ s citlivými daty nebo v prostředí, kde cloud nepřipadá v úvahu.",
+      "read_minutes": 2,
+      "source_date": "2026-03-20"
+    },
+    {
+      "id": "2026-03-20-05",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Začátečník",
+      "topic": "Produktivita",
+      "title": "Nástroje znám, ale systém nemám",
+      "excerpt": "Víc lidí z komunity řeší stejný problém: znají spoustu nástrojů, ale nemají systém, kde začít a jak si je roztřídit. Možná právě tohle odděluje ty, kdo AI jen zkouší, od těch, kdo ji opravdu používají. Jak jste si ten systém našli vy?",
+      "body": "V diskuzi zaznělo něco, co možná řeší víc lidí v komunitě: „Nástroje znám, ale mám v tom hrozný chaos.“\n\nZnát nástroje a mít systém jsou dvě různé věci. Nástroje jsou jako suroviny v lednici. Systém je recept. Říká, v jakém pořadí je použít, na co a kdy.\n\nBez systému se snadno stane",
+      "že": "n- Víš o patnácti nástrojích, ale pravidelně používáš nula\n- Každý týden zkusíš něco nového, ale nic nevydrží\n- Nevíš, kde začít, takže nezačneš vůbec\n\nOtázka pro komunitu: Jak jste si k systému přišli? Měli jste přehled nástrojů předem, nebo jste začali s jedním konkrétním problémem a přidávali postupně? A co vám pomohlo se v tom neztratit?\n\nV reakci na tohle téma se připravuje přehled aplikací i online průvodce úrovněmi zaměřený na Claude Code, od základní konfigurace výš. Pokud ti tahle otázka rezonuje, dej vědět v diskuzi.",
+      "read_minutes": 2,
+      "source_date": "2026-03-20"
+    }
+  ],
+  "resurfacing": null,
+  "transcript": {
+    "groups": [
+      {
+        "slug": "mastertheflow—hlavní",
+        "name": "Master the Flow — hlavní",
+        "messages": [
+          {
+            "time": "12:17",
+            "author": "Daniel",
+            "text": "🔥 PŘETÁHLI JSME JEN O 30 MIN.\n==========================\nA ano, nemohl za to nikdo jiný než já. Chtěl bych vám toho ještě tolik říct, napsat a podobně, každopádně si myslím, že mě teď na chvíli bylo dost a je na řadě, abyste začali pracovat na svých projektech.\nTakže se na chviličku odmlčím, zpracuju záznam z toho dneška, poskládám z toho zase nějaké materiály, pošlu vše, co jsem slíbil, a vy mi mezitím do skupiny vibe coding dávejte své projekty. I pro inspiraci ostatním.\nTohle sdílení je naprosto skvělý a jsem moc rád, že se sešla tak skvělá parta. Mám z toho fakt velkou radost, upřímnou.\nKaždopádně, kdyby bylo cokoliv potřeba, pište do vibe coding challenge skupiny, anebo klidně přímo mě na můj WhatsApp.\nMoc děkuju, že u toho jste se mnou.\nDaniel\n#gamrot"
+          }
+        ]
+      },
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "11:40",
+            "author": "člen komunity",
+            "text": "Lákavá nabídka! Do kdy tam jsi?\nKdyž by to náhodou nevyšlo - jakou aplikaci pro přepis mluvené řeči do textu jsi na iOS používal před tím, než sis udělal Uttero? Vím, že jsi zmiňoval WhisprFlow, ale taky jsi rikal, ze ti nefungoval moc dobre. Mas tip na nejakou jinou osvedcenou nebo i pres ty problemy je WhisprFlow to, co bys doporucil.\nDiky"
+          },
+          {
+            "time": "12:11",
+            "author": "člen komunity",
+            "text": "Ahoj, Claude Code mi dělá první aplikaci - lokální přepis audio a videí na mém Macu. Když už Teleprompter udělal Dan 🙂. V další fázi chci experimentovat. Mám rozhovory s lidmi, kteří chtějí zůstat v anonymitě. Takže budu měnit část textu (výměna jejich skutečného jména a dalších údajů za jiné). A na závěr přečtení hlasu buďto standardním Ai hlasem, nebo nějakým přes Eleven Labs, možná Soniox?"
+          },
+          {
+            "time": "12:12",
+            "author": "Daniel",
+            "text": "Tady v Hua Hin, tuším do 15. dubna, pak budeme ještě týden v Bangkoku. Ale jako lítá to sem teďka dost mizerně a za hodně peněz.\nA WisprFlow. Pak Raycast, když začal WF dost drbat ty texty na iOS."
+          },
+          {
+            "time": "12:13",
+            "author": "Daniel",
+            "text": "Aleši, tohle je super. Mám velkou radost, že se to chytlo. A že sis to poskládal. A sorry, že jsem ti vyfoukl ten teleprompter."
+          },
+          {
+            "time": "12:14",
+            "author": "Daniel",
+            "text": "Jinak ten přepis ti udělá Soniox skvěle, ale myslím si, že i modely od OpenAI s tím, že tam bude nějaká postprodukce v rámci textů, a úpravy, protože ty přepisy nebudou vždycky úplně skvělý. Ne každý dobře formuluje své myšlenky a artikuluje."
+          },
+          {
+            "time": "12:18",
+            "author": "člen komunity",
+            "text": "Tos vychytal … to by se mi hodilo🫣"
+          },
+          {
+            "time": "12:20",
+            "author": "člen komunity",
+            "text": "Dane 👍… jen se v tom neztratit … mam v tom vsem strašný nesystém… takze začít s roztříděním dat 🙄 …"
+          },
+          {
+            "time": "12:22",
+            "author": "člen komunity",
+            "text": "Někde je tady link, můžeš to zkusit, jen si tam musíš vložit Anthropic API key. Funguje, ale je to polotovar, nicméně to můžeš vztí jako pokus a rozpracovat si to dál 🙂"
+          },
+          {
+            "time": "12:27",
+            "author": "Daniel",
+            "text": "Mimochodem, ten příspěvek možná to tak vyznělo, ale není o krabičce a pomodoro minutce.\nJá je, že ty možnosti jsou dneska neskutečný, a mám v hlavě asi tak 100 nápadů, co by přes to šlo dělat, a bylo by to užitečné.\nUrčitě to sem budu sdílet."
+          },
+          {
+            "time": "12:29",
+            "author": "Daniel",
+            "text": "Určitě souhlas, proto jsem začal zpracovávat online průvodce těmi úrovněmi, o kterých jsem dneska mluvil na webináři. Prostě krůček po krůčku.\nBude to zaměřené na Claude Code a právě navigovat postupně směrem k co nejlepší konfiguraci a dovednostem."
+          },
+          {
+            "time": "12:33",
+            "author": "člen komunity",
+            "text": "Ahoj Dane … prosim tě muzes udělat pak nějaký ten seznam ..ktere aplikace na co používáš … neustále hledám o čem se mluvilo, co se ti osvědčilo a stahuju a testuju řady jiných … a ty to máš už osahány co ti funguje díky"
+          },
+          {
+            "time": "12:42",
+            "author": "Daniel",
+            "text": "Bude to v těch materiálech. Určitě pošlu, a kdyby ne, tak mám černý puntík, ať mi to prosím připomeň. Moc děkuju."
+          },
+          {
+            "time": "13:42",
+            "author": "člen komunity",
+            "text": "Moc dík … díky tobě jsem se rozhoupala to zkusit v praxi … nejdřív webinar na Aibility a pak jsem natrefila na tebe  … ta praxe krok po kroku je super …"
+          },
+          {
+            "time": "14:20",
+            "author": "člen komunity",
+            "text": "Tak první přepis celkem OK. Doplňuju postupně slovník a iterujeme. (Lokální LLM post-processing — po přepisu pustit lokální model (přes Ollama), který opraví gramatiku a aplikuje slovník důsledněji. Na M3 to pojede offline a bez kreditů. Jak to @člen udělat, ať Claude nespotřebovává kredity když už je aplikace hotová a já ji jen chci spustit - tedy nahraju nový soubor. Nebo ať spotřebuje co nejméně kreditů?"
+          },
+          {
+            "time": "14:28",
+            "author": "Daniel",
+            "text": "A na čem by měl Claude spotřebovávat ty kredity? Teď asi nerozumím."
+          },
+          {
+            "time": "14:28",
+            "author": "Daniel",
+            "text": "To je skvělý. Děkuju moc."
+          },
+          {
+            "time": "22:24",
+            "author": "člen komunity",
+            "text": "A bude to fungovat i na přepisy horších nahrávek (z přednášek apod.)?"
+          }
+        ]
+      }
+    ]
+  }
+}

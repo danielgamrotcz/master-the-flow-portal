@@ -1,0 +1,228 @@
+{
+  "date": "2026-03-17",
+  "generated_at": "2026-06-05T06:07:51Z",
+  "stats": {
+    "messages": 28,
+    "groups": 1,
+    "members": 6
+  },
+  "cards": [
+    {
+      "id": "2026-03-17-01",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "Claude Code",
+      "title": "Android čtečka článků postavená za tři iterace",
+      "excerpt": "Jeden člen si postavil vlastní Android aplikaci, která čte články nahlas. Umí offline TTS i OpenAI API. Celé to zvládl ve třech iteracích s pomocí Claude Code.",
+      "body": "Člen, který poslouchá podcasty už od roku 2006, řešil jeden problém. Aplikace, které našel, byly buď placené, nebo nacpané reklamou. Tak přestal hledat a postavil si vlastní.\n\nŠel na to jednoduše. Nejdřív si v Claude Chatu připravil zadání. Pak udělal tři iterace v Claude Code. Výsledek? Funkční Android aplikace v telefonu. Umí offline Google Text-to-Speech a taky napojení přes OpenAI TTS API.\n\nByl to jeho první opravdový projekt v Claude Code. A přesně o to šlo. Nešlo jen o napsání kódu, ale o vyzkoušení celého postupu. Od zadání až po funkční aplikaci. Jak sám napsal, wow efekt byl neskutečný.\n\nTenhle příklad dobře ukazuje sílu vibe codingu. Když ti hotové nástroje nesedí, můžeš si poměrně rychle postavit vlastní. Přesně podle sebe.",
+      "read_minutes": 2,
+      "source_date": "2026-03-17"
+    },
+    {
+      "id": "2026-03-17-02",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "Claude Code",
+      "title": "Vizualizace výsledků plaveckých soutěží vlastními silami",
+      "excerpt": "Jeden z členů postavil aplikaci, která zpřehledňuje výsledky plaveckých závodů. Claude Code mu zpracoval vstupní dokumenty, vizuální část si dodělal sám.",
+      "body": "Jeden z členů se chytil denní výzvy a pustil se do svého prvního projektu. Téma vzal z vlastního prostředí. Výsledky plaveckých soutěží sice existují v dokumentech, ale chyběl mu přehlednější vizuální výstup.\n\nPráci si rozdělil jednoduše. Claude Code zpracoval vstupní data a uložil je. Vizuální část si člen navrhl a dodělal sám. Výsledek je zatím jednoduchý, ale funguje.\n\nNa tomhle přístupu je zajímavé hlavně to, že si vědomě vybral, co nechá na AI a co si udělá po svém. Mechanickou část nechal AI, podobu výsledku si rozhodl sám.\n\nPlánuje pokračovat a postupně si zvyšovat laťku. Přesně takhle to dává smysl: udělat malý krok, ověřit, že to funguje, a pak přidávat dál.",
+      "read_minutes": 2,
+      "source_date": "2026-03-17"
+    },
+    {
+      "id": "2026-03-17-03",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Claude Code",
+      "title": "Nejdůležitější fáze projektu je zadání, ne kód",
+      "excerpt": "3. den výzvy je o přípravě zadání ještě před samotným vývojem. Kdo tuhle fázi přeskočí, zbytečně pak ladí dokola a ztrácí čas.",
+      "body": "Výzva v komunitě dnes otevřela téma, které spousta lidí přeskakuje: jak dobře napsat zadání dřív, než začnete něco stavět.\n\nV praxi to často vypadá tak, že člověk dostane nápad a hned ho začne psát do Claude Code. Výsledek nesedí. Tak přijde druhá iterace, třetí… A každá trvá, protože AI nemá dost kontextu. Neví přesně, co chcete, pro koho to je a jak to má fungovat.\n\nBrát zadání jako samostatnou fázi znamená dát si čas na přípravu ještě předtím, než otevřete vývojový chat. Jaký problém to řeší? Kdo to bude používat? Jaké jsou okrajové případy? Co se nesmí stát?\n\nJeden člen si nejdřív připravil zadání v Claude Chatu a až potom přešel do Claude Code. Výsledek fungoval za tři iterace.\n\nČas věnovaný zadání se vrátí. Méně zbytečných oprav, lepší výsledek.",
+      "read_minutes": 2,
+      "source_date": "2026-03-17"
+    },
+    {
+      "id": "2026-03-17-04",
+      "type": "NÁSTROJE",
+      "level": "Začátečník",
+      "topic": "Cursor",
+      "title": "Cursor jako přívětivější vstup do vibe codingu",
+      "excerpt": "Pro ty, kterým Claude Code zatím přijde moc technický, je Cursor jednodušší alternativa. Výsledek je podobný, jen rozjezd je mírnější.",
+      "body": "V komunitě zazněl tip, který se hodí zmínit. Pokud vám práce přímo v Claude Code přijde složitá nebo vás zahlcuje, zkuste Cursor. Je to plnohodnotná alternativa s jednodušším startem.\n\nCursor je editor kódu s AI podporou. Podobá se VS Code, ale je přívětivější i pro lidi, kteří nemají programátorské zázemí. Umí komentovat vygenerovaný kód, navrhovat úpravy přímo v editoru a má v sobě chat.\n\nNejde o to, který nástroj je lepší. Oba zvládnou podobné věci. Důležité je, kde se vám bude líp pracovat a co vás bude míň brzdit.\n\nPokud začínáte a Claude Code vám zatím moc nesedí, dejte šanci Cursoru. Cíl je stejný: vlastní funkční aplikace. Jen cesta k ní může být jednodušší.",
+      "read_minutes": 1,
+      "source_date": "2026-03-17"
+    },
+    {
+      "id": "2026-03-17-05",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Knowledge management",
+      "title": "Od hotových nástrojů k vlastní aplikaci na míru",
+      "excerpt": "Jeden člen začal v Obsidianu, pak přešel na Notion a nakonec si udělal vlastní Markdown aplikaci. Každý přesun měl jasný důvod. Teď má nástroj, který přesně sedí jeho workflow.",
+      "body": "V diskuzi se objevila zajímavá cesta, jak spravovat znalosti. Začalo to Obsidianem, pak přišel Notion a nakonec vlastní aplikace napsaná přes Claude Code.\n\nObsidian byl super na psaní a třídění poznámek. Hůř se ale propojoval s dalšími aplikacemi a automatizacemi. Notion tohle zvládal líp, jenže měl moc funkcí, které spíš překážely. A data navíc leží na cizích serverech, ne u vás v počítači.\n\nŘešením bylo postavit vlastní aplikaci nad Markdown soubory. Data zůstávají lokálně. Rozhraní dělá přesně to, co je potřeba, a nic navíc. Teď s aplikací pracuje i automatizovaný workflow. Na pozadí zpracovává úkoly a o schválení si řekne jen ve chvíli, kdy je to potřeba.\n\nTenhle příklad ukazuje širší vzorec. Hotové nástroje jsou vždycky kompromis. Čím konkrétnější potřeby máte, tím víc ten kompromis bolí. Vibe coding snižuje náklady na vlastní řešení natolik, že se to začíná vyplácet.",
+      "read_minutes": 2,
+      "source_date": "2026-03-17"
+    },
+    {
+      "id": "2026-03-17-06",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Expert",
+      "topic": "Claude modely",
+      "title": "Opus nebo Sonnet pro přípravu zadání projektu",
+      "excerpt": "Jaký model použít při přípravě zadání před vývojem? Opus s Extended Thinking, nebo stačí Sonnet? Tahle otázka ukazuje, že část komunity začíná o AI přemýšlet víc strategicky.",
+      "body": "V komunitě padla otázka, která ukazuje posun v přemýšlení. Už nejde jen o to, co s AI dělat. Spíš jak ji používat dobře. Třeba při přípravě zadání pro Claude Code: vzít Opus s Extended Thinking, nebo stačí Sonnet?\n\nOpus se hodí na složitější věci. Tam, kde je potřeba jít víc do hloubky. Návrh architektury, rozpad složitého problému, hledání okrajových případů, které člověka hned nenapadnou. Extended Thinking mu dá víc prostoru si odpověď postupně promyslet.\n\nSonnet je rychlejší a levnější. Na většinu běžných zadání úplně stačí. Pokud zadání není architektonicky složité nebo nebezpečně vágní.\n\nPrakticky: začněte Sonnetem. Když výsledek působí povrchně nebo v něm chybí hlubší rozbor toho, co se může pokazit, přepněte na Opus s Extended Thinking a nechte ho zadání zrevidovat.\n\nUž samotná otázka je ale dobré znamení. Kdo se ptá takhle, přemýšlí o AI správně.",
+      "read_minutes": 2,
+      "source_date": "2026-03-17"
+    }
+  ],
+  "resurfacing": null,
+  "transcript": {
+    "groups": [
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "03:15",
+            "author": "Daniel",
+            "text": "Někdy je to fakt bolí a vzpomínám si na svý začátky, bylo to asi podobné. Ale ono to půjde.\nA střelecký deník je super."
+          },
+          {
+            "time": "03:15",
+            "author": "Daniel",
+            "text": "Jo, Cursor je taky varianta. A asi i uživatelsky jednodušší."
+          },
+          {
+            "time": "03:18",
+            "author": "Daniel",
+            "text": "Super!"
+          },
+          {
+            "time": "03:21",
+            "author": "Daniel",
+            "text": "Nevím, jestli jsme se o tom už spolu bavili tak, kdežtak promiň, za duplikování. Začínal jsem na Obsidian a byla to paráda, boží, a úžasný. V době, než se rozjel vibe coding, tak ale nebyla možnost to rozumně propojit na další aplikace a automatizace a podobně. Takže jsem skočil do Notion, ale i když je to boží nástroj, tak za mě to bylo mega moc funkcí, který mi tam překážely, a začalo mi vadit trošku i to, že ty data jsou prostě, že je nemám v počítači.\nNo a dopadlo to tak, že jsem si vyrobil Notero, což je v podstatě jenom aplikace nad Markdown soubory.\nNo a teď s tím může krásně pracovat i můj FlowMaster, který od včerejška automaticky zpracovává a maká na úkolech. Na pozadí. A žádá mě jenom o případně o revize, reakce, schvalování."
+          },
+          {
+            "time": "07:42",
+            "author": "člen komunity",
+            "text": "Tak to by mě zajímalo blíž. Bude o tom podcast? 😁🙏"
+          },
+          {
+            "time": "12:34",
+            "author": "člen komunity",
+            "text": "Dnes jsem se konečně dostal k vytvoření svého prvního skutečného ClaudeCode projektu! 🎉\nAplikace dokáže na Androidu přečíst text, třeba článek, který do ní pošlu. Claude Chat mi pomohl vytvořit na začátku zadání. Pak byli tři iterace a bylo hotovo.\nPro mě je to neskutečný wow efekt! Vidím aplikaci v telefonu, kterou jsem vytvořil a dokonce funguje! 😲\nUmožňuje použít offline Google Text-to-Speech, které není ideální, nebo přes API klíč OpenAI TTS.\nPoslouchám podcasty od roku 2006. Začal jsem, když nikdo nevěděl, co to podcast je. 🎧 Tento formát je mi blízký a tohle mi opravdu chybělo. Jistě, existuje spousta aplikací, ale buď placených, nebo jsou plné reklam.\nTeď mám konečně něco vlastního, co má pro mě přidanou hodnotu! 🚀"
+          },
+          {
+            "time": "12:36",
+            "author": "Daniel",
+            "text": "Podcast bude určitě o všem, jenom nedokážu slíbit kdy. Pořád to chci točit sám."
+          },
+          {
+            "time": "12:37",
+            "author": "Daniel",
+            "text": "Přesně jak píšeš, Pavle.\nTěch aplikací je hromada, a nejde jenom o tu platbu. Ale tenhle krok je vlastně otestování toho, že to může fungovat, vyzkoušení si té technologie a podobně.\nPecka!"
+          },
+          {
+            "time": "12:59",
+            "author": "člen komunity",
+            "text": "V rámci komunity CEO bych rád vytvořil app která bude propojena se soniox a dělat transcript hledat klíčové index něco co máš @člen ty. nějaké tipy nebo už existuje a je ke sdílení."
+          },
+          {
+            "time": "13:05",
+            "author": "Daniel",
+            "text": "Ten základ je v Claude Code hotový rychle, pak jenom záleží na tom, co konkrétně. Tam je potřeba za postřehy. Co konkrétně tě zajímá?"
+          },
+          {
+            "time": "13:07",
+            "author": "člen komunity",
+            "text": "Děkuji za inspiraci, @člen\nVčera jsem začal s prvním zadáním pro zpracování výsledků plaveckých soutěží. Chtěl jsem mít lepší náhled. Je to zatím velmi jednoduché a výsledný vizuální jsem tvořil já   Claude Code jen vytvořil kód pro zpracování vstupních dokumentů a jejich uložení.\nDnes jsem však vytvořil malou aplikaci pro sebe a mám z toho velkou radost. Budu pokračovat a zvyšovat laťku.\nDěkuji 🙏🏻\nPřeji všem příjemný den."
+          },
+          {
+            "time": "14:46",
+            "author": "člen komunity",
+            "text": "@člen, četl jsem, že PodcaStudio:“ Má vestavěný teleprompter“. Použil jsi nějaký (jaký)? Nebo sis udělal sám? Chci si udělat něco podobného."
+          },
+          {
+            "time": "15:15",
+            "author": "Daniel",
+            "text": "💻 Den 3: TVORBA ZADÁNÍ\n=====================\nVčera jste měli téma. Dneska z něj uděláme zadání. Pořád ještě nejdeme to tvorby produktu. V podstatě budete jen odpovídat na otázy (od AI, ale to se počítá). Tohle je za mě jedna z nejdůležitějších fází.\n1) OTEVŘETE CHATBOTA A ZADEJTE TENHLE PROMPT\nClaude, ChatGPT, Gemini atd. Cokoliv, co používáte.\n„Chci si postavit jednoduchou webovou aplikaci. Můj problém je [váš problém z včerejška]. Ptej se mě na otázky ohledně tohoto projektu, dokud ti neřeknu dost. Pokládej mi jednu po druhé. Jakmile ti odpovím, zpracuj to a pokračuj další otázkou. Abych si ujasnil, co má aplikace dělat, ale taky, abys posbíral informace pro tvorbu detailního zadání pro vibe coding nástroj. Tvým finálním výstupem bude to zadání, které já pak vložím do [váš vibe coding nástroj].“\nTen prompt si klidně rozšiřte a upravte, teď mi jde spíš o jednoduchou myšlenku než o dokonalý prompt.\n2) ODPOVÍDEJTE NA OTÁZKY\nProstě si povídejte. Použijte diktování, bude to rychlejší, komfortnější a předáte více kontextu.\nNepopisujte řešení. Popisujte situaci. Co vás trápí, co zabírá čas, co vás štve. AI navrhne řešení za vás (a většinou líp, než byste čekali).\nPo pár desítkách minut a pár desítkách otázek napište „Dost. Napiš mi, jak bys to postavil.“ Pokud budete spokojení, nechte ho vytvořit zadání. Pokud ne, pokračujte dál v diskuzi.\n3) SDÍLEJTE TEN PLÁN DO SKUPINY\nScreenshot, copy-paste, cokoliv. Myslím, že nejen já chci vidět, co vám AI navrhlo. Případně klidně přidejte vlastní postřehy z celého toho procesu.\nA kdyby cokoliv, pište.\nMávám z HH.\nDaniel\n#gamrot"
+          },
+          {
+            "time": "15:16",
+            "author": "Daniel",
+            "text": "Sám. Soniox, porovnávání textu (s tím matchingem jsem se docela pral, ale nakonec to funguje dobře)."
+          },
+          {
+            "time": "15:16",
+            "author": "Daniel",
+            "text": "A co to je? Ta appka? Super!"
+          },
+          {
+            "time": "15:51",
+            "author": "člen komunity",
+            "text": "Pomůcka při psaní zpráv z CT vyšetření. Hodnocení masy z nadledvin dle odborného článku. Je tam dost věcí co se mi nechce držet v hlavě, resp to neni tak časté, abych si to pamatoval. Zadám to co vidím a změřím a vyhodí mi to text dle moji šablony a finální zhodnocení. Běží to jen na localhostu."
+          },
+          {
+            "time": "16:50",
+            "author": "člen komunity",
+            "text": "BufferFree zadání z AI"
+          },
+          {
+            "time": "17:25",
+            "author": "člen komunity",
+            "text": "Jedu další iteraci s Claude, dávám svoje postřehy + obrazovky s Loveable. Claude mi vygenerovat úpravy aplikace."
+          },
+          {
+            "time": "17:25",
+            "author": "člen komunity",
+            "text": "BufferFree zadání z AI v2"
+          },
+          {
+            "time": "18:12",
+            "author": "člen komunity",
+            "text": "Pro inspiraci - našel jsem na LinkedIn zmínku o Vibecoding aplikaci na učení se nejčastějších 2k slov. Pokud jste někdo chtěli dělat podobnou, tahle mi přijde Good enough a baví mě: https://2000-words-app.vercel.app"
+          },
+          {
+            "time": "19:07",
+            "author": "člen komunity",
+            "text": "@člen tuhle diskuzi nad zadáním typicky vedeš přes \"ten nejlepší model” (tj. v případě Claude Opus 4.6) nebo stačí “nižší verze” tj. Sonnet 4.6? Předpokládám, že zapnutí Extended Thinking a Web Search je samozřejmost? Nebo je to zbytečné? Diky"
+          },
+          {
+            "time": "20:25",
+            "author": "člen komunity",
+            "text": "Hezký večer, toto jsou první informace, kterým tady plně rozumím. 🤣👍\nJsem na začátku a odhodlání je velké. A to je nezbytný základ. 💪\nDíky."
+          },
+          {
+            "time": "20:28",
+            "author": "člen komunity",
+            "text": "Je nás tu takových víc. Já se také chytám tak z 30 - 50% 😃"
+          },
+          {
+            "time": "20:37",
+            "author": "člen komunity",
+            "text": "Presne, jsem taky jedna z tech co se v neketrych vyrazech moc nechyta 😀 ale k tomu se, doufam, propracuju 😁"
+          },
+          {
+            "time": "20:40",
+            "author": "člen komunity",
+            "text": "Tak je nás tu povicero děvčat co se toho nebojí jen jsou to neznámé vody … ale určitě to dáme … 👍😅"
+          },
+          {
+            "time": "21:19",
+            "author": "člen komunity",
+            "text": "S AI jsme se dohodli, že napřed zkusíme nechat vytvořit Teleprompter Macaly. Shodli jsme se na tomto zadání nakonec: Build a web-based voice-tracking teleprompter application. Do not hardcode any specific script into the application.\nCore Requirements:\nInitial Screen (Input Mode): Create a clean, minimal interface with a large text area where I can manually paste my script. Include a prominent \"Start Teleprompter\" button.\nTeleprompter Screen (Read Mode): Once I click start, hide the input area. Display the pasted text in a large, highly readable font on a dark background (Dark Mode). Center the text. Include a \"Stop/Edit\" button to return to the input screen, and a slider to adjust the font size.\nVoice Tracking: Use the browser's native Web Speech API (SpeechRecognition) to listen to my voice continuously.\nFuzzy Matching Algorithm (CRITICAL): I will be reading the text word-for-word, but the Speech API might mishear words, or I might slightly stumble. Implement a fuzzy matching logic (using a sliding window approach). If the recognized speech matches a sequence of 2 or 3 consecutive words slightly ahead in the text, advance the current tracking position to that point. It must be tolerant of skipped or misheard words so the teleprompter does not get stuck.\nAuto-Scrolling & Highlighting: Highlight the current sentence or phrase I am speaking. As the tracking position advances, automatically scroll the window smoothly so the currently highlighted text always stays in the center of the screen.\nPlease write the complete code for this functional web app"
+          },
+          {
+            "time": "22:35",
+            "author": "člen komunity",
+            "text": "Uff.. ted zda to bude fungovat 🫣👀"
+          },
+          {
+            "time": "22:45",
+            "author": "člen komunity",
+            "text": "potřebovala bych tak dalších 5 hodin, abych to stihla dokončit 🙂 baví mě to moc každopádně"
+          }
+        ]
+      }
+    ]
+  }
+}

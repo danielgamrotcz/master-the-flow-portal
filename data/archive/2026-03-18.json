@@ -1,0 +1,302 @@
+{
+  "date": "2026-03-18",
+  "generated_at": "2026-06-05T06:11:20Z",
+  "stats": {
+    "messages": 45,
+    "groups": 1,
+    "members": 9
+  },
+  "cards": [
+    {
+      "id": "2026-03-18-01",
+      "type": "INSIGHT",
+      "level": "Builder",
+      "topic": "Lovable",
+      "title": "Lovable iteruje rychle, ale chce přesné zadání",
+      "excerpt": "Bez konkrétního popisu a příkladů se v Lovable snadno zacyklíte. Čím přesněji popíšete, co chcete, a přidáte vizuální ukázky, tím míň kol úprav vás čeká.",
+      "body": "Lovable je skvělý nástroj na rychlé prototypy, ale má jednu zvláštnost. Když mu nedáte přesné zadání a konkrétní příklady, AI jen hádá z obecného popisu. A každé další kolo úprav vás posune jen o kousek.\n\nPokud chcete výsledek podle své představy, nestačí napsat, co chcete. Musíte popsat i to, jak to má vypadat. Ideálně přidejte screenshoty nebo odkazy na UI, které se vám líbí. Právě v tom je rozdíl mezi „dvakrát upravím a hotovo“ a „dvanáctkrát upravuju a pořád to není ono“.\n\nDruhá možnost je odladit si logiku lokálně a Lovable použít jen tam, kde dává smysl rychlý vizuální prototyp. Fungují oba přístupy. Záleží na typu projektu.\n\nHlavní poznatek: Lovable je opravdu rychlý až ve chvíli, kdy přesně víte, co chcete, a umíte to dobře popsat. Jinak je to jen rychlejší cesta do kolečka nekonečných oprav.",
+      "read_minutes": 2,
+      "source_date": "2026-03-18"
+    },
+    {
+      "id": "2026-03-18-02",
+      "type": "INSIGHT",
+      "level": "Expert",
+      "topic": "Claude Code",
+      "title": "Opus pro scope projektu, Sonnet pro samotný kód",
+      "excerpt": "Když zvolíte správný model pro správnou fázi práce, ušetříte peníze i opakované ladění. Hloubkovou analýzu a architekturu nechte Opusu. Implementaci pak většinou bez problémů zvládne Sonnet.",
+      "body": "Efektivní workflow s Claude Code vypadá zhruba takhle: složité plánování, analýzu požadavků, scope projektu a debaty o architektuře řešte s Opusem. Je dražší, ale tyhle konverzace bývají krátké. Opus si tu cenu vrátí tím, že výsledek bývá kvalitnější a nemusíte tolik předělávat.\n\nJakmile máte pevnou strukturu a jasné zadání, přepněte na Sonnet. Ve většině případů zvládne implementaci stejně dobře a za zlomek ceny. Tenhle přechod se ale nestane sám. Musíte ho udělat vědomě.\n\nPraktický test: když je úkol spíš mechanický — napsat funkci podle specifikace, opravit chybu, refaktorovat kód — Sonnet nejspíš stačí. Když řešíte „jak to má celé fungovat dohromady“ nebo „co udělat jako první“, to je práce pro Opus.\n\nJednodušší aplikace zvládnuté na Sonnetu za pár minut ukazují, že pro většinu implementačních úloh to funguje bez kompromisů.",
+      "read_minutes": 2,
+      "source_date": "2026-03-18"
+    },
+    {
+      "id": "2026-03-18-03",
+      "type": "POSTAVIL JSEM",
+      "level": "Expert",
+      "topic": "Dashboard",
+      "title": "CEO dashboard napojený na CRM, banku a GA4",
+      "excerpt": "Jeden člen ukázal projekt, který vyvíjí 14 dní: CEO dashboard, který tahá data z CRM, bankovního účtu, Google Analytics 4 a výsledovky. Cílem je mít celý přehled o byznysu na jednom místě.",
+      "body": "Jde o jeden z náročnějších projektů, které ve skupině padly. Cíl je jasný: nepřeskakovat mezi nástroji, ale mít na jedné obrazovce zákazníky, cash flow, návštěvnost webu i ziskovost.\n\nNejvětší technická výzva je propojit víc zdrojů najednou. Každý má jiné API, jiné limity a jiný formát dat. GA4 má vlastní API i MCP server. Standardní API ale omezuje počet požadavků. Druhá možnost je napojení přes Looker Studio. To má přímý konektor na GA4 a není potřeba dělat vlastní API integraci. Nevýhoda je menší volnost v tom, co pak s daty můžete dělat.\n\nProjekt je po 14 dnech práce pořád ve vývoji. Poučení? U podobných integrací se vyplatí dobře navrhnout architekturu hned na začátku. Víc než zkoušet naslepo. Čím víc zdrojů přidáte, tím rychleji roste složitost celého propojení.",
+      "read_minutes": 3,
+      "source_date": "2026-03-18"
+    },
+    {
+      "id": "2026-03-18-04",
+      "type": "POSTAVIL JSEM",
+      "level": "Builder",
+      "topic": "Voice capture",
+      "title": "Hlasová appka zachytí myšlenku a pošle ji do e-mailu",
+      "excerpt": "Jedna členka skupiny staví appku na problém, který zná spousta lidí: rychle si uložit myšlenku nebo úkol bez zbytečného tření. Zmáčkneš action button na iPhonu, řekneš to nahlas a dvakrát denně ti přijdou roztříděné záznamy do e-mailu.",
+      "body": "Problém je jasný: myšlenky a úkoly si často nezapíšeme hned. Stačí malé zdržení — otevřít appku, najít kategorii, napsat text. Člověk si řekne „pak“ a nakonec na to zapomene.\n\nŘešení má víc částí. Action Button na iPhonu spustí nahrávání hlasové poznámky. AI ji přepíše do textu a roztřídí podle kategorií. Dvakrát denně — ráno a odpoledne — přijde e-mail se souhrnem záznamů, připravených na export.\n\nDlouhodobý cíl je automatické propojení s Things, tedy task manažerem. To bude technicky složitější, protože Things nemá veřejné API v klasickém smyslu.\n\nCelý workflow se inspiruje přístupy typu voice-to-inbox. Záznamy vznikají hlasem a třídění se nechá na AI. Smysl je stejný: co nejvíc snížit tření při zapisování. Rozumné MVP je proto nejdřív nahrávání a e-mailový digest. Integrace s appkami může přijít až v další fázi.",
+      "read_minutes": 2,
+      "source_date": "2026-03-18"
+    },
+    {
+      "id": "2026-03-18-05",
+      "type": "INSIGHT",
+      "level": "Začátečník",
+      "topic": "Konzistence",
+      "title": "Hodina denně po tři měsíce přinese viditelný posun",
+      "excerpt": "Největší problém není špatný nástroj ani málo talentu. Je to přerušování. Pravidelná hodina denně porazí každý pětihodinový maraton jednou za měsíc.",
+      "body": "Tohle se ve skupině řeší pořád. A není to teorie. Když se projektu věnujete aspoň hodinu denně, za tři měsíce to bude znát.\n\nNemusí to znamenat, že budete mít hotovou aplikaci. Spíš už budete vědět, jak nad věcmi přemýšlet, kde hledat řešení a budete mít za sebou víc pokusů než někdo, kdo si k tomu sedl jednou za čas na dlouhý blok.\n\nU AI nástrojů to platí dvojnásob. Hodně se učíte zkoušením a opakováním. Čím víc situací potkáte, tím líp poznáte, kdy co použít a kde to má limity.\n\nV praxi: neplánujte si velké bloky. Radši si hlídejte malé okno každý den. Klidně jen 30 minut, ale denně.\n\nFOMO a pocit „nestíhám, všichni jsou dál“ je v prvních týdnech normální. Kdo to vydrží a nevzdá to, bude za tři měsíce překvapený sám ze sebe.",
+      "read_minutes": 2,
+      "source_date": "2026-03-18"
+    }
+  ],
+  "resurfacing": null,
+  "transcript": {
+    "groups": [
+      {
+        "slug": "vibecoding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "03:26",
+            "author": "Daniel",
+            "text": "Podle mě to určitě půjde, ale přemýšlím, proč bych to dával do Lovable, když si to můžu odladit na localhost. Nebo se možná nepochopilo to zadání. Nebo tam něco nevidím."
+          },
+          {
+            "time": "03:28",
+            "author": "Daniel",
+            "text": "Lovable má tu nevýhodu, že tam prostě nejsem schopný dát dopředu svoje očekávání, aniž bych to dělal manuálně. Pokud se tedy něco nezměnilo.\nTakže buď iterovat, nebo to zkusit znovu, ale popsat lépe svoji představu a ideálně mu dát i příklady. To znamená dát mu i konkrétní vzory, co se mi líbí."
+          },
+          {
+            "time": "03:31",
+            "author": "Daniel",
+            "text": "Hele, já jedu přes Opus většinou všechno, ale mám Claude Pro Max. Na limity už dlouho nenarážím. Snažím se více chodit a boxovat. :D\nKaždopádně, aby to bylo praktické, doporučuju udělat právě tyhle rozhovory, analýzu, strukturu a kompletní scope toho projektu v Opusu. A velmi často se stane, že na ty další práce už potom stačí Sonnet. Chce to ale experimentovat. Nevím, jak komplexní ty projekty jsou. Teďka jsem třeba dělal jednu rychlou aplikaci asi za 3 minuty a Sonnet to zvládl hravě."
+          },
+          {
+            "time": "03:31",
+            "author": "Daniel",
+            "text": "Boží! To workflow vypadá moc hezky."
+          },
+          {
+            "time": "03:32",
+            "author": "Daniel",
+            "text": "😀 to půjde. Fakt. Začínal jsem stejně. Alenek (to je Alenka, ale muž) v říši divů."
+          },
+          {
+            "time": "03:33",
+            "author": "Daniel",
+            "text": "Pustil jsem už tu minimalistickou aplikaci do svého backlogu a myslím, že se k ní dneska Claude Code dostane. Řídí si to sám, tak se pak můžeme podívat na to, jak to dopadne."
+          },
+          {
+            "time": "03:33",
+            "author": "Daniel",
+            "text": "Stoprocentně bude. Tak do práce. Už dneska. A zítra. 🙂"
+          },
+          {
+            "time": "03:34",
+            "author": "Daniel",
+            "text": "Buď 5 hodin, anebo přemýšlet o tom, jak to udělat, abys to nemusela řešit ty. 🙂"
+          },
+          {
+            "time": "06:47",
+            "author": "člen komunity",
+            "text": "Ahoj Dane, bylo by možné nasdílet znovu den 1 a den 2 pro narušitele, co se připojili později? 😎❤️"
+          },
+          {
+            "time": "06:57",
+            "author": "člen komunity",
+            "text": "Jinak jedu po webináři Codex, začala jsem včera vedle práce na druhém notebooku (ten multitasking, kdy dělám něco jiného a mezitím mi parťák připravuje appku je prostě boží) po vlastní ose a říkala jsem si, že už konečně zkusím dotáhnout to, o čem dlouho mluvím a několikrát jsem načala, ale nikdy nedotáhla. Mám velký problém se zaznamenáváním během dne. Celý život je pro mne všechno \"určitě na dlouho\" a nejsem schopná ani blbé \"teď mě něco napadlo, musím si to poznamenat\" neodkládat 😂 Takže jen zapsání úkolu typu měla bych se objednat k doktoru často trvá několik týdnů a několik znovuzapomenutí. Takže bych si chtěla vytvořit appku, která mi to tření snad usnadní. Zmáčknu action button na iPhone a řeknu to. Ať to bude úkol nebo myšlenka, nápad. A napadlo mě, že bych si to třeba dvakrát denně (16:00, 7:00) přečetla v mailu, od AI hezky roztříděné podle kategorií a připravené na export do mých appek. Bylo by super kdyby se to do těch appek samozřejmě futrovalo samo, ale nejsem si jistá, jestli to půjde s Things, který miluju a nechci se jich vzdávat."
+          },
+          {
+            "time": "07:03",
+            "author": "člen komunity",
+            "text": "Jj, take bych potrebovala 🙏"
+          },
+          {
+            "time": "07:07",
+            "author": "Daniel",
+            "text": "Jasná věc. Mimochodem, kdybys náhodou věděla, jestli se tady v tomhle kanále dá zobrazit historie pro lidi, co chodí nově, budu moc rád za tip."
+          },
+          {
+            "time": "07:08",
+            "author": "Daniel",
+            "text": "Jé, tohle mám taky, akorát bez těch připomínek. Udělal jsem si právě appku, která přes Soniox přepisuje věci do textu a posílá je do mého inboxu v poznámkové aplikaci.\nJinak Things podle mě půjdou taky přes Webhook a Apple Shortcuts."
+          },
+          {
+            "time": "07:13",
+            "author": "člen komunity",
+            "text": "Tohle jsem si vytvořila přes Apple Shortcuts, že přes dvojité poklepání na záda telefonu se mi otevře poznámkový blok se stejnou poznámkou a můžu diktovat i hlasem nebo napsat, ale super point skrz ty připomínky a trizeni, to bych to také mohla vytunit 👍"
+          },
+          {
+            "time": "07:34",
+            "author": "člen komunity",
+            "text": "Soniox ještě musím prozkoumat před webinarem jsem neznala."
+          },
+          {
+            "time": "07:35",
+            "author": "člen komunity",
+            "text": "Bojím se, že je to dna funkce whatsapp - aby lidi, co přijdou později, neviděli, že je tu lidi drbali, když tu nebyli 😂"
+          },
+          {
+            "time": "07:49",
+            "author": "člen komunity",
+            "text": "Ja se pridavam k tem, co tomu tady rozumej tak z 30%, a vyhlasuju novou podskupinu tech, co jim chybi 3 hodiny denne, aby neco stihli...🤭 Posledni dva dny bez sance a pocit FOMO jeste silnejsi nez pred webinarem. 😅 Tak doufam, @člen, ze to tu bude otevrene i po patku, at se k tomu da vratit. 🙏"
+          },
+          {
+            "time": "08:07",
+            "author": "Daniel",
+            "text": "Já pořád něčemu nerozumím. Fakt!\nA jasně, nechám otevřené. Plus se bude otevírat Master the Flow pro další lidi a budou další kanály."
+          },
+          {
+            "time": "08:17",
+            "author": "člen komunity",
+            "text": "Tak ja zatim zvladla 1. den, 2. den mam zatim jen v hlave, ale chtela bych to dotahnout co nejdriv....pro mne totiz aktualni tema....napadla mne appka, ktera by mi za mne kontrolovala pracovni portaly a davala mi report o relevantnich nabidkach pro mne a mohla by mi i pripravovat odpovedi....tak jsem zvedava, co mi k tomu rekne AI 😁\nAle tesim se na to, zacina nne to bavit vic a vic, jen ten cas 😁"
+          },
+          {
+            "time": "08:22",
+            "author": "Daniel",
+            "text": "📌 ŠUPNUL JSEM ZATÍM PRO TY, CO TU NEJSOU U ZAČÁTKU, NARYCHLO SEM TY TŘI VÝZVY. ČTVRTÁ BUDE DNES.\ndanielgamrot.cz/webinar/vibe-coding/vyzvy/"
+          },
+          {
+            "time": "08:30",
+            "author": "člen komunity",
+            "text": "AhoJitko 🙂\nAno a ano. Pridavam se k tobe do tymu 😉\n#zMatky"
+          },
+          {
+            "time": "08:31",
+            "author": "člen komunity",
+            "text": "Ta by byla super … ráda kouknu az doladíš … dobry nápad 👍"
+          },
+          {
+            "time": "08:42",
+            "author": "člen komunity",
+            "text": "Diky moc. Mam radost, ze kdyz uz tady rozumim tak 30% z toho, co se tu pise, aspon delam intuitivne ukoly, ktere jsem zatim vubec nedostala😅\nLovavle intuitivne odzkouseny na primitivnim ukolu, brainsorming nad prvni “skutecnou apkou” taky.\nMoc diky za nakopnuti Dane. Objevila jsem uplne novy svet a je proste bozi!"
+          },
+          {
+            "time": "10:17",
+            "author": "Daniel",
+            "text": "To půjde!"
+          },
+          {
+            "time": "10:18",
+            "author": "Daniel",
+            "text": "Paráda. Tak jedeme dál. Chce to fakt s tím trávit alespoň pár minut denně. Pomalu. Na skutečně relevantních projektech. 🙂"
+          },
+          {
+            "time": "10:34",
+            "author": "člen komunity",
+            "text": "Bohužel, WA to blokuje. Údajně mají novou feature, že ty zprávy jako admin můžeš poslat 😅 Introducing Group Message History: A more private way to catch up in group chats - WhatsApp Blog https://share.google/7JcY3WMSaRVBOhS0v"
+          },
+          {
+            "time": "10:49",
+            "author": "člen komunity",
+            "text": "Na víkend si udělejte volno. 😁\nhttps://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion"
+          },
+          {
+            "time": "11:10",
+            "author": "člen komunity",
+            "text": "Takhle me doxxnout, Leno!🤪 Doufam, ze mam jinak nastaveny, ze jsem tu uplne \"inkonginto\".  Schvalne, dejte mi pls 👍, kdo u me vidite jen cislo a bez fotky, to je muj default na Whatsappu pro skupiny, tak snad to drzi...\nAle souhlas, at zijou #zMatky a diky Dane, ze sem muzem chodit jeste dlouho po 1-week challenge, pac dokud nepujde vibekodnout \"pojd si se mnou hrat\", tak to bude challenge jeste dlouho...😅\nA ted uz samozrejme zpatky ke strojum a k tematu.\nKrasny den vsem a nezapomente: touch the grass!✌️"
+          },
+          {
+            "time": "11:19",
+            "author": "Daniel",
+            "text": "Jen inspirace, co vás čeká. Když tady vydržíte alespoň pár týdnů a dáte tomu alespoň pár desítek minut denně – já tomu dával zhruba hodinu denně poslední tři měsíce. Předtím jsem měl nějaké základy, ale nic velkého to nebylo.\nJasně, že teď přes zimu se to hodně zintenzivnilo, protože za mě je to skill, který produktivitu extrémně zvedá, a produktivita je 13 let moje téma.\nAle k věci…\nChtěl jsem ukázat kamarádovi dneska v Hua Hin, jak funguje vibe coding v mém podání (to zatím vidět nechcete), a vybral jsem si jeden příklad z naší skupiny o kterém psal @člen. A zadal jsem to FlowMasterovi. No a zhruba asi za 6 minut byl výsledek na světě. Včetně nové webové stránky. Dvakrát jsem to potvrdil ENTERem.\nTady je výsledek. Jen základ teleprompteru, který se posouvá sám podle toho, co říkáte.\nPamatuješ, @člen, na naše společné posouvací dny?\nLINK: https://teleprompter-aae.pages.dev/\nNechám to chvilku venku, jo?\nPS Jen vložte text a klikněte na mikrofon, povolte ho a mluvte."
+          },
+          {
+            "time": "11:23",
+            "author": "člen komunity",
+            "text": "Super Dane, díky!"
+          },
+          {
+            "time": "11:23",
+            "author": "Daniel",
+            "text": "Jako cajk, ale vyrob si to sám! 😀"
+          },
+          {
+            "time": "11:32",
+            "author": "Daniel",
+            "text": "🔨DEN 4. Postavte to.\n=================\n1) OTEVŘETE SVŮJ NÁSTROJ\nLovable, Claude Code, Cursor, cokoliv jste si vybrali.\n2) VEZMĚTE VČEREJŠÍ PLÁN A VLOŽTE DO HO AI\nŘekněte mu „Tady je plán. Postav mi první verzi. Chci to co nejjednodušší, ale aby to fungovalo.“\n3) KOUKEJTE, CO TO UDĚLÁ\nAž to bude hotový, otevřete výsledek a projděte si to.\n4) TEĎ TA NEJDŮLEŽITĚJŠÍ ČÁST\nŘíkejte mu, co se vám nelíbí. Konkrétně.\n„Ten nadpis je moc malý, zvětši ho.“\n„Chci to v tmavých barvách.“\n„Chybí tam tlačítko na reset.“\n„Tohle vůbec nefunguje, když kliknu, nic se nestane.“\n5) OPAKUJTE KROK 4\nDokud nebudete mít něco, co alespoň trochu dělá to, co chcete. Nemusí to být dokonalý.\n6) SDÍLEJTE SCREENSHOT NEBO ODKAZ VE SKUPINĚ\nI rozbitý prototyp je víc než žádný.\nBude to chvílemi frustrující. Mně taky spousta věcí na první pokus nefungovala (a vlastně ani na druhý). Pokud se zaseknete, napište do skupiny. Pomůžeme.\nDaniel\n#gamrot"
+          },
+          {
+            "time": "12:38",
+            "author": "Daniel",
+            "text": "(dámy, které nejste z Ostravy nebo Havířova, zacpete si uši)\nTvl! Pecka.\nPráce tam je vždycky nekonečně mnoho. Ověřeno. To půjde. Mazec."
+          },
+          {
+            "time": "12:48",
+            "author": "Daniel",
+            "text": "Tohle je taky paráda.\nJo, a mám jednu zásadu, kterou moc nesdílím, a to je to, že ne vždy každý další výstup bude lepší než ten předchozí. :)"
+          },
+          {
+            "time": "12:49",
+            "author": "člen komunity",
+            "text": "je to tak"
+          },
+          {
+            "time": "12:53",
+            "author": "člen komunity",
+            "text": "A taky Done > Perfect (což je pro perfekcionisty super očistec💪)!"
+          },
+          {
+            "time": "13:03",
+            "author": "člen komunity",
+            "text": "Nejen pro perfekcionisty. I pro lidi, kteří se bojí selhání."
+          },
+          {
+            "time": "13:56",
+            "author": "člen komunity",
+            "text": "Jako můžu. Ale raději bych si vyrobil něco, co ještě není."
+          },
+          {
+            "time": "14:28",
+            "author": "člen komunity",
+            "text": "Zkoušel někdo prográmek který by se připojil na Google Analytics a získal data například do vaší nové webové aplikace? 🤖👾👾"
+          },
+          {
+            "time": "14:48",
+            "author": "Daniel",
+            "text": "Jestli trénuješ vibe coding, vyber si na první projekt něco, co je, a udělej si to podle sebe. Ten TP podle mě taky už někde je. Ale může mít to, co ti chybí.\nPříklad třeba s těmi e-maily, co jsem ukazoval na webináři – už to určitě někde existuje (100%), ale já to chtěl přesně na míru."
+          },
+          {
+            "time": "14:49",
+            "author": "Daniel",
+            "text": "Jaký by byl účel?"
+          },
+          {
+            "time": "14:50",
+            "author": "člen komunity",
+            "text": "Do CEO Dashboardu oddělení Marketingu dostat data. 👾🤩"
+          },
+          {
+            "time": "14:52",
+            "author": "Daniel",
+            "text": "GA mají API, takže… Nikdy jsem to nedělal, ale nemělo by to být složité."
+          },
+          {
+            "time": "14:53",
+            "author": "člen komunity",
+            "text": "A ten dashboard si tiež vibekóduješ?\nLookerstudio má priamo GA4 connector, ale to predpokladám vieš.\nČo by ti ešte mohlo pomôcť je GA4 MCP server.\nhttps://github.com/harshfolio/mcp-server-ga4\nMy ale narážame na to, že štandardné GA4 API nezobrazuje všetky metriky a dimenzie, tak to zatiaľ radšej riešime cez BigQuery, kam si dáta posielame a spracovávame."
+          },
+          {
+            "time": "15:07",
+            "author": "člen komunity",
+            "text": "CEO Dashboard už kodím přibližně 14dní. Vstupy CRM, banka 🏦 , Google Analytics, P&L postupně vylepšuji. Výstupy 🚦🧭 + řešení majitelů metriky když nevychází neplní. Looker máme jen jsme si nechávali před časem sestavit takže nejsem jeho admin."
+          }
+        ]
+      }
+    ]
+  }
+}
