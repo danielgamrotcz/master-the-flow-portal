@@ -95,8 +95,13 @@ const TYPE_COLORS = {
 const LEVEL_CLASSES = {
   'Začátečník': 'level-zacatecnik',
   'Pokročilý': 'level-builder',
+  'Builder': 'level-builder',
   'Expert': 'level-expert',
 };
+
+function normalizeLevel(level) {
+  return level === 'Builder' ? 'Pokročilý' : (level || '');
+}
 
 /* ===== DATE FORMATTING ===== */
 const MONTHS_CS = ['ledna', 'února', 'března', 'dubna', 'května', 'června',
@@ -137,7 +142,8 @@ function showToast(msg) {
 
 /* ===== CARD HTML ===== */
 function renderCardEl(card, isResurfaced = false) {
-  const levelClass = LEVEL_CLASSES[card.level] || '';
+  const level = normalizeLevel(card.level);
+  const levelClass = LEVEL_CLASSES[level] || '';
   const typeColor = TYPE_COLORS[card.type] || '#808080';
   const sourceDate = card.resurfaced_from || card.source_date || card.date || '';
 
@@ -154,7 +160,7 @@ function renderCardEl(card, isResurfaced = false) {
          aria-label="${esc(card.title)}">
       <div class="card-meta">
         ${resurfacedBadge}
-        <span class="card-level ${levelClass}">${esc(card.level)}</span>
+        <span class="card-level ${levelClass}">${esc(level)}</span>
         <span class="card-type" style="color:${typeColor}">${esc(card.type)}</span>
         ${getTopics(card).map(t => `<span class="card-topic">${esc(t)}</span>`).join('')}
       </div>
@@ -162,12 +168,10 @@ function renderCardEl(card, isResurfaced = false) {
       <div class="card-excerpt">${esc(card.excerpt)}</div>
       <div class="card-footer">
         <span class="card-readmore">Číst dál ↓</span>
-        <span class="card-time">${card.read_minutes || 2} min</span>
       </div>
     </div>
   `;
 }
-
 function esc(str) {
   if (!str) return '';
   return String(str)
@@ -186,21 +190,27 @@ function getTopics(card) {
 
 function buildTopicChips(cards, activeLevel) {
   const filtered = activeLevel && activeLevel !== 'all'
-    ? cards.filter(c => c.level === activeLevel)
+    ? cards.filter(c => (normalizeLevel(c.level)) === activeLevel)
     : cards;
 
-  const topics = new Set();
-  filtered.forEach(c => getTopics(c).forEach(t => topics.add(t)));
+  const counts = {};
+  filtered.forEach(c => getTopics(c).forEach(t => { counts[t] = (counts[t] || 0) + 1; }));
 
-  if (state.topic !== 'all' && !topics.has(state.topic)) {
+  const topics = Object.entries(counts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 20)
+    .map(([t]) => t);
+
+  if (state.topic !== 'all' && !topics.includes(state.topic)) {
     state.topic = 'all';
   }
 
   const chips = $('topic-chips');
-  chips.innerHTML = `<button class="chip${state.topic === 'all' ? ' active' : ''}" data-topic="all">Vše</button>`;
+  let html = `<button class="chip${state.topic === 'all' ? ' active' : ''}" data-topic="all">Vše</button>`;
   topics.forEach(t => {
-    chips.innerHTML += `<button class="chip${state.topic === t ? ' active' : ''}" data-topic="${esc(t)}">${esc(t)}</button>`;
+    html += `<button class="chip${state.topic === t ? ' active' : ''}" data-topic="${esc(t)}">${esc(t)}</button>`;
   });
+  chips.innerHTML = html;
 }
 
 /* ===== FILTER ===== */
@@ -290,8 +300,6 @@ function updateHeader(data, isYesterday) {
   const hasResurfacing = !!data.resurfacing;
   const label = isYesterday ? 'Včera' : 'Dnes';
 
-  $('header-date').textContent = formatDateLong(dateStr);
-
   const badge = $('live-badge');
   badge.classList.remove('hidden');
   $('live-count').textContent = `${label} ${count + (hasResurfacing ? 1 : 0)} poznatků`;
@@ -324,76 +332,50 @@ async function showArchive() {
 function renderArchiveDateGrid() {
   const allDates = (state.archiveIndex?.dates || [])
     .map(d => typeof d === 'string' ? d : d.date)
-    .sort();
+    .sort().reverse();
   if (allDates.length === 0) { $('archive-date-grid').innerHTML = ''; return; }
 
-  const dateSet = new Set(allDates);
-
-  if (!state.archiveMonth) {
-    state.archiveMonth = allDates[allDates.length - 1].slice(0, 7);
-  }
-
-  const [y, m] = state.archiveMonth.split('-').map(Number);
-  const daysInMonth = new Date(y, m, 0).getDate();
-  const firstDow = (new Date(y, m - 1, 1).getDay() + 6) % 7;
-
-  const allMonths = [...new Set(allDates.map(d => d.slice(0, 7)))].sort();
-  const curIdx = allMonths.indexOf(state.archiveMonth);
   const isAllMode = state.archiveDate === 'all';
 
-  let html = '<button class="cal-all-btn' + (isAllMode ? ' active' : '') + '" id="cal-all-btn">Vše</button>';
-  html += '<div class="cal-header">';
-  html += '<button class="cal-nav' + (curIdx > 0 ? '' : ' disabled') + '" id="cal-prev">‹</button>';
-  html += '<span class="cal-month-label">' + MONTHS_CS[m - 1] + ' ' + y + '</span>';
-  html += '<button class="cal-nav' + (curIdx < allMonths.length - 1 ? '' : ' disabled') + '" id="cal-next">›</button>';
-  html += '</div>';
-  html += '<div class="cal-grid">';
-  ['Po', 'Út', 'St', 'Čt', 'Pá', 'So', 'Ne'].forEach(d => {
-    html += '<div class="cal-dow">' + d + '</div>';
+  const byMonth = {};
+  const monthOrder = [];
+  allDates.forEach(ds => {
+    const ym = ds.slice(0, 7);
+    if (!byMonth[ym]) { byMonth[ym] = []; monthOrder.push(ym); }
+    byMonth[ym].push(ds);
   });
-  for (let i = 0; i < firstDow; i++) html += '<div class="cal-cell"></div>';
-  for (let day = 1; day <= daysInMonth; day++) {
-    const ds = y + '-' + String(m).padStart(2, '0') + '-' + String(day).padStart(2, '0');
-    const active = ds === state.archiveDate && !isAllMode ? ' active' : '';
-    if (dateSet.has(ds)) {
-      html += '<button class="cal-cell cal-day' + active + '" data-date="' + ds + '">' + day + '</button>';
-    } else {
-      html += '<div class="cal-cell cal-empty">' + day + '</div>';
-    }
-  }
+
+  let html = '<div class="archive-controls">';
+  html += '<button class="cal-all-btn' + (isAllMode ? ' active' : '') + '" id="cal-all-btn">Vše</button>';
   html += '</div>';
+
+  monthOrder.forEach(ym => {
+    const [y, m] = ym.split('-').map(Number);
+    html += '<div class="archive-month-row">';
+    html += '<span class="archive-month-name">' + MONTHS_CS[m - 1] + ' ' + y + '</span>';
+    html += '<div class="archive-date-pills">';
+    byMonth[ym].forEach(ds => {
+      const day = parseInt(ds.slice(8), 10);
+      const active = ds === state.archiveDate && !isAllMode ? ' active' : '';
+      html += '<button class="date-pill' + active + '" data-date="' + ds + '">' + day + '.</button>';
+    });
+    html += '</div></div>';
+  });
 
   $('archive-date-grid').innerHTML = html;
 
-  $('archive-date-grid').querySelectorAll('.cal-day[data-date]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      state.archiveMonth = btn.dataset.date.slice(0, 7);
-      loadArchiveDay(btn.dataset.date);
-    });
-  });
-
-  const prevBtn = $('cal-prev');
-  const nextBtn = $('cal-next');
-  if (prevBtn && curIdx > 0) prevBtn.addEventListener('click', () => {
-    state.archiveMonth = allMonths[curIdx - 1];
-    renderArchiveDateGrid();
-  });
-  if (nextBtn && curIdx < allMonths.length - 1) nextBtn.addEventListener('click', () => {
-    state.archiveMonth = allMonths[curIdx + 1];
-    renderArchiveDateGrid();
+  $('archive-date-grid').querySelectorAll('.date-pill').forEach(btn => {
+    btn.addEventListener('click', () => loadArchiveDay(btn.dataset.date));
   });
 
   const allBtn = $('cal-all-btn');
-  if (allBtn) allBtn.addEventListener('click', () => loadArchiveAll());
+  if (allBtn) allBtn.addEventListener('click', loadArchiveAll);
 }
-
 async function loadArchiveDay(dateStr) {
   state.archiveDate = dateStr;
-
   $('cards-archive').innerHTML = '';
   show('loading-archive');
   hide('empty-archive');
-
   renderArchiveDateGrid();
 
   try {
@@ -536,10 +518,8 @@ function openCard(cardId) {
     ${getTopics(card).map(t => `<span class="card-topic">${esc(t)}</span>`).join('')}
   `;
 
-  $('overlay-body').innerHTML = `
-    <div class="overlay-title">${esc(card.title)}</div>
-    <div class="overlay-text">${bodyToHTML(card.body || card.excerpt || '')}</div>
-  `;
+  $('overlay-title').textContent = card.title;
+  $('overlay-text').innerHTML = bodyToHTML(card.body || card.excerpt || '');
 
   const dateStr = card.source_date || card.resurfaced_from || card.date || '';
   $('btn-show-transcript').dataset.date = dateStr;
@@ -722,23 +702,32 @@ async function showTranscript(dateStr) {
 
 /* ===== NAVIGATION ===== */
 function switchView(viewName) {
-  ['today', 'week', 'archive', 'search', 'transcript'].forEach(v => {
-    $(`view-${v}`).classList.toggle('hidden', v !== viewName);
+  const prevView = state.view;
+
+  ['today', 'week', 'archive', 'search', 'stats', 'transcript'].forEach(v => {
+    const el = $(`view-${v}`);
+    if (el) el.classList.toggle('hidden', v !== viewName);
   });
 
   document.querySelectorAll('.nav-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.view === viewName);
   });
 
+  if (viewName !== prevView) state.topic = 'all';
   state.view = viewName;
 
-  if (viewName === 'archive') {
+  if (viewName === 'today') {
+    buildTopicChips(state.today?.cards || [], state.level);
+  } else if (viewName === 'archive') {
     showArchive();
   } else if (viewName === 'week') {
     showWeek();
   } else if (viewName === 'search') {
+    buildTopicChips([], state.level);
     initSearch();
     setTimeout(() => $('search-input').focus(), 100);
+  } else if (viewName === 'stats') {
+    showStats();
   }
 }
 
@@ -780,7 +769,7 @@ async function unsubscribePush() {
 }
 
 async function initPushBtn() {
-  const btn = $('btn-push');
+  const btn = $('btn-bell');
   if (!btn || !('PushManager' in window) || !('serviceWorker' in navigator)) {
     if (btn) btn.style.display = 'none';
     return;
@@ -805,8 +794,9 @@ async function initPushBtn() {
   });
 }
 function setPushBtnState(btn, active) {
-  btn.textContent = active ? 'Notifikace: ON — vypnout' : 'Zapnout notifikace o novém digestu';
-  btn.classList.toggle('push-active', active);
+  btn.classList.toggle('bell-active', active);
+  btn.setAttribute('title', active ? 'Notifikace zapnuty — klikni pro vypnutí' : 'Zapnout notifikace o novém digestu');
+  btn.setAttribute('aria-label', active ? 'Vypnout notifikace' : 'Zapnout notifikace');
 }
 
 /* ===== BOOKMARKS ===== */
@@ -863,7 +853,6 @@ async function showWeek() {
   $('cards-week').innerHTML = '';
   show('loading-week');
   hide('empty-week');
-  $('stats-section').innerHTML = '';
 
   await loadArchiveIndex();
   try {
@@ -888,7 +877,6 @@ async function showWeek() {
 
     buildTopicChips(allCards, state.level);
     renderCards(allCards, 'cards-week');
-    renderStats();
   } catch {
     hide('loading-week');
     show('empty-week');
@@ -896,6 +884,11 @@ async function showWeek() {
 }
 
 /* ===== COMMUNITY STATS ===== */
+async function showStats() {
+  await loadArchiveIndex();
+  renderStats();
+}
+
 async function renderStats() {
   const el = $('stats-section');
   if (!el) return;
@@ -1011,6 +1004,8 @@ function handleHash() {
     switchView('week');
   } else if (hash === 'search') {
     switchView('search');
+  } else if (hash === 'stats') {
+    switchView('stats');
   } else {
     switchView('today');
   }
@@ -1060,7 +1055,6 @@ function init() {
   document.getElementById('btn-theme').addEventListener('click', toggleTheme);
 
   registerSW().then(() => initPushBtn());
-  $('header-date').textContent = formatDateLong(new Date().toISOString().slice(0, 10));
 
   document.querySelectorAll('.level-tab').forEach(btn => {
     btn.addEventListener('click', () => onLevelChange(btn.dataset.level));

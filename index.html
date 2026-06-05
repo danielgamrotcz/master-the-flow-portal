@@ -39,13 +39,18 @@
       <div class="header-top">
         <div>
           <div class="site-title">Master the Flow</div>
-          <div id="header-date" class="site-date">načítám…</div>
         </div>
         <div class="header-actions">
           <div id="live-badge" class="live-badge hidden">
             <span class="live-dot"></span>
             <span id="live-count">0 poznatků</span>
           </div>
+          <button id="btn-bell" class="bell-btn" aria-label="Notifikace">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+          </button>
           <button id="btn-theme" class="theme-toggle-btn" aria-label="Přepnout téma">
             <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden">
               <circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/>
@@ -83,9 +88,6 @@
       </div>
 
       <div id="view-week" class="view hidden">
-        <div class="week-push-row">
-          <button id="btn-push" class="btn-push">Zapnout notifikace o novém digestu</button>
-        </div>
         <div id="cards-week" class="cards-grid"></div>
         <div id="loading-week" class="loading-state hidden">
           <div class="spinner"></div>
@@ -93,7 +95,6 @@
         <div id="empty-week" class="empty-state hidden">
           <p>Žádný obsah za posledních 7 dní.</p>
         </div>
-        <div id="stats-section" class="stats-section"></div>
       </div>
 
       <div id="view-archive" class="view hidden">
@@ -123,6 +124,10 @@
         <div id="loading-search" class="loading-state hidden">
           <div class="spinner"></div>
         </div>
+      </div>
+
+      <div id="view-stats" class="view hidden">
+        <div id="stats-section" class="stats-section"></div>
       </div>
 
       <div id="view-transcript" class="view hidden">
@@ -171,6 +176,14 @@
         </svg>
         <span>Hledat</span>
       </button>
+      <button class="nav-btn" data-view="stats" aria-label="Statistiky">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="20" x2="18" y2="10"/>
+          <line x1="12" y1="20" x2="12" y2="4"/>
+          <line x1="6" y1="20" x2="6" y2="14"/>
+        </svg>
+        <span>Statistiky</span>
+      </button>
     </nav>
 
   </div>
@@ -189,6 +202,8 @@
         </button>
       </div>
       <div id="overlay-body" class="overlay-body">
+        <div id="overlay-title" class="overlay-title"></div>
+        <div id="overlay-text" class="overlay-text"></div>
         <div id="overlay-similar" class="overlay-similar hidden">
           <div class="overlay-similar-title">Podobné poznatky</div>
           <div id="overlay-similar-cards"></div>
