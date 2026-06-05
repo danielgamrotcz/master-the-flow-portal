@@ -1,4 +1,4 @@
-const CACHE = 'mtf-v1';
+const CACHE = 'mtf-v2';
 const STATIC = ['/', '/index.html', '/app.js', '/styles.css', '/favicon.svg'];
 
 self.addEventListener('install', e => {
@@ -10,6 +10,37 @@ self.addEventListener('activate', e => {
     caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
       .then(() => self.clients.claim())
   );
+});
+
+self.addEventListener('fetch', e => {
+  const url = new URL(e.request.url);
+
+  // Archive date files — cache-first (they never change once published)
+  if (url.pathname.startsWith('/data/archive/') && url.pathname.endsWith('.json')) {
+    e.respondWith(
+      caches.open(CACHE).then(async cache => {
+        const cached = await cache.match(url.pathname);
+        if (cached) return cached;
+        const res = await fetch(e.request);
+        if (res.ok) cache.put(url.pathname, res.clone());
+        return res;
+      })
+    );
+    return;
+  }
+
+  // today.json and archive index — network-first, fall back to cache
+  if (url.pathname === '/data/today.json' || url.pathname === '/data/archive.json') {
+    e.respondWith(
+      fetch(e.request)
+        .then(res => {
+          if (res.ok) caches.open(CACHE).then(c => c.put(url.pathname, res.clone()));
+          return res;
+        })
+        .catch(() => caches.open(CACHE).then(c => c.match(url.pathname)))
+    );
+    return;
+  }
 });
 
 self.addEventListener('push', e => {

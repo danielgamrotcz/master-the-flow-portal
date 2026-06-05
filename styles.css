@@ -143,7 +143,10 @@ a:hover { text-decoration: underline; }
   font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--text-primary);
+  cursor: pointer;
+  user-select: none;
 }
+.site-title:hover { color: var(--accent); transition: color 150ms ease; }
 
 .site-date {
   font-size: 13px;
@@ -882,21 +885,17 @@ a:hover { text-decoration: underline; }
   color: var(--text-tertiary);
   line-height: 1.6;
   text-align: center;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-  margin-top: 8px;
 }
 
 /* ===== FOOTER ===== */
 .site-footer {
   padding: 24px 20px calc(var(--nav-height) + var(--safe-bottom) + 24px);
-  border-top: 1px solid var(--border);
   text-align: center;
   font-size: 12px;
   color: var(--text-tertiary);
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .site-footer a {
@@ -1011,6 +1010,8 @@ a:hover { text-decoration: underline; }
 /* ===== WEEK VIEW ===== */
 
 /* ===== STATS ===== */
+#view-stats { border-top: none; }
+
 .stats-section {
   padding: 0;
 }
@@ -1155,6 +1156,16 @@ a:hover { text-decoration: underline; }
   border-radius: var(--radius-sm);
 }
 
+.stats-topic-clickable {
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+}
+.stats-topic-clickable:hover {
+  background: var(--bg-card-hover);
+  color: var(--accent);
+}
+.stats-topic-clickable:hover .stats-topic-count { color: var(--accent); opacity: 0.7; }
+
 .stats-topic-count {
   color: var(--text-tertiary);
   font-size: 12px;
@@ -1255,4 +1266,118 @@ a:hover { text-decoration: underline; }
   color: var(--text-secondary);
   line-height: 1.4;
   transition: color 150ms;
+}
+
+/* ===== VIEW TRANSITIONS ===== */
+@keyframes viewFadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.view:not(.hidden) {
+  animation: viewFadeIn 180ms ease forwards;
+}
+
+/* ===== SKELETON LOADING ===== */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.card-skeleton {
+  pointer-events: none;
+  border-color: var(--border) !important;
+}
+.sk {
+  border-radius: var(--radius-sm);
+  background: linear-gradient(90deg, var(--border) 25%, var(--border-hover) 50%, var(--border) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite;
+}
+.sk-title { height: 18px; width: 75%; margin-bottom: 14px; }
+.sk-line  { height: 12px; width: 100%; margin-bottom: 8px; }
+.sk-short { width: 55%; }
+
+/* ===== READ CARDS ===== */
+.card.read { opacity: 0.55; }
+.card.read:hover { opacity: 0.8; }
+
+/* ===== RANDOM BUTTON ===== */
+.random-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  border-radius: var(--radius-sm);
+  transition: color 150ms ease;
+  flex-shrink: 0;
+}
+.random-btn:hover { color: var(--accent); }
+.random-btn svg { width: 16px; height: 16px; }
+
+/* ===== REFRESH BANNER ===== */
+.refresh-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  animation: viewFadeIn 200ms ease;
+}
+
+/* ===== PULL TO REFRESH INDICATOR ===== */
+.pull-indicator {
+  position: fixed;
+  top: -48px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  transition: background 150ms;
+}
+.pull-indicator.pull-ready {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* ===== CALENDAR DAY COUNT ===== */
+.cal-day-active {
+  position: relative;
+}
+.cal-day-num {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+}
+.cal-day-count {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 7px;
+  line-height: 1;
+  opacity: 0.85;
+  overflow: hidden;
+  white-space: nowrap;
 }

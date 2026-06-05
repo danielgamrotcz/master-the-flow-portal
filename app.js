@@ -87,6 +87,9 @@ const state = {
   transcriptDate: null,
 };
 
+let _lastKnownDigestDate = null;
+let _preCardHash = '';
+
 /* ===== VOTES ===== */
 async function loadVoteMap() {
   try {
@@ -151,6 +154,12 @@ function show(id) { $(id).classList.remove('hidden'); }
 function hide(id) { $(id).classList.add('hidden'); }
 function setHTML(id, html) { $(id).innerHTML = html; }
 
+/* ===== SKELETON LOADING ===== */
+function renderSkeleton(containerId, count = 4) {
+  const skel = '<div class="card card-skeleton" aria-hidden="true"><div class="sk sk-title"></div><div class="sk sk-line"></div><div class="sk sk-line sk-short"></div></div>';
+  $(containerId).innerHTML = Array(count).fill(skel).join('');
+}
+
 /* ===== TOAST ===== */
 let toastTimer;
 function showToast(msg) {
@@ -173,7 +182,7 @@ function renderCardEl(card, isResurfaced = false) {
     : '';
 
   return `
-    <div class="card${isResurfaced ? ' resurfaced' : ''}"
+    <div class="card${isResurfaced ? ' resurfaced' : ''}${isRead(card.id) ? ' read' : ''}"
          data-id="${esc(card.id)}"
          data-type="${esc(card.type)}"
          role="article"
@@ -270,16 +279,17 @@ function renderCards(cards, containerId, resurfaced = null) {
 
 /* ===== TODAY VIEW ===== */
 async function loadToday() {
-  show('loading-today');
+  hide('loading-today');
   hide('empty-today');
-  $('cards-today').innerHTML = '';
+  renderSkeleton('cards-today');
 
   try {
     const data = await fetchJSON('/data/today.json');
 
     if ((data.cards || []).length > 0) {
       state.today = data;
-      hide('loading-today');
+      _lastKnownDigestDate = data.date;
+      $('cards-today').innerHTML = '';
       updateHeader(data, false);
       buildTopicChips(data.cards);
       renderCards(data.cards, 'cards-today', data.resurfacing || null);
@@ -294,18 +304,19 @@ async function loadToday() {
     try {
       const yData = await fetchJSON(`/data/archive/${yStr}.json`);
       state.today = yData;
+      _lastKnownDigestDate = yData.date;
       state.archiveCache[yStr] = yData;
-      hide('loading-today');
+      $('cards-today').innerHTML = '';
       updateHeader(yData, true);
       buildTopicChips(yData.cards || []);
       renderCards(yData.cards || [], 'cards-today', yData.resurfacing || null);
     } catch {
-      hide('loading-today');
+      $('cards-today').innerHTML = '';
       _setNavLabel('Včera');
       show('empty-today');
     }
   } catch {
-    hide('loading-today');
+    $('cards-today').innerHTML = '';
     _setNavLabel('Včera');
     show('empty-today');
   }
@@ -405,6 +416,7 @@ function renderArchiveControls() {
       state.archivePreset = 'custom';
       state.archiveFrom = from;
       state.archiveTo = to;
+      history.replaceState({}, '', '#archive/' + from + '/' + to);
       renderArchiveControls();
       loadArchiveDateRange(from, to);
     });
@@ -418,13 +430,14 @@ async function loadArchivePreset(preset) {
   else if (preset === '30d') from = archiveDaysBack(30);
   else from = archiveDaysBack(90);
   state.archivePreset = preset;
+  history.replaceState({}, '', '#archive/' + preset);
   await loadArchiveDateRange(from, to);
 }
 
 async function loadArchiveDateRange(from, to) {
-  $('cards-archive').innerHTML = '';
-  show('loading-archive');
+  hide('loading-archive');
   hide('empty-archive');
+  renderSkeleton('cards-archive');
 
   try {
     const dates = (state.archiveIndex?.dates || [])
@@ -445,12 +458,12 @@ async function loadArchiveDateRange(from, to) {
     }));
 
     state.archiveCards = allCards;
-    hide('loading-archive');
+    $('cards-archive').innerHTML = '';
     if (allCards.length === 0) { show('empty-archive'); return; }
     buildTopicChips(allCards);
     renderCards(allCards, 'cards-archive');
   } catch {
-    hide('loading-archive');
+    $('cards-archive').innerHTML = '';
     show('empty-archive');
   }
 }
@@ -553,8 +566,14 @@ function openCard(cardId) {
   const card = findCard(cardId);
   if (!card) return;
 
+  markRead(cardId);
+  document.querySelectorAll(`.card[data-id="${CSS.escape(cardId)}"]`).forEach(el => el.classList.add('read'));
+
+  if (!location.hash.startsWith('#card/')) {
+    _preCardHash = location.hash || '#';
+  }
   state.activeCard = card;
-  history.pushState({ card: cardId }, '', `#card/${cardId}`);
+  history.replaceState({ card: cardId }, '', `#card/${cardId}`);
 
   const typeColor = TYPE_COLORS[card.type] || '#808080';
 
@@ -623,7 +642,7 @@ function closeCard() {
   document.body.style.overflow = '';
   state.activeCard = null;
   if (location.hash.startsWith('#card/')) {
-    history.back();
+    history.replaceState({}, '', _preCardHash || '#');
   }
 }
 
@@ -866,6 +885,21 @@ function toggleBookmark(id) {
   return !has;
 }
 
+/* ===== READ TRACKING ===== */
+function getReadCards() {
+  try { return new Set(JSON.parse(localStorage.getItem('mtf_read') || '[]')); } catch { return new Set(); }
+}
+function isRead(id) { return getReadCards().has(id); }
+function markRead(id) {
+  try {
+    const s = getReadCards();
+    if (!s.has(id)) {
+      s.add(id);
+      localStorage.setItem('mtf_read', JSON.stringify([...s].slice(-1000)));
+    }
+  } catch {}
+}
+
 /* ===== VOTING ===== */
 function hasVoted(id) {
   try { return JSON.parse(localStorage.getItem('mtf_votes') || '[]').includes(id); } catch { return false; }
@@ -897,18 +931,139 @@ function getSimilarCards(card, n = 3) {
   if (!state.searchAll.length) return [];
   const topicSet = new Set(getTopics(card));
   return state.searchAll
-    .filter(c => c.id !== card.id && getTopics(c).some(t => topicSet.has(t)))
+    .filter(c => c.id !== card.id && c.title && getTopics(c).some(t => topicSet.has(t)))
     .map(c => ({ c, score: getTopics(c).filter(t => topicSet.has(t)).length + Math.random() * 0.4 }))
     .sort((a, b) => b.score - a.score)
     .slice(0, n)
     .map(({ c }) => c);
 }
 
+/* ===== RANDOM CARD ===== */
+async function ensureSearchAll() {
+  if (state.searchAll.length > 0) return;
+  await loadArchiveIndex();
+  const allCards = [];
+  await Promise.all(
+    (state.archiveIndex?.dates || []).map(async entry => {
+      const d = typeof entry === 'string' ? entry : entry.date;
+      try {
+        let data = state.archiveCache[d];
+        if (!data) { data = await fetchJSON('/data/archive/' + d + '.json'); state.archiveCache[d] = data; }
+        (data.cards || []).forEach(c => allCards.push({ ...c, date: c.date || d }));
+        if (data.resurfacing) allCards.push({ ...data.resurfacing, date: d });
+      } catch {}
+    })
+  );
+  const seen = new Set();
+  state.searchAll = allCards.filter(c => {
+    if (!c.id || seen.has(c.id)) return false;
+    seen.add(c.id);
+    return true;
+  });
+}
+
+async function openRandomCard() {
+  if (!state.searchAll.length) {
+    showToast('Načítám archiv…');
+    await ensureSearchAll();
+  }
+  const pool = state.searchAll.length ? state.searchAll : (state.today?.cards || []);
+  if (!pool.length) { showToast('Žádné poznatky k dispozici'); return; }
+  const card = pool[Math.floor(Math.random() * pool.length)];
+  openCard(card.id);
+}
+
+/* ===== KEYBOARD CARD NAVIGATION ===== */
+function navigateCards(dir) {
+  const gridId = state.view === 'today' ? 'cards-today'
+    : state.view === 'week' ? 'cards-week'
+    : state.view === 'archive' ? 'cards-archive'
+    : state.view === 'search' ? 'cards-search'
+    : null;
+  if (!gridId) return;
+  const cards = [...document.getElementById(gridId).querySelectorAll('.card')];
+  if (!cards.length) return;
+  const focused = document.activeElement?.closest('.card');
+  let idx = focused ? cards.indexOf(focused) : -1;
+  idx = Math.max(0, Math.min(cards.length - 1, idx + dir));
+  cards[idx].focus();
+  cards[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+/* ===== PULL TO REFRESH ===== */
+function initPullToRefresh() {
+  const content = document.getElementById('main-content');
+  const indicator = document.getElementById('pull-indicator');
+  if (!content || !indicator) return;
+
+  let startY = 0, pulling = false;
+
+  content.addEventListener('touchstart', e => {
+    if ((document.scrollingElement?.scrollTop || window.scrollY) === 0) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    }
+  }, { passive: true });
+
+  content.addEventListener('touchmove', e => {
+    if (!pulling) return;
+    const dy = e.touches[0].clientY - startY;
+    if (dy > 0) {
+      const clamped = Math.min(dy * 0.5, 52);
+      indicator.style.transform = `translateY(${clamped}px)`;
+      indicator.classList.toggle('pull-ready', dy > 80);
+    }
+  }, { passive: true });
+
+  content.addEventListener('touchend', () => {
+    if (!pulling) return;
+    const wasReady = indicator.classList.contains('pull-ready');
+    pulling = false;
+    indicator.style.transform = '';
+    indicator.classList.remove('pull-ready');
+    if (wasReady) reloadCurrentView();
+  });
+}
+
+async function reloadCurrentView() {
+  if (state.view === 'today') { state.today = null; loadToday(); }
+  else if (state.view === 'week') { state.archiveIndex = null; showWeek(); }
+  else if (state.view === 'archive') { state.archiveIndex = null; state.archiveCards = []; showArchive(); }
+}
+
+/* ===== AUTO REFRESH ===== */
+function initAutoRefresh() {
+  setInterval(async () => {
+    try {
+      const data = await fetch('/data/today.json?v=' + Date.now()).then(r => r.json());
+      if (_lastKnownDigestDate && data.date && data.date !== _lastKnownDigestDate) {
+        showRefreshBanner();
+      }
+    } catch {}
+  }, 5 * 60 * 1000);
+}
+
+function showRefreshBanner() {
+  const banner = document.getElementById('refresh-banner');
+  if (!banner || !banner.classList.contains('hidden')) return;
+  banner.classList.remove('hidden');
+  banner.addEventListener('click', () => {
+    banner.classList.add('hidden');
+    _lastKnownDigestDate = null;
+    state.today = null;
+    state.archiveIndex = null;
+    state.searchAll = [];
+    state.searchIndex = null;
+    switchView('today');
+    loadToday();
+  }, { once: true });
+}
+
 /* ===== LAST 7 DAYS ===== */
 async function showWeek() {
-  $('cards-week').innerHTML = '';
-  show('loading-week');
+  hide('loading-week');
   hide('empty-week');
+  renderSkeleton('cards-week');
 
   await loadArchiveIndex();
   try {
@@ -928,13 +1083,13 @@ async function showWeek() {
     // Populate searchAll for similar cards (additive)
     allCards.forEach(c => { if (!state.searchAll.find(s => s.id === c.id)) state.searchAll.push(c); });
 
-    hide('loading-week');
+    $('cards-week').innerHTML = '';
     if (!allCards.length) { show('empty-week'); return; }
 
     buildTopicChips(allCards);
     renderCards(allCards, 'cards-week');
   } catch {
-    hide('loading-week');
+    $('cards-week').innerHTML = '';
     show('empty-week');
   }
 }
@@ -945,7 +1100,7 @@ async function showStats() {
   renderStats();
 }
 
-function buildActivityCal(monthStr, cardCountByDate) {
+function buildActivityCal(monthStr, msgCountByDate) {
   const [y, m] = monthStr.split('-').map(Number);
   const firstDay = new Date(y, m - 1, 1);
   const lastDay = new Date(y, m, 0);
@@ -975,15 +1130,16 @@ function buildActivityCal(monthStr, cardCountByDate) {
 
   for (let d = 1; d <= lastDay.getDate(); d++) {
     const ds = y + '-' + String(m).padStart(2, '0') + '-' + String(d).padStart(2, '0');
-    const count = cardCountByDate[ds] || 0;
+    const count = msgCountByDate[ds] || 0;
     const dayDate = new Date(y, m - 1, d);
     if (dayDate > today) {
       html += '<div class="cal-day cal-day-pad"></div>';
     } else if (count === 0) {
       html += '<div class="cal-day cal-day-empty" title="' + d + '.' + m + '.">' + d + '</div>';
     } else {
-      const intensity = count <= 3 ? 1 : count <= 6 ? 2 : 3;
-      html += '<div class="cal-day cal-day-active cal-day-i' + intensity + '" data-date="' + ds + '" title="' + d + '.' + m + '. · ' + count + ' poznatk' + (count === 1 ? 'a' : 'ů') + '">' + d + '</div>';
+      const intensity = count <= 10 ? 1 : count <= 30 ? 2 : 3;
+      const word = count === 1 ? 'zpráva' : count <= 4 ? 'zprávy' : 'zpráv';
+      html += '<div class="cal-day cal-day-active cal-day-i' + intensity + '" data-date="' + ds + '" title="' + d + '.' + m + '. · ' + count + ' ' + word + '"><span class="cal-day-num">' + d + '</span><span class="cal-day-count">' + count + ' ' + word + '</span></div>';
     }
   }
 
@@ -1000,7 +1156,7 @@ async function renderStats() {
     const allDates = (state.archiveIndex?.dates || []).map(d => typeof d === 'string' ? d : d.date);
     let totalCards = 0;
     const topicCounts = {};
-    const cardCountByDate = {};
+    const msgCountByDate = {};
 
     await Promise.all(allDates.map(async ds => {
       try {
@@ -1008,13 +1164,14 @@ async function renderStats() {
         if (!data) { data = await fetchJSON('/data/archive/' + ds + '.json'); state.archiveCache[ds] = data; }
         const cnt = (data.cards || []).length;
         totalCards += cnt;
-        cardCountByDate[ds] = cnt;
+        const msgCount = (data.transcript?.groups || []).reduce((s, g) => s + (g.messages || []).length, 0);
+        msgCountByDate[ds] = msgCount;
         (data.cards || []).forEach(c => getTopics(c).forEach(t => { topicCounts[t] = (topicCounts[t] || 0) + 1; }));
       } catch {}
     }));
 
     const calMonth = state.statsMonth || new Date().toISOString().slice(0, 7);
-    const calHtml = buildActivityCal(calMonth, cardCountByDate);
+    const calHtml = buildActivityCal(calMonth, msgCountByDate);
     const topTopics = Object.entries(topicCounts).sort((a, b) => b[1] - a[1]).slice(0, 8);
     const cardMap = {};
     allDates.forEach(ds => (state.archiveCache[ds]?.cards || []).forEach(c => { cardMap[c.id] = c; }));
@@ -1040,10 +1197,9 @@ async function renderStats() {
       if (topOpened.length) {
         insightsHtml += '<div class="stats-section-title">Nejčtenější poznatky</div>'
           + '<div class="stats-top-cards">'
-          + topOpened.map(({ id, opens, avg_seconds }) => {
+          + topOpened.map(({ id, opens }) => {
             const card = cardMap[id];
-            const time = avg_seconds ? ' · ' + avg_seconds + 's' : '';
-            return '<div class="stats-top-card" data-id="' + esc(id) + '"><span class="stats-top-heart">' + opens + '×' + time + '</span><span class="stats-top-title">' + esc(card.title) + '</span></div>';
+            return '<div class="stats-top-card" data-id="' + esc(id) + '"><span class="stats-top-heart">' + opens + '×</span><span class="stats-top-title">' + esc(card.title) + '</span></div>';
           }).join('')
           + '</div>';
       }
@@ -1056,29 +1212,40 @@ async function renderStats() {
       }
     } catch {}
 
+    let memberCount = null;
+    try {
+      const cm = await fetch('/api/community').then(r => r.json());
+      memberCount = cm.count;
+    } catch {}
+
     el.innerHTML = '<div class="stats-grid">'
       + '<div class="stat-card"><div class="stat-num">' + totalCards + '</div><div class="stat-label">poznatků v archivu</div></div>'
       + '<div class="stat-card"><div class="stat-num">' + allDates.length + '</div><div class="stat-label">dní s obsahem</div></div>'
-      + '<div class="stat-card"><div class="stat-num">400+</div><div class="stat-label">členů komunity</div></div>'
+      + '<div class="stat-card"><div class="stat-num">' + (memberCount !== null ? memberCount + '+' : '—') + '</div><div class="stat-label">členů komunity</div></div>'
       + '</div>'
       + calHtml
       + (topTopics.length ? '<div class="stats-section-title">Nejčastější témata</div><div class="stats-topics">'
-        + topTopics.map(([t, n]) => '<div class="stats-topic-row"><span>' + esc(t) + '</span><span class="stats-topic-count">' + n + '×</span></div>').join('')
+        + topTopics.map(([t, n]) => '<div class="stats-topic-row stats-topic-clickable" data-topic="' + esc(t) + '"><span>' + esc(t) + '</span><span class="stats-topic-count">' + n + '×</span></div>').join('')
         + '</div>' : '')
       + topVotedHtml
       + insightsHtml;
 
     el.querySelector('#cal-prev')?.addEventListener('click', () => {
       const [cy, cm] = calMonth.split('-').map(Number);
-      const prev = new Date(cy, cm - 2, 1);
-      state.statsMonth = prev.toISOString().slice(0, 7);
+      let pm = cm - 1, py = cy;
+      if (pm < 1) { pm = 12; py--; }
+      state.statsMonth = py + '-' + String(pm).padStart(2, '0');
       renderStats();
     });
     el.querySelector('#cal-next')?.addEventListener('click', () => {
       const [cy, cm] = calMonth.split('-').map(Number);
-      const next = new Date(cy, cm, 1);
-      if (next <= new Date()) {
-        state.statsMonth = next.toISOString().slice(0, 7);
+      let nm = cm + 1, ny = cy;
+      if (nm > 12) { nm = 1; ny++; }
+      const nextStr = ny + '-' + String(nm).padStart(2, '0');
+      const now = new Date();
+      const curStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+      if (nextStr <= curStr) {
+        state.statsMonth = nextStr;
         renderStats();
       }
     });
@@ -1095,9 +1262,25 @@ async function renderStats() {
         switchView('archive');
       });
     });
+    el.querySelectorAll('.stats-topic-clickable[data-topic]').forEach(row => {
+      row.addEventListener('click', () => openTopicInArchive(row.dataset.topic));
+    });
   } catch {
     el.innerHTML = '';
   }
+}
+
+function openTopicInArchive(topic) {
+  const dates = (state.archiveIndex?.dates || []).map(d => typeof d === 'string' ? d : d.date).sort();
+  const from = dates[0] || archiveDaysBack(90);
+  const to = archiveTodayStr();
+  state.archivePreset = 'custom';
+  state.archiveFrom = from;
+  state.archiveTo = to;
+  state.archiveCards = [];
+  history.replaceState({}, '', '#archive/' + from + '/' + to);
+  switchView('archive');
+  state.topic = topic; // switchView resets topic to 'all' — override after
 }
 
 /* ===== FETCH ===== */
@@ -1152,7 +1335,17 @@ function handleHash() {
         setTimeout(() => openCard(id), 200);
       });
     }
-  } else if (hash === 'archive') {
+  } else if (hash.startsWith('archive')) {
+    const parts = hash.split('/');
+    if (parts.length === 2 && ['7d', '30d', '90d'].includes(parts[1])) {
+      state.archivePreset = parts[1];
+      state.archiveFrom = null;
+      state.archiveTo = null;
+    } else if (parts.length === 3 && parts[1] && parts[2]) {
+      state.archivePreset = 'custom';
+      state.archiveFrom = parts[1];
+      state.archiveTo = parts[2];
+    }
     switchView('archive');
   } else if (hash === 'week') {
     switchView('week');
@@ -1193,9 +1386,16 @@ function init() {
   initGate();
   applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
   document.getElementById('btn-theme').addEventListener('click', toggleTheme);
+  $('btn-random')?.addEventListener('click', openRandomCard);
+  document.querySelector('.site-title')?.addEventListener('click', () => {
+    switchView('today');
+    history.pushState({}, '', '#');
+  });
 
   registerSW().then(() => initPushBtn());
   loadVoteMap();
+  initAutoRefresh();
+  initPullToRefresh();
 
   $('topic-chips').addEventListener('click', e => {
     const chip = e.target.closest('.chip');
@@ -1229,13 +1429,27 @@ function init() {
   });
 
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && !$('card-overlay').classList.contains('hidden')) {
-      closeCard();
+    const inInput = e.target.matches('input, textarea, [contenteditable]');
+    const overlayOpen = !$('card-overlay').classList.contains('hidden');
+
+    if (e.key === 'Escape') {
+      if (overlayOpen) closeCard();
+      return;
     }
+    if (overlayOpen) {
+      if (!inInput && (e.key === 'h' || e.key === 'H')) $('btn-vote')?.click();
+      return;
+    }
+    if (inInput) return;
+
+    if (e.key === '/') { e.preventDefault(); document.querySelector('.nav-btn[data-view="search"]')?.click(); return; }
+    if (e.key === 'r' || e.key === 'R') { openRandomCard(); return; }
+    if (e.key === 'j') { navigateCards(1); return; }
+    if (e.key === 'k') { navigateCards(-1); return; }
   });
 
   window.addEventListener('popstate', () => {
-    if ($('card-overlay').classList.contains('hidden') === false) {
+    if (!$('card-overlay').classList.contains('hidden')) {
       closeCard();
     }
   });
