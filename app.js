@@ -84,6 +84,7 @@ const state = {
   archiveDateQueue: [],
   archivePageLoading: false,
   _archiveObserver: null,
+  _archiveGen: 0,
   cardOpenedAt: null,
   statsMonth: null,
   statsMsgCountByDate: null,
@@ -237,7 +238,8 @@ function buildTopicChips(cards) {
     .map(([t]) => t);
 
   if (state.topic !== 'all' && !topics.includes(state.topic)) {
-    state.topic = 'all';
+    if (counts[state.topic]) topics.push(state.topic); // fell below top-20 but still exists
+    else state.topic = 'all';
   }
 
   const chips = $('topic-chips');
@@ -463,6 +465,9 @@ async function loadArchiveDateRange(from, to) {
 
   if (state._archiveObserver) { state._archiveObserver.disconnect(); state._archiveObserver = null; }
 
+  state._archiveGen++;
+  const myGen = state._archiveGen;
+
   state.archiveDateQueue = (state.archiveIndex?.dates || [])
     .map(d => typeof d === 'string' ? d : d.date)
     .filter(d => d >= from && d <= to)
@@ -476,11 +481,12 @@ async function loadArchiveDateRange(from, to) {
     return;
   }
 
-  await loadArchiveNextPage(true);
+  await loadArchiveNextPage(true, myGen);
 }
 
-async function loadArchiveNextPage(isFirst = false) {
+async function loadArchiveNextPage(isFirst = false, gen = null) {
   if (state.archivePageLoading || state.archiveDateQueue.length === 0) return;
+  if (gen !== null && gen !== state._archiveGen) return; // stale — preset changed
   state.archivePageLoading = true;
 
   const batch = state.archiveDateQueue.splice(0, ARCHIVE_PAGE);
@@ -492,6 +498,8 @@ async function loadArchiveNextPage(isFirst = false) {
       (data.cards || []).forEach(c => newCards.push({ ...c, source_date: c.source_date || ds }));
     } catch {}
   }));
+
+  if (gen !== null && gen !== state._archiveGen) { state.archivePageLoading = false; return; } // stale after fetch
 
   state.archiveCards.push(...newCards);
 
@@ -514,20 +522,25 @@ async function loadArchiveNextPage(isFirst = false) {
     attachCardListeners(container);
   }
 
-  if (state.archiveDateQueue.length > 0) {
-    const s = document.createElement('div');
-    s.id = 'archive-sentinel';
-    s.style.cssText = 'height:1px;width:100%;';
-    container.appendChild(s);
-    if (state._archiveObserver) state._archiveObserver.disconnect();
-    const obs = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) loadArchiveNextPage();
-    }, { rootMargin: '300px' });
-    obs.observe(s);
-    state._archiveObserver = obs;
-  }
-
   state.archivePageLoading = false;
+
+  if (state.archiveDateQueue.length > 0) {
+    if (filtered.length === 0) {
+      // No visible cards from this batch — load next immediately without waiting for scroll
+      await loadArchiveNextPage(false, gen);
+    } else {
+      const s = document.createElement('div');
+      s.id = 'archive-sentinel';
+      s.style.cssText = 'height:1px;width:100%;';
+      container.appendChild(s);
+      if (state._archiveObserver) state._archiveObserver.disconnect();
+      const obs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) loadArchiveNextPage(false, gen);
+      }, { rootMargin: '300px' });
+      obs.observe(s);
+      state._archiveObserver = obs;
+    }
+  }
 }
 
 /* ===== SEARCH ===== */
@@ -1114,6 +1127,10 @@ function showRefreshBanner() {
     _lastKnownDigestDate = null;
     state.today = null;
     state.archiveIndex = null;
+    state.archiveCards = [];
+    state.archiveDateQueue = [];
+    state.archivePageLoading = false;
+    if (state._archiveObserver) { state._archiveObserver.disconnect(); state._archiveObserver = null; }
     state.searchAll = [];
     state.searchIndex = null;
     switchView('today');
@@ -1307,10 +1324,10 @@ function updateStatsCalendar(el) {
   const tmp = document.createElement('div');
   tmp.innerHTML = buildActivityCal(calMonth, state.statsMsgCountByDate);
   existing.replaceWith(tmp.firstChild);
-  attachStatsListeners(el);
+  attachCalendarListeners(el); // only calendar — avoids duplicating card/topic listeners
 }
 
-function attachStatsListeners(el) {
+function attachCalendarListeners(el) {
   const calMonth = state.statsMonth || new Date().toISOString().slice(0, 7);
   const now = new Date();
   const curStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
@@ -1332,9 +1349,6 @@ function attachStatsListeners(el) {
       updateStatsCalendar(el);
     }
   });
-  el.querySelectorAll('.stats-top-card[data-id]').forEach(card => {
-    card.addEventListener('click', () => openCard(card.dataset.id));
-  });
   el.querySelectorAll('.cal-day-active[data-date]').forEach(day => {
     day.addEventListener('click', () => {
       const date = day.dataset.date;
@@ -1344,6 +1358,13 @@ function attachStatsListeners(el) {
       state.archiveTo = date;
       switchView('archive');
     });
+  });
+}
+
+function attachStatsListeners(el) {
+  attachCalendarListeners(el);
+  el.querySelectorAll('.stats-top-card[data-id]').forEach(card => {
+    card.addEventListener('click', () => openCard(card.dataset.id));
   });
   el.querySelectorAll('.stats-topic-clickable[data-topic]').forEach(row => {
     row.addEventListener('click', () => openTopicInArchive(row.dataset.topic));
@@ -1417,7 +1438,7 @@ function handleHash() {
     }
   } else if (hash.startsWith('archive')) {
     const parts = hash.split('/');
-    if (parts.length === 2 && ['7d', '30d', '90d'].includes(parts[1])) {
+    if (parts.length === 2 && ['7d', '30d', '90d', 'this-month', 'last-month'].includes(parts[1])) {
       state.archivePreset = parts[1];
       state.archiveFrom = null;
       state.archiveTo = null;
@@ -1463,8 +1484,9 @@ function rerenderCurrentView() {
       s.style.cssText = 'height:1px;width:100%;';
       container.appendChild(s);
       if (state._archiveObserver) state._archiveObserver.disconnect();
+      const gen = state._archiveGen;
       const obs = new IntersectionObserver(entries => {
-        if (entries[0].isIntersecting) loadArchiveNextPage();
+        if (entries[0].isIntersecting) loadArchiveNextPage(false, gen);
       }, { rootMargin: '300px' });
       obs.observe(s);
       state._archiveObserver = obs;
