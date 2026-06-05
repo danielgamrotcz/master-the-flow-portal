@@ -77,12 +77,16 @@ const state = {
   searchAll: [],
   searchIndex: null,
   activeCard: null,
-  archivePreset: '30d',
+  archivePreset: 'this-month',
   archiveFrom: null,
   archiveTo: null,
   archiveCards: [],
+  archiveDateQueue: [],
+  archivePageLoading: false,
+  _archiveObserver: null,
   cardOpenedAt: null,
   statsMonth: null,
+  statsMsgCountByDate: null,
   voteMap: {},
   transcriptDate: null,
 };
@@ -239,7 +243,7 @@ function buildTopicChips(cards) {
   const chips = $('topic-chips');
   let html = `<button class="chip${state.topic === 'all' ? ' active' : ''}" data-topic="all">Vše</button>`;
   topics.forEach(t => {
-    html += `<button class="chip${state.topic === t ? ' active' : ''}" data-topic="${esc(t)}">${esc(t)}</button>`;
+    html += `<button class="chip${state.topic === t ? ' active' : ''}" data-topic="${esc(t)}">${esc(t)}<span class="chip-count">${counts[t]}</span></button>`;
   });
   chips.innerHTML = html;
 }
@@ -364,19 +368,35 @@ async function showArchive() {
 }
 
 function archiveTodayStr() {
-  return new Date().toISOString().slice(0, 10);
+  const d = new Date();
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
 }
 function archiveDaysBack(n) {
   const d = new Date();
   d.setDate(d.getDate() - n);
-  return d.toISOString().slice(0, 10);
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+}
+function archiveThisMonthFrom() {
+  const d = new Date();
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-01';
+}
+function archiveLastMonth() {
+  const d = new Date();
+  const y = d.getFullYear(), m = d.getMonth(); // m is 0-based = last month in 1-based
+  const ly = m === 0 ? y - 1 : y;
+  const lm = m === 0 ? 12 : m;
+  const lastDay = new Date(y, m, 0).getDate();
+  return {
+    from: ly + '-' + String(lm).padStart(2, '0') + '-01',
+    to: ly + '-' + String(lm).padStart(2, '0') + '-' + String(lastDay).padStart(2, '0'),
+  };
 }
 
 function renderArchiveControls() {
   const PRESETS = [
     { key: '7d', label: '7 dní' },
-    { key: '30d', label: '30 dní' },
-    { key: '90d', label: '3 měsíce' },
+    { key: 'this-month', label: 'Tento měsíc' },
+    { key: 'last-month', label: 'Minulý měsíc' },
   ];
   const active = state.archivePreset;
   const fromVal = state.archiveFrom || '';
@@ -424,48 +444,90 @@ function renderArchiveControls() {
 }
 
 async function loadArchivePreset(preset) {
-  const to = archiveTodayStr();
-  let from;
-  if (preset === '7d') from = archiveDaysBack(7);
-  else if (preset === '30d') from = archiveDaysBack(30);
-  else from = archiveDaysBack(90);
   state.archivePreset = preset;
   history.replaceState({}, '', '#archive/' + preset);
+  let from, to;
+  if (preset === '7d') { from = archiveDaysBack(7); to = archiveTodayStr(); }
+  else if (preset === 'this-month') { from = archiveThisMonthFrom(); to = archiveTodayStr(); }
+  else if (preset === 'last-month') { const lm = archiveLastMonth(); from = lm.from; to = lm.to; }
+  else { from = archiveDaysBack(90); to = archiveTodayStr(); }
   await loadArchiveDateRange(from, to);
 }
+
+const ARCHIVE_PAGE = 12;
 
 async function loadArchiveDateRange(from, to) {
   hide('loading-archive');
   hide('empty-archive');
   renderSkeleton('cards-archive');
 
-  try {
-    const dates = (state.archiveIndex?.dates || [])
-      .map(d => typeof d === 'string' ? d : d.date)
-      .filter(d => d >= from && d <= to)
-      .sort().reverse();
+  if (state._archiveObserver) { state._archiveObserver.disconnect(); state._archiveObserver = null; }
 
-    const allCards = [];
-    await Promise.all(dates.map(async ds => {
-      try {
-        let data = state.archiveCache[ds];
-        if (!data) {
-          data = await fetchJSON('/data/archive/' + ds + '.json');
-          state.archiveCache[ds] = data;
-        }
-        (data.cards || []).forEach(c => allCards.push({ ...c, source_date: c.source_date || ds }));
-      } catch { /* skip */ }
-    }));
+  state.archiveDateQueue = (state.archiveIndex?.dates || [])
+    .map(d => typeof d === 'string' ? d : d.date)
+    .filter(d => d >= from && d <= to)
+    .sort().reverse();
+  state.archiveCards = [];
+  state.archivePageLoading = false;
 
-    state.archiveCards = allCards;
-    $('cards-archive').innerHTML = '';
-    if (allCards.length === 0) { show('empty-archive'); return; }
-    buildTopicChips(allCards);
-    renderCards(allCards, 'cards-archive');
-  } catch {
+  if (state.archiveDateQueue.length === 0) {
     $('cards-archive').innerHTML = '';
     show('empty-archive');
+    return;
   }
+
+  await loadArchiveNextPage(true);
+}
+
+async function loadArchiveNextPage(isFirst = false) {
+  if (state.archivePageLoading || state.archiveDateQueue.length === 0) return;
+  state.archivePageLoading = true;
+
+  const batch = state.archiveDateQueue.splice(0, ARCHIVE_PAGE);
+  const newCards = [];
+  await Promise.all(batch.map(async ds => {
+    try {
+      let data = state.archiveCache[ds];
+      if (!data) { data = await fetchJSON('/data/archive/' + ds + '.json'); state.archiveCache[ds] = data; }
+      (data.cards || []).forEach(c => newCards.push({ ...c, source_date: c.source_date || ds }));
+    } catch {}
+  }));
+
+  state.archiveCards.push(...newCards);
+
+  const container = $('cards-archive');
+  if (isFirst) {
+    container.innerHTML = '';
+    if (!state.archiveCards.length && !state.archiveDateQueue.length) { show('empty-archive'); state.archivePageLoading = false; return; }
+    buildTopicChips(state.archiveCards);
+  } else {
+    buildTopicChips(state.archiveCards);
+  }
+
+  const sentinel = document.getElementById('archive-sentinel');
+  if (sentinel) sentinel.remove();
+
+  const filtered = filterCards(newCards);
+  if (filtered.length) {
+    const tmp = document.createElement('div');
+    filtered.forEach(c => { tmp.innerHTML = renderCardEl(c); container.appendChild(tmp.firstChild); });
+    attachCardListeners(container);
+  }
+
+  if (state.archiveDateQueue.length > 0) {
+    const s = document.createElement('div');
+    s.id = 'archive-sentinel';
+    s.style.cssText = 'height:1px;width:100%;';
+    container.appendChild(s);
+    if (state._archiveObserver) state._archiveObserver.disconnect();
+    const obs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) loadArchiveNextPage();
+    }, { rootMargin: '300px' });
+    obs.observe(s);
+    state._archiveObserver = obs;
+  }
+
+  state.archivePageLoading = false;
 }
 
 /* ===== SEARCH ===== */
@@ -999,7 +1061,7 @@ function initPullToRefresh() {
   let startY = 0, pulling = false;
 
   content.addEventListener('touchstart', e => {
-    if ((document.scrollingElement?.scrollTop || window.scrollY) === 0) {
+    if (content.scrollTop === 0) {
       startY = e.touches[0].clientY;
       pulling = true;
     }
@@ -1170,6 +1232,7 @@ async function renderStats() {
       } catch {}
     }));
 
+    state.statsMsgCountByDate = msgCountByDate;
     const calMonth = state.statsMonth || new Date().toISOString().slice(0, 7);
     const calHtml = buildActivityCal(calMonth, msgCountByDate);
     const topTopics = Object.entries(topicCounts).sort((a, b) => b[1] - a[1]).slice(0, 8);
@@ -1230,44 +1293,61 @@ async function renderStats() {
       + topVotedHtml
       + insightsHtml;
 
-    el.querySelector('#cal-prev')?.addEventListener('click', () => {
-      const [cy, cm] = calMonth.split('-').map(Number);
-      let pm = cm - 1, py = cy;
-      if (pm < 1) { pm = 12; py--; }
-      state.statsMonth = py + '-' + String(pm).padStart(2, '0');
-      renderStats();
-    });
-    el.querySelector('#cal-next')?.addEventListener('click', () => {
-      const [cy, cm] = calMonth.split('-').map(Number);
-      let nm = cm + 1, ny = cy;
-      if (nm > 12) { nm = 1; ny++; }
-      const nextStr = ny + '-' + String(nm).padStart(2, '0');
-      const now = new Date();
-      const curStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
-      if (nextStr <= curStr) {
-        state.statsMonth = nextStr;
-        renderStats();
-      }
-    });
-    el.querySelectorAll('.stats-top-card[data-id]').forEach(card => {
-      card.addEventListener('click', () => openCard(card.dataset.id));
-    });
-    el.querySelectorAll('.cal-day-active[data-date]').forEach(day => {
-      day.addEventListener('click', () => {
-        const date = day.dataset.date;
-        state.archiveCards = [];
-        state.archivePreset = 'custom';
-        state.archiveFrom = date;
-        state.archiveTo = date;
-        switchView('archive');
-      });
-    });
-    el.querySelectorAll('.stats-topic-clickable[data-topic]').forEach(row => {
-      row.addEventListener('click', () => openTopicInArchive(row.dataset.topic));
-    });
+    attachStatsListeners(el);
   } catch {
     el.innerHTML = '';
   }
+}
+
+function updateStatsCalendar(el) {
+  if (!el || !state.statsMsgCountByDate) { renderStats(); return; }
+  const existing = el.querySelector('.activity-cal');
+  if (!existing) { renderStats(); return; }
+  const calMonth = state.statsMonth || new Date().toISOString().slice(0, 7);
+  const tmp = document.createElement('div');
+  tmp.innerHTML = buildActivityCal(calMonth, state.statsMsgCountByDate);
+  existing.replaceWith(tmp.firstChild);
+  attachStatsListeners(el);
+}
+
+function attachStatsListeners(el) {
+  const calMonth = state.statsMonth || new Date().toISOString().slice(0, 7);
+  const now = new Date();
+  const curStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+
+  el.querySelector('#cal-prev')?.addEventListener('click', () => {
+    const [cy, cm] = calMonth.split('-').map(Number);
+    let pm = cm - 1, py = cy;
+    if (pm < 1) { pm = 12; py--; }
+    state.statsMonth = py + '-' + String(pm).padStart(2, '0');
+    updateStatsCalendar(el);
+  });
+  el.querySelector('#cal-next')?.addEventListener('click', () => {
+    const [cy, cm] = calMonth.split('-').map(Number);
+    let nm = cm + 1, ny = cy;
+    if (nm > 12) { nm = 1; ny++; }
+    const nextStr = ny + '-' + String(nm).padStart(2, '0');
+    if (nextStr <= curStr) {
+      state.statsMonth = nextStr;
+      updateStatsCalendar(el);
+    }
+  });
+  el.querySelectorAll('.stats-top-card[data-id]').forEach(card => {
+    card.addEventListener('click', () => openCard(card.dataset.id));
+  });
+  el.querySelectorAll('.cal-day-active[data-date]').forEach(day => {
+    day.addEventListener('click', () => {
+      const date = day.dataset.date;
+      state.archiveCards = [];
+      state.archivePreset = 'custom';
+      state.archiveFrom = date;
+      state.archiveTo = date;
+      switchView('archive');
+    });
+  });
+  el.querySelectorAll('.stats-topic-clickable[data-topic]').forEach(row => {
+    row.addEventListener('click', () => openTopicInArchive(row.dataset.topic));
+  });
 }
 
 function openTopicInArchive(topic) {
@@ -1371,7 +1451,24 @@ function rerenderCurrentView() {
   if (state.view === 'today' && state.today) {
     renderCards(state.today.cards || [], 'cards-today', state.today.resurfacing || null);
   } else if (state.view === 'archive' && state.archiveCards.length > 0) {
-    renderCards(state.archiveCards, 'cards-archive');
+    const container = $('cards-archive');
+    container.innerHTML = '';
+    const filtered = filterCards(state.archiveCards);
+    const tmp = document.createElement('div');
+    filtered.forEach(c => { tmp.innerHTML = renderCardEl(c); container.appendChild(tmp.firstChild); });
+    attachCardListeners(container);
+    if (state.archiveDateQueue.length > 0) {
+      const s = document.createElement('div');
+      s.id = 'archive-sentinel';
+      s.style.cssText = 'height:1px;width:100%;';
+      container.appendChild(s);
+      if (state._archiveObserver) state._archiveObserver.disconnect();
+      const obs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) loadArchiveNextPage();
+      }, { rootMargin: '300px' });
+      obs.observe(s);
+      state._archiveObserver = obs;
+    }
   } else if (state.view === 'week') {
     showWeek();
   } else if (state.view === 'search') {
@@ -1379,6 +1476,46 @@ function rerenderCurrentView() {
     if (q.length >= 2) runSearch(q);
     else buildTopicChips([]);
   }
+}
+
+/* ===== SWIPE TO CLOSE ===== */
+function initSwipeToClose() {
+  const sheet = document.querySelector('.overlay-sheet');
+  const overlay = $('card-overlay');
+  if (!sheet) return;
+
+  let startY = 0, dragging = false;
+
+  sheet.addEventListener('touchstart', e => {
+    const body = $('overlay-body');
+    if (body && body.scrollTop > 0) return;
+    startY = e.touches[0].clientY;
+    dragging = true;
+    sheet.style.transition = 'none';
+  }, { passive: true });
+
+  sheet.addEventListener('touchmove', e => {
+    if (!dragging) return;
+    const dy = e.touches[0].clientY - startY;
+    if (dy > 0) sheet.style.transform = `translateY(${dy}px)`;
+  }, { passive: true });
+
+  sheet.addEventListener('touchend', e => {
+    if (!dragging) return;
+    dragging = false;
+    const dy = e.changedTouches[0].clientY - startY;
+    sheet.style.transition = 'transform 240ms ease';
+    if (dy > 100) {
+      sheet.style.transform = 'translateY(100%)';
+      setTimeout(() => {
+        sheet.style.transition = '';
+        sheet.style.transform = '';
+        closeCard();
+      }, 240);
+    } else {
+      sheet.style.transform = '';
+    }
+  });
 }
 
 /* ===== INIT ===== */
@@ -1396,6 +1533,7 @@ function init() {
   loadVoteMap();
   initAutoRefresh();
   initPullToRefresh();
+  initSwipeToClose();
 
   $('topic-chips').addEventListener('click', e => {
     const chip = e.target.closest('.chip');
