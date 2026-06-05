@@ -77,6 +77,7 @@ const state = {
   searchIndex: null,
   activeCard: null,
   archiveDate: null,
+  archiveMonth: null,
   transcriptDate: null,
 };
 
@@ -91,7 +92,7 @@ const TYPE_COLORS = {
 
 const LEVEL_CLASSES = {
   'Začátečník': 'level-zacatecnik',
-  'Builder': 'level-builder',
+  'Pokročilý': 'level-builder',
   'Expert': 'level-expert',
 };
 
@@ -153,7 +154,7 @@ function renderCardEl(card, isResurfaced = false) {
         ${resurfacedBadge}
         <span class="card-level ${levelClass}">${esc(card.level)}</span>
         <span class="card-type" style="color:${typeColor}">${esc(card.type)}</span>
-        <span class="card-topic">${esc(card.topic)}</span>
+        ${getTopics(card).map(t => `<span class="card-topic">${esc(t)}</span>`).join('')}
       </div>
       <div class="card-title">${esc(card.title)}</div>
       <div class="card-excerpt">${esc(card.excerpt)}</div>
@@ -175,16 +176,20 @@ function esc(str) {
 }
 
 /* ===== TOPICS ===== */
+function getTopics(card) {
+  if (Array.isArray(card.topics)) return card.topics.filter(Boolean);
+  if (card.topic) return card.topic.split(' / ').map(t => t.trim()).filter(Boolean);
+  return [];
+}
+
 function buildTopicChips(cards, activeLevel) {
-  // Zobraz jen témata dostupná v aktuálním levelu
   const filtered = activeLevel && activeLevel !== 'all'
     ? cards.filter(c => c.level === activeLevel)
     : cards;
 
   const topics = new Set();
-  filtered.forEach(c => { if (c.topic) topics.add(c.topic); });
+  filtered.forEach(c => getTopics(c).forEach(t => topics.add(t)));
 
-  // Reset topic filter pokud aktuální topic v novém levelu neexistuje
   if (state.topic !== 'all' && !topics.has(state.topic)) {
     state.topic = 'all';
   }
@@ -200,7 +205,7 @@ function buildTopicChips(cards, activeLevel) {
 function filterCards(cards) {
   return cards.filter(c => {
     if (state.level !== 'all' && c.level !== state.level) return false;
-    if (state.topic !== 'all' && c.topic !== state.topic) return false;
+    if (state.topic !== 'all' && !getTopics(c).includes(state.topic)) return false;
     return true;
   });
 }
@@ -262,12 +267,19 @@ async function loadToday() {
       renderCards(yData.cards || [], 'cards-today', yData.resurfacing || null);
     } catch {
       hide('loading-today');
+      _setNavLabel('Včera');
       show('empty-today');
     }
   } catch {
     hide('loading-today');
+    _setNavLabel('Včera');
     show('empty-today');
   }
+}
+
+function _setNavLabel(label) {
+  const btn = document.querySelector('.nav-btn[data-view="today"]');
+  if (btn) btn.querySelector('span:last-child').textContent = label;
 }
 
 function updateHeader(data, isYesterday) {
@@ -276,14 +288,13 @@ function updateHeader(data, isYesterday) {
   const hasResurfacing = !!data.resurfacing;
   const label = isYesterday ? 'Včera' : 'Dnes';
 
-  $('header-date').textContent = (isYesterday ? 'Včera — ' : '') + formatDateLong(dateStr);
+  $('header-date').textContent = formatDateLong(dateStr);
 
   const badge = $('live-badge');
   badge.classList.remove('hidden');
   $('live-count').textContent = `${label} ${count + (hasResurfacing ? 1 : 0)} poznatků`;
 
-  const todayBtn = document.querySelector('.nav-btn[data-view="today"]');
-  if (todayBtn) todayBtn.querySelector('span:last-child').textContent = label;
+  _setNavLabel(label);
 }
 
 /* ===== ARCHIVE VIEW ===== */
@@ -309,40 +320,69 @@ async function showArchive() {
 }
 
 function renderArchiveDateGrid() {
-  const dates = (state.archiveIndex?.dates || []).slice().reverse();
-  if (dates.length === 0) {
-    $('archive-date-grid').innerHTML = '';
-    return;
+  const allDates = (state.archiveIndex?.dates || [])
+    .map(d => typeof d === 'string' ? d : d.date)
+    .sort();
+  if (allDates.length === 0) { $('archive-date-grid').innerHTML = ''; return; }
+
+  const dateSet = new Set(allDates);
+
+  if (!state.archiveMonth) {
+    state.archiveMonth = allDates[allDates.length - 1].slice(0, 7);
   }
 
-  const byMonth = {};
-  dates.forEach(entry => {
-    const d = typeof entry === 'string' ? entry : entry.date;
-    const [y, m] = d.split('-');
-    const key = `${y}-${m}`;
-    if (!byMonth[key]) byMonth[key] = [];
-    byMonth[key].push(d);
-  });
+  const [y, m] = state.archiveMonth.split('-').map(Number);
+  const daysInMonth = new Date(y, m, 0).getDate();
+  const firstDow = (new Date(y, m - 1, 1).getDay() + 6) % 7;
 
-  let html = '';
-  Object.entries(byMonth).forEach(([key, days]) => {
-    const [y, m] = key.split('-').map(Number);
-    html += `<div class="archive-month-group">`;
-    html += `<div class="archive-month-title">${MONTHS_CS[m - 1]} ${y}</div>`;
-    html += `<div class="archive-days">`;
-    days.forEach(d => {
-      const [,, day] = d.split('-').map(Number);
-      const active = d === state.archiveDate ? ' active' : '';
-      html += `<button class="archive-day-btn${active}" data-date="${esc(d)}">${day}.</button>`;
-    });
-    html += `</div></div>`;
+  const allMonths = [...new Set(allDates.map(d => d.slice(0, 7)))].sort();
+  const curIdx = allMonths.indexOf(state.archiveMonth);
+  const isAllMode = state.archiveDate === 'all';
+
+  let html = '<button class="cal-all-btn' + (isAllMode ? ' active' : '') + '" id="cal-all-btn">Vše</button>';
+  html += '<div class="cal-header">';
+  html += '<button class="cal-nav' + (curIdx > 0 ? '' : ' disabled') + '" id="cal-prev">‹</button>';
+  html += '<span class="cal-month-label">' + MONTHS_CS[m - 1] + ' ' + y + '</span>';
+  html += '<button class="cal-nav' + (curIdx < allMonths.length - 1 ? '' : ' disabled') + '" id="cal-next">›</button>';
+  html += '</div>';
+  html += '<div class="cal-grid">';
+  ['Po', 'Út', 'St', 'Čt', 'Pá', 'So', 'Ne'].forEach(d => {
+    html += '<div class="cal-dow">' + d + '</div>';
   });
+  for (let i = 0; i < firstDow; i++) html += '<div class="cal-cell"></div>';
+  for (let day = 1; day <= daysInMonth; day++) {
+    const ds = y + '-' + String(m).padStart(2, '0') + '-' + String(day).padStart(2, '0');
+    const active = ds === state.archiveDate && !isAllMode ? ' active' : '';
+    if (dateSet.has(ds)) {
+      html += '<button class="cal-cell cal-day' + active + '" data-date="' + ds + '">' + day + '</button>';
+    } else {
+      html += '<div class="cal-cell cal-empty">' + day + '</div>';
+    }
+  }
+  html += '</div>';
 
   $('archive-date-grid').innerHTML = html;
 
-  $('archive-date-grid').querySelectorAll('.archive-day-btn').forEach(btn => {
-    btn.addEventListener('click', () => loadArchiveDay(btn.dataset.date));
+  $('archive-date-grid').querySelectorAll('.cal-day[data-date]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.archiveMonth = btn.dataset.date.slice(0, 7);
+      loadArchiveDay(btn.dataset.date);
+    });
   });
+
+  const prevBtn = $('cal-prev');
+  const nextBtn = $('cal-next');
+  if (prevBtn && curIdx > 0) prevBtn.addEventListener('click', () => {
+    state.archiveMonth = allMonths[curIdx - 1];
+    renderArchiveDateGrid();
+  });
+  if (nextBtn && curIdx < allMonths.length - 1) nextBtn.addEventListener('click', () => {
+    state.archiveMonth = allMonths[curIdx + 1];
+    renderArchiveDateGrid();
+  });
+
+  const allBtn = $('cal-all-btn');
+  if (allBtn) allBtn.addEventListener('click', () => loadArchiveAll());
 }
 
 async function loadArchiveDay(dateStr) {
@@ -352,9 +392,7 @@ async function loadArchiveDay(dateStr) {
   show('loading-archive');
   hide('empty-archive');
 
-  document.querySelectorAll('.archive-day-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.date === dateStr);
-  });
+  renderArchiveDateGrid();
 
   try {
     let data = state.archiveCache[dateStr];
@@ -371,6 +409,38 @@ async function loadArchiveDay(dateStr) {
     }
     buildTopicChips(cards);
     renderCards(cards, 'cards-archive');
+  } catch {
+    hide('loading-archive');
+    show('empty-archive');
+  }
+}
+
+async function loadArchiveAll() {
+  state.archiveDate = 'all';
+  $('cards-archive').innerHTML = '';
+  show('loading-archive');
+  hide('empty-archive');
+  renderArchiveDateGrid();
+
+  try {
+    const allDates = (state.archiveIndex?.dates || []).map(d => typeof d === 'string' ? d : d.date).sort().reverse();
+    const allCards = [];
+
+    await Promise.all(allDates.map(async ds => {
+      try {
+        let data = state.archiveCache[ds];
+        if (!data) {
+          data = await fetchJSON('/data/archive/' + ds + '.json');
+          state.archiveCache[ds] = data;
+        }
+        (data.cards || []).forEach(c => allCards.push({ ...c, date: c.date || ds, source_date: c.source_date || ds }));
+      } catch { /* skip */ }
+    }));
+
+    hide('loading-archive');
+    if (allCards.length === 0) { show('empty-archive'); return; }
+    buildTopicChips(allCards, state.level);
+    renderCards(allCards, 'cards-archive');
   } catch {
     hide('loading-archive');
     show('empty-archive');
@@ -461,7 +531,7 @@ function openCard(cardId) {
   $('overlay-meta').innerHTML = `
     <span class="card-level ${levelClass}">${esc(card.level)}</span>
     <span class="card-type" style="color:${typeColor}">${esc(card.type)}</span>
-    <span class="card-topic">${esc(card.topic)}</span>
+    ${getTopics(card).map(t => `<span class="card-topic">${esc(t)}</span>`).join('')}
   `;
 
   $('overlay-body').innerHTML = `

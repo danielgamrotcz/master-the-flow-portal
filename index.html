@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#000000">
   <meta name="description" content="Denní přehled diskuzí komunity Master the Flow &mdash; anonymizovaný, přehledný, prohledávatelný.">
   <title>Master the Flow — komunita</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -34,8 +35,6 @@
 
   <div id="app">
 
-    <div class="disclaimer-bar">AI sumarizace WhatsApp diskuzí komunity Master the Flow &mdash; není doporučení autora ani ověřený návod. Informace si ověřujte v&nbsp;originálních konverzacích i&nbsp;mimo skupinu.</div>
-
     <header id="site-header">
       <div class="header-top">
         <div>
@@ -62,7 +61,7 @@
       <div class="level-tabs" role="tablist" aria-label="Filtrovat podle úrovně">
         <button class="level-tab active" data-level="all" role="tab" aria-selected="true">Vše</button>
         <button class="level-tab" data-level="Začátečník" role="tab" aria-selected="false">Začátečník</button>
-        <button class="level-tab" data-level="Builder" role="tab" aria-selected="false">Builder</button>
+        <button class="level-tab" data-level="Pokročilý" role="tab" aria-selected="false">Pokročilý</button>
         <button class="level-tab" data-level="Expert" role="tab" aria-selected="false">Expert</button>
       </div>
 
@@ -79,7 +78,7 @@
           <div class="spinner"></div>
         </div>
         <div id="empty-today" class="empty-state hidden">
-          <p>Dnešní digest zatím nevyšel. Vypadá v 5&nbsp;:&nbsp;15.</p>
+          <p>Včerejší digest zatím nevyšel. Generuje se v&nbsp;5:15.</p>
         </div>
       </div>
 
@@ -123,11 +122,8 @@
     </main>
 
     <footer class="site-footer">
-      <div>Autor: <a href="https://danielgamrot.cz" target="_blank" rel="noopener">Daniel Gamrot</a></div>
-      <div class="footer-links">
-        <a href="https://danielgamrot.cz" target="_blank" rel="noopener">danielgamrot.cz</a>
-        <a href="https://linkedin.com/in/danielgamrot" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
+      <div>Autor: <a href="https://danielgamrot.cz" target="_blank" rel="noopener">Daniel Gamrot</a> &bull; <a href="https://linkedin.com/in/danielgamrot" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="disclaimer-bar">Automaticky generovaný souhrn WhatsApp diskuzí komunity. Informace ověřujte v&nbsp;originálních konverzacích.</div>
     </footer>
 
     <nav class="bottom-nav" role="navigation" aria-label="Hlavní navigace">
