@@ -84,8 +84,17 @@ const state = {
   archiveCards: [],
   cardOpenedAt: null,
   statsMonth: null,
+  voteMap: {},
   transcriptDate: null,
 };
+
+/* ===== VOTES ===== */
+async function loadVoteMap() {
+  try {
+    const top = await fetch('/api/top').then(r => r.json());
+    if (Array.isArray(top)) top.forEach(({ id, count }) => { state.voteMap[id] = count; });
+  } catch {}
+}
 
 /* ===== ANALYTICS ===== */
 function trackEvent(event, data) {
@@ -191,7 +200,10 @@ function renderCardEl(card, isResurfaced = false) {
       ${topics.length ? `<div class="card-topics">${topics.map(t => `<span class="card-topic">${esc(t)}</span>`).join('')}</div>` : ''}
       <div class="card-footer">
         <span class="card-readmore">Číst dál ↓</span>
-        ${cardDate ? `<span class="card-date">${formatDateShort(cardDate)}</span>` : ''}
+        <span class="card-footer-right">
+          ${state.voteMap[card.id] ? `<span class="card-hearts">♥ ${state.voteMap[card.id]}</span>` : ''}
+          ${cardDate ? `<span class="card-date">${formatDateShort(cardDate)}</span>` : ''}
+        </span>
       </div>
     </div>
   `;
@@ -247,9 +259,13 @@ function filterCards(cards) {
 }
 
 /* ===== RENDER CARDS ===== */
+function sortByVotes(cards) {
+  return [...cards].sort((a, b) => (state.voteMap[b.id] || 0) - (state.voteMap[a.id] || 0));
+}
+
 function renderCards(cards, containerId, resurfaced = null) {
   const container = $(containerId);
-  const filtered = filterCards(cards);
+  const filtered = sortByVotes(filterCards(cards));
 
   let html = '';
 
@@ -540,7 +556,16 @@ function runSearch(query) {
     return;
   }
 
-  $('cards-search').innerHTML = results.slice(0, 30).map(r => renderCardEl(r.item)).join('');
+  const sorted = results.slice(0, 50)
+    .map(r => r.item)
+    .sort((a, b) => {
+      const vDiff = (state.voteMap[b.id] || 0) - (state.voteMap[a.id] || 0);
+      if (vDiff !== 0) return vDiff;
+      return (b.source_date || b.date || '').localeCompare(a.source_date || a.date || '');
+    })
+    .slice(0, 30);
+
+  $('cards-search').innerHTML = sorted.map(c => renderCardEl(c)).join('');
   show('cards-search');
   attachCardListeners($('cards-search'));
 }
@@ -580,7 +605,9 @@ function openCard(cardId) {
     const count = await castVote(card.id);
     $('vote-count').textContent = count || '';
     voteBtn.classList.add('voted');
+    if (count) state.voteMap[card.id] = count;
     showToast('Díky za hodnocení!');
+    rerenderCurrentView();
   };
 
   // Similar cards
@@ -1203,6 +1230,7 @@ function init() {
   document.getElementById('btn-theme').addEventListener('click', toggleTheme);
 
   registerSW().then(() => initPushBtn());
+  loadVoteMap();
 
   document.querySelectorAll('.level-tab').forEach(btn => {
     btn.addEventListener('click', () => onLevelChange(btn.dataset.level));
