@@ -82,8 +82,27 @@ const state = {
   archiveFrom: null,
   archiveTo: null,
   archiveCards: [],
+  cardOpenedAt: null,
+  statsMonth: null,
   transcriptDate: null,
 };
+
+/* ===== ANALYTICS ===== */
+function trackEvent(event, data) {
+  fetch('/api/track', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ event, data }),
+  }).catch(() => {});
+}
+
+let searchTrackTimer = null;
+function trackSearch(query) {
+  clearTimeout(searchTrackTimer);
+  if (query.trim().length >= 2) {
+    searchTrackTimer = setTimeout(() => trackEvent('search', { query: query.trim() }), 2000);
+  }
+}
 
 /* ===== TOPIC COLORS ===== */
 const TYPE_COLORS = {
@@ -579,9 +598,18 @@ function openCard(cardId) {
   $('card-overlay').classList.remove('hidden');
   $('overlay-body').scrollTop = 0;
   document.body.style.overflow = 'hidden';
+  state.cardOpenedAt = Date.now();
+  trackEvent('card_open', { id: cardId });
 }
 
 function closeCard() {
+  if (state.activeCard && state.cardOpenedAt) {
+    const duration_ms = Date.now() - state.cardOpenedAt;
+    if (duration_ms >= 3000) {
+      trackEvent('card_read', { id: state.activeCard.id, duration_ms });
+    }
+    state.cardOpenedAt = null;
+  }
   $('card-overlay').classList.add('hidden');
   document.body.style.overflow = '';
   state.activeCard = null;
@@ -908,6 +936,52 @@ async function showStats() {
   renderStats();
 }
 
+function buildActivityCal(monthStr, cardCountByDate) {
+  const [y, m] = monthStr.split('-').map(Number);
+  const firstDay = new Date(y, m - 1, 1);
+  const lastDay = new Date(y, m, 0);
+  const today = new Date();
+  today.setHours(23, 59, 59, 999);
+
+  let startDow = firstDay.getDay();
+  startDow = startDow === 0 ? 6 : startDow - 1;
+
+  const DAY_LABELS = ['Po', 'Út', 'St', 'Čt', 'Pá', 'So', 'Ne'];
+  const nextMonthDate = new Date(y, m, 1);
+  const canGoNext = nextMonthDate <= today;
+
+  let html = '<div class="activity-cal">';
+  html += '<div class="activity-cal-nav">'
+    + '<button class="cal-nav-btn" id="cal-prev">&#x2039;</button>'
+    + '<span class="cal-month-label">' + MONTHS_CS[m - 1] + ' ' + y + '</span>'
+    + '<button class="cal-nav-btn' + (canGoNext ? '' : ' cal-nav-disabled') + '" id="cal-next">&#x203A;</button>'
+    + '</div>';
+
+  html += '<div class="activity-cal-grid">';
+  DAY_LABELS.forEach(d => { html += '<div class="cal-day-label">' + d + '</div>'; });
+
+  for (let i = 0; i < startDow; i++) {
+    html += '<div class="cal-day cal-day-pad"></div>';
+  }
+
+  for (let d = 1; d <= lastDay.getDate(); d++) {
+    const ds = y + '-' + String(m).padStart(2, '0') + '-' + String(d).padStart(2, '0');
+    const count = cardCountByDate[ds] || 0;
+    const dayDate = new Date(y, m - 1, d);
+    if (dayDate > today) {
+      html += '<div class="cal-day cal-day-pad"></div>';
+    } else if (count === 0) {
+      html += '<div class="cal-day cal-day-empty" title="' + d + '.' + m + '.">' + d + '</div>';
+    } else {
+      const intensity = count <= 3 ? 1 : count <= 6 ? 2 : 3;
+      html += '<div class="cal-day cal-day-active cal-day-i' + intensity + '" data-date="' + ds + '" title="' + d + '.' + m + '. · ' + count + ' poznatk' + (count === 1 ? 'a' : 'ů') + '">' + d + '</div>';
+    }
+  }
+
+  html += '</div></div>';
+  return html;
+}
+
 async function renderStats() {
   const el = $('stats-section');
   if (!el) return;
@@ -917,48 +991,90 @@ async function renderStats() {
     const allDates = (state.archiveIndex?.dates || []).map(d => typeof d === 'string' ? d : d.date);
     let totalCards = 0;
     const topicCounts = {};
+    const cardCountByDate = {};
 
     await Promise.all(allDates.map(async ds => {
       try {
         let data = state.archiveCache[ds];
         if (!data) { data = await fetchJSON('/data/archive/' + ds + '.json'); state.archiveCache[ds] = data; }
-        totalCards += (data.cards || []).length;
+        const cnt = (data.cards || []).length;
+        totalCards += cnt;
+        cardCountByDate[ds] = cnt;
         (data.cards || []).forEach(c => getTopics(c).forEach(t => { topicCounts[t] = (topicCounts[t] || 0) + 1; }));
       } catch {}
     }));
 
+    const calMonth = state.statsMonth || new Date().toISOString().slice(0, 7);
+    const calHtml = buildActivityCal(calMonth, cardCountByDate);
     const topTopics = Object.entries(topicCounts).sort((a, b) => b[1] - a[1]).slice(0, 8);
+    const cardMap = {};
+    allDates.forEach(ds => (state.archiveCache[ds]?.cards || []).forEach(c => { cardMap[c.id] = c; }));
 
     let topVotedHtml = '';
     try {
       const r = await fetch('/api/top');
       const raw = await r.json();
-      const cardMap = {};
-      allDates.forEach(ds => (state.archiveCache[ds]?.cards || []).forEach(c => { cardMap[c.id] = c; }));
-      const topVoted = raw.filter(({ id, count }) => cardMap[id] && count > 0).slice(0, 10)
+      const topVoted = raw.filter(({ id, count }) => cardMap[id] && count > 0).slice(0, 8)
         .map(({ id, count }) => ({ card: cardMap[id], count }));
       if (topVoted.length) {
         topVotedHtml = '<div class="stats-section-title">Nejoblíbenější poznatky</div>'
           + '<div class="stats-top-cards">'
-          + topVoted.map(({ card, count }) => `<div class="stats-top-card" data-id="${esc(card.id)}"><span class="stats-top-heart">♥ ${count}</span><span class="stats-top-title">${esc(card.title)}</span></div>`).join('')
+          + topVoted.map(({ card, count }) => '<div class="stats-top-card" data-id="' + esc(card.id) + '"><span class="stats-top-heart">♥ ' + count + '</span><span class="stats-top-title">' + esc(card.title) + '</span></div>').join('')
           + '</div>';
       }
     } catch {}
 
-    el.innerHTML = `
-      <div class="stats-grid">
-        <div class="stat-card"><div class="stat-num">${totalCards}</div><div class="stat-label">poznatků v archivu</div></div>
-        <div class="stat-card"><div class="stat-num">${allDates.length}</div><div class="stat-label">dní s obsahem</div></div>
-        <div class="stat-card"><div class="stat-num">400+</div><div class="stat-label">členů komunity</div></div>
-      </div>
-      ${topTopics.length ? '<div class="stats-section-title">Nejčastější témata</div><div class="stats-topics">'
-        + topTopics.map(([t, n]) => `<div class="stats-topic-row"><span>${esc(t)}</span><span class="stats-topic-count">${n}×</span></div>`).join('')
-        + '</div>' : ''}
-      ${topVotedHtml}
-    `;
+    let insightsHtml = '';
+    try {
+      const ins = await fetchJSON('/api/insights');
+      const topOpened = (ins.top_opened || []).filter(({ id }) => cardMap[id]).slice(0, 8);
+      if (topOpened.length) {
+        insightsHtml += '<div class="stats-section-title">Nejčtenější poznatky</div>'
+          + '<div class="stats-top-cards">'
+          + topOpened.map(({ id, opens, avg_seconds }) => {
+            const card = cardMap[id];
+            const time = avg_seconds ? ' · ' + avg_seconds + 's' : '';
+            return '<div class="stats-top-card" data-id="' + esc(id) + '"><span class="stats-top-heart">' + opens + '×' + time + '</span><span class="stats-top-title">' + esc(card.title) + '</span></div>';
+          }).join('')
+          + '</div>';
+      }
+      const topSearches = ins.top_searches || [];
+      if (topSearches.length) {
+        insightsHtml += '<div class="stats-section-title">Co lidi hledají</div>'
+          + '<div class="stats-topics">'
+          + topSearches.map(({ query, count }) => '<div class="stats-topic-row"><span>&bdquo;' + esc(query) + '&ldquo;</span><span class="stats-topic-count">' + count + '×</span></div>').join('')
+          + '</div>';
+      }
+    } catch {}
 
-    el.querySelectorAll('.stats-top-card[data-id]').forEach(el => {
-      el.addEventListener('click', () => openCard(el.dataset.id));
+    el.innerHTML = '<div class="stats-grid">'
+      + '<div class="stat-card"><div class="stat-num">' + totalCards + '</div><div class="stat-label">poznatků v archivu</div></div>'
+      + '<div class="stat-card"><div class="stat-num">' + allDates.length + '</div><div class="stat-label">dní s obsahem</div></div>'
+      + '<div class="stat-card"><div class="stat-num">400+</div><div class="stat-label">členů komunity</div></div>'
+      + '</div>'
+      + calHtml
+      + (topTopics.length ? '<div class="stats-section-title">Nejčastější témata</div><div class="stats-topics">'
+        + topTopics.map(([t, n]) => '<div class="stats-topic-row"><span>' + esc(t) + '</span><span class="stats-topic-count">' + n + '×</span></div>').join('')
+        + '</div>' : '')
+      + topVotedHtml
+      + insightsHtml;
+
+    el.querySelector('#cal-prev')?.addEventListener('click', () => {
+      const [cy, cm] = calMonth.split('-').map(Number);
+      const prev = new Date(cy, cm - 2, 1);
+      state.statsMonth = prev.toISOString().slice(0, 7);
+      renderStats();
+    });
+    el.querySelector('#cal-next')?.addEventListener('click', () => {
+      const [cy, cm] = calMonth.split('-').map(Number);
+      const next = new Date(cy, cm, 1);
+      if (next <= new Date()) {
+        state.statsMonth = next.toISOString().slice(0, 7);
+        renderStats();
+      }
+    });
+    el.querySelectorAll('.stats-top-card[data-id]').forEach(card => {
+      card.addEventListener('click', () => openCard(card.dataset.id));
     });
   } catch {
     el.innerHTML = '';
@@ -1112,7 +1228,10 @@ function init() {
     switchView(state.view === 'transcript' ? 'today' : state.view);
   });
 
-  $('search-input').addEventListener('input', e => runSearch(e.target.value));
+  $('search-input').addEventListener('input', e => {
+    runSearch(e.target.value);
+    trackSearch(e.target.value);
+  });
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && !$('card-overlay').classList.contains('hidden')) {
