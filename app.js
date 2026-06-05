@@ -480,8 +480,14 @@ async function initSearch() {
       })
     );
 
-    state.searchAll = allCards;
-    state.searchIndex = new Fuse(allCards, {
+    const seen = new Set();
+    const deduped = allCards.filter(c => {
+      if (!c.id || seen.has(c.id)) return false;
+      seen.add(c.id);
+      return true;
+    });
+    state.searchAll = deduped;
+    state.searchIndex = new Fuse(deduped, {
       keys: ['title', 'excerpt', 'body', 'topic'],
       threshold: 0.35,
       includeMatches: true,

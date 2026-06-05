@@ -12,10 +12,14 @@ export async function onRequestOptions() {
 
 export async function onRequestGet({ request, env }) {
   const id = new URL(request.url).searchParams.get('id');
-  if (!id) return Response.json({ error: 'missing id' }, { status: 400 });
-  const raw = await env.MTF_DATA.get('vote_' + id);
-  const count = raw ? parseInt(raw, 10) : 0;
-  return Response.json({ id, count }, { headers: cors() });
+  if (!id) return Response.json({ error: 'missing id' }, { status: 400, headers: cors() });
+  try {
+    const raw = await env.MTF_DATA.get('vote_' + id);
+    const count = raw ? parseInt(raw, 10) : 0;
+    return Response.json({ id, count }, { headers: cors() });
+  } catch {
+    return Response.json({ id, count: 0 }, { headers: cors() });
+  }
 }
 
 export async function onRequestPost({ request, env }) {
