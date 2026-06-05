@@ -440,24 +440,22 @@ a:hover { text-decoration: underline; }
   margin-bottom: 10px;
 }
 
-/* archive date grid — compact pill list */
+/* archive date grid — preset + custom range */
 .archive-date-grid {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px;
 }
 
-.archive-controls {
+.archive-presets {
   display: flex;
-  gap: 8px;
-  margin-bottom: 4px;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
-.cal-all-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 12px;
-  font-size: 12px;
+.archive-preset {
+  padding: 6px 14px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--text-secondary);
   background: var(--bg-card);
@@ -465,44 +463,49 @@ a:hover { text-decoration: underline; }
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all 150ms ease;
-  width: fit-content;
 }
-.cal-all-btn:hover { border-color: var(--border-hover); color: var(--text-primary); }
-.cal-all-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+.archive-preset:hover { border-color: var(--border-hover); color: var(--text-primary); }
+.archive-preset.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
 
-.archive-month-row {
+.archive-range {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 6px;
-}
-
-.archive-month-name {
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-tertiary);
-}
-
-.archive-date-pills {
-  display: flex;
   flex-wrap: wrap;
-  gap: 4px;
 }
 
-.date-pill {
-  padding: 5px 10px;
+.archive-date-input {
+  padding: 6px 10px;
   font-size: 13px;
-  font-weight: 500;
+  font-family: inherit;
   color: var(--text-secondary);
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color 150ms ease;
+  min-width: 0;
+}
+.archive-date-input:focus { outline: none; border-color: var(--accent); color: var(--text-primary); }
+
+.archive-range-sep {
+  color: var(--text-tertiary);
+  font-size: 13px;
+}
+
+.archive-range-btn {
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all 150ms ease;
+  white-space: nowrap;
 }
-.date-pill:hover { border-color: var(--border-hover); color: var(--text-primary); }
-.date-pill.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+.archive-range-btn:hover { background: var(--accent); color: #fff; }
 
 /* ===== SEARCH ===== */
 .search-wrapper {

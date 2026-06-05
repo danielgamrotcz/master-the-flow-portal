@@ -78,8 +78,10 @@ const state = {
   searchAll: [],
   searchIndex: null,
   activeCard: null,
-  archiveDate: null,
-  archiveMonth: null,
+  archivePreset: '30d',
+  archiveFrom: null,
+  archiveTo: null,
+  archiveCards: [],
   transcriptDate: null,
 };
 
@@ -322,108 +324,108 @@ async function loadArchiveIndex() {
 
 async function showArchive() {
   await loadArchiveIndex();
-  renderArchiveDateGrid();
-
-  if (state.archiveDate) {
-    await loadArchiveDay(state.archiveDate);
-  } else if (state.archiveIndex.dates && state.archiveIndex.dates.length > 0) {
-    const latest = state.archiveIndex.dates[state.archiveIndex.dates.length - 1];
-    await loadArchiveDay(typeof latest === 'string' ? latest : latest.date);
+  renderArchiveControls();
+  if (state.archiveCards.length > 0) {
+    buildTopicChips(state.archiveCards, state.level);
+    renderCards(state.archiveCards, 'cards-archive');
+  } else {
+    await loadArchivePreset(state.archivePreset);
   }
 }
 
-function renderArchiveDateGrid() {
-  const allDates = (state.archiveIndex?.dates || [])
-    .map(d => typeof d === 'string' ? d : d.date)
-    .sort().reverse();
-  if (allDates.length === 0) { $('archive-date-grid').innerHTML = ''; return; }
+function archiveTodayStr() {
+  return new Date().toISOString().slice(0, 10);
+}
+function archiveDaysBack(n) {
+  const d = new Date();
+  d.setDate(d.getDate() - n);
+  return d.toISOString().slice(0, 10);
+}
 
-  const isAllMode = state.archiveDate === 'all';
+function renderArchiveControls() {
+  const PRESETS = [
+    { key: '7d', label: '7 dní' },
+    { key: '30d', label: '30 dní' },
+    { key: '90d', label: '3 měsíce' },
+  ];
+  const active = state.archivePreset;
+  const fromVal = state.archiveFrom || '';
+  const toVal = state.archiveTo || '';
+  const todayStr = archiveTodayStr();
 
-  const byMonth = {};
-  const monthOrder = [];
-  allDates.forEach(ds => {
-    const ym = ds.slice(0, 7);
-    if (!byMonth[ym]) { byMonth[ym] = []; monthOrder.push(ym); }
-    byMonth[ym].push(ds);
+  let html = '<div class="archive-presets">';
+  PRESETS.forEach(p => {
+    html += '<button class="archive-preset' + (active === p.key ? ' active' : '') + '" data-preset="' + p.key + '">' + p.label + '</button>';
   });
-
-  let html = '<div class="archive-controls">';
-  html += '<button class="cal-all-btn' + (isAllMode ? ' active' : '') + '" id="cal-all-btn">Vše</button>';
   html += '</div>';
-
-  monthOrder.forEach(ym => {
-    const [y, m] = ym.split('-').map(Number);
-    html += '<div class="archive-month-row">';
-    html += '<span class="archive-month-name">' + MONTHS_CS[m - 1] + ' ' + y + '</span>';
-    html += '<div class="archive-date-pills">';
-    byMonth[ym].forEach(ds => {
-      const day = parseInt(ds.slice(8), 10);
-      const active = ds === state.archiveDate && !isAllMode ? ' active' : '';
-      html += '<button class="date-pill' + active + '" data-date="' + ds + '">' + day + '.</button>';
-    });
-    html += '</div></div>';
-  });
+  html += '<div class="archive-range">';
+  html += '<input type="date" id="archive-from" class="archive-date-input" value="' + fromVal + '" max="' + todayStr + '">';
+  html += '<span class="archive-range-sep">–</span>';
+  html += '<input type="date" id="archive-to" class="archive-date-input" value="' + toVal + '" max="' + todayStr + '">';
+  html += '<button class="archive-range-btn" id="archive-range-apply">Zobrazit</button>';
+  html += '</div>';
 
   $('archive-date-grid').innerHTML = html;
 
-  $('archive-date-grid').querySelectorAll('.date-pill').forEach(btn => {
-    btn.addEventListener('click', () => loadArchiveDay(btn.dataset.date));
+  document.querySelectorAll('.archive-preset').forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.archivePreset = btn.dataset.preset;
+      state.archiveFrom = null;
+      state.archiveTo = null;
+      renderArchiveControls();
+      loadArchivePreset(btn.dataset.preset);
+    });
   });
 
-  const allBtn = $('cal-all-btn');
-  if (allBtn) allBtn.addEventListener('click', loadArchiveAll);
-}
-async function loadArchiveDay(dateStr) {
-  state.archiveDate = dateStr;
-  $('cards-archive').innerHTML = '';
-  show('loading-archive');
-  hide('empty-archive');
-  renderArchiveDateGrid();
-
-  try {
-    let data = state.archiveCache[dateStr];
-    if (!data) {
-      data = await fetchJSON(`/data/archive/${dateStr}.json`);
-      state.archiveCache[dateStr] = data;
-    }
-
-    hide('loading-archive');
-    const cards = data.cards || [];
-    if (cards.length === 0) {
-      show('empty-archive');
-      return;
-    }
-    buildTopicChips(cards);
-    renderCards(cards, 'cards-archive');
-  } catch {
-    hide('loading-archive');
-    show('empty-archive');
+  const applyBtn = $('archive-range-apply');
+  if (applyBtn) {
+    applyBtn.addEventListener('click', () => {
+      const from = $('archive-from').value;
+      const to = $('archive-to').value;
+      if (!from || !to || from > to) return;
+      state.archivePreset = 'custom';
+      state.archiveFrom = from;
+      state.archiveTo = to;
+      renderArchiveControls();
+      loadArchiveDateRange(from, to);
+    });
   }
 }
 
-async function loadArchiveAll() {
-  state.archiveDate = 'all';
+async function loadArchivePreset(preset) {
+  const to = archiveTodayStr();
+  let from;
+  if (preset === '7d') from = archiveDaysBack(7);
+  else if (preset === '30d') from = archiveDaysBack(30);
+  else from = archiveDaysBack(90);
+  state.archivePreset = preset;
+  await loadArchiveDateRange(from, to);
+}
+
+async function loadArchiveDateRange(from, to) {
   $('cards-archive').innerHTML = '';
   show('loading-archive');
   hide('empty-archive');
-  renderArchiveDateGrid();
 
   try {
-    const allDates = (state.archiveIndex?.dates || []).map(d => typeof d === 'string' ? d : d.date).sort().reverse();
-    const allCards = [];
+    const dates = (state.archiveIndex?.dates || [])
+      .map(d => typeof d === 'string' ? d : d.date)
+      .filter(d => d >= from && d <= to)
+      .sort().reverse();
 
-    await Promise.all(allDates.map(async ds => {
+    const allCards = [];
+    await Promise.all(dates.map(async ds => {
       try {
         let data = state.archiveCache[ds];
         if (!data) {
           data = await fetchJSON('/data/archive/' + ds + '.json');
           state.archiveCache[ds] = data;
         }
-        (data.cards || []).forEach(c => allCards.push({ ...c, date: c.date || ds, source_date: c.source_date || ds }));
+        (data.cards || []).forEach(c => allCards.push({ ...c, source_date: c.source_date || ds }));
       } catch { /* skip */ }
     }));
 
+    state.archiveCards = allCards;
     hide('loading-archive');
     if (allCards.length === 0) { show('empty-archive'); return; }
     buildTopicChips(allCards, state.level);
@@ -856,11 +858,13 @@ async function castVote(id) {
 /* ===== SIMILAR CARDS ===== */
 function getSimilarCards(card, n = 3) {
   if (!state.searchAll.length) return [];
-  const topics = new Set(getTopics(card));
+  const topicSet = new Set(getTopics(card));
   return state.searchAll
-    .filter(c => c.id !== card.id && getTopics(c).some(t => topics.has(t)))
-    .sort((a, b) => (b.source_date || b.date || '').localeCompare(a.source_date || a.date || ''))
-    .slice(0, n);
+    .filter(c => c.id !== card.id && getTopics(c).some(t => topicSet.has(t)))
+    .map(c => ({ c, score: getTopics(c).filter(t => topicSet.has(t)).length + Math.random() * 0.4 }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, n)
+    .map(({ c }) => c);
 }
 
 /* ===== LAST 7 DAYS ===== */
@@ -1036,8 +1040,8 @@ function onLevelChange(level) {
 
   // Přestavíme topic chips na témata dostupná v novém levelu
   let currentCards = [];
-  if (state.view === 'archive' && state.archiveDate && state.archiveDate !== 'all') {
-    currentCards = state.archiveCache[state.archiveDate]?.cards || [];
+  if (state.view === 'archive') {
+    currentCards = state.archiveCards;
   } else if (state.view === 'week') {
     currentCards = Object.values(state.archiveCache).flatMap(d => d.cards || []);
   } else {
@@ -1059,10 +1063,8 @@ function onTopicChange(topic) {
 function rerenderCurrentView() {
   if (state.view === 'today' && state.today) {
     renderCards(state.today.cards || [], 'cards-today', state.today.resurfacing || null);
-  } else if (state.view === 'archive' && state.archiveDate) {
-    if (state.archiveDate === 'all') { loadArchiveAll(); return; }
-    const data = state.archiveCache[state.archiveDate];
-    if (data) renderCards(data.cards || [], 'cards-archive');
+  } else if (state.view === 'archive' && state.archiveCards.length > 0) {
+    renderCards(state.archiveCards, 'cards-archive');
   } else if (state.view === 'week') {
     showWeek();
   } else if (state.view === 'search') {
