@@ -181,36 +181,9 @@ a:hover { text-decoration: underline; }
 
 
 /* ===== STATS MODE: hide filters ===== */
-#site-header.stats-mode .level-chips,
 #site-header.stats-mode .topic-chips {
   display: none;
 }
-
-/* ===== LEVEL TABS ===== */
-.level-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 10px;
-}
-
-.level-chip {
-  padding: 5px 12px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--text-tertiary);
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  transition: all 150ms ease;
-  white-space: nowrap;
-}
-
-.level-chip:hover { color: var(--text-secondary); border-color: var(--border-hover); }
-.level-chip.active { color: var(--text-primary); border-color: var(--border-hover); background: var(--bg-card-hover); }
-.level-chip-zacatecnik.active { color: #10b981; border-color: #10b981; background: rgba(16, 185, 129, 0.1); }
-.level-chip-pokrocily.active { color: var(--accent); border-color: var(--accent); background: var(--accent-dim); }
-.level-chip-expert.active { color: #818cf8; border-color: #818cf8; background: rgba(129, 140, 248, 0.1); }
 
 /* ===== TOPIC CHIPS ===== */
 .topic-chips {
@@ -286,19 +259,6 @@ a:hover { text-decoration: underline; }
   flex-wrap: wrap;
   flex-shrink: 0;
 }
-
-.card-level {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 2px 7px;
-  border-radius: 4px;
-}
-
-.level-zacatecnik { color: #10b981; background: rgba(16, 185, 129, 0.1); }
-.level-builder { color: var(--accent); background: var(--accent-dim); }
-.level-expert { color: #818cf8; background: rgba(129, 140, 248, 0.1); }
 
 .card-type {
   font-size: 10px;

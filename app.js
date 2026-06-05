@@ -70,7 +70,6 @@ function toggleTheme() {
 /* ===== STATE ===== */
 const state = {
   view: 'today',
-  level: 'all',
   topic: 'all',
   today: null,
   archiveIndex: null,
@@ -122,17 +121,6 @@ const TYPE_COLORS = {
   'TÉMA TÝDNE': '#f59e0b',
 };
 
-const LEVEL_CLASSES = {
-  'Začátečník': 'level-zacatecnik',
-  'Pokročilý': 'level-builder',
-  'Builder': 'level-builder',
-  'Expert': 'level-expert',
-};
-
-function normalizeLevel(level) {
-  return level === 'Builder' ? 'Pokročilý' : (level || '');
-}
-
 /* ===== DATE FORMATTING ===== */
 const MONTHS_CS = ['ledna', 'února', 'března', 'dubna', 'května', 'června',
   'července', 'srpna', 'září', 'října', 'listopadu', 'prosince'];
@@ -175,8 +163,6 @@ function showToast(msg) {
 
 /* ===== CARD HTML ===== */
 function renderCardEl(card, isResurfaced = false) {
-  const level = normalizeLevel(card.level);
-  const levelClass = LEVEL_CLASSES[level] || '';
   const typeColor = TYPE_COLORS[card.type] || '#808080';
   const sourceDate = card.resurfaced_from || card.source_date || card.date || '';
   const cardDate = card.source_date || card.date || '';
@@ -196,7 +182,6 @@ function renderCardEl(card, isResurfaced = false) {
       <div class="card-meta">
         <div class="card-meta-left">
           ${resurfacedBadge}
-          <span class="card-level ${levelClass}">${esc(level)}</span>
           <span class="card-type" style="color:${typeColor}">${esc(card.type)}</span>
         </div>
         ${topics.length ? `<div class="card-topics">${topics.map(t => `<span class="card-topic">${esc(t)}</span>`).join('')}</div>` : ''}
@@ -229,13 +214,9 @@ function getTopics(card) {
   return [];
 }
 
-function buildTopicChips(cards, activeLevel) {
-  const filtered = activeLevel && activeLevel !== 'all'
-    ? cards.filter(c => (normalizeLevel(c.level)) === activeLevel)
-    : cards;
-
+function buildTopicChips(cards) {
   const counts = {};
-  filtered.forEach(c => getTopics(c).forEach(t => { counts[t] = (counts[t] || 0) + 1; }));
+  cards.forEach(c => getTopics(c).forEach(t => { counts[t] = (counts[t] || 0) + 1; }));
 
   const topics = Object.entries(counts)
     .sort((a, b) => b[1] - a[1])
@@ -256,11 +237,8 @@ function buildTopicChips(cards, activeLevel) {
 
 /* ===== FILTER ===== */
 function filterCards(cards) {
-  return cards.filter(c => {
-    if (state.level !== 'all' && normalizeLevel(c.level) !== state.level) return false;
-    if (state.topic !== 'all' && !getTopics(c).includes(state.topic)) return false;
-    return true;
-  });
+  if (state.topic === 'all') return cards;
+  return cards.filter(c => getTopics(c).includes(state.topic));
 }
 
 /* ===== RENDER CARDS ===== */
@@ -281,8 +259,7 @@ function renderCards(cards, containerId, resurfaced = null) {
 
   html += filtered.map(c => renderCardEl(c)).join('');
 
-  if (resurfaced && (state.level === 'all' || state.level === resurfaced.level)
-      && (state.topic === 'all' || state.topic === resurfaced.topic)) {
+  if (resurfaced && (state.topic === 'all' || state.topic === resurfaced.topic)) {
     html += `<div class="section-header">Z archivu</div>`;
     html += renderCardEl(resurfaced, true);
   }
@@ -304,7 +281,7 @@ async function loadToday() {
       state.today = data;
       hide('loading-today');
       updateHeader(data, false);
-      buildTopicChips(data.cards, state.level);
+      buildTopicChips(data.cards);
       renderCards(data.cards, 'cards-today', data.resurfacing || null);
       return;
     }
@@ -320,7 +297,7 @@ async function loadToday() {
       state.archiveCache[yStr] = yData;
       hide('loading-today');
       updateHeader(yData, true);
-      buildTopicChips(yData.cards || [], state.level);
+      buildTopicChips(yData.cards || []);
       renderCards(yData.cards || [], 'cards-today', yData.resurfacing || null);
     } catch {
       hide('loading-today');
@@ -368,7 +345,7 @@ async function showArchive() {
   if (state.archivePreset === 'custom' && state.archiveFrom && state.archiveTo) {
     await loadArchiveDateRange(state.archiveFrom, state.archiveTo);
   } else if (state.archiveCards.length > 0) {
-    buildTopicChips(state.archiveCards, state.level);
+    buildTopicChips(state.archiveCards);
     renderCards(state.archiveCards, 'cards-archive');
   } else {
     await loadArchivePreset(state.archivePreset || '30d');
@@ -470,7 +447,7 @@ async function loadArchiveDateRange(from, to) {
     state.archiveCards = allCards;
     hide('loading-archive');
     if (allCards.length === 0) { show('empty-archive'); return; }
-    buildTopicChips(allCards, state.level);
+    buildTopicChips(allCards);
     renderCards(allCards, 'cards-archive');
   } catch {
     hide('loading-archive');
@@ -545,13 +522,7 @@ function runSearch(query) {
 
   let results = state.searchIndex.search(q);
 
-  // Level filter
-  if (state.level !== 'all') {
-    results = results.filter(r => normalizeLevel(r.item.level) === state.level);
-  }
-
-  // Build chips from level-filtered results
-  buildTopicChips(results.map(r => r.item), 'all');
+  buildTopicChips(results.map(r => r.item));
 
   // Topic filter
   if (state.topic !== 'all') {
@@ -585,11 +556,9 @@ function openCard(cardId) {
   state.activeCard = card;
   history.pushState({ card: cardId }, '', `#card/${cardId}`);
 
-  const levelClass = LEVEL_CLASSES[card.level] || '';
   const typeColor = TYPE_COLORS[card.type] || '#808080';
 
   $('overlay-meta').innerHTML = `
-    <span class="card-level ${levelClass}">${esc(card.level)}</span>
     <span class="card-type" style="color:${typeColor}">${esc(card.type)}</span>
     ${getTopics(card).map(t => `<span class="card-topic">${esc(t)}</span>`).join('')}
   `;
@@ -801,14 +770,14 @@ function switchView(viewName) {
     if (!state.today) {
       loadToday();
     } else {
-      buildTopicChips(state.today.cards || [], state.level);
+      buildTopicChips(state.today.cards || []);
     }
   } else if (viewName === 'archive') {
     showArchive();
   } else if (viewName === 'week') {
     showWeek();
   } else if (viewName === 'search') {
-    buildTopicChips([], state.level);
+    buildTopicChips([]);
     initSearch();
     setTimeout(() => $('search-input').focus(), 100);
   } else if (viewName === 'stats') {
@@ -962,7 +931,7 @@ async function showWeek() {
     hide('loading-week');
     if (!allCards.length) { show('empty-week'); return; }
 
-    buildTopicChips(allCards, state.level);
+    buildTopicChips(allCards);
     renderCards(allCards, 'cards-week');
   } catch {
     hide('loading-week');
@@ -1197,27 +1166,6 @@ function handleHash() {
 }
 
 /* ===== FILTER EVENTS ===== */
-function onLevelChange(level) {
-  state.level = level;
-  document.querySelectorAll('.level-chip').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.level === level);
-    btn.setAttribute('aria-selected', btn.dataset.level === level ? 'true' : 'false');
-  });
-
-  // Přestavíme topic chips na témata dostupná v novém levelu
-  let currentCards = [];
-  if (state.view === 'archive') {
-    currentCards = state.archiveCards;
-  } else if (state.view === 'week') {
-    currentCards = Object.values(state.archiveCache).flatMap(d => d.cards || []);
-  } else {
-    currentCards = state.today?.cards || [];
-  }
-  buildTopicChips(currentCards, level);
-
-  rerenderCurrentView();
-}
-
 function onTopicChange(topic) {
   state.topic = topic;
   document.querySelectorAll('.chip').forEach(btn => {
@@ -1236,7 +1184,7 @@ function rerenderCurrentView() {
   } else if (state.view === 'search') {
     const q = $('search-input').value;
     if (q.length >= 2) runSearch(q);
-    else buildTopicChips([], 'all');
+    else buildTopicChips([]);
   }
 }
 
@@ -1248,10 +1196,6 @@ function init() {
 
   registerSW().then(() => initPushBtn());
   loadVoteMap();
-
-  document.querySelectorAll('.level-chip').forEach(btn => {
-    btn.addEventListener('click', () => onLevelChange(btn.dataset.level));
-  });
 
   $('topic-chips').addEventListener('click', e => {
     const chip = e.target.closest('.chip');
