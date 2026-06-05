@@ -11,65 +11,84 @@
       "id": "2026-04-30-01",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Claude",
       "title": "Claude je pomalejší mezi 14 a 20 hodinou",
       "excerpt": "Anthropic hlásil „menší vytížení“ odpoledne a od té doby si toho v praxi všímá víc lidí. Práce ráno nebo večer je znatelně jiná.",
       "body": "Člen komunity, který Claude používá hodně naplno, sdílel jednu z mála věcí, která mu fakt pomohla: přesunout hlavní práci mimo čas 14–20 hodin středoevropského času. Anthropic tenhle „high burn“ interval interně označuje jako dobu, kdy je výkon snížený pro všechny uživatele.\n\nV praxi to vypadá tak, že odpolední práce bývá pomalejší, model dřív přestane odpovídat a týdenní limit mizí rychleji. Kdo může, přesouvá náročnější úkoly na dopoledne nebo pozdě večer.\n\nTip se hodí hlavně lidem, kteří dělají na větších projektech nebo mají tarif za 20 dolarů. Tam je dopad vidět nejrychleji. Není to dokonalé řešení, ale víc lidem z komunity fungovalo nejlíp ze všeho, co zkoušeli.",
       "read_minutes": 2,
-      "source_date": "2026-04-30"
+      "source_date": "2026-04-30",
+      "topics": [
+        "AI nástroje"
+      ]
     },
     {
       "id": "2026-04-30-02",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Claude Code",
       "title": "Kratší vlákna a přesnější zadání šetří kredity",
       "excerpt": "Místo jedné dlouhé session radši víc krátkých vláken po 10–15 výměnách. Zadání držet co nejkratší: co dělat, co nedělat a na co se zeptat jako první.",
       "body": "Několik členů řeší stejnou věc: Claude se po 2–3 hodinách práce zastaví, nebo vyčerpá týdenní limit rychleji než dřív. Kromě posunutí pracovní doby pomáhá i změnit styl práce.\n\nTipy z diskuze:\n- Držet vlákna krátká, zhruba 10–15 interakcí, a pak začít nové. Dlouhé konverzace žerou zbytečně moc kontextových tokenů.\n- Psát zadání stručně a přesně. Věty typu „tohle dělej, tohle nedělej, tohle nesmí nastat, nejdřív se zeptej“ fungují líp než volný popis.\n- Omezit balast v kontextu. Nepřikládat soubory ani instrukce, které Claude pro daný úkol nepotřebuje.\n- Mít skills a hooks připravené v MD souborech. Claude si instrukce přečte jednou, ne znovu při každé interakci.\n\nJe to spíš změna návyků než technické nastavení. Výsledek: menší spotřeba kreditů při stejném výkonu.",
       "read_minutes": 3,
-      "source_date": "2026-04-30"
+      "source_date": "2026-04-30",
+      "topics": [
+        "Claude Code",
+        "Hooky",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-04-30-03",
       "type": "INSIGHT",
       "level": "Expert",
-      "topic": "Claude Code",
       "title": "CLAUDE.md jako stručný rozcestník, ne manuál",
       "excerpt": "Čím delší CLAUDE.md, tím víc tokenů sežere každá konverzace. Osvědčilo se mít ho jen jako krátký rozcestník a detaily přesunout do samostatných skills.",
       "body": "Developer z komunity se podělil o zkušenost z dlouhého ladění vlastního Claude Code setupu. Podle něj dává CLAUDE.md smysl hlavně jako krátký přehled s pár klíčovými instrukcemi. Ne jako kompletní dokumentace.\n\nDůvod je jednoduchý: CLAUDE.md se načítá do kontextu při každé session. Čím víc textu tam je, tím víc tokenů se spálí ještě před prvním dotazem. U větších projektů to můžou být denně stovky tokenů zbytečného kontextu.\n\nDoporučené rozdělení:\n- CLAUDE.md = rozcestník: co projekt dělá, kde jsou instrukce, pár globálních pravidel\n- Skills = detailní postupy pro konkrétní typy úloh\n- Hooks = automatická pravidla, která model nemusí číst\n\nTenhle přístup chce čas na nastavení. Člen píše, že to „ladil dlouho a občas se v tom vrtá znova“. Výsledek je ale setup, který model nezatěžuje balastem a zároveň drží konzistentní chování napříč celým projektem.",
       "read_minutes": 2,
-      "source_date": "2026-04-30"
+      "source_date": "2026-04-30",
+      "topics": [
+        "Claude Code",
+        "AI nástroje",
+        "Dokumentace",
+        "Hooky"
+      ]
     },
     {
       "id": "2026-04-30-04",
       "type": "OTEVŘENÁ OTÁZKA",
       "level": "Builder",
-      "topic": "Claude",
       "title": "Zhoršuje se Claude záměrně, nebo nestíhá nápor?",
       "excerpt": "Čím dál víc lidí si všímá, že Claude je pomalejší a na limity naráží rychleji než před pár měsíci. Je to problém s kapacitou, nebo záměrná změna v monetizaci?",
       "body": "Jeden člen komunity pojmenoval věc, o které se v AI skupinách mluví čím dál častěji. S masovým přílivem uživatelů Claude buď nezvládá kapacity, nebo záměrně upravuje výkon a limity tak, aby tlačil lidi do dražších tarifů.\n\nV praxi to vypadá stejně. Tarif za 20 dolarů dřív stačil na celý pracovní den. Dneska se zasekne po 2–3 hodinách. Týdenní limit je pryč už v pátek.\n\nAnthropic oznámil „less usage“ v odpoledních hodinách, ale nevysvětlil jasně, co to znamená v číslech. Zároveň přidal dražší plány a Claude Max tier.\n\nOtázka pro komunitu: vidíte stejný trend? Pomohl vám přechod na vyšší tarif, nebo změna stylu práce? A jak velkou roli podle vás hraje samotný způsob práce, třeba délka vláken a velikost kontextu, oproti politice Anthropicu?",
       "read_minutes": 2,
-      "source_date": "2026-04-30"
+      "source_date": "2026-04-30",
+      "topics": [
+        "AI nástroje"
+      ]
     },
     {
       "id": "2026-04-30-05",
       "type": "NÁSTROJE",
       "level": "Expert",
-      "topic": "Plaud",
       "title": "openplaud jako open-source alternativa k Plaudu",
       "excerpt": "Na GitHubu je open-source projekt openplaud. Pokud Plaud používáte a chcete nad ním mít větší kontrolu nebo ho napojit jinak, mrkněte na něj.",
       "body": "V diskuzi mimochodem padl odkaz na GitHub projekt openplaud — open-source alternativu k zařízení Plaud a jeho ekosystému.\n\nPlaud je fyzické zařízení na nahrávání a automatický přepis hovorů, meetingů nebo diktátů. Umí se propojit s Claudem a dalšími modely. Komunita ho používá na přepisy, zpracování nahrávek a automatizaci poznámek.\n\nCo přesně openplaud umí a v čem se liší od oficiálního ekosystému, se v diskuzi moc neřešilo. Spíš to byl tip k prozkoumání. Kdo s Plaudem pracuje a chce se podívat na open-source variantu, najde projekt na GitHubu jako openplaud/openplaud.\n\nNejvíc se bude hodit vývojářům nebo power userům, kteří chtějí vlastní integraci, jiný model nebo větší kontrolu nad tím, co se s nahrávkami děje.",
       "read_minutes": 2,
-      "source_date": "2026-04-30"
+      "source_date": "2026-04-30",
+      "topics": [
+        "Automatizace",
+        "Meeting"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-04-11-03",
     "source_date": "2026-04-11",
-    "topic": "Occamova břitva v debugging",
     "excerpt": "Postřeh z vibe codingu: nejjednodušší vysvětlení chyby bývá většinou správné. Inspirace z Dr. House.",
     "body": "Padl postřeh ze světa vibe codingu: Occamova břitva na debugging. Když něco nefunguje, nejspíš za tím bývá ta nejjednodušší chyba. Inspirace přišla z epizody House MD. Místo lovení složitých příčin je lepší začít u té nejpřímočařejší možnosti.",
-    "resurfaced_from": "2026-04-11"
+    "resurfaced_from": "2026-04-11",
+    "topics": [
+      "Vibe Coding",
+      "Claude Code"
+    ]
   },
   "transcript": {
     "groups": [

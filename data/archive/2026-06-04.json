@@ -11,76 +11,103 @@
       "id": "2026-06-04-01",
       "type": "INSIGHT",
       "level": "Začátečník",
-      "topic": "Automatizace",
       "title": "Google Forms a Sheets jako první krok",
       "excerpt": "Když potřebujete sledovat třeba pracovní cesty a nemáte technické zázemí, Google Forms a Sheets jsou dobrý start. Nemusíte hned řešit databáze ani vlastní apku. Funkční verzi zvládnete postavit za odpoledne.",
       "body": "Jedna členka řešila, jak si pro sebe a účetní vést pracovní cesty. Zvažovala Google Forms na zadávání dat a Google Sheets na automatické výpočty diet. Komunita jí potvrdila, že jako první verze to dává smysl.\n\nTip: začněte tím, co znáte, a postupně to laděte. Když Forms a Sheets pokryjí potřeby, není důvod to komplikovat.\n\nPraktický detail: Google má výchozí formát data v US podobě (MM/DD/YYYY). Nejjednodušší je obejít to přes dropdown místo volného textového pole. Tím se vyhnete chybám při zadávání a Google nemusí datum parsovat. Logika pak zůstává jednoduchá: Form sbírá data, Sheet je zpracuje a spočítá výstupy. AI vám může napsat vzorce nebo celý skript, když budete potřebovat složitější výpočty.",
       "read_minutes": 2,
-      "source_date": "2026-06-04"
+      "source_date": "2026-06-04",
+      "topics": [
+        "Google",
+        "Databáze"
+      ]
     },
     {
       "id": "2026-06-04-02",
       "type": "NÁSTROJE",
       "level": "Builder",
-      "topic": "Supabase",
       "title": "Supabase místo Sheets pro upravitelná data",
       "excerpt": "Google Sheets zvládnou dokument vytvořit, ale úpravy existujících záznamů jsou v nich neohrabané. Supabase to jako databázová vrstva řeší a má přímý konektor na Claude.",
       "body": "Odbornice z účetní firmy popsala zkušenost s budováním podobného systému pro klienty. Databázová vrstva běží na Supabase. Ukládají se v ní data o cestách, náhradové sazby i šablony výstupních dokumentů.\n\nHlavní rozdíl oproti Google Sheets: když potřebujete existující záznam opravit nebo doplnit, Supabase to zvládne čistě. Sheets vždy vytvoří nový dokument, a tím vzniká zmatek v historii dat.\n\nSupabase má přímý konektor na Claude, takže AI může data číst a zpracovávat bez zbytečného obcházení přes API. Logiku výpočtu diet a náhrad jde zabalit přímo do Claude skillu. Pravidla jsou daná zákonem, stačí je jednou nadefinovat a AI je pak používá konzistentně.\n\nPro jednoho uživatele je Supabase možná zbytečně robustní řešení. Pro účetní firmy s více klienty, kde se data opakovaně mění, dává smysl postavit tuhle vrstvu správně hned od začátku.",
       "read_minutes": 2,
-      "source_date": "2026-06-04"
+      "source_date": "2026-06-04",
+      "topics": [
+        "Google",
+        "Databáze"
+      ]
     },
     {
       "id": "2026-06-04-03",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "AppScript",
       "title": "AppScript: tlačítko v Sheetu spustí logiku",
       "excerpt": "Pokud chcete zůstat v prostředí Googlu, ale samotné vzorce už nestačí, App Script je další logický krok. AI napíše celý kód za vás — vy ho jen nahrajete.",
       "body": "AppScript je skriptovací jazyk zabudovaný přímo v Google ekosystému. Funguje trochu jako makra v Excelu, jen umí víc. Dřív se takové skripty psaly ručně, dnes vám je bez velké námahy napíše Claude nebo jiná AI.\n\nPostup je jednoduchý: do Sheetu zadáte vstupy, máte tam potvrzovací tlačítko a po kliknutí se spustí AppScript. Ten provede výpočty a vytvoří výstup ve formátu, který potřebuje účetní.\n\nOproti čistým vzorcům má jednu velkou výhodu: logika je v kódu, ne rozházená po buňkách. Snáz se upravuje a nehrozí, že ji někdo omylem přepíše. Nevýhoda je, že AppScript pořád běží uvnitř Google dokumentů. Pokud potřebujete data sdílet nebo upravovat jinde než v původním Sheetu, narazíte. Pro jednoho uživatele s jasně danou logikou, třeba pro výpočet diet podle zákoníku práce, ale funguje spolehlivě a bez externích nástrojů.",
       "read_minutes": 2,
-      "source_date": "2026-06-04"
+      "source_date": "2026-06-04",
+      "topics": [
+        "Google",
+        "Automatizace"
+      ]
     },
     {
       "id": "2026-06-04-04",
       "type": "INSIGHT",
       "level": "Expert",
-      "topic": "Claude Code",
       "title": "Claude Code v terminálu vidí celý disk",
       "excerpt": "Z ostravské konference Vibecoding Fest zaznělo varování: Claude Code v terminálu má ve výchozím nastavení přístup k celému filesystému, ne jen k aktuálnímu projektu. Jsou dvě ověřená řešení.",
       "body": "Když používáte Claude Code v terminálu, snadno přehlédnete jednu věc: agent může číst a zapisovat soubory kdekoliv na disku, nejen v aktuální pracovní složce. V praxi se tak může dostat k citlivým konfiguracím, SSH klíčům nebo k jiným projektům, které s aktuální prací vůbec nesouvisí.\n\nV komunitě se řešila dvě praktická řešení.\n\nPrvní je Docker. Claude Code běží v izolovaném kontejneru a vidí jen to, co mu výslovně namountujete. Výhoda je jasná: zbytek systému je od něj odstřižený. Nevýhoda: musíte to nastavit a start je o něco pomalejší.\n\nDruhá možnost je VS Code se zapnutým terminálním módem. VS Code v tomhle režimu omezí přístup terminálu na pracovní složku projektu. Pro lidi, kteří VS Code stejně používají, je to jednodušší cesta.\n\nU osobních projektů bez citlivých dat to nemusí být velký problém. U klientských dat nebo na sdílených systémech se ale vyplatí myslet na izolaci dopředu a nastavit ji dřív, než ji budete opravdu potřebovat.",
       "read_minutes": 3,
-      "source_date": "2026-06-04"
+      "source_date": "2026-06-04",
+      "topics": [
+        "Claude Code",
+        "Vibe Coding",
+        "Subagenti"
+      ]
     },
     {
       "id": "2026-06-04-05",
       "type": "NÁSTROJE",
       "level": "Builder",
-      "topic": "Cursor / Claude Code",
       "title": "Cursor nebo Claude Code v terminálu",
       "excerpt": "Hodně lidí z komunity používá Cursor, ale část se postupně vrací ke Claude Code v terminálu. Důvod je jednoduchý: plugin pro Cursor nepodporuje skills ani subagenty.",
       "body": "V komunitě se ukázal jasný vzorec. Cursor je oblíbené vývojové prostředí s dobrou integrací Claude. Jeho plugin má ale jedno omezení: neumí všechno, co Claude Code nabízí přímo v terminálu.\n\nJde hlavně o dvě věci. Skills jsou přednastavené příkazy pro opakované úlohy, třeba generování changelogu, spouštění smoke testů nebo publikování obsahu. Subagenti jsou specializovaní agenti, kteří se spouštějí jako součást většího workflow. Obojí v Cursor pluginu zatím chybí.\n\nČást komunity proto funguje hybridně: Cursor používá jako IDE a editor na psaní kódu, Claude Code v terminálu pak na složitější agentní úlohy. Jiní se vrátili čistě k terminálu, protože tam mají plnou funkcionalitu.\n\nPro vývojáře, kteří aktivně používají skills nebo staví vícevrstvé agentické systémy, má zatím navrch terminál. Kdo skills nepotřebuje a radši pracuje v IDE, pro toho zůstává Cursor pohodlnější volbou.",
       "read_minutes": 2,
-      "source_date": "2026-06-04"
+      "source_date": "2026-06-04",
+      "topics": [
+        "Claude Code",
+        "Cursor",
+        "Workflow",
+        "Dokumentace"
+      ]
     },
     {
       "id": "2026-06-04-06",
       "type": "INSIGHT",
       "level": "Expert",
-      "topic": "Claude Code / NotebookLM",
       "title": "Claude Code s NotebookLM přes MCP funguje",
       "excerpt": "Jeden člen řešil, jak propojit Claude Code s NotebookLM. Komunita poslala dva funkční projekty na GitHubu: skill a MCP server.",
       "body": "NotebookLM od Googlu je nástroj na práci s dokumenty a znalostními bázemi. Umí generovat přehledy, odpovídat na otázky nad vlastními materiály nebo vytvářet audio souhrny. Když ho propojíte s Claude Code, dá se automatizovat: Claude může NotebookLM ovládat nebo z něj číst data jako součást většího workflow.\n\nKomunita na GitHubu sdílela dvě konkrétní řešení.\n\nPrvní je `notebooklm-skill`. Přidává NotebookLM jako Claude skill, tedy přednastavený příkaz, který jde volat přímo z Claude Code. Nastavení je rychlé, ale možnosti jsou omezené tím, co daný skill umí.\n\nDruhé je `notebooklm-mcp`. Jde o MCP server (Model Context Protocol), který zpřístupní NotebookLM jako plnohodnotný nástroj v ekosystému Claude. MCP je flexibilnější, líp se kombinuje s dalšími nástroji a sedí směru, kterým se integrace Claude obecně posouvají.\n\nPokud stavíte workflow, které kombinuje vlastní dokumenty v NotebookLM s agentní logikou v Claude Code, MCP server bude nejspíš lepší dlouhodobý základ.",
       "read_minutes": 3,
-      "source_date": "2026-06-04"
+      "source_date": "2026-06-04",
+      "topics": [
+        "Claude Code",
+        "AI nástroje",
+        "Automatizace",
+        "Workflow"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-05-17-03",
     "source_date": "2026-05-17",
-    "topic": "Bezpečnost MCP serverů",
     "excerpt": "Jak poznat důvěryhodný MCP server? Komunita se shoduje: držte se oficiálních MCP serverů nebo vlastního kódu. Ze začátku radši ručně potvrzujte každý příkaz.",
     "body": "Bezpečnost MCP serverů se začala hodně řešit. Komunita probírala, jak poznat bezpečný zdroj od možného rizika. Doporučení znělo jasně: používat buď oficiální MCP servery, nebo vlastní kód, který si člověk sám napsal. Začátečníkům se doporučovalo zapnout ruční potvrzování příkazů, dokud si neosahají, jak MCP funguje.",
-    "resurfaced_from": "2026-05-17"
+    "resurfaced_from": "2026-05-17",
+    "topics": [
+      "Claude Code",
+      "MCP",
+      "Vibe Coding"
+    ]
   },
   "transcript": {
     "groups": [

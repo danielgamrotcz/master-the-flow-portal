@@ -8,46 +8,63 @@
   },
   "cards": [
     {
-      "topic": "Výběr nástroje není rozhodnutí",
       "excerpt": "Cursor, CC, Codex — začněte klidně s čímkoli. Porovnávat nástroje je stejná past jako porovnávat ToDo aplikace.",
       "body": "Daniel to řekl na rovinu: je jedno, který nástroj si vyberete. Cursor, Claude Code, Codex — v různých fázích umí každý něco líp. Stejná debata se vedla u kalendářů nebo ToDo appek. Výsledek byl vždycky stejný: kdo pořád vybírá, nepracuje. Kdo začne, posouvá se dál.",
       "id": "2026-03-25-01",
-      "source_date": "2026-03-25"
+      "source_date": "2026-03-25",
+      "topics": [
+        "Claude Code",
+        "Vibe Coding"
+      ]
     },
     {
-      "topic": "Certifikáty na jedno kliknutí",
       "excerpt": "Členka staví appku, která vezme šablonu certifikátu a Google Sheet a automaticky rozešle vyplněné certifikáty e-mailem.",
       "body": "Praktický příklad, co vibe coding umí: klientka nahraje šablonu certifikátu a tabulku s účastníky. Appka doplní jméno i další údaje a certifikát pošle e-mailem. Všechno na jedno kliknutí. Přesně něco, co by hotové SaaS řešení buď neumělo, nebo by to schovalo mezi deset zbytečných funkcí navíc.",
       "id": "2026-03-25-02",
-      "source_date": "2026-03-25"
+      "source_date": "2026-03-25",
+      "topics": [
+        "Vibe Coding",
+        "Email",
+        "Google",
+        "Claude Code"
+      ]
     },
     {
-      "topic": "Proč budovat vlastní, když to už existuje",
       "excerpt": "Obecné „to už existuje“ jako argument neberu. Přesně padnoucí řešení má cenu — a co mu chybí, si prostě dodělám.",
       "body": "Několik členů dostalo komentář: „Proč to děláš, když podobný nástroj už existuje?“ Daniel i Radim se shodli, že taková poznámka hází všechno do jednoho pytle a neříká nic konkrétního. Hotové aplikace často obsahují funkce, které spíš překážejí. Funkci, která chybí, si do hotového produktu jen tak nedodělám. A už samotná tvorba pomáhá pochopit danou oblast způsobem, ke kterému bych se jinak nedostal.",
       "id": "2026-03-25-03",
-      "source_date": "2026-03-25"
+      "source_date": "2026-03-25",
+      "topics": [
+        "Poznámky"
+      ]
     },
     {
-      "topic": "Méně konzumovat, víc stavět",
       "excerpt": "Jeden člen zjistil, že víc hltá informace, než něco reálně buduje. Schválně se vrátil k postupu po malých krocích.",
       "body": "Poctivé sebepozorování: je snadné koukat na videa, číst články a mít pocit, že se někam posouváte. Člen si toho všiml a rozhodl se vědomě ubrat v příjmu informací. Místo toho udělal jeden malý krok dopředu. Postup po krůčcích není pomalost. Je to jediný způsob, jak se opravdu posunout.",
       "id": "2026-03-25-04",
-      "source_date": "2026-03-25"
+      "source_date": "2026-03-25",
+      "topics": [
+        "AI nástroje"
+      ]
     },
     {
-      "topic": "75 % kreditu a bug v teleprompter appce",
       "excerpt": "Aleš narazil na týdenní kreditní limit a zároveň řešil bug: text v teleprompterové appce se nepřizpůsoboval tempu čtení.",
       "body": "Dva problémy najednou: Aleš vyčerpal 75 % týdenního kreditu a zároveň zjistil, že mu špatně funguje teleprompter appka. Text jel moc pomalu a nepřizpůsoboval se tempu čtení. Typická situace, kdy člověk začne nástroj víc používat a narazí na první limit. Obojí se dá vyřešit, jen počítejte s tím, že kreditové limity přijdou rychleji, než čekáte.",
       "id": "2026-03-25-05",
-      "source_date": "2026-03-25"
+      "source_date": "2026-03-25",
+      "topics": [
+        "Prompting"
+      ]
     },
     {
-      "topic": "Příliš mnoho Claude skills se navzájem sabotuje",
       "excerpt": "Michael sdílel článek o tom, že překrývající se Claude skills zhoršují výkon. Méně je víc.",
       "body": "Michael vytáhl dobrý postřeh z článku: když má Claude najednou moc skills, které se překrývají, začnou si lézt do cesty a výkon jde dolů. Platí to i pro vlastní konfigurace. Čím jasněji jsou skills ohraničené a čím míň se překrývají, tím líp fungují. Menší počet přesně popsaných skills porazí velkou sbírku vágních.",
       "id": "2026-03-25-06",
-      "source_date": "2026-03-25"
+      "source_date": "2026-03-25",
+      "topics": [
+        "Claude Code",
+        "Workflow"
+      ]
     }
   ],
   "resurfacing": null,

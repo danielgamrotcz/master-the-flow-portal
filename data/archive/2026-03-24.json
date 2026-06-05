@@ -11,56 +11,78 @@
       "id": "2026-03-24-01",
       "type": "POSTAVIL JSEM",
       "level": "Builder",
-      "topic": "Vlastní nástroje",
       "title": "Time tracker na míru místo přeplněného Togglu",
       "excerpt": "Jedna z členek přestala platit za nástroj, který z 90 % vůbec nepoužívala. Místo toho si postavila vlastní time tracker s úkolníčkem, přesně podle toho, jak pracuje s klienty.",
       "body": "Toggl je skvělý nástroj, jenže má spoustu funkcí, které freelancerka nebo asistentka vůbec nepoužije. Jedna členka komunity to proto vzala po svém. Místo hledání dalšího nástroje si postavila vlastní.\n\nVznikla webová aplikace, která má jen to, co opravdu potřebuje. Seznam klientů s hodinovou sazbou. Časovač, který spustí a zastaví. Automaticky vygenerovaný report pro klienta. A přímý odkaz do Fakturovače pro vystavení faktury.\n\nNic navíc. Žádné dashboardy, které nikdo nečte. Žádné integrace, které si stejně nikdy nenastaví.\n\nAplikaci teď ladí a chce ji dát vyzkoušet dalším asistentkám, aby získala zpětnou vazbu z praxe. Přesně takhle se produkt posouvá nejlíp: pustit ho mezi lidi, kteří ho budou opravdu používat, a sbírat konkrétní připomínky.",
       "read_minutes": 2,
-      "source_date": "2026-03-24"
+      "source_date": "2026-03-24",
+      "topics": [
+        "Vibe Coding",
+        "AI nástroje"
+      ]
     },
     {
       "id": "2026-03-24-02",
       "type": "POSTAVIL JSEM",
       "level": "Expert",
-      "topic": "Vlastní nástroje",
       "title": "iOS poznámkovač na 4 prompty s vlastní synchronizací",
       "excerpt": "Člen komunity dodělal iOS verzi svého poznámkovače na čtyři prompty. Data má uložená lokálně, synchronizovaná mezi zařízeními a napojená na celý svůj ekosystém nástrojů.",
       "body": "Místo Apple Notes, Notionu nebo Obsidianu si jeden z členů postavil vlastní poznámkovač. Dnes ho má i jako iOS aplikaci. Stačily mu na to čtyři prompty.\n\nV čem se liší od hotových řešení? Hlavně v práci s daty. Poznámky má uložené lokálně na svých zařízeních jako Markdown soubory a mezi zařízeními se mu synchronizují. Vlastníkem je on, nikdo jiný.\n\nNa tom stojí celý systém. Na stejná data má napojené vlastní nástroje: content creator, Gmail asistenta a nástroje pro tvorbu nabídek. Všechny pracují se stejnými informacemi, bez ručního kopírování nebo importů.\n\nVizuál ještě ladí, ale funkčně to běží. Cíl byl od začátku jasný: systém, který funguje a má ho plně pod kontrolou.",
       "read_minutes": 2,
-      "source_date": "2026-03-24"
+      "source_date": "2026-03-24",
+      "topics": [
+        "Email",
+        "Poznámky",
+        "Obsidian",
+        "Notion"
+      ]
     },
     {
       "id": "2026-03-24-03",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Knowledge management",
       "title": "Proč mít poznámky v systému, který vlastníte",
       "excerpt": "Notion i Obsidian jsou fajn nástroje, ale data v nich máte buď u někoho v cloudu, nebo odříznutá od ostatních nástrojů. Vlastní systém tohle řeší.",
       "body": "Otázka přišla úplně přirozeně: proč si stavět vlastní systém na poznámky, když existuje Notion nebo Obsidian?\n\nOdpověď není ve funkcích. Je v přístupu.\n\nKdyž máte data ve vlastním systému — třeba jako Markdown soubory někde, kde nad nimi máte kontrolu — otevře vám to možnosti, které hotové nástroje často nedají. Můžete na ně napojit vlastní boty a skripty. Můžete je číst i upravovat z víc nástrojů najednou. Verzovat je, zálohovat a přenášet bez toho, abyste byli závislí na jedné konkrétní platformě.\n\nPraktický příklad: jeden z členů si přes Telegram bota diktuje výsledky deep research a ukládá je rovnou do svých poznámek, včetně doplněných detailů. Celý workflow bez otevření aplikace.\n\nNení to řešení pro každého. Hotové nástroje jsou rychlejší na rozjezd a jistější volba, pokud nechcete nic spravovat. Pokud ale chcete, aby vaše poznámky byly opravdu vaše — a fungovaly jako součást většího systému — vlastní přístup dává smysl.",
       "read_minutes": 2,
-      "source_date": "2026-03-24"
+      "source_date": "2026-03-24",
+      "topics": [
+        "Poznámky",
+        "Workflow",
+        "Obsidian",
+        "Notion"
+      ]
     },
     {
       "id": "2026-03-24-04",
       "type": "INSIGHT",
       "level": "Expert",
-      "topic": "Workflow",
       "title": "Telegram bot jako vstupní bod do poznámek",
       "excerpt": "Místo otevírání aplikace a ručního ukládání stačí napsat botovi na Telegramu. Udělá deep research a výsledek uloží rovnou do poznámek. Jeden příkaz a hotovo.",
       "body": "Vlastní systém poznámek má největší sílu ve chvíli, kdy neslouží jen jako místo, kam si ručně ukládáte věci, ale jako hub, se kterým pracují vaši automatizovaní asistenti.\n\nKonkrétní workflow: člen komunity použije Telegram bota, zadá téma — třeba analýzu konkrétní komunity nebo trhu — a bot udělá deep research. Výsledek pak sám uloží do poznámkového systému a přidá k němu další kontext.\n\nProč Telegram, a ne samostatná aplikace? Telegram máte po ruce odkudkoli, nemusíte přepínat do jiného prostředí a zadávání úkolů botům v něm působí přirozeně.\n\nAby to fungovalo, musí být poznámky v systému, do kterého se dá programově zapisovat. Tedy ve vlastních souborech, ne v uzavřeném cloudu jiné firmy. Právě tahle vrstva celé řešení propojuje.\n\nVýsledek: knowledge systém, do kterého nepřispíváte jen vy, ale i vaši AI asistenti. A bez zbytečného přepínání mezi aplikacemi.",
       "read_minutes": 2,
-      "source_date": "2026-03-24"
+      "source_date": "2026-03-24",
+      "topics": [
+        "Automatizace",
+        "Poznámky",
+        "Workflow"
+      ]
     },
     {
       "id": "2026-03-24-05",
       "type": "OTEVŘENÁ OTÁZKA",
       "level": "Začátečník",
-      "topic": "AI nástroje",
       "title": "Claude nebo Cursor: co se vyplatí učit",
       "excerpt": "Jeden z členů se ptal, jaký je rozdíl mezi Claudem a Cursorem. Tahle otázka se objevuje často — a odpověď záleží na tom, co s nimi chcete dělat.",
       "body": "Claude a Cursor můžou zvenku působit podobně. Oba pracují s AI a oběma můžete říkat, co mají dělat. Ve skutečnosti se ale hodí na jiné situace.\n\nCursor je IDE postavené na VS Code. Slouží hlavně k psaní kódu. Dává smysl pro vývojáře nebo pro lidi, kteří se chtějí naučit programovat a chtějí mít nad kódem větší kontrolu.\n\nClaude, hlavně Claude Code, je univerzálnější. Umí psát kód, ale taky analyzovat dokumenty, pomáhat s texty, plánovat workflow nebo automatizovat opakující se úkoly. Pro základní používání nemusíte umět programovat.\n\nPokud nemáte technické zázemí, většinou dává smysl začít s Claudem. Naučíte se líp zadávat úkoly, chápat výstupy a pracovat s AI formou běžné konverzace. Cursor má smysl přidat ve chvíli, kdy už víte, co přesně od kódu chcete.\n\nA co chcete s AI řešit vy? Podle toho se pozná, kde začít.",
       "read_minutes": 2,
-      "source_date": "2026-03-24"
+      "source_date": "2026-03-24",
+      "topics": [
+        "Claude Code",
+        "Automatizace",
+        "Cursor",
+        "Workflow"
+      ]
     }
   ],
   "resurfacing": null,

@@ -11,69 +11,90 @@
       "id": "2026-04-07-01",
       "type": "NÁSTROJE",
       "level": "Začátečník",
-      "topic": "AI nástroje",
       "title": "Manus zklamal v trialu, Claude je lepší start",
       "excerpt": "Lektorka z komunity zkoušela Manus na návrhy webů a prezentací. Jenže nástroj jí začal účtovat poplatky už uprostřed bezplatného trialu. Nakonec si poradila přes ChatGPT a vytvořila jednoduchý kvíz pro svůj web na WordPressu. Zakladatel komunity jako první krok doporučuje Claude artefakty. Jsou zdarma a není potřeba umět programovat.",
       "body": "Manus nalákal hodně lidí na bezplatný přístup. Jenže komunita teď naráží na to, že placení přijde až překvapivě brzy — klidně i během slíbeného trialu. Na vlastní kůži to zažila lektorka, která chystá přednášky. Chtěla v Manu vytvořit návrhy webu a podklady, ale nástroj ji zastavil. Nakonec si poradila přes generování HTML v ChatGPT a výsledek byl použitelný.\n\nZakladatel komunity proto doporučuje začít raději v Claude. Funkce Artefakty v Claude.ai zvládne vytvořit jednoduchou stránku, formulář nebo prezentaci bez jediného řádku vlastního kódu, a to i v bezplatné verzi. Když pak chcete u webů a aplikací pokračovat dál, dává smysl navázat v Claude Code.\n\nPraktický rozdíl oproti Manu: žádné nečekané poplatky uprostřed práce, žádná umělá překážka, která vás zastaví těsně před dokončením projektu.",
       "read_minutes": 2,
-      "source_date": "2026-04-07"
+      "source_date": "2026-04-07",
+      "topics": [
+        "Claude Code",
+        "ChatGPT",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-04-07-02",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Bezpečnost",
       "title": "Jak bezpečně pustit AI k firemním souborům",
       "excerpt": "Zakladatel komunity nikdy nepouští AI přímo do svého hlavního pracovního účtu. Používá místo toho druhý účet v Google Workspace a sdílené složky jako mezikrok. AI vidí jen to, co jí sám záměrně zpřístupní.",
       "body": "Bezpečnost při práci s AI asistenty se často podceňuje. Zakladatel komunity sdílel konkrétní postup, který sám používá: přístup AI nástrojů ke svým souborům řeší přes druhý, oddělený Google Workspace účet. Sdílí jen vybrané složky. AI tak vidí pouze to, co jí vědomě povolí. Stejně postupuje i u schránky. Místo přímého přístupu k hlavnímu účtu používá sdílenou schránku jako prostředníka.\n\nProč to dělá? Kdyby AI nástroj poslal data dál nebo došlo k bezpečnostnímu incidentu, škoda se omezí jen na tenhle oddělený přístup. Hlavní pracovní účet zůstane mimo hru.\n\nPrincip minimálního přístupu znají IT týmy velmi dobře. U AI asistentů ho ale většina lidí zatím neřeší. Přitom se vyplatí myslet na to dřív, než jakémukoli nástroji dáte přístup k e-mailu, Drivu nebo firemním dokumentům.",
       "read_minutes": 2,
-      "source_date": "2026-04-07"
+      "source_date": "2026-04-07",
+      "topics": [
+        "Email"
+      ]
     },
     {
       "id": "2026-04-07-03",
       "type": "NÁSTROJE",
       "level": "Začátečník",
-      "topic": "Claude Code",
       "title": "Claude Code Pro jako vstupní bod pro web",
       "excerpt": "Člen komunity staví přes Claude Code celý web. Zakladatel komunity přes něj spravuje i ten svůj. Pro verze stačí jako vstupní bod. Hodí se na jednodušší projekty i na osahání možností, i když neumíte programovat.",
       "body": "Claude Code si v komunitě rychle buduje silnou pozici. Hned několik lidí potvrdilo, že ho používají na tvorbu webů a aplikací, a nejsou to jen vývojáři. Jeden člen přes Claude Code staví celý web, zakladatel komunity přes něj spravuje svůj web taky.\n\nPro koho se Claude Code hodí? Pro každého, kdo chce vytvořit nebo upravit web, aplikaci nebo automatizaci, ale nechce do detailu řešit kód. Funguje jako hodně schopný programátor. Řeknete mu, co chcete, a on to postaví.\n\nZakladatel komunity doporučuje začít s Pro verzí. Na první projekty a osahání základů to stačí. Složitější a větší projekty můžou časem vyžadovat Max verzi, ale to je otázka na později, ne na první den.\n\nHlavní výhoda oproti nástrojům jako Manus: nemá skryté limity, které vás zastaví uprostřed práce.",
       "read_minutes": 2,
-      "source_date": "2026-04-07"
+      "source_date": "2026-04-07",
+      "topics": [
+        "Claude Code",
+        "Automatizace",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-04-07-04",
       "type": "TÉMA TÝDNE",
       "level": "Builder",
-      "topic": "Výběr nástrojů",
       "title": "Bez kontextu nelze doporučit správný nástroj",
       "excerpt": "Na otázku „který AI nástroj je nejlepší“ není jedna odpověď. Záleží na tom, co chcete dělat, co chcete vytvořit a jaký způsob práce vám sedí. To, že je nějaký nástroj populární, samo o sobě nic neznamená.",
       "body": "Diskuze v komunitě potvrdila to, co zkušení uživatelé AI nástrojů říkají pořád: porovnávat nástroje bez kontextu moc nedává smysl. Claude Code je silný hlavně na UI a projekty stavěné od nuly. Jiné nástroje ale můžou být lepší pro jiné typy práce. A když jich zkombinujete víc, výsledek může být lepší než s každým zvlášť.\n\nCo z toho plyne při výběru nástroje? Než sáhnete po tom, co vám někdo doporučil, zkuste si odpovědět na pár otázek: Co přesně chci vytvořit? Web, aplikaci, prezentaci, automatizaci? Chci se u toho něco naučit, nebo jen rychle dostat hotový výsledek? A jak moc chci mít pod kontrolou, co se děje pod kapotou?\n\nTyhle odpovědi vám napoví víc než jakýkoli žebříček nebo doporučení vytržené z kontextu. Správný nástroj je ten, který sedí vašemu konkrétnímu záměru. Ne ten, o kterém se zrovna nejvíc mluví.",
       "read_minutes": 2,
-      "source_date": "2026-04-07"
+      "source_date": "2026-04-07",
+      "topics": [
+        "Claude Code",
+        "Automatizace",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-04-07-05",
       "type": "OTEVŘENÁ OTÁZKA",
       "level": "Builder",
-      "topic": "Produkty a nástroje",
       "title": "Jak poznat, že AI produkt má reálný dopad",
       "excerpt": "Člen komunity pracuje na nástroji se spoustou proměnných a sám řeší, jak zařídit, aby z toho nebyla jen hračka. Komunita se shodla, že skutečný dopad to bude mít až ve chvíli, kdy bude jasné, pro koho to je a jaký konkrétní problém to řeší.",
       "body": "V komunitě se rozjela zajímavá debata o stavění produktů s AI. Jeden člen ukázal nástroj, na kterém pracuje. Pracuje s velkým množstvím proměnných. Sám si ale klade otázku, jestli bude mít reálný dopad, nebo zůstane jen u zajímavého experimentu.\n\nZakladatel komunity k tomu dodal, že ho zajímá hlavně produkt v praxi. Co se fakt vyplatí dostat do každodenní rutiny. A co radši nechat být. Nestačí, že nástroj funguje. Musí dát jasný výstup v konkrétní situaci pro konkrétního člověka.\n\nJeden člen to vystihl přesně: udělat nástroj intuitivní, jednoduchý, účinný a opravdu užitečný je těžké. Nástroje, které to zvládnou, mají skutečný dopad. Ty ostatní jsou možná zajímavé, ale často zůstanou jen jako hračky.\n\nOtázka na vás: Stavíte nebo plánujete postavit něco s AI? Víte přesně, pro koho to je a co konkrétně jim to vyřeší?",
       "read_minutes": 2,
-      "source_date": "2026-04-07"
+      "source_date": "2026-04-07",
+      "topics": [
+        "AI nástroje"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-03-23-02",
     "type": "TÉMA TÝDNE",
     "level": "Builder",
-    "topic": "Vibe coding flow state",
     "title": "Vibe coding pohltí a čas zmizí",
     "excerpt": "Víc lidí z komunity popisuje stejný zážitek: sednete k projektu, najednou je pozdě večer a limit je pryč. Flow state při vibe codingu je fakt reálný a silný.",
     "body": "Vibe coding má jednu věc, která překvapí skoro každého, kdo ho poprvé zkusí pořádně: chytne vás. Ne špatně. Jen se dostanete do flow. Věci fungují, model chápe kontext, výsledky chodí rychle a najednou neřešíte čas.\n\nV komunitě to popisuje víc lidí nezávisle na sobě. Jeden člen strávil celý den nejdřív nastavováním skillů a pravidel v Claude Code, pak dělal na dvou projektech. Že je něco špatně, mu došlo až ve chvíli, kdy model přestal odpovídat, protože došly tokeny.\n\nJe to jiný zážitek než klasické programování. Zmizí spousta věcí, které práci brzdí: syntaxe, debugging, hledání v dokumentaci. Místo toho řešíte hlavně to, co chcete postavit. A pak se snadno stane, že u toho sedíte déle, než jste chtěli.\n\nPomáhá pár jednoduchých věcí: nastavte si předem časový limit, dělejte pauzy jako u jiné soustředěné práce a náročnější úkoly si nechte na začátek sezení, kdy máte ještě tokeny i energii. Vibe coding je silný nástroj. Pracuje pro vás, ne místo vás.",
     "read_minutes": 2,
     "source_date": "2026-03-23",
-    "resurfaced_from": "2026-03-23"
+    "resurfaced_from": "2026-03-23",
+    "topics": [
+      "Claude Code",
+      "Vibe Coding",
+      "Fokus",
+      "Dokumentace"
+    ]
   },
   "transcript": {
     "groups": [

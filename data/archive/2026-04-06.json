@@ -10,43 +10,58 @@
     {
       "id": "2026-04-06-01",
       "source_date": "2026-04-06",
-      "topic": "Weekly review — co se dělo v komunitě",
       "excerpt": "Týdenní přehled: členové si staví vlastní appky, řešila se cena AI nástrojů a taky bezpečnostní incident v JavaScriptové knihovně.",
-      "body": "Daniel sdílel týdenní souhrn pro nové členy. Několik lidí si postavilo appky na správu úkolů: maminka na mateřské appku na diktování úkolů jednou rukou, další člen třídič nápadů a jiná členka rodinnou verzi se sbíráním bodů pro děti. Probírali jsme ceny AI nástrojů, od nuly až po šest a půl tisíce měsíčně. Sdílel se článek o dopaminové pasti tvůrce a řešil se bezpečnostní incident s JavaScriptovou knihovnou. Kdo nepoužívá Claude Code, nemusí to řešit."
+      "body": "Daniel sdílel týdenní souhrn pro nové členy. Několik lidí si postavilo appky na správu úkolů: maminka na mateřské appku na diktování úkolů jednou rukou, další člen třídič nápadů a jiná členka rodinnou verzi se sbíráním bodů pro děti. Probírali jsme ceny AI nástrojů, od nuly až po šest a půl tisíce měsíčně. Sdílel se článek o dopaminové pasti tvůrce a řešil se bezpečnostní incident s JavaScriptovou knihovnou. Kdo nepoužívá Claude Code, nemusí to řešit.",
+      "topics": [
+        "Claude Code",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-04-06-02",
       "source_date": "2026-04-06",
-      "topic": "Nový člen: Petr Říha",
       "excerpt": "Petr se představil jako projektový manažer a stavbyvedoucí se zkušenostmi z IT. Hledá jedno místo, kde bude mít všechny informace pohromadě, bez přepínání mezi aplikacemi.",
-      "body": "Petr Říha přišel s konkrétním problémem: jako projektový manažer, stavbyvedoucí a člověk, který se vyzná v IT, pořád přepíná mezi aplikacemi. Chce mít všechno na jednom místě. Přesně typ situace, kde může AI opravdu pomoct."
+      "body": "Petr Říha přišel s konkrétním problémem: jako projektový manažer, stavbyvedoucí a člověk, který se vyzná v IT, pořád přepíná mezi aplikacemi. Chce mít všechno na jednom místě. Přesně typ situace, kde může AI opravdu pomoct.",
+      "topics": [
+        "Produktivita"
+      ]
     },
     {
       "id": "2026-04-06-03",
       "source_date": "2026-04-06",
-      "topic": "Google Workspace a Drive napojené na AI — MCP nebo API?",
       "excerpt": "Ve Vibe Codingu se řešilo, jak propojit Google Drive s AI nástroji — přes MCP nebo přímé API — a jestli fungují i sdílené disky.",
-      "body": "Ve skupině Vibe Coding se řešilo napojení Google Workspace a Drivu na AI. Otázky šly docela do hloubky: použít MCP, nebo jít přes přímé API? Dostane se AI i ke sdíleným diskům, nebo jen k osobnímu My Drivu? Padlo taky, jestli Claude Code umí přes Drive rovnou vytvořit a uložit soubor nebo prezentaci na konkrétní místo. Jasná odpověď zatím nepadla."
+      "body": "Ve skupině Vibe Coding se řešilo napojení Google Workspace a Drivu na AI. Otázky šly docela do hloubky: použít MCP, nebo jít přes přímé API? Dostane se AI i ke sdíleným diskům, nebo jen k osobnímu My Drivu? Padlo taky, jestli Claude Code umí přes Drive rovnou vytvořit a uložit soubor nebo prezentaci na konkrétní místo. Jasná odpověď zatím nepadla.",
+      "topics": [
+        "Claude Code",
+        "Vibe Coding",
+        "MCP"
+      ]
     },
     {
       "id": "2026-04-06-04",
       "source_date": "2026-04-06",
-      "topic": "n8n jako alternativa k MCP pro neziskovky",
       "excerpt": "Jeden člen psal, že pro neziskovku používá n8n místo MCP. Automatizace už má rozjeté, AI vrstvu zatím nepřidal.",
-      "body": "Padl příklad z praxe: jeden člen používá v neziskovce n8n, má zmapované a zautomatizované scénáře, ale AI do toho zatím naplno nezapojil. Pro organizace, které si nejdřív potřebují rozjet základní automatizaci a AI přidat až později, to může být dobrá cesta."
+      "body": "Padl příklad z praxe: jeden člen používá v neziskovce n8n, má zmapované a zautomatizované scénáře, ale AI do toho zatím naplno nezapojil. Pro organizace, které si nejdřív potřebují rozjet základní automatizaci a AI přidat až později, to může být dobrá cesta.",
+      "topics": [
+        "Automatizace"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-03-18-03",
     "type": "POSTAVIL JSEM",
     "level": "Expert",
-    "topic": "Dashboard",
     "title": "CEO dashboard napojený na CRM, banku a GA4",
     "excerpt": "Jeden člen ukázal projekt, který vyvíjí 14 dní: CEO dashboard, který tahá data z CRM, bankovního účtu, Google Analytics 4 a výsledovky. Cílem je mít celý přehled o byznysu na jednom místě.",
     "body": "Jde o jeden z náročnějších projektů, které ve skupině padly. Cíl je jasný: nepřeskakovat mezi nástroji, ale mít na jedné obrazovce zákazníky, cash flow, návštěvnost webu i ziskovost.\n\nNejvětší technická výzva je propojit víc zdrojů najednou. Každý má jiné API, jiné limity a jiný formát dat. GA4 má vlastní API i MCP server. Standardní API ale omezuje počet požadavků. Druhá možnost je napojení přes Looker Studio. To má přímý konektor na GA4 a není potřeba dělat vlastní API integraci. Nevýhoda je menší volnost v tom, co pak s daty můžete dělat.\n\nProjekt je po 14 dnech práce pořád ve vývoji. Poučení? U podobných integrací se vyplatí dobře navrhnout architekturu hned na začátku. Víc než zkoušet naslepo. Čím víc zdrojů přidáte, tím rychleji roste složitost celého propojení.",
     "read_minutes": 3,
     "source_date": "2026-03-18",
-    "resurfaced_from": "2026-03-18"
+    "resurfaced_from": "2026-03-18",
+    "topics": [
+      "Claude Code",
+      "MCP",
+      "Vibe Coding"
+    ]
   },
   "transcript": {
     "groups": [

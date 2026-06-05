@@ -11,25 +11,32 @@
       "id": "2026-04-16-01",
       "type": "OTEVŘENÁ OTÁZKA",
       "level": "Builder",
-      "topic": "Uttero",
       "title": "Jak dlouho nechat mikrofon Uttera zapnutý",
       "excerpt": "Jeden člen řeší, jestli je na iOS bezpečné a šetrné k baterii prodloužit v Utteru dostupnost mikrofonu nad výchozích 5 minut. Komunita na to zatím nemá jasnou odpověď.",
       "body": "Uttero na iOS má ve výchozím nastavení přístup k mikrofonu omezený na 5 minut. Člen komunity se ptá, co se stane, když tenhle limit zrušíte nebo výrazně prodloužíte. Drží pak aplikace mikrofon fyzicky zapnutý, a tím víc vybíjí baterii? Nebo jde jen o oprávnění v systému, které se použije až ve chvíli, kdy aplikace mikrofon opravdu potřebuje?\n\nDruhá část otázky je bezpečnost. Delší povolení znamená, že aplikace může k mikrofonu přistupovat bez dalšího potvrzení. Pro většinu lidí to nejspíš nebude praktický problém. Pokud jste ale na soukromí citlivější, stojí to za zvážení.\n\nV komunitě zatím nikdo přímo neporovnal obě nastavení. Pokud Uttero používáte na iOS a víte, jak se to chová v praxi, dejte vědět, co jste zjistili.",
       "read_minutes": 2,
-      "source_date": "2026-04-16"
+      "source_date": "2026-04-16",
+      "topics": [
+        "AI nástroje"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-03-31-04",
     "type": "OTEVŘENÁ OTÁZKA",
     "level": "Builder",
-    "topic": "Automatizace",
     "title": "Jak automatizovat Claude Code bez navíc za API",
     "excerpt": "Jeden člen řeší dilema: chce mít všechny automatizace pohromadě v Claude Code, ale nechce si k předplatnému ještě připlácet za API volání. Headless Claude Code neumí načítat skills, Task Scheduler spouští terminál. Kde je hranice mezi slepou uličkou a řešením, které fakt funguje?",
     "body": "Tohle řeší asi každý, kdo už nechce pouštět skripty ručně. V diskuzi padlo několik možností, každá má nějaký háček.\n\nAktuálně dostupné varianty:\n\n- n8n / Make — vizuální automatizace, ale mimo ekosystém Claude Code\n- Claude Code skills pouštěné ručně — funguje, ale automatizace to není\n- Task Scheduler ve Windows + spuštění Claude Code s parametry — komunitní pokus, výsledky zatím nejsou jasné\n- Headless Claude Code — neumí načítat skills, takže workflow postavené na skills nefunguje\n- GitHub + Railway + cronjob — ověřený setup pro cloudovou automatizaci\n- integrovaný `/schedule` v Claude Code — spouští remote agenty, ale je to jiný model než lokální skills\n\nHlavní otázka pořád nemá jasnou odpověď: jde spouštět skills automaticky bez API klíče a bez ručního zásahu?\n\nPokud to řešíš nebo jsi na něco přišel, hoď postup do diskuze. Pomůže to víc lidem.",
     "read_minutes": 2,
     "source_date": "2026-03-31",
-    "resurfaced_from": "2026-03-31"
+    "resurfaced_from": "2026-03-31",
+    "topics": [
+      "Claude Code",
+      "Automatizace",
+      "Workflow",
+      "Vibe Coding"
+    ]
   },
   "transcript": {
     "groups": [

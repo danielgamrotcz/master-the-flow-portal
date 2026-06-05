@@ -11,56 +11,70 @@
       "id": "2026-03-19-01",
       "type": "TÉMA TÝDNE",
       "level": "Builder",
-      "topic": "Vibe Coding výzva",
       "title": "Den 5 výzvy: hotové projekty jdou ven",
       "excerpt": "Pátý den Vibe Coding výzvy patřil ladění a ukázkám toho, co kdo postavil. Členové sdíleli funkční aplikace z Lovable i Claude Code a reakce komunity rozhodně nebyly jen ze slušnosti.",
       "body": "Vibe Coding výzva se dostala do nejcennější fáze: přestalo se ladit dokola a začalo se ukazovat. Den 5 byl o doladění jedné konkrétní věci a sdílení výsledku. V kanálu se objevilo víc hotových projektů najednou než za všechny předchozí dny dohromady.\n\nZajímavé bylo, jak různě k tomu lidi přistoupili. Někdo stavěl v Lovable přes vizuální rozhraní. Někdo jel v Claude Code čistě přes terminál. Fungovalo obojí. Komunita si tím sama ověřila, že na nástroji tolik nezáleží. Důležité je se do toho pustit a dotáhnout výsledek.\n\nDen 5 ukázal, že pětidenní výzva v tomhle tempu dává smysl.",
       "read_minutes": 2,
-      "source_date": "2026-03-19"
+      "source_date": "2026-03-19",
+      "topics": [
+        "Claude Code",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-03-19-02",
       "type": "POSTAVIL JSEM",
       "level": "Builder",
-      "topic": "Lovable",
       "title": "Aplikace, která připomíná ozvat se blízkým",
       "excerpt": "Jeden člen si přes Lovable postavil nástroj na udržování vztahů. Vycházelo to z jeho vlastní situace: rodina daleko, tři děti, náročná práce. A prostě mu přirozeně nedojde, že by se mohl někomu ozvat.",
       "body": "Nápad nevznikl od stolu, ale z úplně konkrétního problému: když nestíháte a blízcí jsou daleko, vztahy se pomalu vytrácí. Ne proto, že by vám na nich nezáleželo. Prostě zapomenete.\n\nJeden člen komunity si to vyřešil vlastní aplikací postavenou v Lovable. Připomíná mu, kdy se má ozvat konkrétním lidem, a pomáhá mu držet vztahy v dobré kvalitě i při plném diáři.\n\nSdílel ji otevřeně s tím, že má ještě dost much. Přihlašování přes Google a Apple třeba zatím nebylo otestované. Ale aplikace už je vidět naživo a dá se dál iterovat.\n\nPřesně takhle vibe coding funguje nejlíp: nejdřív udělat něco, co vám fakt řeší problém. Až potom řešit polish.",
       "read_minutes": 2,
-      "source_date": "2026-03-19"
+      "source_date": "2026-03-19",
+      "topics": [
+        "Vibe Coding",
+        "Claude Code"
+      ]
     },
     {
       "id": "2026-03-19-03",
       "type": "POSTAVIL JSEM",
       "level": "Builder",
-      "topic": "Claude Code",
       "title": "Z terminálu na vizuální rozhraní za čtyři dny",
       "excerpt": "V sobotu běžel prototypovací asistent jen v terminálu. Ve čtvrtek už má plné vizuální rozhraní. Čtyři dny, jedna aplikace a velký skok v použitelnosti.",
       "body": "Tohle je přesně ten moment, na kterém je dobře vidět, proč vibe coding zrychluje práci. Asistent na tvorbu prototypů začínal jako čistě terminálový nástroj. Fungoval, ale byl hlavně pro lidi, kteří se v terminálu vyznají. Čtyři dny po prvním spuštění už má vizuální rozhraní.\n\nNe proto, že si to vyžádal klient. Ne proto, že to bylo ve sprintu. Prostě to dávalo smysl jako další krok. A vibe coding umožňuje takový krok zvládnout za odpoledne. Pro komunitu je to dobrá připomínka, že tempo iterací je dnes úplně jinde než před rokem. Pokud si chcete ověřit, co to znamená v praxi, tohle je dobrý příklad.",
       "read_minutes": 2,
-      "source_date": "2026-03-19"
+      "source_date": "2026-03-19",
+      "topics": [
+        "Vibe Coding",
+        "Claude Code"
+      ]
     },
     {
       "id": "2026-03-19-04",
       "type": "NÁSTROJE",
       "level": "Builder",
-      "topic": "Uttero",
       "title": "Diktování přímo do textového pole, ne do schránky",
       "excerpt": "V komunitě se řešil diktovací nástroj, který funguje jinak než ostatní. Text se zobrazuje rovnou v poli, kam píšete, nejde přes schránku. Verze pro macOS už je dostupná, iOS klávesnice se chystá.",
       "body": "Většina nástrojů na diktování funguje tak, že něco nadiktujete, chvíli počkáte a pak text zkopírujete nebo vložíte. Jeden nástroj, který se řešil v komunitě, to dělá jinak. Text se objevuje rovnou v aktivním textovém poli, a to v reálném čase.\n\nVerze pro macOS měla dobré ohlasy od členů, kteří ji testovali. Verze pro iOS už je v pokročilé fázi vývoje a půjde cestou vlastní klávesnice. Jednoduchý koncept, jedna hlavní funkce. Jeden člen komunity se ptal na verzi pro Android. Ta by byla technicky jednodušší na distribuci, protože by stačil APK soubor bez App Storu, ale zatím není v plánu.\n\nPokud diktování používáte, nebo jste ho zkoušeli a moc vám nefungovalo, vyplatí se sledovat, kdy se iOS verze otevře testerům.",
       "read_minutes": 2,
-      "source_date": "2026-03-19"
+      "source_date": "2026-03-19",
+      "topics": [
+        "AI nástroje"
+      ]
     },
     {
       "id": "2026-03-19-05",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "App Store / distribuce aplikací",
       "title": "Apple zamítá vibe-coded aplikace s externími API klíči",
       "excerpt": "V komunitě se řešilo, že Apple začíná přísněji schvalovat aplikace vytvořené přes vibe coding. Nejčastěji je zamítá kvůli externím API klíčům, které jsou přímo v kódu aplikace.",
       "body": "App Store review začíná být problém pro aplikace postavené přes vibe coding. Hlavně pro ty, které volají externí API a mají klíče uložené přímo v kódu nebo v bundlu. Apple takové aplikace zamítá.\n\nKomunita řešila dvě možnosti, jak to obejít:\n\n**TestFlight** — neveřejná beta distribuce. App Store review tu má jiná pravidla, případně vůbec neprobíhá. Pro menší skupinu uživatelů je to použitelná náhrada za veřejné vydání.\n\n**Sdílení zdrojáků** — uživatel si aplikaci sám zkompiluje a nainstaluje přes Xcode. Technicky je to čistší řešení, ale druhá strana musí mít Mac a vědět, co dělá.\n\nPro vývojáře, kteří chtějí dostat vlastní aplikaci na iPhone, je teď TestFlight nejjednodušší cesta. U aplikací s API klíči je dostat se do veřejného App Storu přes standardní review hodně těžké.",
       "read_minutes": 3,
-      "source_date": "2026-03-19"
+      "source_date": "2026-03-19",
+      "topics": [
+        "Vibe Coding",
+        "Claude Code"
+      ]
     }
   ],
   "resurfacing": null,

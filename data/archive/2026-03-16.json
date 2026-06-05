@@ -11,56 +11,76 @@
       "id": "2026-03-16-01",
       "type": "NÁSTROJE",
       "level": "Builder",
-      "topic": "Claude Code vs Gemini",
       "title": "Claude Code vede nad Gemini pro vibe coding",
       "excerpt": "Jeden člen delší dobu zkoušel Gemini na vibe coding, ale nakonec zůstal u Claude Code. Výstupy jsou prostě jinde a CC má navrch. Jiný člen mezitím staví Gmail klienta, kterého řídí Gemini přes Google AI Studio.",
       "body": "Diskuze potvrdila to, co část komunity už tušila: na vibe coding je Claude Code pořád přirozenější volba. Jeden člen Gemini testoval delší dobu, ne jen pár minut na zkoušku, a výsledek měl jasný. Výstupy jsou prostě jiné. CC vede.\n\nTo ale neznamená, že Gemini nemá svoje místo. Jiný člen mezitím staví Gmail klienta řízeného přes Gemini v Google AI Studiu. To je jiný use case a jiný přístup. Gemini dává smysl hlavně jako součást Google ekosystému. Ale jako hlavní engine na vibe coding? Tam má CC zatím navrch.\n\nPrakticky: pokud začínáte a řešíte, čemu dát čas, CC je teď jistější volba pro iterativní stavění. Gemini se vyplatí testovat hlavně ve chvíli, kdy hodně pracujete s Google produkty nebo potřebujete hlubší napojení na jejich ekosystém.",
       "read_minutes": 2,
-      "source_date": "2026-03-16"
+      "source_date": "2026-03-16",
+      "topics": [
+        "Claude Code",
+        "Vibe Coding",
+        "AI nástroje",
+        "Email"
+      ]
     },
     {
       "id": "2026-03-16-02",
       "type": "POSTAVIL JSEM",
       "level": "Builder",
-      "topic": "Vibe Coding Challenge",
       "title": "Den 2: pět nápadů na projekty z komunity",
       "excerpt": "Komunita sdílela první nápady na finální produkty výzvy. Objevily se projekty kolem každodenních věcí: objednávek, kapesného, výživy nebo rozpočtu. Čím osobnější téma, tím větší chuť dotáhnout ho do konce.",
       "body": "Druhý den výzvy přinesl to nejcennější: konkrétní nápady z běžného života. Lidi z komunity sdíleli, co je fakt štve, nebo co už dlouho chtěli postavit, jen na to nikdy nebyl čas, peníze nebo kapacity.\n\nZ diskuze vzešly tyhle projekty:\n\n- Objednávkový web na marmelády ze dvora — jednoduchý e-shop pro lokální prodej\n- Tracker kapesného pro děti navázaný na výsledky ve škole — hravý způsob, jak děti učit pracovat s penězi\n- E-mailový asistent na zpracování objednávek z kanceláře — automatizace rutinní administrativy\n- Výživový poradce propojený s Garminem a Google Kalendářem — doporučení podle pohybu a denního programu\n- Měsíční rozpočtový tracker jako webová appka — jednoduchý přehled financí bez zbytečných funkcí\n\nSpolečné mají jedno: žádný z těch projektů není „appka za milion“. Jsou to konkrétní řešení konkrétních problémů. A přesně o tom vibe coding je.",
       "read_minutes": 2,
-      "source_date": "2026-03-16"
+      "source_date": "2026-03-16",
+      "topics": [
+        "Vibe Coding",
+        "Automatizace",
+        "Email",
+        "Claude Code"
+      ]
     },
     {
       "id": "2026-03-16-03",
       "type": "INSIGHT",
       "level": "Začátečník",
-      "topic": "Nástroje pro začátečníky",
       "title": "Cursor nebo VS Code pro začátečníky",
       "excerpt": "Instalace Gitu a Claude Code CLI přes příkazovou řádku může být překážka. Člověka odradí ještě dřív, než začne něco stavět. Komunita proto navrhla Cursor nebo rozšíření do VS Code jako dostupnější alternativy se stejnou silou.",
       "body": "Ne každému se chce začínat v příkazové řádce. Jeden člen zkoušel instalovat Git a Claude Code CLI a narazil na technické záseky, které člověka snadno odradí hned na startu.\n\nKomunita navrhla dvě alternativy:\n\n**Cursor** — editor postavený na VS Code s AI přímo uvnitř. Stáhnete, nainstalujete, otevřete složku a můžete pracovat. Terminál tam je taky, ale pro první kroky ho nepotřebujete.\n\n**VS Code s rozšířením Claude** — pokud už VS Code znáte, stačí přidat rozšíření Claude. Dostanete podobný zážitek bez další složité instalace.\n\nPro úplné začátečníky je Cursor nejspíš jednodušší start. Terminál se naučíte později, až ho budete potřebovat. Teď jde hlavně o to začít něco stavět, ne se hned učit unixové příkazy.",
       "read_minutes": 2,
-      "source_date": "2026-03-16"
+      "source_date": "2026-03-16",
+      "topics": [
+        "Claude Code",
+        "Cursor",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-03-16-04",
       "type": "TÉMA TÝDNE",
       "level": "Builder",
-      "topic": "Správa poznámek a druhý mozek",
       "title": "Obsidian, Apple Notes nebo vlastní systém",
       "excerpt": "Komunita otevřela téma, které řeší spousta builderů: kam ukládat nápady a znalosti, aby z toho fakt vznikl druhý mozek. Padl Obsidian, Apple Notes kvůli GDPR i vlastní systémy napojené na AI.",
       "body": "Z diskuze vyšly tři směry:\n\n**Obsidian** — dobrá volba pro lokální Markdown soubory. Data máte u sebe, funguje offline a jde napojit na různé nástroje. Jeden člen teď zkouší zapojit vlastní nástroj na zpracování myšlenek do své appky a Obsidian má jako součást workflow.\n\n**Apple Notes** — nepadly kvůli tomu, že by to byl špatný nástroj, ale kvůli GDPR. Pro část komunity je důležité, kde data leží a komu v tomhle věří.\n\n**Vlastní systém** — varianta pro buildery, kteří chtějí plnou kontrolu a napojení na AI nástroje. Zabere víc času ho postavit, ale může dělat přesně to, co potřebujete.\n\nUniverzální odpověď tu není. Záleží, jak pracujete. Potřebujete synchronizaci mezi zařízeními? Offline přístup? Sdílení s ostatními? GDPR compliance? Odpovědi na tyhle otázky vás navedou líp než jakékoli srovnání nástrojů.",
       "read_minutes": 2,
-      "source_date": "2026-03-16"
+      "source_date": "2026-03-16",
+      "topics": [
+        "Poznámky",
+        "Workflow",
+        "Obsidian"
+      ]
     },
     {
       "id": "2026-03-16-05",
       "type": "OTEVŘENÁ OTÁZKA",
       "level": "Builder",
-      "topic": "Komunikační nástroje",
       "title": "Hledáme náhradu za Telegram bez kompromisů",
       "excerpt": "Komunita hledá náhradu za Telegram. Padly návrhy jako Signal, Discord a OpenClaw. Ani jedna možnost zatím není bez kompromisů, takže se hledá dál.",
       "body": "Část komunity hledá náhradu za Telegram. V diskuzi padli tři kandidáti:\n\n**Signal** — šifrovaný a důvěryhodný, pokud jde o soukromí. Jenže ho nepoužívá každý a přemluvit lidi k přechodu bývá oříšek.\n\n**Discord** — silný pro komunity. Má dobré kanály a vyhledávání v historii. Pro někoho je ale moc hlučný nebo až moc spojený s herní kulturou. A soukromí jako Signal nenabízí.\n\n**OpenClaw** — méně známá alternativa. V diskuzi zazněla, ale bez jasného závěru.\n\nJasný vítěz zatím není. Všude jsou kompromisy: soukromí vs. dostupnost, funkce vs. jednoduchost. Jeden člen zatím zůstává na Telegramu a příští týden vyzkouší alternativy.\n\nCo používáte vy? A co by musela splňovat ideální náhrada, abyste přešli?",
       "read_minutes": 2,
-      "source_date": "2026-03-16"
+      "source_date": "2026-03-16",
+      "topics": [
+        "AI nástroje"
+      ]
     }
   ],
   "resurfacing": null,

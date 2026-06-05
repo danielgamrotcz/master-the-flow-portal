@@ -10,50 +10,66 @@
     {
       "id": "2026-05-20-01",
       "source_date": "2026-05-20",
-      "topic": "Offline setkání",
       "excerpt": "Brněnský meetup se rýsuje. Petra nabídla kancl a přihlásilo se už aspoň pět lidí, včetně Petra Říhy z Liberce.",
-      "body": "V Inspiraci spontánně vznikl plán na meetup v Brně. Petra Pučálková nabídla prostor a zájem potvrdilo víc než pět lidí. Daniel založil novou skupinu pro offline setkávání — Praha, Brno, Bohumín a další města."
+      "body": "V Inspiraci spontánně vznikl plán na meetup v Brně. Petra Pučálková nabídla prostor a zájem potvrdilo víc než pět lidí. Daniel založil novou skupinu pro offline setkávání — Praha, Brno, Bohumín a další města.",
+      "topics": [
+        "Meeting"
+      ]
     },
     {
       "id": "2026-05-20-02",
       "source_date": "2026-05-20",
-      "topic": "Setuper jako nová profese",
       "excerpt": "V komunitě se pro novou roli ujalo pojmenování setuper: člověk, který freelancerům nastaví systémy, aby se mohli soustředit na tvorbu.",
-      "body": "Diskuze o Jiřího architektuře měla velký ohlas. Několik členů přiznalo, že systémová část je pro ně úplně jiný vesmír. Sám od sebe se objevil název pro novou profesní roli: setuper — člověk, který ostatním nastavuje AI infrastrukturu a pomáhá jim překonat technické překážky."
+      "body": "Diskuze o Jiřího architektuře měla velký ohlas. Několik členů přiznalo, že systémová část je pro ně úplně jiný vesmír. Sám od sebe se objevil název pro novou profesní roli: setuper — člověk, který ostatním nastavuje AI infrastrukturu a pomáhá jim překonat technické překážky.",
+      "topics": [
+        "Fokus"
+      ]
     },
     {
       "id": "2026-05-20-03",
       "source_date": "2026-05-20",
-      "topic": "Architektura a infrastruktura",
       "excerpt": "Filip nasdílel setup n8n na Hetzneru, Jiří ukázal Obsidian podle PARA. Pak se detailně řešil Claude Cowork vs. CLI a synchronizace přes iCloud.",
-      "body": "Technická diskuze se rozjela naplno. Filip Fio Konečný popsal setup n8n na Hetzneru. Jiří Soljáka ukázal, jak pracuje s Obsidianem přes PARA strukturu. Řešily se praktické věci: vzdálené připojení k Mac Mini, synchronizace přes iCloud i rozdíly mezi Claude Cowork a CLI přístupem."
+      "body": "Technická diskuze se rozjela naplno. Filip Fio Konečný popsal setup n8n na Hetzneru. Jiří Soljáka ukázal, jak pracuje s Obsidianem přes PARA strukturu. Řešily se praktické věci: vzdálené připojení k Mac Mini, synchronizace přes iCloud i rozdíly mezi Claude Cowork a CLI přístupem.",
+      "topics": [
+        "Automatizace",
+        "Obsidian"
+      ]
     },
     {
       "id": "2026-05-20-04",
       "source_date": "2026-05-20",
-      "topic": "Doporučené zdroje pro vibe coding",
       "excerpt": "aifirst.cz a naprimosai.cz jsou dobrý start pro ty, kdo s vibe codingem teprve začínají.",
-      "body": "Daniel sdílel epizodu s Jindrou Fáborským a Markem Prokopem. Komunita k ní doporučila dva weby pro nováčky ve vibe codingu: aifirst.cz a naprimosai.cz."
+      "body": "Daniel sdílel epizodu s Jindrou Fáborským a Markem Prokopem. Komunita k ní doporučila dva weby pro nováčky ve vibe codingu: aifirst.cz a naprimosai.cz.",
+      "topics": [
+        "Vibe Coding",
+        "Claude Code"
+      ]
     },
     {
       "id": "2026-05-20-05",
       "source_date": "2026-05-20",
-      "topic": "rtk-ai/rtk — snížení spotřeby tokenů",
       "excerpt": "Ve skupině Vibe Coding testují rtk-ai/rtk. Zkušenosti jsou zatím půl na půl — jeden člen si radši nastavil vlastní styl výstupu.",
-      "body": "Ve skupině Vibe Coding se testuje rtk-ai/rtk jako způsob, jak snížit spotřebu tokenů. Výsledky jsou zatím různé. Někdo ocenil úsporu, jiný si radši nastavil vlastní output style přímo v projektu. Jeden člen mezitím napojil Meta Ads MCP, jenže API je nestabilní a blokuje účty."
+      "body": "Ve skupině Vibe Coding se testuje rtk-ai/rtk jako způsob, jak snížit spotřebu tokenů. Výsledky jsou zatím různé. Někdo ocenil úsporu, jiný si radši nastavil vlastní output style přímo v projektu. Jeden člen mezitím napojil Meta Ads MCP, jenže API je nestabilní a blokuje účty.",
+      "topics": [
+        "Vibe Coding",
+        "Claude Code"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-05-05-01",
     "type": "INSIGHT",
     "level": "Začátečník",
-    "topic": "AI a organizace souborů",
     "title": "AI roztřídí fotky do složek za vás",
     "excerpt": "Automatické roztřídění tisíců fotek do podsložek podle roku funguje spolehlivě a ušetří hodiny ruční práce. Jeden člen to vyzkoušel a výsledek prošel bez problémů.",
     "body": "Jedna členka se ptala, jestli někdo třídí fotky pomocí AI. Hned se ozval další člen se zkušeností: nechal si automaticky rozřadit celou sbírku do podsložek podle roku. Funguje mu to bez ručního zásahu.\n\nPostup je jednoduchý. AI nebo skript přečte metadata souboru, hlavně EXIF datum pořízení, případně i název fotky. Podle toho pak vytvoří složky a fotky do nich přesune. Pro běžného uživatele to nemusí být nic složitého. Existují jednoduché skripty i vizuální aplikace, které to zvládnou bez programování.\n\nPokud máte na disku nebo v cloudu hromadu fotek bez systému, tohle je jeden z nejrychlejších způsobů, jak si pomocí AI ušetřit práci. Co by ručně trvalo hodiny, může být hotové za pár minut.",
     "read_minutes": 2,
     "source_date": "2026-05-05",
-    "resurfaced_from": "2026-05-05"
+    "resurfaced_from": "2026-05-05",
+    "topics": [
+      "Workflow",
+      "AI nástroje"
+    ]
   },
   "transcript": {
     "groups": [

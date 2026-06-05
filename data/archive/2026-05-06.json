@@ -11,58 +11,75 @@
       "id": "2026-05-06-01",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Učení s AI",
       "title": "Tři průšvihy pasivního učení s AI",
       "excerpt": "Pasivně jen číst, nechat AI přemýšlet za nás a nic si neověřovat. Tři spolehlivé způsoby, jak se s AI nic nenaučit. Problém není v nástroji, ale v tom, jak ho používáme. A řešení je překvapivě jednoduché.",
       "body": "Hodně lidí s AI „studuje“ tak, že si nechá něco vysvětlit nebo shrnout. Výsledek? Příjemný pocit, že tomu rozumíte. Za týden je pryč.\n\n**Pasivní čtení** — AI vám téma hezky vysvětlí. Text dává smysl, takže máte pocit, že už to umíte. Jenže to je fluency illusion. Mozek si splete plynulé čtení se skutečným učením.\n\n**Přenechání přemýšlení AI** — Necháte AI, ať to shrne za vás. Jenže tím přijdete o chvíli, kdy si myšlenku propojíte s vlastní zkušeností. Bez toho se znalost moc neuchytí.\n\n**Žádné ověření** — Nezkoušíte, jestli to opravdu umíte. Přitom AI vás umí dobře prozkoušet. Přes otázky, dialog nebo kvízy.\n\nCo funguje líp? Otočte roli. Místo abyste se ptali vy AI, nechte AI ptát se vás.\n\nZkuste třeba prompt: „Vytvoř mi z toho kvíz na úrovni XYZ a jdi do hloubky.“ Nebo sokratovský styl. AI nepřednáší, ale vede vás otázkami.\n\nAnebo jednoduše: vysvětlete téma vlastními slovy. Tak, aby ho pochopil kolega, který o něm nic neví. Jakmile začnete kličkovat, víte, kde máte mezeru.",
       "read_minutes": 2,
-      "source_date": "2026-05-06"
+      "source_date": "2026-05-06",
+      "topics": [
+        "Prompting"
+      ]
     },
     {
       "id": "2026-05-06-02",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Učení s AI",
       "title": "Sokratovský model: AI vás zkouší, ne vysvětluje",
       "excerpt": "Místo klasického „vysvětli mi X“ zkuste prompt, který z AI udělá tazatele. Místo hotového textu dostanete sérii naváděcích otázek. A téma pochopíte tak, že vám to fakt zůstane v hlavě.",
       "body": "Konkrétní prompt, který stojí za zkoušku:\n\n„Chci pochopit, jak funguje [téma]. Nevysvětluj mi to rovnou. Pokládej mi postupně naváděcí otázky, ať si na to přijdu sám. Po každé mojí odpovědi se zeptej na něco hlubšího. Zastav se až ve chvíli, kdy pochopím základní princip.“\n\nProč to funguje? Protože si líp pamatujeme věci, na které jsme přišli sami. Ne ty, které nám někdo jen naservíroval. Sokratovský přístup tohle dobře napodobuje.\n\nDalší možnost: nechte AI vygenerovat 10 otázek, které prověří, jestli jste téma opravdu pochopili. Odpovědi diktujte nahlas. Bez koukání zpátky do materiálů. Tam, kde se zaseknete, máte mezeru v porozumění.\n\nOba postupy se dají použít skoro na cokoliv. Na technická témata, obchodní strategie i historii. Důležité je zapojit se aktivně, ne jen pasivně číst. AI vám může pomoct podobně jako dobrý lektor. Jen jí o to musíte říct napřímo.",
       "read_minutes": 2,
-      "source_date": "2026-05-06"
+      "source_date": "2026-05-06",
+      "topics": [
+        "Prompting"
+      ]
     },
     {
       "id": "2026-05-06-03",
       "type": "POSTAVIL JSEM",
       "level": "Expert",
-      "topic": "Automatizace",
       "title": "Přepis Plaud nahrávek bez cloudového předplatného",
       "excerpt": "Jeden člen si postavil vlastní pipeline na přepis hlasových nahrávek z Plaud zařízení. Bez nutnosti platit cloudové předplatné za 240 dolarů ročně. Dohnal ho k tomu blížící se poplatek, vyřešil to lokálním zpracováním.",
       "body": "Plaud je oblíbené zařízení na přepis schůzek a poznámek. Jeho cloud ale stojí 240 dolarů ročně. Jeden člen komunity si proto postavil vlastní pipeline. Přepis zvládne bez cizí infrastruktury.\n\nAlternativy z diskuze:\n\n**Fireflies** — cloudová služba na přepis schůzek. Zase ale platíte předplatné a data posíláte na cizí servery.\n\n**Whisper** — open-source model od OpenAI. Přepis běží lokálně a zdarma. Chce to trochu technického nastavení, ale výsledky jsou dobré i v češtině.\n\n**NotebookLM** — nástroj od Googlu. Umí pracovat s hotovými přepisy, ale samotný přepis neřeší.\n\nVlastní pipeline znamená kontrolu nad daty a žádné průběžné náklady. Nevýhoda je čas na nastavení a průběžná údržba. Je to něco za něco. Vyplatí se hlavně při větším množství nahrávek nebo při práci s citlivými informacemi ze schůzek.\n\nPokud máte Plaud nebo podobné zařízení a vadí vám cena předplatného, Whisper je nejpřímější cesta k lokálnímu přepisu bez závislosti na cloudu.",
       "read_minutes": 2,
-      "source_date": "2026-05-06"
+      "source_date": "2026-05-06",
+      "topics": [
+        "ChatGPT",
+        "AI nástroje",
+        "Workflow"
+      ]
     },
     {
       "id": "2026-05-06-04",
       "type": "POSTAVIL JSEM",
       "level": "Builder",
-      "topic": "Vibe Coding",
       "title": "Velín: time tracking pro VA vibe codingem",
       "excerpt": "Jeden člen naší komunity si postavil vlastní nástroj na měření času pro virtuální asistenty. Alternativu k Togglu a Clockify. Aplikace vznikla vibe codingem a už běží v produkci.",
       "body": "Toggl i Clockify jsou fajn nástroje, ale ne každému sednou do jeho workflow. Jeden člen si proto postavil vlastní řešení: aplikaci Velín, přímo pro potřeby virtuálních asistentek.\n\nVznikla vibe codingem, tedy postupným stavěním s AI bez klasického vývojového cyklu. A hned se nabízí otázka: jak je na tom taková appka s bezpečností dat?\n\nV diskuzi padly konkrétní dotazy na ochranu dat. Autor popsal, jak to má vyřešené:\n\n**Firebase Auth** — přihlašování běží přes Google infrastrukturu, takže není potřeba řešit vlastní správu loginů.\n\n**Firestore security rules** — pravidla přístupu jsou nastavená přímo v databázi, nezávisle na logice aplikace. I kdyby někdo obešel frontend, k datům se nedostane.\n\nNení to bezpečnost „omylem“. Je to vědomě nastavené ve správných vrstvách. Vibe coding neznamená automaticky zanedbanou bezpečnost. Jen je potřeba vědět, co nastavit a proč.\n\nVelín je dobrý příklad toho, že i produkt postavený bez klasického vývojáře může běžet v produkci a fungovat bezpečně.",
       "read_minutes": 2,
-      "source_date": "2026-05-06"
+      "source_date": "2026-05-06",
+      "topics": [
+        "Vibe Coding",
+        "Workflow",
+        "Databáze",
+        "Claude Code"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-04-15-03",
     "type": "INSIGHT",
     "level": "Začátečník",
-    "topic": "Produktivita",
     "title": "Jak ukočírovat data roztahaná přes tři cloudy",
     "excerpt": "Členka komunity popsala, že má data rozházená ve třech počítačích, třech e-mailech a několika cloudech. Komunita jí poradila začít tím, že se AI zeptá, co vlastně potřebuje a jak chce pracovat. Bez jasného workflow je každé sjednocování jen přesouvání chaosu na jiné místo.",
     "body": "Než začnete cokoliv migrovat nebo mazat, nechte si od AI pomoct ujasnit, co vlastně potřebujete. Zeptejte se rovnou Claude nebo Gemini. Popište, co máte, jak pracujete a co by vám ulehčilo život. Nechte si navrhnout workflow a až potom vybírejte nástroje.\n\nZ komunity zaznělo konkrétní doporučení: Google Workspace jako jedno centrální místo. Plusy jsou sdílení napříč zařízeními, hledání v celém obsahu a jeden účet místo tří. Mínus je závislost na Googlu a menší soukromí. Pokud jedete v Apple ekosystému, dává smysl iCloud a Apple Mail. Pokud už máte Microsoft 365, tak OneDrive a Outlook.\n\nNejdůležitější je vybrat jednu cestu a držet se jí. Hybridní řešení chvíli fungují, ale chaos se vrátí. Nejlepší postup: zvolit jeden workspace, přesunout do něj aktivní věci a zbytek archivovat nebo smazat.",
     "read_minutes": 2,
     "source_date": "2026-04-15",
-    "resurfaced_from": "2026-04-15"
+    "resurfaced_from": "2026-04-15",
+    "topics": [
+      "AI nástroje",
+      "Email",
+      "Workflow"
+    ]
   },
   "transcript": {
     "groups": [

@@ -11,58 +11,77 @@
       "id": "2026-03-31-01",
       "type": "NÁSTROJE",
       "level": "Builder",
-      "topic": "Zápisy ze schůzek",
       "title": "Granola vs Plaud: co funguje na meetingy",
       "excerpt": "Komunita zkoušela Granolu na automatické zápisy ze schůzek. Ukázalo se, že výběr nástroje záleží na tom, jestli chceš zachytit skupinový hovor, nebo si po schůzce nadiktovat vlastní poznámky. Uttero se do tohohle použití moc nehodí — je to spíš nástroj na osobní diktování.",
       "body": "Granola se v AI komunitách řeší čím dál víc, ale konkrétních zkušeností je zatím málo. V diskuzi se objevily dvě různé potřeby, které se snadno pletou: zápisy ze skupinových jednání a osobní poznámky po schůzce nebo návštěvě v terénu.\n\nJeden člen používá Plaud hardware spolu s Plaud softwarem. Fyzické zařízení nahrává přímo v místnosti a automaticky přepisuje. Pro skupinová jednání, kde záleží na kvalitním záznamu, se mu to osvědčilo.\n\nUttero je něco jiného. Není to nástroj na meetingy, ale spíš na osobní diktování a vlastní poznámky. Funguje jen na iOS a Macu, takže pro uživatele Windows nedává smysl.\n\nGranola podle prvních dojmů stojí za vyzkoušení, ale zkušenosti z komunity zatím chybí. Pokud ji testuješ nebo na ni přecházíš z jiného nástroje, hoď výsledky do diskuze.",
       "read_minutes": 2,
-      "source_date": "2026-03-31"
+      "source_date": "2026-03-31",
+      "topics": [
+        "Poznámky",
+        "Meeting"
+      ]
     },
     {
       "id": "2026-03-31-02",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Přepis nahrávek",
       "title": "Lokální přepis starých nahrávek za 10 minut",
       "excerpt": "Máš složku se starými hlasovými nahrávkami a chceš je přepsat do textu? Dá se to rozjet lokálně přes Whisper model a Claude Code — bez nahrávání souborů na cizí server a bez dalšího předplatného. Celé nastavení zabere zhruba 10 minut.",
       "body": "Whisper je open-source model od OpenAI pro přepis řeči. Běží lokálně na vlastním počítači a umí zpracovat víc souborů najednou. S Claude Code si k němu snadno uděláš jednoduchý skript, který projde složku s nahrávkami a každou uloží jako textový soubor.\n\nCo potřebuješ:\n- Claude Code, stačí běžné předplatné\n- nainstalovaný Python\n- Whisper model, ten se stáhne automaticky\n\nZáleží i na výkonu počítače. Větší modely bývají přesnější, ale jsou pomalejší. Na starším stroji může přepis trvat déle než samotná nahrávka. Na Apple Silicon, tedy M1, M2 nebo M4, to většinou běží rychleji než reálný čas záznamu.\n\nJestli chceš cloudovou variantu bez instalace, TurboScribe patří mezi často chválené placené alternativy. Pro občasné použití má dobrý poměr ceny a výkonu.\n\nDává to smysl hlavně pro lidi, kteří mají nahrávky z porad, terénních návštěv nebo vlastního diktování a chtějí v nich vyhledávat nebo s nimi dál pracovat jako s textem.",
       "read_minutes": 2,
-      "source_date": "2026-03-31"
+      "source_date": "2026-03-31",
+      "topics": [
+        "Claude Code",
+        "ChatGPT",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-03-31-03",
       "type": "POSTAVIL JSEM",
       "level": "Expert",
-      "topic": "Automatizace",
       "title": "Gmail Responder: Python appka reagující na příchozí maily",
       "excerpt": "Jeden člen popsal architekturu svého systému, který automaticky vyhodnocuje příchozí e-maily a připravuje návrhy odpovědí. Aplikace běží na Google Cloudu a nespouští se podle plánu. Google ji sám upozorní pokaždé, když dorazí nový e-mail.",
       "body": "Architektura Gmail Responderu ukazuje rozdíl mezi polling automatizací („kontroluj každých X minut“) a event-driven přístupem („reaguj ve chvíli, kdy se něco stane“).\n\nJak to funguje:\n\n1. V Gmailu je nastavený watch přes Google Pub/Sub, tedy cloudovou službu pro doručování zpráv v reálném čase.\n2. Jakmile přijde nový mail, Google automaticky pošle notifikaci do appky.\n3. Python appka běžící na Google Cloudu mail přečte a vyhodnotí, jestli má smysl na něj odpovídat.\n4. Pokud ano, přes Gemini API vygeneruje návrh odpovědi ve stylu autora.\n\nProč Google Cloud a ne lokální počítač: appka musí být dostupná nonstop na veřejné adrese, aby Pub/Sub fungoval. Lokální skript by musel mít veřejné URL, nebo by musel sám pravidelně kontrolovat doručenou poštu. To znamená zbytečnou zátěž a vyšší latenci.\n\nStejný vzor — webhook → zpracování → AI výstup — se dá použít i jinde: pro Slack notifikace, GitHub issues, zákaznickou podporu nebo interní zpracování dokumentů.",
       "read_minutes": 3,
-      "source_date": "2026-03-31"
+      "source_date": "2026-03-31",
+      "topics": [
+        "AI nástroje",
+        "Automatizace",
+        "Email"
+      ]
     },
     {
       "id": "2026-03-31-04",
       "type": "OTEVŘENÁ OTÁZKA",
       "level": "Builder",
-      "topic": "Automatizace",
       "title": "Jak automatizovat Claude Code bez navíc za API",
       "excerpt": "Jeden člen řeší dilema: chce mít všechny automatizace pohromadě v Claude Code, ale nechce si k předplatnému ještě připlácet za API volání. Headless Claude Code neumí načítat skills, Task Scheduler spouští terminál. Kde je hranice mezi slepou uličkou a řešením, které fakt funguje?",
       "body": "Tohle řeší asi každý, kdo už nechce pouštět skripty ručně. V diskuzi padlo několik možností, každá má nějaký háček.\n\nAktuálně dostupné varianty:\n\n- n8n / Make — vizuální automatizace, ale mimo ekosystém Claude Code\n- Claude Code skills pouštěné ručně — funguje, ale automatizace to není\n- Task Scheduler ve Windows + spuštění Claude Code s parametry — komunitní pokus, výsledky zatím nejsou jasné\n- Headless Claude Code — neumí načítat skills, takže workflow postavené na skills nefunguje\n- GitHub + Railway + cronjob — ověřený setup pro cloudovou automatizaci\n- integrovaný `/schedule` v Claude Code — spouští remote agenty, ale je to jiný model než lokální skills\n\nHlavní otázka pořád nemá jasnou odpověď: jde spouštět skills automaticky bez API klíče a bez ručního zásahu?\n\nPokud to řešíš nebo jsi na něco přišel, hoď postup do diskuze. Pomůže to víc lidem.",
       "read_minutes": 2,
-      "source_date": "2026-03-31"
+      "source_date": "2026-03-31",
+      "topics": [
+        "Claude Code",
+        "Automatizace",
+        "Workflow",
+        "Vibe Coding"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-03-14-03",
     "type": "INSIGHT",
     "level": "Builder",
-    "topic": "Windows workflow",
     "title": "Tři nastavení, která zrychlí AI práci na Windows",
     "excerpt": "Člen sdílel tři konkrétní tipy pro Windows: hlasové zadávání přes zkratku, přístup ke Claude Code z terminálu a příznak, díky kterému běží práce plynuleji bez neustálého potvrzování. Každý tip funguje samostatně.",
     "body": "**Win+H — hlasové zadávání přímo do Claude**\n\nKlávesová zkratka Win+H ve Windows zapne hlasové zadávání v jakémkoliv textovém poli, tedy i v chatu s Claude. Přepis zatím není tak dobrý jako u specializovaných nástrojů, ale na delší vstupy funguje slušně. A je hned po ruce, bez instalace.\n\n**Claude Code v terminálu místo editoru**\n\nHodně lidí začíná s Claude Code přes IDE, třeba VS Code. Terminál je ale rychlejší: míň přepínání, přímé napojení na projekt a žádné zbytečné rozhraní. Na běžné používání se vyplatí ho zkusit.\n\n**`--dangerously-skip-permissions` pro plynulý běh**\n\nClaude Code se normálně zastaví a ptá se na potvrzení u každé akce, která může měnit soubory nebo spouštět příkazy. Příznak `--dangerously-skip-permissions` tohle přeskočí. Už název říká, že opatrně — pouštět jen v projektech, kde víš, co Claude dělá, a rozhodně ne na produkci.",
     "read_minutes": 3,
     "source_date": "2026-03-14",
-    "resurfaced_from": "2026-03-14"
+    "resurfaced_from": "2026-03-14",
+    "topics": [
+      "Claude Code",
+      "Vibe Coding"
+    ]
   },
   "transcript": {
     "groups": [

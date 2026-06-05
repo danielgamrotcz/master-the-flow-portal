@@ -10,43 +10,57 @@
     {
       "id": "2026-05-16-01",
       "source_date": "2026-05-16",
-      "topic": "Raycast pro laiky",
       "excerpt": "Člen komunity popsal, že mu Raycast zjednodušil práci i bez znalosti programování – buď už v základu, nebo přes pluginy.",
-      "body": "Diskuze začala otázkou: co je Raycast a k čemu se hodí člověku, který není z IT? Filip shrnul hlavní funkce: rychlé spouštění aplikací a webů, snippety s placeholdery jako datum nebo jméno adresáta, správu oken, chytrou schránku s historií, emoji a color picker, kalkulačku, převody měn, překladač a stovky dalších integrací zdarma. Všechno se ovládá jednou klávesovou zkratkou. Jako první krok doporučil Danielovo video na LinkedInu."
+      "body": "Diskuze začala otázkou: co je Raycast a k čemu se hodí člověku, který není z IT? Filip shrnul hlavní funkce: rychlé spouštění aplikací a webů, snippety s placeholdery jako datum nebo jméno adresáta, správu oken, chytrou schránku s historií, emoji a color picker, kalkulačku, převody měn, překladač a stovky dalších integrací zdarma. Všechno se ovládá jednou klávesovou zkratkou. Jako první krok doporučil Danielovo video na LinkedInu.",
+      "topics": [
+        "Raycast"
+      ]
     },
     {
       "id": "2026-05-16-02",
       "source_date": "2026-05-16",
-      "topic": "GPT a Perplexity na překlad posterů",
       "excerpt": "Členka komunity ukázala kolegyni, jak pomocí GPT a Perplexity překládat konferenční postery. Prakticky, přímo v reálné situaci.",
-      "body": "Příklad z praxe: překlad odborných posterů z konference. Žádné složité nastavování, žádný kód. Stačilo vědět, jaký nástroj použít a jak se správně zeptat. Přesně takové využití se dá během pár minut ukázat i ostatním."
+      "body": "Příklad z praxe: překlad odborných posterů z konference. Žádné složité nastavování, žádný kód. Stačilo vědět, jaký nástroj použít a jak se správně zeptat. Přesně takové využití se dá během pár minut ukázat i ostatním.",
+      "topics": [
+        "AI nástroje"
+      ]
     },
     {
       "id": "2026-05-16-03",
       "source_date": "2026-05-16",
-      "topic": "Vibe coding sledují i totální laici",
       "excerpt": "Ve skupině Vibe Coding se ozvali i členové, kteří pro to zatím nemají konkrétní využití, ale baví je sledovat zkušenosti ostatních.",
-      "body": "Vibe coding láká i lidi, kteří zatím nemají vlastní projekt. Sledují, co funguje ostatním, a čekají, až přijde jejich chvíle. Komunita jim dává prostor se rozkoukat, než dostanou vlastní nápad."
+      "body": "Vibe coding láká i lidi, kteří zatím nemají vlastní projekt. Sledují, co funguje ostatním, a čekají, až přijde jejich chvíle. Komunita jim dává prostor se rozkoukat, než dostanou vlastní nápad.",
+      "topics": [
+        "Vibe Coding",
+        "Claude Code"
+      ]
     },
     {
       "id": "2026-05-16-04",
       "source_date": "2026-05-16",
-      "topic": "Pojmenování souborů a adresářů ve vibe codingu",
       "excerpt": "Filip sdílel video o tom, jak správně pojmenovávat soubory. Je to základní dovednost, podle které AI líp chápe strukturu projektu.",
-      "body": "Když začínáte s vibe codingem, názvy souborů a složek nejsou žádná drobnost. AI bere název souboru jako kontext — špatný název znamená horší výsledky. Filip sdílel video přímo pro lidi mimo IT, kteří s tím teprve začínají."
+      "body": "Když začínáte s vibe codingem, názvy souborů a složek nejsou žádná drobnost. AI bere název souboru jako kontext — špatný název znamená horší výsledky. Filip sdílel video přímo pro lidi mimo IT, kteří s tím teprve začínají.",
+      "topics": [
+        "Vibe Coding",
+        "Claude Code"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-04-19-02",
     "type": "INSIGHT",
     "level": "Začátečník",
-    "topic": "AI agenti",
     "title": "Sommelier rozjel pivovar z telefonu bez kódu",
     "excerpt": "Šedesátiletý sommelier, který v životě nenapsal ani řádek kódu, si přes AI agenta postavil automatizovaný pivovar a funkční e-shop. Všechno jen z telefonu. Bez IT znalostí a bez týmu.",
     "body": "Tohle je přesně ten příklad, u kterého si člověk řekne: „To snad ne.“ Jenže právě o takovém posunu teď mluvíme.\n\nSommelier neuměl programovat. Ani nemusel. S AI agentem mluvil normálně. Popsal mu, co chce, a agent zařídil zbytek. Výsledek? Funkční automatizovaný pivovar a e-shop.\n\nProč je to důležité i pro vás, když pivovar neplánujete? Protože technická bariéra mizí. Agenti mění to, co zvládne člověk bez technického zázemí.\n\nKdyž máte jasnou představu o výsledku a jste ochotní s agentem mluvit a průběžně ho opravovat, postavíte věci, na které byste ještě před rokem potřebovali vývojáře nebo celé IT.\n\nZačátek je jednoduchý. Popište, co chcete, jako byste to říkali kolegovi. Ne technicky. Řekněte, jaký má být výsledek. Co má existovat? Co to má dělat? Zbytek si agent zjistí sám.",
     "read_minutes": 2,
     "source_date": "2026-04-19",
-    "resurfaced_from": "2026-04-19"
+    "resurfaced_from": "2026-04-19",
+    "topics": [
+      "Automatizace",
+      "Subagenti",
+      "Claude Code"
+    ]
   },
   "transcript": {
     "groups": [

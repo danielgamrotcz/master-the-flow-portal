@@ -11,58 +11,76 @@
       "id": "2026-04-12-01",
       "type": "POSTAVIL JSEM",
       "level": "Builder",
-      "topic": "Vibe Coding",
       "title": "Grant dashboard pro klienta za 3 hodiny",
       "excerpt": "Advokátka přešla z Manusu na Claude a za tři hodiny postavila funkční webovou aplikaci na mapování dotací. Pro klienta, který zakládá novou organizaci, vytvořila interaktivní dashboard na míru. Přehledný, klikací a s reálnou hodnotou.",
       "body": "Jedna členka ukázala, co zvládla za odpoledne s Claudem. Přešla z Manusu a rovnou ho vzala do praxe: 3 hodiny práce a výsledkem je funkční webová aplikace na mapování dotací pro konkrétního klienta.\n\nCo aplikace umí: klient zakládá novou organizaci a potřeboval přehled, o co může žádat, v jakém rozsahu a co mu dává smysl sledovat. Dashboard je interaktivní, klikací a věcně přesný. Není to šablona stažená z internetu. Je to nástroj postavený přesně pro tenhle případ.\n\nProč je to zajímavé: nejde jen o rychlost. Jde o to dodat něco opravdu na míru. Každý klient může dostat vlastní přehled podle toho, co zrovna řeší. A to mění hodnotu, kterou jako poradce nebo konzultant nabízíte.\n\nZároveň padlo i zdravé upozornění: je to experiment. Kdyby šlo o produkční nasazení s daty víc uživatelů, je na místě poradit se s někým, kdo rozumí bezpečnosti. Vibe coding je silný nástroj na prototypy a jednorázové potřeby. Jeho limity je ale potřeba znát.",
       "read_minutes": 2,
-      "source_date": "2026-04-12"
+      "source_date": "2026-04-12",
+      "topics": [
+        "Vibe Coding",
+        "Claude Code"
+      ]
     },
     {
       "id": "2026-04-12-02",
       "type": "INSIGHT",
       "level": "Začátečník",
-      "topic": "AI agenti",
       "title": "Co jsou smečky agentů v praxi",
       "excerpt": "Termín „smečka agentů“ se ve světě AI používá čím dál častěji. Co ale znamená v praxi? Není to konkrétní nástroj, ale způsob, jak si uspořádat práci.",
       "body": "V komunitě padla přímá otázka: co vlastně znamená „smečka agentů“? Je to konkrétní nástroj? Skilly v Claudu? Claude Code? Nebo něco úplně jiného?\n\n„Smečka agentů“ je běžný název pro situaci, kdy na jednom úkolu pracuje víc AI agentů najednou, nebo postupně po sobě. Každý má svou roli. Jeden hledá informace, druhý je třídí a analyzuje, třetí z toho napíše výstup. Výsledek pak bývá rychlejší nebo propracovanější, než kdyby všechno dělal jeden model sám.\n\nV praxi to může vypadat různě:\n\n- Claude Code si složitější úkol rozdělí a spustí menší agenty paralelně\n- nástroj jako Manus měl tenhle přístup přímo v základu: části úkolu přidělil různým specializovaným modelům\n- v pokročilejších frameworcích spolu agenti komunikují a předávají si výsledky\n\nNa začátku to nemusíte znát do detailu. Důležitá je hlavní myšlenka: místo jednoho modelu, který dělá všechno, máte tým specializovaných nástrojů, které spolupracují. Časem to začne dávat smysl samo, jak s těmi nástroji budete pracovat. Technické zázemí k tomu nepotřebujete.",
       "read_minutes": 2,
-      "source_date": "2026-04-12"
+      "source_date": "2026-04-12",
+      "topics": [
+        "Claude Code",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-04-12-03",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Bezpečnost",
       "title": "Vibe coding a bezpečnostní díry, které přehlížíme",
       "excerpt": "Někdo sdílel na LinkedIn funkční e-shop. Za 5 minut se zkušenější člověk dostal k celé databázi. Nebyl to útok. Data byla veřejně dostupná přímo v aplikaci.",
       "body": "V komunitě padl konkrétní případ, který stojí za zapamatování.\n\nJeden člen popsal situaci z minulého týdne. Někdo dal na LinkedIn vibe-codovaný e-shop jako ukázku toho, co dnes AI zvládne. Technicky zdatný člověk se na něj podíval a za pět minut zjistil, že celá databáze projektu je veřejně dostupná. Nebyl to útok. Ta data tam prostě ležela přímo v aplikaci, bez jakéhokoli zabezpečení.\n\nProč se to děje: vibe coding umí vyrobit kód rychle, ale bez bezpečnostního auditu. Když zadavatel neví, na co se má ptát, model tyhle problémy sám od sebe aktivně neřeší. Aplikace pak na první pohled funguje, ale pod kapotou může mít díry.\n\nCo z toho plyne:\n- Pro interní pokusy bez citlivých dat je vibe coding v pohodě\n- Jakmile v aplikaci řešíte přihlašování, platby nebo data klientů, je potřeba audit\n- Audit nemusí být drahý projekt. Klidně může jít o konzultaci a AI asistovanou analýzu kódu\n- Claude umí projít kód a najít běžné bezpečnostní problémy, když se ho na to přímo zeptáte\n\nRychlost vibe codingu je obrovská výhoda. Odpovědnost za to, co nasadíte, ale pořád zůstává na vás.",
       "read_minutes": 3,
-      "source_date": "2026-04-12"
+      "source_date": "2026-04-12",
+      "topics": [
+        "Vibe Coding",
+        "Databáze",
+        "Claude Code"
+      ]
     },
     {
       "id": "2026-04-12-04",
       "type": "OTEVŘENÁ OTÁZKA",
       "level": "Builder",
-      "topic": "Vibe Coding",
       "title": "Kde kreslíte hranici mezi experimentem a produkcí",
       "excerpt": "Experiment, prototyp, produkce. Kde je mezi nimi hranice? A jak poznáte, že už jste ji překročili? Debata o bezpečnosti znovu otevřela otázku, která se v komunitě pořád vrací.",
       "body": "Debata o bezpečnosti vibecodovaných aplikací otevřela otázku, na kterou není jednoduchá odpověď: kdy je to, co jste postavili, dost dobré na to, abyste to ukázali klientovi, sdíleli veřejně nebo nasadili do provozu?\n\nJedna členka to vystihla přesně: na citlivá data si dává pozor, ale v kyberbezpečnosti se nevyzná. Kde je tedy hranice, když nemáte technické zázemí?\n\nPár pohledů z diskuze:\n\n- Pokud aplikace nepracuje s daty třetích stran a slouží jen jako interaktivní přehled nebo checklist, riziko je nízké.\n- Jakmile se objeví přihlašování, platby nebo klientská data, měl by se na to podívat někdo, kdo ví, co hledat.\n- Funkční neznamená bezpečné. Aplikace může běžet skvěle, a přitom mít veřejně přístupnou databázi.\n- Rychlý test: ukažte Claudovi svůj kód a zeptejte se: „Jaké bezpečnostní problémy tady vidíš?“ Odpověď vás může překvapit.\n\nOtázka pro vás: kde tuhle hranici kreslíte vy?",
       "read_minutes": 2,
-      "source_date": "2026-04-12"
+      "source_date": "2026-04-12",
+      "topics": [
+        "Vibe Coding",
+        "Databáze",
+        "Claude Code"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-03-29-02",
     "type": "INSIGHT",
     "level": "Builder",
-    "topic": "Claude Code",
     "title": "Claude Code na Raspberry Pi ovládaný z telefonu",
     "excerpt": "Claude Code jde spustit i na miniaturním počítači a ovládat přes Telegram z telefonu. Jeden člen komunity tak po rozbití displeje MacBooku pracuje kompletně z iPhonu.",
     "body": "Raspberry Pi 5 stojí zhruba tolik co levnější sluchátka a Claude Code na něm běží bez problémů. Ovládá se přes Telegram boty: z telefonu pošlete příkaz a výsledek vám přijde zpátky do chatu. Když potřebujete přímo do terminálu, funguje Termius.\n\nTím se mění představa o tom, co k práci potřebujete. Výkonný notebook už nemusí být nutnost. Pokud vám nevadí ovládání přes chat, stačí telefon a malý počítač zapojený doma nebo v kanceláři.\n\nTenhle setup má svoje limity. Raspberry Pi není žádné dělo a u složitějších projektů na ně narazíte. Jako server pro AI agenty, automatizace a pravidelné úlohy ale funguje dobře. A protože běží na slabším hardwaru, donutí vás zadávat úkoly úsporněji a přesněji.",
     "read_minutes": 2,
     "source_date": "2026-03-29",
-    "resurfaced_from": "2026-03-29"
+    "resurfaced_from": "2026-03-29",
+    "topics": [
+      "Claude Code",
+      "Automatizace",
+      "Vibe Coding"
+    ]
   },
   "transcript": {
     "groups": [

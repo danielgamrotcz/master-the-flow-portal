@@ -11,69 +11,93 @@
       "id": "2026-05-24-01",
       "type": "POSTAVIL JSEM",
       "level": "Builder",
-      "topic": "Voice capture workflow",
       "title": "Hlasový capture přes iPhone akční tlačítko",
       "excerpt": "Jedna členka si poskládala workflow, kde stiskne akční tlačítko na iPhonu, spustí se nahrávání, přepis přes OpenAI API a odeslání do chatu v Claude. Výsledek se pak automaticky uloží do Todoistu nebo Notionu podle toho, co řekla.",
       "body": "Nápad byl jednoduchý: místo ručního zapisování úkolů, nápadů a citátů do různých appek zmáčknu jedno tlačítko a řeknu, co potřebuju.\n\nTechnicky to funguje takhle: zkratka na iPhonu nahraje hlas, OpenAI API ho přepíše a přepsaný text pošle jako nový chat do Claude.ai. Tam jsou tři skilly: jeden na úkoly napojený na Todoist, jeden na nápady a jeden na citáty z knih a podcastů. Ty poslední dva jsou přes konektor napojené na Notion.\n\nClaude podle kontextu pozná, který skill má použít. Případně mu to upřesním hned na začátku věty.\n\nCelé jsem to postavil za víkend. První den používání ukázal, že odpor při zapisování fakt zmizel.\n\nJediná aktuální otrava: výstup jde do Notion, ne rovnou do Obsidianu. Ten konektor nemá, takže přesun zatím řeším ručně přes skill v Coworku. I tak je ale systém použitelný.",
       "read_minutes": 2,
-      "source_date": "2026-05-24"
+      "source_date": "2026-05-24",
+      "topics": [
+        "ChatGPT",
+        "Workflow",
+        "Obsidian",
+        "Notion"
+      ]
     },
     {
       "id": "2026-05-24-02",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Claude Skills",
       "title": "Více cílů z jednoho vstupu: oddělené skilly",
       "excerpt": "Místo jednoho přetíženého skriptu jsou tu tři samostatné skilly. Každý má jasný úkol a svůj cílový systém. Ví, kam data patří, a nemusí hádat, co se po něm chce.",
       "body": "Klasická past při stavbě capture systémů: nacpat všechno do jednoho promptu. Výsledek je pak křehký. AI musí hádat, co jste tím mysleli.\n\nJiný postup: tři skilly, každý s jasnou odpovědností. Skill pro úkoly ví, že výstup patří do Todoist. Skill pro nápady a skill pro citáty zase vědí, do které databáze v Notion mají zapisovat.\n\nVstup je pořád stejný: přepsaný hlas. Záměr se ale pozná buď podle začátku věty, nebo podle toho, který skript spustíte.\n\nNení to tak elegantní jako jeden univerzální universal-capture skill. Je to ale odolnější. Když jeden skill přestane fungovat, ostatní jedou dál. A ladí se to líp, protože přesně víte, kde hledat problém.\n\nAutoři tohohle přístupu sami říkají, že mají slepou skvrnu vůči jednodušším řešením. Ale jim to funguje. A to je hlavní.",
       "read_minutes": 2,
-      "source_date": "2026-05-24"
+      "source_date": "2026-05-24",
+      "topics": [
+        "Notion",
+        "Prompting",
+        "Databáze"
+      ]
     },
     {
       "id": "2026-05-24-03",
       "type": "NÁSTROJE",
       "level": "Builder",
-      "topic": "Hlasový vstup",
       "title": "OpenAI API vs Apple Dictate Text pro češtinu",
       "excerpt": "Na hlasový vstup v češtině funguje přes API líp OpenAI Whisper než nativní Apple Dictate Text. Přesnost přepisu přímo ovlivňuje kvalitu celého workflow.",
       "body": "Apple má ve svých zařízeních vlastní rozpoznávání hlasu, které běží přímo v zařízení, bez internetu. V angličtině funguje skvěle. V češtině už je to slabší, hlavně u odborných výrazů, názvů nástrojů a delších souvětí.\n\nOpenAI Whisper přes API je přesnější, ale potřebuje připojení k internetu a něco stojí. Platí se podle délky nahrávky, částky jsou nízké.\n\nPro každodenní capture workflow je přesnost důležitější než pár ušetřených korun. Nepřesný přepis přidává šum místo hodnoty a nutí vás výstup ručně opravovat.\n\nJeden konkrétní postřeh bokem: Claude.ai zatím nemá českou verzi hlasového chatu ani voice control. I tam proto Whisper dává smysl jako mezikrok pro každého, kdo pracuje česky.",
       "read_minutes": 2,
-      "source_date": "2026-05-24"
+      "source_date": "2026-05-24",
+      "topics": [
+        "ChatGPT",
+        "Workflow"
+      ]
     },
     {
       "id": "2026-05-24-04",
       "type": "OTEVŘENÁ OTÁZKA",
       "level": "Builder",
-      "topic": "Obsidian integrace",
       "title": "Jak zapisovat z Claude přímo do Obsidianu",
       "excerpt": "Obsidian nemá konektor pro Claude.ai. V diskuzi ale padlo, že ho vlastně ani nepotřebuje. Jak to řešíte vy?",
       "body": "Jeden člen používá capture workflow, kde data nejdřív padají do Notionu a pak se přes skill přehazují do Obsidianu, protože Obsidian konektor nemá. Jiný člen diskuze ale naznačil, že Obsidian konektor vlastně nepotřebuje. Zpráva bohužel zůstala nedopsaná.\n\nObsidian běží nad složkou markdownových souborů, takže technicky jde zapisovat přímo do vaultu přes filesystem, MCP nebo Claude Code s přístupem ke složce. Pro ty, kdo nejedou přes terminál, to ale zatím není úplně jednoduché.\n\nPokud tohle teď řešíte nebo máte funkční postup, hoďte ho prosím do diskuze.",
       "read_minutes": 1,
-      "source_date": "2026-05-24"
+      "source_date": "2026-05-24",
+      "topics": [
+        "Claude Code",
+        "Poznámky",
+        "Workflow",
+        "Obsidian"
+      ]
     },
     {
       "id": "2026-05-24-05",
       "type": "INSIGHT",
       "level": "Začátečník",
-      "topic": "Rozhodovací paralýza",
       "title": "Spusťte systém nedokonalý, dolaďte za provozu",
       "excerpt": "Čekat na dokonalou architekturu je nejjistější cesta, jak nikdy nic nespustit. Jeden člen to odkládal celé měsíce. Pak za víkend poskládal funkční systém a hned další den věděl, co je potřeba doladit.",
       "body": "Při stavbě vlastních AI nástrojů je lákavé čekat na dokonalou architekturu. Jenže dokud je nezačnete opravdu používat, nevíte, co vás bude štvát. Jestli přesnost přepisu, latence, nebo třeba způsob, jak dát systému najevo svůj záměr.\n\nKonkrétní příklad z diskuze: capture workflow se spustil v nedokonalé podobě. S Notionem místo preferovaného Obsidianu a se třemi skilly místo jednoho. Po prvním dni bylo jasné, co funguje a co ne. Tahle zpětná vazba by jinak přišla až po týdnech teoretizování.\n\nJednoduchý test: umíte systém popsat jednou větou? Pokud ano, spusťte ho. Pokud ne, nejspíš řešíte moc věcí najednou.\n\nRozbít si vlastní nástroj a pak ho opravit vás naučí víc než čtení dokumentace.",
       "read_minutes": 1,
-      "source_date": "2026-05-24"
+      "source_date": "2026-05-24",
+      "topics": [
+        "Workflow",
+        "Obsidian",
+        "Notion",
+        "Dokumentace"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-04-30-04",
     "type": "OTEVŘENÁ OTÁZKA",
     "level": "Builder",
-    "topic": "Claude",
     "title": "Zhoršuje se Claude záměrně, nebo nestíhá nápor?",
     "excerpt": "Čím dál víc lidí si všímá, že Claude je pomalejší a na limity naráží rychleji než před pár měsíci. Je to problém s kapacitou, nebo záměrná změna v monetizaci?",
     "body": "Jeden člen komunity pojmenoval věc, o které se v AI skupinách mluví čím dál častěji. S masovým přílivem uživatelů Claude buď nezvládá kapacity, nebo záměrně upravuje výkon a limity tak, aby tlačil lidi do dražších tarifů.\n\nV praxi to vypadá stejně. Tarif za 20 dolarů dřív stačil na celý pracovní den. Dneska se zasekne po 2–3 hodinách. Týdenní limit je pryč už v pátek.\n\nAnthropic oznámil „less usage“ v odpoledních hodinách, ale nevysvětlil jasně, co to znamená v číslech. Zároveň přidal dražší plány a Claude Max tier.\n\nOtázka pro komunitu: vidíte stejný trend? Pomohl vám přechod na vyšší tarif, nebo změna stylu práce? A jak velkou roli podle vás hraje samotný způsob práce, třeba délka vláken a velikost kontextu, oproti politice Anthropicu?",
     "read_minutes": 2,
     "source_date": "2026-04-30",
-    "resurfaced_from": "2026-04-30"
+    "resurfaced_from": "2026-04-30",
+    "topics": [
+      "AI nástroje"
+    ]
   },
   "transcript": {
     "groups": [

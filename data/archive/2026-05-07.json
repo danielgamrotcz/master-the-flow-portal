@@ -11,58 +11,75 @@
       "id": "2026-05-07-01",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Nahrávání a přepis",
       "title": "Bezdrátový klopák a telefon na přednášky stačí",
       "excerpt": "Na přednášky a prezentace nemusíte kupovat drahou techniku. Stačí bezdrátový klopový mikrofon a telefon jako záznamník. Tahle kombinace funguje dobře, hlavně když přepis potom zpracuje cloudový nástroj jako Soniox.",
       "body": "Z diskuze v komunitě vyplynulo, že na přednášky a prezentace většinou stačí bezdrátový klopový mikrofon připnutý na oblečení a telefon. Důležité je hlavně to, aby byl mikrofon dost blízko u pusy a řeč byla dobře slyšet.\n\nSoniox, cloudový nástroj na přepis mluveného slova, si poradí i s horším zvukem nebo místností, kde se zvuk odráží. Hodí se tak na živé akce, kde nemáte akustiku úplně pod kontrolou.\n\nU lokálních AI modelů je to jiné. Výsledky se dost liší a na špatném audiu můžou selhávat víc než cloudová řešení. Pokud tedy chcete jednoduché a spolehlivé nastavení na přednášení, kombinace bezdrátový klopák, telefon a cloudový přepis je dobrý začátek. Bez zbytečného utrácení za hardware.",
       "read_minutes": 2,
-      "source_date": "2026-05-07"
+      "source_date": "2026-05-07",
+      "topics": [
+        "AI nástroje"
+      ]
     },
     {
       "id": "2026-05-07-02",
       "type": "NÁSTROJE",
       "level": "Builder",
-      "topic": "Plaud",
       "title": "Plaud jako ekosystém — co získáte a co vzdáte",
       "excerpt": "Plaud není jen nahrávačka. Je to uzavřený ekosystém s vlastní automatizací. Zmáčknete tlačítko, nahrávka se pošle do cloudu a zpracuje se sama. DIY varianta to zvládne taky, jen potřebuje víc nastavení.",
       "body": "Když srovnáte Plaud s vlastním řešením typu telefon + NotebookLM nebo jiný nástroj, vyjde z toho jednoduchý kompromis: Plaud je pohodlnější, ale méně průhledný.\n\nOproti telefonu má Plaud pár věcí navíc. Má fyzické tlačítko na spuštění a zastavení nahrávání. Nahrávky automaticky posílá do cloudu a zpracuje je, takže nemusíte ručně přenášet soubory. A má vlastní baterii, takže nejste závislí na tom, kolik procent zbývá v telefonu.\n\nDIY varianta, tedy telefon + vlastní přepis, zvládne technicky totéž. Funguje s NotebookLM i s vlastním nástrojem. Jen je potřeba trochu nastavení a ruční přenos souborů.\n\nTakže otázka není „Plaud, nebo ne“. Spíš: „Chci platit za pohodlí a automatizaci, nebo si to radši postavím sám?“ Pro lidi, kteří nechtějí řešit technické detaily, dává Plaud smysl. Pro ty, kdo si rádi věci nastavují po svém, je DIY plnohodnotná alternativa.",
       "read_minutes": 2,
-      "source_date": "2026-05-07"
+      "source_date": "2026-05-07",
+      "topics": [
+        "AI nástroje",
+        "Automatizace"
+      ]
     },
     {
       "id": "2026-05-07-03",
       "type": "OTEVŘENÁ OTÁZKA",
       "level": "Builder",
-      "topic": "AI transparentnost",
       "title": "Jaký model přepisuje vaše nahrávky v Plaudu",
       "excerpt": "Padla otázka, jaké AI modely Plaud používá na přepis. Objevilo se i podezření, že mezi nimi můžou být čínské. Na webu to ale nikde není jasně napsané. Jak moc řešíte, co se s vašimi nahrávkami ve skutečnosti děje?",
       "body": "V komunitě padla otázka, na kterou zatím není jasná odpověď: jaký model v Plaudu konkrétně přepisuje mluvené slovo do textu. Oficiálně to nikde uvedené není. Na webu prý dřív šel model pro přepis vybrat, ale jaký to byl, zůstává nejasné.\n\nNejde jen o Plaud. Spousta nástrojů na přepis, shrnutí nebo analýzu textu neříká, jaký model používá. A to může být dost podstatné, když nahráváte pracovní schůzky, citlivé rozhovory nebo interní informace.\n\nPřed výběrem nástroje na přepis se vyplatí zeptat:\n\n- Kde se nahrávka zpracovává? Lokálně, nebo v cloudu?\n- Kdo provozuje infrastrukturu? EU, USA, Čína?\n- Jaký model přepis dělá a co se s daty stane po zpracování?\n\nU AI nástrojů je transparentnost pořád spíš výjimka než pravidlo. Pokud pracujete s citlivými daty, hledejte nástroje, které tohle říkají jasně a napřímo.",
       "read_minutes": 3,
-      "source_date": "2026-05-07"
+      "source_date": "2026-05-07",
+      "topics": [
+        "AI nástroje",
+        "Meeting"
+      ]
     },
     {
       "id": "2026-05-07-04",
       "type": "POSTAVIL JSEM",
       "level": "Builder",
-      "topic": "Vibe coding",
       "title": "Astronomický přehled postavený jen pro radost",
       "excerpt": "Jeden člen komunity sdílel projekt, který vznikl úplně bez byznysového plánu — web s přehledem aktuálních astronomických událostí a historických dat. Žádný zákazník, žádná monetizace. Jen nápad a jedno odpoledne u počítače.",
       "body": "Ve skupině Vibe Coding se objevil projekt, který hezky ukazuje, k čemu se dají AI nástroje použít i mimo práci: astronomický přehled pro sledování aktuálních úkazů na obloze, historických dat a tvorbu pozorovacích přehledů.\n\nNejzajímavější na tom není samotné téma, ale přístup. Projekt vznikl bokem, bez jasného cíle. Prostě proto, že to autora bavilo. Přesně takové věci dřív znamenaly týdny práce: databáze, frontend, napojení API. Dnes se dají postavit za odpoledne.\n\nVibe coding v praxi není jen o automatizaci práce. Hlavně snižuje práh pro nápady, které by jinak zůstaly v hlavě. Když vás projekt stojí odpoledne místo měsíce, začnete dělat i věci, které vás prostě zajímají. Nejen ty, které se „vyplatí“.\n\nMáte vlastní projekt, který jste postavili jen tak pro radost? Hoďte ho do komunity. Inspirace funguje oběma směry.",
       "read_minutes": 2,
-      "source_date": "2026-05-07"
+      "source_date": "2026-05-07",
+      "topics": [
+        "Vibe Coding",
+        "Automatizace",
+        "Databáze",
+        "Claude Code"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-04-12-04",
     "type": "OTEVŘENÁ OTÁZKA",
     "level": "Builder",
-    "topic": "Vibe Coding",
     "title": "Kde kreslíte hranici mezi experimentem a produkcí",
     "excerpt": "Experiment, prototyp, produkce. Kde je mezi nimi hranice? A jak poznáte, že už jste ji překročili? Debata o bezpečnosti znovu otevřela otázku, která se v komunitě pořád vrací.",
     "body": "Debata o bezpečnosti vibecodovaných aplikací otevřela otázku, na kterou není jednoduchá odpověď: kdy je to, co jste postavili, dost dobré na to, abyste to ukázali klientovi, sdíleli veřejně nebo nasadili do provozu?\n\nJedna členka to vystihla přesně: na citlivá data si dává pozor, ale v kyberbezpečnosti se nevyzná. Kde je tedy hranice, když nemáte technické zázemí?\n\nPár pohledů z diskuze:\n\n- Pokud aplikace nepracuje s daty třetích stran a slouží jen jako interaktivní přehled nebo checklist, riziko je nízké.\n- Jakmile se objeví přihlašování, platby nebo klientská data, měl by se na to podívat někdo, kdo ví, co hledat.\n- Funkční neznamená bezpečné. Aplikace může běžet skvěle, a přitom mít veřejně přístupnou databázi.\n- Rychlý test: ukažte Claudovi svůj kód a zeptejte se: „Jaké bezpečnostní problémy tady vidíš?“ Odpověď vás může překvapit.\n\nOtázka pro vás: kde tuhle hranici kreslíte vy?",
     "read_minutes": 2,
     "source_date": "2026-04-12",
-    "resurfaced_from": "2026-04-12"
+    "resurfaced_from": "2026-04-12",
+    "topics": [
+      "Vibe Coding",
+      "Databáze",
+      "Claude Code"
+    ]
   },
   "transcript": {
     "groups": [

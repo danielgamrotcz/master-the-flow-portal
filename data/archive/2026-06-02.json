@@ -11,69 +11,92 @@
       "id": "2026-06-02-01",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Claude Code",
       "title": "CC jako stavitel nástrojů, ne přímý operátor",
       "excerpt": "Pro video a audio workflow není CC nejsilnější v přímém zpracování. Víc z něj dostanete, když ho necháte postavit nástroj, který pak práci odvede sám — s GUI, exportem a paralelními subagenty.",
       "body": "Diskuzi spustil pokus o automatický střih videa přímo v CC. Problém byly nepřesné časové značky a odpovědi, které se nedokončily. Komunita navrhla jiný postup: nepoužívat CC jako operátora videa, ale nechat ho postavit vlastní nástroj. Výsledkem byl skript s jednoduchým GUI, který generuje soubory .kdenlive. Ty pak otevřete v Kdenlive a vyexportujete. Transcript se navíc zpracovává po větách, ne po blocích, takže jsou časové značky výrazně přesnější. Paralelní subagenti zpracovávají jednotlivé chunky najednou, takže celý proces běží rychleji. Hlavní pointa: když CC chybuje při přímém zpracování, zkuste ho donutit, ať místo toho postaví nástroj, který ten problém vyřeší líp, než by to zvládl sám v reálném čase.",
       "read_minutes": 2,
-      "source_date": "2026-06-02"
+      "source_date": "2026-06-02",
+      "topics": [
+        "Claude Code",
+        "Workflow",
+        "Subagenti",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-06-02-02",
       "type": "INSIGHT",
       "level": "Expert",
-      "topic": "Claude Code",
       "title": "Hooky a skills: jak CC donutit jet podle plánu",
       "excerpt": "CC si někdy zadání přepíše po svém a začne dělat něco jiného. Komunita sdílela dva způsoby, jak tomu předcházet: pre-commit hooky a skills pro opakující se procesy.",
       "body": "V komunitě se opakovaně řeší jedna věc: CC si přeformuluje zadání a začne improvizovat.\n\nPraktické řešení jsou pre-commit hooky — automatické kontroly, které se spustí ještě před uložením změn. Konkrétní příklad z diskuze: hook, který z commit messages automaticky odstraní řádky `Co-Authored-By`, aby CC nemohl obejít interní standard.\n\nDruhá možnost jsou skills — předem dané postupy, kde CC jede podle konkrétního skriptu, ne podle obecného odhadu. Pokud CC u nějakého kroku často improvizuje, napište ten krok do instrukcí skillu. Dejte tam přesné pořadí akcí a jasný zákaz odchylek.\n\nNejlépe funguje kombinace obojího: hooky jako pojistka, skills jako skript. Svévoli to výrazně omezí. Nezmizí úplně, ale chyby, které už jednou proběhly, se nebudou pořád vracet.",
       "read_minutes": 2,
-      "source_date": "2026-06-02"
+      "source_date": "2026-06-02",
+      "topics": [
+        "Claude Code",
+        "Hooky",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-06-02-03",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Claude Code",
       "title": "Přetečení kontextu session není limit předplatného",
       "excerpt": "Jednomu členovi se v CC objevila hláška s výzvou k upgradu. Když to prověřil, zjistil, že nešlo o skutečný limit tarifu, ale o přetečení kontextu v session. Stačilo otevřít novou session.",
       "body": "Záludná situace: CC ukázal zprávu, která vypadala jako výzva k upgradu předplatného. Člověka hned napadne dražší plán. Tady ale šlo o něco jiného: session měla přeplněný kontext.\n\nKonverzace už byla moc dlouhá a CC narazil na limit dané session, ne na limit tarifu. Řešení bylo jednoduché: otevřít novou session. Upgrade by nepomohl, protože problém nebyl v předplatném.\n\nPraktický tip: když CC začne odpovídat divně, zapomínat kontext nebo vás posílat k upgradu, zkuste nejdřív novou session. Pokud problém zmizí, byl to kontext, ne plán. Tarif má smysl řešit až ve chvíli, kdy se to opakuje i na začátku nových sessions.",
       "read_minutes": 2,
-      "source_date": "2026-06-02"
+      "source_date": "2026-06-02",
+      "topics": [
+        "Claude Code"
+      ]
     },
     {
       "id": "2026-06-02-04",
       "type": "NÁSTROJE",
       "level": "Builder",
-      "topic": "Nástroje",
       "title": "ChatGPT Pro vs CC Max: co říká praxe",
       "excerpt": "Komunita sdílela zkušenosti s výběrem mezi ChatGPT Pro a Claude Code Max. Jasný vítěz z toho nevzešel. Záleží hlavně na tom, k čemu je chcete používat.",
       "body": "V komunitě se ukázaly dva různé přístupy. Jeden člen zůstává u dvou předplatných ChatGPT Pro a říká, že CC mu proti Codexu nedává smysl. Druhý přešel z CC Max zpátky na nižší plán, protože zjistil, že problém nebyl v limitu tarifu, ale v přetečeném kontextu.\n\nSrovnání Codex vs. CC je dost specifické, protože každý se hodí na něco jiného. Codex je silný v generování kódu podle zadání. CC je silnější jako agent nad celým projektem: umí pracovat s repozitářem, spravovat soubory a pouštět příkazy v terminálu.\n\nPokud hlavně potřebujete rychle generovat kód, Codex může být lepší volba. Pokud chcete agenta, který projde celý repozitář a zvládne složitější úkoly přes víc vrstev, CC má navrch.\n\nNejlepší test: zkuste obě možnosti a sledujte, kde nejvíc čekáte nebo co musíte nejčastěji opravovat.",
       "read_minutes": 2,
-      "source_date": "2026-06-02"
+      "source_date": "2026-06-02",
+      "topics": [
+        "Claude Code",
+        "ChatGPT",
+        "Subagenti",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-06-02-05",
       "type": "POSTAVIL JSEM",
       "level": "Začátečník",
-      "topic": "AI a hardware",
       "title": "Robot a micro:bit jako vstup do fyzické robotiky",
       "excerpt": "Jeden člen chce se synem při výuce programování otestovat fyzický hardware — robota Reachy Mini a BBC micro:bit. AI jim má pomoct jako průvodce světem fyzické robotiky.",
       "body": "Ne všechno, co AI komunita řeší, se odehrává jen na obrazovce. Jeden člen sdílel plán: chce se synem vyzkoušet dvě fyzické věci — robota Reachy Mini a BBC micro:bit.\n\nReachy Mini je open-source humanoidní robot pro výzkum a vzdělávání. BBC micro:bit je malý programovatelný počítač, který se v Británii rozdával zdarma do škol. Dnes je oblíbený jako nástroj, na kterém se děti učí základy programování.\n\nS AI se to propojuje úplně snadno. CC nebo jiný asistent pomůže psát kód pro micro:bit v MicroPythonu, vymýšlet experimenty nebo ladit chyby. Robot k tomu přidá fyzický rozměr, který samotná obrazovka nenabídne.\n\nPokud máte doma děti a chcete je přivést k programování, micro:bit je jeden z nejpřívětivějších začátků. Stojí kolem 15 EUR, má obrovskou komunitu a tisíce hotových projektů.",
       "read_minutes": 2,
-      "source_date": "2026-06-02"
+      "source_date": "2026-06-02",
+      "topics": [
+        "AI nástroje"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-05-07-04",
     "type": "POSTAVIL JSEM",
     "level": "Builder",
-    "topic": "Vibe coding",
     "title": "Astronomický přehled postavený jen pro radost",
     "excerpt": "Jeden člen komunity sdílel projekt, který vznikl úplně bez byznysového plánu — web s přehledem aktuálních astronomických událostí a historických dat. Žádný zákazník, žádná monetizace. Jen nápad a jedno odpoledne u počítače.",
     "body": "Ve skupině Vibe Coding se objevil projekt, který hezky ukazuje, k čemu se dají AI nástroje použít i mimo práci: astronomický přehled pro sledování aktuálních úkazů na obloze, historických dat a tvorbu pozorovacích přehledů.\n\nNejzajímavější na tom není samotné téma, ale přístup. Projekt vznikl bokem, bez jasného cíle. Prostě proto, že to autora bavilo. Přesně takové věci dřív znamenaly týdny práce: databáze, frontend, napojení API. Dnes se dají postavit za odpoledne.\n\nVibe coding v praxi není jen o automatizaci práce. Hlavně snižuje práh pro nápady, které by jinak zůstaly v hlavě. Když vás projekt stojí odpoledne místo měsíce, začnete dělat i věci, které vás prostě zajímají. Nejen ty, které se „vyplatí“.\n\nMáte vlastní projekt, který jste postavili jen tak pro radost? Hoďte ho do komunity. Inspirace funguje oběma směry.",
     "read_minutes": 2,
     "source_date": "2026-05-07",
-    "resurfaced_from": "2026-05-07"
+    "resurfaced_from": "2026-05-07",
+    "topics": [
+      "Vibe Coding",
+      "Automatizace",
+      "Databáze",
+      "Claude Code"
+    ]
   },
   "transcript": {
     "groups": [

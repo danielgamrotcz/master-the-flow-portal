@@ -10,30 +10,39 @@
     {
       "id": "2026-03-21-01",
       "source_date": "2026-03-21",
-      "topic": "Diktování v hlučném prostředí",
       "excerpt": "Soniox zvládne přepis i v pořádném hluku — ve fitku, na ulici, prostě všude.",
-      "body": "Soniox je natrénovaný na běžné nahrávky, ne na studiové ticho. Daniel diktuje v muay thai gymu, v klasickém fitku i na ulici v Bangkoku. A přepis funguje. Pokud vás při diktování brzdí hluk kolem, tenhle nástroj si s tím poradí."
+      "body": "Soniox je natrénovaný na běžné nahrávky, ne na studiové ticho. Daniel diktuje v muay thai gymu, v klasickém fitku i na ulici v Bangkoku. A přepis funguje. Pokud vás při diktování brzdí hluk kolem, tenhle nástroj si s tím poradí.",
+      "topics": [
+        "AI nástroje"
+      ]
     },
     {
       "id": "2026-03-21-02",
       "source_date": "2026-03-21",
-      "topic": "AI přepis přednášek a snů",
       "excerpt": "Aleš přepisuje přednášky z výcviku a hned po probuzení si nahrává sny.",
-      "body": "Dva fajn příklady od Aleše: přepis odborných přednášek z výcviku funguje dobře. A druhý: iPhone na nočním stolku v letovém režimu, hned po probuzení namluvit sen do diktafonu. AI ho přepíše. Věci, které by do deseti minut zmizely, zůstanou."
+      "body": "Dva fajn příklady od Aleše: přepis odborných přednášek z výcviku funguje dobře. A druhý: iPhone na nočním stolku v letovém režimu, hned po probuzení namluvit sen do diktafonu. AI ho přepíše. Věci, které by do deseti minut zmizely, zůstanou.",
+      "topics": [
+        "AI nástroje",
+        "Poznámky"
+      ]
     },
     {
       "id": "2026-03-21-03",
       "source_date": "2026-03-21",
-      "topic": "Odkládání systémů s výmluvou na AI",
       "excerpt": "Proč si stavět systém v Notionu, když to za nás za chvíli udělá AI? Upřímně? Je to výmluva.",
-      "body": "Eliška pojmenovala něco, co dělá spousta lidí: odkládají budování systémů, protože věří, že AI to brzy zvládne sama. Zní to rozumně. Jenže AI zatím nezná váš kontext, nezná vaše priority a systém za vás neprovozuje. Čekat na ideální nástroj místo toho, aby vám to fungovalo už teď, je klasická past."
+      "body": "Eliška pojmenovala něco, co dělá spousta lidí: odkládají budování systémů, protože věří, že AI to brzy zvládne sama. Zní to rozumně. Jenže AI zatím nezná váš kontext, nezná vaše priority a systém za vás neprovozuje. Čekat na ideální nástroj místo toho, aby vám to fungovalo už teď, je klasická past.",
+      "topics": [
+        "Notion"
+      ]
     },
     {
       "id": "2026-03-21-04",
       "source_date": "2026-03-21",
-      "topic": "gupt.eu — univerzálnější alternativa",
       "excerpt": "Alex nasdílel svůj projekt gupt.eu jako obecnější variantu podobného nástroje.",
-      "body": "Alex Trejtnar ukázal gupt.eu — nástroj, který umí podobné věci, jen obecněji. Sdílet vlastní projekty v komunitě se vyplácí. Dostanete zpětnou vazbu od lidí, kteří řeší podobné problémy."
+      "body": "Alex Trejtnar ukázal gupt.eu — nástroj, který umí podobné věci, jen obecněji. Sdílet vlastní projekty v komunitě se vyplácí. Dostanete zpětnou vazbu od lidí, kteří řeší podobné problémy.",
+      "topics": [
+        "AI nástroje"
+      ]
     }
   ],
   "resurfacing": null,

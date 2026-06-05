@@ -11,67 +11,87 @@
       "id": "2026-06-03-01",
       "type": "NÁSTROJE",
       "level": "Začátečník",
-      "topic": "Přepis schůzek",
       "title": "Čím přepisovat schůzky offline a online",
       "excerpt": "Komunita porovnávala Plaud, Fireflies, Soniox a lokální Whisper. Každý nástroj cílí na něco jiného: cenu, soukromí, podporu němčiny nebo práci s více jazyky najednou. Výběr záleží na tom, kde schůzka běží a co pak chcete s přepisem dělat.",
       "body": "Ve skupině se rozjela dlouhá diskuze o zápisech ze schůzek. Hlavní otázka byla: co použít, když schůzka běží v němčině nebo se během ní střídají jazyky?\n\nNejvíc chvály dostal Plaud. Zvládá míchat jazyky, automaticky rozpozná řečníky a funguje offline i na vzdálených meetinzích přes PC. Počítejte ale se vstupní investicí do hardwarového záznamníku. Data navíc putují do cloudu s čínskou infrastrukturou.\n\nFireflies je americká alternativa s podobnými funkcemi. Funguje jako účastník online schůzky a zvládne i offline nahrávky. Pro ty, kdo řeší datovou svrchovanost, může být bezpečnější volba.\n\nSoniox doporučil jeden člen jako cloudové řešení s dobrým přepisem. Lokální Whisper na vlastním hardwaru je zase varianta pro citlivé věci, kdy data nesmí opustit počítač.\n\nTana Outliner má záznamník v ceně předplatného. Výsledek ukáže nejen jako přepis, ale i jako vizualizaci podobnou whiteboardu. Pro ty, kdo nechtějí nic přepisovat ručně, je to praktická kombinace.\n\nPro jednoduché použití na Android telefonu pořád dobře poslouží Google Recorder. Výstup si ale člověk musí exportovat ručně.",
       "read_minutes": 2,
-      "source_date": "2026-06-03"
+      "source_date": "2026-06-03",
+      "topics": [
+        "Meeting"
+      ]
     },
     {
       "id": "2026-06-03-02",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Přepis schůzek",
       "title": "Kdy lokální Whisper a kdy cloudový přepis",
       "excerpt": "Ne všechno, co zazní na schůzkách, může skončit v cloudu u cizí firmy. Jeden člen popsal dvojí nastavení: cloud používají na běžné věci a lokální model na citlivá data. Provoz lokálně moc nestojí, nejvíc to vezme času při nastavování.",
       "body": "Přepis schůzek v cloudu je pohodlnější a levnější. Má to ale háček: obsah schůzky odchází na servery cizí firmy. U interních strategií, personálních témat nebo klientských dat to může vadit.\n\nRozdělení je jednoduché: cloud použít na věci, které můžou ven, třeba veřejné webináře, nezávazné konzultace nebo běžné obecné meetingy. Lokální model nechat na všechno citlivější.\n\nSoniox je dobrá cloudová varianta. Přepisuje kvalitně a za rozumné peníze. Whisper spuštěný lokálně na Mac Mini nebo jiném silnějším stroji zvládne stejnou práci bez odesílání dat ven. Jen musí běžet počítač a nahrávku je potřeba přenést ručně nebo přes lokální síť.\n\nTenhle postup se hodí hlavně pro:\n\n- konzultanty a kouče, kteří nahrávají klienty\n- firmy s interními pravidly pro sdílení dat\n- kohokoliv, kdo pracuje s údaji citlivými z pohledu GDPR\n\nLokální provoz nestojí moc. Whisper je open source a moderní Mac Mini přepíše hodinovou nahrávku za pár minut. Největší náklad je čas na nastavení a pak důslednost v tom, co patří do cloudu a co má zůstat lokálně.",
       "read_minutes": 2,
-      "source_date": "2026-06-03"
+      "source_date": "2026-06-03",
+      "topics": [
+        "Meeting"
+      ]
     },
     {
       "id": "2026-06-03-03",
       "type": "OTEVŘENÁ OTÁZKA",
       "level": "Builder",
-      "topic": "Bezpečnost dat",
       "title": "Plaud a čínská infrastruktura: kde je vaše hranice",
       "excerpt": "Plaud patří v komunitě k nejlíp hodnoceným záznamníkům. Jeho cloud ale běží na čínské infrastruktuře. Jeden člen to označil za dealbreaker, jiní to berou jako přijatelné riziko.",
       "body": "Plaud dostává hodně pochval za kvalitu přepisu, rozpoznávání mluvčích a práci s více jazyky najednou. Má to ale háček: jeho cloud běží v Číně. Pro část lidí je to stopka, i kdyby fungoval sebelepší.\n\nKde máte hranici vy?\n\nProč ho používat:\n- Data ze schůzek jsou většinou pracovní, ne osobní\n- Americké cloudové firmy data taky sledují, jen jinak\n- Praktický přínos, tedy kvalita a funkce, může převážit nad nejistým rizikem\n\nProč ho nepoužívat:\n- Čínská regulace umožňuje vládě přístup k datům soukromých firem\n- U citlivých obchodních informací nebo klientů s compliance požadavky to může být problém\n- Jakmile data odejdou ze zařízení, už nad nimi nemáte kontrolu\n\nFireflies z USA nebo lokální Whisper jsou alternativy pro ty, kdo chtějí jiný model důvěry. V komunitě se tohle téma otevřelo a každý si ho musí rozhodnout sám. Záleží hlavně na tom, s jakými daty pracujete a pro koho.",
       "read_minutes": 2,
-      "source_date": "2026-06-03"
+      "source_date": "2026-06-03",
+      "topics": [
+        "Workflow"
+      ]
     },
     {
       "id": "2026-06-03-04",
       "type": "INSIGHT",
       "level": "Začátečník",
-      "topic": "Přepis schůzek",
       "title": "Zápisy ze schůzek pro netechnického uživatele",
       "excerpt": "Jak nastavit zápisy ze schůzek pro někoho, kdo si s technologiemi moc nerozumí a nechce řešit složitou automatizaci. Hlavní podmínky: musí to fungovat v telefonu, výstup se má objevit v počítači a člověk se v tom nesmí ztratit.",
       "body": "V komunitě se řešil konkrétní případ: jak dělat zápisy ze schůzek pro staršího člověka, který má náročnou práci a hodně komunikuje. Zadání bylo jasné: Android telefon, žádná složitá automatizace a výstup musí dorazit do počítače v čitelné podobě.\n\nCo v takové situaci dává smysl:\n\n**Nejjednodušší varianta:** Plaud záznamník s mobilní appkou. Nahraje schůzku, pošle přepis a shrnutí na e-mail nebo do appky. Bez nastavování, jen se zmáčkne tlačítko. Vstupní zařízení stojí zhruba 150 USD.\n\n**Bezplatná alternativa:** Google Recorder na Androidu funguje dobře. Přepis dělá offline a přesně. Nevýhoda: výstup zůstane v appce a musí se ručně exportovat.\n\n**Hlavní pravidlo:** čím míň kroků, tím líp. Pro netechnického uživatele je nejhorší nástroj, který chce nastavovat integrace nebo pravidelně udržovat. Lepší je jednodušší řešení, které spolehlivě funguje, než výkonnější nástroj, u kterého jednou za měsíc něco přestane jet.\n\nPokud má člověk v práci Microsoft 365, Teams s Copilotem umí přepis automaticky a bez dalšího hardwaru. Má to ale podmínku: schůzky musí probíhat přes Teams.",
       "read_minutes": 2,
-      "source_date": "2026-06-03"
+      "source_date": "2026-06-03",
+      "topics": [
+        "AI nástroje",
+        "Automatizace",
+        "Email",
+        "Meeting"
+      ]
     },
     {
       "id": "2026-06-03-05",
       "type": "NÁSTROJE",
       "level": "Builder",
-      "topic": "Claude Code",
       "title": "Claude Code: terminál nebo desktopová appka",
       "excerpt": "Po živé ukázce Claude Code se v komunitě rozjela debata: terminál, nebo desktopová appka? Pro pokročilé věci vyhrál terminál. Na běžné použití je pořád přehlednější desktop. Hlavní rozdíl jsou hooks.",
       "body": "Claude Code má dvě podoby: terminálové CLI a desktopovou appku. Po živé ukázce pro čtyři lidi se rozjela debata, kdy dává co větší smysl.\n\n**Terminál vyhrává v těchto případech:**\n- Hooks: automatické spouštění skriptů při akcích, třeba commit, push nebo otevření souboru\n- Vzdálený přístup: přihlášení přes SSH na jiný stroj a pokračování v práci\n- Multi-session workflow: víc paralelních sessions najednou, bez omezení UI\n- Integrace s dalšími CLI nástroji, jako git, bash nebo docker\n\n**Desktopová appka se hodí pro:**\n- Lidi, kteří terminál nepoužívají nebo ho neznají\n- Jednoduché jednorázové úkoly bez automatizace\n- Přehledné zobrazení kontextu bez nutnosti pamatovat si příkazy\n\nHooks jsou jen v CLI. Kdo chce po každém commitu spouštět automatický check nebo si při startu session nastavit prostředí, musí do terminálu. Desktopová appka to zatím neumí.\n\nPro začínající AI buildery může být desktop dobrý start. Kdo ale chce z Claude Code vytěžit maximum, dřív nebo později skončí v terminálu.",
       "read_minutes": 2,
-      "source_date": "2026-06-03"
+      "source_date": "2026-06-03",
+      "topics": [
+        "Claude Code",
+        "Automatizace",
+        "Workflow",
+        "Hooky"
+      ]
     },
     {
       "id": "2026-06-03-06",
       "type": "INSIGHT",
       "level": "Expert",
-      "topic": "Claude Code",
       "title": "Claude desktop appka přistupuje mimo povolenou složku",
       "excerpt": "Bezpečnostní varování z komunity: desktopová appka Claude sahala i mimo nastavenou pracovní složku a zjevně ji nic nezastavilo. Samotný výběr pracovního adresáře jako bezpečnostní opatření nestačí.",
       "body": "V komunitě padlo konkrétní varování z vlastní zkušenosti: desktopová appka Claude sahala na soubory mimo složku nastavenou jako pracovní adresář. Bez chyby. Bez upozornění.\n\nTo je problém, pokud výběr pracovní složky berete jako izolaci. Když máte na počítači citlivé soubory, třeba SSH klíče, `.env` soubory nebo firemní dokumenty, appka se k nim teoreticky může dostat.\n\nCo s tím:\n\n**Nejspolehlivější je izolovat to na úrovni OS, ne jen v appce:**\n\n- **Terminál s omezeními:** spustit Claude Code v shellu pod omezeným uživatelem nebo přes `sandbox-exec` na macOS\n- **Docker kontejner:** namountovat jen složky, které jsou potřeba, zbytek systému zůstane mimo dosah\n- **Samostatný uživatel:** vytvořit zvláštní macOS účet jen pro práci s AI, bez přístupu k citlivým složkám\n\nPro hobby použití nebo testovací stroj to nejspíš není zásadní. Pro production práci nebo počítače s přístupem k citlivým datům se izolace vyplatí.\n\nCLI v terminálu má stejný přístup k systému jako shell daného uživatele. Permissions a hooks se ale nastavují explicitně a chování je líp čitelné.",
       "read_minutes": 2,
-      "source_date": "2026-06-03"
+      "source_date": "2026-06-03",
+      "topics": [
+        "Claude Code",
+        "Hooky",
+        "Vibe Coding"
+      ]
     }
   ],
   "resurfacing": null,

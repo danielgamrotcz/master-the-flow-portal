@@ -147,6 +147,7 @@ function renderCardEl(card, isResurfaced = false) {
   const typeColor = TYPE_COLORS[card.type] || '#808080';
   const sourceDate = card.resurfaced_from || card.source_date || card.date || '';
 
+  const cardDate = card.source_date || card.date || '';
   const resurfacedBadge = isResurfaced
     ? `<span class="resurfacing-badge">Z archivu · ${formatDateShort(sourceDate)}</span>`
     : '';
@@ -168,6 +169,7 @@ function renderCardEl(card, isResurfaced = false) {
       <div class="card-excerpt">${esc(card.excerpt)}</div>
       <div class="card-footer">
         <span class="card-readmore">Číst dál ↓</span>
+        ${cardDate ? `<span class="card-date">${formatDateShort(cardDate)}</span>` : ''}
       </div>
     </div>
   `;
@@ -216,7 +218,7 @@ function buildTopicChips(cards, activeLevel) {
 /* ===== FILTER ===== */
 function filterCards(cards) {
   return cards.filter(c => {
-    if (state.level !== 'all' && c.level !== state.level) return false;
+    if (state.level !== 'all' && normalizeLevel(c.level) !== state.level) return false;
     if (state.topic !== 'all' && !getTopics(c).includes(state.topic)) return false;
     return true;
   });
@@ -519,6 +521,8 @@ function openCard(cardId) {
   `;
 
   $('overlay-title').textContent = card.title;
+  const dateLabel = $('overlay-date-label');
+  if (dateLabel) dateLabel.textContent = dateStr ? formatDateLong(dateStr) : '';
   $('overlay-text').innerHTML = bodyToHTML(card.body || card.excerpt || '');
 
   const dateStr = card.source_date || card.resurfaced_from || card.date || '';
@@ -536,15 +540,6 @@ function openCard(cardId) {
     $('vote-count').textContent = count || '';
     voteBtn.classList.add('voted');
     showToast('Díky za hodnocení!');
-  };
-
-  // Bookmark
-  const bm = $('btn-bookmark');
-  bm.textContent = isBookmarked(card.id) ? 'Uloženo ★' : 'Uložit ☆';
-  bm.onclick = () => {
-    const now = toggleBookmark(card.id);
-    bm.textContent = now ? 'Uloženo ★' : 'Uložit ☆';
-    showToast(now ? 'Uloženo' : 'Odebráno ze záložek');
   };
 
   // Similar cards
@@ -717,7 +712,11 @@ function switchView(viewName) {
   state.view = viewName;
 
   if (viewName === 'today') {
-    buildTopicChips(state.today?.cards || [], state.level);
+    if (!state.today) {
+      loadToday();
+    } else {
+      buildTopicChips(state.today.cards || [], state.level);
+    }
   } else if (viewName === 'archive') {
     showArchive();
   } else if (viewName === 'week') {
@@ -885,7 +884,7 @@ async function showWeek() {
 
 /* ===== COMMUNITY STATS ===== */
 async function showStats() {
-  await loadArchiveIndex();
+  try { state.archiveIndex = await fetchJSON('/data/archive.json'); } catch {}
   renderStats();
 }
 
@@ -1020,9 +1019,14 @@ function onLevelChange(level) {
   });
 
   // Přestavíme topic chips na témata dostupná v novém levelu
-  const currentCards = state.view === 'archive' && state.archiveDate
-    ? (state.archiveCache[state.archiveDate]?.cards || [])
-    : (state.today?.cards || []);
+  let currentCards = [];
+  if (state.view === 'archive' && state.archiveDate && state.archiveDate !== 'all') {
+    currentCards = state.archiveCache[state.archiveDate]?.cards || [];
+  } else if (state.view === 'week') {
+    currentCards = Object.values(state.archiveCache).flatMap(d => d.cards || []);
+  } else {
+    currentCards = state.today?.cards || [];
+  }
   buildTopicChips(currentCards, level);
 
   rerenderCurrentView();

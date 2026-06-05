@@ -11,69 +11,97 @@
       "id": "2026-04-15-01",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Claude Code",
       "title": "Claude Code projde vaše poznámky za vás",
       "excerpt": "Máte stovky Markdown souborů a pořád není čas je projít? Claude Code zvládne projít celý adresář, ukázat, co nedává smysl, navrhnout lepší názvy a upozornit na zbytečný balast. Poslouží jako první filtr, než se do toho pustíte ručně.",
       "body": "Jeden člen komunity sdílel, jak to používá při návratu po delší pauze. Poznámky si poctivě ukládal 5 měsíců, ale skoro s nimi nepracoval. Teď, když se vrátil naplno do provozu, přes ně pustil Claude Code, aby se v nich rychle zorientoval.\n\nV praxi to funguje takhle: Claude Code dostane cestu k adresáři s Markdown soubory a projde je. Vrátí přehled toho, co by šlo vylepšit, jak by se dalo upravit pojmenování, co nedává smysl nebo co je zastaralé. Vy pak rozhodnete, co z toho zapracujete.\n\nPodmínka je jednoduchá. Poznámky musí být v Markdownu a nejlíp uložené lokálně na disku. Cloudové poznámky v proprietárních formátech s tím fungují hůř, nebo vůbec.\n\nPokud jste doteď měli Obsidian spíš jako zásobárnu bez systému, tohle je dobrý start. Pusťte CC na složku a nechte ho navrhnout, jak ji uklidit.",
       "read_minutes": 2,
-      "source_date": "2026-04-15"
+      "source_date": "2026-04-15",
+      "topics": [
+        "Claude Code",
+        "Poznámky",
+        "Obsidian",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-04-15-02",
       "type": "NÁSTROJE",
       "level": "Začátečník",
-      "topic": "Obsidian",
       "title": "Obsidian se potvrdil jako komunitní standard",
       "excerpt": "V téhle diskuzi si Obsidian v komunitě vybudoval silnou pozici jako hlavní nástroj na poznámky v Markdownu. Bear se s ním srovnával taky, ale Obsidian vede díky funkcím a flexibilitě. Hlavní důvod pro přechod je Markdown jako formát, který AI nástroje umí přirozeně číst.",
       "body": "Obsidian je zdarma, funguje offline a data zůstávají u vás, uložená lokálně jako obyčejné textové soubory. Právě proto s nimi AI nástroje jako Claude Code umí pracovat bez zbytečných mezikroků.\n\nBear je hezčí na pohled a má lepší mobilní aplikaci. Data ale ukládá v proprietárním formátu, což spolupráci s AI omezuje. Markdown, který používá Obsidian, je dnes pro AI v podstatě přirozený jazyk. Modely ho čtou snadno a bez ztráty struktury.\n\nPro koho se Obsidian hodí? Pro každého, kdo si chce stavět vlastní knowledge base, která s ním poroste. Nemusíte se hned učit všechny funkce. Stačí začít ukládat poznámky jako Markdown soubory do jedné složky. Zbytek si osvojíte postupně.\n\nPokud vás Obsidian zaujal a nevíte, kde začít, v diskuzi padl odkaz na starší úvodní video. Základy v něm jsou pořád aktuální.",
       "read_minutes": 2,
-      "source_date": "2026-04-15"
+      "source_date": "2026-04-15",
+      "topics": [
+        "Claude Code",
+        "Poznámky",
+        "Obsidian",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-04-15-03",
       "type": "INSIGHT",
       "level": "Začátečník",
-      "topic": "Produktivita",
       "title": "Jak ukočírovat data roztahaná přes tři cloudy",
       "excerpt": "Členka komunity popsala, že má data rozházená ve třech počítačích, třech e-mailech a několika cloudech. Komunita jí poradila začít tím, že se AI zeptá, co vlastně potřebuje a jak chce pracovat. Bez jasného workflow je každé sjednocování jen přesouvání chaosu na jiné místo.",
       "body": "Než začnete cokoliv migrovat nebo mazat, nechte si od AI pomoct ujasnit, co vlastně potřebujete. Zeptejte se rovnou Claude nebo Gemini. Popište, co máte, jak pracujete a co by vám ulehčilo život. Nechte si navrhnout workflow a až potom vybírejte nástroje.\n\nZ komunity zaznělo konkrétní doporučení: Google Workspace jako jedno centrální místo. Plusy jsou sdílení napříč zařízeními, hledání v celém obsahu a jeden účet místo tří. Mínus je závislost na Googlu a menší soukromí. Pokud jedete v Apple ekosystému, dává smysl iCloud a Apple Mail. Pokud už máte Microsoft 365, tak OneDrive a Outlook.\n\nNejdůležitější je vybrat jednu cestu a držet se jí. Hybridní řešení chvíli fungují, ale chaos se vrátí. Nejlepší postup: zvolit jeden workspace, přesunout do něj aktivní věci a zbytek archivovat nebo smazat.",
       "read_minutes": 2,
-      "source_date": "2026-04-15"
+      "source_date": "2026-04-15",
+      "topics": [
+        "AI nástroje",
+        "Email",
+        "Workflow"
+      ]
     },
     {
       "id": "2026-04-15-04",
       "type": "POSTAVIL JSEM",
       "level": "Expert",
-      "topic": "AI development",
       "title": "Člen staví vlastní chat klienta pro LLM",
       "excerpt": "Jeden člen komunity se rozhodl postavit vlastní alternativu ke Gemini a ChatGPT chatům. Komunita mu potvrdila, že v téhle oblasti fakt chybí použitelné UX. Většina existujících projektů se buď už moc neudržuje, nebo je na každodenní používání zbytečně technická.",
       "body": "Běžná chatovací rozhraní mají limity, na které power users rychle narazí. Chybí lepší práce s kontextem, vlastní systémové prompty na jedno kliknutí nebo plynulé přepínání mezi modely bez ztráty konverzace.\n\nJeden člen se to rozhodl vyřešit vlastní aplikací. Měl jasno v tom, co mu současné nástroje nedávají, a komunita mu potvrdila, že jde o reálný problém, který má smysl řešit.\n\nExistují open-source alternativy jako Open WebUI nebo Chatbox. Většina z nich je ale buď zastaralá, nebo přeplácaná funkcemi, které power user nepotřebuje. Udržovaných projektů zaměřených na jednoduchost je málo.\n\nPokud vám tohle téma sedí a taky v dostupných nástrojích cítíte UX gap, v komunitě na to běží diskuze. Výsledkem může být vlastní tool, ale klidně i lépe nastavený současný klient.",
       "read_minutes": 2,
-      "source_date": "2026-04-15"
+      "source_date": "2026-04-15",
+      "topics": [
+        "ChatGPT",
+        "AI nástroje",
+        "Prompting"
+      ]
     },
     {
       "id": "2026-04-15-05",
       "type": "NÁSTROJE",
       "level": "Builder",
-      "topic": "Claude Code",
       "title": "Nová funkce Claude Code automatizuje opakované úkoly",
       "excerpt": "Ve skupině Vibe Coding se objevil tip na Claude Code Routines. Je to nový způsob, jak si přímo v nástroji nastavit opakující se úkoly bez psaní shell skriptů. Komunita zatím reagovala spíš opatrně. Funkce je docela nová a ekosystém kolem ní se teprve rozjíždí.",
       "body": "Claude Code Routines umožňují naplánovat nebo nastavit opakované akce, které CC zvládne samo. Je to posun od jednorázových promptů k trvalejší automatizaci, ke které nepotřebujete umět programovat.\n\nProč být opatrní? Funkce je nová a komunita zatím nemá dost praxe na konkrétní doporučení. Chybí reálné příklady od lidí, kteří ji používají déle než pár dní.\n\nSmysl můžou dávat třeba pravidelné kontroly souboru s poznámkami, týdenní reporty nebo automatické shrnutí projektového adresáře. To jsou úkoly, kde Routines můžou ušetřit čas, aniž byste museli psát složité skripty.\n\nPokud si to chcete vyzkoušet, začněte jednoduše. Jedno opakující se zadání, jasný výstup a výsledek, který snadno ověříte. Složitější automatizace přijde později, až pochopíte, jak Routines pracují s kontextem.",
       "read_minutes": 3,
-      "source_date": "2026-04-15"
+      "source_date": "2026-04-15",
+      "topics": [
+        "Claude Code",
+        "Vibe Coding",
+        "Automatizace",
+        "Poznámky"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-03-28-01",
     "type": "INSIGHT",
     "level": "Builder",
-    "topic": "Claude Code",
     "title": "Kontext v Claude Code: jak nepromarnit paměť sešny",
     "excerpt": "Kontext je paměť, se kterou Claude Code pracuje během jedné seance. Ještě nedávno byla oproti dnešku asi pětinová a u větších projektů se vyčerpala dost rychle. Dnes má Opus milion tokenů, ale i ten se dá snadno vyplýtvat, když nevíte, co ho požírá.",
     "body": "Hodně lidí bere milion tokenů jako něco, co nejde vyčerpat. Jenže jde. Velké soubory, dlouhé konverzace, vložené obrázky i dokumentace ukrajují z kontextu. A když se kontext začne plnit, Claude Code začne „zapomínat“. Opakuje kroky, přehlíží dřívější instrukce nebo odpovídá míň přesně.\n\nUžitečné příkazy pro práci s kontextem:\n\n- `/context` — ukáže, kolik kontextu právě používáte\n- `/compact` — zkomprimuje historii konverzace a ušetří místo\n- `/doctor` — zkontroluje stav session\n- Subagenti — Claude Code rozdělí práci mezi víc agentů, každý má čistší kontext\n- Auto mode — CC sám rozhodne, kdy použít subagenta\n\nJeště nedávno byl kontext jen pětinový oproti dnešku. Teď už to tolik nebolí, ale základní hygiena kontextu se pořád vyplatí. Hlavně u větších projektů nebo dlouhých session. Jeden člen komunity sdílel video v pomalém a srozumitelném tempu, kde to celé vysvětluje. Doporučuju každému, kdo s CC pracuje víc než jen občas.",
     "read_minutes": 2,
     "source_date": "2026-03-28",
-    "resurfaced_from": "2026-03-28"
+    "resurfaced_from": "2026-03-28",
+    "topics": [
+      "Claude Code",
+      "Dokumentace",
+      "Subagenti",
+      "Vibe Coding"
+    ]
   },
   "transcript": {
     "groups": [

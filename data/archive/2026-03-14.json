@@ -11,56 +11,74 @@
       "id": "2026-03-14-01",
       "type": "POSTAVIL JSEM",
       "level": "Builder",
-      "topic": "Vlastní nástroje",
       "title": "Appka na hudební teorii postavená za den",
       "excerpt": "Jedna členka nemohla najít výukovou appku, která by ji bavila natolik, aby u ní vydržela. Tak si ji prostě postavila sama. Výsledek sdílela hned druhý den a chce ho dál ladit.",
       "body": "Motivace vznikla z obyčejné frustrace. Appky na hudební teorii ji nebavily. A když tě to nebaví, moc se toho nenaučíš. Tak si udělala vlastní. Přesně podle toho, jak přemýšlí a jak se učí.\n\nCelý projekt dala dohromady za jeden den. Díky AI nástroji nemusela být vývojářka ani mít technické zázemí. Stačilo vědět, co má appka dělat a jak má vypadat.\n\nTenhle příklad ukazuje, že i bez znalosti programování si člověk může místo hledání ideálního nástroje rovnou vytvořit vlastní. Appka nemusí být dokonalá. Stačí, že funguje pro konkrétního člověka. A přesně to se tady povedlo.",
       "read_minutes": 2,
-      "source_date": "2026-03-14"
+      "source_date": "2026-03-14",
+      "topics": [
+        "Vibe Coding",
+        "AI nástroje"
+      ]
     },
     {
       "id": "2026-03-14-02",
       "type": "INSIGHT",
       "level": "Expert",
-      "topic": "Claude Code",
       "title": "CLAUDE.md jako základ každého projektu s Claude Code",
       "excerpt": "Developer sdílel svůj návod na nastavení souboru CLAUDE.md. Ten určuje, jak Claude chápe projekt a jak s ním má pracovat. Pro každého, kdo Claude Code používá pravidelně, je to zásadní součást nastavení.",
       "body": "CLAUDE.md je soubor, který si Claude Code načte na začátku každé session. Popisuje mu, co projekt dělá, jak je poskládaný, jaké má konvence, co smí a nesmí dělat — a taky jak s ním jako vývojář chceš pracovat.\n\nJeden developer nasdílel svůj návod k tomuhle souboru ve formátu HTML a Markdown. Má v něm svoje workflow, které průběžně ladí. Podle něj je to základ, aby Claude Code dělal přesně to, co po něm chceš, bez zbytečných oprav a nedorozumění.\n\nDopad byl rychlý. Jiný člen komunity přiznal, že ho to nakoplo k překopání vlastního vstupního workflow. Výsledek? Práce mu teď prý mnohem líp odsýpá.\n\nPokud Claude Code používáš a CLAUDE.md nemáš, nebo ho máš prázdný, začal bych právě tímhle. Vyplatí se do toho dát čas.",
       "read_minutes": 2,
-      "source_date": "2026-03-14"
+      "source_date": "2026-03-14",
+      "topics": [
+        "Claude Code",
+        "Workflow",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-03-14-03",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Windows workflow",
       "title": "Tři nastavení, která zrychlí AI práci na Windows",
       "excerpt": "Člen sdílel tři konkrétní tipy pro Windows: hlasové zadávání přes zkratku, přístup ke Claude Code z terminálu a příznak, díky kterému běží práce plynuleji bez neustálého potvrzování. Každý tip funguje samostatně.",
       "body": "**Win+H — hlasové zadávání přímo do Claude**\n\nKlávesová zkratka Win+H ve Windows zapne hlasové zadávání v jakémkoliv textovém poli, tedy i v chatu s Claude. Přepis zatím není tak dobrý jako u specializovaných nástrojů, ale na delší vstupy funguje slušně. A je hned po ruce, bez instalace.\n\n**Claude Code v terminálu místo editoru**\n\nHodně lidí začíná s Claude Code přes IDE, třeba VS Code. Terminál je ale rychlejší: míň přepínání, přímé napojení na projekt a žádné zbytečné rozhraní. Na běžné používání se vyplatí ho zkusit.\n\n**`--dangerously-skip-permissions` pro plynulý běh**\n\nClaude Code se normálně zastaví a ptá se na potvrzení u každé akce, která může měnit soubory nebo spouštět příkazy. Příznak `--dangerously-skip-permissions` tohle přeskočí. Už název říká, že opatrně — pouštět jen v projektech, kde víš, co Claude dělá, a rozhodně ne na produkci.",
       "read_minutes": 3,
-      "source_date": "2026-03-14"
+      "source_date": "2026-03-14",
+      "topics": [
+        "Claude Code",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-03-14-04",
       "type": "NÁSTROJE",
       "level": "Expert",
-      "topic": "NotebookLM",
       "title": "NotebookLM má neoficiální Python API",
       "excerpt": "V diskuzi se objevil odkaz na open-source knihovnu, přes kterou jde NotebookLM používat z Pythonu. Kdo pracuje s velkým množstvím zdrojů, může si díky ní automatizovat práci, aniž by musel stavět vlastní systém.",
       "body": "NotebookLM od Googlu nemá oficiální API. Existuje ale neoficiální open-source knihovna pro Python, která ho napodobuje. Díky ní můžeš programově přidávat zdroje, pokládat dotazy a pracovat s notebooky bez klikání v prohlížeči.\n\nK čemu se to hodí? Pokud NotebookLM aktivně používáš na organizaci většího množství dokumentů, třeba pro výzkum, podklady k projektům nebo firemní znalostní bázi, může ti tahle knihovna dost zrychlit práci. Místo ručního nahrávání zdrojů to zvládneš automatizovat skriptem.\n\nPokud NotebookLM zatím nepoužíváš, přínos nemusí být hned jasný. Nejdřív si samotný nástroj vyzkoušej a zjisti, jestli ti zapadá do workflow. Až potom má smysl řešit automatizaci.\n\nKnihovnu najdeš na GitHubu pod profilem teng-lin.",
       "read_minutes": 2,
-      "source_date": "2026-03-14"
+      "source_date": "2026-03-14",
+      "topics": [
+        "AI nástroje",
+        "Automatizace",
+        "Workflow"
+      ]
     },
     {
       "id": "2026-03-14-05",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Výběr nástrojů",
       "title": "Nástroj bez API do moderního workflow nezapadne",
       "excerpt": "V diskuzi jsme se shodli na jednom jasném kritériu pro výběr nástrojů. Když nástroj nemá API, nejde ho rozumně automatizovat ani napojit na vlastní systém. Pro pravidelné používání je to velká překážka.",
       "body": "Dřív se API řešilo hlavně při vývoji aplikací. Dnes už je to kritérium i pro běžné uživatele, kteří chtějí z nástrojů dostat maximum.\n\nProč? Bez API používáte nástroj ručně: přihlásíte se, klikáte, zadáte vstup, zkopírujete výsledek. S API se dá celý postup automatizovat, zavolat nástroj ze skriptu, propojit ho s jinou službou nebo ho zapojit do vlastního workflow.\n\nV diskuzi to padlo jako jasné pravidlo: když nástroj nemá API, je to důvod jít dál. Ne proto, že by byl špatný, ale protože se nedá rozumně integrovat.\n\nJednoduchý test při výběru nového nástroje: Má API? Má dokumentaci? Dá se používat bez speciálního enterprise plánu? Pokud je odpověď třikrát ano, stojí za to ho zkoumat dál.",
       "read_minutes": 2,
-      "source_date": "2026-03-14"
+      "source_date": "2026-03-14",
+      "topics": [
+        "Automatizace",
+        "Workflow",
+        "Dokumentace"
+      ]
     }
   ],
   "resurfacing": null,

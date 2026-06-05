@@ -11,47 +11,62 @@
       "id": "2026-04-19-01",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "AI agenti",
       "title": "Chatboti se vzdají, agenti improvizují",
       "excerpt": "Zásadní rozdíl mezi chatbotem a agentem není v tom, kolik toho umí. Je v tom, co udělá, když narazí na situaci, na kterou nebyl naprogramovaný. Chatbot řekne, že to neumí. Agent si poradí.",
       "body": "Na TEDu zazněla věta, která to vystihuje: „Chatboti se vzdají. Agenti improvizují.“\n\nV prezentaci ukázali konkrétní příklad. Developer poslal botovi hlasovku, i když pro ni nikdy nenapsal podporu. Bot sám poznal, že jde o audio soubor. Převedl formát, našel v systému OpenAI klíč, poslal nahrávku na přepis a odpověděl. Trvalo to pár sekund. Nic z toho nebylo dopředu v kódu.\n\nTohle je velký posun. Klasický chatbot jen reaguje. Odpoví na to, co mu dáte. Když narazí na hranici svých možností, skončí. Agent je aktivní. Dostane cíl a cestu si najde sám. I když narazí na problém, se kterým nikdo nepočítal.\n\nV práci to znamená jednu věc. Přestáváte řešit jak. Začínáte řešit co. Technické detaily si vezme agent. Vy určíte výsledek.",
       "read_minutes": 2,
-      "source_date": "2026-04-19"
+      "source_date": "2026-04-19",
+      "topics": [
+        "ChatGPT",
+        "Subagenti",
+        "Claude Code"
+      ]
     },
     {
       "id": "2026-04-19-02",
       "type": "INSIGHT",
       "level": "Začátečník",
-      "topic": "AI agenti",
       "title": "Sommelier rozjel pivovar z telefonu bez kódu",
       "excerpt": "Šedesátiletý sommelier, který v životě nenapsal ani řádek kódu, si přes AI agenta postavil automatizovaný pivovar a funkční e-shop. Všechno jen z telefonu. Bez IT znalostí a bez týmu.",
       "body": "Tohle je přesně ten příklad, u kterého si člověk řekne: „To snad ne.“ Jenže právě o takovém posunu teď mluvíme.\n\nSommelier neuměl programovat. Ani nemusel. S AI agentem mluvil normálně. Popsal mu, co chce, a agent zařídil zbytek. Výsledek? Funkční automatizovaný pivovar a e-shop.\n\nProč je to důležité i pro vás, když pivovar neplánujete? Protože technická bariéra mizí. Agenti mění to, co zvládne člověk bez technického zázemí.\n\nKdyž máte jasnou představu o výsledku a jste ochotní s agentem mluvit a průběžně ho opravovat, postavíte věci, na které byste ještě před rokem potřebovali vývojáře nebo celé IT.\n\nZačátek je jednoduchý. Popište, co chcete, jako byste to říkali kolegovi. Ne technicky. Řekněte, jaký má být výsledek. Co má existovat? Co to má dělat? Zbytek si agent zjistí sám.",
       "read_minutes": 2,
-      "source_date": "2026-04-19"
+      "source_date": "2026-04-19",
+      "topics": [
+        "Automatizace",
+        "Subagenti",
+        "Claude Code"
+      ]
     },
     {
       "id": "2026-04-19-03",
       "type": "POSTAVIL JSEM",
       "level": "Builder",
-      "topic": "AI agenti, Telegram",
       "title": "Malé aplikace přes Telegram přesně tehdy, kdy je potřebuji",
       "excerpt": "Jeden člen zkouší stavět jednoúčelové aplikace přes Telegram napojený na AI agenta. Vzniknou ve chvíli, kdy jsou potřeba, a pak už se o ně klidně nemusí nikdo starat. Třeba aplikace, která navrhne domácí vědecké pokusy podle toho, co je zrovna po ruce.",
       "body": "Telegram jako rozhraní pro AI agenta dává dost smysl. Zprávu napíšete nebo namluvíte odkudkoliv. Agent požadavek zpracuje, postaví, co potřebujete, a pošle výsledek zpátky. Bez otevírání notebooku. Bez přihlašování do dalších nástrojů.\n\nKonkrétní příklad ze sdílení: aplikace na vymýšlení domácích vědeckých pokusů. Zadání bylo jednoduché. Co mám doma a co chci zkoušet s dítětem. Výsledek? Funkční nástroj, postavený za chvíli přes chat.\n\nKdy to dává smysl? Když chcete něco jen pro danou chvíli. Nechcete to spravovat, updatovat ani udržovat. Prostě to potřebujete teď.\n\nJe to jiný přístup než klasický vývoj. Spíš výroba na míru během pár vteřin. Velkou aplikaci takhle nepostavíte. Ale pro jednoúčelové nástroje, které řeší konkrétní situaci, to funguje překvapivě dobře.",
       "read_minutes": 2,
-      "source_date": "2026-04-19"
+      "source_date": "2026-04-19",
+      "topics": [
+        "Subagenti",
+        "Claude Code"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-03-23-01",
     "type": "INSIGHT",
     "level": "Začátečník",
-    "topic": "Claude Code limity",
     "title": "Anthropic omezuje tokeny, ne čas",
     "excerpt": "Spousta uživatelů má pocit, že jim dochází čas. Ve skutečnosti jim ale docházejí tokeny v přiděleném okně. Ten rozdíl je zásadní, když si plánujete práci s Claudem.",
     "body": "Claude Code pracuje s takzvanými rate okny. Anthropic nepočítá hodiny strávené v aplikaci, ale tokeny spotřebované za určitý čas. Jsou dvě okna: pětihodinové a týdenní. Když v nich vyčerpáte přidělený počet tokenů, musíte počkat, než se okno obnoví.\n\nV praxi to znamená, že můžete mít Claude otevřený klidně celý den a jen číst výstupy bez omezení. Limit řešíte až ve chvíli, kdy aktivně píšete prompty, necháváte model generovat dlouhé odpovědi nebo pracovat s velkými soubory.\n\nPro plán má základní množství tokenů. Max plán nabízí pětinásobek, Max za 5 tisíc pak pětadvacetinásobek. Ani to ale není neomezené. I uživatelé nejdražšího plánu hlásí, že jim při intenzivní práci tokeny docházejí.\n\nPraktický tip: sledujte hlavně to, kolik toho model generuje, ne jen počet zadaných promptů. Dlouhé kontexty, velké soubory a složité úlohy sežerou limity mnohem rychleji než jednoduché dotazy.",
     "read_minutes": 2,
     "source_date": "2026-03-23",
-    "resurfaced_from": "2026-03-23"
+    "resurfaced_from": "2026-03-23",
+    "topics": [
+      "Claude Code",
+      "Prompting",
+      "Vibe Coding"
+    ]
   },
   "transcript": {
     "groups": [

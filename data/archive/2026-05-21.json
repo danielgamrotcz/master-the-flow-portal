@@ -11,69 +11,94 @@
       "id": "2026-05-21-01",
       "type": "NÁSTROJE",
       "level": "Builder",
-      "topic": "Diktování a speech-to-text",
       "title": "Wispr Flow vs Apple diktování vs Raycast",
       "excerpt": "Komunita v praxi porovnávala tři způsoby převodu řeči na text. Wispr Flow vede přesností, a to i na iOS. Apple diktování funguje spolehlivě bez nastavování. Raycast přidal diktování v nejnovější verzi. Každý z těchto přístupů má ale svoje limity.",
       "body": "Debata se stočila ke konkrétním zkušenostem s diktováním. Z těch, kdo ho zkoušeli, zatím nejlíp vychází Wispr Flow. Funguje na Macu i iPhonu a překvapivě dobře rozpoznává řeč i v místnosti, kde mluví víc lidí najednou. Na iOS má ale háček: musí běžet na pozadí a napojení na systémovou klávesnici je dost kostrbaté. Někdo zkoušel nastavit dvojité poklepání na zadní stranu telefonu pro rychlé spuštění, ale i to je spíš nouzové řešení.\n\nApple diktování funguje bez většího nastavování. Hodí se pro ty, kdo nechtějí instalovat další nástroj. Nevýhoda je, že interpunkci je potřeba diktovat ručně.\n\nRaycast v nejnovější verzi nově přidal přepis diktování. Kdo ho používá jako launcher, má tuhle funkci rovnou k dispozici. Uttero se dál vyvíjí jako nástroj přímo z komunity.\n\nKdo chce začít bez nastavování, pro toho je nejjednodušší Apple diktování. Kdo chce větší přesnost a použití napříč aplikacemi, měl by zkusit Wispr Flow.",
       "read_minutes": 2,
-      "source_date": "2026-05-21"
+      "source_date": "2026-05-21",
+      "topics": [
+        "Raycast"
+      ]
     },
     {
       "id": "2026-05-21-02",
       "type": "NÁSTROJE",
       "level": "Začátečník",
-      "topic": "Přepis schůzek",
       "title": "Fireflies, Deepgram nebo Plaud na schůzky",
       "excerpt": "O přepis online schůzek se zajímá čím dál víc lidí. Padly tři konkrétní nástroje. Fireflies se přidá do pozvánky a přepis pak přijde automaticky. Deepgram nabízí diarizaci a 200 dolarů kreditu zdarma na začátek.",
       "body": "Přepisy živých schůzek řeší víc lidí z komunity. V diskuzi padly tři konkrétní nástroje.\n\nFireflies se do Google Meetu nebo Zoomu připojí jako virtuální účastník. Přepis dorazí automaticky po každé schůzce. Pro netechnické uživatele je to nejjednodušší cesta. Stačí přidat e-mail do pozvánky a dál to neřešit.\n\nDeepgram umí diarizaci, tedy rozpoznat, kdo co v přepisu říkal. Startovní kredit 200 dolarů zdarma je dobrá šance si ho vyzkoušet bez závazku. Hodí se pro ty, kdo chtějí mít větší kontrolu nad zpracováním dat.\n\nPlaud je fyzické zařízení na nahrávání. Někteří v komunitě ho zvažují jako doplněk k online nástrojům. Hlavně pro osobní schůzky, kde se nechcete spoléhat na připojení.\n\nPokud začínáte, Fireflies je nejrychlejší volba. Pokud potřebujete víc než jen textový přepis, Deepgram dá větší flexibilitu.",
       "read_minutes": 2,
-      "source_date": "2026-05-21"
+      "source_date": "2026-05-21",
+      "topics": [
+        "Email",
+        "Meeting",
+        "Google"
+      ]
     },
     {
       "id": "2026-05-21-03",
       "type": "OTEVŘENÁ OTÁZKA",
       "level": "Builder",
-      "topic": "Task management",
       "title": "Dává ještě dedikovaný task manager smysl?",
       "excerpt": "Dnešní debata byla o tom, jestli má ještě smysl používat Things, Google Tasks nebo Evernote. Claude přes MCP zvládne číst e-maily, kalendář i soubory najednou. Může časem nahradit specializovaný nástroj?",
       "body": "Část komunity jede minimalisticky přes Google Calendar a Google Tasks. Jiní používají Obsidian nebo hybridní setup. Zatím nikdo nepopsal funkční setup, kde by Claude přes MCP úplně nahradil samostatný task manager. Debata ale naznačuje, že se k tomu blížíme.\n\nProč si nechat samostatný nástroj: jeden přehledný pohled na úkoly, rychlý přístup bez otevírání chatu, notifikace a připomínky, které běží samy, bez ptaní.\n\nProč používat Claude přes MCP: umí vzít e-maily, kalendář a poznámky dohromady a navrhnout priority podle kontextu. To statický task manager neumí.\n\nOtázka k zamyšlení: používáte ještě samostatný task manager, nebo se vám workflow přesunulo jinam? A pokud kombinujete, co zůstalo v nástroji a co už převzala AI?",
       "read_minutes": 2,
-      "source_date": "2026-05-21"
+      "source_date": "2026-05-21",
+      "topics": [
+        "Email",
+        "Poznámky",
+        "Workflow",
+        "Obsidian"
+      ]
     },
     {
       "id": "2026-05-21-04",
       "type": "INSIGHT",
       "level": "Expert",
-      "topic": "Claude Code",
       "title": "Claude Code řídit z mobilu přes SSH",
       "excerpt": "Ve skupině Vibe Coding se řešilo, jak ovládat Claude Code z mobilu, když počítač běží doma. Jde to přes Termius a SSH, případně přes Telegram bota v tmux session. Jeden člen takhle udělal velký update knowledge base a všechno proběhlo bez jediného problému.",
       "body": "Pokud máte Mac mini doma nebo v kanceláři a chcete Claude Code ovládat na dálku, v diskuzi padlo několik možností.\n\nNejjednodušší je Termius na iOS nebo Androidu. Přihlásíte se přes SSH do Macu, otevřete tmux session a v ní pustíte Claude Code. Výhoda je plná kontrola. Nevýhoda je práce v terminálu na malém displeji mobilu.\n\nPro běžné používání je pohodlnější Telegram bot jako wrapper pro Claude Code. Bot bere zprávy z Telegramu a posílá je do Claude Code session. Výstup se vrací zpátky jako běžná zpráva v aplikaci v mobilu. Tím odpadá otravná práce s terminálem na telefonu.\n\nSlack může fungovat podobně, pokud ho používáte radši.\n\nJeden člen psal, že takhle z mobilu udělal velký update knowledge base. Bez problémů. Výsledek byl stejný jako při práci na desktopu. Základ je stabilní tmux session na Macu, která přežije odpojení.",
       "read_minutes": 3,
-      "source_date": "2026-05-21"
+      "source_date": "2026-05-21",
+      "topics": [
+        "Claude Code",
+        "Vibe Coding",
+        "Email",
+        "Poznámky"
+      ]
     },
     {
       "id": "2026-05-21-05",
       "type": "NÁSTROJE",
       "level": "Expert",
-      "topic": "AI coding",
       "title": "ChatGPT Codex vs Claude Code na refaktoringu",
       "excerpt": "Část komunity začala vedle Claude Code testovat i Codex. Opus 4.7 podle nich plní zadání až moc doslova a míň sahá do okolního kódu. Codex zatím podle prvních dojmů líp přepisuje existující kód.",
       "body": "První srovnání z komunity ukazují zajímavý rozdíl. Claude Code s Opusem 4.7 prý bere zadání až moc doslova. Sáhne jen na to, o co si řeknete, a nechá být okolní kód, který by si taky zasloužil úklid. ChatGPT Codex podle prvních zkušeností líp přepisuje existující kód, když je potřeba ho vyčistit nebo napsat znovu.\n\nPořád jsou to ale první dojmy z konkrétních projektů. Modely se rychle mění, zkušenosti se liší projekt od projektu a obecné benchmarky vám neřeknou, jak bude nástroj fungovat zrovna na vašem kódu a ve vašem workflow.\n\nNavíc rychlé přeskakování mezi nástroji žere čas i soustředění. Testování dává smysl na konkrétním úkolu, který děláte opakovaně. Ne na náhodném kusu kódu.\n\nPokud si chcete udělat vlastní srovnání, vyberte jeden typ úkolu, udělejte ho v obou nástrojích a výsledek posuďte ve svém kontextu. Obecné dojmy z komunity berte jako start, ne jako hotový závěr.",
       "read_minutes": 2,
-      "source_date": "2026-05-21"
+      "source_date": "2026-05-21",
+      "topics": [
+        "Claude Code",
+        "ChatGPT",
+        "Fokus",
+        "Workflow"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-05-05-03",
     "type": "POSTAVIL JSEM",
     "level": "Builder",
-    "topic": "Vibe coding",
     "title": "Tři projekty z komunity za týden",
     "excerpt": "Appka na domácí úkoly při výcviku psa, beta projekt, který zpracovává jen změněná data, a kalkulačka daňových doplatků pro rok 2025. Komunita staví a sdílí.",
     "body": "Z dnešní diskuze vylezly tři konkrétní projekty, které členové buď dokončili, nebo je právě dotahují:\n\n**Appka na domácí úkoly pro výcvik** — hotová je i landing page. Nejde jen o samotný nástroj, ale i o prezentaci pro možné uživatele. Dobrý příklad, že vibe coding nemusí skončit jen u prototypu.\n\n**Beta projekt s optimalizací zpracování změn** — techničtější projekt zaměřený na efektivitu. Nezpracovává celý dataset pořád dokola, ale bere jen změny. Tenhle pattern se hodí všude, kde se data mění postupně.\n\n**Kalkulačka na daňové doplatky 2025** — konkrétní sezónní utilita. Místo ručního počítání nebo hledání po webu nabídne jednoduché rozhraní, které vrátí výsledek pro vaši situaci.\n\nVšechny tři projekty dobře ukazují, k čemu se vibe coding hodí nejvíc. Na rychlé prototypy a osobní nástroje, které by jinak nejspíš nikdy nevznikly, protože by jejich vývoj byl moc drahý nebo zbytečně složitý.",
     "read_minutes": 2,
     "source_date": "2026-05-05",
-    "resurfaced_from": "2026-05-05"
+    "resurfaced_from": "2026-05-05",
+    "topics": [
+      "Vibe Coding",
+      "Produktivita",
+      "Claude Code"
+    ]
   },
   "transcript": {
     "groups": [

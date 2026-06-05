@@ -11,69 +11,88 @@
       "id": "2026-04-03-01",
       "type": "TÉMA TÝDNE",
       "level": "Builder",
-      "topic": "Produktivita s AI",
       "title": "Dopaminová past tvůrce v éře Vibe Codingu",
       "excerpt": "Diskuze se točila kolem jedné věci: AI nám dovoluje sypat projekty tempem, na které mozek není stavěný. A to sypání je návykové. Otázka, jestli to, co stavíme, vůbec chceme používat, zůstává bokem.",
       "body": "Vibe Coding srazil odpor skoro na nulu. V pátek nápad, v sobotu funkční prototyp. Taková páka tu historicky nebyla. Jenže právě ona spouští něco, co dobře znají vývojáři i tvůrci obsahu: tvoření dává okamžitý dopamin, ale výsledek přichází pomalu. Nebo vůbec.\n\nJeden člen to vystihl přesně. Před AI si říkal, že může mít skoro všechno, jen ne hned. Teď to hned mít může. A z výhody se stala past. Čím víc věcí jde rychle postavit, tím těžší je poznat, co má vůbec smysl stavět.\n\nDruhý člen přidal zkušenost z práce s týmem. Nestačí změny chrlit. Musí se ověřit v praxi a profiltrovat. U projektů je to stejné. To, že něco vznikne rychle, ještě neznamená, že to přežije střet s realitou.\n\nShoda v diskuzi byla jasná: brzda není v technologii. Je v nás. AI zrychlí to, co se rozhodneme zrychlit. Otázka není, co všechno jde postavit. Otázka je, co má smysl.",
       "read_minutes": 3,
-      "source_date": "2026-04-03"
+      "source_date": "2026-04-03",
+      "topics": [
+        "Vibe Coding",
+        "Claude Code"
+      ]
     },
     {
       "id": "2026-04-03-02",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Práce s AI",
       "title": "AI zrychluje to, co si zvolíte",
       "excerpt": "Jeden člen to vystihl jednou větou: AI je neuvěřitelná páka. Jen zrychluje. Co zrychlí, určujeme my. Tenhle pohled mění způsob, jak k Vibe Codingu přistupujeme.",
       "body": "Páka bez kormidla je jen větší síla namířená do zdi. To bylo jádro postřehu z diskuze: AI za vás nerozhodne, co stojí za váš čas. Jen rychleji a s menší námahou dodá to, pro co se rozhodnete.\n\nPrakticky: když máte brzdu a jasno v tom, proč to stavíte a kdo to bude používat, AI vás dostane k výsledku dřív. Když v tom jasno nemáte, dostane vás jen rychleji ke špatnému výsledku.\n\nNikdo v diskuzi neříkal, že Vibe Coding je špatně. Zaznělo ale důležité upozornění: nástroj ukáže váš přístup, ale sám ho nezlepší. Kdo má tendenci skákat mezi projekty, bude skákat rychleji. Kdo má nastavený proces ověřování, bude ověřovat rychleji.\n\nKonkrétní krok z diskuze: než pustíte Vibe Coding session, napište si jednu větu, co chcete výsledkem ověřit. Ne co chcete postavit, ale co chcete zjistit.",
       "read_minutes": 2,
-      "source_date": "2026-04-03"
+      "source_date": "2026-04-03",
+      "topics": [
+        "Vibe Coding",
+        "Claude Code"
+      ]
     },
     {
       "id": "2026-04-03-03",
       "type": "INSIGHT",
       "level": "Začátečník",
-      "topic": "Psychologie produktivity",
       "title": "Projekty, které nikdo nechce používat",
       "excerpt": "Proč se staví tolik věcí, které pak nikdo nepoužívá? Jedním z důvodů je to, jak mozek reaguje na tvoření. Když vytvoříme něco nového, máme hned pocit pokroku. A je jedno, jestli to opravdu řeší nějaký skutečný problém.",
       "body": "Tohle se netýká jen AI. Děje se to vývojářům, designérům, manažerům i zakladatelům. AI to jen násobí, protože dostat se od nápadu k výsledku je najednou skoro bez námahy.\n\nFunguje to jednoduše: mozek nás odměňuje už za samotné tvoření. Nový projekt, nová funkce, nový nápad — to všechno vystřelí dopamin. Jenže ověřování, testování a úpravy podle zpětné vazby tak příjemné nejsou. Trvají déle, jsou nejisté a často i nepohodlné.\n\nVýsledek? Spousta nedodělaných nebo nepoužívaných věcí. A k tomu pocit, že pořád něco děláme, i když se ve skutečnosti moc neposouváme.\n\nJak z toho ven? Před startem si vědomě položit otázku: kdo to bude používat a proč? Pokud odpověď nepřijde rychle a není konkrétní, je to signál zastavit se dřív, než projekt vůbec rozjedete.",
       "read_minutes": 2,
-      "source_date": "2026-04-03"
+      "source_date": "2026-04-03",
+      "topics": [
+        "Produktivita",
+        "Fokus"
+      ]
     },
     {
       "id": "2026-04-03-04",
       "type": "OTEVŘENÁ OTÁZKA",
       "level": "Builder",
-      "topic": "Budoucnost AI nástrojů",
       "title": "Srovná se Vibe Coding sám, nebo ne",
       "excerpt": "Padla otázka, jestli se situace kolem AI nástrojů časem sama uklidní. Skeptická odpověď zněla: stačí se podívat na sociální sítě, jídlo nebo cvičení. Možnosti máme, ale to, že přišly lepší, neznamená, že ty horší zmizely. Nakonec záleží na tom, jak k tomu lidi přistoupí.",
       "body": "Optimistická verze říká: až zdraží předplatné nebo přijde únava z AI, lidi se vrátí k rozumnějšímu používání.\n\nSkeptická verze říká: to samé se říkalo o scrollování na TikToku. Krátká videa nevytlačila dlouhé filmy ani dokumenty. Ale nezastavila ani nekvalitní obsah. Oboje jede dál vedle sebe.\n\nPodobně to funguje u jídla nebo sportu. Možnosti žít zdravěji jsou dostupnější než kdy dřív. Přesto obezita roste. Technologie tu past neodstraní, protože ta past není v technologii.\n\nPro Vibe Coding to znamená jediné: rovnováha na úrovni celého ekosystému nepřijde sama. Přijde, nebo nepřijde, u jednotlivých lidí. Podle toho, jak si nastaví vlastní přístup.\n\nOtázka pro vás: jak konkrétně si tu brzdu nastavujete vy?",
       "read_minutes": 2,
-      "source_date": "2026-04-03"
+      "source_date": "2026-04-03",
+      "topics": [
+        "Vibe Coding",
+        "Claude Code"
+      ]
     },
     {
       "id": "2026-04-03-05",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Práce s týmem",
       "title": "Změny v týmu se musí ověřit v praxi",
       "excerpt": "Jeden člen propojil dopaminovou past tvůrce s vlastní zkušeností z vedení: nestačí chrlit jednu změnu za druhou. Nejdřív se musí ověřit v praxi a projít filtrem reality, teprve pak můžou přinášet výsledky. Platí to pro projekty i pro lidi.",
       "body": "Pohled zvenku na svět AI nastavil přesné zrcadlo: manažer, který zavádí změny v týmu, naráží na stejnou past jako developer ve Vibe Codingu. Každá nová změna vypadá jako posun. Jenže skutečný posun přijde až ve chvíli, kdy se v praxi ukáže, jestli změna funguje, nebo ne.\n\nChrlit jednu změnu za druhou bez ověření znamená pálit kapacitu týmu. Lidi potřebují čas jednu změnu vstřebat, teprve pak mají prostor přijmout další. Rychlé zavádění bez zpětné vazby nevytváří efektivitu, ale chaos.\n\nStejné je to u projektů. Nestačí, že vzniknou rychle. Fáze, kdy projekt narazí na skutečné uživatele a reálné podmínky, nejde přeskočit. AI ji nezrušila. Jen nám pomohla dostat se k ní dřív.\n\nKonkrétně: po každé iteraci, ať jde o funkci, projekt nebo změnu v týmu, si určete jedno kritérium, podle kterého rozhodnete, jestli pokračujete, nebo se vrátíte zpátky. Bez něj budete iterovat donekonečna.",
       "read_minutes": 2,
-      "source_date": "2026-04-03"
+      "source_date": "2026-04-03",
+      "topics": [
+        "Vibe Coding",
+        "Produktivita",
+        "Claude Code"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-03-14-01",
     "type": "POSTAVIL JSEM",
     "level": "Builder",
-    "topic": "Vlastní nástroje",
     "title": "Appka na hudební teorii postavená za den",
     "excerpt": "Jedna členka nemohla najít výukovou appku, která by ji bavila natolik, aby u ní vydržela. Tak si ji prostě postavila sama. Výsledek sdílela hned druhý den a chce ho dál ladit.",
     "body": "Motivace vznikla z obyčejné frustrace. Appky na hudební teorii ji nebavily. A když tě to nebaví, moc se toho nenaučíš. Tak si udělala vlastní. Přesně podle toho, jak přemýšlí a jak se učí.\n\nCelý projekt dala dohromady za jeden den. Díky AI nástroji nemusela být vývojářka ani mít technické zázemí. Stačilo vědět, co má appka dělat a jak má vypadat.\n\nTenhle příklad ukazuje, že i bez znalosti programování si člověk může místo hledání ideálního nástroje rovnou vytvořit vlastní. Appka nemusí být dokonalá. Stačí, že funguje pro konkrétního člověka. A přesně to se tady povedlo.",
     "read_minutes": 2,
     "source_date": "2026-03-14",
-    "resurfaced_from": "2026-03-14"
+    "resurfaced_from": "2026-03-14",
+    "topics": [
+      "Vibe Coding",
+      "AI nástroje"
+    ]
   },
   "transcript": {
     "groups": [

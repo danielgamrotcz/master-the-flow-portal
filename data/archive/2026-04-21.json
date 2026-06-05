@@ -11,80 +11,106 @@
       "id": "2026-04-21-01",
       "type": "POSTAVIL JSEM",
       "level": "Builder",
-      "topic": "Komunita / Vzdělávání",
       "title": "Česky psané testy o Claudovi a AI ekosystému",
       "excerpt": "Jeden člen nasdílel web, kde si komunita může v češtině otestovat znalosti o Claudovi a AI ekosystému. Vychází z kurzů od Anthropicu a je doplněný o vlastní poznatky. Bez monetizace, čistě pro komunitu.",
       "body": "Jeden člen dal dohromady web s testy a kvízy o Claudovi a AI ekosystému. Celé je to česky. Inspiroval se kurzy od Anthropicu, ale není to kopie. Vzal z nich základ, přidal vlastní poznámky, zkušenosti a celé to zpracoval po svém. Výsledek je samostatný projekt bez cíle na tom vydělávat.\n\nKomunita to vzala nadšeně. Padla i otázka na autorská práva. Autor vysvětlil, že jde o vlastní výklad a zpracování, ne o překlad ani kopii. Odkaz může kdokoli posílat dál.\n\nProč je to zajímavé: testy v češtině k tomuhle tématu skoro nejsou. Pokud si chcete ověřit, co o Claudovi a AI opravdu víte — a nechcete jen číst, ale taky se otestovat — je to užitečný zdroj.",
       "read_minutes": 2,
-      "source_date": "2026-04-21"
+      "source_date": "2026-04-21",
+      "topics": [
+        "Poznámky"
+      ]
     },
     {
       "id": "2026-04-21-02",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Claude Code / Poznámky",
       "title": "Claude Code jako průvodce po vlastních poznámkách",
       "excerpt": "Když máte poznámky uložené lokálně v Markdownu, zkuste nad nimi pustit AI. Projde jejich strukturu, navrhne přejmenování, najde duplicity a řekne, co vyhodit. Jeden člen takhle najednou zpracoval osm set poznámek.",
       "body": "Jeden člen sdílel workflow, ke kterému se pořád vrací: Claude Code puštěný přímo nad složkou s markdownovými poznámkami. Bere to jako audit vlastního „second brainu“.\n\nAI projde strukturu, navrhne lepší názvy souborů, najde duplicity a doporučí, co smazat nebo sloučit. Hodí se to hlavně po delší době, kdy poznámky jen přibývají a systém se začne rozpadat.\n\nV komunitě se pak řešily i nástroje. Padl Obsidian, Bear i Notion. Jeden člen přesunul osm set poznámek do Obsidianu a k tomu spustil Claude Code přes plugin Terminal přímo v okně aplikace. Jiný si nastavil AI tak, aby mu průběžně vybírala zajímavé myšlenky z chatů do Notionu.\n\nZásadní podmínka: poznámky musí být lokálně v Markdownu. Když jsou v uzavřeném formátu nebo jen v cloudu, zatím to nejde moc přímo. Ale pokud ten formát máte, je to jedna z nejpraktičtějších věcí, které se dají s AI dělat.",
       "read_minutes": 2,
-      "source_date": "2026-04-21"
+      "source_date": "2026-04-21",
+      "topics": [
+        "Claude Code",
+        "Poznámky",
+        "Workflow",
+        "Obsidian"
+      ]
     },
     {
       "id": "2026-04-21-03",
       "type": "NÁSTROJE",
       "level": "Expert",
-      "topic": "Claude Code / Vývojové nástroje",
       "title": "Context7 dává AI aktuální dokumentaci místo zastaralé",
       "excerpt": "Context7 je rozšíření, které v Claude Code tahá aktuální dokumentaci knihoven. Nespoléhá na informace z trénovacích dat. Rozdíl poznáte hlavně u nástrojů, které se rychle mění. Jen pozor: ani Context7 není bez chyb.",
       "body": "Jeden člen upozornil na konkrétní problém při práci s Claude Code: AI zná dokumentaci ke knihovnám jen do data, na kterém byla trénovaná. Když se mezitím změnilo API, může vám poradit něco, co je technicky špatně nebo už neplatí.\n\nContext7 tohle pomáhá řešit. Je to rozšíření, konkrétně MCP server, které do Claude Code tahá aktuální dokumentaci přímo z oficiálních zdrojů. Díky tomu bývá kód přesnější a člověk míň opravuje chyby vzniklé podle zastaralých příkladů.\n\nJen pozor: zazněla i zkušenost, že Context7 není neomylný. Jeden člen narazil na chybějící model. V oficiální dokumentaci opravdu byl, ale Context7 ho neznal. Takže je to velké zlepšení, ne perfektní řešení.\n\nSmysl to dává hlavně vývojářům, kteří pracují s frameworky nebo knihovnami, kde se API mění poměrně často. Třeba Next.js, LangChain, Anthropic SDK a podobně.",
       "read_minutes": 2,
-      "source_date": "2026-04-21"
+      "source_date": "2026-04-21",
+      "topics": [
+        "Claude Code",
+        "Dokumentace",
+        "MCP",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-04-21-04",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "GDPR / Bezpečnost",
       "title": "Jak bezpečně pouštět AI do pracovní komunikace",
       "excerpt": "Co dělat, když chcete použít AI na e-mail nebo poznámky, ale máte v nich důvěrná data? Komunita řešila konkrétní situaci s korporátními klienty a dala dohromady pár použitelných postupů.",
       "body": "Jedna členka popsala situaci, kterou zná hodně lidí z firem. Mezi klienty má korporáty, kde je skoro každý e-mail důvěrný. AI by jí přitom ušetřila hodiny práce, kdyby ji mohla pustit do mailů a poznámek.\n\nZ diskuze vyšly čtyři praktické možnosti:\n\n**Nepouštět AI do celé schránky.** Vybrat jen konkrétní e-maily nebo vlákna, odstranit z nich identifikátory jako jméno, firmu nebo projekt, a teprve pak použít AI na samotný obsah.\n\n**Použít lokální modely pro citlivá data.** Když data nesmí opustit firemní prostředí, dají se použít modely jako Gemma. Běží lokálně a neposílají data na externí servery.\n\n**Přečíst si podmínky placené služby.** Claude Pro, Copilot for Microsoft 365 nebo Gemini Workspace mají každý jiná pravidla pro práci s daty. Placené verze obvykle nabízejí lepší záruky než bezplatné tarify.\n\n**Neignorovat pochybnost.** Když vás u konkrétního obsahu napadne „měl/a bych to sem dávat?“, berte to jako varování. Většinou se neozve jen tak.",
       "read_minutes": 3,
-      "source_date": "2026-04-21"
+      "source_date": "2026-04-21",
+      "topics": [
+        "AI nástroje",
+        "Email",
+        "Poznámky"
+      ]
     },
     {
       "id": "2026-04-21-05",
       "type": "OTEVŘENÁ OTÁZKA",
       "level": "Builder",
-      "topic": "Nástroje / Workflow",
       "title": "Přepínat na nový nástroj nebo zůstat u toho, co funguje?",
       "excerpt": "Každé dva týdny se objeví „lepší alternativa“ k tomu, co zrovna používáte. Komunita řešila, jestli přejít z Claude na Codex — a podle čeho se při takovém rozhodování obecně řídit.",
       "body": "V diskuzi padla konkrétní otázka: po poslední aktualizaci OpenAI Codexu přejít, nebo zůstat u Claude?\n\nZazněl názor, který se hodí skoro na každé podobné rozhodování. Pokud vám současný nástroj funguje a zvládnete s ním to, co potřebujete, nepřepínejte jen proto, že vyšel nový benchmark nebo to teď všichni řeší na LinkedInu. Každá změna nástroje stojí čas. Musíte si zvyknout na jiné chování, znovu nastavit workflow a narazíte na nové problémy.\n\nTo neznamená ignorovat vývoj. Jen je rozdíl mezi „tenhle nástroj neumí něco, co fakt potřebuju“ a „tenhle nástroj má o 3 % horší skóre v HumanEval benchmarku“.\n\nOtázka pro komunitu: podle čeho poznáte, že už má přechod smysl? Kde je pro vás hranice?",
       "read_minutes": 2,
-      "source_date": "2026-04-21"
+      "source_date": "2026-04-21",
+      "topics": [
+        "ChatGPT",
+        "Workflow"
+      ]
     },
     {
       "id": "2026-04-21-06",
       "type": "INSIGHT",
       "level": "Začátečník",
-      "topic": "Mindset / Produktivita",
       "title": "Technika z Inner Excellence na negativní myšlenky",
       "excerpt": "Jeden člen sdílel postup z knihy Inner Excellence od Murphyho, jak pracovat s negativním myšlením. Nejde o to myšlenky potlačovat, ale naučit se je jen pozorovat a nereagovat na ně. Pak přidal zkušenost z vlastní praxe.",
       "body": "V diskuzi padlo doporučení na knihu Inner Excellence od Jima Murphyho. Zaujala hlavně jedna myšlenka: negativní myšlenky nejde zastavit silou vůle. Čím víc je člověk tlačí pryč, tím víc se vrací.\n\nJiná cesta je myšlenky jen pozorovat. Jako mraky na obloze. Nechytat se jich, nebrat je jako součást sebe, ale ani je neodhánět. Jen si všimnout, že tu jsou, a nechat je projít.\n\nNa to navázala osobní zkušenost z komunity. Jeden člen popsal, že přesně s tímhle mu pomohl mindfulness. Zásadní změna pro něj byla přestat dělit myšlenky na dobré a špatné. Místo toho je začal jen registrovat.\n\nPro lidi, kteří jedou hodně intenzivně nebo fungují v prostředí plném podnětů, může být tenhle přístup praktičtější než klasické „pozitivní myšlení“. Nemusíte se totiž přesvědčovat o něčem, čemu sami nevěříte.",
       "read_minutes": 2,
-      "source_date": "2026-04-21"
+      "source_date": "2026-04-21",
+      "topics": [
+        "Produktivita",
+        "Fokus"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-03-24-04",
     "type": "INSIGHT",
     "level": "Expert",
-    "topic": "Workflow",
     "title": "Telegram bot jako vstupní bod do poznámek",
     "excerpt": "Místo otevírání aplikace a ručního ukládání stačí napsat botovi na Telegramu. Udělá deep research a výsledek uloží rovnou do poznámek. Jeden příkaz a hotovo.",
     "body": "Vlastní systém poznámek má největší sílu ve chvíli, kdy neslouží jen jako místo, kam si ručně ukládáte věci, ale jako hub, se kterým pracují vaši automatizovaní asistenti.\n\nKonkrétní workflow: člen komunity použije Telegram bota, zadá téma — třeba analýzu konkrétní komunity nebo trhu — a bot udělá deep research. Výsledek pak sám uloží do poznámkového systému a přidá k němu další kontext.\n\nProč Telegram, a ne samostatná aplikace? Telegram máte po ruce odkudkoli, nemusíte přepínat do jiného prostředí a zadávání úkolů botům v něm působí přirozeně.\n\nAby to fungovalo, musí být poznámky v systému, do kterého se dá programově zapisovat. Tedy ve vlastních souborech, ne v uzavřeném cloudu jiné firmy. Právě tahle vrstva celé řešení propojuje.\n\nVýsledek: knowledge systém, do kterého nepřispíváte jen vy, ale i vaši AI asistenti. A bez zbytečného přepínání mezi aplikacemi.",
     "read_minutes": 2,
     "source_date": "2026-03-24",
-    "resurfaced_from": "2026-03-24"
+    "resurfaced_from": "2026-03-24",
+    "topics": [
+      "Automatizace",
+      "Poznámky",
+      "Workflow"
+    ]
   },
   "transcript": {
     "groups": [

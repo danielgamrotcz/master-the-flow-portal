@@ -11,58 +11,77 @@
       "id": "2026-05-12-01",
       "type": "POSTAVIL JSEM",
       "level": "Builder",
-      "topic": "Claude Code",
       "title": "Bez IT zázemí nastavila CC za jeden den",
       "excerpt": "Obchodní manažerka po třech týdnech práce s Claude Projects poprvé zkusila Claude Code — a dala to. Pomohlo hlavně to, že už měla v coworku celý kontext o firmě i záměrech. Přechod byl spíš copy-paste než učení.",
       "body": "Tři týdny v Claude Projects, nulová zkušenost s IT. A pak jeden den, kdy se rozhodla zkusit Claude Code. Výsledek? Funguje.\n\nNejde ani tak o to, že to zvládla. Spíš o to, jak. Nemusela se Claude Code učit od nuly. Její speciální projekt v coworku, takzvaný Agent 0, už znal celý kontext: kdo je, co firma staví, jaké use casy řeší, jak komunikuje, co chce a co nechce. Přesně věděl, co nastavit. Psal jí prompty, ona je vkládala do Claude Code. Claude Code je zpracoval. Ona neřešila techniku. Řešila výsledek.\n\nWorkflow se ustálilo na třech vrstvách: cowork drží kontext a paměť, uživatelka je orchestrátor a rozhoduje, co chce, Claude Code je výkonná ruka a dělá to, co by jinak zabralo hodiny ručního klikání.\n\nProč to stojí za pozornost: většina lidí bez IT zázemí skončí už u představy, že Claude Code je moc složitý. Tady je jiná cesta. Nejdřív si vybudovat kontext v coworku, až potom přejít na Claude Code. Učící křivka se tím výrazně zkrátí.",
       "read_minutes": 2,
-      "source_date": "2026-05-12"
+      "source_date": "2026-05-12",
+      "topics": [
+        "Claude Code",
+        "Fokus",
+        "Workflow",
+        "Prompting"
+      ]
     },
     {
       "id": "2026-05-12-02",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Claude Code + Claude Projects",
       "title": "Cowork jako mozek, Claude Code jako ruka",
       "excerpt": "Silná kombinace pro ty, kdo s Claude Code teprve začínají: Claude Projects drží kontext a připravuje prompty, CC je spouští. Uživatel to celé řídí, místo aby ladil technické detaily.",
       "body": "Z diskuze vypadl workflow, který stojí za to poslat dál:\n\n1. **Claude Projects (cowork)** — drží celý kontext: kdo jste, co stavíte, jak mluvíte, jaké use casy řešíte.\n2. **Uživatel** — přijde s požadavkem: chci udělat X.\n3. **Cowork** — vezme požadavek a přepíše ho do konkrétního promptu pro CC, protože zná celé pozadí.\n4. **Claude Code** — dostane přesný prompt a udělá práci.\n\nProč je to lepší než rovnou skočit do CC: Claude Code je silný, ale bez kontextu. Neví nic o vaší firmě ani procesech. Cowork ten kontext má. Spolu tím odstraní největší tření při onboardingu. Místo ladění konfigurace řešíte výsledek.\n\nHodí se to hlavně ve chvíli, kdy přecházíte z AI asistenta na AI agenta a nechcete se zaseknout na technice. Postup je jednoduchý: nejdřív si postavte pořádný projekt v coworku, pak ho nechte nastavit CC za vás.",
       "read_minutes": 2,
-      "source_date": "2026-05-12"
+      "source_date": "2026-05-12",
+      "topics": [
+        "Claude Code",
+        "Workflow",
+        "Prompting",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-05-12-03",
       "type": "NÁSTROJE",
       "level": "Začátečník",
-      "topic": "Platební brány",
       "title": "Comgate vychází lépe než Stripe pro český trh",
       "excerpt": "V diskuzi o platebních branách pro online kurzy a e-shopy se komunita shodla na jednom: pro projekty zaměřené na Česko má Comgate lepší podmínky než Stripe. Padla konkrétní čísla i zkušenosti z několikaletého provozu.",
       "body": "Otázka zněla jasně: Comgate, nebo Stripe pro online kurz na vlastním webu, hlavně pro české zákazníky?\n\nJako favorit vyšel Comgate. Důvodů bylo víc. Šest měsíců zdarma do obratu 50 000 Kč měsíčně, potom 0,9 % + 1 Kč za transakci. To je jedna z nejlepších cen na českém trhu. Několik členů taky potvrdilo, že jim Comgate na e-shopech běží bez problémů už několik let.\n\nGoPay v diskuzi moc dobře nedopadl. Jeden člen přešel z GoPay na Comgate kvůli špatné zkušenosti a od té doby je spokojený.\n\nStripe nikdo neodepsal automaticky. Dává smysl, když míříte na zahraniční zákazníky nebo potřebujete pokročilejší integraci. Pro čistě český trh ale jeho výhody většinou nepřebijí jednodušší nastavení a nižší poplatky u Comgate.\n\nPraktický závěr: pro nový projekt s česky mluvící komunitou je Comgate rozumný start. Před spuštěním si ale podmínky zkontrolujte přímo na webu poskytovatele. Čísla z diskuze jsou z května 2026.",
       "read_minutes": 2,
-      "source_date": "2026-05-12"
+      "source_date": "2026-05-12",
+      "topics": [
+        "Automatizace"
+      ]
     },
     {
       "id": "2026-05-12-04",
       "type": "NÁSTROJE",
       "level": "Začátečník",
-      "topic": "Platební terminály",
       "title": "SumUp pro fyzické prodejny s kartovým terminálem",
       "excerpt": "Člen, který provozuje kamenné pobočky, doporučuje SumUp pro drobný prodej. Nabízí jednoduché přehledy plateb, terminál za pár tisíc korun a žádné měsíční poplatky.",
       "body": "Vedle online platebních bran padl v diskuzi i tip pro fyzické provozovny: SumUp.\n\nZkušenost z provozu (stav zhruba před dvěma lety, aktuální podmínky si radši ověřte):\n\nTerminál pořídíte za pár tisíc korun. Poplatky bývají kolem 0,5 až 1,5 % z platby, bez dalšího měsíčního paušálu. Přehledy plateb jsou jednoduché a dobře čitelné. Hodí se pro drobný prodej, třeba kávu s sebou nebo malý stánek.\n\nSumUp dává smysl pro menší kamennou prodejnu, pop-up nebo stánek, kde nechcete řešit složitý pokladní systém. Pro velké e-shopy ani komplexní skladové hospodářství to není. Tam by chyběly pokročilejší funkce.\n\nPozor: konkrétní podmínky se mění. Před nákupem si ověřte aktuální ceník přímo u poskytovatele.",
       "read_minutes": 1,
-      "source_date": "2026-05-12"
+      "source_date": "2026-05-12",
+      "topics": [
+        "Automatizace"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-04-26-01",
     "type": "INSIGHT",
     "level": "Začátečník",
-    "topic": "Tabulky",
     "title": "AI vyplní Excel bez rozhozeného formátování",
     "excerpt": "Složitá tabulka se vzorci, které se nesmí rozbít. Jedna členka ji místo ručního vyplňování svěřila AI a výsledek byl čistý. Stejný postup funguje i v Google Sheets.",
     "body": "Jedna členka komunity dostala k vyplnění složitou excelovou tabulku plnou vzorců a speciálního formátování. Bálo se jí do ní sáhnout, aby nerozbila strukturu, a hledala bezpečný postup. Nakonec to zkusila nechat na AI. Ta tabulku vyplnila, uložila a formátování zůstalo beze změny.\n\nPodobně to jde i v Google Sheets. Jeden člen komunity si takhle pravidelně aktualizuje vlastní CRM. Místo ručního přidávání sloupců pustí Claude Code a za dvě minuty má hotovo. Důležité je nechat AI pracovat přímo se souborem, ne kopírovat data do chatu.\n\nPraktický tip: když dostanete tabulku, do které se bojíte sáhnout, zkuste ji poslat AI s jasným zadáním. Napište, co se má vyplnit a co se nesmí změnit. Výsledek bývá překvapivě čistý.",
     "read_minutes": 2,
     "source_date": "2026-04-26",
-    "resurfaced_from": "2026-04-26"
+    "resurfaced_from": "2026-04-26",
+    "topics": [
+      "Claude Code",
+      "Google",
+      "Databáze",
+      "Vibe Coding"
+    ]
   },
   "transcript": {
     "groups": [

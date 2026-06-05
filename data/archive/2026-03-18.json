@@ -11,56 +11,73 @@
       "id": "2026-03-18-01",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Lovable",
       "title": "Lovable iteruje rychle, ale chce přesné zadání",
       "excerpt": "Bez konkrétního popisu a příkladů se v Lovable snadno zacyklíte. Čím přesněji popíšete, co chcete, a přidáte vizuální ukázky, tím míň kol úprav vás čeká.",
       "body": "Lovable je skvělý nástroj na rychlé prototypy, ale má jednu zvláštnost. Když mu nedáte přesné zadání a konkrétní příklady, AI jen hádá z obecného popisu. A každé další kolo úprav vás posune jen o kousek.\n\nPokud chcete výsledek podle své představy, nestačí napsat, co chcete. Musíte popsat i to, jak to má vypadat. Ideálně přidejte screenshoty nebo odkazy na UI, které se vám líbí. Právě v tom je rozdíl mezi „dvakrát upravím a hotovo“ a „dvanáctkrát upravuju a pořád to není ono“.\n\nDruhá možnost je odladit si logiku lokálně a Lovable použít jen tam, kde dává smysl rychlý vizuální prototyp. Fungují oba přístupy. Záleží na typu projektu.\n\nHlavní poznatek: Lovable je opravdu rychlý až ve chvíli, kdy přesně víte, co chcete, a umíte to dobře popsat. Jinak je to jen rychlejší cesta do kolečka nekonečných oprav.",
       "read_minutes": 2,
-      "source_date": "2026-03-18"
+      "source_date": "2026-03-18",
+      "topics": [
+        "Vibe Coding",
+        "AI nástroje"
+      ]
     },
     {
       "id": "2026-03-18-02",
       "type": "INSIGHT",
       "level": "Expert",
-      "topic": "Claude Code",
       "title": "Opus pro scope projektu, Sonnet pro samotný kód",
       "excerpt": "Když zvolíte správný model pro správnou fázi práce, ušetříte peníze i opakované ladění. Hloubkovou analýzu a architekturu nechte Opusu. Implementaci pak většinou bez problémů zvládne Sonnet.",
       "body": "Efektivní workflow s Claude Code vypadá zhruba takhle: složité plánování, analýzu požadavků, scope projektu a debaty o architektuře řešte s Opusem. Je dražší, ale tyhle konverzace bývají krátké. Opus si tu cenu vrátí tím, že výsledek bývá kvalitnější a nemusíte tolik předělávat.\n\nJakmile máte pevnou strukturu a jasné zadání, přepněte na Sonnet. Ve většině případů zvládne implementaci stejně dobře a za zlomek ceny. Tenhle přechod se ale nestane sám. Musíte ho udělat vědomě.\n\nPraktický test: když je úkol spíš mechanický — napsat funkci podle specifikace, opravit chybu, refaktorovat kód — Sonnet nejspíš stačí. Když řešíte „jak to má celé fungovat dohromady“ nebo „co udělat jako první“, to je práce pro Opus.\n\nJednodušší aplikace zvládnuté na Sonnetu za pár minut ukazují, že pro většinu implementačních úloh to funguje bez kompromisů.",
       "read_minutes": 2,
-      "source_date": "2026-03-18"
+      "source_date": "2026-03-18",
+      "topics": [
+        "Claude Code",
+        "Workflow",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-03-18-03",
       "type": "POSTAVIL JSEM",
       "level": "Expert",
-      "topic": "Dashboard",
       "title": "CEO dashboard napojený na CRM, banku a GA4",
       "excerpt": "Jeden člen ukázal projekt, který vyvíjí 14 dní: CEO dashboard, který tahá data z CRM, bankovního účtu, Google Analytics 4 a výsledovky. Cílem je mít celý přehled o byznysu na jednom místě.",
       "body": "Jde o jeden z náročnějších projektů, které ve skupině padly. Cíl je jasný: nepřeskakovat mezi nástroji, ale mít na jedné obrazovce zákazníky, cash flow, návštěvnost webu i ziskovost.\n\nNejvětší technická výzva je propojit víc zdrojů najednou. Každý má jiné API, jiné limity a jiný formát dat. GA4 má vlastní API i MCP server. Standardní API ale omezuje počet požadavků. Druhá možnost je napojení přes Looker Studio. To má přímý konektor na GA4 a není potřeba dělat vlastní API integraci. Nevýhoda je menší volnost v tom, co pak s daty můžete dělat.\n\nProjekt je po 14 dnech práce pořád ve vývoji. Poučení? U podobných integrací se vyplatí dobře navrhnout architekturu hned na začátku. Víc než zkoušet naslepo. Čím víc zdrojů přidáte, tím rychleji roste složitost celého propojení.",
       "read_minutes": 3,
-      "source_date": "2026-03-18"
+      "source_date": "2026-03-18",
+      "topics": [
+        "Claude Code",
+        "MCP",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-03-18-04",
       "type": "POSTAVIL JSEM",
       "level": "Builder",
-      "topic": "Voice capture",
       "title": "Hlasová appka zachytí myšlenku a pošle ji do e-mailu",
       "excerpt": "Jedna členka skupiny staví appku na problém, který zná spousta lidí: rychle si uložit myšlenku nebo úkol bez zbytečného tření. Zmáčkneš action button na iPhonu, řekneš to nahlas a dvakrát denně ti přijdou roztříděné záznamy do e-mailu.",
       "body": "Problém je jasný: myšlenky a úkoly si často nezapíšeme hned. Stačí malé zdržení — otevřít appku, najít kategorii, napsat text. Člověk si řekne „pak“ a nakonec na to zapomene.\n\nŘešení má víc částí. Action Button na iPhonu spustí nahrávání hlasové poznámky. AI ji přepíše do textu a roztřídí podle kategorií. Dvakrát denně — ráno a odpoledne — přijde e-mail se souhrnem záznamů, připravených na export.\n\nDlouhodobý cíl je automatické propojení s Things, tedy task manažerem. To bude technicky složitější, protože Things nemá veřejné API v klasickém smyslu.\n\nCelý workflow se inspiruje přístupy typu voice-to-inbox. Záznamy vznikají hlasem a třídění se nechá na AI. Smysl je stejný: co nejvíc snížit tření při zapisování. Rozumné MVP je proto nejdřív nahrávání a e-mailový digest. Integrace s appkami může přijít až v další fázi.",
       "read_minutes": 2,
-      "source_date": "2026-03-18"
+      "source_date": "2026-03-18",
+      "topics": [
+        "Email",
+        "Poznámky",
+        "Workflow"
+      ]
     },
     {
       "id": "2026-03-18-05",
       "type": "INSIGHT",
       "level": "Začátečník",
-      "topic": "Konzistence",
       "title": "Hodina denně po tři měsíce přinese viditelný posun",
       "excerpt": "Největší problém není špatný nástroj ani málo talentu. Je to přerušování. Pravidelná hodina denně porazí každý pětihodinový maraton jednou za měsíc.",
       "body": "Tohle se ve skupině řeší pořád. A není to teorie. Když se projektu věnujete aspoň hodinu denně, za tři měsíce to bude znát.\n\nNemusí to znamenat, že budete mít hotovou aplikaci. Spíš už budete vědět, jak nad věcmi přemýšlet, kde hledat řešení a budete mít za sebou víc pokusů než někdo, kdo si k tomu sedl jednou za čas na dlouhý blok.\n\nU AI nástrojů to platí dvojnásob. Hodně se učíte zkoušením a opakováním. Čím víc situací potkáte, tím líp poznáte, kdy co použít a kde to má limity.\n\nV praxi: neplánujte si velké bloky. Radši si hlídejte malé okno každý den. Klidně jen 30 minut, ale denně.\n\nFOMO a pocit „nestíhám, všichni jsou dál“ je v prvních týdnech normální. Kdo to vydrží a nevzdá to, bude za tři měsíce překvapený sám ze sebe.",
       "read_minutes": 2,
-      "source_date": "2026-03-18"
+      "source_date": "2026-03-18",
+      "topics": [
+        "Produktivita"
+      ]
     }
   ],
   "resurfacing": null,

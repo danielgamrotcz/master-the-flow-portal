@@ -11,69 +11,89 @@
       "id": "2026-05-22-01",
       "type": "TÉMA TÝDNE",
       "level": "Builder",
-      "topic": "Speech-to-text",
       "title": "Speech-to-text dominuje diskuzi v komunite",
       "excerpt": "Diktování a přepisy ze schůzek. Komunita sdílí zkušenosti s Utterem, WisprFlow a betou Raycastu 2.0. Výběr nástroje záleží hlavně na operačním systému a na tom, jak složitý workflow chcete.",
       "body": "Velká část diskuze v Inspiraci se točila kolem speech-to-text nástrojů. Od diktování do mobilu až po přepisy meetingů.\n\nUttero vede v přesnosti i rozpoznávání jazyků, včetně francouzštiny. Funguje hlavně na Macu a iOS. Lidi ze skupiny si ho chválí, hlavně když míchají víc jazyků.\n\nWisprFlow je nejlepší alternativa pro Windows. Má méně funkcí, ale solidní základ a dobrou přesnost.\n\nRaycast 2.0 beta přidává diktování, které prý hodně připomíná Uttero. Pokud už Raycast používáte, dává smysl ho vyzkoušet. Obě aplikace se aktivně vyvíjejí a nejspíš se budou dál přibližovat.\n\nPlaud řeší něco jiného: přepisy schůzek, ne diktování. Hardware se připojí k telefonu, software pak všechno organizuje v počítači.\n\nSpolečná linka je jasná: speech-to-text už není jen prémiová funkce pro power users. Čím dál víc lidí ho používá v běžné práci, ať už na psaní, nebo na záznamy ze schůzek.",
       "read_minutes": 2,
-      "source_date": "2026-05-22"
+      "source_date": "2026-05-22",
+      "topics": [
+        "Workflow",
+        "Raycast",
+        "Meeting"
+      ]
     },
     {
       "id": "2026-05-22-02",
       "type": "NÁSTROJE",
       "level": "Builder",
-      "topic": "Přepisy z meetingů",
       "title": "Plaud jako hardware i software pro přepisy",
       "excerpt": "Plaud je fyzický záznamník a zároveň software do počítače. Dohromady fungují tak, že se nahraný meeting rovnou uloží jako přepis na jednom místě, bez ručního exportu.",
       "body": "Plaud je fyzické zařízení, které připojíte k telefonu. Nahrává zvuk přímo z reproduktoru nebo mikrofonu. K tomu má aplikaci pro počítač, kde se přepisy ukládají a třídí.\n\nFunguje to jednoduše: přijdete na meeting, nahráváte přes Plaud hardware a přepis se vám automaticky objeví v aplikaci. Nemusíte nic ručně exportovat ani řešit, kam uložit soubory.\n\nPodle zkušeností z komunity jsou přepisy hodně přesné. Platí to i u delších nahrávek a u smíšeného obsahu.\n\nDalší možnost je postavit si vlastní řešení nad některým AI API pro přepis. Získáte tím větší kontrolu a často lepší výsledky při míchání jazyků. Na druhou stranu to chce technické znalosti a čas na vývoj.\n\nPro většinu lidí, kteří chtějí jednoduše dostat přepis z meetingu rovnou do textu bez ručního stahování, je Plaud dobrá volba.",
       "read_minutes": 2,
-      "source_date": "2026-05-22"
+      "source_date": "2026-05-22",
+      "topics": [
+        "Meeting"
+      ]
     },
     {
       "id": "2026-05-22-03",
       "type": "INSIGHT",
       "level": "Expert",
-      "topic": "Vibe Coding",
       "title": "Jak strukturovat konec Vibe Coding session",
       "excerpt": "Jak správně ukončit práci s Claude Code? V komunitě na to lidi jdou různě: někdo používá ruční vícekrokové skilly, jiný automatické hooky a další ukládá stav session do JSONu. Každý přístup řeší trochu jiný problém.",
       "body": "Ve skupině Vibe Coding se rozjela dlouhá diskuze o tom, jak správně ukončit práci s Claude Code. Nakonec z toho bylo větší téma, než se na první pohled zdálo.\n\nPřístupy, které v diskuzi padly:\n\nMultikrokový skill: strukturovaný seznam kroků na konec session. Uložit stav, udělat commit, zapsat poznámky, připravit plán na příště. Pomáhá ohlídat, že na nic nezapomenete.\n\nMemplace + /save hook: automatické ukládání stavu session do paměti. Hook se spustí sám, takže na to nemusíte myslet.\n\n /wrap flow: kombinace zápisů do Obsidianu, Things a Notion. Hodí se pro lidi, kteří mají složitější systém postavený na více nástrojích.\n\nProjekt-state.json a cross-projektové závislosti: pokročilejší přístup, ve kterém si Claude drží stav napříč projekty. Když se vrátíte k projektu B, víte, co může ovlivnit projekt A.\n\nHlavní otázka při výběru je jednoduchá: chcete session zavírat ručně, kdy práci vědomě ukončíte, nebo automaticky, kdy to za vás udělá hook? Funguje oboje. Jen z toho budete mít jiný pocit při práci.",
       "read_minutes": 2,
-      "source_date": "2026-05-22"
+      "source_date": "2026-05-22",
+      "topics": [
+        "Claude Code",
+        "Vibe Coding",
+        "Poznámky",
+        "Obsidian"
+      ]
     },
     {
       "id": "2026-05-22-04",
       "type": "NÁSTROJE",
       "level": "Expert",
-      "topic": "Bezpečnost",
       "title": "Bezpečnostní audit vibe-coded aplikace před produkcí",
       "excerpt": "Pustit vibe-coded aplikaci do produkce bez bezpečnostního auditu je risk. V komunitě se řešily dva nástroje: vibeaudit.cz a grovetechai.com/scanner. Recenze jsou ale smíšené a pořád se diskutuje, co funguje nejlíp.",
       "body": "Vibe coding je skvělý způsob, jak rychle rozjet aplikaci. Než ji ale pustíte k reálným uživatelům, vyplatí se udělat bezpečnostní kontrolu. Hlavně pokud pracuje s citlivými daty nebo penězi.\n\nV komunitě padly dva nástroje:\n\nvibeaudit.cz: nástroj zaměřený přímo na vibe-coded aplikace. Ohlasy v komunitě jsou smíšené. Někomu pomohl, jiný měl pocit, že výstupy jsou moc obecné.\n\ngrovetechai.com/scanner: další automatizovaný scanner. Podobně může posloužit jako první kontrola, ale nechytí všechno.\n\nOba nástroje dávají smysl jako základní automatizovaný check. U aplikace, která jde do produkce a pracuje s citlivými daty, ale stojí za to brát smíšené recenze vážně.\n\nLepší může být kombinace: nejdřív automatický scanner na snadno odhalitelné chyby, potom ruční review od někoho, kdo má zkušenost se security. Komunita teď aktivně řeší, co v téhle oblasti funguje nejlíp.",
       "read_minutes": 2,
-      "source_date": "2026-05-22"
+      "source_date": "2026-05-22",
+      "topics": [
+        "Vibe Coding",
+        "Automatizace",
+        "Claude Code"
+      ]
     },
     {
       "id": "2026-05-22-05",
       "type": "OTEVŘENÁ OTÁZKA",
       "level": "Začátečník",
-      "topic": "Komunita",
       "title": "Jak nepřijít o důležité věci ve velké skupině",
       "excerpt": "Zpráv přibývá, ale přechod na Discord nebo Slack se neplánuje. Jak zůstat v obraze a nestrávit hodiny scrollováním? Komunita navrhla tři možnosti, jasná odpověď zatím není.",
       "body": "Otázka, kterou řeší skoro každý v aktivní komunitě: jak neztratit důležité věci, když zpráv přibývá, ale přesun na Discord nebo Slack nedává smysl.\n\nZ komunity padly tři směry:\n\nDigest nástroje, třeba noscroll.com: projdou skupinu a pošlou vám výcuc toho podstatného. Nemusíte scrollovat a dostanete rychlý přehled.\n\nPřímé napojení WhatsAppu na LLM: AI sleduje skupinu a automaticky shrnuje nebo třídí zprávy. Je to technicky náročnější, ale řeší to problém systémově.\n\nVíce skupin: rozdělit komunitu podle témat, aby každá skupina měla jasné zaměření. V každé je pak méně šumu.\n\nJasný závěr z diskuze zatím není. Digest je pasivní a člověk může přijít o kontext. Více skupin tříští konverzaci. Napojení na LLM je technicky složité.\n\nTéma je pořád otevřené. Pokud máte vlastní způsob, jak zvládáte velkou skupinu, přidejte se do diskuze.",
       "read_minutes": 2,
-      "source_date": "2026-05-22"
+      "source_date": "2026-05-22",
+      "topics": [
+        "AI nástroje",
+        "Email"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-04-26-03",
     "type": "INSIGHT",
     "level": "Expert",
-    "topic": "Data management",
     "title": "Markdown v gitu jako datová vrstva pro AI",
     "excerpt": "Jeden člen přestal koukat přímo do dat a místo toho se na všechno ptá Clauda. Tvrdí, že markdownové soubory v gitu jsou pro AI nejlepší struktura, se kterou se jí dobře pracuje. Inspirovalo to dalšího člena, aby přešel na CRM v Markdownu.",
     "body": "Jeden člen komunity popsal, jak změnil přístup ke svým datům. Nepoužívá grafické rozhraní ani aplikace. Všechno má v Markdown souborech v gitu. Důvod je jednoduchý: stejně se na data nedívá přímo, na všechno se ptá Clauda. A Claude si s Markdownem rozumí nejlíp.\n\nJe to přirozené pokračování filozofie plain text. Markdown přečte člověk i stroj, dá se verzovat a snadno přenášet. Git k tomu přidá historii změn a zálohu. Claude pak slouží jako rozhraní: prohledává, shrnuje a aktualizuje.\n\nMá to i svoje limity. Nehodí se to pro velké objemy strukturovaných dat, pro týmy bez technického zázemí a vyžaduje to pořádek v názvech souborů i struktuře. Pro osobní knowledge management nebo jednoduché CRM to ale může být elegantnější řešení než řada komerčních nástrojů.\n\nV diskuzi to inspirovalo dalšího člena k přechodu na CRM v Markdownu. Hezký příklad toho, jak sdílení konkrétních postupů v komunitě mění způsob práce.",
     "read_minutes": 2,
     "source_date": "2026-04-26",
-    "resurfaced_from": "2026-04-26"
+    "resurfaced_from": "2026-04-26",
+    "topics": [
+      "Poznámky"
+    ]
   },
   "transcript": {
     "groups": [

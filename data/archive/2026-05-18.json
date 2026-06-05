@@ -10,64 +10,84 @@
     {
       "id": "2026-05-18-01",
       "source_date": "2026-05-18",
-      "topic": "Právníci a AI nástroje",
       "excerpt": "Jedna otázka před státnicemi rozjela půldenní vlákno a ukázala, kolik právníků se v komunitě skrývá.",
-      "body": "Členka se zeptala, jak jí AI může pomoct s přípravou na státnice. Dostala víc tipů, než čekala. Pak se ukázalo, že je v komunitě spousta právníků a advokátek, kteří o sobě navzájem ani nevěděli. Řešili Codexis, Libratech, NotebookLM i specializované nástroje pro právo. Padl taky nápad založit vlastní podskupinu pro právníky."
+      "body": "Členka se zeptala, jak jí AI může pomoct s přípravou na státnice. Dostala víc tipů, než čekala. Pak se ukázalo, že je v komunitě spousta právníků a advokátek, kteří o sobě navzájem ani nevěděli. Řešili Codexis, Libratech, NotebookLM i specializované nástroje pro právo. Padl taky nápad založit vlastní podskupinu pro právníky.",
+      "topics": [
+        "AI nástroje"
+      ]
     },
     {
       "id": "2026-05-18-02",
       "source_date": "2026-05-18",
-      "topic": "Různé úrovně jsou v pořádku",
       "excerpt": "Datová analytika a dashboardy mají stejnou hodnotu jako stavění appek — appka je jen jeden z možných výstupů.",
-      "body": "Ve Vibe Codingu jedna členka psala, že čte, co ostatní staví, a vedle programátorů si připadá jako žabař. Odpověď byla: když někdo analyticky zpracovává data a šetří si tím čas, dělá v principu totéž, jen jinými nástroji. Appka je jen jeden možný výstup, ne cíl."
+      "body": "Ve Vibe Codingu jedna členka psala, že čte, co ostatní staví, a vedle programátorů si připadá jako žabař. Odpověď byla: když někdo analyticky zpracovává data a šetří si tím čas, dělá v principu totéž, jen jinými nástroji. Appka je jen jeden možný výstup, ne cíl.",
+      "topics": [
+        "Vibe Coding",
+        "Claude Code"
+      ]
     },
     {
       "id": "2026-05-18-03",
       "source_date": "2026-05-18",
-      "topic": "Plaud MCP",
       "excerpt": "Plaud vydal vlastní MCP. Díky němu se napojíte přímo na AI asistenta bez psaní dalšího kódu.",
-      "body": "Plaud vydal vlastní MCP server. Připojíte ho rovnou k AI asistentovi, bez dalšího kódu a s o něco míň klikáním než dřív."
+      "body": "Plaud vydal vlastní MCP server. Připojíte ho rovnou k AI asistentovi, bez dalšího kódu a s o něco míň klikáním než dřív.",
+      "topics": [
+        "Claude Code",
+        "MCP",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-05-18-04",
       "source_date": "2026-05-18",
-      "topic": "Soniox pro vícejazyčné přepisy",
       "excerpt": "U přepisů, kde se střídá čeština s angličtinou, pořád nejlíp vychází Soniox.",
-      "body": "Na vícejazyčné přepisy, kde se střídá čeština, angličtina a další jazyky, pořád nejlíp vychází Soniox. Nově umí i text-to-speech. Za málo peněz hodně muziky — Daniel ho používá jako základ pro Uttero."
+      "body": "Na vícejazyčné přepisy, kde se střídá čeština, angličtina a další jazyky, pořád nejlíp vychází Soniox. Nově umí i text-to-speech. Za málo peněz hodně muziky — Daniel ho používá jako základ pro Uttero.",
+      "topics": [
+        "AI nástroje"
+      ]
     },
     {
       "id": "2026-05-18-05",
       "source_date": "2026-05-18",
-      "topic": "Raycast",
       "excerpt": "Raycast posouvá Spotlight na Macu i Windows dál: spouští appky, umí snippety, AI integrace i zkratky.",
-      "body": "V Inspiraci & Diskuzi se probíral Raycast. Je to aplikace pro Mac i Windows, která rozšiřuje možnosti Spotlightu. Umí spouštět aplikace, pracovat se snippety, má AI integrace a klávesové zkratky. Pokud vám to nic neříká, zkuste ji."
+      "body": "V Inspiraci & Diskuzi se probíral Raycast. Je to aplikace pro Mac i Windows, která rozšiřuje možnosti Spotlightu. Umí spouštět aplikace, pracovat se snippety, má AI integrace a klávesové zkratky. Pokud vám to nic neříká, zkuste ji.",
+      "topics": [
+        "Raycast"
+      ]
     },
     {
       "id": "2026-05-18-06",
       "source_date": "2026-05-18",
-      "topic": "Platební brány pro CZ trh",
       "excerpt": "V diskuzi se rychle shodli: pro český trh má Comgate lepší podmínky než Stripe.",
-      "body": "V komunitě se řešily platební brány pro český trh. Shoda byla rychlá: Comgate má lepší podmínky než Stripe."
+      "body": "V komunitě se řešily platební brány pro český trh. Shoda byla rychlá: Comgate má lepší podmínky než Stripe.",
+      "topics": [
+        "Automatizace"
+      ]
     },
     {
       "id": "2026-05-18-07",
       "source_date": "2026-05-18",
-      "topic": "Růst komunity",
       "excerpt": "Za týden přibylo 22 nových členů a komunita se objevila v newsletteru.",
-      "body": "Za týden přibylo 22 nových členů. Komunita se objevila v newsletteru a lidi skupinu sdílí dál."
+      "body": "Za týden přibylo 22 nových členů. Komunita se objevila v newsletteru a lidi skupinu sdílí dál.",
+      "topics": [
+        "Produktivita"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-04-28-04",
     "type": "INSIGHT",
     "level": "Expert",
-    "topic": "Claude Code, infrastruktura",
     "title": "Claude Code na Mac Mini jako osobní server",
     "excerpt": "Mac Mini s Claude Code a cron jobem běží nonstop 24/7. Tahle architektura zaujala komunitu a rozjela debatu o osobním serveru versus cloudu.",
     "body": "V komunitě padl konkrétní setup, který vyvolal dost otázek: Claude Code běžící na Macu Mini přes cron job, pořád dostupný bez ručního spouštění. Prostě vlastní mini server pro AI agenty, který zpracovává úkoly na pozadí.\n\nOproti cloudu má výhodu v přímém napojení na lokální software, aplikace a soubory. Mac Mini M4 stojí jednorázově víc peněz, ale provoz je pak levný. Cloud je pružnější a líp škáluje, jenže pro osobní projekty a experimenty může lokální řešení úplně stačit.\n\nDebata Mac Mini versus cloud se v komunitě vrací pořád dokola. Lidi zajímala hlavně architektura: jak jsou napojené cron joby, jak se to verzuje a jak se řeší přístupy. Jestli máš podobný setup nebo si s tím hraješ, hoď to do Vibe Coding skupiny.",
     "read_minutes": 2,
     "source_date": "2026-04-28",
-    "resurfaced_from": "2026-04-28"
+    "resurfaced_from": "2026-04-28",
+    "topics": [
+      "Claude Code",
+      "Vibe Coding"
+    ]
   },
   "transcript": {
     "groups": [

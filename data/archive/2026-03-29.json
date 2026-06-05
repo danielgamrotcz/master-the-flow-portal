@@ -11,69 +11,90 @@
       "id": "2026-03-29-01",
       "type": "POSTAVIL JSEM",
       "level": "Expert",
-      "topic": "Automatizace",
       "title": "Admin konzole ovládaná přirozeným jazykem",
       "excerpt": "Člen komunity staví systém, kde uživatel vlastními slovy napíše, co chce změnit, a pipeline se postará o zbytek. GitHub Actions z požadavku udělá zadání, agenti provedou změny a Vercel je automaticky nasadí.",
       "body": "Jde o plně automatizovanou pipeline od požadavku až po nasazení. Uživatel, třeba partner nebo klient, napíše do admin konzole normálně větou, co potřebuje: změnit barvy, zvětšit písmo, přidat způsob ukládání. GitHub Actions to zachytí, převedou na strukturované zadání a pošlou agentům. Ti udělají potřebné úpravy a výsledek se přes Vercel nasadí. Bez toho, aby na to musel někdo sahat.\n\nAutor teď řeší hlavně guardrails. Tedy pravidla, co agenti můžou udělat rovnou a co musí počkat na schválení. Ne všechno chcete pustit automaticky. Některé změny jsou bezpečné a dají se snadno vrátit. Jiné ne.\n\nTenhle přístup není jen technická hračka. Je to reálný příklad toho, jak se AI posouvá od nástroje pro vývojáře k rozhraní pro lidi, kteří kód číst neumí a ani nechtějí. Na vstupu je přirozený jazyk. Na výstupu nasazení. Bez ručního zásahu.",
       "read_minutes": 2,
-      "source_date": "2026-03-29"
+      "source_date": "2026-03-29",
+      "topics": [
+        "Automatizace",
+        "Workflow"
+      ]
     },
     {
       "id": "2026-03-29-02",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Claude Code",
       "title": "Claude Code na Raspberry Pi ovládaný z telefonu",
       "excerpt": "Claude Code jde spustit i na miniaturním počítači a ovládat přes Telegram z telefonu. Jeden člen komunity tak po rozbití displeje MacBooku pracuje kompletně z iPhonu.",
       "body": "Raspberry Pi 5 stojí zhruba tolik co levnější sluchátka a Claude Code na něm běží bez problémů. Ovládá se přes Telegram boty: z telefonu pošlete příkaz a výsledek vám přijde zpátky do chatu. Když potřebujete přímo do terminálu, funguje Termius.\n\nTím se mění představa o tom, co k práci potřebujete. Výkonný notebook už nemusí být nutnost. Pokud vám nevadí ovládání přes chat, stačí telefon a malý počítač zapojený doma nebo v kanceláři.\n\nTenhle setup má svoje limity. Raspberry Pi není žádné dělo a u složitějších projektů na ně narazíte. Jako server pro AI agenty, automatizace a pravidelné úlohy ale funguje dobře. A protože běží na slabším hardwaru, donutí vás zadávat úkoly úsporněji a přesněji.",
       "read_minutes": 2,
-      "source_date": "2026-03-29"
+      "source_date": "2026-03-29",
+      "topics": [
+        "Claude Code",
+        "Automatizace",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-03-29-03",
       "type": "INSIGHT",
       "level": "Začátečník",
-      "topic": "Claude",
       "title": "Vyčerpal jsem limit Claude Pro — co dál?",
       "excerpt": "Claude Pro má 5hodinový limit na tokeny. Když ho vyčerpáte, nemusíte platit víc ani přecházet na jiný plán. Stačí počkat, až se okno resetuje.",
       "body": "Limity u Clauda můžou napoprvé působit trochu zvláštně. U plánu se počítá s 5hodinovým oknem. Na každých pět hodin máte určitý objem tokenů. Jakmile ho vyčerpáte, Claude přestane odpovídat nebo vás na limit upozorní. Stačí počkat, až se okno obnoví.\n\nPraktický tip: když vás čeká větší projekt nebo delší konverzace, začněte hned na začátku okna, ne někde uprostřed. Kratší a přesnější dotazy sežerou méně tokenů než dlouhé a nepřehledné zprávy.\n\nNejvíc tokenů mizí na velkém kontextu. Typicky u dlouhých konverzací, kde si Claude drží celou historii vlákna. Pokud na limit narážíte pořád, zkuste místo jedné nekonečné konverzace zakládat nové chaty. Každý nový chat začíná s prázdným kontextem a spotřeba se tím výrazně zpomalí.",
       "read_minutes": 1,
-      "source_date": "2026-03-29"
+      "source_date": "2026-03-29",
+      "topics": [
+        "Email"
+      ]
     },
     {
       "id": "2026-03-29-04",
       "type": "INSIGHT",
       "level": "Začátečník",
-      "topic": "Produktivita",
       "title": "Markdown a Obsidian jako první krok",
       "excerpt": "Na začátek není potřeba žádný složitý systém na správu znalostí. Stačí lokální Markdown soubory v Obsidianu. AI s nimi umí pracovat stejně dobře jako s drahou databází.",
       "body": "Markdown jsou obyčejné textové soubory s jednoduchým formátováním. Žádná databáze, žádný cloud, žádná speciální aplikace. Jen soubory ve vašem počítači. A právě s tím umí AI nástroje jako Claude Code pracovat úplně přirozeně.\n\nObsidian je aplikace, která z těchto souborů udělá prohledávatelnou a propojenou databázi znalostí. Pro osobní produktivitu je zdarma. Vaše data přitom zůstávají u vás, ne na cizím serveru.\n\nHodně lidí odkládá systém na poznámky nebo projekty, protože ještě nevybrali ten správný nástroj. Markdown v Obsidianu je nejjednodušší start. Nezamkne vám data a funguje s AI. Když budete chtít později přejít na složitější řešení, soubory si vezmete s sebou. Složitost přidávejte až ve chvíli, kdy ji fakt potřebujete.",
       "read_minutes": 2,
-      "source_date": "2026-03-29"
+      "source_date": "2026-03-29",
+      "topics": [
+        "Claude Code",
+        "Produktivita",
+        "Poznámky",
+        "Obsidian"
+      ]
     },
     {
       "id": "2026-03-29-05",
       "type": "TÉMA TÝDNE",
       "level": "Builder",
-      "topic": "Komunita",
       "title": "Co si členové postavili za poslední týden",
       "excerpt": "Co komunita postavila za posledních sedm dní: lokální přepis nahrávek, time tracker, rodinný dashboard, appku na certifikáty a migraci z Google Sheets na Vercel.",
       "body": "Za poslední týden členové komunity postavili nebo dotáhli: lokální přepis nahrávek na Macu, time tracker pro práci s klienty, redesign webu pro partnera, nástroj na třídění nápadů, rodinný dashboard na fotorámu se školním rozvrhem, jídelníčkem a kalendářem, migraci projektu z Google Sheets na Vercel, aplikaci na automatické vyplňování certifikátů a iOS verzi poznámkovače. Ta zabrala zhruba 30 minut.\n\nNení to seznam technických hraček pro vývojáře. Je to průřez různými profesemi a potřebami. Věci, které lidi fakt používají nebo prodávají.\n\nAnketa v komunitě ukázala tohle rozložení: 12 z 23 tvoří pravidelně a chtějí víc, 4 už mají něco funkčního, 5 to zkouší a 2 se zatím rozkoukávají. Právě tahle kombinace funguje dobře. Začátečníci se mají od koho učit a pokročilí mají s kým sdílet.",
       "read_minutes": 2,
-      "source_date": "2026-03-29"
+      "source_date": "2026-03-29",
+      "topics": [
+        "Poznámky",
+        "Google"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-03-14-02",
     "type": "INSIGHT",
     "level": "Expert",
-    "topic": "Claude Code",
     "title": "CLAUDE.md jako základ každého projektu s Claude Code",
     "excerpt": "Developer sdílel svůj návod na nastavení souboru CLAUDE.md. Ten určuje, jak Claude chápe projekt a jak s ním má pracovat. Pro každého, kdo Claude Code používá pravidelně, je to zásadní součást nastavení.",
     "body": "CLAUDE.md je soubor, který si Claude Code načte na začátku každé session. Popisuje mu, co projekt dělá, jak je poskládaný, jaké má konvence, co smí a nesmí dělat — a taky jak s ním jako vývojář chceš pracovat.\n\nJeden developer nasdílel svůj návod k tomuhle souboru ve formátu HTML a Markdown. Má v něm svoje workflow, které průběžně ladí. Podle něj je to základ, aby Claude Code dělal přesně to, co po něm chceš, bez zbytečných oprav a nedorozumění.\n\nDopad byl rychlý. Jiný člen komunity přiznal, že ho to nakoplo k překopání vlastního vstupního workflow. Výsledek? Práce mu teď prý mnohem líp odsýpá.\n\nPokud Claude Code používáš a CLAUDE.md nemáš, nebo ho máš prázdný, začal bych právě tímhle. Vyplatí se do toho dát čas.",
     "read_minutes": 2,
     "source_date": "2026-03-14",
-    "resurfaced_from": "2026-03-14"
+    "resurfaced_from": "2026-03-14",
+    "topics": [
+      "Claude Code",
+      "Workflow",
+      "Vibe Coding"
+    ]
   },
   "transcript": {
     "groups": [

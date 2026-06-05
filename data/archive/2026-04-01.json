@@ -11,69 +11,87 @@
       "id": "2026-04-01-01",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Bezpečnost",
       "title": "Zkontroluj vibecoding projekty po npm bezpečnostním incidentu",
       "excerpt": "Populární JavaScriptovou knihovnu axios někdo krátce kompromitoval přes npm. Pokud máte vibecodingové projekty se závislostmi v Node.js, vyplatí se je zkontrolovat. Claude Code to zvládne sám a výsledek vám srozumitelně vysvětlí.",
       "body": "V komunitě jsme řešili bezpečnostní incident: npm balíček axios byl krátce kompromitovaný. Většiny vibecoding projektů se to nakonec netýkalo, ale otevřelo to téma, na které hodně lidí narazilo poprvé.\n\nCo teď? Pokud víte, že váš projekt používá Node.js, typicky to poznáte podle souboru package.json ve složce projektu, nechte ho zkontrolovat. Otevřete Claude Code, vložte mu zprávu o incidentu, popište svůj setup a řekněte mu, ať vás provede kontrolou.\n\nTechničtější členové sdíleli i ruční postup: jak rychle najít všechny lock soubory na disku a ověřit konkrétní verze kompromitovaných balíčků. Pokud se v tom ale nechcete hrabat, Claude Code to zvládne za vás.\n\nAktuálně nahlášené projekty členů jsou v pořádku. Incident ale dobře připomněl, proč se hodí vědět, co v projektech máte, a mít rychlý způsob, jak si to ověřit.",
       "read_minutes": 2,
-      "source_date": "2026-04-01"
+      "source_date": "2026-04-01",
+      "topics": [
+        "Claude Code",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-04-01-02",
       "type": "INSIGHT",
       "level": "Expert",
-      "topic": "Správa závislostí",
       "title": "Pinovat přesné verze balíčků, ne rozsahy",
       "excerpt": "Jedna členka sdílela jednoduché pravidlo, které výrazně snižuje riziko supply chain útoků: místo rozsahů typu ^1.0.0 používat přesné verze a vybírat balíčky, které jsou venku aspoň čtyři dny.",
       "body": "Po diskuzi o bezpečnostním incidentu kolem axiosu sdílela jedna členka komunity konkrétní tipy, jak spravovat npm závislosti.\n\nPrvní pravidlo se týká zápisu verzí v `package.json`. Když napíšete `^1.0.0`, npm může při instalaci stáhnout jakoukoli kompatibilní novější verzi. Pokud útočník mezitím kompromituje novější verzi, automaticky se dostane i do vašeho projektu. Přesný zápis `1.0.0` bez stříšky tohle riziko odstraňuje.\n\nDruhé pravidlo: nekopírovat verze balíčků hned po vydání. Nové verze kontroluje komunita postupně. Balíček, který je čtyři dny venku bez incidentu, je mnohem bezpečnější než ten, který vyšel před hodinou.\n\nObě pravidla jsou jednoduchá a dají se použít v jakémkoli Node.js projektu. Spolu s pravidelnou kontrolou lock souborů tvoří základní bezpečnostní hygienu pro projekty, kde na bezpečnosti záleží.",
       "read_minutes": 2,
-      "source_date": "2026-04-01"
+      "source_date": "2026-04-01",
+      "topics": [
+        "Claude Code",
+        "Dokumentace"
+      ]
     },
     {
       "id": "2026-04-01-03",
       "type": "OTEVŘENÁ OTÁZKA",
       "level": "Builder",
-      "topic": "Workflow",
       "title": "Claude.ai, Cowork nebo Claude Code, kdy co",
       "excerpt": "Jeden z členů popsal mentální souboj, který asi zná spousta aktivních uživatelů: kdy má smysl pracovat v chatu, kdy přejít do Claude Code a k čemu je vlastně Cowork. Odpovědi z komunity se dost liší.",
       "body": "Jeden člen komunity popsal situaci, kterou asi zná spousta lidí: pořád řeší, jestli daný úkol patří do chatu na Claude.ai, do Coworku, nebo do Claude Code. A taky že často skočí do Claude Code i ve chvíli, kdy to vlastně není nutné, jen proto, že se mu tam líp pracuje se soubory a terminálem.\n\nZ diskuze vyplynulo, že každý to má nastavené trochu jinak. Jeden z nejaktivnějších uživatelů přiznal, že Cowork skoro vůbec nepoužívá a všechno řeší přes Claude Code, i když u daného úkolu vůbec nepíše kód. Jiní naopak zmiňovali Cowork jako praktický nástroj pro správu a sdílení souborů.\n\nJedna správná odpověď na to není. Záleží na tom, co děláte nejčastěji, jak máte uspořádané soubory a kde vám přirozeně vzniká kontext. Dává ale smysl si pro sebe nastavit jednoduché pravidlo, abyste mezi nástroji nepřeskakovali jen tak bez důvodu.\n\nJak to máte vy?",
       "read_minutes": 2,
-      "source_date": "2026-04-01"
+      "source_date": "2026-04-01",
+      "topics": [
+        "Claude Code",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-04-01-04",
       "type": "NÁSTROJE",
       "level": "Builder",
-      "topic": "Perplexity",
       "title": "Perplexity Pro zhoršilo výsledky po spuštění Computer",
       "excerpt": "Jeden z členů komunity popsal, že se mu po spuštění funkce Computer výrazně zhoršila kvalita odpovědí v Perplexity Pro. Opakovaně dostává slabé výsledky i tam, kde dřív Perplexity fungovalo výborně.",
       "body": "V diskuzi se objevilo, že někteří uživatelé Perplexity Pro po spuštění funkce Computer vidí znatelné zhoršení výsledků. Jeden člen komunity popisoval opakované odpovědi, které byly horší než standard, na který byl zvyklý.\n\nPerplexity bylo dlouho oblíbené jako nástroj pro vyhledávání na webu s AI zpracováním výsledků. Funkce Computer přidává možnost pracovat přímo s počítačem. Podle zkušeností uživatelů ale mohla její integrace ovlivnit celkovou kvalitu nebo rozdělení výpočetního výkonu.\n\nZatím jde o zkušenost jednoho člena. Může to být dočasný problém nebo se to může týkat jen některých typů dotazů. I tak je dobré to sledovat, hlavně pokud Perplexity Pro používáte pravidelně při práci.\n\nPokud jste v poslední době narazili na podobné problémy, může dávat smysl zkusit pro vyhledávání alternativy. Případně počkat, jestli Perplexity situaci vyřeší.",
       "read_minutes": 2,
-      "source_date": "2026-04-01"
+      "source_date": "2026-04-01",
+      "topics": [
+        "AI nástroje"
+      ]
     },
     {
       "id": "2026-04-01-05",
       "type": "TÉMA TÝDNE",
       "level": "Builder",
-      "topic": "Bezpečnost v AI projektech",
       "title": "Supply chain útoky jako téma pro vibe codery",
       "excerpt": "Incident kolem npm balíčku axios otevřel debatu, která se komunitě kolem vibecodingu doteď spíš vyhýbala. Když stavíte projekty s pomocí AI, narážíte i na bezpečnostní rizika, která vývojáři znají už roky.",
       "body": "Dnešní diskuze o incidentu kolem axiosu ukázala jednu věc. Vibe coding otevřel tvorbu softwaru i lidem, kteří dřív nekódovali. Jenže tyhle projekty si s sebou nesou stejná bezpečnostní rizika jako běžný vývoj. Včetně supply chain útoků přes npm.\n\nSupply chain útok znamená, že útočník nenapadne přímo váš projekt, ale knihovnu, na které závisí. Do vaší aplikace se pak dostane škodlivý kód, i když jste sami neudělali chybu. Axios má přes 50 milionů stažení týdně a patří mezi nejpoužívanější npm balíčky vůbec. Když někdo kompromituje takovou knihovnu, může tím zasáhnout obrovské množství projektů najednou.\n\nDobrá zpráva je, že projektů v komunitě se tentokrát problém netýkal. Incident ale dobře připomněl, že být vibe coder znamená převzít i základní odpovědnost za bezpečnost. Třeba vědět, co vaše projekty používají, a umět si to rychle ověřit.",
       "read_minutes": 3,
-      "source_date": "2026-04-01"
+      "source_date": "2026-04-01",
+      "topics": [
+        "Vibe Coding",
+        "Claude Code"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-03-14-05",
     "type": "INSIGHT",
     "level": "Builder",
-    "topic": "Výběr nástrojů",
     "title": "Nástroj bez API do moderního workflow nezapadne",
     "excerpt": "V diskuzi jsme se shodli na jednom jasném kritériu pro výběr nástrojů. Když nástroj nemá API, nejde ho rozumně automatizovat ani napojit na vlastní systém. Pro pravidelné používání je to velká překážka.",
     "body": "Dřív se API řešilo hlavně při vývoji aplikací. Dnes už je to kritérium i pro běžné uživatele, kteří chtějí z nástrojů dostat maximum.\n\nProč? Bez API používáte nástroj ručně: přihlásíte se, klikáte, zadáte vstup, zkopírujete výsledek. S API se dá celý postup automatizovat, zavolat nástroj ze skriptu, propojit ho s jinou službou nebo ho zapojit do vlastního workflow.\n\nV diskuzi to padlo jako jasné pravidlo: když nástroj nemá API, je to důvod jít dál. Ne proto, že by byl špatný, ale protože se nedá rozumně integrovat.\n\nJednoduchý test při výběru nového nástroje: Má API? Má dokumentaci? Dá se používat bez speciálního enterprise plánu? Pokud je odpověď třikrát ano, stojí za to ho zkoumat dál.",
     "read_minutes": 2,
     "source_date": "2026-03-14",
-    "resurfaced_from": "2026-03-14"
+    "resurfaced_from": "2026-03-14",
+    "topics": [
+      "Automatizace",
+      "Workflow",
+      "Dokumentace"
+    ]
   },
   "transcript": {
     "groups": [

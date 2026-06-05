@@ -11,80 +11,100 @@
       "id": "2026-05-23-01",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Task management",
       "title": "Claude spravuje úkoly v Things přes AppleScript",
       "excerpt": "Todoist má konektor pro Claude, Things zatím ne. Na dodavatele ale čekat nemusíte. Jeden člen nechal Clauda, ať si napojení přes AppleScript vymyslí sám — a funguje to.",
       "body": "Když nástroj, který používáte, nemá přímý konektor na Claude, ještě to neznamená, že ho nejde napojit. Jeden člen komunity prostě Claudovi řekl, ať si připojení na Things vymyslí sám. Výsledek? Automatizace přes AppleScript, kterou Claude napsal celou sám. Bez jediné ručně napsané řádky kódu.\n\nClaude umí přidávat úkoly do inboxu, nastavovat tagy i deadliny. Zařazování do konkrétních projektů zatím není úplně spolehlivé, ale to zas tak nevadí. Pro spoustu lidí je inbox jako výchozí místo a ruční roztřídění úplně přirozený workflow.\n\nFunguje to proto, že Mac má AppleScript jako scriptovací vrstvu nad desítkami aplikací. A Claude umí AppleScript psát. Stačí mu říct, co chcete automatizovat.\n\nTakže pokud přemýšlíte o přechodu na Todoist jen kvůli konektoru, možná ještě chvíli počkejte. Třeba je jednodušší najít cestu tam, kde už jste.",
       "read_minutes": 2,
-      "source_date": "2026-05-23"
+      "source_date": "2026-05-23",
+      "topics": [
+        "Automatizace",
+        "Email",
+        "Workflow"
+      ]
     },
     {
       "id": "2026-05-23-02",
       "type": "POSTAVIL JSEM",
       "level": "Builder",
-      "topic": "Webové projekty",
       "title": "Web z Lovable na GitHub za pár hodin",
       "excerpt": "Jedna členka přesunula svůj web z Lovable na Claude a GitHub. Už není závislá na jedné platformě, platí jen za Claude a má plnou kontrolu nad kódem.",
       "body": "Lovable je skvělý odrazový můstek. Jakmile si ale chcete web upravit opravdu po svém, rychle narazíte na limity platformy. Jedna členka komunity se proto rozhodla přejít jinam. Vzala web tak, jak byl, přesunula ho do Clauda a na GitHub a celý přesun měla za pár hodin hotový.\n\nCo tím získala? Plnou kontrolu. Teď může s Claudem upravovat cokoliv, změny commitovat na GitHub a nasazovat bez prostředníka. Platí jen jedno předplatné.\n\nZároveň si začala stavět vlastní knowledge base v Obsidianu, kterou chce s projektem propojit.\n\nProč to sdílela? Aby dodala odvahu lidem, kteří váhají. Přechod z no-code nástroje na vlastní kontrolu nad kódem může znít děsivě. V praxi se to ale dá zvládnout i bez technického zázemí. Stačí mít po ruce Clauda.",
       "read_minutes": 2,
-      "source_date": "2026-05-23"
+      "source_date": "2026-05-23",
+      "topics": [
+        "Poznámky",
+        "Obsidian"
+      ]
     },
     {
       "id": "2026-05-23-03",
       "type": "POSTAVIL JSEM",
       "level": "Builder",
-      "topic": "Vibe Coding",
       "title": "Vlastní fakturace místo drahého tarifu za hodinu",
       "excerpt": "iDoklad v základním tarifu nechtěl zpřístupnit potřebné funkce. Jeden člen si proto s Codexem za hodinu a půl postavil vlastní fakturační systém — se vším, co potřeboval.",
       "body": "Frustrující situace: platíte za nástroj, ale funkce, které fakt potřebujete, jsou schované až v dražším tarifu. Přesně tohle řešil jeden člen komunity s iDokladem. Místo aby dál připlácel, vzal to do vlastních rukou — s pomocí Codexu si za hodinu a půl postavil vlastní fakturační systém přesně podle svých potřeb.\n\nDobrý příklad toho, jak se věci s AI nástroji posouvají. Dřív by vlastní fakturační systém znamenal týdny nebo měsíce práce. Teď to může být hotové za jedno odpoledne.\n\nPíše, že výsledek chce ještě porovnat s Claude Code. I tak je ale podle něj výsledek boží.\n\nPointa: když vás SaaS nástroj drží pod krkem paywallem, zkuste si spočítat, jestli nebude rychlejší postavit si vlastní řešení. V roce 2026 to může stát hodiny, ne měsíce.",
       "read_minutes": 2,
-      "source_date": "2026-05-23"
+      "source_date": "2026-05-23",
+      "topics": [
+        "Claude Code",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-05-23-04",
       "type": "NÁSTROJE",
       "level": "Builder",
-      "topic": "Soniox",
       "title": "Přepisy podcastů se Soniox za 30 minut",
       "excerpt": "Jedna členka potřebovala přepsat svoje podcasty včetně časových značek a rozlišení mluvčích. Za půl hodiny měla hotový funkční skript.",
       "body": "Pokud tvoříte audio nebo video a chcete z něj dostat text — pro SEO, blog nebo archiv — Soniox stojí za vyzkoušení.\n\nJedna členka komunity si za 30 minut postavila pipeline, která zvládá tři věci najednou: vytáhne audio z MP4 souboru, přepíše ho přes Soniox s přesnými časovými značkami a rozpozná jednotlivé mluvčí. Výstup si pak naformátuje podle potřeby.\n\nProč Soniox a ne jiný nástroj? Má silné rozpoznávání mluvčích (diarization) a dobře podporuje češtinu. V tomhle spousta dalších nástrojů pořád pokulhává.\n\nPostup byl jednoduchý: Claude napsal skript, Soniox udělal přepis. Bez ručního klikání a bez manuálního nahrávání do webového rozhraní. Celý proces jde automatizovat a pouštět znovu na libovolném počtu souborů.",
       "read_minutes": 2,
-      "source_date": "2026-05-23"
+      "source_date": "2026-05-23",
+      "topics": [
+        "Automatizace",
+        "Workflow",
+        "Dokumentace"
+      ]
     },
     {
       "id": "2026-05-23-05",
       "type": "POSTAVIL JSEM",
       "level": "Builder",
-      "topic": "Vibe Coding",
       "title": "CRM pro elektro zakázky postavené s AI",
       "excerpt": "Jeden elektrikář si staví vlastní systém na správu zakázek. Výkazy práce, ekonomika, denní záznamy, adresář i reporty — všechno má pohromadě v jednom nástroji.",
       "body": "Elektrikáři, stavební firmy, živnostníci obecně — mají potřeby, které běžné CRM systémy řeší jen částečně. Právě proto si jeden člen komunity staví vlastní systém.\n\nUmí správu zakázek, ekonomiku, to-do listy, denní záznamy, adresář, reporty, výkazy práce i výkazy víceprací. Zatím běží lokálně a ladí se na reálných datech. Veřejně nasazený ještě není.\n\nNení to rychlý prototyp. Je to poctivý nástroj pro běžný pracovní provoz. Něco podobného by jinak stálo hodně peněz za licenci, nebo měsíce vývoje. S AI se to dá posunout za pár víkendů.\n\nDalší člen ze stavebnictví psal, že dřív dělal na podobném projektu pro výpočet rizik, ale nedotáhl ho. Je vidět, že tohle téma lidi řeší. Specifický software pro konkrétní řemesla často chybí, takže si ho začínají stavět sami.",
       "read_minutes": 3,
-      "source_date": "2026-05-23"
+      "source_date": "2026-05-23",
+      "topics": [
+        "AI nástroje"
+      ]
     },
     {
       "id": "2026-05-23-06",
       "type": "OTEVŘENÁ OTÁZKA",
       "level": "Builder",
-      "topic": "RAG / studium",
       "title": "Vlastní NotebookLM s hlasem pro státnice",
       "excerpt": "Student před státnicemi si chce postavit vlastní verzi NotebookLM se Sonioxem, hlasovým vstupem i výstupem. Shání reálné zkušenosti od lidí, kteří něco podobného zkoušeli.",
       "body": "NotebookLM od Googlu je oblíbený nástroj na učení z dokumentů, ale má svoje limity. Student z komunity, který se připravuje na státnice, chce zajít dál: postavit si vlastní verzi s hlasovým vstupem a výstupem přes Soniox.\n\nPředstava je jednoduchá: místo čtení a psaní by se svými studijními materiály mluvil. Hlasem by pokládal otázky, dostával hlasové odpovědi a procházel látku formou konverzace.\n\nKomunitě položil pár otázek:\n\n- Dá se to v praxi opravdu používat, nebo to dobře zní jen na papíře?\n- Kolik to reálně stojí — Soniox, tokeny, inference?\n- Jak to celé technicky poskládat?\n\nSám to vystihl přesně: tohle mu žádné LLM pořádně nepopíše, protože odpověď závisí na reálné zkušenosti, ne na tréninkových datech. Pokud máte s podobným projektem zkušenost — se Sonioxem nebo s jiným hlasovým RAG řešením — bude hodně cenné, když se podělíte.",
       "read_minutes": 2,
-      "source_date": "2026-05-23"
+      "source_date": "2026-05-23",
+      "topics": [
+        "AI nástroje"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-04-26-03",
     "type": "INSIGHT",
     "level": "Expert",
-    "topic": "Data management",
     "title": "Markdown v gitu jako datová vrstva pro AI",
     "excerpt": "Jeden člen přestal koukat přímo do dat a místo toho se na všechno ptá Clauda. Tvrdí, že markdownové soubory v gitu jsou pro AI nejlepší struktura, se kterou se jí dobře pracuje. Inspirovalo to dalšího člena, aby přešel na CRM v Markdownu.",
     "body": "Jeden člen komunity popsal, jak změnil přístup ke svým datům. Nepoužívá grafické rozhraní ani aplikace. Všechno má v Markdown souborech v gitu. Důvod je jednoduchý: stejně se na data nedívá přímo, na všechno se ptá Clauda. A Claude si s Markdownem rozumí nejlíp.\n\nJe to přirozené pokračování filozofie plain text. Markdown přečte člověk i stroj, dá se verzovat a snadno přenášet. Git k tomu přidá historii změn a zálohu. Claude pak slouží jako rozhraní: prohledává, shrnuje a aktualizuje.\n\nMá to i svoje limity. Nehodí se to pro velké objemy strukturovaných dat, pro týmy bez technického zázemí a vyžaduje to pořádek v názvech souborů i struktuře. Pro osobní knowledge management nebo jednoduché CRM to ale může být elegantnější řešení než řada komerčních nástrojů.\n\nV diskuzi to inspirovalo dalšího člena k přechodu na CRM v Markdownu. Hezký příklad toho, jak sdílení konkrétních postupů v komunitě mění způsob práce.",
     "read_minutes": 2,
     "source_date": "2026-04-26",
-    "resurfaced_from": "2026-04-26"
+    "resurfaced_from": "2026-04-26",
+    "topics": [
+      "Poznámky"
+    ]
   },
   "transcript": {
     "groups": [

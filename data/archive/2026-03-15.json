@@ -10,37 +10,52 @@
     {
       "id": "2026-03-15-01",
       "source_date": "2026-03-15",
-      "topic": "iterativní přístup",
       "excerpt": "První pokus je hotový, jenže zadání jsem pochopil špatně. Takže rovnou druhá iterace.",
-      "body": "Tohle byl Den 1 a víc lidí narazilo na stejný vzorec: něco pustili, výsledek nebyl podle představ, tak to zkusili znovu. Zkoušení po krocích si osahali v praxi, ne z teorie. Přesně takhle to funguje."
+      "body": "Tohle byl Den 1 a víc lidí narazilo na stejný vzorec: něco pustili, výsledek nebyl podle představ, tak to zkusili znovu. Zkoušení po krocích si osahali v praxi, ne z teorie. Přesně takhle to funguje.",
+      "topics": [
+        "Prompting",
+        "Workflow"
+      ]
     },
     {
       "id": "2026-03-15-02",
       "source_date": "2026-03-15",
-      "topic": "výběr nástroje",
       "excerpt": "První den lidi nejčastěji sahali po Lovable, Macaly a Claude Code.",
-      "body": "Kdo se bál terminálu, sáhl po Lovable nebo Macaly. V prohlížeči, bez instalace, hotovo za pět minut. Kdo chtěl větší kontrolu, spustil Claude Code. Fungovalo obojí. Výsledky byly rychle."
+      "body": "Kdo se bál terminálu, sáhl po Lovable nebo Macaly. V prohlížeči, bez instalace, hotovo za pět minut. Kdo chtěl větší kontrolu, spustil Claude Code. Fungovalo obojí. Výsledky byly rychle.",
+      "topics": [
+        "Claude Code",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-03-15-03",
       "source_date": "2026-03-15",
-      "topic": "dlouhodobý projekt",
       "excerpt": "Alex ukázal aribena.com — vyvíjel ho čtyři měsíce přes Claude. Pěkný kontrast k třídenní výzvě.",
-      "body": "Třídenní výzva je sprint. aribena.com je maraton. Čtyři měsíce iterací, oprav a rozšiřování. Ukázka, kam se dá vibe coding dotáhnout, když ho po prvním týdnu nezabalíte."
+      "body": "Třídenní výzva je sprint. aribena.com je maraton. Čtyři měsíce iterací, oprav a rozšiřování. Ukázka, kam se dá vibe coding dotáhnout, když ho po prvním týdnu nezabalíte.",
+      "topics": [
+        "Vibe Coding",
+        "Claude Code"
+      ]
     },
     {
       "id": "2026-03-15-04",
       "source_date": "2026-03-15",
-      "topic": "limity scrapingu",
       "excerpt": "Martin narazil na limity scrapingu veřejných zakázek — většina portálů je schovaná za přihlášením nebo paywallem.",
-      "body": "TED API pokrývá jen část zakázek. Zbytek je buď dostupný až po přihlášení, nebo schovaný za paywallem. Tady vibe coding nestačí. Problém není v kódu, ale v tom, jak jsou data omezená."
+      "body": "TED API pokrývá jen část zakázek. Zbytek je buď dostupný až po přihlášení, nebo schovaný za paywallem. Tady vibe coding nestačí. Problém není v kódu, ale v tom, jak jsou data omezená.",
+      "topics": [
+        "Vibe Coding",
+        "Claude Code"
+      ]
     },
     {
       "id": "2026-03-15-05",
       "source_date": "2026-03-15",
-      "topic": "neočekávané využití nástroje",
       "excerpt": "Nikol použila Claude Code, aby místo aplikace vygenerovala prezentaci.",
-      "body": "Zadání bylo vytvořit aplikaci, Nikol z toho udělala prezentaci. A funguje to. Nástroje se nemusí používat jen tak, jak byly původně navržené — a tohle je dobrý příklad, proč má smysl zkoušet nové věci."
+      "body": "Zadání bylo vytvořit aplikaci, Nikol z toho udělala prezentaci. A funguje to. Nástroje se nemusí používat jen tak, jak byly původně navržené — a tohle je dobrý příklad, proč má smysl zkoušet nové věci.",
+      "topics": [
+        "Claude Code",
+        "Vibe Coding"
+      ]
     }
   ],
   "resurfacing": null,

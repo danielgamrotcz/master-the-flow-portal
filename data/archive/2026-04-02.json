@@ -11,69 +11,94 @@
       "id": "2026-04-02-01",
       "type": "TÉMA TÝDNE",
       "level": "Začátečník",
-      "topic": "AI náklady",
       "title": "Kolik komunita měsíčně platí za AI",
       "excerpt": "Celá diskuze se točila kolem jedné otázky: kolik vlastně dáváme za AI nástroje. Členové psali částky od tisícovky až po víc než 15 000 Kč měsíčně. Hodně z nich přiznalo, že přemýšlí, co zrušit nebo osekat.",
       "body": "Jeden člen otevřel téma tím, že sdílel svůj průměr kolem 6 500 Kč měsíčně. A tím spustil vlnu přiznání od ostatních.\n\nNa jednom konci jsou lidi, kteří jedou skoro zadarmo. Google Workspace za základní poplatky, free plány AI nástrojů, žádná předplatná. Na druhém konci jsou full stacky typu Claude Max, Cursor, Perplexity a Lovable. Tam se náklady snadno dostanou přes 15 000 Kč.\n\nNejčastěji se v diskuzi opakovala kombinace Claude a ChatGPT vedle sebe. Jeden na přemýšlení a psaní, druhý kvůli obrázkům nebo prostě ze zvyku. Dost lidí ale přiznalo, že tohle zdvojení moc nedává smysl a jeden z nich zruší.\n\nZajímavé srovnání přidal profesionální vibecoder. Platí přes 500 dolarů měsíčně, ale počítá do toho databáze, hosting i desítky aktivních projektů. To už je jiná liga než hobby stack.\n\nHlavní otázka, která z diskuze zůstala: kdy nástroj opravdu ušetří tolik práce, aby se zaplatil?",
       "read_minutes": 2,
-      "source_date": "2026-04-02"
+      "source_date": "2026-04-02",
+      "topics": [
+        "Vibe Coding",
+        "ChatGPT",
+        "AI nástroje",
+        "Databáze"
+      ]
     },
     {
       "id": "2026-04-02-02",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "AI náklady",
       "title": "Tři způsoby jak ohlídat výdaje za Claude",
       "excerpt": "V diskuzi padlo pár konkrétních tipů, jak snížit měsíční fakturu za Claude. Na menší úkoly přepnout na Haiku, nastavit si měsíční limit nebo zvolit Max plán místo přímého API. Každá možnost funguje trochu jinak a hodí se pro jinou situaci.",
       "body": "Ne každý úkol potřebuje nejsilnější model. Claude Haiku je mnohem levnější než Sonnet nebo Opus. Na jednoduché přepisy, shrnutí nebo formátování dat bohatě stačí. Když budete modely přepínat podle náročnosti, ušetříte rychle. A bez ztráty kvality tam, kde je opravdu důležitá.\n\nClaude Code umí nastavit měsíční limit na extra usage. Pokud jste na Max plánu a nechcete překročit určitou částku, zapněte si ho. Zastaví vás dřív, než přijde nepříjemné překvapení na faktuře.\n\nTřetí tip je o způsobu přístupu. Propojení Claude Code s měsíčním plánem vychází levněji než přímé volání přes API. API dává smysl hlavně vývojářům, kteří staví vlastní aplikace. Pro ostatní je to zbytečně drahá cesta k tomu, co už Max plán nabízí v ceně předplatného.\n\nJeden člen zmiňoval Dispatch na vzdálené ovládání počítače. Tam si radši dopředu spočítejte, kolik tokenů akce sežerou. Práce s rozhraním jich bere výrazně víc než obyčejná práce s textem.",
       "read_minutes": 2,
-      "source_date": "2026-04-02"
+      "source_date": "2026-04-02",
+      "topics": [
+        "Claude Code",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-04-02-03",
       "type": "POSTAVIL JSEM",
       "level": "Builder",
-      "topic": "Vibe Coding",
       "title": "Task manager navržený pro procházku s kočárkem",
       "excerpt": "Jedna členka si vibe-codingem postavila vlastní appku na správu úkolů přesně pro svou situaci. Úkoly diktuje na procházce s miminkem a aplikace je pak doma zpracuje. Žádný hotový nástroj tenhle workflow neuměl.",
       "body": "Tohle je dobrý příklad, proč vibe coding není jen o technickém výsledku. Jde o to, že si člověk může postavit přesně to, co potřebuje. Bez kompromisů, které mají hotové aplikace.\n\nFreelancerka s miminkem řešila konkrétní problém. Když má čas přemýšlet nad úkoly, není u počítače. Když je u počítače, má moc práce. Řešením byla appka, která na procházce vezme hlasový vstup, zpracuje ho a doma z něj připraví úkoly rovnou k práci.\n\nTenhle případ ukazuje širší vzorec. Vibe coding začíná být dostupný i lidem, kteří se nikdy nebrali jako někdo, kdo si „staví aplikace“. Hlavní posun je v tom, že nemusíte rozumět tomu, jak aplikace funguje uvnitř. Stačí popsat, co má dělat, a ladit ji, dokud nefunguje přesně podle vás.\n\nDalší člen ve stejné době ladil todo appku s oddělenými seznamy na nápady a úkoly. Zdánlivě drobnost. Ale přesně ten typ úpravy, kvůli kterému většina lidí přeskakuje mezi pěti různými aplikacemi a stejně není spokojená.",
       "read_minutes": 2,
-      "source_date": "2026-04-02"
+      "source_date": "2026-04-02",
+      "topics": [
+        "Vibe Coding",
+        "Workflow",
+        "Claude Code"
+      ]
     },
     {
       "id": "2026-04-02-04",
       "type": "NÁSTROJE",
       "level": "Expert",
-      "topic": "Claude MCP",
       "title": "Claude s Notion MCP nebo Cowork — kdy co",
       "excerpt": "V diskuzi se řešilo, jestli stačí Claude chat napojený přes MCP, nebo má smysl připlácet za Cowork. Komunita se nakonec shodla na celkem jasné odpovědi. Záleží na jedné konkrétní věci.",
       "body": "Cowork je nadstavba nad Claudem. Umožňuje pracovat s lokálními soubory přímo z chatu, bez kopírování obsahu do okna a bez terminálu. To je její hlavní, a vlastně skoro jediná, výhoda proti samotnému MCP.\n\nClaude chat s Notion MCP funguje dobře, když pracujete s daty v Notionu. Tedy s databázemi, stránkami, tabulkami nebo propojenými záznamy. Jakmile ale potřebujete řešit PDF na disku, soubory v lokálních složkách nebo cokoli mimo Notion, samotné MCP nestačí.\n\nCowork tuhle mezeru vyplňuje. Dá Claudovi přístup k lokálnímu systému souborů, aniž by si uživatel musel nastavovat Claude Code nebo se učit terminál. Pro netechnické uživatele, kteří chtějí víc než jen chat, ale nechtějí rovnou celé vibe coding prostředí, to může být rozumný mezikrok.\n\nShoda z diskuze je zhruba taková: pokud máte všechno v Notionu nebo v cloudu, MCP stačí a Cowork nepotřebujete. Pokud ale pravidelně pracujete s lokálními soubory, Cowork se nejspíš zaplatí úsporou času při přenášení dat.",
       "read_minutes": 2,
-      "source_date": "2026-04-02"
+      "source_date": "2026-04-02",
+      "topics": [
+        "Claude Code",
+        "Vibe Coding",
+        "Notion",
+        "MCP"
+      ]
     },
     {
       "id": "2026-04-02-05",
       "type": "NÁSTROJE",
       "level": "Builder",
-      "topic": "Dispatch",
       "title": "Dispatch: Claude ovládá váš počítač na dálku",
       "excerpt": "Jeden člen testoval Dispatch, nástroj, přes který Claude převezme kontrolu nad vaším počítačem a pracuje za vás. Výsledky jsou zajímavé, ale cena za jedno sezení může překvapit.",
       "body": "Dispatch se chová jako vzdálený pracovník. Otevřete spojení, řeknete Claudovi, co má na vašem počítači udělat, a on to opravdu udělá. Kliká, píše, přepíná aplikace a otevírá soubory.\n\nV diskuzi se testovalo vibe coding sezení přes Dispatch. Výsledek fungoval, ale účet vyšel zhruba na 11 dolarů za jednu session. To samo o sobě není žádná tragédie, pokud předem víte, za co platíte. Problém je, když netušíte, kolik tokenů taková práce s obrazovkou sežere.\n\nOproti běžnému chatu s Claudem je to velký rozdíl. Každá akce na obrazovce něco stojí. Každý screenshot, každé kliknutí, každý další krok žere tokeny. Model vidí aktuální stav obrazovky jako obrázek, musí ho vyhodnotit a až potom se rozhodne, co udělá dál. Výpočetně i finančně je to násobně dražší než práce s textem.\n\nSmysl to dává hlavně lidem, kteří chtějí automatizovat opakované úkoly na počítači, ale nechtějí se učit skriptování ani terminál. Pro pravidelné používání je ale dobré nejdřív udělat testovací sezení, spočítat náklady a pak rozhodnout, jestli se to vyplatí.",
       "read_minutes": 2,
-      "source_date": "2026-04-02"
+      "source_date": "2026-04-02",
+      "topics": [
+        "Vibe Coding",
+        "Automatizace",
+        "Claude Code"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-03-16-03",
     "type": "INSIGHT",
     "level": "Začátečník",
-    "topic": "Nástroje pro začátečníky",
     "title": "Cursor nebo VS Code pro začátečníky",
     "excerpt": "Instalace Gitu a Claude Code CLI přes příkazovou řádku může být překážka. Člověka odradí ještě dřív, než začne něco stavět. Komunita proto navrhla Cursor nebo rozšíření do VS Code jako dostupnější alternativy se stejnou silou.",
     "body": "Ne každému se chce začínat v příkazové řádce. Jeden člen zkoušel instalovat Git a Claude Code CLI a narazil na technické záseky, které člověka snadno odradí hned na startu.\n\nKomunita navrhla dvě alternativy:\n\n**Cursor** — editor postavený na VS Code s AI přímo uvnitř. Stáhnete, nainstalujete, otevřete složku a můžete pracovat. Terminál tam je taky, ale pro první kroky ho nepotřebujete.\n\n**VS Code s rozšířením Claude** — pokud už VS Code znáte, stačí přidat rozšíření Claude. Dostanete podobný zážitek bez další složité instalace.\n\nPro úplné začátečníky je Cursor nejspíš jednodušší start. Terminál se naučíte později, až ho budete potřebovat. Teď jde hlavně o to začít něco stavět, ne se hned učit unixové příkazy.",
     "read_minutes": 2,
     "source_date": "2026-03-16",
-    "resurfaced_from": "2026-03-16"
+    "resurfaced_from": "2026-03-16",
+    "topics": [
+      "Claude Code",
+      "Cursor",
+      "Vibe Coding"
+    ]
   },
   "transcript": {
     "groups": [

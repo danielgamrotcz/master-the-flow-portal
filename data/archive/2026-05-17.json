@@ -10,57 +10,81 @@
     {
       "id": "2026-05-17-01",
       "source_date": "2026-05-17",
-      "topic": "Raycast beta diktování vs Uttero",
       "excerpt": "Daniel porovnal beta diktování v Raycastu s Uttero. Vyšlo mu z toho, že kdo začíná teď, nejspíš sáhne po Raycastu. Uttero dál bere jako svůj osobní experimentální projekt s funkcemi, které Raycast zatím nemá.",
-      "body": "Raycast beta přidal diktování a funguje fakt skvěle. Daniel sdílel srovnání: rychlost i formátování jsou na jedničku s hvězdičkou. Objevila se jedna chyba se jménem v oslovení, ale dá se vyřešit promptem. Uttero má pořád svoje výhody, třeba offline diktování a živé náhledy. Komunita přidala vlastní zkušenosti a řešila, jak moc záleží na konkrétním použití."
+      "body": "Raycast beta přidal diktování a funguje fakt skvěle. Daniel sdílel srovnání: rychlost i formátování jsou na jedničku s hvězdičkou. Objevila se jedna chyba se jménem v oslovení, ale dá se vyřešit promptem. Uttero má pořád svoje výhody, třeba offline diktování a živé náhledy. Komunita přidala vlastní zkušenosti a řešila, jak moc záleží na konkrétním použití.",
+      "topics": [
+        "Raycast",
+        "Prompting"
+      ]
     },
     {
       "id": "2026-05-17-02",
       "source_date": "2026-05-17",
-      "topic": "ShellBoard a terminálové nástroje",
       "excerpt": "Člen komunity postavil vlastní projektový terminál ShellBoard s taby a rozděleným zobrazením. Zmíněný byl i Terax a ViberTerm, který Daniel kvůli jiným prioritám odložil.",
-      "body": "Při debatě o ViberTermu sdílel člen komunity vlastní řešení ShellBoard — terminál stavěný kolem projektů, se skupinami vlevo, podporou více tabů a rozdělenou obrazovkou. Odkaz na GitHub je k dispozici. Jako další alternativa padl Terax. Daniel přiznal, že VibeTerm má u něj nízkou prioritu a teď ho dál nerozvíjí."
+      "body": "Při debatě o ViberTermu sdílel člen komunity vlastní řešení ShellBoard — terminál stavěný kolem projektů, se skupinami vlevo, podporou více tabů a rozdělenou obrazovkou. Odkaz na GitHub je k dispozici. Jako další alternativa padl Terax. Daniel přiznal, že VibeTerm má u něj nízkou prioritu a teď ho dál nerozvíjí.",
+      "topics": [
+        "Workflow",
+        "AI nástroje"
+      ]
     },
     {
       "id": "2026-05-17-03",
       "source_date": "2026-05-17",
-      "topic": "Bezpečnost MCP serverů",
       "excerpt": "Jak poznat důvěryhodný MCP server? Komunita se shoduje: držte se oficiálních MCP serverů nebo vlastního kódu. Ze začátku radši ručně potvrzujte každý příkaz.",
-      "body": "Bezpečnost MCP serverů se začala hodně řešit. Komunita probírala, jak poznat bezpečný zdroj od možného rizika. Doporučení znělo jasně: používat buď oficiální MCP servery, nebo vlastní kód, který si člověk sám napsal. Začátečníkům se doporučovalo zapnout ruční potvrzování příkazů, dokud si neosahají, jak MCP funguje."
+      "body": "Bezpečnost MCP serverů se začala hodně řešit. Komunita probírala, jak poznat bezpečný zdroj od možného rizika. Doporučení znělo jasně: používat buď oficiální MCP servery, nebo vlastní kód, který si člověk sám napsal. Začátečníkům se doporučovalo zapnout ruční potvrzování příkazů, dokud si neosahají, jak MCP funguje.",
+      "topics": [
+        "Claude Code",
+        "MCP",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-05-17-04",
       "source_date": "2026-05-17",
-      "topic": "Osobnostní CV pro AI agenty — personality priming",
       "excerpt": "Člen komunity sdílel tip: než AI zadáte úkol, dejte jí fiktivní profesní profil. Jiný člen to používá při generování person pro usability review.",
-      "body": "Tip z komunity: místo toho, abyste AI rovnou zadali úkol, jí nejdřív dejte identitu přes fiktivní životopis nebo profesní profil. Podle zkušeností to výrazně mění tón i kvalitu výstupu. Jeden člen komunity to používá při generování person pro usability testy. Než pustí testování s reálnými uživateli, tak si takhle předem ověří, jestli design dává smysl."
+      "body": "Tip z komunity: místo toho, abyste AI rovnou zadali úkol, jí nejdřív dejte identitu přes fiktivní životopis nebo profesní profil. Podle zkušeností to výrazně mění tón i kvalitu výstupu. Jeden člen komunity to používá při generování person pro usability testy. Než pustí testování s reálnými uživateli, tak si takhle předem ověří, jestli design dává smysl.",
+      "topics": [
+        "Prompting",
+        "AI nástroje"
+      ]
     },
     {
       "id": "2026-05-17-05",
       "source_date": "2026-05-17",
-      "topic": "Anonymizace dat před vstupem do AI",
       "excerpt": "Jak posílat citlivá data do AI bezpečně? V komunitě padly dvě konkrétní možnosti: MS Presidio a lokální Gemma běžící v Dockeru.",
-      "body": "Jeden z členů se ptal na nástroje, které anonymizují data, než je pošle do AI modelu. Padla dvě konkrétní doporučení: Microsoft Presidio, open-source knihovna pro detekci a maskování PII, a lokálně spuštěný model Gemma v Dockeru jako alternativa ke cloudovým službám. Obě možnosti umí zpracovat citlivá data bez toho, aby se originál posílal na cizí servery."
+      "body": "Jeden z členů se ptal na nástroje, které anonymizují data, než je pošle do AI modelu. Padla dvě konkrétní doporučení: Microsoft Presidio, open-source knihovna pro detekci a maskování PII, a lokálně spuštěný model Gemma v Dockeru jako alternativa ke cloudovým službám. Obě možnosti umí zpracovat citlivá data bez toho, aby se originál posílal na cizí servery.",
+      "topics": [
+        "AI nástroje"
+      ]
     },
     {
       "id": "2026-05-17-06",
       "source_date": "2026-05-17",
-      "topic": "Efektivita bez tlaku na automatizaci",
       "excerpt": "Honza připomněl princip mikrovylepšení od Paula Akerse. Jiří přidal otázku pro CEO/CTO: slouží to svému účelu? Odpovídají tomu náklady? Několik členů připomnělo, že ne každý si musí vyvíjet vlastní řešení.",
-      "body": "Debata o efektivitě se stočila k zásadní otázce: kdy ještě automatizovat a řešit nástroje a kdy už prostě dělat práci. Honza zmínil princip mikrovylepšení od Paula Akerse — malá každodenní zlepšení bez tlaku na dokonalost. Jiří přidal byznysový pohled: každý nástroj nebo workflow by mělo projít jednoduchým testem — plní svůj účel? Odpovídají náklady tomu, co přináší? Komunita se shodla, že účel je důležitější než nástroje a že ne každý si musí vyvíjet vlastní software."
+      "body": "Debata o efektivitě se stočila k zásadní otázce: kdy ještě automatizovat a řešit nástroje a kdy už prostě dělat práci. Honza zmínil princip mikrovylepšení od Paula Akerse — malá každodenní zlepšení bez tlaku na dokonalost. Jiří přidal byznysový pohled: každý nástroj nebo workflow by mělo projít jednoduchým testem — plní svůj účel? Odpovídají náklady tomu, co přináší? Komunita se shodla, že účel je důležitější než nástroje a že ne každý si musí vyvíjet vlastní software.",
+      "topics": [
+        "Automatizace",
+        "Produktivita",
+        "Workflow"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-04-28-05",
     "type": "INSIGHT",
     "level": "Začátečník",
-    "topic": "Tabulky, Excel",
     "title": "AI dotáhne tabulku, kde vzorce selžou",
     "excerpt": "Složitá excelová tabulka, která se při ručních úpravách rozsype? Jedna členka to vyřešila přes AI a nepřišla o žádné vzorce. Funguje to i v Google Sheets.",
     "body": "Jedna členka popsala konkrétní situaci. Měla těžkou excelovou tabulku plnou vzorců a ručně ji nešlo dodělat tak, aby se něco nerozbilo. Zkusila to přes AI a tabulka byla hotová bez problémů.\n\nPodobně to jde i v Google Sheets. Přes Claude Code se dají spravovat i složitější věci, třeba vlastní CRM. Každou úpravu můžeš nechat na AI a nehrozí, že ručně něco rozhodíš.\n\nPro lidi bez programátorského zázemí je tohle jeden z nejpraktičtějších způsobů použití. Nemusíš rozumět vzorcům. Stačí popsat, co chceš, a AI to dotáhne. Hodí se to hlavně ve chvíli, kdy chybí jeden vzorec, potřebuješ přidat sloupec nebo opravit strukturu tak, aby se nerozsypala data.",
     "read_minutes": 2,
     "source_date": "2026-04-28",
-    "resurfaced_from": "2026-04-28"
+    "resurfaced_from": "2026-04-28",
+    "topics": [
+      "Claude Code",
+      "Google",
+      "Databáze",
+      "Vibe Coding"
+    ]
   },
   "transcript": {
     "groups": [

@@ -11,58 +11,73 @@
       "id": "2026-04-14-01",
       "type": "NÁSTROJE",
       "level": "Builder",
-      "topic": "Claude Code / MCP",
       "title": "Context7 přináší aktuální docs do AI asistenta",
       "excerpt": "Context7 je MCP server, který AI asistentovi tahá dokumentaci knihoven a frameworků přímo z internetu. Nespoléhá na stará trénovací data, ale pracuje s aktuálními informacemi. Claude Code ho umí používat automaticky, někdy ho na něj ale musíte navést ručně.",
       "body": "Když AI asistent pracuje s konkrétní knihovnou nebo frameworkem, vychází z toho, co se naučil při trénování. Jenže tahle data můžou být klidně rok nebo víc stará. Context7 to bere jinak. Je to MCP server, který si při každém dotazu stáhne aktuální dokumentaci z internetu a pošle ji rovnou do kontextu asistenta.\n\nV praxi se hodí hlavně při napojování technologií. Třeba když integrujete nové API nebo pracujete s frameworkem, který se rychle mění. Claude Code umí Context7 používat automaticky, ale nespoléhejte na to, že ho vždycky zapne sám. Když řešíte konkrétní technologii a odpovědi nejsou přesné, řekněte mu přímo, ať se podívá do dokumentace přes Context7.\n\nNastavení je celkem jednoduché. Přidáte Context7 jako MCP server do konfigurace Claude Code a od té chvíle ho může asistent používat. Není to žádné kouzlo. Pro běžnou práci s kódem ale znatelně zlepší přesnost odpovědí.",
       "read_minutes": 2,
-      "source_date": "2026-04-14"
+      "source_date": "2026-04-14",
+      "topics": [
+        "Claude Code",
+        "Dokumentace",
+        "MCP",
+        "Vibe Coding"
+      ]
     },
     {
       "id": "2026-04-14-02",
       "type": "INSIGHT",
       "level": "Expert",
-      "topic": "Claude Code / MCP",
       "title": "Ani Context7 nezaručí kompletní dokumentaci",
       "excerpt": "Context7 je užitečný nástroj, ale stažená dokumentace nemusí být vždy kompletní. Jeden člen narazil na případ, kdy Context7 nenašel model, který byl starý teprve dva měsíce.",
       "body": "Context7 AI asistentovi výrazně pomáhá dostat se k aktuálním informacím, ale není bez omezení. Dokumentace, kterou si stáhne, nemusí být vždy kompletní. Nebo může být poskládaná jinak, než asistent čeká.\n\nZ komunity přišel konkrétní příklad. Jeden člen pracoval s technologií, kde byl model starý zhruba dva měsíce. Context7 ho stejně nenašel, protože v dostupné dokumentaci prostě nebyl. A stalo se to přesně ve chvíli, kdy by měl být Context7 nejužitečnější.\n\nZávěr je jednoduchý. Context7 je dobrý první krok. Pokud ale pracujete s úplně čerstvou verzí technologie nebo s méně běžnou knihovnou, ověřte si výsledek i přímo v oficiální dokumentaci. Slepě věřit tomu, že asistent „má aktuální data“, se může vymstít. Takové chyby se hledají hůř než běžné halucinace, protože vypadají mnohem věrohodněji.",
       "read_minutes": 2,
-      "source_date": "2026-04-14"
+      "source_date": "2026-04-14",
+      "topics": [
+        "Dokumentace"
+      ]
     },
     {
       "id": "2026-04-14-03",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "Workflow / Automatizace",
       "title": "Weekly review skupinových chatů přes export a prompt",
       "excerpt": "Pravidelný souhrn dění ve WhatsApp skupinách jde udělat tak, že se exportují chaty a lokálně na počítači zpracují přes připravený prompt. Automatizace se ještě dolaďuje, ale základní verze funguje už teď.",
       "body": "Weekly review vzniká z exportů chatů z WhatsAppu. Ty se pak lokálně v počítači zpracují přes připravený prompt. Výsledek je čitelný souhrn pro nové nebo méně aktivní členy, kteří nestíhají sledovat všechno hned.\n\nPostup je jednoduchý. Z každé skupiny se vyexportuje chat. WhatsApp to umí v nastavení skupiny. Texty se spojí a projdou promptem, který z nich vytáhne hlavní témata, projekty a postřehy. Ve shrnutí nejsou jména členů. Vynechávají se i provozní věci, třeba pozdravy nebo domlouvání akcí.\n\nAutomatizace celého procesu se ještě ladí. Základ ale funguje i ručně. Pokud vedete komunitu, interní tým nebo jakýkoli skupinový chat a chcete pravidelně shrnovat, co se děje, je to použitelný postup bez speciálních nástrojů. Stačí export chatů a dobře napsaný prompt.",
       "read_minutes": 2,
-      "source_date": "2026-04-14"
+      "source_date": "2026-04-14",
+      "topics": [
+        "Automatizace",
+        "Prompting"
+      ]
     },
     {
       "id": "2026-04-14-04",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "AI workflow / Produktivita",
       "title": "Kdy přestat záplatovat a začít od začátku",
       "excerpt": "Jeden člen strávil několik dní opravou chyby v projektu. Lepil to z jedné strany, pak z druhé, a pokaždé se rozbilo něco jiného. Nakonec nechal AI navrhnout řešení od nuly. Za pár hodin bylo hotovo.",
       "body": "Je snadné spadnout do nekonečného záplatování. Opravíte jednu věc a rozbije se druhá. Opravíte druhou a začne padat třetí. Každý krok sám o sobě dává smysl, ale celek se pomalu sype. A čím déle v tom jste, tím víc energie pálíte na udržování kódu, který pořád nefunguje.\n\nV komunitě se osvědčilo tohle: když se stejná chyba vrátí víc než dvakrát, nebo když začnou opravy záviset jedna na druhé, zastavte se. Neptejte se „jak tohle opravím?“. Zeptejte se: „Jak bych to navrhl znovu od nuly, kdybych věděl to, co vím teď?“\n\nAI asistenti jsou v tomhle překvapivě užiteční. Nemají citovou vazbu na současné řešení. Často navrhnou jednodušší, přehlednější a líp udržovatelnou variantu. A čas utopený v záplatách bývá často delší než čas potřebný na přepis.\n\nPravidlo nezní „vždycky přepisuj“. Spíš: „Než strávíš třetí den na stejné chybě, zkus se zeptat na řešení s čistým listem.“",
       "read_minutes": 2,
-      "source_date": "2026-04-14"
+      "source_date": "2026-04-14",
+      "topics": [
+        "Fokus"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-03-28-02",
     "type": "INSIGHT",
     "level": "Builder",
-    "topic": "Vibe Coding",
     "title": "Mapa, poloha a checklist v jedné aplikaci",
     "excerpt": "Jeden člen řeší interaktivní aplikaci pro detailing auta. Byla by napojená na web detailera a měla by v sobě mapu, polohu i checklist. Stejný princip se dá použít i u vaření nebo u jakéhokoli postupu, který závisí na kontextu.",
     "body": "Nápad je jednoduchý. Zákazník otevře stránku, uvidí checklist péče o auto, aplikace zná jeho polohu, ukáže nejbližší servis nebo produkt a přímo z rozhraní může zavolat.\n\nZajímavé je, že se tu spojují tři věci: checklist, tedy co udělat, poloha, tedy kde jsem a co mám poblíž, a přímý kontakt, tedy zavolání bez přepínání mezi aplikacemi. Každá z těch věcí už existuje sama o sobě. Dohromady ale dávají smysl přesně ve chvíli, kdy je člověk potřebuje.\n\nStejná logika funguje i u vaření: recept, ingredience v okolí a dodávka. Nebo u DIY oprav a tréninkových plánů.\n\nTechnicky to není nic složitého. Claude Code zvládne vygenerovat interaktivní HTML checklist za hodinu. Napojení na Google Maps přes statické URL je otázka jednoho kroku. A `tel:` odkaz pro volání přidáte jedním řádkem. Těžší je dobře určit, co má uživatel v každém kroku vidět a udělat. Nemusíte stavět celou aplikaci. Stačí statická HTML stránka, která se chová jako appka.",
     "read_minutes": 2,
     "source_date": "2026-03-28",
-    "resurfaced_from": "2026-03-28"
+    "resurfaced_from": "2026-03-28",
+    "topics": [
+      "Claude Code",
+      "Vibe Coding"
+    ]
   },
   "transcript": {
     "groups": [

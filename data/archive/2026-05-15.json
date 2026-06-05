@@ -11,58 +11,68 @@
       "id": "2026-05-15-01",
       "type": "INSIGHT",
       "level": "Builder",
-      "topic": "AI a právní dokumenty",
       "title": "Proč AI bloudí ve výkladu zákonů",
       "excerpt": "I prémiové modely dokážou sebevědomě tvrdit věci, které jsou špatně nebo už neplatí. Pletou si různé verze zákonů v čase a ani rozšířené uvažování to spolehlivě nespraví.",
       "body": "Tohle se v diskuzi potvrdilo opakovaně a z víc stran, včetně lidí z advokacie. Jazykové modely nejsou trénované na aktuální znění zákonů. A nemají žádný mechanismus, který by je nutil ověřovat citace.\n\nVýsledek je dost nebezpečný: model odpoví sebejistě a odkáže na paragraf, který buď vůbec neexistuje, nebo byl zrušený už před lety. Jeden člen psal, že mu ChatGPT tvrdil, že nošení boxeru je v ČR zakázané.\n\nSpolehlivě to neřeší ani Thinking mód, ani Extended thinking, ani Opus 4.7. Model sice může projít delší kontext, ale když v trénovacích datech převážilo staré znění zákona, odpověď bude špatně.\n\nZákladní pravidlo pro práci s AI a legislativou: vždy chtějte přesnou citaci s číslem paragrafu a odstavce. A pak si ji ověřte v primárním zdroji. Tohle za vás AI zatím neudělá.",
       "read_minutes": 2,
-      "source_date": "2026-05-15"
+      "source_date": "2026-05-15",
+      "topics": [
+        "ChatGPT"
+      ]
     },
     {
       "id": "2026-05-15-02",
       "type": "NÁSTROJE",
       "level": "Builder",
-      "topic": "NotebookLM pro legislativu",
       "title": "NotebookLM jako izolovaný právní asistent",
       "excerpt": "Nahrajte do NotebookLM jen konkrétní zákony a vyhlášky a pracujte výhradně s tímhle uzavřeným zdrojem. AI pak ví, z čeho má vycházet, a když něco neví, řekne to.",
       "body": "Hlavní poznatek z diskuze: problém s AI a právem není jen v samotném modelu, ale hlavně v tom, k čemu má přístup. Když vidí celý internet, míchá dohromady aktuální znění zákonů, starší verze, komentáře i zahraniční právní systémy.\n\nNotebookLM na to jde jinak. Nahrajete do něj přesně ty dokumenty, se kterými chcete pracovat, a model odpovídá jen podle nich. Když odpověď v dokumentech nenajde, řekne, že neví.\n\nTenhle postup v diskuzi potvrzovali lidé z advokacie i z dalších oborů, kde je přesná legislativa zásadní.\n\nDoporučený postup: založit si samostatný notebook pro každou právní oblast — třeba stavební zákon, zákoník práce nebo GDPR — a pravidelně ho aktualizovat po novelách. Po modelu vždy chtít přesný odkaz na paragraf a odstavec.\n\nVýhoda je i v tom, že máte větší klid. Přesně víte, z čeho model vychází, a nemusíte hádat, odkud svou odpověď vzal.",
       "read_minutes": 2,
-      "source_date": "2026-05-15"
+      "source_date": "2026-05-15",
+      "topics": [
+        "AI nástroje"
+      ]
     },
     {
       "id": "2026-05-15-03",
       "type": "NÁSTROJE",
       "level": "Začátečník",
-      "topic": "Raycast",
       "title": "Raycast jako první aplikace na každém Macu",
       "excerpt": "Jeden z power userů v komunitě říká, že Raycast instaluje jako první věc na každý nový Mac. Nahradí mu desítky dalších nástrojů a šetří zbytečné přepínání mezi aplikacemi.",
       "body": "Raycast je launcher pro macOS, ale tím slovem se dost podceňuje, co všechno umí. V praxi nahradí hromadu dalších nástrojů: hledání souborů, správu schránky, kalkulačku, překlad, ovládání hudby, kontrolu kalendáře i vlastní skripty. Všechno z jednoho místa, přes klávesnici, bez sahání na myš.\n\nV diskuzi padl i praktický tip: diktování v macOS jde spustit dvojitým stiskem klávesy ⌃ Control. Funguje to i na externích klávesnicích, kde jako spouštěč nefunguje fn. Raycast to nijak neblokuje a dobře se s tím doplňuje. Na YouTube kanále Raycastu je navíc spousta tipů pro začátečníky i pokročilé.\n\nPokud jste na Macu a u rutinních věcí pořád často saháte po myši, dejte Raycastu půl hodiny na nastavení.",
       "read_minutes": 2,
-      "source_date": "2026-05-15"
+      "source_date": "2026-05-15",
+      "topics": [
+        "Raycast"
+      ]
     },
     {
       "id": "2026-05-15-04",
       "type": "NÁSTROJE",
       "level": "Builder",
-      "topic": "Přepisy a transkripce",
       "title": "Plaud a Sionox pro přepisy v češtině a slovenštině",
       "excerpt": "Padl dotaz na alternativu k Fireflies pro slovenské přepisy. Komunita doporučila Plaud kvůli kvalitě a vlastním šablonám. Na meetingy, kde se střídají jazyky, pak Sionox.",
       "body": "Fireflies je oblíbený nástroj na přepisy meetingů, ale se slovenštinou nebo hovory, kde lidé přepínají mezi jazyky, si ne vždy poradí.\n\nZ diskuze vzešla dvě doporučení. Plaud dělá kvalitní přepisy i v češtině a slovenštině. Podporuje vlastní šablony pro výstup a umí pracovat s klíčovými slovy, která chcete v přepisu zvýraznit nebo sledovat. Hodí se hlavně pro běžné meetingy s jedním hlavním jazykem.\n\nSionox se zaměřuje na vícejazyčné meetingy, kde účastníci během jednoho hovoru přepínají mezi jazyky. Každou část zvládne přepsat ve správném jazyce bez ručního nastavování.\n\nU obou nástrojů ale platí jedno: i velmi přesný přepis je dobré zkontrolovat. Vlastní jména, odborné termíny a čísla si vždy ověřte ručně.",
       "read_minutes": 2,
-      "source_date": "2026-05-15"
+      "source_date": "2026-05-15",
+      "topics": [
+        "Meeting"
+      ]
     }
   ],
   "resurfacing": {
     "id": "2026-04-26-03",
     "type": "INSIGHT",
     "level": "Expert",
-    "topic": "Data management",
     "title": "Markdown v gitu jako datová vrstva pro AI",
     "excerpt": "Jeden člen přestal koukat přímo do dat a místo toho se na všechno ptá Clauda. Tvrdí, že markdownové soubory v gitu jsou pro AI nejlepší struktura, se kterou se jí dobře pracuje. Inspirovalo to dalšího člena, aby přešel na CRM v Markdownu.",
     "body": "Jeden člen komunity popsal, jak změnil přístup ke svým datům. Nepoužívá grafické rozhraní ani aplikace. Všechno má v Markdown souborech v gitu. Důvod je jednoduchý: stejně se na data nedívá přímo, na všechno se ptá Clauda. A Claude si s Markdownem rozumí nejlíp.\n\nJe to přirozené pokračování filozofie plain text. Markdown přečte člověk i stroj, dá se verzovat a snadno přenášet. Git k tomu přidá historii změn a zálohu. Claude pak slouží jako rozhraní: prohledává, shrnuje a aktualizuje.\n\nMá to i svoje limity. Nehodí se to pro velké objemy strukturovaných dat, pro týmy bez technického zázemí a vyžaduje to pořádek v názvech souborů i struktuře. Pro osobní knowledge management nebo jednoduché CRM to ale může být elegantnější řešení než řada komerčních nástrojů.\n\nV diskuzi to inspirovalo dalšího člena k přechodu na CRM v Markdownu. Hezký příklad toho, jak sdílení konkrétních postupů v komunitě mění způsob práce.",
     "read_minutes": 2,
     "source_date": "2026-04-26",
-    "resurfaced_from": "2026-04-26"
+    "resurfaced_from": "2026-04-26",
+    "topics": [
+      "Poznámky"
+    ]
   },
   "transcript": {
     "groups": [
