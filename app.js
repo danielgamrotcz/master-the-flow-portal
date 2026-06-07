@@ -1638,21 +1638,9 @@ async function shareCard() {
 function handleHash() {
   const hash = location.hash.slice(1);
   if (hash.startsWith('card/')) {
-    const id = hash.slice(5);
-    if (id) {
-      loadToday().then(async () => {
-        if (!findCard(id)) {
-          const dateStr = id.slice(0, 10);
-          if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr) && !state.archiveCache[dateStr]) {
-            try {
-              const data = await fetchJSON('/data/archive/' + dateStr + '.json');
-              state.archiveCache[dateStr] = data;
-            } catch {}
-          }
-        }
-        setTimeout(() => openCard(id), 50);
-      });
-    }
+    // Card hash is session-only — don't auto-open on page refresh
+    history.replaceState({}, '', '#');
+    switchView('today');
   } else if (hash.startsWith('archive')) {
     const parts = hash.split('/');
     if (parts.length === 2 && ['7d', '30d', '90d', 'this-month', 'last-month', 'all'].includes(parts[1])) {
