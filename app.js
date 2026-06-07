@@ -90,6 +90,7 @@ const state = {
   statsMsgCountByDate: null,
   voteMap: {},
   transcriptDate: null,
+  searchQuery: '',
 };
 
 let _lastKnownDigestDate = null;
@@ -256,6 +257,29 @@ function filterCards(cards) {
   return cards.filter(c => getTopics(c).includes(state.topic));
 }
 
+/* ===== UNREAD BAR ===== */
+function renderUnreadBar(cards, containerId) {
+  const container = $(containerId);
+  if (!container) return;
+  const existing = container.previousElementSibling;
+  if (existing && existing.classList.contains('unread-bar')) existing.remove();
+
+  const readSet = getReadCards();
+  const unread = cards.filter(c => !readSet.has(c.id)).length;
+  if (unread === 0 || cards.length === 0) return;
+
+  const bar = document.createElement('div');
+  bar.className = 'unread-bar';
+  bar.innerHTML = `<span>${unread} z ${cards.length} nepřečteno</span><button class="unread-bar-btn" id="unread-bar-read-all">přečíst vše</button>`;
+  container.parentNode.insertBefore(bar, container);
+
+  bar.querySelector('#unread-bar-read-all').addEventListener('click', () => {
+    cards.forEach(c => markRead(c.id));
+    bar.remove();
+    document.querySelectorAll(`#${containerId} .card`).forEach(el => el.classList.add('read'));
+  });
+}
+
 /* ===== RENDER CARDS ===== */
 function sortByVotes(cards) {
   return [...cards].sort((a, b) => (state.voteMap[b.id] || 0) - (state.voteMap[a.id] || 0));
@@ -299,6 +323,7 @@ async function loadToday() {
       updateHeader(data, false);
       buildTopicChips(data.cards);
       renderCards(data.cards, 'cards-today', data.resurfacing || null);
+      renderUnreadBar(data.cards, 'cards-today');
       return;
     }
 
@@ -316,6 +341,7 @@ async function loadToday() {
       updateHeader(yData, true);
       buildTopicChips(yData.cards || []);
       renderCards(yData.cards || [], 'cards-today', yData.resurfacing || null);
+      renderUnreadBar(yData.cards || [], 'cards-today');
     } catch {
       $('cards-today').innerHTML = '';
       _setNavLabel('Včera');
@@ -590,8 +616,19 @@ async function initSearch() {
   }
 }
 
+function highlightInHTML(html, query) {
+  if (!query) return html;
+  const terms = query.trim().split(/\s+/)
+    .filter(t => t.length >= 2)
+    .map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  if (!terms.length) return html;
+  const re = new RegExp(`(?![^<]*>)(${terms.join('|')})`, 'gi');
+  return html.replace(re, '<mark class="search-highlight">$1</mark>');
+}
+
 function runSearch(query) {
   const q = query.trim();
+  state.searchQuery = q;
   hide('empty-search');
   hide('cards-search');
   $('cards-search').innerHTML = '';
@@ -661,7 +698,10 @@ function openCard(cardId) {
   $('overlay-title').textContent = card.title;
   const dateLabel = $('overlay-date-label');
   if (dateLabel) dateLabel.textContent = dateStr ? formatDateLong(dateStr) : '';
-  $('overlay-text').innerHTML = bodyToHTML(card.body || card.excerpt || '');
+  const rawHtml = bodyToHTML(card.body || card.excerpt || '');
+  $('overlay-text').innerHTML = (state.view === 'search' && state.searchQuery)
+    ? highlightInHTML(rawHtml, state.searchQuery)
+    : rawHtml;
   $('btn-show-transcript').dataset.date = dateStr;
   $('btn-show-transcript').style.display = dateStr ? '' : 'none';
 
@@ -972,6 +1012,14 @@ function markRead(id) {
       s.add(id);
       localStorage.setItem('mtf_read', JSON.stringify([...s].slice(-1000)));
     }
+  } catch {}
+}
+function markUnread(id) {
+  try {
+    const s = getReadCards();
+    s.delete(id);
+    localStorage.setItem('mtf_read', JSON.stringify([...s]));
+    document.querySelectorAll(`.card[data-id="${CSS.escape(id)}"]`).forEach(el => el.classList.remove('read'));
   } catch {}
 }
 
@@ -1540,6 +1588,39 @@ function initSwipeToClose() {
   });
 }
 
+/* ===== SHORTCUTS PANEL ===== */
+function toggleShortcutsPanel() {
+  let panel = document.getElementById('shortcuts-panel');
+  if (panel) {
+    panel.classList.toggle('hidden');
+    return;
+  }
+  panel = document.createElement('div');
+  panel.id = 'shortcuts-panel';
+  panel.className = 'shortcuts-panel';
+  panel.innerHTML = `
+    <div class="shortcuts-header">Klávesové zkratky
+      <button class="shortcuts-close" id="shortcuts-close-btn">&times;</button>
+    </div>
+    <div class="shortcuts-grid">
+      <kbd>J / K</kbd><span>Navigace v kartách</span>
+      <kbd>Enter</kbd><span>Otevřít kartu</span>
+      <kbd>R</kbd><span>Náhodná karta</span>
+      <kbd>/</kbd><span>Vyhledávání</span>
+      <kbd>Esc</kbd><span>Zavřít overlay</span>
+      <kbd>H</kbd><span>Hlasovat (v overlay)</span>
+      <kbd>?</kbd><span>Tato nápověda</span>
+    </div>`;
+  document.body.appendChild(panel);
+  panel.querySelector('#shortcuts-close-btn').addEventListener('click', () => panel.classList.add('hidden'));
+  document.addEventListener('click', function onOutside(e) {
+    if (!panel.contains(e.target) && e.target.id !== 'btn-shortcuts') {
+      panel.classList.add('hidden');
+      document.removeEventListener('click', onOutside);
+    }
+  });
+}
+
 /* ===== INIT ===== */
 function init() {
   initGate();
@@ -1572,6 +1653,14 @@ function init() {
   $('overlay-close').addEventListener('click', closeCard);
   $('overlay-backdrop').addEventListener('click', closeCard);
   $('btn-share').addEventListener('click', shareCard);
+
+  document.getElementById('btn-mark-unread')?.addEventListener('click', () => {
+    if (state.activeCard) {
+      markUnread(state.activeCard.id);
+      showToast('Označeno jako nepřečtené');
+      closeCard();
+    }
+  });
 
   $('btn-show-transcript').addEventListener('click', () => {
     const dateStr = $('btn-show-transcript').dataset.date;
@@ -1606,6 +1695,7 @@ function init() {
     if (e.key === 'r' || e.key === 'R') { openRandomCard(); return; }
     if (e.key === 'j') { navigateCards(1); return; }
     if (e.key === 'k') { navigateCards(-1); return; }
+    if (e.key === '?') { e.preventDefault(); toggleShortcutsPanel(); return; }
   });
 
   window.addEventListener('popstate', () => {

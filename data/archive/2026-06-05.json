@@ -1,0 +1,134 @@
+{
+  "date": "2026-06-05",
+  "generated_at": "2026-06-07T08:00:00Z",
+  "stats": {
+    "messages": 16,
+    "groups": 3,
+    "members": 4
+  },
+  "cards": [
+    {
+      "id": "2026-06-05-01",
+      "type": "PŘÍBĚH",
+      "level": "Builder",
+      "title": "Petr si postavil vlastní fakturační nástroj místo iDokladu",
+      "excerpt": "iDoklad odmítl nabídnout dvě šablony pro různé obory v rozumném tarifu. Petr si za tři dny postavil vlastní řešení s automatickým číslováním, QR platbami a grafy.",
+      "body": "Petr Říha potřeboval dvě různé šablony faktur — jednu pro elektro projektové řízení, druhou pro IT služby. Odlišné logo, různé bankovní účty, různé emaily. iDoklad to nabídl jen ve vyšším tarifu, a ani to by nesplnilo všechno, co potřeboval.\n\nTakže si to postavil sám. Za tři dny ladění vznikl nástroj, který zvládá adresář, automatické číslování faktur, různé splatnosti, úpravu řádků, spárování příloh, uložení do PDF na jedno kliknutí a funkční QR platby. Navíc grafy a statistiky.\n\nPlán na další verzi: automatické zasílání mailem podle nastavené frekvence.\n\nTenhle přístup se v komunitě opakuje. Hotová řešení mají kompromisy. Vlastní nástroj máte přesně takový, jaký potřebujete — a většinou je rychlejší to postavit, než si myslet, že to půjde bez přizpůsobení.",
+      "read_minutes": 2,
+      "source_date": "2026-06-05",
+      "topics": ["Automatizace", "Workflow", "Builder"]
+    },
+    {
+      "id": "2026-06-05-02",
+      "type": "INSIGHT",
+      "level": "Expert",
+      "title": "Jak izolovat AI agenta od zbytku systému",
+      "excerpt": "Čím více přístupu agentu dáte, tím více toho po něm chcete. Ale zároveň roste riziko. Komunita probírala tři přístupy: Docker, VM (Lima, OrbStack) a yolo mód.",
+      "body": "Ve Vibe Coding skupině se rozjela debata o bezpečnosti při práci s AI agenty. Jeden člen to shrnul trefně: přístup k terminálu je přístup všude.\n\nTři přístupy, které komunita probírala.\n\nVM přes Lima nebo OrbStack (na Mac s menší RAM): agent vidí jen to, co mu explicitně namountujete. Nejbezpečnější varianta, ale vyžaduje nastavení. OrbStack se ukazuje jako výkonnější a méně náročný na RAM než Docker Desktop.\n\nDocker: izolace na úrovni kontejneru. Nejedná se o plnohodnotné VM — sdílí jádro systému, ale pro většinu scénářů to stačí. Docker Sandbox jde ještě dál.\n\nYolo mód: agent má přístup k celému stroji. Někteří členové ho záměrně volí pro úlohy, kde chcete spravovat celý systém — migrace tabů, nastavení macOS, práce přes více projektů. Vyšší riziko, ale taky vyšší výkon.\n\nPravidlo: čím víc agenta omezíte, tím méně toho po něm chcete. Stack nono.sh slouží jako předpřipravené prostředí pro Claude, pokud nechcete nastavovat věci od nuly.",
+      "read_minutes": 2,
+      "source_date": "2026-06-05",
+      "topics": ["Claude Code", "Vibe Coding", "Bezpečnost"]
+    },
+    {
+      "id": "2026-06-05-03",
+      "type": "OTEVŘENÁ OTÁZKA",
+      "level": "Začátečník",
+      "title": "Jak dostat 30minutovou nahrávku z iPhonu, když nefunguje export?",
+      "excerpt": "Členka měla v iOS Voice Memos uloženou hodinovou nahrávku lokálně (bez iCloudu). Zvuk v timeline viditelný, ale přehrát ani exportovat nešel. Řešení zatím nepadlo.",
+      "body": "V Inspiraci se objevila otázka, která zatím zůstala bez odpovědi. Členka si v Voice Memos nahrála 30minutový hovor a uložila ho lokálně — iCloud byl vypnutý. Nahrávka v timeline viditelná, ale přehrát nešla a ani AirDrop nebo uložení do Files nefungoval.\n\nAI prý nepomohl. Delší hledání bez výsledku.\n\nKontext, který padl: jiná nahrávka ze stejného dne fungovala. Hodinový hovor AirDropnutý do Macu, přepis přes MacWhisper ve free verzi, bez problémů.\n\nPokud máte zkušenost s obnovou poškozených Voice Memos nahrávek nebo s jejich extrakcí ze zálohy — dejte vědět.",
+      "read_minutes": 1,
+      "source_date": "2026-06-05",
+      "topics": ["iPhone", "Workflow", "Diktování"]
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-06-01-01",
+    "source_date": "2026-06-01",
+    "excerpt": "Český experiment svěřil různým AI agentům správu fiktivního města a sledoval, jak se chovají. Výsledkem je praktické srovnání agentických modelů na stejném úkolu.",
+    "body": "Jeden člen komunity připravil experiment: různé AI agenty dostaly za úkol spravovat fiktivní město. Výsledky ukázaly zásadní rozdíly v tom, jak jednotlivé modely přistupují k rozhodování, prioritizaci a komunikaci. Experiment je praktickým způsobem, jak porovnat agentické chování modelů na shodném zadání — bez nutnosti riskovat produkční prostředí.",
+    "resurfaced_from": "2026-06-01",
+    "topics": ["Workflow", "Subagenti", "Claude Code"]
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspirace--diskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "10:39",
+            "author": "člen komunity",
+            "text": "Vyvoj-s-podporou-AI-Zasady-CS.pdf"
+          },
+          {
+            "time": "10:39",
+            "author": "člen komunity",
+            "text": "AI-Assisted-Development-Dos-and-Donts.pdf"
+          },
+          {
+            "time": "17:19",
+            "author": "člen komunity",
+            "text": "Ahoj, prosim, nejaky tip, jak dostat (rozchodit) nahravku (30min.) z Voice memos na iphone? Je ulozena lokalne, icloud vypnuty, pri edit je videt v time line, ze tam nejaky zvukovy zaznam je, spustit pres tlacitko Play ale nejde, ani poslat airdropem, ulozit do Files atd. Mate prosim tip na nejaky reseni, co by to umelo — idealne lokalne — vyextrahovat / obnovit / rozchodit?"
+          }
+        ]
+      },
+      {
+        "slug": "vibe-coding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "06:55",
+            "author": "člen komunity",
+            "text": "Pokud dávám přístup k terminálu, dávám přístup všude. Nejlepší způsob je to běhat ve VM (Gondolin, Lima, ...) a dát tam jen přesně to, co chceš, aby řešil. Na druhou stranu já to tak dělám jen občas a mnohem víc jedu full yolo a dávám mu přístup k celému stroji. Čím víc agenta omezím, tím méně toho po něm můžu chtít."
+          },
+          {
+            "time": "07:10",
+            "author": "člen komunity",
+            "text": "Proto pres Docker, taky dela VM. Jj, ja toho radsi chci min a mam bezpecnost na prvnim miste."
+          },
+          {
+            "time": "09:22",
+            "author": "člen komunity",
+            "text": "Docker nedělá přímo VM, tedy pokud se nebavíme o Docker Sandbox."
+          },
+          {
+            "time": "15:25",
+            "author": "člen komunity",
+            "text": "Na macOS s menší RAM používám orbstack.dev Přijde mi, že sebere o dost méně RAM a je výkonnější."
+          },
+          {
+            "time": "15:30",
+            "author": "člen komunity",
+            "text": "Ještě bych doporučil mrknout na nono.sh, je to stack, na kterém bych chtěl svoje Claude prostředí stavět."
+          },
+          {
+            "time": "18:09",
+            "author": "Petr Říha",
+            "text": "Ahoj všem při pátku. Trošku z jiného soudku. Zmiňoval jsem tu, že jsem po iDokladu chtěl, abych měl dvě šablony (Projektový manažer elektro) a IT služby. Odkázali mě na vyšší placený tarif a i tak bych tam neměl vše, co potřebuju. Tak jsem si udělal svůj fakturační nástroj, ve kterém mám dva druhy šablon se všemi náležitostmi, které potřebuju. Adresář, automatické číslování faktur, různé splatnosti, úprava řádků faktur, spárování příloh s fakturou, uložení do PDF na jedno kliknutí. Funkční QR platby, grafy, čísla, statistiky. A mnoho dalšího. Sice to bylo tak na tři dny vytváření a ladění, ale povedlo se. Tak iDoklad byl dobrou inspirací i impulsem si věci dělat po svém."
+          },
+          {
+            "time": "18:57",
+            "author": "člen komunity",
+            "text": "ha, to zni dobre. mohl bys nasdilet vic detailu? Zajimalo by me to, protoze bych si rada postavila neco podobneho. Mockrat dekuji."
+          },
+          {
+            "time": "19:04",
+            "author": "Petr Říha",
+            "text": "Jaké detaily by tě zajímaly? Když tak napiš soukromou zprávu."
+          }
+        ]
+      },
+      {
+        "slug": "webinare--workshopy",
+        "name": "Webináře & Workshopy",
+        "messages": [
+          {
+            "time": "07:23",
+            "author": "Daniel Gamrot",
+            "text": "Tak já to zase smažu."
+          }
+        ]
+      }
+    ]
+  }
+}

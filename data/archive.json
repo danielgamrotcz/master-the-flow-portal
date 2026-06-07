@@ -672,6 +672,26 @@
         "AppScript",
         "Claude Code"
       ]
+    },
+    {
+      "date": "2026-06-05",
+      "card_count": 3,
+      "topics": [
+        "Automatizace",
+        "Vibe Coding",
+        "Bezpečnost",
+        "iPhone",
+        "Workflow"
+      ]
+    },
+    {
+      "date": "2026-06-06",
+      "card_count": 1,
+      "topics": [
+        "Komunita",
+        "Knowledge Management",
+        "Workflow"
+      ]
     }
   ]
 }
