@@ -1432,10 +1432,8 @@ async function loadTopView() {
   renderSkeleton('cards-top');
 
   try {
-    if (!Object.keys(state.cardStats).length) {
-      const tc = await fetch('/api/top-cards').then(r => r.json());
-      if (tc?.cards) tc.cards.forEach(c => { state.cardStats[c.id] = c; });
-    }
+    const tc = await fetch('/api/top-cards').then(r => r.json());
+    if (tc?.cards) tc.cards.forEach(c => { state.cardStats[c.id] = c; });
 
     await ensureSearchAll();
 
