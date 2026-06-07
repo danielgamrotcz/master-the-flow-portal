@@ -1,5 +1,4 @@
 /* ===== GATE ===== */
-// SHA-256 of "MTF2026" — změň kód pomocí: python3 -c "import hashlib; print(hashlib.sha256('NOVYKOD'.encode()).hexdigest())"
 const GATE_HASH = '5b9b2870716de15d8a6174804647360b656a25c67b1be0703f1e695ff365384d';
 const GATE_TTL = 30 * 24 * 60 * 60 * 1000;
 const VAPID_PUBLIC = 'BCub7WYDQt5wX2Jj0HUUMhK-T8VATzn4rvfc108akt7VCh8qGd_rgw6lQRJGKPIAsBDrPHwt7pagUYia1WIyEYY';
@@ -219,10 +218,6 @@ function renderCardEl(card, isResurfaced = false, query = '') {
   const cardDate = card.source_date || card.date || '';
   const topics = getTopics(card).slice(0, 5);
 
-  const resurfacedBadge = isResurfaced
-    ? `<span class="resurfacing-badge">Z archivu · ${formatDateShort(sourceDate)}</span>`
-    : '';
-
   return `
     <div class="card${isResurfaced ? ' resurfaced' : ''}${isRead(card.id) ? ' read' : ''}"
          data-id="${esc(card.id)}"
@@ -232,7 +227,6 @@ function renderCardEl(card, isResurfaced = false, query = '') {
          aria-label="${esc(card.title)}">
       <div class="card-meta">
         <div class="card-meta-left">
-          ${resurfacedBadge}
           <span class="card-type" style="color:${typeColor}">${esc(card.type)}</span>
         </div>
         ${topics.length ? `<div class="card-topics">${topics.map(t => `<span class="card-topic">${esc(t)}</span>`).join('')}</div>` : ''}
@@ -242,8 +236,8 @@ function renderCardEl(card, isResurfaced = false, query = '') {
       <div class="card-footer">
         <span class="card-readmore">Číst dál ↓</span>
         <span class="card-footer-right">
-          ${state.cardStats[card.id]?.reads > 0 ? `<span class="card-reads">${state.cardStats[card.id].reads} čtení</span>` : ''}
-          ${state.voteMap[card.id] ? `<span class="card-hearts"><svg viewBox="0 0 24 24" fill="currentColor" width="11" height="11" style="vertical-align:-1px;margin-right:2px"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>${state.voteMap[card.id]}</span>` : ''}
+          <span class="card-reads">${state.cardStats[card.id]?.reads ?? 0} čtení</span>
+          <span class="card-hearts"><svg viewBox="0 0 24 24" fill="currentColor" width="11" height="11" style="vertical-align:-1px;margin-right:2px"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>${state.voteMap[card.id] || 0}</span>
           ${cardDate ? `<span class="card-date">${formatDateShort(cardDate)}</span>` : ''}
         </span>
       </div>
@@ -365,8 +359,8 @@ async function loadToday() {
       const isYesterdayData = data.date !== actualToday;
       $('cards-today').innerHTML = '';
       updateHeader(data, isYesterdayData);
-      buildTopicChips(data.resurfacing ? [...data.cards, data.resurfacing] : data.cards);
-      renderCards(data.cards, 'cards-today', data.resurfacing || null);
+      buildTopicChips(data.cards);
+      renderCards(data.cards, 'cards-today', null);
       renderUnreadBar(data.cards, 'cards-today');
       updatePageTitle();
       ensureSearchAll().catch(() => {});
@@ -385,8 +379,8 @@ async function loadToday() {
       state.archiveCache[yStr] = yData;
       $('cards-today').innerHTML = '';
       updateHeader(yData, true);
-      buildTopicChips(yData.resurfacing ? [...(yData.cards || []), yData.resurfacing] : (yData.cards || []));
-      renderCards(yData.cards || [], 'cards-today', yData.resurfacing || null);
+      buildTopicChips(yData.cards || []);
+      renderCards(yData.cards || [], 'cards-today', null);
       renderUnreadBar(yData.cards || [], 'cards-today');
       updatePageTitle();
     } catch {
@@ -1558,12 +1552,6 @@ async function renderStats() {
       }
     } catch {}
 
-    let insightsHtml = '';
-    try {
-      const ins = await fetchJSON('/api/insights');
-      // Admin-only data — not shown to users, accessible via /api/insights directly
-    } catch {}
-
     let memberCount = null;
     try {
       const cm = await fetch('/api/community').then(r => r.json());
@@ -1579,8 +1567,7 @@ async function renderStats() {
       + (topTopics.length ? '<div class="stats-section-title">Nejčastější témata</div><div class="stats-topics">'
         + topTopics.map(([t, n]) => '<div class="stats-topic-row stats-topic-clickable" data-topic="' + esc(t) + '"><span>' + esc(t) + '</span><span class="stats-topic-count">' + n + '×</span></div>').join('')
         + '</div>' : '')
-      + topVotedHtml
-      + insightsHtml;
+      + topVotedHtml;
 
     attachStatsListeners(el);
   } catch {
@@ -1711,11 +1698,12 @@ function handleHash() {
     switchView('today');
   } else if (hash.startsWith('archive')) {
     const parts = hash.split('/');
+    const dateRe = /^\d{4}-\d{2}-\d{2}$/;
     if (parts.length === 2 && ['7d', '30d', '90d', 'this-month', 'last-month', 'all'].includes(parts[1])) {
       state.archivePreset = parts[1];
       state.archiveFrom = null;
       state.archiveTo = null;
-    } else if (parts.length === 3 && parts[1] && parts[2]) {
+    } else if (parts.length === 3 && dateRe.test(parts[1]) && dateRe.test(parts[2])) {
       state.archivePreset = 'custom';
       state.archiveFrom = parts[1];
       state.archiveTo = parts[2];
@@ -1754,7 +1742,7 @@ function rerenderCurrentView() {
     return;
   }
   if (state.view === 'today' && state.today) {
-    renderCards(state.today.cards || [], 'cards-today', state.today.resurfacing || null);
+    renderCards(state.today.cards || [], 'cards-today', null);
   } else if (state.view === 'archive' && state.archiveCards.length > 0) {
     const container = $('cards-archive');
     container.innerHTML = '';
@@ -1880,7 +1868,7 @@ function init() {
   });
 
   registerSW().then(() => initPushBtn());
-  loadVoteMap();
+  loadVoteMap().then(() => rerenderCurrentView());
   initAutoRefresh();
   initPullToRefresh();
   initSwipeToClose();
