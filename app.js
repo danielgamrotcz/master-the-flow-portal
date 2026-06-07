@@ -745,7 +745,6 @@ function runSearch(query) {
 
 /* ===== CARD OVERLAY ===== */
 function openCard(cardId) {
-  console.trace('openCard', cardId);
   const card = findCard(cardId);
   if (!card) return;
 
@@ -1937,7 +1936,7 @@ function init() {
     if (inInput) return;
 
     if (e.key === '/') { e.preventDefault(); document.querySelector('.nav-btn[data-view="search"]')?.click(); return; }
-    if (e.key === 'r' || e.key === 'R') { openRandomCard(); return; }
+    if ((e.key === 'r' || e.key === 'R') && !e.metaKey && !e.ctrlKey) { openRandomCard(); return; }
     if (e.key === 'j') { navigateCards(1); return; }
     if (e.key === 'k') { navigateCards(-1); return; }
     if (e.key === '?') { e.preventDefault(); toggleShortcutsPanel(); return; }
