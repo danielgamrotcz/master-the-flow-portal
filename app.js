@@ -695,6 +695,7 @@ function openCard(cardId) {
   const card = findCard(cardId);
   if (!card) return;
 
+  const wasRead = isRead(cardId);
   markRead(cardId);
   document.querySelectorAll(`.card[data-id="${CSS.escape(cardId)}"]`).forEach(el => el.classList.add('read'));
 
@@ -712,9 +713,36 @@ function openCard(cardId) {
   `;
 
   const dateStr = card.source_date || card.resurfaced_from || card.date || '';
-  $('overlay-title').textContent = card.title;
+  const titleEl = $('overlay-title');
+  titleEl.classList.remove('expanded', 'clampable');
+  titleEl.textContent = card.title;
+  requestAnimationFrame(() => {
+    if (titleEl.scrollHeight > titleEl.clientHeight + 2) titleEl.classList.add('clampable');
+  });
+
   const dateLabel = $('overlay-date-label');
-  if (dateLabel) dateLabel.textContent = dateStr ? formatDateLong(dateStr) : '';
+  if (dateLabel) {
+    dateLabel.textContent = dateStr ? formatDateLong(dateStr) : '';
+    dateLabel.dataset.date = dateStr || '';
+    dateLabel.classList.toggle('has-link', !!dateStr);
+  }
+
+  const readBadge = $('overlay-read-badge');
+  if (readBadge) readBadge.classList.toggle('hidden', !wasRead);
+
+  const topicsEl = $('overlay-topics');
+  const overlayTopics = getTopics(card);
+  if (topicsEl && overlayTopics.length) {
+    topicsEl.innerHTML = overlayTopics.map(t =>
+      `<button class="overlay-chip${state.topic === t ? ' active' : ''}" data-topic="${esc(t)}">${esc(t)}</button>`
+    ).join('');
+    topicsEl.classList.remove('hidden');
+    topicsEl.querySelectorAll('.overlay-chip').forEach(btn => {
+      btn.addEventListener('click', () => { closeCard(); onTopicChange(btn.dataset.topic); });
+    });
+  } else if (topicsEl) {
+    topicsEl.classList.add('hidden');
+  }
   const rawHtml = bodyToHTML(card.body || card.excerpt || '');
   $('overlay-text').innerHTML = (state.view === 'search' && state.searchQuery)
     ? highlightInHTML(rawHtml, state.searchQuery)
@@ -1741,6 +1769,24 @@ function init() {
   $('overlay-prev').addEventListener('click', () => navigateOverlay(-1));
   $('overlay-next').addEventListener('click', () => navigateOverlay(1));
   $('btn-share').addEventListener('click', shareCard);
+
+  $('overlay-title').addEventListener('click', () => {
+    const el = $('overlay-title');
+    if (el.classList.contains('clampable') || el.classList.contains('expanded')) {
+      el.classList.toggle('expanded');
+    }
+  });
+
+  $('overlay-date-label').addEventListener('click', () => {
+    const dateStr = $('overlay-date-label').dataset.date;
+    if (!dateStr) return;
+    closeCard();
+    state.archiveCards = [];
+    state.archivePreset = 'custom';
+    state.archiveFrom = dateStr;
+    state.archiveTo = dateStr;
+    switchView('archive');
+  });
 
   // Swipe left/right v overlay pro navigaci mezi kartami
   const overlayBody = $('overlay-body');
