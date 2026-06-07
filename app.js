@@ -319,11 +319,15 @@ async function loadToday() {
     if ((data.cards || []).length > 0) {
       state.today = data;
       _lastKnownDigestDate = data.date;
+      state.archiveCache[data.date] = data;
+      const actualToday = new Date().toISOString().slice(0, 10);
+      const isYesterdayData = data.date !== actualToday;
       $('cards-today').innerHTML = '';
-      updateHeader(data, false);
+      updateHeader(data, isYesterdayData);
       buildTopicChips(data.cards);
-      renderCards(data.cards, 'cards-today', data.resurfacing || null);
+      renderCards(data.cards, 'cards-today', null);
       renderUnreadBar(data.cards, 'cards-today');
+      ensureSearchAll().catch(() => {});
       return;
     }
 
@@ -340,7 +344,7 @@ async function loadToday() {
       $('cards-today').innerHTML = '';
       updateHeader(yData, true);
       buildTopicChips(yData.cards || []);
-      renderCards(yData.cards || [], 'cards-today', yData.resurfacing || null);
+      renderCards(yData.cards || [], 'cards-today', null);
       renderUnreadBar(yData.cards || [], 'cards-today');
     } catch {
       $('cards-today').innerHTML = '';
@@ -359,15 +363,20 @@ function _setNavLabel(label) {
   if (btn) btn.querySelector('span:last-child').textContent = label;
 }
 
+function poznatek(n) {
+  if (n === 1) return 'poznatek';
+  if (n >= 2 && n <= 4) return 'poznatky';
+  return 'poznatků';
+}
+
 function updateHeader(data, isYesterday) {
   const dateStr = data.date || new Date().toISOString().slice(0, 10);
   const count = (data.cards || []).length;
-  const hasResurfacing = !!data.resurfacing;
   const label = isYesterday ? 'Včera' : 'Dnes';
 
   const badge = $('live-badge');
   badge.classList.remove('hidden');
-  $('live-count').textContent = `${label} ${count + (hasResurfacing ? 1 : 0)} poznatků`;
+  $('live-count').textContent = `${label} ${count} ${poznatek(count)}`;
 
   _setNavLabel(label);
 }
@@ -425,6 +434,7 @@ function renderArchiveControls() {
     { key: '7d', label: '7 dní' },
     { key: 'this-month', label: 'Tento měsíc' },
     { key: 'last-month', label: 'Minulý měsíc' },
+    { key: 'all', label: 'Vše' },
   ];
   const active = state.archivePreset;
   const fromVal = state.archiveFrom || '';
@@ -478,6 +488,7 @@ async function loadArchivePreset(preset) {
   if (preset === '7d') { from = archiveDaysBack(7); to = archiveTodayStr(); }
   else if (preset === 'this-month') { from = archiveThisMonthFrom(); to = archiveTodayStr(); }
   else if (preset === 'last-month') { const lm = archiveLastMonth(); from = lm.from; to = lm.to; }
+  else if (preset === 'all') { from = '2000-01-01'; to = archiveTodayStr(); }
   else { from = archiveDaysBack(90); to = archiveTodayStr(); }
   await loadArchiveDateRange(from, to);
 }
@@ -721,26 +732,35 @@ function openCard(cardId) {
   };
 
   // Similar cards
-  const sim = getSimilarCards(card, 3);
   const simEl = $('overlay-similar');
-  if (sim.length) {
-    $('overlay-similar-cards').innerHTML = sim.map(c => `
-      <div class="similar-card" data-id="${esc(c.id)}">
-        <span class="similar-date">${c.source_date ? formatDateShort(c.source_date) : ''}</span>
-        <span class="similar-title">${esc(c.title)}</span>
-      </div>
-    `).join('');
-    simEl.classList.remove('hidden');
-    simEl.querySelectorAll('.similar-card').forEach(el => {
-      el.addEventListener('click', () => openCard(el.dataset.id));
-    });
+  const renderSimilar = () => {
+    const sim = getSimilarCards(card, 3);
+    if (sim.length) {
+      $('overlay-similar-cards').innerHTML = sim.map(c => `
+        <div class="similar-card" data-id="${esc(c.id)}">
+          <span class="similar-date">${c.source_date ? formatDateShort(c.source_date) : ''}</span>
+          <span class="similar-title">${esc(c.title)}</span>
+        </div>
+      `).join('');
+      simEl.classList.remove('hidden');
+      simEl.querySelectorAll('.similar-card').forEach(el => {
+        el.addEventListener('click', () => openCard(el.dataset.id));
+      });
+    } else {
+      simEl.classList.add('hidden');
+    }
+  };
+  if (state.searchAll.length) {
+    renderSimilar();
   } else {
     simEl.classList.add('hidden');
+    ensureSearchAll().then(() => { if (state.activeCard?.id === cardId) renderSimilar(); });
   }
 
   $('card-overlay').classList.remove('hidden');
   $('overlay-body').scrollTop = 0;
-  document.body.style.overflow = 'hidden';
+  const mc = document.getElementById('main-content');
+  if (mc) { mc.dataset.scrollTop = mc.scrollTop; mc.style.overflow = 'hidden'; }
   state.cardOpenedAt = Date.now();
   trackEvent('card_open', { id: cardId });
 }
@@ -753,8 +773,9 @@ function closeCard() {
     }
     state.cardOpenedAt = null;
   }
+  const mc = document.getElementById('main-content');
+  if (mc) { mc.style.overflow = ''; mc.scrollTop = parseFloat(mc.dataset.scrollTop || '0'); }
   $('card-overlay').classList.add('hidden');
-  document.body.style.overflow = '';
   state.activeCard = null;
   if (location.hash.startsWith('#card/')) {
     history.replaceState({}, '', _preCardHash || '#');
@@ -1518,7 +1539,7 @@ function onTopicChange(topic) {
 
 function rerenderCurrentView() {
   if (state.view === 'today' && state.today) {
-    renderCards(state.today.cards || [], 'cards-today', state.today.resurfacing || null);
+    renderCards(state.today.cards || [], 'cards-today', null);
   } else if (state.view === 'archive' && state.archiveCards.length > 0) {
     const container = $('cards-archive');
     container.innerHTML = '';

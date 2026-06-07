@@ -13,7 +13,7 @@
       "level": "Builder",
       "title": "Vlastní fakturační systém za tři dny místo iDokladu",
       "excerpt": "Jeden člen potřeboval dvě šablony faktur s různým logem, účtem a emailem. iDoklad to odmítl v základním tarifu. Postavil si vlastní nástroj za tři dny.",
-      "body": "iDoklad nabídl dvě šablony jen ve vyšším tarifu — a ani to by nepokrylo všechno, co člen potřeboval pro dvě různé oblasti práce.\n\nVýsledek po třech dnech: adresář klientů, automatické číslování faktur, různé splatnosti, úprava řádků, párování příloh s fakturou, PDF na jedno kliknutí, funkční QR platby a grafy se statistikami.\n\nDalší plán: automatické zasílání faktur mailem podle nastavené frekvence.\n\nNástroj běží lokálně, nevyžaduje žádnou externí službu.",
+      "body": "iDoklad nabídl dvě šablony jen ve vyšším tarifu. Ani to ale nepokrylo vše, co člen potřeboval pro dvě různé oblasti práce.\n\nVýsledek po třech dnech: adresář klientů, automatické číslování faktur, různé splatnosti, úprava řádků, párování příloh s fakturou, PDF na jedno kliknutí, funkční QR platby a grafy se statistikami.\n\nDalší plán: automatické zasílání faktur mailem podle nastavené frekvence.\n\nNástroj běží lokálně, nevyžaduje žádnou externí službu.",
       "read_minutes": 1,
       "source_date": "2026-06-05",
       "topics": ["Automatizace", "Workflow"]
@@ -23,8 +23,8 @@
       "type": "INSIGHT",
       "level": "Expert",
       "title": "Docker, VM nebo yolo: jak izolovat AI agenta",
-      "excerpt": "Přístup k terminálu je přístup všude. Komunita ve Vibe Coding probírala tři přístupy k izolaci — a každý má jiný trade-off mezi bezpečností a tím, co po agentovi chcete.",
-      "body": "VM (Lima, OrbStack): agent vidí jen to, co mu explicitně namountujete. Na Macu s menší RAM vychází OrbStack lépe než Docker Desktop — zabere méně paměti a je výkonnější. Nevýhoda: nastavení trvá.\n\nDocker: izolace na úrovni kontejneru, sdílí jádro systému. Není to plnohodnotné VM, ale pro většinu scénářů to stačí. Docker Sandbox jde ještě dál.\n\nYolo mód: plný přístup k celému stroji. Někteří členové ho záměrně volí pro správu systému přes více projektů — migrace tabů, nastavení macOS. Čím víc agenta omezíte, tím méně toho po něm chcete.\n\nStack nono.sh slouží jako předpřipravené prostředí pro Claude, pokud nechcete nastavovat vrstvy ručně.",
+      "excerpt": "Přístup k terminálu je přístup všude. Komunita ve Vibe Coding probírala tři přístupy k izolaci. Každý z nich má jiný trade-off mezi bezpečností a tím, co po agentovi chcete.",
+      "body": "VM (Lima, OrbStack): agent vidí jen to, co mu explicitně namountujete. Na Macu s menší RAM vychází OrbStack lépe než Docker Desktop. Zabere méně paměti a je výkonnější. Nevýhoda: nastavení trvá.\n\nDocker: izolace na úrovni kontejneru, sdílí jádro systému. Není to plnohodnotné VM, ale pro většinu scénářů to stačí. Docker Sandbox jde ještě dál.\n\nYolo mód: plný přístup k celému stroji. Někteří členové ho záměrně volí pro správu systému přes více projektů, třeba migrace tabů nebo nastavení macOS. Čím víc agenta omezíte, tím méně toho po něm chcete.\n\nStack nono.sh slouží jako předpřipravené prostředí pro Claude, pokud nechcete nastavovat vrstvy ručně.",
       "read_minutes": 2,
       "source_date": "2026-06-05",
       "topics": ["Claude Code", "Vibe Coding"]
@@ -35,7 +35,7 @@
       "level": "Začátečník",
       "title": "30minutová nahrávka v Voice Memos — jak ji dostat ven?",
       "excerpt": "Jedna členka má v iPhone Voice Memos nahrávku uloženou lokálně bez iCloudu. V timeline ji vidí, ale přehrát ani exportovat nešla. AI nepomohl. Řešení zatím nikdo nenabídl.",
-      "body": "Nahrávka je viditelná v timeline — ale tlačítko Play nereaguje, AirDrop nefunguje, ani uložení do Files. Jiné nahrávky z téhož dne fungují normálně.\n\nKontext: stejný telefon, stejný den, hodinový hovor AirDropnutý do Macu bez problémů a přepsaný přes MacWhisper ve free verzi.\n\nAI nepomohl ani po delším hledání. Otázka zůstala v kanálu bez odpovědi.\n\nZná někdo způsob, jak nahrávku z iOS Voice Memos zachránit nebo vyextrahovat lokálně — ideálně bez iCloudu?",
+      "body": "Nahrávka je viditelná v timeline, ale tlačítko Play nereaguje, AirDrop nefunguje, ani uložení do Files. Jiné nahrávky z téhož dne fungují normálně.\n\nKontext: stejný telefon, stejný den, hodinový hovor AirDropnutý do Macu bez problémů a přepsaný přes MacWhisper ve free verzi.\n\nAI nepomohl ani po delším hledání. Otázka zůstala v kanálu bez odpovědi.",
       "read_minutes": 1,
       "source_date": "2026-06-05",
       "topics": ["Workflow", "Diktování"]
