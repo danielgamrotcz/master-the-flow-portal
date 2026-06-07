@@ -10,20 +10,20 @@
     {
       "id": "2026-06-06-01",
       "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Builder",
-      "title": "Kdo v komunitě ví, komu napsat o detail?",
-      "excerpt": "Jedna členka pojmenovala problém, který zná každý v síťovací skupině: najít informaci jde, ale vědět, kdo za ní stojí a může říct víc, je jiná věc.",
-      "body": "Jedna členka přišla s přesným pozorováním. Když v komunitě dohledáte informaci přes filtr, víte co. Ale kdo to ví do hloubky a komu napsat o soukromou zprávu pro detaily — to z výsledku hledání nepoznáte.\n\nDruhý nápad navazoval: co kdyby systém dokázal říct, že téma, které chcete filtrovat, se ve skupině ještě nikdy pořádně neprobíralo? Mohl by to být signál pro Daniela — tohle téma chybí, bylo by dobré se na něj zaměřit.\n\nObě myšlenky míří na stejný problém: komunita je datový zdroj, ale klíče k tomu, jak jej číst, jsou rozptýleny mezi lidi. Knowledge management uvnitř komunity — kdo ví co a jak to propojit.\n\nOtázka pro vás: narazili jste v komunitě na informaci, kde jste chtěli víc, ale nevěděli jste koho se zeptat?",
-      "read_minutes": 2,
+      "level": "Pokročilý",
+      "title": "Jak poznat, komu v komunitě napsat o detail?",
+      "excerpt": "Filtr najde informaci, ale neřekne, kdo za ní stojí a komu napsat o víc. Jedna členka pojmenovala dvě mezery v tom, jak komunita pracuje se znalostmi.",
+      "body": "První mezera: výsledek hledání ukáže, co bylo řečeno, ale ne kdo to ví do hloubky. Když letecký pohled potřebuje detaily, ty jsou v soukromé zprávě konkrétního člena — a ten člověk z výsledku hledání nepoznáte.\n\nDruhá mezera: když hledáte téma, které se ve skupině nikdy pořádně neprobíralo, systém to prostě nevrátí. Nezazní žádný signál, že tato díra existuje.\n\nOba náměty šly jako nápady Danielovi — nejsou to stížnosti, spíš pozorování z reálného použití.\n\nJak to řešíte vy, když z přepisu nebo karty chcete víc?",
+      "read_minutes": 1,
       "source_date": "2026-06-06",
-      "topics": ["Komunita", "Knowledge Management", "Workflow"]
+      "topics": ["Komunita", "Workflow"]
     }
   ],
   "resurfacing": {
     "id": "2026-06-05-01",
     "source_date": "2026-06-05",
-    "excerpt": "iDoklad odmítl nabídnout dvě šablony pro různé obory v rozumném tarifu. Jeden člen si za tři dny postavil vlastní řešení s automatickým číslováním, QR platbami a grafy.",
-    "body": "Jeden člen potřeboval dvě různé šablony faktur — jednu pro elektro projektové řízení, druhou pro IT služby. iDoklad to nabídl jen ve vyšším tarifu, a ani to by nesplnilo vše, co potřeboval. Takže si to postavil sám. Za tři dny ladění vznikl nástroj s adresářem, automatickým číslováním, různými splatnostmi, QR platbami a grafy. Tenhle přístup se v komunitě opakuje: vlastní nástroj máte přesně takový, jaký potřebujete.",
+    "excerpt": "Jeden člen potřeboval dvě šablony faktur s různým logem, účtem a emailem. iDoklad to odmítl v základním tarifu. Postavil si vlastní nástroj za tři dny.",
+    "body": "iDoklad nabídl dvě šablony jen ve vyšším tarifu — a ani to by nepokrylo vše, co člen potřeboval pro dvě různé oblasti práce. Výsledek po třech dnech: adresář klientů, automatické číslování, různé splatnosti, párování příloh, PDF na klik, funkční QR platby a grafy se statistikami. Nástroj běží lokálně, nevyžaduje žádnou externí službu.",
     "resurfaced_from": "2026-06-05",
     "topics": ["Automatizace", "Workflow"]
   },
