@@ -8,7 +8,7 @@
   <title>Master the Flow — komunita</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="styles.css">
-  <script>(function(){var saved=localStorage.getItem('theme');var t=saved||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);})()</script>
+  <script>(function(){var saved=localStorage.getItem('theme');var t=saved||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);try{var a=localStorage.getItem('mtf_auth');if(a&&Date.now()<JSON.parse(a).expires)document.documentElement.classList.add('auth-ok');}catch(e){}})()</script>
   <!-- Cloudflare Web Analytics -->
   <!-- <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token":"DOPLNIT_TOKEN"}'></script> -->
 </head>
@@ -150,6 +150,7 @@
         <a href="https://linkedin.com/in/danielgamrot" target="_blank" rel="noopener">LinkedIn</a>
       </div>
       <div class="disclaimer-bar">Automaticky generovaný souhrn WhatsApp diskuzí komunity. Informace ověřujte v&nbsp;originálních konverzacích.</div>
+      <div class="privacy-notice">Portál zaznamenává anonymní data o&nbsp;způsobu používání (otevírání karet, hledání, čas čtení) výhradně pro zlepšování obsahu komunity Master&nbsp;the&nbsp;Flow. Žádné osobní údaje. Žádné sdílení s&nbsp;třetími stranami.</div>
       </footer>
 
     </main>

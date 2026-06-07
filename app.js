@@ -115,18 +115,30 @@ async function loadVoteMap() {
 
 /* ===== ANALYTICS ===== */
 function trackEvent(event, data) {
+  const now = new Date();
+  const enriched = { ...data, hour_utc: now.getUTCHours(), date: now.toISOString().slice(0, 10) };
   fetch('/api/track', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ event, data }),
+    body: JSON.stringify({ event, data: enriched }),
   }).catch(() => {});
 }
 
 let searchTrackTimer = null;
+let _lastSearchResultCount = -1;
 function trackSearch(query) {
   clearTimeout(searchTrackTimer);
   if (query.trim().length >= 2) {
-    searchTrackTimer = setTimeout(() => trackEvent('search', { query: query.trim() }), 2000);
+    const capturedCount = _lastSearchResultCount;
+    searchTrackTimer = setTimeout(() => trackEvent('search', { query: query.trim(), result_count: capturedCount }), 2000);
+  }
+}
+
+function trackSession() {
+  const today = new Date().toISOString().slice(0, 10);
+  if (localStorage.getItem('mtf_last_visit') !== today) {
+    localStorage.setItem('mtf_last_visit', today);
+    trackEvent('session_visit', {});
   }
 }
 
@@ -724,6 +736,8 @@ function runSearch(query) {
     results = results.filter(r => getTopics(r.item).includes(state.topic));
   }
 
+  _lastSearchResultCount = results.length;
+
   if (results.length === 0) {
     show('empty-search');
     return;
@@ -854,14 +868,14 @@ function openCard(cardId) {
   const banner = document.getElementById('refresh-banner');
   if (banner) banner.style.visibility = 'hidden';
   state.cardOpenedAt = Date.now();
-  trackEvent('card_open', { id: cardId });
+  trackEvent('card_open', { id: cardId, topic: getTopics(card)[0] || null, card_type: card.type || null });
 }
 
 function closeCard() {
   if (state.activeCard && state.cardOpenedAt) {
     const duration_ms = Date.now() - state.cardOpenedAt;
     if (duration_ms >= 3000) {
-      trackEvent('card_read', { id: state.activeCard.id, duration_ms });
+      trackEvent('card_read', { id: state.activeCard.id, duration_ms, topic: getTopics(state.activeCard)[0] || null });
     }
     state.cardOpenedAt = null;
   }
@@ -954,6 +968,7 @@ function inlineMarkdown(text) {
 async function showTranscript(dateStr) {
   if (!dateStr) return;
 
+  trackEvent('transcript_view', { date: dateStr });
   _preTranscriptHash = location.hash || '#';
   state.transcriptDate = dateStr;
   switchView('transcript');
@@ -1018,6 +1033,7 @@ function switchView(viewName) {
 
   if (viewName !== prevView) state.topic = 'all';
   state.view = viewName;
+  trackEvent('view_switch', { view: viewName });
 
   if (viewName === 'today') {
     if (!state.today) {
@@ -1218,6 +1234,7 @@ async function openRandomCard() {
   const pool = state.searchAll.length ? state.searchAll : (state.today?.cards || []);
   if (!pool.length) { showToast('Žádné poznatky k dispozici'); return; }
   const card = pool[Math.floor(Math.random() * pool.length)];
+  trackEvent('random_card', {});
   openCard(card.id);
 }
 
@@ -1246,6 +1263,7 @@ function navigateOverlay(dir) {
   if (idx === -1) return;
   const next = idx + dir;
   if (next < 0 || next >= ids.length) return;
+  trackEvent('overlay_nav', { dir: dir > 0 ? 'next' : 'prev' });
   openCard(ids[next]);
 }
 
@@ -1559,6 +1577,7 @@ function attachCalendarListeners(el) {
   el.querySelectorAll('.cal-day-active[data-date]').forEach(day => {
     day.addEventListener('click', () => {
       const date = day.dataset.date;
+      trackEvent('archive_date', { date });
       state.archiveCards = [];
       state.archivePreset = 'custom';
       state.archiveFrom = date;
@@ -1617,6 +1636,8 @@ async function shareCard() {
   const card = state.activeCard;
   if (!card) return;
 
+  trackEvent('share', { id: card.id });
+
   const url = `${location.origin}${location.pathname}#card/${card.id}`;
 
   if (navigator.share) {
@@ -1667,6 +1688,7 @@ function handleHash() {
 /* ===== FILTER EVENTS ===== */
 function onTopicChange(topic) {
   state.topic = topic;
+  trackEvent('topic_filter', { topic });
   document.querySelectorAll('.chip').forEach(btn => {
     const isActive = btn.dataset.topic === topic;
     btn.classList.toggle('active', isActive);
@@ -1793,6 +1815,7 @@ function init() {
   state.activeCard = null;
 
   initGate();
+  trackSession();
   applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
   document.getElementById('btn-theme').addEventListener('click', toggleTheme);
   $('btn-random')?.addEventListener('click', openRandomCard);
