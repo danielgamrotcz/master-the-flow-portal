@@ -745,6 +745,7 @@ function runSearch(query) {
 
 /* ===== CARD OVERLAY ===== */
 function openCard(cardId) {
+  console.trace('openCard', cardId);
   const card = findCard(cardId);
   if (!card) return;
 
@@ -1788,6 +1789,10 @@ function toggleShortcutsPanel() {
 
 /* ===== INIT ===== */
 function init() {
+  // Defensive: ensure overlay is hidden on every page load (handles bfcache and edge cases)
+  $('card-overlay')?.classList.add('hidden');
+  state.activeCard = null;
+
   initGate();
   applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
   document.getElementById('btn-theme').addEventListener('click', toggleTheme);
@@ -1954,6 +1959,15 @@ function init() {
     window.visualViewport.addEventListener('resize', onViewportResize);
     window.visualViewport.addEventListener('scroll', onViewportResize);
   }
+
+  // bfcache: Safari restores page from memory on back/forward — close any open overlay
+  window.addEventListener('pageshow', e => {
+    if (e.persisted) {
+      $('card-overlay')?.classList.add('hidden');
+      state.activeCard = null;
+      if (location.hash.startsWith('#card/')) history.replaceState({}, '', '#');
+    }
+  });
 
   handleHash();
   loadArchiveIndex();
