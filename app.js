@@ -64,6 +64,8 @@ function applyTheme(theme) {
   const isLight = theme === 'light';
   document.getElementById('icon-sun').classList.toggle('hidden', !isLight);
   document.getElementById('icon-moon').classList.toggle('hidden', isLight);
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  if (themeColor) themeColor.setAttribute('content', isLight ? '#f4f4f4' : '#0f0f0f');
 }
 
 function toggleTheme() {
@@ -260,9 +262,10 @@ function buildTopicChips(cards) {
   }
 
   const chips = $('topic-chips');
-  let html = `<button class="chip${state.topic === 'all' ? ' active' : ''}" data-topic="all">Vše</button>`;
+  let html = `<button class="chip${state.topic === 'all' ? ' active' : ''}" data-topic="all" aria-selected="${state.topic === 'all' ? 'true' : 'false'}">Vše</button>`;
   topics.forEach(t => {
-    html += `<button class="chip${state.topic === t ? ' active' : ''}" data-topic="${esc(t)}">${esc(t)}<span class="chip-count">${counts[t]}</span></button>`;
+    const sel = state.topic === t;
+    html += `<button class="chip${sel ? ' active' : ''}" data-topic="${esc(t)}" aria-selected="${sel ? 'true' : 'false'}">${esc(t)}<span class="chip-count">${counts[t]}</span></button>`;
   });
   chips.innerHTML = html;
 }
@@ -820,6 +823,7 @@ function openCard(cardId) {
   $('card-overlay').classList.remove('hidden');
   $('overlay-body').scrollTop = 0;
   updateOverlayNav(cardId);
+  requestAnimationFrame(() => $('overlay-close')?.focus());
   const mc = document.getElementById('main-content');
   if (mc) { mc.dataset.scrollTop = mc.scrollTop; mc.style.overflow = 'hidden'; }
   const banner = document.getElementById('refresh-banner');
@@ -982,7 +986,9 @@ function switchView(viewName) {
   });
 
   document.querySelectorAll('.nav-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.view === viewName);
+    const isActive = btn.dataset.view === viewName;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-current', isActive ? 'page' : 'false');
   });
 
   if (viewName !== prevView) state.topic = 'all';
@@ -1661,7 +1667,9 @@ function handleHash() {
 function onTopicChange(topic) {
   state.topic = topic;
   document.querySelectorAll('.chip').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.topic === topic);
+    const isActive = btn.dataset.topic === topic;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
   });
   const chips = $('topic-chips');
   if (chips) chips.scrollLeft = 0;
@@ -1888,6 +1896,19 @@ function init() {
       return;
     }
     if (overlayOpen) {
+      if (e.key === 'Tab') {
+        const sheet = document.querySelector('.overlay-sheet');
+        const focusable = [...sheet.querySelectorAll('button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])')];
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+        } else {
+          if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+        return;
+      }
       if (!inInput && (e.key === 'h' || e.key === 'H')) $('btn-vote')?.click();
       if (!inInput && e.key === 'j') { navigateOverlay(1); return; }
       if (!inInput && e.key === 'k') { navigateOverlay(-1); return; }

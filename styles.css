@@ -242,6 +242,7 @@ a:hover { text-decoration: underline; }
   opacity: 0.6;
   font-weight: 400;
   margin-left: 2px;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 /* ===== MAIN CONTENT ===== */
@@ -343,6 +344,7 @@ a:hover { text-decoration: underline; }
   font-size: 11px;
   font-weight: 600;
   color: var(--accent);
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 .overlay-date-label {
@@ -1221,6 +1223,7 @@ a:hover { text-decoration: underline; }
   color: var(--accent);
   line-height: 1;
   margin-bottom: 4px;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 .stat-label {
@@ -1267,6 +1270,7 @@ a:hover { text-decoration: underline; }
 .stats-topic-count {
   color: var(--text-tertiary);
   font-size: 12px;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 .stats-top-cards {
@@ -1322,6 +1326,7 @@ a:hover { text-decoration: underline; }
 
 #vote-count {
   font-size: 12px;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 /* ===== OVERLAY SIMILAR ===== */
@@ -1385,8 +1390,8 @@ a:hover { text-decoration: underline; }
 
 /* ===== SKELETON LOADING ===== */
 @keyframes shimmer {
-  0%   { background-position: -400px 0; }
-  100% { background-position: 400px 0; }
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(100%); }
 }
 .card-skeleton {
   pointer-events: none;
@@ -1394,8 +1399,16 @@ a:hover { text-decoration: underline; }
 }
 .sk {
   border-radius: var(--radius-sm);
-  background: linear-gradient(90deg, var(--border) 25%, var(--border-hover) 50%, var(--border) 75%);
-  background-size: 800px 100%;
+  background: var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.sk::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, var(--border-hover) 50%, transparent 100%);
+  transform: translateX(-100%);
   animation: shimmer 1.4s infinite;
 }
 .sk-title { height: 18px; width: 75%; margin-bottom: 14px; }
@@ -1674,3 +1687,12 @@ a:hover { text-decoration: underline; }
 .overlay-nav-btn:hover { background: var(--bg-active); color: var(--text-primary); }
 .overlay-nav-btn:disabled { opacity: 0.2; cursor: default; pointer-events: none; }
 .overlay-close-btn { margin-left: 4px; }
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  .view:not(.hidden) { animation: none; }
+  .refresh-banner { animation: none; }
+  .live-dot { animation: none; }
+  .toast { animation: none; }
+  .sk::after { animation: none; }
+}
