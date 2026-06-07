@@ -97,6 +97,8 @@ const state = {
   statsMonth: null,
   statsMsgCountByDate: null,
   voteMap: {},
+  cardStats: {},
+  topCards: [],
   transcriptDate: null,
   searchQuery: '',
 };
@@ -108,8 +110,12 @@ let _preTranscriptHash = '';
 /* ===== VOTES ===== */
 async function loadVoteMap() {
   try {
-    const top = await fetch('/api/top').then(r => r.json());
+    const [top, topCards] = await Promise.all([
+      fetch('/api/top').then(r => r.json()),
+      fetch('/api/top-cards').then(r => r.json()),
+    ]);
     if (Array.isArray(top)) top.forEach(({ id, count }) => { state.voteMap[id] = count; });
+    if (topCards?.cards) topCards.cards.forEach(c => { state.cardStats[c.id] = c; });
   } catch {}
 }
 
@@ -236,6 +242,7 @@ function renderCardEl(card, isResurfaced = false, query = '') {
       <div class="card-footer">
         <span class="card-readmore">Číst dál ↓</span>
         <span class="card-footer-right">
+          ${state.cardStats[card.id]?.reads > 5 ? `<span class="card-reads">${state.cardStats[card.id].reads} čtení</span>` : ''}
           ${state.voteMap[card.id] ? `<span class="card-hearts"><svg viewBox="0 0 24 24" fill="currentColor" width="11" height="11" style="vertical-align:-1px;margin-right:2px"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>${state.voteMap[card.id]}</span>` : ''}
           ${cardDate ? `<span class="card-date">${formatDateShort(cardDate)}</span>` : ''}
         </span>
@@ -1020,7 +1027,7 @@ function switchView(viewName) {
 
   document.getElementById('site-header').classList.toggle('stats-mode', viewName === 'stats');
 
-  ['today', 'week', 'archive', 'search', 'stats', 'transcript'].forEach(v => {
+  ['today', 'week', 'archive', 'search', 'stats', 'transcript', 'top'].forEach(v => {
     const el = $(`view-${v}`);
     if (el) el.classList.toggle('hidden', v !== viewName);
   });
@@ -1055,6 +1062,8 @@ function switchView(viewName) {
     setTimeout(() => $('search-input').focus(), 100);
   } else if (viewName === 'stats') {
     showStats();
+  } else if (viewName === 'top') {
+    loadTopView();
   }
 }
 
@@ -1251,7 +1260,7 @@ function updatePageTitle() {
 
 /* ===== OVERLAY PREV/NEXT NAVIGATION ===== */
 function getViewCardIds() {
-  const gridId = { today: 'cards-today', week: 'cards-week', archive: 'cards-archive', search: 'cards-search' }[state.view];
+  const gridId = { today: 'cards-today', week: 'cards-week', archive: 'cards-archive', search: 'cards-search', top: 'cards-top' }[state.view];
   if (!gridId) return [];
   return [...(document.getElementById(gridId)?.querySelectorAll('.card[data-id]') || [])].map(el => el.dataset.id);
 }
@@ -1411,6 +1420,43 @@ async function showWeek() {
   } catch {
     $('cards-week').innerHTML = '';
     show('empty-week');
+  }
+}
+
+/* ===== TOP VIEW ===== */
+async function loadTopView() {
+  const container = $('cards-top');
+  const empty = $('empty-top');
+  if (!container) return;
+  if (empty) empty.classList.add('hidden');
+  renderSkeleton('cards-top');
+
+  try {
+    if (!Object.keys(state.cardStats).length) {
+      const tc = await fetch('/api/top-cards').then(r => r.json());
+      if (tc?.cards) tc.cards.forEach(c => { state.cardStats[c.id] = c; });
+    }
+
+    await ensureSearchAll();
+
+    const topCards = Object.entries(state.cardStats)
+      .sort((a, b) => b[1].score - a[1].score)
+      .slice(0, 30)
+      .map(([id]) => findCard(id))
+      .filter(Boolean);
+
+    container.innerHTML = '';
+    if (!topCards.length) {
+      if (empty) empty.classList.remove('hidden');
+      return;
+    }
+
+    state.topCards = topCards;
+    buildTopicChips(topCards);
+    renderCards(topCards, 'cards-top');
+  } catch {
+    container.innerHTML = '';
+    if (empty) empty.classList.remove('hidden');
   }
 }
 
@@ -1680,6 +1726,8 @@ function handleHash() {
     switchView('search');
   } else if (hash === 'stats') {
     switchView('stats');
+  } else if (hash === 'top') {
+    switchView('top');
   } else {
     switchView('today');
   }
@@ -1728,6 +1776,8 @@ function rerenderCurrentView() {
     }
   } else if (state.view === 'week') {
     showWeek();
+  } else if (state.view === 'top' && state.topCards.length > 0) {
+    renderCards(state.topCards, 'cards-top');
   } else if (state.view === 'search') {
     const q = $('search-input').value;
     if (q.length >= 2) runSearch(q);
