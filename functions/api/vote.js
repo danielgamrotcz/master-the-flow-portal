@@ -1,50 +1,76 @@
-function cors() {
+const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
+const VOTE_ID_RE = /^[a-zA-Z0-9_-]{1,80}$/;
+const DEDUP_TTL = 30 * 24 * 3600; // 30 days
+
+function corsHeaders(origin, methods = 'GET, OPTIONS') {
   return {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Origin': origin === SITE_ORIGIN ? origin : '*',
+    'Access-Control-Allow-Methods': methods,
     'Access-Control-Allow-Headers': 'Content-Type',
+    'Vary': 'Origin',
   };
 }
 
-export async function onRequestOptions() {
-  return new Response(null, { headers: cors() });
+async function ipHash(ip, id) {
+  const buf = await crypto.subtle.digest(
+    'SHA-256',
+    new TextEncoder().encode(ip + ':' + id)
+  );
+  return Array.from(new Uint8Array(buf))
+    .map(b => b.toString(16).padStart(2, '0'))
+    .join('')
+    .slice(0, 32);
+}
+
+export async function onRequestOptions({ request }) {
+  const origin = request.headers.get('Origin');
+  return new Response(null, { headers: corsHeaders(origin, 'GET, POST, OPTIONS') });
 }
 
 export async function onRequestGet({ request, env }) {
+  const origin = request.headers.get('Origin');
   const id = new URL(request.url).searchParams.get('id');
-  if (!id) return Response.json({ error: 'missing id' }, { status: 400, headers: cors() });
+  if (!id || !VOTE_ID_RE.test(id)) {
+    return Response.json({ error: 'invalid id' }, { status: 400, headers: corsHeaders(origin) });
+  }
   try {
     const raw = await env.MTF_DATA.get('vote_' + id);
     const count = raw ? parseInt(raw, 10) : 0;
-    return Response.json({ id, count }, { headers: cors() });
+    return Response.json({ id, count }, { headers: corsHeaders(origin) });
   } catch {
-    return Response.json({ id, count: 0 }, { headers: cors() });
+    return Response.json({ id, count: 0 }, { headers: corsHeaders(origin) });
   }
 }
 
 export async function onRequestPost({ request, env }) {
+  const origin = request.headers.get('Origin');
+  const headers = corsHeaders(origin, 'GET, POST, OPTIONS');
+
   try {
     const { id } = await request.json();
-    if (!id) return Response.json({ error: 'missing id' }, { status: 400 });
-    const key = 'vote_' + id;
-    const raw = await env.MTF_DATA.get(key);
-    const count = (raw ? parseInt(raw, 10) : 0) + 1;
-    await env.MTF_DATA.put(key, String(count));
-    return Response.json({ id, count }, { headers: cors() });
-  } catch (e) {
-    return Response.json({ error: 'error' }, { status: 500, headers: cors() });
-  }
-}
+    if (!id || !VOTE_ID_RE.test(id)) {
+      return Response.json({ error: 'invalid id' }, { status: 400, headers });
+    }
 
-// Top N most voted cards
-export async function onRequestGet_top({ request, env }) {
-  const list = await env.MTF_DATA.list({ prefix: 'vote_' });
-  const entries = await Promise.all(
-    list.keys.map(async ({ name }) => {
-      const count = parseInt(await env.MTF_DATA.get(name) || '0', 10);
-      return { id: name.replace('vote_', ''), count };
-    })
-  );
-  entries.sort((a, b) => b.count - a.count);
-  return Response.json(entries.slice(0, 20), { headers: cors() });
+    // Server-side dedup: one vote per IP per card per 30 days
+    const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+    const dedupKey = 'voted_' + await ipHash(ip, id);
+    const alreadyVoted = await env.MTF_DATA.get(dedupKey);
+    if (alreadyVoted) {
+      const raw = await env.MTF_DATA.get('vote_' + id);
+      const count = raw ? parseInt(raw, 10) : 0;
+      return Response.json({ id, count, duplicate: true }, { headers });
+    }
+
+    const voteKey = 'vote_' + id;
+    const raw = await env.MTF_DATA.get(voteKey);
+    const count = (raw ? parseInt(raw, 10) : 0) + 1;
+    await Promise.all([
+      env.MTF_DATA.put(voteKey, String(count)),
+      env.MTF_DATA.put(dedupKey, '1', { expirationTtl: DEDUP_TTL }),
+    ]);
+    return Response.json({ id, count }, { headers });
+  } catch {
+    return Response.json({ error: 'Internal error' }, { status: 500, headers });
+  }
 }

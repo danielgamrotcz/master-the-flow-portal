@@ -40,6 +40,7 @@ export async function onRequestGet({ env }) {
 
     return Response.json({ top_opened: topOpened, top_searches: topSearches }, { headers: cors() });
   } catch (e) {
-    return Response.json({ error: e.message }, { status: 500, headers: cors() });
+    console.error('insights error:', e);
+    return Response.json({ error: 'Internal error' }, { status: 500, headers: cors() });
   }
 }
