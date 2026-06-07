@@ -15,7 +15,8 @@
       "topics": [
         "Claude Code",
         "Vibe Coding"
-      ]
+      ],
+      "title": "Porovnávat nástroje je past, prostě začni"
     },
     {
       "excerpt": "Členka staví appku, která vezme šablonu certifikátu a Google Sheet a automaticky rozešle vyplněné certifikáty e-mailem.",
@@ -27,7 +28,8 @@
         "Email",
         "Google",
         "Claude Code"
-      ]
+      ],
+      "title": "Appka, co rozešle certifikáty z Google Sheetu"
     },
     {
       "excerpt": "Obecné „to už existuje“ jako argument neberu. Přesně padnoucí řešení má cenu — a co mu chybí, si prostě dodělám.",
@@ -36,7 +38,8 @@
       "source_date": "2026-03-25",
       "topics": [
         "Poznámky"
-      ]
+      ],
+      "title": "To už existuje? Padnoucí řešení má svou cenu"
     },
     {
       "excerpt": "Jeden člen zjistil, že víc hltá informace, než něco reálně buduje. Schválně se vrátil k postupu po malých krocích.",
@@ -45,7 +48,8 @@
       "source_date": "2026-03-25",
       "topics": [
         "AI nástroje"
-      ]
+      ],
+      "title": "Místo hltání informací jeden malý krok"
     },
     {
       "excerpt": "Aleš narazil na týdenní kreditní limit a zároveň řešil bug: text v teleprompterové appce se nepřizpůsoboval tempu čtení.",
@@ -54,7 +58,8 @@
       "source_date": "2026-03-25",
       "topics": [
         "Prompting"
-      ]
+      ],
+      "title": "Kreditní limit a bug najednou"
     },
     {
       "excerpt": "Michael sdílel článek o tom, že překrývající se Claude skills zhoršují výkon. Méně je víc.",
@@ -64,7 +69,8 @@
       "topics": [
         "Claude Code",
         "Workflow"
-      ]
+      ],
+      "title": "Překrývající se Claude skills škodí výkonu"
     }
   ],
   "resurfacing": null,

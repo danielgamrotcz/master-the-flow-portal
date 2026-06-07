@@ -15,7 +15,8 @@
       "topics": [
         "Raycast",
         "Prompting"
-      ]
+      ],
+      "title": "Diktování v Raycastu versus Uttero"
     },
     {
       "id": "2026-05-17-02",
@@ -25,7 +26,8 @@
       "topics": [
         "Workflow",
         "AI nástroje"
-      ]
+      ],
+      "title": "ShellBoard: vlastní terminál stavěný kolem projektů"
     },
     {
       "id": "2026-05-17-03",
@@ -36,7 +38,8 @@
         "Claude Code",
         "MCP",
         "Vibe Coding"
-      ]
+      ],
+      "title": "Jak poznat důvěryhodný MCP server"
     },
     {
       "id": "2026-05-17-04",
@@ -46,7 +49,8 @@
       "topics": [
         "Prompting",
         "AI nástroje"
-      ]
+      ],
+      "title": "Dej AI fiktivní profesní profil před úkolem"
     },
     {
       "id": "2026-05-17-05",
@@ -55,7 +59,8 @@
       "body": "Jeden z členů se ptal na nástroje, které anonymizují data, než je pošle do AI modelu. Padla dvě konkrétní doporučení: Microsoft Presidio, open-source knihovna pro detekci a maskování PII, a lokálně spuštěný model Gemma v Dockeru jako alternativa ke cloudovým službám. Obě možnosti umí zpracovat citlivá data bez toho, aby se originál posílal na cizí servery.",
       "topics": [
         "AI nástroje"
-      ]
+      ],
+      "title": "Jak posílat citlivá data do AI bezpečně"
     },
     {
       "id": "2026-05-17-06",
@@ -66,7 +71,8 @@
         "Automatizace",
         "Produktivita",
         "Workflow"
-      ]
+      ],
+      "title": "Mikrovylepšení: slouží to stále svému účelu?"
     }
   ],
   "resurfacing": {

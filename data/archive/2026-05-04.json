@@ -17,7 +17,8 @@
         "AI nástroje",
         "Email",
         "Meeting"
-      ]
+      ],
+      "title": "Daniel napsal čtyřem lidem, kdo na čem maká"
     },
     {
       "id": "2026-05-04-02",
@@ -27,7 +28,8 @@
       "topics": [
         "Vibe Coding",
         "Claude Code"
-      ]
+      ],
+      "title": "Appka pro správu klientů v pilotním provozu"
     },
     {
       "id": "2026-05-04-03",
@@ -37,7 +39,8 @@
       "topics": [
         "Claude Code",
         "Vibe Coding"
-      ]
+      ],
+      "title": "Nechat Claude Code posoudit vlastní projekt"
     }
   ],
   "resurfacing": {

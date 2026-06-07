@@ -77,7 +77,7 @@ const state = {
   searchAll: [],
   searchIndex: null,
   activeCard: null,
-  archivePreset: 'this-month',
+  archivePreset: 'all',
   archiveFrom: null,
   archiveTo: null,
   archiveCards: [],
@@ -270,13 +270,16 @@ function renderUnreadBar(cards, containerId) {
 
   const bar = document.createElement('div');
   bar.className = 'unread-bar';
-  bar.innerHTML = `<span>${unread} z ${cards.length} nepřečteno</span><button class="unread-bar-btn" id="unread-bar-read-all">přečíst vše</button>`;
+  bar.innerHTML = `<span>${unread} z ${cards.length} nepřečteno</span><button class="unread-bar-btn" id="unread-bar-next">→ Nepřečtená</button><button class="unread-bar-btn" id="unread-bar-read-all">přečíst vše</button>`;
   container.parentNode.insertBefore(bar, container);
+
+  bar.querySelector('#unread-bar-next').addEventListener('click', () => jumpToNextUnread());
 
   bar.querySelector('#unread-bar-read-all').addEventListener('click', () => {
     cards.forEach(c => markRead(c.id));
     bar.remove();
     document.querySelectorAll(`#${containerId} .card`).forEach(el => el.classList.add('read'));
+    updatePageTitle();
   });
 }
 
@@ -327,6 +330,7 @@ async function loadToday() {
       buildTopicChips(data.cards);
       renderCards(data.cards, 'cards-today', null);
       renderUnreadBar(data.cards, 'cards-today');
+      updatePageTitle();
       ensureSearchAll().catch(() => {});
       return;
     }
@@ -346,6 +350,7 @@ async function loadToday() {
       buildTopicChips(yData.cards || []);
       renderCards(yData.cards || [], 'cards-today', null);
       renderUnreadBar(yData.cards || [], 'cards-today');
+      updatePageTitle();
     } catch {
       $('cards-today').innerHTML = '';
       _setNavLabel('Včera');
@@ -393,6 +398,7 @@ async function loadArchiveIndex() {
 
 async function showArchive() {
   await loadArchiveIndex();
+  if (!state.archivePreset) state.archivePreset = 'all';
   renderArchiveControls();
   if (state.archivePreset === 'custom' && state.archiveFrom && state.archiveTo) {
     await loadArchiveDateRange(state.archiveFrom, state.archiveTo);
@@ -400,7 +406,7 @@ async function showArchive() {
     buildTopicChips(state.archiveCards);
     renderCards(state.archiveCards, 'cards-archive');
   } else {
-    await loadArchivePreset(state.archivePreset || '30d');
+    await loadArchivePreset(state.archivePreset);
   }
 }
 
@@ -555,7 +561,7 @@ async function loadArchiveNextPage(isFirst = false, gen = null) {
   const filtered = filterCards(newCards);
   if (filtered.length) {
     const tmp = document.createElement('div');
-    filtered.forEach(c => { tmp.innerHTML = renderCardEl(c); container.appendChild(tmp.firstChild); });
+    filtered.forEach(c => { tmp.innerHTML = renderCardEl(c); container.appendChild(tmp.firstElementChild); });
     attachCardListeners(container);
   }
 
@@ -759,8 +765,11 @@ function openCard(cardId) {
 
   $('card-overlay').classList.remove('hidden');
   $('overlay-body').scrollTop = 0;
+  updateOverlayNav(cardId);
   const mc = document.getElementById('main-content');
   if (mc) { mc.dataset.scrollTop = mc.scrollTop; mc.style.overflow = 'hidden'; }
+  const banner = document.getElementById('refresh-banner');
+  if (banner) banner.style.visibility = 'hidden';
   state.cardOpenedAt = Date.now();
   trackEvent('card_open', { id: cardId });
 }
@@ -776,6 +785,8 @@ function closeCard() {
   const mc = document.getElementById('main-content');
   if (mc) { mc.style.overflow = ''; mc.scrollTop = parseFloat(mc.dataset.scrollTop || '0'); }
   $('card-overlay').classList.add('hidden');
+  const banner = document.getElementById('refresh-banner');
+  if (banner) banner.style.visibility = '';
   state.activeCard = null;
   if (location.hash.startsWith('#card/')) {
     history.replaceState({}, '', _preCardHash || '#');
@@ -1032,6 +1043,7 @@ function markRead(id) {
     if (!s.has(id)) {
       s.add(id);
       localStorage.setItem('mtf_read', JSON.stringify([...s].slice(-1000)));
+      updatePageTitle();
     }
   } catch {}
 }
@@ -1041,6 +1053,7 @@ function markUnread(id) {
     s.delete(id);
     localStorage.setItem('mtf_read', JSON.stringify([...s]));
     document.querySelectorAll(`.card[data-id="${CSS.escape(id)}"]`).forEach(el => el.classList.remove('read'));
+    updatePageTitle();
   } catch {}
 }
 
@@ -1115,6 +1128,56 @@ async function openRandomCard() {
   if (!pool.length) { showToast('Žádné poznatky k dispozici'); return; }
   const card = pool[Math.floor(Math.random() * pool.length)];
   openCard(card.id);
+}
+
+/* ===== PAGE TITLE UNREAD COUNT ===== */
+function updatePageTitle() {
+  const cards = state.today?.cards || [];
+  if (!cards.length) { document.title = 'Master the Flow — komunita'; return; }
+  const readSet = getReadCards();
+  const unread = cards.filter(c => !readSet.has(c.id)).length;
+  document.title = unread > 0
+    ? `(${unread}) Master the Flow — komunita`
+    : 'Master the Flow — komunita';
+}
+
+/* ===== OVERLAY PREV/NEXT NAVIGATION ===== */
+function getViewCardIds() {
+  const gridId = { today: 'cards-today', week: 'cards-week', archive: 'cards-archive', search: 'cards-search' }[state.view];
+  if (!gridId) return [];
+  return [...(document.getElementById(gridId)?.querySelectorAll('.card[data-id]') || [])].map(el => el.dataset.id);
+}
+
+function navigateOverlay(dir) {
+  if (!state.activeCard) return;
+  const ids = getViewCardIds();
+  const idx = ids.indexOf(state.activeCard.id);
+  if (idx === -1) return;
+  const next = idx + dir;
+  if (next < 0 || next >= ids.length) return;
+  openCard(ids[next]);
+}
+
+function updateOverlayNav(cardId) {
+  const ids = getViewCardIds();
+  const idx = ids.indexOf(cardId);
+  const prevBtn = document.getElementById('overlay-prev');
+  const nextBtn = document.getElementById('overlay-next');
+  if (prevBtn) prevBtn.disabled = idx <= 0;
+  if (nextBtn) nextBtn.disabled = idx < 0 || idx >= ids.length - 1;
+}
+
+/* ===== NEXT UNREAD JUMP ===== */
+function jumpToNextUnread() {
+  const gridId = { today: 'cards-today', week: 'cards-week' }[state.view];
+  if (!gridId) return;
+  const readSet = getReadCards();
+  const cards = [...(document.getElementById(gridId)?.querySelectorAll('.card[data-id]') || [])];
+  const next = cards.find(el => !readSet.has(el.dataset.id));
+  if (next) {
+    next.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    next.focus();
+  }
 }
 
 /* ===== KEYBOARD CARD NAVIGATION ===== */
@@ -1507,7 +1570,7 @@ function handleHash() {
     }
   } else if (hash.startsWith('archive')) {
     const parts = hash.split('/');
-    if (parts.length === 2 && ['7d', '30d', '90d', 'this-month', 'last-month'].includes(parts[1])) {
+    if (parts.length === 2 && ['7d', '30d', '90d', 'this-month', 'last-month', 'all'].includes(parts[1])) {
       state.archivePreset = parts[1];
       state.archiveFrom = null;
       state.archiveTo = null;
@@ -1534,6 +1597,8 @@ function onTopicChange(topic) {
   document.querySelectorAll('.chip').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.topic === topic);
   });
+  const chips = $('topic-chips');
+  if (chips) chips.scrollLeft = 0;
   rerenderCurrentView();
 }
 
@@ -1545,7 +1610,7 @@ function rerenderCurrentView() {
     container.innerHTML = '';
     const filtered = filterCards(state.archiveCards);
     const tmp = document.createElement('div');
-    filtered.forEach(c => { tmp.innerHTML = renderCardEl(c); container.appendChild(tmp.firstChild); });
+    filtered.forEach(c => { tmp.innerHTML = renderCardEl(c); container.appendChild(tmp.firstElementChild); });
     attachCardListeners(container);
     if (state.archiveDateQueue.length > 0) {
       const s = document.createElement('div');
@@ -1673,7 +1738,35 @@ function init() {
 
   $('overlay-close').addEventListener('click', closeCard);
   $('overlay-backdrop').addEventListener('click', closeCard);
+  $('overlay-prev').addEventListener('click', () => navigateOverlay(-1));
+  $('overlay-next').addEventListener('click', () => navigateOverlay(1));
   $('btn-share').addEventListener('click', shareCard);
+
+  // Swipe left/right v overlay pro navigaci mezi kartami
+  const overlayBody = $('overlay-body');
+  let _swipeStartX = 0, _swipeStartY = 0, _swipeTracking = false;
+  overlayBody.addEventListener('touchstart', e => {
+    if (e.touches.length !== 1) return;
+    _swipeStartX = e.touches[0].clientX;
+    _swipeStartY = e.touches[0].clientY;
+    _swipeTracking = true;
+  }, { passive: true });
+  overlayBody.addEventListener('touchmove', e => {
+    if (!_swipeTracking || e.touches.length !== 1) return;
+    const dx = e.touches[0].clientX - _swipeStartX;
+    const dy = e.touches[0].clientY - _swipeStartY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
+      e.preventDefault(); // potlač vertikální scroll jen při jasně horizontálním pohybu
+    }
+  }, { passive: false });
+  overlayBody.addEventListener('touchend', e => {
+    if (!_swipeTracking) return;
+    _swipeTracking = false;
+    const dx = e.changedTouches[0].clientX - _swipeStartX;
+    const dy = e.changedTouches[0].clientY - _swipeStartY;
+    if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+    navigateOverlay(dx < 0 ? 1 : -1);
+  }, { passive: true });
 
   document.getElementById('btn-mark-unread')?.addEventListener('click', () => {
     if (state.activeCard) {
@@ -1708,6 +1801,8 @@ function init() {
     }
     if (overlayOpen) {
       if (!inInput && (e.key === 'h' || e.key === 'H')) $('btn-vote')?.click();
+      if (!inInput && e.key === 'j') { navigateOverlay(1); return; }
+      if (!inInput && e.key === 'k') { navigateOverlay(-1); return; }
       return;
     }
     if (inInput) return;
@@ -1724,6 +1819,17 @@ function init() {
       closeCard();
     }
   });
+
+  if (window.visualViewport) {
+    const nav = document.querySelector('.bottom-nav');
+    const onViewportResize = () => {
+      if (!nav) return;
+      const gap = window.innerHeight - window.visualViewport.height - window.visualViewport.offsetTop;
+      nav.style.transform = gap > 50 ? `translateY(-${gap}px)` : '';
+    };
+    window.visualViewport.addEventListener('resize', onViewportResize);
+    window.visualViewport.addEventListener('scroll', onViewportResize);
+  }
 
   handleHash();
   if (!location.hash || location.hash === '#') {

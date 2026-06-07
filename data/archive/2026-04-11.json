@@ -17,7 +17,8 @@
         "Fokus",
         "Meeting",
         "Subagenti"
-      ]
+      ],
+      "title": "Tři fáze práce s AI podle Daniela"
     },
     {
       "id": "2026-04-11-02",
@@ -26,7 +27,8 @@
       "body": "V diskuzi padl hack původně od Dřímalky: neptat se AI rovnou, ale nechat ji nejdřív najít největší světové odborníky na dané téma a pak nasimulovat jejich pohledy. Řešilo se, který model je na to nejlepší. Nejspíš Opus s extended thinking, ale zatím to nikdo neotestoval. Při simulaci víc expertů AI většinou začne rozdílnými názory, ale nakonec dojde ke společnému pojmenování věci.",
       "topics": [
         "Prompting"
-      ]
+      ],
+      "title": "Nech AI nasimulovat pohledy světových odborníků"
     },
     {
       "id": "2026-04-11-03",
@@ -36,7 +38,8 @@
       "topics": [
         "Vibe Coding",
         "Claude Code"
-      ]
+      ],
+      "title": "Nejjednodušší vysvětlení chyby bývá správné"
     }
   ],
   "resurfacing": {

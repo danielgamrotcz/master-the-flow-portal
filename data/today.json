@@ -16,7 +16,10 @@
       "body": "První mezera: výsledek hledání ukáže, co bylo řečeno, ale ne kdo to ví do hloubky. Když letecký pohled potřebuje detaily, ty jsou v soukromé zprávě konkrétního člena. A toho z výsledku hledání nepoznáte.\n\nDruhá mezera: když hledáte téma, které se ve skupině nikdy pořádně neprobíralo, systém to prostě nevrátí. Nezazní žádný signál, že tato díra existuje.\n\nOba náměty šly jako nápady Danielovi, nejsou to stížnosti, spíš pozorování z reálného použití.",
       "read_minutes": 1,
       "source_date": "2026-06-06",
-      "topics": ["Komunita", "Workflow"]
+      "topics": [
+        "Komunita",
+        "Workflow"
+      ]
     }
   ],
   "resurfacing": {
@@ -25,7 +28,11 @@
     "excerpt": "Jeden člen potřeboval dvě šablony faktur s různým logem, účtem a emailem. iDoklad to odmítl v základním tarifu. Postavil si vlastní nástroj za tři dny.",
     "body": "iDoklad nabídl dvě šablony jen ve vyšším tarifu — a ani to by nepokrylo vše, co člen potřeboval pro dvě různé oblasti práce. Výsledek po třech dnech: adresář klientů, automatické číslování, různé splatnosti, párování příloh, PDF na klik, funkční QR platby a grafy se statistikami. Nástroj běží lokálně, nevyžaduje žádnou externí službu.",
     "resurfaced_from": "2026-06-05",
-    "topics": ["Automatizace", "Workflow"]
+    "topics": [
+      "Automatizace",
+      "Workflow"
+    ],
+    "title": "Vlastní fakturační nástroj za tři dny"
   },
   "transcript": {
     "groups": [

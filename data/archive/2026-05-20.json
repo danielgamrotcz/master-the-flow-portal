@@ -14,7 +14,8 @@
       "body": "V Inspiraci spontánně vznikl plán na meetup v Brně. Petra Pučálková nabídla prostor a zájem potvrdilo víc než pět lidí. Daniel založil novou skupinu pro offline setkávání — Praha, Brno, Bohumín a další města.",
       "topics": [
         "Meeting"
-      ]
+      ],
+      "title": "Brněnský meetup se rýsuje"
     },
     {
       "id": "2026-05-20-02",
@@ -23,7 +24,8 @@
       "body": "Diskuze o Jiřího architektuře měla velký ohlas. Několik členů přiznalo, že systémová část je pro ně úplně jiný vesmír. Sám od sebe se objevil název pro novou profesní roli: setuper — člověk, který ostatním nastavuje AI infrastrukturu a pomáhá jim překonat technické překážky.",
       "topics": [
         "Fokus"
-      ]
+      ],
+      "title": "Setuper: nová role, co nastaví systémy za freelancery"
     },
     {
       "id": "2026-05-20-03",
@@ -33,7 +35,8 @@
       "topics": [
         "Automatizace",
         "Obsidian"
-      ]
+      ],
+      "title": "n8n na Hetzneru a Obsidian podle PARA"
     },
     {
       "id": "2026-05-20-04",
@@ -43,7 +46,8 @@
       "topics": [
         "Vibe Coding",
         "Claude Code"
-      ]
+      ],
+      "title": "Dva weby pro nováčky ve vibe codingu"
     },
     {
       "id": "2026-05-20-05",
@@ -53,7 +57,8 @@
       "topics": [
         "Vibe Coding",
         "Claude Code"
-      ]
+      ],
+      "title": "rtk na úsporu tokenů: zkušenosti půl na půl"
     }
   ],
   "resurfacing": {

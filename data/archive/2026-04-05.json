@@ -14,7 +14,8 @@
       "body": "Možná nevíš, že každá čtečka Kindle má vlastní e-mailovou adresu. Když na ni pošleš dokument ve Wordu, Amazon ho automaticky převede do formátu pro e‑knihy a pošle rovnou do čtečky. Jenže nestačí jen kliknout na Odeslat. Dokument musí být správně naformátovaný a e-mail musí být propojený s účtem Kindle. Jinak to neprojde.",
       "topics": [
         "Email"
-      ]
+      ],
+      "title": "Pošli Word na Kindle a máš e-book"
     },
     {
       "id": "2026-04-05-02",
@@ -24,7 +25,8 @@
       "topics": [
         "Vibe Coding",
         "Claude Code"
-      ]
+      ],
+      "title": "Vibe coding není na vrcholu, prostoru je dost"
     }
   ],
   "resurfacing": {

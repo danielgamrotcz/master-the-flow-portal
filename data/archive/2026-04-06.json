@@ -15,7 +15,8 @@
       "topics": [
         "Claude Code",
         "Vibe Coding"
-      ]
+      ],
+      "title": "Týdenní přehled: vlastní appky a ceny nástrojů"
     },
     {
       "id": "2026-04-06-02",
@@ -24,7 +25,8 @@
       "body": "Petr Říha přišel s konkrétním problémem: jako projektový manažer, stavbyvedoucí a člověk, který se vyzná v IT, pořád přepíná mezi aplikacemi. Chce mít všechno na jednom místě. Přesně typ situace, kde může AI opravdu pomoct.",
       "topics": [
         "Produktivita"
-      ]
+      ],
+      "title": "Projektový manažer hledá jedno místo pro vše"
     },
     {
       "id": "2026-04-06-03",
@@ -35,7 +37,8 @@
         "Claude Code",
         "Vibe Coding",
         "MCP"
-      ]
+      ],
+      "title": "Jak napojit Google Drive na AI"
     },
     {
       "id": "2026-04-06-04",
@@ -44,7 +47,8 @@
       "body": "Padl příklad z praxe: jeden člen používá v neziskovce n8n, má zmapované a zautomatizované scénáře, ale AI do toho zatím naplno nezapojil. Pro organizace, které si nejdřív potřebují rozjet základní automatizaci a AI přidat až později, to může být dobrá cesta.",
       "topics": [
         "Automatizace"
-      ]
+      ],
+      "title": "n8n v neziskovce, AI vrstva zatím počká"
     }
   ],
   "resurfacing": {

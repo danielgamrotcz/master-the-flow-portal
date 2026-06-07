@@ -15,7 +15,8 @@
       "topics": [
         "Prompting",
         "Workflow"
-      ]
+      ],
+      "title": "Špatně pochopené zadání? Rovnou druhá iterace"
     },
     {
       "id": "2026-03-15-02",
@@ -25,7 +26,8 @@
       "topics": [
         "Claude Code",
         "Vibe Coding"
-      ]
+      ],
+      "title": "Lovable, Macaly nebo Claude Code — první den šlo všechno"
     },
     {
       "id": "2026-03-15-03",
@@ -35,7 +37,8 @@
       "topics": [
         "Vibe Coding",
         "Claude Code"
-      ]
+      ],
+      "title": "aribena.com: čtyři měsíce vibe codingu"
     },
     {
       "id": "2026-03-15-04",
@@ -45,7 +48,8 @@
       "topics": [
         "Vibe Coding",
         "Claude Code"
-      ]
+      ],
+      "title": "Scraping zakázek naráží na paywally, ne na kód"
     },
     {
       "id": "2026-03-15-05",
@@ -55,7 +59,8 @@
       "topics": [
         "Claude Code",
         "Vibe Coding"
-      ]
+      ],
+      "title": "Z aplikace rovnou na prezentaci"
     }
   ],
   "resurfacing": null,

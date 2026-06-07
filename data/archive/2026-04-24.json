@@ -15,7 +15,8 @@
       "topics": [
         "Automatizace",
         "Obsidian"
-      ]
+      ],
+      "title": "Obsah v Obsidianu, chybí jen zpětná vazba"
     },
     {
       "id": "2026-04-24-02",
@@ -24,7 +25,8 @@
       "body": "Členka komunity nasdílela vlastní řešení na sledování zdrojů. Spouští ho ručně přes příkaz. Scrapeuje jen nový obsah od posledního spuštění, vybírá jen témata, která ji zajímají, a v Obsidianu vytvoří note s TL;DR, tagy, backlinkama a místem na vlastní feedback. Claude.md hlídá, že ty zdroje opravdu používá. Nic složitého, ale jako první funkční vlaštovka super.",
       "topics": [
         "Obsidian"
-      ]
+      ],
+      "title": "Vlastní scraper, co plní rovnou Obsidian"
     }
   ],
   "resurfacing": {

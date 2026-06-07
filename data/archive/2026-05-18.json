@@ -14,7 +14,8 @@
       "body": "Členka se zeptala, jak jí AI může pomoct s přípravou na státnice. Dostala víc tipů, než čekala. Pak se ukázalo, že je v komunitě spousta právníků a advokátek, kteří o sobě navzájem ani nevěděli. Řešili Codexis, Libratech, NotebookLM i specializované nástroje pro právo. Padl taky nápad založit vlastní podskupinu pro právníky.",
       "topics": [
         "AI nástroje"
-      ]
+      ],
+      "title": "Otázka před státnicemi odhalila právníky v komunitě"
     },
     {
       "id": "2026-05-18-02",
@@ -24,7 +25,8 @@
       "topics": [
         "Vibe Coding",
         "Claude Code"
-      ]
+      ],
+      "title": "Analýza dat má stejnou cenu jako hotová appka"
     },
     {
       "id": "2026-05-18-03",
@@ -35,7 +37,8 @@
         "Claude Code",
         "MCP",
         "Vibe Coding"
-      ]
+      ],
+      "title": "Plaud vydal vlastní MCP server"
     },
     {
       "id": "2026-05-18-04",
@@ -44,7 +47,8 @@
       "body": "Na vícejazyčné přepisy, kde se střídá čeština, angličtina a další jazyky, pořád nejlíp vychází Soniox. Nově umí i text-to-speech. Za málo peněz hodně muziky — Daniel ho používá jako základ pro Uttero.",
       "topics": [
         "AI nástroje"
-      ]
+      ],
+      "title": "Na míchanou češtinu s angličtinou vede Soniox"
     },
     {
       "id": "2026-05-18-05",
@@ -53,7 +57,8 @@
       "body": "V Inspiraci & Diskuzi se probíral Raycast. Je to aplikace pro Mac i Windows, která rozšiřuje možnosti Spotlightu. Umí spouštět aplikace, pracovat se snippety, má AI integrace a klávesové zkratky. Pokud vám to nic neříká, zkuste ji.",
       "topics": [
         "Raycast"
-      ]
+      ],
+      "title": "Raycast posouvá Spotlight na další úroveň"
     },
     {
       "id": "2026-05-18-06",
@@ -62,7 +67,8 @@
       "body": "V komunitě se řešily platební brány pro český trh. Shoda byla rychlá: Comgate má lepší podmínky než Stripe.",
       "topics": [
         "Automatizace"
-      ]
+      ],
+      "title": "Pro český trh má Comgate lepší podmínky než Stripe"
     },
     {
       "id": "2026-05-18-07",
@@ -71,7 +77,8 @@
       "body": "Za týden přibylo 22 nových členů. Komunita se objevila v newsletteru a lidi skupinu sdílí dál.",
       "topics": [
         "Produktivita"
-      ]
+      ],
+      "title": "Za týden přibylo 22 nových členů"
     }
   ],
   "resurfacing": {

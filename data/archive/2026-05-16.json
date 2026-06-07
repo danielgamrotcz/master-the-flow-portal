@@ -14,7 +14,8 @@
       "body": "Diskuze začala otázkou: co je Raycast a k čemu se hodí člověku, který není z IT? Filip shrnul hlavní funkce: rychlé spouštění aplikací a webů, snippety s placeholdery jako datum nebo jméno adresáta, správu oken, chytrou schránku s historií, emoji a color picker, kalkulačku, převody měn, překladač a stovky dalších integrací zdarma. Všechno se ovládá jednou klávesovou zkratkou. Jako první krok doporučil Danielovo video na LinkedInu.",
       "topics": [
         "Raycast"
-      ]
+      ],
+      "title": "Raycast usnadní práci i bez programování"
     },
     {
       "id": "2026-05-16-02",
@@ -23,7 +24,8 @@
       "body": "Příklad z praxe: překlad odborných posterů z konference. Žádné složité nastavování, žádný kód. Stačilo vědět, jaký nástroj použít a jak se správně zeptat. Přesně takové využití se dá během pár minut ukázat i ostatním.",
       "topics": [
         "AI nástroje"
-      ]
+      ],
+      "title": "Překlad konferenčních posterů přes GPT a Perplexity"
     },
     {
       "id": "2026-05-16-03",
@@ -33,7 +35,8 @@
       "topics": [
         "Vibe Coding",
         "Claude Code"
-      ]
+      ],
+      "title": "Vibe coding láká i lidi bez konkrétního projektu"
     },
     {
       "id": "2026-05-16-04",
@@ -43,7 +46,8 @@
       "topics": [
         "Vibe Coding",
         "Claude Code"
-      ]
+      ],
+      "title": "Názvy souborů dávají AI kontext"
     }
   ],
   "resurfacing": {
