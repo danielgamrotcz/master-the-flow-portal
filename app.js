@@ -195,7 +195,7 @@ function showToast(msg) {
 }
 
 /* ===== CARD HTML ===== */
-function renderCardEl(card, isResurfaced = false) {
+function renderCardEl(card, isResurfaced = false, query = '') {
   const typeColor = TYPE_COLORS[card.type] || 'var(--text-tertiary)';
   const sourceDate = card.resurfaced_from || card.source_date || card.date || '';
   const cardDate = card.source_date || card.date || '';
@@ -219,8 +219,8 @@ function renderCardEl(card, isResurfaced = false) {
         </div>
         ${topics.length ? `<div class="card-topics">${topics.map(t => `<span class="card-topic">${esc(t)}</span>`).join('')}</div>` : ''}
       </div>
-      <div class="card-title">${esc(card.title)}</div>
-      <div class="card-excerpt">${esc(card.excerpt)}</div>
+      <div class="card-title">${query ? highlightInHTML(esc(card.title), query) : esc(card.title)}</div>
+      <div class="card-excerpt">${query ? highlightInHTML(esc(card.excerpt), query) : esc(card.excerpt)}</div>
       <div class="card-footer">
         <span class="card-readmore">Číst dál ↓</span>
         <span class="card-footer-right">
@@ -713,7 +713,7 @@ function runSearch(query) {
     })
     .slice(0, 30);
 
-  $('cards-search').innerHTML = sorted.map(c => renderCardEl(c)).join('');
+  $('cards-search').innerHTML = sorted.map(c => renderCardEl(c, false, q)).join('');
   show('cards-search');
   attachCardListeners($('cards-search'));
 }
@@ -1005,8 +1005,12 @@ function switchView(viewName) {
   } else if (viewName === 'week') {
     showWeek();
   } else if (viewName === 'search') {
-    buildTopicChips([]);
     initSearch();
+    if (state.searchQuery && state.searchIndex) {
+      runSearch(state.searchQuery);
+    } else {
+      buildTopicChips([]);
+    }
     setTimeout(() => $('search-input').focus(), 100);
   } else if (viewName === 'stats') {
     showStats();
@@ -1406,7 +1410,7 @@ function buildActivityCal(monthStr, msgCountByDate) {
     const count = msgCountByDate[ds] || 0;
     const dayDate = new Date(y, m - 1, d);
     if (dayDate > today) {
-      html += '<div class="cal-day cal-day-pad"></div>';
+      html += '<div class="cal-day cal-day-future">' + d + '</div>';
     } else if (count === 0) {
       html += '<div class="cal-day cal-day-empty" title="' + d + '.' + m + '.">' + d + '</div>';
     } else {
@@ -1467,23 +1471,7 @@ async function renderStats() {
     let insightsHtml = '';
     try {
       const ins = await fetchJSON('/api/insights');
-      const topOpened = (ins.top_opened || []).filter(({ id }) => cardMap[id]).slice(0, 8);
-      if (topOpened.length) {
-        insightsHtml += '<div class="stats-section-title">Nejčtenější poznatky</div>'
-          + '<div class="stats-top-cards">'
-          + topOpened.map(({ id, opens }) => {
-            const card = cardMap[id];
-            return '<div class="stats-top-card" data-id="' + esc(id) + '"><span class="stats-top-heart">' + opens + '×</span><span class="stats-top-title">' + esc(card.title) + '</span></div>';
-          }).join('')
-          + '</div>';
-      }
-      const topSearches = ins.top_searches || [];
-      if (topSearches.length) {
-        insightsHtml += '<div class="stats-section-title">Co lidi hledají</div>'
-          + '<div class="stats-topics">'
-          + topSearches.map(({ query, count }) => '<div class="stats-topic-row"><span>&bdquo;' + esc(query) + '&ldquo;</span><span class="stats-topic-count">' + count + '×</span></div>').join('')
-          + '</div>';
-      }
+      // Admin-only data — not shown to users, accessible via /api/insights directly
     } catch {}
 
     let memberCount = null;
@@ -1677,6 +1665,10 @@ function onTopicChange(topic) {
 }
 
 function rerenderCurrentView() {
+  if (state.view === 'search' && state.searchQuery) {
+    runSearch(state.searchQuery);
+    return;
+  }
   if (state.view === 'today' && state.today) {
     renderCards(state.today.cards || [], 'cards-today', state.today.resurfacing || null);
   } else if (state.view === 'archive' && state.archiveCards.length > 0) {
@@ -1883,8 +1875,18 @@ function init() {
   });
 
   $('search-input').addEventListener('input', e => {
-    runSearch(e.target.value);
-    trackSearch(e.target.value);
+    const val = e.target.value;
+    $('search-clear').classList.toggle('hidden', val.length === 0);
+    runSearch(val);
+    trackSearch(val);
+  });
+
+  $('search-clear').addEventListener('click', () => {
+    const inp = $('search-input');
+    inp.value = '';
+    inp.focus();
+    $('search-clear').classList.add('hidden');
+    runSearch('');
   });
 
   document.addEventListener('keydown', e => {

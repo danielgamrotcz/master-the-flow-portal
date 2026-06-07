@@ -573,11 +573,28 @@ a:hover { text-decoration: underline; }
 /* ===== SEARCH ===== */
 .search-wrapper {
   margin-bottom: 16px;
+  position: relative;
 }
+
+.search-clear {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  border-radius: 50%;
+  transition: color 120ms ease, background 120ms ease;
+}
+.search-clear:hover { color: var(--text-primary); background: var(--btn-bg); }
 
 .search-input {
   width: 100%;
-  padding: 12px 16px;
+  padding: 12px 44px 12px 16px;
   font-size: 16px;
   font-family: inherit;
   color: var(--text-primary);
@@ -1178,6 +1195,13 @@ a:hover { text-decoration: underline; }
 }
 
 .cal-day-pad { background: transparent; }
+
+.cal-day-future {
+  color: var(--border-hover);
+  background: transparent;
+  font-size: 11px;
+  opacity: 0.5;
+}
 
 .cal-day-empty {
   color: var(--text-tertiary);
