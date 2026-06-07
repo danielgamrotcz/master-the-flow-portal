@@ -664,6 +664,18 @@ function runSearch(query) {
 
   let results = state.searchIndex.search(q);
 
+  // For short queries (≤ 5 chars), Fuse fuzzy matching returns false positives.
+  // Filter to only cards that actually contain the query as a substring.
+  if (q.length <= 5) {
+    const lower = q.toLowerCase();
+    results = results.filter(r => {
+      const c = r.item;
+      return (c.title || '').toLowerCase().includes(lower) ||
+             (c.excerpt || '').toLowerCase().includes(lower) ||
+             (c.body || '').toLowerCase().includes(lower);
+    });
+  }
+
   buildTopicChips(results.map(r => r.item));
 
   // Topic filter
