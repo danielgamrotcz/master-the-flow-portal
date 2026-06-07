@@ -169,8 +169,17 @@ function setHTML(id, html) { $(id).innerHTML = html; }
 
 /* ===== SKELETON LOADING ===== */
 function renderSkeleton(containerId, count = 4) {
-  const skel = '<div class="card card-skeleton" aria-hidden="true"><div class="sk sk-title"></div><div class="sk sk-line"></div><div class="sk sk-line sk-short"></div></div>';
-  $(containerId).innerHTML = Array(count).fill(skel).join('');
+  const widths = ['55px', '70px', '48px', '62px', '58px', '66px'];
+  const skels = Array.from({ length: count }, (_, i) => {
+    const w = widths[i % widths.length];
+    return `<div class="card card-skeleton" aria-hidden="true">
+      <div class="card-meta"><div class="sk" style="height:10px;width:${w}"></div></div>
+      <div class="sk sk-title" style="margin-top:10px"></div>
+      <div class="sk sk-line"></div>
+      <div class="sk sk-line sk-short"></div>
+    </div>`;
+  });
+  $(containerId).innerHTML = skels.join('');
 }
 
 /* ===== TOAST ===== */
@@ -185,7 +194,7 @@ function showToast(msg) {
 
 /* ===== CARD HTML ===== */
 function renderCardEl(card, isResurfaced = false) {
-  const typeColor = TYPE_COLORS[card.type] || '#808080';
+  const typeColor = TYPE_COLORS[card.type] || 'var(--text-tertiary)';
   const sourceDate = card.resurfaced_from || card.source_date || card.date || '';
   const cardDate = card.source_date || card.date || '';
   const topics = getTopics(card).slice(0, 5);
@@ -213,7 +222,7 @@ function renderCardEl(card, isResurfaced = false) {
       <div class="card-footer">
         <span class="card-readmore">Číst dál ↓</span>
         <span class="card-footer-right">
-          ${state.voteMap[card.id] ? `<span class="card-hearts">♥ ${state.voteMap[card.id]}</span>` : ''}
+          ${state.voteMap[card.id] ? `<span class="card-hearts"><svg viewBox="0 0 24 24" fill="currentColor" width="11" height="11" style="vertical-align:-1px;margin-right:2px"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>${state.voteMap[card.id]}</span>` : ''}
           ${cardDate ? `<span class="card-date">${formatDateShort(cardDate)}</span>` : ''}
         </span>
       </div>
@@ -302,7 +311,7 @@ function renderCards(cards, containerId, resurfaced = null) {
   let html = '';
 
   if (filtered.length === 0 && !resurfaced) {
-    container.innerHTML = '<div class="empty-state"><p>Žádné poznatky pro toto téma.</p></div>';
+    container.innerHTML = '<div class="empty-state"><p>Žádné poznatky pro toto téma. Zkuste filtr „Vše“.</p></div>';
     return;
   }
 
@@ -721,7 +730,7 @@ function openCard(cardId) {
   state.activeCard = card;
   history.replaceState({ card: cardId }, '', `#card/${cardId}`);
 
-  const typeColor = TYPE_COLORS[card.type] || '#808080';
+  const typeColor = TYPE_COLORS[card.type] || 'var(--text-tertiary)';
 
   $('overlay-meta').innerHTML = `
     <span class="card-type" style="color:${typeColor}">${esc(card.type)}</span>
