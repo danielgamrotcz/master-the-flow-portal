@@ -1407,13 +1407,6 @@ a:hover { text-decoration: underline; }
 .similar-card:hover .similar-arrow { color: var(--accent); }
 
 /* ===== VIEW TRANSITIONS ===== */
-@keyframes viewFadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-.view:not(.hidden) {
-  animation: viewFadeIn 180ms ease forwards;
-}
 
 /* ===== SKELETON LOADING ===== */
 @keyframes shimmer {
@@ -1718,7 +1711,6 @@ a:hover { text-decoration: underline; }
 
 /* ===== REDUCED MOTION ===== */
 @media (prefers-reduced-motion: reduce) {
-  .view:not(.hidden) { animation: none; }
   .refresh-banner { animation: none; }
   .live-dot { animation: none; }
   .toast { animation: none; }
