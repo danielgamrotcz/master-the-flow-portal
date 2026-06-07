@@ -422,7 +422,7 @@ async function showArchive() {
   if (state.archivePreset === 'custom' && state.archiveFrom && state.archiveTo) {
     await loadArchiveDateRange(state.archiveFrom, state.archiveTo);
   } else if (state.archiveCards.length > 0) {
-    buildTopicChips(state.archiveCards);
+    buildTopicChips(state._archiveCountsComplete ? state._archiveAllCards : state.archiveCards);
     renderCards(state.archiveCards, 'cards-archive');
   } else {
     await loadArchivePreset(state.archivePreset);
@@ -529,11 +529,14 @@ async function loadArchiveDateRange(from, to) {
 
   state._archiveGen++;
   const myGen = state._archiveGen;
+  state._archiveCountsComplete = false;
+  state._archiveAllCards = [];
 
   state.archiveDateQueue = (state.archiveIndex?.dates || [])
     .map(d => typeof d === 'string' ? d : d.date)
     .filter(d => d >= from && d <= to)
     .sort().reverse();
+  const allDatesInRange = [...state.archiveDateQueue];
   state.archiveCards = [];
   state.archivePageLoading = false;
 
@@ -544,6 +547,28 @@ async function loadArchiveDateRange(from, to) {
   }
 
   await loadArchiveNextPage(true, myGen);
+  prefetchArchiveCounts(allDatesInRange, myGen);
+}
+
+async function prefetchArchiveCounts(allDates, gen) {
+  await Promise.all(allDates.map(async ds => {
+    if (gen !== state._archiveGen) return;
+    if (!state.archiveCache[ds]) {
+      try {
+        const data = await fetchJSON('/data/archive/' + ds + '.json');
+        if (gen === state._archiveGen) state.archiveCache[ds] = data;
+      } catch {}
+    }
+  }));
+  if (gen !== state._archiveGen) return;
+  const allCards = [];
+  allDates.forEach(ds => {
+    const data = state.archiveCache[ds];
+    if (data) (data.cards || []).forEach(c => allCards.push({ ...c, source_date: c.source_date || ds }));
+  });
+  state._archiveCountsComplete = true;
+  state._archiveAllCards = allCards;
+  buildTopicChips(allCards);
 }
 
 async function loadArchiveNextPage(isFirst = false, gen = null) {
@@ -569,9 +594,9 @@ async function loadArchiveNextPage(isFirst = false, gen = null) {
   if (isFirst) {
     container.innerHTML = '';
     if (!state.archiveCards.length && !state.archiveDateQueue.length) { show('empty-archive'); state.archivePageLoading = false; return; }
-    buildTopicChips(state.archiveCards);
+    if (!state._archiveCountsComplete) buildTopicChips(state.archiveCards);
   } else {
-    buildTopicChips(state.archiveCards);
+    if (!state._archiveCountsComplete) buildTopicChips(state.archiveCards);
   }
 
   const sentinel = document.getElementById('archive-sentinel');
