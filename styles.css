@@ -2,8 +2,8 @@
 :root {
   --bg: #000;
   --bg-elevated: #0a0a0a;
-  --bg-card: rgba(255, 255, 255, 0.04);
-  --bg-card-hover: rgba(255, 255, 255, 0.07);
+  --bg-card: #121212;
+  --bg-card-hover: #161616;
   --bg-overlay: rgba(0, 0, 0, 0.85);
 
   --text-primary: #fff;
@@ -24,7 +24,7 @@
   --btn-bg: rgba(255, 255, 255, 0.08);
   --btn-bg-hover: rgba(255, 255, 255, 0.12);
 
-  --font: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
   --radius-sm: 6px;
   --radius-md: 10px;
@@ -217,7 +217,7 @@ a:hover { text-decoration: underline; }
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  transition: all 150ms ease;
+  transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
   white-space: nowrap;
   min-height: 44px;
   display: inline-flex;
@@ -296,8 +296,6 @@ a:hover { text-decoration: underline; }
 .card-type {
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
   color: var(--text-tertiary);
 }
 
@@ -353,8 +351,9 @@ a:hover { text-decoration: underline; }
   font-size: 11px;
   font-weight: 600;
   color: var(--text-tertiary);
-  background: var(--surface-2);
-  border-radius: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
   padding: 2px 8px;
   white-space: nowrap;
   flex-shrink: 0;
@@ -371,9 +370,9 @@ a:hover { text-decoration: underline; }
   font-size: 12px;
   font-weight: 500;
   color: var(--text-tertiary);
-  background: var(--surface-2);
+  background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: var(--radius-sm);
   padding: 3px 10px;
   cursor: pointer;
   transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
@@ -448,8 +447,6 @@ a:hover { text-decoration: underline; }
 .section-header {
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--text-tertiary);
   padding: 16px 0 8px;
 }
@@ -487,8 +484,6 @@ a:hover { text-decoration: underline; }
 .archive-month-label {
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--text-tertiary);
   margin-bottom: 10px;
 }
@@ -515,7 +510,7 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all 150ms ease;
+  transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
 }
 .archive-preset:hover { border-color: var(--border-hover); color: var(--text-primary); }
 .archive-preset.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
@@ -555,7 +550,7 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--accent);
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all 150ms ease;
+  transition: background 150ms ease, color 150ms ease;
   white-space: nowrap;
 }
 .archive-range-btn:hover { background: var(--accent); color: #fff; }
@@ -875,7 +870,7 @@ a:hover { text-decoration: underline; }
   background: var(--btn-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  transition: all 150ms ease;
+  transition: background 150ms ease, border-color 150ms ease;
 }
 
 .btn-secondary svg { width: 16px; height: 16px; }
@@ -957,11 +952,11 @@ a:hover { text-decoration: underline; }
 }
 
 /* ===== CARD TYPE COLOR ACCENTS ===== */
-.card[data-type="NÁSTROJE"] { border-left: 3px solid #3b82f6; }
-.card[data-type="POSTAVIL JSEM"] { border-left: 3px solid #10b981; }
-.card[data-type="OTEVŘENÁ OTÁZKA"] { border-left: 3px solid #8b5cf6; }
-.card[data-type="TÉMA TÝDNE"] { border-left: 3px solid #f59e0b; }
-.card[data-type="INSIGHT"] { border-left: 3px solid var(--accent); }
+.card[data-type="NÁSTROJE"] .card-type { color: #3b82f6; }
+.card[data-type="POSTAVIL JSEM"] .card-type { color: #10b981; }
+.card[data-type="OTEVŘENÁ OTÁZKA"] .card-type { color: #8b5cf6; }
+.card[data-type="TÉMA TÝDNE"] .card-type { color: #f59e0b; }
+.card[data-type="INSIGHT"] .card-type { color: var(--accent); }
 
 /* ===== SEARCH HIGHLIGHT ===== */
 .highlight { color: var(--accent); font-weight: 600; }
@@ -1137,7 +1132,7 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all 150ms ease;
+  transition: border-color 150ms ease, color 150ms ease;
   touch-action: manipulation;
 }
 .cal-nav-btn:hover { border-color: var(--border-hover); color: var(--text-primary); }
@@ -1223,8 +1218,6 @@ a:hover { text-decoration: underline; }
 .stats-section-title {
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--text-tertiary);
   margin-bottom: 10px;
   margin-top: 20px;
@@ -1307,7 +1300,7 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all 150ms;
+  transition: border-color 150ms, color 150ms;
 }
 .btn-vote:hover { border-color: #f43f5e; color: #f43f5e; }
 .btn-vote.voted { border-color: #f43f5e; color: #f43f5e; fill: #f43f5e; }
@@ -1327,8 +1320,6 @@ a:hover { text-decoration: underline; }
 .overlay-similar-title {
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--text-tertiary);
   margin-bottom: 10px;
 }
