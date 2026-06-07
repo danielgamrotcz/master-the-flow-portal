@@ -242,7 +242,7 @@ function renderCardEl(card, isResurfaced = false, query = '') {
       <div class="card-footer">
         <span class="card-readmore">Číst dál ↓</span>
         <span class="card-footer-right">
-          ${state.cardStats[card.id]?.reads > 5 ? `<span class="card-reads">${state.cardStats[card.id].reads} čtení</span>` : ''}
+          ${state.cardStats[card.id]?.reads > 0 ? `<span class="card-reads">${state.cardStats[card.id].reads} čtení</span>` : ''}
           ${state.voteMap[card.id] ? `<span class="card-hearts"><svg viewBox="0 0 24 24" fill="currentColor" width="11" height="11" style="vertical-align:-1px;margin-right:2px"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>${state.voteMap[card.id]}</span>` : ''}
           ${cardDate ? `<span class="card-date">${formatDateShort(cardDate)}</span>` : ''}
         </span>
