@@ -1440,7 +1440,8 @@ async function loadTopView() {
     await ensureSearchAll();
 
     const topCards = Object.entries(state.cardStats)
-      .sort((a, b) => b[1].score - a[1].score)
+      .filter(([, s]) => s.reads > 0)
+      .sort((a, b) => b[1].reads - a[1].reads)
       .slice(0, 30)
       .map(([id]) => findCard(id))
       .filter(Boolean);
@@ -1453,7 +1454,9 @@ async function loadTopView() {
 
     state.topCards = topCards;
     buildTopicChips(topCards);
-    renderCards(topCards, 'cards-top');
+    const filtered = filterCards(topCards);
+    container.innerHTML = filtered.map(c => renderCardEl(c)).join('');
+    attachCardListeners(container);
   } catch {
     container.innerHTML = '';
     if (empty) empty.classList.remove('hidden');
@@ -1777,7 +1780,11 @@ function rerenderCurrentView() {
   } else if (state.view === 'week') {
     showWeek();
   } else if (state.view === 'top' && state.topCards.length > 0) {
-    renderCards(state.topCards, 'cards-top');
+    const topContainer = $('cards-top');
+    topContainer.innerHTML = '';
+    const topFiltered = filterCards(state.topCards);
+    topContainer.innerHTML = topFiltered.map(c => renderCardEl(c)).join('');
+    attachCardListeners(topContainer);
   } else if (state.view === 'search') {
     const q = $('search-input').value;
     if (q.length >= 2) runSearch(q);

@@ -259,6 +259,7 @@ a:hover { text-decoration: underline; }
 
 .view { display: block; margin: 0 -20px; border-top: 1px solid var(--border); padding: 16px 20px 0; }
 .view.hidden { display: none; }
+.view:not(.hidden) { flex-grow: 1; }
 
 /* ===== CARDS GRID ===== */
 .cards-grid {
@@ -1030,7 +1031,7 @@ a:hover { text-decoration: underline; }
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-top: auto;
+  flex-shrink: 0;
 }
 
 .site-footer a {
