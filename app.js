@@ -1956,10 +1956,7 @@ function init() {
   }
 
   handleHash();
-  if (!location.hash || location.hash === '#') {
-    loadToday();
-    loadArchiveIndex();
-  }
+  loadArchiveIndex();
 }
 
 document.addEventListener('DOMContentLoaded', init);

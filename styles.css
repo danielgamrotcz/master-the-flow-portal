@@ -1555,6 +1555,7 @@ a:hover { text-decoration: underline; }
     border-left: 1px solid var(--border);
     overflow-y: auto;
     height: 100%;
+    display: block;
   }
 
   .bottom-nav {
