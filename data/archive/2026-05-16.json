@@ -11,7 +11,7 @@
       "id": "2026-05-16-01",
       "source_date": "2026-05-16",
       "excerpt": "Člen komunity popsal, že mu Raycast zjednodušil práci i bez znalosti programování – buď už v základu, nebo přes pluginy.",
-      "body": "Diskuze začala otázkou: co je Raycast a k čemu se hodí člověku, který není z IT? Filip shrnul hlavní funkce: rychlé spouštění aplikací a webů, snippety s placeholdery jako datum nebo jméno adresáta, správu oken, chytrou schránku s historií, emoji a color picker, kalkulačku, převody měn, překladač a stovky dalších integrací zdarma. Všechno se ovládá jednou klávesovou zkratkou. Jako první krok doporučil Danielovo video na LinkedInu.",
+      "body": "Diskuze začala otázkou: co je Raycast a k čemu se hodí člověku, který není z IT? Jeden člen shrnul hlavní funkce: rychlé spouštění aplikací a webů, snippety s placeholdery jako datum nebo jméno adresáta, správu oken, chytrou schránku s historií, emoji a color picker, kalkulačku, převody měn, překladač a stovky dalších integrací zdarma. Všechno se ovládá jednou klávesovou zkratkou. Jako první krok doporučil Danielovo video na LinkedInu.",
       "topics": [
         "Raycast"
       ],
@@ -41,8 +41,8 @@
     {
       "id": "2026-05-16-04",
       "source_date": "2026-05-16",
-      "excerpt": "Filip sdílel video o tom, jak správně pojmenovávat soubory. Je to základní dovednost, podle které AI líp chápe strukturu projektu.",
-      "body": "Když začínáte s vibe codingem, názvy souborů a složek nejsou žádná drobnost. AI bere název souboru jako kontext — špatný název znamená horší výsledky. Filip sdílel video přímo pro lidi mimo IT, kteří s tím teprve začínají.",
+      "excerpt": "Jeden člen sdílel video o tom, jak správně pojmenovávat soubory. Je to základní dovednost, podle které AI líp chápe strukturu projektu.",
+      "body": "Když začínáte s vibe codingem, názvy souborů a složek nejsou žádná drobnost. AI bere název souboru jako kontext — špatný název znamená horší výsledky. Jeden člen sdílel video přímo pro lidi mimo IT, kteří s tím teprve začínají.",
       "topics": [
         "Vibe Coding",
         "Claude Code"

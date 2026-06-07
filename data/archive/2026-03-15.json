@@ -43,7 +43,7 @@
     {
       "id": "2026-03-15-04",
       "source_date": "2026-03-15",
-      "excerpt": "Martin narazil na limity scrapingu veřejných zakázek — většina portálů je schovaná za přihlášením nebo paywallem.",
+      "excerpt": "Jeden člen narazil na limity scrapingu veřejných zakázek — většina portálů je schovaná za přihlášením nebo paywallem.",
       "body": "TED API pokrývá jen část zakázek. Zbytek je buď dostupný až po přihlášení, nebo schovaný za paywallem. Tady vibe coding nestačí. Problém není v kódu, ale v tom, jak jsou data omezená.",
       "topics": [
         "Vibe Coding",

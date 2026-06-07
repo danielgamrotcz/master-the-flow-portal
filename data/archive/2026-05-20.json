@@ -10,8 +10,8 @@
     {
       "id": "2026-05-20-01",
       "source_date": "2026-05-20",
-      "excerpt": "Brněnský meetup se rýsuje. Petra nabídla kancl a přihlásilo se už aspoň pět lidí, včetně Petra Říhy z Liberce.",
-      "body": "V Inspiraci spontánně vznikl plán na meetup v Brně. Petra Pučálková nabídla prostor a zájem potvrdilo víc než pět lidí. Daniel založil novou skupinu pro offline setkávání — Praha, Brno, Bohumín a další města.",
+      "excerpt": "Brněnský meetup se rýsuje. Jedna členka nabídla kancl a přihlásilo se už aspoň pět lidí, včetně jednoho člena z Liberce.",
+      "body": "V Inspiraci spontánně vznikl plán na meetup v Brně. Jedna členka nabídla prostor a zájem potvrdilo víc než pět lidí. Daniel založil novou skupinu pro offline setkávání — Praha, Brno, Bohumín a další města.",
       "topics": [
         "Meeting"
       ],
@@ -30,8 +30,8 @@
     {
       "id": "2026-05-20-03",
       "source_date": "2026-05-20",
-      "excerpt": "Filip nasdílel setup n8n na Hetzneru, Jiří ukázal Obsidian podle PARA. Pak se detailně řešil Claude Cowork vs. CLI a synchronizace přes iCloud.",
-      "body": "Technická diskuze se rozjela naplno. Filip Fio Konečný popsal setup n8n na Hetzneru. Jiří Soljáka ukázal, jak pracuje s Obsidianem přes PARA strukturu. Řešily se praktické věci: vzdálené připojení k Mac Mini, synchronizace přes iCloud i rozdíly mezi Claude Cowork a CLI přístupem.",
+      "excerpt": "Jeden člen nasdílel setup n8n na Hetzneru, jiný člen ukázal Obsidian podle PARA. Pak se detailně řešil Claude Cowork vs. CLI a synchronizace přes iCloud.",
+      "body": "Technická diskuze se rozjela naplno. Jeden člen popsal setup n8n na Hetzneru. Jiný člen ukázal, jak pracuje s Obsidianem přes PARA strukturu. Řešily se praktické věci: vzdálené připojení k Mac Mini, synchronizace přes iCloud i rozdíly mezi Claude Cowork a CLI přístupem.",
       "topics": [
         "Automatizace",
         "Obsidian"

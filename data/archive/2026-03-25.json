@@ -33,7 +33,7 @@
     },
     {
       "excerpt": "Obecné „to už existuje“ jako argument neberu. Přesně padnoucí řešení má cenu — a co mu chybí, si prostě dodělám.",
-      "body": "Několik členů dostalo komentář: „Proč to děláš, když podobný nástroj už existuje?“ Daniel i Radim se shodli, že taková poznámka hází všechno do jednoho pytle a neříká nic konkrétního. Hotové aplikace často obsahují funkce, které spíš překážejí. Funkci, která chybí, si do hotového produktu jen tak nedodělám. A už samotná tvorba pomáhá pochopit danou oblast způsobem, ke kterému bych se jinak nedostal.",
+      "body": "Několik členů dostalo komentář: „Proč to děláš, když podobný nástroj už existuje?“ Daniel a jeden člen komunity se shodli, že taková poznámka hází všechno do jednoho pytle a neříká nic konkrétního. Hotové aplikace často obsahují funkce, které spíš překážejí. Funkci, která chybí, si do hotového produktu jen tak nedodělám. A už samotná tvorba pomáhá pochopit danou oblast způsobem, ke kterému bych se jinak nedostal.",
       "id": "2026-03-25-03",
       "source_date": "2026-03-25",
       "topics": [
@@ -52,8 +52,8 @@
       "title": "Místo hltání informací jeden malý krok"
     },
     {
-      "excerpt": "Aleš narazil na týdenní kreditní limit a zároveň řešil bug: text v teleprompterové appce se nepřizpůsoboval tempu čtení.",
-      "body": "Dva problémy najednou: Aleš vyčerpal 75 % týdenního kreditu a zároveň zjistil, že mu špatně funguje teleprompter appka. Text jel moc pomalu a nepřizpůsoboval se tempu čtení. Typická situace, kdy člověk začne nástroj víc používat a narazí na první limit. Obojí se dá vyřešit, jen počítejte s tím, že kreditové limity přijdou rychleji, než čekáte.",
+      "excerpt": "Jeden člen narazil na týdenní kreditní limit a zároveň řešil bug: text v teleprompterové appce se nepřizpůsoboval tempu čtení.",
+      "body": "Dva problémy najednou: Jeden člen vyčerpal 75 % týdenního kreditu a zároveň zjistil, že mu špatně funguje teleprompter appka. Text jel moc pomalu a nepřizpůsoboval se tempu čtení. Typická situace, kdy člověk začne nástroj víc používat a narazí na první limit. Obojí se dá vyřešit, jen počítejte s tím, že kreditové limity přijdou rychleji, než čekáte.",
       "id": "2026-03-25-05",
       "source_date": "2026-03-25",
       "topics": [
@@ -62,8 +62,8 @@
       "title": "Kreditní limit a bug najednou"
     },
     {
-      "excerpt": "Michael sdílel článek o tom, že překrývající se Claude skills zhoršují výkon. Méně je víc.",
-      "body": "Michael vytáhl dobrý postřeh z článku: když má Claude najednou moc skills, které se překrývají, začnou si lézt do cesty a výkon jde dolů. Platí to i pro vlastní konfigurace. Čím jasněji jsou skills ohraničené a čím míň se překrývají, tím líp fungují. Menší počet přesně popsaných skills porazí velkou sbírku vágních.",
+      "excerpt": "Jeden člen sdílel článek o tom, že překrývající se Claude skills zhoršují výkon. Méně je víc.",
+      "body": "Jeden člen vytáhl dobrý postřeh z článku: když má Claude najednou moc skills, které se překrývají, začnou si lézt do cesty a výkon jde dolů. Platí to i pro vlastní konfigurace. Čím jasněji jsou skills ohraničené a čím míň se překrývají, tím líp fungují. Menší počet přesně popsaných skills porazí velkou sbírku vágních.",
       "id": "2026-03-25-06",
       "source_date": "2026-03-25",
       "topics": [
