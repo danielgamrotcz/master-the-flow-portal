@@ -12,8 +12,8 @@
       "type": "OTEVŘENÁ OTÁZKA",
       "level": "Builder",
       "title": "Kdo v komunitě ví, komu napsat o detail?",
-      "excerpt": "Viktorie pojmenovala problém, který zná každý v síťovací skupině: najít informaci jde, ale vědět, kdo za ní stojí a může říct víc, je jiná věc.",
-      "body": "Viktorie přišla s přesným pozorováním. Když v komunitě dohledáte informaci přes filtr, víte co. Ale kdo to ví do hloubky a komu napsat o soukromou zprávu pro detaily — to z výsledku hledání nepoznáte.\n\nDruhý nápad navazoval: co kdyby systém dokázal říct, že téma, které chcete filtrovat, se ve skupině ještě nikdy pořádně neprobíralo? Mohl by to být signál pro Daniela — tohle téma chybí, bylo by dobré se na něj zaměřit.\n\nObě myšlenky míří na stejný problém: komunita je datový zdroj, ale klíče k tomu, jak jej číst, jsou rozptýleny mezi lidi. Knowledge management uvnitř komunity — kdo ví co a jak to propojit.\n\nOtázka pro vás: narazili jste v komunitě na informaci, kde jste chtěli víc, ale nevěděli jste koho se zeptat?",
+      "excerpt": "Jedna členka pojmenovala problém, který zná každý v síťovací skupině: najít informaci jde, ale vědět, kdo za ní stojí a může říct víc, je jiná věc.",
+      "body": "Jedna členka přišla s přesným pozorováním. Když v komunitě dohledáte informaci přes filtr, víte co. Ale kdo to ví do hloubky a komu napsat o soukromou zprávu pro detaily — to z výsledku hledání nepoznáte.\n\nDruhý nápad navazoval: co kdyby systém dokázal říct, že téma, které chcete filtrovat, se ve skupině ještě nikdy pořádně neprobíralo? Mohl by to být signál pro Daniela — tohle téma chybí, bylo by dobré se na něj zaměřit.\n\nObě myšlenky míří na stejný problém: komunita je datový zdroj, ale klíče k tomu, jak jej číst, jsou rozptýleny mezi lidi. Knowledge management uvnitř komunity — kdo ví co a jak to propojit.\n\nOtázka pro vás: narazili jste v komunitě na informaci, kde jste chtěli víc, ale nevěděli jste koho se zeptat?",
       "read_minutes": 2,
       "source_date": "2026-06-06",
       "topics": ["Komunita", "Knowledge Management", "Workflow"]
@@ -22,10 +22,10 @@
   "resurfacing": {
     "id": "2026-06-05-01",
     "source_date": "2026-06-05",
-    "excerpt": "iDoklad odmítl nabídnout dvě šablony pro různé obory v rozumném tarifu. Petr si za tři dny postavil vlastní řešení s automatickým číslováním, QR platbami a grafy.",
-    "body": "Petr Říha potřeboval dvě různé šablony faktur — jednu pro elektro projektové řízení, druhou pro IT služby. iDoklad to nabídl jen ve vyšším tarifu, a ani to by nesplnilo všechno, co potřeboval. Takže si to postavil sám. Za tři dny ladění vznikl nástroj s adresářem, automatickým číslováním, různými splatnostmi, QR platbami a grafy. Tenhle přístup se v komunitě opakuje: vlastní nástroj máte přesně takový, jaký potřebujete.",
+    "excerpt": "iDoklad odmítl nabídnout dvě šablony pro různé obory v rozumném tarifu. Jeden člen si za tři dny postavil vlastní řešení s automatickým číslováním, QR platbami a grafy.",
+    "body": "Jeden člen potřeboval dvě různé šablony faktur — jednu pro elektro projektové řízení, druhou pro IT služby. iDoklad to nabídl jen ve vyšším tarifu, a ani to by nesplnilo vše, co potřeboval. Takže si to postavil sám. Za tři dny ladění vznikl nástroj s adresářem, automatickým číslováním, různými splatnostmi, QR platbami a grafy. Tenhle přístup se v komunitě opakuje: vlastní nástroj máte přesně takový, jaký potřebujete.",
     "resurfaced_from": "2026-06-05",
-    "topics": ["Automatizace", "Workflow", "Builder"]
+    "topics": ["Automatizace", "Workflow"]
   },
   "transcript": {
     "groups": [
@@ -35,17 +35,17 @@
         "messages": [
           {
             "time": "07:54",
-            "author": "Daniel Gamrot",
+            "author": "Daniel",
             "text": "Ty jo, vůbec netuším. Promyslím to dneska na kole."
           },
           {
             "time": "20:55",
-            "author": "Viktorie Sládková",
+            "author": "člen komunity",
             "text": "Pokud dohledám informaci dle filtru a detail k ní vic drží nejakej clovek z chatu, tak abych věděla komu mohu napsat o vic treba. Protoze nekdy pojmenujeme letecky pohled, ale detail uz je na soukromou zpravu dane osobe. Tak to me napadlo."
           },
           {
             "time": "20:57",
-            "author": "Viktorie Sládková",
+            "author": "člen komunity",
             "text": "A taky pokud budu filtrovat neco, co vubec neproběhlo záznamem na whatsapp, aby ti to dalo notifikaci, ze je supr se na to téma potenciálně zamerit, pokud je validní. To mi jen běhá hlavou."
           }
         ]

@@ -189,9 +189,21 @@ a:hover { text-decoration: underline; }
 /* ===== TOPIC CHIPS ===== */
 .topic-chips {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 6px;
   padding-bottom: 12px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.topic-chips::-webkit-scrollbar { display: none; }
+
+@media (min-width: 960px) {
+  .topic-chips {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
 }
 
 .chip {
