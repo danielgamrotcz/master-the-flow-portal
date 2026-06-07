@@ -736,8 +736,8 @@ a:hover { text-decoration: underline; }
 }
 
 .overlay-close-btn {
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1335,7 +1335,7 @@ a:hover { text-decoration: underline; }
 
 .similar-card {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 8px;
   padding: 8px 0;
   border-bottom: 1px solid var(--border);
@@ -1356,8 +1356,18 @@ a:hover { text-decoration: underline; }
   font-size: 13px;
   color: var(--text-secondary);
   line-height: 1.4;
+  flex: 1;
   transition: color 150ms;
 }
+
+.similar-arrow {
+  font-size: 16px;
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+  line-height: 1;
+  transition: color 150ms;
+}
+.similar-card:hover .similar-arrow { color: var(--accent); }
 
 /* ===== VIEW TRANSITIONS ===== */
 @keyframes viewFadeIn {
@@ -1644,9 +1654,9 @@ a:hover { text-decoration: underline; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  min-width: 36px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
   background: none;
   border: none;
   border-radius: 8px;

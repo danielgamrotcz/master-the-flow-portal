@@ -33,15 +33,21 @@ function initGate() {
   const btn = document.getElementById('gate-submit');
   const err = document.getElementById('gate-error');
 
+  input.addEventListener('input', () => { err.textContent = ''; });
+
   async function tryUnlock() {
     const code = input.value.trim().toUpperCase();
-    if (!code) return;
+    if (!code) {
+      err.textContent = 'Zadejte prosím přístupový kód.';
+      input.focus();
+      return;
+    }
     const hash = await sha256(code);
     if (hash === GATE_HASH) {
       storeAuth();
       document.getElementById('gate').classList.add('hidden');
     } else {
-      err.textContent = 'Nesprávný kód. Zkus to znovu.';
+      err.textContent = 'Nesprávný kód. Zkuste to znovu.';
       input.value = '';
       input.focus();
     }
@@ -296,7 +302,7 @@ function renderCards(cards, containerId, resurfaced = null) {
   let html = '';
 
   if (filtered.length === 0 && !resurfaced) {
-    container.innerHTML = '';
+    container.innerHTML = '<div class="empty-state"><p>Žádné poznatky pro toto téma.</p></div>';
     return;
   }
 
@@ -328,7 +334,7 @@ async function loadToday() {
       const isYesterdayData = data.date !== actualToday;
       $('cards-today').innerHTML = '';
       updateHeader(data, isYesterdayData);
-      buildTopicChips(data.cards);
+      buildTopicChips(data.resurfacing ? [...data.cards, data.resurfacing] : data.cards);
       renderCards(data.cards, 'cards-today', data.resurfacing || null);
       renderUnreadBar(data.cards, 'cards-today');
       updatePageTitle();
@@ -348,7 +354,7 @@ async function loadToday() {
       state.archiveCache[yStr] = yData;
       $('cards-today').innerHTML = '';
       updateHeader(yData, true);
-      buildTopicChips(yData.cards || []);
+      buildTopicChips(yData.resurfacing ? [...(yData.cards || []), yData.resurfacing] : (yData.cards || []));
       renderCards(yData.cards || [], 'cards-today', yData.resurfacing || null);
       renderUnreadBar(yData.cards || [], 'cards-today');
       updatePageTitle();
@@ -781,9 +787,10 @@ function openCard(cardId) {
     const sim = getSimilarCards(card, 3);
     if (sim.length) {
       $('overlay-similar-cards').innerHTML = sim.map(c => `
-        <div class="similar-card" data-id="${esc(c.id)}">
+        <div class="similar-card" data-id="${esc(c.id)}" role="button" tabindex="0" aria-label="${esc(c.title)}">
           <span class="similar-date">${c.source_date ? formatDateShort(c.source_date) : ''}</span>
           <span class="similar-title">${esc(c.title)}</span>
+          <span class="similar-arrow">›</span>
         </div>
       `).join('');
       simEl.classList.remove('hidden');
@@ -857,18 +864,19 @@ function bodyToHTML(text) {
 
     // Headings
     if (/^### /.test(line)) {
-      if (inList) { out.push('</ul>'); inList = false; }
+      if (inList) { out.push(inList === 'ol' ? '</ol>' : '</ul>'); inList = false; }
       out.push(`<h4>${inlineMarkdown(line.slice(4))}</h4>`);
       continue;
     }
     if (/^## /.test(line)) {
-      if (inList) { out.push('</ul>'); inList = false; }
+      if (inList) { out.push(inList === 'ol' ? '</ol>' : '</ul>'); inList = false; }
       out.push(`<h3>${inlineMarkdown(line.slice(3))}</h3>`);
       continue;
     }
 
-    // List items
+    // Bullet list items
     if (/^[-*] /.test(line)) {
+      if (inList === 'ol') { out.push('</ol>'); inList = false; }
       if (!inList) { out.push('<ul>'); inList = true; }
       out.push(`<li>${inlineMarkdown(line.slice(2))}</li>`);
       continue;
@@ -876,7 +884,7 @@ function bodyToHTML(text) {
 
     // Numbered list
     if (/^\d+\. /.test(line)) {
-      if (inList) { out.push('</ul>'); inList = false; }
+      if (inList === true) { out.push('</ul>'); inList = false; }
       if (!inList) { out.push('<ol>'); inList = 'ol'; }
       out.push(`<li>${inlineMarkdown(line.replace(/^\d+\. /, ''))}</li>`);
       continue;
