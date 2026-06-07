@@ -95,6 +95,7 @@ const state = {
 
 let _lastKnownDigestDate = null;
 let _preCardHash = '';
+let _preTranscriptHash = '';
 
 /* ===== VOTES ===== */
 async function loadVoteMap() {
@@ -328,7 +329,7 @@ async function loadToday() {
       $('cards-today').innerHTML = '';
       updateHeader(data, isYesterdayData);
       buildTopicChips(data.cards);
-      renderCards(data.cards, 'cards-today', null);
+      renderCards(data.cards, 'cards-today', data.resurfacing || null);
       renderUnreadBar(data.cards, 'cards-today');
       updatePageTitle();
       ensureSearchAll().catch(() => {});
@@ -348,7 +349,7 @@ async function loadToday() {
       $('cards-today').innerHTML = '';
       updateHeader(yData, true);
       buildTopicChips(yData.cards || []);
-      renderCards(yData.cards || [], 'cards-today', null);
+      renderCards(yData.cards || [], 'cards-today', yData.resurfacing || null);
       renderUnreadBar(yData.cards || [], 'cards-today');
       updatePageTitle();
     } catch {
@@ -907,6 +908,7 @@ function inlineMarkdown(text) {
 async function showTranscript(dateStr) {
   if (!dateStr) return;
 
+  _preTranscriptHash = location.hash || '#';
   state.transcriptDate = dateStr;
   switchView('transcript');
 
@@ -1525,6 +1527,7 @@ function attachCalendarListeners(el) {
       state.archivePreset = 'custom';
       state.archiveFrom = date;
       state.archiveTo = date;
+      history.replaceState({}, '', '#archive/' + date + '/' + date);
       switchView('archive');
     });
   });
@@ -1601,8 +1604,17 @@ function handleHash() {
   if (hash.startsWith('card/')) {
     const id = hash.slice(5);
     if (id) {
-      loadToday().then(() => {
-        setTimeout(() => openCard(id), 200);
+      loadToday().then(async () => {
+        if (!findCard(id)) {
+          const dateStr = id.slice(0, 10);
+          if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr) && !state.archiveCache[dateStr]) {
+            try {
+              const data = await fetchJSON('/data/archive/' + dateStr + '.json');
+              state.archiveCache[dateStr] = data;
+            } catch {}
+          }
+        }
+        setTimeout(() => openCard(id), 50);
       });
     }
   } else if (hash.startsWith('archive')) {
@@ -1641,7 +1653,7 @@ function onTopicChange(topic) {
 
 function rerenderCurrentView() {
   if (state.view === 'today' && state.today) {
-    renderCards(state.today.cards || [], 'cards-today', null);
+    renderCards(state.today.cards || [], 'cards-today', state.today.resurfacing || null);
   } else if (state.view === 'archive' && state.archiveCards.length > 0) {
     const container = $('cards-archive');
     container.innerHTML = '';
@@ -1794,6 +1806,7 @@ function init() {
     state.archivePreset = 'custom';
     state.archiveFrom = dateStr;
     state.archiveTo = dateStr;
+    history.replaceState({}, '', '#archive/' + dateStr + '/' + dateStr);
     switchView('archive');
   });
 
@@ -1838,7 +1851,10 @@ function init() {
   });
 
   $('btn-transcript-back').addEventListener('click', () => {
-    switchView(state.view === 'transcript' ? 'today' : state.view);
+    const target = _preTranscriptHash || '#';
+    _preTranscriptHash = '';
+    history.replaceState({}, '', target);
+    handleHash();
   });
 
   $('search-input').addEventListener('input', e => {

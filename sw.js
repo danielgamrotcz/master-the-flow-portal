@@ -1,4 +1,4 @@
-const CACHE = 'mtf-v2';
+const CACHE = 'mtf-v3';
 const STATIC = ['/', '/index.html', '/app.js', '/styles.css', '/favicon.svg'];
 
 self.addEventListener('install', e => {
@@ -15,16 +15,15 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
 
-  // Archive date files — cache-first (they never change once published)
+  // Archive date files — network-first, fall back to cache
   if (url.pathname.startsWith('/data/archive/') && url.pathname.endsWith('.json')) {
     e.respondWith(
-      caches.open(CACHE).then(async cache => {
-        const cached = await cache.match(url.pathname);
-        if (cached) return cached;
-        const res = await fetch(e.request);
-        if (res.ok) cache.put(url.pathname, res.clone());
-        return res;
-      })
+      fetch(e.request)
+        .then(res => {
+          if (res.ok) caches.open(CACHE).then(c => c.put(url.pathname, res.clone()));
+          return res;
+        })
+        .catch(() => caches.open(CACHE).then(c => c.match(url.pathname)))
     );
     return;
   }
