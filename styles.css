@@ -253,6 +253,8 @@ a:hover { text-decoration: underline; }
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
   padding: 0 20px 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .view { display: block; margin: 0 -20px; border-top: 1px solid var(--border); padding: 16px 20px 0; }
@@ -1014,6 +1016,7 @@ a:hover { text-decoration: underline; }
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin-top: auto;
 }
 
 .site-footer a {
