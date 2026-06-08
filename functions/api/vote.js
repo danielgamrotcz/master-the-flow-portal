@@ -25,7 +25,7 @@ async function ipHash(ip, id) {
 
 export async function onRequestOptions({ request }) {
   const origin = request.headers.get('Origin');
-  return new Response(null, { headers: corsHeaders(origin, 'GET, POST, OPTIONS') });
+  return new Response(null, { headers: corsHeaders(origin, 'GET, POST, DELETE, OPTIONS') });
 }
 
 export async function onRequestGet({ request, env }) {
@@ -40,6 +40,37 @@ export async function onRequestGet({ request, env }) {
     return Response.json({ id, count }, { headers: corsHeaders(origin) });
   } catch {
     return Response.json({ id, count: 0 }, { headers: corsHeaders(origin) });
+  }
+}
+
+export async function onRequestDelete({ request, env }) {
+  const origin = request.headers.get('Origin');
+  const headers = corsHeaders(origin, 'GET, POST, DELETE, OPTIONS');
+
+  try {
+    const { id } = await request.json();
+    if (!id || !VOTE_ID_RE.test(id)) {
+      return Response.json({ error: 'invalid id' }, { status: 400, headers });
+    }
+
+    const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+    const dedupKey = 'voted_' + await ipHash(ip, id);
+    const alreadyVoted = await env.MTF_DATA.get(dedupKey);
+    if (!alreadyVoted) {
+      const raw = await env.MTF_DATA.get('vote_' + id);
+      return Response.json({ id, count: raw ? parseInt(raw, 10) : 0 }, { headers });
+    }
+
+    const voteKey = 'vote_' + id;
+    const raw = await env.MTF_DATA.get(voteKey);
+    const count = Math.max(0, (raw ? parseInt(raw, 10) : 0) - 1);
+    await Promise.all([
+      env.MTF_DATA.put(voteKey, String(count)),
+      env.MTF_DATA.delete(dedupKey),
+    ]);
+    return Response.json({ id, count }, { headers });
+  } catch {
+    return Response.json({ error: 'Internal error' }, { status: 500, headers });
   }
 }
 

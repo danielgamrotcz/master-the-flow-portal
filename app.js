@@ -825,13 +825,21 @@ function openCard(cardId) {
   voteBtn.classList.toggle('voted', voted);
   fetchVoteCount(card.id).then(c => { $('vote-count').textContent = c || ''; });
   voteBtn.onclick = async () => {
-    if (hasVoted(card.id)) return;
-    const count = await castVote(card.id);
-    $('vote-count').textContent = count || '';
-    voteBtn.classList.add('voted');
-    if (count) state.voteMap[card.id] = count;
-    showToast('Díky za hodnocení!');
-    rerenderCurrentView();
+    if (hasVoted(card.id)) {
+      const count = await removeVote(card.id);
+      $('vote-count').textContent = count || '';
+      voteBtn.classList.remove('voted');
+      state.voteMap[card.id] = count;
+      showToast('Hodnocení odvoláno');
+      rerenderCurrentView();
+    } else {
+      const count = await castVote(card.id);
+      $('vote-count').textContent = count || '';
+      voteBtn.classList.add('voted');
+      if (count) state.voteMap[card.id] = count;
+      showToast('Díky za hodnocení!');
+      rerenderCurrentView();
+    }
   };
 
   // Similar cards
@@ -1191,6 +1199,25 @@ async function castVote(id) {
     const j = await r.json();
     markVoted(id);
     return j.count || 0;
+  } catch { return 0; }
+}
+
+function markUnvoted(id) {
+  try {
+    const v = JSON.parse(localStorage.getItem('mtf_votes') || '[]');
+    localStorage.setItem('mtf_votes', JSON.stringify(v.filter(i => i !== id)));
+  } catch {}
+}
+
+async function removeVote(id) {
+  try {
+    const r = await fetch('/api/vote', {
+      method: 'DELETE', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id }),
+    });
+    const j = await r.json();
+    markUnvoted(id);
+    return j.count ?? 0;
   } catch { return 0; }
 }
 
@@ -1782,12 +1809,19 @@ function attachSwipeToCard(wrap) {
 
     const id = el.dataset.id;
     if (dx > 0) {
-      if (hasVoted(id)) { showToast('Již jste hodnotil/a'); return; }
-      castVote(id).then(count => {
-        if (count) state.voteMap[id] = count;
-        showToast('Díky za hodnocení!');
-        rerenderCurrentView();
-      });
+      if (hasVoted(id)) {
+        removeVote(id).then(count => {
+          state.voteMap[id] = count;
+          showToast('Hodnocení odvoláno');
+          rerenderCurrentView();
+        });
+      } else {
+        castVote(id).then(count => {
+          if (count) state.voteMap[id] = count;
+          showToast('Díky za hodnocení!');
+          rerenderCurrentView();
+        });
+      }
     } else {
       if (isRead(id)) {
         markUnread(id);
