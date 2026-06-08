@@ -1785,8 +1785,65 @@ function attachCardListeners(container) {
         openCard(el.dataset.id);
       }
     });
+    el.addEventListener('contextmenu', e => {
+      if (!window.matchMedia('(pointer: fine)').matches) return;
+      e.preventDefault();
+      showCardContextMenu(e.clientX, e.clientY, el.dataset.id);
+    });
     attachSwipeToCard(wrap);
   });
+}
+
+let _ctxMenuEl = null;
+let _ctxDismiss = null;
+
+function showCardContextMenu(x, y, cardId) {
+  hideCardContextMenu();
+
+  const voted = hasVoted(cardId);
+  const read = isRead(cardId);
+
+  const menu = document.createElement('div');
+  menu.className = 'card-ctx-menu';
+  menu.innerHTML = `
+    <button data-action="vote">${voted ? 'Odebrat srdíčko' : 'Dát srdíčko'}</button>
+    <button data-action="read">${read ? 'Označit jako nepřečtené' : 'Označit jako přečtené'}</button>
+  `;
+  document.body.appendChild(menu);
+  _ctxMenuEl = menu;
+
+  const vw = window.innerWidth, vh = window.innerHeight;
+  const mw = 220, mh = 80;
+  menu.style.left = (x + mw > vw ? vw - mw - 8 : x) + 'px';
+  menu.style.top  = (y + mh > vh ? y - mh : y) + 'px';
+
+  menu.addEventListener('click', e => {
+    const btn = e.target.closest('button[data-action]');
+    if (!btn) return;
+    hideCardContextMenu();
+    if (btn.dataset.action === 'vote') {
+      if (hasVoted(cardId)) removeVote(cardId); else castVote(cardId);
+    } else {
+      if (isRead(cardId)) markUnread(cardId); else markRead(cardId);
+    }
+  });
+
+  const dismiss = e => { if (!menu.contains(e.target)) hideCardContextMenu(); };
+  const dismissKey = e => { if (e.key === 'Escape') hideCardContextMenu(); };
+  setTimeout(() => {
+    document.addEventListener('pointerdown', dismiss, { once: false });
+    document.addEventListener('keydown', dismissKey);
+    document.addEventListener('scroll', hideCardContextMenu, { once: true, capture: true });
+    _ctxDismiss = () => {
+      document.removeEventListener('pointerdown', dismiss);
+      document.removeEventListener('keydown', dismissKey);
+    };
+  }, 0);
+}
+
+function hideCardContextMenu() {
+  if (_ctxMenuEl) { _ctxMenuEl.remove(); _ctxMenuEl = null; }
+  if (_ctxDismiss) { _ctxDismiss(); _ctxDismiss = null; }
 }
 
 function attachSwipeToCard(wrap) {
