@@ -1165,13 +1165,15 @@ a:hover { text-decoration: underline; }
   .stats-desktop-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    gap: 56px;
     align-items: start;
   }
 
   .stats-col-left,
   .stats-col-right {
     display: block;
+    padding-top: 0;
+    vertical-align: top;
   }
 }
 
