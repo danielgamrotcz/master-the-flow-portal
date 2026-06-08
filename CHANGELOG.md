@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+### Changed
+- Swipe gesta na kartách odstraněna — čeká na novou specifikaci
+
 ### Fixed
 - Resurfacing karta se nezobrazovala v tab Včera (null místo data.resurfacing)
 - Service worker cachoval archivní soubory cache-first — stará data po aktualizaci; přepnuto na network-first + cache `mtf-v3`
