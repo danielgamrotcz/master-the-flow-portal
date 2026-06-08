@@ -1,15 +1,22 @@
-function cors() {
+const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
+
+function cors(origin) {
+  const allowed = !origin || origin === SITE_ORIGIN || origin.startsWith('http://localhost');
   return {
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': allowed ? (origin || '*') : 'null',
     'Access-Control-Allow-Methods': 'GET, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Vary': 'Origin',
   };
 }
 
-export async function onRequestOptions() {
-  return new Response(null, { headers: cors() });
+export async function onRequestOptions({ request }) {
+  const origin = request.headers.get('Origin');
+  return new Response(null, { headers: cors(origin) });
 }
 
-export async function onRequestGet({ env }) {
+export async function onRequestGet({ env, request }) {
+  const origin = request.headers.get('Origin');
   try {
     const [opensRaw, readsRaw, sharesRaw, votesList] = await Promise.all([
       env.MTF_DATA.get('analytics:opens'),
@@ -50,11 +57,11 @@ export async function onRequestGet({ env }) {
 
     return Response.json({ cards }, {
       headers: {
-        ...cors(),
+        ...cors(origin),
         'Cache-Control': 'public, max-age=300',
       },
     });
   } catch {
-    return Response.json({ cards: [] }, { headers: cors() });
+    return Response.json({ cards: [] }, { headers: cors(origin) });
   }
 }

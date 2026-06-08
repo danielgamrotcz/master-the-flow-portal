@@ -1,6 +1,4 @@
-// Vapid public: BCub7WYDQt5wX2Jj0HUUMhK-T8VATzn4rvfc108akt7VCh8qGd_rgw6lQRJGKPIAsBDrPHwt7pagUYia1WIyEYY
-const VAPID_SUBJECT = 'mailto:daniel@gamrot.cz';
-const VAPID_PUB_B64 = 'BCub7WYDQt5wX2Jj0HUUMhK-T8VATzn4rvfc108akt7VCh8qGd_rgw6lQRJGKPIAsBDrPHwt7pagUYia1WIyEYY';
+// VAPID public key is defined client-side in app.js — server derives it from the VAPID_PRIVATE JWK.
 
 function b64urlEncode(buf) {
   return btoa(String.fromCharCode(...new Uint8Array(buf)))
@@ -20,11 +18,11 @@ async function importVapidPrivate(d, x, y) {
   );
 }
 
-async function createVapidJWT(endpoint, privateKey) {
+async function createVapidJWT(endpoint, subject, privateKey) {
   const aud = new URL(endpoint).origin;
   const exp = Math.floor(Date.now() / 1000) + 86400;
   const enc = s => b64urlEncode(new TextEncoder().encode(JSON.stringify(s)));
-  const unsigned = enc({ typ: 'JWT', alg: 'ES256' }) + '.' + enc({ aud, exp, sub: VAPID_SUBJECT });
+  const unsigned = enc({ typ: 'JWT', alg: 'ES256' }) + '.' + enc({ aud, exp, sub: subject });
   const sig = await crypto.subtle.sign(
     { name: 'ECDSA', hash: 'SHA-256' },
     privateKey,
@@ -33,9 +31,9 @@ async function createVapidJWT(endpoint, privateKey) {
   return unsigned + '.' + b64urlEncode(sig);
 }
 
-async function sendPush(sub, privateKey) {
-  const jwt = await createVapidJWT(sub.endpoint, privateKey);
-  const auth = `vapid t=${jwt},k=${VAPID_PUB_B64}`;
+async function sendPush(sub, privateKey, vapidPub, subject) {
+  const jwt = await createVapidJWT(sub.endpoint, subject, privateKey);
+  const auth = `vapid t=${jwt},k=${vapidPub}`;
   const resp = await fetch(sub.endpoint, {
     method: 'POST',
     headers: {
@@ -54,7 +52,11 @@ export async function onRequestPost({ request, env }) {
     return new Response('Unauthorized', { status: 401 });
   }
 
-  const pubBytes = b64urlDecode(VAPID_PUB_B64);
+  const vapidPub = env.VAPID_PUBLIC;
+  const vapidSubject = env.VAPID_SUBJECT;
+  if (!vapidPub || !vapidSubject) return new Response('VAPID env not set', { status: 500 });
+
+  const pubBytes = b64urlDecode(vapidPub);
   const x = b64urlEncode(pubBytes.slice(1, 33));
   const y = b64urlEncode(pubBytes.slice(33, 65));
   const d = env.VAPID_PRIVATE;
@@ -70,7 +72,7 @@ export async function onRequestPost({ request, env }) {
       const raw = await env.MTF_DATA.get(name);
       if (!raw) return;
       const sub = JSON.parse(raw);
-      const status = await sendPush(sub, privateKey);
+      const status = await sendPush(sub, privateKey, vapidPub, vapidSubject);
       if (status === 410 || status === 404) {
         await env.MTF_DATA.delete(name);
         failed++;

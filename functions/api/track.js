@@ -1,5 +1,14 @@
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 const CARD_ID_RE = /^[a-zA-Z0-9_-]{1,80}$/;
+
+async function checkTrackRateLimit(env, ip) {
+  if (!env.MTF_DATA) return false;
+  const key = 'ratelimit:track:' + ip;
+  const raw = await env.MTF_DATA.get(key);
+  if (raw) return true; // already made a request in the last 5 seconds
+  await env.MTF_DATA.put(key, '1', { expirationTtl: 5 });
+  return false;
+}
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const ALLOWED_EVENTS = new Set([
   'card_open', 'card_read', 'search',
@@ -38,6 +47,16 @@ export async function onRequestOptions({ request }) {
 export async function onRequestPost({ request, env }) {
   const origin = request.headers.get('Origin');
   const headers = corsHeaders(origin);
+
+  if (!request.headers.get('content-type')?.includes('application/json')) {
+    return new Response('Bad Request', { status: 400, headers });
+  }
+
+  const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+  const blocked = await checkTrackRateLimit(env, ip);
+  if (blocked) {
+    return new Response('OK', { headers }); // silently drop — don't reveal rate limit to client
+  }
 
   try {
     const { event, data } = await request.json();

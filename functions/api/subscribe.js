@@ -1,4 +1,15 @@
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
+const SUB_RATE_LIMIT = 5; // max subscriptions per IP per hour
+
+async function checkSubRateLimit(env, ip) {
+  if (!env.MTF_DATA) return false;
+  const key = 'ratelimit:sub:' + ip;
+  const raw = await env.MTF_DATA.get(key);
+  const count = raw ? parseInt(raw, 10) : 0;
+  if (count >= SUB_RATE_LIMIT) return true;
+  await env.MTF_DATA.put(key, String(count + 1), { expirationTtl: 3600 });
+  return false;
+}
 
 function corsHeaders(origin) {
   const allowed = !origin || origin === SITE_ORIGIN || origin.startsWith('http://localhost');
@@ -29,6 +40,17 @@ export async function onRequestOptions({ request }) {
 export async function onRequestPost({ request, env }) {
   const origin = request.headers.get('Origin');
   const headers = corsHeaders(origin);
+
+  if (!request.headers.get('content-type')?.includes('application/json')) {
+    return new Response('Bad Request', { status: 400, headers });
+  }
+
+  const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+  const blocked = await checkSubRateLimit(env, ip);
+  if (blocked) {
+    return new Response('Too Many Requests', { status: 429, headers });
+  }
+
   try {
     const sub = await request.json();
     if (!isValidSubscription(sub)) return new Response('Bad request', { status: 400, headers });

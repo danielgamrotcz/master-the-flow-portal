@@ -1,25 +1,17 @@
 /* ===== GATE ===== */
-const GATE_HASH = '5b9b2870716de15d8a6174804647360b656a25c67b1be0703f1e695ff365384d';
-const GATE_TTL = 30 * 24 * 60 * 60 * 1000;
 const VAPID_PUBLIC = 'BCub7WYDQt5wX2Jj0HUUMhK-T8VATzn4rvfc108akt7VCh8qGd_rgw6lQRJGKPIAsBDrPHwt7pagUYia1WIyEYY';
-
-
-async function sha256(str) {
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
-  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
-}
 
 function isAuthenticated() {
   try {
     const raw = localStorage.getItem('mtf_auth');
     if (!raw) return false;
-    const { expires } = JSON.parse(raw);
-    return Date.now() < expires;
+    const { token, expires } = JSON.parse(raw);
+    return token && Date.now() < expires;
   } catch { return false; }
 }
 
-function storeAuth() {
-  localStorage.setItem('mtf_auth', JSON.stringify({ expires: Date.now() + GATE_TTL }));
+function storeAuth(token, expires) {
+  localStorage.setItem('mtf_auth', JSON.stringify({ token, expires }));
 }
 
 function initGate() {
@@ -35,20 +27,32 @@ function initGate() {
   input.addEventListener('input', () => { err.textContent = ''; });
 
   async function tryUnlock() {
-    const code = input.value.trim().toUpperCase();
+    const code = input.value.trim();
     if (!code) {
       err.textContent = 'Zadejte prosím přístupový kód.';
       input.focus();
       return;
     }
-    const hash = await sha256(code);
-    if (hash === GATE_HASH) {
-      storeAuth();
-      document.getElementById('gate').classList.add('hidden');
-    } else {
-      err.textContent = 'Nesprávný kód. Zkuste to znovu.';
-      input.value = '';
-      input.focus();
+    btn.disabled = true;
+    try {
+      const res = await fetch('/api/auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ code }),
+      });
+      if (res.ok) {
+        const { token, expires } = await res.json();
+        storeAuth(token, expires);
+        document.getElementById('gate').classList.add('hidden');
+      } else {
+        err.textContent = 'Nesprávný kód. Zkuste to znovu.';
+        input.value = '';
+        input.focus();
+      }
+    } catch {
+      err.textContent = 'Chyba připojení. Zkuste to znovu.';
+    } finally {
+      btn.disabled = false;
     }
   }
 

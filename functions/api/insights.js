@@ -1,21 +1,26 @@
 const ADMIN_SECRET_HEADER = 'x-admin-secret';
+const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 
-function cors() {
+function cors(origin) {
+  const allowed = !origin || origin === SITE_ORIGIN || origin.startsWith('http://localhost');
   return {
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': allowed ? (origin || '*') : 'null',
     'Access-Control-Allow-Methods': 'GET, OPTIONS',
     'Access-Control-Allow-Headers': `Content-Type, ${ADMIN_SECRET_HEADER}`,
+    'Vary': 'Origin',
   };
 }
 
-export async function onRequestOptions() {
-  return new Response(null, { headers: cors() });
+export async function onRequestOptions({ request }) {
+  const origin = request.headers.get('Origin');
+  return new Response(null, { headers: cors(origin) });
 }
 
 export async function onRequestGet({ request, env }) {
+  const origin = request.headers.get('Origin');
   const secret = request.headers.get(ADMIN_SECRET_HEADER);
   if (!secret || secret !== env.ADMIN_SECRET) {
-    return new Response('Unauthorized', { status: 401, headers: cors() });
+    return new Response('Unauthorized', { status: 401, headers: cors(origin) });
   }
 
   try {
@@ -161,10 +166,10 @@ export async function onRequestGet({ request, env }) {
       events,
       hours: hoursArray,
       daily_trend: dailyTrend,
-    }, { headers: cors() });
+    }, { headers: cors(origin) });
 
   } catch (e) {
     console.error('insights error:', e);
-    return Response.json({ error: 'Internal error' }, { status: 500, headers: cors() });
+    return Response.json({ error: 'Internal error' }, { status: 500, headers: cors(origin) });
   }
 }

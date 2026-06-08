@@ -1,5 +1,21 @@
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 const VOTE_ID_RE = /^[a-zA-Z0-9_-]{1,80}$/;
+const RESERVED_PREFIXES = ['analytics', 'sub_', 'community_', 'voted_', 'vote_'];
+
+async function checkVoteRateLimit(env, ip) {
+  if (!env.MTF_DATA) return false;
+  const key = 'ratelimit:vote:' + ip;
+  const raw = await env.MTF_DATA.get(key);
+  const count = raw ? parseInt(raw, 10) : 0;
+  if (count >= 20) return true; // max 20 vote actions per 60s per IP
+  await env.MTF_DATA.put(key, String(count + 1), { expirationTtl: 60 });
+  return false;
+}
+
+function isSafeVoteId(id) {
+  if (!VOTE_ID_RE.test(id)) return false;
+  return !RESERVED_PREFIXES.some(p => id.startsWith(p));
+}
 const DEDUP_TTL = 30 * 24 * 3600; // 30 days
 
 function corsHeaders(origin, methods = 'GET, OPTIONS') {
@@ -31,7 +47,7 @@ export async function onRequestOptions({ request }) {
 export async function onRequestGet({ request, env }) {
   const origin = request.headers.get('Origin');
   const id = new URL(request.url).searchParams.get('id');
-  if (!id || !VOTE_ID_RE.test(id)) {
+  if (!id || !isSafeVoteId(id)) {
     return Response.json({ error: 'invalid id' }, { status: 400, headers: corsHeaders(origin) });
   }
   try {
@@ -47,13 +63,21 @@ export async function onRequestDelete({ request, env }) {
   const origin = request.headers.get('Origin');
   const headers = corsHeaders(origin, 'GET, POST, DELETE, OPTIONS');
 
+  if (!request.headers.get('content-type')?.includes('application/json')) {
+    return Response.json({ error: 'Bad Request' }, { status: 400, headers });
+  }
+
+  const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+  if (await checkVoteRateLimit(env, ip)) {
+    return Response.json({ error: 'Too Many Requests' }, { status: 429, headers });
+  }
+
   try {
     const { id } = await request.json();
-    if (!id || !VOTE_ID_RE.test(id)) {
+    if (!id || !isSafeVoteId(id)) {
       return Response.json({ error: 'invalid id' }, { status: 400, headers });
     }
 
-    const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
     const dedupKey = 'voted_' + await ipHash(ip, id);
     const alreadyVoted = await env.MTF_DATA.get(dedupKey);
     if (!alreadyVoted) {
@@ -78,14 +102,22 @@ export async function onRequestPost({ request, env }) {
   const origin = request.headers.get('Origin');
   const headers = corsHeaders(origin, 'GET, POST, OPTIONS');
 
+  if (!request.headers.get('content-type')?.includes('application/json')) {
+    return Response.json({ error: 'Bad Request' }, { status: 400, headers });
+  }
+
+  const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+  if (await checkVoteRateLimit(env, ip)) {
+    return Response.json({ error: 'Too Many Requests' }, { status: 429, headers });
+  }
+
   try {
     const { id } = await request.json();
-    if (!id || !VOTE_ID_RE.test(id)) {
+    if (!id || !isSafeVoteId(id)) {
       return Response.json({ error: 'invalid id' }, { status: 400, headers });
     }
 
     // Server-side dedup: one vote per IP per card per 30 days
-    const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
     const dedupKey = 'voted_' + await ipHash(ip, id);
     const alreadyVoted = await env.MTF_DATA.get(dedupKey);
     if (alreadyVoted) {
