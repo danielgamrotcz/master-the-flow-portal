@@ -3,12 +3,13 @@ const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 
 function cors(origin) {
   const allowed = origin && (origin === SITE_ORIGIN || origin.startsWith('http://localhost'));
-  return {
-    'Access-Control-Allow-Origin': allowed ? origin : 'null',
+  const headers = {
     'Access-Control-Allow-Methods': 'GET, OPTIONS',
     'Access-Control-Allow-Headers': `Content-Type, ${ADMIN_SECRET_HEADER}`,
     'Vary': 'Origin',
   };
+  if (allowed) headers['Access-Control-Allow-Origin'] = origin;
+  return headers;
 }
 
 export async function onRequestOptions({ request }) {

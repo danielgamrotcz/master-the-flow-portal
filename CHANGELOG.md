@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+### Added
+- **Chatbot** — nová položka v menu „Chat"; Claude Sonnet odpovídá výhradně na základě obsahu komunity (karty + přepisy WhatsApp). Multi-turn konverzace, streaming po slovech, citace jako klikatelné chipy otevírající overlay karty.
+- `/api/chat` endpoint se streamovanými odpověďmi přes SSE a tool-use smyčkou pro vyhledávání v přepisech.
+- Předgenerované datové soubory `data/chat-corpus.json` (273 karet) a `data/chat-transcripts.json` (70 dní, 1439 zpráv) pro rychlé načítání v chatbotu.
+
 ### Security
 - CORS: požadavky bez hlavičky Origin vrací `null` místo `*` — brání přístupu z curl/server-side skriptů
 - Auth: odstraněn FALLBACK_HASH ze source kódu; bez `GATE_CODE` env var server vrátí 500

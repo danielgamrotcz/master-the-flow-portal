@@ -3,12 +3,13 @@ const TOKEN_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
 
 function corsHeaders(origin) {
   const allowed = origin && (origin === SITE_ORIGIN || origin.startsWith('http://localhost'));
-  return {
-    'Access-Control-Allow-Origin': allowed ? origin : 'null',
+  const headers = {
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Vary': 'Origin',
   };
+  if (allowed) headers['Access-Control-Allow-Origin'] = origin;
+  return headers;
 }
 
 async function generateToken(secret) {

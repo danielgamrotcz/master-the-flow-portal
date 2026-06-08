@@ -112,9 +112,10 @@ let _preTranscriptHash = '';
 /* ===== VOTES ===== */
 async function loadVoteMap() {
   try {
+    const authToken = chatGetToken();
     const [top, topCards] = await Promise.all([
       fetch('/api/top').then(r => r.json()),
-      fetch('/api/top-cards').then(r => r.json()),
+      fetch('/api/top-cards', { headers: { 'x-mtf-token': authToken } }).then(r => r.ok ? r.json() : { cards: [] }),
     ]);
     if (Array.isArray(top)) top.forEach(({ id, count }) => { state.voteMap[id] = count; });
     if (topCards?.cards) topCards.cards.forEach(c => { state.cardStats[c.id] = c; });
@@ -1043,7 +1044,7 @@ function switchView(viewName) {
 
   document.getElementById('site-header').classList.toggle('stats-mode', viewName === 'stats');
 
-  ['today', 'week', 'archive', 'search', 'stats', 'transcript', 'top'].forEach(v => {
+  ['today', 'week', 'archive', 'search', 'stats', 'transcript', 'top', 'chat'].forEach(v => {
     const el = $(`view-${v}`);
     if (el) el.classList.toggle('hidden', v !== viewName);
   });
@@ -1080,6 +1081,8 @@ function switchView(viewName) {
     showStats();
   } else if (viewName === 'top') {
     loadTopView();
+  } else if (viewName === 'chat') {
+    initChat();
   }
 }
 
@@ -1501,7 +1504,7 @@ async function loadTopView() {
   renderSkeleton('cards-top');
 
   try {
-    const tc = await fetch('/api/top-cards').then(r => r.json());
+    const tc = await fetch('/api/top-cards', { headers: { 'x-mtf-token': chatGetToken() } }).then(r => r.ok ? r.json() : { cards: [] });
     if (tc?.cards) tc.cards.forEach(c => { state.cardStats[c.id] = c; });
 
     await ensureSearchAll();
@@ -2003,6 +2006,8 @@ function handleHash() {
     switchView('stats');
   } else if (hash === 'top') {
     switchView('top');
+  } else if (hash === 'chat') {
+    switchView('chat');
   } else {
     switchView('today');
   }
@@ -2135,6 +2140,256 @@ function toggleShortcutsPanel() {
       document.removeEventListener('click', onOutside);
     }
   });
+}
+
+/* ===== CHAT ===== */
+const chatState = {
+  messages: [],    // {role, content} for API
+  streaming: false,
+  initialized: false,
+};
+
+function chatGetToken() {
+  try { return JSON.parse(localStorage.getItem('mtf_auth') || '{}').token || ''; } catch { return ''; }
+}
+
+function chatSaveHistory() {
+  try {
+    const trimmed = chatState.messages.slice(-20);
+    localStorage.setItem('mtf_chat', JSON.stringify(trimmed));
+  } catch {}
+}
+
+function chatLoadHistory() {
+  try {
+    const raw = localStorage.getItem('mtf_chat');
+    if (raw) chatState.messages = JSON.parse(raw).filter(m => m.role && m.content) || [];
+  } catch { chatState.messages = []; }
+}
+
+function chatClearHistory() {
+  chatState.messages = [];
+  localStorage.removeItem('mtf_chat');
+  const container = $('chat-messages');
+  if (container) container.innerHTML = '';
+}
+
+function chatRenderBubble(role, text, citations) {
+  const container = $('chat-messages');
+  if (!container) return null;
+  const wrap = document.createElement('div');
+  wrap.className = `chat-bubble chat-bubble-${role}`;
+  const bubble = document.createElement('div');
+  bubble.className = 'chat-bubble-text';
+  if (role === 'assistant') {
+    bubble.innerHTML = bodyToHTML(text);
+  } else {
+    bubble.innerHTML = `<p>${esc(text)}</p>`;
+  }
+  wrap.appendChild(bubble);
+  if (citations && citations.length) {
+    const chips = document.createElement('div');
+    chips.className = 'chat-citations';
+    citations.forEach(id => {
+      const btn = document.createElement('button');
+      btn.className = 'chat-citation-chip';
+      btn.dataset.cardId = id;
+      btn.textContent = id;
+      btn.addEventListener('click', () => openCitedCard(id));
+      chips.appendChild(btn);
+      // Try to resolve title after cache is populated
+      (async () => {
+        const date = id.slice(0, 10);
+        if (!state.archiveCache[date]) {
+          try { state.archiveCache[date] = await fetchJSON(`/data/archive/${date}.json`); } catch {}
+        }
+        const card = findCard(id);
+        if (card && btn.isConnected) btn.textContent = card.title || id;
+      })();
+    });
+    wrap.appendChild(chips);
+  }
+  container.appendChild(wrap);
+  container.scrollTop = container.scrollHeight;
+  return bubble;
+}
+
+async function openCitedCard(id) {
+  const date = id.slice(0, 10);
+  if (!state.archiveCache[date]) {
+    try { state.archiveCache[date] = await fetchJSON(`/data/archive/${date}.json`); } catch {}
+  }
+  openCard(id);
+}
+
+async function chatSend(text) {
+  if (chatState.streaming || !text.trim()) return;
+  chatState.streaming = true;
+  const sendBtn = $('chat-send');
+  const input = $('chat-input');
+  if (sendBtn) sendBtn.disabled = true;
+  if (input) { input.value = ''; input.style.height = ''; }
+
+  chatRenderBubble('user', text);
+  chatState.messages.push({ role: 'user', content: text });
+
+  // Render assistant bubble (streaming)
+  const container = $('chat-messages');
+  const wrap = document.createElement('div');
+  wrap.className = 'chat-bubble chat-bubble-assistant';
+  const bubble = document.createElement('div');
+  bubble.className = 'chat-bubble-text chat-bubble-streaming';
+  bubble.innerHTML = '<span class="chat-cursor"></span>';
+  wrap.appendChild(bubble);
+  if (container) container.appendChild(wrap);
+
+  let rawBuffer = '';
+  const HOLD_BACK = 40;
+
+  try {
+    const resp = await fetch('/api/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-mtf-token': chatGetToken(),
+      },
+      body: JSON.stringify({ messages: chatState.messages }),
+    });
+
+    if (!resp.ok) {
+      bubble.innerHTML = `<p class="chat-error">${resp.status === 401 ? 'Platnost přístupu vypršela. Načtěte stránku znovu.' : 'Nepodařilo se odpovědět. Zkuste to znovu.'}</p>`;
+      chatState.streaming = false;
+      if (sendBtn) sendBtn.disabled = false;
+      return;
+    }
+
+    const reader = resp.body.getReader();
+    const decoder = new TextDecoder();
+    let sseBuffer = '';
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      sseBuffer += decoder.decode(value, { stream: true });
+      const parts = sseBuffer.split('\n\n');
+      sseBuffer = parts.pop() ?? '';
+
+      for (const part of parts) {
+        const line = part.trim();
+        if (!line.startsWith('data: ')) continue;
+        let ev;
+        try { ev = JSON.parse(line.slice(6)); } catch { continue; }
+
+        if (ev.type === 'text') {
+          rawBuffer += ev.delta;
+          // flush all but the last HOLD_BACK chars to avoid half-rendered citation marker
+          const safeLen = Math.max(0, rawBuffer.length - HOLD_BACK);
+          const safeText = rawBuffer.slice(0, safeLen);
+          bubble.innerHTML = bodyToHTML(safeText) + '<span class="chat-cursor"></span>';
+          if (container) container.scrollTop = container.scrollHeight;
+
+        } else if (ev.type === 'done') {
+          // Parse and strip citation marker from tail
+          const citationRe = /\[\[CARDS:\s*([^\]]*)\]\]\s*$/;
+          const match = rawBuffer.match(citationRe);
+          let citations = [];
+          let visibleText = rawBuffer;
+          if (match) {
+            visibleText = rawBuffer.slice(0, match.index).trimEnd();
+            citations = match[1].split(',').map(s => s.trim()).filter(s => /^\d{4}-\d{2}-\d{2}-\d{2,3}$/.test(s));
+            // Dedupe
+            citations = [...new Set(citations)];
+          }
+          bubble.classList.remove('chat-bubble-streaming');
+          bubble.innerHTML = bodyToHTML(visibleText);
+
+          chatState.messages.push({ role: 'assistant', content: visibleText });
+          chatSaveHistory();
+
+          if (citations.length) {
+            const chips = document.createElement('div');
+            chips.className = 'chat-citations';
+            citations.forEach(id => {
+              const btn = document.createElement('button');
+              btn.className = 'chat-citation-chip';
+              btn.dataset.cardId = id;
+              btn.textContent = id;
+              btn.addEventListener('click', () => openCitedCard(id));
+              chips.appendChild(btn);
+              (async () => {
+                const date = id.slice(0, 10);
+                if (!state.archiveCache[date]) {
+                  try { state.archiveCache[date] = await fetchJSON(`/data/archive/${date}.json`); } catch {}
+                }
+                const card = findCard(id);
+                if (card && btn.isConnected) btn.textContent = card.title || id;
+              })();
+            });
+            wrap.appendChild(chips);
+          }
+          if (container) container.scrollTop = container.scrollHeight;
+
+        } else if (ev.type === 'error') {
+          bubble.classList.remove('chat-bubble-streaming');
+          bubble.innerHTML = '<p class="chat-error">Nastala chyba. Zkuste to znovu.</p>';
+        }
+      }
+    }
+
+  } catch {
+    bubble.classList.remove('chat-bubble-streaming');
+    bubble.innerHTML = '<p class="chat-error">Nepodařilo se připojit. Zkuste to znovu.</p>';
+  }
+
+  chatState.streaming = false;
+  if (sendBtn) sendBtn.disabled = false;
+}
+
+function initChat() {
+  const container = $('chat-messages');
+  const input = $('chat-input');
+  const sendBtn = $('chat-send');
+  if (!container || !input || !sendBtn) return;
+
+  // Load history and wire events only once
+  if (!chatState.initialized) {
+    chatLoadHistory();
+    chatState.initialized = true;
+
+    // Render saved history
+    chatState.messages.forEach(m => chatRenderBubble(m.role, m.content));
+
+    // Show clear button if history exists
+    if (chatState.messages.length) {
+      const clearBtn = document.createElement('button');
+      clearBtn.className = 'chat-clear-btn';
+      clearBtn.textContent = 'Smazat konverzaci';
+      clearBtn.addEventListener('click', () => { chatClearHistory(); clearBtn.remove(); });
+      container.insertBefore(clearBtn, container.firstChild);
+    }
+
+    // Auto-resize textarea
+    input.addEventListener('input', () => {
+      input.style.height = 'auto';
+      input.style.height = Math.min(input.scrollHeight, 120) + 'px';
+    });
+
+    // Enter = send, Shift+Enter = newline
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        const text = input.value.trim();
+        if (text) chatSend(text);
+      }
+    });
+
+    sendBtn.addEventListener('click', () => {
+      const text = input.value.trim();
+      if (text) chatSend(text);
+    });
+  }
+
+  input.focus();
 }
 
 /* ===== INIT ===== */

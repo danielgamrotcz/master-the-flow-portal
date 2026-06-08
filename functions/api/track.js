@@ -18,12 +18,13 @@ const ALLOWED_EVENTS = new Set([
 
 function corsHeaders(origin) {
   const allowed = origin && (origin === SITE_ORIGIN || origin.startsWith('http://localhost'));
-  return {
-    'Access-Control-Allow-Origin': allowed ? origin : 'null',
+  const headers = {
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Vary': 'Origin',
   };
+  if (allowed) headers['Access-Control-Allow-Origin'] = origin;
+  return headers;
 }
 
 async function kv_update(kv, key, fn) {
@@ -159,7 +160,8 @@ export async function onRequestPost({ request, env }) {
 
     await Promise.all(writes);
     return new Response('OK', { headers });
-  } catch {
+  } catch (e) {
+    if (e instanceof SyntaxError) return new Response('Bad Request', { status: 400, headers });
     return new Response('Error', { status: 500, headers });
   }
 }

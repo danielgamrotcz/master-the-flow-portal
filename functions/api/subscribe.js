@@ -22,12 +22,13 @@ async function checkSubRateLimit(env, ip) {
 
 function corsHeaders(origin) {
   const allowed = origin && (origin === SITE_ORIGIN || origin.startsWith('http://localhost'));
-  return {
-    'Access-Control-Allow-Origin': allowed ? origin : 'null',
+  const headers = {
     'Access-Control-Allow-Methods': 'POST, DELETE, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Vary': 'Origin',
   };
+  if (allowed) headers['Access-Control-Allow-Origin'] = origin;
+  return headers;
 }
 
 function isValidSubscription(sub) {
@@ -75,7 +76,8 @@ export async function onRequestPost({ request, env }) {
     const key = 'sub_' + hash;
     await env.MTF_DATA.put(key, JSON.stringify(clean), { expirationTtl: 60 * 86400 });
     return new Response('OK', { headers });
-  } catch {
+  } catch (e) {
+    if (e instanceof SyntaxError) return new Response('Bad Request', { status: 400, headers });
     return new Response('Error', { status: 500, headers });
   }
 }
@@ -92,7 +94,8 @@ export async function onRequestDelete({ request, env }) {
     const key = 'sub_' + hash;
     await env.MTF_DATA.delete(key);
     return new Response('OK', { headers });
-  } catch {
+  } catch (e) {
+    if (e instanceof SyntaxError) return new Response('Bad Request', { status: 400, headers });
     return new Response('Error', { status: 500, headers });
   }
 }

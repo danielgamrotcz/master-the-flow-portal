@@ -1,13 +1,35 @@
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
+const TOKEN_TTL_MS = 30 * 24 * 60 * 60 * 1000;
+const enc = new TextEncoder();
 
 function cors(origin) {
   const allowed = origin && (origin === SITE_ORIGIN || origin.startsWith('http://localhost'));
-  return {
-    'Access-Control-Allow-Origin': allowed ? origin : 'null',
+  const headers = {
     'Access-Control-Allow-Methods': 'GET, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Headers': 'Content-Type, x-mtf-token',
     'Vary': 'Origin',
   };
+  if (allowed) headers['Access-Control-Allow-Origin'] = origin;
+  return headers;
+}
+
+async function verifyToken(token, gateCode) {
+  if (!token || typeof token !== 'string') return false;
+  const lastColon = token.lastIndexOf(':');
+  if (lastColon < 1) return false;
+  const payload = token.slice(0, lastColon);
+  const sigHex = token.slice(lastColon + 1);
+  if (sigHex.length !== 64) return false;
+  const ts = parseInt(payload.split(':')[0], 10);
+  if (isNaN(ts) || Date.now() > ts + TOKEN_TTL_MS) return false;
+  try {
+    const key = await crypto.subtle.importKey(
+      'raw', enc.encode(gateCode),
+      { name: 'HMAC', hash: 'SHA-256' }, false, ['verify']
+    );
+    const sigBytes = new Uint8Array(sigHex.match(/.{2}/g).map(b => parseInt(b, 16)));
+    return await crypto.subtle.verify('HMAC', key, sigBytes, enc.encode(payload));
+  } catch { return false; }
 }
 
 export async function onRequestOptions({ request }) {
@@ -17,6 +39,13 @@ export async function onRequestOptions({ request }) {
 
 export async function onRequestGet({ env, request }) {
   const origin = request.headers.get('Origin');
+  const corsH = cors(origin);
+
+  const token = request.headers.get('x-mtf-token');
+  if (!env.GATE_CODE || !await verifyToken(token, env.GATE_CODE)) {
+    return new Response('Unauthorized', { status: 401, headers: corsH });
+  }
+
   try {
     const [opensRaw, readsRaw, sharesRaw, votesList] = await Promise.all([
       env.MTF_DATA.get('analytics:opens'),
@@ -57,11 +86,11 @@ export async function onRequestGet({ env, request }) {
 
     return Response.json({ cards }, {
       headers: {
-        ...cors(origin),
-        'Cache-Control': 'public, max-age=300',
+        ...corsH,
+        'Cache-Control': 'private, max-age=300',
       },
     });
   } catch {
-    return Response.json({ cards: [] }, { headers: cors(origin) });
+    return Response.json({ cards: [] }, { headers: corsH });
   }
 }

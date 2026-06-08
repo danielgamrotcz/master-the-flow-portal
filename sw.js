@@ -1,4 +1,4 @@
-const CACHE = 'mtf-v5';
+const CACHE = 'mtf-v6';
 const STATIC = ['/', '/index.html', '/app.js', '/styles.css', '/favicon.svg',
   '/manifest.webmanifest', '/icon-192.png', '/icon-512.png', '/apple-touch-icon.png'];
 
@@ -15,6 +15,9 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
+
+  // Never intercept API calls — streaming SSE would break
+  if (url.pathname.startsWith('/api/')) return;
 
   // Archive date files — network-first, fall back to cache
   if (url.pathname.startsWith('/data/archive/') && url.pathname.endsWith('.json')) {
