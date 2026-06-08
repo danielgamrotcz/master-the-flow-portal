@@ -1172,8 +1172,10 @@ a:hover { text-decoration: underline; }
   .stats-col-left,
   .stats-col-right {
     display: block;
-    padding-top: 0;
-    vertical-align: top;
+  }
+
+  .stats-col-left {
+    padding-top: 32px;
   }
 }
 
