@@ -1636,16 +1636,19 @@ async function renderStats() {
       memberCount = cm.count;
     } catch {}
 
-    el.innerHTML = '<div class="stats-grid">'
+    const leftCol = '<div class="stats-grid">'
       + '<div class="stat-card"><div class="stat-num">' + totalCards + '</div><div class="stat-label">poznatků v archivu</div></div>'
       + '<div class="stat-card"><div class="stat-num">' + allDates.length + '</div><div class="stat-label">dní s obsahem</div></div>'
       + '<div class="stat-card"><div class="stat-num">' + (memberCount !== null ? memberCount + '+' : '—') + '</div><div class="stat-label">členů komunity</div></div>'
       + '</div>'
-      + calHtml
-      + (topTopics.length ? '<div class="stats-section-title">Nejčastější témata</div><div class="stats-topics">'
+      + calHtml;
+
+    const rightCol = (topTopics.length ? '<div class="stats-section-title">Nejčastější témata</div><div class="stats-topics">'
         + topTopics.map(([t, n]) => '<div class="stats-topic-row stats-topic-clickable" data-topic="' + esc(t) + '"><span>' + esc(t) + '</span><span class="stats-topic-count">' + n + '×</span></div>').join('')
         + '</div>' : '')
       + topVotedHtml;
+
+    el.innerHTML = '<div class="stats-desktop-layout"><div class="stats-col-left">' + leftCol + '</div><div class="stats-col-right">' + rightCol + '</div></div>';
 
     attachStatsListeners(el);
   } catch {

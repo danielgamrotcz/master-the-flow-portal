@@ -5,6 +5,8 @@
 ### Changed
 - Swipe přepínání panelů (Dnes/Týden/Archiv…) odstraněno — zůstává swipe na kartách (srdíčko / přečteno)
 - Top view: řazení podle váženého skóre (čtení + srdíčka × 5) místo pouhého počtu čtení
+- Push notifikace zobrazují title + excerpt nejlépe hodnocené karty dne místo generického textu
+- Statistiky: 2-sloupcový layout na desktopu (čísla + kalendář vlevo, témata + oblíbené karty vpravo)
 
 ### Fixed
 - Resurfacing karta se nezobrazovala v tab Včera (null místo data.resurfacing)

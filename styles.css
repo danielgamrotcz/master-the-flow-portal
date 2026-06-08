@@ -1152,6 +1152,29 @@ a:hover { text-decoration: underline; }
   padding: 0;
 }
 
+.stats-desktop-layout {
+  display: contents;
+}
+
+.stats-col-left,
+.stats-col-right {
+  display: contents;
+}
+
+@media (min-width: 960px) {
+  .stats-desktop-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .stats-col-left,
+  .stats-col-right {
+    display: block;
+  }
+}
+
 /* Activity calendar */
 .activity-cal {
   margin-bottom: 24px;

@@ -1,4 +1,4 @@
-const CACHE = 'mtf-v4';
+const CACHE = 'mtf-v5';
 const STATIC = ['/', '/index.html', '/app.js', '/styles.css', '/favicon.svg',
   '/manifest.webmanifest', '/icon-192.png', '/icon-512.png', '/apple-touch-icon.png'];
 
@@ -45,14 +45,30 @@ self.addEventListener('fetch', e => {
 
 self.addEventListener('push', e => {
   e.waitUntil(
-    self.registration.showNotification('Master the Flow', {
-      body: 'Nový digest je připraven. Podívej se, co se dnes řešilo.',
-      icon: '/icon-192.png',
-      badge: '/icon-192.png',
-      tag: 'digest',
-      renotify: true,
-      vibrate: [200, 100, 200],
-    })
+    fetch('/data/today.json')
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        const cards = (data?.cards || []);
+        const top = cards.slice().sort((a, b) => (b.votes || 0) - (a.votes || 0))[0] || cards[0];
+        const title = top ? top.title : 'Master the Flow';
+        const body = top ? top.excerpt : 'Nový digest je připraven.';
+        return self.registration.showNotification(title, {
+          body,
+          icon: '/icon-192.png',
+          badge: '/icon-192.png',
+          tag: 'digest',
+          renotify: true,
+          vibrate: [200, 100, 200],
+        });
+      })
+      .catch(() => self.registration.showNotification('Master the Flow', {
+        body: 'Nový digest je připraven.',
+        icon: '/icon-192.png',
+        badge: '/icon-192.png',
+        tag: 'digest',
+        renotify: true,
+        vibrate: [200, 100, 200],
+      }))
   );
 });
 
