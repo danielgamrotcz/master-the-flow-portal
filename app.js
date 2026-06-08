@@ -1751,9 +1751,13 @@ function attachSwipeToCard(wrap) {
     el.style.transform = `translateX(${dx * 0.45}px)`;
     const committed = Math.abs(dx) >= THRESHOLD;
     if (dx > 0) {
+      wrap.classList.add('is-swiping-vote');
+      wrap.classList.remove('is-swiping-read');
       wrap.classList.toggle('swipe-triggered-vote', committed);
       wrap.classList.remove('swipe-triggered-read');
     } else {
+      wrap.classList.add('is-swiping-read');
+      wrap.classList.remove('is-swiping-vote');
       wrap.classList.toggle('swipe-triggered-read', committed);
       wrap.classList.remove('swipe-triggered-vote');
     }
@@ -1766,7 +1770,7 @@ function attachSwipeToCard(wrap) {
 
     el.style.transition = 'transform 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
     el.style.transform = 'translateX(0)';
-    wrap.classList.remove('swipe-triggered-vote', 'swipe-triggered-read');
+    wrap.classList.remove('swipe-triggered-vote', 'swipe-triggered-read', 'is-swiping-vote', 'is-swiping-read');
     setTimeout(() => { el.style.transition = ''; }, 300);
 
     if (swiping) {

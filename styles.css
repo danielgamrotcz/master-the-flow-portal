@@ -1476,8 +1476,12 @@ a:hover { text-decoration: underline; }
   align-items: center;
   pointer-events: none;
   z-index: 0;
+  opacity: 0;
   transition: background 150ms ease;
 }
+
+.card-wrap.is-swiping-vote .swipe-bg-vote { opacity: 1; }
+.card-wrap.is-swiping-read .swipe-bg-read { opacity: 1; }
 
 .swipe-bg svg {
   flex-shrink: 0;
