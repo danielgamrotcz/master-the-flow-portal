@@ -1755,7 +1755,22 @@ a:hover { text-decoration: underline; }
   .nav-btn.active { color: var(--accent); box-shadow: inset 2px 0 0 var(--accent); }
   .nav-icon { width: 20px; height: 20px; }
 
-  .view { max-width: 780px; margin: 0 auto; padding: 16px 24px 0; border-top: none; }
+  .view { max-width: 1120px; margin: 0 auto; padding: 16px 24px 0; border-top: none; }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+
+  /* Full-width spans inside the 2-col grid */
+  .card.resurfaced,
+  .section-header,
+  .empty-state,
+  .loading-state {
+    grid-column: 1 / -1;
+  }
 
   .toast { bottom: 24px; }
   .pull-indicator { display: none; }
