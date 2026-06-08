@@ -3,7 +3,7 @@
 ## [Unreleased]
 
 ### Changed
-- Swipe gesta na kartách odstraněna — čeká na novou specifikaci
+- Swipe přepínání panelů (Dnes/Týden/Archiv…) odstraněno — zůstává swipe na kartách (srdíčko / přečteno)
 
 ### Fixed
 - Resurfacing karta se nezobrazovala v tab Včera (null místo data.resurfacing)
