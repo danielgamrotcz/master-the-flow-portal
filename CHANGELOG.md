@@ -4,6 +4,7 @@
 
 ### Changed
 - Swipe přepínání panelů (Dnes/Týden/Archiv…) odstraněno — zůstává swipe na kartách (srdíčko / přečteno)
+- Top view: řazení podle váženého skóre (čtení + srdíčka × 5) místo pouhého počtu čtení
 
 ### Fixed
 - Resurfacing karta se nezobrazovala v tab Včera (null místo data.resurfacing)

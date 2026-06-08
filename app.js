@@ -1504,9 +1504,10 @@ async function loadTopView() {
 
     await ensureSearchAll();
 
+    const score = ([id, s]) => (s.reads || 0) + (state.voteMap[id] || 0) * 5;
     const topCards = Object.entries(state.cardStats)
       .filter(([, s]) => s.reads > 0)
-      .sort((a, b) => b[1].reads - a[1].reads)
+      .sort((a, b) => score(b) - score(a))
       .slice(0, 30)
       .map(([id]) => findCard(id))
       .filter(Boolean);
