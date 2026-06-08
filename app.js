@@ -1802,36 +1802,49 @@ function showCardContextMenu(x, y, cardId) {
 
   const voted = hasVoted(cardId);
   const read = isRead(cardId);
+  const card = findCard(cardId);
+  const hasTranscript = !!(card?.source_date);
 
   const menu = document.createElement('div');
   menu.className = 'card-ctx-menu';
   menu.innerHTML = `
     <button data-action="vote">${voted ? 'Odebrat srdíčko' : 'Dát srdíčko'}</button>
     <button data-action="read">${read ? 'Označit jako nepřečtené' : 'Označit jako přečtené'}</button>
+    <div class="card-ctx-sep"></div>
+    <button data-action="share">Sdílet kartu</button>
+    ${hasTranscript ? '<button data-action="transcript">Přepis konverzace</button>' : ''}
   `;
   document.body.appendChild(menu);
   _ctxMenuEl = menu;
 
+  const mw = menu.offsetWidth || 220;
+  const mh = menu.offsetHeight || 120;
   const vw = window.innerWidth, vh = window.innerHeight;
-  const mw = 220, mh = 80;
   menu.style.left = (x + mw > vw ? vw - mw - 8 : x) + 'px';
   menu.style.top  = (y + mh > vh ? y - mh : y) + 'px';
 
-  menu.addEventListener('click', e => {
+  menu.addEventListener('click', async e => {
     const btn = e.target.closest('button[data-action]');
     if (!btn) return;
     hideCardContextMenu();
-    if (btn.dataset.action === 'vote') {
+    const action = btn.dataset.action;
+    if (action === 'vote') {
       if (hasVoted(cardId)) removeVote(cardId); else castVote(cardId);
-    } else {
+    } else if (action === 'read') {
       if (isRead(cardId)) markUnread(cardId); else markRead(cardId);
+    } else if (action === 'share') {
+      const url = `${location.origin}${location.pathname}#card/${cardId}`;
+      try { await navigator.clipboard.writeText(url); showToast('Odkaz zkopírován'); }
+      catch { showToast('Nepodařilo se zkopírovat'); }
+    } else if (action === 'transcript' && card) {
+      showTranscript(card.source_date, card.source_group, card.source_msg_times);
     }
   });
 
   const dismiss = e => { if (!menu.contains(e.target)) hideCardContextMenu(); };
   const dismissKey = e => { if (e.key === 'Escape') hideCardContextMenu(); };
   setTimeout(() => {
-    document.addEventListener('pointerdown', dismiss, { once: false });
+    document.addEventListener('pointerdown', dismiss);
     document.addEventListener('keydown', dismissKey);
     document.addEventListener('scroll', hideCardContextMenu, { once: true, capture: true });
     _ctxDismiss = () => {

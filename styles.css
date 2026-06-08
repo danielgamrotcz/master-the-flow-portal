@@ -723,12 +723,18 @@ a:hover { text-decoration: underline; }
 .card-ctx-menu {
   position: fixed;
   z-index: 200;
-  background: #1a1a1a;
-  border: 1px solid #2e2e2e;
-  border-radius: 8px;
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
   padding: 4px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-  min-width: 200px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.7), 0 2px 8px rgba(0,0,0,0.4);
+  min-width: 210px;
+  animation: ctx-in 80ms ease;
+}
+
+@keyframes ctx-in {
+  from { opacity: 0; transform: scale(0.97) translateY(-2px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 .card-ctx-menu button {
@@ -738,15 +744,23 @@ a:hover { text-decoration: underline; }
   background: none;
   border: none;
   color: var(--text-secondary);
-  font-size: 13px;
+  font-family: inherit;
+  font-size: 13.5px;
   padding: 8px 12px;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  letter-spacing: 0;
 }
 
 .card-ctx-menu button:hover {
-  background: #2a2a2a;
+  background: rgba(255,255,255,0.06);
   color: var(--text-primary);
+}
+
+.card-ctx-sep {
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  margin: 4px 0;
 }
 
 /* ===== CARD OVERLAY ===== */
