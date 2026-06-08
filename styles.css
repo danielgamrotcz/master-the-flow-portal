@@ -697,21 +697,16 @@ a:hover { text-decoration: underline; }
   word-break: break-word;
 }
 
-.transcript-message.is-source {
-  background: rgba(240, 106, 21, 0.08);
-  border-left: 3px solid var(--accent);
-  border-radius: 6px;
-  padding: 8px 10px 8px 12px;
-  margin: 0 -10px;
-}
-
 .transcript-message.is-source .msg-text {
   color: var(--text-primary);
 }
 
 .transcript-message.is-source .msg-time {
-  color: var(--accent);
-  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.transcript-message:not(.is-source) {
+  opacity: 0.45;
 }
 
 .transcript-filter-notice {
