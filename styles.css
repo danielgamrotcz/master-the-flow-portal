@@ -1497,6 +1497,8 @@ a:hover { text-decoration: underline; }
   color: var(--text-tertiary);
   white-space: nowrap;
   flex-shrink: 0;
+  min-width: 52px;
+  text-align: left;
 }
 
 .similar-title {

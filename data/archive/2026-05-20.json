@@ -8,27 +8,6 @@
   },
   "cards": [
     {
-      "id": "2026-05-20-01",
-      "source_date": "2026-05-20",
-      "excerpt": "Brněnský meetup se rýsuje. Jedna členka nabídla kancl a přihlásilo se už aspoň pět lidí, včetně jednoho člena z Liberce.",
-      "body": "V Inspiraci spontánně vznikl plán na meetup v Brně. Jedna členka nabídla prostor a zájem potvrdilo víc než pět lidí. Daniel založil novou skupinu pro offline setkávání — Praha, Brno, Bohumín a další města.",
-      "topics": [
-        "Meeting"
-      ],
-      "title": "Brněnský meetup se rýsuje",
-      "source_group": "inspiracediskuze",
-      "source_msg_times": [
-        "17:37",
-        "07:49",
-        "07:55",
-        "07:57",
-        "08:01",
-        "08:06",
-        "08:56",
-        "09:18"
-      ]
-    },
-    {
       "id": "2026-05-20-02",
       "source_date": "2026-05-20",
       "excerpt": "V komunitě se pro novou roli ujalo pojmenování setuper: člověk, který freelancerům nastaví systémy, aby se mohli soustředit na tvorbu.",
@@ -47,7 +26,8 @@
         "07:57",
         "09:02",
         "09:11"
-      ]
+      ],
+      "type": "INSIGHT"
     },
     {
       "id": "2026-05-20-03",
@@ -62,7 +42,8 @@
       "source_group": "inspiracediskuze",
       "source_msg_times": [
         "10:24"
-      ]
+      ],
+      "type": "NÁSTROJE"
     },
     {
       "id": "2026-05-20-04",
@@ -79,7 +60,8 @@
         "21:10",
         "07:49",
         "18:11"
-      ]
+      ],
+      "type": "NÁSTROJE"
     },
     {
       "id": "2026-05-20-05",
@@ -98,7 +80,8 @@
         "14:57",
         "13:32",
         "13:49"
-      ]
+      ],
+      "type": "NÁSTROJE"
     }
   ],
   "resurfacing": {

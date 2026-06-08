@@ -20,7 +20,8 @@
       "source_group": "inspiracediskuze",
       "source_msg_times": [
         "07:50"
-      ]
+      ],
+      "type": "NÁSTROJE"
     },
     {
       "id": "2026-05-17-02",
@@ -35,7 +36,8 @@
       "source_group": "inspiracediskuze",
       "source_msg_times": [
         "09:52"
-      ]
+      ],
+      "type": "POSTAVIL JSEM"
     },
     {
       "id": "2026-05-17-03",
@@ -53,7 +55,8 @@
         "07:50",
         "20:37",
         "21:51"
-      ]
+      ],
+      "type": "INSIGHT"
     },
     {
       "id": "2026-05-17-04",
@@ -71,7 +74,8 @@
         "07:50",
         "18:23",
         "21:51"
-      ]
+      ],
+      "type": "INSIGHT"
     },
     {
       "id": "2026-05-17-05",
@@ -92,7 +96,8 @@
         "20:36",
         "20:58",
         "21:51"
-      ]
+      ],
+      "type": "INSIGHT"
     },
     {
       "id": "2026-05-17-06",
@@ -109,7 +114,8 @@
       "source_msg_times": [
         "21:51",
         "07:50"
-      ]
+      ],
+      "type": "INSIGHT"
     }
   ],
   "resurfacing": {

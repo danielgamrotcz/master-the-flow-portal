@@ -8,20 +8,6 @@
   },
   "cards": [
     {
-      "id": "2026-05-18-01",
-      "source_date": "2026-05-18",
-      "excerpt": "Jedna otázka před státnicemi rozjela půldenní vlákno a ukázala, kolik právníků se v komunitě skrývá.",
-      "body": "Členka se zeptala, jak jí AI může pomoct s přípravou na státnice. Dostala víc tipů, než čekala. Pak se ukázalo, že je v komunitě spousta právníků a advokátek, kteří o sobě navzájem ani nevěděli. Řešili Codexis, Libratech, NotebookLM i specializované nástroje pro právo. Padl taky nápad založit vlastní podskupinu pro právníky.",
-      "topics": [
-        "AI nástroje"
-      ],
-      "title": "Otázka před státnicemi odhalila právníky v komunitě",
-      "source_group": "mastertheflow—hlavní",
-      "source_msg_times": [
-        "08:46"
-      ]
-    },
-    {
       "id": "2026-05-18-02",
       "source_date": "2026-05-18",
       "excerpt": "Datová analytika a dashboardy mají stejnou hodnotu jako stavění appek — appka je jen jeden z možných výstupů.",
@@ -34,7 +20,8 @@
       "source_group": "mastertheflow—hlavní",
       "source_msg_times": [
         "08:46"
-      ]
+      ],
+      "type": "INSIGHT"
     },
     {
       "id": "2026-05-18-03",
@@ -50,7 +37,8 @@
       "source_group": "mastertheflow—hlavní",
       "source_msg_times": [
         "08:46"
-      ]
+      ],
+      "type": "NÁSTROJE"
     },
     {
       "id": "2026-05-18-04",
@@ -64,7 +52,8 @@
       "source_group": "mastertheflow—hlavní",
       "source_msg_times": [
         "08:46"
-      ]
+      ],
+      "type": "NÁSTROJE"
     },
     {
       "id": "2026-05-18-05",
@@ -78,7 +67,8 @@
       "source_group": "mastertheflow—hlavní",
       "source_msg_times": [
         "08:46"
-      ]
+      ],
+      "type": "NÁSTROJE"
     },
     {
       "id": "2026-05-18-06",
@@ -92,21 +82,8 @@
       "source_group": "mastertheflow—hlavní",
       "source_msg_times": [
         "08:46"
-      ]
-    },
-    {
-      "id": "2026-05-18-07",
-      "source_date": "2026-05-18",
-      "excerpt": "Za týden přibylo 22 nových členů a komunita se objevila v newsletteru.",
-      "body": "Za týden přibylo 22 nových členů. Komunita se objevila v newsletteru a lidi skupinu sdílí dál.",
-      "topics": [
-        "Produktivita"
       ],
-      "title": "Za týden přibylo 22 nových členů",
-      "source_group": "mastertheflow—hlavní",
-      "source_msg_times": [
-        "08:46"
-      ]
+      "type": "NÁSTROJE"
     }
   ],
   "resurfacing": {

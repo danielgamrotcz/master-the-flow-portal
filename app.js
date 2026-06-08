@@ -1908,6 +1908,8 @@ function attachSwipeToCard(wrap) {
 
     if (!swiping || Math.abs(dx) < THRESHOLD) return;
 
+    if (navigator.vibrate) navigator.vibrate(10);
+
     const id = el.dataset.id;
     if (dx > 0) {
       if (hasVoted(id)) {
@@ -2110,7 +2112,7 @@ function toggleShortcutsPanel() {
       <kbd>R</kbd><span>Náhodná karta</span>
       <kbd>/</kbd><span>Vyhledávání</span>
       <kbd>Esc</kbd><span>Zavřít overlay</span>
-      <kbd>H</kbd><span>Hlasovat (v overlay)</span>
+      <kbd>H</kbd><span>Hodnotit (v overlay)</span>
       <kbd>?</kbd><span>Tato nápověda</span>
     </div>`;
   document.body.appendChild(panel);
@@ -2254,6 +2256,8 @@ function init() {
     if (e.key === 'Escape') {
       if (overlayOpen) { closeCard(); return; }
       if (state.view === 'transcript') { $('btn-transcript-back').click(); return; }
+      const shortcutsPanel = document.getElementById('shortcuts-panel');
+      if (shortcutsPanel && !shortcutsPanel.classList.contains('hidden')) { shortcutsPanel.classList.add('hidden'); return; }
       return;
     }
     if (overlayOpen) {

@@ -20,7 +20,8 @@
       "source_group": "inspiracediskuze",
       "source_msg_times": [
         "11:08"
-      ]
+      ],
+      "type": "NÁSTROJE"
     },
     {
       "id": "2026-05-28-02",
@@ -34,7 +35,8 @@
       "source_group": "inspiracediskuze",
       "source_msg_times": [
         "10:31"
-      ]
+      ],
+      "type": "INSIGHT"
     },
     {
       "id": "2026-05-28-03",
@@ -50,7 +52,8 @@
         "11:18",
         "11:32",
         "00:05"
-      ]
+      ],
+      "type": "INSIGHT"
     },
     {
       "id": "2026-05-28-04",
@@ -67,7 +70,8 @@
       "source_msg_times": [
         "00:05",
         "11:36"
-      ]
+      ],
+      "type": "INSIGHT"
     }
   ],
   "resurfacing": {

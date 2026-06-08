@@ -8,23 +8,6 @@
   },
   "cards": [
     {
-      "id": "2026-05-04-01",
-      "source_date": "2026-05-04",
-      "excerpt": "Daniel napsal čtyřem lidem ze skupiny a zjišťoval, kdo na čem maká. Výsledek ho překvapil.",
-      "body": "Spontánní průzkum: čtyři zprávy, čtyři rozhovory o tom, co kdo ze skupiny právě staví. Daniel to shrnul ve Vibe Coding skupině a přidal výzvu: pokud jste něco vytvořili, hoďte to ven. Může to inspirovat ostatní a zároveň získáte zpětnou vazbu, na které se to může posunout dál.",
-      "topics": [
-        "Vibe Coding",
-        "AI nástroje",
-        "Email",
-        "Meeting"
-      ],
-      "title": "Daniel napsal čtyřem lidem, kdo na čem maká",
-      "source_group": "vibecoding",
-      "source_msg_times": [
-        "18:42"
-      ]
-    },
-    {
       "id": "2026-05-04-02",
       "source_date": "2026-05-04",
       "excerpt": "Jeden člen komunity testuje vlastní aplikaci na měření času a správu klientů. V pilotním provozu ji zkouší 15 virtuálních asistentek.",
@@ -37,7 +20,8 @@
       "source_group": "vibecoding",
       "source_msg_times": [
         "20:08"
-      ]
+      ],
+      "type": "POSTAVIL JSEM"
     },
     {
       "id": "2026-05-04-03",
@@ -53,7 +37,8 @@
       "source_msg_times": [
         "09:20",
         "09:28"
-      ]
+      ],
+      "type": "INSIGHT"
     }
   ],
   "resurfacing": {

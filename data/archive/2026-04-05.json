@@ -19,7 +19,8 @@
       "source_group": "inspiracediskuze",
       "source_msg_times": [
         "12:16"
-      ]
+      ],
+      "type": "INSIGHT"
     },
     {
       "id": "2026-04-05-02",
@@ -34,7 +35,8 @@
       "source_group": "vibecoding",
       "source_msg_times": [
         "12:14"
-      ]
+      ],
+      "type": "INSIGHT"
     }
   ],
   "resurfacing": {

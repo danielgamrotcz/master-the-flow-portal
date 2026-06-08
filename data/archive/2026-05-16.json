@@ -19,7 +19,8 @@
       "source_group": "inspiracediskuze",
       "source_msg_times": [
         "19:34"
-      ]
+      ],
+      "type": "NÁSTROJE"
     },
     {
       "id": "2026-05-16-02",
@@ -35,7 +36,8 @@
         "18:47",
         "19:34",
         "10:26"
-      ]
+      ],
+      "type": "NÁSTROJE"
     },
     {
       "id": "2026-05-16-03",
@@ -52,7 +54,8 @@
         "17:49",
         "18:20",
         "21:44"
-      ]
+      ],
+      "type": "INSIGHT"
     },
     {
       "id": "2026-05-16-04",
@@ -67,7 +70,8 @@
       "source_group": "vibecoding",
       "source_msg_times": [
         "21:44"
-      ]
+      ],
+      "type": "INSIGHT"
     }
   ],
   "resurfacing": {
