@@ -57,7 +57,8 @@
       "Subagenti",
       "Claude Code"
     ],
-    "title": "Fiktivní město jako test agentských modelů"
+    "title": "Fiktivní město jako test agentských modelů",
+    "type": "NÁSTROJE"
   },
   "transcript": {
     "groups": [
