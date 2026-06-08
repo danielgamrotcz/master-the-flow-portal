@@ -1,12 +1,10 @@
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 const TOKEN_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
-// Fallback hash when GATE_CODE env var is not set (SHA-256 of the access code, server-side only)
-const FALLBACK_HASH = '5b9b2870716de15d8a6174804647360b656a25c67b1be0703f1e695ff365384d';
 
 function corsHeaders(origin) {
-  const allowed = !origin || origin === SITE_ORIGIN || origin.startsWith('http://localhost');
+  const allowed = origin && (origin === SITE_ORIGIN || origin.startsWith('http://localhost'));
   return {
-    'Access-Control-Allow-Origin': allowed ? (origin || '*') : 'null',
+    'Access-Control-Allow-Origin': allowed ? origin : 'null',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Vary': 'Origin',
@@ -37,14 +35,18 @@ async function checkRateLimit(env, ip) {
   const key = 'ratelimit:auth:' + ip;
   const raw = await env.MTF_DATA.get(key);
   const attempts = raw ? parseInt(raw, 10) : 0;
-  if (attempts >= 10) return true; // blocked — 10 attempts per 15 min window
-  await env.MTF_DATA.put(key, String(attempts + 1), { expirationTtl: 900 }); // 15 min TTL
+  if (attempts >= 10) return true; // 10 attempts per 15 min window
+  await env.MTF_DATA.put(key, String(attempts + 1), { expirationTtl: 900 });
   return false;
 }
 
 export async function onRequestPost({ request, env }) {
   const origin = request.headers.get('Origin');
   const headers = corsHeaders(origin);
+
+  if (!env.GATE_CODE) {
+    return Response.json({ error: 'Server misconfigured' }, { status: 500, headers });
+  }
 
   if (!request.headers.get('content-type')?.includes('application/json')) {
     return Response.json({ error: 'Bad Request' }, { status: 400, headers });
@@ -63,27 +65,18 @@ export async function onRequestPost({ request, env }) {
     }
 
     const provided = code.trim().toUpperCase();
-    let valid = false;
-
-    if (env.GATE_CODE) {
-      // Preferred: compare against env var (set in Cloudflare Pages dashboard)
-      valid = env.GATE_CODE.trim().toUpperCase() === provided;
-    } else {
-      // Fallback: compare against known hash (server-side only, not exposed to browser)
-      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(provided));
-      const hash = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
-      valid = hash === FALLBACK_HASH;
-    }
+    const valid = env.GATE_CODE.trim().toUpperCase() === provided;
 
     if (!valid) {
       return Response.json({ ok: false }, { status: 401, headers });
     }
 
-    const secret = env.GATE_CODE || env.NOTIFY_SECRET || 'fallback';
-    const token = await generateToken(secret);
+    const token = await generateToken(env.GATE_CODE);
     const expires = Date.now() + TOKEN_TTL_MS;
 
-    return Response.json({ ok: true, token, expires }, { headers });
+    return Response.json({ ok: true, token, expires }, {
+      headers: { ...headers, 'Cache-Control': 'no-store' },
+    });
   } catch {
     return Response.json({ error: 'Internal error' }, { status: 500, headers });
   }

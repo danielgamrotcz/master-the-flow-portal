@@ -1,5 +1,14 @@
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 const SUB_RATE_LIMIT = 5; // max subscriptions per IP per hour
+const SUB_GLOBAL_CAP = 500; // hard cap on total stored subscriptions
+
+async function endpointHash(endpoint) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(endpoint));
+  return Array.from(new Uint8Array(buf))
+    .map(b => b.toString(16).padStart(2, '0'))
+    .join('')
+    .slice(0, 48);
+}
 
 async function checkSubRateLimit(env, ip) {
   if (!env.MTF_DATA) return false;
@@ -12,9 +21,9 @@ async function checkSubRateLimit(env, ip) {
 }
 
 function corsHeaders(origin) {
-  const allowed = !origin || origin === SITE_ORIGIN || origin.startsWith('http://localhost');
+  const allowed = origin && (origin === SITE_ORIGIN || origin.startsWith('http://localhost'));
   return {
-    'Access-Control-Allow-Origin': allowed ? (origin || '*') : 'null',
+    'Access-Control-Allow-Origin': allowed ? origin : 'null',
     'Access-Control-Allow-Methods': 'POST, DELETE, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Vary': 'Origin',
@@ -54,9 +63,16 @@ export async function onRequestPost({ request, env }) {
   try {
     const sub = await request.json();
     if (!isValidSubscription(sub)) return new Response('Bad request', { status: 400, headers });
-    // Store only the fields we need — never store arbitrary data
+
+    // Global cap — prevent subscription flood
+    const existing = await env.MTF_DATA.list({ prefix: 'sub_', limit: SUB_GLOBAL_CAP + 1 });
+    if (existing.keys.length >= SUB_GLOBAL_CAP) {
+      return new Response('Service unavailable', { status: 503, headers });
+    }
+
     const clean = { endpoint: sub.endpoint, keys: { auth: sub.keys.auth, p256dh: sub.keys.p256dh } };
-    const key = 'sub_' + btoa(sub.endpoint).replace(/[^a-zA-Z0-9]/g, '').slice(0, 48);
+    const hash = await endpointHash(sub.endpoint);
+    const key = 'sub_' + hash;
     await env.MTF_DATA.put(key, JSON.stringify(clean), { expirationTtl: 60 * 86400 });
     return new Response('OK', { headers });
   } catch {
@@ -72,7 +88,8 @@ export async function onRequestDelete({ request, env }) {
     if (!sub?.endpoint || typeof sub.endpoint !== 'string') {
       return new Response('Bad request', { status: 400, headers });
     }
-    const key = 'sub_' + btoa(sub.endpoint).replace(/[^a-zA-Z0-9]/g, '').slice(0, 48);
+    const hash = await endpointHash(sub.endpoint);
+    const key = 'sub_' + hash;
     await env.MTF_DATA.delete(key);
     return new Response('OK', { headers });
   } catch {

@@ -19,9 +19,9 @@ function isSafeVoteId(id) {
 const DEDUP_TTL = 30 * 24 * 3600; // 30 days
 
 function corsHeaders(origin, methods = 'GET, OPTIONS') {
-  const allowed = !origin || origin === SITE_ORIGIN || origin.startsWith('http://localhost');
+  const allowed = origin && (origin === SITE_ORIGIN || origin.startsWith('http://localhost'));
   return {
-    'Access-Control-Allow-Origin': allowed ? (origin || '*') : 'null',
+    'Access-Control-Allow-Origin': allowed ? origin : 'null',
     'Access-Control-Allow-Methods': methods,
     'Access-Control-Allow-Headers': 'Content-Type',
     'Vary': 'Origin',

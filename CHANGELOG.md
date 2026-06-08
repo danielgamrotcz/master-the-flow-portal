@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+### Security
+- CORS: požadavky bez hlavičky Origin vrací `null` místo `*` — brání přístupu z curl/server-side skriptů
+- Auth: odstraněn FALLBACK_HASH ze source kódu; bez `GATE_CODE` env var server vrátí 500
+- Auth: response při přihlášení má `Cache-Control: no-store`
+- Subscribe: klíč subscripce využívá SHA-256 hash endpointu — odstraněna možnost kolize klíčů
+- Subscribe: globální limit 500 subscripcí — ochrana před flood útokem
+- Track: oprava rate limit TTL (5 s → 60 s; KV minimum); chyba rate limitu nyní vrací CORS hlavičky
+
 ### Changed
 - Swipe přepínání panelů (Dnes/Týden/Archiv…) odstraněno — zůstává swipe na kartách (srdíčko / přečteno)
 - Top view: řazení podle váženého skóre (čtení + srdíčka × 5) místo pouhého počtu čtení

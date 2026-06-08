@@ -2,9 +2,9 @@ const ADMIN_SECRET_HEADER = 'x-admin-secret';
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 
 function cors(origin) {
-  const allowed = !origin || origin === SITE_ORIGIN || origin.startsWith('http://localhost');
+  const allowed = origin && (origin === SITE_ORIGIN || origin.startsWith('http://localhost'));
   return {
-    'Access-Control-Allow-Origin': allowed ? (origin || '*') : 'null',
+    'Access-Control-Allow-Origin': allowed ? origin : 'null',
     'Access-Control-Allow-Methods': 'GET, OPTIONS',
     'Access-Control-Allow-Headers': `Content-Type, ${ADMIN_SECRET_HEADER}`,
     'Vary': 'Origin',

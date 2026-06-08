@@ -5,8 +5,8 @@ async function checkTrackRateLimit(env, ip) {
   if (!env.MTF_DATA) return false;
   const key = 'ratelimit:track:' + ip;
   const raw = await env.MTF_DATA.get(key);
-  if (raw) return true; // already made a request in the last 5 seconds
-  await env.MTF_DATA.put(key, '1', { expirationTtl: 5 });
+  if (raw) return true;
+  await env.MTF_DATA.put(key, '1', { expirationTtl: 60 }); // min KV TTL is 60s
   return false;
 }
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
@@ -17,9 +17,9 @@ const ALLOWED_EVENTS = new Set([
 ]);
 
 function corsHeaders(origin) {
-  const allowed = !origin || origin === SITE_ORIGIN || origin.startsWith('http://localhost');
+  const allowed = origin && (origin === SITE_ORIGIN || origin.startsWith('http://localhost'));
   return {
-    'Access-Control-Allow-Origin': allowed ? (origin || '*') : 'null',
+    'Access-Control-Allow-Origin': allowed ? origin : 'null',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Vary': 'Origin',
@@ -53,12 +53,13 @@ export async function onRequestPost({ request, env }) {
   }
 
   const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
-  const blocked = await checkTrackRateLimit(env, ip);
-  if (blocked) {
-    return new Response('OK', { headers }); // silently drop — don't reveal rate limit to client
-  }
 
   try {
+    const blocked = await checkTrackRateLimit(env, ip);
+    if (blocked) {
+      return new Response('OK', { headers }); // silently drop
+    }
+
     const { event, data } = await request.json();
     if (!event || !ALLOWED_EVENTS.has(event) || !data) {
       return new Response('Bad Request', { status: 400, headers });
