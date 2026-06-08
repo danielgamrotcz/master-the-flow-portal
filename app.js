@@ -241,6 +241,14 @@ function renderCardEl(card, isResurfaced = false, query = '') {
           ${cardDate ? `<span class="card-date">${formatDateShort(cardDate)}</span>` : ''}
         </span>
       </div>
+      <div class="swipe-hint swipe-hint-vote" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        Líbí se
+      </div>
+      <div class="swipe-hint swipe-hint-read" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="20 6 9 17 4 12"/></svg>
+        <span class="swipe-read-label">Přečteno</span>
+      </div>
     </div>
   `;
 }
@@ -1303,6 +1311,51 @@ function navigateCards(dir) {
 }
 
 /* ===== PULL TO REFRESH ===== */
+function initViewSwipe() {
+  const NAV_ORDER = ['today', 'week', 'archive', 'search', 'top', 'stats'];
+  const content = document.getElementById('main-content');
+  if (!content) return;
+
+  let startX = 0, startY = 0, tracking = false, swiping = false;
+
+  content.addEventListener('touchstart', e => {
+    if (e.touches.length !== 1) return;
+    if (!$('overlay').classList.contains('hidden')) return;
+    if (e.target.closest('.card')) return;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    tracking = true;
+    swiping = false;
+  }, { passive: true });
+
+  content.addEventListener('touchmove', e => {
+    if (!tracking || e.touches.length !== 1) return;
+    const dx = e.touches[0].clientX - startX;
+    const dy = e.touches[0].clientY - startY;
+    if (!swiping) {
+      if (Math.abs(dy) > Math.abs(dx) + 6) { tracking = false; return; }
+      if (Math.abs(dx) < 12) return;
+      swiping = true;
+    }
+    e.preventDefault();
+  }, { passive: false });
+
+  content.addEventListener('touchend', e => {
+    if (!tracking || !swiping) { tracking = false; return; }
+    tracking = false;
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) < 55 || Math.abs(dy) > Math.abs(dx) * 0.75) return;
+    const idx = NAV_ORDER.indexOf(state.view);
+    if (idx === -1) return;
+    const nextIdx = dx < 0 ? idx + 1 : idx - 1;
+    if (nextIdx < 0 || nextIdx >= NAV_ORDER.length) return;
+    const next = NAV_ORDER[nextIdx];
+    switchView(next);
+    history.pushState({}, '', `#${next === 'today' ? '' : next}`);
+  }, { passive: true });
+}
+
 function initPullToRefresh() {
   const content = document.getElementById('main-content');
   const indicator = document.getElementById('pull-indicator');
@@ -1648,14 +1701,103 @@ async function fetchJSON(url) {
 /* ===== ATTACH LISTENERS ===== */
 function attachCardListeners(container) {
   container.querySelectorAll('.card').forEach(el => {
-    el.addEventListener('click', () => openCard(el.dataset.id));
+    el.addEventListener('click', () => {
+      if (el.dataset.swipePrevented) return;
+      openCard(el.dataset.id);
+    });
     el.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         openCard(el.dataset.id);
       }
     });
+    attachSwipeToCard(el);
   });
+}
+
+function attachSwipeToCard(el) {
+  const THRESHOLD = 65;
+  let startX = 0, startY = 0, tracking = false, swiping = false;
+
+  el.addEventListener('touchstart', e => {
+    if (e.touches.length !== 1) return;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    tracking = true;
+    swiping = false;
+    el.style.transition = 'none';
+  }, { passive: true });
+
+  el.addEventListener('touchmove', e => {
+    if (!tracking || e.touches.length !== 1) return;
+    const dx = e.touches[0].clientX - startX;
+    const dy = e.touches[0].clientY - startY;
+
+    if (!swiping) {
+      if (Math.abs(dy) > Math.abs(dx) + 6) { tracking = false; el.style.transition = ''; return; }
+      if (Math.abs(dx) < 8) return;
+      swiping = true;
+    }
+
+    e.preventDefault();
+    const damped = dx * 0.42;
+    el.style.transform = `translateX(${damped}px)`;
+
+    const hintV = el.querySelector('.swipe-hint-vote');
+    const hintR = el.querySelector('.swipe-hint-read');
+    if (dx > 0) {
+      hintV.style.opacity = Math.min(1, (dx - 10) / 55);
+      hintR.style.opacity = 0;
+    } else {
+      hintV.style.opacity = 0;
+      const progress = Math.min(1, (-dx - 10) / 55);
+      hintR.style.opacity = progress;
+      const label = hintR.querySelector('.swipe-read-label');
+      if (label) label.textContent = isRead(el.dataset.id) ? 'Nepřečteno' : 'Přečteno';
+    }
+  }, { passive: false });
+
+  el.addEventListener('touchend', e => {
+    if (!tracking) return;
+    tracking = false;
+
+    const dx = e.changedTouches[0].clientX - startX;
+
+    const hintV = el.querySelector('.swipe-hint-vote');
+    const hintR = el.querySelector('.swipe-hint-read');
+    el.style.transition = 'transform 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    el.style.transform = 'translateX(0)';
+    if (hintV) hintV.style.opacity = 0;
+    if (hintR) hintR.style.opacity = 0;
+    setTimeout(() => { el.style.transition = ''; }, 300);
+
+    if (swiping) {
+      el.dataset.swipePrevented = '1';
+      setTimeout(() => delete el.dataset.swipePrevented, 350);
+    }
+
+    if (!swiping || Math.abs(dx) < THRESHOLD) return;
+
+    const id = el.dataset.id;
+    if (dx > 0) {
+      if (hasVoted(id)) { showToast('Již jste hodnotil/a'); return; }
+      castVote(id).then(count => {
+        if (count) state.voteMap[id] = count;
+        showToast('Díky za hodnocení!');
+        rerenderCurrentView();
+      });
+    } else {
+      if (isRead(id)) {
+        markUnread(id);
+        showToast('Označeno jako nepřečtené');
+      } else {
+        markRead(id);
+        el.classList.add('read');
+        showToast('Označeno jako přečtené');
+      }
+      updatePageTitle();
+    }
+  }, { passive: true });
 }
 
 /* ===== SHARE ===== */
@@ -1864,6 +2006,7 @@ function init() {
   loadVoteMap().then(() => rerenderCurrentView());
   initAutoRefresh();
   initPullToRefresh();
+  initViewSwipe();
   initSwipeToClose();
 
   $('topic-chips').addEventListener('click', e => {
