@@ -1793,9 +1793,17 @@ function showCardContextMenu(x, y, cardId) {
     hideCardContextMenu();
     const action = btn.dataset.action;
     if (action === 'vote') {
-      if (hasVoted(cardId)) removeVote(cardId); else castVote(cardId);
+      if (hasVoted(cardId)) {
+        removeVote(cardId).then(() => { rerenderCurrentView(); showToast('Hodnocení odvoláno'); });
+      } else {
+        castVote(cardId).then(count => { if (count) state.voteMap[cardId] = count; rerenderCurrentView(); showToast('Díky za hodnocení!'); });
+      }
     } else if (action === 'read') {
-      if (isRead(cardId)) markUnread(cardId); else markRead(cardId);
+      if (isRead(cardId)) {
+        markUnread(cardId); rerenderCurrentView(); showToast('Označeno jako nepřečtené');
+      } else {
+        markRead(cardId); rerenderCurrentView(); showToast('Označeno jako přečtené');
+      }
     } else if (action === 'share') {
       const url = `${location.origin}${location.pathname}#card/${cardId}`;
       try { await navigator.clipboard.writeText(url); showToast('Odkaz zkopírován'); }
@@ -1830,6 +1838,9 @@ function attachSwipeToCard(wrap) {
   const el = wrap.querySelector('.card');
   if (!el) return;
   let startX = 0, startY = 0, tracking = false, swiping = false;
+  let longPressTimer = null;
+
+  const cancelLongPress = () => { if (longPressTimer) { clearTimeout(longPressTimer); longPressTimer = null; } };
 
   wrap.addEventListener('touchstart', e => {
     if (e.touches.length !== 1) return;
@@ -1838,12 +1849,24 @@ function attachSwipeToCard(wrap) {
     tracking = true;
     swiping = false;
     el.style.transition = 'none';
+
+    const touchX = e.touches[0].clientX;
+    const touchY = e.touches[0].clientY;
+    longPressTimer = setTimeout(() => {
+      longPressTimer = null;
+      if (swiping) return;
+      el.dataset.swipePrevented = '1';
+      setTimeout(() => delete el.dataset.swipePrevented, 500);
+      showCardContextMenu(touchX, touchY, el.dataset.id);
+    }, 500);
   }, { passive: true });
 
   wrap.addEventListener('touchmove', e => {
     if (!tracking || e.touches.length !== 1) return;
     const dx = e.touches[0].clientX - startX;
     const dy = e.touches[0].clientY - startY;
+
+    if (Math.abs(dx) > 6 || Math.abs(dy) > 6) cancelLongPress();
 
     if (!swiping) {
       if (Math.abs(dy) > Math.abs(dx) + 6) { tracking = false; el.style.transition = ''; return; }
@@ -1869,6 +1892,7 @@ function attachSwipeToCard(wrap) {
   }, { passive: false });
 
   wrap.addEventListener('touchend', e => {
+    cancelLongPress();
     if (!tracking) return;
     tracking = false;
     const dx = e.changedTouches[0].clientX - startX;
