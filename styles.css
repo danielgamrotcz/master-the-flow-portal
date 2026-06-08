@@ -1454,36 +1454,59 @@ a:hover { text-decoration: underline; }
 .card.read { opacity: 0.45; }
 .card.read:hover { opacity: 0.75; }
 
-/* ===== SWIPE HINTS ===== */
-.swipe-hint {
+/* ===== CARD SWIPE ===== */
+.card-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.card-wrap .card {
+  position: relative;
+  z-index: 1;
+}
+
+.swipe-bg {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0;
-  pointer-events: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  border-radius: 20px;
-  padding: 6px 12px;
-  white-space: nowrap;
-  z-index: 2;
-  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  transition: background 150ms ease;
 }
-.swipe-hint-vote {
-  left: 12px;
+
+.swipe-bg svg {
+  flex-shrink: 0;
+  transition: transform 150ms ease;
+}
+
+.swipe-bg-vote {
+  background: rgba(240, 106, 21, 0.1);
   color: var(--accent);
-  background: rgba(240, 106, 21, 0.18);
-  border: 1px solid rgba(240, 106, 21, 0.35);
+  padding-left: 18px;
+  justify-content: flex-start;
 }
-.swipe-hint-read {
-  right: 12px;
+
+.swipe-bg-read {
+  background: rgba(16, 185, 129, 0.1);
   color: #6ee7b7;
-  background: rgba(16, 185, 129, 0.14);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding-right: 18px;
+  justify-content: flex-end;
+}
+
+.card-wrap.swipe-triggered-vote .swipe-bg-vote {
+  background: rgba(240, 106, 21, 0.24);
+}
+.card-wrap.swipe-triggered-read .swipe-bg-read {
+  background: rgba(16, 185, 129, 0.24);
+}
+.card-wrap.swipe-triggered-vote .swipe-bg-vote svg,
+.card-wrap.swipe-triggered-read .swipe-bg-read svg {
+  transform: scale(1.2);
 }
 
 /* ===== RANDOM BUTTON ===== */

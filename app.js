@@ -219,35 +219,35 @@ function renderCardEl(card, isResurfaced = false, query = '') {
   const topics = getTopics(card).slice(0, 5);
 
   return `
-    <div class="card${isResurfaced ? ' resurfaced' : ''}${isRead(card.id) ? ' read' : ''}"
-         data-id="${esc(card.id)}"
-         data-type="${esc(card.type)}"
-         role="article"
-         tabindex="0"
-         aria-label="${esc(card.title)}">
-      <div class="card-meta">
-        <div class="card-meta-left">
-          <span class="card-type" style="color:${typeColor}">${esc(card.type)}</span>
+    <div class="card-wrap">
+      <div class="swipe-bg swipe-bg-vote" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <div class="swipe-bg swipe-bg-read" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      </div>
+      <div class="card${isResurfaced ? ' resurfaced' : ''}${isRead(card.id) ? ' read' : ''}"
+           data-id="${esc(card.id)}"
+           data-type="${esc(card.type)}"
+           role="article"
+           tabindex="0"
+           aria-label="${esc(card.title)}">
+        <div class="card-meta">
+          <div class="card-meta-left">
+            <span class="card-type" style="color:${typeColor}">${esc(card.type)}</span>
+          </div>
+          ${topics.length ? `<div class="card-topics">${topics.map(t => `<span class="card-topic">${esc(t)}</span>`).join('')}</div>` : ''}
         </div>
-        ${topics.length ? `<div class="card-topics">${topics.map(t => `<span class="card-topic">${esc(t)}</span>`).join('')}</div>` : ''}
-      </div>
-      <div class="card-title">${query ? highlightInHTML(esc(card.title), query) : esc(card.title)}</div>
-      <div class="card-excerpt">${query ? highlightInHTML(esc(card.excerpt), query) : esc(card.excerpt)}</div>
-      <div class="card-footer">
-        <span class="card-readmore">Číst dál ↓</span>
-        <span class="card-footer-right">
-          <span class="card-reads">${state.cardStats[card.id]?.reads ?? 0} čtení</span>
-          <span class="card-hearts"><svg viewBox="0 0 24 24" fill="currentColor" width="11" height="11" style="vertical-align:-1px;margin-right:2px"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>${state.voteMap[card.id] || 0}</span>
-          ${cardDate ? `<span class="card-date">${formatDateShort(cardDate)}</span>` : ''}
-        </span>
-      </div>
-      <div class="swipe-hint swipe-hint-vote" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        Líbí se
-      </div>
-      <div class="swipe-hint swipe-hint-read" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><polyline points="20 6 9 17 4 12"/></svg>
-        <span class="swipe-read-label">Přečteno</span>
+        <div class="card-title">${query ? highlightInHTML(esc(card.title), query) : esc(card.title)}</div>
+        <div class="card-excerpt">${query ? highlightInHTML(esc(card.excerpt), query) : esc(card.excerpt)}</div>
+        <div class="card-footer">
+          <span class="card-readmore">Číst dál ↓</span>
+          <span class="card-footer-right">
+            <span class="card-reads">${state.cardStats[card.id]?.reads ?? 0} čtení</span>
+            <span class="card-hearts"><svg viewBox="0 0 24 24" fill="currentColor" width="11" height="11" style="vertical-align:-1px;margin-right:2px"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>${state.voteMap[card.id] || 0}</span>
+            ${cardDate ? `<span class="card-date">${formatDateShort(cardDate)}</span>` : ''}
+          </span>
+        </div>
       </div>
     </div>
   `;
@@ -1320,8 +1320,8 @@ function initViewSwipe() {
 
   content.addEventListener('touchstart', e => {
     if (e.touches.length !== 1) return;
-    if (!$('overlay').classList.contains('hidden')) return;
-    if (e.target.closest('.card')) return;
+    if (!$('card-overlay').classList.contains('hidden')) return;
+    if (e.target.closest('.card-wrap')) return;
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
     tracking = true;
@@ -1700,7 +1700,11 @@ async function fetchJSON(url) {
 
 /* ===== ATTACH LISTENERS ===== */
 function attachCardListeners(container) {
-  container.querySelectorAll('.card').forEach(el => {
+  container.querySelectorAll('.card-wrap').forEach(wrap => {
+    if (wrap.dataset.listenersAttached) return;
+    wrap.dataset.listenersAttached = '1';
+    const el = wrap.querySelector('.card');
+    if (!el) return;
     el.addEventListener('click', () => {
       if (el.dataset.swipePrevented) return;
       openCard(el.dataset.id);
@@ -1711,15 +1715,19 @@ function attachCardListeners(container) {
         openCard(el.dataset.id);
       }
     });
-    attachSwipeToCard(el);
+    attachSwipeToCard(wrap);
   });
 }
 
-function attachSwipeToCard(el) {
-  const THRESHOLD = 65;
+function attachSwipeToCard(wrap) {
+  if (wrap.dataset.swipeAttached) return;
+  wrap.dataset.swipeAttached = '1';
+  const THRESHOLD = 80;
+  const el = wrap.querySelector('.card');
+  if (!el) return;
   let startX = 0, startY = 0, tracking = false, swiping = false;
 
-  el.addEventListener('touchstart', e => {
+  wrap.addEventListener('touchstart', e => {
     if (e.touches.length !== 1) return;
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
@@ -1728,7 +1736,7 @@ function attachSwipeToCard(el) {
     el.style.transition = 'none';
   }, { passive: true });
 
-  el.addEventListener('touchmove', e => {
+  wrap.addEventListener('touchmove', e => {
     if (!tracking || e.touches.length !== 1) return;
     const dx = e.touches[0].clientX - startX;
     const dy = e.touches[0].clientY - startY;
@@ -1740,35 +1748,25 @@ function attachSwipeToCard(el) {
     }
 
     e.preventDefault();
-    const damped = dx * 0.42;
-    el.style.transform = `translateX(${damped}px)`;
-
-    const hintV = el.querySelector('.swipe-hint-vote');
-    const hintR = el.querySelector('.swipe-hint-read');
+    el.style.transform = `translateX(${dx * 0.45}px)`;
+    const committed = Math.abs(dx) >= THRESHOLD;
     if (dx > 0) {
-      hintV.style.opacity = Math.min(1, (dx - 10) / 55);
-      hintR.style.opacity = 0;
+      wrap.classList.toggle('swipe-triggered-vote', committed);
+      wrap.classList.remove('swipe-triggered-read');
     } else {
-      hintV.style.opacity = 0;
-      const progress = Math.min(1, (-dx - 10) / 55);
-      hintR.style.opacity = progress;
-      const label = hintR.querySelector('.swipe-read-label');
-      if (label) label.textContent = isRead(el.dataset.id) ? 'Nepřečteno' : 'Přečteno';
+      wrap.classList.toggle('swipe-triggered-read', committed);
+      wrap.classList.remove('swipe-triggered-vote');
     }
   }, { passive: false });
 
-  el.addEventListener('touchend', e => {
+  wrap.addEventListener('touchend', e => {
     if (!tracking) return;
     tracking = false;
-
     const dx = e.changedTouches[0].clientX - startX;
 
-    const hintV = el.querySelector('.swipe-hint-vote');
-    const hintR = el.querySelector('.swipe-hint-read');
     el.style.transition = 'transform 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
     el.style.transform = 'translateX(0)';
-    if (hintV) hintV.style.opacity = 0;
-    if (hintR) hintR.style.opacity = 0;
+    wrap.classList.remove('swipe-triggered-vote', 'swipe-triggered-read');
     setTimeout(() => { el.style.transition = ''; }, 300);
 
     if (swiping) {
