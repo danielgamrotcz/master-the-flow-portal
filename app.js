@@ -15,10 +15,9 @@ function storeAuth(token, expires) {
 }
 
 function initGate() {
-  if (isAuthenticated()) {
-    document.getElementById('gate').classList.add('hidden');
-    return;
-  }
+  if (isAuthenticated()) return;
+
+  document.getElementById('gate').classList.remove('hidden');
 
   const input = document.getElementById('gate-input');
   const btn = document.getElementById('gate-submit');
@@ -1794,7 +1793,7 @@ function showCardContextMenu(x, y, cardId) {
     const action = btn.dataset.action;
     if (action === 'vote') {
       if (hasVoted(cardId)) {
-        removeVote(cardId).then(() => { rerenderCurrentView(); showToast('Hodnocení odvoláno'); });
+        removeVote(cardId).then(count => { state.voteMap[cardId] = count; rerenderCurrentView(); showToast('Hodnocení odvoláno'); });
       } else {
         castVote(cardId).then(count => { if (count) state.voteMap[cardId] = count; rerenderCurrentView(); showToast('Díky za hodnocení!'); });
       }
