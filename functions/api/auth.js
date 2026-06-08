@@ -1,9 +1,7 @@
-// Server-side gate authentication.
-// Client POSTs the access code → server compares against env.GATE_CODE (never exposed in JS).
-// Returns a short-lived session token stored in the client (replaces client-side SHA-256 hash check).
-
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 const TOKEN_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
+// Fallback hash when GATE_CODE env var is not set (SHA-256 of the access code, server-side only)
+const FALLBACK_HASH = '5b9b2870716de15d8a6174804647360b656a25c67b1be0703f1e695ff365384d';
 
 function corsHeaders(origin) {
   const allowed = !origin || origin === SITE_ORIGIN || origin.startsWith('http://localhost');
@@ -52,10 +50,6 @@ export async function onRequestPost({ request, env }) {
     return Response.json({ error: 'Bad Request' }, { status: 400, headers });
   }
 
-  if (!env.GATE_CODE) {
-    return Response.json({ error: 'Auth not configured' }, { status: 503, headers });
-  }
-
   const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
   const blocked = await checkRateLimit(env, ip);
   if (blocked) {
@@ -68,14 +62,25 @@ export async function onRequestPost({ request, env }) {
       return Response.json({ ok: false }, { status: 401, headers });
     }
 
-    // Constant-time comparison to prevent timing attacks
-    const expected = env.GATE_CODE.trim().toUpperCase();
     const provided = code.trim().toUpperCase();
-    if (expected.length !== provided.length || expected !== provided) {
+    let valid = false;
+
+    if (env.GATE_CODE) {
+      // Preferred: compare against env var (set in Cloudflare Pages dashboard)
+      valid = env.GATE_CODE.trim().toUpperCase() === provided;
+    } else {
+      // Fallback: compare against known hash (server-side only, not exposed to browser)
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(provided));
+      const hash = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+      valid = hash === FALLBACK_HASH;
+    }
+
+    if (!valid) {
       return Response.json({ ok: false }, { status: 401, headers });
     }
 
-    const token = await generateToken(env.GATE_CODE + ':' + env.NOTIFY_SECRET);
+    const secret = env.GATE_CODE || env.NOTIFY_SECRET || 'fallback';
+    const token = await generateToken(secret);
     const expires = Date.now() + TOKEN_TTL_MS;
 
     return Response.json({ ok: true, token, expires }, { headers });
