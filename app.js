@@ -1049,7 +1049,9 @@ async function showTranscript(dateStr, sourceGroup, sourceMsgTimes) {
            + `<div class="transcript-expand"><button class="btn-secondary" id="btn-transcript-expand">Zobrazit celý přepis</button></div>`;
     }
 
-    $('transcript-content').innerHTML = html;
+    const contentEl = $('transcript-content');
+    contentEl.classList.toggle('transcript-filtered', filtering);
+    contentEl.innerHTML = html;
 
     if (filtering) {
       document.getElementById('btn-transcript-expand')?.addEventListener('click', () => {
@@ -2193,7 +2195,8 @@ function init() {
     const overlayOpen = !$('card-overlay').classList.contains('hidden');
 
     if (e.key === 'Escape') {
-      if (overlayOpen) closeCard();
+      if (overlayOpen) { closeCard(); return; }
+      if (state.view === 'transcript') { $('btn-transcript-back').click(); return; }
       return;
     }
     if (overlayOpen) {

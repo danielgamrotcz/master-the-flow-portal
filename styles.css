@@ -697,16 +697,12 @@ a:hover { text-decoration: underline; }
   word-break: break-word;
 }
 
-.transcript-message.is-source .msg-text {
+.transcript-filtered .transcript-message:not(.is-source) {
+  opacity: 0.4;
+}
+
+.transcript-filtered .transcript-message.is-source .msg-text {
   color: var(--text-primary);
-}
-
-.transcript-message.is-source .msg-time {
-  color: var(--text-secondary);
-}
-
-.transcript-message:not(.is-source) {
-  opacity: 0.45;
 }
 
 .transcript-filter-notice {
