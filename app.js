@@ -1044,6 +1044,9 @@ function switchView(viewName) {
 
   document.getElementById('site-header').classList.toggle('stats-mode', viewName === 'stats');
 
+  const noChipsViews = new Set(['chat', 'transcript', 'stats']);
+  $('topic-chips').classList.toggle('hidden', noChipsViews.has(viewName));
+
   ['today', 'week', 'archive', 'search', 'stats', 'transcript', 'top', 'chat'].forEach(v => {
     const el = $(`view-${v}`);
     if (el) el.classList.toggle('hidden', v !== viewName);
@@ -2257,7 +2260,12 @@ async function chatSend(text) {
     });
 
     if (!resp.ok) {
-      bubble.innerHTML = `<p class="chat-error">${resp.status === 401 ? 'Platnost přístupu vypršela. Načtěte stránku znovu.' : 'Nepodařilo se odpovědět. Zkuste to znovu.'}</p>`;
+      if (resp.status === 401) {
+        localStorage.removeItem('mtf_auth');
+        location.reload();
+        return;
+      }
+      bubble.innerHTML = `<p class="chat-error">Nepodařilo se odpovědět. Zkuste to znovu.</p>`;
       chatState.streaming = false;
       if (sendBtn) sendBtn.disabled = false;
       return;
