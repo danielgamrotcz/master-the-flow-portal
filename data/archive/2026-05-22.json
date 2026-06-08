@@ -90,26 +90,6 @@
         "19:11",
         "09:32"
       ]
-    },
-    {
-      "id": "2026-05-22-05",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Začátečník",
-      "title": "Jak nepřijít o důležité věci ve velké skupině",
-      "excerpt": "Zpráv přibývá, ale přechod na Discord nebo Slack se neplánuje. Jak zůstat v obraze a nestrávit hodiny scrollováním? Komunita navrhla tři možnosti, jasná odpověď zatím není.",
-      "body": "Otázka, kterou řeší skoro každý v aktivní komunitě: jak neztratit důležité věci, když zpráv přibývá, ale přesun na Discord nebo Slack nedává smysl.\n\nZ komunity padly tři směry:\n\nDigest nástroje, třeba noscroll.com: projdou skupinu a pošlou vám výcuc toho podstatného. Nemusíte scrollovat a dostanete rychlý přehled.\n\nPřímé napojení WhatsAppu na LLM: AI sleduje skupinu a automaticky shrnuje nebo třídí zprávy. Je to technicky náročnější, ale řeší to problém systémově.\n\nVíce skupin: rozdělit komunitu podle témat, aby každá skupina měla jasné zaměření. V každé je pak méně šumu.\n\nJasný závěr z diskuze zatím není. Digest je pasivní a člověk může přijít o kontext. Více skupin tříští konverzaci. Napojení na LLM je technicky složité.\n\nTéma je pořád otevřené. Pokud máte vlastní způsob, jak zvládáte velkou skupinu, přidejte se do diskuze.",
-      "read_minutes": 2,
-      "source_date": "2026-05-22",
-      "topics": [
-        "AI nástroje",
-        "Email"
-      ],
-      "source_group": "vibecoding",
-      "source_msg_times": [
-        "18:53",
-        "09:36",
-        "15:14"
-      ]
     }
   ],
   "resurfacing": {

@@ -86,24 +86,6 @@
         "13:33",
         "13:25"
       ]
-    },
-    {
-      "id": "2026-04-07-05",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Builder",
-      "title": "Jak poznat, že AI produkt má reálný dopad",
-      "excerpt": "Člen komunity pracuje na nástroji se spoustou proměnných a sám řeší, jak zařídit, aby z toho nebyla jen hračka. Komunita se shodla, že skutečný dopad to bude mít až ve chvíli, kdy bude jasné, pro koho to je a jaký konkrétní problém to řeší.",
-      "body": "V komunitě se rozjela zajímavá debata o stavění produktů s AI. Jeden člen ukázal nástroj, na kterém pracuje. Pracuje s velkým množstvím proměnných. Sám si ale klade otázku, jestli bude mít reálný dopad, nebo zůstane jen u zajímavého experimentu.\n\nZakladatel komunity k tomu dodal, že ho zajímá hlavně produkt v praxi. Co se fakt vyplatí dostat do každodenní rutiny. A co radši nechat být. Nestačí, že nástroj funguje. Musí dát jasný výstup v konkrétní situaci pro konkrétního člověka.\n\nJeden člen to vystihl přesně: udělat nástroj intuitivní, jednoduchý, účinný a opravdu užitečný je těžké. Nástroje, které to zvládnou, mají skutečný dopad. Ty ostatní jsou možná zajímavé, ale často zůstanou jen jako hračky.\n\nOtázka na vás: Stavíte nebo plánujete postavit něco s AI? Víte přesně, pro koho to je a co konkrétně jim to vyřeší?",
-      "read_minutes": 2,
-      "source_date": "2026-04-07",
-      "topics": [
-        "AI nástroje"
-      ],
-      "source_group": "inspiracediskuze",
-      "source_msg_times": [
-        "13:21",
-        "13:14"
-      ]
     }
   ],
   "resurfacing": {

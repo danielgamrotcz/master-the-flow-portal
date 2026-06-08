@@ -96,25 +96,6 @@
         "16:03",
         "16:05"
       ]
-    },
-    {
-      "id": "2026-03-16-05",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Builder",
-      "title": "Hledáme náhradu za Telegram bez kompromisů",
-      "excerpt": "Komunita hledá náhradu za Telegram. Padly návrhy jako Signal, Discord a OpenClaw. Ani jedna možnost zatím není bez kompromisů, takže se hledá dál.",
-      "body": "Část komunity hledá náhradu za Telegram. V diskuzi padli tři kandidáti:\n\n**Signal** — šifrovaný a důvěryhodný, pokud jde o soukromí. Jenže ho nepoužívá každý a přemluvit lidi k přechodu bývá oříšek.\n\n**Discord** — silný pro komunity. Má dobré kanály a vyhledávání v historii. Pro někoho je ale moc hlučný nebo až moc spojený s herní kulturou. A soukromí jako Signal nenabízí.\n\n**OpenClaw** — méně známá alternativa. V diskuzi zazněla, ale bez jasného závěru.\n\nJasný vítěz zatím není. Všude jsou kompromisy: soukromí vs. dostupnost, funkce vs. jednoduchost. Jeden člen zatím zůstává na Telegramu a příští týden vyzkouší alternativy.\n\nCo používáte vy? A co by musela splňovat ideální náhrada, abyste přešli?",
-      "read_minutes": 2,
-      "source_date": "2026-03-16",
-      "topics": [
-        "AI nástroje"
-      ],
-      "source_group": "vibecoding",
-      "source_msg_times": [
-        "07:59",
-        "15:17",
-        "15:13"
-      ]
     }
   ],
   "resurfacing": null,

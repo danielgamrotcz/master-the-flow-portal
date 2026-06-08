@@ -27,24 +27,6 @@
       ]
     },
     {
-      "id": "2026-04-17-02",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Builder",
-      "title": "Claude nebo Codex: kdy má smysl přeskakovat?",
-      "excerpt": "Jeden člen se zeptal na rovinu: Proč Claude, a ne Codex po nové aktualizaci od OpenAI? Komunita se shodla, že bez pádného důvodu nemá smysl přecházet.",
-      "body": "Kacířská otázka, která se v komunitě občas vrací: Je Claude pořád nejlepší volba, nebo už ho někdo dohnal?\n\nTentokrát šlo hlavně o srovnání s Codexem po poslední aktualizaci OpenAI. Člen komunity vytáhl dvě roviny. Etiku, tedy přístup k datům a hodnoty Anthropicu vs. OpenAI. A pak praxi: limity, ekosystém, funkce.\n\nOdpovědi šly většinou jedním směrem. Pokud nemáte jasný důvod přejít, zůstaňte tam, kde jste. Skákat mezi nástroji každých 14 dní podle toho, kdo zrovna vydal novou verzi, je dobrý způsob, jak se nikam nedostat. Opravdu dobře s nástrojem začnete pracovat až časem.\n\nA pak přišel Opus 4.7, takže si ta otázka trochu odpověděla sama.\n\nMáte jasně dané, co by vás přimělo přejít na jiný nástroj?",
-      "read_minutes": 2,
-      "source_date": "2026-04-17",
-      "topics": [
-        "ChatGPT"
-      ],
-      "source_group": "inspiracediskuze",
-      "source_msg_times": [
-        "08:45",
-        "14:56"
-      ]
-    },
-    {
       "id": "2026-04-17-03",
       "type": "NÁSTROJE",
       "level": "Expert",

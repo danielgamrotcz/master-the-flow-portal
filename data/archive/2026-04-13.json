@@ -59,28 +59,6 @@
       "source_msg_times": [
         "10:05"
       ]
-    },
-    {
-      "id": "2026-04-13-04",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Začátečník",
-      "title": "Kdy začít se skripty a automatizací",
-      "excerpt": "Víc členů komunity přiznalo, že skriptům a automatizaci zatím moc nerozumí a radši počkají, než aby něco pokazili. Je to rozumný přístup, ale často kvůli tomu zbytečně odkládají věci, do kterých by se mohli pustit.",
-      "body": "V dnešní debatě to zmínilo víc členů najednou. U skriptů a technických věcí radši počkají na školení, než aby sami něco rozbili. Chápu to. Jenže někdy nás tenhle přístup brzdí víc, než je nutné.\n\nPár věcí k zamyšlení:\n\n- Většina automatizací kolem e-mailů nebo dokumentů neznamená psát kód od nuly. Nástroje jako Make nebo Zapier to zvládnou bez jediného řádku kódu.\n- Skripty dávají smysl až ve chvíli, kdy chcete něco, co hotové nástroje neumí, nebo když toho děláte tolik, že se ruční práce nevyplatí.\n- Claude Code nebo ChatGPT vám kód napíšou. Nemusíte mu rozumět do posledního detailu. Stačí vědět, co má dělat, a ověřit si, že to opravdu dělá.\n\nA teď přímo k vám: kde je vaše skutečná hranice? Co konkrétně se bojíte pokazit?",
-      "read_minutes": 2,
-      "source_date": "2026-04-13",
-      "topics": [
-        "Claude Code",
-        "ChatGPT",
-        "Automatizace",
-        "Email"
-      ],
-      "source_group": "inspiracediskuze",
-      "source_msg_times": [
-        "08:15",
-        "07:37",
-        "08:16"
-      ]
     }
   ],
   "resurfacing": {

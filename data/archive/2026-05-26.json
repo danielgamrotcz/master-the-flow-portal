@@ -96,33 +96,6 @@
         "18:53",
         "14:26"
       ]
-    },
-    {
-      "id": "2026-05-26-05",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Expert",
-      "title": "Jak otestovat bezpečnost projektu před spuštěním",
-      "excerpt": "Padl dotaz, jak udělat security audit vibe coding projektu, než ho pustíte do produkce. Zaznělo doporučení na bezplatný scanner, reakce komunity ale byly smíšené.",
-      "body": "Jeden člen se ptal, jak otestovat bezpečnost projektu postaveného přes Claude Code nebo jiné vibe coding nástroje, než ho pustí do produkce. V komunitě se to zatím moc neřeší, ale řešit by se to mělo.\n\nPadlo doporučení na grovetechai.com/scanner (Vibe Coding Scan). Je zdarma jednou měsíčně a míří přímo na projekty vzniklé přes vibe coding. Reakce ale nebyly jen pozitivní. Jeden člen měl špatnou zkušenost s kvalitou výsledků. Scanner mu hlásil problémy, které buď nebyly reálné, nebo byly dost povrchní.\n\nTím se otevírá širší otázka: jak bezpečně projít projekt, který vznikl rychle a bez klasického code review? Automatické scannery mají svoje limity. Manuální review chce buď zkušenosti, nebo někoho druhého. A většina vibe coderů to teď neřeší vůbec.\n\nMáte ve svém workflow security check před spuštěním do produkce? A pokud ano, jak konkrétně?",
-      "read_minutes": 3,
-      "source_date": "2026-05-26",
-      "topics": [
-        "Claude Code",
-        "Vibe Coding",
-        "Workflow",
-        "Dokumentace"
-      ],
-      "source_group": "vibe-coding",
-      "source_msg_times": [
-        "15:14",
-        "18:53",
-        "14:26",
-        "15:46",
-        "16:27",
-        "17:04",
-        "15:14",
-        "15:44"
-      ]
     }
   ],
   "resurfacing": null,

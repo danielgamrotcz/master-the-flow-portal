@@ -65,29 +65,6 @@
       ]
     },
     {
-      "id": "2026-05-05-04",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Builder",
-      "title": "Co byste dali do sdílené zásobárny nápadů",
-      "excerpt": "Padl nápad vytvořit sdílenou zásobárnu po vzoru Karpathyho LLM wiki. Co by v ní mělo být, aby fakt k něčemu byla a neskončila jen jako další archiv, kam nikdo nechodí?",
-      "body": "Andrej Karpathy má na GitHubu wiki s víc než 100 tisíci hvězdami. Sbírá tam nápady a poznámky kolem LLM. Jednoduchý princip: jedno místo na věci, které stojí za to si uložit.\n\nV komunitě padl nápad zkusit něco podobného pro sdílení idea files mezi členy. Reakce přišla hned. Několik lidí se ozvalo, že mají co sdílet.\n\nOtázka je, co by na takovém místě mělo být, aby to fakt k něčemu bylo. Prompty, které fungují? Nastavení nástrojů? Workflow, na které byste sami nepřišli? Zkušenosti z konkrétních projektů?\n\nNapište do diskuze, co byste tam hledali jako první. Podle odpovědí uvidíme, jestli má smysl to stavět.",
-      "read_minutes": 2,
-      "source_date": "2026-05-05",
-      "topics": [
-        "AI nástroje",
-        "Poznámky",
-        "Workflow",
-        "Prompting"
-      ],
-      "source_group": "vibecoding",
-      "source_msg_times": [
-        "12:46",
-        "09:49",
-        "18:42",
-        "12:38"
-      ]
-    },
-    {
       "id": "2026-05-05-05",
       "type": "INSIGHT",
       "level": "Expert",

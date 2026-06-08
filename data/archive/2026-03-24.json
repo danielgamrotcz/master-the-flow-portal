@@ -85,33 +85,6 @@
         "12:18",
         "11:23"
       ]
-    },
-    {
-      "id": "2026-03-24-05",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Začátečník",
-      "title": "Claude nebo Cursor: co se vyplatí učit",
-      "excerpt": "Jeden z členů se ptal, jaký je rozdíl mezi Claudem a Cursorem. Tahle otázka se objevuje často — a odpověď záleží na tom, co s nimi chcete dělat.",
-      "body": "Claude a Cursor můžou zvenku působit podobně. Oba pracují s AI a oběma můžete říkat, co mají dělat. Ve skutečnosti se ale hodí na jiné situace.\n\nCursor je IDE postavené na VS Code. Slouží hlavně k psaní kódu. Dává smysl pro vývojáře nebo pro lidi, kteří se chtějí naučit programovat a chtějí mít nad kódem větší kontrolu.\n\nClaude, hlavně Claude Code, je univerzálnější. Umí psát kód, ale taky analyzovat dokumenty, pomáhat s texty, plánovat workflow nebo automatizovat opakující se úkoly. Pro základní používání nemusíte umět programovat.\n\nPokud nemáte technické zázemí, většinou dává smysl začít s Claudem. Naučíte se líp zadávat úkoly, chápat výstupy a pracovat s AI formou běžné konverzace. Cursor má smysl přidat ve chvíli, kdy už víte, co přesně od kódu chcete.\n\nA co chcete s AI řešit vy? Podle toho se pozná, kde začít.",
-      "read_minutes": 2,
-      "source_date": "2026-03-24",
-      "topics": [
-        "Claude Code",
-        "Automatizace",
-        "Cursor",
-        "Workflow"
-      ],
-      "source_group": "vibecoding",
-      "source_msg_times": [
-        "11:23",
-        "12:18",
-        "10:16",
-        "14:27",
-        "20:48",
-        "07:04",
-        "07:11",
-        "10:44"
-      ]
     }
   ],
   "resurfacing": null,

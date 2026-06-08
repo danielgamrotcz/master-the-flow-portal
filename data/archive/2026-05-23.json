@@ -99,23 +99,6 @@
       "source_msg_times": [
         "15:50"
       ]
-    },
-    {
-      "id": "2026-05-23-06",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Builder",
-      "title": "Vlastní NotebookLM s hlasem pro státnice",
-      "excerpt": "Student před státnicemi si chce postavit vlastní verzi NotebookLM se Sonioxem, hlasovým vstupem i výstupem. Shání reálné zkušenosti od lidí, kteří něco podobného zkoušeli.",
-      "body": "NotebookLM od Googlu je oblíbený nástroj na učení z dokumentů, ale má svoje limity. Student z komunity, který se připravuje na státnice, chce zajít dál: postavit si vlastní verzi s hlasovým vstupem a výstupem přes Soniox.\n\nPředstava je jednoduchá: místo čtení a psaní by se svými studijními materiály mluvil. Hlasem by pokládal otázky, dostával hlasové odpovědi a procházel látku formou konverzace.\n\nKomunitě položil pár otázek:\n\n- Dá se to v praxi opravdu používat, nebo to dobře zní jen na papíře?\n- Kolik to reálně stojí — Soniox, tokeny, inference?\n- Jak to celé technicky poskládat?\n\nSám to vystihl přesně: tohle mu žádné LLM pořádně nepopíše, protože odpověď závisí na reálné zkušenosti, ne na tréninkových datech. Pokud máte s podobným projektem zkušenost — se Sonioxem nebo s jiným hlasovým RAG řešením — bude hodně cenné, když se podělíte.",
-      "read_minutes": 2,
-      "source_date": "2026-05-23",
-      "topics": [
-        "AI nástroje"
-      ],
-      "source_group": "vibecoding",
-      "source_msg_times": [
-        "14:03"
-      ]
     }
   ],
   "resurfacing": {

@@ -44,25 +44,6 @@
       ]
     },
     {
-      "id": "2026-04-01-03",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Builder",
-      "title": "Claude.ai, Cowork nebo Claude Code, kdy co",
-      "excerpt": "Jeden z členů popsal mentální souboj, který asi zná spousta aktivních uživatelů: kdy má smysl pracovat v chatu, kdy přejít do Claude Code a k čemu je vlastně Cowork. Odpovědi z komunity se dost liší.",
-      "body": "Jeden člen komunity popsal situaci, kterou asi zná spousta lidí: pořád řeší, jestli daný úkol patří do chatu na Claude.ai, do Coworku, nebo do Claude Code. A taky že často skočí do Claude Code i ve chvíli, kdy to vlastně není nutné, jen proto, že se mu tam líp pracuje se soubory a terminálem.\n\nZ diskuze vyplynulo, že každý to má nastavené trochu jinak. Jeden z nejaktivnějších uživatelů přiznal, že Cowork skoro vůbec nepoužívá a všechno řeší přes Claude Code, i když u daného úkolu vůbec nepíše kód. Jiní naopak zmiňovali Cowork jako praktický nástroj pro správu a sdílení souborů.\n\nJedna správná odpověď na to není. Záleží na tom, co děláte nejčastěji, jak máte uspořádané soubory a kde vám přirozeně vzniká kontext. Dává ale smysl si pro sebe nastavit jednoduché pravidlo, abyste mezi nástroji nepřeskakovali jen tak bez důvodu.\n\nJak to máte vy?",
-      "read_minutes": 2,
-      "source_date": "2026-04-01",
-      "topics": [
-        "Claude Code",
-        "Vibe Coding"
-      ],
-      "source_group": "vibecoding",
-      "source_msg_times": [
-        "13:28",
-        "10:41"
-      ]
-    },
-    {
       "id": "2026-04-01-04",
       "type": "NÁSTROJE",
       "level": "Builder",

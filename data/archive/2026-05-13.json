@@ -85,27 +85,6 @@
         "13:06",
         "13:13"
       ]
-    },
-    {
-      "id": "2026-05-13-05",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Expert",
-      "title": "Kdy zahodit vlastní nástroj ve prospěch oficiálního",
-      "excerpt": "Postavit si vlastní integraci dá práci, ale funguje přesně tak, jak potřebujete. Když pak výrobce vydá oficiální verzi, je přechod jasná volba? Nebo má smysl zůstat u vlastního řešení?",
-      "body": "Jeden člen komunity řešil klasické dilema: udělal si vlastní nástroj na stahování a zpracování hlasových záznamů. Funguje. Jenže pak výrobce vydal oficiální MCP integraci.\n\nVlastní nástroj má jasné výhody:\n- Sedí přesně na váš workflow\n- Nestojí nic navíc\n- Máte ho pod kontrolou — nikdo ho nezruší ani nezpoplatní\n- Rozumíte mu a víte, co dělá\n\nOficiální integrace má zase jiné plusy:\n- Udržuje ji výrobce, ne vy\n- Může mít přístup k věcem, kam vás veřejné API nepustí\n- Snáz ji doporučíte ostatním\n\nRozumné pravidlo: vlastní nástroj má smysl držet, dokud ho nová integrace nepřekoná ve všem, co je pro vás důležité. Přejít jen proto, že je něco „oficiální“, není dost dobrý důvod. Přejít proto, že vám to ušetří hodinu práce týdně? To už důvod je.\n\nA vy? Máte vlastní nástroj, který nahrazuje něco oficiálního?",
-      "read_minutes": 2,
-      "source_date": "2026-05-13",
-      "topics": [
-        "Workflow",
-        "MCP",
-        "Claude Code"
-      ],
-      "source_group": "vibecoding",
-      "source_msg_times": [
-        "13:13",
-        "12:50",
-        "13:06"
-      ]
     }
   ],
   "resurfacing": {

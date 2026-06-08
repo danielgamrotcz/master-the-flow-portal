@@ -68,24 +68,6 @@
       ]
     },
     {
-      "id": "2026-04-26-04",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Builder",
-      "title": "Drive connector nebo Drive for Desktop pro sdílenou znalostní bázi",
-      "excerpt": "Firma nasazuje Claude Team pro sedm lidí a řeší, jak k němu připojit centrální znalostní bázi z Google Disku. Má použít konektor, nebo lokální synchronizaci přes Drive for Desktop?",
-      "body": "Jedna členka komunity nasazuje licenci Claude Team pro sedmičlenný tým. Centrální znalostní bázi budou mít na Google Disku: metodiky, legislativu, interní postupy a šablony. Tým z ní bude číst a zároveň do ní ukládat výstupy.\n\nNa komunitu se obrátila s otázkou: je lepší propojit Claude s Google Diskem přes nativní konektor, nebo přes Drive for Desktop, tedy lokální synchronizaci souborů?\n\nNejde jen o technický detail. Drive konektor se snáz spravuje, není nutné ho instalovat na každý počítač a běží přes cloudové API. Drive for Desktop naopak synchronizuje soubory do počítače. AI pak pracuje přímo se soubory na disku, což může být rychlejší a stabilnější u větších objemů dat nebo při práci offline. Instalace u kolegů je jednorázová práce.\n\nPři 100–200 dokumentech měsíčně a větší znalostní bázi je to otázka, kterou bude řešit nejeden tým při zavádění AI nástrojů ve firmě. Pokud máte zkušenost s jednou nebo druhou variantou, podělte se.",
-      "read_minutes": 2,
-      "source_date": "2026-04-26",
-      "topics": [
-        "AI nástroje",
-        "Workflow"
-      ],
-      "source_group": "inspiracediskuze",
-      "source_msg_times": [
-        "16:19"
-      ]
-    },
-    {
       "id": "2026-04-26-05",
       "type": "INSIGHT",
       "level": "Builder",

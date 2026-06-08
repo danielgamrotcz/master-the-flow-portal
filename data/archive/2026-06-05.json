@@ -44,24 +44,6 @@
         "15:25",
         "15:30"
       ]
-    },
-    {
-      "id": "2026-06-05-03",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Začátečník",
-      "title": "30minutová nahrávka v Voice Memos — jak ji dostat ven?",
-      "excerpt": "Jedna členka má v iPhone Voice Memos nahrávku uloženou lokálně bez iCloudu. V timeline ji vidí, ale přehrát ani exportovat nešla. AI nepomohl. Řešení zatím nikdo nenabídl.",
-      "body": "Nahrávka je viditelná v timeline, ale tlačítko Play nereaguje, AirDrop nefunguje, ani uložení do Files. Jiné nahrávky z téhož dne fungují normálně.\n\nKontext: stejný telefon, stejný den, hodinový hovor AirDropnutý do Macu bez problémů a přepsaný přes MacWhisper ve free verzi.\n\nAI nepomohl ani po delším hledání. Otázka zůstala v kanálu bez odpovědi.",
-      "read_minutes": 1,
-      "source_date": "2026-06-05",
-      "topics": [
-        "Workflow",
-        "Diktování"
-      ],
-      "source_group": "inspirace--diskuze",
-      "source_msg_times": [
-        "17:19"
-      ]
     }
   ],
   "resurfacing": {

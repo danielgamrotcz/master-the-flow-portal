@@ -87,24 +87,6 @@
       ]
     },
     {
-      "id": "2026-04-21-05",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Builder",
-      "title": "Přepínat na nový nástroj nebo zůstat u toho, co funguje?",
-      "excerpt": "Každé dva týdny se objeví „lepší alternativa“ k tomu, co zrovna používáte. Komunita řešila, jestli přejít z Claude na Codex — a podle čeho se při takovém rozhodování obecně řídit.",
-      "body": "V diskuzi padla konkrétní otázka: po poslední aktualizaci OpenAI Codexu přejít, nebo zůstat u Claude?\n\nZazněl názor, který se hodí skoro na každé podobné rozhodování. Pokud vám současný nástroj funguje a zvládnete s ním to, co potřebujete, nepřepínejte jen proto, že vyšel nový benchmark nebo to teď všichni řeší na LinkedInu. Každá změna nástroje stojí čas. Musíte si zvyknout na jiné chování, znovu nastavit workflow a narazíte na nové problémy.\n\nTo neznamená ignorovat vývoj. Jen je rozdíl mezi „tenhle nástroj neumí něco, co fakt potřebuju“ a „tenhle nástroj má o 3 % horší skóre v HumanEval benchmarku“.\n\nOtázka pro komunitu: podle čeho poznáte, že už má přechod smysl? Kde je pro vás hranice?",
-      "read_minutes": 2,
-      "source_date": "2026-04-21",
-      "topics": [
-        "ChatGPT",
-        "Workflow"
-      ],
-      "source_group": "mastertheflow—hlavní",
-      "source_msg_times": [
-        "16:52"
-      ]
-    },
-    {
       "id": "2026-04-21-06",
       "type": "INSIGHT",
       "level": "Začátečník",

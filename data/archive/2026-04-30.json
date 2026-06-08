@@ -67,24 +67,6 @@
       ]
     },
     {
-      "id": "2026-04-30-04",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Builder",
-      "title": "Zhoršuje se Claude záměrně, nebo nestíhá nápor?",
-      "excerpt": "Čím dál víc lidí si všímá, že Claude je pomalejší a na limity naráží rychleji než před pár měsíci. Je to problém s kapacitou, nebo záměrná změna v monetizaci?",
-      "body": "Jeden člen komunity pojmenoval věc, o které se v AI skupinách mluví čím dál častěji. S masovým přílivem uživatelů Claude buď nezvládá kapacity, nebo záměrně upravuje výkon a limity tak, aby tlačil lidi do dražších tarifů.\n\nV praxi to vypadá stejně. Tarif za 20 dolarů dřív stačil na celý pracovní den. Dneska se zasekne po 2–3 hodinách. Týdenní limit je pryč už v pátek.\n\nAnthropic oznámil „less usage“ v odpoledních hodinách, ale nevysvětlil jasně, co to znamená v číslech. Zároveň přidal dražší plány a Claude Max tier.\n\nOtázka pro komunitu: vidíte stejný trend? Pomohl vám přechod na vyšší tarif, nebo změna stylu práce? A jak velkou roli podle vás hraje samotný způsob práce, třeba délka vláken a velikost kontextu, oproti politice Anthropicu?",
-      "read_minutes": 2,
-      "source_date": "2026-04-30",
-      "topics": [
-        "AI nástroje"
-      ],
-      "source_group": "vibecoding",
-      "source_msg_times": [
-        "13:28",
-        "14:00"
-      ]
-    },
-    {
       "id": "2026-04-30-05",
       "type": "NÁSTROJE",
       "level": "Expert",

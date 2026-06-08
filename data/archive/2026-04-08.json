@@ -78,26 +78,6 @@
         "21:57",
         "12:34"
       ]
-    },
-    {
-      "id": "2026-04-08-05",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Builder",
-      "title": "Stačí WhatsApp pro asynchronní komunitní diskuzi",
-      "excerpt": "Jeden člen otevřel zajímavé téma: vlákna na WhatsAppu se často uzavřou dřív, než stihne zareagovat. Navrhl jako alternativu Slack. Je WhatsApp vhodný pro hlubší diskuze, nebo kvůli němu přicházíme o hodnotná témata?",
-      "body": "Člen komunity si všiml jedné věci: zajímavé vlákno si přečetl až po pěti dnech a už se bál ozvat, protože téma působilo jako uzavřené. Navrhl Slack, kde vlákna zůstávají dostupná a dají se oživit i později.\n\nTo je u WhatsApp komunit reálný problém. Zprávy rychle zapadnou v historii a kontext se špatně dohledává. WhatsApp má ale jednu velkou výhodu: pro nové členy je bez bariér. Nemusí se nikam registrovat ani instalovat další aplikaci.\n\nSlack nebo Discord umí líp vlákna, vyhledávání i organizaci diskuzí. Jenže přesun by nejspíš odřízl část lidí, kteří si novou aplikaci nenainstalují.\n\nNěkterá témata potřebují delší diskuzi, než WhatsApp dobře zvládá. Není to ale jen technická otázka. Je to i o zvyku komunity. Jak se v ní přirozeně diskutuje? Jak dlouho udrží téma pozornost? A je Slack fakt řešení, nebo jen přesune problém jinam?",
-      "read_minutes": 2,
-      "source_date": "2026-04-08",
-      "topics": [
-        "Email",
-        "Fokus"
-      ],
-      "source_group": "inspiracediskuze",
-      "source_msg_times": [
-        "15:15",
-        "12:34",
-        "12:48"
-      ]
     }
   ],
   "resurfacing": {

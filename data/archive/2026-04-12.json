@@ -68,32 +68,6 @@
         "19:27",
         "19:26"
       ]
-    },
-    {
-      "id": "2026-04-12-04",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Builder",
-      "title": "Kde kreslíte hranici mezi experimentem a produkcí",
-      "excerpt": "Experiment, prototyp, produkce. Kde je mezi nimi hranice? A jak poznáte, že už jste ji překročili? Debata o bezpečnosti znovu otevřela otázku, která se v komunitě pořád vrací.",
-      "body": "Debata o bezpečnosti vibecodovaných aplikací otevřela otázku, na kterou není jednoduchá odpověď: kdy je to, co jste postavili, dost dobré na to, abyste to ukázali klientovi, sdíleli veřejně nebo nasadili do provozu?\n\nJedna členka to vystihla přesně: na citlivá data si dává pozor, ale v kyberbezpečnosti se nevyzná. Kde je tedy hranice, když nemáte technické zázemí?\n\nPár pohledů z diskuze:\n\n- Pokud aplikace nepracuje s daty třetích stran a slouží jen jako interaktivní přehled nebo checklist, riziko je nízké.\n- Jakmile se objeví přihlašování, platby nebo klientská data, měl by se na to podívat někdo, kdo ví, co hledat.\n- Funkční neznamená bezpečné. Aplikace může běžet skvěle, a přitom mít veřejně přístupnou databázi.\n- Rychlý test: ukažte Claudovi svůj kód a zeptejte se: „Jaké bezpečnostní problémy tady vidíš?“ Odpověď vás může překvapit.\n\nOtázka pro vás: kde tuhle hranici kreslíte vy?",
-      "read_minutes": 2,
-      "source_date": "2026-04-12",
-      "topics": [
-        "Vibe Coding",
-        "Databáze",
-        "Claude Code"
-      ],
-      "source_group": "inspiracediskuze",
-      "source_msg_times": [
-        "18:43",
-        "18:49",
-        "19:27",
-        "19:26",
-        "20:17",
-        "22:05",
-        "22:06",
-        "20:07"
-      ]
     }
   ],
   "resurfacing": {

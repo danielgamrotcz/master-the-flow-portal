@@ -41,23 +41,6 @@
       "source_msg_times": [
         "11:57"
       ]
-    },
-    {
-      "id": "2026-05-30-03",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Builder",
-      "title": "Vybíráte model podle čísla verze, nebo podle chování",
-      "excerpt": "Automaticky sáhnout po nejnovějším modelu je lákavé, ale pro konkrétní použití to nemusí být nejlepší volba. Jak to máte vy?",
-      "body": "V komunitě se otevřelo téma, které vypadá jednoduše, ale není. Často bereme jako samozřejmost, že vyšší číslo verze znamená lepší výsledky. U jazykových modelů to tak přímočaré není.\n\nKaždý model je laděný na něco jiného. Jeden líp zvládá reasoning, druhý je rychlejší, třetí vyjde levněji na tokeny. A ne všechno se automaticky přenese do další verze. Dobře to ukázal příklad extended thinking u Opusu.\n\nOtázka pro komunitu: používáte na různé typy práce různé modely? Nebo jedete pořád na jeden a spoléháte, že to bude stačit? A jak poznáte, že už nestačí? Čekáte, až dá špatnou odpověď, nebo si ho testujete dopředu?",
-      "read_minutes": 1,
-      "source_date": "2026-05-30",
-      "topics": [
-        "AI nástroje"
-      ],
-      "source_group": "inspiracediskuze",
-      "source_msg_times": [
-        "11:57"
-      ]
     }
   ],
   "resurfacing": {

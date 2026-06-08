@@ -6,26 +6,7 @@
     "groups": 1,
     "members": 3
   },
-  "cards": [
-    {
-      "id": "2026-04-16-01",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Builder",
-      "title": "Jak dlouho nechat mikrofon Uttera zapnutý",
-      "excerpt": "Jeden člen řeší, jestli je na iOS bezpečné a šetrné k baterii prodloužit v Utteru dostupnost mikrofonu nad výchozích 5 minut. Komunita na to zatím nemá jasnou odpověď.",
-      "body": "Uttero na iOS má ve výchozím nastavení přístup k mikrofonu omezený na 5 minut. Člen komunity se ptá, co se stane, když tenhle limit zrušíte nebo výrazně prodloužíte. Drží pak aplikace mikrofon fyzicky zapnutý, a tím víc vybíjí baterii? Nebo jde jen o oprávnění v systému, které se použije až ve chvíli, kdy aplikace mikrofon opravdu potřebuje?\n\nDruhá část otázky je bezpečnost. Delší povolení znamená, že aplikace může k mikrofonu přistupovat bez dalšího potvrzení. Pro většinu lidí to nejspíš nebude praktický problém. Pokud jste ale na soukromí citlivější, stojí to za zvážení.\n\nV komunitě zatím nikdo přímo neporovnal obě nastavení. Pokud Uttero používáte na iOS a víte, jak se to chová v praxi, dejte vědět, co jste zjistili.",
-      "read_minutes": 2,
-      "source_date": "2026-04-16",
-      "topics": [
-        "AI nástroje"
-      ],
-      "source_group": "inspiracediskuze",
-      "source_msg_times": [
-        "19:49",
-        "10:16"
-      ]
-    }
-  ],
+  "cards": [],
   "resurfacing": {
     "id": "2026-03-31-04",
     "type": "OTEVŘENÁ OTÁZKA",

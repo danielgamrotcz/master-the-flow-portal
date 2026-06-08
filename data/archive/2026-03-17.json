@@ -110,26 +110,6 @@
         "15:15",
         "12:34"
       ]
-    },
-    {
-      "id": "2026-03-17-06",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Expert",
-      "title": "Opus nebo Sonnet pro přípravu zadání projektu",
-      "excerpt": "Jaký model použít při přípravě zadání před vývojem? Opus s Extended Thinking, nebo stačí Sonnet? Tahle otázka ukazuje, že část komunity začíná o AI přemýšlet víc strategicky.",
-      "body": "V komunitě padla otázka, která ukazuje posun v přemýšlení. Už nejde jen o to, co s AI dělat. Spíš jak ji používat dobře. Třeba při přípravě zadání pro Claude Code: vzít Opus s Extended Thinking, nebo stačí Sonnet?\n\nOpus se hodí na složitější věci. Tam, kde je potřeba jít víc do hloubky. Návrh architektury, rozpad složitého problému, hledání okrajových případů, které člověka hned nenapadnou. Extended Thinking mu dá víc prostoru si odpověď postupně promyslet.\n\nSonnet je rychlejší a levnější. Na většinu běžných zadání úplně stačí. Pokud zadání není architektonicky složité nebo nebezpečně vágní.\n\nPrakticky: začněte Sonnetem. Když výsledek působí povrchně nebo v něm chybí hlubší rozbor toho, co se může pokazit, přepněte na Opus s Extended Thinking a nechte ho zadání zrevidovat.\n\nUž samotná otázka je ale dobré znamení. Kdo se ptá takhle, přemýšlí o AI správně.",
-      "read_minutes": 2,
-      "source_date": "2026-03-17",
-      "topics": [
-        "Claude Code",
-        "Vibe Coding"
-      ],
-      "source_group": "vibecoding",
-      "source_msg_times": [
-        "15:15",
-        "12:34",
-        "19:07"
-      ]
     }
   ],
   "resurfacing": null,

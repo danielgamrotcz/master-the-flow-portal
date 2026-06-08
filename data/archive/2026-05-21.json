@@ -55,28 +55,6 @@
       ]
     },
     {
-      "id": "2026-05-21-03",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Builder",
-      "title": "Dává ještě dedikovaný task manager smysl?",
-      "excerpt": "Dnešní debata byla o tom, jestli má ještě smysl používat Things, Google Tasks nebo Evernote. Claude přes MCP zvládne číst e-maily, kalendář i soubory najednou. Může časem nahradit specializovaný nástroj?",
-      "body": "Část komunity jede minimalisticky přes Google Calendar a Google Tasks. Jiní používají Obsidian nebo hybridní setup. Zatím nikdo nepopsal funkční setup, kde by Claude přes MCP úplně nahradil samostatný task manager. Debata ale naznačuje, že se k tomu blížíme.\n\nProč si nechat samostatný nástroj: jeden přehledný pohled na úkoly, rychlý přístup bez otevírání chatu, notifikace a připomínky, které běží samy, bez ptaní.\n\nProč používat Claude přes MCP: umí vzít e-maily, kalendář a poznámky dohromady a navrhnout priority podle kontextu. To statický task manager neumí.\n\nOtázka k zamyšlení: používáte ještě samostatný task manager, nebo se vám workflow přesunulo jinam? A pokud kombinujete, co zůstalo v nástroji a co už převzala AI?",
-      "read_minutes": 2,
-      "source_date": "2026-05-21",
-      "topics": [
-        "Email",
-        "Poznámky",
-        "Workflow",
-        "Obsidian"
-      ],
-      "source_group": "inspiracediskuze",
-      "source_msg_times": [
-        "14:30",
-        "14:39",
-        "14:35"
-      ]
-    },
-    {
       "id": "2026-05-21-04",
       "type": "INSIGHT",
       "level": "Expert",

@@ -105,32 +105,6 @@
         "09:52",
         "14:57"
       ]
-    },
-    {
-      "id": "2026-03-30-06",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Builder",
-      "title": "Šetřit tokeny nebo prostě navýšit tarif?",
-      "excerpt": "Jeden člen komunity upozornil, že ne-IT styl zadávání spotřebuje výrazně víc tokenů. Tím se otevírá praktická otázka, na kterou není jednoznačná odpověď.",
-      "body": "Z diskuze vylezla zajímavá věc. Vibe coding bez IT zázemí funguje a umí přinést výsledky. Zároveň ale platí, že volnější a méně strukturované prompty sežerou víc tokenů než přesné technické zadání.\n\nA tím vzniká praktická otázka: vyplatí se platit vyšší tarif a psát zadání přirozeně, nebo se radši naučit prompty formulovat úsporněji?\n\nAsi záleží, v jaké fázi člověk je. Začátečník, který teprve zkouší, co AI umí, potřebuje prostor na experimenty. Přesnější prompty se naučí časem. Power user, který přesně ví, co chce dostat, může dost ušetřit tím, že zadání líp strukturuje.\n\nRozumíte tokenům a pracujete s nimi vědomě, nebo to zatím jedete spíš od oka a jistíte to vyšším tarifem?",
-      "read_minutes": 2,
-      "source_date": "2026-03-30",
-      "topics": [
-        "Vibe Coding",
-        "Prompting",
-        "Claude Code"
-      ],
-      "source_group": "vibecoding",
-      "source_msg_times": [
-        "09:59",
-        "10:06",
-        "10:27",
-        "11:42",
-        "09:52",
-        "14:57",
-        "11:39",
-        "14:49"
-      ]
     }
   ],
   "resurfacing": {

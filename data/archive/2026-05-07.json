@@ -43,26 +43,6 @@
       ]
     },
     {
-      "id": "2026-05-07-03",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Builder",
-      "title": "Jaký model přepisuje vaše nahrávky v Plaudu",
-      "excerpt": "Padla otázka, jaké AI modely Plaud používá na přepis. Objevilo se i podezření, že mezi nimi můžou být čínské. Na webu to ale nikde není jasně napsané. Jak moc řešíte, co se s vašimi nahrávkami ve skutečnosti děje?",
-      "body": "V komunitě padla otázka, na kterou zatím není jasná odpověď: jaký model v Plaudu konkrétně přepisuje mluvené slovo do textu. Oficiálně to nikde uvedené není. Na webu prý dřív šel model pro přepis vybrat, ale jaký to byl, zůstává nejasné.\n\nNejde jen o Plaud. Spousta nástrojů na přepis, shrnutí nebo analýzu textu neříká, jaký model používá. A to může být dost podstatné, když nahráváte pracovní schůzky, citlivé rozhovory nebo interní informace.\n\nPřed výběrem nástroje na přepis se vyplatí zeptat:\n\n- Kde se nahrávka zpracovává? Lokálně, nebo v cloudu?\n- Kdo provozuje infrastrukturu? EU, USA, Čína?\n- Jaký model přepis dělá a co se s daty stane po zpracování?\n\nU AI nástrojů je transparentnost pořád spíš výjimka než pravidlo. Pokud pracujete s citlivými daty, hledejte nástroje, které tohle říkají jasně a napřímo.",
-      "read_minutes": 3,
-      "source_date": "2026-05-07",
-      "topics": [
-        "AI nástroje",
-        "Meeting"
-      ],
-      "source_group": "inspiracediskuze",
-      "source_msg_times": [
-        "07:49",
-        "06:52",
-        "06:48"
-      ]
-    },
-    {
       "id": "2026-05-07-04",
       "type": "POSTAVIL JSEM",
       "level": "Builder",

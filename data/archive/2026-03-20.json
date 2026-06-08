@@ -91,28 +91,6 @@
         "12:11",
         "12:14"
       ]
-    },
-    {
-      "id": "2026-03-20-05",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Začátečník",
-      "title": "Nástroje znám, ale systém nemám",
-      "excerpt": "Víc lidí z komunity řeší stejný problém: znají spoustu nástrojů, ale nemají systém, kde začít a jak si je roztřídit. Možná právě tohle odděluje ty, kdo AI jen zkouší, od těch, kdo ji opravdu používají. Jak jste si ten systém našli vy?",
-      "body": "V diskuzi zaznělo něco, co možná řeší víc lidí v komunitě: „Nástroje znám, ale mám v tom hrozný chaos.“\n\nZnát nástroje a mít systém jsou dvě různé věci. Nástroje jsou jako suroviny v lednici. Systém je recept. Říká, v jakém pořadí je použít, na co a kdy.\n\nBez systému se snadno stane",
-      "že": "n- Víš o patnácti nástrojích, ale pravidelně používáš nula\n- Každý týden zkusíš něco nového, ale nic nevydrží\n- Nevíš, kde začít, takže nezačneš vůbec\n\nOtázka pro komunitu: Jak jste si k systému přišli? Měli jste přehled nástrojů předem, nebo jste začali s jedním konkrétním problémem a přidávali postupně? A co vám pomohlo se v tom neztratit?\n\nV reakci na tohle téma se připravuje přehled aplikací i online průvodce úrovněmi zaměřený na Claude Code, od základní konfigurace výš. Pokud ti tahle otázka rezonuje, dej vědět v diskuzi.",
-      "read_minutes": 2,
-      "source_date": "2026-03-20",
-      "topics": [
-        "Produktivita"
-      ],
-      "source_group": "vibecoding",
-      "source_msg_times": [
-        "12:11",
-        "12:20",
-        "12:27",
-        "12:29",
-        "12:42"
-      ]
     }
   ],
   "resurfacing": null,

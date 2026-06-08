@@ -67,26 +67,6 @@
       ]
     },
     {
-      "id": "2026-05-25-04",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Builder",
-      "title": "Dává smysl task manager, když mám Claude?",
-      "excerpt": "Otázka z komunity: Proč si vést samostatný úkolníček, když se Claude přes MCP dostane skoro kamkoliv? Padala různá řešení. Od Google ekosystému přes Things s Obsidianem až po týmové projektové nástroje.",
-      "body": "Claude s MCP konektorem umí číst z Notionu, Todoistu nebo Google Tasks. Umí tam i zapisovat a propojovat úkoly s tím, co se řeší v konverzaci. Má pak ještě smysl mít samostatný task manager?\n\nPro task manager mluví tohle: přehledný seznam úkolů s prioritami, termíny a opakováním pořád líp funguje ve specializované aplikaci. Notifikace, widgety a mobilní používání Claude nenahradí. A v týmech je sdílený úkolníček pořád základ.\n\nPro Claude jako hlavní místo: když úkol souvisí s konverzací nebo projektem, dává smysl držet ho u zdroje. Automatizace přes hlas nebo iOS zkratku, která úkol rovnou zapíše do Notionu, je v mnoha případech rychlejší než otevírat aplikaci.\n\nSkupina se neshodla. A není to jen teorie. Záleží na tom, co konkrétnímu člověku v jeho systému ubere víc tření.",
-      "read_minutes": 2,
-      "source_date": "2026-05-25",
-      "topics": [
-        "Automatizace",
-        "Obsidian",
-        "Notion",
-        "MCP"
-      ],
-      "source_group": "mastertheflow—hlavní",
-      "source_msg_times": [
-        "15:18"
-      ]
-    },
-    {
       "id": "2026-05-25-05",
       "type": "POSTAVIL JSEM",
       "level": "Builder",

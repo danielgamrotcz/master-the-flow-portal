@@ -67,29 +67,6 @@
       ]
     },
     {
-      "id": "2026-05-24-04",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Builder",
-      "title": "Jak zapisovat z Claude přímo do Obsidianu",
-      "excerpt": "Obsidian nemá konektor pro Claude.ai. V diskuzi ale padlo, že ho vlastně ani nepotřebuje. Jak to řešíte vy?",
-      "body": "Jeden člen používá capture workflow, kde data nejdřív padají do Notionu a pak se přes skill přehazují do Obsidianu, protože Obsidian konektor nemá. Jiný člen diskuze ale naznačil, že Obsidian konektor vlastně nepotřebuje. Zpráva bohužel zůstala nedopsaná.\n\nObsidian běží nad složkou markdownových souborů, takže technicky jde zapisovat přímo do vaultu přes filesystem, MCP nebo Claude Code s přístupem ke složce. Pro ty, kdo nejedou přes terminál, to ale zatím není úplně jednoduché.\n\nPokud tohle teď řešíte nebo máte funkční postup, hoďte ho prosím do diskuze.",
-      "read_minutes": 1,
-      "source_date": "2026-05-24",
-      "topics": [
-        "Claude Code",
-        "Poznámky",
-        "Workflow",
-        "Obsidian"
-      ],
-      "source_group": "vibecoding",
-      "source_msg_times": [
-        "16:27",
-        "14:26",
-        "17:04",
-        "17:27"
-      ]
-    },
-    {
       "id": "2026-05-24-05",
       "type": "INSIGHT",
       "level": "Začátečník",

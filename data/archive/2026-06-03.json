@@ -53,30 +53,6 @@
       ]
     },
     {
-      "id": "2026-06-03-03",
-      "type": "OTEVŘENÁ OTÁZKA",
-      "level": "Builder",
-      "title": "Plaud a čínská infrastruktura: kde je vaše hranice",
-      "excerpt": "Plaud patří v komunitě k nejlíp hodnoceným záznamníkům. Jeho cloud ale běží na čínské infrastruktuře. Jeden člen to označil za dealbreaker, jiní to berou jako přijatelné riziko.",
-      "body": "Plaud dostává hodně pochval za kvalitu přepisu, rozpoznávání mluvčích a práci s více jazyky najednou. Má to ale háček: jeho cloud běží v Číně. Pro část lidí je to stopka, i kdyby fungoval sebelepší.\n\nKde máte hranici vy?\n\nProč ho používat:\n- Data ze schůzek jsou většinou pracovní, ne osobní\n- Americké cloudové firmy data taky sledují, jen jinak\n- Praktický přínos, tedy kvalita a funkce, může převážit nad nejistým rizikem\n\nProč ho nepoužívat:\n- Čínská regulace umožňuje vládě přístup k datům soukromých firem\n- U citlivých obchodních informací nebo klientů s compliance požadavky to může být problém\n- Jakmile data odejdou ze zařízení, už nad nimi nemáte kontrolu\n\nFireflies z USA nebo lokální Whisper jsou alternativy pro ty, kdo chtějí jiný model důvěry. V komunitě se tohle téma otevřelo a každý si ho musí rozhodnout sám. Záleží hlavně na tom, s jakými daty pracujete a pro koho.",
-      "read_minutes": 2,
-      "source_date": "2026-06-03",
-      "topics": [
-        "Workflow"
-      ],
-      "source_group": "inspirace--diskuze",
-      "source_msg_times": [
-        "14:43",
-        "15:36",
-        "17:15",
-        "21:06",
-        "12:20",
-        "12:29",
-        "15:31",
-        "16:48"
-      ]
-    },
-    {
       "id": "2026-06-03-04",
       "type": "INSIGHT",
       "level": "Začátečník",
