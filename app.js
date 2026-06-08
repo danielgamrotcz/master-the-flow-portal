@@ -1854,8 +1854,8 @@ function attachSwipeToCard(wrap) {
     longPressTimer = setTimeout(() => {
       longPressTimer = null;
       if (swiping) return;
-      el.dataset.swipePrevented = '1';
-      setTimeout(() => delete el.dataset.swipePrevented, 500);
+      // Swallow the click that fires after touchend — once, capture phase
+      el.addEventListener('click', e => { e.stopPropagation(); e.preventDefault(); }, { once: true, capture: true });
       showCardContextMenu(touchX, touchY, el.dataset.id);
     }, 500);
   }, { passive: true });

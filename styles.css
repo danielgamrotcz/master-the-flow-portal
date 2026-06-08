@@ -277,6 +277,8 @@ a:hover { text-decoration: underline; }
   cursor: pointer;
   transition: background 150ms ease, border-color 150ms ease, transform 100ms ease;
   position: relative;
+  user-select: none;
+  -webkit-user-select: none;
   overflow: hidden;
 }
 
