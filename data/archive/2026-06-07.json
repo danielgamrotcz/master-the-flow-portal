@@ -1,0 +1,71 @@
+{
+  "date": "2026-06-07",
+  "generated_at": "2026-06-08T05:36:34Z",
+  "stats": {
+    "messages": 2,
+    "groups": 1,
+    "members": 1
+  },
+  "cards": [
+    {
+      "id": "2026-06-07-01",
+      "type": "INSIGHT",
+      "level": "Pokročilý",
+      "topics": [
+        "Fokus",
+        "Produktivita"
+      ],
+      "title": "Otevřené otázky místo cílů jako myšlenkový filtr",
+      "excerpt": "Místo cílů nebo úkolů si jeden člen nosí v hlavě dvanáct otevřených otázek. Věci, na které chce jednou znát odpověď, ale cíleně je nezkoumá. Ty otázky mu pak fungují jako pasivní filtr na všechno, co čte, poslouchá nebo zažívá. Metoda vychází z toho, jak prý uvažoval jeden slavný fyzik.",
+      "body": "Princip je jednoduchý. Vyberete si 10–15 otázek z různých oblastí života: rodina, zdraví, práce, peníze, obsah. Nedáváte si termíny ani konkrétní kroky. Ty otázky vám prostě zůstanou v hlavě.\n\nKdykoli pak narazíte na článek, podcast, rozhovor nebo výsledek z práce, automaticky zkoušíte, jestli to náhodou neodpovídá na některou z nich. Jde to samo, bez tlačení. Souvislosti se začnou objevovat přirozeně.\n\nNejvětší síla téhle metody je v tom, že otázky nejsou z jednoho oboru. Jsou schválně namíchané. Výzkum o výživě tak může najednou pomoct s pracovním rozhodnutím. Přednáška o dětské psychologii zase sedne na obecný princip motivace. Při cíleném hledání by vás takové propojení nejspíš vůbec nenapadlo.\n\nV praxi stačí otázky sepsat — třeba do poznámky, nebo si je jen nechat v hlavě — a normálně žít dál. Žádná údržba, žádné přepisování. Časem se samy mění. Na některé najdete odpověď, jiné přibudou. Hlavní je, že to nejsou úkoly. Jsou to věci, které vás dlouhodobě zajímají.",
+      "read_minutes": 2,
+      "source_date": "2026-06-07"
+    },
+    {
+      "id": "2026-06-07-02",
+      "type": "INSIGHT",
+      "level": "Začátečník",
+      "topics": [
+        "Fokus",
+        "Produktivita",
+        "Poznámky"
+      ],
+      "title": "Proč dává smysl číst napříč obory",
+      "excerpt": "Čtení o výchově, výživě nebo psychologii může vypadat jako ztráta času. Co to má společného s prací? Jenže mozek, který už má nějaký kontext, si začne sám hledat souvislosti i tam, kde by je člověk nečekal. Díky tomu narazíte na spojení, ke kterým byste se cíleným hledáním vůbec nedostali.",
+      "body": "Jeden člen komunity popisoval, jak mu to funguje v praxi. Sleduje rodinu, zdraví, práci i finance zároveň. Nesnaží se témata propojovat. Souvislosti přicházejí samy.\n\nPřednáška o rozhodování u dětí mu pomohla vyřešit pracovní dilema. Článek o výživě ho přivedl k jinému pohledu na energii v práci. Nic z toho neplánoval.\n\nFunguje to jednoduše: když víte, co hledáte, třeba díky otevřeným otázkám, mozek si nové informace automaticky porovnává s vaším kontextem. Bez námahy.\n\nPro lidi, kteří mají pocit, že „nečtou dost“ nebo „nestíhají sledovat novinky“, je tohle alternativa k panice z informačního přetížení. Nemusíte stíhat všechno. Stačí vědět, co vás zajímá. Pak toho může být míň, ale líp trefeného. Širší záběr neznamená roztříštěnost. Je to prostor pro nečekané souvislosti.",
+      "read_minutes": 2,
+      "source_date": "2026-06-07"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-05-18-06",
+    "source_date": "2026-05-18",
+    "excerpt": "V diskuzi se rychle shodli: pro český trh má Comgate lepší podmínky než Stripe.",
+    "body": "V komunitě se řešily platební brány pro český trh. Shoda byla rychlá: Comgate má lepší podmínky než Stripe.",
+    "topics": [
+      "Automatizace"
+    ],
+    "title": "Pro český trh má Comgate lepší podmínky než Stripe",
+    "resurfaced_from": "2026-05-18"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspirace--diskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "08:55",
+            "author": "Daniel",
+            "text": "Tohle by bylo fajn. Jen ty data jsou očištěné o jména, čísla apod. Jediné jméno bude moje. 🤷‍♂️"
+          },
+          {
+            "time": "19:26",
+            "author": "Daniel",
+            "text": "[obrázek] Už nevím kdo, ale v nějakých článcích jsem četl o tom, jak údajně Feynman přemýšlel (jestli je to pravda, kdo ví, každopádně mi to hezky funguje).\nDržte si v hlavě X otevřených otázek. Ne úkoly, ne cíle (nemám cíle). Otázky, na které nemáte odpověď, ale chcete ji najít.\nOtázky si nezkoušíte aktivně zodpovědět. Necháte je ležet. Pokaždé, když narazíte na nový nápad, článek, rozhovor nebo výsledek, otestujete ho proti každé z nich. Občas přijde shoda. Najednou zjistíte, že něco, co jste četli o výživě, odpovídá na otázku o práci. Nebo že přednáška o psychologii dětí sedí na rozhodování. Je to dlouhodobě aktivní filtr.\nMoje otázky vypadají takhle… Jak vychovat Olivera k samostatnosti? Jak mít hodně energie? Jak být v osmdesáti soběstačný? Dvanáct věcí, které mě zajímají dlouhodobě, napříč oblastmi. Rodina, zdraví, práce, peníze, obsah. Když čtu nebo poslouchám cokoliv, testuju, jestli to někam pasuje. Neplánuju to. Prostě se to děje. A protože vím, co hledám, často nacházím super spojitosti."
+          }
+        ]
+      }
+    ]
+  }
+}
