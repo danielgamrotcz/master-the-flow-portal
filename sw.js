@@ -1,5 +1,6 @@
-const CACHE = 'mtf-v3';
-const STATIC = ['/', '/index.html', '/app.js', '/styles.css', '/favicon.svg'];
+const CACHE = 'mtf-v4';
+const STATIC = ['/', '/index.html', '/app.js', '/styles.css', '/favicon.svg',
+  '/manifest.webmanifest', '/icon-192.png', '/icon-512.png', '/apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(STATIC)).then(() => self.skipWaiting()));
@@ -46,8 +47,8 @@ self.addEventListener('push', e => {
   e.waitUntil(
     self.registration.showNotification('Master the Flow', {
       body: 'Nový digest je připraven. Podívej se, co se dnes řešilo.',
-      icon: '/favicon.svg',
-      badge: '/favicon.svg',
+      icon: '/icon-192.png',
+      badge: '/icon-192.png',
       tag: 'digest',
       renotify: true,
       vibrate: [200, 100, 200],
