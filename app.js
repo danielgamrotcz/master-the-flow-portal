@@ -1808,7 +1808,7 @@ function showCardContextMenu(x, y, cardId) {
   const menu = document.createElement('div');
   menu.className = 'card-ctx-menu';
   menu.innerHTML = `
-    <button data-action="vote">${voted ? 'Odebrat srdíčko' : 'Dát srdíčko'}</button>
+    <button data-action="vote">${voted ? 'Odebrat srdíčko' : 'Líbí se mi'}</button>
     <button data-action="read">${read ? 'Označit jako nepřečtené' : 'Označit jako přečtené'}</button>
     <div class="card-ctx-sep"></div>
     <button data-action="share">Sdílet kartu</button>
