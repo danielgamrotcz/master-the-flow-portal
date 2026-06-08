@@ -407,14 +407,7 @@ function poznatek(n) {
 }
 
 function updateHeader(data, isYesterday) {
-  const dateStr = data.date || new Date().toISOString().slice(0, 10);
-  const count = (data.cards || []).length;
   const label = isYesterday ? 'Včera' : 'Dnes';
-
-  const badge = $('live-badge');
-  badge.classList.remove('hidden');
-  $('live-count').textContent = `${label} ${count} ${poznatek(count)}`;
-
   _setNavLabel(label);
 }
 
