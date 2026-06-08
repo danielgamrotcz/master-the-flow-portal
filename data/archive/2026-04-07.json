@@ -20,6 +20,12 @@
         "Claude Code",
         "ChatGPT",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "13:25",
+        "13:01",
+        "12:58"
       ]
     },
     {
@@ -33,6 +39,11 @@
       "source_date": "2026-04-07",
       "topics": [
         "Email"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "13:10",
+        "13:03"
       ]
     },
     {
@@ -48,6 +59,12 @@
         "Claude Code",
         "Automatizace",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "13:25",
+        "13:01",
+        "13:08"
       ]
     },
     {
@@ -63,6 +80,11 @@
         "Claude Code",
         "Automatizace",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "13:33",
+        "13:25"
       ]
     },
     {
@@ -76,6 +98,11 @@
       "source_date": "2026-04-07",
       "topics": [
         "AI nástroje"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "13:21",
+        "13:14"
       ]
     }
   ],

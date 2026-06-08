@@ -21,6 +21,10 @@
         "Dokumentace",
         "MCP",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "07:12"
       ]
     },
     {
@@ -34,6 +38,14 @@
       "source_date": "2026-04-14",
       "topics": [
         "Dokumentace"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "07:12",
+        "12:19",
+        "20:39",
+        "08:52",
+        "09:58"
       ]
     },
     {
@@ -48,6 +60,10 @@
       "topics": [
         "Automatizace",
         "Prompting"
+      ],
+      "source_group": "mastertheflow—hlavní",
+      "source_msg_times": [
+        "03:48"
       ]
     },
     {
@@ -61,6 +77,10 @@
       "source_date": "2026-04-14",
       "topics": [
         "Fokus"
+      ],
+      "source_group": "mastertheflow—hlavní",
+      "source_msg_times": [
+        "03:48"
       ]
     }
   ],

@@ -15,7 +15,12 @@
       "topics": [
         "Meeting"
       ],
-      "title": "Tři hodiny před blokem překopal celou přípravu"
+      "title": "Tři hodiny před blokem překopal celou přípravu",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "19:42",
+        "19:49"
+      ]
     },
     {
       "id": "2026-04-29-02",
@@ -25,7 +30,13 @@
       "topics": [
         "Prompting"
       ],
-      "title": "Přidat feedback účastníků, nebo vsadit na okamžik?"
+      "title": "Přidat feedback účastníků, nebo vsadit na okamžik?",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "19:49",
+        "19:42",
+        "19:50"
+      ]
     },
     {
       "id": "2026-04-29-03",
@@ -35,7 +46,12 @@
       "topics": [
         "Fokus"
       ],
-      "title": "Co cítíš uvnitř, publikum vidí jinak"
+      "title": "Co cítíš uvnitř, publikum vidí jinak",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "19:49",
+        "19:50"
+      ]
     }
   ],
   "resurfacing": {

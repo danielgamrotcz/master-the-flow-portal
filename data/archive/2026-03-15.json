@@ -16,7 +16,14 @@
         "Prompting",
         "Workflow"
       ],
-      "title": "Špatně pochopené zadání? Rovnou druhá iterace"
+      "title": "Špatně pochopené zadání? Rovnou druhá iterace",
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "12:18",
+        "17:48",
+        "12:35",
+        "16:40"
+      ]
     },
     {
       "id": "2026-03-15-02",
@@ -27,7 +34,13 @@
         "Claude Code",
         "Vibe Coding"
       ],
-      "title": "Lovable, Macaly nebo Claude Code — první den šlo všechno"
+      "title": "Lovable, Macaly nebo Claude Code — první den šlo všechno",
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "12:18",
+        "17:48",
+        "16:40"
+      ]
     },
     {
       "id": "2026-03-15-03",
@@ -38,7 +51,15 @@
         "Vibe Coding",
         "Claude Code"
       ],
-      "title": "aribena.com: čtyři měsíce vibe codingu"
+      "title": "aribena.com: čtyři měsíce vibe codingu",
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "12:18",
+        "17:48",
+        "16:40",
+        "10:38",
+        "11:38"
+      ]
     },
     {
       "id": "2026-03-15-04",
@@ -49,7 +70,15 @@
         "Vibe Coding",
         "Claude Code"
       ],
-      "title": "Scraping zakázek naráží na paywally, ne na kód"
+      "title": "Scraping zakázek naráží na paywally, ne na kód",
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "12:18",
+        "17:48",
+        "10:38",
+        "11:38",
+        "19:02"
+      ]
     },
     {
       "id": "2026-03-15-05",
@@ -60,7 +89,16 @@
         "Claude Code",
         "Vibe Coding"
       ],
-      "title": "Z aplikace rovnou na prezentaci"
+      "title": "Z aplikace rovnou na prezentaci",
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "12:18",
+        "17:48",
+        "18:57",
+        "12:31",
+        "15:29",
+        "16:40"
+      ]
     }
   ],
   "resurfacing": null,

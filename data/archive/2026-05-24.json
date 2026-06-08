@@ -21,6 +21,11 @@
         "Workflow",
         "Obsidian",
         "Notion"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "14:26",
+        "16:27"
       ]
     },
     {
@@ -36,6 +41,11 @@
         "Notion",
         "Prompting",
         "Databáze"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "16:27",
+        "14:26"
       ]
     },
     {
@@ -50,6 +60,10 @@
       "topics": [
         "ChatGPT",
         "Workflow"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "14:26"
       ]
     },
     {
@@ -66,6 +80,13 @@
         "Poznámky",
         "Workflow",
         "Obsidian"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "16:27",
+        "14:26",
+        "17:04",
+        "17:27"
       ]
     },
     {
@@ -82,6 +103,13 @@
         "Obsidian",
         "Notion",
         "Dokumentace"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "16:27",
+        "14:26",
+        "16:19",
+        "16:29"
       ]
     }
   ],

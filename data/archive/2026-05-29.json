@@ -18,6 +18,12 @@
       "source_date": "2026-05-29",
       "topics": [
         "Databáze"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "16:40",
+        "14:11",
+        "16:07"
       ]
     },
     {
@@ -32,6 +38,10 @@
       "topics": [
         "Claude Code",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "16:40"
       ]
     },
     {
@@ -47,6 +57,11 @@
         "Email",
         "Fokus",
         "Workflow"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "13:51",
+        "16:42"
       ]
     }
   ],

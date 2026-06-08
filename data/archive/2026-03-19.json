@@ -19,6 +19,16 @@
       "topics": [
         "Claude Code",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "12:17",
+        "14:57",
+        "07:20",
+        "08:00",
+        "12:00",
+        "14:49",
+        "14:56"
       ]
     },
     {
@@ -33,6 +43,10 @@
       "topics": [
         "Vibe Coding",
         "Claude Code"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "07:52"
       ]
     },
     {
@@ -47,6 +61,11 @@
       "topics": [
         "Vibe Coding",
         "Claude Code"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "05:20",
+        "12:17"
       ]
     },
     {
@@ -60,6 +79,13 @@
       "source_date": "2026-03-19",
       "topics": [
         "AI nástroje"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "06:06",
+        "05:54",
+        "12:17",
+        "07:46"
       ]
     },
     {
@@ -74,6 +100,17 @@
       "topics": [
         "Vibe Coding",
         "Claude Code"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "12:00",
+        "07:20",
+        "07:52",
+        "12:04",
+        "12:17",
+        "15:08",
+        "05:54",
+        "12:03"
       ]
     }
   ],

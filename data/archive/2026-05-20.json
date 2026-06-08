@@ -15,7 +15,18 @@
       "topics": [
         "Meeting"
       ],
-      "title": "Brněnský meetup se rýsuje"
+      "title": "Brněnský meetup se rýsuje",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "17:37",
+        "07:49",
+        "07:55",
+        "07:57",
+        "08:01",
+        "08:06",
+        "08:56",
+        "09:18"
+      ]
     },
     {
       "id": "2026-05-20-02",
@@ -25,7 +36,18 @@
       "topics": [
         "Fokus"
       ],
-      "title": "Setuper: nová role, co nastaví systémy za freelancery"
+      "title": "Setuper: nová role, co nastaví systémy za freelancery",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "08:08",
+        "09:18",
+        "09:38",
+        "10:45",
+        "07:41",
+        "07:57",
+        "09:02",
+        "09:11"
+      ]
     },
     {
       "id": "2026-05-20-03",
@@ -36,7 +58,11 @@
         "Automatizace",
         "Obsidian"
       ],
-      "title": "n8n na Hetzneru a Obsidian podle PARA"
+      "title": "n8n na Hetzneru a Obsidian podle PARA",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "10:24"
+      ]
     },
     {
       "id": "2026-05-20-04",
@@ -47,7 +73,13 @@
         "Vibe Coding",
         "Claude Code"
       ],
-      "title": "Dva weby pro nováčky ve vibe codingu"
+      "title": "Dva weby pro nováčky ve vibe codingu",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "21:10",
+        "07:49",
+        "18:11"
+      ]
     },
     {
       "id": "2026-05-20-05",
@@ -58,7 +90,15 @@
         "Vibe Coding",
         "Claude Code"
       ],
-      "title": "rtk na úsporu tokenů: zkušenosti půl na půl"
+      "title": "rtk na úsporu tokenů: zkušenosti půl na půl",
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "15:02",
+        "14:52",
+        "14:57",
+        "13:32",
+        "13:49"
+      ]
     }
   ],
   "resurfacing": {

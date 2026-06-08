@@ -18,6 +18,10 @@
       "source_date": "2026-05-07",
       "topics": [
         "AI nástroje"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "06:48"
       ]
     },
     {
@@ -32,6 +36,10 @@
       "topics": [
         "AI nástroje",
         "Automatizace"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "06:48"
       ]
     },
     {
@@ -46,6 +54,12 @@
       "topics": [
         "AI nástroje",
         "Meeting"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "07:49",
+        "06:52",
+        "06:48"
       ]
     },
     {
@@ -62,6 +76,10 @@
         "Automatizace",
         "Databáze",
         "Claude Code"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "06:48"
       ]
     }
   ],

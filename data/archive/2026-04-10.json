@@ -20,6 +20,10 @@
         "ChatGPT",
         "AI nástroje",
         "Prompting"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "07:28"
       ]
     },
     {
@@ -35,6 +39,10 @@
         "Claude Code",
         "Databáze",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "07:41"
       ]
     },
     {
@@ -50,6 +58,10 @@
         "Claude Code",
         "Databáze",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "07:41"
       ]
     }
   ],

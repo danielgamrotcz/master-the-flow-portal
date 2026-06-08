@@ -19,6 +19,16 @@
       "topics": [
         "Claude Code",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "14:16",
+        "14:56",
+        "14:18",
+        "14:09",
+        "15:31",
+        "13:43",
+        "17:14"
       ]
     },
     {
@@ -34,6 +44,14 @@
         "Claude Code",
         "Automatizace",
         "Vibe Coding"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "08:49",
+        "08:43",
+        "09:46",
+        "13:44",
+        "10:04"
       ]
     },
     {
@@ -48,6 +66,16 @@
       "topics": [
         "Claude Code",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "14:56",
+        "14:09",
+        "14:16",
+        "17:14",
+        "13:43",
+        "14:18",
+        "15:31"
       ]
     },
     {
@@ -64,6 +92,10 @@
         "Prompting",
         "Subagenti",
         "Vibe Coding"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "13:44"
       ]
     },
     {
@@ -78,6 +110,10 @@
       "topics": [
         "Poznámky",
         "Obsidian"
+      ],
+      "source_group": "mastertheflow—hlavní",
+      "source_msg_times": [
+        "08:09"
       ]
     }
   ],

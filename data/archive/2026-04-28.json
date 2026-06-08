@@ -19,6 +19,10 @@
       "topics": [
         "Email",
         "Workflow"
+      ],
+      "source_group": "mastertheflow—hlavní",
+      "source_msg_times": [
+        "20:38"
       ]
     },
     {
@@ -35,6 +39,10 @@
         "Poznámky",
         "Obsidian",
         "Claude Code"
+      ],
+      "source_group": "mastertheflow—hlavní",
+      "source_msg_times": [
+        "20:38"
       ]
     },
     {
@@ -48,6 +56,10 @@
       "source_date": "2026-04-28",
       "topics": [
         "Automatizace"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "21:12"
       ]
     },
     {
@@ -62,6 +74,10 @@
       "topics": [
         "Claude Code",
         "Vibe Coding"
+      ],
+      "source_group": "mastertheflow—hlavní",
+      "source_msg_times": [
+        "20:38"
       ]
     },
     {
@@ -78,6 +94,10 @@
         "Google",
         "Databáze",
         "Vibe Coding"
+      ],
+      "source_group": "mastertheflow—hlavní",
+      "source_msg_times": [
+        "20:38"
       ]
     },
     {
@@ -91,6 +111,10 @@
       "source_date": "2026-04-28",
       "topics": [
         "Obsidian"
+      ],
+      "source_group": "mastertheflow—hlavní",
+      "source_msg_times": [
+        "20:38"
       ]
     }
   ],

@@ -19,6 +19,10 @@
       "topics": [
         "Vibe Coding",
         "Claude Code"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "09:59"
       ]
     },
     {
@@ -33,6 +37,10 @@
       "topics": [
         "Workflow",
         "Prompting"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "10:06"
       ]
     },
     {
@@ -46,6 +54,12 @@
       "source_date": "2026-03-30",
       "topics": [
         "AI nástroje"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "09:52",
+        "09:56",
+        "11:37"
       ]
     },
     {
@@ -59,6 +73,17 @@
       "source_date": "2026-03-30",
       "topics": [
         "AI nástroje"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "14:57",
+        "09:56",
+        "14:58",
+        "15:00",
+        "15:02",
+        "15:03",
+        "09:52",
+        "09:55"
       ]
     },
     {
@@ -72,6 +97,13 @@
       "source_date": "2026-03-30",
       "topics": [
         "Poznámky"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "15:02",
+        "15:03",
+        "09:52",
+        "14:57"
       ]
     },
     {
@@ -87,6 +119,17 @@
         "Vibe Coding",
         "Prompting",
         "Claude Code"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "09:59",
+        "10:06",
+        "10:27",
+        "11:42",
+        "09:52",
+        "14:57",
+        "11:39",
+        "14:49"
       ]
     }
   ],

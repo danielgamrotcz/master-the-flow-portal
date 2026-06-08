@@ -20,6 +20,10 @@
         "ChatGPT",
         "Subagenti",
         "Claude Code"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "06:25"
       ]
     },
     {
@@ -35,6 +39,10 @@
         "Automatizace",
         "Subagenti",
         "Claude Code"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "06:25"
       ]
     },
     {
@@ -49,6 +57,10 @@
       "topics": [
         "Subagenti",
         "Claude Code"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "06:25"
       ]
     }
   ],

@@ -21,6 +21,10 @@
         "Dokumentace",
         "Subagenti",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "07:59"
       ]
     },
     {
@@ -35,6 +39,11 @@
       "topics": [
         "Claude Code",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "07:59",
+        "17:03"
       ]
     },
     {
@@ -49,6 +58,11 @@
       "topics": [
         "Claude Code",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "07:59",
+        "14:51"
       ]
     }
   ],

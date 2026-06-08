@@ -18,6 +18,16 @@
       "source_date": "2026-06-03",
       "topics": [
         "Meeting"
+      ],
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "15:36",
+        "12:29",
+        "16:48",
+        "10:53",
+        "14:24",
+        "15:31",
+        "17:15"
       ]
     },
     {
@@ -31,6 +41,15 @@
       "source_date": "2026-06-03",
       "topics": [
         "Meeting"
+      ],
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "15:36",
+        "16:48",
+        "14:43",
+        "17:15",
+        "12:29",
+        "15:31"
       ]
     },
     {
@@ -44,6 +63,17 @@
       "source_date": "2026-06-03",
       "topics": [
         "Workflow"
+      ],
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "14:43",
+        "15:36",
+        "17:15",
+        "21:06",
+        "12:20",
+        "12:29",
+        "15:31",
+        "16:48"
       ]
     },
     {
@@ -60,6 +90,16 @@
         "Automatizace",
         "Email",
         "Meeting"
+      ],
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "14:24",
+        "14:43",
+        "10:53",
+        "17:15",
+        "21:09",
+        "15:57",
+        "21:06"
       ]
     },
     {
@@ -76,6 +116,14 @@
         "Automatizace",
         "Workflow",
         "Hooky"
+      ],
+      "source_group": "vibe-coding",
+      "source_msg_times": [
+        "17:29",
+        "16:32",
+        "16:39",
+        "16:24",
+        "16:50"
       ]
     },
     {
@@ -91,6 +139,10 @@
         "Claude Code",
         "Hooky",
         "Vibe Coding"
+      ],
+      "source_group": "vibe-coding",
+      "source_msg_times": [
+        "17:29"
       ]
     }
   ],

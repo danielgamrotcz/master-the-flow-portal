@@ -19,6 +19,16 @@
       "topics": [
         "Vibe Coding",
         "AI nástroje"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "03:28",
+        "11:32",
+        "03:26",
+        "03:31",
+        "11:19",
+        "06:57",
+        "07:08"
       ]
     },
     {
@@ -34,6 +44,12 @@
         "Claude Code",
         "Workflow",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "03:31",
+        "11:19",
+        "11:32"
       ]
     },
     {
@@ -49,6 +65,17 @@
         "Claude Code",
         "MCP",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "06:57",
+        "11:19",
+        "14:28",
+        "15:07",
+        "03:31",
+        "08:07",
+        "12:38",
+        "14:53"
       ]
     },
     {
@@ -64,6 +91,10 @@
         "Email",
         "Poznámky",
         "Workflow"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "06:57"
       ]
     },
     {
@@ -77,6 +108,13 @@
       "source_date": "2026-03-18",
       "topics": [
         "Produktivita"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "11:19",
+        "11:32",
+        "03:31",
+        "07:49"
       ]
     }
   ],

@@ -20,6 +20,10 @@
         "Workflow",
         "Raycast",
         "Meeting"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "09:32"
       ]
     },
     {
@@ -33,6 +37,16 @@
       "source_date": "2026-05-22",
       "topics": [
         "Meeting"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "15:14",
+        "18:53",
+        "06:44",
+        "07:01",
+        "09:36",
+        "08:30",
+        "16:06"
       ]
     },
     {
@@ -49,6 +63,12 @@
         "Vibe Coding",
         "Poznámky",
         "Obsidian"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "18:53",
+        "17:34",
+        "15:14"
       ]
     },
     {
@@ -64,6 +84,11 @@
         "Vibe Coding",
         "Automatizace",
         "Claude Code"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "19:11",
+        "09:32"
       ]
     },
     {
@@ -78,6 +103,12 @@
       "topics": [
         "AI nástroje",
         "Email"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "18:53",
+        "09:36",
+        "15:14"
       ]
     }
   ],

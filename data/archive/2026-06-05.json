@@ -19,6 +19,10 @@
       "topics": [
         "Automatizace",
         "Workflow"
+      ],
+      "source_group": "vibe-coding",
+      "source_msg_times": [
+        "18:09"
       ]
     },
     {
@@ -33,6 +37,12 @@
       "topics": [
         "Claude Code",
         "Vibe Coding"
+      ],
+      "source_group": "vibe-coding",
+      "source_msg_times": [
+        "06:55",
+        "15:25",
+        "15:30"
       ]
     },
     {
@@ -47,6 +57,10 @@
       "topics": [
         "Workflow",
         "Diktování"
+      ],
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "17:19"
       ]
     }
   ],

@@ -19,6 +19,12 @@
       "topics": [
         "Google",
         "Databáze"
+      ],
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "15:29",
+        "15:53",
+        "16:16"
       ]
     },
     {
@@ -33,6 +39,12 @@
       "topics": [
         "Google",
         "Databáze"
+      ],
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "15:40",
+        "15:29",
+        "16:00"
       ]
     },
     {
@@ -47,6 +59,14 @@
       "topics": [
         "Google",
         "Automatizace"
+      ],
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "15:46",
+        "15:29",
+        "15:34",
+        "15:53",
+        "15:40"
       ]
     },
     {
@@ -62,6 +82,14 @@
         "Claude Code",
         "Vibe Coding",
         "Subagenti"
+      ],
+      "source_group": "vibe-coding",
+      "source_msg_times": [
+        "15:57",
+        "16:04",
+        "10:31",
+        "18:34",
+        "17:20"
       ]
     },
     {
@@ -78,6 +106,14 @@
         "Cursor",
         "Workflow",
         "Dokumentace"
+      ],
+      "source_group": "vibe-coding",
+      "source_msg_times": [
+        "10:31",
+        "17:20",
+        "16:04",
+        "15:57",
+        "16:24"
       ]
     },
     {
@@ -94,6 +130,17 @@
         "AI nástroje",
         "Automatizace",
         "Workflow"
+      ],
+      "source_group": "vibe-coding",
+      "source_msg_times": [
+        "15:57",
+        "16:04",
+        "18:34",
+        "17:20",
+        "10:31",
+        "15:55",
+        "18:53",
+        "20:54"
       ]
     }
   ],

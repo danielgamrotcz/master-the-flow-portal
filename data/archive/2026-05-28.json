@@ -16,6 +16,10 @@
       "topics": [
         "MCP",
         "Claude Code"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "11:08"
       ]
     },
     {
@@ -26,6 +30,10 @@
       "body": "Input tokeny z promptu jsou proti tool callům a kontextu skoro nic. Konkrétní čísla z diskuze: v promptu ušetříte třeba 1–2 tokeny, zatímco tools a context můžou mít klidně 17 tisíc tokenů. Overhead jednoho dotazu pak vyjde zhruba na 0,04 USD. Jazyk má smysl řešit jen ve chvíli, kdy máte hodně textových vstupů a výstupů a zároveň byste museli přeložit všechny materiály. Při kódování ten rozdíl ve spotřebě nepoznáte.",
       "topics": [
         "Prompting"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "10:31"
       ]
     },
     {
@@ -36,6 +44,12 @@
       "body": "Thuy se ptala, jestli jde spustit Todoist zkratku přes Siri — třeba při řízení, aby si mohla hands-free zapsat úkol. V Apple Shortcuts to jde. Stačí Siri přiřadit ke konkrétní zkratce a pak ji spustit hlasem. Detaily nastavení je potřeba vyzkoušet, ale základní postup funguje. Když si takovou zkratku nastavíte, nemusíte při řízení sahat na telefon.",
       "topics": [
         "Produktivita"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "11:18",
+        "11:32",
+        "00:05"
       ]
     },
     {
@@ -48,6 +62,11 @@
         "Vibe Coding",
         "MCP",
         "Claude Code"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "00:05",
+        "11:36"
       ]
     }
   ],

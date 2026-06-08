@@ -19,6 +19,10 @@
       "topics": [
         "Workflow",
         "AI nástroje"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "09:49"
       ]
     },
     {
@@ -33,6 +37,10 @@
       "topics": [
         "Email",
         "Google"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "09:49"
       ]
     },
     {
@@ -48,6 +56,12 @@
         "Vibe Coding",
         "Produktivita",
         "Claude Code"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "09:49",
+        "14:16",
+        "18:42"
       ]
     },
     {
@@ -64,6 +78,13 @@
         "Poznámky",
         "Workflow",
         "Prompting"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "12:46",
+        "09:49",
+        "18:42",
+        "12:38"
       ]
     },
     {
@@ -78,6 +99,10 @@
       "topics": [
         "Claude Code",
         "Vibe Coding"
+      ],
+      "source_group": "mastertheflow—hlavní",
+      "source_msg_times": [
+        "11:57"
       ]
     }
   ],

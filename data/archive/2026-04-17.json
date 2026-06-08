@@ -19,6 +19,11 @@
       "topics": [
         "Claude Code",
         "Vibe Coding"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "14:56",
+        "15:52"
       ]
     },
     {
@@ -32,6 +37,11 @@
       "source_date": "2026-04-17",
       "topics": [
         "ChatGPT"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "08:45",
+        "14:56"
       ]
     },
     {
@@ -48,6 +58,12 @@
         "Dokumentace",
         "Databáze",
         "Vibe Coding"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "06:36",
+        "15:52",
+        "14:56"
       ]
     },
     {
@@ -62,6 +78,10 @@
       "topics": [
         "Vibe Coding",
         "Claude Code"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "07:39"
       ]
     },
     {
@@ -76,6 +96,11 @@
       "topics": [
         "Poznámky",
         "Obsidian"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "15:52",
+        "16:20"
       ]
     }
   ],

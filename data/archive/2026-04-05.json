@@ -15,7 +15,11 @@
       "topics": [
         "Email"
       ],
-      "title": "Pošli Word na Kindle a máš e-book"
+      "title": "Pošli Word na Kindle a máš e-book",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "12:16"
+      ]
     },
     {
       "id": "2026-04-05-02",
@@ -26,7 +30,11 @@
         "Vibe Coding",
         "Claude Code"
       ],
-      "title": "Vibe coding není na vrcholu, prostoru je dost"
+      "title": "Vibe coding není na vrcholu, prostoru je dost",
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "12:14"
+      ]
     }
   ],
   "resurfacing": {

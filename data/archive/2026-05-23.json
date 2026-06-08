@@ -20,6 +20,12 @@
         "Automatizace",
         "Email",
         "Workflow"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "13:06",
+        "10:11",
+        "15:24"
       ]
     },
     {
@@ -34,6 +40,10 @@
       "topics": [
         "Poznámky",
         "Obsidian"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "15:14"
       ]
     },
     {
@@ -48,6 +58,10 @@
       "topics": [
         "Claude Code",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "16:18"
       ]
     },
     {
@@ -63,6 +77,10 @@
         "Automatizace",
         "Workflow",
         "Dokumentace"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "16:22"
       ]
     },
     {
@@ -76,6 +94,10 @@
       "source_date": "2026-05-23",
       "topics": [
         "AI nástroje"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "15:50"
       ]
     },
     {
@@ -89,6 +111,10 @@
       "source_date": "2026-05-23",
       "topics": [
         "AI nástroje"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "14:03"
       ]
     }
   ],

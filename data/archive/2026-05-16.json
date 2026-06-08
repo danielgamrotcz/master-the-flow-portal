@@ -15,7 +15,11 @@
       "topics": [
         "Raycast"
       ],
-      "title": "Raycast usnadní práci i bez programování"
+      "title": "Raycast usnadní práci i bez programování",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "19:34"
+      ]
     },
     {
       "id": "2026-05-16-02",
@@ -25,7 +29,13 @@
       "topics": [
         "AI nástroje"
       ],
-      "title": "Překlad konferenčních posterů přes GPT a Perplexity"
+      "title": "Překlad konferenčních posterů přes GPT a Perplexity",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "18:47",
+        "19:34",
+        "10:26"
+      ]
     },
     {
       "id": "2026-05-16-03",
@@ -36,7 +46,13 @@
         "Vibe Coding",
         "Claude Code"
       ],
-      "title": "Vibe coding láká i lidi bez konkrétního projektu"
+      "title": "Vibe coding láká i lidi bez konkrétního projektu",
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "17:49",
+        "18:20",
+        "21:44"
+      ]
     },
     {
       "id": "2026-05-16-04",
@@ -47,7 +63,11 @@
         "Vibe Coding",
         "Claude Code"
       ],
-      "title": "Názvy souborů dávají AI kontext"
+      "title": "Názvy souborů dávají AI kontext",
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "21:44"
+      ]
     }
   ],
   "resurfacing": {

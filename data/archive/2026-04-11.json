@@ -18,7 +18,11 @@
         "Meeting",
         "Subagenti"
       ],
-      "title": "Tři fáze práce s AI podle Daniela"
+      "title": "Tři fáze práce s AI podle Daniela",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "05:01"
+      ]
     },
     {
       "id": "2026-04-11-02",
@@ -28,7 +32,14 @@
       "topics": [
         "Prompting"
       ],
-      "title": "Nech AI nasimulovat pohledy světových odborníků"
+      "title": "Nech AI nasimulovat pohledy světových odborníků",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "06:39",
+        "05:01",
+        "08:26",
+        "15:41"
+      ]
     },
     {
       "id": "2026-04-11-03",
@@ -39,7 +50,11 @@
         "Vibe Coding",
         "Claude Code"
       ],
-      "title": "Nejjednodušší vysvětlení chyby bývá správné"
+      "title": "Nejjednodušší vysvětlení chyby bývá správné",
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "12:34"
+      ]
     }
   ],
   "resurfacing": {

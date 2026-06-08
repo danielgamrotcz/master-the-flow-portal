@@ -18,6 +18,17 @@
       "source_date": "2026-04-09",
       "topics": [
         "ChatGPT"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "09:12",
+        "09:14",
+        "09:53",
+        "21:12",
+        "03:11",
+        "08:55",
+        "21:05",
+        "22:02"
       ]
     },
     {
@@ -32,6 +43,13 @@
       "topics": [
         "AI nástroje",
         "Workflow"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "09:12",
+        "09:53",
+        "21:54",
+        "22:02"
       ]
     },
     {
@@ -46,6 +64,11 @@
       "topics": [
         "AI nástroje",
         "Prompting"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "21:02",
+        "09:12"
       ]
     },
     {
@@ -61,6 +84,12 @@
         "ChatGPT",
         "Prompting",
         "Meeting"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "21:09",
+        "21:05",
+        "20:48"
       ]
     },
     {
@@ -74,6 +103,10 @@
       "source_date": "2026-04-09",
       "topics": [
         "Fokus"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "09:12"
       ]
     }
   ],

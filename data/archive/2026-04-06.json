@@ -16,7 +16,11 @@
         "Claude Code",
         "Vibe Coding"
       ],
-      "title": "Týdenní přehled: vlastní appky a ceny nástrojů"
+      "title": "Týdenní přehled: vlastní appky a ceny nástrojů",
+      "source_group": "mastertheflow—hlavní",
+      "source_msg_times": [
+        "07:28"
+      ]
     },
     {
       "id": "2026-04-06-02",
@@ -26,7 +30,11 @@
       "topics": [
         "Produktivita"
       ],
-      "title": "Projektový manažer hledá jedno místo pro vše"
+      "title": "Projektový manažer hledá jedno místo pro vše",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "21:23"
+      ]
     },
     {
       "id": "2026-04-06-03",
@@ -38,7 +46,14 @@
         "Vibe Coding",
         "MCP"
       ],
-      "title": "Jak napojit Google Drive na AI"
+      "title": "Jak napojit Google Drive na AI",
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "20:23",
+        "19:52",
+        "19:51",
+        "20:22"
+      ]
     },
     {
       "id": "2026-04-06-04",
@@ -48,7 +63,11 @@
       "topics": [
         "Automatizace"
       ],
-      "title": "n8n v neziskovce, AI vrstva zatím počká"
+      "title": "n8n v neziskovce, AI vrstva zatím počká",
+      "source_group": "mastertheflow—hlavní",
+      "source_msg_times": [
+        "07:28"
+      ]
     }
   ],
   "resurfacing": {

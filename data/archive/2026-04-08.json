@@ -18,6 +18,10 @@
       "source_date": "2026-04-08",
       "topics": [
         "ChatGPT"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "12:34"
       ]
     },
     {
@@ -32,6 +36,11 @@
       "topics": [
         "ChatGPT",
         "Automatizace"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "12:34",
+        "12:48"
       ]
     },
     {
@@ -46,6 +55,10 @@
       "topics": [
         "Vibe Coding",
         "Claude Code"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "12:34"
       ]
     },
     {
@@ -59,6 +72,11 @@
       "source_date": "2026-04-08",
       "topics": [
         "Workflow"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "21:57",
+        "12:34"
       ]
     },
     {
@@ -73,6 +91,12 @@
       "topics": [
         "Email",
         "Fokus"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "15:15",
+        "12:34",
+        "12:48"
       ]
     }
   ],

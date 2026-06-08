@@ -20,6 +20,10 @@
         "Workflow",
         "Subagenti",
         "Claude Code"
+      ],
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "07:05"
       ]
     },
     {
@@ -35,6 +39,10 @@
         "Prompting",
         "Subagenti",
         "Claude Code"
+      ],
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "07:05"
       ]
     }
   ],

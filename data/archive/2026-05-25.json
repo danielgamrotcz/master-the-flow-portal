@@ -19,6 +19,15 @@
       "topics": [
         "AI nástroje",
         "Email"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "09:07",
+        "06:51",
+        "06:52",
+        "14:28",
+        "14:48",
+        "14:49"
       ]
     },
     {
@@ -33,6 +42,10 @@
       "topics": [
         "Subagenti",
         "Claude Code"
+      ],
+      "source_group": "mastertheflow—hlavní",
+      "source_msg_times": [
+        "15:18"
       ]
     },
     {
@@ -47,6 +60,10 @@
       "topics": [
         "Raycast",
         "Meeting"
+      ],
+      "source_group": "mastertheflow—hlavní",
+      "source_msg_times": [
+        "15:18"
       ]
     },
     {
@@ -63,6 +80,10 @@
         "Obsidian",
         "Notion",
         "MCP"
+      ],
+      "source_group": "mastertheflow—hlavní",
+      "source_msg_times": [
+        "15:18"
       ]
     },
     {
@@ -77,6 +98,10 @@
       "topics": [
         "Fokus",
         "Notion"
+      ],
+      "source_group": "mastertheflow—hlavní",
+      "source_msg_times": [
+        "15:18"
       ]
     },
     {
@@ -92,6 +117,10 @@
         "Claude Code",
         "Vibe Coding",
         "Subagenti"
+      ],
+      "source_group": "mastertheflow—hlavní",
+      "source_msg_times": [
+        "15:18"
       ]
     }
   ],

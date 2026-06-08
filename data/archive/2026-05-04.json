@@ -18,7 +18,11 @@
         "Email",
         "Meeting"
       ],
-      "title": "Daniel napsal čtyřem lidem, kdo na čem maká"
+      "title": "Daniel napsal čtyřem lidem, kdo na čem maká",
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "18:42"
+      ]
     },
     {
       "id": "2026-05-04-02",
@@ -29,7 +33,11 @@
         "Vibe Coding",
         "Claude Code"
       ],
-      "title": "Appka pro správu klientů v pilotním provozu"
+      "title": "Appka pro správu klientů v pilotním provozu",
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "20:08"
+      ]
     },
     {
       "id": "2026-05-04-03",
@@ -40,7 +48,12 @@
         "Claude Code",
         "Vibe Coding"
       ],
-      "title": "Nechat Claude Code posoudit vlastní projekt"
+      "title": "Nechat Claude Code posoudit vlastní projekt",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "09:20",
+        "09:28"
+      ]
     }
   ],
   "resurfacing": {

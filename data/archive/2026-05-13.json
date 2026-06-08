@@ -21,6 +21,10 @@
         "Cursor",
         "Workflow",
         "MCP"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "12:50"
       ]
     },
     {
@@ -37,6 +41,10 @@
         "Automatizace",
         "Poznámky",
         "Workflow"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "12:50"
       ]
     },
     {
@@ -52,6 +60,11 @@
         "Claude Code",
         "MCP",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "13:13",
+        "12:50"
       ]
     },
     {
@@ -65,6 +78,12 @@
       "source_date": "2026-05-13",
       "topics": [
         "Automatizace"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "12:50",
+        "13:06",
+        "13:13"
       ]
     },
     {
@@ -80,6 +99,12 @@
         "Workflow",
         "MCP",
         "Claude Code"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "13:13",
+        "12:50",
+        "13:06"
       ]
     }
   ],

@@ -16,7 +16,11 @@
         "Raycast",
         "Prompting"
       ],
-      "title": "Diktování v Raycastu versus Uttero"
+      "title": "Diktování v Raycastu versus Uttero",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "07:50"
+      ]
     },
     {
       "id": "2026-05-17-02",
@@ -27,7 +31,11 @@
         "Workflow",
         "AI nástroje"
       ],
-      "title": "ShellBoard: vlastní terminál stavěný kolem projektů"
+      "title": "ShellBoard: vlastní terminál stavěný kolem projektů",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "09:52"
+      ]
     },
     {
       "id": "2026-05-17-03",
@@ -39,7 +47,13 @@
         "MCP",
         "Vibe Coding"
       ],
-      "title": "Jak poznat důvěryhodný MCP server"
+      "title": "Jak poznat důvěryhodný MCP server",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "07:50",
+        "20:37",
+        "21:51"
+      ]
     },
     {
       "id": "2026-05-17-04",
@@ -50,7 +64,14 @@
         "Prompting",
         "AI nástroje"
       ],
-      "title": "Dej AI fiktivní profesní profil před úkolem"
+      "title": "Dej AI fiktivní profesní profil před úkolem",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "17:42",
+        "07:50",
+        "18:23",
+        "21:51"
+      ]
     },
     {
       "id": "2026-05-17-05",
@@ -60,7 +81,18 @@
       "topics": [
         "AI nástroje"
       ],
-      "title": "Jak posílat citlivá data do AI bezpečně"
+      "title": "Jak posílat citlivá data do AI bezpečně",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "07:50",
+        "09:52",
+        "10:12",
+        "18:40",
+        "18:46",
+        "20:36",
+        "20:58",
+        "21:51"
+      ]
     },
     {
       "id": "2026-05-17-06",
@@ -72,7 +104,12 @@
         "Produktivita",
         "Workflow"
       ],
-      "title": "Mikrovylepšení: slouží to stále svému účelu?"
+      "title": "Mikrovylepšení: slouží to stále svému účelu?",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "21:51",
+        "07:50"
+      ]
     }
   ],
   "resurfacing": {

@@ -21,6 +21,10 @@
         "Produktivita",
         "Workflow",
         "Prompting"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "19:50"
       ]
     },
     {
@@ -34,6 +38,11 @@
       "source_date": "2026-03-22",
       "topics": [
         "Automatizace"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "21:48",
+        "21:42"
       ]
     },
     {
@@ -47,6 +56,14 @@
       "source_date": "2026-03-22",
       "topics": [
         "Google"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "13:25",
+        "21:48",
+        "12:31",
+        "19:50",
+        "21:42"
       ]
     },
     {
@@ -61,6 +78,10 @@
       "topics": [
         "Vibe Coding",
         "Claude Code"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "13:01"
       ]
     }
   ],

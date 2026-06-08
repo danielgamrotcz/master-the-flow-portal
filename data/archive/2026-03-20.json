@@ -21,6 +21,10 @@
         "Vibe Coding",
         "ChatGPT",
         "Meeting"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "12:11"
       ]
     },
     {
@@ -36,6 +40,14 @@
         "ChatGPT",
         "AI nástroje",
         "Raycast"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "14:20",
+        "12:14",
+        "12:11",
+        "11:40",
+        "12:12"
       ]
     },
     {
@@ -52,6 +64,11 @@
         "AI nástroje",
         "Automatizace",
         "Prompting"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "12:11",
+        "14:20"
       ]
     },
     {
@@ -67,6 +84,12 @@
         "AI nástroje",
         "Workflow",
         "Meeting"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "14:20",
+        "12:11",
+        "12:14"
       ]
     },
     {
@@ -81,6 +104,14 @@
       "source_date": "2026-03-20",
       "topics": [
         "Produktivita"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "12:11",
+        "12:20",
+        "12:27",
+        "12:29",
+        "12:42"
       ]
     }
   ],

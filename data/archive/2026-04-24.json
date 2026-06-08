@@ -16,7 +16,11 @@
         "Automatizace",
         "Obsidian"
       ],
-      "title": "Obsah v Obsidianu, chybí jen zpětná vazba"
+      "title": "Obsah v Obsidianu, chybí jen zpětná vazba",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "12:21"
+      ]
     },
     {
       "id": "2026-04-24-02",
@@ -26,7 +30,11 @@
       "topics": [
         "Obsidian"
       ],
-      "title": "Vlastní scraper, co plní rovnou Obsidian"
+      "title": "Vlastní scraper, co plní rovnou Obsidian",
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "18:23"
+      ]
     }
   ],
   "resurfacing": {

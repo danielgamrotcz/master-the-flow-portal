@@ -18,6 +18,10 @@
       "source_date": "2026-05-14",
       "topics": [
         "Produktivita"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "19:07"
       ]
     },
     {
@@ -34,6 +38,10 @@
         "Automatizace",
         "Subagenti",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "09:17"
       ]
     },
     {
@@ -49,6 +57,14 @@
         "ChatGPT",
         "AI nástroje",
         "Poznámky"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "10:07",
+        "10:10",
+        "10:10",
+        "11:57",
+        "13:22"
       ]
     },
     {
@@ -62,6 +78,11 @@
       "source_date": "2026-05-14",
       "topics": [
         "Produktivita"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "19:07",
+        "19:09"
       ]
     }
   ],

@@ -20,6 +20,11 @@
         "Claude Code",
         "Prompting",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "18:19",
+        "21:31"
       ]
     },
     {
@@ -36,6 +41,10 @@
         "Vibe Coding",
         "Fokus",
         "Dokumentace"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "18:19"
       ]
     },
     {
@@ -50,6 +59,10 @@
       "topics": [
         "Claude Code",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "18:19"
       ]
     }
   ],

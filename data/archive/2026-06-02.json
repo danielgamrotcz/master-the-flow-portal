@@ -21,6 +21,14 @@
         "Workflow",
         "Subagenti",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "14:15",
+        "14:07",
+        "07:56",
+        "12:36",
+        "16:13"
       ]
     },
     {
@@ -36,6 +44,11 @@
         "Claude Code",
         "Hooky",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "07:56",
+        "16:01"
       ]
     },
     {
@@ -49,6 +62,12 @@
       "source_date": "2026-06-02",
       "topics": [
         "Claude Code"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "07:14",
+        "14:06",
+        "14:15"
       ]
     },
     {
@@ -65,6 +84,17 @@
         "ChatGPT",
         "Subagenti",
         "Vibe Coding"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "00:50",
+        "07:56",
+        "14:15",
+        "07:14",
+        "14:06",
+        "13:24",
+        "14:07",
+        "16:29"
       ]
     },
     {
@@ -78,6 +108,12 @@
       "source_date": "2026-06-02",
       "topics": [
         "AI nástroje"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "14:26",
+        "07:56",
+        "13:24"
       ]
     }
   ],

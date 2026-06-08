@@ -16,7 +16,11 @@
         "Claude Code",
         "Vibe Coding"
       ],
-      "title": "Porovnávat nástroje je past, prostě začni"
+      "title": "Porovnávat nástroje je past, prostě začni",
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "06:36"
+      ]
     },
     {
       "excerpt": "Členka staví appku, která vezme šablonu certifikátu a Google Sheet a automaticky rozešle vyplněné certifikáty e-mailem.",
@@ -29,7 +33,11 @@
         "Google",
         "Claude Code"
       ],
-      "title": "Appka, co rozešle certifikáty z Google Sheetu"
+      "title": "Appka, co rozešle certifikáty z Google Sheetu",
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "09:23"
+      ]
     },
     {
       "excerpt": "Obecné „to už existuje“ jako argument neberu. Přesně padnoucí řešení má cenu — a co mu chybí, si prostě dodělám.",
@@ -39,7 +47,14 @@
       "topics": [
         "Poznámky"
       ],
-      "title": "To už existuje? Padnoucí řešení má svou cenu"
+      "title": "To už existuje? Padnoucí řešení má svou cenu",
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "13:33",
+        "13:27",
+        "06:36",
+        "13:35"
+      ]
     },
     {
       "excerpt": "Jeden člen zjistil, že víc hltá informace, než něco reálně buduje. Schválně se vrátil k postupu po malých krocích.",
@@ -49,7 +64,12 @@
       "topics": [
         "AI nástroje"
       ],
-      "title": "Místo hltání informací jeden malý krok"
+      "title": "Místo hltání informací jeden malý krok",
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "13:33",
+        "13:47"
+      ]
     },
     {
       "excerpt": "Jeden člen narazil na týdenní kreditní limit a zároveň řešil bug: text v teleprompterové appce se nepřizpůsoboval tempu čtení.",
@@ -59,7 +79,13 @@
       "topics": [
         "Prompting"
       ],
-      "title": "Kreditní limit a bug najednou"
+      "title": "Kreditní limit a bug najednou",
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "14:49",
+        "13:33",
+        "15:05"
+      ]
     },
     {
       "excerpt": "Jeden člen sdílel článek o tom, že překrývající se Claude skills zhoršují výkon. Méně je víc.",
@@ -70,7 +96,16 @@
         "Claude Code",
         "Workflow"
       ],
-      "title": "Překrývající se Claude skills škodí výkonu"
+      "title": "Překrývající se Claude skills škodí výkonu",
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "15:56",
+        "13:33",
+        "06:37",
+        "13:27",
+        "13:47",
+        "13:50"
+      ]
     }
   ],
   "resurfacing": null,

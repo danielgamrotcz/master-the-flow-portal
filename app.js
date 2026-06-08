@@ -821,6 +821,8 @@ function openCard(cardId) {
     ? highlightInHTML(rawHtml, state.searchQuery)
     : rawHtml;
   $('btn-show-transcript').dataset.date = dateStr;
+  $('btn-show-transcript').dataset.sourceGroup = card.source_group || '';
+  $('btn-show-transcript').dataset.sourceMsgTimes = JSON.stringify(card.source_msg_times || []);
   $('btn-show-transcript').style.display = dateStr ? '' : 'none';
 
   // Vote
@@ -979,16 +981,18 @@ function inlineMarkdown(text) {
 }
 
 /* ===== TRANSCRIPT VIEW ===== */
-async function showTranscript(dateStr) {
+async function showTranscript(dateStr, sourceGroup, sourceMsgTimes) {
   if (!dateStr) return;
 
-  trackEvent('transcript_view', { date: dateStr });
+  trackEvent('transcript_view', { date: dateStr, filtered: !!(sourceGroup && sourceMsgTimes?.length) });
   _preTranscriptHash = location.hash || '#';
   state.transcriptDate = dateStr;
   switchView('transcript');
 
   $('transcript-date-label').textContent = formatDateLong(dateStr);
   $('transcript-content').innerHTML = '<div class="loading-state"><div class="spinner"></div></div>';
+
+  const filtering = !!(sourceGroup && sourceMsgTimes && sourceMsgTimes.length > 0);
 
   try {
     let data = state.archiveCache[dateStr];
@@ -1005,12 +1009,30 @@ async function showTranscript(dateStr) {
 
     let html = '';
     transcript.groups.forEach(group => {
+      if (filtering && group.slug !== sourceGroup) return;
+
+      let messages = group.messages || [];
+      if (filtering && sourceMsgTimes.length > 0) {
+        const matchSet = new Set();
+        messages.forEach((msg, i) => {
+          if (sourceMsgTimes.includes(msg.time)) {
+            for (let k = Math.max(0, i - 2); k <= Math.min(messages.length - 1, i + 2); k++) {
+              matchSet.add(k);
+            }
+          }
+        });
+        if (matchSet.size > 0) {
+          messages = Array.from(matchSet).sort((a, b) => a - b).map(i => group.messages[i]);
+        }
+      }
+
       html += `<div class="transcript-group">`;
       html += `<div class="transcript-group-name">${esc(group.name)}</div>`;
-      (group.messages || []).forEach(msg => {
+      messages.forEach(msg => {
         const isHost = msg.author === 'Daniel' || msg.author === 'Daniel Gamrot';
+        const isSource = filtering && sourceMsgTimes.includes(msg.time);
         html += `
-          <div class="transcript-message">
+          <div class="transcript-message${isSource ? ' is-source' : ''}">
             <div class="msg-time">${esc(msg.time || '')}</div>
             <div class="msg-body">
               <div class="msg-author${isHost ? ' is-host' : ''}">${esc(msg.author)}</div>
@@ -1022,7 +1044,18 @@ async function showTranscript(dateStr) {
       html += `</div>`;
     });
 
+    if (filtering) {
+      html = `<div class="transcript-filter-notice">Relevantní část diskuze k&nbsp;této kartě</div>` + html
+           + `<div class="transcript-expand"><button class="btn-secondary" id="btn-transcript-expand">Zobrazit celý přepis</button></div>`;
+    }
+
     $('transcript-content').innerHTML = html;
+
+    if (filtering) {
+      document.getElementById('btn-transcript-expand')?.addEventListener('click', () => {
+        showTranscript(dateStr);
+      });
+    }
   } catch {
     $('transcript-content').innerHTML = '<div class="empty-state"><p>Přepis se nepodařilo načíst.</p></div>';
   }
@@ -2125,9 +2158,12 @@ function init() {
   });
 
   $('btn-show-transcript').addEventListener('click', () => {
-    const dateStr = $('btn-show-transcript').dataset.date;
+    const btn = $('btn-show-transcript');
+    const dateStr = btn.dataset.date;
+    const sourceGroup = btn.dataset.sourceGroup || '';
+    const sourceMsgTimes = JSON.parse(btn.dataset.sourceMsgTimes || '[]');
     closeCard();
-    showTranscript(dateStr);
+    showTranscript(dateStr, sourceGroup, sourceMsgTimes);
   });
 
   $('btn-transcript-back').addEventListener('click', () => {

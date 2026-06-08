@@ -697,6 +697,28 @@ a:hover { text-decoration: underline; }
   word-break: break-word;
 }
 
+.transcript-message.is-source .msg-text {
+  color: var(--text-primary);
+}
+
+.transcript-message.is-source .msg-time {
+  color: var(--accent);
+}
+
+.transcript-filter-notice {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  background: rgba(240,106,21,0.07);
+  border: 1px solid rgba(240,106,21,0.2);
+  border-radius: 8px;
+  padding: 8px 14px;
+}
+
+.transcript-expand {
+  padding-top: 8px;
+  text-align: center;
+}
+
 /* ===== CARD OVERLAY ===== */
 .overlay {
   position: fixed;

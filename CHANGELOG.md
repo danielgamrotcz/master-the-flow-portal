@@ -7,6 +7,12 @@
 - Top view: řazení podle váženého skóre (čtení + srdíčka × 5) místo pouhého počtu čtení
 - Push notifikace zobrazují title + excerpt nejlépe hodnocené karty dne místo generického textu
 - Statistiky: 2-sloupcový layout na desktopu (čísla + kalendář vlevo, témata + oblíbené karty vpravo)
+- Přepis u karty filtrovaný na relevantní zprávy — tlačítko „Zobrazit celý přepis" pro kompletní konverzaci
+
+### Added
+- `source_group` + `source_msg_times` na kartách — dohledání zdrojových zpráv v přepisu
+- Generátor karet nyní předává Claudovi konverzaci s časovými razítky [HH:MM] a slug skupiny
+- Backfill 304 existujících karet (keyword matching karta ↔ zprávy přepisu)
 
 ### Fixed
 - Resurfacing karta se nezobrazovala v tab Včera (null místo data.resurfacing)

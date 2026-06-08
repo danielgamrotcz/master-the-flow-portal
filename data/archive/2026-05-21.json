@@ -18,6 +18,14 @@
       "source_date": "2026-05-21",
       "topics": [
         "Raycast"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "13:12",
+        "09:32",
+        "12:47",
+        "14:29",
+        "13:16"
       ]
     },
     {
@@ -33,6 +41,17 @@
         "Email",
         "Meeting",
         "Google"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "12:47",
+        "14:39",
+        "20:38",
+        "09:32",
+        "12:43",
+        "13:16",
+        "14:30",
+        "17:21"
       ]
     },
     {
@@ -49,6 +68,12 @@
         "Poznámky",
         "Workflow",
         "Obsidian"
+      ],
+      "source_group": "inspiracediskuze",
+      "source_msg_times": [
+        "14:30",
+        "14:39",
+        "14:35"
       ]
     },
     {
@@ -65,6 +90,12 @@
         "Vibe Coding",
         "Email",
         "Poznámky"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "09:36",
+        "17:10",
+        "17:21"
       ]
     },
     {
@@ -81,6 +112,15 @@
         "ChatGPT",
         "Fokus",
         "Workflow"
+      ],
+      "source_group": "vibecoding",
+      "source_msg_times": [
+        "07:01",
+        "06:44",
+        "17:48",
+        "08:30",
+        "09:36",
+        "17:18"
       ]
     }
   ],
