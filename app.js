@@ -1340,6 +1340,7 @@ function navigateCards(dir) {
 /* ===== PULL TO REFRESH ===== */
 function initViewSwipe() {
   const NAV_ORDER = ['today', 'week', 'archive', 'search', 'top', 'stats'];
+  const VIEW_MIN = 150;
   const content = document.getElementById('main-content');
   if (!content) return;
 
@@ -1348,7 +1349,6 @@ function initViewSwipe() {
   content.addEventListener('touchstart', e => {
     if (e.touches.length !== 1) return;
     if (!$('card-overlay').classList.contains('hidden')) return;
-    if (e.target.closest('.card-wrap')) return;
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
     tracking = true;
@@ -1372,7 +1372,7 @@ function initViewSwipe() {
     tracking = false;
     const dx = e.changedTouches[0].clientX - startX;
     const dy = e.changedTouches[0].clientY - startY;
-    if (Math.abs(dx) < 55 || Math.abs(dy) > Math.abs(dx) * 0.75) return;
+    if (Math.abs(dx) < VIEW_MIN || Math.abs(dy) > Math.abs(dx) * 0.75) return;
     const idx = NAV_ORDER.indexOf(state.view);
     if (idx === -1) return;
     const nextIdx = dx < 0 ? idx + 1 : idx - 1;
@@ -1750,9 +1750,10 @@ function attachSwipeToCard(wrap) {
   if (wrap.dataset.swipeAttached) return;
   wrap.dataset.swipeAttached = '1';
   const THRESHOLD = 80;
+  const VIEW_MIN = 150;
   const el = wrap.querySelector('.card');
   if (!el) return;
-  let startX = 0, startY = 0, tracking = false, swiping = false;
+  let startX = 0, startY = 0, tracking = false, swiping = false, viewSwiping = false;
 
   wrap.addEventListener('touchstart', e => {
     if (e.touches.length !== 1) return;
@@ -1760,6 +1761,7 @@ function attachSwipeToCard(wrap) {
     startY = e.touches[0].clientY;
     tracking = true;
     swiping = false;
+    viewSwiping = false;
     el.style.transition = 'none';
   }, { passive: true });
 
@@ -1775,6 +1777,16 @@ function attachSwipeToCard(wrap) {
     }
 
     e.preventDefault();
+
+    if (!viewSwiping && Math.abs(dx) >= VIEW_MIN) {
+      viewSwiping = true;
+      el.style.transition = 'transform 180ms ease';
+      el.style.transform = 'translateX(0)';
+      wrap.classList.remove('swipe-triggered-vote', 'swipe-triggered-read', 'is-swiping-vote', 'is-swiping-read');
+      return;
+    }
+    if (viewSwiping) return;
+
     el.style.transform = `translateX(${dx * 0.45}px)`;
     const committed = Math.abs(dx) >= THRESHOLD;
     if (dx > 0) {
@@ -1795,8 +1807,12 @@ function attachSwipeToCard(wrap) {
     tracking = false;
     const dx = e.changedTouches[0].clientX - startX;
 
-    el.style.transition = 'transform 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-    el.style.transform = 'translateX(0)';
+    if (!viewSwiping) {
+      el.style.transition = 'transform 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      el.style.transform = 'translateX(0)';
+    } else {
+      el.style.transition = '';
+    }
     wrap.classList.remove('swipe-triggered-vote', 'swipe-triggered-read', 'is-swiping-vote', 'is-swiping-read');
     setTimeout(() => { el.style.transition = ''; }, 300);
 
@@ -1805,7 +1821,7 @@ function attachSwipeToCard(wrap) {
       setTimeout(() => delete el.dataset.swipePrevented, 350);
     }
 
-    if (!swiping || Math.abs(dx) < THRESHOLD) return;
+    if (!swiping || Math.abs(dx) < THRESHOLD || viewSwiping) return;
 
     const id = el.dataset.id;
     if (dx > 0) {
