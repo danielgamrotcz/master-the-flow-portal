@@ -1967,9 +1967,21 @@ async function shareCard() {
 function handleHash() {
   const hash = location.hash.slice(1);
   if (hash.startsWith('card/')) {
-    // Card hash is session-only — don't auto-open on page refresh
-    history.replaceState({}, '', '#');
+    const cardId = hash.slice(5);
+    const dateMatch = cardId.match(/^(\d{4}-\d{2}-\d{2})/);
     switchView('today');
+    if (dateMatch) {
+      const dateStr = dateMatch[1];
+      (async () => {
+        if (!state.archiveCache[dateStr]) {
+          try {
+            const data = await fetchJSON(`/data/archive/${dateStr}.json`);
+            state.archiveCache[dateStr] = data;
+          } catch {}
+        }
+        openCard(cardId);
+      })();
+    }
   } else if (hash.startsWith('archive')) {
     const parts = hash.split('/');
     const dateRe = /^\d{4}-\d{2}-\d{2}$/;
