@@ -5,6 +5,7 @@
 ### Fixed
 - Chat: filtrovací tabky (témata) se zobrazovaly v chat view — nyní jsou skryté v chat, přepis a statistiky.
 - Chat: při neplatném přihlašovacím tokenu se nyní automaticky odhlásí a zobrazí přihlašovací obrazovka místo chybové hlášky.
+- Chat: nav tlačítko skryto — chatbot zůstává dostupný přes #chat ale není v menu.
 
 ### Added
 - **Chatbot** — nová položka v menu „Chat"; Claude Sonnet odpovídá výhradně na základě obsahu komunity (karty + přepisy WhatsApp). Multi-turn konverzace, streaming po slovech, citace jako klikatelné chipy otevírající overlay karty.
