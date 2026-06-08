@@ -302,30 +302,6 @@ function filterCards(cards) {
 }
 
 /* ===== UNREAD BAR ===== */
-function renderUnreadBar(cards, containerId) {
-  const container = $(containerId);
-  if (!container) return;
-  const existing = container.previousElementSibling;
-  if (existing && existing.classList.contains('unread-bar')) existing.remove();
-
-  const readSet = getReadCards();
-  const unread = cards.filter(c => !readSet.has(c.id)).length;
-  if (unread === 0 || cards.length === 0) return;
-
-  const bar = document.createElement('div');
-  bar.className = 'unread-bar';
-  bar.innerHTML = `<span>${unread} z ${cards.length} nepřečteno</span><button class="unread-bar-btn" id="unread-bar-next">→ Nepřečtená</button><button class="unread-bar-btn" id="unread-bar-read-all">přečíst vše</button>`;
-  container.parentNode.insertBefore(bar, container);
-
-  bar.querySelector('#unread-bar-next').addEventListener('click', () => jumpToNextUnread());
-
-  bar.querySelector('#unread-bar-read-all').addEventListener('click', () => {
-    cards.forEach(c => markRead(c.id));
-    bar.remove();
-    document.querySelectorAll(`#${containerId} .card`).forEach(el => el.classList.add('read'));
-    updatePageTitle();
-  });
-}
 
 /* ===== RENDER CARDS ===== */
 function sortByVotes(cards) {
@@ -373,7 +349,6 @@ async function loadToday() {
       updateHeader(data, isYesterdayData);
       buildTopicChips(data.cards);
       renderCards(data.cards, 'cards-today', null);
-      renderUnreadBar(data.cards, 'cards-today');
       updatePageTitle();
       ensureSearchAll().catch(() => {});
       return;
@@ -1347,17 +1322,6 @@ function updateOverlayNav(cardId) {
 }
 
 /* ===== NEXT UNREAD JUMP ===== */
-function jumpToNextUnread() {
-  const gridId = { today: 'cards-today', week: 'cards-week' }[state.view];
-  if (!gridId) return;
-  const readSet = getReadCards();
-  const cards = [...(document.getElementById(gridId)?.querySelectorAll('.card[data-id]') || [])];
-  const next = cards.find(el => !readSet.has(el.dataset.id));
-  if (next) {
-    next.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    next.focus();
-  }
-}
 
 /* ===== KEYBOARD CARD NAVIGATION ===== */
 function navigateCards(dir) {
