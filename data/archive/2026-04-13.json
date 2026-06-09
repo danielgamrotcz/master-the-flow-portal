@@ -9,11 +9,11 @@
   "cards": [
     {
       "id": "2026-04-13-01",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Builder",
       "title": "iOS aplikace pro diktování jde do testování",
-      "excerpt": "Jeden z členů komunity dokončil iOS verzi diktofonní aplikace a postupně pouští lidi do testování přes TestFlight. Prvních 20 míst je volných tento týden, dalších 70 přibude příští týden. Testování je zdarma a zatím jen pro naši komunitu.",
-      "body": "Aplikace má za sebou první interní testování a teď se otevírá většímu okruhu testerů. Kapacita se zvedá postupně schválně. Autor chce sbírat zpětnou vazbu po částech, ne zahltit podporu najednou.\n\nKdo se chce zapojit, zadá své Apple ID přes formulář na webu a do 48 hodin mu přijde pozvánka do TestFlightu. Na webu je taky video s ukázkou fungování aplikace.\n\nTestování má jasně nastavený způsob. Autor žádá, aby testeři posílali zpětnou vazbu přes tlačítko přímo v nastavení aplikace. Zároveň prosí, aby to brali vážně, ale s odstupem. Nejde o chválení hotového produktu. Jde o to zjistit, jestli by tuhle aplikaci lidé opravdu používali každý den.\n\nAplikace teď běží na autorově kreditu, proto doporučuje nahrávky držet v rozumné délce.",
+      "excerpt": "Daniel otevřel testování Uttero pro iOS přes TestFlight. Prvních 20 míst je volných tento týden, dalších 70 přibude příští týden. Testování je zdarma a zatím jen pro komunitu.",
+      "body": "Daniel domluvil navýšení kvóty pro testy se Soniox a postupně přizývá další lidi. Celkem má 100 slotů: 10 bylo otevřeno dřív, dalších 20 jde tento týden, zbylých 70 příští týden.\n\nKdo se chce zapojit, zadá své Apple ID přes formulář na webu a do 48 hodin přijde pozvánka do TestFlightu. Na webu je i video s ukázkou fungování aplikace.\n\nDaniel prosí testéry o tři věci: posílat zpětnou vazbu přes tlačítko v nastavení aplikace, nepřepisovat přes ni celovečerní filmy (běží z jeho kreditu) a brát to jako experiment s aplikací, kterou by lidé používali každý den.",
       "read_minutes": 2,
       "source_date": "2026-04-13",
       "topics": [
@@ -29,8 +29,8 @@
       "type": "NÁSTROJE",
       "level": "Builder",
       "title": "Claude nebo Gemini v Google Workspace",
-      "excerpt": "Mít Google Workspace neznamená, že musíte psát v Gemini. Jeden člen popsal, proč na tvorbu textů používá Claude, i když má celý workflow postavený na Google ekosystému.",
-      "body": "Logika říká: máš Gmail, Docs a Drive, tak používej Gemini. Je zabudovaný, pohodlný a nemusíš přepínat mezi nástroji.\n\nJenže pohodlí a kvalita výsledku nejsou totéž. Jeden člen komunity popsal, jak to řeší on. E-maily si přes Google skripty upraví ještě před odesláním do AI. Na samotné psaní textů pak přepíná do Claude. Proč? Výstupy má lepší a prostředí mu víc vyhovuje.\n\nJe to dobrý příklad toho, že integrace pomáhá, ale nemá smysl kvůli ní obětovat kvalitu. Nástroje se dají v klidu kombinovat napříč ekosystémy.\n\nPokud řešíte podobné rozhodnutí, otestujte oba modely na typu textu, který píšete nejčastěji. Marketingový e-mail, interní zpráva, nabídka. Výsledek se bude lišit podle člověka, zadání i jazyka.",
+      "excerpt": "Mít Google Workspace neznamená, že musíte psát v Gemini. Daniel popsal, proč na tvorbu textů používá Claude, i když má celý workflow postavený na Google ekosystému.",
+      "body": "Daniel řekl, že Claude z Google Workspace nepouští. Na tvorbu textů přepíná do Claude, protože výstupy má lepší a prostředí mu víc vyhovuje.\n\nE-maily si přes Google skripty upraví ještě před odesláním do Gemini. Sám říká, že to je trochu na dýl a zkusí to někdy popsat.\n\nZároveň zmínil, že má zájem vyzkoušet lokální model. Testoval ho na MacBook Pro a fungoval dobře, ale MacBook není pořád zapnutý a hardware pro stálý provoz zatím nemá.",
       "read_minutes": 2,
       "source_date": "2026-04-13",
       "topics": [
@@ -47,17 +47,18 @@
       "id": "2026-04-13-03",
       "type": "INSIGHT",
       "level": "Expert",
-      "title": "Lokální AI pro citlivá data",
-      "excerpt": "Když AI model běží lokálně, řeší to jednu zásadní věc: data zůstanou u vás v počítači. Jenže bez dost výkonného hardwaru to pořádně nepojede. A návody to většinou dopředu neřeknou.",
-      "body": "Lokální modely řeší oprávněnou obavu: co se děje s daty, která posíláte do cloudu. U citlivých dokumentů, smluv nebo interní komunikace to dává smysl řešit.\n\nHáček je v hardwaru. Průměrný firemní počítač většinou nestačí. Hodí se aspoň 32 GB RAM, rychlý disk a ideálně samostatná grafická karta. Jinak model buď nespustíte vůbec, nebo poběží tak pomalu, že se s ním nedá rozumně pracovat.\n\nJedna členka komunity psala, že všechno správně nainstalovala, ale její stolní PC to neutáhl. To se stává často. Návody většinou řeknou, co nainstalovat, ale už neřeší, jak silný počítač k tomu potřebujete.\n\nNejčastěji se pro lokální provoz používají Ollama a LM Studio. Modely jako Llama 3, Mistral nebo Phi-3 jsou zdarma a fungují offline. Než do toho dáte čas, zkontrolujte si parametry svého počítače.\n\nPokud takový hardware nemáte, ale soukromí dat řešit chcete, podívejte se na podmínky konkrétní cloudové služby. Řada z nich data nepoužívá k trénování modelů.",
-      "read_minutes": 3,
+      "title": "Lokální AI pro citlivá data: zájem je, hardware brzdí",
+      "excerpt": "Členka komunity zkusila rozjet AI lokálně kvůli bezpečnosti dat. Vše nainstalovala správně, ale její pevný počítač to nezvládl. Ptala se na minimální vybavení.",
+      "body": "Martina psala, že před pár měsíci zkoušela rozjet AI lokálně. Motivací byla bezpečnost dat v konkrétních případech. Vše nainstalovala podle návodu, ale pevný PC to nedal.\n\nPtala se Daniela, na jakém hardwaru to testoval a jaké je minimální vybavení.\n\nDaniel odpověděl, že to má otestované na MacBook Pro a funguje to dobře. Na stálý provoz ale nemá hardware, který by mu vyhovoval, MacBook není pořád zapnutý.\n\nOtázka na konkrétní minimální vybavení zůstala bez přímé odpovědi.",
+      "read_minutes": 2,
       "source_date": "2026-04-13",
       "topics": [
         "AI nástroje"
       ],
-      "source_group": "mastertheflow—hlavní",
+      "source_group": "inspiracediskuze",
       "source_msg_times": [
-        "10:05"
+        "07:37",
+        "08:10"
       ]
     }
   ],

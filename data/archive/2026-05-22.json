@@ -12,8 +12,8 @@
       "type": "TÉMA TÝDNE",
       "level": "Builder",
       "title": "Speech-to-text dominuje diskuzi v komunite",
-      "excerpt": "Diktování a přepisy ze schůzek. Komunita sdílí zkušenosti s Utterem, WisprFlow a betou Raycastu 2.0. Výběr nástroje záleží hlavně na operačním systému a na tom, jak složitý workflow chcete.",
-      "body": "Velká část diskuze v Inspiraci se točila kolem speech-to-text nástrojů. Od diktování do mobilu až po přepisy meetingů.\n\nUttero vede v přesnosti i rozpoznávání jazyků, včetně francouzštiny. Funguje hlavně na Macu a iOS. Lidi ze skupiny si ho chválí, hlavně když míchají víc jazyků.\n\nWisprFlow je nejlepší alternativa pro Windows. Má méně funkcí, ale solidní základ a dobrou přesnost.\n\nRaycast 2.0 beta přidává diktování, které prý hodně připomíná Uttero. Pokud už Raycast používáte, dává smysl ho vyzkoušet. Obě aplikace se aktivně vyvíjejí a nejspíš se budou dál přibližovat.\n\nPlaud řeší něco jiného: přepisy schůzek, ne diktování. Hardware se připojí k telefonu, software pak všechno organizuje v počítači.\n\nSpolečná linka je jasná: speech-to-text už není jen prémiová funkce pro power users. Čím dál víc lidí ho používá v běžné práci, ať už na psaní, nebo na záznamy ze schůzek.",
+      "excerpt": "Komunita sdílí zkušenosti s Utterem, WisprFlow a betou Raycastu 2.0. Daniel používá Plaud jako hardware i software pro přepisy meetingů. Pro Windows doporučuje WisprFlow nebo počkat na Raycast 2.0.",
+      "body": "Velká část diskuze v Inspiraci se točila kolem speech-to-text nástrojů.\n\nUttero si lidi z komunity chválí. Na iPhone ho jeden člen zkouší necelý týden. Jiný člen ho pochválil za přesnost a rozpoznávání jazyků včetně francouzštiny, ale nerozchodil překlad do vlastního jazyka on the fly.\n\nWisprFlow Daniel doporučuje pro Windows. Další možnost je počkat na Raycast 2.0, jehož beta verze diktování hodně připomíná Uttero.\n\nNa přepisy meetingů Daniel používá Plaud jako hardware i software. Říká, že je to nejjednodušší varianta, jak mít všechno na jednom místě, a přesnost je dobrá. Přemýšlí o vlastním nástroji nad Sonioxem kvůli míchání jazyků, ale to je zatím vzdálená budoucnost.\n\nLive Translate v Utteru Daniel vypnul a zatím neví, jak ho znovu zapojit.",
       "read_minutes": 2,
       "source_date": "2026-05-22",
       "topics": [
@@ -23,30 +23,34 @@
       ],
       "source_group": "inspiracediskuze",
       "source_msg_times": [
-        "09:32"
+        "09:32",
+        "10:00",
+        "10:15",
+        "11:04",
+        "11:05"
       ]
     },
     {
       "id": "2026-05-22-02",
-      "type": "NÁSTROJE",
-      "level": "Builder",
-      "title": "Plaud jako hardware i software pro přepisy",
-      "excerpt": "Plaud je fyzický záznamník a zároveň software do počítače. Dohromady fungují tak, že se nahraný meeting rovnou uloží jako přepis na jednom místě, bez ručního exportu.",
-      "body": "Plaud je fyzické zařízení, které připojíte k telefonu. Nahrává zvuk přímo z reproduktoru nebo mikrofonu. K tomu má aplikaci pro počítač, kde se přepisy ukládají a třídí.\n\nFunguje to jednoduše: přijdete na meeting, nahráváte přes Plaud hardware a přepis se vám automaticky objeví v aplikaci. Nemusíte nic ručně exportovat ani řešit, kam uložit soubory.\n\nPodle zkušeností z komunity jsou přepisy hodně přesné. Platí to i u delších nahrávek a u smíšeného obsahu.\n\nDalší možnost je postavit si vlastní řešení nad některým AI API pro přepis. Získáte tím větší kontrolu a často lepší výsledky při míchání jazyků. Na druhou stranu to chce technické znalosti a čas na vývoj.\n\nPro většinu lidí, kteří chtějí jednoduše dostat přepis z meetingu rovnou do textu bez ručního stahování, je Plaud dobrá volba.",
+      "type": "INSIGHT",
+      "level": "Expert",
+      "title": "Claude Code vs Codex: komunita porovnává výstupy",
+      "excerpt": "Část komunity přechází z Claude Code na Codex. Opus 4.7 prý bere zadání doslovněji než dřív a méně domýšlí. Codex naopak víc rozumí kontextu a sám navrhuje vylepšení.",
+      "body": "Ve Vibe Coding skupině se rozjela diskuze o tom, jestli Claude Code pořád dává nejlepší výstupy.\n\nJeden člen po půl roce na Claude Code zkusil znovu ChatGPT Codex a má pocit, že Codex dává teď lepší výsledky. Jiný člen potvrdil stejný pocit, k tomu přidal výpadek Clauda.\n\nOpus 4.7 podle zkušeností komunity bere zadání mnohem doslovněji než předchozí verze. Když mu něco v zadání chybí, navrhne to k řešení, místo aby to sám nějak udělal. Jednomu členu to vyhovuje, protože nesnáší, když si AI domýšlí featury.\n\nJiný člen, který kóduje v Pythonu, říká, že Codex lépe chápe kontext a navrhuje vylepšení, zatímco CC se soustředí hlavně na splnění úkolu.\n\nDaniel zkusil 24 hodin na Codexu a říká, že to bylo super. Pro něj je ale důležitější doručovat výsledky než řešit nástroj pokaždé, když vyjde nová verze.",
       "read_minutes": 2,
       "source_date": "2026-05-22",
       "topics": [
-        "Meeting"
+        "Claude Code",
+        "Vibe Coding"
       ],
       "source_group": "vibecoding",
       "source_msg_times": [
-        "15:14",
-        "18:53",
         "06:44",
+        "06:48",
         "07:01",
-        "09:36",
         "08:30",
-        "16:06"
+        "09:02",
+        "09:38"
       ]
     },
     {
@@ -54,8 +58,8 @@
       "type": "INSIGHT",
       "level": "Expert",
       "title": "Jak strukturovat konec Vibe Coding session",
-      "excerpt": "Jak správně ukončit práci s Claude Code? V komunitě na to lidi jdou různě: někdo používá ruční vícekrokové skilly, jiný automatické hooky a další ukládá stav session do JSONu. Každý přístup řeší trochu jiný problém.",
-      "body": "Ve skupině Vibe Coding se rozjela dlouhá diskuze o tom, jak správně ukončit práci s Claude Code. Nakonec z toho bylo větší téma, než se na první pohled zdálo.\n\nPřístupy, které v diskuzi padly:\n\nMultikrokový skill: strukturovaný seznam kroků na konec session. Uložit stav, udělat commit, zapsat poznámky, připravit plán na příště. Pomáhá ohlídat, že na nic nezapomenete.\n\nMemplace + /save hook: automatické ukládání stavu session do paměti. Hook se spustí sám, takže na to nemusíte myslet.\n\n /wrap flow: kombinace zápisů do Obsidianu, Things a Notion. Hodí se pro lidi, kteří mají složitější systém postavený na více nástrojích.\n\nProjekt-state.json a cross-projektové závislosti: pokročilejší přístup, ve kterém si Claude drží stav napříč projekty. Když se vrátíte k projektu B, víte, co může ovlivnit projekt A.\n\nHlavní otázka při výběru je jednoduchá: chcete session zavírat ručně, kdy práci vědomě ukončíte, nebo automaticky, kdy to za vás udělá hook? Funguje oboje. Jen z toho budete mít jiný pocit při práci.",
+      "excerpt": "Daniel sdílel svůj 9-krokový /bye skill pro ukončení session. Komunita odpověděla třemi různými přístupy: memplace + /save hook, /wrap flow do Obsidianu a Things, a SESSION CLOSE s project-state.json.",
+      "body": "Daniel se zeptal, jestli má komunita v Claude Code nějaký /bye skill. Sdílel svůj přístup: 9 kroků od kontroly gitu přes commit a push až po zápis do second brainu.\n\nPřístupy, které v odpovědích padly:\n\nMemplace + /save hook: jeden člen má /save skill, který ukládá stav session do memplace. K tomu hook, který každých 15 kroků spustí /save automaticky.\n\n/wrap: jiný člen projde celou session, nové a důležité věci zpracuje jako Obsidian note, menší věci uloží do příslušné poznámky nebo claude.md. Navrhne a vytvoří tasky do Things, případně aktualizuje Notion nebo HTML Dashboard. Na konci zapíše jednu větu o tom, co se dělalo.\n\nSESSION CLOSE (Jiří Soljak): každý projekt má master brief, architecture map, session log a project-state.json. Na konci session skill shrne co se udělalo, aktualizuje statusy komponent a commitne strukturovanou zprávou. Zároveň drží přehled přes všechny projekty a hlídá závislosti.",
       "read_minutes": 2,
       "source_date": "2026-05-22",
       "topics": [
@@ -66,9 +70,11 @@
       ],
       "source_group": "vibecoding",
       "source_msg_times": [
-        "18:53",
+        "15:46",
+        "16:05",
+        "16:06",
         "17:34",
-        "15:14"
+        "18:53"
       ]
     },
     {
@@ -76,8 +82,8 @@
       "type": "NÁSTROJE",
       "level": "Expert",
       "title": "Bezpečnostní audit vibe-coded aplikace před produkcí",
-      "excerpt": "Pustit vibe-coded aplikaci do produkce bez bezpečnostního auditu je risk. V komunitě se řešily dva nástroje: vibeaudit.cz a grovetechai.com/scanner. Recenze jsou ale smíšené a pořád se diskutuje, co funguje nejlíp.",
-      "body": "Vibe coding je skvělý způsob, jak rychle rozjet aplikaci. Než ji ale pustíte k reálným uživatelům, vyplatí se udělat bezpečnostní kontrolu. Hlavně pokud pracuje s citlivými daty nebo penězi.\n\nV komunitě padly dva nástroje:\n\nvibeaudit.cz: nástroj zaměřený přímo na vibe-coded aplikace. Ohlasy v komunitě jsou smíšené. Někomu pomohl, jiný měl pocit, že výstupy jsou moc obecné.\n\ngrovetechai.com/scanner: další automatizovaný scanner. Podobně může posloužit jako první kontrola, ale nechytí všechno.\n\nOba nástroje dávají smysl jako základní automatizovaný check. U aplikace, která jde do produkce a pracuje s citlivými daty, ale stojí za to brát smíšené recenze vážně.\n\nLepší může být kombinace: nejdřív automatický scanner na snadno odhalitelné chyby, potom ruční review od někoho, kdo má zkušenost se security. Komunita teď aktivně řeší, co v téhle oblasti funguje nejlíp.",
+      "excerpt": "Členka komunity hledá security audit před spuštěním aplikace do produkce. Padly dva nástroje: vibeaudit.cz a grovetechai.com/scanner. Recenze jsou smíšené.",
+      "body": "Jedna členka testuje aplikaci s patnácti lidmi a chce ji pustit víc do světa. Před tím ale chce bezpečnostní audit, protože si netroufá vzít na triko všechna rizika vibe codingu bez toho, aby se na to někdo pořádně podíval.\n\nNa LinkedIn na ni vykoukl Ondřej Hájek s vibeaudit.cz a zvažuje, jestli do toho investovat.\n\nZ komunity padl tip na grovetechai.com/scanner. Jeden člen dodal, že vibe coding scan mají jednou za měsíc zdarma.\n\nRecenze na vibeaudit.cz jsou ale smíšené. Jeden člen napsal, že výsledky auditu byly v mnoha věcech úplně mimo. Jiný člen se zeptal na spolehlivost, protože stránka sama vypadá jako produkt pětiminutového vibe codingu.",
       "read_minutes": 2,
       "source_date": "2026-05-22",
       "topics": [
@@ -88,7 +94,12 @@
       "source_group": "inspiracediskuze",
       "source_msg_times": [
         "19:11",
-        "09:32"
+        "19:24",
+        "19:26",
+        "19:40",
+        "19:52",
+        "20:21",
+        "20:30"
       ]
     }
   ],

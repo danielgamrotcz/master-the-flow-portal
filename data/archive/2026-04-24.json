@@ -10,7 +10,7 @@
     {
       "id": "2026-04-24-01",
       "source_date": "2026-04-24",
-      "excerpt": "Obsah na jednom místě v Obsidianu, konfigurace se průběžně ladí — chybí už jen automatická zpětná vazba.",
+      "excerpt": "Obsah na jednom místě v Obsidianu, konfigurace se průběžně ladí. Chybí už jen automatická zpětná vazba.",
       "body": "Daniel popisuje, jak si v Obsidianu centralizuje obsah a přidává k němu personalizovaná doporučení. Průběžně to ladí a upravuje. Zatím mu chybí automatizace v sebeučení a zpětné vazbě. To chce dotáhnout a ukázat na webináři 7. 5. Ailin se nabídla, že se na to podívají spolu.",
       "topics": [
         "Automatizace",
@@ -21,7 +21,7 @@
       "source_msg_times": [
         "12:21"
       ],
-      "type": "POSTAVIL JSEM"
+      "type": "UKÁZKA"
     },
     {
       "id": "2026-04-24-02",
@@ -36,7 +36,7 @@
       "source_msg_times": [
         "18:23"
       ],
-      "type": "POSTAVIL JSEM"
+      "type": "UKÁZKA"
     }
   ],
   "resurfacing": {

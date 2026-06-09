@@ -12,8 +12,8 @@
       "type": "NÁSTROJE",
       "level": "Builder",
       "title": "Wispr Flow vs Apple diktování vs Raycast",
-      "excerpt": "Komunita v praxi porovnávala tři způsoby převodu řeči na text. Wispr Flow vede přesností, a to i na iOS. Apple diktování funguje spolehlivě bez nastavování. Raycast přidal diktování v nejnovější verzi. Každý z těchto přístupů má ale svoje limity.",
-      "body": "Debata se stočila ke konkrétním zkušenostem s diktováním. Z těch, kdo ho zkoušeli, zatím nejlíp vychází Wispr Flow. Funguje na Macu i iPhonu a překvapivě dobře rozpoznává řeč i v místnosti, kde mluví víc lidí najednou. Na iOS má ale háček: musí běžet na pozadí a napojení na systémovou klávesnici je dost kostrbaté. Někdo zkoušel nastavit dvojité poklepání na zadní stranu telefonu pro rychlé spuštění, ale i to je spíš nouzové řešení.\n\nApple diktování funguje bez většího nastavování. Hodí se pro ty, kdo nechtějí instalovat další nástroj. Nevýhoda je, že interpunkci je potřeba diktovat ručně.\n\nRaycast v nejnovější verzi nově přidal přepis diktování. Kdo ho používá jako launcher, má tuhle funkci rovnou k dispozici. Uttero se dál vyvíjí jako nástroj přímo z komunity.\n\nKdo chce začít bez nastavování, pro toho je nejjednodušší Apple diktování. Kdo chce větší přesnost a použití napříč aplikacemi, měl by zkusit Wispr Flow.",
+      "excerpt": "Komunita porovnávala diktování v praxi. Wispr Flow vede přesností na Macu i iPhonu, ale na iOS má limity. Apple diktování funguje bez nastavování, interpunkci je ale třeba diktovat ručně. Raycast přidal diktování v nejnovější verzi. Řešily se i halucinace v přepisech.",
+      "body": "Debata se stočila ke konkrétním zkušenostem s diktováním. Z těch, kdo ho zkoušeli, zatím nejlíp vychází Wispr Flow. Funguje na Macu i iPhonu. Na iOS má ale háček: musí běžet na pozadí a napojení na systémovou klávesnici je dost kostrbaté. Někdo zkoušel nastavit dvojité poklepání na zadní stranu telefonu pro rychlé spuštění, ale i to je spíš nouzové řešení. Wispr Flow navíc nepodporuje psaní tahem, takže kdo tu funkci používá, musí přepínat.\n\nApple diktování funguje bez většího nastavování. Nevýhoda je, že interpunkci je potřeba diktovat ručně.\n\nRaycast v nejnovější verzi nově přidal přepis diktování.\n\nJeden člen zmínil problém s halucinacemi v přepisech, kdy se na začátek zprávy přidá náhodná věta, kterou dotyčný vůbec neřekl. Děje se to jak u Wispr Flow, tak u Uttero.",
       "read_minutes": 2,
       "source_date": "2026-05-21",
       "topics": [
@@ -33,8 +33,8 @@
       "type": "NÁSTROJE",
       "level": "Začátečník",
       "title": "Fireflies, Deepgram nebo Plaud na schůzky",
-      "excerpt": "O přepis online schůzek se zajímá čím dál víc lidí. Padly tři konkrétní nástroje. Fireflies se přidá do pozvánky a přepis pak přijde automaticky. Deepgram nabízí diarizaci a 200 dolarů kreditu zdarma na začátek.",
-      "body": "Přepisy živých schůzek řeší víc lidí z komunity. V diskuzi padly tři konkrétní nástroje.\n\nFireflies se do Google Meetu nebo Zoomu připojí jako virtuální účastník. Přepis dorazí automaticky po každé schůzce. Pro netechnické uživatele je to nejjednodušší cesta. Stačí přidat e-mail do pozvánky a dál to neřešit.\n\nDeepgram umí diarizaci, tedy rozpoznat, kdo co v přepisu říkal. Startovní kredit 200 dolarů zdarma je dobrá šance si ho vyzkoušet bez závazku. Hodí se pro ty, kdo chtějí mít větší kontrolu nad zpracováním dat.\n\nPlaud je fyzické zařízení na nahrávání. Někteří v komunitě ho zvažují jako doplněk k online nástrojům. Hlavně pro osobní schůzky, kde se nechcete spoléhat na připojení.\n\nPokud začínáte, Fireflies je nejrychlejší volba. Pokud potřebujete víc než jen textový přepis, Deepgram dá větší flexibilitu.",
+      "excerpt": "O přepis online schůzek se zajímá víc lidí z komunity. Padly tři konkrétní nástroje. Deepgram nabízí diarizaci a 200 dolarů kreditu zdarma. Fireflies jeden člen zkoušel a zachytilo prý 95 procent informací včetně čísel.",
+      "body": "Přepisy živých schůzek řeší víc lidí z komunity. V diskuzi padly tři konkrétní nástroje.\n\nFireflies jeden člen přímo vyzkoušel na schůzce. Zachytilo prý 95 procent informací, funguje i při použití mobilu v terénu a tvoří souhrny. Druhý člen Fireflies zmínil jako možnost, ale osobně ho netestoval.\n\nDeepgram umí diarizaci. Nabízí 200 dolarů kreditu zdarma, což podle jednoho člena pro domácí použití prakticky nejde vyčerpat.\n\nPlaud jeden člen zvažoval jako doplněk ke svému workflow. Daniel ho používá pro přepisy schůzek, a to jak hardware, tak software v počítači.\n\nOtevřená otázka dne: jeden člen hledal řešení pro nahrávání a přepis online schůzky lokálně, bez cloudu (Mac, 24 GB). Komunita nabídla Deepgram, ale kompletní lokální workflow nikdo nepopsal.",
       "read_minutes": 2,
       "source_date": "2026-05-21",
       "topics": [
@@ -60,7 +60,7 @@
       "level": "Expert",
       "title": "Claude Code řídit z mobilu přes SSH",
       "excerpt": "Ve skupině Vibe Coding se řešilo, jak ovládat Claude Code z mobilu, když počítač běží doma. Jde to přes Termius a SSH, případně přes Telegram bota v tmux session. Jeden člen takhle udělal velký update knowledge base a všechno proběhlo bez jediného problému.",
-      "body": "Pokud máte Mac mini doma nebo v kanceláři a chcete Claude Code ovládat na dálku, v diskuzi padlo několik možností.\n\nNejjednodušší je Termius na iOS nebo Androidu. Přihlásíte se přes SSH do Macu, otevřete tmux session a v ní pustíte Claude Code. Výhoda je plná kontrola. Nevýhoda je práce v terminálu na malém displeji mobilu.\n\nPro běžné používání je pohodlnější Telegram bot jako wrapper pro Claude Code. Bot bere zprávy z Telegramu a posílá je do Claude Code session. Výstup se vrací zpátky jako běžná zpráva v aplikaci v mobilu. Tím odpadá otravná práce s terminálem na telefonu.\n\nSlack může fungovat podobně, pokud ho používáte radši.\n\nJeden člen psal, že takhle z mobilu udělal velký update knowledge base. Bez problémů. Výsledek byl stejný jako při práci na desktopu. Základ je stabilní tmux session na Macu, která přežije odpojení.",
+      "body": "Ve Vibe Coding skupině se řešilo, jak ovládat Claude Code z mobilu, když stroj běží doma.\n\nNěkteří jedou přes Termius: SSH připojení na Mac mini, synchronizace souborů přes iCloud. Jeden člen takhle fungoval, ale nakonec přešel na Telegram bota v tmux session. Ten podle něj funguje dobře, po určitém vyladění.\n\nJiný člen sdílel zkušenost s remote-control přes dispatch v krizové situaci. Z auta poslal cowork, který za něj psal prompty v Claude Code a problém vyřešil. Označil to sám za nouzové řešení.\n\nJeden člen má CC nastaven tak, že každá session má automaticky zapnutou remote-control. Z mobilu mu nefungují některé příkazy, ale buď je zavolá CC sám, nebo mu je napíše ručně.\n\nDaniel sdílel zkušenost po sessions z mobilu: udělal velký update knowledge base, téměř bez problémů. Remote-control s Mac mini označil za zatím fajn.",
       "read_minutes": 3,
       "source_date": "2026-05-21",
       "topics": [
@@ -82,7 +82,7 @@
       "level": "Expert",
       "title": "ChatGPT Codex vs Claude Code na refaktoringu",
       "excerpt": "Část komunity začala vedle Claude Code testovat i Codex. Opus 4.7 podle nich plní zadání až moc doslova a míň sahá do okolního kódu. Codex zatím podle prvních dojmů líp přepisuje existující kód.",
-      "body": "První srovnání z komunity ukazují zajímavý rozdíl. Claude Code s Opusem 4.7 prý bere zadání až moc doslova. Sáhne jen na to, o co si řeknete, a nechá být okolní kód, který by si taky zasloužil úklid. ChatGPT Codex podle prvních zkušeností líp přepisuje existující kód, když je potřeba ho vyčistit nebo napsat znovu.\n\nPořád jsou to ale první dojmy z konkrétních projektů. Modely se rychle mění, zkušenosti se liší projekt od projektu a obecné benchmarky vám neřeknou, jak bude nástroj fungovat zrovna na vašem kódu a ve vašem workflow.\n\nNavíc rychlé přeskakování mezi nástroji žere čas i soustředění. Testování dává smysl na konkrétním úkolu, který děláte opakovaně. Ne na náhodném kusu kódu.\n\nPokud si chcete udělat vlastní srovnání, vyberte jeden typ úkolu, udělejte ho v obou nástrojích a výsledek posuďte ve svém kontextu. Obecné dojmy z komunity berte jako start, ne jako hotový závěr.",
+      "body": "Část komunity začala vedle Claude Code testovat ChatGPT Codex.\n\nJeden člen používal CC víc než půl roku. S releasem Opusu 4.7 začal mít pocit, že výstupy nejsou tak dobré jako dřív. Zkusil Codex a přijde mu, že dává lepší výstupy.\n\nDruhý člen potvrdil podobný pocit a přidal konkrétnější popis. Opus 4.7 bere zadání víc doslova než předchozí verze. Když mu v zadání něco chybí, navrhne to k řešení, dřív by to prostě nějak udělal. Codex podle jeho zkušenosti kód víc pochopí a nadhazuje, co by šlo vylepšit. CC tohle nedělá.\n\nDaniel zkoušel Codex 24 hodin a bylo to super. Přesto u CC zůstává. Napsal, že je pro něj důležitější doručovat výsledky a neřešit každý měsíc novou verzi nástroje.",
       "read_minutes": 2,
       "source_date": "2026-05-21",
       "topics": [
@@ -104,7 +104,7 @@
   ],
   "resurfacing": {
     "id": "2026-05-05-03",
-    "type": "POSTAVIL JSEM",
+    "type": "UKÁZKA",
     "level": "Builder",
     "title": "Tři projekty z komunity za týden",
     "excerpt": "Appka na domácí úkoly při výcviku psa, beta projekt, který zpracovává jen změněná data, a kalkulačka daňových doplatků pro rok 2025. Komunita staví a sdílí.",

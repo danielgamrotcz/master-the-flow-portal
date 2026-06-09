@@ -13,7 +13,7 @@
       "level": "Builder",
       "title": "Automatické ukládání kontextu při práci v Claude Code",
       "excerpt": "Když session skončí, kontext zmizí. Několik členů sdílelo konkrétní způsoby, jak si rozdělanou práci ukládají automaticky, bez ručního exportu.",
-      "body": "Větší projekty v Claude Code mají jeden praktický problém: jakmile ukončíte session, kontext zmizí. V diskuzi se objevily tři způsoby, jak to řešit.\n\nNejvíc automatická varianta jsou hooky, které ukládají kontext každých 15 kroků. Stav se zapíše do souboru a člověk nemusí nic zadávat ručně. Druhá možnost je skill, který při ukončení zpracuje session a rovnou navrhne úkoly do task manageru, třeba Things, Notionu nebo Obsidianu. Třetí varianta hlídá závislosti mezi projekty a při přepnutí kontext zachová.\n\nVšechny tři přístupy mají společné to, že se kontext neukládá náhodně, ale přímo v rámci běžného workflow. Kdo v Claude Code tráví několik hodin denně, pro toho to není drobnost, ale základ, aby se dalo plynule navázat.",
+      "body": "Větší projekty v Claude Code mají jeden praktický problém: jakmile ukončíte session, kontext zmizí. V diskuzi se objevily tři způsoby, jak to řešit.\n\nNejvíc automatická varianta jsou hooky, které ukládají kontext každých 15 kroků. Stav se zapíše do souboru a člověk nemusí nic zadávat ručně. Druhá možnost je skill, který při ukončení zpracuje session a rovnou navrhne úkoly do task manageru, třeba Things, Notionu nebo Obsidianu. Třetí varianta jde dál: každý projekt má vlastní strukturu (master brief, session log, project-state.json) a skill při SESSION CLOSE hlídá závislosti mezi projekty a aktualizuje centrální registry. Na začátku každé session pak víte nejen kde jste skončili v jednom projektu, ale i co se děje jinde.",
       "read_minutes": 2,
       "source_date": "2026-05-26",
       "topics": [
@@ -34,11 +34,11 @@
     },
     {
       "id": "2026-05-26-02",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Builder",
       "title": "Tři projekty za víkend bez nového předplatného",
       "excerpt": "Migrace webu, vlastní CRM na elektro zakázky a pipeline na přepisy podcastů. Tři konkrétní příklady věcí, které členové postavili s AI místo placených nástrojů.",
-      "body": "Z diskuze vzešly tři projekty, které stojí za pozornost.\n\nPrvní: web přesunutý z Lovable na čistý Claude a GitHub. Pár hodin práce a žádné další předplatné. Důvod byl jednoduchý: člen chtěl mít větší kontrolu nad kódem a Lovable mu ji nedávalo.\n\nDruhý: komplexní CRM systém pro elektro zakázky. Placené CRM nástroje neuměly přesně to, co bylo potřeba, tak vzniklo vlastní řešení. Projekt, který by dřív zabral programátorovi zhruba týden.\n\nTřetí: pipeline pro přepisy podcastů přes Soniox. Automatický přepis a strukturovaný výstup bez ručního nahrávání do externího nástroje.\n\nCo mají společné: placené nástroje s omezenou flexibilitou dávají čím dál menší smysl, když si člověk umí postavit přesně to, co potřebuje. Tenhle posun se v komunitě objevuje čím dál častěji.",
+      "body": "Z diskuze vzešly tři projekty, které stojí za pozornost.\n\nPrvní: web přesunutý z Lovable na čistý Claude a GitHub. Pár hodin práce a žádné další předplatné.\n\nDruhý: komplexní systém pro elektro zakázky. Zakázky, ekonomika, to-do listy, denní záznamy, adresář, reporty, výkazy práce. Člen ho staví jako CRM s tím, co mu žádné placené CRM nedalo. Fakturaci si jiný člen postavil s Codexem za hodinu a půl, protože placený iDoklad neměl funkce, které potřeboval.\n\nTřetí: pipeline na přepisy podcastů přes Soniox. Skript vytáhne audio z mp4, Soniox přepíše, skript stáhne výsledek a naformátuje ho, uloží do Obsidianu. 30 minut práce a členka smazala předplatné Turboscribe.",
       "read_minutes": 2,
       "source_date": "2026-05-26",
       "topics": [
@@ -62,8 +62,8 @@
       "type": "NÁSTROJE",
       "level": "Builder",
       "title": "Dávají ještě smysl placené nástroje jako Canva nebo Turboscribe",
-      "excerpt": "Lidi v komunitě začali otevřeně řešit, za co se ještě vyplatí platit a co AI zvládne levněji nebo líp. Jasná odpověď z toho není, ale tahle otázka se objevuje čím dál častěji.",
-      "body": "Debata se stočila k praktické otázce: kdy už nedává smysl platit za specializovaný nástroj, když AI zvládne 80 % toho samého zdarma nebo za zlomek ceny?\n\nCanva je dobrý příklad. Pro jednodušší grafiku už AI alternativy fungují dobře, ale u složitějšího brandu pořád zaostávají. Turboscribe zase naráží na silnou konkurenci nástrojů jako Deepgram nebo lokální Whisper. Ty umí nabídnout srovnatelnou, někdy i lepší kvalitu za nižší cenu.\n\nJasný závěr z diskuze nepadl. Zaznělo ale jedno užitečné pravidlo: platit má smysl, když nástroj šetří čas v konkrétním opakovaném workflow a alternativa by znamenala technické nastavování, ke kterému se člověk reálně nedostane. Jakmile tenhle práh překročíte, stojí za to nástroj znovu zvážit.\n\nV praxi to řeší čím dál víc členů. Ne teoreticky, ale rovnou na vlastních nákladech.",
+      "excerpt": "Jedna členka napsala, že přestala platit za Lovable, Turboscribe i Canvu. Vše si staví sama. Jiný člen se hned zeptal jak na Canvu. Odpověď: to teprve přijde.",
+      "body": "Jedna členka v diskuzi napsala, že přestala používat Lovable, Turboscribe i Canvu. Vše si teď staví sama tak, aby to fungovalo přesně jak potřebuje. Turboscribe nahradila vlastním skriptem přes Soniox, Lovable odložila ve prospěch Clauda a GitHubu.\n\nNa Canvu se ji hned jiný člen zeptal jak, protože na editaci grafiky mu připadá dobrá a cenově OK. Odpověď zněla, že to má teprve v plánu a podá zprávu.\n\nJiný člen napsal rovnou, že Lovable a podobné nástroje už nedávají smysl a měly jepičí život. Jasný závěr z diskuze nepadl, otázka zůstala otevřená.",
       "read_minutes": 2,
       "source_date": "2026-05-26",
       "topics": [
@@ -83,7 +83,7 @@
       "level": "Začátečník",
       "title": "noscroll: denní digest novinek bez vlastní automatizace",
       "excerpt": "Vyberete si témata, která vás zajímají, a každý den dostanete přehled novinek k věci. Bez scrapování a bez kódu.",
-      "body": "Jeden člen zmínil Noscroll jako náhradu za vlastní scrapovací automatizaci. Funguje jednoduše: řeknete mu, co vás zajímá — AI nástroje, marketing nebo konkrétní obor — a každý den vám poskládá digest z relevantních zdrojů.\n\nProč to zmiňovat ve skupině, kde spousta lidí umí automatizovat? Protože někdy je nejchytřejší nic nestavět. Hotový nástroj znamená žádnou údržbu, žádné přihlašovací tokeny, hlídání API limitů ani opravy, když se něco rozbije.\n\nNoscroll sedí přesně na situaci, kdy chcete mít přehled o novinkách, ale nechcete řešit celou pipeline. Pro lidi bez technického zázemí je to přímočaré řešení. Pro technické lidi zase vědomá volba neztrácet čas něčím, co už existuje hotové.\n\nTip padl v diskuzi o tom, co ještě dává smysl stavět si vlastními silami.",
+      "body": "Jeden člen sdílel noscroll.com jako tip pro ty, kteří si nechcou nebo nemohou budovat vlastní scrapovací automatizaci. V konverzaci s nástrojem nastavíte, jaká témata vás zajímají, a každý den dostanete digest novinek. Průběžně mu dáváte zpětnou vazbu a digest si ladíte.\n\nČlen zkusil týdenní trial a rozhodl se pro placenou verzi. Cena podle něj 2 stovky a stojí to za to, i když si vlastní digest uměl sestavit sám. Pochválil i příjemnou osobnost nástroje.\n\nTip padl jako odpověď na Danielův dotaz, co by členům pomohlo s přehledností skupiny.",
       "read_minutes": 1,
       "source_date": "2026-05-26",
       "topics": [

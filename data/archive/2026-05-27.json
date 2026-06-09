@@ -33,7 +33,7 @@
       "level": "Builder",
       "title": "Čeština nekrátí token limit, krátí prostor v session",
       "excerpt": "Často se plete, že čeština zbytečně žere tokeny z měsíčního limitu. Zkušenější člen to upřesnil: měsíční limit to skoro neovlivní, ale kontextové okno v jedné session ano.",
-      "body": "Český text bývá zhruba o třetinu delší než stejný text v angličtině. V jedné dlouhé session s AI tak máte míň místa na kontext, kód, dokumenty nebo historii konverzace.\n\nMěsíčního ani denního token limitu se to většinou moc nedotkne. Textový vstup a výstup jsou proti celkovému využití malé, takže u běžné práce čeština nevadí.\n\nPoznáte to hlavně u delších projektů s desítkami až stovkami zpráv, kde do kontextu přidáváte soubory, kód nebo dokumentaci. Tam se ta třetina navíc projeví docela rychle.\n\nPrakticky: u kratších úkolů a diktování je čeština úplně v pohodě. U delší architektury nebo projektů se spoustou dokumentů se vyplatí zvážit angličtinu aspoň pro hlavní instrukce a system prompt.",
+      "body": "Česky psaný text zabírá v kontextovém okně session víc místa než anglický překlad. V jedné dlouhé session s AI tak máte míň místa na kontext, kód, dokumenty nebo historii konverzace.\n\nMěsíčního ani denního token limitu se to většinou moc nedotkne. Textový vstup a výstup jsou proti celkovému využití malé, takže u běžné práce čeština nevadí.\n\nZnát je to hlavně u delší práce s AI, kde do kontextu přidáváte soubory, kód nebo dokumentaci. Tam se ten rozdíl projeví.\n\nPrakticky: u kratších úkolů a diktování je čeština úplně v pohodě. U delší architektury nebo projektů se spoustou dokumentů se vyplatí zvážit angličtinu aspoň pro hlavní instrukce.",
       "read_minutes": 2,
       "source_date": "2026-05-27",
       "topics": [
@@ -52,7 +52,7 @@
       "level": "Builder",
       "title": "SuperWhisper umí přeložit diktát do angličtiny automaticky",
       "excerpt": "Jeden člen upozornil na nenápadnou funkci SuperWhisperu. Aplikaci si můžete nastavit tak, že vezme českou řeč a výstup rovnou přeloží do angličtiny. Diktujete normálně česky, AI dostane anglický text.",
-      "body": "SuperWhisper je macOS aplikace na hlasové diktování. Výstup posílá rovnou do aktivního textového pole. Má i méně známou funkci: živý překlad. Nastavíte cílový jazyk na angličtinu a SuperWhisper automaticky přeloží všechno, co nadiktujete česky.\n\nČlen, který to zmínil, rovnou řekl, že tuhle funkci sám nepoužívá. Jako postup ale dává smysl pro lidi, kteří chtějí diktovat česky a zároveň promptovat anglicky. Bez přepínání jazyka a bez ručního překládání.\n\nV praxi mluvíte přirozeně, přemýšlíte česky a AI dostane úspornější anglický vstup s větším prostorem pro kontext v session. Pokud SuperWhisper používáte a tahle možnost vás láká, zkuste ji otestovat na delším projektu.",
+      "body": "Jeden člen upozornil, že SuperWhisper umí diktát automaticky přeložit do angličtiny. Sám to nedělá, ale zmínil to jako postup, který stojí za vyzkoušení.\n\nProč to dává smysl? Mluvíte přirozeně česky, AI dostane anglický text s větším prostorem v kontextovém okně. Bez přepínání jazyka a bez ručního překládání.\n\nPokud SuperWhisper používáte a chcete šetřit místo v kontextu, tahle funkce to řeší bez změny diktovacích návyků.",
       "read_minutes": 1,
       "source_date": "2026-05-27",
       "topics": [
@@ -74,7 +74,7 @@
       "level": "Expert",
       "title": "Zranitelnost v Anthropic MCP umožňuje vzdálené spuštění kódu",
       "excerpt": "Výzkumníci z OX Security upozornili na vážnou bezpečnostní zranitelnost v Model Context Protocolu od Anthropic. Chyba v architektuře SDK umožňuje vzdáleně spustit kód přes dodavatelský řetězec AI. Ohrožené jsou mimo jiné nástroje Cursor a Windsurf.",
-      "body": "Tým OX Security našel architektonickou chybu v oficiálních SDK pro Model Context Protocol (MCP). Problém je v nebezpečném zpracování parametrů. Útočník díky tomu může na dálku spustit kód na systémech, kde běží MCP servery.\n\nDopad je velký. Podle odhadů je zranitelných přes 200 000 serverů. Týká se to i známých vývojářských nástrojů jako Cursor a Windsurf, které MCP používají.\n\nÚtočníci mají víc možností, jak chybu zneužít. Jde třeba o injekci přes uživatelské rozhraní, manipulaci s registry doplňků nebo prompt injection útok, který nevyžaduje žádnou akci uživatele.\n\nV komunitní diskuzi se objevil popis zranitelnosti, ale chyběl odkaz na původní výzkum. Pokud provozujete MCP servery nebo používáte nástroje, které na nich staví, sledujte bezpečnostní aktualizace od Anthropic a výrobců konkrétních nástrojů.",
+      "body": "Tým OX Security našel architektonickou chybu v oficiálních SDK pro Model Context Protocol (MCP). Problém je v nebezpečném zpracování parametrů. Útočník díky tomu může na dálku spustit kód na systémech, kde běží MCP servery.\n\nDopad je velký. Podle odhadů je zranitelných přes 200 000 serverů. Týká se to i známých vývojářských nástrojů jako Cursor a Windsurf, které MCP používají.\n\nÚtočníci mají víc možností, jak chybu zneužít. Jde třeba o injekci přes uživatelské rozhraní, manipulaci s registry doplňků nebo prompt injection útok, který nevyžaduje žádnou akci uživatele.\n\nV komunitní diskuzi se objevil popis zranitelnosti, ale chyběl odkaz na původní výzkum.",
       "read_minutes": 3,
       "source_date": "2026-05-27",
       "topics": [

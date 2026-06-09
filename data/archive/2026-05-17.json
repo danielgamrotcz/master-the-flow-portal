@@ -26,8 +26,8 @@
     {
       "id": "2026-05-17-02",
       "source_date": "2026-05-17",
-      "excerpt": "Člen komunity postavil vlastní projektový terminál ShellBoard s taby a rozděleným zobrazením. Zmíněný byl i Terax a ViberTerm, který Daniel kvůli jiným prioritám odložil.",
-      "body": "Při debatě o ViberTermu sdílel člen komunity vlastní řešení ShellBoard — terminál stavěný kolem projektů, se skupinami vlevo, podporou více tabů a rozdělenou obrazovkou. Odkaz na GitHub je k dispozici. Jako další alternativa padl Terax. Daniel přiznal, že VibeTerm má u něj nízkou prioritu a teď ho dál nerozvíjí.",
+      "excerpt": "Člen komunity postavil vlastní projektový terminál ShellBoard s taby a rozděleným zobrazením. Zmíněný byl i Terax a VibeTerm, který Daniel kvůli jiným prioritám odložil.",
+      "body": "Člen komunity se ptal na Danielův terminálový projekt VibeTerm a zároveň sdílel vlastní řešení ShellBoard, terminál stavěný kolem projektů, se skupinami vlevo, podporou více tabů a rozdělenou obrazovkou. Odkaz na GitHub je k dispozici. Jako další alternativa padl Terax. Daniel přiznal, že VibeTerm má u něj nízkou prioritu a projekt dál nerozvíjí.",
       "topics": [
         "Workflow",
         "AI nástroje"
@@ -35,9 +35,12 @@
       "title": "ShellBoard: vlastní terminál stavěný kolem projektů",
       "source_group": "inspiracediskuze",
       "source_msg_times": [
-        "09:52"
+        "09:52",
+        "09:59",
+        "10:12",
+        "14:34"
       ],
-      "type": "POSTAVIL JSEM"
+      "type": "UKÁZKA"
     },
     {
       "id": "2026-05-17-03",
@@ -50,11 +53,12 @@
         "Vibe Coding"
       ],
       "title": "Jak poznat důvěryhodný MCP server",
-      "source_group": "inspiracediskuze",
+      "source_group": "vibecoding",
       "source_msg_times": [
-        "07:50",
-        "20:37",
-        "21:51"
+        "09:25",
+        "09:34",
+        "09:47",
+        "09:54"
       ],
       "type": "INSIGHT"
     },
@@ -62,7 +66,7 @@
       "id": "2026-05-17-04",
       "source_date": "2026-05-17",
       "excerpt": "Člen komunity sdílel tip: než AI zadáte úkol, dejte jí fiktivní profesní profil. Jiný člen to používá při generování person pro usability review.",
-      "body": "Tip z komunity: místo toho, abyste AI rovnou zadali úkol, jí nejdřív dejte identitu přes fiktivní životopis nebo profesní profil. Podle zkušeností to výrazně mění tón i kvalitu výstupu. Jeden člen komunity to používá při generování person pro usability testy. Než pustí testování s reálnými uživateli, tak si takhle předem ověří, jestli design dává smysl.",
+      "body": "Tip z komunity: místo toho, abyste AI rovnou zadali úkol, dejte jí fiktivní profesní profil jako součást system promptu. Agent pak vstupuje do úkolu s konkrétními profesními instinkty, ne jako generic helpful AI assistant. Jeden člen komunity to používá při generování person pro usability review, kde projde IFU, UX a guidelines ještě před testováním s reálnými uživateli.",
       "topics": [
         "Prompting",
         "AI nástroje"
@@ -71,9 +75,7 @@
       "source_group": "inspiracediskuze",
       "source_msg_times": [
         "17:42",
-        "07:50",
-        "18:23",
-        "21:51"
+        "18:23"
       ],
       "type": "INSIGHT"
     },
@@ -81,29 +83,23 @@
       "id": "2026-05-17-05",
       "source_date": "2026-05-17",
       "excerpt": "Jak posílat citlivá data do AI bezpečně? V komunitě padly dvě konkrétní možnosti: MS Presidio a lokální Gemma běžící v Dockeru.",
-      "body": "Jeden z členů se ptal na nástroje, které anonymizují data, než je pošle do AI modelu. Padla dvě konkrétní doporučení: Microsoft Presidio, open-source knihovna pro detekci a maskování PII, a lokálně spuštěný model Gemma v Dockeru jako alternativa ke cloudovým službám. Obě možnosti umí zpracovat citlivá data bez toho, aby se originál posílal na cizí servery.",
+      "body": "Jeden z členů se ptal na nástroje pro anonymizaci a pseudonymizaci dokumentů před vložením do AI. Padla dvě konkrétní doporučení: MS Presidio, které sám zkoušel, a lokální AI přes Gemma v Dockeru jako druhá možnost.",
       "topics": [
         "AI nástroje"
       ],
       "title": "Jak posílat citlivá data do AI bezpečně",
       "source_group": "inspiracediskuze",
       "source_msg_times": [
-        "07:50",
-        "09:52",
-        "10:12",
         "18:40",
-        "18:46",
-        "20:36",
-        "20:58",
-        "21:51"
+        "18:46"
       ],
       "type": "INSIGHT"
     },
     {
       "id": "2026-05-17-06",
       "source_date": "2026-05-17",
-      "excerpt": "Jeden člen připomněl princip mikrovylepšení od Paula Akerse. jiný člen přidal otázku pro CEO/CTO: slouží to svému účelu? Odpovídají tomu náklady? Několik členů připomnělo, že ne každý si musí vyvíjet vlastní řešení.",
-      "body": "Debata o efektivitě se stočila k zásadní otázce: kdy ještě automatizovat a řešit nástroje a kdy už prostě dělat práci. Jeden člen zmínil princip mikrovylepšení od Paula Akerse — malá každodenní zlepšení bez tlaku na dokonalost. Jiný člen přidal byznysový pohled: každý nástroj nebo workflow by mělo projít jednoduchým testem — plní svůj účel? Odpovídají náklady tomu, co přináší? Komunita se shodla, že účel je důležitější než nástroje a že ne každý si musí vyvíjet vlastní software.",
+      "excerpt": "Jeden člen připomněl princip mikrovylepšení od Paula Akerse. Jiný člen přidal otázku pro CEO/CTO pohled: slouží to svému účelu? Odpovídají tomu náklady? Několik členů připomnělo, že ne každý si musí vyvíjet vlastní řešení.",
+      "body": "Debata o efektivitě se stočila k zásadní otázce: kdy ještě automatizovat a řešit nástroje a kdy už prostě dělat práci. Jeden člen zmínil princip mikrovylepšení od Paula Akerse, malá každodenní zlepšení bez tlaku na dokonalost. Jiný člen přidal byznysový pohled a postavil si vlastního ekonomicky smýšlejícího CTO agenta, jehož jediný účel je brzdit v nekonečném vylepšování. Ten se ptá: slouží ti tohle, nebo tě to jen zaměstnává? Daniel s přístupem souhlasil a poděkoval za tip.",
       "topics": [
         "Automatizace",
         "Produktivita",
@@ -112,8 +108,10 @@
       "title": "Mikrovylepšení: slouží to stále svému účelu?",
       "source_group": "inspiracediskuze",
       "source_msg_times": [
-        "21:51",
-        "07:50"
+        "20:36",
+        "20:58",
+        "21:00",
+        "21:51"
       ],
       "type": "INSIGHT"
     }

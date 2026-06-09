@@ -12,7 +12,7 @@
       "type": "INSIGHT",
       "level": "Builder",
       "title": "Tři průšvihy pasivního učení s AI",
-      "excerpt": "Pasivně jen číst, nechat AI přemýšlet za nás a nic si neověřovat. Tři spolehlivé způsoby, jak se s AI nic nenaučit. Problém není v nástroji, ale v tom, jak ho používáme. A řešení je překvapivě jednoduché.",
+      "excerpt": "Pasivně jen číst, nechat AI přemýšlet za nás a nic si neověřovat. Tři spolehlivé způsoby, jak se s AI nic nenaučit. Daniel to sdílel jako výseč z webináře pro klienta o sebevzdělávání s AI.",
       "body": "Hodně lidí s AI „studuje“ tak, že si nechá něco vysvětlit nebo shrnout. Výsledek? Příjemný pocit, že tomu rozumíte. Za týden je pryč.\n\n**Pasivní čtení** — AI vám téma hezky vysvětlí. Text dává smysl, takže máte pocit, že už to umíte. Jenže to je fluency illusion. Mozek si splete plynulé čtení se skutečným učením.\n\n**Přenechání přemýšlení AI** — Necháte AI, ať to shrne za vás. Jenže tím přijdete o chvíli, kdy si myšlenku propojíte s vlastní zkušeností. Bez toho se znalost moc neuchytí.\n\n**Žádné ověření** — Nezkoušíte, jestli to opravdu umíte. Přitom AI vás umí dobře prozkoušet. Přes otázky, dialog nebo kvízy.\n\nCo funguje líp? Otočte roli. Místo abyste se ptali vy AI, nechte AI ptát se vás.\n\nZkuste třeba prompt: „Vytvoř mi z toho kvíz na úrovni XYZ a jdi do hloubky.“ Nebo sokratovský styl. AI nepřednáší, ale vede vás otázkami.\n\nAnebo jednoduše: vysvětlete téma vlastními slovy. Tak, aby ho pochopil kolega, který o něm nic neví. Jakmile začnete kličkovat, víte, kde máte mezeru.",
       "read_minutes": 2,
       "source_date": "2026-05-06",
@@ -30,7 +30,7 @@
       "level": "Builder",
       "title": "Sokratovský model: AI vás zkouší, ne vysvětluje",
       "excerpt": "Místo klasického „vysvětli mi X“ zkuste prompt, který z AI udělá tazatele. Místo hotového textu dostanete sérii naváděcích otázek. A téma pochopíte tak, že vám to fakt zůstane v hlavě.",
-      "body": "Konkrétní prompt, který stojí za zkoušku:\n\n„Chci pochopit, jak funguje [téma]. Nevysvětluj mi to rovnou. Pokládej mi postupně naváděcí otázky, ať si na to přijdu sám. Po každé mojí odpovědi se zeptej na něco hlubšího. Zastav se až ve chvíli, kdy pochopím základní princip.“\n\nProč to funguje? Protože si líp pamatujeme věci, na které jsme přišli sami. Ne ty, které nám někdo jen naservíroval. Sokratovský přístup tohle dobře napodobuje.\n\nDalší možnost: nechte AI vygenerovat 10 otázek, které prověří, jestli jste téma opravdu pochopili. Odpovědi diktujte nahlas. Bez koukání zpátky do materiálů. Tam, kde se zaseknete, máte mezeru v porozumění.\n\nOba postupy se dají použít skoro na cokoliv. Na technická témata, obchodní strategie i historii. Důležité je zapojit se aktivně, ne jen pasivně číst. AI vám může pomoct podobně jako dobrý lektor. Jen jí o to musíte říct napřímo.",
+      "body": "Konkrétní prompt, který stojí za zkoušku:\n\n„Chci pochopit, jak funguje [téma]. Nevysvětluj mi to rovnou. Pokládej mi postupně naváděcí otázky, ať si na to přijdu sám. Po každé mojí odpovědi se zeptej na něco hlubšího. Zastav se až ve chvíli, kdy pochopím základní princip.“\n\nProč to funguje? Protože si líp pamatujeme věci, na které jsme přišli sami. Ne ty, které nám někdo jen naservíroval. Sokratovský přístup tohle dobře napodobuje.\n\nDalší možnost: nechte AI vygenerovat 10 otázek, které prověří, jestli jste téma opravdu pochopili. Odpovědi diktujte nahlas. Bez koukání zpátky do materiálů. Tam, kde se zaseknete, máte mezeru v porozumění.\n\nOba postupy se dají použít skoro na cokoliv.",
       "read_minutes": 2,
       "source_date": "2026-05-06",
       "topics": [
@@ -43,11 +43,11 @@
     },
     {
       "id": "2026-05-06-03",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Expert",
       "title": "Přepis Plaud nahrávek bez cloudového předplatného",
       "excerpt": "Jeden člen si postavil vlastní pipeline na přepis hlasových nahrávek z Plaud zařízení. Bez nutnosti platit cloudové předplatné za 240 dolarů ročně. Dohnal ho k tomu blížící se poplatek, vyřešil to lokálním zpracováním.",
-      "body": "Plaud je oblíbené zařízení na přepis schůzek a poznámek. Jeho cloud ale stojí 240 dolarů ročně. Jeden člen komunity si proto postavil vlastní pipeline. Přepis zvládne bez cizí infrastruktury.\n\nAlternativy z diskuze:\n\n**Fireflies** — cloudová služba na přepis schůzek. Zase ale platíte předplatné a data posíláte na cizí servery.\n\n**Whisper** — open-source model od OpenAI. Přepis běží lokálně a zdarma. Chce to trochu technického nastavení, ale výsledky jsou dobré i v češtině.\n\n**NotebookLM** — nástroj od Googlu. Umí pracovat s hotovými přepisy, ale samotný přepis neřeší.\n\nVlastní pipeline znamená kontrolu nad daty a žádné průběžné náklady. Nevýhoda je čas na nastavení a průběžná údržba. Je to něco za něco. Vyplatí se hlavně při větším množství nahrávek nebo při práci s citlivými informacemi ze schůzek.\n\nPokud máte Plaud nebo podobné zařízení a vadí vám cena předplatného, Whisper je nejpřímější cesta k lokálnímu přepisu bez závislosti na cloudu.",
+      "body": "Plaud Unlimited stojí cca 240 dolarů ročně za cloud přepisy a sumarizace. Daniela k tomu dotlačila blížící se platba. Mac Mini u něj doma běží nonstop, takže ho zapojil do pipeline.\n\nKaždých 60 minut Mac Mini zkontroluje, jestli přibyl nový záznam. Když přibyl, stáhne ho, lokálně přepíše přes Whisper a pošle na sumarizaci. Schůzka má sekce účastníci a akce, webinář má klíčové myšlenky a citáty. Pak přijde notifikace na telefon. Soubor spadne do Obsidian rootu jako inbox.\n\nStálo to cca hodinu práce. Plaud Unlimited Daniel zrušil.\n\nAlternativy z diskuze:\n\n**Fireflies** — člen zmínil, že je super na videohovory, ale při příchozím hovoru se přeruší.\n\n**NotebookLM** — jiný člen se ptal, jestli nahrávka z iPhonu importovaná do NotebookLM dá stejný výstup jako Plaud. Daniel odpověď nedal, otázka visí.\n\nDalší člen v komunitě si postavil podobný stack ve stejný den, stack byl jiný, testování plánoval na večer.",
       "read_minutes": 2,
       "source_date": "2026-05-06",
       "topics": [
@@ -64,11 +64,11 @@
     },
     {
       "id": "2026-05-06-04",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Builder",
       "title": "Velín: time tracking pro VA vibe codingem",
       "excerpt": "Jeden člen naší komunity si postavil vlastní nástroj na měření času pro virtuální asistenty. Alternativu k Togglu a Clockify. Aplikace vznikla vibe codingem a už běží v produkci.",
-      "body": "Toggl i Clockify jsou fajn nástroje, ale ne každému sednou do jeho workflow. Jeden člen si proto postavil vlastní řešení: aplikaci Velín, přímo pro potřeby virtuálních asistentek.\n\nVznikla vibe codingem, tedy postupným stavěním s AI bez klasického vývojového cyklu. A hned se nabízí otázka: jak je na tom taková appka s bezpečností dat?\n\nV diskuzi padly konkrétní dotazy na ochranu dat. Autor popsal, jak to má vyřešené:\n\n**Firebase Auth** — přihlašování běží přes Google infrastrukturu, takže není potřeba řešit vlastní správu loginů.\n\n**Firestore security rules** — pravidla přístupu jsou nastavená přímo v databázi, nezávisle na logice aplikace. I kdyby někdo obešel frontend, k datům se nedostane.\n\nNení to bezpečnost „omylem“. Je to vědomě nastavené ve správných vrstvách. Vibe coding neznamená automaticky zanedbanou bezpečnost. Jen je potřeba vědět, co nastavit a proč.\n\nVelín je dobrý příklad toho, že i produkt postavený bez klasického vývojáře může běžet v produkci a fungovat bezpečně.",
+      "body": "Aplikace Velín je time tracking nástroj postavený pro virtuální asistenty. Člen komunity sdílel, že za první týden testování přibylo spoustu nových funkcí. Většina VA trekuje v Togglu nebo Clockify, Velín má prý funkce nad rámec Togglu.\n\nV diskuzi padly dotazy na bezpečnost dat. Martina zmínila, že vibe coded appky bývají děravé a IT profíci před tím varovali.\n\nAutor popsal, jak to má:\n\n**Firebase Auth a Firestore** — základní zabezpečení postavené na Googlu. V security rules nastaveno, že přihlášený uživatel vidí jen svá data.\n\nAutor sám dodal, že by rád vyslechl názor někoho fundovanějšího, jestli je to dostačující.",
       "read_minutes": 2,
       "source_date": "2026-05-06",
       "topics": [

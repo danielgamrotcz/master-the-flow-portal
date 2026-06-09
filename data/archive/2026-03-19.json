@@ -33,7 +33,7 @@
     },
     {
       "id": "2026-03-19-02",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Builder",
       "title": "Aplikace, která připomíná ozvat se blízkým",
       "excerpt": "Jeden člen si přes Lovable postavil nástroj na udržování vztahů. Vycházelo to z jeho vlastní situace: rodina daleko, tři děti, náročná práce. A prostě mu přirozeně nedojde, že by se mohl někomu ozvat.",
@@ -51,7 +51,7 @@
     },
     {
       "id": "2026-03-19-03",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Builder",
       "title": "Z terminálu na vizuální rozhraní za čtyři dny",
       "excerpt": "V sobotu běžel prototypovací asistent jen v terminálu. Ve čtvrtek už má plné vizuální rozhraní. Čtyři dny, jedna aplikace a velký skok v použitelnosti.",

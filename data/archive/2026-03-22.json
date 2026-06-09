@@ -13,7 +13,7 @@
       "level": "Builder",
       "title": "Sobota strávená přípravou skills a rules",
       "excerpt": "Jeden člen strávil celou sobotu přípravou vlastních skills a rules pro Claude Code. S Claudem si vygeneroval celý postup, který chce nasadit hned druhý den. Cíl je mít projekty i nápady v jednom dobře naladěném prostředí.",
-      "body": "Přizpůsobit si Claude Code vlastnímu workflow se vyplatí. Skills jsou pojmenované příkazy. Místo dlouhého promptu napíšeš /moje-skill a Claude přesně ví, co má dělat. Rules nastavují chování pro celý projekt: jakým stylem psát kód, co nikdy nedělat nebo jak pojmenovávat soubory.\n\nTady člen nemusel vymýšlet strukturu od nuly. Nechal si s Claudem vygenerovat celý plán. Pak ho přes noc nechal uležet a ráno šel rovnou implementovat.\n\nJestli máš projekty, kde pořád dokola opakuješ stejné instrukce nebo kopíruješ prompt z poznámek, skills a rules jsou pro tebe. Nastavení zabere půl dne a pak ti šetří čas každý den.",
+      "body": "Jeden člen ho zaujaly informace o skills a rules pro Claude Code. Strávil skoro celou sobotu tím, že to s Claudem připravoval. Na konci měl vygenerovaný postup, co přesně udělat. Implementaci naplánoval na druhý den.\n\nCíl je mít projekty i nápady v jednom dobře naladěném prostředí Claude Code.",
       "read_minutes": 2,
       "source_date": "2026-03-22",
       "topics": [
@@ -29,11 +29,11 @@
     },
     {
       "id": "2026-03-22-02",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Expert",
       "title": "Chytrý fotorám jako domácí dashboard přes FTP",
       "excerpt": "Jeden člen rozchodil 12 let starý FullHD fotorámeček jako domácí panel s počasím, kurzy a daty z domácnosti. Problém byl ve starém androidím prohlížeči, který nenačte žádný moderní web. Vyřešil to tak, že generuje HTML, převádí ho do PNG a přes FTP ho nahrává do rámečku.",
-      "body": "Nápad zní jednoduše: vzít starý fotorámeček s Wi‑Fi a udělat z něj domácí informační displej. Jenže realita je horší. Rámeček z roku 2014 má zastaralý Android prohlížeč, který už nenačte žádnou současnou stránku.\n\nJeden člen vyzkoušel několik cest a nakonec skončil u řešení, které dává smysl. Vygeneruje si vlastní HTML stránku s aktuálními daty, převede ji na PNG obrázek, nahraje na FTP a rámeček si obrázek stáhne a zobrazí. Celé to běží automaticky. Rámeček nemusí nic počítat ani renderovat.\n\nTenhle postup se hodí pro spoustu zařízení, která mají Wi‑Fi a umí zobrazit obrázek ze sítě, ale výkonem nebo softwarem už nestačí na web. Starý Kindle, tablet na lednici nebo právě digitální fotorámeček.\n\nDalší člen komunity hned napsal, že o vlastní verzi začne vážně přemýšlet. Ráno by chtěl vidět počasí, program dne a aktuální kurzy. Přesně pro takové použití to celé dává smysl.",
+      "body": "Jeden člen rozchodil 12 let starý FullHD fotorámeček jako domácí panel. Problém byl v zastaralém Android prohlížeči, který nenačte běžnou webovou stránku. Zkoušel různé alternativy. Nakonec skončil u tohoto postupu: vygenerovat HTML, převést do PNG, nahrát na FTP a odtamtud to fotorámeček zvládl zobrazit.\n\nDalší člen napsal, že o tom začne vážně přemýšlet. Chtěl by ráno vidět počasí, kurzy a co ho čeká.",
       "read_minutes": 3,
       "source_date": "2026-03-22",
       "topics": [
@@ -51,7 +51,7 @@
       "level": "Builder",
       "title": "Migrace z Google Sheets na Vercel kvůli výkonu",
       "excerpt": "Jeden člen přešel z Google Sheets a Google Apps Scriptu na Vercel. Původní řešení sice fungovalo, ale bylo pomalé. A to byl dost dobrý důvod ke změně.",
-      "body": "Google Sheets jako backend pro jednoduché aplikace je oblíbený začátek. Nestojí nic, snadno se nastaví a všechno je na jednom místě. Problém přijde ve chvíli, kdy aplikace roste a čekání na odpověď začne být znát.\n\nApps Script má studený start, takže se každý požadavek může chvíli rozbíhat. Sheets API má rate limity a samotné tabulky nejsou stavěné na dotazy v reálném čase. Funguje to, ale je to pomalé.\n\nVercel nabízí edge funkce, které běží blíž uživateli, a nasazení je jednoduché. Push do gitu a za chvíli je aplikace venku. Pro projekty, které začaly jako prototyp v Sheets a časem ho přerostly, je to přirozený další krok.\n\nČlen je teď uprostřed migrace. Uvidíme, jak velký výkonnostní rozdíl z toho nakonec bude.",
+      "body": "Jeden člen migruje řešení z Google Sheets a Google Apps na Vercel. Google Sheets bylo v pohodě na nastavení, ale je to pomalé. To byl důvod ke změně. Migrace stále probíhá.",
       "read_minutes": 2,
       "source_date": "2026-03-22",
       "topics": [
@@ -59,11 +59,7 @@
       ],
       "source_group": "vibecoding",
       "source_msg_times": [
-        "13:25",
-        "21:48",
-        "12:31",
-        "19:50",
-        "21:42"
+        "13:25"
       ]
     },
     {
@@ -72,7 +68,7 @@
       "level": "Builder",
       "title": "Drsný feedback zastavil přechod z WordPressu",
       "excerpt": "Jeden člen se při přechodu webu z WordPressu na vibe coding zasekl skoro na dva měsíce. Dostal tvrdou zpětnou vazbu a místo dalšího kódování se rozhodl nejdřív předělat strategii. Web ale potřebuje rychle.",
-      "body": "Tu situaci zná spousta lidí. Máš rozjetý projekt, dal jsi do něj čas, ale výsledek pořád není tam, kde by měl být. A web přitom potřebuješ rychle, protože teď na něm máš míň informací než na sociálních sítích.\n\nZastavit to a předělat strategii místo toho, abys jen pokračoval dál, není snadné. Ale dává to smysl. Vibe coding ti dovolí stavět rychle. Jenže když stavíš špatnou věc, rychlost tě nezachrání. Feedback, i když je tvrdý, je informace. Ne útok na tebe.\n\nPoučení je jasné. Než přejdeš na novou technologii, vyplatí se vědět, co má web dělat a pro koho je. Jinak jen přeneseš starý chaos do nového prostředí.\n\nDva měsíce zaseknutí naštvou. Ale vědomě se zastavit a přehodnotit směr je lepší než dál makat na něčem, co nefunguje.",
+      "body": "Jeden člen se plácá při převedení webu z WordPressu na vibe coding. Dostal drsný feedback, takže teď řeší nejdřív strategii. Web přitom potřebuje rychle, protože na něm má zatím míň informací než na sociálních sítích. Takhle zaseklý je skoro dva měsíce.",
       "read_minutes": 2,
       "source_date": "2026-03-22",
       "topics": [

@@ -9,11 +9,11 @@
   "cards": [
     {
       "id": "2026-03-17-01",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Builder",
       "title": "Android čtečka článků postavená za tři iterace",
       "excerpt": "Jeden člen si postavil vlastní Android aplikaci, která čte články nahlas. Umí offline TTS i OpenAI API. Celé to zvládl ve třech iteracích s pomocí Claude Code.",
-      "body": "Člen, který poslouchá podcasty už od roku 2006, řešil jeden problém. Aplikace, které našel, byly buď placené, nebo nacpané reklamou. Tak přestal hledat a postavil si vlastní.\n\nŠel na to jednoduše. Nejdřív si v Claude Chatu připravil zadání. Pak udělal tři iterace v Claude Code. Výsledek? Funkční Android aplikace v telefonu. Umí offline Google Text-to-Speech a taky napojení přes OpenAI TTS API.\n\nByl to jeho první opravdový projekt v Claude Code. A přesně o to šlo. Nešlo jen o napsání kódu, ale o vyzkoušení celého postupu. Od zadání až po funkční aplikaci. Jak sám napsal, wow efekt byl neskutečný.\n\nTenhle příklad dobře ukazuje sílu vibe codingu. Když ti hotové nástroje nesedí, můžeš si poměrně rychle postavit vlastní. Přesně podle sebe.",
+      "body": "Člen, který poslouchá podcasty už od roku 2006, řešil jeden problém. Aplikace, které našel, byly buď placené, nebo nacpané reklamou. Tak přestal hledat a postavil si vlastní.\n\nŠel na to jednoduše. Nejdřív si v Claude Chatu připravil zadání. Pak udělal tři iterace v Claude Code. Výsledek? Funkční Android aplikace v telefonu. Umí offline Google Text-to-Speech a taky napojení přes OpenAI TTS API.\n\nByl to jeho první opravdový projekt v Claude Code. Jak sám napsal, wow efekt byl neskutečný. Vidí aplikaci v telefonu, kterou vytvořil, a dokonce funguje.",
       "read_minutes": 2,
       "source_date": "2026-03-17",
       "topics": [
@@ -29,11 +29,11 @@
     },
     {
       "id": "2026-03-17-02",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Builder",
       "title": "Vizualizace výsledků plaveckých soutěží vlastními silami",
       "excerpt": "Jeden z členů postavil aplikaci, která zpřehledňuje výsledky plaveckých závodů. Claude Code mu zpracoval vstupní dokumenty, vizuální část si dodělal sám.",
-      "body": "Jeden z členů se chytil denní výzvy a pustil se do svého prvního projektu. Téma vzal z vlastního prostředí. Výsledky plaveckých soutěží sice existují v dokumentech, ale chyběl mu přehlednější vizuální výstup.\n\nPráci si rozdělil jednoduše. Claude Code zpracoval vstupní data a uložil je. Vizuální část si člen navrhl a dodělal sám. Výsledek je zatím jednoduchý, ale funguje.\n\nNa tomhle přístupu je zajímavé hlavně to, že si vědomě vybral, co nechá na AI a co si udělá po svém. Mechanickou část nechal AI, podobu výsledku si rozhodl sám.\n\nPlánuje pokračovat a postupně si zvyšovat laťku. Přesně takhle to dává smysl: udělat malý krok, ověřit, že to funguje, a pak přidávat dál.",
+      "body": "Jeden z členů se pustil do svého prvního projektu. Téma vzal z vlastního prostředí. Výsledky plaveckých soutěží sice existují v dokumentech, ale chyběl mu přehlednější vizuální výstup.\n\nClaude Code mu zpracoval vstupní dokumenty a uložil je. Vizuální část si dodělal sám. Výsledek je zatím jednoduchý, ale funguje.\n\nPlánuje pokračovat a postupně si zvyšovat laťku.",
       "read_minutes": 2,
       "source_date": "2026-03-17",
       "topics": [
@@ -42,8 +42,7 @@
       ],
       "source_group": "vibecoding",
       "source_msg_times": [
-        "13:07",
-        "12:34"
+        "13:07"
       ]
     },
     {
@@ -52,7 +51,7 @@
       "level": "Builder",
       "title": "Nejdůležitější fáze projektu je zadání, ne kód",
       "excerpt": "3. den výzvy je o přípravě zadání ještě před samotným vývojem. Kdo tuhle fázi přeskočí, zbytečně pak ladí dokola a ztrácí čas.",
-      "body": "Výzva v komunitě dnes otevřela téma, které spousta lidí přeskakuje: jak dobře napsat zadání dřív, než začnete něco stavět.\n\nV praxi to často vypadá tak, že člověk dostane nápad a hned ho začne psát do Claude Code. Výsledek nesedí. Tak přijde druhá iterace, třetí… A každá trvá, protože AI nemá dost kontextu. Neví přesně, co chcete, pro koho to je a jak to má fungovat.\n\nBrát zadání jako samostatnou fázi znamená dát si čas na přípravu ještě předtím, než otevřete vývojový chat. Jaký problém to řeší? Kdo to bude používat? Jaké jsou okrajové případy? Co se nesmí stát?\n\nJeden člen si nejdřív připravil zadání v Claude Chatu a až potom přešel do Claude Code. Výsledek fungoval za tři iterace.\n\nČas věnovaný zadání se vrátí. Méně zbytečných oprav, lepší výsledek.",
+      "body": "Daniel spustil Den 3 výzvy s jedním hlavním tématem: tvorba zadání jako fáze před vývojem. Pořád ještě nejde rovnou do produktu.\n\nPostup byl konkrétní. Otevřít chatbota, zadat prompt, který AI přivede do role tazatele. Odpovídat na otázky, ne popisovat řešení. Popisovat situaci. Co vás trápí, co zabírá čas, co vás štve. AI navrhne řešení.\n\nJeden z členů tenhle přístup vyzkoušel den předtím. Nejdřív si připravil zadání v Claude Chatu, pak přešel do Claude Code. Výsledek fungoval za tři iterace.\n\nDaniel to popisuje jako jednu z nejdůležitějších fází celého procesu.",
       "read_minutes": 2,
       "source_date": "2026-03-17",
       "topics": [
@@ -72,7 +71,7 @@
       "level": "Začátečník",
       "title": "Cursor jako přívětivější vstup do vibe codingu",
       "excerpt": "Pro ty, kterým Claude Code zatím přijde moc technický, je Cursor jednodušší alternativa. Výsledek je podobný, jen rozjezd je mírnější.",
-      "body": "V komunitě zazněl tip, který se hodí zmínit. Pokud vám práce přímo v Claude Code přijde složitá nebo vás zahlcuje, zkuste Cursor. Je to plnohodnotná alternativa s jednodušším startem.\n\nCursor je editor kódu s AI podporou. Podobá se VS Code, ale je přívětivější i pro lidi, kteří nemají programátorské zázemí. Umí komentovat vygenerovaný kód, navrhovat úpravy přímo v editoru a má v sobě chat.\n\nNejde o to, který nástroj je lepší. Oba zvládnou podobné věci. Důležité je, kde se vám bude líp pracovat a co vás bude míň brzdit.\n\nPokud začínáte a Claude Code vám zatím moc nesedí, dejte šanci Cursoru. Cíl je stejný: vlastní funkční aplikace. Jen cesta k ní může být jednodušší.",
+      "body": "V ranní diskuzi padl tip pro ty, komu Claude Code zatím nesedí. Daniel zmínil Cursor jako taky variantu, a asi i uživatelsky jednodušší.\n\nŽádný delší rozbor. Jenom krátká poznámka, že existuje alternativa, která může mít mírnější vstup.",
       "read_minutes": 1,
       "source_date": "2026-03-17",
       "topics": [
@@ -82,11 +81,7 @@
       ],
       "source_group": "vibecoding",
       "source_msg_times": [
-        "03:21",
-        "15:15",
-        "12:34",
-        "13:07",
-        "17:25"
+        "03:15"
       ]
     },
     {
@@ -95,7 +90,7 @@
       "level": "Builder",
       "title": "Od hotových nástrojů k vlastní aplikaci na míru",
       "excerpt": "Jeden člen začal v Obsidianu, pak přešel na Notion a nakonec si udělal vlastní Markdown aplikaci. Každý přesun měl jasný důvod. Teď má nástroj, který přesně sedí jeho workflow.",
-      "body": "V diskuzi se objevila zajímavá cesta, jak spravovat znalosti. Začalo to Obsidianem, pak přišel Notion a nakonec vlastní aplikace napsaná přes Claude Code.\n\nObsidian byl super na psaní a třídění poznámek. Hůř se ale propojoval s dalšími aplikacemi a automatizacemi. Notion tohle zvládal líp, jenže měl moc funkcí, které spíš překážely. A data navíc leží na cizích serverech, ne u vás v počítači.\n\nŘešením bylo postavit vlastní aplikaci nad Markdown soubory. Data zůstávají lokálně. Rozhraní dělá přesně to, co je potřeba, a nic navíc. Teď s aplikací pracuje i automatizovaný workflow. Na pozadí zpracovává úkoly a o schválení si řekne jen ve chvíli, kdy je to potřeba.\n\nTenhle příklad ukazuje širší vzorec. Hotové nástroje jsou vždycky kompromis. Čím konkrétnější potřeby máte, tím víc ten kompromis bolí. Vibe coding snižuje náklady na vlastní řešení natolik, že se to začíná vyplácet.",
+      "body": "Daniel popsal svou cestu od Obsidianu přes Notion až k vlastní aplikaci.\n\nObsidian byl skvělý, ale nešlo ho rozumně propojit s dalšími aplikacemi a automatizacemi. Notion fungovalo líp, ale bylo tam moc funkcí, které překážely. A data ležela na cizích serverech.\n\nDopadlo to tak, že si udělal Notero. Aplikace nad Markdown soubory. Data zůstávají v počítači. Teď s ní pracuje i FlowMaster, který od předchozího dne automaticky zpracovává úkoly na pozadí a žádá o revize nebo schválení jen ve chvíli, kdy je to potřeba.",
       "read_minutes": 2,
       "source_date": "2026-03-17",
       "topics": [
@@ -106,9 +101,7 @@
       ],
       "source_group": "vibecoding",
       "source_msg_times": [
-        "03:21",
-        "15:15",
-        "12:34"
+        "03:21"
       ]
     }
   ],

@@ -48,7 +48,7 @@
     },
     {
       "id": "2026-03-31-03",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Expert",
       "title": "Gmail Responder: Python appka reagující na příchozí maily",
       "excerpt": "Jeden člen popsal architekturu svého systému, který automaticky vyhodnocuje příchozí e-maily a připravuje návrhy odpovědí. Aplikace běží na Google Cloudu a nespouští se podle plánu. Google ji sám upozorní pokaždé, když dorazí nový e-mail.",

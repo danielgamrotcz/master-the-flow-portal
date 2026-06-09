@@ -1063,7 +1063,7 @@ a:hover { text-decoration: underline; }
 
 /* ===== CARD TYPE COLOR ACCENTS ===== */
 .card[data-type="NÁSTROJE"] .card-type { color: #3b82f6; }
-.card[data-type="POSTAVIL JSEM"] .card-type { color: #10b981; }
+.card[data-type="UKÁZKA"] .card-type { color: #10b981; }
 .card[data-type="OTEVŘENÁ OTÁZKA"] .card-type { color: #8b5cf6; }
 .card[data-type="TÉMA TÝDNE"] .card-type { color: #f59e0b; }
 .card[data-type="INSIGHT"] .card-type { color: var(--accent); }

@@ -9,7 +9,7 @@
   "cards": [
     {
       "id": "2026-06-08-01",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Pokročilý",
       "topics": [
         "Vibe Coding",
@@ -18,7 +18,7 @@
       ],
       "title": "Mini appka pro vizualizaci ideálního týdne",
       "excerpt": "Jedna členka komunity postavila přes víkend jednoduchý plánovač vlastního ideálního týdne. Nastavíš fond dostupných hodin, pak přiřazuješ procenta jednotlivým oblastem práce. Výsledek je vizuální přehled záměrů, ne seznam úkolů.",
-      "body": "Jedna členka komunity sdílela víkendový projekt. Postavila si mini appku, která vizualizuje ideální rozložení pracovního týdne.\n\nPrincip je přímý. Nejdřív zadáš, kolik hodin realisticky pracuješ a kolik z toho zabere oběd nebo přestávky. Z toho se spočítá fond použitelných hodin. Pak přidáváš bloky, tedy kategorie jako klienti, vlastní projekty nebo vzdělávání, a ke každé přiřazuješ procento týdne.\n\nJde o plánování na jiné úrovni než klasický task manager. Nejde o to, co konkrétně máš udělat, ale o to, kolik prostoru chceš každé oblasti dávat. Vizualizace pak okamžitě ukáže, jestli záměr sedí na realitu.\n\nCelou appku postavila sama s pomocí AI přes víkend, bez klasického development procesu. Funguje jako pravidelný rituál na začátku týdne.\n\nPodobný přístup rezonuje s více lidmi v komunitě, kteří plánují na týdenní, ne denní úrovni. Klíčová výhoda je, že přetlak klientské práce je viditelný dřív, než je pozdě na korekci.",
+      "body": "Jedna členka komunity sdílela víkendový projekt. Postavila si mini appku, která vizualizuje ideální rozložení pracovního týdne.\n\nPrincip: nejdřív zadáš, kolik hodin realisticky pracuješ a kolik z toho zabere oběd nebo přestávky. Z toho se spočítá fond hodin. Pak přidáváš bloky, kategorie jako klienti, vlastní projekty nebo vzdělávání, a ke každé přiřazuješ procento týdne.\n\nNejde o plánování po úkolech, ale o vizualizaci toho, kolik prostoru chceš každé oblasti dávat. Říká o tom, že je to fajn start týdne.\n\nDaniel appku pochválil a dodal, že myšlenku ideálního týdne razí dlouho.",
       "read_minutes": 2,
       "source_group": "vibe-coding",
       "source_msg_times": [
@@ -38,7 +38,7 @@
       ],
       "title": "Plánuj týden procenty, ne úkoly",
       "excerpt": "Místo klasického todo listu si rozhodni, kolik procent pracovního týdne patří jednotlivým oblastem. Jednoduchý posun v přístupu, který dá tvému týdnu strukturu ještě předtím, než řešíš konkrétní úkoly.",
-      "body": "Klasické plánování pracuje s úkoly. Problém je, že seznam věcí k dodání nehlídá celkové rozložení času. Snadno se stane, že celý týden proběhne na klientských zakázkách a na vlastní rozvoj nebo strategické myšlení nezbyde nic.\n\nAlternativní přístup začíná jinde. Nejdřív si rozhodni, jak má ideální týden vypadat na úrovni kategorií. Kolik procent pracovního času chceš věnovat klientům, kolik vlastním projektům a kolik vzdělávání. Vychází se z konkrétního fondu hodin po odečtení schůzek a pauz.\n\nV praxi to může vypadat tak, že máš k dispozici třicet pracovních hodin týdně. Chceš padesát procent pro klientskou práci, dvacet pět pro vlastní projekty a dvacet pět pro učení. To jsou konkrétní čísla, která každý týden porovnáváš s realitou.\n\nPokud vidíš, že klienti konstantně zabírají osmdesát procent, víš přesně, kde je problém, ještě předtím, než ti uteče půl roku.\n\nNa tento přístup nepotřebuješ žádnou speciální appku. Funguje v poznámkovém bloku, tabulce nebo na papíru.",
+      "body": "Jedna členka komunity si přístup \"ideálního týdne\" zpracovala do mini appky. Místo klasického plánování po úkolech si nastavuje, kolik procent pracovního týdne má patřit jednotlivým oblastem. Kategorie jako klienti, vlastní projekty nebo vzdělávání.\n\nZáklad je fond hodin: pracovní čas minus oběd a přestávky. Na ten pak napasuje procenta.\n\nNejde o to, co konkrétně udělat. Jde o to, kolik prostoru chceš každé oblasti věnovat. Vizualizace ukáže, jestli záměr sedí na realitu.\n\nDaniel dodal, že tuhle myšlenku razí dlouho.",
       "read_minutes": 2,
       "source_group": "vibe-coding",
       "source_msg_times": [
@@ -57,8 +57,8 @@
         "Workflow"
       ],
       "title": "Detekce anomálií v účetnictví: automatizace před AI",
-      "excerpt": "Monitoring stovek tisíc účetních zápisů patří do FinOps, ne do chatbotu. AI v tomto procesu pomůže, ale není správný startovací bod. Dřív než vybereš nástroj, potřebuješ vědět, jaké anomálie vlastně hledáš.",
-      "body": "Pokud řešíš kontrolu účetních zápisů ve velkém měřítku (stovky tisíc řádků), první instinkt bývá vyzkoušet chatbot. Problém je, že ani jeden AI nástroj takový objem dat nezvládne jako vstup najednou, a i když by ho zvládl, kvalita analýzy by byla nepředvídatelná.\n\nSprávnější rámec je automatizace. Nejdřív si odpovíš na otázku, jaké typy anomálií vlastně hledáš. Duplicitní záznamy, neobvyklé částky, nesoulad mezi účty nebo chybějící schválení. Každý typ anomálie má svá pravidla a ta pravidla se dají zakódovat do automatizovaného procesu.\n\nAI pak vstupuje ve druhé vrstvě. Pomůže zpracovat okrajové případy, které se pravidly zachytit nedají, najít vzorce v datech nebo popsat nalezenou anomálii srozumitelně pro člověka.\n\nVýchozí bod proto není výběr AI nástroje. Je to audit toho, jaké anomálie chceš zachycovat a kde jsou aktuálně největší slepá místa. Z toho teprve vyplyne, co se dá automatizovat přímo a kde AI přidá reálnou hodnotu.\n\nPro finance týmy, které dnes pracují ručně v Excelu nebo Power Query, to znamená, že první krok je pravděpodobně automatizace samotná, ne přímé nasazení AI.",
+      "excerpt": "V komunitě padl dotaz na AI monitoring účetních zápisů. Odpověď: patří to spíš do FinOps a automatizace, AI s tím pomůže, ale není primárním nástrojem.",
+      "body": "Člen komunity se ptal, jestli někdo má zkušenost s AI pro monitoring účetních zápisů. Pracují s nimi ručně přes Excel, Power Query a Smart View, zápisů a řádků ke kontrole mají stovky tisíc.\n\nOdpověď od jiného člena: tohle je klasická FinOps úloha. Spíš než na AI je to na automatizaci. S tou AI dobře pomůže, ale není startovacím bodem.\n\nNabídl osobní call nebo schůzku k tématu. Diskuze tím skončila.",
       "read_minutes": 2,
       "source_group": "inspirace--diskuze",
       "source_msg_times": [

@@ -12,31 +12,12 @@
       "type": "NÁSTROJE",
       "level": "Expert",
       "title": "Fiktivní město jako test agentických modelů",
-      "excerpt": "Český experiment svěřil různým AI agentům správu fiktivního města a sledoval, jak se chovají. Výsledkem je praktické srovnání agentických modelů na stejném úkolu.",
-      "body": "Jeden člen z AlphaI postavil experiment, který řeší jeden z nejtěžších problémů při výběru agentického modelu: jak je porovnat na reálné, ale pořád kontrolované úloze. Nechal několik různých AI agentů řídit fiktivní město a sledoval, jak se rozhodují, plánují a zvládají nečekané situace.\n\nBěžné benchmarky měří výkon na izolovaných úlohách. Správa města je ale něco jiného. Agent musí balancovat protichůdné cíle, reagovat na změny a dělat rozhodnutí, která mají dopad až později. Přesně tohle chování chcete u agentů znát, než je pustíte do reálného workflow.\n\nČlánek vychází na alphai.cz a dobře ukazuje konkrétní rozdíly v tom, jak jednotlivé modely přemýšlejí. Ne podle toho, co o sobě říkají, ale podle toho, co opravdu dělají pod tlakem.",
+      "excerpt": "Honza Tyl nechal AI agenty spravovat fiktivní město. Člence komunity sdílela odkaz na blog alphai.cz s popisem simulace a srovnáním jednotlivých agentických modelů.",
+      "body": "Člen komunity sdílí odkaz na experiment, kde Honza Tyl nechal AI agenty řídit fiktivní město. Podle popisu zprávy jde o praktické srovnání chování různých agentických modelů.\n\nOdkaz vede na blog alphai.cz: https://www.alphai.cz/cs/blog/2026-05-31-pet-svetu-pet-osudu-simulace-ai-agentu",
       "read_minutes": 4,
       "source_date": "2026-06-01",
       "topics": [
         "Workflow",
-        "Subagenti",
-        "Claude Code"
-      ],
-      "source_group": "inspirace--diskuze",
-      "source_msg_times": [
-        "07:05"
-      ]
-    },
-    {
-      "id": "2026-06-01-02",
-      "type": "INSIGHT",
-      "level": "Builder",
-      "title": "Jak testovat agenty bez produkčního prostředí",
-      "excerpt": "Než pustíte AI agenta do ostrého provozu, musíte vědět, jak se chová pod tlakem. Fiktivní scénáře — město, firma nebo tým — jsou bezpečný způsob, jak to zjistit.",
-      "body": "Experiment se simulací města ukazuje praktický problém: jak agenta otestovat dřív, než ho pustíte k vlastním datům nebo procesům?\n\nJedna možnost je postavit fiktivní verzi prostředí, ve kterém má agent pracovat. Řešíte zákaznický servis? Dejte mu vymyšlené konverzace s vymyšlenými zákazníky. Plánujete obsah? Dejte mu smyšlený produktový brief. Nejde o to ověřit finální výstupy. Jde o to sledovat, jak agent uvažuje, na co se ptá, kde narazí a kde naopak funguje líp, než čekáte.\n\nTakhle získáte mnohem víc informací než při klasickém testování na jednotlivých promptech. Agent v simulovaném prostředí ukáže chování, které benchmark nezachytí — třeba že je až moc opatrný, nebo naopak příliš sebejistý ve chvíli, kdy by se měl zastavit a zeptat se.",
-      "read_minutes": 3,
-      "source_date": "2026-06-01",
-      "topics": [
-        "Prompting",
         "Subagenti",
         "Claude Code"
       ],

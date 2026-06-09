@@ -99,7 +99,7 @@
     },
     {
       "id": "2026-06-02-05",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Začátečník",
       "title": "Robot a micro:bit jako vstup do fyzické robotiky",
       "excerpt": "Jeden člen chce se synem při výuce programování otestovat fyzický hardware — robota Reachy Mini a BBC micro:bit. AI jim má pomoct jako průvodce světem fyzické robotiky.",
@@ -119,7 +119,7 @@
   ],
   "resurfacing": {
     "id": "2026-05-07-04",
-    "type": "POSTAVIL JSEM",
+    "type": "UKÁZKA",
     "level": "Builder",
     "title": "Astronomický přehled postavený jen pro radost",
     "excerpt": "Jeden člen komunity sdílel projekt, který vznikl úplně bez byznysového plánu — web s přehledem aktuálních astronomických událostí a historických dat. Žádný zákazník, žádná monetizace. Jen nápad a jedno odpoledne u počítače.",

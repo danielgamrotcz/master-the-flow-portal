@@ -13,7 +13,7 @@
       "level": "Builder",
       "title": "/btw: otázky mimo frontu v Claude Code",
       "excerpt": "Uprostřed rozdělané úlohy vám přijde vedlejší otázka. Nemusíte čekat ani přerušovat práci. Příkaz /btw otevře samostatné vlákno a hlavní úloha běží dál.",
-      "body": "Jeden z členů sdílel tip, který vám může dost změnit práci s Claude Code u delších úloh. Když Claude řeší větší zadání a vám mezitím naskočí jiná otázka, napište /btw. Claude si otevře odbočku, odpoví a pak se vrátí přesně tam, kde skončil.\n\nBez toho máte dvě otravné možnosti: buď čekat, až hlavní úloha doběhne, nebo ji přerušit a riskovat, že se ztratí kontext. /btw tohle řeší čistě.\n\nHodí se hlavně u delších generovacích úloh, kdy Claude prochází víc souborů nebo píše delší dokument. Nemusíte čekat ani si vedlejší dotazy odkládat bokem. Odpověď dostanete rovnou.\n\nZkuste to příště v praxi: až budete čekat na dokončení větší analýzy a napadne vás vedlejší dotaz, napište /btw a sledujte, co se stane.",
+      "body": "Jeden z členů sdílel tip k Claude Code. Když Claude řeší větší zadání a vám mezitím naskočí jiná otázka, napište /btw. Otevře se odbočka, Claude odpoví a hlavní vlákno jede dál.\n\nBez toho máte dvě možnosti: buď čekat, až hlavní úloha doběhne, nebo ji přerušit. /btw tohle řeší. Obejde frontu a jede jako separátní vlákno.",
       "read_minutes": 1,
       "source_date": "2026-05-11",
       "topics": [
@@ -37,7 +37,7 @@
       "level": "Začátečník",
       "title": "Claude Cowork nebo Claude Code: co vybrat",
       "excerpt": "Dnes se v komunitě řešilo, jestli pro práci s AI použít Claude Cowork, nebo Claude Code. Shoda byla jasná: záleží na tom, co děláte a jak moc se cítíte technicky.",
-      "body": "Claude Cowork a Claude Code vypadají na první pohled podobně, ale každý se hodí pro jiné lidi a jiné situace.\n\nClaude Code je silnější. Umí pracovat se soubory, spouštět skripty, stavět aplikace a projít celou codebase. Počítá ale s tím, že máte aspoň základní technický cit, nebo jste ochotní se to naučit.\n\nClaude Cowork je přístupnější. Funguje spíš jako prostředí pro spolupráci na konkrétních úkolech. Nemusíte řešit, co se děje pod kapotou. Hodí se pro HR manažery, účetní nebo obchodní stratégy.\n\nDnes padly třeba tyhle use cases: zpracování dokladů a párování s bankovními výpisy, příprava podkladů pro firemní školení nebo první MVP interních automatizací.\n\nPrakticky pro vás: pokud řešíte, kde začít, zkuste nejdřív Cowork. Nástup je jednodušší. Když zjistíte, že chcete víc kontroly nebo stavíte vlastní věci, přejděte na Claude Code.",
+      "body": "V komunitě se dnes řešilo, kdy sáhnout po Coworku a kdy po Claude Code.\n\nNěkteří Cowork vůbec nepoužívají, protože jim stačí Claude Code. Jedna členka to shrnula takhle: jakmile si člověk jednou rozjede Claude Code, Cowork se stane zbytečným. Pro ostatní může být Cowork přístupnější cesta, jak s automatizacemi začít.\n\nPadly konkrétní příklady využití Coworku: zpracování dokladů a párování s bankovními výpisy, příprava podkladů pro školení produktového managementu (čas přípravy klesl o dvě třetiny) a MVPs firemních AI automatizací. Jeden člen trénuje v Coworku skills a agenty s uživateli a pak to s IT zapracovává do workflow.",
       "read_minutes": 2,
       "source_date": "2026-05-11",
       "topics": [
@@ -47,11 +47,12 @@
       ],
       "source_group": "inspiracediskuze",
       "source_msg_times": [
-        "08:49",
         "08:43",
+        "08:46",
+        "08:49",
         "09:46",
-        "13:44",
-        "10:04"
+        "10:04",
+        "10:55"
       ]
     },
     {
@@ -83,8 +84,8 @@
       "type": "INSIGHT",
       "level": "Expert",
       "title": "Sdílený state.md pro přepínání mezi agenty",
-      "excerpt": "Jeden developer střídá Claude Code a Codex a kontext si drží ve sdíleném souboru state.md. Jednoduchý postup, který řeší jeden z hlavních problémů při práci s více agenty.",
-      "body": "Jeden z developerů v komunitě popsal, jak pracuje s víc AI agenty najednou. Aby jim nemusel pořád dokola vysvětlovat kontext, vede si soubor state.md. Do něj zapisuje aktuální stav projektu, otevřené úkoly a hlavní rozhodnutí.\n\nKdyž přepíná mezi Claude Code a Codexem, začne tím, že nového agenta nechá přečíst state.md. Agent tak hned ví, kde projekt stojí, bez půlhodinového onboardingu.\n\nFunguje to proto, že část kontextu — co se dělalo, proč a co ještě zbývá — se přes prompt předává blbě. V souboru to zůstává, dá se to číst strojově a kdykoli upravit.\n\nZároveň je to pojistka proti nekonzistenci. Každý agent má trochu jiný kontext a může dělat jiná rozhodnutí. Sdílený state.md to pomáhá srovnat.\n\nČlen teď plánuje otestovat Goose jako další agent framework. Stejný pattern chce použít jako most mezi Goose a ostatními nástroji.",
+      "excerpt": "Jeden člen přepíná mezi Claude Code a Codexem a kontext si drží ve sdíleném souboru state.md. Vedle toho plánuje otestovat Goose jako další agent framework.",
+      "body": "Jeden z členů popsal, jak přepíná mezi Claude Code a Codexem a drží kontext přes sdílený soubor state.md. Vedle toho má vlastní šablonu claude.md, která řeší způsob spolupráce. Projekty většinou startuje od nuly.\n\nStejný člen plánuje tento týden otestovat Goose jako další agent framework.",
       "read_minutes": 2,
       "source_date": "2026-05-11",
       "topics": [
@@ -93,18 +94,20 @@
         "Subagenti",
         "Vibe Coding"
       ],
-      "source_group": "inspiracediskuze",
+      "source_group": "vibecoding",
       "source_msg_times": [
-        "13:44"
+        "15:31",
+        "15:34",
+        "17:14"
       ]
     },
     {
       "id": "2026-05-11-05",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Builder",
       "title": "Lokální Plaud setup bez měsíčního předplatného",
       "excerpt": "Jeden člen si postavil vlastní systém na zpracování nahrávek z diktafonu: přepis přes Whisper, AI shrnutí a výsledek se rovnou ukládá do Obsidianu. Roční předplatné Plaudu zrušil.",
-      "body": "Diktafon zůstal, jen celé zpracování běží lokálně na Mac Mini. Funguje to takhle: každou hodinu se automaticky zkontroluje, jestli přibyl nový záznam. Když ano, spustí se Whisper, tedy lokální model na přepis řeči. Ten udělá přepis, AI z něj připraví sumář a hotový soubor se automaticky uloží do Obsidianu.\n\nPlaud má hodně lidí rádo hlavně kvůli celému ekosystému: fyzické zařízení, hotové šablony a minimum starostí. Spoustu lidí ale odradí kvalita přepisu a měsíční platba.\n\nTenhle setup řeší oboje. Přepis přes Whisper je srovnatelný nebo lepší, model běží lokálně, takže data nikam neodcházejí, a po jednorázovém nastavení jede všechno automaticky.\n\nHlasová poznámka z cesty → diktafon → Mac Mini → Obsidian. Bez klikání, bez ručního přepisování, bez předplatného.\n\nPokud vás to zaujalo a chcete podobný setup, hledejte v komunitě téma lokálního Whisperu. Dá se to zvládnout i bez programátorských zkušeností, jen to chce trochu trpělivosti při nastavování.",
+      "body": "Daniel popsal vlastní Plaud-like setup. Diktafon zůstal, zpracování ale běží lokálně na Mac Mini. Každou hodinu se zkontroluje, jestli přibyl nový záznam. Whisper ho přepíše, AI udělá sumář a soubor se uloží do Obsidianu.\n\nPlaud má hodnotu v celém ekosystému: fyzické zařízení, šablony, bezproblémovost. Ale kvalita přepisu a měsíční platba mnohé odrazují. Daniel zrušil roční předplatné Plaud Unlimited.",
       "read_minutes": 2,
       "source_date": "2026-05-11",
       "topics": [

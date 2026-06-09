@@ -13,7 +13,7 @@
       "level": "Expert",
       "title": "OpenClaw na vlastním serveru přes Tailscale VPN",
       "excerpt": "Jedna členka má OpenClaw na vlastním serveru. Přístup řeší přes Tailscale VPN. Data zůstávají u ní a spotřebu tokenů sleduje přes ChatGPT.",
-      "body": "OpenClaw v komunitě zaujal. Ukázalo se, že ho někdo už reálně provozuje v produkci.\n\nKonkrétní setup: vlastní server, přístup přes Tailscale VPN. Data zůstávají lokálně a nic není vystavené do internetu. Spotřeba tokenů se hlídá přes napojení na ChatGPT.\n\nTailscale je jedna z nejjednodušších možností, jak si zpřístupnit vlastní službu přes šifrovaný tunel. Není potřeba veřejná IP ani složité nastavování firewallu. Na Linuxu je instalace hotová za pár minut.\n\nMezitím další člen testoval OpenClaw na obecnějších scénářích a rešerších. Ve skupině se tak začínají sbírat první srovnatelné zkušenosti. Pokud o nasazení uvažujete, teď je dobrá chvíle přidat se do diskuze.",
+      "body": "OpenClaw v komunitě zaujal. Ukázalo se, že ho někdo už reálně provozuje v produkci.\n\nKonkrétní setup: vlastní server, přístup přes Tailscale VPN. Data zůstávají lokálně a nic není vystavené do internetu. Spotřeba tokenů se hlídá přes napojení na ChatGPT.\n\nDalší člen testoval OpenClaw na obecnějších scénářích a rešerších. Pustil ho přes prostředníka na vlastní data. Zmínil, že to může být zajímavé i pro Google Disk, Gmail nebo kalendář, ale ne s přístupem k ostrému účtu. Běží mu to na Raspberry Pi 5.",
       "read_minutes": 2,
       "source_date": "2026-04-09",
       "topics": [
@@ -37,7 +37,7 @@
       "level": "Začátečník",
       "title": "Nečekejte na hotový výsledek, korigujte průběžně",
       "excerpt": "Místo jednoho velkého dotazu je lepší vést model postupně. Když vysvětlí, jak se k výsledku dostal, snáz poznáte, kde se to pokazilo.",
-      "body": "Jeden z hlavních postřehů z dnešní diskuze: spousta lidí pošle jeden velký dotaz a čeká, co z toho vypadne. Výsledek bývá průměrný. A opravuje se hůř, než kdybyste šli krok za krokem.\n\nLíp funguje průběžné ladění. Když model udělá krok, kterým si nejste jistí, nechte si vysvětlit, jak k němu došel. Chybu tak chytíte dřív, než se propíše do celého výstupu. A oprava je pak přesnější, protože víte, kde přesně se to pokazilo.\n\nPrakticky: místo „Napiš mi celý marketingový plán“ začněte třeba: „Jaké cílové skupiny bys zvažoval pro B2B prodej v logistice?“ Pak to vyhodnotíte, odsouhlasíte nebo opravíte. A až potom jdete dál. Na začátku je to trochu pomalejší. Celkově ale bývá výsledek výrazně lepší a vy máte proces opravdu pod kontrolou.",
+      "body": "Jedna členka popsala, jak v začátcích pracuje s modelem. Když viděla výstup a nebyla spokojena, nechala si od modelu rozepsat, jak k výsledku došel. Pak kontrolovala jednotlivé kroky a doptávala se na detaily postupu. Teprve pak dávala další prompty přímo k nim.\n\nDalší tip z diskuze: přidat instrukci „ptej se mě furt dokola na upřesnění, dokud neřeknu stop”. Model pak sám táhne konverzaci dopředu.\n\nPadlo i to, že začátečníci by neměli čekat zázraky hned na první dobrou. Člověk si to musí nejdřív osahat a k tomu je potřeba hodně iterací.",
       "read_minutes": 2,
       "source_date": "2026-04-09",
       "topics": [
@@ -58,7 +58,7 @@
       "level": "Builder",
       "title": "Claude a Gemini jako vzájemný cross-check při rešerši",
       "excerpt": "Po měsíci ladění promptů a doplňování kontextu o firmě začíná AI market research dávat zajímavé výsledky. Porovnání výstupů z Claude a Gemini k tomu přidává druhý pohled.",
-      "body": "Market research s AI začne dávat smysl až po delší přípravě. Potvrdila to zkušenost jednoho člena, kterou dnes sdílel v komunitě.\n\nPrvní měsíc byl hlavně o ladění promptů a postupném předávání kontextu. Odvětví, konkurence, zákazníci, produktový slovník firmy. Teprve když tohle model dostal, začaly být výstupy opravdu použitelné.\n\nDůležitý princip: kontext nedávat jednorázově, ale průběžně. Každý další prompt navazuje na to, co už model o firmě ví. Čím přesnější kontext, tím relevantnější výstup.\n\nUžitečný je i cross-check mezi Claudem a Gemini. Co jeden model označí jako klíčový trend, druhý může vidět jinak nebo úplně přehlédnout. Když se výstupy rozcházejí, je to signál. Buď je otázka položená moc vágně, nebo jde o oblast, která je fakt nejednoznačná a stojí za hlubší průzkum.\n\nDva modely jako „debatní partneři“ fungují líp než jeden model jako autorita.",
+      "body": "Jeden člen sdílel zkušenost s AI market research. Po měsíci hraní si s tím, jak má vypadat výstup, a učení modelu, co vlastně dělá jeho firma, začíná dávat zajímavé výsledky.\n\nPoužívá cross-check mezi Claude a Gemini, aby měl dva pohledy. Sám ale říká, že ho zajímá, jak to dělat lépe.",
       "read_minutes": 2,
       "source_date": "2026-04-09",
       "topics": [
@@ -77,7 +77,7 @@
       "level": "Builder",
       "title": "Asistent s instrukcí ptej se dokola dokud neřeknu stop",
       "excerpt": "U B2B akvizice v konzervativním oboru se hodí vlastní asistent se systémovým promptem. Zadání pro model: ptej se mě pořád dokola, dokud neřeknu stop.",
-      "body": "Dnes se v komunitě řešil konkrétní případ: jak použít AI pro B2B akvizici v konzervativním průmyslu, kde jsou rozhodovatelé opatrní a všechno jde přes formální kanály.\n\nPadla jednoduchá rada: nepoužívat obecný chat, ale postavit si vlastního asistenta se systémovým promptem. Do něj popíšete kontext — obor, typ zákazníka, jeho časté námitky i způsob rozhodování. Asistent pak drží stejný rámec a nemusíte mu pokaždé vysvětlovat základy.\n\nZajímavý detail: přidejte instrukci „ptej se mě pořád dokola, dokud neřeknu stop“. Model pak rozhovor vede sám a tahá z vás informace. Nemusíte přemýšlet, co ještě dodat. Výsledek bývá mnohem propracovanější než po jednom dlouhém promptu.\n\nPro tuhle práci komunita doporučila zvážit přechod z ChatGPT na Claude. Líp drží kontext v delší konverzaci a česky zní přirozeněji.",
+      "body": "V komunitě se řešil konkrétní případ: jak použít AI pro B2B akvizici v konzervativním průmyslu na polském a maďarském trhu.\n\nPadla rada: nepoužívat obecný chat, ale postavit si vlastního asistenta se systémovým promptem. Celý proces rozdělit do tří fází: odladění zadání, deep research webu, vytvoření asistenta. V rámci deep researche použít jiný nástroj nebo jiný chat.\n\nDalší tip: přidat instrukci „ptej se mě furt dokola na upřesnění, dokud neřeknu stop”. Model pak sám táhne konverzaci a tahá z vás informace.\n\nPadlo i doporučení přejít z ChatGPT na Claude. A připomínka pro začátečníky: nečekejte výsledky hned na první dobrou, musíte si to nejdřív osahat.",
       "read_minutes": 2,
       "source_date": "2026-04-09",
       "topics": [
@@ -97,8 +97,8 @@
       "type": "INSIGHT",
       "level": "Začátečník",
       "title": "Telefon nepatří ani do šuplíku ani na stůl",
-      "excerpt": "Mobil položený na stole zhoršuje soustředění, i když je ztlumený. Šuplík nestačí — pomůže až jiná místnost.",
-      "body": "Dnes v diskuzi padlo přirovnání, které stojí za zopakování. Mobil na stole — i když leží displejem dolů a je ztlumený — prokazatelně snižuje soustředění. Nejde o to, jestli bliká. Už jen to, že víte, že tam je, vám bere část pozornosti.\n\nVětšina lidí si myslí, že jich se to netýká. Jenže problém je, že druhou možnost nikdy nezkusili dost dlouho, aby mohli srovnávat. Týden s telefonem na stole, týden s telefonem v jiné místnosti. Teprve pak je to fér srovnání.\n\nPadlo i konkrétní doporučení: ne do šuplíku, ne do tašky, ne displejem dolů. Ideálně do jiné místnosti. Šuplík je pořád moc blízko. Rozhodnutí „vezmu ho, nebo ne?“ se pak vrací každých pět minut a pokaždé trochu bere energii. Jiná místnost tahle rozhodnutí úplně odstraní.\n\nU práce s AI to platí dvojnásob. Hluboká práce s modelem funguje líp, když nejste napůl jinde.",
+      "excerpt": "Mobil položený na stole zhoršuje soustředění, i když je ztlumený. Šuplík nestačí. Pomůže až jiná místnost.",
+      "body": "Daniel sdílel postřeh z domácí výuky. Mobil na stole ve většině případů snižuje kognitivní výkon. I když má vypnutý zvuk nebo je obrácený displejem dolů.\n\nVětšina lidí si myslí, že se umí soustředit i s telefonem vedle. Problém je, že tu druhou možnost nikdy nezkusili dost dlouho, aby mohli srovnávat.\n\nKonkrétní doporučení: ne do šuplíku, ne do tašky, ne obrácený na stole. Ideálně jiná místnost. Pak si dát 90 minut hluboké práce. A všímat si, kolikrát během té doby prolítne hlavou impulz ho zkontrolovat.",
       "read_minutes": 2,
       "source_date": "2026-04-09",
       "topics": [

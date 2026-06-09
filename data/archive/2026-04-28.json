@@ -27,11 +27,11 @@
     },
     {
       "id": "2026-04-28-02",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Expert",
       "title": "Scraper obsahu s automatickými poznámkami v Obsidianu",
       "excerpt": "Jedna členka si postavila nástroj, který bere nový obsah ze zadaných zdrojů a automaticky ho ukládá do Obsidianu. Přidá k němu TLDR, tagy a místo na vlastní zpětnou vazbu.",
-      "body": "Konkrétní ukázka toho, co má spousta lidí v hlavě jako nápad, ale už to nedotáhne. Členka dá nástroji seznam zdrojů, ten pravidelně kontroluje novinky a každý nový obsah uloží do Obsidianu jako poznámku. Přidá k tomu TLDR, tagy, backlinky na související témata a místo, kam si může dopsat vlastní komentář nebo zpětnou vazbu.\n\nVýsledek: informace nepřibývají jen na hromadu, ale rovnou zpracované. Místo scrollování nekonečným seznamem záložek máš v Obsidianu strukturované poznámky připravené ke čtení nebo dalšímu navázání.\n\nPodobný systém si ladí víc lidí z komunity. Padl i nápad udělat session, kde by každý ukázal kus svého přístupu a mohli bychom je porovnat. Pokud tě to zajímá, sleduj skupinu Vibe Coding.",
+      "body": "Konkrétní ukázka toho, co má spousta lidí v hlavě jako nápad, ale už to nedotáhne. Členka dá nástroji seznam zdrojů, ten pravidelně kontroluje novinky a každý nový obsah uloží do Obsidianu jako poznámku. Přidá k tomu TLDR, tagy, backlinky na související témata a místo, kam si může dopsat vlastní komentář nebo zpětnou vazbu.\n\nVýsledek: informace nepřibývají jen na hromadu, ale rovnou zpracované. Místo scrollování nekonečným seznamem záložek máš v Obsidianu strukturované poznámky připravené ke čtení nebo dalšímu navázání.\n\nPodobný systém si ladí víc lidí z komunity. Padl i nápad udělat session, kde by každý ukázal kus svého přístupu a mohli bychom je porovnat.",
       "read_minutes": 2,
       "source_date": "2026-04-28",
       "topics": [
@@ -51,7 +51,7 @@
       "level": "Builder",
       "title": "Vercel a Cloudflare Pages jako alternativa k Wedosu",
       "excerpt": "Moderní hosting zdarma s automatickým nasazením přes GitHub. V diskuzi zazněly konkrétní tipy pro ty, kdo chtějí odejít z klasického sdíleného hostingu.",
-      "body": "V komunitě se rozjela debata o přechodu z klasického hostingu na modernější platformy. Padly konkrétní tipy na Vercel a Cloudflare Pages. Obě služby mají tarif zdarma, který na osobní projekty nebo menší weby úplně stačí.\n\nVelké plus je automatické nasazení přes GitHub. Commitneš změnu a web se sám nasadí. Bez FTP a bez ručního nahrávání souborů. Obě platformy jsou navíc výrazně rychlejší než běžný shared hosting a líp zvládají statické i dynamické weby.\n\nSmysl to dává každému, kdo má web na klasickém hostingu a chce si zjednodušit práci nebo snížit náklady. Přechod není složitý, pokud máš projekt na GitHubu nebo jsi ochotný ho tam dát. Cloudflare Pages navíc nabízí serverless funkce i pro dynamický obsah.",
+      "body": "V komunitě se rozjela debata o přechodu z klasického hostingu na modernější platformy. Padly konkrétní tipy na Vercel a Cloudflare Pages. Obě služby umožňují hostovat takový projekt zdarma.\n\nVelké plus je automatické nasazení přes GitHub. Stačí, aby tam přišla nová verze, a automaticky se spouští deploy. Bez ručního nahrávání souborů. To může být i riziko, pokud člověk jede YOLO a neví jak git používat a vše dělá slepě přes AI.\n\nVercel funguje stejně. V hodně omezeném režimu umožňují provoz i GitHub Pages. Pro SEO padl tip pokrýt existující cesty 1:1, nebo aspoň vyřešit redirecty.",
       "read_minutes": 2,
       "source_date": "2026-04-28",
       "topics": [
@@ -68,7 +68,7 @@
       "level": "Expert",
       "title": "Claude Code na Mac Mini jako osobní server",
       "excerpt": "Mac Mini s Claude Code a cron jobem běží nonstop 24/7. Tahle architektura zaujala komunitu a rozjela debatu o osobním serveru versus cloudu.",
-      "body": "V komunitě padl konkrétní setup, který vyvolal dost otázek: Claude Code běžící na Macu Mini přes cron job, pořád dostupný bez ručního spouštění. Prostě vlastní mini server pro AI agenty, který zpracovává úkoly na pozadí.\n\nOproti cloudu má výhodu v přímém napojení na lokální software, aplikace a soubory. Mac Mini M4 stojí jednorázově víc peněz, ale provoz je pak levný. Cloud je pružnější a líp škáluje, jenže pro osobní projekty a experimenty může lokální řešení úplně stačit.\n\nDebata Mac Mini versus cloud se v komunitě vrací pořád dokola. Lidi zajímala hlavně architektura: jak jsou napojené cron joby, jak se to verzuje a jak se řeší přístupy. Jestli máš podobný setup nebo si s tím hraješ, hoď to do Vibe Coding skupiny.",
+      "body": "Ve Vibe Coding padla otázka na konkrétní setup: Claude Code běžící na Mac Mini přes cron job, 24/7. Daniel potvrdil: Mac Mini, cron job.\n\nPředtím proběhla debata proč lidé používají Mac Mini, když by cloud vyšel levněji. Zaznělo, že důvod bývá znalost možností a přístupnost nastavení. Někdo zmínil, že pro něj je důležitá integrace s klasickým softwarem na Mac Mini. Daniel dodal, že ve finále vyhrálo mít věci u sebe, i když je to drahé, plus vlastní experimenty.",
       "read_minutes": 2,
       "source_date": "2026-04-28",
       "topics": [
@@ -86,7 +86,7 @@
       "level": "Začátečník",
       "title": "AI dotáhne tabulku, kde vzorce selžou",
       "excerpt": "Složitá excelová tabulka, která se při ručních úpravách rozsype? Jedna členka to vyřešila přes AI a nepřišla o žádné vzorce. Funguje to i v Google Sheets.",
-      "body": "Jedna členka popsala konkrétní situaci. Měla těžkou excelovou tabulku plnou vzorců a ručně ji nešlo dodělat tak, aby se něco nerozbilo. Zkusila to přes AI a tabulka byla hotová bez problémů.\n\nPodobně to jde i v Google Sheets. Přes Claude Code se dají spravovat i složitější věci, třeba vlastní CRM. Každou úpravu můžeš nechat na AI a nehrozí, že ručně něco rozhodíš.\n\nPro lidi bez programátorského zázemí je tohle jeden z nejpraktičtějších způsobů použití. Nemusíš rozumět vzorcům. Stačí popsat, co chceš, a AI to dotáhne. Hodí se to hlavně ve chvíli, kdy chybí jeden vzorec, potřebuješ přidat sloupec nebo opravit strukturu tak, aby se nerozsypala data.",
+      "body": "Jedna členka popsala konkrétní situaci. Měla těžkou excelovou tabulku plnou vzorců a ručně ji nešlo dotáhnout bez rozsypání vzorců. Zkusila to přes AI a tabulka byla hotová bez problémů.\n\nPodobně to funguje i v Google Sheets. Daniel zmínil, že si přes Claude Code udržuje vlastní CRMko a každou aktualizaci nechává na AI.",
       "read_minutes": 2,
       "source_date": "2026-04-28",
       "topics": [

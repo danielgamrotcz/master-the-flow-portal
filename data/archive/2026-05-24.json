@@ -9,11 +9,11 @@
   "cards": [
     {
       "id": "2026-05-24-01",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Builder",
       "title": "Hlasový capture přes iPhone akční tlačítko",
       "excerpt": "Jedna členka si poskládala workflow, kde stiskne akční tlačítko na iPhonu, spustí se nahrávání, přepis přes OpenAI API a odeslání do chatu v Claude. Výsledek se pak automaticky uloží do Todoistu nebo Notionu podle toho, co řekla.",
-      "body": "Nápad byl jednoduchý: místo ručního zapisování úkolů, nápadů a citátů do různých appek zmáčknu jedno tlačítko a řeknu, co potřebuju.\n\nTechnicky to funguje takhle: zkratka na iPhonu nahraje hlas, OpenAI API ho přepíše a přepsaný text pošle jako nový chat do Claude.ai. Tam jsou tři skilly: jeden na úkoly napojený na Todoist, jeden na nápady a jeden na citáty z knih a podcastů. Ty poslední dva jsou přes konektor napojené na Notion.\n\nClaude podle kontextu pozná, který skill má použít. Případně mu to upřesním hned na začátku věty.\n\nCelé jsem to postavil za víkend. První den používání ukázal, že odpor při zapisování fakt zmizel.\n\nJediná aktuální otrava: výstup jde do Notion, ne rovnou do Obsidianu. Ten konektor nemá, takže přesun zatím řeším ručně přes skill v Coworku. I tak je ale systém použitelný.",
+      "body": "Nápad byl jednoduchý: místo ručního zapisování úkolů, nápadů a citátů do různých appek zmáčknout jedno tlačítko a říct, co potřebuju.\n\nTechnicky to funguje takhle: zkratka na iPhonu nahraje hlas, OpenAI API ho přepíše a přepsaný text pošle jako nový chat do Claude.ai. Tam jsou tři skilly: jeden na úkoly napojený na Todoist, jeden na nápady a jeden na citáty z knih a podcastů. Ty poslední dva jsou přes konektor napojené na Notion.\n\nClaude podle kontextu pozná, který skill má použít. Případně mu to autorka upřesní hned na začátku věty.\n\nCelé to vzniklo o víkendu. První den používání ukázal, že tření se zapisováním věcí je pryč.\n\nJediná aktuální otrava: výstup jde do Notion, ne rovnou do Obsidianu. Ten konektor nemá, takže přesun zatím řeší ručně přes skill v Coworku. I tak je ale systém použitelný.",
       "read_minutes": 2,
       "source_date": "2026-05-24",
       "topics": [
@@ -34,7 +34,7 @@
       "level": "Builder",
       "title": "Více cílů z jednoho vstupu: oddělené skilly",
       "excerpt": "Místo jednoho přetíženého skriptu jsou tu tři samostatné skilly. Každý má jasný úkol a svůj cílový systém. Ví, kam data patří, a nemusí hádat, co se po něm chce.",
-      "body": "Klasická past při stavbě capture systémů: nacpat všechno do jednoho promptu. Výsledek je pak křehký. AI musí hádat, co jste tím mysleli.\n\nJiný postup: tři skilly, každý s jasnou odpovědností. Skill pro úkoly ví, že výstup patří do Todoist. Skill pro nápady a skill pro citáty zase vědí, do které databáze v Notion mají zapisovat.\n\nVstup je pořád stejný: přepsaný hlas. Záměr se ale pozná buď podle začátku věty, nebo podle toho, který skript spustíte.\n\nNení to tak elegantní jako jeden univerzální universal-capture skill. Je to ale odolnější. Když jeden skill přestane fungovat, ostatní jedou dál. A ladí se to líp, protože přesně víte, kde hledat problém.\n\nAutoři tohohle přístupu sami říkají, že mají slepou skvrnu vůči jednodušším řešením. Ale jim to funguje. A to je hlavní.",
+      "body": "Klasická past při stavbě capture systémů: nacpat všechno do jednoho promptu. Výsledek je pak křehký. AI musí hádat, co jste tím mysleli.\n\nJiný postup: tři skilly, každý s jasnou odpovědností. Skill pro úkoly ví, že výstup patří do Todoist. Skill pro nápady a skill pro citáty zase vědí, do které databáze v Notion mají zapisovat.\n\nVstup je pořád stejný: přepsaný hlas. Záměr se pozná buď podle začátku věty, nebo podle toho, který skill spustíte.\n\nNení to tak elegantní jako jeden všechno-v-jednom skill. Je to ale odolnější. Když jeden skill přestane fungovat, ostatní jedou dál. A ladí se to líp, protože přesně víte, kde hledat problém.\n\nAutorka sama říká, že má slepotu vůči jednodušším řešením. Ale systém funguje. A to je hlavní.",
       "read_minutes": 2,
       "source_date": "2026-05-24",
       "topics": [

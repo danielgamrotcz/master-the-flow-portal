@@ -32,8 +32,8 @@
     {
       "id": "2026-05-20-03",
       "source_date": "2026-05-20",
-      "excerpt": "Jeden člen nasdílel setup n8n na Hetzneru, jiný člen ukázal Obsidian podle PARA. Pak se detailně řešil Claude Cowork vs. CLI a synchronizace přes iCloud.",
-      "body": "Technická diskuze se rozjela naplno. Jeden člen popsal setup n8n na Hetzneru. Jiný člen ukázal, jak pracuje s Obsidianem přes PARA strukturu. Řešily se praktické věci: vzdálené připojení k Mac Mini, synchronizace přes iCloud i rozdíly mezi Claude Cowork a CLI přístupem.",
+      "excerpt": "Jeden člen popsal svůj setup: Claude Cowork s asi 50 skripty, Obsidian podle PARA, n8n na Hetzneru pro backend a druhá Claude noga na starém Mac mini.",
+      "body": "Jiří Soljak shrnul, jak má postavený celý systém. V Claude Cowork má přes 50 vytvořených skillů, složky synchronizuje přes iCloud. Obsidian naplnil podle Karpathyho Wiki-LLM návodu, strukturovaný přes PARA. Backend postupně staví na n8n na Hetzneru. Paralelně si rozjíždí druhou CLI instanci Claude na starém Mac mini pro případ, že laptop spí. Říká, že to stálo moře času, ale záměrně šel cestou Good Enough, aby nepředělával věci pořád dokola.",
       "topics": [
         "Automatizace",
         "Obsidian"
@@ -48,8 +48,8 @@
     {
       "id": "2026-05-20-04",
       "source_date": "2026-05-20",
-      "excerpt": "aifirst.cz a naprimosai.cz jsou dobrý start pro ty, kdo s vibe codingem teprve začínají.",
-      "body": "Daniel sdílel epizodu s Jindrou Fáborským a Markem Prokopem. Komunita k ní doporučila dva weby pro nováčky ve vibe codingu: aifirst.cz a naprimosai.cz.",
+      "excerpt": "Daniel sdílel epizodu Marka Prokopa s Jindrou Fáborským. Dva členové k tomu doporučili aifirst.cz a naprimosai.cz jako vstupní bod pro vibe coding.",
+      "body": "Daniel sdílel epizodu Marka Prokopa s Jindrou Fáborským na Spotify. Jeden člen potvrdil, že Jindrův podcast ho dostal k vibe codingu, a velmi doporučil celý kurz na aifirst.cz jako praktický první krok. Nikol sdílela z AI MSK komunity odkaz na naprimosai.cz jako zevrubný návod pro začínající.",
       "topics": [
         "Vibe Coding",
         "Claude Code"
@@ -57,17 +57,17 @@
       "title": "Dva weby pro nováčky ve vibe codingu",
       "source_group": "inspiracediskuze",
       "source_msg_times": [
-        "21:10",
-        "07:49",
-        "18:11"
+        "18:11",
+        "20:17",
+        "21:10"
       ],
       "type": "NÁSTROJE"
     },
     {
       "id": "2026-05-20-05",
       "source_date": "2026-05-20",
-      "excerpt": "Ve skupině Vibe Coding testují rtk-ai/rtk. Zkušenosti jsou zatím půl na půl — jeden člen si radši nastavil vlastní styl výstupu.",
-      "body": "Ve skupině Vibe Coding se testuje rtk-ai/rtk jako způsob, jak snížit spotřebu tokenů. Výsledky jsou zatím různé. Někdo ocenil úsporu, jiný si radši nastavil vlastní output style přímo v projektu. Jeden člen mezitím napojil Meta Ads MCP, jenže API je nestabilní a blokuje účty.",
+      "excerpt": "Ve skupině Vibe Coding sdíleli rtk-ai/rtk. Jeden člen ho zkoušel, ale raději si definoval vlastní output styl. Meta Ads MCP má jeden člen napojený, jiný upozornil, že Meta účty za napojení blokuje.",
+      "body": "Jeden člen doporučil rtk-ai/rtk jako nástroj pro snížení spotřeby tokenů u Claude Code. Jiný člen ho zkoušel, ale přišlo mu, že výrazně snižuje kvalitu a Claude se méně ptá. Raději si definoval vlastní output styl, kde Claude odpovídá stručně, ale neztrácí vrstvu dotazování. K Meta Ads MCP: jeden člen ho má napojený a spravuje přes něj reklamy, ale jen na jednom účtu. Jiný člen upozornil, že Meta účty za MCP napojení blokuje. Třetí člen jede přímo přes API do vlastní lokální appky a říká, že Meta API je nestabilní a dokumentace má skluz za realitou.",
       "topics": [
         "Vibe Coding",
         "Claude Code"
@@ -75,11 +75,13 @@
       "title": "rtk na úsporu tokenů: zkušenosti půl na půl",
       "source_group": "vibecoding",
       "source_msg_times": [
-        "15:02",
-        "14:52",
-        "14:57",
         "13:32",
-        "13:49"
+        "13:36",
+        "13:49",
+        "14:52",
+        "14:53",
+        "14:57",
+        "15:02"
       ],
       "type": "NÁSTROJE"
     }

@@ -11,8 +11,8 @@
       "id": "2026-05-28-01",
       "source_date": "2026-05-28",
       "title": "Booking.com má vlastní MCP konektor",
-      "excerpt": "Hledání ubytka přes AI je zase o krok blíž. Booking.com spustil MCP konektor, který je v Coworku dostupný přes Connectors.",
-      "body": "Booking.com přidal vlastní MCP konektor. Najdete ho v Coworku pod záložkou Connectors. Spustili ho zhruba před měsícem spolu s dalšími consumer konektory, jako jsou Spotify, Uber a Tripadvisor.\n\nRecenze jsou zatím smíšené. Jeden člen testoval vyhledávání podle kritérií ubytování a konektor nenašel hotel, který by jim přesně odpovídal. Schéma parametru pro parkování má jen dvě hodnoty: PARKING a FREE_PARKING. Chybí třeba parkování v objektu nebo soukromé parkování. Na konkrétnější požadavky to zatím nestačí. Na rychlé doporučení oblíbených hotelů z Booking.com to ale funguje.",
+      "excerpt": "Booking.com spustil MCP konektor dostupný v Coworku přes Connectors. Člen komunity ho testoval a má smíšené dojmy.",
+      "body": "Booking.com přidal vlastní MCP konektor. Najdete ho v Coworku pod záložkou Connectors. Spustili ho zhruba před měsícem spolu s dalšími consumer konektory, jako jsou Spotify, Uber a Tripadvisor.\n\nRecenze jsou zatím smíšené. Jeden člen testoval vyhledávání podle kritérií a konektor nenašel ubytování, které přesně splňovalo zadání. Schéma parametru pro parkování má jen dvě hodnoty: PARKING a FREE_PARKING. Chybí třeba parkování v objektu nebo soukromé parkování. Na konkrétnější požadavky to zatím nestačí. Na rychlé najití něčeho, co doporučuje sám Booking, to ale prý funguje.",
       "topics": [
         "MCP",
         "Claude Code"
@@ -28,7 +28,7 @@
       "source_date": "2026-05-28",
       "title": "Čeština vs angličtina v promptech — záleží na tom?",
       "excerpt": "Při kódování a práci s tools je skoro jedno, v jakém jazyce prompt píšeš. Komunita to spočítala.",
-      "body": "Input tokeny z promptu jsou proti tool callům a kontextu skoro nic. Konkrétní čísla z diskuze: v promptu ušetříte třeba 1–2 tokeny, zatímco tools a context můžou mít klidně 17 tisíc tokenů. Overhead jednoho dotazu pak vyjde zhruba na 0,04 USD. Jazyk má smysl řešit jen ve chvíli, kdy máte hodně textových vstupů a výstupů a zároveň byste museli přeložit všechny materiály. Při kódování ten rozdíl ve spotřebě nepoznáte.",
+      "body": "Input tokeny z promptu jsou proti tool callům a kontextu skoro nic. Konkrétní čísla z diskuze: v promptu ušetříte třeba 1,4 tokenu (7 tokenů krát 20 % úspora), zatímco tools a context můžou mít klidně 17 tisíc tokenů. Overhead jednoho dotazu pak vyjde zhruba na 0,04 USD. Jazyk má smysl řešit jen ve chvíli, kdy máte hodně textových vstupů a výstupů a zároveň byste museli přeložit všechny materiály. Při kódování ten rozdíl ve spotřebě nepoznáte.",
       "topics": [
         "Prompting"
       ],
@@ -42,34 +42,31 @@
       "id": "2026-05-28-03",
       "source_date": "2026-05-28",
       "title": "Todoist hands-free přes Siri při řízení",
-      "excerpt": "Zapsat si úkoly za jízdy, aniž byste sahali na telefon? Jde to přes Apple Shortcuts a Siri.",
-      "body": "Thuy se ptala, jestli jde spustit Todoist zkratku přes Siri — třeba při řízení, aby si mohla hands-free zapsat úkol. V Apple Shortcuts to jde. Stačí Siri přiřadit ke konkrétní zkratce a pak ji spustit hlasem. Detaily nastavení je potřeba vyzkoušet, ale základní postup funguje. Když si takovou zkratku nastavíte, nemusíte při řízení sahat na telefon.",
+      "excerpt": "Jde zapsat úkol do Tododistu za jízdy přes Siri? Člen se ptal, Daniel potvrdil, že Apple Shortcuts na to má možnost spuštění.",
+      "body": "Člen se ptal, jestli jde spustit Todoist zkratku přes Siri, třeba při řízení, aby si mohl hands-free zapsat úkol. Daniel potvrdil, že Apple Shortcuts má možnost spuštění přes Siri. Pokud si nastavíš Siri na konkrétní zkratku, pak ji spustíš hlasem. Daniel ale dodal, že nad dalšími možnostmi zatím moc nepřemýšlel.",
       "topics": [
         "Produktivita"
       ],
       "source_group": "inspiracediskuze",
       "source_msg_times": [
         "11:18",
-        "11:32",
-        "00:05"
+        "11:32"
       ],
       "type": "INSIGHT"
     },
     {
       "id": "2026-05-28-04",
       "source_date": "2026-05-28",
-      "title": "MCP a VPN — proč si dávat pozor",
-      "excerpt": "Ve skupině Vibe Coding se objevil odkaz na článek o zranitelnosti v MCP. Doporučení: přes MCP se k VPN nepřipojovat.",
-      "body": "Ve skupině Vibe Coding se sdílel článek o bezpečnostní zranitelnosti v MCP protokolu. Konkrétně se nedoporučuje pouštět MCP k nastavení nebo správě VPN. Proč je to problém a jaká zranitelnost hrozí, najdete v článku z komunity. Obecně platí: MCP konektory mají přístup k tomu, co jim povolíte. U citlivých věcí, jako je VPN nebo klíčenka, se vyplatí být opatrný.",
+      "title": "MCP a VPN — článek o zranitelnosti",
+      "excerpt": "Ve skupině Vibe Coding člen sdílel odkaz na článek o zranitelnosti v MCP a proč se nedoporučuje sahat na VPN.",
+      "body": "Ve skupině Vibe Coding člen sdílel odkaz na článek z Lupa.cz o zranitelnosti v MCP protokolu a tématu VPN. Zpráva neměla komentář. Kdo má zájem o detaily, najde je přímo v článku.",
       "topics": [
         "Vibe Coding",
-        "MCP",
-        "Claude Code"
+        "MCP"
       ],
-      "source_group": "inspiracediskuze",
+      "source_group": "vibecoding",
       "source_msg_times": [
-        "00:05",
-        "11:36"
+        "06:47"
       ],
       "type": "INSIGHT"
     }

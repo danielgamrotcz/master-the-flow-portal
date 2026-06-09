@@ -9,11 +9,11 @@
   "cards": [
     {
       "id": "2026-03-20-01",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Builder",
       "title": "Aplikace na lokální přepis audia a videa",
-      "excerpt": "Jeden člen komunity si s Claude Code postavil vlastní aplikaci na lokální přepis audia a videí přímo na Macu. Cloudové nástroje mu nestačily, tak si udělal vlastní řešení. Teď chce přidat automatickou anonymizaci nahraných rozhovorů.",
-      "body": "Jeden člen komunity si s Claude Code postavil aplikaci pro lokální přepis audia a videí na Macu. Přesně ten typ projektu, kde vibe coding dává smysl. Potřebuješ nástroj, který buď neexistuje, nebo by byl moc drahý. Tak si ho uděláš sám.\n\nTeď chce přidat anonymizaci rozhovorů. Pracuje s lidmi, kteří chtějí zůstat v anonymitě, takže samotný přepis nestačí. Potřebuje ještě úpravu textu, která nahradí jména a citlivé údaje neutrálními výrazy.\n\nNa přepis Daniel doporučil Soniox nebo modely od OpenAI. Zároveň upozornil, že text je skoro vždycky potřeba ještě upravit. Ne každý mluví jasně a přepis to pak věrně ukáže. Nakonec by aplikace mohla text i přečíst syntetickým hlasem přes Eleven Labs nebo podobnou službu.\n\nTakhle vibe coding často vypadá. Začneš jednou funkcí. Pak přidáš další. A potom ještě jednu. Každou fázi ti pomůže poskládat Claude Code, i když nejsi developer.",
+      "excerpt": "Jeden člen komunity si s Claude Code postavil vlastní aplikaci na lokální přepis audia a videí přímo na Macu. Teď chce přidat automatickou anonymizaci nahraných rozhovorů.",
+      "body": "Jeden člen komunity si s Claude Code postavil aplikaci pro lokální přepis audia a videí na Macu. Pracuje s rozhovory, kde dotazovaní chtějí zůstat v anonymitě. Nestačí mu proto jen přepis. Chce ještě nahradit jména a citlivé údaje jinými.\n\nNa přepis Daniel doporučil Soniox nebo modely od OpenAI s tím, že výstup bude skoro vždy potřeba ještě upravit. Ne každý mluví jasně a přepis to věrně ukáže. Na závěr člen plánuje text i přečíst syntetickým hlasem, třeba přes Eleven Labs.",
       "read_minutes": 2,
       "source_date": "2026-03-20",
       "topics": [
@@ -32,8 +32,8 @@
       "type": "NÁSTROJE",
       "level": "Builder",
       "title": "WisprFlow, Raycast a Soniox: co kdy použít",
-      "excerpt": "V komunitě jsme porovnávali nástroje na přepis mluvené řeči. WisprFlow je oblíbený, ale na iOS občas text dost zkomolí. Raycast se hodí jako záloha, Soniox spíš pro náročnější přepisy.",
-      "body": "K otázce přepisu řeči na iOS se sešlo několik zkušeností.\n\nWisprFlow je asi nejznámější volba v téhle kategorii. Na desktopu funguje dobře, ale na iOS občas text zkreslí nebo pokazí. Jako záloha se dá použít Raycast. Přepis taky umí, i když to není jeho hlavní funkce.\n\nNa přesnější nebo náročnější přepis padlo doporučení na Soniox. Případně modely od OpenAI. Jen je potřeba počítat s tím, že výstup bude chtít ještě upravit. Lidi často nemluví úplně jasně a surový přepis to prostě ukáže.\n\nKdo chce mít všechno pod kontrolou, bez cloudu a bez kreditů, může zkusit lokální post-processing přes Ollama. Běží offline přímo na Macu s čipem M3 a novějším. Je to ale složitější cesta a hodí se spíš pro technicky zdatnější uživatele.\n\nKrátké shrnutí: WisprFlow jako výchozí volba pro většinu, Raycast jako záloha na iOS, Soniox nebo OpenAI pro přesnější přepis a Ollama pro offline práci s citlivými daty.",
+      "excerpt": "V komunitě se řešily nástroje na přepis mluvené řeči. WisprFlow je výchozí volba, ale na iOS občas texty zkomolí. Jako záloha slouží Raycast.",
+      "body": "K otázce přepisu řeči na iOS se sešlo několik zkušeností.\n\nDaniel používá WisprFlow jako hlavní nástroj. Když začal WisprFlow příliš kazit texty na iOS, přešel na Raycast jako zálohu.\n\nNa přesnější přepis doporučil Soniox nebo modely od OpenAI. U obou ale upozornil, že výstup bude chtít ještě upravit. Lidi ne vždy mluví jasně a surový přepis to ukáže.\n\nJeden člen komunity testuje lokální post-processing přes Ollamu na M3. Po přepisu pustí lokální model, který opraví gramatiku a aplikuje slovník důsledněji. Výhodou je, že to pojede offline a bez kreditů.",
       "read_minutes": 2,
       "source_date": "2026-03-20",
       "topics": [
@@ -55,8 +55,8 @@
       "type": "INSIGHT",
       "level": "Builder",
       "title": "Anonymizace přepisů přes textový post-processing",
-      "excerpt": "Přepis rozhovoru je jen půlka práce. Když nahrávka obsahuje jména nebo citlivé údaje, je potřeba je z textu vymazat ještě před dalším použitím. AI to může udělat hned potom jako další krok v procesu.",
-      "body": "Jeden člen komunity pracuje s rozhovory, kde dotazovaní chtějí zůstat v anonymitě. Nestačí proto jen převést audio na text. Přepis se musí ještě upravit: nahradit jména, firmy a další údaje, podle kterých by šel člověk poznat, neutrálními nebo vymyšlenými názvy.\n\nTady dává úprava textu pomocí AI velký smysl. Postup může vypadat takhle:\n\n1. přepis audia (Soniox, Whisper, OpenAI)\n2. vyčištění textu (oprava nesrozumitelných míst a gramatiky)\n3. anonymizace (prompt s instrukcí, co se má nahradit a čím)\n4. volitelně: vytvoření hlasu z anonymizovaného textu\n\nDůležité je, že každý krok jde automatizovat. Claude nebo jiný LLM dostane text a instrukci typu „nahraď všechna jména neutrálními označeními“ a udrží to konzistentně v celém dokumentu.\n\nPokud s rozhovory pracuješ pravidelně, vyplatí se tenhle postup jednou nastavit a pak ho jen spouštět. Hodí se pro novináře, výzkumníky, HR i kouče. Zkrátka pro každého, kdo pracuje s citlivými výpověďmi.",
+      "excerpt": "Přepis rozhovoru nestačí, když dotazovaní chtějí zůstat v anonymitě. Člen komunity chce nahradit jména a citlivé údaje jinými výrazy jako další krok po přepisu.",
+      "body": "Jeden člen komunity pracuje s rozhovory, kde dotazovaní chtějí zůstat v anonymitě. Samotný přepis proto nestačí. Potřebuje ještě upravit text, konkrétně vyměnit jména a jiné údaje za jiné.\n\nNa přepis padlo doporučení Soniox nebo modelů od OpenAI. Daniel zároveň upozornil, že přepisy budou skoro vždy potřebovat úpravy, protože ne každý mluví jasně.\n\nNa závěr by aplikace mohla text přečíst syntetickým hlasem přes Eleven Labs nebo podobnou službu.",
       "read_minutes": 2,
       "source_date": "2026-03-20",
       "topics": [
@@ -76,8 +76,8 @@
       "type": "INSIGHT",
       "level": "Expert",
       "title": "Lokální Ollama jako offline alternativa ke cloudu",
-      "excerpt": "Jeden člen komunity testuje úpravy textu lokálně přes Ollamu na Macu s čipem M3. Data nejdou do cloudu, nejsou potřeba kredity a má nad tím plnou kontrolu. Nevýhoda? Složitější nastavení a závislost na výkonu zařízení.",
-      "body": "Ne každý chce posílat nahrávky rozhovorů nebo citlivé texty do cloudu. Právě na to se hodí Ollama. Je to framework, přes který můžeš spouštět jazykové modely lokálně přímo na Macu.\n\nJeden člen komunity ji testuje na M3 MacBooku pro post-processing přepisů. Workflow má jednoduché: audio se nejdřív přepíše cloudovým nebo lokálním nástrojem. Hotový text pak projde přes lokální model v Ollamě, který udělá korekce, anonymizaci nebo jiné úpravy.\n\nCo to znamená v praxi:\n- stáhneš a nainstaluješ Ollamu (open source, zdarma)\n- vybereš model, třeba Llama 3, Mistral, Gemma nebo jiný\n- spustíš lokální server a voláš ho přes API nebo CLI\n\nVýkon záleží na čipu. M3 Pro a vyšší zvládá dobře modely zhruba do 13 miliard parametrů. Na běžný post-processing textu to stačí. U složitějších úloh, delších kontextů nebo když chceš přesnější výsledky, jsou cloudové modely pořád rychlejší.\n\nOllama dává smysl hlavně ve chvíli, kdy pracuješ s citlivými daty nebo v prostředí, kde cloud nepřipadá v úvahu.",
+      "excerpt": "Jeden člen komunity testuje lokální post-processing přepisů přes Ollamu na Macu s čipem M3. Pojede to offline a bez kreditů.",
+      "body": "Jeden člen komunity testuje Ollamu na M3 pro úpravy přepisů. Workflow má jednoduché: audio se nejdřív přepíše, hotový text pak projde lokálním modelem, který opraví gramatiku a aplikuje slovník důsledněji.\n\nVýhoda je jasná. Data nejdou do cloudu a nejsou potřeba kredity. Člen to zmínil jako řešení pro situaci, kdy je aplikace hotová a chce ji jen spouštět bez dalšího volání Claude.\n\nOtázka o tom, jak omezit spotřebu kreditů, v diskuzi zůstala otevřená. Daniel napsal, že nerozumí, na čem by Claude kredity spotřebovával.",
       "read_minutes": 2,
       "source_date": "2026-03-20",
       "topics": [

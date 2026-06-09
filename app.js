@@ -155,7 +155,7 @@ function trackSession() {
 const TYPE_COLORS = {
   'INSIGHT': '#f06a15',
   'NÁSTROJE': '#3b82f6',
-  'POSTAVIL JSEM': '#10b981',
+  'UKÁZKA': '#10b981',
   'OTEVŘENÁ OTÁZKA': '#8b5cf6',
   'TÉMA TÝDNE': '#f59e0b',
 };

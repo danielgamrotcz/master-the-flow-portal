@@ -32,7 +32,7 @@
       "level": "Builder",
       "title": "AI zrychluje to, co si zvolíte",
       "excerpt": "Jeden člen to vystihl jednou větou: AI je neuvěřitelná páka. Jen zrychluje. Co zrychlí, určujeme my. Tenhle pohled mění způsob, jak k Vibe Codingu přistupujeme.",
-      "body": "Páka bez kormidla je jen větší síla namířená do zdi. To bylo jádro postřehu z diskuze: AI za vás nerozhodne, co stojí za váš čas. Jen rychleji a s menší námahou dodá to, pro co se rozhodnete.\n\nPrakticky: když máte brzdu a jasno v tom, proč to stavíte a kdo to bude používat, AI vás dostane k výsledku dřív. Když v tom jasno nemáte, dostane vás jen rychleji ke špatnému výsledku.\n\nNikdo v diskuzi neříkal, že Vibe Coding je špatně. Zaznělo ale důležité upozornění: nástroj ukáže váš přístup, ale sám ho nezlepší. Kdo má tendenci skákat mezi projekty, bude skákat rychleji. Kdo má nastavený proces ověřování, bude ověřovat rychleji.\n\nKonkrétní krok z diskuze: než pustíte Vibe Coding session, napište si jednu větu, co chcete výsledkem ověřit. Ne co chcete postavit, ale co chcete zjistit.",
+      "body": "Páka bez kormidla je jen větší síla namířená do zdi. To bylo jádro postřehu z diskuze: AI za vás nerozhodne, co stojí za váš čas. Jen rychleji a s menší námahou dodá to, pro co se rozhodnete.\n\nČlen to napsal jednou větou: AI je neuvěřitelná páka, jen zrychluje. Co má zrychlovat, určujeme my. Ať už s AI nebo bez, je škoda jít pro kvantitu a ne pro kvalitu.\n\nNikdo v diskuzi neříkal, že Vibe Coding je špatně. Zaznělo ale upozornění: nástroj ukáže váš přístup, ale sám ho nezlepší.",
       "read_minutes": 2,
       "source_date": "2026-04-03",
       "topics": [
@@ -50,7 +50,7 @@
       "level": "Začátečník",
       "title": "Projekty, které nikdo nechce používat",
       "excerpt": "Proč se staví tolik věcí, které pak nikdo nepoužívá? Jedním z důvodů je to, jak mozek reaguje na tvoření. Když vytvoříme něco nového, máme hned pocit pokroku. A je jedno, jestli to opravdu řeší nějaký skutečný problém.",
-      "body": "Tohle se netýká jen AI. Děje se to vývojářům, designérům, manažerům i zakladatelům. AI to jen násobí, protože dostat se od nápadu k výsledku je najednou skoro bez námahy.\n\nFunguje to jednoduše: mozek nás odměňuje už za samotné tvoření. Nový projekt, nová funkce, nový nápad — to všechno vystřelí dopamin. Jenže ověřování, testování a úpravy podle zpětné vazby tak příjemné nejsou. Trvají déle, jsou nejisté a často i nepohodlné.\n\nVýsledek? Spousta nedodělaných nebo nepoužívaných věcí. A k tomu pocit, že pořád něco děláme, i když se ve skutečnosti moc neposouváme.\n\nJak z toho ven? Před startem si vědomě položit otázku: kdo to bude používat a proč? Pokud odpověď nepřijde rychle a není konkrétní, je to signál zastavit se dřív, než projekt vůbec rozjedete.",
+      "body": "Daniel sdílel článek o dopaminové pasti tvůrce s poznámkou, že vytváření aplikací, které člověk nechce používat, z velké části pramení právě z tohohle.\n\nMaja to popsala z vlastní zkušenosti. Před příchodem Vibe Codingu si opakovala, že sice může mít skoro všechno, jen ne hned. Teď to hned mít může. A z toho se pro ni stala velká past. O to víc říká, že se musí zastavovat a uvědomovat si, co je opravdu důležité.\n\nNikol dodala, že je to hluboká králičí nora. Přišel nový hype. Časem se to snad srovná.",
       "read_minutes": 2,
       "source_date": "2026-04-03",
       "topics": [
@@ -70,7 +70,7 @@
       "level": "Builder",
       "title": "Změny v týmu se musí ověřit v praxi",
       "excerpt": "Jeden člen propojil dopaminovou past tvůrce s vlastní zkušeností z vedení: nestačí chrlit jednu změnu za druhou. Nejdřív se musí ověřit v praxi a projít filtrem reality, teprve pak můžou přinášet výsledky. Platí to pro projekty i pro lidi.",
-      "body": "Pohled zvenku na svět AI nastavil přesné zrcadlo: manažer, který zavádí změny v týmu, naráží na stejnou past jako developer ve Vibe Codingu. Každá nová změna vypadá jako posun. Jenže skutečný posun přijde až ve chvíli, kdy se v praxi ukáže, jestli změna funguje, nebo ne.\n\nChrlit jednu změnu za druhou bez ověření znamená pálit kapacitu týmu. Lidi potřebují čas jednu změnu vstřebat, teprve pak mají prostor přijmout další. Rychlé zavádění bez zpětné vazby nevytváří efektivitu, ale chaos.\n\nStejné je to u projektů. Nestačí, že vzniknou rychle. Fáze, kdy projekt narazí na skutečné uživatele a reálné podmínky, nejde přeskočit. AI ji nezrušila. Jen nám pomohla dostat se k ní dřív.\n\nKonkrétně: po každé iteraci, ať jde o funkci, projekt nebo změnu v týmu, si určete jedno kritérium, podle kterého rozhodnete, jestli pokračujete, nebo se vrátíte zpátky. Bez něj budete iterovat donekonečna.",
+      "body": "Člen propojil téma článku s vlastní zkušeností z práce s týmem. Psal, že chrlil spoustu změn, ale aby se uchytly a začaly přinášet ovoce, musí se v praxi ověřit a profiltrovat.\n\nParalela se světem Vibe Codingu sedí. Nestačí, že změna nebo projekt vzniknou rychle. Fáze ověřování nejde přeskočit.\n\nDalší člen navázal: jedinou brzdou budou lidi sami svým přístupem a mentálním nastavením. Podobně jako u konzumace obsahu, sociálních sítí nebo stravy. Příchod lepších možností nijak neomezil to horší spektrum.",
       "read_minutes": 2,
       "source_date": "2026-04-03",
       "topics": [
@@ -90,7 +90,7 @@
   ],
   "resurfacing": {
     "id": "2026-03-14-01",
-    "type": "POSTAVIL JSEM",
+    "type": "UKÁZKA",
     "level": "Builder",
     "title": "Appka na hudební teorii postavená za den",
     "excerpt": "Jedna členka nemohla najít výukovou appku, která by ji bavila natolik, aby u ní vydržela. Tak si ji prostě postavila sama. Výsledek sdílela hned druhý den a chce ho dál ladit.",

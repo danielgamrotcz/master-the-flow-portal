@@ -12,8 +12,8 @@
       "type": "INSIGHT",
       "level": "Builder",
       "title": "Claude spravuje úkoly v Things přes AppleScript",
-      "excerpt": "Todoist má konektor pro Claude, Things zatím ne. Na dodavatele ale čekat nemusíte. Jeden člen nechal Clauda, ať si napojení přes AppleScript vymyslí sám — a funguje to.",
-      "body": "Když nástroj, který používáte, nemá přímý konektor na Claude, ještě to neznamená, že ho nejde napojit. Jeden člen komunity prostě Claudovi řekl, ať si připojení na Things vymyslí sám. Výsledek? Automatizace přes AppleScript, kterou Claude napsal celou sám. Bez jediné ručně napsané řádky kódu.\n\nClaude umí přidávat úkoly do inboxu, nastavovat tagy i deadliny. Zařazování do konkrétních projektů zatím není úplně spolehlivé, ale to zas tak nevadí. Pro spoustu lidí je inbox jako výchozí místo a ruční roztřídění úplně přirozený workflow.\n\nFunguje to proto, že Mac má AppleScript jako scriptovací vrstvu nad desítkami aplikací. A Claude umí AppleScript psát. Stačí mu říct, co chcete automatizovat.\n\nTakže pokud přemýšlíte o přechodu na Todoist jen kvůli konektoru, možná ještě chvíli počkejte. Třeba je jednodušší najít cestu tam, kde už jste.",
+      "excerpt": "Todoist má konektor pro Claude, Things zatím ne. Jeden člen to nevzdal a řekl Claudovi, ať si napojení přes AppleScript vymyslí sám. Funguje to.",
+      "body": "Jeden člen komunity Claudovi prostě řekl, ať si připojení na Things přes AppleScript vymyslí sám. Claude úkoly hází většinou do inboxu, odkud si je člen rozřadí ručně. Zařazování do konkrétních projektů mu moc nejde, ale to mu nevadí. Zvládá přiřadit tagy i deadliny.\n\nDruhý člen se ptal, jestli nepřejít na Todoist, který má přímý konektor pro Claude a pracuje i na konektoru pro ChatGPT.",
       "read_minutes": 2,
       "source_date": "2026-05-23",
       "topics": [
@@ -23,18 +23,17 @@
       ],
       "source_group": "vibecoding",
       "source_msg_times": [
-        "13:06",
         "10:11",
-        "15:24"
+        "13:06"
       ]
     },
     {
       "id": "2026-05-23-02",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Builder",
       "title": "Web z Lovable na GitHub za pár hodin",
-      "excerpt": "Jedna členka přesunula svůj web z Lovable na Claude a GitHub. Už není závislá na jedné platformě, platí jen za Claude a má plnou kontrolu nad kódem.",
-      "body": "Lovable je skvělý odrazový můstek. Jakmile si ale chcete web upravit opravdu po svém, rychle narazíte na limity platformy. Jedna členka komunity se proto rozhodla přejít jinam. Vzala web tak, jak byl, přesunula ho do Clauda a na GitHub a celý přesun měla za pár hodin hotový.\n\nCo tím získala? Plnou kontrolu. Teď může s Claudem upravovat cokoliv, změny commitovat na GitHub a nasazovat bez prostředníka. Platí jen jedno předplatné.\n\nZároveň si začala stavět vlastní knowledge base v Obsidianu, kterou chce s projektem propojit.\n\nProč to sdílela? Aby dodala odvahu lidem, kteří váhají. Přechod z no-code nástroje na vlastní kontrolu nad kódem může znít děsivě. V praxi se to ale dá zvládnout i bez technického zázemí. Stačí mít po ruce Clauda.",
+      "excerpt": "Jedna členka přesunula svůj web z Lovable na Claude a GitHub. Celý přesun byl za pár hodin. Teď platí jen Claude.",
+      "body": "Jedna členka komunity převedla svůj web z Lovable. Teď ho upravuje jen s Claudem a GitHubem. Celá operace trvala pár hodin. Platí jen jedno předplatné za Claude.\n\nSdílela to jako vzpruhu pro všechny, kdo váhají. Po přesunu si jde hrát se svou knowledge base v Obsidianu.",
       "read_minutes": 2,
       "source_date": "2026-05-23",
       "topics": [
@@ -48,11 +47,11 @@
     },
     {
       "id": "2026-05-23-03",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Builder",
       "title": "Vlastní fakturace místo drahého tarifu za hodinu",
-      "excerpt": "iDoklad v základním tarifu nechtěl zpřístupnit potřebné funkce. Jeden člen si proto s Codexem za hodinu a půl postavil vlastní fakturační systém — se vším, co potřeboval.",
-      "body": "Frustrující situace: platíte za nástroj, ale funkce, které fakt potřebujete, jsou schované až v dražším tarifu. Přesně tohle řešil jeden člen komunity s iDokladem. Místo aby dál připlácel, vzal to do vlastních rukou — s pomocí Codexu si za hodinu a půl postavil vlastní fakturační systém přesně podle svých potřeb.\n\nDobrý příklad toho, jak se věci s AI nástroji posouvají. Dřív by vlastní fakturační systém znamenal týdny nebo měsíce práce. Teď to může být hotové za jedno odpoledne.\n\nPíše, že výsledek chce ještě porovnat s Claude Code. I tak je ale podle něj výsledek boží.\n\nPointa: když vás SaaS nástroj drží pod krkem paywallem, zkuste si spočítat, jestli nebude rychlejší postavit si vlastní řešení. V roce 2026 to může stát hodiny, ne měsíce.",
+      "excerpt": "iDoklad neměl potřebné funkce v placeném tarifu. Jeden člen si s Codexem za hodinu a půl postavil vlastní fakturační systém se vším, co potřeboval.",
+      "body": "Jeden člen komunity měl výměnu s iDokladem. Dotaz na podporu, pak dotazník spokojenosti. Napsal jim, že je nespokojený a že si v době vibe codingu docela troufají. Funkce, které potřeboval, nebyly v jeho placeném tarifu.\n\nMísto připlácení si s Codexem za hodinu a půl postavil vlastní systém na fakturace, kde má vše, co potřebuje. Výsledek hodnotí jako boží. Chce to ještě zkusit s Claude Code.",
       "read_minutes": 2,
       "source_date": "2026-05-23",
       "topics": [
@@ -69,8 +68,8 @@
       "type": "NÁSTROJE",
       "level": "Builder",
       "title": "Přepisy podcastů se Soniox za 30 minut",
-      "excerpt": "Jedna členka potřebovala přepsat svoje podcasty včetně časových značek a rozlišení mluvčích. Za půl hodiny měla hotový funkční skript.",
-      "body": "Pokud tvoříte audio nebo video a chcete z něj dostat text — pro SEO, blog nebo archiv — Soniox stojí za vyzkoušení.\n\nJedna členka komunity si za 30 minut postavila pipeline, která zvládá tři věci najednou: vytáhne audio z MP4 souboru, přepíše ho přes Soniox s přesnými časovými značkami a rozpozná jednotlivé mluvčí. Výstup si pak naformátuje podle potřeby.\n\nProč Soniox a ne jiný nástroj? Má silné rozpoznávání mluvčích (diarization) a dobře podporuje češtinu. V tomhle spousta dalších nástrojů pořád pokulhává.\n\nPostup byl jednoduchý: Claude napsal skript, Soniox udělal přepis. Bez ručního klikání a bez manuálního nahrávání do webového rozhraní. Celý proces jde automatizovat a pouštět znovu na libovolném počtu souborů.",
+      "excerpt": "Jedna členka potřebovala přepsat podcasty s časovými značkami a rozlišením mluvčích. Za 30 minut měla hotovou pipeline. Jde mazat Turboscribe.",
+      "body": "Jedna členka komunity si za 30 minut postavila pipeline na přepisy svých podcastů. Postup ve čtyřech krocích: skript vytáhne z MP4 audio, přepíše se Soniox, skript stáhne výsledek a naformátuje ho podle jejích potřeb, uloží do Obsidianu.\n\nPipeline zvládá časové značky, rozpoznávání mluvčích i vlastní formátování výstupu. Po dokončení šla rušit předplatné Turboscribe.",
       "read_minutes": 2,
       "source_date": "2026-05-23",
       "topics": [
@@ -80,16 +79,17 @@
       ],
       "source_group": "vibecoding",
       "source_msg_times": [
+        "15:37",
         "16:22"
       ]
     },
     {
       "id": "2026-05-23-05",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Builder",
       "title": "CRM pro elektro zakázky postavené s AI",
-      "excerpt": "Jeden elektrikář si staví vlastní systém na správu zakázek. Výkazy práce, ekonomika, denní záznamy, adresář i reporty — všechno má pohromadě v jednom nástroji.",
-      "body": "Elektrikáři, stavební firmy, živnostníci obecně — mají potřeby, které běžné CRM systémy řeší jen částečně. Právě proto si jeden člen komunity staví vlastní systém.\n\nUmí správu zakázek, ekonomiku, to-do listy, denní záznamy, adresář, reporty, výkazy práce i výkazy víceprací. Zatím běží lokálně a ladí se na reálných datech. Veřejně nasazený ještě není.\n\nNení to rychlý prototyp. Je to poctivý nástroj pro běžný pracovní provoz. Něco podobného by jinak stálo hodně peněz za licenci, nebo měsíce vývoje. S AI se to dá posunout za pár víkendů.\n\nDalší člen ze stavebnictví psal, že dřív dělal na podobném projektu pro výpočet rizik, ale nedotáhl ho. Je vidět, že tohle téma lidi řeší. Specifický software pro konkrétní řemesla často chybí, takže si ho začínají stavět sami.",
+      "excerpt": "Jeden člen staví komplexní systém pro správu elektro zakázek. Zakázky, ekonomika, to-do listy, denní záznamy, adresář, reporty, výkazy práce i výkazy víceprací.",
+      "body": "Jeden člen komunity staví komplexní systém pro Projekty elektro. Zahrnuje zakázky, ekonomiku, to-do listy, denní záznamy, adresář, reporty, výkazy práce i výkazy víceprací. Zatím ladí funkce na reálných datech, ven to pouštět ještě nebude.\n\nDalší člen ze stavebnictví napsal, že ho to zajímá. Dřív dělal na podobném projektu pro výpočet rizik, ale nedodělal ho. Ostatní projekt označili jako CRM s něčím navíc.",
       "read_minutes": 3,
       "source_date": "2026-05-23",
       "topics": [
@@ -97,7 +97,12 @@
       ],
       "source_group": "vibecoding",
       "source_msg_times": [
-        "15:50"
+        "15:19",
+        "15:24",
+        "15:36",
+        "15:45",
+        "15:50",
+        "16:04"
       ]
     }
   ],

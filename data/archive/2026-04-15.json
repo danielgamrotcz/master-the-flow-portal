@@ -77,7 +77,7 @@
     },
     {
       "id": "2026-04-15-04",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Expert",
       "title": "Člen staví vlastní chat klienta pro LLM",
       "excerpt": "Jeden člen komunity se rozhodl postavit vlastní alternativu ke Gemini a ChatGPT chatům. Komunita mu potvrdila, že v téhle oblasti fakt chybí použitelné UX. Většina existujících projektů se buď už moc neudržuje, nebo je na každodenní používání zbytečně technická.",

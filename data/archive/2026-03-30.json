@@ -13,7 +13,7 @@
       "level": "Začátečník",
       "title": "IT zázemí není podmínka pro stavění s AI",
       "excerpt": "Víc lidí z komunity potvrdilo, že aplikace s AI zvládnou stavět i bez technického vzdělání. Důležitá je kreativita a schopnost dobře popsat, co chcete. Zbytek zařídí AI.",
-      "body": "V diskuzi se ozvalo víc lidí bez IT zkušeností, kteří za poslední měsíc nebo dva postavili funkční aplikace. Nespojuje je znalost kódu. Spíš to, že umí jasně popsat, co chtějí, a jsou ochotní to postupně ladit.\n\nJedna členka komunity to řekla jednoduše. Stačí být kreativní, podnikavý a umět dobře popsat nápad. Se zbytkem pomůže AI. Když narazíte na technické limity nebo bezpečnost, kolem jsou vývojáři, kteří rádi poradí.\n\nJe dobré brát to jako učení, ne jako jednorázový výsledek. Každá aplikace, kterou postavíte, vás naučí líp zadat tu další. Jeden člen komunity má za měsíc dvě dotažené aplikace, i když nikdy nepsal kód. A přesně o téhle změně tu mluvíme.",
+      "body": "V diskuzi se ozvalo víc lidí bez IT zkušeností, kteří za poslední měsíc nebo dva postavili funkční aplikace. Nespojuje je znalost kódu. Spíš to, že umí jasně popsat, co chtějí, a jsou ochotní to postupně ladit.\n\nJedna členka komunity to řekla jednoduše. Stačí být kreativní, podnikavý a umět dobře popsat nápad. Se zbytkem pomůže AI. Když narazíte na technické limity nebo bezpečnost, kolem jsou vývojáři, kteří rádi poradí. A taky je fajn brát to jako proces učení.\n\nJeden člen komunity má za měsíc dvě dotažené aplikace, i když nikdy nepsal kód. A přesně o téhle změně tu mluvíme.",
       "read_minutes": 2,
       "source_date": "2026-03-30",
       "topics": [
@@ -27,11 +27,11 @@
     },
     {
       "id": "2026-03-30-02",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Expert",
       "title": "EU market research na 30 stranách bez týmu",
       "excerpt": "Jeden z členů komunity připravuje podrobný průzkum trhu pro jednotlivé země EU. Výstupem bude datový dokument, shrnutí pro management a prezentační webový portál pro top management.",
-      "body": "Projekt ukazuje, co dnes zvládne jeden člověk s AI. Podrobný průzkum trhu po zemích EU. Výstupní dokument s více než 30 stranami dat. K tomu management summary. A nad tím prezentační webový portál pro top management.\n\nBez AI by na to byl potřeba velký tým, nebo měsíce práce. Tady to zvládá jeden člověk s několika navazujícími AI procesy.\n\nNejtěžší není obsah vygenerovat. Nejtěžší je ověřit, že výstupy sedí. Autor sám říká, že mu tady chybí zkušenosti s tím, jak správně nastavit procesy a skilly pro vícekrokové workflow. Tak, aby výsledky držely pohromadě a nedávaly nesmysly.\n\nU podobných projektů platí jednoduchá věc. Čím víc kroků na sebe navazuje, tím víc záleží na architektuře celého procesu. Prompty jsou jen začátek.",
+      "body": "Projekt ukazuje, co dnes zvládne jeden člověk s AI. Podrobný průzkum trhu po zemích EU. Výstupní dokument s více než 30 stranami dat. K tomu management summary. A nad tím prezentační webový portál pro top management.\n\nAutor sám říká, že by to bez AI nedal. A že mu tady chybí zkušenosti s tím, jak optimálně nastavit procesy a skilly pro vícekrokové workflow. Potřebuje spouštět několik navazujících procesů a dělat cross-check, aby výstupy nedávaly nesmysly.",
       "read_minutes": 3,
       "source_date": "2026-03-30",
       "topics": [
@@ -49,7 +49,7 @@
       "level": "Builder",
       "title": "Uttero pro iOS míří na TestFlight",
       "excerpt": "iOS verze Uttero je odeslaná na TestFlight a čeká na schválení od Applu. To obvykle trvá 24 až 48 hodin. Několik lidí z komunity už ji aktivně vyhlíží.",
-      "body": "Uttero je hlasový diktovací nástroj s AI úpravami. Doteď fungoval hlavně na macOS. Verze pro iOS přinese stejný komfort i na telefonu. Podle ohlasů z komunity je o ni velký zájem.\n\nTestFlight je nástroj od Applu pro šíření beta verzí před vydáním v App Storu. Jakmile Apple aplikaci schválí, zájemci si ji můžou nainstalovat a testovat ještě před veřejným spuštěním. Schválení běžně trvá 24 až 48 hodin od odeslání.\n\nNěkolik lidí z komunity Uttero aktivně doporučuje ve svém okolí. Zájem tam je. Zatím ale nemají co nabídnout, dokud nebude iOS verze dostupná. To se brzy změní.",
+      "body": "iOS verze Uttero je na TestFlight a čeká na schválení. To trvá 24 až 48 hodin. Daniel to oznámil v komunitě a zároveň říká, že iOS verze je výrazně lepší než macOS appka.\n\nNěkolik lidí z komunity Uttero aktivně propaguje ve svém okolí. Zájem tam je. Zatím ale nemají co nabídnout, dokud nebude iOS verze dostupná. Jeden člen komunity přišel o předchozí nástroj hned poté, co Uttero na macOS vyzkoušel.",
       "read_minutes": 2,
       "source_date": "2026-03-30",
       "topics": [
@@ -68,7 +68,7 @@
       "level": "Builder",
       "title": "Reálné náklady na 40 hodin diktace s AI",
       "excerpt": "Používání Uttero vyjde zhruba na 5 USD za 40 hodin aktivního diktování. Model Haiku zvládne 90 % běžných úprav, Sonnet se používá jen u složitějších případů.",
-      "body": "Jedna z nejčastějších otázek při výběru AI nástrojů je jednoduchá: kolik to opravdu stojí? U Uttero vychází cena hodně nízko. Za 40 hodin diktování zaplatíte zhruba 5 dolarů.\n\nJe to dané tím, jak aplikace pracuje s modely. Levnější Haiku zvládne většinu běžných situací, asi 90 % úprav textu. Sonnet se použije až ve chvíli, kdy je potřeba lepší porozumění nebo složitější přeformulování.\n\nU každodenního diktování je to tedy skoro zanedbatelná částka. Navíc neplatíte paušál za kapacitu, kterou třeba ani nevyužijete. Platíte jen za to, co skutečně použijete. Pro lidi, kteří diktují často a hodně, je to výrazně levnější než jakýkoli paušální tarif.",
+      "body": "Člen komunity se ptal, kolik tokeny pro Uttero opravdu stojí. Daniel odhadl: zhruba 40 hodin diktování za 5 USD (synchronní režim). Asynchronní je prý ještě levnější.\n\nNa úpravách v aplikaci stačí Haiku. Daniel říká, že pokryje devadesát procent případů. Sonnet je k dispozici pro složitější situace. Opus považuje za overkill a pomalý.",
       "read_minutes": 2,
       "source_date": "2026-03-30",
       "topics": [
@@ -92,7 +92,7 @@
       "level": "Začátečník",
       "title": "Co Uttero o vás ukládá a co ne",
       "excerpt": "Padl dotaz, jestli Uttero sbírá nahrávky nebo osobní data. Ne. Aplikace ukládá jen anonymní souhrnná čísla bez vazby na konkrétního uživatele.",
-      "body": "Jeden člen komunity se ptal, co se děje s daty, která se dostanou do Uttero. Je to úplně na místě. Hlasové nahrávky jsou citlivé.\n\nOdpověď je jasná. Uttero nesbírá žádné osobní údaje. Ukládá jen anonymní souhrnný počet hodin a znaků. Bez vazby na konkrétního uživatele. Nahrávky ani přepisy se nikam neposílají a nikam neukládají.\n\nPro každého, kdo diktuje pracovní texty, poznámky z porad nebo osobní zápisky, je to důležité. Minimalizace dat je tady záměr. Ne náhoda.",
+      "body": "Členka komunity se ptala, jestli Daniel v Uttero sbírá data. Daniel odpověděl, že nesbírá nic osobního. Jediná věc, která se ukládá, je anonymní souhrnný počet hodin a znaků. Jde to do jednoho políčka, kde se to sčítá, bez jakékoli vazby na konkrétního uživatele.\n\nCo se týká nahrávek a přepisů, Daniel upřesnil, že vše, co se řeší v kontextu sběru dat, se týká Soniox a případně Claude nebo OpenAI.",
       "read_minutes": 2,
       "source_date": "2026-03-30",
       "topics": [
@@ -109,7 +109,7 @@
   ],
   "resurfacing": {
     "id": "2026-03-14-01",
-    "type": "POSTAVIL JSEM",
+    "type": "UKÁZKA",
     "level": "Builder",
     "title": "Appka na hudební teorii postavená za den",
     "excerpt": "Jedna členka nemohla najít výukovou appku, která by ji bavila natolik, aby u ní vydržela. Tak si ji prostě postavila sama. Výsledek sdílela hned druhý den a chce ho dál ladit.",

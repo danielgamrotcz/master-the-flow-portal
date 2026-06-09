@@ -11,7 +11,7 @@
       "id": "2026-04-29-01",
       "source_date": "2026-04-29",
       "excerpt": "Tři hodiny před svým blokem překopal celou přípravu. Akce dopadla jako bomba.",
-      "body": "Daniel vystupoval na živé akci a tři hodiny před svým blokem se rozhodl, že chce víc. I když byl nervózní a měl pocit, že je hlavou úplně jinde, akce dopadla skvěle. Pak o ní napsal příspěvek na LinkedIn. Zmínil i feedback od účastníků, ale nakonec ho nepřidal. Prý by to vzalo celému momentu kouzlo. Autenticita pro něj byla víc než potvrzení od publika.",
+      "body": "Daniel vystupoval na živé akci a tři hodiny před svým blokem se rozhodl, že chce víc. Akce dopadla skvěle, označil ji za bombu. Napsal o ní příspěvek na LinkedIn. Nikol navrhla přidat feedback od účastníků, Daniel odmítl. Prý by to vzalo celému momentu kouzlo.",
       "topics": [
         "Meeting"
       ],
@@ -27,7 +27,7 @@
       "id": "2026-04-29-02",
       "source_date": "2026-04-29",
       "excerpt": "Přidat feedback od účastníků, nebo ne? Daniel vsadil na autenticitu okamžiku.",
-      "body": "Nikol navrhla Danielovi, aby k příspěvku na LinkedIn přidal zpětnou vazbu účastníků. Odmítl to — podle něj by tím příspěvek ztratil kouzlo. Bylo to vědomé rozhodnutí: sdílet zážitek tak, jak ho člověk prožívá, ne tak, jak ho potvrzují ostatní. Ten moment má hodnotu i bez cizího potvrzení.",
+      "body": "Nikol navrhla Danielovi, aby k příspěvku na LinkedIn přidal zpětnou vazbu účastníků. Odmítl. Podle něj by tím příspěvek ztratil kouzlo. Lidi byli zlatí, akce boží, ale feedback přidávat nechce.",
       "topics": [
         "Prompting"
       ],
@@ -44,7 +44,7 @@
       "id": "2026-04-29-03",
       "source_date": "2026-04-29",
       "excerpt": "Nikol si všimla, že je Daniel roztržitý. Účastníci to ale viděli úplně jinak.",
-      "body": "Nikol si v pondělí všimla, že Daniel působil roztržitě. Účastníci akce to ale viděli jinak. Zná to každý, kdo někdy vystupoval: to, co člověk prožívá uvnitř, a to, jak působí navenek, se často liší. Soustředění, které může vypadat jako nervozita, si publikum klidně přečte jako plnou přítomnost.",
+      "body": "Nikol si v pondělí všimla, že Daniel působil roztržitě. Účastníci akce to ale viděli jinak. Aspoň tak to komentovala Nikol.",
       "topics": [
         "Fokus"
       ],
@@ -59,7 +59,7 @@
   ],
   "resurfacing": {
     "id": "2026-04-13-01",
-    "type": "POSTAVIL JSEM",
+    "type": "UKÁZKA",
     "level": "Builder",
     "title": "iOS aplikace pro diktování jde do testování",
     "excerpt": "Jeden z členů komunity dokončil iOS verzi diktofonní aplikace a postupně pouští lidi do testování přes TestFlight. Prvních 20 míst je volných tento týden, dalších 70 přibude příští týden. Testování je zdarma a zatím jen pro naši komunitu.",

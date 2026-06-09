@@ -13,7 +13,7 @@
       "level": "Builder",
       "title": "Plaud spustil vlastní MCP a CLI",
       "excerpt": "Plaud vydal oficiální MCP server a CLI nástroj. Kdo si dřív postavil vlastní pipeline na stahování záznamů, teď řeší, jestli přejít, nebo zůstat u toho, co už funguje. Free verze zatím moc spolehlivá nebyla.",
-      "body": "Plaud — oblíbený diktafon s AI přepisem — spustil vlastní MCP server a CLI. V praxi to znamená, že záznamy půjde napojit přímo na AI asistenty, jako je Cursor nebo Claude Code, bez vlastní integrace.\n\nHáček je v tom, že ve free verzi zatím nejdou záznamy spolehlivě stáhnout. Není jasné, jestli je to jen dočasná chyba, nebo jestli plná funkčnost zůstane jen pro placené účty.\n\nKdo už má vlastní pipeline, řeší jednoduchou věc: vlastní řešení funguje přesně podle jeho potřeb, ale musí se udržovat. Oficiální integrace je jednodušší. Jenže závisí na tom, co Plaud dovolí a kolik si za to řekne. Přechod dává smysl až ve chvíli, kdy bude jasné, co placená verze MCP nabídne a jestli pokryje váš konkrétní workflow.",
+      "body": "Plaud spustil vlastní MCP a CLI. Kdo si dřív postavil vlastní nástroj na stahování záznamů, teď řeší, jestli přejít.\n\nHáček je v tom, že ve free verzi zatím nejdou záznamy stáhnout. Není jasné proč, zatím to nebylo prozkoumáno, ale možná bude potřeba placená verze.\n\nKdo má vlastní pipeline, která funguje, má zatím důvod zůstat. Těžký život vibe codera.",
       "read_minutes": 2,
       "source_date": "2026-05-13",
       "topics": [
@@ -32,8 +32,8 @@
       "type": "INSIGHT",
       "level": "Builder",
       "title": "Workflow pro záznamy: od nahrávky po Obsidian",
-      "excerpt": "Stáhnout záznam, přepsat ho lokálně nebo přes Soniox, shrnout přes Claude a uložit výsledek do Obsidianu. Kroky se nastaví podle typu události. Dá se to zautomatizovat tak, aby všechno proběhlo bez ručního zásahu.",
-      "body": "Jeden člen komunity se podělil o workflow, které mu funguje při zpracování hlasových záznamů:\n\n1. **Stažení záznamu** — automaticky nebo ručně z aplikace  \n2. **Přepis** — lokálně (levnější a soukromější), nebo přes Soniox (lepší výsledek, ale placené)  \n3. **Shrnutí přes Claude** — prompt upravený podle typu události  \n4. **Uložení do Obsidianu** — automaticky, včetně kontextu a dalších kroků  \n\nNejdůležitější je třetí krok. Prompt se mění podle toho, o jaký záznam jde. Schůzka potřebuje jiný výstup než brainstorm nebo osobní poznámky. Díky tomu v Obsidianu neskončí jen obyčejný přepis, ale rovnou strukturovaný výstup, se kterým se dá dál pracovat.\n\nCelé workflow jde zautomatizovat přes CLI nebo Claude Code. Jakmile se záznam nahraje do Plaudu, zbytek už proběhne sám.",
+      "excerpt": "Daniel popsal svůj workflow na zpracování záznamů: stažení, přepis lokálně nebo přes Soniox, sumarizace přes Claude, uložení do Obsidianu. Trochu krkolomné, ale funguje.",
+      "body": "Daniel popsal svůj aktuální workflow na zpracování záznamů:\n\n1. Stažení záznamu (to, co zatím funguje)\n2. Přepis lokálně nebo přes Soniox\n3. Sumarizace přes Claude, přizpůsobená pro konkrétní potřeby\n4. Uložení do Obsidianu, včetně dalších kroků podle typu události\n\nTenhle postup označuje za trochu krkolomný, ale funkční. Zmínil ho v kontextu spuštění Plaud MCP: raději zůstane u toho, co funguje, než přecházet na něco nového, které ještě není odzkoušené.",
       "read_minutes": 2,
       "source_date": "2026-05-13",
       "topics": [
@@ -53,7 +53,7 @@
       "level": "Builder",
       "title": "Plaud MCP v Cursoru: blokoval to antivirus",
       "excerpt": "Jeden člen komunity rozchodil Plaud MCP v Cursoru. Přihlášení přes Google ale blokoval antivirus, protože dělal HTTPS inspekci. Stačilo ji vypnout a všechno fungovalo.",
-      "body": "Při nastavování Plaud MCP v Cursoru můžete narazit na problém, který vůbec není v konfiguraci MCP serveru. Může za něj antivirus.\n\nKonkrétně Avast má funkci HTTPS inspekce. Ta rozšifruje zabezpečené připojení a kontroluje jeho obsah. Jenže tím může rozbít OAuth přihlášení, třeba přes Google. Server pak nevidí správný certifikát a přihlášení spadne, i když zadáte správné údaje.\n\nŘešení je snadné: vypněte v antiviru HTTPS inspekci. V Avastu ji najdete většinou tady: Nastavení → Ochrana → Web Shield. Po vypnutí už přihlášení projde normálně.\n\nStejný problém umí způsobit i další antiviry se SSL nebo HTTPS inspekcí, třeba AVG, Kaspersky nebo ESET. Pokud MCP server vypadá nastavený správně, ale přihlášení pořád padá, zkontrolujte jako první bezpečnostní software.",
+      "body": "Jeden člen komunity se pokoušel zprovoznit Plaud MCP v Cursoru. Vše fungovalo, ale přihlášení přes Google účet pořád selhávalo, i když zadal správné údaje.\n\nProblém byl v Avastu. Bylo potřeba vyřešit testování šifrovaných stránek HTTPS. Po tom přihlášení prošlo a MCP fungoval.\n\nDaniel odkázal na plaud-pipeline-howto jako výchozí bod pro ty, kdo to chtějí zkusit.",
       "read_minutes": 2,
       "source_date": "2026-05-13",
       "topics": [
@@ -71,9 +71,9 @@
       "id": "2026-05-13-04",
       "type": "NÁSTROJE",
       "level": "Builder",
-      "title": "Stripe: výborné API, matoucí dashboard",
-      "excerpt": "Stripe je standard pro platby přes API, ale vyznat se v jeho dashboardu dá zabrat i lidem, kteří ho používají pravidelně. Ruční dohledávání platby nebo zákazníka umí být pěkně frustrující.",
-      "body": "Stripe mají vývojáři rádi hlavně proto, že má dobře popsané a spolehlivé API. Napojit platby do vlastní aplikace je s ním celkem jednoduché.\n\nHorší je to ve chvíli, kdy potřebujete něco najít ručně. Třeba konkrétní platbu, zákazníka, spor nebo fakturu. Dashboard není moc přehledný a ani zkušenější uživatelé v něm často zbytečně dlouho hledají věci, které by měly být hned po ruce.\n\nPadla otázka, jestli jsou v tomhle české alternativy jako Comgate lepší. Comgate míří hlavně na české a slovenské e-shopy, takže jeho administrace je stavěná spíš pro běžného provozovatele webu než pro vývojáře pracujícího s API.\n\nU menších projektů nebo tam, kde zákazníkům řešíte platby ručně, může být Comgate praktičtější. Na API napojení a mezinárodní platby ale Stripe zatím nemá srovnatelnou alternativu. Je to kompromis: buď lepší administrace, nebo lepší API.",
+      "title": "Stripe: přes API OK, ručně totální masakr",
+      "excerpt": "Daniel sdílel, že orientace ve Stripe dashboardu je pro něj totální masakr. Přes API to frčí, ale ručně dohledat cokoliv je velký špatný. Ptal se, jestli by Comgate byl přehlednější.",
+      "body": "Daniel sdílel svou zkušenost se Stripe. Většinu věcí řeší přes API, ale když potřebuje něco dohledat ručně, je to podle jeho slov totální masakr. Orientace v dashboardu mu dá zabrat, i když ho používá pravidelně.\n\nZároveň přiznal, že nemá srovnání, takže neví, jestli je to jinde lepší. Otevřeně se ptal, jestli by třeba Comgate v tomhle byl přehlednější. Odpověď v diskuzi nepřišla.",
       "read_minutes": 2,
       "source_date": "2026-05-13",
       "topics": [

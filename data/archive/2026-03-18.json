@@ -54,7 +54,7 @@
     },
     {
       "id": "2026-03-18-03",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Expert",
       "title": "CEO dashboard napojený na CRM, banku a GA4",
       "excerpt": "Jeden člen ukázal projekt, který vyvíjí 14 dní: CEO dashboard, který tahá data z CRM, bankovního účtu, Google Analytics 4 a výsledovky. Cílem je mít celý přehled o byznysu na jednom místě.",
@@ -80,7 +80,7 @@
     },
     {
       "id": "2026-03-18-04",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Builder",
       "title": "Hlasová appka zachytí myšlenku a pošle ji do e-mailu",
       "excerpt": "Jedna členka skupiny staví appku na problém, který zná spousta lidí: rychle si uložit myšlenku nebo úkol bez zbytečného tření. Zmáčkneš action button na iPhonu, řekneš to nahlas a dvakrát denně ti přijdou roztříděné záznamy do e-mailu.",

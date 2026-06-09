@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+- Typ karty „POSTAVIL JSEM" přejmenován na „UKÁZKA" — rodově neutrální, 57 existujících karet + generátor karet aktualizovány.
+- Opravy obsahu archivu: odstraněna vymyšlená fakta (ceny produktů, encyklopedické detaily, nepotvrzené funkce), opraveny em-dashe a AI fráze v 40 dnech archivu.
+
 ### Fixed
 - Chat: filtrovací tabky (témata) se zobrazovaly v chat view — nyní jsou skryté v chat, přepis a statistiky.
 - Chat: při neplatném přihlašovacím tokenu se nyní automaticky odhlásí a zobrazí přihlašovací obrazovka místo chybové hlášky.

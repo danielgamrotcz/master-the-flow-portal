@@ -30,7 +30,7 @@
     },
     {
       "id": "2026-04-26-02",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Builder",
       "title": "CRM v tabulce aktualizované přes Claude Code",
       "excerpt": "Jeden člen si vede celé CRM v Google Sheets a aktualizuje ho přes Claude Code. Žádný SaaS nástroj, žádné měsíční platby — jen tabulka a AI.",

@@ -9,7 +9,7 @@
   "cards": [
     {
       "id": "2026-03-29-01",
-      "type": "POSTAVIL JSEM",
+      "type": "UKÁZKA",
       "level": "Expert",
       "title": "Admin konzole ovládaná přirozeným jazykem",
       "excerpt": "Člen komunity staví systém, kde uživatel vlastními slovy napíše, co chce změnit, a pipeline se postará o zbytek. GitHub Actions z požadavku udělá zadání, agenti provedou změny a Vercel je automaticky nasadí.",
