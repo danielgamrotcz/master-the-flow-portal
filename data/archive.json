@@ -701,6 +701,18 @@
         "Poznámky",
         "Produktivita"
       ]
+    },
+    {
+      "date": "2026-06-08",
+      "card_count": 3,
+      "topics": [
+        "Produktivita",
+        "AI nástroje",
+        "Workflow",
+        "Vibe Coding",
+        "Fokus",
+        "Automatizace"
+      ]
     }
   ]
 }
