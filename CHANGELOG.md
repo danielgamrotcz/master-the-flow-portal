@@ -17,6 +17,24 @@
 - Předgenerované datové soubory `data/chat-corpus.json` (273 karet) a `data/chat-transcripts.json` (70 dní, 1439 zpráv) pro rychlé načítání v chatbotu.
 
 ### Security
+- AUTH-001: nonce tracking — každý token ukládá nonce do KV (30 dní TTL); serverová verifikace odmítne token s neznámým nonce. Umožňuje budoucí revokaci tokenů. Stávající tokeny budou po deployi neplatné.
+- Auth: CSPRNG nonce (`crypto.getRandomValues`) místo náhodného řetězce
+- Auth: timing-safe porovnání gate kódu přes SHA-256 XOR
+- Auth: rate limit přihlášení 10 pokusů / 15 min / IP
+- Vote: autentizace tokenu na POST i DELETE (dříve byl volně dostupný)
+- Vote: deduplikace hlasování — 1 hlas / IP / karta / 30 dní
+- Chat: rate limit 30 požadavků / IP / 24 h
+- Chat: limity zpráv — max 40 zpráv, max 4000 znaků / zpráva, max 4 iterace tool-use
+- Chat: vynucené střídání rolí (user/assistant) — klient nemůže podvrhnout assistant zprávy
+- Track: validace data — musí být reálné datum v rozsahu ±7 dní od dnes
+- Subscribe: SSRF ochrana — allowlist platných push notifikace domén (`googleapis.com`, `mozilla.com`, …)
+- Subscribe: vynucen `https:` protokol pro push endpoint
+- Insights: timing-safe porovnání admin tokenu
+- Insights: audit log přístupu (čas + IP)
+- Security headers: `X-Frame-Options: DENY`, `HSTS`, `Permissions-Policy`, `Cross-Origin-Opener-Policy`, `X-Robots-Tag: noindex`
+- CSP: oprava SHA-256 hashe inline skriptu (tmavý režim se po reloadu resetoval kvůli blokovanému skriptu)
+- Service worker: cache klíč využívá celý Request objekt místo pathname — opravena nesprávná shoda URL s query params
+- CORS: localhost regex pevně zadaný (`/^http:\/\/localhost(:\d+)?$/`) ve všech API funkcích
 - CORS: požadavky bez hlavičky Origin vrací `null` místo `*` — brání přístupu z curl/server-side skriptů
 - Auth: odstraněn FALLBACK_HASH ze source kódu; bez `GATE_CODE` env var server vrátí 500
 - Auth: response při přihlášení má `Cache-Control: no-store`

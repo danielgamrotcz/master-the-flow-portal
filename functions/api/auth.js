@@ -24,7 +24,7 @@ async function timingSafeEqual(a, b) {
   return diff === 0;
 }
 
-async function generateToken(secret) {
+async function generateToken(secret, env) {
   const nonceBytes = crypto.getRandomValues(new Uint8Array(16));
   const nonce = Array.from(nonceBytes).map(b => b.toString(16).padStart(2, '0')).join('');
   const payload = Date.now() + ':' + nonce;
@@ -37,6 +37,9 @@ async function generateToken(secret) {
   );
   const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(payload));
   const sigHex = Array.from(new Uint8Array(sig)).map(b => b.toString(16).padStart(2, '0')).join('');
+  if (env?.MTF_DATA) {
+    await env.MTF_DATA.put('token:' + nonce, '1', { expirationTtl: 30 * 86400 });
+  }
   return payload + ':' + sigHex;
 }
 
@@ -85,7 +88,7 @@ export async function onRequestPost({ request, env }) {
       return Response.json({ ok: false }, { status: 401, headers });
     }
 
-    const token = await generateToken(env.GATE_CODE);
+    const token = await generateToken(env.GATE_CODE, env);
     const expires = Date.now() + TOKEN_TTL_MS;
 
     return Response.json({ ok: true, token, expires }, {

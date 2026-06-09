@@ -19,14 +19,15 @@ function corsHeaders(origin) {
   return headers;
 }
 
-async function verifyToken(token, gateCode) {
+async function verifyToken(token, gateCode, env) {
   if (!token || typeof token !== 'string') return false;
   const lastColon = token.lastIndexOf(':');
   if (lastColon < 1) return false;
   const payload = token.slice(0, lastColon);
   const sigHex = token.slice(lastColon + 1);
   if (sigHex.length !== 64) return false;
-  const ts = parseInt(payload.split(':')[0], 10);
+  const parts = payload.split(':');
+  const ts = parseInt(parts[0], 10);
   if (isNaN(ts) || Date.now() > ts + TOKEN_TTL_MS) return false;
   try {
     const key = await crypto.subtle.importKey(
@@ -34,7 +35,14 @@ async function verifyToken(token, gateCode) {
       { name: 'HMAC', hash: 'SHA-256' }, false, ['verify']
     );
     const sigBytes = new Uint8Array(sigHex.match(/.{2}/g).map(b => parseInt(b, 16)));
-    return await crypto.subtle.verify('HMAC', key, sigBytes, enc.encode(payload));
+    const valid = await crypto.subtle.verify('HMAC', key, sigBytes, enc.encode(payload));
+    if (!valid) return false;
+    if (env?.MTF_DATA) {
+      const nonce = parts[1];
+      const stored = await env.MTF_DATA.get('token:' + nonce);
+      if (!stored) return false;
+    }
+    return true;
   } catch { return false; }
 }
 
@@ -160,7 +168,7 @@ export async function onRequestPost({ request, env }) {
   }
 
   const token = request.headers.get('x-mtf-token');
-  if (!await verifyToken(token, env.GATE_CODE)) {
+  if (!await verifyToken(token, env.GATE_CODE, env)) {
     return new Response('Unauthorized', { status: 401, headers: cors });
   }
 
