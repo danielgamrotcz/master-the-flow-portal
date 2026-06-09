@@ -3,12 +3,13 @@ const TOKEN_TTL_MS = 30 * 24 * 60 * 60 * 1000;
 const MAX_MESSAGES = 40;
 const MAX_USER_MSG_LEN = 4000;
 const MAX_ITERATIONS = 4;
+const CHAT_RATE_LIMIT = 30; // requests per IP per 24 hours
 const ANTHROPIC_API = 'https://api.anthropic.com/v1/messages';
 
 const enc = new TextEncoder();
 
 function corsHeaders(origin) {
-  const allowed = origin && (origin === SITE_ORIGIN || origin.startsWith('http://localhost'));
+  const allowed = origin && (origin === SITE_ORIGIN || /^http:\/\/localhost(:\d+)?$/.test(origin));
   const headers = {
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, x-mtf-token',
@@ -35,6 +36,16 @@ async function verifyToken(token, gateCode) {
     const sigBytes = new Uint8Array(sigHex.match(/.{2}/g).map(b => parseInt(b, 16)));
     return await crypto.subtle.verify('HMAC', key, sigBytes, enc.encode(payload));
   } catch { return false; }
+}
+
+async function checkChatRateLimit(env, ip) {
+  if (!env.MTF_DATA) return false;
+  const key = 'ratelimit:chat:' + ip;
+  const raw = await env.MTF_DATA.get(key);
+  const count = raw ? parseInt(raw, 10) : 0;
+  if (count >= CHAT_RATE_LIMIT) return true;
+  await env.MTF_DATA.put(key, String(count + 1), { expirationTtl: 86400 });
+  return false;
 }
 
 const TOOLS = [
@@ -99,7 +110,7 @@ async function* parseAnthropicSSE(body) {
         if (line.startsWith('data: ')) {
           const raw = line.slice(6).trim();
           if (raw && raw !== '[DONE]') {
-            try { yield JSON.parse(raw); } catch {}
+            try { yield JSON.parse(raw); } catch { /* skip malformed SSE frame */ }
           }
         }
       }
@@ -107,7 +118,7 @@ async function* parseAnthropicSSE(body) {
     if (buf.startsWith('data: ')) {
       const raw = buf.slice(6).trim();
       if (raw && raw !== '[DONE]') {
-        try { yield JSON.parse(raw); } catch {}
+        try { yield JSON.parse(raw); } catch { /* skip */ }
       }
     }
   } finally {
@@ -120,6 +131,7 @@ function sseWrite(writer, obj) {
 }
 
 async function searchTranscripts(transcripts, query, limit = 12) {
+  const safeLimit = Math.min(Math.max(1, Number(limit) || 12), 20);
   const q = query.toLowerCase();
   const results = [];
   const days = transcripts.days || {};
@@ -127,7 +139,7 @@ async function searchTranscripts(transcripts, query, limit = 12) {
     for (const msg of messages) {
       if (msg.text.toLowerCase().includes(q)) {
         results.push({ date, time: msg.time, author: msg.author, text: msg.text, group: msg.group || '' });
-        if (results.length >= limit) return results;
+        if (results.length >= safeLimit) return results;
       }
     }
   }
@@ -152,6 +164,11 @@ export async function onRequestPost({ request, env }) {
     return new Response('Unauthorized', { status: 401, headers: cors });
   }
 
+  const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+  if (await checkChatRateLimit(env, ip)) {
+    return new Response('Too Many Requests', { status: 429, headers: cors });
+  }
+
   if (!request.headers.get('content-type')?.includes('application/json')) {
     return new Response('Bad Request', { status: 400, headers: cors });
   }
@@ -161,15 +178,29 @@ export async function onRequestPost({ request, env }) {
     return new Response('Bad Request', { status: 400, headers: cors });
   }
 
+  // Accept only user messages from client — server generates its own assistant turns
   let messages = Array.isArray(body.messages) ? body.messages : [];
   messages = messages
     .filter(m => (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string' && m.content.length > 0)
     .slice(-MAX_MESSAGES);
 
+  // Enforce role alternation starting with user
+  messages = messages.reduce((acc, msg) => {
+    if (acc.length === 0) {
+      if (msg.role === 'user') acc.push(msg);
+    } else {
+      const expected = acc[acc.length - 1].role === 'user' ? 'assistant' : 'user';
+      if (msg.role === expected) acc.push(msg);
+    }
+    return acc;
+  }, []);
+
   if (!messages.length || messages[messages.length - 1].role !== 'user') {
     return new Response('Bad Request', { status: 400, headers: cors });
   }
-  if (messages[messages.length - 1].content.length > MAX_USER_MSG_LEN) {
+
+  // Enforce length limit on all user messages
+  if (messages.some(m => m.role === 'user' && m.content.length > MAX_USER_MSG_LEN)) {
     return new Response('Message too long', { status: 400, headers: cors });
   }
 
@@ -224,7 +255,7 @@ export async function onRequestPost({ request, env }) {
         });
 
         if (!apiResp.ok) {
-          await sseWrite(writer, { type: 'error', message: `API chyba ${apiResp.status}` });
+          await sseWrite(writer, { type: 'error', message: 'Chyba při komunikaci se serverem' });
           break;
         }
 

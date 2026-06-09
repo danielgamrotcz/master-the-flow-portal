@@ -3,7 +3,7 @@ const TOKEN_TTL_MS = 30 * 24 * 60 * 60 * 1000;
 const enc = new TextEncoder();
 
 function cors(origin) {
-  const allowed = origin && (origin === SITE_ORIGIN || origin.startsWith('http://localhost'));
+  const allowed = origin && (origin === SITE_ORIGIN || /^http:\/\/localhost(:\d+)?$/.test(origin));
   const headers = {
     'Access-Control-Allow-Methods': 'GET, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, x-mtf-token',

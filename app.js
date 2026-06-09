@@ -1216,7 +1216,7 @@ async function fetchVoteCount(id) {
 async function castVote(id) {
   try {
     const r = await fetch('/api/vote', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      method: 'POST', headers: { 'Content-Type': 'application/json', 'x-mtf-token': chatGetToken() },
       body: JSON.stringify({ id }),
     });
     const j = await r.json();
@@ -1235,7 +1235,7 @@ function markUnvoted(id) {
 async function removeVote(id) {
   try {
     const r = await fetch('/api/vote', {
-      method: 'DELETE', headers: { 'Content-Type': 'application/json' },
+      method: 'DELETE', headers: { 'Content-Type': 'application/json', 'x-mtf-token': chatGetToken() },
       body: JSON.stringify({ id }),
     });
     const j = await r.json();
@@ -2412,7 +2412,7 @@ function init() {
 
   initGate();
   trackSession();
-  applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
+  applyTheme(document.documentElement.getAttribute('data-theme') || localStorage.getItem('theme') || 'light');
   document.getElementById('btn-theme').addEventListener('click', toggleTheme);
   $('btn-random')?.addEventListener('click', openRandomCard);
   document.querySelector('.site-title')?.addEventListener('click', () => {

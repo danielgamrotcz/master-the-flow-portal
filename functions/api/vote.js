@@ -1,6 +1,28 @@
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
+const TOKEN_TTL_MS = 30 * 24 * 60 * 60 * 1000;
 const VOTE_ID_RE = /^[a-zA-Z0-9_-]{1,80}$/;
 const RESERVED_PREFIXES = ['analytics', 'sub_', 'community_', 'voted_', 'vote_'];
+
+const enc = new TextEncoder();
+
+async function verifyToken(token, gateCode) {
+  if (!token || typeof token !== 'string') return false;
+  const lastColon = token.lastIndexOf(':');
+  if (lastColon < 1) return false;
+  const payload = token.slice(0, lastColon);
+  const sigHex = token.slice(lastColon + 1);
+  if (sigHex.length !== 64) return false;
+  const ts = parseInt(payload.split(':')[0], 10);
+  if (isNaN(ts) || Date.now() > ts + TOKEN_TTL_MS) return false;
+  try {
+    const key = await crypto.subtle.importKey(
+      'raw', enc.encode(gateCode),
+      { name: 'HMAC', hash: 'SHA-256' }, false, ['verify']
+    );
+    const sigBytes = new Uint8Array(sigHex.match(/.{2}/g).map(b => parseInt(b, 16)));
+    return await crypto.subtle.verify('HMAC', key, sigBytes, enc.encode(payload));
+  } catch { return false; }
+}
 
 async function checkVoteRateLimit(env, ip) {
   if (!env.MTF_DATA) return false;
@@ -19,10 +41,10 @@ function isSafeVoteId(id) {
 const DEDUP_TTL = 30 * 24 * 3600; // 30 days
 
 function corsHeaders(origin, methods = 'GET, OPTIONS') {
-  const allowed = origin && (origin === SITE_ORIGIN || origin.startsWith('http://localhost'));
+  const allowed = origin && (origin === SITE_ORIGIN || /^http:\/\/localhost(:\d+)?$/.test(origin));
   const headers = {
     'Access-Control-Allow-Methods': methods,
-    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Headers': 'Content-Type, x-mtf-token',
     'Vary': 'Origin',
   };
   if (allowed) headers['Access-Control-Allow-Origin'] = origin;
@@ -64,6 +86,11 @@ export async function onRequestDelete({ request, env }) {
   const origin = request.headers.get('Origin');
   const headers = corsHeaders(origin, 'GET, POST, DELETE, OPTIONS');
 
+  const token = request.headers.get('x-mtf-token');
+  if (!env.GATE_CODE || !await verifyToken(token, env.GATE_CODE)) {
+    return Response.json({ error: 'Unauthorized' }, { status: 401, headers });
+  }
+
   if (!request.headers.get('content-type')?.includes('application/json')) {
     return Response.json({ error: 'Bad Request' }, { status: 400, headers });
   }
@@ -83,7 +110,7 @@ export async function onRequestDelete({ request, env }) {
     const alreadyVoted = await env.MTF_DATA.get(dedupKey);
     if (!alreadyVoted) {
       const raw = await env.MTF_DATA.get('vote_' + id);
-      return Response.json({ id, count: raw ? parseInt(raw, 10) : 0 }, { headers });
+      return Response.json({ id, count: raw ? parseInt(raw, 10) : 0 }, { status: 409, headers });
     }
 
     const voteKey = 'vote_' + id;
@@ -102,6 +129,11 @@ export async function onRequestDelete({ request, env }) {
 export async function onRequestPost({ request, env }) {
   const origin = request.headers.get('Origin');
   const headers = corsHeaders(origin, 'GET, POST, OPTIONS');
+
+  const token = request.headers.get('x-mtf-token');
+  if (!env.GATE_CODE || !await verifyToken(token, env.GATE_CODE)) {
+    return Response.json({ error: 'Unauthorized' }, { status: 401, headers });
+  }
 
   if (!request.headers.get('content-type')?.includes('application/json')) {
     return Response.json({ error: 'Bad Request' }, { status: 400, headers });

@@ -1,6 +1,7 @@
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 const SUB_RATE_LIMIT = 5; // max subscriptions per IP per hour
 const SUB_GLOBAL_CAP = 500; // hard cap on total stored subscriptions
+const PUSH_ENDPOINT_RE = /\.(googleapis\.com|mozilla\.com|windows\.com|apple\.com|w3\.org)$/;
 
 async function endpointHash(endpoint) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(endpoint));
@@ -21,7 +22,7 @@ async function checkSubRateLimit(env, ip) {
 }
 
 function corsHeaders(origin) {
-  const allowed = origin && (origin === SITE_ORIGIN || origin.startsWith('http://localhost'));
+  const allowed = origin && (origin === SITE_ORIGIN || /^http:\/\/localhost(:\d+)?$/.test(origin));
   const headers = {
     'Access-Control-Allow-Methods': 'POST, DELETE, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
@@ -35,7 +36,11 @@ function isValidSubscription(sub) {
   if (!sub || typeof sub !== 'object') return false;
   if (typeof sub.endpoint !== 'string') return false;
   if (sub.endpoint.length > 512) return false;
-  try { new URL(sub.endpoint); } catch { return false; }
+  try {
+    const u = new URL(sub.endpoint);
+    if (u.protocol !== 'https:') return false;
+    if (!PUSH_ENDPOINT_RE.test(u.hostname)) return false;
+  } catch { return false; }
   if (!sub.keys || typeof sub.keys !== 'object') return false;
   if (typeof sub.keys.auth !== 'string' || sub.keys.auth.length > 64) return false;
   if (typeof sub.keys.p256dh !== 'string' || sub.keys.p256dh.length > 128) return false;

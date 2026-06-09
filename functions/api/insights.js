@@ -2,7 +2,7 @@ const ADMIN_SECRET_HEADER = 'x-admin-secret';
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 
 function cors(origin) {
-  const allowed = origin && (origin === SITE_ORIGIN || origin.startsWith('http://localhost'));
+  const allowed = origin && (origin === SITE_ORIGIN || /^http:\/\/localhost(:\d+)?$/.test(origin));
   const headers = {
     'Access-Control-Allow-Methods': 'GET, OPTIONS',
     'Access-Control-Allow-Headers': `Content-Type, ${ADMIN_SECRET_HEADER}`,
@@ -10,6 +10,18 @@ function cors(origin) {
   };
   if (allowed) headers['Access-Control-Allow-Origin'] = origin;
   return headers;
+}
+
+async function timingSafeEqual(a, b) {
+  const enc = new TextEncoder();
+  const [ha, hb] = await Promise.all([
+    crypto.subtle.digest('SHA-256', enc.encode(a)),
+    crypto.subtle.digest('SHA-256', enc.encode(b)),
+  ]);
+  const ba = new Uint8Array(ha), bb = new Uint8Array(hb);
+  let diff = 0;
+  for (let i = 0; i < 32; i++) diff |= ba[i] ^ bb[i];
+  return diff === 0;
 }
 
 export async function onRequestOptions({ request }) {
@@ -20,9 +32,11 @@ export async function onRequestOptions({ request }) {
 export async function onRequestGet({ request, env }) {
   const origin = request.headers.get('Origin');
   const secret = request.headers.get(ADMIN_SECRET_HEADER);
-  if (!secret || secret !== env.ADMIN_SECRET) {
+  if (!secret || !env.ADMIN_SECRET || !await timingSafeEqual(secret, env.ADMIN_SECRET)) {
     return new Response('Unauthorized', { status: 401, headers: cors(origin) });
   }
+
+  console.log('insights access', new Date().toISOString(), request.headers.get('CF-Connecting-IP') || 'unknown');
 
   try {
     const last30Days = Array.from({ length: 30 }, (_, i) => {

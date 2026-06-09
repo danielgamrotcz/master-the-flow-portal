@@ -2,7 +2,7 @@ const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 const TOKEN_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
 
 function corsHeaders(origin) {
-  const allowed = origin && (origin === SITE_ORIGIN || origin.startsWith('http://localhost'));
+  const allowed = origin && (origin === SITE_ORIGIN || /^http:\/\/localhost(:\d+)?$/.test(origin));
   const headers = {
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
@@ -12,8 +12,22 @@ function corsHeaders(origin) {
   return headers;
 }
 
+async function timingSafeEqual(a, b) {
+  const enc = new TextEncoder();
+  const [ha, hb] = await Promise.all([
+    crypto.subtle.digest('SHA-256', enc.encode(a)),
+    crypto.subtle.digest('SHA-256', enc.encode(b)),
+  ]);
+  const ba = new Uint8Array(ha), bb = new Uint8Array(hb);
+  let diff = 0;
+  for (let i = 0; i < 32; i++) diff |= ba[i] ^ bb[i];
+  return diff === 0;
+}
+
 async function generateToken(secret) {
-  const payload = Date.now() + ':' + Math.random().toString(36).slice(2);
+  const nonceBytes = crypto.getRandomValues(new Uint8Array(16));
+  const nonce = Array.from(nonceBytes).map(b => b.toString(16).padStart(2, '0')).join('');
+  const payload = Date.now() + ':' + nonce;
   const key = await crypto.subtle.importKey(
     'raw',
     new TextEncoder().encode(secret),
@@ -65,8 +79,7 @@ export async function onRequestPost({ request, env }) {
       return Response.json({ ok: false }, { status: 401, headers });
     }
 
-    const provided = code.trim().toUpperCase();
-    const valid = env.GATE_CODE.trim().toUpperCase() === provided;
+    const valid = await timingSafeEqual(code.trim().toUpperCase(), env.GATE_CODE.trim().toUpperCase());
 
     if (!valid) {
       return Response.json({ ok: false }, { status: 401, headers });

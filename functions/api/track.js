@@ -16,8 +16,15 @@ const ALLOWED_EVENTS = new Set([
   'view_switch', 'overlay_nav', 'topic_filter', 'archive_date', 'session_visit',
 ]);
 
+function isValidDate(dateStr) {
+  if (!DATE_RE.test(dateStr)) return false;
+  const d = new Date(dateStr);
+  if (isNaN(d.getTime())) return false;
+  return Math.abs(Date.now() - d.getTime()) <= 7 * 86400000;
+}
+
 function corsHeaders(origin) {
-  const allowed = origin && (origin === SITE_ORIGIN || origin.startsWith('http://localhost'));
+  const allowed = origin && (origin === SITE_ORIGIN || /^http:\/\/localhost(:\d+)?$/.test(origin));
   const headers = {
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
@@ -67,7 +74,7 @@ export async function onRequestPost({ request, env }) {
     }
 
     const hour = typeof data.hour_utc === 'number' && data.hour_utc >= 0 && data.hour_utc <= 23 ? data.hour_utc : null;
-    const date = typeof data.date === 'string' && DATE_RE.test(data.date) ? data.date : null;
+    const date = typeof data.date === 'string' && isValidDate(data.date) ? data.date : null;
     const writes = [];
 
     // --- Card open ---
@@ -116,7 +123,7 @@ export async function onRequestPost({ request, env }) {
     }
 
     // --- Transcript view ---
-    if (event === 'transcript_view' && data.date && DATE_RE.test(data.date)) {
+    if (event === 'transcript_view' && data.date && isValidDate(data.date)) {
       writes.push(kv_update(env.MTF_DATA, 'analytics:transcripts', obj => incr(obj, data.date, 500)));
     }
 
@@ -126,12 +133,12 @@ export async function onRequestPost({ request, env }) {
         if (event === 'view_switch' && data.view) {
           if (!obj.view_switch) obj.view_switch = {};
           const v = String(data.view).slice(0, 20);
-          obj.view_switch[v] = (obj.view_switch[v] || 0) + 1;
+          incr(obj.view_switch, v, 50);
         } else if (event === 'topic_filter' && data.topic) {
           if (!obj.topic_filter) obj.topic_filter = {};
           const t = String(data.topic).slice(0, 60);
-          obj.topic_filter[t] = (obj.topic_filter[t] || 0) + 1;
-        } else if (event === 'archive_date' && data.date && DATE_RE.test(data.date)) {
+          incr(obj.topic_filter, t, 200);
+        } else if (event === 'archive_date' && data.date && isValidDate(data.date)) {
           if (!obj.archive_dates) obj.archive_dates = {};
           incr(obj.archive_dates, data.date, 200);
         } else {
