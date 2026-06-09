@@ -12,8 +12,8 @@
       "type": "INSIGHT",
       "level": "Začátečník",
       "title": "AI roztřídí fotky do složek za vás",
-      "excerpt": "Automatické roztřídění tisíců fotek do podsložek podle roku funguje spolehlivě a ušetří hodiny ruční práce. Jeden člen to vyzkoušel a výsledek prošel bez problémů.",
-      "body": "Jedna členka se ptala, jestli někdo třídí fotky pomocí AI. Hned se ozval další člen se zkušeností: nechal si automaticky rozřadit celou sbírku do podsložek podle roku. Funguje mu to bez ručního zásahu.\n\nPostup je jednoduchý. AI nebo skript přečte metadata souboru, hlavně EXIF datum pořízení, případně i název fotky. Podle toho pak vytvoří složky a fotky do nich přesune. Pro běžného uživatele to nemusí být nic složitého. Existují jednoduché skripty i vizuální aplikace, které to zvládnou bez programování.\n\nPokud máte na disku nebo v cloudu hromadu fotek bez systému, tohle je jeden z nejrychlejších způsobů, jak si pomocí AI ušetřit práci. Co by ručně trvalo hodiny, může být hotové za pár minut.",
+      "excerpt": "Ve zdrojové zprávě se o třídění fotek nepíše nic. Karta nemá oporu ve zdrojových zprávách.",
+      "body": "Zdrojová zpráva popisuje nastavení daily briefu v nástroji Cowork, který tahá data z Jiry, kalendáře, e-mailu a Slacku. O třídění fotek pomocí AI se člen nezmiňuje. Obsah této karty nelze ze zdrojových zpráv doložit.",
       "read_minutes": 2,
       "source_date": "2026-05-05",
       "topics": [
@@ -30,8 +30,8 @@
       "type": "NÁSTROJE",
       "level": "Builder",
       "title": "Daily brief z Jiry, kalendáře, mailu a Slacku",
-      "excerpt": "Jeden člen si nastavil automatický ranní přehled. Tahá data ze čtyř nástrojů a vygeneruje mu seřazený seznam úkolů podle priority. Ostatní se hned ptali na bezpečnost a na to, co tomu řekne IT.",
-      "body": "Cowork se umí napojit na Jiru, Google Calendar, e-mail i Slack. Každé ráno z toho vygeneruje přehledný seznam úkolů seřazený podle priority. Člen, který nástroj sdílel, píše, že pro lidi, kterým úkoly chodí ze čtyř různých míst, je to velká úleva. Když úkol potvrdíte, propíše se zpátky do nástroje, kde vznikl.\n\nV diskuzi se nejvíc neřešilo, jak to funguje, ale co na to řekne IT. Ve firmách podobné napojení externích nástrojů na firemní data často narazí na bezpečnostní pravidla. Pokud u vás firma blokuje OAuth přístupy třetích stran, nejspíš budete mít problém.\n\nJestli ale máte prostor to zkusit, nebo pracujete jako freelancer s vlastními nástroji, ten princip dává smysl. Místo přepínání mezi čtyřmi záložkami dostanete ráno jeden dokument s kontextem, kde vidíte, co dnes opravdu řešit. Hodnota není v samotné AI, ale v tom, že sjednocení úkolů snižuje mentální zátěž.",
+      "excerpt": "Jeden člen sdílí zkušenost s nástrojem Cowork. Nastavil si denní přehled úkolů, který tahá data z Jiry, kalendáře, e-mailu a Slacku. Říká, že nastavení trvalo asi 45 minut a stálo to za to.",
+      "body": "Člen popisuje, že Cowork mu každý den vygeneruje seznam úkolů seřazený podle vlastního scoring mechanismu. Když úkol potvrdí, automaticky se to propíše zpátky do Jiry nebo Slacku. Nástroj taky hlídá zasedačky, upozorní na chybějící místnost nebo Google link a případně ho sám vytvoří.\n\nSám člen píše, že je to hlavně pro kancelářské a korporátní lidi, kteří dostávají úkoly z více míst. Za něj jde o velkou úsporu času a nervů. Nastavení mu trvalo asi 45 minut.\n\nPoznámka: člen sám říká, že to není typický vibe coding, ale jede to na podobném principu.",
       "read_minutes": 2,
       "source_date": "2026-05-05",
       "topics": [
@@ -48,8 +48,8 @@
       "type": "UKÁZKA",
       "level": "Builder",
       "title": "Tři projekty z komunity za týden",
-      "excerpt": "Appka na domácí úkoly při výcviku psa, beta projekt, který zpracovává jen změněná data, a kalkulačka daňových doplatků pro rok 2025. Komunita staví a sdílí.",
-      "body": "Z dnešní diskuze vylezly tři konkrétní projekty, které členové buď dokončili, nebo je právě dotahují:\n\n**Appka na domácí úkoly pro výcvik** — hotová je i landing page. Nejde jen o samotný nástroj, ale i o prezentaci pro možné uživatele. Dobrý příklad, že vibe coding nemusí skončit jen u prototypu.\n\n**Beta projekt s optimalizací zpracování změn** — techničtější projekt zaměřený na efektivitu. Nezpracovává celý dataset pořád dokola, ale bere jen změny. Tenhle pattern se hodí všude, kde se data mění postupně.\n\n**Kalkulačka na daňové doplatky 2025** — konkrétní sezónní utilita. Místo ručního počítání nebo hledání po webu nabídne jednoduché rozhraní, které vrátí výsledek pro vaši situaci.\n\nVšechny tři projekty dobře ukazují, k čemu se vibe coding hodí nejvíc. Na rychlé prototypy a osobní nástroje, které by jinak nejspíš nikdy nevznikly, protože by jejich vývoj byl moc drahý nebo zbytečně složitý.",
+      "excerpt": "Členové sdílí, co stavějí. Z diskuze vyplynuly projekty v různých fázích, ale konkrétní detaily jsou zatím kusé.",
+      "body": "Člen Petr Říha píše, že je aktuálně na beta_v7, zbývá dokončit reporty a pak chce nasadit projekt na vlastní projekty. Optimalizoval zpracování tak, že Claude zpracovává jen změny, ne celý dataset.\n\nDalší člen vyzval ostatní, aby sdíleli, co kdo vytvořil. Daniel Gamrot reagoval, že by projekt chtěl upravit, ale bojí se, že si na něj za týden nevzpomene.\n\nO appce na výcvik psa ani o kalkulačce daňových doplatků se v těchto zprávách nepíše. Ty detaily ve zdrojích nejsou.",
       "read_minutes": 2,
       "source_date": "2026-05-05",
       "topics": [
@@ -69,8 +69,8 @@
       "type": "INSIGHT",
       "level": "Expert",
       "title": "Bot na monitoring inzerátů za odpoledne",
-      "excerpt": "Místo aby každý den ručně procházel inzertní portály, jeden člen si postavil bota, který posílá nové inzeráty rovnou do Telegramu. Běží jako cron job na domácím počítači.",
-      "body": "Hledání konkrétního zboží na inzertních portálech umí být otrava. Buď to každý den kontrolujete ručně, nebo se spoléháte na notifikace z portálu, které často nestačí.\n\nPřes Claude Code se dá napsat scrapovací skript, který projde relevantní portály, vyfiltruje inzeráty podle vašich kritérií a pošle výsledky do Telegramu. Jako cron job pak běží automaticky v pravidelných intervalech na domácím počítači. Celé to zabralo jedno odpoledne.\n\nStejný princip jde použít skoro na cokoliv: nové pracovní nabídky, slevy na produkty, sledování cen nebo dostupné termíny u lékaře. Skript vám Claude napíše. Vy jen zadáte kritéria a nastavíte, jak často se má spouštět.\n\nPozor: vždycky si zkontrolujte robots.txt a podmínky použití portálů, které scrapujete. Některé to výslovně zakazují.",
+      "excerpt": "Zdrojová zpráva je pouze hlavička týdenního souhrnu od Daniela Gamrota. O botu na monitoring inzerátů se v ní nepíše nic.",
+      "body": "Zdrojová zpráva z 11:57 obsahuje pouze text \"TÝDENNÍ SOUHRN (27.4. - 4.5.)\". Obsah této karty, tedy bot na scrapování inzertních portálů, Telegram notifikace ani cron job, nemá ve zdrojových zprávách žádnou oporu. Karta by měla být odstraněna nebo doplněna o správný zdroj.",
       "read_minutes": 3,
       "source_date": "2026-05-05",
       "topics": [

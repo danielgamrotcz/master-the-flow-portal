@@ -12,8 +12,8 @@
       "type": "INSIGHT",
       "level": "Builder",
       "title": "Kontext v Claude Code: jak nepromarnit paměť sešny",
-      "excerpt": "Kontext je paměť, se kterou Claude Code pracuje během jedné seance. Ještě nedávno byla oproti dnešku asi pětinová a u větších projektů se vyčerpala dost rychle. Dnes má Opus milion tokenů, ale i ten se dá snadno vyplýtvat, když nevíte, co ho požírá.",
-      "body": "Hodně lidí bere milion tokenů jako něco, co nejde vyčerpat. Jenže jde. Velké soubory, dlouhé konverzace, vložené obrázky i dokumentace ukrajují z kontextu. A když se kontext začne plnit, Claude Code začne „zapomínat“. Opakuje kroky, přehlíží dřívější instrukce nebo odpovídá míň přesně.\n\nUžitečné příkazy pro práci s kontextem:\n\n- `/context` — ukáže, kolik kontextu právě používáte\n- `/compact` — zkomprimuje historii konverzace a ušetří místo\n- `/doctor` — zkontroluje stav session\n- Subagenti — Claude Code rozdělí práci mezi víc agentů, každý má čistší kontext\n- Auto mode — CC sám rozhodne, kdy použít subagenta\n\nJeště nedávno byl kontext jen pětinový oproti dnešku. Teď už to tolik nebolí, ale základní hygiena kontextu se pořád vyplatí. Hlavně u větších projektů nebo dlouhých session. Jeden člen komunity sdílel video v pomalém a srozumitelném tempu, kde to celé vysvětluje. Doporučuju každému, kdo s CC pracuje víc než jen občas.",
+      "excerpt": "Člen komunity sdílí video Patrika Zandla o kontextu v Claude Code. Video vysvětluje, jak kontext funguje a jak s ním pracovat.",
+      "body": "Člen komunity doporučuje video Patrika Zandla o kontextu v Claude Code. Podle sdíleného odkazu jde o srozumitelné video vhodné pro každého, kdo s Claude Code pracuje.",
       "read_minutes": 2,
       "source_date": "2026-03-28",
       "topics": [
@@ -32,8 +32,8 @@
       "type": "INSIGHT",
       "level": "Builder",
       "title": "Mapa, poloha a checklist v jedné aplikaci",
-      "excerpt": "Jeden člen řeší interaktivní aplikaci pro detailing auta. Byla by napojená na web detailera a měla by v sobě mapu, polohu i checklist. Stejný princip se dá použít i u vaření nebo u jakéhokoli postupu, který závisí na kontextu.",
-      "body": "Nápad je jednoduchý. Zákazník otevře stránku, uvidí checklist péče o auto, aplikace zná jeho polohu, ukáže nejbližší servis nebo produkt a přímo z rozhraní může zavolat.\n\nZajímavé je, že se tu spojují tři věci: checklist, tedy co udělat, poloha, tedy kde jsem a co mám poblíž, a přímý kontakt, tedy zavolání bez přepínání mezi aplikacemi. Každá z těch věcí už existuje sama o sobě. Dohromady ale dávají smysl přesně ve chvíli, kdy je člověk potřebuje.\n\nStejná logika funguje i u vaření: recept, ingredience v okolí a dodávka. Nebo u DIY oprav a tréninkových plánů.\n\nTechnicky to není nic složitého. Claude Code zvládne vygenerovat interaktivní HTML checklist za hodinu. Napojení na Google Maps přes statické URL je otázka jednoho kroku. A `tel:` odkaz pro volání přidáte jedním řádkem. Těžší je dobře určit, co má uživatel v každém kroku vidět a udělat. Nemusíte stavět celou aplikaci. Stačí statická HTML stránka, která se chová jako appka.",
+      "excerpt": "Člen komunity uvažuje o interaktivní aplikaci pro detailing auta. Vycházela by z webu detailera a kombinovala by mapu, polohu, telefon a checklist. Stejný princip by šel použít i u vaření.",
+      "body": "Nápad vychází přímo od člena komunity. Zákazník by otevřel stránku napojenou na web detailera a dostal by checklist péče o auto doplněný o polohu a možnost zavolat.\n\nČlen zmiňuje, že stejná logika by fungovala i u vaření. Spojení mapy, polohy, telefonu a checklistu dohromady ho zaujalo jako inspirace pro to, co je dnes možné postavit.\n\nKonkrétní technické řešení ani časová náročnost ve zprávách padnuty nebyly.",
       "read_minutes": 2,
       "source_date": "2026-03-28",
       "topics": [
@@ -51,8 +51,8 @@
       "type": "INSIGHT",
       "level": "Začátečník",
       "title": "Sdílíte výsledek práce? Screenshot bývá spolehlivější",
-      "excerpt": "Live náhled HTML stránky z Claude Code se může příjemci zobrazit jen jako bílá stránka. Screenshot ukáže přesně to, co vidíte vy — bez závislosti na lokálním serveru nebo nastavení prostředí.",
-      "body": "Když sdílíte výsledek z Claude Code nebo jiného vibe coding nástroje, často narazíte na tohle: pošlete soubor nebo odkaz, druhý člověk ho otevře v prohlížeči — a vidí jen bílou stránku. Web se nenačte, protože čeká na lokální server, chybí mu soubor nebo běží v prostředí, které příjemce nemá nastavené.\n\nScreenshot tohle řeší. Vyfotíte přesně to, co vidíte vy. Příjemce to hned uvidí taky, bez nastavování.\n\nKdy screenshot nestačí:\n- Chcete ukázat interakci: klikání, formuláře, animace\n- Příjemce má stránku opravdu používat, ne se na ni jen podívat\n\nV takovém případě je lepší dát projekt na hosting, třeba Netlify nebo GitHub Pages. Případně pošlete záznam obrazovky.\n\nPro rychlé sdílení výsledku v komunitě nebo s klientem je ale screenshot nejrychlejší a nejjistější volba. Na Macu ho uděláte za dvě vteřiny: Cmd+Shift+4.",
+      "excerpt": "Daniel Gamrot při sdílení HTML stránky viděl jen bílou stránku. Screenshot tohle obchází, protože ukáže přesně to, co vidíte vy.",
+      "body": "Při sdílení výsledku z Claude Code nebo jiného vibe coding nástroje se může stát, že příjemce místo stránky uvidí jen bílou. Daniel Gamrot na to narazil přímo v komunitě.\n\nScreenshot tohle řeší. Vyfotíte přesně to, co vidíte vy, a příjemce to hned uvidí taky, bez nastavování prostředí.\n\nKdy screenshot nestačí:\n- Chcete ukázat interakci: klikání, formuláře, animace\n- Příjemce má stránku opravdu používat\n\nV takovém případě je lepší projekt nasadit na hosting nebo sdílet záznam obrazovky.\n\nPro rychlé sdílení výsledku v komunitě nebo s klientem je screenshot nejrychlejší volba.",
       "read_minutes": 1,
       "source_date": "2026-03-28",
       "topics": [

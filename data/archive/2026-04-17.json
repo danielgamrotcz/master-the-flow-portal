@@ -12,8 +12,8 @@
       "type": "INSIGHT",
       "level": "Builder",
       "title": "Claude Code na tvorbu, Claude chat na analýzu",
-      "excerpt": "Jeden člen popsal, jak si dělí práci mezi Claude Code a aplikaci Claude. Claude Code bere jako pracovní prostor na tvorbu, nejen na kód, ale i na dokumenty. Claude chat a projekty pak používá na konzultace a analýzu.",
-      "body": "Přepínání mezi nástroji žere čas. A často se u toho ztratí souvislosti.\n\nJeden člen komunity popsal, jak to má on. Claude Code používá jako hlavní pracovní prostor. Tvoří v něm, píše dokumenty, plánuje projekty a generuje obsah. Nejde mu jen o kód. Claude.ai chat a Projekty bere spíš jako místo na konzultace. Chodí tam pro analýzu, zpětnou vazbu nebo rychlý průzkum tématu.\n\nProč to tak dává smysl? Každý nástroj se hodí na něco jiného. Claude Code drží kontext celého projektu. Vidí soubory, historii i strukturu. Claude chat je rychlý a interaktivní, ale kontext se v něm ztrácí rychleji.\n\nPraktické pravidlo: pokud na jedné věci děláte déle než den, dejte ji do Claude Code. Jednorázové dotazy a analýzy bez projektového kontextu nechte v Claude chatu.",
+      "excerpt": "Pavel Vokoun popsal, jak si dělí práci mezi Claude Code a aplikaci Claude. Claude Code bere jako prostor na tvorbu, nejen kód, ale i dokumenty. Claude chat a projekty používá na analýzu a konzultace.",
+      "body": "Jeden člen komunity se ptal, jak ostatní přepínají mezi Claude Code a klasickým chatem.\n\nPavel Vokoun popsal svůj přístup. Claude chat a Projekty používá, když potřebuje analyzovat a konzultovat. Claude Code bere jako hlavní prostor pro tvorbu. Nejen kód, ale i dokumenty.",
       "read_minutes": 2,
       "source_date": "2026-04-17",
       "topics": [
@@ -31,8 +31,8 @@
       "type": "NÁSTROJE",
       "level": "Expert",
       "title": "Supabase dokumentace přes SSH pro AI agenty",
-      "excerpt": "Supabase nově zpřístupnil dokumentaci přes SSH. Podle jejich newsletteru se v ní tak AI agentům líp orientuje. Tip pro všechny, kdo Supabase používají nebo o něm uvažují.",
-      "body": "Člen komunity sdílel novinku ze Supabase newsletteru. Dokumentace je teď dostupná přes SSH. Není to funkce pro lidi, ale pro AI agenty.\n\nAgenti, kteří pracují se Supabase, třeba přes Claude Code nebo jiný nástroj, teď můžou dokumentaci prohledávat a číst přímo přes SSH připojení. Supabase říká, že je to jednodušší a přesnější než klasické scrapování webu nebo hledání v HTML.\n\nPokud stavíte agenta pro Supabase, nebo používáte Claude Code se Supabase, mrkněte na jejich blog. Můžete si ověřit, jestli tahle funkce zrychlí nebo zpřesní práci vašeho agenta s dokumentací.",
+      "excerpt": "Člen komunity sdílí novinku ze Supabase newsletteru. Supabase otevřel dokumentaci přes SSH. Pro agenty prý jednodušší na hledání.",
+      "body": "Člen komunity sdílel informaci ze Supabase newsletteru. Supabase otevřel dokumentaci přes SSH. Podle jejich newsletteru je to pro agenty jednodušší na hledání.\n\nPokud Supabase používáte nebo o něm uvažujete a newsletter nedostáváte, může stát za to ověřit.",
       "read_minutes": 2,
       "source_date": "2026-04-17",
       "topics": [
@@ -53,8 +53,8 @@
       "type": "INSIGHT",
       "level": "Začátečník",
       "title": "Středoškoláci postavili funkční appku za hodinu",
-      "excerpt": "Ve finále soutěže v digitálních dovednostech zvládli studenti z různých oborů vytvořit funkční kvízovou aplikaci zhruba za hodinu. Elektrikáři, gymnazisté i ajťáci. Dobrá motivace pro každého, kdo ještě nezačal.",
-      "body": "Jedna členka komunity sdílela zážitek z finále středoškolské soutěže v digitálních dovednostech.\n\nStudenti tam mimo jiné tvořili vzdělávací obsah pro seniory, rozkrývali dezinformace a vibe codovali.\n\nVýsledek? Dost jasný.\n\nVšichni za zhruba hodinu postavili funkční kvízovou aplikaci v nástroji Macaly. Bez ohledu na obor. Elektrikáři, gymnazisté i studenti IT.\n\nRozdíly mezi nimi samozřejmě byly. Ale do cíle se dostali všichni.\n\nProč to píšeme?\n\nNejčastěji lidé nezačnou proto, že mají pocit, že toho neumí dost. Středoškoláci bez přípravy tenhle pocit vyvrátili za hodinu.\n\nJestli vás brzdí věta „nejsem technický typ“, tahle historka je přesně pro vás.\n\nZačít se dá dřív, než si myslíte.",
+      "excerpt": "Nikol sdílela zážitek z finále středoškolské soutěže v digitálních dovednostech. Studenti z různých oborů, elektrikáři, gymnazisté i ajťáci, zvládli za hodinu vytvořit funkční kvízovou aplikaci v Macaly.",
+      "body": "Nikol popsala, jak proběhlo finále jejich soutěže pro středoškoláky v digitálních dovednostech. Studenti tam tvořili vzdělávací obsah pro seniory, rozkrývali dezinformační narativy a vibe codovali.\n\nVšichni za hodinu zvládli vytvořit funkční aplikaci na kvízy v nástroji Macaly. Bez ohledu na obor. Rozdíly mezi nimi byly, ale do cíle se dostali všichni.",
       "read_minutes": 2,
       "source_date": "2026-04-17",
       "topics": [
@@ -71,8 +71,8 @@
       "type": "UKÁZKA",
       "level": "Expert",
       "title": "800 poznámek v Obsidianu a agenti nad nimi",
-      "excerpt": "Jeden z členů přesunul 800 poznámek do Obsidianu a teď nad nimi staví vlastní systém agentů. Sdílel plugin Terminal a inspiraci pro agentní práci s osobními znalostmi.",
-      "body": "Člen komunity psal, že přesunul všech 800 poznámek do Obsidianu. A neskončil jen u třídění. Teď si nad nimi staví vlastní vrstvu agentů, kteří poznámky prohledávají, propojují a dál s nimi pracují.\n\nPomáhají mu hlavně dvě věci:\n\n- Obsidian plugin Terminal: díky němu může spouštět příkazy přímo z Obsidianu, bez přepínání do terminálu\n- YouTube inspirace na koncept „agentních tlup“ nad poznámkami: skupiny agentů, kde má každý jiný úkol. Jeden hledá, druhý shrnuje, třetí navrhuje propojení.\n\nJe to pokročilejší přístup ke knowledge managementu. Poznámky pak nejsou jen pasivní archiv. Stávají se z nich aktivní znalostní báze, se kterou AI umí pracovat.\n\nPokud používáte Obsidian a láká vás představa agentů nad vlastními poznámkami, plugin Terminal je dobrý první krok.",
+      "excerpt": "Pavel Vokoun sdílí odkaz na YouTube kanál s inspirací na tlupu agentů nad poznámkami. Pokud pracujete s Obsidianem a agenty, může vás zajímat.",
+      "body": "Pavel Vokoun doporučil YouTube kanál pro ty, kdo hledají inspiraci na agenty nad poznámkami. Konkrétně zmínil koncept \"tlupy agentů\" nad poznámkami.\n\nOdkaz: https://m.youtube.com/@myicor",
       "read_minutes": 3,
       "source_date": "2026-04-17",
       "topics": [

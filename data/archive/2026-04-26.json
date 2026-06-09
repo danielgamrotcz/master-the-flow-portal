@@ -12,8 +12,8 @@
       "type": "INSIGHT",
       "level": "Začátečník",
       "title": "AI vyplní Excel bez rozhozeného formátování",
-      "excerpt": "Složitá tabulka se vzorci, které se nesmí rozbít. Jedna členka ji místo ručního vyplňování svěřila AI a výsledek byl čistý. Stejný postup funguje i v Google Sheets.",
-      "body": "Jedna členka komunity dostala k vyplnění složitou excelovou tabulku plnou vzorců a speciálního formátování. Bálo se jí do ní sáhnout, aby nerozbila strukturu, a hledala bezpečný postup. Nakonec to zkusila nechat na AI. Ta tabulku vyplnila, uložila a formátování zůstalo beze změny.\n\nPodobně to jde i v Google Sheets. Jeden člen komunity si takhle pravidelně aktualizuje vlastní CRM. Místo ručního přidávání sloupců pustí Claude Code a za dvě minuty má hotovo. Důležité je nechat AI pracovat přímo se souborem, ne kopírovat data do chatu.\n\nPraktický tip: když dostanete tabulku, do které se bojíte sáhnout, zkuste ji poslat AI s jasným zadáním. Napište, co se má vyplnit a co se nesmí změnit. Výsledek bývá překvapivě čistý.",
+      "excerpt": "Složitá excelová tabulka plná vzorců. Jedna členka se bálo do ní sáhnout, tak to svěřila AI. Vyplnila, uložila a formátování zůstalo beze změny.",
+      "body": "Jedna členka komunity dostala k vyplnění složitou excelovou tabulku plnou vzorců a speciálního formátování. Bálo se jí do ní sáhnout, aby nerozbila strukturu. Nakonec to nechala udělat AI. Ta tabulku vyplnila, uložila a bylo to v pohodě.\n\nPodobně to jde i v Google Sheets. Jeden člen komunity si takhle aktualizuje vlastní CRM. Místo ručního přidávání sloupků pustí Claude Code a za dvě minuty má hotovo.\n\nPraktický tip: když dostanete tabulku, do které se bojíte sáhnout, zkuste to svěřit AI s jasným zadáním. Napište, co se má vyplnit a co se nesmí změnit.",
       "read_minutes": 2,
       "source_date": "2026-04-26",
       "topics": [
@@ -33,8 +33,8 @@
       "type": "UKÁZKA",
       "level": "Builder",
       "title": "CRM v tabulce aktualizované přes Claude Code",
-      "excerpt": "Jeden člen si vede celé CRM v Google Sheets a aktualizuje ho přes Claude Code. Žádný SaaS nástroj, žádné měsíční platby — jen tabulka a AI.",
-      "body": "Jeden člen komunity popsal, jak řeší kontakty a obchodní data. Nemá na CRM žádný speciální nástroj. Všechno vede v Google Sheets. Změna, která mu dřív zabrala čtvrt hodiny ručního klikání, teď trvá dvě minuty. Spustí Claude Code, napíše, co se má upravit, a je hotovo.\n\nMožná to zní zvláštně, ale dává to smysl. Tabulka je přehledná, dá se snadno exportovat, nevzniká vendor lock-in a Claude s ní umí dobře pracovat. Zná její strukturu, přidává sloupce, filtruje záznamy a hledá v datech podle běžně napsaného dotazu.\n\nPodobný vzorec se v komunitě objevuje častěji: jednoduchý nástroj a AI jako operátor. Nemusí jít jen o CRM. Stejně se dá řešit správa projektů, evidence faktur nebo sledování úkolů. Hodnota není v komplikovaném softwaru, ale v tom, že AI ví, kde data leží a co s nimi má udělat.",
+      "excerpt": "Jeden člen si vede celé CRM v Google Sheets a aktualizuje ho přes Claude Code. Dřív přidával sloupky ručně, teď to trvá dvě minuty.",
+      "body": "Jeden člen komunity popsal, jak řeší kontakty a obchodní data. Nemá na CRM žádný speciální nástroj. Všechno vede v Google Sheets. Dřív přidával sloupky ručně, dnes na to pustí Claude Code a je hotovo za dvě minuty.\n\nZároveň jiná členka zmínila, že týden zkoumá Claude a má z výsledků brutální dojem. Chystá se nasadit Team licenci pro sedm lidí ve firmě.\n\nTyhle dva příspěvky ukazují podobný vzorec: jednoduchý nástroj a AI jako operátor. Hodnota není v komplikovaném softwaru, ale v tom, že AI ví, kde data leží a co s nimi má udělat.",
       "read_minutes": 2,
       "source_date": "2026-04-26",
       "topics": [
@@ -54,8 +54,8 @@
       "type": "INSIGHT",
       "level": "Expert",
       "title": "Markdown v gitu jako datová vrstva pro AI",
-      "excerpt": "Jeden člen přestal koukat přímo do dat a místo toho se na všechno ptá Clauda. Tvrdí, že markdownové soubory v gitu jsou pro AI nejlepší struktura, se kterou se jí dobře pracuje. Inspirovalo to dalšího člena, aby přešel na CRM v Markdownu.",
-      "body": "Jeden člen komunity popsal, jak změnil přístup ke svým datům. Nepoužívá grafické rozhraní ani aplikace. Všechno má v Markdown souborech v gitu. Důvod je jednoduchý: stejně se na data nedívá přímo, na všechno se ptá Clauda. A Claude si s Markdownem rozumí nejlíp.\n\nJe to přirozené pokračování filozofie plain text. Markdown přečte člověk i stroj, dá se verzovat a snadno přenášet. Git k tomu přidá historii změn a zálohu. Claude pak slouží jako rozhraní: prohledává, shrnuje a aktualizuje.\n\nMá to i svoje limity. Nehodí se to pro velké objemy strukturovaných dat, pro týmy bez technického zázemí a vyžaduje to pořádek v názvech souborů i struktuře. Pro osobní knowledge management nebo jednoduché CRM to ale může být elegantnější řešení než řada komerčních nástrojů.\n\nV diskuzi to inspirovalo dalšího člena k přechodu na CRM v Markdownu. Hezký příklad toho, jak sdílení konkrétních postupů v komunitě mění způsob práce.",
+      "excerpt": "Jeden člen přestal koukat přímo do dat a na všechno se ptá Clauda. Tvrdí, že Markdown soubory v gitu jsou pro AI nejlepší struktura. Dalšího člena to inspirovalo k přechodu na CRM v Markdownu.",
+      "body": "Jeden člen komunity popsal, jak změnil přístup ke svým datům. Všechno má v Markdown souborech v gitu. Důvod je jednoduchý: stejně se na data nedívá přímo, na všechno se ptá Clauda. A pro Clauda je tohle prý nejlepší struktura.\n\nGit k tomu přidá historii změn a zálohu. Claude pak slouží jako rozhraní: prohledává, shrnuje a aktualizuje.\n\nV diskuzi to inspirovalo dalšího člena, který napsal, že chce mít do konce týdne CRM v Markdown souborech. Hezký příklad toho, jak sdílení konkrétních postupů mění způsob práce.",
       "read_minutes": 2,
       "source_date": "2026-04-26",
       "topics": [
@@ -72,8 +72,8 @@
       "type": "INSIGHT",
       "level": "Builder",
       "title": "Nástroje bez GUI fungují spolehlivěji na pozadí",
-      "excerpt": "Většina věcí, které jeden člen postavil s AI, nemá žádné grafické rozhraní. Běží na pozadí, dělají svou práci a UI se u nich neřeší.",
-      "body": "Jeden člen komunity říkal, že většina nástrojů, které si postavil s pomocí AI, nemá žádný grafický design. Prostě běží na pozadí a žádné rozhraní neřeší.\n\nNa první dobrou to může znít jako kompromis. Ve skutečnosti je to záměr. GUI žere čas: návrh, implementace, ladění. Když se místo toho udělá skript nebo automatizace bez rozhraní, ušetří to desítky hodin. A výsledek často přinese víc, protože pozornost šla do funkce, ne do vzhledu.\n\nTenhle přístup sedí hlavně na osobní nástroje, automatizace pro rodinu nebo klienty a věci, které řeší konkrétní opakující se problém. Nemusí to být hezké. Musí to fungovat.\n\nPro builder mindset je to dobrý posun v hlavě: ne každý nástroj musí být produkt. Někdy stačí skript, který tiše maká na pozadí a uvolní ruce na věci, které mají skutečnou hodnotu.",
+      "excerpt": "Naprostá většina nástrojů, které jeden člen postavil s AI, nemá žádný grafický design. Běží na pozadí a dělají svou práci.",
+      "body": "Jeden člen komunity říkal na webináři k vibe codingu, že naprostá většina věcí, které postavil, běží na pozadí a nemá žádný grafický design. Podle něj je to skvělé ze dvou důvodů: šetří to mraky času a pomáhá to vytvářet věci, které jsou hodnotné pro něj, blízké, rodinu a klienty.\n\nGUI žere čas na návrh, implementaci a ladění. Když se místo toho udělá skript nebo automatizace bez rozhraní, pozornost jde do funkce.\n\nPro builder mindset je to dobrý posun v hlavě: ne každý nástroj musí být produkt. Někdy stačí skript, který tiše maká na pozadí.",
       "read_minutes": 1,
       "source_date": "2026-04-26",
       "topics": [

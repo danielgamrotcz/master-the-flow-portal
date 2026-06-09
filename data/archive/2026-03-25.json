@@ -8,8 +8,8 @@
   },
   "cards": [
     {
-      "excerpt": "Cursor, CC, Codex — začněte klidně s čímkoli. Porovnávat nástroje je stejná past jako porovnávat ToDo aplikace.",
-      "body": "Daniel to řekl na rovinu: je jedno, který nástroj si vyberete. Cursor, Claude Code, Codex — v různých fázích umí každý něco líp. Stejná debata se vedla u kalendářů nebo ToDo appek. Výsledek byl vždycky stejný: kdo pořád vybírá, nepracuje. Kdo začne, posouvá se dál.",
+      "excerpt": "Daniel říká, že neví, proč by Cursor vůbec srovnával. A proč to řešit?",
+      "body": "Daniel napsal jednu větu: neví, proč by srovnával Cursor s něčím jiným, a proč to vůbec řešit. To je celý jeho příspěvek. Žádný rozvinutý argument o nástrojích, žádné srovnání fází projektu. Jen konstatování, že mu ta debata přijde zbytečná.",
       "id": "2026-03-25-01",
       "source_date": "2026-03-25",
       "topics": [
@@ -25,7 +25,7 @@
     },
     {
       "excerpt": "Členka staví appku, která vezme šablonu certifikátu a Google Sheet a automaticky rozešle vyplněné certifikáty e-mailem.",
-      "body": "Praktický příklad, co vibe coding umí: klientka nahraje šablonu certifikátu a tabulku s účastníky. Appka doplní jméno i další údaje a certifikát pošle e-mailem. Všechno na jedno kliknutí. Přesně něco, co by hotové SaaS řešení buď neumělo, nebo by to schovalo mezi deset zbytečných funkcí navíc.",
+      "body": "Praktický příklad, co vibe coding umí: klientka nahraje šablonu certifikátu a tabulku s účastníky. Appka doplní jméno i další údaje a certifikát pošle e-mailem. Všechno na jedno kliknutí. Členka to popisuje jako věc, kterou teď zkouší postavit.",
       "id": "2026-03-25-02",
       "source_date": "2026-03-25",
       "topics": [
@@ -42,8 +42,8 @@
       "type": "UKÁZKA"
     },
     {
-      "excerpt": "Obecné „to už existuje“ jako argument neberu. Přesně padnoucí řešení má cenu — a co mu chybí, si prostě dodělám.",
-      "body": "Několik členů dostalo komentář: „Proč to děláš, když podobný nástroj už existuje?“ Daniel a jeden člen komunity se shodli, že taková poznámka hází všechno do jednoho pytle a neříká nic konkrétního. Hotové aplikace často obsahují funkce, které spíš překážejí. Funkci, která chybí, si do hotového produktu jen tak nedodělám. A už samotná tvorba pomáhá pochopit danou oblast způsobem, ke kterému bych se jinak nedostal.",
+      "excerpt": "Dva členové dostali komentář, že podobný nástroj už existuje. Daniel a Radim se shodli, že taková reakce hází vše do jednoho pytle.",
+      "body": "Jedna členka schytala poznámku, ať raději šetří tokeny, když podobný nástroj už existuje. Daniel odpověděl, že přesně padnoucí řešení je samo o sobě důvod do toho jít. Hotové aplikace mají spoustu funkcí, které překážejí. Radim dodal, že kritici jeho appce vůbec nerozumí oblasti, které se týká, takže jejich komentář nemá přidanou hodnotu.",
       "id": "2026-03-25-03",
       "source_date": "2026-03-25",
       "topics": [
@@ -60,8 +60,8 @@
       "type": "INSIGHT"
     },
     {
-      "excerpt": "Jeden člen zjistil, že víc hltá informace, než něco reálně buduje. Schválně se vrátil k postupu po malých krocích.",
-      "body": "Poctivé sebepozorování: je snadné koukat na videa, číst články a mít pocit, že se někam posouváte. Člen si toho všiml a rozhodl se vědomě ubrat v příjmu informací. Místo toho udělal jeden malý krok dopředu. Postup po krůčcích není pomalost. Je to jediný způsob, jak se opravdu posunout.",
+      "excerpt": "Člen si všiml, že víc hltá informace než reálně tvoří. Vrátil se k postupu po malých krocích.",
+      "body": "Člen napsal, že když čte příspěvky v komunitě, má pocit, že rychlík ujel. Pak si sedne zpět a jde po krůčcích ve svých projektech. A uvědomuje si, že teď víc hltá informace než dělá reálné appky nebo výstupy. Žádné řešení nenabídl, jen to pojmenoval.",
       "id": "2026-03-25-04",
       "source_date": "2026-03-25",
       "topics": [
@@ -76,8 +76,8 @@
       "type": "INSIGHT"
     },
     {
-      "excerpt": "Jeden člen narazil na týdenní kreditní limit a zároveň řešil bug: text v teleprompterové appce se nepřizpůsoboval tempu čtení.",
-      "body": "Dva problémy najednou: Jeden člen vyčerpal 75 % týdenního kreditu a zároveň zjistil, že mu špatně funguje teleprompter appka. Text jel moc pomalu a nepřizpůsoboval se tempu čtení. Typická situace, kdy člověk začne nástroj víc používat a narazí na první limit. Obojí se dá vyřešit, jen počítejte s tím, že kreditové limity přijdou rychleji, než čekáte.",
+      "excerpt": "Aleš narazil na týdenní kreditní limit a zároveň řeší bug: text v teleprompterové appce běžel moc pomalu a nereagoval na tempo čtení.",
+      "body": "Aleš dostal hlášku, že spotřeboval 75 % týdenního limitu, a přitom mu přišlo, že toho moc nedělal. Zároveň nahlásil bug v teleprompter appce, na které pracuje Daniel: text běží pomalu a nereaguje na tempo čtení. V angličtině to bylo ještě horší, odhad čtených slov vůbec nefungoval.",
       "id": "2026-03-25-05",
       "source_date": "2026-03-25",
       "topics": [
@@ -93,8 +93,8 @@
       "type": "UKÁZKA"
     },
     {
-      "excerpt": "Jeden člen sdílel článek o tom, že překrývající se Claude skills zhoršují výkon. Méně je víc.",
-      "body": "Jeden člen vytáhl dobrý postřeh z článku: když má Claude najednou moc skills, které se překrývají, začnou si lézt do cesty a výkon jde dolů. Platí to i pro vlastní konfigurace. Čím jasněji jsou skills ohraničené a čím míň se překrývají, tím líp fungují. Menší počet přesně popsaných skills porazí velkou sbírku vágních.",
+      "excerpt": "Michael sdílí odkaz na příspěvek o tom, jak překrývající se Claude skills žerou zdroje.",
+      "body": "Michael sdílí odkaz na LinkedIn příspěvek s postřehem, že příliš mnoho překrývajících se Claude skills žere zdroje. Bez dalšího komentáře.",
       "id": "2026-03-25-06",
       "source_date": "2026-03-25",
       "topics": [

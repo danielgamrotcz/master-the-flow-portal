@@ -12,8 +12,8 @@
       "type": "NÁSTROJE",
       "level": "Builder",
       "title": "Context7 přináší aktuální docs do AI asistenta",
-      "excerpt": "Context7 je MCP server, který AI asistentovi tahá dokumentaci knihoven a frameworků přímo z internetu. Nespoléhá na stará trénovací data, ale pracuje s aktuálními informacemi. Claude Code ho umí používat automaticky, někdy ho na něj ale musíte navést ručně.",
-      "body": "Když AI asistent pracuje s konkrétní knihovnou nebo frameworkem, vychází z toho, co se naučil při trénování. Jenže tahle data můžou být klidně rok nebo víc stará. Context7 to bere jinak. Je to MCP server, který si při každém dotazu stáhne aktuální dokumentaci z internetu a pošle ji rovnou do kontextu asistenta.\n\nV praxi se hodí hlavně při napojování technologií. Třeba když integrujete nové API nebo pracujete s frameworkem, který se rychle mění. Claude Code umí Context7 používat automaticky, ale nespoléhejte na to, že ho vždycky zapne sám. Když řešíte konkrétní technologii a odpovědi nejsou přesné, řekněte mu přímo, ať se podívá do dokumentace přes Context7.\n\nNastavení je celkem jednoduché. Přidáte Context7 jako MCP server do konfigurace Claude Code a od té chvíle ho může asistent používat. Není to žádné kouzlo. Pro běžnou práci s kódem ale znatelně zlepší přesnost odpovědí.",
+      "excerpt": "Člen sdílí odkaz na Context7.",
+      "body": "Člen sdílí odkaz na Context7 bez dalšího komentáře.",
       "read_minutes": 2,
       "source_date": "2026-04-14",
       "topics": [
@@ -32,8 +32,8 @@
       "type": "INSIGHT",
       "level": "Expert",
       "title": "Ani Context7 nezaručí kompletní dokumentaci",
-      "excerpt": "Context7 je užitečný nástroj, ale stažená dokumentace nemusí být vždy kompletní. Jeden člen narazil na případ, kdy Context7 nenašel model, který byl starý teprve dva měsíce.",
-      "body": "Context7 AI asistentovi výrazně pomáhá dostat se k aktuálním informacím, ale není bez omezení. Dokumentace, kterou si stáhne, nemusí být vždy kompletní. Nebo může být poskládaná jinak, než asistent čeká.\n\nZ komunity přišel konkrétní příklad. Jeden člen pracoval s technologií, kde byl model starý zhruba dva měsíce. Context7 ho stejně nenašel, protože v dostupné dokumentaci prostě nebyl. A stalo se to přesně ve chvíli, kdy by měl být Context7 nejužitečnější.\n\nZávěr je jednoduchý. Context7 je dobrý první krok. Pokud ale pracujete s úplně čerstvou verzí technologie nebo s méně běžnou knihovnou, ověřte si výsledek i přímo v oficiální dokumentaci. Slepě věřit tomu, že asistent „má aktuální data“, se může vymstít. Takové chyby se hledají hůř než běžné halucinace, protože vypadají mnohem věrohodněji.",
+      "excerpt": "Context7 pomáhá AI asistentovi pracovat s aktuální dokumentací, ale není neomylný. Jeden člen narazil na případ, kdy Context7 tvrdil, že model v API Soniox neexistuje, přestože byl v dokumentaci uveden už dva měsíce.",
+      "body": "Context7 AI asistentovi pomáhá dostat se k aktuálním informacím, ale má omezení. Dokumentace, kterou stáhne, nemusí být vždy úplná.\n\nZ komunity přišel konkrétní příklad. Člen pracoval s API Soniox a Claude Code přes Context7 tvrdil, že model v4 neexistuje. Přitom v dokumentaci byl uveden už dva měsíce. Context7 zkrátka neměl aktuální data.\n\nDaniel používá Context7 vždy, když napojuje technologie. Claude Code si tam většinou sáhne sám, ale párkrát se stalo, že to neudělal a musel ho tam nasměrovat ručně.\n\nZávěr je jednoduchý. Context7 je dobrý první krok, ale výsledek stojí za to ověřit přímo v oficiální dokumentaci, zvlášť u čerstvých verzí nebo méně běžných knihoven.",
       "read_minutes": 2,
       "source_date": "2026-04-14",
       "topics": [
@@ -53,8 +53,8 @@
       "type": "INSIGHT",
       "level": "Builder",
       "title": "Weekly review skupinových chatů přes export a prompt",
-      "excerpt": "Pravidelný souhrn dění ve WhatsApp skupinách jde udělat tak, že se exportují chaty a lokálně na počítači zpracují přes připravený prompt. Automatizace se ještě dolaďuje, ale základní verze funguje už teď.",
-      "body": "Weekly review vzniká z exportů chatů z WhatsAppu. Ty se pak lokálně v počítači zpracují přes připravený prompt. Výsledek je čitelný souhrn pro nové nebo méně aktivní členy, kteří nestíhají sledovat všechno hned.\n\nPostup je jednoduchý. Z každé skupiny se vyexportuje chat. WhatsApp to umí v nastavení skupiny. Texty se spojí a projdou promptem, který z nich vytáhne hlavní témata, projekty a postřehy. Ve shrnutí nejsou jména členů. Vynechávají se i provozní věci, třeba pozdravy nebo domlouvání akcí.\n\nAutomatizace celého procesu se ještě ladí. Základ ale funguje i ručně. Pokud vedete komunitu, interní tým nebo jakýkoli skupinový chat a chcete pravidelně shrnovat, co se děje, je to použitelný postup bez speciálních nástrojů. Stačí export chatů a dobře napsaný prompt.",
+      "excerpt": "Daniel sdílí weekly review dění v komunitních skupinách za období 6. 4. až 13. 4.",
+      "body": "Daniel sdílí weekly review pokrývající období 6. 4. až 13. 4. Další podrobnosti o způsobu zpracování ani použitých nástrojích ze zprávy nevyplývají.",
       "read_minutes": 2,
       "source_date": "2026-04-14",
       "topics": [
@@ -71,8 +71,8 @@
       "type": "INSIGHT",
       "level": "Builder",
       "title": "Kdy přestat záplatovat a začít od začátku",
-      "excerpt": "Jeden člen strávil několik dní opravou chyby v projektu. Lepil to z jedné strany, pak z druhé, a pokaždé se rozbilo něco jiného. Nakonec nechal AI navrhnout řešení od nuly. Za pár hodin bylo hotovo.",
-      "body": "Je snadné spadnout do nekonečného záplatování. Opravíte jednu věc a rozbije se druhá. Opravíte druhou a začne padat třetí. Každý krok sám o sobě dává smysl, ale celek se pomalu sype. A čím déle v tom jste, tím víc energie pálíte na udržování kódu, který pořád nefunguje.\n\nV komunitě se osvědčilo tohle: když se stejná chyba vrátí víc než dvakrát, nebo když začnou opravy záviset jedna na druhé, zastavte se. Neptejte se „jak tohle opravím?“. Zeptejte se: „Jak bych to navrhl znovu od nuly, kdybych věděl to, co vím teď?“\n\nAI asistenti jsou v tomhle překvapivě užiteční. Nemají citovou vazbu na současné řešení. Často navrhnou jednodušší, přehlednější a líp udržovatelnou variantu. A čas utopený v záplatách bývá často delší než čas potřebný na přepis.\n\nPravidlo nezní „vždycky přepisuj“. Spíš: „Než strávíš třetí den na stejné chybě, zkus se zeptat na řešení s čistým listem.“",
+      "excerpt": "Daniel sdílí weekly review dění v komunitních skupinách za období 6. 4. až 13. 4.",
+      "body": "Daniel sdílí weekly review pokrývající období 6. 4. až 13. 4. Další podrobnosti o obsahu nebo konkrétních projektech ze zprávy nevyplývají.",
       "read_minutes": 2,
       "source_date": "2026-04-14",
       "topics": [

@@ -12,8 +12,8 @@
       "type": "NÁSTROJE",
       "level": "Builder",
       "title": "Claude Code vede nad Gemini pro vibe coding",
-      "excerpt": "Jeden člen delší dobu zkoušel Gemini na vibe coding, ale nakonec zůstal u Claude Code. Výstupy jsou prostě jinde a CC má navrch. Jiný člen mezitím staví Gmail klienta, kterého řídí Gemini přes Google AI Studio.",
-      "body": "Diskuze potvrdila to, co část komunity už tušila: na vibe coding je Claude Code pořád přirozenější volba. Jeden člen Gemini testoval delší dobu, ne jen pár minut na zkoušku, a výsledek měl jasný. Výstupy jsou prostě jiné. CC vede.\n\nTo ale neznamená, že Gemini nemá svoje místo. Jiný člen mezitím staví Gmail klienta řízeného přes Gemini v Google AI Studiu. To je jiný use case a jiný přístup. Gemini dává smysl hlavně jako součást Google ekosystému. Ale jako hlavní engine na vibe coding? Tam má CC zatím navrch.\n\nPrakticky: pokud začínáte a řešíte, čemu dát čas, CC je teď jistější volba pro iterativní stavění. Gemini se vyplatí testovat hlavně ve chvíli, kdy hodně pracujete s Google produkty nebo potřebujete hlubší napojení na jejich ekosystém.",
+      "excerpt": "Daniel Gamrot zkoušel Gemini na vibe coding docela dlouho, ale výstupy jsou prostě jiné. Za něj vede CC. Jiný člen mezitím staví Gmail klienta řízeného přes Gemini v Google AI Studiu.",
+      "body": "Daniel Gamrot to řekl přímo: jako velký fanoušek Googlu zkoušel Gemini na vibe coding docela dlouho, ne jen na zkoušku pár minut. Výsledek? Výstupy jsou prostě jiné. CC vede.\n\nParalelně jiný člen staví Gmail klienta a navádí ho Gemini přes Google AI Studio. To je jiný use case, ne přímé srovnání.\n\nPokud začínáte a řešíte, čemu dát čas, CC je podle zkušenosti z komunity jistější volba pro iterativní stavění.",
       "read_minutes": 2,
       "source_date": "2026-03-16",
       "topics": [
@@ -34,8 +34,8 @@
       "type": "UKÁZKA",
       "level": "Builder",
       "title": "Den 2: pět nápadů na projekty z komunity",
-      "excerpt": "Komunita sdílela první nápady na finální produkty výzvy. Objevily se projekty kolem každodenních věcí: objednávek, kapesného, výživy nebo rozpočtu. Čím osobnější téma, tím větší chuť dotáhnout ho do konce.",
-      "body": "Druhý den výzvy přinesl to nejcennější: konkrétní nápady z běžného života. Lidi z komunity sdíleli, co je fakt štve, nebo co už dlouho chtěli postavit, jen na to nikdy nebyl čas, peníze nebo kapacity.\n\nZ diskuze vzešly tyhle projekty:\n\n- Objednávkový web na marmelády ze dvora — jednoduchý e-shop pro lokální prodej\n- Tracker kapesného pro děti navázaný na výsledky ve škole — hravý způsob, jak děti učit pracovat s penězi\n- E-mailový asistent na zpracování objednávek z kanceláře — automatizace rutinní administrativy\n- Výživový poradce propojený s Garminem a Google Kalendářem — doporučení podle pohybu a denního programu\n- Měsíční rozpočtový tracker jako webová appka — jednoduchý přehled financí bez zbytečných funkcí\n\nSpolečné mají jedno: žádný z těch projektů není „appka za milion“. Jsou to konkrétní řešení konkrétních problémů. A přesně o tom vibe coding je.",
+      "excerpt": "Druhý den výzvy byl o hledání tématu. Členové sdíleli nápady na projekty z vlastního života. Čím osobnější problém, tím větší chuť ho dotáhnout.",
+      "body": "Daniel Gamrot vyhlásil Den 2 výzvy s tématem: najděte své téma. Z diskuze vzešly konkrétní nápady:\n\n- Tracker kapesného pro děti navázaný na výsledky ve škole\n- E-mailový asistent na zpracování objednávek z kanceláře\n- Appka na uspořádání myšlenek a úkolů s přípravou na pracovní týden\n- Gmail klient řízený přes Gemini a Google AI Studio\n- Vibe coding disciplína pro SŠ studenty na celostátní soutěži v digi dovednostech\n\nSpolečné mají jedno: každý projekt řeší konkrétní problém konkrétního člověka.",
       "read_minutes": 2,
       "source_date": "2026-03-16",
       "topics": [
@@ -54,8 +54,8 @@
       "type": "INSIGHT",
       "level": "Začátečník",
       "title": "Cursor nebo VS Code pro začátečníky",
-      "excerpt": "Instalace Gitu a Claude Code CLI přes příkazovou řádku může být překážka. Člověka odradí ještě dřív, než začne něco stavět. Komunita proto navrhla Cursor nebo rozšíření do VS Code jako dostupnější alternativy se stejnou silou.",
-      "body": "Ne každému se chce začínat v příkazové řádce. Jeden člen zkoušel instalovat Git a Claude Code CLI a narazil na technické záseky, které člověka snadno odradí hned na startu.\n\nKomunita navrhla dvě alternativy:\n\n**Cursor** — editor postavený na VS Code s AI přímo uvnitř. Stáhnete, nainstalujete, otevřete složku a můžete pracovat. Terminál tam je taky, ale pro první kroky ho nepotřebujete.\n\n**VS Code s rozšířením Claude** — pokud už VS Code znáte, stačí přidat rozšíření Claude. Dostanete podobný zážitek bez další složité instalace.\n\nPro úplné začátečníky je Cursor nejspíš jednodušší start. Terminál se naučíte později, až ho budete potřebovat. Teď jde hlavně o to začít něco stavět, ne se hned učit unixové příkazy.",
+      "excerpt": "Martin Itterheim narazil na sérii technických záseků při instalaci Gitu a Claude Code CLI. Komunita navrhla Cursor nebo VS Code s rozšířením jako dostupnější alternativy.",
+      "body": "Martin Itterheim popsal svou zkušenost: Claude Code na webu nechtěl vzít lokální adresář a nutil ho do GitHubu. Nainstaloval aplikaci Claude Code, ta chtěla Git, pak nevěděla, kde je. Skončil v příkazové řádce, pak přeskakoval mezi Claude chatem a VS Code. Jeho slova: jako neprogramátor dost hard job.\n\nPro srovnání: o víkendu si na Claude chat udělal hobby střelecký deník, nasadil ho na Cloudflare, Supabase i vlastní doménu. Bylo to jednodušší, protože jel pořád v chatu.\n\nPro začátečníky, kteří nechtějí řešit terminál hned na startu, může být Cursor nebo VS Code s rozšířením Claude jednodušší cesta.",
       "read_minutes": 2,
       "source_date": "2026-03-16",
       "topics": [
@@ -76,8 +76,8 @@
       "type": "TÉMA TÝDNE",
       "level": "Builder",
       "title": "Obsidian, Apple Notes nebo vlastní systém",
-      "excerpt": "Komunita otevřela téma, které řeší spousta builderů: kam ukládat nápady a znalosti, aby z toho fakt vznikl druhý mozek. Padl Obsidian, Apple Notes kvůli GDPR i vlastní systémy napojené na AI.",
-      "body": "Z diskuze vyšly tři směry:\n\n**Obsidian** — dobrá volba pro lokální Markdown soubory. Data máte u sebe, funguje offline a jde napojit na různé nástroje. Jeden člen teď zkouší zapojit vlastní nástroj na zpracování myšlenek do své appky a Obsidian má jako součást workflow.\n\n**Apple Notes** — nepadly kvůli tomu, že by to byl špatný nástroj, ale kvůli GDPR. Pro část komunity je důležité, kde data leží a komu v tomhle věří.\n\n**Vlastní systém** — varianta pro buildery, kteří chtějí plnou kontrolu a napojení na AI nástroje. Zabere víc času ho postavit, ale může dělat přesně to, co potřebujete.\n\nUniverzální odpověď tu není. Záleží, jak pracujete. Potřebujete synchronizaci mezi zařízeními? Offline přístup? Sdílení s ostatními? GDPR compliance? Odpovědi na tyhle otázky vás navedou líp než jakékoli srovnání nástrojů.",
+      "excerpt": "Nikol otevřela otázku, jak má komunita řešený druhý mozek. Padl Obsidian kvůli lokálním Markdown souborům. Jiné odpovědi ze zdrojů nejsou.",
+      "body": "Nikol se zeptala, jak mají členové řešený druhý mozek: poznámky, úkoly a podobně. Jestli staví na Obsidianu, Notionu nebo from scratch.\n\nZ diskuze přišla jedna konkrétní odpověď: jeden člen používá Obsidian hlavně kvůli možnosti práce na lokále s Markdown soubory.\n\nMartin Itterheim mezitím popsal svůj problém: každou neděli večer se marně snaží projít psané poznámky, poznámky v mobilu, v PC a v kalendáři. Chce postavit appku, která mu pomůže myšlenky a úkoly zpracovat a dát do přehledného task listu s upomínkami.\n\nDalší odpovědi na Nikolinu otázku ze zdrojových zpráv nejsou k dispozici.",
       "read_minutes": 2,
       "source_date": "2026-03-16",
       "topics": [

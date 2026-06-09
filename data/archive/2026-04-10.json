@@ -12,8 +12,8 @@
       "type": "NÁSTROJE",
       "level": "Začátečník",
       "title": "Google Study Mode skončil, co místo něj",
-      "excerpt": "Google od dubna vypnul Study Mode, který pomáhal s učením krok za krokem. Dvě funkční náhrady už ale existují.",
-      "body": "Pokud jsi používal Study Mode v Googlu, teď ho v rozhraní nenajdeš. Google ho začátkem dubna potichu odstranil.\n\nNejjednodušší náhrada: přejdi do Gemini. Guided learning tam pořád je.\n\nDruhá možnost funguje v jakémkoli chatbotu: ChatGPT, Claude i Gemini. Na začátek konverzace vlož tenhle prompt:\n\n\"Act as my tutor. Don't give me direct answers. Instead, guide me step by step using Socratic questioning. Ask me questions to check my understanding before moving on. Adapt to my level. If I'm struggling, give me hints, not solutions. After each concept, give me a short practice exercise.\"\n\nAI se pak začne chovat jako učitel. Nedá ti rovnou odpověď. Bude se ptát, ověří si, jestli tomu rozumíš, a přizpůsobí se tvému tempu. Funguje to podobně jako Study Mode, jen si ho nastavíš sám.\n\nPrompt si ulož, ať ho příště nemusíš hledat.",
+      "excerpt": "Členka komunity zjistila, že Study Mode v Googlu od dubna zmizel. Jako náhradu zmiňuje Gemini nebo vlastní prompt v ChatGPT.",
+      "body": "Členka komunity si včera všimla, že Study Mode v Googlu chybí tam, kde býval. Google prý funkci zrušil od dubna.\n\nJako první náhrada padl Gemini, který podobnou funkci má pořád.\n\nDruhá možnost je zadat prompt v ChatGPT nebo jiném chatbotu:\n\n\"Act as my tutor. Don't give me direct answers. Instead, guide me step by step using Socratic questioning. Ask me questions to check my understanding before moving on. Adapt to my level. If I'm struggling, give me hints, not solutions. After each concept, give me a short practice exercise.\"\n\nPrompt si ulož, ať ho příště nemusíš hledat.",
       "read_minutes": 2,
       "source_date": "2026-04-10",
       "topics": [
@@ -31,8 +31,8 @@
       "type": "INSIGHT",
       "level": "Builder",
       "title": "Soft vs hard omezení v Claude Code",
-      "excerpt": "Spousta lidí si do Claude Code přidá pravidlo „nesahej na produkční databázi“ a bere to jako pojistku. Jenže je to jen měkké omezení. Opravdová bezpečnost funguje jinak.",
-      "body": "Soft omezení znamená, že spoléháš na to, že Claude pravidlo dodrží. Do CLAUDE.md napíšeš: „Nemaž soubory mimo /tmp.“ A věříš, že to bude respektovat. Většinou bude. Ale pořád je to dohoda, ne zeď.\n\nHard omezení funguje jinak. Claude nemá přístup k ničemu, co mu nedáš. K databázi se nedostane bez connection stringu. Na složku mimo pracovní adresář nesáhne. Nejde to porušit, protože ta možnost prostě neexistuje.\n\nTen rozdíl je zásadní hlavně u projektů, kde chyba bolí. Přepsaná data. Smazané soubory. Přístup k citlivým klíčům.\n\nPraktický tip: před každou session si projdi, co Claude Code vidí. Jaké soubory. Jaké proměnné prostředí. Jaké přihlašovací údaje. Co vědět nepotřebuje, nesdílej. To je základ hard přístupu i bez technické infrastruktury.",
+      "excerpt": "Člen komunity upozornil na rozdíl mezi soft a hard omezeními v Claude Code. Spoléhat jen na pravidla v CLAUDE.md nestačí.",
+      "body": "Soft omezení znamená, že spoléháš na to, že Claude pravidlo dodrží. Do CLAUDE.md napíšeš \"nemaž soubory mimo /tmp\" a věříš, že to bude respektovat. Většinou bude. Ale pořád je to dohoda, ne zeď.\n\nHard omezení funguje jinak. Claude se prostě nemá šanci dostat k ničemu, co s ním nenasdílíš. Jeden člen komunity to řeší přes Docker na lokálním počítači. Claude Code CLI tak pracuje v izolovaném kontejneru a může jen do složky, kam ho pustíš.\n\nTen rozdíl je zásadní hlavně u projektů, kde chyba bolí. Přepsaná data, smazané soubory, přístup k citlivým klíčům.\n\nPrakticky: před každou session si projdi, co Claude Code vidí. Co vědět nepotřebuje, nesdílej.",
       "read_minutes": 2,
       "source_date": "2026-04-10",
       "topics": [
@@ -50,8 +50,8 @@
       "type": "INSIGHT",
       "level": "Expert",
       "title": "Docker izolace pro Claude Code na lokálním stroji",
-      "excerpt": "Když spustíš Claude Code CLI v Docker kontejneru, AI běží úplně odděleně od zbytku systému. Ty určuješ, ke kterým složkám a souborům má přístup. Ne Claude.",
-      "body": "Jeden developer ze skupiny sdílel konkrétní postup: Claude Code CLI pouští lokálně přes Docker. Celý proces tak běží v kontejneru a má přístup jen ke složkám, které mu výslovně namountuješ.\n\nNení to měkké pravidlo v `CLAUDE.md`. Je to pevná hranice na úrovni operačního systému. Claude se prostě fyzicky nedostane k ničemu, co mu při spuštění kontejneru nepředáš.\n\nNastavení je o něco techničtější než běžná instalace. Potřebuješ Docker, jednoduchý příkaz `docker run` s volume mountem a API klíčem jako environment variable. Výsledek ale stojí za to: i kdyby Claude Code udělal něco nečekaného, zůstane omezený jen na tu část souborového systému, kam ho chceš pustit.\n\nDává to smysl hlavně u projektů, kde jsou poblíž produkční databáze, klíče k jiným službám nebo cokoliv, kde by nechtěná akce mohla mít reálný dopad.",
+      "excerpt": "Člen komunity sdílí, že Claude Code CLI pouští lokálně přes Docker. AI tak běží v izolovaném kontejneru a má přístup jen ke složkám, které mu výslovně předáš.",
+      "body": "Člen komunity popisuje svůj přístup: Claude Code CLI pouští na lokálním počítači přes Docker. CC tak pracuje v izolovaném kontejneru a může jen do složky, kam ho pustí.\n\nNení to měkké pravidlo v CLAUDE.md. Je to pevná hranice, hard omezení. Claude se fyzicky nedostane k ničemu, co mu při spuštění kontejneru nepředáš.\n\nNastavení je podle něj trochu techničtější než běžná instalace. Konkrétní příkazy ani konfiguraci ve zprávě neuvádí.\n\nDává to smysl hlavně u projektů, kde jsou poblíž produkční databáze, klíče k jiným službám nebo cokoliv, kde by nechtěná akce mohla mít reálný dopad.",
       "read_minutes": 3,
       "source_date": "2026-04-10",
       "topics": [

@@ -12,8 +12,8 @@
       "type": "INSIGHT",
       "level": "Builder",
       "title": "Bezdrátový klopák a telefon na přednášky stačí",
-      "excerpt": "Na přednášky a prezentace nemusíte kupovat drahou techniku. Stačí bezdrátový klopový mikrofon a telefon jako záznamník. Tahle kombinace funguje dobře, hlavně když přepis potom zpracuje cloudový nástroj jako Soniox.",
-      "body": "Z diskuze v komunitě vyplynulo, že na přednášky a prezentace většinou stačí bezdrátový klopový mikrofon připnutý na oblečení a telefon. Důležité je hlavně to, aby byl mikrofon dost blízko u pusy a řeč byla dobře slyšet.\n\nSoniox, cloudový nástroj na přepis mluveného slova, si poradí i s horším zvukem nebo místností, kde se zvuk odráží. Hodí se tak na živé akce, kde nemáte akustiku úplně pod kontrolou.\n\nU lokálních AI modelů je to jiné. Výsledky se dost liší a na špatném audiu můžou selhávat víc než cloudová řešení. Pokud tedy chcete jednoduché a spolehlivé nastavení na přednášení, kombinace bezdrátový klopák, telefon a cloudový přepis je dobrý začátek. Bez zbytečného utrácení za hardware.",
+      "excerpt": "Na přednášky a prezentace nemusíte kupovat drahou techniku. Podle Daniela Gamrota stačí bezdrátový klopový mikrofon a telefon. Klíčové je mít telefon dost blízko, aby zachytil vše.",
+      "body": "Daniel Gamrot v diskuzi zmínil, že na přednášky a prezentace mu stačí bezdrátový klopový mikrofon a telefon. Podmínkou je mít telefon dostatečně blízko, aby zachytil vše potřebné. Předpokladem je umět si celé nastavení připravit sám.",
       "read_minutes": 2,
       "source_date": "2026-05-07",
       "topics": [
@@ -29,8 +29,8 @@
       "type": "NÁSTROJE",
       "level": "Builder",
       "title": "Plaud jako ekosystém — co získáte a co vzdáte",
-      "excerpt": "Plaud není jen nahrávačka. Je to uzavřený ekosystém s vlastní automatizací. Zmáčknete tlačítko, nahrávka se pošle do cloudu a zpracuje se sama. DIY varianta to zvládne taky, jen potřebuje víc nastavení.",
-      "body": "Když srovnáte Plaud s vlastním řešením typu telefon + NotebookLM nebo jiný nástroj, vyjde z toho jednoduchý kompromis: Plaud je pohodlnější, ale méně průhledný.\n\nOproti telefonu má Plaud pár věcí navíc. Má fyzické tlačítko na spuštění a zastavení nahrávání. Nahrávky automaticky posílá do cloudu a zpracuje je, takže nemusíte ručně přenášet soubory. A má vlastní baterii, takže nejste závislí na tom, kolik procent zbývá v telefonu.\n\nDIY varianta, tedy telefon + vlastní přepis, zvládne technicky totéž. Funguje s NotebookLM i s vlastním nástrojem. Jen je potřeba trochu nastavení a ruční přenos souborů.\n\nTakže otázka není „Plaud, nebo ne“. Spíš: „Chci platit za pohodlí a automatizaci, nebo si to radši postavím sám?“ Pro lidi, kteří nechtějí řešit technické detaily, dává Plaud smysl. Pro ty, kdo si rádi věci nastavují po svém, je DIY plnohodnotná alternativa.",
+      "excerpt": "Člen komunity sdílí pohled na nahrávání přednášek pomocí telefonu a bezdrátového klopáku. Klíčová je podle něj schopnost si nastavení připravit sám.",
+      "body": "Ze zprávy Daniela Gamrota vyplývá, že na přednášky a prezentace mu stačí bezdrátový klopový mikrofon a telefon, pokud si to člověk umí sám nasetupovat. Důraz klade na to, aby byl telefon dostatečně blízko a zachytil vše. Podrobnosti o konkrétních nástrojích, automatizaci nebo srovnání s jinými řešeními ve zprávě nejsou uvedeny.",
       "read_minutes": 2,
       "source_date": "2026-05-07",
       "topics": [
@@ -47,8 +47,8 @@
       "type": "UKÁZKA",
       "level": "Builder",
       "title": "Astronomický přehled postavený jen pro radost",
-      "excerpt": "Jeden člen komunity sdílel projekt, který vznikl úplně bez byznysového plánu — web s přehledem aktuálních astronomických událostí a historických dat. Žádný zákazník, žádná monetizace. Jen nápad a jedno odpoledne u počítače.",
-      "body": "Ve skupině Vibe Coding se objevil projekt, který hezky ukazuje, k čemu se dají AI nástroje použít i mimo práci: astronomický přehled pro sledování aktuálních úkazů na obloze, historických dat a tvorbu pozorovacích přehledů.\n\nNejzajímavější na tom není samotné téma, ale přístup. Projekt vznikl bokem, bez jasného cíle. Prostě proto, že to autora bavilo. Přesně takové věci dřív znamenaly týdny práce: databáze, frontend, napojení API. Dnes se dají postavit za odpoledne.\n\nVibe coding v praxi není jen o automatizaci práce. Hlavně snižuje práh pro nápady, které by jinak zůstaly v hlavě. Když vás projekt stojí odpoledne místo měsíce, začnete dělat i věci, které vás prostě zajímají. Nejen ty, které se „vyplatí“.\n\nMáte vlastní projekt, který jste postavili jen tak pro radost? Hoďte ho do komunity. Inspirace funguje oběma směry.",
+      "excerpt": "Člen komunity sdílí odkaz na projekt. Podrobnosti o projektu ani jeho záměru ze zprávy nevyplývají.",
+      "body": "Daniel Gamrot ve zprávě zmiňuje nastavení nahrávání přednášek pomocí telefonu a bezdrátového klopáku. Astronomický projekt ani jiné detaily o vibe codingu nebo vedlejších projektech ve zdrojové zprávě nejsou uvedeny.",
       "read_minutes": 2,
       "source_date": "2026-05-07",
       "topics": [

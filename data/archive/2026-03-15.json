@@ -10,8 +10,8 @@
     {
       "id": "2026-03-15-01",
       "source_date": "2026-03-15",
-      "excerpt": "První pokus je hotový, jenže zadání jsem pochopil špatně. Takže rovnou druhá iterace.",
-      "body": "Tohle byl Den 1 a víc lidí narazilo na stejný vzorec: něco pustili, výsledek nebyl podle představ, tak to zkusili znovu. Zkoušení po krocích si osahali v praxi, ne z teorie. Přesně takhle to funguje.",
+      "excerpt": "Daniel spustil první nástroj a výsledek byl nejistý. \"Teď nevím, jestli je to hurá nebo búúúúú,\" napsal do chatu.",
+      "body": "Den 1 výzvy byl o prvním spuštění. Daniel to komentoval slovy \"Běží to, super\" a zároveň vyjadřoval nejistotu. Ze zpráv není jasné, jestli více lidí narazilo na stejný vzorec nebo ne. Co je vidět: spustit a reagovat na výsledek je základ celé výzvy.",
       "topics": [
         "Prompting",
         "Workflow"
@@ -29,8 +29,8 @@
     {
       "id": "2026-03-15-02",
       "source_date": "2026-03-15",
-      "excerpt": "První den lidi nejčastěji sahali po Lovable, Macaly a Claude Code.",
-      "body": "Kdo se bál terminálu, sáhl po Lovable nebo Macaly. V prohlížeči, bez instalace, hotovo za pět minut. Kdo chtěl větší kontrolu, spustil Claude Code. Fungovalo obojí. Výsledky byly rychle.",
+      "excerpt": "Ze zdrojových zpráv není jasné, které nástroje členové první den nejčastěji používali. Alex zmínil Claude v prohlížeči a Claude Code.",
+      "body": "Alex Trejtnar popsal svůj projekt aribena.com: čtyři měsíce vývoje přes Claude v prohlížeči a poslední měsíc s Claude Code za tokeny. Jiné nástroje jako Lovable nebo Macaly se v těchto zprávách neobjevují. Jeden člen sdílel odkaz na svůj výsledek na Lovable, ale bez popisu procesu.",
       "topics": [
         "Claude Code",
         "Vibe Coding"
@@ -47,8 +47,8 @@
     {
       "id": "2026-03-15-03",
       "source_date": "2026-03-15",
-      "excerpt": "Alex ukázal aribena.com — vyvíjel ho čtyři měsíce přes Claude. Pěkný kontrast k třídenní výzvě.",
-      "body": "Třídenní výzva je sprint. aribena.com je maraton. Čtyři měsíce iterací, oprav a rozšiřování. Ukázka, kam se dá vibe coding dotáhnout, když ho po prvním týdnu nezabalíte.",
+      "excerpt": "Alex Trejtnar sdílel aribena.com. Vývoj trval čtyři měsíce přes Claude v prohlížeči a poslední měsíc s Claude Code za tokeny.",
+      "body": "Alex popsal projekt slovy: \"Od té doby je to nekonečná jízda.\" Sám dodal kontrast k třídenní výzvě větou \"Takže nemožné do 3 dnů / zázraky na počkáni!\". Přidal odkaz na YouTube. Vývoj proběhl od prosince 2024 do dubna 2025.",
       "topics": [
         "Vibe Coding",
         "Claude Code"
@@ -67,8 +67,8 @@
     {
       "id": "2026-03-15-04",
       "source_date": "2026-03-15",
-      "excerpt": "Jeden člen narazil na limity scrapingu veřejných zakázek — většina portálů je schovaná za přihlášením nebo paywallem.",
-      "body": "TED API pokrývá jen část zakázek. Zbytek je buď dostupný až po přihlášení, nebo schovaný za paywallem. Tady vibe coding nestačí. Problém není v kódu, ale v tom, jak jsou data omezená.",
+      "excerpt": "Martin zkoušel nástroj na hledání výběrových řízení. Narazil na nedostupnost API serverů veřejných zakázek.",
+      "body": "Martin Itterheim napsal, že dělal něco, co by mu každý den hledalo výběrová řízení. Problém byl v nedostupnosti API serverů veřejných zakázek. Dodal, že zkouší dál. TED API ani paywally ve zprávách zmíněné nejsou.",
       "topics": [
         "Vibe Coding",
         "Claude Code"
@@ -87,8 +87,8 @@
     {
       "id": "2026-03-15-05",
       "source_date": "2026-03-15",
-      "excerpt": "Nikol použila Claude Code, aby místo aplikace vygenerovala prezentaci.",
-      "body": "Zadání bylo vytvořit aplikaci, Nikol z toho udělala prezentaci. A funguje to. Nástroje se nemusí používat jen tak, jak byly původně navržené — a tohle je dobrý příklad, proč má smysl zkoušet nové věci.",
+      "excerpt": "Nikol pracovala v Claude Code na prezentaci pro komunitní akci. Apku má stále rozpracovanou, ale Claude instruovala, aby k ní vytvořil prezentaci.",
+      "body": "Nikol popsala svůj postup: má apku timetobrief.com rozpracovanou v Claude Code a Claude instruovala, aby k ní vytvořil prezentaci pro akci Fajné Prompty v MS kraji. Apka posílá denní brief aktualit do mailu. Nabídla podrobnější info zájemcům. Zadání výzvy bylo otestovat první nástroj, Nikol ho použila jinak.",
       "topics": [
         "Claude Code",
         "Vibe Coding"

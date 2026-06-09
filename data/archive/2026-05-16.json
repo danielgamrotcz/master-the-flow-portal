@@ -10,8 +10,8 @@
     {
       "id": "2026-05-16-01",
       "source_date": "2026-05-16",
-      "excerpt": "Člen komunity popsal, že mu Raycast zjednodušil práci i bez znalosti programování – buď už v základu, nebo přes pluginy.",
-      "body": "Diskuze začala otázkou: co je Raycast a k čemu se hodí člověku, který není z IT? Jeden člen shrnul hlavní funkce: rychlé spouštění aplikací a webů, snippety s placeholdery jako datum nebo jméno adresáta, správu oken, chytrou schránku s historií, emoji a color picker, kalkulačku, převody měn, překladač a stovky dalších integrací zdarma. Všechno se ovládá jednou klávesovou zkratkou. Jako první krok doporučil Danielovo video na LinkedInu.",
+      "excerpt": "Filip Fio Konečný popsal, co Raycast umí – od spouštění aplikací přes snippety až po stovky integrací zdarma. Vše ovládané jedinou klávesovou zkratkou.",
+      "body": "Člen komunity se ptal, co je Raycast a k čemu ho může použít laik. Filip Fio Konečný shrnul hlavní funkce: rychlé spouštění aplikací a konkrétních webů, snippety s placeholdery jako datum nebo jméno adresáta, správu oken, chytrou schránku s historií, emoji picker, color picker, kalkulačku, převody měn a jednotek, překladač, hledání souborů, ovládání přes CLI a stovky dalších integrací zdarma na store. Jiný člen doplnil, že mu Raycast nabídl spoustu zjednodušení buď v základu, nebo přes dostupné pluginy – bez nutnosti znát programování.",
       "topics": [
         "Raycast"
       ],
@@ -25,8 +25,8 @@
     {
       "id": "2026-05-16-02",
       "source_date": "2026-05-16",
-      "excerpt": "Členka komunity ukázala kolegyni, jak pomocí GPT a Perplexity překládat konferenční postery. Prakticky, přímo v reálné situaci.",
-      "body": "Příklad z praxe: překlad odborných posterů z konference. Žádné složité nastavování, žádný kód. Stačilo vědět, jaký nástroj použít a jak se správně zeptat. Přesně takové využití se dá během pár minut ukázat i ostatním.",
+      "excerpt": "Zdrojové zprávy k této kartě se týkají Raycastu, ne překladu konferenčních posterů. Obsah karty nemá oporu ve zdrojích.",
+      "body": "Zdrojové zprávy neobsahují žádnou zmínku o překladu konferenčních posterů přes GPT nebo Perplexity. Karta vychází ze zpráv o Raycastu – otázka laika a odpověď Filipa Fio Konečného se výhradně týkají funkcí Raycastu. Obsah karty nelze z dostupných zdrojů doložit.",
       "topics": [
         "AI nástroje"
       ],
@@ -42,8 +42,8 @@
     {
       "id": "2026-05-16-03",
       "source_date": "2026-05-16",
-      "excerpt": "Ve skupině Vibe Coding se ozvali i členové, kteří pro to zatím nemají konkrétní využití, ale baví je sledovat zkušenosti ostatních.",
-      "body": "Vibe coding láká i lidi, kteří zatím nemají vlastní projekt. Sledují, co funguje ostatním, a čekají, až přijde jejich chvíle. Komunita jim dává prostor se rozkoukat, než dostanou vlastní nápad.",
+      "excerpt": "Dva členové skupiny Vibe Coding napsali, že je téma baví, i když pro ně zatím nemají praktické využití. Rádi sledují zkušenosti ostatních.",
+      "body": "Dva členové se ozvali s tím, že je vibe coding zajímá, ale zatím pro něj nemají konkrétní projekt. Jeden napsal, že je skvělé slyšet, jak to funguje ostatním. Druhý dodal, že ho jako laika zajímají všechny aplikace a zkušenosti, i když se ho přímo netýkají.",
       "topics": [
         "Vibe Coding",
         "Claude Code"
@@ -60,8 +60,8 @@
     {
       "id": "2026-05-16-04",
       "source_date": "2026-05-16",
-      "excerpt": "Jeden člen sdílel video o tom, jak správně pojmenovávat soubory. Je to základní dovednost, podle které AI líp chápe strukturu projektu.",
-      "body": "Když začínáte s vibe codingem, názvy souborů a složek nejsou žádná drobnost. AI bere název souboru jako kontext — špatný název znamená horší výsledky. Jeden člen sdílel video přímo pro lidi mimo IT, kteří s tím teprve začínají.",
+      "excerpt": "Filip Fio Konečný sdílel tip na pojmenovávání souborů a adresářů pro lidi mimo IT.",
+      "body": "Filip Fio Konečný zmínil tip na názvy souborů a adresářů s poznámkou, že je určený pro ne-IT lidi. Žádné další podrobnosti ze zprávy nevyplývají.",
       "topics": [
         "Vibe Coding",
         "Claude Code"
