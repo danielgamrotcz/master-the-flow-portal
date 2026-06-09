@@ -87,7 +87,7 @@ export async function onRequestGet({ env, request }) {
     return Response.json({ cards }, {
       headers: {
         ...corsH,
-        'Cache-Control': 'private, max-age=300',
+        'Cache-Control': 'private, max-age=60',
       },
     });
   } catch {

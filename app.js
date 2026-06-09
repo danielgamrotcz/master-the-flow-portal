@@ -866,7 +866,11 @@ function closeCard() {
   if (state.activeCard && state.cardOpenedAt) {
     const duration_ms = Date.now() - state.cardOpenedAt;
     if (duration_ms >= 3000) {
-      trackEvent('card_read', { id: state.activeCard.id, duration_ms, topic: getTopics(state.activeCard)[0] || null });
+      const readId = state.activeCard.id;
+      trackEvent('card_read', { id: readId, duration_ms, topic: getTopics(state.activeCard)[0] || null });
+      const cur = state.cardStats[readId] || { reads: 0 };
+      state.cardStats[readId] = { ...cur, reads: (cur.reads || 0) + 1 };
+      rerenderCurrentView();
     }
     state.cardOpenedAt = null;
   }
