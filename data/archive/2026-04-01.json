@@ -11,7 +11,7 @@
       "id": "2026-04-01-01",
       "type": "INSIGHT",
       "level": "Builder",
-      "title": "Zkontroluj vibecoding projekty po npm bezpečnostním incidentu",
+      "title": "Kontrola vibecoding projektů po npm bezpečnostním incidentu",
       "excerpt": "Populární JavaScriptovou knihovnu axios někdo krátce kompromitoval přes npm. Pokud máte vibecodingové projekty se závislostmi v Node.js, vyplatí se je zkontrolovat. Claude Code to zvládne sám a výsledek vám srozumitelně vysvětlí.",
       "body": "V komunitě jsme řešili bezpečnostní incident: npm balíček axios byl krátce kompromitovaný. Většiny vibecoding projektů se to nakonec netýkalo, ale otevřelo to téma, na které hodně lidí narazilo poprvé.\n\nCo teď? Pokud víte, že váš projekt používá Node.js, typicky to poznáte podle souboru package.json ve složce projektu, nechte ho zkontrolovat. Otevřete Claude Code, vložte mu zprávu o incidentu, popište svůj setup a řekněte mu, ať vás provede kontrolou.\n\nTechničtější členové sdíleli i ruční postup: jak rychle najít všechny lock soubory na disku a ověřit konkrétní verze kompromitovaných balíčků. Pokud se v tom ale nechcete hrabat, Claude Code to zvládne za vás.\n\nAktuálně nahlášené projekty členů jsou v pořádku. Incident ale dobře připomněl, proč se hodí vědět, co v projektech máte, a mít rychlý způsob, jak si to ověřit.",
       "read_minutes": 2,
