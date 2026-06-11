@@ -339,42 +339,25 @@ async function loadToday() {
   try {
     const data = await fetchJSON('/data/today.json');
 
+    // today.json je vždy nejnovější digest — zobrazíme ho, i když má 0 karet
+    // (klidný den). 0 karet je validní stav, ne „digest ještě nevyšel".
+    state.today = data;
+    _lastKnownDigestDate = data.date;
+    state.archiveCache[data.date] = data;
+    const actualToday = new Date().toISOString().slice(0, 10);
+    const isYesterdayData = data.date !== actualToday;
+    $('cards-today').innerHTML = '';
+    updateHeader(data, isYesterdayData);
+    buildTopicChips(data.cards || []);
+
     if ((data.cards || []).length > 0) {
-      state.today = data;
-      _lastKnownDigestDate = data.date;
-      state.archiveCache[data.date] = data;
-      const actualToday = new Date().toISOString().slice(0, 10);
-      const isYesterdayData = data.date !== actualToday;
-      $('cards-today').innerHTML = '';
-      updateHeader(data, isYesterdayData);
-      buildTopicChips(data.cards);
       renderCards(data.cards, 'cards-today', null);
-      updatePageTitle();
-      ensureSearchAll().catch(() => {});
-      return;
+    } else {
+      $('cards-today').innerHTML =
+        '<div class="empty-state"><p>Za včerejšek nejsou žádné vygenerované poznatky.</p></div>';
     }
-
-    // Dnesni digest jeste nevysel — nacteme vcerejsek
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-    const yStr = yesterday.toISOString().slice(0, 10);
-
-    try {
-      const yData = await fetchJSON(`/data/archive/${yStr}.json`);
-      state.today = yData;
-      _lastKnownDigestDate = yData.date;
-      state.archiveCache[yStr] = yData;
-      $('cards-today').innerHTML = '';
-      updateHeader(yData, true);
-      buildTopicChips(yData.cards || []);
-      renderCards(yData.cards || [], 'cards-today', null);
-      renderUnreadBar(yData.cards || [], 'cards-today');
-      updatePageTitle();
-    } catch {
-      $('cards-today').innerHTML = '';
-      _setNavLabel('Včera');
-      show('empty-today');
-    }
+    updatePageTitle();
+    ensureSearchAll().catch(() => {});
   } catch {
     $('cards-today').innerHTML = '';
     _setNavLabel('Včera');

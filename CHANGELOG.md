@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+### Fixed
+- Klidný den bez karet: záložka Včera nově zobrazí hlášku „Za včerejšek nejsou žádné vygenerované poznatky" místo zavádějícího textu o filtru. Digest s 0 kartami je validní stav, portál nezamrzne na předchozím dni.
+
 ### Changed
 - Typ karty „POSTAVIL JSEM" přejmenován na „UKÁZKA" — rodově neutrální, 57 existujících karet + generátor karet aktualizovány.
 - Opravy obsahu archivu: odstraněna vymyšlená fakta (ceny produktů, encyklopedické detaily, nepotvrzené funkce), opraveny em-dashe a AI fráze v 40 dnech archivu.
