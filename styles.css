@@ -994,6 +994,7 @@ a:hover { text-decoration: underline; }
 }
 
 .btn-secondary svg { width: 16px; height: 16px; }
+.btn-secondary { white-space: nowrap; }
 .btn-secondary:hover { background: var(--btn-bg-hover); border-color: var(--border-hover); }
 
 .btn-ghost {
@@ -1006,9 +1007,19 @@ a:hover { text-decoration: underline; }
   border-radius: var(--radius-md);
   transition: color 150ms ease;
   margin-left: auto;
+  white-space: nowrap;
 }
+/* Druhý ghost v řadě (Nepřečtené) už nemá odstrkávat — auto margin jen prvnímu */
+.btn-ghost + .btn-ghost { margin-left: 0; }
 
 .btn-ghost:hover { color: var(--text-secondary); }
+
+/* Úzké mobily — footer akce kompaktnější, ať se 4 tlačítka vejdou na 1 řádek */
+@media (max-width: 480px) {
+  .overlay-footer { gap: 6px; padding-left: 14px; padding-right: 14px; }
+  .btn-ghost { padding: 10px 8px; font-size: 13px; }
+  .btn-secondary { padding: 10px 12px; }
+}
 
 /* ===== BOTTOM NAV ===== */
 .bottom-nav {

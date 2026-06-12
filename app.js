@@ -111,17 +111,21 @@ let _preTranscriptHash = '';
 
 /* ===== VOTES ===== */
 async function loadVoteMap() {
-  try {
-    const [top, reads] = await Promise.all([
-      fetch('/api/top').then(r => r.json()),
-      fetch('/api/reads').then(r => r.ok ? r.json() : {}),
-    ]);
-    if (Array.isArray(top)) top.forEach(({ id, count }) => { state.voteMap[id] = count; });
-    // Globální počet čtení pro všechny karty — stejný na každém zařízení
-    if (reads && typeof reads === 'object') {
-      for (const [id, n] of Object.entries(reads)) state.cardStats[id] = { reads: n };
-    }
-  } catch {}
+  // Nezávisle — selhání jednoho endpointu nesmí shodit druhý
+  const loadTop = fetch('/api/top')
+    .then(r => r.ok ? r.json() : [])
+    .then(top => { if (Array.isArray(top)) top.forEach(({ id, count }) => { state.voteMap[id] = count; }); })
+    .catch(() => {});
+  // Globální počet čtení pro všechny karty — stejný na každém zařízení
+  const loadReads = fetch('/api/reads')
+    .then(r => r.ok ? r.json() : {})
+    .then(reads => {
+      if (reads && typeof reads === 'object') {
+        for (const [id, n] of Object.entries(reads)) state.cardStats[id] = { reads: n };
+      }
+    })
+    .catch(() => {});
+  await Promise.allSettled([loadTop, loadReads]);
 }
 
 /* ===== ANALYTICS ===== */
