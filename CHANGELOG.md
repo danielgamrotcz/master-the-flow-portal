@@ -10,7 +10,9 @@
 - Sjednocení vizuálu — ikony (jednotná tloušťka tahu, zaoblené konce, ustálené velikosti) a tlačítka (společný základ `.icon-btn`, 2 velikosti + 1 zaoblení místo 4+4, odstraněno 8× zduplikovaného CSS, jednotky px místo rem).
 
 ### Fixed
-- Počítadlo čtení sjednoceno na globální serverové číslo (`/api/reads`, veřejné) — bylo nekonzistentní mezi zařízeními (mobil vs desktop). Odeslání čtení přes `keepalive`.
+- Počítadlo čtení sjednoceno na globální serverové číslo (`/api/reads`, veřejné) — bylo nekonzistentní mezi zařízeními (mobil vs desktop). Odeslání čtení přes `keepalive`, okamžité připočtení po přečtení nad spolehlivý serverový základ.
+- CSP `style-src` doplněn o `'unsafe-inline'` — inline styly (barvy typů karet včetně TIP) byly blokované, házely 100+ chyb a barvy typů nefungovaly. `script-src` zůstává přísný.
+- Spodní lišta v rozbalené kartě na mobilu: „Označit jako nepřečtené" → „Nepřečtené", tlačítka se nezalamují.
 - Vyhledávací pole má plnou šířku hned od začátku (předtím se na desktopu rozšiřovalo až po zobrazení výsledků).
 - Počet členů komunity aktualizován na 490.
 - Klidný den bez karet: záložka Včera nově zobrazí hlášku „Za včerejšek nejsou žádné vygenerované poznatky" místo zavádějícího textu o filtru. Digest s 0 kartami je validní stav, portál nezamrzne na předchozím dni.
