@@ -259,10 +259,6 @@
         </div>
         <div id="overlay-topics" class="overlay-topics hidden"></div>
         <div id="overlay-text" class="overlay-text"></div>
-        <a id="overlay-whatsapp" class="overlay-whatsapp" href="#" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-          Probrat ve skupině
-        </a>
         <div id="overlay-similar" class="overlay-similar hidden">
           <div class="overlay-similar-title">Podobné poznatky</div>
           <div id="overlay-similar-cards"></div>
@@ -275,14 +271,16 @@
           </svg>
           <span id="vote-count"></span>
         </button>
-        <button id="btn-share" class="btn-secondary">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button id="btn-share" class="btn-icon" title="Sdílet kartu" aria-label="Sdílet kartu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
             <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/>
             <polyline points="16 6 12 2 8 6"/>
             <line x1="12" y1="2" x2="12" y2="15"/>
           </svg>
-          Sdílet
         </button>
+        <a id="overlay-whatsapp" class="btn-icon" href="#" target="_blank" rel="noopener noreferrer" title="Probrat ve skupině na WhatsAppu" aria-label="Probrat ve skupině na WhatsAppu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
         <button id="btn-show-transcript" class="btn-ghost">Přepis &rarr;</button>
         <button id="btn-mark-unread" class="btn-ghost">Nepřečtené</button>
       </div>

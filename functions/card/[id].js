@@ -32,7 +32,15 @@ export async function onRequestGet({ params, request }) {
   const title = card ? card.title : 'Master the Flow';
   const desc = card ? card.excerpt : 'Poznatky komunity Master the Flow — AI, nástroje a produktivita.';
   const pageTitle = card ? `${title} — Master the Flow` : 'Master the Flow';
-  const image = origin + '/og-default.png';
+
+  // Per-card banner, pokud existuje; jinak obecný brandový banner.
+  let image = origin + '/og-default.png';
+  if (card) {
+    try {
+      const h = await fetch(`${origin}/data/og/${id}.png`, { method: 'HEAD' });
+      if (h.ok) image = `${origin}/data/og/${id}.png`;
+    } catch { /* fallback zůstává */ }
+  }
   const canonical = `${origin}/card/${id}`;
   const spa = `${origin}/#card/${id}`;
 
