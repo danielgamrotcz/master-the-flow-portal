@@ -874,9 +874,12 @@ function closeCard() {
     const duration_ms = Date.now() - state.cardOpenedAt;
     if (duration_ms >= 3000) {
       const readId = state.activeCard.id;
-      // Počet čtení je globální serverový agregát (viz /api/reads). Lokálně
-      // nepřipočítáváme — projeví se při příštím načtení, stejně na všech zařízeních.
       trackEvent('card_read', { id: readId, duration_ms, topic: getTopics(state.activeCard)[0] || null });
+      // Okamžitá odezva: připočti lokálně nad spolehlivý serverový základ
+      // (z /api/reads). Při příštím načtení se sjednotí s globálním agregátem.
+      const cur = state.cardStats[readId] || { reads: 0 };
+      state.cardStats[readId] = { ...cur, reads: (cur.reads || 0) + 1 };
+      rerenderCurrentView();
     }
     state.cardOpenedAt = null;
   }
