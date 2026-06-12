@@ -112,13 +112,15 @@ let _preTranscriptHash = '';
 /* ===== VOTES ===== */
 async function loadVoteMap() {
   try {
-    const authToken = chatGetToken();
-    const [top, topCards] = await Promise.all([
+    const [top, reads] = await Promise.all([
       fetch('/api/top').then(r => r.json()),
-      fetch('/api/top-cards', { headers: { 'x-mtf-token': authToken } }).then(r => r.ok ? r.json() : { cards: [] }),
+      fetch('/api/reads').then(r => r.ok ? r.json() : {}),
     ]);
     if (Array.isArray(top)) top.forEach(({ id, count }) => { state.voteMap[id] = count; });
-    if (topCards?.cards) topCards.cards.forEach(c => { state.cardStats[c.id] = c; });
+    // Globální počet čtení pro všechny karty — stejný na každém zařízení
+    if (reads && typeof reads === 'object') {
+      for (const [id, n] of Object.entries(reads)) state.cardStats[id] = { reads: n };
+    }
   } catch {}
 }
 
@@ -867,10 +869,9 @@ function closeCard() {
     const duration_ms = Date.now() - state.cardOpenedAt;
     if (duration_ms >= 3000) {
       const readId = state.activeCard.id;
+      // Počet čtení je globální serverový agregát (viz /api/reads). Lokálně
+      // nepřipočítáváme — projeví se při příštím načtení, stejně na všech zařízeních.
       trackEvent('card_read', { id: readId, duration_ms, topic: getTopics(state.activeCard)[0] || null });
-      const cur = state.cardStats[readId] || { reads: 0 };
-      state.cardStats[readId] = { ...cur, reads: (cur.reads || 0) + 1 };
-      rerenderCurrentView();
     }
     state.cardOpenedAt = null;
   }
@@ -1511,8 +1512,10 @@ async function loadTopView() {
   renderSkeleton('cards-top');
 
   try {
-    const tc = await fetch('/api/top-cards', { headers: { 'x-mtf-token': chatGetToken() } }).then(r => r.ok ? r.json() : { cards: [] });
-    if (tc?.cards) tc.cards.forEach(c => { state.cardStats[c.id] = c; });
+    const reads = await fetch('/api/reads').then(r => r.ok ? r.json() : {});
+    if (reads && typeof reads === 'object') {
+      for (const [id, n] of Object.entries(reads)) state.cardStats[id] = { reads: n };
+    }
 
     await ensureSearchAll();
 
