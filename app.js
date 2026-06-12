@@ -1439,6 +1439,7 @@ function initPullToRefresh() {
 }
 
 async function reloadCurrentView() {
+  await loadVoteMap();  // čerstvé počty čtení a srdíček
   if (state.view === 'today') { state.today = null; loadToday(); }
   else if (state.view === 'week') { state.archiveIndex = null; showWeek(); }
   else if (state.view === 'archive') { state.archiveIndex = null; state.archiveCards = []; showArchive(); }
@@ -2436,6 +2437,16 @@ function init() {
   initAutoRefresh();
   initPullToRefresh();
   initSwipeToClose();
+
+  // Po návratu do appky (PWA z pozadí, přepnutí tabu) obnov počty čtení a srdíček.
+  // Throttle 20 s, ať rychlé přepínání negeneruje zbytečné requesty.
+  let _lastStatsRefresh = Date.now();
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && Date.now() - _lastStatsRefresh > 20000) {
+      _lastStatsRefresh = Date.now();
+      loadVoteMap().then(() => rerenderCurrentView());
+    }
+  });
 
   $('topic-chips').addEventListener('click', e => {
     const chip = e.target.closest('.chip');
