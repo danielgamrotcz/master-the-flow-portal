@@ -732,13 +732,14 @@
     },
     {
       "date": "2026-06-11",
-      "card_count": 2,
+      "card_count": 6,
       "topics": [
-        "AI nástroje",
         "Workflow",
+        "AI nástroje",
+        "Vibe Coding",
         "Poznámky",
-        "Cursor",
-        "Obsidian"
+        "Obsidian",
+        "Produktivita"
       ]
     }
   ]
