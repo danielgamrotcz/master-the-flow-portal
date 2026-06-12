@@ -1,6 +1,9 @@
-const CACHE = 'mtf-v7';
+const CACHE = 'mtf-v8';
 const STATIC = ['/', '/index.html', '/app.js', '/styles.css', '/favicon.svg',
   '/manifest.webmanifest', '/icon-192.png', '/icon-512.png', '/apple-touch-icon.png'];
+// App shell — vždy zkus síť, fallback cache (offline). Brání stale verzi appky
+// bez nutnosti bumpovat CACHE při každé změně app.js/styles.css/index.html.
+const SHELL = new Set(['/', '/index.html', '/app.js', '/styles.css']);
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(STATIC)).then(() => self.skipWaiting()));
@@ -18,6 +21,19 @@ self.addEventListener('fetch', e => {
 
   // Never intercept API calls — streaming SSE would break
   if (url.pathname.startsWith('/api/')) return;
+
+  // App shell — network-first so app.js/styles.css/index.html stay fresh
+  if (url.origin === location.origin && SHELL.has(url.pathname)) {
+    e.respondWith(
+      fetch(e.request)
+        .then(res => {
+          if (res.ok) caches.open(CACHE).then(c => c.put(e.request, res.clone()));
+          return res;
+        })
+        .catch(() => caches.open(CACHE).then(c => c.match(e.request)))
+    );
+    return;
+  }
 
   // Archive date files — network-first, fall back to cache
   if (url.pathname.startsWith('/data/archive/') && url.pathname.endsWith('.json')) {

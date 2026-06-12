@@ -1,36 +1,6 @@
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
-const TOKEN_TTL_MS = 30 * 24 * 60 * 60 * 1000;
 const VOTE_ID_RE = /^[a-zA-Z0-9_-]{1,80}$/;
 const RESERVED_PREFIXES = ['analytics', 'sub_', 'community_', 'voted_', 'vote_'];
-
-const enc = new TextEncoder();
-
-async function verifyToken(token, gateCode, env) {
-  if (!token || typeof token !== 'string') return false;
-  const lastColon = token.lastIndexOf(':');
-  if (lastColon < 1) return false;
-  const payload = token.slice(0, lastColon);
-  const sigHex = token.slice(lastColon + 1);
-  if (sigHex.length !== 64) return false;
-  const parts = payload.split(':');
-  const ts = parseInt(parts[0], 10);
-  if (isNaN(ts) || Date.now() > ts + TOKEN_TTL_MS) return false;
-  try {
-    const key = await crypto.subtle.importKey(
-      'raw', enc.encode(gateCode),
-      { name: 'HMAC', hash: 'SHA-256' }, false, ['verify']
-    );
-    const sigBytes = new Uint8Array(sigHex.match(/.{2}/g).map(b => parseInt(b, 16)));
-    const valid = await crypto.subtle.verify('HMAC', key, sigBytes, enc.encode(payload));
-    if (!valid) return false;
-    if (env?.MTF_DATA) {
-      const nonce = parts[1];
-      const stored = await env.MTF_DATA.get('token:' + nonce);
-      if (!stored) return false;
-    }
-    return true;
-  } catch { return false; }
-}
 
 async function checkVoteRateLimit(env, ip) {
   if (!env.MTF_DATA) return false;

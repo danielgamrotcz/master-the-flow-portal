@@ -90,6 +90,10 @@ export async function onRequestPost({ request, env }) {
 export async function onRequestDelete({ request, env }) {
   const origin = request.headers.get('Origin');
   const headers = corsHeaders(origin);
+  const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+  if (await checkSubRateLimit(env, ip)) {
+    return new Response('Too Many Requests', { status: 429, headers });
+  }
   try {
     const sub = await request.json();
     if (!sub?.endpoint || typeof sub.endpoint !== 'string') {

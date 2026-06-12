@@ -2,7 +2,7 @@ const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 const TOP_RATE_LIMIT = 30; // max 30 requests per minute per IP
 
 function corsHeaders(origin) {
-  const allowed = origin && (origin === SITE_ORIGIN || origin.startsWith('http://localhost'));
+  const allowed = origin && (origin === SITE_ORIGIN || /^http:\/\/localhost(:\d+)?$/.test(origin));
   const headers = {
     'Access-Control-Allow-Methods': 'GET, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',

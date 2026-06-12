@@ -121,7 +121,12 @@ async function loadVoteMap() {
     .then(r => r.ok ? r.json() : {})
     .then(reads => {
       if (reads && typeof reads === 'object') {
-        for (const [id, n] of Object.entries(reads)) state.cardStats[id] = { reads: n };
+        for (const [id, n] of Object.entries(reads)) {
+          // Merge: drž vyšší z lokálu a serveru, ať optimistic +1 z čerstvého
+          // přečtení nebliká dolů, než ho server agregát dožene.
+          const cur = state.cardStats[id]?.reads || 0;
+          state.cardStats[id] = { reads: Math.max(n, cur) };
+        }
       }
     })
     .catch(() => {});
@@ -815,6 +820,7 @@ function openCard(cardId) {
   voteBtn.onclick = async () => {
     if (hasVoted(card.id)) {
       const count = await removeVote(card.id);
+      if (count === null) { showToast('Nepodařilo se odvolat hodnocení'); return; }
       $('vote-count').textContent = count || '';
       voteBtn.classList.remove('voted');
       state.voteMap[card.id] = count;
@@ -822,9 +828,10 @@ function openCard(cardId) {
       rerenderCurrentView();
     } else {
       const count = await castVote(card.id);
+      if (count === null) { showToast('Nepodařilo se uložit hodnocení'); return; }
       $('vote-count').textContent = count || '';
       voteBtn.classList.add('voted');
-      if (count) state.voteMap[card.id] = count;
+      state.voteMap[card.id] = count;
       showToast('Díky za hodnocení!');
       rerenderCurrentView();
     }
@@ -1225,13 +1232,14 @@ async function fetchVoteCount(id) {
 async function castVote(id) {
   try {
     const r = await fetch('/api/vote', {
-      method: 'POST', headers: { 'Content-Type': 'application/json', 'x-mtf-token': chatGetToken() },
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ id }),
     });
+    if (!r.ok) return null;  // server odmítl — nemarkovat lokálně jako odhlasováno
     const j = await r.json();
     markVoted(id);
-    return j.count || 0;
-  } catch { return 0; }
+    return j.count ?? 0;
+  } catch { return null; }
 }
 
 function markUnvoted(id) {
@@ -1244,13 +1252,14 @@ function markUnvoted(id) {
 async function removeVote(id) {
   try {
     const r = await fetch('/api/vote', {
-      method: 'DELETE', headers: { 'Content-Type': 'application/json', 'x-mtf-token': chatGetToken() },
+      method: 'DELETE', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ id }),
     });
+    if (!r.ok) return null;  // 409 (nehlasováno) i 5xx — neměnit lokální stav
     const j = await r.json();
     markUnvoted(id);
     return j.count ?? 0;
-  } catch { return 0; }
+  } catch { return null; }
 }
 
 /* ===== SIMILAR CARDS ===== */
@@ -1815,9 +1824,15 @@ function showCardContextMenu(x, y, cardId) {
     const action = btn.dataset.action;
     if (action === 'vote') {
       if (hasVoted(cardId)) {
-        removeVote(cardId).then(count => { state.voteMap[cardId] = count; rerenderCurrentView(); showToast('Hodnocení odvoláno'); });
+        removeVote(cardId).then(count => {
+          if (count === null) { showToast('Nepodařilo se odvolat hodnocení'); return; }
+          state.voteMap[cardId] = count; rerenderCurrentView(); showToast('Hodnocení odvoláno');
+        });
       } else {
-        castVote(cardId).then(count => { if (count) state.voteMap[cardId] = count; rerenderCurrentView(); showToast('Díky za hodnocení!'); });
+        castVote(cardId).then(count => {
+          if (count === null) { showToast('Nepodařilo se uložit hodnocení'); return; }
+          state.voteMap[cardId] = count; rerenderCurrentView(); showToast('Díky za hodnocení!');
+        });
       }
     } else if (action === 'read') {
       if (isRead(cardId)) {
