@@ -10,6 +10,8 @@
 - Sjednocení vizuálu — ikony (jednotná tloušťka tahu, zaoblené konce, ustálené velikosti) a tlačítka (společný základ `.icon-btn`, 2 velikosti + 1 zaoblení místo 4+4, odstraněno 8× zduplikovaného CSS, jednotky px místo rem).
 
 ### Fixed
+- Počítadlo čtení nepřežívalo restart — rate limit na `/api/track` byl 1 event / 60 s / IP (tiše zahazoval zbytek), takže `card_read` se po načtení stránky nikdy nezapsal. Opraveno na 120 / 60 s.
+- Srdíčka se nepropisovala do seznamu — hlasování vyžadovalo přihlašovací token, který byl po AUTH-001 (nonce tracking) neplatný a vracel tichý 401. Hlasování je nyní veřejné (jako čtení), chrání ho dedup 1 hlas/IP/karta a rate limit.
 - Počítadlo čtení sjednoceno na globální serverové číslo (`/api/reads`, veřejné) — bylo nekonzistentní mezi zařízeními (mobil vs desktop). Odeslání čtení přes `keepalive`, okamžité připočtení po přečtení nad spolehlivý serverový základ.
 - CSP `style-src` doplněn o `'unsafe-inline'` — inline styly (barvy typů karet včetně TIP) byly blokované, házely 100+ chyb a barvy typů nefungovaly. `script-src` zůstává přísný.
 - Spodní lišta v rozbalené kartě na mobilu: „Označit jako nepřečtené" → „Nepřečtené", tlačítka se nezalamují.
