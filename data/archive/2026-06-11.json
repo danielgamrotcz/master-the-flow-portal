@@ -1,10 +1,10 @@
 {
   "date": "2026-06-11",
-  "generated_at": "2026-06-12T00:03:33Z",
+  "generated_at": "2026-06-12T03:19:10Z",
   "stats": {
-    "messages": 9,
+    "messages": 19,
     "groups": 1,
-    "members": 5
+    "members": 7
   },
   "cards": [
     {
@@ -13,13 +13,13 @@
       "level": "Pokročilý",
       "topics": [
         "Obsidian",
-        "Claude Code",
+        "AI nástroje",
         "Cursor",
         "Workflow"
       ],
-      "title": "Obsidian architektura navržená AI místo tutoriálů",
-      "excerpt": "Dva členové začali s Obsidianem tak, že místo sledování tutoriálů dali celý kontext své práce do Claude nebo Cursoru a nechali AI navrhnout strukturu přímo pro sebe. Jeden přešel z Notionu, druhý si rovnou přidal agenta, který mu průběžně spravuje second brain.",
-      "body": "Jeden člen přešel z Notionu do Obsidianu jen s Claudem. Dal mu kontext celé své práce a společně navrhli architekturu, aniž by předtím cokoli studoval. Druhý člen použil Cursor, šel na to stejně a navíc si nechal vygenerovat agenta, který mu systém průběžně spravuje. Oba potvrdili, že výsledná struktura sedí jejich skutečnému způsobu práce líp než cokoli, co by se naučili z tutoriálu.",
+      "title": "AI jako architekt second brainu od začátku",
+      "excerpt": "Dva členové popsali podobnou zkušenost. Místo studování kurzů dali AI celý kontext své práce a nechali ji navrhnout strukturu. Jeden použil Claude při přechodu z Notionu, druhý Cursor se svými projekty a metodikou.",
+      "body": "Jeden člen přešel z Notionu do Obsidianu jen s pomocí Clauda. Popsal mu, co potřebuje, a společně navrhli strukturu složek a pravidla, bez dalšího studia. Jiný člen šel podobnou cestou s Cursorem. Dal mu celý kontext své práce, osobních projektů i vlastní metodiky a nechal ho vymyslet strukturu i agenta, který se stará o second brain. Na vstupu jsou nápady, zbytek řeší agent.",
       "read_minutes": 2,
       "source_group": "inspirace--diskuze",
       "source_msg_times": [
@@ -31,43 +31,44 @@
     {
       "id": "2026-06-11-02",
       "type": "INSIGHT",
-      "level": "Pokročilý",
+      "level": "Začátečník",
       "topics": [
         "Obsidian",
-        "Produktivita",
-        "Workflow"
+        "AI nástroje",
+        "Poznámky"
       ],
-      "title": "Migrace zápisků z OneNote do Obsidianu přes PDF",
-      "excerpt": "Zápisky z OneNotu se dají exportovat do PDF a pak předat Claudovi, aby je zpracoval a uspořádal. Člen tenhle postup doporučil jako odpověď na obavu, jestli si Claude s takovým obsahem poradí.",
-      "body": "Jeden člen doporučil vyexportovat zápisky z OneNotu do PDF a až potom je dát Claudovi. Claude si obsah přečte, zpracuje ho a srovná do požadované struktury. Zmínil taky princip PACT a kombinaci Claude + Cursor. U složitějšího obsahu nechá výstup zpracovat oběma nástroji a pak vybere lepší výsledek.",
+      "title": "Dva přístupy migrace z OneNote do Obsidianu",
+      "excerpt": "Při přechodu z OneNotu členové vyzkoušeli dvě praktické možnosti. První je export do PDF a zpracování v Claudu, druhá plugin Importer přímo v Obsidianu.",
+      "body": "OneNote umí exportovat poznámky do PDF. Claude pak PDF dokáže zpracovat a pomoct s jejich uspořádáním v Obsidianu. Druhá možnost je plugin Importer přímo v Obsidianu. Jeden člen, který přecházel z OneNotu, ho použil a pochválil, že se u přenesených poznámek zachovalo formátování.",
       "read_minutes": 1,
       "source_group": "inspirace--diskuze",
       "source_msg_times": [
-        "09:40"
+        "09:40",
+        "12:17"
       ],
       "source_date": "2026-06-11"
     }
   ],
   "resurfacing": {
-    "id": "2026-05-23-04",
-    "type": "NÁSTROJE",
+    "id": "2026-05-24-02",
+    "type": "INSIGHT",
     "level": "Builder",
-    "title": "Přepisy podcastů se Soniox za 30 minut",
-    "excerpt": "Jedna členka potřebovala přepsat podcasty s časovými značkami a rozlišením mluvčích. Za 30 minut měla hotovou pipeline. Jde mazat Turboscribe.",
-    "body": "Jedna členka komunity si za 30 minut postavila pipeline na přepisy svých podcastů. Postup ve čtyřech krocích: skript vytáhne z MP4 audio, přepíše se Soniox, skript stáhne výsledek a naformátuje ho podle jejích potřeb, uloží do Obsidianu.\n\nPipeline zvládá časové značky, rozpoznávání mluvčích i vlastní formátování výstupu. Po dokončení šla rušit předplatné Turboscribe.",
+    "title": "Více cílů z jednoho vstupu: oddělené skilly",
+    "excerpt": "Místo jednoho přetíženého skriptu jsou tu tři samostatné skilly. Každý má jasný úkol a svůj cílový systém. Ví, kam data patří, a nemusí hádat, co se po něm chce.",
+    "body": "Klasická past při stavbě capture systémů: nacpat všechno do jednoho promptu. Výsledek je pak křehký. AI musí hádat, co jste tím mysleli.\n\nJiný postup: tři skilly, každý s jasnou odpovědností. Skill pro úkoly ví, že výstup patří do Todoist. Skill pro nápady a skill pro citáty zase vědí, do které databáze v Notion mají zapisovat.\n\nVstup je pořád stejný: přepsaný hlas. Záměr se pozná buď podle začátku věty, nebo podle toho, který skill spustíte.\n\nNení to tak elegantní jako jeden všechno-v-jednom skill. Je to ale odolnější. Když jeden skill přestane fungovat, ostatní jedou dál. A ladí se to líp, protože přesně víte, kde hledat problém.\n\nAutorka sama říká, že má slepotu vůči jednodušším řešením. Ale systém funguje. A to je hlavní.",
     "read_minutes": 2,
-    "source_date": "2026-05-23",
+    "source_date": "2026-05-24",
     "topics": [
-      "Automatizace",
-      "Workflow",
-      "Dokumentace"
+      "Notion",
+      "Prompting",
+      "Databáze"
     ],
     "source_group": "vibecoding",
     "source_msg_times": [
-      "15:37",
-      "16:22"
+      "16:27",
+      "14:26"
     ],
-    "resurfaced_from": "2026-05-23"
+    "resurfaced_from": "2026-05-24"
   },
   "transcript": {
     "groups": [
@@ -119,6 +120,56 @@
             "time": "10:02",
             "author": "člen komunity",
             "text": "Tak to je ideální, děkuji. 🙂"
+          },
+          {
+            "time": "12:17",
+            "author": "člen komunity",
+            "text": "Samozřejmě to není žádná konkurence pro Dana:), ale já kombinoval jeho videa s https://www.youtube.com/@linkingyourthinking/videos  -  Nick Milo - má tak příjemný hlas, že je to dobré i jako pohádka na usnutí.\nA jinak přecházel jsem taky z OneNote a použil jsem v Obsidianu plugin Importer, který hezky zachoval formátování.\n[kontext odkazu: YouTube kanál „Linking Your Thinking\" zaměřený na správu osobních znalostí (PKM), práci s Obsidian a budování systémů pro propojené poznámky a myšlení.]"
+          },
+          {
+            "time": "12:32",
+            "author": "člen komunity",
+            "text": "Diky moc vsem! Ja toho aktualne mam ve Onenote opravdu hodne, tak jsem zvedavy, jak si s tim kontext poradi a zda nenarazim na limity (mam “jen” Claude PRO). Dam sem pripadne vedet, jak akce dopadla 😉"
+          },
+          {
+            "time": "12:44",
+            "author": "člen komunity",
+            "text": "Já jel v obsidiánu z čistého stolu (zkoušel jsem obsidián/notion, ale pak jsem to vzdal a zůstal čistý obsidián). Můj vlastní sestup utvářeli asi 3 lidi- Dan, Minář, Benedikt ale jen jako inspirace. Mam to po svém a určitě ne dokonale. “Je to živé”"
+          },
+          {
+            "time": "14:13",
+            "author": "Daniel",
+            "text": "Známý doporučuje toto: https://effortlessacademic.com/\nNemám zkušenosti, ale prý je to moc dobrý.\n[kontext odkazu: Vzdělávací platforma pro akademiky a výzkumníky nabízející kurzy o produktivitě, správě informací a využití nástrojů jako Obsidian, Zotero a ChatGPT v akademické práci.]"
+          },
+          {
+            "time": "14:14",
+            "author": "Daniel",
+            "text": "Starý, ale podle mě furt docela dobrý pro začátek."
+          },
+          {
+            "time": "14:15",
+            "author": "Daniel",
+            "text": "Já na konkurenci moc nehraju a učím se rád od ostatních. 🙂"
+          },
+          {
+            "time": "14:49",
+            "author": "člen komunity",
+            "text": "S tímto mám hodně zkušenosti. Je to primárně pro akademické osoby nebo lidi co tvoří vědecké publikace.\nUrčitě by to šlo aplikovat i na falši oblasti života nebo jinou práci. Ilya je super.\nJa to kombinuji s již zmiňovaným Nick Milo. A občas něco dvojího. Takový divoký mix 😩"
+          },
+          {
+            "time": "15:11",
+            "author": "Daniel",
+            "text": "[soubor: 📝 Kdo včera zmeškal, tady je sumář ze včerejšího večerního setkání, kde jsme sdíleli, na čem makáme a jak.\nZa mě to bylo naprosto boží a super inspirace. Každý ten vstup byl naprosto odlišný a přinesl něco nového.\nJdu mrknou na záznam a nasdílím co nevidět taky.] MTF-Sdileni-projektu-2026-06-10"
+          },
+          {
+            "time": "15:24",
+            "author": "Daniel",
+            "text": "📹 A ještě záznam tady: https://us06web.zoom.us/rec/share/JWzBQK_7xzethETEOlad4lkk2c3uzulI6UIMTuufHTAgCVGAUPbzzOYT8a0s_1nv.LPtQqY42cqFmTEgA?startTime=1781108968000\nHeslo je: !2znH@&2\nAkce začíná od 7:40, prvních pár minut jsme sice neladili „vidíme se?“, „slyšíme se?“, ale sdílení obrazovky."
+          },
+          {
+            "time": "15:37",
+            "author": "člen komunity",
+            "text": "Ještě k tomu Obsidianu a second brain. Tady týpek staví během 45 minut kompletní second brain (obchází Obsidian - je dobrý hlavně na uživatelské čtení a úpravu MD souborů) s Karpathyo principem. Celkem užitečná step by step inspirace. Sám to teď řeším\nhttps://youtu.be/ib74sLgjIBM?si=uclevKSGDFsi3jnp\n[kontext odkazu: YouTube video s názvem „Build A Claude Knowledge Base That Self-Improves!\" zaměřené na tvorbu vlastní znalostní báze pomocí Claude AI, která se dokáže průběžně zlepšovat.]"
           }
         ]
       }
