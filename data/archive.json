@@ -729,6 +729,17 @@
       "date": "2026-06-10",
       "card_count": 0,
       "topics": []
+    },
+    {
+      "date": "2026-06-11",
+      "card_count": 2,
+      "topics": [
+        "Cursor",
+        "Produktivita",
+        "Workflow",
+        "Obsidian",
+        "Claude Code"
+      ]
     }
   ]
 }
