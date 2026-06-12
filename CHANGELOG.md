@@ -15,6 +15,10 @@
 - Odstraněn mrtvý kód ve `vote.js` (po zveřejnění hlasování).
 
 ### Added
+- **Most na WhatsApp** — tlačítko „Probrat ve skupině" v detailu karty vede přímo do WhatsApp komunity (propojuje read-only portál zpět s diskuzí).
+- **Náhledy při sdílení** — sdílení karty nově vede na `/card/ID`, kde Pages Function vrací Open Graph meta (titulek, úryvek, obrázek) → sdílený odkaz ukáže hezký náhled místo holé URL. Sdílený text nese branding „z komunity Master the Flow".
+
+### Added
 - Nový typ karty **TIP** (tyrkysová) — sdílené externí zdroje (videa, kurzy, kanály, metodiky) s komentářem člena. Inspirace, kvůli které lidi do skupiny chodí.
 - Zpětné doplnění odkazů na 80 historických karet — URL spárované přes zdrojové zprávy, u karet s víc kandidáty ověřeno Claudem (jen tematicky relevantní, bez falešných).
 
