@@ -2,6 +2,18 @@
 
 ## [Unreleased]
 
+### Security
+- **Únik citlivých souborů opraven** — `.dev.vars` (obsahoval `GATE_CODE` a `ANTHROPIC_API_KEY`), `wrangler.toml`, `CLAUDE.md`, `CHANGELOG.md` a staré audit reporty byly veřejně čitelné na webu. Přidán `functions/_middleware.js`, který tyto cesty blokuje (404) před servírováním. Staré audit/overnight reporty odstraněny z repa. **Nutná rotace `ANTHROPIC_API_KEY`** (byl veřejný).
+- Sjednocen localhost CORS regex v `top.js` a `community.js` (slabý `startsWith`).
+- Rate limit přidán na `subscribe` DELETE.
+
+### Fixed
+- Service worker: cache `mtf-v8`, app shell (index/app.js/styles.css) network-first — nainstalované PWA už nezůstanou na staré verzi.
+- Hlasování: `castVote`/`removeVote` kontrolují `res.ok`, při chybě nehlasují lokálně a zobrazí chybu; odstraněn ignorovaný token. `loadVoteMap` slučuje počty čtení (max lokál/server), ať optimistic +1 nebliká dolů.
+- `chat-corpus.json` doplněn o 2026-06-11 (chatbot ho neznal).
+- Stray typ karty `POSTAVIL JSEM` → `UKÁZKA`. Archivní index přegenerován (36 dní mělo špatný `card_count`).
+- Odstraněn mrtvý kód ve `vote.js` (po zveřejnění hlasování).
+
 ### Added
 - Nový typ karty **TIP** (tyrkysová) — sdílené externí zdroje (videa, kurzy, kanály, metodiky) s komentářem člena. Inspirace, kvůli které lidi do skupiny chodí.
 - Zpětné doplnění odkazů na 80 historických karet — URL spárované přes zdrojové zprávy, u karet s víc kandidáty ověřeno Claudem (jen tematicky relevantní, bez falešných).
