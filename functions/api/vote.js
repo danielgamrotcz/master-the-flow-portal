@@ -94,11 +94,6 @@ export async function onRequestDelete({ request, env }) {
   const origin = request.headers.get('Origin');
   const headers = corsHeaders(origin, 'GET, POST, DELETE, OPTIONS');
 
-  const token = request.headers.get('x-mtf-token');
-  if (!env.GATE_CODE || !await verifyToken(token, env.GATE_CODE, env)) {
-    return Response.json({ error: 'Unauthorized' }, { status: 401, headers });
-  }
-
   if (!request.headers.get('content-type')?.includes('application/json')) {
     return Response.json({ error: 'Bad Request' }, { status: 400, headers });
   }
@@ -137,11 +132,6 @@ export async function onRequestDelete({ request, env }) {
 export async function onRequestPost({ request, env }) {
   const origin = request.headers.get('Origin');
   const headers = corsHeaders(origin, 'GET, POST, OPTIONS');
-
-  const token = request.headers.get('x-mtf-token');
-  if (!env.GATE_CODE || !await verifyToken(token, env.GATE_CODE, env)) {
-    return Response.json({ error: 'Unauthorized' }, { status: 401, headers });
-  }
 
   if (!request.headers.get('content-type')?.includes('application/json')) {
     return Response.json({ error: 'Bad Request' }, { status: 400, headers });
