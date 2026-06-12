@@ -914,6 +914,22 @@ a:hover { text-decoration: underline; }
 .card-link::after { content: "↗"; font-size: 11px; opacity: 0.7; }
 .card-link:hover { background: var(--accent); color: #fff; }
 
+/* Most na WhatsApp — výrazné CTA pod obsahem karty */
+.overlay-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border-radius: var(--radius-md);
+  transition: background 150ms ease;
+}
+.overlay-whatsapp:hover { background: var(--accent-hover); text-decoration: none; }
+
 .overlay-text ul,
 .overlay-text ol {
   padding-left: 22px;

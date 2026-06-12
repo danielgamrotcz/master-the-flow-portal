@@ -1841,9 +1841,12 @@ function showCardContextMenu(x, y, cardId) {
         markRead(cardId); rerenderCurrentView(); showToast('Označeno jako přečtené');
       }
     } else if (action === 'share') {
-      const url = `${location.origin}${location.pathname}#card/${cardId}`;
-      try { await navigator.clipboard.writeText(url); showToast('Odkaz zkopírován'); }
-      catch { showToast('Nepodařilo se zkopírovat'); }
+      const url = `${location.origin}/card/${cardId}`;
+      const text = card ? `${card.title} — z komunity Master the Flow` : url;
+      try {
+        if (navigator.share) await navigator.share({ title: card?.title || 'Master the Flow', text, url });
+        else { await navigator.clipboard.writeText(`${text}\n${url}`); showToast('Odkaz zkopírován'); }
+      } catch { /* uživatel zrušil sdílení */ }
     } else if (action === 'transcript' && card) {
       showTranscript(card.source_date, card.source_group, card.source_msg_times);
     }
@@ -1983,17 +1986,19 @@ async function shareCard() {
 
   trackEvent('share', { id: card.id });
 
-  const url = `${location.origin}${location.pathname}#card/${card.id}`;
+  // /card/ID místo #card/ID — server (Pages Function) dodá náhled při sdílení
+  const url = `${location.origin}/card/${card.id}`;
+  const text = `${card.title} — z komunity Master the Flow`;
 
   if (navigator.share) {
     try {
-      await navigator.share({ title: card.title, url });
+      await navigator.share({ title: card.title, text, url });
       return;
     } catch { /* fall through to clipboard */ }
   }
 
   try {
-    await navigator.clipboard.writeText(url);
+    await navigator.clipboard.writeText(`${text}\n${url}`);
     showToast('Odkaz zkopírován');
   } catch {
     showToast('Nepodařilo se zkopírovat');
