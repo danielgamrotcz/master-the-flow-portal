@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+### Added
+- Nový typ karty **TIP** (tyrkysová) — sdílené externí zdroje (videa, kurzy, kanály, metodiky) s komentářem člena. Inspirace, kvůli které lidi do skupiny chodí.
+
 ### Fixed
 - Klidný den bez karet: záložka Včera nově zobrazí hlášku „Za včerejšek nejsou žádné vygenerované poznatky" místo zavádějícího textu o filtru. Digest s 0 kartami je validní stav, portál nezamrzne na předchozím dni.
 

@@ -156,6 +156,7 @@ const TYPE_COLORS = {
   'INSIGHT': '#f06a15',
   'NÁSTROJE': '#3b82f6',
   'UKÁZKA': '#10b981',
+  'TIP': '#06b6d4',
   'OTEVŘENÁ OTÁZKA': '#8b5cf6',
   'TÉMA TÝDNE': '#f59e0b',
 };
@@ -213,6 +214,21 @@ function showToast(msg) {
   el.classList.remove('hidden');
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => el.classList.add('hidden'), 2200);
+}
+
+/* ===== CARD LINKS ===== */
+// Klikatelné odkazy v rozbalené kartě. Jen http(s), escapované, otevírají nové okno.
+function renderCardLinks(card) {
+  const links = Array.isArray(card.links)
+    ? [...new Set(card.links.filter(u => typeof u === 'string' && /^https?:\/\//i.test(u)))]
+    : [];
+  if (!links.length) return '';
+  const items = links.map(u => {
+    let label;
+    try { label = new URL(u).hostname.replace(/^www\./, ''); } catch { label = u; }
+    return `<a class="card-link" href="${esc(u)}" target="_blank" rel="noopener noreferrer nofollow">${esc(label)}</a>`;
+  }).join('');
+  return `<div class="card-links"><span class="card-links-label">Odkazy</span>${items}</div>`;
 }
 
 /* ===== CARD HTML ===== */
@@ -775,9 +791,10 @@ function openCard(cardId) {
     topicsEl.classList.add('hidden');
   }
   const rawHtml = bodyToHTML(card.body || card.excerpt || '');
-  $('overlay-text').innerHTML = (state.view === 'search' && state.searchQuery)
+  const bodyHtml = (state.view === 'search' && state.searchQuery)
     ? highlightInHTML(rawHtml, state.searchQuery)
     : rawHtml;
+  $('overlay-text').innerHTML = bodyHtml + renderCardLinks(card);
   $('btn-show-transcript').dataset.date = dateStr;
   $('btn-show-transcript').dataset.sourceGroup = card.source_group || '';
   $('btn-show-transcript').dataset.sourceMsgTimes = JSON.stringify(card.source_msg_times || []);

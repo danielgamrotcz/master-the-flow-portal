@@ -904,6 +904,41 @@ a:hover { text-decoration: underline; }
 }
 .overlay-text p:last-child { margin-bottom: 0; }
 
+.card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.card-links-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-right: 4px;
+}
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 100%;
+  padding: 6px 12px;
+  font-size: 13px;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border-radius: 999px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: background 150ms ease, color 150ms ease;
+}
+.card-link::after { content: "↗"; font-size: 11px; opacity: 0.7; }
+.card-link:hover { background: var(--accent); color: #fff; }
+
 .overlay-text ul,
 .overlay-text ol {
   padding-left: 22px;
