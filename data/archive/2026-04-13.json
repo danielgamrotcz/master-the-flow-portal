@@ -8,26 +8,6 @@
   },
   "cards": [
     {
-      "id": "2026-04-13-01",
-      "type": "UKÁZKA",
-      "level": "Builder",
-      "title": "iOS aplikace pro diktování jde do testování",
-      "excerpt": "Daniel otevřel testování Uttero pro iOS přes TestFlight. Prvních 20 míst je volných tento týden, dalších 70 přibude příští týden. Testování je zdarma a zatím jen pro komunitu.",
-      "body": "Daniel domluvil navýšení kvóty pro testy se Soniox a postupně přizývá další lidi. Celkem má 100 slotů: 10 bylo otevřeno dřív, dalších 20 jde tento týden, zbylých 70 příští týden.\n\nKdo se chce zapojit, zadá své Apple ID přes formulář na webu a do 48 hodin přijde pozvánka do TestFlightu. Na webu je i video s ukázkou fungování aplikace.\n\nDaniel prosí testéry o tři věci: posílat zpětnou vazbu přes tlačítko v nastavení aplikace, nepřepisovat přes ni celovečerní filmy (běží z jeho kreditu) a brát to jako experiment s aplikací, kterou by lidé používali každý den.",
-      "read_minutes": 2,
-      "source_date": "2026-04-13",
-      "topics": [
-        "AI nástroje"
-      ],
-      "source_group": "mastertheflow—hlavní",
-      "source_msg_times": [
-        "10:05"
-      ],
-      "links": [
-        "https://danielgamrot.cz/nastroje/uttero-ios/"
-      ]
-    },
-    {
       "id": "2026-04-13-02",
       "type": "NÁSTROJE",
       "level": "Builder",

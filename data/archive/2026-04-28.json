@@ -8,47 +8,6 @@
   },
   "cards": [
     {
-      "id": "2026-04-28-01",
-      "type": "INSIGHT",
-      "level": "Builder",
-      "title": "Appku nepotřebuješ, stačí workflow",
-      "excerpt": "Čím dál víc členů zjišťuje, že nepotřebují vlastní aplikaci. Stačí jim jednoduchý workflow s Claudem: CRM v tabulce, Claude jako rozhraní a hotovo.",
-      "body": "V komunitě se opakuje posun v přemýšlení. Ještě před měsícem spousta lidí řešila, jakou appku si postaví. Teď čím dál častěji říkají, že žádnou appku vlastně nepotřebují.\n\nJeden člen místo trackeru reklamačních dokladů nechává Claudea procházet e-maily a ptá se ho na to, co zrovna potřebuje. Jiný má CRM v obyčejné tabulce a složitější řešení nehledá. Padl i návrh držet všechno v Markdownu a gitu, protože do souborů stejně nikdo nekouká a Claude jako rozhraní stačí.\n\nTohle dává smysl. Ne každý problém potřebuje aplikaci. Často stačí workflow, které odstraní opakované klikání. Než příště začneš stavět appku, zeptej se sám sebe, jestli by nestačilo jednoduché AI workflow.",
-      "read_minutes": 2,
-      "source_date": "2026-04-28",
-      "topics": [
-        "Email",
-        "Workflow"
-      ],
-      "source_group": "mastertheflow—hlavní",
-      "source_msg_times": [
-        "20:38"
-      ]
-    },
-    {
-      "id": "2026-04-28-02",
-      "type": "UKÁZKA",
-      "level": "Expert",
-      "title": "Scraper obsahu s automatickými poznámkami v Obsidianu",
-      "excerpt": "Jedna členka si postavila nástroj, který bere nový obsah ze zadaných zdrojů a automaticky ho ukládá do Obsidianu. Přidá k němu TLDR, tagy a místo na vlastní zpětnou vazbu.",
-      "body": "Konkrétní ukázka toho, co má spousta lidí v hlavě jako nápad, ale už to nedotáhne. Členka dá nástroji seznam zdrojů, ten pravidelně kontroluje novinky a každý nový obsah uloží do Obsidianu jako poznámku. Přidá k tomu TLDR, tagy, backlinky na související témata a místo, kam si může dopsat vlastní komentář nebo zpětnou vazbu.\n\nVýsledek: informace nepřibývají jen na hromadu, ale rovnou zpracované. Místo scrollování nekonečným seznamem záložek máš v Obsidianu strukturované poznámky připravené ke čtení nebo dalšímu navázání.\n\nPodobný systém si ladí víc lidí z komunity. Padl i nápad udělat session, kde by každý ukázal kus svého přístupu a mohli bychom je porovnat.",
-      "read_minutes": 2,
-      "source_date": "2026-04-28",
-      "topics": [
-        "Vibe Coding",
-        "Poznámky",
-        "Obsidian",
-        "Claude Code"
-      ],
-      "source_group": "mastertheflow—hlavní",
-      "source_msg_times": [
-        "20:38"
-      ],
-      "links": [
-        "https://www.linkedin.com/posts/matejmatolin_information-overload-%C4%8Dlov%C4%9Bk-odeb%C3%ADr%C3%A1-share-7452995373222072320-vJhk"
-      ]
-    },
-    {
       "id": "2026-04-28-03",
       "type": "NÁSTROJE",
       "level": "Builder",
@@ -63,44 +22,6 @@
       "source_group": "vibecoding",
       "source_msg_times": [
         "21:12"
-      ]
-    },
-    {
-      "id": "2026-04-28-04",
-      "type": "INSIGHT",
-      "level": "Expert",
-      "title": "Claude Code na Mac Mini jako osobní server",
-      "excerpt": "Mac Mini s Claude Code a cron jobem běží nonstop 24/7. Tahle architektura zaujala komunitu a rozjela debatu o osobním serveru versus cloudu.",
-      "body": "Ve Vibe Coding padla otázka na konkrétní setup: Claude Code běžící na Mac Mini přes cron job, 24/7. Daniel potvrdil: Mac Mini, cron job.\n\nPředtím proběhla debata proč lidé používají Mac Mini, když by cloud vyšel levněji. Zaznělo, že důvod bývá znalost možností a přístupnost nastavení. Někdo zmínil, že pro něj je důležitá integrace s klasickým softwarem na Mac Mini. Daniel dodal, že ve finále vyhrálo mít věci u sebe, i když je to drahé, plus vlastní experimenty.",
-      "read_minutes": 2,
-      "source_date": "2026-04-28",
-      "topics": [
-        "Claude Code",
-        "Vibe Coding"
-      ],
-      "source_group": "mastertheflow—hlavní",
-      "source_msg_times": [
-        "20:38"
-      ]
-    },
-    {
-      "id": "2026-04-28-05",
-      "type": "INSIGHT",
-      "level": "Začátečník",
-      "title": "AI dotáhne tabulku, kde vzorce selžou",
-      "excerpt": "Složitá excelová tabulka, která se při ručních úpravách rozsype? Jedna členka to vyřešila přes AI a nepřišla o žádné vzorce. Funguje to i v Google Sheets.",
-      "body": "Jedna členka popsala konkrétní situaci. Měla těžkou excelovou tabulku plnou vzorců a ručně ji nešlo dotáhnout bez rozsypání vzorců. Zkusila to přes AI a tabulka byla hotová bez problémů.\n\nPodobně to funguje i v Google Sheets. Daniel zmínil, že si přes Claude Code udržuje vlastní CRMko a každou aktualizaci nechává na AI.",
-      "read_minutes": 2,
-      "source_date": "2026-04-28",
-      "topics": [
-        "Claude Code",
-        "Google",
-        "Databáze",
-        "Vibe Coding"
-      ],
-      "source_group": "mastertheflow—hlavní",
-      "source_msg_times": [
-        "20:38"
       ]
     }
   ],

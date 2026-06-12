@@ -66,24 +66,6 @@
       "links": [
         "https://www.jirkamartisek.cz/procvicovani/"
       ]
-    },
-    {
-      "id": "2026-05-05-05",
-      "type": "INSIGHT",
-      "level": "Expert",
-      "title": "Bot na monitoring inzerátů za odpoledne",
-      "excerpt": "Zdrojová zpráva je pouze hlavička týdenního souhrnu od Daniela Gamrota. O botu na monitoring inzerátů se v ní nepíše nic.",
-      "body": "Zdrojová zpráva z 11:57 obsahuje pouze text \"TÝDENNÍ SOUHRN (27.4. - 4.5.)\". Obsah této karty, tedy bot na scrapování inzertních portálů, Telegram notifikace ani cron job, nemá ve zdrojových zprávách žádnou oporu. Karta by měla být odstraněna nebo doplněna o správný zdroj.",
-      "read_minutes": 3,
-      "source_date": "2026-05-05",
-      "topics": [
-        "Claude Code",
-        "Vibe Coding"
-      ],
-      "source_group": "mastertheflow—hlavní",
-      "source_msg_times": [
-        "11:57"
-      ]
     }
   ],
   "resurfacing": {

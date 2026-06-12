@@ -53,41 +53,6 @@
       "links": [
         "https://context7.com"
       ]
-    },
-    {
-      "id": "2026-04-14-03",
-      "type": "INSIGHT",
-      "level": "Builder",
-      "title": "Weekly review skupinových chatů přes export a prompt",
-      "excerpt": "Daniel sdílí weekly review dění v komunitních skupinách za období 6. 4. až 13. 4.",
-      "body": "Daniel sdílí weekly review pokrývající období 6. 4. až 13. 4. Další podrobnosti o způsobu zpracování ani použitých nástrojích ze zprávy nevyplývají.",
-      "read_minutes": 2,
-      "source_date": "2026-04-14",
-      "topics": [
-        "Automatizace",
-        "Prompting"
-      ],
-      "source_group": "mastertheflow—hlavní",
-      "source_msg_times": [
-        "03:48"
-      ]
-    },
-    {
-      "id": "2026-04-14-04",
-      "type": "INSIGHT",
-      "level": "Builder",
-      "title": "Kdy přestat záplatovat a začít od začátku",
-      "excerpt": "Daniel sdílí weekly review dění v komunitních skupinách za období 6. 4. až 13. 4.",
-      "body": "Daniel sdílí weekly review pokrývající období 6. 4. až 13. 4. Další podrobnosti o obsahu nebo konkrétních projektech ze zprávy nevyplývají.",
-      "read_minutes": 2,
-      "source_date": "2026-04-14",
-      "topics": [
-        "Fokus"
-      ],
-      "source_group": "mastertheflow—hlavní",
-      "source_msg_times": [
-        "03:48"
-      ]
     }
   ],
   "resurfacing": {

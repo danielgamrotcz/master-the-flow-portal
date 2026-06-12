@@ -123,23 +123,7 @@
       ]
     }
   ],
-  "resurfacing": {
-    "id": "2026-04-28-05",
-    "type": "INSIGHT",
-    "level": "Začátečník",
-    "title": "AI dotáhne tabulku, kde vzorce selžou",
-    "excerpt": "Složitá excelová tabulka, která se při ručních úpravách rozsype? Jedna členka to vyřešila přes AI a nepřišla o žádné vzorce. Funguje to i v Google Sheets.",
-    "body": "Jedna členka popsala konkrétní situaci. Měla těžkou excelovou tabulku plnou vzorců a ručně ji nešlo dodělat tak, aby se něco nerozbilo. Zkusila to přes AI a tabulka byla hotová bez problémů.\n\nPodobně to jde i v Google Sheets. Přes Claude Code se dají spravovat i složitější věci, třeba vlastní CRM. Každou úpravu můžeš nechat na AI a nehrozí, že ručně něco rozhodíš.\n\nPro lidi bez programátorského zázemí je tohle jeden z nejpraktičtějších způsobů použití. Nemusíš rozumět vzorcům. Stačí popsat, co chceš, a AI to dotáhne. Hodí se to hlavně ve chvíli, kdy chybí jeden vzorec, potřebuješ přidat sloupec nebo opravit strukturu tak, aby se nerozsypala data.",
-    "read_minutes": 2,
-    "source_date": "2026-04-28",
-    "resurfaced_from": "2026-04-28",
-    "topics": [
-      "Claude Code",
-      "Google",
-      "Databáze",
-      "Vibe Coding"
-    ]
-  },
+  "resurfacing": null,
   "transcript": {
     "groups": [
       {

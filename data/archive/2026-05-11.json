@@ -109,27 +109,6 @@
       "links": [
         "https://goose-docs.ai/docs/quickstart"
       ]
-    },
-    {
-      "id": "2026-05-11-05",
-      "type": "UKÁZKA",
-      "level": "Builder",
-      "title": "Lokální Plaud setup bez měsíčního předplatného",
-      "excerpt": "Jeden člen si postavil vlastní systém na zpracování nahrávek z diktafonu: přepis přes Whisper, AI shrnutí a výsledek se rovnou ukládá do Obsidianu. Roční předplatné Plaudu zrušil.",
-      "body": "Daniel popsal vlastní Plaud-like setup. Diktafon zůstal, zpracování ale běží lokálně na Mac Mini. Každou hodinu se zkontroluje, jestli přibyl nový záznam. Whisper ho přepíše, AI udělá sumář a soubor se uloží do Obsidianu.\n\nPlaud má hodnotu v celém ekosystému: fyzické zařízení, šablony, bezproblémovost. Ale kvalita přepisu a měsíční platba mnohé odrazují. Daniel zrušil roční předplatné Plaud Unlimited.",
-      "read_minutes": 2,
-      "source_date": "2026-05-11",
-      "topics": [
-        "Poznámky",
-        "Obsidian"
-      ],
-      "source_group": "mastertheflow—hlavní",
-      "source_msg_times": [
-        "08:09"
-      ],
-      "links": [
-        "https://github.com/faborsky/whisper-cz-en"
-      ]
     }
   ],
   "resurfacing": {

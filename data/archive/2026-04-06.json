@@ -8,25 +8,6 @@
   },
   "cards": [
     {
-      "id": "2026-04-06-01",
-      "source_date": "2026-04-06",
-      "excerpt": "Týdenní přehled: členové si staví vlastní appky, řešila se cena AI nástrojů a taky bezpečnostní incident v JavaScriptové knihovně.",
-      "body": "Daniel sdílel týdenní souhrn pro nové členy. Několik lidí si postavilo appky na správu úkolů: maminka na mateřské appku na diktování úkolů jednou rukou, další člen třídič nápadů a jiná členka rodinnou verzi se sbíráním bodů pro děti. Probírali jsme ceny AI nástrojů, od nuly až po šest a půl tisíce měsíčně. Sdílel se článek o dopaminové pasti tvůrce a řešil se bezpečnostní incident s JavaScriptovou knihovnou. Kdo nepoužívá Claude Code, nemusí to řešit.",
-      "topics": [
-        "Claude Code",
-        "Vibe Coding"
-      ],
-      "title": "Týdenní přehled: vlastní appky a ceny nástrojů",
-      "source_group": "mastertheflow—hlavní",
-      "source_msg_times": [
-        "07:28"
-      ],
-      "type": "TÉMA TÝDNE",
-      "links": [
-        "https://www.granola.ai/"
-      ]
-    },
-    {
       "id": "2026-04-06-03",
       "source_date": "2026-04-06",
       "excerpt": "Ve Vibe Codingu se řešilo, jak propojit Google Drive s AI nástroji — přes MCP nebo přímé API — a jestli fungují i sdílené disky.",

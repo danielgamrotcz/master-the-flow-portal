@@ -63,20 +63,7 @@
       "type": "INSIGHT"
     }
   ],
-  "resurfacing": {
-    "id": "2026-04-13-01",
-    "type": "UKÁZKA",
-    "level": "Builder",
-    "title": "iOS aplikace pro diktování jde do testování",
-    "excerpt": "Jeden z členů komunity dokončil iOS verzi diktofonní aplikace a postupně pouští lidi do testování přes TestFlight. Prvních 20 míst je volných tento týden, dalších 70 přibude příští týden. Testování je zdarma a zatím jen pro naši komunitu.",
-    "body": "Aplikace má za sebou první interní testování a teď se otevírá většímu okruhu testerů. Kapacita se zvedá postupně schválně. Autor chce sbírat zpětnou vazbu po částech, ne zahltit podporu najednou.\n\nKdo se chce zapojit, zadá své Apple ID přes formulář na webu a do 48 hodin mu přijde pozvánka do TestFlightu. Na webu je taky video s ukázkou fungování aplikace.\n\nTestování má jasně nastavený způsob. Autor žádá, aby testeři posílali zpětnou vazbu přes tlačítko přímo v nastavení aplikace. Zároveň prosí, aby to brali vážně, ale s odstupem. Nejde o chválení hotového produktu. Jde o to zjistit, jestli by tuhle aplikaci lidé opravdu používali každý den.\n\nAplikace teď běží na autorově kreditu, proto doporučuje nahrávky držet v rozumné délce.",
-    "read_minutes": 2,
-    "source_date": "2026-04-13",
-    "resurfaced_from": "2026-04-13",
-    "topics": [
-      "AI nástroje"
-    ]
-  },
+  "resurfacing": null,
   "transcript": {
     "groups": [
       {

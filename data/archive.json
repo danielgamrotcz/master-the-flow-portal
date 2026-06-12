@@ -245,7 +245,7 @@
     },
     {
       "date": "2026-04-06",
-      "card_count": 3,
+      "card_count": 2,
       "topics": [
         "Automatizace",
         "Claude Code",
@@ -322,7 +322,7 @@
     },
     {
       "date": "2026-04-13",
-      "card_count": 3,
+      "card_count": 2,
       "topics": [
         "AI nástroje",
         "Email",
@@ -331,14 +331,11 @@
     },
     {
       "date": "2026-04-14",
-      "card_count": 4,
+      "card_count": 2,
       "topics": [
-        "Automatizace",
         "Claude Code",
         "Dokumentace",
-        "Fokus",
         "MCP",
-        "Prompting",
         "Vibe Coding"
       ]
     },
@@ -387,19 +384,9 @@
     },
     {
       "date": "2026-04-21",
-      "card_count": 5,
+      "card_count": 1,
       "topics": [
-        "AI nástroje",
-        "Claude Code",
-        "Dokumentace",
-        "Email",
-        "Fokus",
-        "MCP",
-        "Obsidian",
-        "Poznámky",
-        "Produktivita",
-        "Vibe Coding",
-        "Workflow"
+        "Poznámky"
       ]
     },
     {
@@ -425,17 +412,9 @@
     },
     {
       "date": "2026-04-28",
-      "card_count": 5,
+      "card_count": 1,
       "topics": [
-        "Automatizace",
-        "Claude Code",
-        "Databáze",
-        "Email",
-        "Google",
-        "Obsidian",
-        "Poznámky",
-        "Vibe Coding",
-        "Workflow"
+        "Automatizace"
       ]
     },
     {
@@ -470,7 +449,7 @@
     },
     {
       "date": "2026-05-05",
-      "card_count": 4,
+      "card_count": 3,
       "topics": [
         "AI nástroje",
         "Claude Code",
@@ -515,12 +494,10 @@
     },
     {
       "date": "2026-05-11",
-      "card_count": 5,
+      "card_count": 4,
       "topics": [
         "Automatizace",
         "Claude Code",
-        "Obsidian",
-        "Poznámky",
         "Prompting",
         "Subagenti",
         "Vibe Coding"
@@ -602,15 +579,8 @@
     },
     {
       "date": "2026-05-18",
-      "card_count": 5,
-      "topics": [
-        "AI nástroje",
-        "Automatizace",
-        "Claude Code",
-        "MCP",
-        "Raycast",
-        "Vibe Coding"
-      ]
+      "card_count": 0,
+      "topics": []
     },
     {
       "date": "2026-05-20",
@@ -683,17 +653,10 @@
     },
     {
       "date": "2026-05-25",
-      "card_count": 5,
+      "card_count": 1,
       "topics": [
         "AI nástroje",
-        "Claude Code",
-        "Email",
-        "Fokus",
-        "Meeting",
-        "Notion",
-        "Raycast",
-        "Subagenti",
-        "Vibe Coding"
+        "Email"
       ]
     },
     {

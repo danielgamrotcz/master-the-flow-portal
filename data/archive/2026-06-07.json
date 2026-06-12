@@ -45,18 +45,7 @@
       ]
     }
   ],
-  "resurfacing": {
-    "id": "2026-05-18-06",
-    "source_date": "2026-05-18",
-    "excerpt": "V diskuzi se rychle shodli: pro český trh má Comgate lepší podmínky než Stripe.",
-    "body": "V komunitě se řešily platební brány pro český trh. Shoda byla rychlá: Comgate má lepší podmínky než Stripe.",
-    "topics": [
-      "Automatizace"
-    ],
-    "title": "Pro český trh má Comgate lepší podmínky než Stripe",
-    "resurfaced_from": "2026-05-18",
-    "type": "NÁSTROJE"
-  },
+  "resurfacing": null,
   "transcript": {
     "groups": [
       {
