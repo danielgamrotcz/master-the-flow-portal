@@ -68,7 +68,10 @@
       "source_msg_times": [
         "08:46"
       ],
-      "type": "NÁSTROJE"
+      "type": "NÁSTROJE",
+      "links": [
+        "https://www.raycast.com/blog/the-new-raycast"
+      ]
     },
     {
       "id": "2026-05-18-06",

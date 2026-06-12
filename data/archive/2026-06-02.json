@@ -114,6 +114,12 @@
         "14:26",
         "07:56",
         "13:24"
+      ],
+      "links": [
+        "https://reachymini.net/",
+        "https://huggingface.co/spaces/pollen-robotics/Reachy_Mini#/download",
+        "https://ruzovka.cz/cs/micro-bit/19636-bbc-micro-bit-v2-2-go-kit-pro-vyuku-programovani.html",
+        "https://ruzovka.cz/cs/micro-bit/20664-elecfreaks-micro-bit-smart-home-kit-bez-desky-micro-bitu.html"
       ]
     }
   ],

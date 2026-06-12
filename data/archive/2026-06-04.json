@@ -90,6 +90,9 @@
         "10:31",
         "18:34",
         "17:20"
+      ],
+      "links": [
+        "https://github.com/shanraisshan/claude-code-best-practice/blob/main/best-practice%2Fclaude-settings.mdhttps://github.com/shanraisshan/claude-code-best-"
       ]
     },
     {
@@ -114,6 +117,9 @@
         "16:04",
         "15:57",
         "16:24"
+      ],
+      "links": [
+        "https://github.com/shanraisshan/claude-code-best-practice/blob/main/best-practice%2Fclaude-settings.mdhttps://github.com/shanraisshan/claude-code-best-"
       ]
     },
     {
@@ -141,6 +147,10 @@
         "15:55",
         "18:53",
         "20:54"
+      ],
+      "links": [
+        "https://github.com/PleasePrompto/notebooklm-skill",
+        "https://github.com/PleasePrompto/notebooklm-mcp"
       ]
     }
   ],

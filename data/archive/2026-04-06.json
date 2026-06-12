@@ -21,7 +21,10 @@
       "source_msg_times": [
         "07:28"
       ],
-      "type": "TÉMA TÝDNE"
+      "type": "TÉMA TÝDNE",
+      "links": [
+        "https://www.granola.ai/"
+      ]
     },
     {
       "id": "2026-04-06-03",

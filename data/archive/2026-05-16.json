@@ -55,7 +55,10 @@
         "18:20",
         "21:44"
       ],
-      "type": "INSIGHT"
+      "type": "INSIGHT",
+      "links": [
+        "https://youtu.be/pjnSE99-cz0?is=rmS1bwsaWlXtQ_CK"
+      ]
     },
     {
       "id": "2026-05-16-04",
@@ -71,7 +74,10 @@
       "source_msg_times": [
         "21:44"
       ],
-      "type": "INSIGHT"
+      "type": "INSIGHT",
+      "links": [
+        "https://youtu.be/pjnSE99-cz0?is=rmS1bwsaWlXtQ_CK"
+      ]
     }
   ],
   "resurfacing": {

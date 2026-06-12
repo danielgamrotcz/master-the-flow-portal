@@ -26,7 +26,10 @@
         "11:00",
         "11:50"
       ],
-      "source_date": "2026-06-09"
+      "source_date": "2026-06-09",
+      "links": [
+        "https://modelregression.com/"
+      ]
     },
     {
       "id": "2026-06-09-02",
@@ -65,7 +68,10 @@
       "source_msg_times": [
         "19:32"
       ],
-      "source_date": "2026-06-09"
+      "source_date": "2026-06-09",
+      "links": [
+        "https://nvn-otazky.pages.dev/"
+      ]
     },
     {
       "id": "2026-06-09-04",
@@ -83,7 +89,10 @@
       "source_msg_times": [
         "19:32"
       ],
-      "source_date": "2026-06-09"
+      "source_date": "2026-06-09",
+      "links": [
+        "https://nvn-otazky.pages.dev/"
+      ]
     }
   ],
   "resurfacing": {

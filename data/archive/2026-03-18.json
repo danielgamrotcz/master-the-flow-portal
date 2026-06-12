@@ -29,6 +29,9 @@
         "11:19",
         "06:57",
         "07:08"
+      ],
+      "links": [
+        "https://teleprompter-aae.pages.dev/"
       ]
     },
     {
@@ -50,6 +53,9 @@
         "03:31",
         "11:19",
         "11:32"
+      ],
+      "links": [
+        "https://teleprompter-aae.pages.dev/"
       ]
     },
     {
@@ -76,6 +82,9 @@
         "08:07",
         "12:38",
         "14:53"
+      ],
+      "links": [
+        "https://github.com/harshfolio/mcp-server-ga4"
       ]
     },
     {
@@ -115,6 +124,9 @@
         "11:32",
         "03:31",
         "07:49"
+      ],
+      "links": [
+        "https://teleprompter-aae.pages.dev/"
       ]
     }
   ],

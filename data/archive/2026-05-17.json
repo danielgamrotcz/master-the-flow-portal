@@ -40,7 +40,11 @@
         "10:12",
         "14:34"
       ],
-      "type": "UKÁZKA"
+      "type": "UKÁZKA",
+      "links": [
+        "https://github.com/ok2cqr/shellboard",
+        "https://terax.app/"
+      ]
     },
     {
       "id": "2026-05-17-03",
@@ -113,7 +117,10 @@
         "21:00",
         "21:51"
       ],
-      "type": "INSIGHT"
+      "type": "INSIGHT",
+      "links": [
+        "https://danielgamrot.cz/clanky/nikdo-neresi-jak-ovladat-pocitac/"
+      ]
     }
   ],
   "resurfacing": {

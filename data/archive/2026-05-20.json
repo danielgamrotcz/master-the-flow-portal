@@ -61,7 +61,11 @@
         "20:17",
         "21:10"
       ],
-      "type": "NÁSTROJE"
+      "type": "NÁSTROJE",
+      "links": [
+        "https://open.spotify.com/episode/5jguj3xtXck18FFznW28Qu?si=37dc56d6776046f3",
+        "https://www.naprimosai.cz/skoleni"
+      ]
     },
     {
       "id": "2026-05-20-05",
@@ -83,7 +87,10 @@
         "14:57",
         "15:02"
       ],
-      "type": "NÁSTROJE"
+      "type": "NÁSTROJE",
+      "links": [
+        "https://github.com/rtk-ai/rtk"
+      ]
     }
   ],
   "resurfacing": {

@@ -68,7 +68,10 @@
       "source_msg_times": [
         "06:47"
       ],
-      "type": "INSIGHT"
+      "type": "INSIGHT",
+      "links": [
+        "https://www.lupa.cz/clanky/superschopny-claude-mythos-zranitelnost-v-mcp-a-proc-nesahat-na-vpn/"
+      ]
     }
   ],
   "resurfacing": {
