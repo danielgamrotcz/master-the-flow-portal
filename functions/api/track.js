@@ -5,8 +5,9 @@ async function checkTrackRateLimit(env, ip) {
   if (!env.MTF_DATA) return false;
   const key = 'ratelimit:track:' + ip;
   const raw = await env.MTF_DATA.get(key);
-  if (raw) return true;
-  await env.MTF_DATA.put(key, '1', { expirationTtl: 60 }); // min KV TTL is 60s
+  const count = raw ? parseInt(raw, 10) : 0;
+  if (count >= 120) return true; // max 120 events / 60s / IP — pokryje běžné používání, blokuje flood
+  await env.MTF_DATA.put(key, String(count + 1), { expirationTtl: 60 });
   return false;
 }
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
