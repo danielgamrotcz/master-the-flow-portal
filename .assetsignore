@@ -1,9 +1,0 @@
-# Soubory, které se NESMÍ nahrát na veřejný web (Cloudflare Pages)
-# Zůstávají v repu, jen se nedeployují.
-*.md
-.wrangler
-**/.wrangler
-.dev.vars
-.gitignore
-.assetsignore
-wrangler.toml
