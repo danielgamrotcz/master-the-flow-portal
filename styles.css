@@ -119,32 +119,27 @@ a:hover { text-decoration: underline; }
 }
 
 
-.bell-btn {
-  width: 32px;
-  height: 32px;
+/* Icon buttons — shared base. Small (32) in header, --lg (44) in overlay. */
+.icon-btn {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  padding: 0;
+  background: none;
+  border: none;
   color: var(--text-tertiary);
   border-radius: var(--radius-sm);
-  transition: color 150ms ease;
-  flex-shrink: 0;
+  cursor: pointer;
+  transition: color 150ms ease, background 150ms ease;
 }
+.icon-btn--lg { width: 44px; height: 44px; }
+
 .bell-btn:hover { color: var(--text-secondary); }
 .bell-btn svg { width: 18px; height: 18px; }
 .bell-btn.bell-active { color: var(--accent); }
-
-.theme-toggle-btn {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-tertiary);
-  border-radius: var(--radius-sm);
-  transition: color 150ms ease;
-  flex-shrink: 0;
-}
 
 .theme-toggle-btn:hover { color: var(--text-secondary); }
 .theme-toggle-btn svg { width: 18px; height: 18px; }
@@ -589,17 +584,9 @@ a:hover { text-decoration: underline; }
 
 .search-clear {
   position: absolute;
-  right: 12px;
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-tertiary);
-  border-radius: 50%;
-  transition: color 120ms ease, background 120ms ease;
 }
 .search-clear:hover { color: var(--text-primary); background: var(--btn-bg); }
 
@@ -837,18 +824,6 @@ a:hover { text-decoration: underline; }
   align-items: center;
   flex: 1;
   min-width: 0;
-}
-
-.overlay-close-btn {
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-tertiary);
-  border-radius: var(--radius-sm);
-  flex-shrink: 0;
-  transition: color 150ms ease;
 }
 
 .overlay-close-btn:hover { color: var(--text-primary); }
@@ -1490,7 +1465,7 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: border-color 150ms, color 150ms;
+  transition: border-color 150ms ease, color 150ms ease;
 }
 .btn-vote:hover { border-color: #f43f5e; color: #f43f5e; }
 .btn-vote.voted { border-color: #f43f5e; color: #f43f5e; fill: #f43f5e; }
@@ -1652,17 +1627,6 @@ a:hover { text-decoration: underline; }
 }
 
 /* ===== RANDOM BUTTON ===== */
-.random-btn {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-tertiary);
-  border-radius: var(--radius-sm);
-  transition: color 150ms ease;
-  flex-shrink: 0;
-}
 .random-btn:hover { color: var(--accent); }
 .random-btn svg { width: 16px; height: 16px; }
 
@@ -1896,22 +1860,7 @@ a:hover { text-decoration: underline; }
   gap: 2px;
   flex-shrink: 0;
 }
-.overlay-nav-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  min-width: 44px;
-  background: none;
-  border: none;
-  border-radius: 8px;
-  color: var(--text-tertiary);
-  cursor: pointer;
-  padding: 0;
-  touch-action: manipulation;
-  transition: background 120ms ease, color 120ms ease;
-}
+.overlay-nav-btn { touch-action: manipulation; }
 .overlay-nav-btn:hover { background: var(--bg-active); color: var(--text-primary); }
 .overlay-nav-btn:disabled { opacity: 0.2; cursor: default; pointer-events: none; }
 .overlay-close-btn { margin-left: 4px; }
@@ -1956,7 +1905,7 @@ a:hover { text-decoration: underline; }
 .chat-bubble-text {
   padding: 10px 14px;
   border-radius: var(--radius-lg);
-  font-size: 0.92rem;
+  font-size: 15px;
   line-height: 1.55;
 }
 .chat-bubble-user .chat-bubble-text {
@@ -1973,7 +1922,7 @@ a:hover { text-decoration: underline; }
 }
 .chat-bubble-text p { margin: 0 0 6px; }
 .chat-bubble-text p:last-child { margin: 0; }
-.chat-bubble-text h4 { font-size: 0.92rem; font-weight: 600; margin: 8px 0 4px; }
+.chat-bubble-text h4 { font-size: 15px; font-weight: 600; margin: 8px 0 4px; }
 .chat-bubble-text ul, .chat-bubble-text ol { margin: 4px 0 6px 18px; padding: 0; }
 .chat-bubble-text li { margin-bottom: 2px; }
 .chat-bubble-text code { background: var(--bg-sheet); padding: 1px 4px; border-radius: 3px; font-size: 0.85em; }
@@ -1991,7 +1940,7 @@ a:hover { text-decoration: underline; }
 
 .chat-bubble-streaming .chat-cursor { opacity: 1; }
 
-.chat-error { color: #e05; font-size: 0.88rem; margin: 0; }
+.chat-error { color: #e05; font-size: 14px; margin: 0; }
 
 .chat-citations {
   display: flex;
@@ -2004,7 +1953,7 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--border-hover);
   border-radius: 20px;
   padding: 3px 10px;
-  font-size: 0.78rem;
+  font-size: 12px;
   color: var(--accent);
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s;
@@ -2024,7 +1973,7 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 4px 12px;
-  font-size: 0.78rem;
+  font-size: 12px;
   color: var(--text-tertiary);
   cursor: pointer;
   margin-bottom: 4px;
@@ -2047,7 +1996,7 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 9px 12px;
-  font-size: 0.92rem;
+  font-size: 15px;
   color: var(--text-primary);
   resize: none;
   line-height: 1.4;
@@ -2072,7 +2021,7 @@ a:hover { text-decoration: underline; }
   cursor: pointer;
   color: #fff;
   flex-shrink: 0;
-  transition: background 0.15s;
+  transition: background 150ms ease;
 }
 .chat-send-btn:hover { background: var(--accent-hover); }
 .chat-send-btn:disabled { opacity: 0.4; cursor: default; }
