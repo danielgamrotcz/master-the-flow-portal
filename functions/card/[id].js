@@ -32,7 +32,7 @@ export async function onRequestGet({ params, request }) {
   const title = card ? card.title : 'Master the Flow';
   const desc = card ? card.excerpt : 'Poznatky komunity Master the Flow — AI, nástroje a produktivita.';
   const pageTitle = card ? `${title} — Master the Flow` : 'Master the Flow';
-  const image = origin + '/icon-512.png';
+  const image = origin + '/og-default.png';
   const canonical = `${origin}/card/${id}`;
   const spa = `${origin}/#card/${id}`;
 
