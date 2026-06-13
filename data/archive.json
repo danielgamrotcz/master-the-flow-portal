@@ -830,6 +830,15 @@
         "Poznámky",
         "Produktivita"
       ]
+    },
+    {
+      "date": "2026-06-12",
+      "card_count": 1,
+      "topics": [
+        "AI nástroje",
+        "Produktivita",
+        "Workflow"
+      ]
     }
   ]
 }
