@@ -2,7 +2,7 @@
 // veřejné (config, secrets, interní dokumentace). Pages Functions middleware
 // běží před servírováním statických assetů, takže 404 je vrácen dřív, než
 // se soubor odešle.
-const BLOCKED = /^\/(\.dev\.vars|\.wrangler(\/|$)|wrangler\.toml|wrangler\.jsonc?|package(-lock)?\.json|[^/]+\.md)$/i;
+const BLOCKED = /^\/(\.dev\.vars|\.wrangler(\/|$)|wrangler\.toml|wrangler\.jsonc?|package(-lock)?\.json|[^/]+\.md|.*\.sql)$/i;
 
 export async function onRequest(context) {
   const { pathname } = new URL(context.request.url);
