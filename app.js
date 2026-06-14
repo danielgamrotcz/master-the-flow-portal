@@ -807,11 +807,6 @@ function openCard(cardId) {
     ? highlightInHTML(rawHtml, state.searchQuery)
     : rawHtml;
   $('overlay-text').innerHTML = bodyHtml + renderCardLinks(card);
-  // Most na WhatsApp — předvyplní zprávu s názvem karty a odkazem.
-  // (WhatsApp z webu neumí poslat rovnou do konkrétní skupiny + s textem,
-  //  takže se předvyplní text a člen ťukne na skupinu MtF v seznamu.)
-  const waMsg = `Mrkni na tohle z komunity Master the Flow:\n${card.title}\n${location.origin}/card/${card.id}`;
-  $('overlay-whatsapp').href = `https://wa.me/?text=${encodeURIComponent(waMsg)}`;
   $('btn-show-transcript').dataset.date = dateStr;
   $('btn-show-transcript').dataset.sourceGroup = card.source_group || '';
   $('btn-show-transcript').dataset.sourceMsgTimes = JSON.stringify(card.source_msg_times || []);
@@ -1221,6 +1216,16 @@ function markUnread(id) {
 }
 
 /* ===== VOTING ===== */
+// Jednorázový reset lokální paměti hlasů po vynulování srdíček na serveru —
+// jinak by zařízení dál ukazovalo vyplněné srdíčko u karet, které už mají 0.
+function resetStaleVotesOnce() {
+  try {
+    if (localStorage.getItem('mtf_votes_v') !== '2') {
+      localStorage.removeItem('mtf_votes');
+      localStorage.setItem('mtf_votes_v', '2');
+    }
+  } catch {}
+}
 // Stabilní ID zařízení — dedup hlasů per zařízení, ne per IP (sdílený NAT
 // jinak sloučí víc lidí do jednoho hlasu).
 function getClientId() {
@@ -2459,6 +2464,7 @@ function init() {
   $('card-overlay')?.classList.add('hidden');
   state.activeCard = null;
 
+  resetStaleVotesOnce();
   initGate();
   trackSession();
   applyTheme(document.documentElement.getAttribute('data-theme') || localStorage.getItem('theme') || 'light');
