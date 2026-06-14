@@ -65,21 +65,12 @@ export async function onRequestGet({ env, request }) {
     const reads = readsRaw ? JSON.parse(readsRaw) : {};
     const shares = sharesRaw ? JSON.parse(sharesRaw) : {};
 
-    // Hlasy jsou klíče v:<karta>:<volič>. Počet karty = počet jejích klíčů.
+    // Počty hlasů z D1 (přesné, silně konzistentní).
+    const voteRows = await env.VOTES_DB
+      .prepare('SELECT card_id, COUNT(*) AS n FROM votes GROUP BY card_id')
+      .all();
     const votes = {};
-    let cursor;
-    do {
-      const res = await env.MTF_DATA.list({ prefix: 'v:', cursor, limit: 1000 });
-      for (const { name } of res.keys) {
-        const rest = name.slice(2);
-        const idx = rest.lastIndexOf(':');
-        if (idx > 0) {
-          const vid = rest.slice(0, idx);
-          votes[vid] = (votes[vid] || 0) + 1;
-        }
-      }
-      cursor = res.list_complete ? null : res.cursor;
-    } while (cursor);
+    (voteRows.results || []).forEach(r => { votes[r.card_id] = r.n; });
 
     const allIds = new Set([
       ...Object.keys(opens),

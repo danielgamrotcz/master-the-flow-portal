@@ -36,34 +36,22 @@ function corsHeaders(origin, methods = 'GET, OPTIONS') {
   return headers;
 }
 
-async function dedupHash(voter, id) {
-  const buf = await crypto.subtle.digest(
-    'SHA-256',
-    new TextEncoder().encode(voter + ':' + id)
-  );
+// Stabilní, neidentifikující otisk voliče (chrání IP před uložením v plain).
+async function voterHash(voter) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(voter));
   return Array.from(new Uint8Array(buf))
     .map(b => b.toString(16).padStart(2, '0'))
     .join('')
     .slice(0, 32);
 }
 
-// Klíč jednoho hlasu: v:<karta>:<hash voliče>. Počet hlasů = počet těchto klíčů.
-// Žádné měnitelné počítadlo → žádný read-modify-write race na KV (KV je
-// eventually consistent, sdílené počítadlo by ztrácelo souběžné hlasy).
-function voteKey(id, voterHash) {
-  return 'v:' + id + ':' + voterHash;
-}
-
-// Spočítá hlasy karty vylistováním klíčů s prefixem v:<karta>: (s kurzorem).
+// Počet hlasů z D1 (silně konzistentní — na rozdíl od KV vrátí přesné číslo
+// hned po zápisu, žádný race ani propagační zpoždění).
 async function countVotes(env, id) {
-  let count = 0;
-  let cursor;
-  do {
-    const res = await env.MTF_DATA.list({ prefix: 'v:' + id + ':', cursor, limit: 1000 });
-    count += res.keys.length;
-    cursor = res.list_complete ? null : res.cursor;
-  } while (cursor);
-  return count;
+  const row = await env.VOTES_DB
+    .prepare('SELECT COUNT(*) AS n FROM votes WHERE card_id = ?')
+    .bind(id).first();
+  return row ? row.n : 0;
 }
 
 export async function onRequestOptions({ request }) {
@@ -103,8 +91,10 @@ export async function onRequestDelete({ request, env }) {
     if (!id || !isSafeVoteId(id)) {
       return Response.json({ error: 'invalid id' }, { status: 400, headers });
     }
-    const key = voteKey(id, await dedupHash(voterKey(cid, ip), id));
-    await env.MTF_DATA.delete(key);  // idempotentní
+    const voter = await voterHash(voterKey(cid, ip));
+    await env.VOTES_DB
+      .prepare('DELETE FROM votes WHERE card_id = ? AND voter = ?')
+      .bind(id, voter).run();
     const count = await countVotes(env, id);
     return Response.json({ id, count }, { headers });
   } catch {
@@ -130,10 +120,12 @@ export async function onRequestPost({ request, env }) {
     if (!id || !isSafeVoteId(id)) {
       return Response.json({ error: 'invalid id' }, { status: 400, headers });
     }
-    // Jeden hlas = jeden klíč. Idempotentní zápis (opakovaný hlas téhož voliče
-    // jen přepíše vlastní klíč, počet se nemění). Dedup je v samotném klíči.
-    const key = voteKey(id, await dedupHash(voterKey(cid, ip), id));
-    await env.MTF_DATA.put(key, '1');
+    // INSERT OR IGNORE: dedup je v PRIMARY KEY (card_id, voter) — opakovaný hlas
+    // téhož voliče nic nepřidá. Žádný read-modify-write, počet je vždy přesný.
+    const voter = await voterHash(voterKey(cid, ip));
+    await env.VOTES_DB
+      .prepare('INSERT OR IGNORE INTO votes (card_id, voter) VALUES (?, ?)')
+      .bind(id, voter).run();
     const count = await countVotes(env, id);
     return Response.json({ id, count }, { headers });
   } catch {

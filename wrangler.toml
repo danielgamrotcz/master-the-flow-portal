@@ -6,6 +6,12 @@ pages_build_output_dir = "."
 binding = "MTF_DATA"
 id = "b19b4222ee52444f98cd0495fa919816"
 
+# D1 — přesné počty hlasů (KV je eventually consistent, nehodí se na počítadla)
+[[d1_databases]]
+binding = "VOTES_DB"
+database_name = "mtf-votes"
+database_id = "609b4aa0-8949-4635-87f2-e2df613fab3b"
+
 # Secrets (set via: wrangler secret put ADMIN_SECRET)
 # ADMIN_SECRET — chrání POST /api/community (aktualizace počtu členů)
 # NOTIFY_SECRET — chrání POST /api/notify (odesílání push notifikací)
