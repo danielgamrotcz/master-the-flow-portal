@@ -1,6 +1,7 @@
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 const VOTE_ID_RE = /^[a-zA-Z0-9_-]{1,80}$/;
-const RESERVED_PREFIXES = ['analytics', 'sub_', 'community_', 'voted_', 'vote_'];
+const RESERVED_PREFIXES = ['analytics', 'sub_', 'community_', 'voted_', 'vote_', 'v:'];
+const CID_RE = /^[a-zA-Z0-9_-]{8,64}$/;
 
 async function checkVoteRateLimit(env, ip) {
   if (!env.MTF_DATA) return false;
@@ -16,8 +17,6 @@ function isSafeVoteId(id) {
   if (!VOTE_ID_RE.test(id)) return false;
   return !RESERVED_PREFIXES.some(p => id.startsWith(p));
 }
-const CID_RE = /^[a-zA-Z0-9_-]{8,64}$/;
-const DEDUP_TTL = 30 * 24 * 3600; // 30 days
 
 // Hlas dedupujeme per zařízení (client ID z prohlížeče), ne per IP — sdílený
 // NAT (firma, domácnost) by jinak sloučil víc lidí do jednoho hlasu. IP slouží
@@ -48,6 +47,25 @@ async function dedupHash(voter, id) {
     .slice(0, 32);
 }
 
+// Klíč jednoho hlasu: v:<karta>:<hash voliče>. Počet hlasů = počet těchto klíčů.
+// Žádné měnitelné počítadlo → žádný read-modify-write race na KV (KV je
+// eventually consistent, sdílené počítadlo by ztrácelo souběžné hlasy).
+function voteKey(id, voterHash) {
+  return 'v:' + id + ':' + voterHash;
+}
+
+// Spočítá hlasy karty vylistováním klíčů s prefixem v:<karta>: (s kurzorem).
+async function countVotes(env, id) {
+  let count = 0;
+  let cursor;
+  do {
+    const res = await env.MTF_DATA.list({ prefix: 'v:' + id + ':', cursor, limit: 1000 });
+    count += res.keys.length;
+    cursor = res.list_complete ? null : res.cursor;
+  } while (cursor);
+  return count;
+}
+
 export async function onRequestOptions({ request }) {
   const origin = request.headers.get('Origin');
   return new Response(null, { headers: corsHeaders(origin, 'GET, POST, DELETE, OPTIONS') });
@@ -60,8 +78,7 @@ export async function onRequestGet({ request, env }) {
     return Response.json({ error: 'invalid id' }, { status: 400, headers: corsHeaders(origin) });
   }
   try {
-    const raw = await env.MTF_DATA.get('vote_' + id);
-    const count = raw ? parseInt(raw, 10) : 0;
+    const count = await countVotes(env, id);
     return Response.json({ id, count }, { headers: corsHeaders(origin) });
   } catch {
     return Response.json({ id, count: 0 }, { headers: corsHeaders(origin) });
@@ -86,21 +103,9 @@ export async function onRequestDelete({ request, env }) {
     if (!id || !isSafeVoteId(id)) {
       return Response.json({ error: 'invalid id' }, { status: 400, headers });
     }
-
-    const dedupKey = 'voted_' + await dedupHash(voterKey(cid, ip), id);
-    const alreadyVoted = await env.MTF_DATA.get(dedupKey);
-    if (!alreadyVoted) {
-      const raw = await env.MTF_DATA.get('vote_' + id);
-      return Response.json({ id, count: raw ? parseInt(raw, 10) : 0 }, { status: 409, headers });
-    }
-
-    const voteKey = 'vote_' + id;
-    const raw = await env.MTF_DATA.get(voteKey);
-    const count = Math.max(0, (raw ? parseInt(raw, 10) : 0) - 1);
-    await Promise.all([
-      env.MTF_DATA.put(voteKey, String(count)),
-      env.MTF_DATA.delete(dedupKey),
-    ]);
+    const key = voteKey(id, await dedupHash(voterKey(cid, ip), id));
+    await env.MTF_DATA.delete(key);  // idempotentní
+    const count = await countVotes(env, id);
     return Response.json({ id, count }, { headers });
   } catch {
     return Response.json({ error: 'Internal error' }, { status: 500, headers });
@@ -125,23 +130,11 @@ export async function onRequestPost({ request, env }) {
     if (!id || !isSafeVoteId(id)) {
       return Response.json({ error: 'invalid id' }, { status: 400, headers });
     }
-
-    // Server-side dedup: one vote per zařízení (client ID) per card per 30 days
-    const dedupKey = 'voted_' + await dedupHash(voterKey(cid, ip), id);
-    const alreadyVoted = await env.MTF_DATA.get(dedupKey);
-    if (alreadyVoted) {
-      const raw = await env.MTF_DATA.get('vote_' + id);
-      const count = raw ? parseInt(raw, 10) : 0;
-      return Response.json({ id, count, duplicate: true }, { headers });
-    }
-
-    const voteKey = 'vote_' + id;
-    const raw = await env.MTF_DATA.get(voteKey);
-    const count = (raw ? parseInt(raw, 10) : 0) + 1;
-    await Promise.all([
-      env.MTF_DATA.put(voteKey, String(count)),
-      env.MTF_DATA.put(dedupKey, '1', { expirationTtl: DEDUP_TTL }),
-    ]);
+    // Jeden hlas = jeden klíč. Idempotentní zápis (opakovaný hlas téhož voliče
+    // jen přepíše vlastní klíč, počet se nemění). Dedup je v samotném klíči.
+    const key = voteKey(id, await dedupHash(voterKey(cid, ip), id));
+    await env.MTF_DATA.put(key, '1');
+    const count = await countVotes(env, id);
     return Response.json({ id, count }, { headers });
   } catch {
     return Response.json({ error: 'Internal error' }, { status: 500, headers });

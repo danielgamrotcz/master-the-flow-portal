@@ -33,13 +33,22 @@ export async function onRequestGet({ env, request }) {
   if (await checkRateLimit(env, ip)) {
     return new Response('Too Many Requests', { status: 429, headers: corsHeaders(origin) });
   }
-  const list = await env.MTF_DATA.list({ prefix: 'vote_' });
-  const entries = await Promise.all(
-    list.keys.map(async ({ name }) => {
-      const count = parseInt(await env.MTF_DATA.get(name) || '0', 10);
-      return { id: name.replace('vote_', ''), count };
-    })
-  );
+  // Hlasy jsou klíče v:<karta>:<volič>. Počet karty = počet jejích klíčů.
+  const counts = {};
+  let cursor;
+  do {
+    const res = await env.MTF_DATA.list({ prefix: 'v:', cursor, limit: 1000 });
+    for (const { name } of res.keys) {
+      const rest = name.slice(2);
+      const i = rest.lastIndexOf(':');
+      if (i > 0) {
+        const id = rest.slice(0, i);
+        counts[id] = (counts[id] || 0) + 1;
+      }
+    }
+    cursor = res.list_complete ? null : res.cursor;
+  } while (cursor);
+  const entries = Object.entries(counts).map(([id, count]) => ({ id, count }));
   entries.sort((a, b) => b.count - a.count);
   return Response.json(entries.slice(0, 20), {
     headers: corsHeaders(origin),

@@ -55,23 +55,31 @@ export async function onRequestGet({ env, request }) {
   }
 
   try {
-    const [opensRaw, readsRaw, sharesRaw, votesList] = await Promise.all([
+    const [opensRaw, readsRaw, sharesRaw] = await Promise.all([
       env.MTF_DATA.get('analytics:opens'),
       env.MTF_DATA.get('analytics:reads'),
       env.MTF_DATA.get('analytics:shares'),
-      env.MTF_DATA.list({ prefix: 'vote_' }),
     ]);
 
     const opens = opensRaw ? JSON.parse(opensRaw) : {};
     const reads = readsRaw ? JSON.parse(readsRaw) : {};
     const shares = sharesRaw ? JSON.parse(sharesRaw) : {};
 
-    const voteKeys = votesList.keys || [];
-    const voteValues = await Promise.all(voteKeys.map(k => env.MTF_DATA.get(k.name)));
+    // Hlasy jsou klíče v:<karta>:<volič>. Počet karty = počet jejích klíčů.
     const votes = {};
-    voteKeys.forEach((k, i) => {
-      if (voteValues[i]) votes[k.name.slice(5)] = parseInt(voteValues[i], 10) || 0;
-    });
+    let cursor;
+    do {
+      const res = await env.MTF_DATA.list({ prefix: 'v:', cursor, limit: 1000 });
+      for (const { name } of res.keys) {
+        const rest = name.slice(2);
+        const idx = rest.lastIndexOf(':');
+        if (idx > 0) {
+          const vid = rest.slice(0, idx);
+          votes[vid] = (votes[vid] || 0) + 1;
+        }
+      }
+      cursor = res.list_complete ? null : res.cursor;
+    } while (cursor);
 
     const allIds = new Set([
       ...Object.keys(opens),
