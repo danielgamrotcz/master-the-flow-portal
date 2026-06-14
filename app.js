@@ -1221,6 +1221,18 @@ function markUnread(id) {
 }
 
 /* ===== VOTING ===== */
+// Stabilní ID zařízení — dedup hlasů per zařízení, ne per IP (sdílený NAT
+// jinak sloučí víc lidí do jednoho hlasu).
+function getClientId() {
+  try {
+    let cid = localStorage.getItem('mtf_cid');
+    if (!cid || !/^[a-zA-Z0-9_-]{8,64}$/.test(cid)) {
+      cid = (crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2) + Date.now().toString(36)).replace(/[^a-zA-Z0-9_-]/g, '');
+      localStorage.setItem('mtf_cid', cid);
+    }
+    return cid;
+  } catch { return ''; }
+}
 function hasVoted(id) {
   try { return JSON.parse(localStorage.getItem('mtf_votes') || '[]').includes(id); } catch { return false; }
 }
@@ -1238,7 +1250,7 @@ async function castVote(id) {
   try {
     const r = await fetch('/api/vote', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id }),
+      body: JSON.stringify({ id, cid: getClientId() }),
     });
     if (!r.ok) return null;  // server odmítl — nemarkovat lokálně jako odhlasováno
     const j = await r.json();
@@ -1258,7 +1270,7 @@ async function removeVote(id) {
   try {
     const r = await fetch('/api/vote', {
       method: 'DELETE', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id }),
+      body: JSON.stringify({ id, cid: getClientId() }),
     });
     if (!r.ok) return null;  // 409 (nehlasováno) i 5xx — neměnit lokální stav
     const j = await r.json();

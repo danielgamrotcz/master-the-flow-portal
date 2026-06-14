@@ -16,7 +16,15 @@ function isSafeVoteId(id) {
   if (!VOTE_ID_RE.test(id)) return false;
   return !RESERVED_PREFIXES.some(p => id.startsWith(p));
 }
+const CID_RE = /^[a-zA-Z0-9_-]{8,64}$/;
 const DEDUP_TTL = 30 * 24 * 3600; // 30 days
+
+// Hlas dedupujeme per zařízení (client ID z prohlížeče), ne per IP — sdílený
+// NAT (firma, domácnost) by jinak sloučil víc lidí do jednoho hlasu. IP slouží
+// jen na rate-limit. Fallback na IP, když klient ID nepošle (starší verze).
+function voterKey(cid, ip) {
+  return (typeof cid === 'string' && CID_RE.test(cid)) ? 'c:' + cid : 'i:' + ip;
+}
 
 function corsHeaders(origin, methods = 'GET, OPTIONS') {
   const allowed = origin && (origin === SITE_ORIGIN || /^http:\/\/localhost(:\d+)?$/.test(origin));
@@ -29,10 +37,10 @@ function corsHeaders(origin, methods = 'GET, OPTIONS') {
   return headers;
 }
 
-async function ipHash(ip, id) {
+async function dedupHash(voter, id) {
   const buf = await crypto.subtle.digest(
     'SHA-256',
-    new TextEncoder().encode(ip + ':' + id)
+    new TextEncoder().encode(voter + ':' + id)
   );
   return Array.from(new Uint8Array(buf))
     .map(b => b.toString(16).padStart(2, '0'))
@@ -74,12 +82,12 @@ export async function onRequestDelete({ request, env }) {
   }
 
   try {
-    const { id } = await request.json();
+    const { id, cid } = await request.json();
     if (!id || !isSafeVoteId(id)) {
       return Response.json({ error: 'invalid id' }, { status: 400, headers });
     }
 
-    const dedupKey = 'voted_' + await ipHash(ip, id);
+    const dedupKey = 'voted_' + await dedupHash(voterKey(cid, ip), id);
     const alreadyVoted = await env.MTF_DATA.get(dedupKey);
     if (!alreadyVoted) {
       const raw = await env.MTF_DATA.get('vote_' + id);
@@ -113,13 +121,13 @@ export async function onRequestPost({ request, env }) {
   }
 
   try {
-    const { id } = await request.json();
+    const { id, cid } = await request.json();
     if (!id || !isSafeVoteId(id)) {
       return Response.json({ error: 'invalid id' }, { status: 400, headers });
     }
 
-    // Server-side dedup: one vote per IP per card per 30 days
-    const dedupKey = 'voted_' + await ipHash(ip, id);
+    // Server-side dedup: one vote per zařízení (client ID) per card per 30 days
+    const dedupKey = 'voted_' + await dedupHash(voterKey(cid, ip), id);
     const alreadyVoted = await env.MTF_DATA.get(dedupKey);
     if (alreadyVoted) {
       const raw = await env.MTF_DATA.get('vote_' + id);
