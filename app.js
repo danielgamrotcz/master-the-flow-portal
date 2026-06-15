@@ -343,7 +343,15 @@ function renderCards(cards, containerId, resurfaced = null) {
   let html = '';
 
   if (filtered.length === 0 && !resurfaced) {
-    container.innerHTML = '<div class="empty-state"><p>Žádné poznatky pro toto téma. Zkuste filtr „Vše“.</p></div>';
+    let msg;
+    if (state.topic && state.topic !== 'all') {
+      msg = 'Žádné poznatky pro toto téma. Zkuste filtr „Vše“.';
+    } else if (containerId === 'cards-today') {
+      msg = 'Ze včerejška nejsou žádné poznatky.';
+    } else {
+      msg = 'Žádné poznatky.';
+    }
+    container.innerHTML = `<div class="empty-state"><p>${msg}</p></div>`;
     return;
   }
 
