@@ -382,7 +382,7 @@ async function loadToday() {
       renderCards(data.cards, 'cards-today', null);
     } else {
       $('cards-today').innerHTML =
-        '<div class="empty-state"><p>Za včerejšek nejsou žádné vygenerované poznatky.</p></div>';
+        '<div class="empty-state"><p>Ze včerejška nejsou žádné poznatky.</p></div>';
     }
     updatePageTitle();
     ensureSearchAll().catch(() => {});
