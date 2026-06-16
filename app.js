@@ -1,5 +1,5 @@
 /* ===== GATE ===== */
-const VAPID_PUBLIC = 'BCub7WYDQt5wX2Jj0HUUMhK-T8VATzn4rvfc108akt7VCh8qGd_rgw6lQRJGKPIAsBDrPHwt7pagUYia1WIyEYY';
+const VAPID_PUBLIC = 'BEZFl-_nPGP_1u49UExtRaDl9kc6A9fKzrvUaA-mJTCKx-_LpoaxVw1bkh4Wtf1MeabUVa2vJCnUkv-uCaK4sEs';
 
 function isAuthenticated() {
   try {

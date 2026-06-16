@@ -74,10 +74,14 @@ export async function onRequestPost({ request, env }) {
       const sub = JSON.parse(raw);
       const status = await sendPush(sub, privateKey, vapidPub, vapidSubject);
       if (status === 410 || status === 404) {
+        // Odběr zanikl — smazat.
         await env.MTF_DATA.delete(name);
         failed++;
-      } else {
+      } else if (status >= 200 && status < 300) {
         sent++;
+      } else {
+        // 403 (špatný VAPID), 400 atd. — neúspěch, odběr ale nemazat.
+        failed++;
       }
     } catch { failed++; }
   }));
