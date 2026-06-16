@@ -1,4 +1,4 @@
-const CACHE = 'mtf-v8';
+const CACHE = 'mtf-v9';
 const STATIC = ['/', '/index.html', '/app.js', '/styles.css', '/favicon.svg',
   '/manifest.webmanifest', '/icon-192.png', '/icon-512.png', '/apple-touch-icon.png'];
 // App shell — vždy zkus síť, fallback cache (offline). Brání stale verzi appky
@@ -62,15 +62,30 @@ self.addEventListener('fetch', e => {
   }
 });
 
+// České skloňování počtu poznatků (service worker nemá přístup k app.js).
+function pocetPoznatku(n) {
+  if (n === 1) return '1 nový poznatek';
+  if (n >= 2 && n <= 4) return n + ' nové poznatky';
+  return n + ' nových poznatků';
+}
+
 self.addEventListener('push', e => {
   e.waitUntil(
     fetch('/data/today.json')
       .then(r => r.ok ? r.json() : null)
       .then(data => {
         const cards = (data?.cards || []);
-        const top = cards.slice().sort((a, b) => (b.votes || 0) - (a.votes || 0))[0] || cards[0];
-        const title = top ? top.title : 'Master the Flow';
-        const body = top ? top.excerpt : 'Nový digest je připraven.';
+        let title, body;
+        if (cards.length === 0) {
+          title = 'Master the Flow';
+          body = 'Mrkni, co je v komunitě nového.';
+        } else {
+          // Titulek = počet, text = stručný výčet karet (proč kliknout).
+          title = pocetPoznatku(cards.length) + ' dnes';
+          const titles = cards.map(c => c.title).filter(Boolean);
+          const shown = titles.slice(0, 6);
+          body = shown.join(' · ') + (titles.length > shown.length ? ' a další' : '');
+        }
         return self.registration.showNotification(title, {
           body,
           icon: '/icon-192.png',
