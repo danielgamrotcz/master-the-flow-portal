@@ -1,4 +1,4 @@
-const CACHE = 'mtf-v10';
+const CACHE = 'mtf-v11';
 const STATIC = ['/', '/index.html', '/app.js', '/styles.css', '/favicon.svg',
   '/manifest.webmanifest', '/icon-192.png', '/icon-512.png', '/apple-touch-icon.png'];
 // App shell — vždy zkus síť, fallback cache (offline). Brání stale verzi appky
@@ -81,7 +81,7 @@ self.addEventListener('push', e => {
           body = 'Mrkni, co je v komunitě nového.';
         } else {
           // Titulek = počet, text = stručný výčet karet (proč kliknout).
-          title = pocetPoznatku(cards.length) + ' v Master the Flow';
+          title = pocetPoznatku(cards.length);
           const titles = cards.map(c => c.title).filter(Boolean);
           const shown = titles.slice(0, 6);
           body = shown.join(' · ') + (titles.length > shown.length ? ' a další' : '');
