@@ -112,6 +112,9 @@ let _preCardHash = '';
 let _preTranscriptHash = '';
 let _preEventHash = '';
 
+// Dočasně skryté tlačítko „Přepis" v detailu karty. Obnovit = true.
+const TRANSCRIPT_BTN_ENABLED = false;
+
 /* ===== VOTES ===== */
 async function loadVoteMap() {
   // Nezávisle — selhání jednoho endpointu nesmí shodit druhý
@@ -822,7 +825,7 @@ function openCard(cardId) {
   $('btn-show-transcript').dataset.date = dateStr;
   $('btn-show-transcript').dataset.sourceGroup = card.source_group || '';
   $('btn-show-transcript').dataset.sourceMsgTimes = JSON.stringify(card.source_msg_times || []);
-  $('btn-show-transcript').style.display = dateStr ? '' : 'none';
+  $('btn-show-transcript').style.display = (TRANSCRIPT_BTN_ENABLED && dateStr) ? '' : 'none';
 
   // Vote
   const voted = hasVoted(card.id);
@@ -919,6 +922,7 @@ function findCard(id) {
     state.today?.resurfacing ? [state.today.resurfacing] : [],
     ...Object.values(state.archiveCache).map(d => [...(d.cards || []), ...(d.resurfacing ? [d.resurfacing] : [])]),
     state.searchAll,
+    state.notFoundCards || [],
   ];
   for (const pool of allPools) {
     const found = pool.find(c => c.id === id);
@@ -1278,10 +1282,10 @@ function switchView(viewName) {
 
   document.getElementById('site-header').classList.toggle('stats-mode', viewName === 'stats');
 
-  const noChipsViews = new Set(['chat', 'transcript', 'stats', 'events']);
+  const noChipsViews = new Set(['chat', 'transcript', 'stats', 'events', 'notfound']);
   $('topic-chips').classList.toggle('hidden', noChipsViews.has(viewName));
 
-  ['today', 'week', 'archive', 'search', 'stats', 'transcript', 'top', 'chat', 'events'].forEach(v => {
+  ['today', 'week', 'archive', 'search', 'stats', 'transcript', 'top', 'chat', 'events', 'notfound'].forEach(v => {
     const el = $(`view-${v}`);
     if (el) el.classList.toggle('hidden', v !== viewName);
   });
@@ -2035,7 +2039,7 @@ function showCardContextMenu(x, y, cardId) {
     <button data-action="read">${read ? 'Označit jako nepřečtené' : 'Označit jako přečtené'}</button>
     <div class="card-ctx-sep"></div>
     <button data-action="share">Sdílet kartu</button>
-    ${hasTranscript ? '<button data-action="transcript">Přepis konverzace</button>' : ''}
+    ${(TRANSCRIPT_BTN_ENABLED && hasTranscript) ? '<button data-action="transcript">Přepis konverzace</button>' : ''}
   `;
   document.body.appendChild(menu);
   _ctxMenuEl = menu;
@@ -2679,6 +2683,37 @@ function initChat() {
 }
 
 /* ===== INIT ===== */
+/* ===== 404 ===== */
+// Neexistující cesta = cokoliv jiného než kořen appky. Hash routy běží pod „/",
+// /card/:id obsluhuje samostatná funkce, takže jiná pathname = překlep/mrtvý odkaz.
+function isUnknownPath() {
+  const p = location.pathname.replace(/\/+$/, '') || '/';
+  return p !== '/' && p !== '/index.html';
+}
+
+async function showNotFound() {
+  switchView('notfound');
+  const container = $('cards-notfound');
+  container.innerHTML = '<div class="loading-state"><div class="spinner"></div></div>';
+  try {
+    const pool = await fetchJSON('/data/chat-corpus.json');
+    const insights = (pool || []).filter(c => c.type === 'INSIGHT');
+    const base = insights.length >= 6 ? insights : (pool || []);
+    // Náhodný výběr 6 (Fisher-Yates na kopii).
+    const arr = [...base];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    const six = arr.slice(0, 6);
+    state.notFoundCards = six;
+    container.innerHTML = six.map(c => renderCardEl(c)).join('');
+    attachCardListeners(container);
+  } catch {
+    container.innerHTML = '<div class="empty-state"><p>Zkuste to prosím za&nbsp;chvíli znovu.</p></div>';
+  }
+}
+
 function init() {
   // Defensive: ensure overlay is hidden on every page load (handles bfcache and edge cases)
   $('card-overlay')?.classList.add('hidden');
@@ -2900,7 +2935,11 @@ function init() {
     }
   });
 
-  handleHash();
+  if (isUnknownPath()) {
+    showNotFound();
+  } else {
+    handleHash();
+  }
   loadArchiveIndex();
 }
 

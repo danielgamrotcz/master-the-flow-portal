@@ -2115,3 +2115,39 @@ a:hover { text-decoration: underline; }
 }
 .more-item:hover { background: var(--bg-card); }
 .more-item svg { color: var(--text-secondary); flex-shrink: 0; }
+
+/* ===== 404 / NOT FOUND ===== */
+.notfound-hero {
+  text-align: center;
+  padding: 40px 20px 28px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.notfound-emoji { font-size: 44px; line-height: 1; margin-bottom: 16px; }
+.notfound-title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin: 0 0 12px;
+}
+.notfound-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0 0 22px;
+}
+.notfound-home {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 22px;
+  border-radius: var(--radius-md);
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 150ms ease;
+}
+.notfound-home:hover { opacity: 0.9; text-decoration: none; }
