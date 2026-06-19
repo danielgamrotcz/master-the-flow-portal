@@ -1258,15 +1258,27 @@ function renderEventTeaser() {
   loadEvents().then(() => {
     const { upcoming } = splitEvents(state.events || []);
     const ev = upcoming.find(e => !e.status);  // přeskoč zrušené/vyprodané
-    if (!ev) { el.classList.add('hidden'); el.innerHTML = ''; return; }
+    // Skryj, když uživatel tuhle akci zavřel (zapamatováno per id — nová akce
+    // se zase ukáže). Funguje na mobilu i desktopu (localStorage).
+    let dismissed = '';
+    try { dismissed = localStorage.getItem('mtf_teaser_dismissed') || ''; } catch {}
+    if (!ev || dismissed === ev.id) { el.classList.add('hidden'); el.innerHTML = ''; return; }
     el.innerHTML = `
       <button class="event-teaser-inner" type="button">
         <span class="event-teaser-label">Nejbližší akce</span>
         <span class="event-teaser-title">${esc(ev.title)}</span>
         <span class="event-teaser-date">${esc(eventDateLabel(ev))}</span>
+      </button>
+      <button class="event-teaser-close" type="button" aria-label="Skrýt akci" title="Skrýt">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="14" height="14"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>`;
     el.classList.remove('hidden');
     el.querySelector('.event-teaser-inner').addEventListener('click', () => showEvent(ev.id));
+    el.querySelector('.event-teaser-close').addEventListener('click', () => {
+      try { localStorage.setItem('mtf_teaser_dismissed', ev.id); } catch {}
+      el.classList.add('hidden');
+      el.innerHTML = '';
+    });
   }).catch(() => {});
 }
 
