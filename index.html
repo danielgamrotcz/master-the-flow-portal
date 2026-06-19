@@ -175,13 +175,6 @@
         <div id="loading-events" class="loading-state hidden"><div class="spinner"></div></div>
       </div>
 
-      <div id="view-event-detail" class="view hidden">
-        <div class="transcript-back">
-          <button class="back-btn" id="btn-event-back">&larr;&nbsp;Zpět</button>
-        </div>
-        <div id="event-detail-content" class="transcript-content"></div>
-      </div>
-
       <footer class="site-footer">
       <div class="footer-links">
         <a href="https://danielgamrot.cz" target="_blank" rel="noopener">Daniel Gamrot</a>
@@ -275,6 +268,25 @@
         </svg>
         <span>Zeptat se</span>
       </button>
+    </div>
+  </div>
+
+  <div id="event-overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="event-ov-title">
+    <div class="overlay-backdrop" id="event-overlay-backdrop"></div>
+    <div class="overlay-sheet">
+      <div class="overlay-handle"></div>
+      <div class="overlay-header">
+        <div id="event-ov-meta" class="overlay-meta"></div>
+        <button id="event-overlay-close" class="overlay-close-btn icon-btn icon-btn--lg" aria-label="Zavřít">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div id="event-overlay-body" class="overlay-body">
+        <div id="event-ov-content"></div>
+      </div>
     </div>
   </div>
 

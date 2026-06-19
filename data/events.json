@@ -12,11 +12,13 @@
       "short": "Kompletní setup Raycastu, co reálně používám. Záznam 90 minut, přepis, PDF a seznam rozšíření.",
       "description": "„Myslel jsem, že Raycast využívám naplno. Nebyla to pravda.“ Celé moje nastavení Raycastu s praktickými tipy a reálným setupem. Součástí je záznam (90 minut), textový přepis, PDF souhrn a seznam rozšíření.",
       "program": [
-        "Raycast bez doplňků (hledání, kalkulačka, okna, AI)",
-        "Historie schránky a textové zkratky",
-        "Přímé zkratky na stránky a klávesové zkratky",
-        "Doplňky, které mění práci (Claude, ChatGPT, WhatsApp)",
-        "Otázky a odpovědi"
+        "Raycast jako centrální ovladač Macu přes klávesové zkratky (náhrada Spotlightu)",
+        "Základ bez instalace: vyhledávání, kalkulačka, převody měn a jednotek",
+        "Správa oken zkratkami a rychlé emotikony",
+        "AI chat: přepínání modelů, větvení konverzace, Quick AI přes Tab",
+        "AI commands: uložené prompty na text, schránku i web (překlad, gramatika, shrnutí)",
+        "Neomezená historie schránky s fulltextem",
+        "Snippety zdarma místo TextExpanderu a vlastní extension přes Claude Code (Obsidian, Google Workspace, OCR)"
       ],
       "registration_url": "https://buy.stripe.com/8x2fZh3L83UvgsP6h9cIE0a",
       "is_paid": true,
@@ -65,12 +67,14 @@
       "short": "Kompletní prohlídka mého produktivního systému na řízení desítek projektů. Záznam 2 h 50 min plus bonusy.",
       "description": "„13 let jsem si stavěl produktivní systém. Ukážu vám ho celý.“ Reálný workflow přes screenshare. Součástí je záznam (2 h 50 min + Q&A), 16stránkový eBook, 11 sketchnotes, 18 skillů pro Claude Code, šablony a checklisty.",
       "program": [
-        "Práce z různých míst a digitální svět",
-        "Digitální zjednodušování a vibe coding",
-        "AI produktivita bez kódu přes Claude Code",
-        "Práce s informacemi a knowledge management",
-        "Energie a sebeřízení (not-to-do list)",
-        "Praktické aplikace pro vlastní systém"
+        "Rovnice produktivity: záměr, výkon, relevance, udržitelnost",
+        "Inbox, metoda 4D a timeblocking",
+        "Obsidian jako druhý mozek (systém PARA)",
+        "Vibe coding a Claude Code: konfigurace, skilly, hooky",
+        "Automatizace bez UI, přepisy a reporty",
+        "E-maily a „neúkoly“, procesní zjednodušení",
+        "Bezpečnost, governance a práce s daty",
+        "Energie, udržitelnost a „dopaminová past“"
       ],
       "registration_url": "https://buy.stripe.com/eVqfZh81o62DcczgVNcIE08",
       "is_paid": true,
@@ -92,11 +96,12 @@
       "short": "Jak neprogramátor vytváří funkční nástroje pomocí AI. Záznam 55 minut plus Vibe Coding Handbook.",
       "description": "Jak si i bez znalosti programování postavit funkční aplikaci s pomocí AI. Součástí je záznam (55 minut), Vibe Coding Handbook (PDF), materiály a shrnutí.",
       "program": [
-        "Vibe coding jako řešení konkrétních problémů",
-        "Reálné projekty (Beach Watch, LiveScript, Uttero, VibeTerm)",
-        "Live demo: webová aplikace od nuly",
-        "Práce se zadáním a komunikace s AI",
-        "Praktické tipy a triky"
+        "Co je vibe coding: vyřešit problém vytvořením produktu na míru",
+        "Začít nejjednodušším MVP na vlastní problém",
+        "Iterativní dialog s AI a pochopení kódu před nasazením",
+        "Reálné aplikace: Beach Watch, Live Script, Uttero, VibeTerm, YouTube Transcriber",
+        "Nástroje: Claude Code, Lovable, Codex; přepis Soniox a Whisper; nasazení Cloudflare nebo Vercel",
+        "Bezpečnost: review, testy a monitoring před produkcí"
       ],
       "registration_url": "https://buy.stripe.com/6oU6oHftQez90tRbBtcIE05",
       "is_paid": true,

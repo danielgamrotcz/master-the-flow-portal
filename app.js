@@ -1141,7 +1141,7 @@ function renderEventCardEl(ev) {
 
 function attachEventCardListeners(container) {
   container.querySelectorAll('.event-card').forEach(el => {
-    const open = () => showEvent(el.dataset.eventId, true);
+    const open = () => showEvent(el.dataset.eventId);
     el.addEventListener('click', open);
     el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
   });
@@ -1206,7 +1206,7 @@ function eventCtaHtml(ev) {
 
   let html = '';
   if (buyShown && ev.discount_code) {
-    html += `<div class="event-note">Slevový kód: <strong>${esc(ev.discount_code)}</strong> (zadej v pokladně)</div>`;
+    html += `<div class="event-note">Slevový kód: <strong>${esc(ev.discount_code)}</strong> (zadejte ve Stripe)</div>`;
   }
   if (btns.length) html += `<div class="event-cta-row">${btns.join('')}</div>`;
   if (rec && ev.recording_password) {
@@ -1215,34 +1215,36 @@ function eventCtaHtml(ev) {
   return html;
 }
 
-function showEvent(id, pushHash = false) {
+// Detail akce se otevírá ve stejném sheet overlayi jako karty poznatků.
+function showEvent(id) {
   const ev = (state.events || []).find(e => e.id === id);
   if (!ev) {
-    if (!state.eventsLoaded) { loadEvents().then(() => showEvent(id, pushHash)); return; }
-    switchView('events');
+    if (!state.eventsLoaded) { loadEvents().then(() => showEvent(id)); return; }
     showToast('Akce nenalezena');
     return;
   }
-  if (pushHash) {
-    _preEventHash = location.hash || '#';
-    history.pushState({}, '', '#event/' + id);
-  } else {
-    _preEventHash = '#events';
-  }
-  switchView('event-detail');
+  if (!location.hash.startsWith('#event/')) _preEventHash = location.hash || '#';
+  history.replaceState({ event: id }, '', '#event/' + id);
   trackEvent('event_view', { id });
   const color = EVENT_TYPE_COLORS[ev.type] || 'var(--text-tertiary)';
   const meta = [eventDateLabel(ev), ev.location].filter(Boolean).map(esc).join(' · ');
-  $('event-detail-content').innerHTML = `
-    <div class="event-detail">
-      <div class="card-meta"><span class="card-type" style="color:${color}">${esc(ev.type || 'AKCE')}</span>${eventBadge(ev)}</div>
-      <h2 class="event-detail-title">${esc(ev.title)}</h2>
-      <div class="event-detail-meta">${meta}</div>
-      ${ev.description ? `<p class="event-detail-desc">${esc(ev.description).replace(/\n/g, '<br>')}</p>` : ''}
-      ${renderProgram(ev.program)}
-      ${eventCtaHtml(ev)}
-    </div>`;
-  $('view-event-detail').scrollTop = 0;
+  $('event-ov-meta').innerHTML = `<span class="card-type" style="color:${color}">${esc(ev.type || 'AKCE')}</span>${eventBadge(ev)}`;
+  $('event-ov-content').innerHTML = `
+    <h2 id="event-ov-title" class="event-detail-title">${esc(ev.title)}</h2>
+    <div class="event-detail-meta">${meta}</div>
+    ${ev.description ? `<p class="event-detail-desc">${esc(ev.description).replace(/\n/g, '<br>')}</p>` : ''}
+    ${renderProgram(ev.program)}
+    ${eventCtaHtml(ev)}`;
+  $('event-overlay-body').scrollTop = 0;
+  show('event-overlay');
+}
+
+function closeEvent() {
+  if ($('event-overlay').classList.contains('hidden')) return;
+  hide('event-overlay');
+  const target = _preEventHash || '#events';
+  _preEventHash = '';
+  history.replaceState({}, '', target);
 }
 
 // Proužek s nejbližší nadcházející akcí na úvodní obrazovce.
@@ -1260,7 +1262,7 @@ function renderEventTeaser() {
         <span class="event-teaser-date">${esc(eventDateLabel(ev))}</span>
       </button>`;
     el.classList.remove('hidden');
-    el.querySelector('.event-teaser-inner').addEventListener('click', () => showEvent(ev.id, true));
+    el.querySelector('.event-teaser-inner').addEventListener('click', () => showEvent(ev.id));
   }).catch(() => {});
 }
 
@@ -1271,18 +1273,21 @@ function closeMoreSheet() { hide('more-sheet'); }
 function switchView(viewName) {
   const prevView = state.view;
 
+  // Přepnutí pohledu zavře případný otevřený detail akce (sheet).
+  $('event-overlay')?.classList.add('hidden');
+
   document.getElementById('site-header').classList.toggle('stats-mode', viewName === 'stats');
 
-  const noChipsViews = new Set(['chat', 'transcript', 'stats', 'events', 'event-detail']);
+  const noChipsViews = new Set(['chat', 'transcript', 'stats', 'events']);
   $('topic-chips').classList.toggle('hidden', noChipsViews.has(viewName));
 
-  ['today', 'week', 'archive', 'search', 'stats', 'transcript', 'top', 'chat', 'events', 'event-detail'].forEach(v => {
+  ['today', 'week', 'archive', 'search', 'stats', 'transcript', 'top', 'chat', 'events'].forEach(v => {
     const el = $(`view-${v}`);
     if (el) el.classList.toggle('hidden', v !== viewName);
   });
 
   // Pohledy schované pod „Více" zvýrazní tlačítko Více.
-  const moreViews = new Set(['stats', 'events', 'event-detail', 'chat']);
+  const moreViews = new Set(['stats', 'events', 'chat']);
   const navTarget = moreViews.has(viewName) ? 'more' : viewName;
   document.querySelectorAll('.nav-btn').forEach(btn => {
     const isActive = btn.dataset.view === navTarget;
@@ -2288,7 +2293,7 @@ function handleHash() {
   } else if (hash.startsWith('event/')) {
     const id = hash.slice(6);
     switchView('events');
-    showEvent(id, false);
+    showEvent(id);
   } else {
     switchView('today');
   }
@@ -2736,12 +2741,8 @@ function init() {
   });
   $('more-backdrop').addEventListener('click', closeMoreSheet);
 
-  $('btn-event-back').addEventListener('click', () => {
-    const target = _preEventHash || '#events';
-    _preEventHash = '';
-    history.replaceState({}, '', target);
-    handleHash();
-  });
+  $('event-overlay-close').addEventListener('click', closeEvent);
+  $('event-overlay-backdrop').addEventListener('click', closeEvent);
 
   $('overlay-close').addEventListener('click', closeCard);
   $('overlay-backdrop').addEventListener('click', closeCard);
@@ -2839,8 +2840,8 @@ function init() {
 
     if (e.key === 'Escape') {
       if (!$('more-sheet').classList.contains('hidden')) { closeMoreSheet(); return; }
+      if (!$('event-overlay').classList.contains('hidden')) { closeEvent(); return; }
       if (overlayOpen) { closeCard(); return; }
-      if (state.view === 'event-detail') { $('btn-event-back').click(); return; }
       if (state.view === 'transcript') { $('btn-transcript-back').click(); return; }
       const shortcutsPanel = document.getElementById('shortcuts-panel');
       if (shortcutsPanel && !shortcutsPanel.classList.contains('hidden')) { shortcutsPanel.classList.add('hidden'); return; }
@@ -2878,6 +2879,9 @@ function init() {
     if (!$('card-overlay').classList.contains('hidden')) {
       closeCard();
     }
+    if (!$('event-overlay').classList.contains('hidden')) {
+      hide('event-overlay');
+    }
   });
 
   if (window.visualViewport) {
@@ -2895,8 +2899,9 @@ function init() {
   window.addEventListener('pageshow', e => {
     if (e.persisted) {
       $('card-overlay')?.classList.add('hidden');
+      $('event-overlay')?.classList.add('hidden');
       state.activeCard = null;
-      if (location.hash.startsWith('#card/')) history.replaceState({}, '', '#');
+      if (location.hash.startsWith('#card/') || location.hash.startsWith('#event/')) history.replaceState({}, '', '#');
     }
   });
 
