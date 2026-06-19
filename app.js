@@ -2697,10 +2697,8 @@ async function showNotFound() {
   container.innerHTML = '<div class="loading-state"><div class="spinner"></div></div>';
   try {
     const pool = await fetchJSON('/data/chat-corpus.json');
-    const insights = (pool || []).filter(c => c.type === 'INSIGHT');
-    const base = insights.length >= 6 ? insights : (pool || []);
-    // Náhodný výběr 6 (Fisher-Yates na kopii).
-    const arr = [...base];
+    // Náhodný výběr 6 ze VŠECH kategorií (insight, nástroje, ukázka, tip…).
+    const arr = [...(pool || [])];
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [arr[i], arr[j]] = [arr[j], arr[i]];
