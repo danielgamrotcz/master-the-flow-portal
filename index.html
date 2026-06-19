@@ -78,6 +78,7 @@
     <main id="main-content">
 
       <div id="view-today" class="view">
+        <div id="event-teaser" class="event-teaser hidden"></div>
         <div id="cards-today" class="cards-grid">
           <div class="card card-skeleton" aria-hidden="true"><div class="card-meta"><div class="sk sk-meta-md"></div></div><div class="sk sk-title"></div><div class="sk sk-line"></div><div class="sk sk-line sk-short"></div></div>
           <div class="card card-skeleton" aria-hidden="true"><div class="card-meta"><div class="sk sk-meta-xl"></div></div><div class="sk sk-title"></div><div class="sk sk-line"></div><div class="sk sk-line sk-short"></div></div>
@@ -159,6 +160,28 @@
         <div id="transcript-content" class="transcript-content"></div>
       </div>
 
+      <div id="view-events" class="view hidden">
+        <div id="events-upcoming-section" class="events-section">
+          <div class="section-header">Nadcházející</div>
+          <div id="events-upcoming" class="cards-grid"></div>
+          <div id="empty-events-upcoming" class="empty-state hidden">
+            <p>Žádná naplánovaná akce. Sleduj kanál Webináře &amp;&nbsp;workshopy na&nbsp;WhatsAppu.</p>
+          </div>
+        </div>
+        <div id="events-past-section" class="events-section hidden">
+          <div class="section-header">Proběhlé</div>
+          <div id="events-past" class="cards-grid"></div>
+        </div>
+        <div id="loading-events" class="loading-state hidden"><div class="spinner"></div></div>
+      </div>
+
+      <div id="view-event-detail" class="view hidden">
+        <div class="transcript-back">
+          <button class="back-btn" id="btn-event-back">&larr;&nbsp;Zpět</button>
+        </div>
+        <div id="event-detail-content" class="transcript-content"></div>
+      </div>
+
       <footer class="site-footer">
       <div class="footer-links">
         <a href="https://danielgamrot.cz" target="_blank" rel="noopener">Daniel Gamrot</a>
@@ -212,13 +235,13 @@
         </svg>
         <span>Top</span>
       </button>
-      <button class="nav-btn" data-view="stats" aria-label="Statistiky">
+      <button class="nav-btn" data-view="more" aria-label="Více">
         <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="20" x2="18" y2="10"/>
-          <line x1="12" y1="20" x2="12" y2="4"/>
-          <line x1="6" y1="20" x2="6" y2="14"/>
+          <circle cx="5" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+          <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+          <circle cx="19" cy="12" r="1.5" fill="currentColor" stroke="none"/>
         </svg>
-        <span>Statistiky</span>
+        <span>Více</span>
       </button>
       <button class="nav-btn hidden" data-view="chat" aria-label="Zeptat se">
         <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -228,6 +251,31 @@
       </button>
     </nav>
 
+  </div>
+
+  <div id="more-sheet" class="overlay hidden" role="dialog" aria-modal="true" aria-label="Více">
+    <div class="overlay-backdrop" id="more-backdrop"></div>
+    <div class="overlay-sheet more-sheet">
+      <div class="overlay-handle"></div>
+      <button class="more-item" data-view="events">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+          <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01"/>
+        </svg>
+        <span>Události</span>
+      </button>
+      <button class="more-item" data-view="stats">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+          <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+        </svg>
+        <span>Statistiky</span>
+      </button>
+      <button class="more-item" data-view="chat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+        <span>Zeptat se</span>
+      </button>
+    </div>
   </div>
 
   <div id="card-overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="overlay-title">

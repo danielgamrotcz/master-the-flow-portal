@@ -82,6 +82,8 @@ const state = {
   view: 'today',
   topic: 'all',
   today: null,
+  events: null,
+  eventsLoaded: false,
   archiveIndex: null,
   archiveCache: {},
   searchAll: [],
@@ -108,6 +110,7 @@ const state = {
 let _lastKnownDigestDate = null;
 let _preCardHash = '';
 let _preTranscriptHash = '';
+let _preEventHash = '';
 
 /* ===== VOTES ===== */
 async function loadVoteMap() {
@@ -393,6 +396,7 @@ async function loadToday() {
         '<div class="empty-state"><p>Ze včerejška nejsou žádné poznatky.</p></div>';
     }
     updatePageTitle();
+    renderEventTeaser();
     ensureSearchAll().catch(() => {});
   } catch {
     $('cards-today').innerHTML = '';
@@ -1066,22 +1070,210 @@ async function showTranscript(dateStr, sourceGroup, sourceMsgTimes) {
   }
 }
 
+/* ===== EVENTS ===== */
+const EVENT_TYPE_COLORS = {
+  'SETKÁNÍ': '#f06a15',
+  'WEBINÁŘ': '#3b82f6',
+  'ŠKOLENÍ': '#8b5cf6',
+  'SHOW-AND-TELL': '#10b981',
+};
+
+async function loadEvents() {
+  if (state.eventsLoaded) return state.events;
+  try {
+    const data = await fetchJSON('/data/events.json');
+    state.events = Array.isArray(data.events) ? data.events : [];
+  } catch {
+    state.events = [];
+  }
+  state.eventsLoaded = true;
+  return state.events;
+}
+
+// Konec akce v lokálním čase: datum + time_to (nebo konec dne). Akce s časem
+// nesmí zhasnout hned po půlnoci.
+function eventEndTs(ev) {
+  const t = (ev.time_to && /^\d{1,2}:\d{2}$/.test(ev.time_to)) ? ev.time_to : '23:59';
+  const ts = new Date(`${ev.date}T${t}:00`).getTime();
+  return isNaN(ts) ? 0 : ts;
+}
+
+function splitEvents(events) {
+  const now = Date.now();
+  const upcoming = [], past = [];
+  for (const ev of events) {
+    if (!ev || !ev.date) continue;
+    (eventEndTs(ev) >= now ? upcoming : past).push(ev);
+  }
+  upcoming.sort((a, b) => a.date.localeCompare(b.date) || (a.time_from || '').localeCompare(b.time_from || ''));
+  past.sort((a, b) => b.date.localeCompare(a.date) || (b.time_from || '').localeCompare(a.time_from || ''));
+  return { upcoming, past };
+}
+
+function eventDateLabel(ev) {
+  let s = formatDateLong(ev.date);
+  if (ev.time_from) s += ` · ${ev.time_from}${ev.time_to ? '–' + ev.time_to : ''}`;
+  return s;
+}
+
+function eventBadge(ev) {
+  if (ev.status) return `<span class="event-badge event-badge-status">${esc(ev.status)}</span>`;
+  if (ev.is_paid) return `<span class="event-badge event-badge-paid">${esc(ev.price || 'Placené')}</span>`;
+  return `<span class="event-badge event-badge-free">Zdarma</span>`;
+}
+
+function renderEventCardEl(ev) {
+  const color = EVENT_TYPE_COLORS[ev.type] || 'var(--text-tertiary)';
+  return `
+    <div class="card event-card" data-event-id="${esc(ev.id)}" role="article" tabindex="0" aria-label="${esc(ev.title)}">
+      <div class="card-meta">
+        <div class="card-meta-left"><span class="card-type" style="color:${color}">${esc(ev.type || 'AKCE')}</span></div>
+        ${eventBadge(ev)}
+      </div>
+      <div class="card-title">${esc(ev.title)}</div>
+      ${ev.short ? `<div class="card-excerpt">${esc(ev.short)}</div>` : ''}
+      <div class="card-footer">
+        <span class="card-date">${esc(eventDateLabel(ev))}</span>
+        ${ev.location ? `<span class="card-footer-right"><span class="card-date">${esc(ev.location)}</span></span>` : ''}
+      </div>
+    </div>`;
+}
+
+function attachEventCardListeners(container) {
+  container.querySelectorAll('.event-card').forEach(el => {
+    const open = () => showEvent(el.dataset.eventId, true);
+    el.addEventListener('click', open);
+    el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+  });
+}
+
+async function showEvents() {
+  show('loading-events');
+  await loadEvents();
+  hide('loading-events');
+  renderEvents();
+}
+
+function renderEvents() {
+  const { upcoming, past } = splitEvents(state.events || []);
+  const up = $('events-upcoming');
+  up.innerHTML = upcoming.map(renderEventCardEl).join('');
+  $('empty-events-upcoming').classList.toggle('hidden', upcoming.length > 0);
+  attachEventCardListeners(up);
+
+  const pastWrap = $('events-past-section');
+  if (past.length) {
+    $('events-past').innerHTML = past.map(renderEventCardEl).join('');
+    attachEventCardListeners($('events-past'));
+    pastWrap.classList.remove('hidden');
+  } else {
+    pastWrap.classList.add('hidden');
+  }
+}
+
+function renderProgram(program) {
+  if (!program) return '';
+  if (Array.isArray(program)) {
+    const items = program.map(p => {
+      if (typeof p === 'string') return `<li>${esc(p)}</li>`;
+      const time = p.time ? `<span class="event-prog-time">${esc(p.time)}</span> ` : '';
+      return `<li>${time}${esc(p.label || '')}</li>`;
+    }).join('');
+    return `<div class="event-section"><h3>Program</h3><ul class="event-program">${items}</ul></div>`;
+  }
+  return `<div class="event-section"><h3>Program</h3><p>${esc(String(program)).replace(/\n/g, '<br>')}</p></div>`;
+}
+
+function eventCtaHtml(ev) {
+  const isPast = eventEndTs(ev) < Date.now();
+  const safe = u => (typeof u === 'string' && /^https?:\/\//i.test(u)) ? u : null;
+  const reg = safe(ev.registration_url);
+  const rec = safe(ev.recording_url);
+  const parts = [];
+  if (!ev.status) {
+    if (!isPast && reg) {
+      parts.push(`<a class="event-cta event-cta-primary" href="${esc(reg)}" target="_blank" rel="noopener noreferrer nofollow">${ev.is_paid ? 'Koupit / rezervovat' : 'Registrovat se'}</a>`);
+    } else if (isPast && ev.is_paid && reg && !rec) {
+      parts.push(`<a class="event-cta event-cta-primary" href="${esc(reg)}" target="_blank" rel="noopener noreferrer nofollow">Koupit záznam</a>`);
+    }
+  }
+  if (rec) {
+    parts.push(`<a class="event-cta event-cta-secondary" href="${esc(rec)}" target="_blank" rel="noopener noreferrer nofollow">Záznam</a>`);
+  }
+  return parts.length ? `<div class="event-cta-row">${parts.join('')}</div>` : '';
+}
+
+function showEvent(id, pushHash = false) {
+  const ev = (state.events || []).find(e => e.id === id);
+  if (!ev) {
+    if (!state.eventsLoaded) { loadEvents().then(() => showEvent(id, pushHash)); return; }
+    switchView('events');
+    showToast('Akce nenalezena');
+    return;
+  }
+  if (pushHash) {
+    _preEventHash = location.hash || '#';
+    history.pushState({}, '', '#event/' + id);
+  } else {
+    _preEventHash = '#events';
+  }
+  switchView('event-detail');
+  trackEvent('event_view', { id });
+  const color = EVENT_TYPE_COLORS[ev.type] || 'var(--text-tertiary)';
+  const meta = [eventDateLabel(ev), ev.location].filter(Boolean).map(esc).join(' · ');
+  $('event-detail-content').innerHTML = `
+    <div class="event-detail">
+      <div class="card-meta"><span class="card-type" style="color:${color}">${esc(ev.type || 'AKCE')}</span>${eventBadge(ev)}</div>
+      <h2 class="event-detail-title">${esc(ev.title)}</h2>
+      <div class="event-detail-meta">${meta}</div>
+      ${ev.description ? `<p class="event-detail-desc">${esc(ev.description).replace(/\n/g, '<br>')}</p>` : ''}
+      ${renderProgram(ev.program)}
+      ${eventCtaHtml(ev)}
+    </div>`;
+  $('view-event-detail').scrollTop = 0;
+}
+
+// Proužek s nejbližší nadcházející akcí na úvodní obrazovce.
+function renderEventTeaser() {
+  const el = $('event-teaser');
+  if (!el) return;
+  loadEvents().then(() => {
+    const { upcoming } = splitEvents(state.events || []);
+    const ev = upcoming.find(e => !e.status);  // přeskoč zrušené/vyprodané
+    if (!ev) { el.classList.add('hidden'); el.innerHTML = ''; return; }
+    el.innerHTML = `
+      <button class="event-teaser-inner" type="button">
+        <span class="event-teaser-label">Nejbližší akce</span>
+        <span class="event-teaser-title">${esc(ev.title)}</span>
+        <span class="event-teaser-date">${esc(eventDateLabel(ev))}</span>
+      </button>`;
+    el.classList.remove('hidden');
+    el.querySelector('.event-teaser-inner').addEventListener('click', () => showEvent(ev.id, true));
+  }).catch(() => {});
+}
+
+function openMoreSheet() { show('more-sheet'); }
+function closeMoreSheet() { hide('more-sheet'); }
+
 /* ===== NAVIGATION ===== */
 function switchView(viewName) {
   const prevView = state.view;
 
   document.getElementById('site-header').classList.toggle('stats-mode', viewName === 'stats');
 
-  const noChipsViews = new Set(['chat', 'transcript', 'stats']);
+  const noChipsViews = new Set(['chat', 'transcript', 'stats', 'events', 'event-detail']);
   $('topic-chips').classList.toggle('hidden', noChipsViews.has(viewName));
 
-  ['today', 'week', 'archive', 'search', 'stats', 'transcript', 'top', 'chat'].forEach(v => {
+  ['today', 'week', 'archive', 'search', 'stats', 'transcript', 'top', 'chat', 'events', 'event-detail'].forEach(v => {
     const el = $(`view-${v}`);
     if (el) el.classList.toggle('hidden', v !== viewName);
   });
 
+  // Pohledy schované pod „Více" zvýrazní tlačítko Více.
+  const moreViews = new Set(['stats', 'events', 'event-detail', 'chat']);
+  const navTarget = moreViews.has(viewName) ? 'more' : viewName;
   document.querySelectorAll('.nav-btn').forEach(btn => {
-    const isActive = btn.dataset.view === viewName;
+    const isActive = btn.dataset.view === navTarget;
     btn.classList.toggle('active', isActive);
     btn.setAttribute('aria-current', isActive ? 'page' : 'false');
   });
@@ -1114,6 +1306,8 @@ function switchView(viewName) {
     loadTopView();
   } else if (viewName === 'chat') {
     initChat();
+  } else if (viewName === 'events') {
+    showEvents();
   }
 }
 
@@ -2077,6 +2271,12 @@ function handleHash() {
     switchView('top');
   } else if (hash === 'chat') {
     switchView('chat');
+  } else if (hash === 'events') {
+    switchView('events');
+  } else if (hash.startsWith('event/')) {
+    const id = hash.slice(6);
+    switchView('events');
+    showEvent(id, false);
   } else {
     switchView('today');
   }
@@ -2506,9 +2706,29 @@ function init() {
 
   document.querySelectorAll('.nav-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      switchView(btn.dataset.view);
-      history.pushState({}, '', `#${btn.dataset.view === 'today' ? '' : btn.dataset.view}`);
+      const v = btn.dataset.view;
+      if (v === 'more') { openMoreSheet(); return; }
+      switchView(v);
+      history.pushState({}, '', `#${v === 'today' ? '' : v}`);
     });
+  });
+
+  // Menu „Více" — položky a zavření.
+  document.querySelectorAll('#more-sheet .more-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const v = btn.dataset.view;
+      closeMoreSheet();
+      switchView(v);
+      history.pushState({}, '', `#${v}`);
+    });
+  });
+  $('more-backdrop').addEventListener('click', closeMoreSheet);
+
+  $('btn-event-back').addEventListener('click', () => {
+    const target = _preEventHash || '#events';
+    _preEventHash = '';
+    history.replaceState({}, '', target);
+    handleHash();
   });
 
   $('overlay-close').addEventListener('click', closeCard);
@@ -2606,7 +2826,9 @@ function init() {
     const overlayOpen = !$('card-overlay').classList.contains('hidden');
 
     if (e.key === 'Escape') {
+      if (!$('more-sheet').classList.contains('hidden')) { closeMoreSheet(); return; }
       if (overlayOpen) { closeCard(); return; }
+      if (state.view === 'event-detail') { $('btn-event-back').click(); return; }
       if (state.view === 'transcript') { $('btn-transcript-back').click(); return; }
       const shortcutsPanel = document.getElementById('shortcuts-panel');
       if (shortcutsPanel && !shortcutsPanel.classList.contains('hidden')) { shortcutsPanel.classList.add('hidden'); return; }
