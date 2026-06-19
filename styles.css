@@ -2094,6 +2094,8 @@ a:hover { text-decoration: underline; }
 .event-cta-primary { background: var(--accent); color: #fff; }
 .event-cta-secondary { background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border); }
 .event-cta:hover { opacity: 0.9; text-decoration: none; }
+.event-note { font-size: 13px; color: var(--text-secondary); margin-top: 10px; }
+.event-note strong { color: var(--text-primary); }
 
 .event-teaser { margin-bottom: 16px; }
 .event-teaser-inner {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T10:00:00Z",
+  "generated_at": "2026-06-19T11:00:00Z",
   "events": [
     {
       "id": "evt-2026-06-11-raycast",
@@ -21,7 +21,37 @@
       "registration_url": "https://buy.stripe.com/8x2fZh3L83UvgsP6h9cIE0a",
       "is_paid": true,
       "price": "790 Kč",
+      "discount_code": "MTFRAYCAST",
+      "detail_url": "https://danielgamrot.cz/webinar/raycast/",
       "recording_url": null,
+      "recording_password": null,
+      "status": null
+    },
+    {
+      "id": "evt-2026-06-10-show-and-tell",
+      "type": "SHOW-AND-TELL",
+      "title": "Show & Tell: sdílení projektů skupiny Vibe Coding",
+      "date": "2026-06-10",
+      "time_from": null,
+      "time_to": null,
+      "location": "Online",
+      "short": "Členové ukázali projekty postavené s AI a vibe codingem, od účetnictví přes sport po catering. Záznam k dispozici.",
+      "description": "Sdílení skupiny, kde si účastníci ukázali projekty postavené s pomocí AI a vibe codingu. Prezentující z různých oborů ukázali konkrétní nástroje, workflow i chyby, na které narazili. Hlavní pointa: zvídavost a ochota zkoušet věci po malých částech je důležitější než technické zázemí.",
+      "program": [
+        "Automatizace párování bankovních transakcí přes Claude skill",
+        "Second brain v Claude Code jako síť Markdown souborů",
+        "Analýza sportovního videa po snímcích",
+        "Agentický tým s cross-verifikací subagentů",
+        "Lovable: prototyp za hodinu a jeho úskalí",
+        "Iterování mezi Claude a ChatGPT"
+      ],
+      "registration_url": null,
+      "is_paid": false,
+      "price": null,
+      "discount_code": null,
+      "detail_url": null,
+      "recording_url": "https://us06web.zoom.us/rec/share/h8NfnvCeG4MBL4pz41FxgHnCyZLEl1tAit9HGdzTkZoaL4b121Rgwr7Ui_JktIOx.O65NmfQSdekW2bnl",
+      "recording_password": "!2znH@&2",
       "status": null
     },
     {
@@ -45,7 +75,10 @@
       "registration_url": "https://buy.stripe.com/eVqfZh81o62DcczgVNcIE08",
       "is_paid": true,
       "price": "1 490 Kč",
+      "discount_code": "MASTERTHEFLOW",
+      "detail_url": "https://danielgamrot.cz/webinar/pod-kapotou/",
       "recording_url": null,
+      "recording_password": null,
       "status": null
     },
     {
@@ -68,7 +101,10 @@
       "registration_url": "https://buy.stripe.com/6oU6oHftQez90tRbBtcIE05",
       "is_paid": true,
       "price": "490 Kč",
+      "discount_code": "MASTERTHEFLOW",
+      "detail_url": "https://danielgamrot.cz/webinar/vibe-coding/",
       "recording_url": null,
+      "recording_password": null,
       "status": null
     }
   ]

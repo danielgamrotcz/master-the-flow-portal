@@ -1189,18 +1189,30 @@ function eventCtaHtml(ev) {
   const safe = u => (typeof u === 'string' && /^https?:\/\//i.test(u)) ? u : null;
   const reg = safe(ev.registration_url);
   const rec = safe(ev.recording_url);
-  const parts = [];
+  const detail = safe(ev.detail_url);
+  const btns = [];
+  let buyShown = false;
   if (!ev.status) {
     if (!isPast && reg) {
-      parts.push(`<a class="event-cta event-cta-primary" href="${esc(reg)}" target="_blank" rel="noopener noreferrer nofollow">${ev.is_paid ? 'Koupit / rezervovat' : 'Registrovat se'}</a>`);
+      btns.push(`<a class="event-cta event-cta-primary" href="${esc(reg)}" target="_blank" rel="noopener noreferrer nofollow">${ev.is_paid ? 'Koupit / rezervovat' : 'Registrovat se'}</a>`);
+      buyShown = true;
     } else if (isPast && ev.is_paid && reg && !rec) {
-      parts.push(`<a class="event-cta event-cta-primary" href="${esc(reg)}" target="_blank" rel="noopener noreferrer nofollow">Koupit záznam</a>`);
+      btns.push(`<a class="event-cta event-cta-primary" href="${esc(reg)}" target="_blank" rel="noopener noreferrer nofollow">Koupit záznam</a>`);
+      buyShown = true;
     }
   }
-  if (rec) {
-    parts.push(`<a class="event-cta event-cta-secondary" href="${esc(rec)}" target="_blank" rel="noopener noreferrer nofollow">Záznam</a>`);
+  if (rec) btns.push(`<a class="event-cta event-cta-secondary" href="${esc(rec)}" target="_blank" rel="noopener noreferrer nofollow">Záznam</a>`);
+  if (detail) btns.push(`<a class="event-cta event-cta-secondary" href="${esc(detail)}" target="_blank" rel="noopener noreferrer nofollow">Detail akce</a>`);
+
+  let html = '';
+  if (buyShown && ev.discount_code) {
+    html += `<div class="event-note">Slevový kód: <strong>${esc(ev.discount_code)}</strong> (zadej v pokladně)</div>`;
   }
-  return parts.length ? `<div class="event-cta-row">${parts.join('')}</div>` : '';
+  if (btns.length) html += `<div class="event-cta-row">${btns.join('')}</div>`;
+  if (rec && ev.recording_password) {
+    html += `<div class="event-note">Heslo k záznamu: <strong>${esc(ev.recording_password)}</strong></div>`;
+  }
+  return html;
 }
 
 function showEvent(id, pushHash = false) {
