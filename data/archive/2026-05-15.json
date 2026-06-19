@@ -30,7 +30,7 @@
       "level": "Builder",
       "title": "NotebookLM jako izolovaný právní asistent",
       "excerpt": "Nahrát do NotebookLM konkrétní zákony a vyhlášky a pracovat jen s tímhle uzavřeným zdrojem. Model pak odpovídá pouze z nahraných dokumentů a když odpověď nenajde, napíše, že neví.",
-      "body": "Pavel Minář prý na tohle téma sdílel video, ve kterém jeho manželka, projektantka, popisuje, jak do NotebookLM nahrává zákony a vyhlášky. Model pracuje jen s těmito dokumenty a pokud odpověď nenajde, napíše, že neví.\n\nNěkolik dalších členů potvrdilo, že NotebookLM takhle používají pro interní postupy nebo znalostní báze.\n\nZ advokacie přišlo upozornění: výstupy z běžných AI jsou prý \"jedna velká pohádka\". Modely neumí pracovat s časovými verzemi zákonů a pletou různé verze dohromady. V diskuzi zazněla i doporučení na specializované nástroje Libratech.ai a Codexis AI. Jeden člen Codexis používá a má s ním dobré zkušenosti, jiný člen k izolovanosti právních AI systémů vyjádřil výhrady.\n\nZákladní doporučení z diskuze: vždy chtít přesný odkaz na paragraf a odstavec.",
+      "body": "člen komunity prý na tohle téma sdílel video, ve kterém jeho manželka, projektantka, popisuje, jak do NotebookLM nahrává zákony a vyhlášky. Model pracuje jen s těmito dokumenty a pokud odpověď nenajde, napíše, že neví.\n\nNěkolik dalších členů potvrdilo, že NotebookLM takhle používají pro interní postupy nebo znalostní báze.\n\nZ advokacie přišlo upozornění: výstupy z běžných AI jsou prý \"jedna velká pohádka\". Modely neumí pracovat s časovými verzemi zákonů a pletou různé verze dohromady. V diskuzi zazněla i doporučení na specializované nástroje Libratech.ai a Codexis AI. Jeden člen Codexis používá a má s ním dobré zkušenosti, jiný člen k izolovanosti právních AI systémů vyjádřil výhrady.\n\nZákladní doporučení z diskuze: vždy chtít přesný odkaz na paragraf a odstavec.",
       "read_minutes": 2,
       "source_date": "2026-05-15",
       "topics": [
@@ -216,7 +216,7 @@
           {
             "time": "13:50",
             "author": "člen komunity",
-            "text": "Pavel Minar na to mel videotip se svoji manzelkou, ktera je projektantka a pouziva NotebookLM. Nahraje si tam vsechny zakony, vyhlasky, atd. a vi, ze to pracuje pouze s temi dokumenty. Pokud to nevi, napise, ze nevi."
+            "text": "člen komunity na to mel videotip se svoji manzelkou, ktera je projektantka a pouziva NotebookLM. Nahraje si tam vsechny zakony, vyhlasky, atd. a vi, ze to pracuje pouze s temi dokumenty. Pokud to nevi, napise, ze nevi."
           },
           {
             "time": "13:51",

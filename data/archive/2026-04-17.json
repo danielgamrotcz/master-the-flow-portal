@@ -12,8 +12,8 @@
       "type": "INSIGHT",
       "level": "Builder",
       "title": "Claude Code na tvorbu, Claude chat na analýzu",
-      "excerpt": "Pavel Vokoun popsal, jak si dělí práci mezi Claude Code a aplikaci Claude. Claude Code bere jako prostor na tvorbu, nejen kód, ale i dokumenty. Claude chat a projekty používá na analýzu a konzultace.",
-      "body": "Jeden člen komunity se ptal, jak ostatní přepínají mezi Claude Code a klasickým chatem.\n\nPavel Vokoun popsal svůj přístup. Claude chat a Projekty používá, když potřebuje analyzovat a konzultovat. Claude Code bere jako hlavní prostor pro tvorbu. Nejen kód, ale i dokumenty.",
+      "excerpt": "člen komunity popsal, jak si dělí práci mezi Claude Code a aplikaci Claude. Claude Code bere jako prostor na tvorbu, nejen kód, ale i dokumenty. Claude chat a projekty používá na analýzu a konzultace.",
+      "body": "Jeden člen komunity se ptal, jak ostatní přepínají mezi Claude Code a klasickým chatem.\n\nčlen komunity popsal svůj přístup. Claude chat a Projekty používá, když potřebuje analyzovat a konzultovat. Claude Code bere jako hlavní prostor pro tvorbu. Nejen kód, ale i dokumenty.",
       "read_minutes": 2,
       "source_date": "2026-04-17",
       "topics": [
@@ -77,8 +77,8 @@
       "type": "UKÁZKA",
       "level": "Expert",
       "title": "800 poznámek v Obsidianu a agenti nad nimi",
-      "excerpt": "Pavel Vokoun sdílí odkaz na YouTube kanál s inspirací na tlupu agentů nad poznámkami. Pokud pracujete s Obsidianem a agenty, může vás zajímat.",
-      "body": "Pavel Vokoun doporučil YouTube kanál pro ty, kdo hledají inspiraci na agenty nad poznámkami. Konkrétně zmínil koncept \"tlupy agentů\" nad poznámkami.\n\nOdkaz: https://m.youtube.com/@myicor",
+      "excerpt": "člen komunity sdílí odkaz na YouTube kanál s inspirací na tlupu agentů nad poznámkami. Pokud pracujete s Obsidianem a agenty, může vás zajímat.",
+      "body": "člen komunity doporučil YouTube kanál pro ty, kdo hledají inspiraci na agenty nad poznámkami. Konkrétně zmínil koncept \"tlupy agentů\" nad poznámkami.\n\nOdkaz: https://m.youtube.com/@myicor",
       "read_minutes": 3,
       "source_date": "2026-04-17",
       "topics": [
@@ -153,7 +153,7 @@
           {
             "time": "07:39",
             "author": "člen komunity",
-            "text": "Ahoj všem,\nminulý týden jsme měli finále naší soutěže pro středoškolály v digi dovednostech, v rámci kterého tvořili vzdělávací obsah pro seniory, rozkrývali dezinfo narativy a taky vibe codovali. Jen jsem s vámi chtěla posdílet, že ačkoli mezi nimi byly rozdíly (elektrikáři, gympláci, IT obory), všichni za hoďku zvládli vytvořit funkční apku na kvízy v Macaly.\nTak jen povzbuzení pro ty, co teprve začínají. 🙂 Jindra Fáborský o tom natočil i podcast:\nhttps://youtu.be/ipPh-5AOg4s?is=BEDEXw1TWuvmeO0V"
+            "text": "Ahoj všem,\nminulý týden jsme měli finále naší soutěže pro středoškolály v digi dovednostech, v rámci kterého tvořili vzdělávací obsah pro seniory, rozkrývali dezinfo narativy a taky vibe codovali. Jen jsem s vámi chtěla posdílet, že ačkoli mezi nimi byly rozdíly (elektrikáři, gympláci, IT obory), všichni za hoďku zvládli vytvořit funkční apku na kvízy v Macaly.\nTak jen povzbuzení pro ty, co teprve začínají. 🙂 člen komunity o tom natočil i podcast:\nhttps://youtu.be/ipPh-5AOg4s?is=BEDEXw1TWuvmeO0V"
           },
           {
             "time": "08:04",

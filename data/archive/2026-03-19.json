@@ -13,7 +13,7 @@
       "level": "Builder",
       "title": "Den 5 výzvy: hotové projekty jdou ven",
       "excerpt": "Pátý den Vibe Coding výzvy byl o doladění a sdílení výsledků. V kanálu se objevily projekty stavěné v Lovable i Claude Code.",
-      "body": "Daniel Gamrot vyhlásil Den 5 heslem: dolaďte a sdílejte. Členové se podělili o to, co za pět dní postavili.\n\nV diskuzi bylo vidět, že lidi jedou na různých nástrojích. Denisa Filičková používala na část věcí Gemini CLI a překvapilo ji, že Claude Code to teď zvládne taky. Daniel přiznal, že Lovable už nějakou dobu neotvírá a jede všechno přes Claude Code, protože nechce tříštit práci do více nástrojů.\n\nDen 5 byl také o App Store problémech, které Nikol sdílela odkazem na článek z 9to5mac.",
+      "body": "Daniel Gamrot vyhlásil Den 5 heslem: dolaďte a sdílejte. Členové se podělili o to, co za pět dní postavili.\n\nV diskuzi bylo vidět, že lidi jedou na různých nástrojích. člen komunity používala na část věcí Gemini CLI a překvapilo ji, že Claude Code to teď zvládne taky. Daniel přiznal, že Lovable už nějakou dobu neotvírá a jede všechno přes Claude Code, protože nechce tříštit práci do více nástrojů.\n\nDen 5 byl také o App Store problémech, které Nikol sdílela odkazem na článek z 9to5mac.",
       "read_minutes": 2,
       "source_date": "2026-03-19",
       "topics": [
@@ -80,7 +80,7 @@
       "level": "Builder",
       "title": "Diktování přímo do textového pole, ne do schránky",
       "excerpt": "Daniel sdílel nástroj na diktování, který text zobrazuje rovnou v aktivním poli. macOS verze je hotová, na iOS verzi je podle něj ještě pyšnější.",
-      "body": "Daniel Gamrot popsal, že hledal nástroj, který by text z diktování zobrazoval přímo v textovém poli, ne přes schránku. Takový nenašel, tak si ho zřejmě postavil sám. Zmínil, že Raycast má diktování dobré, ale bojí se, že se rozbije jako Wispr Flow.\n\nmacOS verze je hotová. iOS verzi Daniel označil za něco, na co je ještě pyšnější.\n\nPavel Vokoun se ptal na Android verzi. Poznamenal, že tam by distribuce byla jednodušší, stačil by APK soubor bez App Storu, a přihlásil se jako tester. Jestli je Android verze v plánu, ze zpráv nevyplývá.",
+      "body": "Daniel Gamrot popsal, že hledal nástroj, který by text z diktování zobrazoval přímo v textovém poli, ne přes schránku. Takový nenašel, tak si ho zřejmě postavil sám. Zmínil, že Raycast má diktování dobré, ale bojí se, že se rozbije jako Wispr Flow.\n\nmacOS verze je hotová. iOS verzi Daniel označil za něco, na co je ještě pyšnější.\n\nčlen komunity se ptal na Android verzi. Poznamenal, že tam by distribuce byla jednodušší, stačil by APK soubor bez App Storu, a přihlásil se jako tester. Jestli je Android verze v plánu, ze zpráv nevyplývá.",
       "read_minutes": 2,
       "source_date": "2026-03-19",
       "topics": [

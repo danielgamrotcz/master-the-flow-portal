@@ -33,7 +33,7 @@
       "id": "2026-05-20-03",
       "source_date": "2026-05-20",
       "excerpt": "Jeden člen popsal svůj setup: Claude Cowork s asi 50 skripty, Obsidian podle PARA, n8n na Hetzneru pro backend a druhá Claude noga na starém Mac mini.",
-      "body": "Jiří Soljak shrnul, jak má postavený celý systém. V Claude Cowork má přes 50 vytvořených skillů, složky synchronizuje přes iCloud. Obsidian naplnil podle Karpathyho Wiki-LLM návodu, strukturovaný přes PARA. Backend postupně staví na n8n na Hetzneru. Paralelně si rozjíždí druhou CLI instanci Claude na starém Mac mini pro případ, že laptop spí. Říká, že to stálo moře času, ale záměrně šel cestou Good Enough, aby nepředělával věci pořád dokola.",
+      "body": "člen komunity shrnul, jak má postavený celý systém. V Claude Cowork má přes 50 vytvořených skillů, složky synchronizuje přes iCloud. Obsidian naplnil podle Karpathyho Wiki-LLM návodu, strukturovaný přes PARA. Backend postupně staví na n8n na Hetzneru. Paralelně si rozjíždí druhou CLI instanci Claude na starém Mac mini pro případ, že laptop spí. Říká, že to stálo moře času, ale záměrně šel cestou Good Enough, aby nepředělával věci pořád dokola.",
       "topics": [
         "Automatizace",
         "Obsidian"
@@ -48,8 +48,8 @@
     {
       "id": "2026-05-20-04",
       "source_date": "2026-05-20",
-      "excerpt": "Daniel sdílel epizodu Marka Prokopa s Jindrou Fáborským. Dva členové k tomu doporučili aifirst.cz a naprimosai.cz jako vstupní bod pro vibe coding.",
-      "body": "Daniel sdílel epizodu Marka Prokopa s Jindrou Fáborským na Spotify. Jeden člen potvrdil, že Jindrův podcast ho dostal k vibe codingu, a velmi doporučil celý kurz na aifirst.cz jako praktický první krok. Nikol sdílela z AI MSK komunity odkaz na naprimosai.cz jako zevrubný návod pro začínající.",
+      "excerpt": "Daniel sdílel epizodu Marka Prokopa s člen komunity. Dva členové k tomu doporučili aifirst.cz a naprimosai.cz jako vstupní bod pro vibe coding.",
+      "body": "Daniel sdílel epizodu Marka Prokopa s člen komunity na Spotify. Jeden člen potvrdil, že Jindrův podcast ho dostal k vibe codingu, a velmi doporučil celý kurz na aifirst.cz jako praktický první krok. Nikol sdílela z AI MSK komunity odkaz na naprimosai.cz jako zevrubný návod pro začínající.",
       "topics": [
         "Vibe Coding",
         "Claude Code"
@@ -498,7 +498,7 @@
           {
             "time": "18:11",
             "author": "Daniel",
-            "text": "Moc fajn rozhovor Marka Prokopa s Jindrou Fáborským. Marka sleduju od té doby, co jsem na volné noze. Baví mě jeho témata i adaptabilita. A to jsem marketingem nepolíbený.\nBTW pokud neposloucháte, Jindrův podcast je fakt plný inspirace i praktických tipů. Doporučuju si to dát od první epizody. Vzpomínám, jak jsem to hltal v gymu v Hua Hin. Až by se to mohlo jmenovat „Cvičíme s Jindrou“.\nhttps://open.spotify.com/episode/5jguj3xtXck18FFznW28Qu?si=37dc56d6776046f3"
+            "text": "Moc fajn rozhovor Marka Prokopa s člen komunity. Marka sleduju od té doby, co jsem na volné noze. Baví mě jeho témata i adaptabilita. A to jsem marketingem nepolíbený.\nBTW pokud neposloucháte, Jindrův podcast je fakt plný inspirace i praktických tipů. Doporučuju si to dát od první epizody. Vzpomínám, jak jsem to hltal v gymu v Hua Hin. Až by se to mohlo jmenovat „Cvičíme s Jindrou“.\nhttps://open.spotify.com/episode/5jguj3xtXck18FFznW28Qu?si=37dc56d6776046f3"
           },
           {
             "time": "19:58",

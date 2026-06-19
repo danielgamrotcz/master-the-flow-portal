@@ -10,8 +10,8 @@
     {
       "id": "2026-05-16-01",
       "source_date": "2026-05-16",
-      "excerpt": "Filip Fio Konečný popsal, co Raycast umí – od spouštění aplikací přes snippety až po stovky integrací zdarma. Vše ovládané jedinou klávesovou zkratkou.",
-      "body": "Člen komunity se ptal, co je Raycast a k čemu ho může použít laik. Filip Fio Konečný shrnul hlavní funkce: rychlé spouštění aplikací a konkrétních webů, snippety s placeholdery jako datum nebo jméno adresáta, správu oken, chytrou schránku s historií, emoji picker, color picker, kalkulačku, převody měn a jednotek, překladač, hledání souborů, ovládání přes CLI a stovky dalších integrací zdarma na store. Jiný člen doplnil, že mu Raycast nabídl spoustu zjednodušení buď v základu, nebo přes dostupné pluginy – bez nutnosti znát programování.",
+      "excerpt": "člen komunity popsal, co Raycast umí – od spouštění aplikací přes snippety až po stovky integrací zdarma. Vše ovládané jedinou klávesovou zkratkou.",
+      "body": "Člen komunity se ptal, co je Raycast a k čemu ho může použít laik. člen komunity shrnul hlavní funkce: rychlé spouštění aplikací a konkrétních webů, snippety s placeholdery jako datum nebo jméno adresáta, správu oken, chytrou schránku s historií, emoji picker, color picker, kalkulačku, převody měn a jednotek, překladač, hledání souborů, ovládání přes CLI a stovky dalších integrací zdarma na store. Jiný člen doplnil, že mu Raycast nabídl spoustu zjednodušení buď v základu, nebo přes dostupné pluginy – bez nutnosti znát programování.",
       "topics": [
         "Raycast"
       ],
@@ -26,7 +26,7 @@
       "id": "2026-05-16-02",
       "source_date": "2026-05-16",
       "excerpt": "Zdrojové zprávy k této kartě se týkají Raycastu, ne překladu konferenčních posterů. Obsah karty nemá oporu ve zdrojích.",
-      "body": "Zdrojové zprávy neobsahují žádnou zmínku o překladu konferenčních posterů přes GPT nebo Perplexity. Karta vychází ze zpráv o Raycastu – otázka laika a odpověď Filipa Fio Konečného se výhradně týkají funkcí Raycastu. Obsah karty nelze z dostupných zdrojů doložit.",
+      "body": "Zdrojové zprávy neobsahují žádnou zmínku o překladu konferenčních posterů přes GPT nebo Perplexity. Karta vychází ze zpráv o Raycastu – otázka laika a odpověď člen komunity se výhradně týkají funkcí Raycastu. Obsah karty nelze z dostupných zdrojů doložit.",
       "topics": [
         "AI nástroje"
       ],
@@ -63,8 +63,8 @@
     {
       "id": "2026-05-16-04",
       "source_date": "2026-05-16",
-      "excerpt": "Filip Fio Konečný sdílel tip na pojmenovávání souborů a adresářů pro lidi mimo IT.",
-      "body": "Filip Fio Konečný zmínil tip na názvy souborů a adresářů s poznámkou, že je určený pro ne-IT lidi. Žádné další podrobnosti ze zprávy nevyplývají.",
+      "excerpt": "člen komunity sdílel tip na pojmenovávání souborů a adresářů pro lidi mimo IT.",
+      "body": "člen komunity zmínil tip na názvy souborů a adresářů s poznámkou, že je určený pro ne-IT lidi. Žádné další podrobnosti ze zprávy nevyplývají.",
       "topics": [
         "Vibe Coding",
         "Claude Code"

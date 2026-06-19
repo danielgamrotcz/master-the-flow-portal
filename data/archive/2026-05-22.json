@@ -59,7 +59,7 @@
       "level": "Expert",
       "title": "Jak strukturovat konec Vibe Coding session",
       "excerpt": "Daniel sdílel svůj 9-krokový /bye skill pro ukončení session. Komunita odpověděla třemi různými přístupy: memplace + /save hook, /wrap flow do Obsidianu a Things, a SESSION CLOSE s project-state.json.",
-      "body": "Daniel se zeptal, jestli má komunita v Claude Code nějaký /bye skill. Sdílel svůj přístup: 9 kroků od kontroly gitu přes commit a push až po zápis do second brainu.\n\nPřístupy, které v odpovědích padly:\n\nMemplace + /save hook: jeden člen má /save skill, který ukládá stav session do memplace. K tomu hook, který každých 15 kroků spustí /save automaticky.\n\n/wrap: jiný člen projde celou session, nové a důležité věci zpracuje jako Obsidian note, menší věci uloží do příslušné poznámky nebo claude.md. Navrhne a vytvoří tasky do Things, případně aktualizuje Notion nebo HTML Dashboard. Na konci zapíše jednu větu o tom, co se dělalo.\n\nSESSION CLOSE (Jiří Soljak): každý projekt má master brief, architecture map, session log a project-state.json. Na konci session skill shrne co se udělalo, aktualizuje statusy komponent a commitne strukturovanou zprávou. Zároveň drží přehled přes všechny projekty a hlídá závislosti.",
+      "body": "Daniel se zeptal, jestli má komunita v Claude Code nějaký /bye skill. Sdílel svůj přístup: 9 kroků od kontroly gitu přes commit a push až po zápis do second brainu.\n\nPřístupy, které v odpovědích padly:\n\nMemplace + /save hook: jeden člen má /save skill, který ukládá stav session do memplace. K tomu hook, který každých 15 kroků spustí /save automaticky.\n\n/wrap: jiný člen projde celou session, nové a důležité věci zpracuje jako Obsidian note, menší věci uloží do příslušné poznámky nebo claude.md. Navrhne a vytvoří tasky do Things, případně aktualizuje Notion nebo HTML Dashboard. Na konci zapíše jednu větu o tom, co se dělalo.\n\nSESSION CLOSE (člen komunity): každý projekt má master brief, architecture map, session log a project-state.json. Na konci session skill shrne co se udělalo, aktualizuje statusy komponent a commitne strukturovanou zprávou. Zároveň drží přehled přes všechny projekty a hlídá závislosti.",
       "read_minutes": 2,
       "source_date": "2026-05-22",
       "topics": [
@@ -83,7 +83,7 @@
       "level": "Expert",
       "title": "Bezpečnostní audit vibe-coded aplikace před produkcí",
       "excerpt": "Členka komunity hledá security audit před spuštěním aplikace do produkce. Padly dva nástroje: vibeaudit.cz a grovetechai.com/scanner. Recenze jsou smíšené.",
-      "body": "Jedna členka testuje aplikaci s patnácti lidmi a chce ji pustit víc do světa. Před tím ale chce bezpečnostní audit, protože si netroufá vzít na triko všechna rizika vibe codingu bez toho, aby se na to někdo pořádně podíval.\n\nNa LinkedIn na ni vykoukl Ondřej Hájek s vibeaudit.cz a zvažuje, jestli do toho investovat.\n\nZ komunity padl tip na grovetechai.com/scanner. Jeden člen dodal, že vibe coding scan mají jednou za měsíc zdarma.\n\nRecenze na vibeaudit.cz jsou ale smíšené. Jeden člen napsal, že výsledky auditu byly v mnoha věcech úplně mimo. Jiný člen se zeptal na spolehlivost, protože stránka sama vypadá jako produkt pětiminutového vibe codingu.",
+      "body": "Jedna členka testuje aplikaci s patnácti lidmi a chce ji pustit víc do světa. Před tím ale chce bezpečnostní audit, protože si netroufá vzít na triko všechna rizika vibe codingu bez toho, aby se na to někdo pořádně podíval.\n\nNa LinkedIn na ni vykoukl člen komunity s vibeaudit.cz a zvažuje, jestli do toho investovat.\n\nZ komunity padl tip na grovetechai.com/scanner. Jeden člen dodal, že vibe coding scan mají jednou za měsíc zdarma.\n\nRecenze na vibeaudit.cz jsou ale smíšené. Jeden člen napsal, že výsledky auditu byly v mnoha věcech úplně mimo. Jiný člen se zeptal na spolehlivost, protože stránka sama vypadá jako produkt pětiminutového vibe codingu.",
       "read_minutes": 2,
       "source_date": "2026-05-22",
       "topics": [
@@ -199,7 +199,7 @@
           {
             "time": "19:11",
             "author": "člen komunity",
-            "text": "Ahoj, chtěla jsem se zeptat, jestli je tady někdo, kdo by mi byl schopen udělat security audit aplikace před ostrou produkcí.\nMomentálně mi aplikaci testuje patnáct lidí. Ale chtěla bych jí pustit víc do světa a vzhledem k záludnostem vibecodingu si teď úplně netroufám vzít na triko veškerá rizika bez toho, aby se mi na to někdo pořádně podíval.\nZatím na mě na LI vykoukl Ondřej Hájek (možná tady i je?😀), který má vibeaudit.cz, tak přemýšlím, jestli investovat do toho nebo ještě zvážit možnosti. 😊 Moc díky za případné tipy a rady. 🙏"
+            "text": "Ahoj, chtěla jsem se zeptat, jestli je tady někdo, kdo by mi byl schopen udělat security audit aplikace před ostrou produkcí.\nMomentálně mi aplikaci testuje patnáct lidí. Ale chtěla bych jí pustit víc do světa a vzhledem k záludnostem vibecodingu si teď úplně netroufám vzít na triko veškerá rizika bez toho, aby se mi na to někdo pořádně podíval.\nZatím na mě na LI vykoukl člen komunity (možná tady i je?😀), který má vibeaudit.cz, tak přemýšlím, jestli investovat do toho nebo ještě zvážit možnosti. 😊 Moc díky za případné tipy a rady. 🙏"
           },
           {
             "time": "19:24",

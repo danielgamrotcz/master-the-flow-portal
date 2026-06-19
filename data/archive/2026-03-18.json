@@ -64,7 +64,7 @@
       "level": "Expert",
       "title": "CEO dashboard napojený na CRM, banku a GA4",
       "excerpt": "Jeden člen buduje přibližně 14 dní CEO dashboard, který tahá data z CRM, bankovního účtu, Google Analytics a výsledovky. Jiný člen se ptá, jak napojit Google Analytics na webovou aplikaci.",
-      "body": "Jeden člen komunity popisuje CEO dashboard, na kterém pracuje přibližně 14 dní. Vstupy jsou CRM, banka, Google Analytics a P&L. Výstupy zahrnují přehled metrik a řešení pro majitele, když metriky nevychází. Looker Studio mají, ale člen není jeho admin, takže s tím pracuje omezeně.\n\nJiný člen se ve skupině ptal, jestli někdo zkoušel program, který by se připojil na Google Analytics a získal data do nové webové aplikace.\n\nDenisa Filičková se zeptala, jestli si dashboard taky vibe-kóduje. Odpověď ve zprávách není.",
+      "body": "Jeden člen komunity popisuje CEO dashboard, na kterém pracuje přibližně 14 dní. Vstupy jsou CRM, banka, Google Analytics a P&L. Výstupy zahrnují přehled metrik a řešení pro majitele, když metriky nevychází. Looker Studio mají, ale člen není jeho admin, takže s tím pracuje omezeně.\n\nJiný člen se ve skupině ptal, jestli někdo zkoušel program, který by se připojil na Google Analytics a získal data do nové webové aplikace.\n\nčlen komunity se zeptala, jestli si dashboard taky vibe-kóduje. Odpověď ve zprávách není.",
       "read_minutes": 3,
       "source_date": "2026-03-18",
       "topics": [
@@ -93,7 +93,7 @@
       "level": "Builder",
       "title": "Hlasová appka zachytí myšlenku a pošle ji do e-mailu",
       "excerpt": "Eliška staví appku na problém, který dobře zná: zapsat myšlenku nebo úkol hned, bez odkladů. Plán je zmáčknout action button na iPhonu, říct to nahlas a dvakrát denně dostat roztříděné záznamy do e-mailu.",
-      "body": "Eliška Vyhnánková popisuje, že má celý život problém se zaznamenáváním věcí během dne. I zapsání jednoduchého úkolu trvá týdny a několik znovuzapomenutí.\n\nChce si postavit appku, která to zjednodušší. Zmáčkne action button na iPhonu, řekne myšlenku nebo úkol nahlas. Dvakrát denně (7:00 a 16:00) by jí přišel e-mail s záznamy roztříděnými od AI podle kategorií, připravenými na export.\n\nDlouhodobý cíl je automatické propojení s Things, task manažerem, který používá a nechce ho opustit. Sama ale není jistá, jestli to s Things půjde.\n\nDaniel Gamrot zmínil, že má podobnou appku postavenou přes Soniox, která přepisuje věci do textu a posílá je do jeho inboxu v poznámkové aplikaci.",
+      "body": "člen komunity popisuje, že má celý život problém se zaznamenáváním věcí během dne. I zapsání jednoduchého úkolu trvá týdny a několik znovuzapomenutí.\n\nChce si postavit appku, která to zjednodušší. Zmáčkne action button na iPhonu, řekne myšlenku nebo úkol nahlas. Dvakrát denně (7:00 a 16:00) by jí přišel e-mail s záznamy roztříděnými od AI podle kategorií, připravenými na export.\n\nDlouhodobý cíl je automatické propojení s Things, task manažerem, který používá a nechce ho opustit. Sama ale není jistá, jestli to s Things půjde.\n\nDaniel Gamrot zmínil, že má podobnou appku postavenou přes Soniox, která přepisuje věci do textu a posílá je do jeho inboxu v poznámkové aplikaci.",
       "read_minutes": 2,
       "source_date": "2026-03-18",
       "topics": [

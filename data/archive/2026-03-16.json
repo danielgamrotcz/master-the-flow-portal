@@ -54,8 +54,8 @@
       "type": "INSIGHT",
       "level": "Začátečník",
       "title": "Cursor nebo VS Code pro začátečníky",
-      "excerpt": "Martin Itterheim narazil na sérii technických záseků při instalaci Gitu a Claude Code CLI. Komunita navrhla Cursor nebo VS Code s rozšířením jako dostupnější alternativy.",
-      "body": "Martin Itterheim popsal svou zkušenost: Claude Code na webu nechtěl vzít lokální adresář a nutil ho do GitHubu. Nainstaloval aplikaci Claude Code, ta chtěla Git, pak nevěděla, kde je. Skončil v příkazové řádce, pak přeskakoval mezi Claude chatem a VS Code. Jeho slova: jako neprogramátor dost hard job.\n\nPro srovnání: o víkendu si na Claude chat udělal hobby střelecký deník, nasadil ho na Cloudflare, Supabase i vlastní doménu. Bylo to jednodušší, protože jel pořád v chatu.\n\nPro začátečníky, kteří nechtějí řešit terminál hned na startu, může být Cursor nebo VS Code s rozšířením Claude jednodušší cesta.",
+      "excerpt": "člen komunity narazil na sérii technických záseků při instalaci Gitu a Claude Code CLI. Komunita navrhla Cursor nebo VS Code s rozšířením jako dostupnější alternativy.",
+      "body": "člen komunity popsal svou zkušenost: Claude Code na webu nechtěl vzít lokální adresář a nutil ho do GitHubu. Nainstaloval aplikaci Claude Code, ta chtěla Git, pak nevěděla, kde je. Skončil v příkazové řádce, pak přeskakoval mezi Claude chatem a VS Code. Jeho slova: jako neprogramátor dost hard job.\n\nPro srovnání: o víkendu si na Claude chat udělal hobby střelecký deník, nasadil ho na Cloudflare, Supabase i vlastní doménu. Bylo to jednodušší, protože jel pořád v chatu.\n\nPro začátečníky, kteří nechtějí řešit terminál hned na startu, může být Cursor nebo VS Code s rozšířením Claude jednodušší cesta.",
       "read_minutes": 2,
       "source_date": "2026-03-16",
       "topics": [
@@ -80,7 +80,7 @@
       "level": "Builder",
       "title": "Obsidian, Apple Notes nebo vlastní systém",
       "excerpt": "Nikol otevřela otázku, jak má komunita řešený druhý mozek. Padl Obsidian kvůli lokálním Markdown souborům. Jiné odpovědi ze zdrojů nejsou.",
-      "body": "Nikol se zeptala, jak mají členové řešený druhý mozek: poznámky, úkoly a podobně. Jestli staví na Obsidianu, Notionu nebo from scratch.\n\nZ diskuze přišla jedna konkrétní odpověď: jeden člen používá Obsidian hlavně kvůli možnosti práce na lokále s Markdown soubory.\n\nMartin Itterheim mezitím popsal svůj problém: každou neděli večer se marně snaží projít psané poznámky, poznámky v mobilu, v PC a v kalendáři. Chce postavit appku, která mu pomůže myšlenky a úkoly zpracovat a dát do přehledného task listu s upomínkami.\n\nDalší odpovědi na Nikolinu otázku ze zdrojových zpráv nejsou k dispozici.",
+      "body": "Nikol se zeptala, jak mají členové řešený druhý mozek: poznámky, úkoly a podobně. Jestli staví na Obsidianu, Notionu nebo from scratch.\n\nZ diskuze přišla jedna konkrétní odpověď: jeden člen používá Obsidian hlavně kvůli možnosti práce na lokále s Markdown soubory.\n\nčlen komunity mezitím popsal svůj problém: každou neděli večer se marně snaží projít psané poznámky, poznámky v mobilu, v PC a v kalendáři. Chce postavit appku, která mu pomůže myšlenky a úkoly zpracovat a dát do přehledného task listu s upomínkami.\n\nDalší odpovědi na Nikolinu otázku ze zdrojových zpráv nejsou k dispozici.",
       "read_minutes": 2,
       "source_date": "2026-03-16",
       "topics": [
@@ -275,7 +275,7 @@
           {
             "time": "11:55",
             "author": "člen komunity",
-            "text": "Jj, Jindra Fáborský, který nám s tím pomáhá, už jim nahrál dvě videa, takže připravení snad budou dostatečně. :)"
+            "text": "Jj, člen komunity, který nám s tím pomáhá, už jim nahrál dvě videa, takže připravení snad budou dostatečně. :)"
           },
           {
             "time": "11:56",

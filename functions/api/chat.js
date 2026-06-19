@@ -3,7 +3,9 @@ const TOKEN_TTL_MS = 30 * 24 * 60 * 60 * 1000;
 const MAX_MESSAGES = 40;
 const MAX_USER_MSG_LEN = 4000;
 const MAX_ITERATIONS = 4;
-const CHAT_RATE_LIMIT = 30; // requests per IP per 24 hours
+const CHAT_RATE_LIMIT = 30;        // requests per IP per 24 hours
+const CHAT_TOKEN_LIMIT = 40;       // requests per gate token per 24 hours
+const CHAT_GLOBAL_LIMIT = 500;     // requests across the whole portal per 24 hours (bill cap)
 const ANTHROPIC_API = 'https://api.anthropic.com/v1/messages';
 
 const enc = new TextEncoder();
@@ -46,13 +48,23 @@ async function verifyToken(token, gateCode, env) {
   } catch { return false; }
 }
 
-async function checkChatRateLimit(env, ip) {
+// Obecný denní čítač v KV. Vrací true, když je limit překročen.
+async function bumpDailyLimit(env, key, limit) {
   if (!env.MTF_DATA) return false;
-  const key = 'ratelimit:chat:' + ip;
   const raw = await env.MTF_DATA.get(key);
   const count = raw ? parseInt(raw, 10) : 0;
-  if (count >= CHAT_RATE_LIMIT) return true;
+  if (count >= limit) return true;
   await env.MTF_DATA.put(key, String(count + 1), { expirationTtl: 86400 });
+  return false;
+}
+
+// Vrstvy ochrany proti nákladovému zneužití chatu (LLM stojí peníze):
+// per-IP, per-token a globální denní strop na celý portál (tvrdá pojistka na účet).
+async function checkChatLimits(env, ip, nonce) {
+  const day = new Date().toISOString().slice(0, 10); // YYYY-MM-DD (UTC)
+  if (await bumpDailyLimit(env, 'ratelimit:chat:' + ip, CHAT_RATE_LIMIT)) return true;
+  if (nonce && await bumpDailyLimit(env, 'ratelimit:chat:tok:' + nonce, CHAT_TOKEN_LIMIT)) return true;
+  if (await bumpDailyLimit(env, 'ratelimit:chat:global:' + day, CHAT_GLOBAL_LIMIT)) return true;
   return false;
 }
 
@@ -172,8 +184,11 @@ export async function onRequestPost({ request, env }) {
     return new Response('Unauthorized', { status: 401, headers: cors });
   }
 
+  // Otisk tokenu (nonce) pro per-token limit — rotace IP pod jedním tokenem tak
+  // narazí na zeď, ne jen per-IP.
+  const tokenNonce = (token.split(':')[1] || '').slice(0, 32);
   const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
-  if (await checkChatRateLimit(env, ip)) {
+  if (await checkChatLimits(env, ip, tokenNonce)) {
     return new Response('Too Many Requests', { status: 429, headers: cors });
   }
 

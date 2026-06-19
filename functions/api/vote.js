@@ -1,7 +1,34 @@
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 const VOTE_ID_RE = /^[a-zA-Z0-9_-]{1,80}$/;
 const RESERVED_PREFIXES = ['analytics', 'sub_', 'community_', 'voted_', 'vote_', 'v:'];
-const CID_RE = /^[a-zA-Z0-9_-]{8,64}$/;
+const TOKEN_TTL_MS = 30 * 24 * 60 * 60 * 1000;
+
+// Ověří přístupový token (HMAC + KV nonce) a vrátí jeho nonce, jinak null.
+// Hlas vážeme na nonce vydaný serverem, ne na volně volitelné klientské cid —
+// nafouknout hlasy tak jde jen mintěním tokenů (gate kód + auth, rate-limited).
+async function tokenNonce(token, gateCode, env) {
+  if (!token || typeof token !== 'string') return null;
+  const lastColon = token.lastIndexOf(':');
+  if (lastColon < 1) return null;
+  const payload = token.slice(0, lastColon);
+  const sigHex = token.slice(lastColon + 1);
+  if (sigHex.length !== 64) return null;
+  const parts = payload.split(':');
+  const ts = parseInt(parts[0], 10);
+  if (isNaN(ts) || Date.now() > ts + TOKEN_TTL_MS) return null;
+  try {
+    const key = await crypto.subtle.importKey(
+      'raw', new TextEncoder().encode(gateCode),
+      { name: 'HMAC', hash: 'SHA-256' }, false, ['verify']
+    );
+    const sigBytes = new Uint8Array(sigHex.match(/.{2}/g).map(b => parseInt(b, 16)));
+    const valid = await crypto.subtle.verify('HMAC', key, sigBytes, new TextEncoder().encode(payload));
+    if (!valid) return null;
+    const nonce = parts[1];
+    if (env?.MTF_DATA && !(await env.MTF_DATA.get('token:' + nonce))) return null;
+    return nonce || null;
+  } catch { return null; }
+}
 
 async function checkVoteRateLimit(env, ip) {
   if (!env.MTF_DATA) return false;
@@ -18,11 +45,11 @@ function isSafeVoteId(id) {
   return !RESERVED_PREFIXES.some(p => id.startsWith(p));
 }
 
-// Hlas dedupujeme per zařízení (client ID z prohlížeče), ne per IP — sdílený
-// NAT (firma, domácnost) by jinak sloučil víc lidí do jednoho hlasu. IP slouží
-// jen na rate-limit. Fallback na IP, když klient ID nepošle (starší verze).
-function voterKey(cid, ip) {
-  return (typeof cid === 'string' && CID_RE.test(cid)) ? 'c:' + cid : 'i:' + ip;
+// Hlas dedupujeme per přihlašovací token (nonce vydaný serverem). Token drží
+// každý člen po vstupu kódem, takže to neslučuje lidi za sdíleným NAT a zároveň
+// to nejde zfalšovat volně voleným klientským cid. IP slouží jen na rate-limit.
+function voterKey(nonce) {
+  return 't:' + nonce;
 }
 
 function corsHeaders(origin, methods = 'GET, OPTIONS') {
@@ -81,17 +108,22 @@ export async function onRequestDelete({ request, env }) {
     return Response.json({ error: 'Bad Request' }, { status: 400, headers });
   }
 
+  const nonce = await tokenNonce(request.headers.get('x-mtf-token'), env.GATE_CODE, env);
+  if (!nonce) {
+    return Response.json({ error: 'Unauthorized' }, { status: 401, headers });
+  }
+
   const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
   if (await checkVoteRateLimit(env, ip)) {
     return Response.json({ error: 'Too Many Requests' }, { status: 429, headers });
   }
 
   try {
-    const { id, cid } = await request.json();
+    const { id } = await request.json();
     if (!id || !isSafeVoteId(id)) {
       return Response.json({ error: 'invalid id' }, { status: 400, headers });
     }
-    const voter = await voterHash(voterKey(cid, ip));
+    const voter = await voterHash(voterKey(nonce));
     await env.VOTES_DB
       .prepare('DELETE FROM votes WHERE card_id = ? AND voter = ?')
       .bind(id, voter).run();
@@ -110,19 +142,24 @@ export async function onRequestPost({ request, env }) {
     return Response.json({ error: 'Bad Request' }, { status: 400, headers });
   }
 
+  const nonce = await tokenNonce(request.headers.get('x-mtf-token'), env.GATE_CODE, env);
+  if (!nonce) {
+    return Response.json({ error: 'Unauthorized' }, { status: 401, headers });
+  }
+
   const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
   if (await checkVoteRateLimit(env, ip)) {
     return Response.json({ error: 'Too Many Requests' }, { status: 429, headers });
   }
 
   try {
-    const { id, cid } = await request.json();
+    const { id } = await request.json();
     if (!id || !isSafeVoteId(id)) {
       return Response.json({ error: 'invalid id' }, { status: 400, headers });
     }
     // INSERT OR IGNORE: dedup je v PRIMARY KEY (card_id, voter) — opakovaný hlas
     // téhož voliče nic nepřidá. Žádný read-modify-write, počet je vždy přesný.
-    const voter = await voterHash(voterKey(cid, ip));
+    const voter = await voterHash(voterKey(nonce));
     await env.VOTES_DB
       .prepare('INSERT OR IGNORE INTO votes (card_id, voter) VALUES (?, ?)')
       .bind(id, voter).run();
