@@ -2089,7 +2089,7 @@ a:hover { text-decoration: underline; }
 .event-program li:last-child { border-bottom: none; }
 .event-prog-time { color: var(--accent); font-weight: 600; margin-right: 6px; }
 
-.event-cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+.event-cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; margin-bottom: calc(24px + env(safe-area-inset-bottom)); }
 .event-cta { display: inline-flex; align-items: center; justify-content: center; padding: 12px 20px; border-radius: var(--radius-md); font-size: 15px; font-weight: 600; text-decoration: none; transition: opacity 150ms ease; }
 .event-cta-primary { background: var(--accent); color: #fff; }
 .event-cta-secondary { background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border); }
