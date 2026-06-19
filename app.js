@@ -2357,15 +2357,22 @@ function rerenderCurrentView() {
 
 /* ===== SWIPE TO CLOSE ===== */
 function initSwipeToClose() {
-  const sheet = document.querySelector('.overlay-sheet');
-  const overlay = $('card-overlay');
+  // Swipe dolů zavře sheet — pro kartu i pro detail akce (každý svůj overlay).
+  initSheetSwipe('card-overlay', 'overlay-body', closeCard);
+  initSheetSwipe('event-overlay', 'event-overlay-body', closeEvent);
+}
+
+function initSheetSwipe(overlayId, bodyId, closeFn) {
+  const overlay = $(overlayId);
+  if (!overlay) return;
+  const sheet = overlay.querySelector('.overlay-sheet');
   if (!sheet) return;
 
   let startY = 0, dragging = false;
 
   sheet.addEventListener('touchstart', e => {
-    const body = $('overlay-body');
-    if (body && body.scrollTop > 0) return;
+    const body = bodyId && $(bodyId);
+    if (body && body.scrollTop > 0) return;  // jen když je obsah nahoře
     startY = e.touches[0].clientY;
     dragging = true;
     sheet.style.transition = 'none';
@@ -2387,7 +2394,7 @@ function initSwipeToClose() {
       setTimeout(() => {
         sheet.style.transition = '';
         sheet.style.transform = '';
-        closeCard();
+        closeFn();
       }, 240);
     } else {
       sheet.style.transform = '';
