@@ -2,6 +2,31 @@
   "generated_at": "2026-06-19T11:00:00Z",
   "events": [
     {
+      "id": "evt-2026-07-15-second-brain",
+      "type": "SHOW-AND-TELL",
+      "title": "Show & Tell: Second Brain",
+      "date": "2026-07-15",
+      "time_from": "18:30",
+      "time_to": "20:00",
+      "location": "Online",
+      "short": "Příští Show & Tell celý o second brainu. Jak ho máte nastavený vy, od prvních kroků po systém řízený agentem.",
+      "description": "Po červnovém Show & Tell se rozjela velká diskuze o Obsidianu a second brainu. Padlo přání vidět, jak to mají nastavené ostatní, tak na to uděláme celou akci. Ukážeme různé přístupy k second brainu (ne nutně v Obsidianu), od člověka, co začíná od nuly, po systém se stovkami propojených souborů řízený agentem. Čím víc úrovní, tím líp, ať vidíme, že cest je víc. Součástí může být i feedback a náměty na zlepšení. Kdo chce ukázat svůj systém, jak ho máte nastavený a jak do toho zapojujete Claude Code, Codex nebo cokoli jiného, ať se ozve Danielovi. Přijít se dá i jen na kukačku.",
+      "program": [
+        "Ukázky second brain systémů členů",
+        "Od nuly po systém řízený agentem",
+        "Různé nástroje, nejen Obsidian",
+        "Feedback a náměty na zlepšení"
+      ],
+      "registration_url": null,
+      "is_paid": false,
+      "price": null,
+      "discount_code": null,
+      "detail_url": null,
+      "recording_url": null,
+      "recording_password": null,
+      "status": null
+    },
+    {
       "id": "evt-2026-06-11-raycast",
       "type": "WEBINÁŘ",
       "title": "Raycast: jak to mám nastavené já",
