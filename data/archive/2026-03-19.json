@@ -13,7 +13,7 @@
       "level": "Builder",
       "title": "Den 5 výzvy: hotové projekty jdou ven",
       "excerpt": "Pátý den Vibe Coding výzvy byl o doladění a sdílení výsledků. V kanálu se objevily projekty stavěné v Lovable i Claude Code.",
-      "body": "Daniel Gamrot vyhlásil Den 5 heslem: dolaďte a sdílejte. Členové se podělili o to, co za pět dní postavili.\n\nV diskuzi bylo vidět, že lidi jedou na různých nástrojích. člen komunity používala na část věcí Gemini CLI a překvapilo ji, že Claude Code to teď zvládne taky. Daniel přiznal, že Lovable už nějakou dobu neotvírá a jede všechno přes Claude Code, protože nechce tříštit práci do více nástrojů.\n\nDen 5 byl také o App Store problémech, které Nikol sdílela odkazem na článek z 9to5mac.",
+      "body": "Daniel Gamrot vyhlásil Den 5 heslem: dolaďte a sdílejte. Členové se podělili o to, co za pět dní postavili.\n\nV diskuzi bylo vidět, že lidi jedou na různých nástrojích. člen komunity používala na část věcí Gemini CLI a překvapilo ji, že Claude Code to teď zvládne taky. Daniel přiznal, že Lovable už nějakou dobu neotvírá a jede všechno přes Claude Code, protože nechce tříštit práci do více nástrojů.\n\nDen 5 byl také o App Store problémech, které člen komunity sdílela odkazem na článek z 9to5mac.",
       "read_minutes": 2,
       "source_date": "2026-03-19",
       "topics": [
@@ -99,8 +99,8 @@
       "type": "INSIGHT",
       "level": "Builder",
       "title": "Apple zamítá vibe-coded aplikace s externími API klíči",
-      "excerpt": "Nikol sdílela odkaz na článek o tom, že Apple zpřísňuje schvalování aplikací z vibe codingu. Daniel přiznal, že jeho aplikace má API klíče do externích služeb a uvidí, jak to dopadne.",
-      "body": "Nikol sdílí odkaz na článek z 9to5mac o tom, že Apple zpřísňuje schvalování vibe-coded aplikací.\n\nDaniel Gamrot článek nečetl, ale reagoval na situaci ze své zkušenosti: TestFlight prý zatím v pohodě funguje. Jeho aplikace má API klíče do externích služeb, takže uvidí, jestli to bude procházet. Jako záložní řešení zmínil sdílení zdrojáků, kdy si uživatel aplikaci nasadí přes Xcode sám.\n\nJestli Apple aplikace aktivně zamítá kvůli API klíčům v kódu, nebo jde o širší problém, ze zpráv přímo nevyplývá. Nikol jen sdílela odkaz s komentářem \"To nebude lehké.\"",
+      "excerpt": "člen komunity sdílela odkaz na článek o tom, že Apple zpřísňuje schvalování aplikací z vibe codingu. Daniel přiznal, že jeho aplikace má API klíče do externích služeb a uvidí, jak to dopadne.",
+      "body": "člen komunity sdílí odkaz na článek z 9to5mac o tom, že Apple zpřísňuje schvalování vibe-coded aplikací.\n\nDaniel Gamrot článek nečetl, ale reagoval na situaci ze své zkušenosti: TestFlight prý zatím v pohodě funguje. Jeho aplikace má API klíče do externích služeb, takže uvidí, jestli to bude procházet. Jako záložní řešení zmínil sdílení zdrojáků, kdy si uživatel aplikaci nasadí přes Xcode sám.\n\nJestli Apple aplikace aktivně zamítá kvůli API klíčům v kódu, nebo jde o širší problém, ze zpráv přímo nevyplývá. člen komunity jen sdílela odkaz s komentářem \"To nebude lehké.\"",
       "read_minutes": 3,
       "source_date": "2026-03-19",
       "topics": [
@@ -219,7 +219,7 @@
           {
             "time": "11:14",
             "author": "člen komunity",
-            "text": "Zdravim Michale, tady Frantisek. Pekna aplikace.Uz zkousim na mobilu.\nFunguje dobre."
+            "text": "Zdravim člen komunity, tady člen komunity. Pekna aplikace.Uz zkousim na mobilu.\nFunguje dobre."
           },
           {
             "time": "11:16",
@@ -249,7 +249,7 @@
           {
             "time": "12:05",
             "author": "člen komunity",
-            "text": "Ahoj Frantisku. Diky za feedback i testovani :)"
+            "text": "Ahoj člen komunity. Diky za feedback i testovani :)"
           },
           {
             "time": "12:11",

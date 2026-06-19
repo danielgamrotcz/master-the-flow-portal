@@ -74,7 +74,7 @@
       "level": "Builder",
       "title": "Velín: time tracking pro VA vibe codingem",
       "excerpt": "Jeden člen naší komunity si postavil vlastní nástroj na měření času pro virtuální asistenty. Alternativu k Togglu a Clockify. Aplikace vznikla vibe codingem a už běží v produkci.",
-      "body": "Aplikace Velín je time tracking nástroj postavený pro virtuální asistenty. Člen komunity sdílel, že za první týden testování přibylo spoustu nových funkcí. Většina VA trekuje v Togglu nebo Clockify, Velín má prý funkce nad rámec Togglu.\n\nV diskuzi padly dotazy na bezpečnost dat. Martina zmínila, že vibe coded appky bývají děravé a IT profíci před tím varovali.\n\nAutor popsal, jak to má:\n\n**Firebase Auth a Firestore** — základní zabezpečení postavené na Googlu. V security rules nastaveno, že přihlášený uživatel vidí jen svá data.\n\nAutor sám dodal, že by rád vyslechl názor někoho fundovanějšího, jestli je to dostačující.",
+      "body": "Aplikace Velín je time tracking nástroj postavený pro virtuální asistenty. Člen komunity sdílel, že za první týden testování přibylo spoustu nových funkcí. Většina VA trekuje v Togglu nebo Clockify, Velín má prý funkce nad rámec Togglu.\n\nV diskuzi padly dotazy na bezpečnost dat. člen komunity zmínila, že vibe coded appky bývají děravé a IT profíci před tím varovali.\n\nAutor popsal, jak to má:\n\n**Firebase Auth a Firestore** — základní zabezpečení postavené na Googlu. V security rules nastaveno, že přihlášený uživatel vidí jen svá data.\n\nAutor sám dodal, že by rád vyslechl názor někoho fundovanějšího, jestli je to dostačující.",
       "read_minutes": 2,
       "source_date": "2026-05-06",
       "topics": [
@@ -293,12 +293,12 @@
           {
             "time": "20:53",
             "author": "člen komunity",
-            "text": "Můžeš si zkusit postavit něco svého podobně jako Jindra (zatím jsem nezkoušela, ale mám to v plánu):\nhttps://github.com/faborsky/whisper-cz-en"
+            "text": "Můžeš si zkusit postavit něco svého podobně jako člen komunity (zatím jsem nezkoušela, ale mám to v plánu):\nhttps://github.com/faborsky/whisper-cz-en"
           },
           {
             "time": "21:05",
             "author": "člen komunity",
-            "text": "Díky, Nikol. Mrknu!"
+            "text": "Díky, člen komunity. Mrknu!"
           }
         ]
       },

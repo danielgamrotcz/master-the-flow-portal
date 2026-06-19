@@ -13,7 +13,7 @@
       "level": "Builder",
       "title": "Grant dashboard pro klienta za 3 hodiny",
       "excerpt": "Členka komunity přešla z Manusu na Claude a za tři hodiny postavila funkční webovou aplikaci na mapování dotací pro konkrétního klienta. Výsledek: interaktivní klikací dashboard na míru. Je na sebe pyšná.",
-      "body": "Martina ukázala, co zvládla za odpoledne s Claudem. Přešla z Manusu a rovnou ho vzala do praxe: 3 hodiny práce a výsledkem je funkční webová aplikace na mapování dotací pro konkrétního klienta, který zakládá novou organizaci.\n\nDashboard je interaktivní a klikací. Klientovi dává přehled o tom, o co může žádat. Martina vidí přínos v tom, že každý klient může dostat vlastní přehled podle toho, co zrovna řeší.\n\nZ diskuze také padlo, že v tomto případě nejde o práci s daty, která by bylo potřeba zabezpečovat, spíš o interaktivní checklist na míru. Detaily ale členka komunity neznala. Bezpečnostní otázky jsou tedy otevřené a záleží na konkrétním nasazení.",
+      "body": "člen komunity ukázala, co zvládla za odpoledne s Claudem. Přešla z Manusu a rovnou ho vzala do praxe: 3 hodiny práce a výsledkem je funkční webová aplikace na mapování dotací pro konkrétního klienta, který zakládá novou organizaci.\n\nDashboard je interaktivní a klikací. Klientovi dává přehled o tom, o co může žádat. člen komunity vidí přínos v tom, že každý klient může dostat vlastní přehled podle toho, co zrovna řeší.\n\nZ diskuze také padlo, že v tomto případě nejde o práci s daty, která by bylo potřeba zabezpečovat, spíš o interaktivní checklist na míru. Detaily ale členka komunity neznala. Bezpečnostní otázky jsou tedy otevřené a záleží na konkrétním nasazení.",
       "read_minutes": 2,
       "source_date": "2026-04-12",
       "topics": [
@@ -33,7 +33,7 @@
       "level": "Začátečník",
       "title": "Co jsou smečky agentů v praxi",
       "excerpt": "V komunitě padla přímá otázka: co vlastně znamená smečka agentů? Je to nástroj, skilly v Claudu, nebo něco jiného? Členové se pokusili vysvětlit základní myšlenku.",
-      "body": "Maja se zeptala přímo: co ten tým AI agentů prakticky znamená? Jde o OpenClaw, skilly v Claudu, Claude Code, nebo něco úplně jiného?\n\nZ reakcí v komunitě vyplývá, že jde obecně o situaci, kdy na jednom úkolu pracuje víc AI agentů, každý se svou rolí. Konkrétní technická vysvětlení ale v diskuzi nezazněla.\n\nVětšina následné konverzace se stočila jinam, k tématu bezpečnosti a citlivých dat. Přímá odpověď na Majinu otázku v dostupných zprávách není.\n\nPokud tenhle termín neznáte, dobrý první krok je zeptat se přímo AI nástroje, který používáte.",
+      "body": "člen komunity se zeptala přímo: co ten tým AI agentů prakticky znamená? Jde o OpenClaw, skilly v Claudu, Claude Code, nebo něco úplně jiného?\n\nZ reakcí v komunitě vyplývá, že jde obecně o situaci, kdy na jednom úkolu pracuje víc AI agentů, každý se svou rolí. Konkrétní technická vysvětlení ale v diskuzi nezazněla.\n\nVětšina následné konverzace se stočila jinam, k tématu bezpečnosti a citlivých dat. Přímá odpověď na člen komunity otázku v dostupných zprávách není.\n\nPokud tenhle termín neznáte, dobrý první krok je zeptat se přímo AI nástroje, který používáte.",
       "read_minutes": 2,
       "source_date": "2026-04-12",
       "topics": [
@@ -255,7 +255,7 @@
           {
             "time": "22:05",
             "author": "člen komunity",
-            "text": "Lukáš to v postu velmi dobře shrnuje. Při opravdu velkém objemu to může dávat smysl, pokud nejde o extrémní náročnost na kapacity a _kompetence_ modelů.\nNejčastější důvod pro lokální modely bude podle mě data security viz téma výše"
+            "text": "člen komunity to v postu velmi dobře shrnuje. Při opravdu velkém objemu to může dávat smysl, pokud nejde o extrémní náročnost na kapacity a _kompetence_ modelů.\nNejčastější důvod pro lokální modely bude podle mě data security viz téma výše"
           },
           {
             "time": "22:06",

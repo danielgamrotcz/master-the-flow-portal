@@ -34,7 +34,7 @@
       {
         "time": "11:52",
         "author": "člen komunity",
-        "text": "Ahojte děkuji za pozvání Jirka",
+        "text": "Ahojte děkuji za pozvání člen komunity",
         "group": "Vibe Coding"
       },
       {
@@ -150,7 +150,7 @@
       {
         "time": "12:18",
         "author": "Daniel",
-        "text": "💻 Den 1: OTESTUJTE PRVNÍ NÁSTROJ\n===============================\nPrvní den je zahřívací. Potřebuju, abyste začali pracovat s nějakým vibe coding nástrojem. Takže krok za krokem:\n1) VYBERTE SI JEDEN NÁSTROJ\nBojíte se terminálu? Berte Lovable (lovable.dev) nebo Macaly (macaly.com). Je to v prohlížeči, nic neinstalujete, za pět minut tam budete. Větším ale, že příští pátek už pojedete s Claude Code nebo Codexem v terminálu. Fakt je to o zvyku. A ty možnosti jsou pak úplně jinde.\n2) VYTVOŘTE SI ÚČET\nPokud nevíte jak, otevřete si ChatGPT nebo Claude a napište „Chci si vytvořit účet na Lovable, proveď mě tím krok za krokem“. Případně „Chci si nainstalovat Claude Code do počítače a nevím jak na to. Proveď mě tím krok za krokem“.\n3) VYTVOŘTE PRVNÍ ZADÁNÍ\nAž budete v nástroji, vytvořte první zadání. Třeba tohle (klidně to zkopírujte): „Vytvoř mi jednoduchou webovou stránku. Bude tam nadpis s mým jménem, krátký popis toho, čím se zabývám, a tlačítko, které kliknutím otevře e-mailového klienta, kterého uživatel používá, a vytvoří e-mail s předmětem 'Zpráva pro Daniela', adresátem 'daniel@gamrot.cz' a v těle e-mailu bude začátek e-mailu 'Danieli Gamrote, '. Zbytek pak doplní uživatel.“\nPokud si troufnete, zkuste to jakkoliv dostat do online. Lovable má funkci publish, s projektem v CC vám pomůže Claude.\n4) KOUKNĚTE, CO TO UDĚLÁ\nZkuste pak měnit barvy, text, cokoliv. Jenom si to osahat. Žádný tlak. Cíl dneška je jenom vidět, že to funguje. Hoďte do sem skupiny screenshot toho, co vám vzniklo.\n5) OTESTUJTE TO\nKlikněte na to vytvořené tlačítko na webu a pošlete mi zprávu. Napište cokoliv, třeba to, jaký máte aktuálně vztah k vibe codingu, co jste se naučili na webináři nebo jak byste rádi pokračovali dál.\nA abych nezahálel, hodil jsem to do Lovable (výstup za minutu) i Claude Code (tak nějak podobně). Jen abych poukázal na rozdíl – Lovable nemá definované žádné informace o mně. Barvy, písmo, styl, nic. Claude Code ano a ne málo. Proto po prvním (stejném) promptu věděl bez dalších informací, co má dělat a jak to má vypadat.\n- Lovable: https://hello-daniel-here.lovable.app\n- Claude Code: https://hello-daniel-here.pages.dev\nDo práce. Kdyby něco, pište sem.\nDaniel",
+        "text": "💻 Den 1: OTESTUJTE PRVNÍ NÁSTROJ\n===============================\nPrvní den je zahřívací. Potřebuju, abyste začali pracovat s nějakým vibe coding nástrojem. Takže krok za krokem:\n1) VYBERTE SI JEDEN NÁSTROJ\nBojíte se terminálu? Berte Lovable (lovable.dev) nebo člen komunity (macaly.com). Je to v prohlížeči, nic neinstalujete, za pět minut tam budete. Větším ale, že příští pátek už pojedete s Claude Code nebo Codexem v terminálu. Fakt je to o zvyku. A ty možnosti jsou pak úplně jinde.\n2) VYTVOŘTE SI ÚČET\nPokud nevíte jak, otevřete si ChatGPT nebo Claude a napište „Chci si vytvořit účet na Lovable, proveď mě tím krok za krokem“. Případně „Chci si nainstalovat Claude Code do počítače a nevím jak na to. Proveď mě tím krok za krokem“.\n3) VYTVOŘTE PRVNÍ ZADÁNÍ\nAž budete v nástroji, vytvořte první zadání. Třeba tohle (klidně to zkopírujte): „Vytvoř mi jednoduchou webovou stránku. Bude tam nadpis s mým jménem, krátký popis toho, čím se zabývám, a tlačítko, které kliknutím otevře e-mailového klienta, kterého uživatel používá, a vytvoří e-mail s předmětem 'Zpráva pro Daniela', adresátem 'daniel@gamrot.cz' a v těle e-mailu bude začátek e-mailu 'Danieli Gamrote, '. Zbytek pak doplní uživatel.“\nPokud si troufnete, zkuste to jakkoliv dostat do online. Lovable má funkci publish, s projektem v CC vám pomůže Claude.\n4) KOUKNĚTE, CO TO UDĚLÁ\nZkuste pak měnit barvy, text, cokoliv. Jenom si to osahat. Žádný tlak. Cíl dneška je jenom vidět, že to funguje. Hoďte do sem skupiny screenshot toho, co vám vzniklo.\n5) OTESTUJTE TO\nKlikněte na to vytvořené tlačítko na webu a pošlete mi zprávu. Napište cokoliv, třeba to, jaký máte aktuálně vztah k vibe codingu, co jste se naučili na webináři nebo jak byste rádi pokračovali dál.\nA abych nezahálel, hodil jsem to do Lovable (výstup za minutu) i Claude Code (tak nějak podobně). Jen abych poukázal na rozdíl – Lovable nemá definované žádné informace o mně. Barvy, písmo, styl, nic. Claude Code ano a ne málo. Proto po prvním (stejném) promptu věděl bez dalších informací, co má dělat a jak to má vypadat.\n- Lovable: https://hello-daniel-here.lovable.app\n- Claude Code: https://hello-daniel-here.pages.dev\nDo práce. Kdyby něco, pište sem.\nDaniel",
         "group": "Vibe Coding"
       },
       {
@@ -252,7 +252,7 @@
       {
         "time": "17:48",
         "author": "Daniel",
-        "text": "💻 Den 1: OTESTUJTE PRVNÍ NÁSTROJ\n===============================\nPrvní den je zahřívací. Potřebuju, abyste začali pracovat s nějakým vibe coding nástrojem. Takže krok za krokem:\n1) VYBERTE SI JEDEN NÁSTROJ\nBojíte se terminálu? Berte Lovable (lovable.dev) nebo Macaly (macaly.com). Je to v prohlížeči, nic neinstalujete, za pět minut tam budete. Větším ale, že příští pátek už pojedete s Claude Code nebo Codexem v terminálu. Fakt je to o zvyku. A ty možnosti jsou pak úplně jinde.\n2) VYTVOŘTE SI ÚČET\nPokud nevíte jak, otevřete si ChatGPT nebo Claude a napište „Chci si vytvořit účet na Lovable, proveď mě tím krok za krokem“. Případně „Chci si nainstalovat Claude Code do počítače a nevím jak na to. Proveď mě tím krok za krokem“.\n3) VYTVOŘTE PRVNÍ ZADÁNÍ\nAž budete v nástroji, vytvořte první zadání. Třeba tohle (klidně to zkopírujte): „Vytvoř mi jednoduchou webovou stránku. Bude tam nadpis s mým jménem, krátký popis toho, čím se zabývám, a tlačítko, které kliknutím otevře e-mailového klienta, kterého uživatel používá, a vytvoří e-mail s předmětem 'Zpráva pro Daniela', adresátem 'daniel@gamrot.cz' a v těle e-mailu bude začátek e-mailu 'Danieli Gamrote, '. Zbytek pak doplní uživatel.“\nPokud si troufnete, zkuste to jakkoliv dostat do online. Lovable má funkci publish, s projektem v CC vám pomůže Claude.\n4) KOUKNĚTE, CO TO UDĚLÁ\nZkuste pak měnit barvy, text, cokoliv. Jenom si to osahat. Žádný tlak. Cíl dneška je jenom vidět, že to funguje. Hoďte do sem skupiny screenshot toho, co vám vzniklo.\n5) OTESTUJTE TO\nKlikněte na to vytvořené tlačítko na webu a pošlete mi zprávu. Napište cokoliv, třeba to, jaký máte aktuálně vztah k vibe codingu, co jste se naučili na webináři nebo jak byste rádi pokračovali dál.\nA abych nezahálel, hodil jsem to do Lovable (výstup za minutu) i Claude Code (tak nějak podobně). Jen abych poukázal na rozdíl – Lovable nemá definované žádné informace o mně. Barvy, písmo, styl, nic. Claude Code ano a ne málo. Proto po prvním (stejném) promptu věděl bez dalších informací, co má dělat a jak to má vypadat.\n•⁠  ⁠Lovable: https://hello-daniel-here.lovable.app\n•⁠  ⁠Claude Code: https://hello-daniel-here.pages.dev\nDo práce. Kdyby něco, pište sem.\nDaniel",
+        "text": "💻 Den 1: OTESTUJTE PRVNÍ NÁSTROJ\n===============================\nPrvní den je zahřívací. Potřebuju, abyste začali pracovat s nějakým vibe coding nástrojem. Takže krok za krokem:\n1) VYBERTE SI JEDEN NÁSTROJ\nBojíte se terminálu? Berte Lovable (lovable.dev) nebo člen komunity (macaly.com). Je to v prohlížeči, nic neinstalujete, za pět minut tam budete. Větším ale, že příští pátek už pojedete s Claude Code nebo Codexem v terminálu. Fakt je to o zvyku. A ty možnosti jsou pak úplně jinde.\n2) VYTVOŘTE SI ÚČET\nPokud nevíte jak, otevřete si ChatGPT nebo Claude a napište „Chci si vytvořit účet na Lovable, proveď mě tím krok za krokem“. Případně „Chci si nainstalovat Claude Code do počítače a nevím jak na to. Proveď mě tím krok za krokem“.\n3) VYTVOŘTE PRVNÍ ZADÁNÍ\nAž budete v nástroji, vytvořte první zadání. Třeba tohle (klidně to zkopírujte): „Vytvoř mi jednoduchou webovou stránku. Bude tam nadpis s mým jménem, krátký popis toho, čím se zabývám, a tlačítko, které kliknutím otevře e-mailového klienta, kterého uživatel používá, a vytvoří e-mail s předmětem 'Zpráva pro Daniela', adresátem 'daniel@gamrot.cz' a v těle e-mailu bude začátek e-mailu 'Danieli Gamrote, '. Zbytek pak doplní uživatel.“\nPokud si troufnete, zkuste to jakkoliv dostat do online. Lovable má funkci publish, s projektem v CC vám pomůže Claude.\n4) KOUKNĚTE, CO TO UDĚLÁ\nZkuste pak měnit barvy, text, cokoliv. Jenom si to osahat. Žádný tlak. Cíl dneška je jenom vidět, že to funguje. Hoďte do sem skupiny screenshot toho, co vám vzniklo.\n5) OTESTUJTE TO\nKlikněte na to vytvořené tlačítko na webu a pošlete mi zprávu. Napište cokoliv, třeba to, jaký máte aktuálně vztah k vibe codingu, co jste se naučili na webináři nebo jak byste rádi pokračovali dál.\nA abych nezahálel, hodil jsem to do Lovable (výstup za minutu) i Claude Code (tak nějak podobně). Jen abych poukázal na rozdíl – Lovable nemá definované žádné informace o mně. Barvy, písmo, styl, nic. Claude Code ano a ne málo. Proto po prvním (stejném) promptu věděl bez dalších informací, co má dělat a jak to má vypadat.\n•⁠  ⁠Lovable: https://hello-daniel-here.lovable.app\n•⁠  ⁠Claude Code: https://hello-daniel-here.pages.dev\nDo práce. Kdyby něco, pište sem.\nDaniel",
         "group": "Vibe Coding"
       },
       {
@@ -300,7 +300,7 @@
       {
         "time": "22:09",
         "author": "člen komunity",
-        "text": "Ahoj všem, web budu ještě ladit, zatím v Macaly takto: https://macaly-hgs8m54fxvupotyt29p2o4yj.macaly.app. Zítra si koupím Claude. Používám nyní placené Gemini. Právě chci ladit jak design webu, tak úpravu struktury.",
+        "text": "Ahoj všem, web budu ještě ladit, zatím v člen komunity takto: https://macaly-hgs8m54fxvupotyt29p2o4yj.macaly.app. Zítra si koupím Claude. Používám nyní placené Gemini. Právě chci ladit jak design webu, tak úpravu struktury.",
         "group": "Vibe Coding"
       }
     ],
@@ -320,7 +320,7 @@
       {
         "time": "02:15",
         "author": "Daniel",
-        "text": "Super, Aleši. Já, jako velký fanoušek Googlu, jsem zkoušel Gemini na vibe coding. Docela dlouho, ale ty výstupy jsou prostě jiné. CC vede. Za mě.",
+        "text": "Super, člen komunity. Já, jako velký fanoušek Googlu, jsem zkoušel Gemini na vibe coding. Docela dlouho, ale ty výstupy jsou prostě jiné. CC vede. Za mě.",
         "group": "Vibe Coding"
       },
       {
@@ -350,7 +350,7 @@
       {
         "time": "09:11",
         "author": "Daniel",
-        "text": "Tohle je úplně super. V tom vidím inspiraci i pro sebe. Chudák Oliver. 😀\nKaždopádně zrovna taky řeším dashboard pro „spolupráci“ s Claude Code na dálku. Bude co nevidět, pak kdyžtak nasdílím. Ale bohužel, smetí to zatím nevynese a postel neustele.",
+        "text": "Tohle je úplně super. V tom vidím inspiraci i pro sebe. Chudák člen komunity. 😀\nKaždopádně zrovna taky řeším dashboard pro „spolupráci“ s Claude Code na dálku. Bude co nevidět, pak kdyžtak nasdílím. Ale bohužel, smetí to zatím nevynese a postel neustele.",
         "group": "Vibe Coding"
       },
       {
@@ -622,7 +622,7 @@
       {
         "time": "12:37",
         "author": "Daniel",
-        "text": "Přesně jak píšeš, Pavle.\nTěch aplikací je hromada, a nejde jenom o tu platbu. Ale tenhle krok je vlastně otestování toho, že to může fungovat, vyzkoušení si té technologie a podobně.\nPecka!",
+        "text": "Přesně jak píšeš, člen komunity.\nTěch aplikací je hromada, a nejde jenom o tu platbu. Ale tenhle krok je vlastně otestování toho, že to může fungovat, vyzkoušení si té technologie a podobně.\nPecka!",
         "group": "Vibe Coding"
       },
       {
@@ -730,7 +730,7 @@
       {
         "time": "21:19",
         "author": "člen komunity",
-        "text": "S AI jsme se dohodli, že napřed zkusíme nechat vytvořit Teleprompter Macaly. Shodli jsme se na tomto zadání nakonec: Build a web-based voice-tracking teleprompter application. Do not hardcode any specific script into the application.\nCore Requirements:\nInitial Screen (Input Mode): Create a clean, minimal interface with a large text area where I can manually paste my script. Include a prominent \"Start Teleprompter\" button.\nTeleprompter Screen (Read Mode): Once I click start, hide the input area. Display the pasted text in a large, highly readable font on a dark background (Dark Mode). Center the text. Include a \"Stop/Edit\" button to return to the input screen, and a slider to adjust the font size.\nVoice Tracking: Use the browser's native Web Speech API (SpeechRecognition) to listen to my voice continuously.\nFuzzy Matching Algorithm (CRITICAL): I will be reading the text word-for-word, but the Speech API might mishear words, or I might slightly stumble. Implement a fuzzy matching logic (using a sliding window approach). If the recognized speech matches a sequence of 2 or 3 consecutive words slightly ahead in the text, advance the current tracking position to that point. It must be tolerant of skipped or misheard words so the teleprompter does not get stuck.\nAuto-Scrolling & Highlighting: Highlight the current sentence or phrase I am speaking. As the tracking position advances, automatically scroll the window smoothly so the currently highlighted text always stays in the center of the screen.\nPlease write the complete code for this functional web app",
+        "text": "S AI jsme se dohodli, že napřed zkusíme nechat vytvořit Teleprompter člen komunity. Shodli jsme se na tomto zadání nakonec: Build a web-based voice-tracking teleprompter application. Do not hardcode any specific script into the application.\nCore Requirements:\nInitial Screen (Input Mode): Create a clean, minimal interface with a large text area where I can manually paste my script. Include a prominent \"Start Teleprompter\" button.\nTeleprompter Screen (Read Mode): Once I click start, hide the input area. Display the pasted text in a large, highly readable font on a dark background (Dark Mode). Center the text. Include a \"Stop/Edit\" button to return to the input screen, and a slider to adjust the font size.\nVoice Tracking: Use the browser's native Web Speech API (SpeechRecognition) to listen to my voice continuously.\nFuzzy Matching Algorithm (CRITICAL): I will be reading the text word-for-word, but the Speech API might mishear words, or I might slightly stumble. Implement a fuzzy matching logic (using a sliding window approach). If the recognized speech matches a sequence of 2 or 3 consecutive words slightly ahead in the text, advance the current tracking position to that point. It must be tolerant of skipped or misheard words so the teleprompter does not get stuck.\nAuto-Scrolling & Highlighting: Highlight the current sentence or phrase I am speaking. As the tracking position advances, automatically scroll the window smoothly so the currently highlighted text always stays in the center of the screen.\nPlease write the complete code for this functional web app",
         "group": "Vibe Coding"
       },
       {
@@ -912,7 +912,7 @@
       {
         "time": "11:10",
         "author": "člen komunity",
-        "text": "Takhle me doxxnout, Leno!🤪 Doufam, ze mam jinak nastaveny, ze jsem tu uplne \"inkonginto\".  Schvalne, dejte mi pls 👍, kdo u me vidite jen cislo a bez fotky, to je muj default na Whatsappu pro skupiny, tak snad to drzi...\nAle souhlas, at zijou #zMatky a diky Dane, ze sem muzem chodit jeste dlouho po 1-week challenge, pac dokud nepujde vibekodnout \"pojd si se mnou hrat\", tak to bude challenge jeste dlouho...😅\nA ted uz samozrejme zpatky ke strojum a k tematu.\nKrasny den vsem a nezapomente: touch the grass!✌️",
+        "text": "Takhle me doxxnout, člen komunity!🤪 Doufam, ze mam jinak nastaveny, ze jsem tu uplne \"inkonginto\".  Schvalne, dejte mi pls 👍, kdo u me vidite jen cislo a bez fotky, to je muj default na Whatsappu pro skupiny, tak snad to drzi...\nAle souhlas, at zijou #zMatky a diky Dane, ze sem muzem chodit jeste dlouho po 1-week challenge, pac dokud nepujde vibekodnout \"pojd si se mnou hrat\", tak to bude challenge jeste dlouho...😅\nA ted uz samozrejme zpatky ke strojum a k tematu.\nKrasny den vsem a nezapomente: touch the grass!✌️",
         "group": "Vibe Coding"
       },
       {
@@ -1118,7 +1118,7 @@
       {
         "time": "11:14",
         "author": "člen komunity",
-        "text": "Zdravim Michale, tady Frantisek. Pekna aplikace.Uz zkousim na mobilu.\nFunguje dobre.",
+        "text": "Zdravim člen komunity, tady člen komunity. Pekna aplikace.Uz zkousim na mobilu.\nFunguje dobre.",
         "group": "Vibe Coding"
       },
       {
@@ -1154,7 +1154,7 @@
       {
         "time": "12:05",
         "author": "člen komunity",
-        "text": "Ahoj Frantisku. Diky za feedback i testovani :)",
+        "text": "Ahoj člen komunity. Diky za feedback i testovani :)",
         "group": "Vibe Coding"
       },
       {
@@ -1240,7 +1240,7 @@
       {
         "time": "12:13",
         "author": "Daniel",
-        "text": "Aleši, tohle je super. Mám velkou radost, že se to chytlo. A že sis to poskládal. A sorry, že jsem ti vyfoukl ten teleprompter.",
+        "text": "člen komunity, tohle je super. Mám velkou radost, že se to chytlo. A že sis to poskládal. A sorry, že jsem ti vyfoukl ten teleprompter.",
         "group": "Vibe Coding"
       },
       {
@@ -1350,7 +1350,7 @@
       {
         "time": "21:09",
         "author": "člen komunity",
-        "text": "Ahoj Nikol, dal jsem přepsat přednášky z výcviku a funguje dobře. Líp, než můj druhý usecase - hned po probuzení vzpomínám na sny a nahrávám si je na diktafon na iPhone (flight mode).",
+        "text": "Ahoj člen komunity, dal jsem přepsat přednášky z výcviku a funguje dobře. Líp, než můj druhý usecase - hned po probuzení vzpomínám na sny a nahrávám si je na diktafon na iPhone (flight mode).",
         "group": "Vibe Coding"
       }
     ],
@@ -1628,7 +1628,7 @@
       {
         "time": "09:22",
         "author": "člen komunity",
-        "text": "Budu moc ráda, Evi. 😊",
+        "text": "Budu moc ráda, člen komunity. 😊",
         "group": "Vibe Coding"
       },
       {
@@ -1658,7 +1658,7 @@
       {
         "time": "13:39",
         "author": "Daniel",
-        "text": "Pokud si o mně myslíte, že jsem magor, tak mám spoustu známých, kteří jdou ještě dál. A dokonce se za to nestydí.\nJá mám ten tým postavený trošičku jinak, ale v podstatě spousta těch věcí, který tam Filip píše, dává smysl. Je to možná inspirace pro ty z vás, kdo jste dál.\nJinak pořád stojím za tím, že tohleto je o přemýšlení, učení a nastavení.\nhttps://www.linkedin.com/posts/filippodstavec_m%C5%AFj-aktu%C3%A1ln%C3%AD-ai-dev-stack-po-del%C5%A1%C3%AD-dob%C4%9B-activity-7442268102404513792-gBBb",
+        "text": "Pokud si o mně myslíte, že jsem magor, tak mám spoustu známých, kteří jdou ještě dál. A dokonce se za to nestydí.\nJá mám ten tým postavený trošičku jinak, ale v podstatě spousta těch věcí, který tam člen komunity píše, dává smysl. Je to možná inspirace pro ty z vás, kdo jste dál.\nJinak pořád stojím za tím, že tohleto je o přemýšlení, učení a nastavení.\nhttps://www.linkedin.com/posts/filippodstavec_m%C5%AFj-aktu%C3%A1ln%C3%AD-ai-dev-stack-po-del%C5%A1%C3%AD-dob%C4%9B-activity-7442268102404513792-gBBb",
         "group": "Vibe Coding"
       },
       {
@@ -1758,7 +1758,7 @@
       {
         "time": "05:47",
         "author": "Daniel",
-        "text": "Fajn ráno, pokud jste se připojili během týdne a přemýšlíte, o co tady řešíme, tady je krátký souhrn za poslední týden.\nTahle skupina vznikla v rámci webináře o vibe codingu, ale je to jen část již brzy otevřené komunitu Master the Flow, kde se bude řešit nejen vibe coding, ale AI a digitální produktivita obecně. A konkrétně. Těch věcí, které se kolem toho dají dělat, je nekonečně mnoho. Takže počítejte s tím, že tady to nekončí.\n*Co se tady za poslední týden ukázalo:*\nAleš si udělal lokální přepis nahrávek na Macu. Hana postavila time tracker pro práci s klienty a zároveň redesignuje web pro partnera. Martin předělal svůj nástroj na třídění nápadů. Druhý Martin vytvořil rodinný dashboard na fotorám, který ráno ukazuje rozvrh ze školy, jídelníček a kalendář. Zaxx migroval svůj projekt z Google Sheets na Vercel. Eva tvoří appku na automatické vyplňování certifikátů. Radim sbírá „pozitivní“ reakce na LinkedIn za svůj první výtvor. A já jsem dotáhl iOS verzi svého poznámkovače, trvalo to asi 30 minut.\nMimochodem, dejte nám vědět, vy co na tom makáte, jak to dopadlo a jestli jste ty věci dotáhli. Případně jak si stojíte s vaším projektem.\n*Z praktických věcí, co se řešily:*\nRozběhal jsem Claude Code na Raspberry Pi 5 a ovládám ho přes Telegram boty z telefonu. Plus používám Termius, když potřebuju sáhnout po terminálu. Což se docela hodí, protože jsem si tozmlátil displej MacBooku. Od včerejška pracuju komplet z iPhonu.\nŘešili jsme taky limity tokenů v Claude (Pro plán má 5h okno, pokud ho vyčerpáte, stačí počkat). A bavili jsme se o tom, proč je fajn mít data v Markdown souborech lokálně (pro začátek stačí Obsidian, nemusíte lovil složitější systém).\n*Užitečné odkazy z chatu:*\nPatrik Zandl natočil srozumitelné video o kontextu v Claude Code (co ho zabírá, jak s ním pracovat): youtu.be/3oIxzRPbr4I\nMichael sdílel zajímavý článek o tom, jak příliš mnoho překrývajících se skillů v Claude Code žere zdroje: linkedin.com/posts/drewbrucker_your-claude-skills-are-sabotaging-each-other-ugcPost-7442254058687623168-YxLm\n*Kde jsou ostatní:*\nVčera jsem tady publikoval anketu, pokud jste ještě nehlasovali, budu rád, když tam kliknete.\nZe 23 hlasů… 12 lidí tvoří pravidelně a chtějí víc, 4 mají něco, co reálně používají, 5 to zkouší a 2 se zatím rozkoukávají. Ať jste kdekoliv, jste v dobrý společnosti.\nKlidně se ptejte, sdílejte, co děláte, i pokud to je teprve začátek. Přesně o tom to tady je.\nDíky moc a fajn neděli přeju.\n#gamrot",
+        "text": "Fajn ráno, pokud jste se připojili během týdne a přemýšlíte, o co tady řešíme, tady je krátký souhrn za poslední týden.\nTahle skupina vznikla v rámci webináře o vibe codingu, ale je to jen část již brzy otevřené komunitu Master the Flow, kde se bude řešit nejen vibe coding, ale AI a digitální produktivita obecně. A konkrétně. Těch věcí, které se kolem toho dají dělat, je nekonečně mnoho. Takže počítejte s tím, že tady to nekončí.\n*Co se tady za poslední týden ukázalo:*\nčlen komunity si udělal lokální přepis nahrávek na Macu. člen komunity postavila time tracker pro práci s klienty a zároveň redesignuje web pro partnera. člen komunity předělal svůj nástroj na třídění nápadů. Druhý člen komunity vytvořil rodinný dashboard na fotorám, který ráno ukazuje rozvrh ze školy, jídelníček a kalendář. Zaxx migroval svůj projekt z Google Sheets na Vercel. člen komunity tvoří appku na automatické vyplňování certifikátů. člen komunity sbírá „pozitivní“ reakce na LinkedIn za svůj první výtvor. A já jsem dotáhl iOS verzi svého poznámkovače, trvalo to asi 30 minut.\nMimochodem, dejte nám vědět, vy co na tom makáte, jak to dopadlo a jestli jste ty věci dotáhli. Případně jak si stojíte s vaším projektem.\n*Z praktických věcí, co se řešily:*\nRozběhal jsem Claude Code na Raspberry Pi 5 a ovládám ho přes Telegram boty z telefonu. Plus používám Termius, když potřebuju sáhnout po terminálu. Což se docela hodí, protože jsem si tozmlátil displej MacBooku. Od včerejška pracuju komplet z iPhonu.\nŘešili jsme taky limity tokenů v Claude (Pro plán má 5h okno, pokud ho vyčerpáte, stačí počkat). A bavili jsme se o tom, proč je fajn mít data v Markdown souborech lokálně (pro začátek stačí Obsidian, nemusíte lovil složitější systém).\n*Užitečné odkazy z chatu:*\nPatrik Zandl natočil srozumitelné video o kontextu v Claude Code (co ho zabírá, jak s ním pracovat): youtu.be/3oIxzRPbr4I\nčlen komunity sdílel zajímavý článek o tom, jak příliš mnoho překrývajících se skillů v Claude Code žere zdroje: linkedin.com/posts/drewbrucker_your-claude-skills-are-sabotaging-each-other-ugcPost-7442254058687623168-YxLm\n*Kde jsou ostatní:*\nVčera jsem tady publikoval anketu, pokud jste ještě nehlasovali, budu rád, když tam kliknete.\nZe 23 hlasů… 12 lidí tvoří pravidelně a chtějí víc, 4 mají něco, co reálně používají, 5 to zkouší a 2 se zatím rozkoukávají. Ať jste kdekoliv, jste v dobrý společnosti.\nKlidně se ptejte, sdílejte, co děláte, i pokud to je teprve začátek. Přesně o tom to tady je.\nDíky moc a fajn neděli přeju.\n#gamrot",
         "group": "Vibe Coding"
       },
       {
@@ -2486,7 +2486,7 @@
       {
         "time": "18:16",
         "author": "člen komunity",
-        "text": "Ahoj, ja jsem si s claude code udelal second brain (COG - vysel jsem z repa na githubu a uzpusobil si to), a vyhovuje mi, ze tim, ze je to jen kombinace markdownu a skillu, tak si s tim vlastne jenom muzu povidat a nemusim nikde nic zadavat jak pise Frankie.",
+        "text": "Ahoj, ja jsem si s claude code udelal second brain (COG - vysel jsem z repa na githubu a uzpusobil si to), a vyhovuje mi, ze tim, ze je to jen kombinace markdownu a skillu, tak si s tim vlastne jenom muzu povidat a nemusim nikde nic zadavat jak pise člen komunity.",
         "group": "Vibe Coding"
       },
       {
@@ -2704,13 +2704,13 @@
       {
         "time": "13:09",
         "author": "člen komunity",
-        "text": "Ahoj Marti, v Claude Code právě vibecoduju celý web. 🙂",
+        "text": "Ahoj člen komunity, v Claude Code právě vibecoduju celý web. 🙂",
         "group": "Vibe Coding"
       },
       {
         "time": "13:09",
         "author": "člen komunity",
-        "text": "Ahoj Hani, rada Te tu vidim. A diky za sdileni, ze mas dobrou zkusenost. 🙂",
+        "text": "Ahoj člen komunity, rada Te tu vidim. A diky za sdileni, ze mas dobrou zkusenost. 🙂",
         "group": "Vibe Coding"
       },
       {
@@ -2778,7 +2778,7 @@
       {
         "time": "12:34",
         "author": "Daniel",
-        "text": "🤖 CHATBOTI A PAMĚŤ\nPřed chvílí jsem na to narazil tady u známých v Hua Hin. Řešili jsme nějaké věci ohledně chatbotů. Já teda dost šepotem, páč zápal plic v Thajsku můžu mít fakt jenom já. A Mary prý, že jí strašně štve, že jí ChatGPT neustále nutí růžové barvy. Oblečení, homepage, všechno. Vůbec nechápala.\nSamozřejmě jsme se dopátrali toho, že měla v paměti uložené něco o tom, že růžová je její nejvíc nejoblíbenější barva. Dostalo se to tam pravděpodobně přes dceru (ponaučení = nikdy nesdílejte svůj účet, pokud nechcete měsíce řešit růžovou barvu; nebo přijít o mnohem důležitější věci). Zbytek není podstatný, každopádně…\nPokud chatbot neřeší věci, které chcete, tak jak chcete, a nutí vám dokola něco, co není vaše, můžete ho buď opustit (ano, Claude 👀) anebo se podívejte do paměti.\n👇👇👇\n————————\nCHATGPT\nNastavení > Personalizace > Paměť > Spravovat\n(v EN si určitě poradíte)\nCLAUDE\nSettings > Privacy > Memory preferences > Manage\n(do CZ to podle mě ještě nepřeložili)\n————————\nJasně, je ještě spousta dalších míst, kde můžete mít informace, které nejsou úplně v dobrém tandemu s tím, co chcete.\nKaždopádně, když už v té paměti budete, tak nezapomeňte vylovit nějaké poklady i pro nás. 😀 Občas se tam toho nastřádá docela dost. Ale ne vždycky to je nezajímavé.",
+        "text": "🤖 CHATBOTI A PAMĚŤ\nPřed chvílí jsem na to narazil tady u známých v Hua Hin. Řešili jsme nějaké věci ohledně chatbotů. Já teda dost šepotem, páč zápal plic v Thajsku můžu mít fakt jenom já. A člen komunity prý, že jí strašně štve, že jí ChatGPT neustále nutí růžové barvy. Oblečení, homepage, všechno. Vůbec nechápala.\nSamozřejmě jsme se dopátrali toho, že měla v paměti uložené něco o tom, že růžová je její nejvíc nejoblíbenější barva. Dostalo se to tam pravděpodobně přes dceru (ponaučení = nikdy nesdílejte svůj účet, pokud nechcete měsíce řešit růžovou barvu; nebo přijít o mnohem důležitější věci). Zbytek není podstatný, každopádně…\nPokud chatbot neřeší věci, které chcete, tak jak chcete, a nutí vám dokola něco, co není vaše, můžete ho buď opustit (ano, Claude 👀) anebo se podívejte do paměti.\n👇👇👇\n————————\nCHATGPT\nNastavení > Personalizace > Paměť > Spravovat\n(v EN si určitě poradíte)\nCLAUDE\nSettings > Privacy > Memory preferences > Manage\n(do CZ to podle mě ještě nepřeložili)\n————————\nJasně, je ještě spousta dalších míst, kde můžete mít informace, které nejsou úplně v dobrém tandemu s tím, co chcete.\nKaždopádně, když už v té paměti budete, tak nezapomeňte vylovit nějaké poklady i pro nás. 😀 Občas se tam toho nastřádá docela dost. Ale ne vždycky to je nezajímavé.",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -2834,7 +2834,7 @@
       {
         "time": "03:11",
         "author": "Daniel",
-        "text": "Michale, děkuju moc. To je hezký. Co se týče té platformy, tak je to jedna z možností. Teď v rámci bety, která bude minimálně měsíc až dva, to určitě necháme tady. Pro většinu lidí je to nejjednodušší řešení.\nTěch kanálů, které jsem chtěl, respektive ze kterých jsem vybíral, bylo více. A byť nejsem WhatsApp guy, tak volba padla právě sem. Jinak i na ta stará témata se klidně ozvěte.\nZa mě je to právě účel tady téhle skupiny. Kde by to bobtnalo až moc, tak vymyslíme, co s tím. Jinak s tou poslední věcí moc držím palce. Včera o mně syn prohlásil, že smrdím. Ať se vám nestane něco podobného. 😀",
+        "text": "člen komunity, děkuju moc. To je hezký. Co se týče té platformy, tak je to jedna z možností. Teď v rámci bety, která bude minimálně měsíc až dva, to určitě necháme tady. Pro většinu lidí je to nejjednodušší řešení.\nTěch kanálů, které jsem chtěl, respektive ze kterých jsem vybíral, bylo více. A byť nejsem WhatsApp guy, tak volba padla právě sem. Jinak i na ta stará témata se klidně ozvěte.\nZa mě je to právě účel tady téhle skupiny. Kde by to bobtnalo až moc, tak vymyslíme, co s tím. Jinak s tou poslední věcí moc držím palce. Včera o mně syn prohlásil, že smrdím. Ať se vám nestane něco podobného. 😀",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -2858,7 +2858,7 @@
       {
         "time": "09:12",
         "author": "Daniel",
-        "text": "🌱 POSTŘEH Z DOMÁCÍ VÝUKY\nChudák mé dítě teď jede mou „diagnostiku“, abychom si na papíře ověřili, jak na tom je ve škole (dostali jsme na zimu plán od paní učitelky, tak úplně nechci, aby přijel na konci dubna do školy s tím, že neumí narýsovat úsečku AB, která má 45 mm).\nMáme na stole terárko s kudlankou. Asian Twig Mantis. Boží živočich. Furt visí na větvi a nic nedělá. Přesto má pozornost. Hlavně Oliverovu. Hlavně u učení. 😀 A tu je tu už druhý měsíc. No nic, chápu ho.\nNapadla mě k tomu jedna analogie a proto to sem vlastně celý píšu. Dám to sem bez dat, jsem na mobilu, pak kdyžtak dohledám odkazy.\nMobil na stole ve většině případů dost snižuje kognitivní výkon. I když má vypnutý zvuk nebo je obrácený displejem dolů. Jsem v tomhle totální průměr, protože když potřebuju focus, musím ho zahrabat někam hluboko do batohu nebo nechat v ložnici (když tam nespím). Jinak tam ty oči sjíždění, pokud zrovna nejsem fakt ponořený do něčeho mega zábavného.\nVětšina lidí si myslí, že se umí soustředit i s telefonem vedle/zapnutým/blikajícím/pípajícím… Jako ok, ale pojďme si definovat soustředění (pro každého úplně jiné téma). A pojďme si porovnat, jak to vypadá s blikajícím telefonem na stole jeden týden a s telefonem úplně mimo ten druhý. Jasně, vím, že není jen černá a bílá. Jen blbý, že lidi nikdy tu bílou ani světle šedou nezkusí.\n- Nechat telefon někde jinde, když se chci ponořit do práce\n- ⁠Ne v šuplíku, ne v tašce, ne obrácený na stole\n- ⁠Ideál jiná místnost\n- ⁠Pak si dát 90 minut hluboké práce\nIdeálně v obou případech si na místě i zpětně všímat, kolikrát vám během té doby prolítl hlavou impulz ho zkontrolovat.\nNení to appka na blokování appek. Je to zadarmo. Jen přemístíte jeden objekt o X metrů.\nV době, kdy lidi vytvářejí přes vibe coding aplikace jak na běžícím páse a paralelně jim běží šest různých terminálových oken, to vypadá jako dost oldschool. Akorát že s našim mozkem budeme muset nějak dožít. A ten funguje podle určitých principů.",
+        "text": "🌱 POSTŘEH Z DOMÁCÍ VÝUKY\nChudák mé dítě teď jede mou „diagnostiku“, abychom si na papíře ověřili, jak na tom je ve škole (dostali jsme na zimu plán od paní učitelky, tak úplně nechci, aby přijel na konci dubna do školy s tím, že neumí narýsovat úsečku AB, která má 45 mm).\nMáme na stole terárko s kudlankou. Asian Twig Mantis. Boží živočich. Furt visí na větvi a nic nedělá. Přesto má pozornost. Hlavně člen komunity. Hlavně u učení. 😀 A tu je tu už druhý měsíc. No nic, chápu ho.\nNapadla mě k tomu jedna analogie a proto to sem vlastně celý píšu. Dám to sem bez dat, jsem na mobilu, pak kdyžtak dohledám odkazy.\nMobil na stole ve většině případů dost snižuje kognitivní výkon. I když má vypnutý zvuk nebo je obrácený displejem dolů. Jsem v tomhle totální průměr, protože když potřebuju focus, musím ho zahrabat někam hluboko do batohu nebo nechat v ložnici (když tam nespím). Jinak tam ty oči sjíždění, pokud zrovna nejsem fakt ponořený do něčeho mega zábavného.\nVětšina lidí si myslí, že se umí soustředit i s telefonem vedle/zapnutým/blikajícím/pípajícím… Jako ok, ale pojďme si definovat soustředění (pro každého úplně jiné téma). A pojďme si porovnat, jak to vypadá s blikajícím telefonem na stole jeden týden a s telefonem úplně mimo ten druhý. Jasně, vím, že není jen černá a bílá. Jen blbý, že lidi nikdy tu bílou ani světle šedou nezkusí.\n- Nechat telefon někde jinde, když se chci ponořit do práce\n- ⁠Ne v šuplíku, ne v tašce, ne obrácený na stole\n- ⁠Ideál jiná místnost\n- ⁠Pak si dát 90 minut hluboké práce\nIdeálně v obou případech si na místě i zpětně všímat, kolikrát vám během té doby prolítl hlavou impulz ho zkontrolovat.\nNení to appka na blokování appek. Je to zadarmo. Jen přemístíte jeden objekt o X metrů.\nV době, kdy lidi vytvářejí přes vibe coding aplikace jak na běžícím páse a paralelně jim běží šest různých terminálových oken, to vypadá jako dost oldschool. Akorát že s našim mozkem budeme muset nějak dožít. A ten funguje podle určitých principů.",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -2918,7 +2918,7 @@
       {
         "time": "22:02",
         "author": "člen komunity",
-        "text": "A ještě doplním jeden úplně super tip co ráda sdílím a kýmkoliv kdo začíná - máte tady od Davea super návod.\nPokud nevíte, co si pod jakýmkoliv z těch kroku představit (nebo to chcete prostě jen pohodlnější 😁), můžete udělat screenshot/ zkopírovat ten navržený postup a nahrát ho do jakéhokoli llm co ma study mode (ChatGPT, Gemini, copilot… určitě je jich vic. ) ten study mode jen zapnete v plusku v promtovacim okně a reknete mu, ať vas tim procesem provede krok po kroku.\nStudy mode se chová jako super trpělivý učitel a dává i úkoly krok po kroku. ☺️",
+        "text": "A ještě doplním jeden úplně super tip co ráda sdílím a kýmkoliv kdo začíná - máte tady od člen komunity super návod.\nPokud nevíte, co si pod jakýmkoliv z těch kroku představit (nebo to chcete prostě jen pohodlnější 😁), můžete udělat screenshot/ zkopírovat ten navržený postup a nahrát ho do jakéhokoli llm co ma study mode (ChatGPT, Gemini, copilot… určitě je jich vic. ) ten study mode jen zapnete v plusku v promtovacim okně a reknete mu, ať vas tim procesem provede krok po kroku.\nStudy mode se chová jako super trpělivý učitel a dává i úkoly krok po kroku. ☺️",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -3000,7 +3000,7 @@
       {
         "time": "08:26",
         "author": "člen komunity",
-        "text": "Dave, prosím a klasicky v Claude chat s opusem a extended thinking? nebo který model má v tomto konkrétně nejlepší výsledky? 🙂",
+        "text": "člen komunity, prosím a klasicky v Claude chat s opusem a extended thinking? nebo který model má v tomto konkrétně nejlepší výsledky? 🙂",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -3236,7 +3236,7 @@
       {
         "time": "22:05",
         "author": "člen komunity",
-        "text": "Lukáš to v postu velmi dobře shrnuje. Při opravdu velkém objemu to může dávat smysl, pokud nejde o extrémní náročnost na kapacity a _kompetence_ modelů.\nNejčastější důvod pro lokální modely bude podle mě data security viz téma výše",
+        "text": "člen komunity to v postu velmi dobře shrnuje. Při opravdu velkém objemu to může dávat smysl, pokud nejde o extrémní náročnost na kapacity a _kompetence_ modelů.\nNejčastější důvod pro lokální modely bude podle mě data security viz téma výše",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -3582,7 +3582,7 @@
       {
         "time": "07:39",
         "author": "člen komunity",
-        "text": "Ahoj všem,\nminulý týden jsme měli finále naší soutěže pro středoškolály v digi dovednostech, v rámci kterého tvořili vzdělávací obsah pro seniory, rozkrývali dezinfo narativy a taky vibe codovali. Jen jsem s vámi chtěla posdílet, že ačkoli mezi nimi byly rozdíly (elektrikáři, gympláci, IT obory), všichni za hoďku zvládli vytvořit funkční apku na kvízy v Macaly.\nTak jen povzbuzení pro ty, co teprve začínají. 🙂 člen komunity o tom natočil i podcast:\nhttps://youtu.be/ipPh-5AOg4s?is=BEDEXw1TWuvmeO0V",
+        "text": "Ahoj všem,\nminulý týden jsme měli finále naší soutěže pro středoškolály v digi dovednostech, v rámci kterého tvořili vzdělávací obsah pro seniory, rozkrývali dezinfo narativy a taky vibe codovali. Jen jsem s vámi chtěla posdílet, že ačkoli mezi nimi byly rozdíly (elektrikáři, gympláci, IT obory), všichni za hoďku zvládli vytvořit funkční apku na kvízy v člen komunity.\nTak jen povzbuzení pro ty, co teprve začínají. 🙂 člen komunity o tom natočil i podcast:\nhttps://youtu.be/ipPh-5AOg4s?is=BEDEXw1TWuvmeO0V",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -3594,7 +3594,7 @@
       {
         "time": "08:19",
         "author": "člen komunity",
-        "text": "Nikol, díky za inspiraci, to bude přesně pro mě ☺️",
+        "text": "člen komunity, díky za inspiraci, to bude přesně pro mě ☺️",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -3736,13 +3736,13 @@
       {
         "time": "12:54",
         "author": "člen komunity",
-        "text": "Jirko, velká paráda, skvělý nápad.. Moc díky 👌🤓",
+        "text": "člen komunity, velká paráda, skvělý nápad.. Moc díky 👌🤓",
         "group": "Vibe Coding"
       },
       {
         "time": "13:03",
         "author": "člen komunity",
-        "text": "Diky Petre, potesilo me to 😉. Kdyz tam narazite na nejakou pitomost nebo naopak nejakou myslenku na doplneni, budu rad. Je to projekt bez ambice na monetizaci, takze tam jsou nedokonalosti. Ale proc je nezlepsit, pokud je to mozne. Mejte se!",
+        "text": "Diky člen komunity, potesilo me to 😉. Kdyz tam narazite na nejakou pitomost nebo naopak nejakou myslenku na doplneni, budu rad. Je to projekt bez ambice na monetizaci, takze tam jsou nedokonalosti. Ale proc je nezlepsit, pokud je to mozne. Mejte se!",
         "group": "Vibe Coding"
       },
       {
@@ -4152,7 +4152,7 @@
       {
         "time": "10:25",
         "author": "člen komunity",
-        "text": "Ahoj Davide, díky za sdílení. Zajímá mě to z pohledu bezpečnosti - nebyl žádný interní trouble s IT? Všechny data zůstávají ve firmě?",
+        "text": "Ahoj člen komunity, díky za sdílení. Zajímá mě to z pohledu bezpečnosti - nebyl žádný interní trouble s IT? Všechny data zůstávají ve firmě?",
         "group": "Vibe Coding"
       },
       {
@@ -4454,13 +4454,13 @@
       {
         "time": "20:53",
         "author": "člen komunity",
-        "text": "Můžeš si zkusit postavit něco svého podobně jako Jindra (zatím jsem nezkoušela, ale mám to v plánu):\nhttps://github.com/faborsky/whisper-cz-en",
+        "text": "Můžeš si zkusit postavit něco svého podobně jako člen komunity (zatím jsem nezkoušela, ale mám to v plánu):\nhttps://github.com/faborsky/whisper-cz-en",
         "group": "Vibe Coding"
       },
       {
         "time": "21:05",
         "author": "člen komunity",
-        "text": "Díky, Nikol. Mrknu!",
+        "text": "Díky, člen komunity. Mrknu!",
         "group": "Vibe Coding"
       },
       {
@@ -5110,7 +5110,7 @@
       {
         "time": "10:16",
         "author": "člen komunity",
-        "text": "Filipe, spamuj ;)\nJeste jsem se k tomu nedostala, ale moc uvitam nejakou rychloukazku od Tebe 😉",
+        "text": "člen komunity, spamuj ;)\nJeste jsem se k tomu nedostala, ale moc uvitam nejakou rychloukazku od Tebe 😉",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -5438,7 +5438,7 @@
       {
         "time": "09:59",
         "author": "člen komunity",
-        "text": "To vypadá hodně užitečně Petře 👍, díky za sdílení.\nJá včera objevil Terax a v pondělí ho začnu zkoušet.\nhttps://terax.app/",
+        "text": "To vypadá hodně užitečně člen komunity 👍, díky za sdílení.\nJá včera objevil Terax a v pondělí ho začnu zkoušet.\nhttps://terax.app/",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -5578,7 +5578,7 @@
       {
         "time": "07:42",
         "author": "Daniel",
-        "text": "Boží, Jirko, díky moc! Navzdory tvému úvodu je to cool a zajímá mě to. 😉",
+        "text": "Boží, člen komunity, díky moc! Navzdory tvému úvodu je to cool a zajímá mě to. 😉",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -5652,7 +5652,7 @@
       {
         "time": "05:59",
         "author": "člen komunity",
-        "text": "Jirko, neplevelis. Tohle je megacase a me by moc zajimaly detaily, protoze potrebuji prakticky totez. Mohla bych se s tebou online sejit a zjistit od tebe vic?",
+        "text": "člen komunity, neplevelis. Tohle je megacase a me by moc zajimaly detaily, protoze potrebuji prakticky totez. Mohla bych se s tebou online sejit a zjistit od tebe vic?",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -5856,7 +5856,7 @@
       {
         "time": "09:18",
         "author": "člen komunity",
-        "text": "nicméně řešení Jiřího dává super smysl, jde totiž o jiný use-case.",
+        "text": "nicméně řešení člen komunity dává super smysl, jde totiž o jiný use-case.",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -5988,7 +5988,7 @@
       {
         "time": "15:22",
         "author": "člen komunity",
-        "text": "Ahoj Gábi! 🥰",
+        "text": "Ahoj člen komunity! 🥰",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -6024,7 +6024,7 @@
       {
         "time": "15:30",
         "author": "člen komunity",
-        "text": "Nechci Jindrovi lézt do zelí, ale jedno neformální setkání za sebe rád vykopnu, jestli nás brněnských odpoledňáků bude víc (pravidelnou organizaci určitě nedám)\nTyhle neformální setkání kolem AI za mě mají obrovský přínos – protože přesně, jak tady padá. Dneska už to není tolik o tom JAK něco udělat, ale vědět CO a PROČ chci udělat a hlavně že to vůbec jde.",
+        "text": "Nechci člen komunity lézt do zelí, ale jedno neformální setkání za sebe rád vykopnu, jestli nás brněnských odpoledňáků bude víc (pravidelnou organizaci určitě nedám)\nTyhle neformální setkání kolem AI za mě mají obrovský přínos – protože přesně, jak tady padá. Dneska už to není tolik o tom JAK něco udělat, ale vědět CO a PROČ chci udělat a hlavně že to vůbec jde.",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -6036,7 +6036,7 @@
       {
         "time": "15:39",
         "author": "člen komunity",
-        "text": "Matouši! Ta poslední možnost je zcela zbytečná. 😉",
+        "text": "člen komunity! Ta poslední možnost je zcela zbytečná. 😉",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -6096,13 +6096,13 @@
       {
         "time": "18:11",
         "author": "Daniel",
-        "text": "Moc fajn rozhovor Marka Prokopa s člen komunity. Marka sleduju od té doby, co jsem na volné noze. Baví mě jeho témata i adaptabilita. A to jsem marketingem nepolíbený.\nBTW pokud neposloucháte, Jindrův podcast je fakt plný inspirace i praktických tipů. Doporučuju si to dát od první epizody. Vzpomínám, jak jsem to hltal v gymu v Hua Hin. Až by se to mohlo jmenovat „Cvičíme s Jindrou“.\nhttps://open.spotify.com/episode/5jguj3xtXck18FFznW28Qu?si=37dc56d6776046f3",
+        "text": "Moc fajn rozhovor Marka Prokopa s člen komunity. Marka sleduju od té doby, co jsem na volné noze. Baví mě jeho témata i adaptabilita. A to jsem marketingem nepolíbený.\nBTW pokud neposloucháte, člen komunity podcast je fakt plný inspirace i praktických tipů. Doporučuju si to dát od první epizody. Vzpomínám, jak jsem to hltal v gymu v Hua Hin. Až by se to mohlo jmenovat „Cvičíme s Jindrou“.\nhttps://open.spotify.com/episode/5jguj3xtXck18FFznW28Qu?si=37dc56d6776046f3",
         "group": "Inspirace & Diskuze"
       },
       {
         "time": "19:58",
         "author": "člen komunity",
-        "text": "Potvrzuju, je to výborný zdroj a inspirace pro vibecoding. Jindra má extrémní zápal. Dal jsem si to před pár týdny jako binge listening.",
+        "text": "Potvrzuju, je to výborný zdroj a inspirace pro vibecoding. člen komunity má extrémní zápal. Dal jsem si to před pár týdny jako binge listening.",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -6114,7 +6114,7 @@
       {
         "time": "20:24",
         "author": "člen komunity",
-        "text": "Hlavně díky Jindrovi jsem došel do stavu, že Claude Code je dost výkonný (trochu méně zkušený) člen mého jinak jednočlenného týmu :-)\nProgramuje toho minimum, ale odmaká hromadu věcí, které mě nebaví a brzdí mě v kreativní práci. Třeba kompletně připraví podklady pro newsletter (nový články, tipy na starší, výběr fotek, …), kam já si už jen dopíšu tu „svou” osobní část. Claude to pak nahodí do systému, já překontroluju a odešlu.",
+        "text": "Hlavně díky člen komunity jsem došel do stavu, že Claude Code je dost výkonný (trochu méně zkušený) člen mého jinak jednočlenného týmu :-)\nProgramuje toho minimum, ale odmaká hromadu věcí, které mě nebaví a brzdí mě v kreativní práci. Třeba kompletně připraví podklady pro newsletter (nový články, tipy na starší, výběr fotek, …), kam já si už jen dopíšu tu „svou” osobní část. Claude to pak nahodí do systému, já překontroluju a odešlu.",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -6888,7 +6888,7 @@
       {
         "time": "15:18",
         "author": "člen komunity",
-        "text": "Well :)) s pivkem, neber to Jiří :) cheers",
+        "text": "Well :)) s pivkem, neber to člen komunity :) cheers",
         "group": "Vibe Coding"
       },
       {
@@ -6930,7 +6930,7 @@
       {
         "time": "15:45",
         "author": "člen komunity",
-        "text": "Projekty elektro? Tome jako stavaře zajímá, já jsem před časem dělal spolu na výpočet rizik, ale nedodelal",
+        "text": "Projekty elektro? člen komunity jako stavaře zajímá, já jsem před časem dělal spolu na výpočet rizik, ale nedodelal",
         "group": "Vibe Coding"
       },
       {
@@ -7464,7 +7464,7 @@
       {
         "time": "11:37",
         "author": "člen komunity",
-        "text": "Taky mam sam sebe zagentizovanyho, kdyz jdu spat, at agenti necekaj na \"Human-in-the-loop\" do rana :)\n> # TOM Agent\n> **Slug:** `tom-proxy`\n> **Order:** 95\n> **API:** `aiworkflow/v1` · `AgentDefinition`\n> ## Role\n> Zástupný Human-in-the-loop agent reprezentující Tomášův styl rozhodování, oponentury a prioritizace.\n> ## Mission\n> Zastupuj Tomáše jako decision a review proxy. Vyhodnocuj návrhy ostatních agentů podle reálné použitelnosti, business a technické hodnoty, dotaženosti a poměru value/effort. Koriguj příliš obecná, marketingová nebo nepraktická řešení.\n> ## Gallup profil\n> **Domény:** Strategic Thinking + Executing\n> **Talenty:** Strategic, Analytical, Achiever, Responsibility, Futuristic, Learner, Maximizer\n> **Strategic** — rychle rozlišuje mezi slepými cestami a použitelnými směry\n> **Analytical** — hledá logiku, důkazy, slabá místa a nekonzistence\n> **Achiever** — tlačí výstup do dotažené a použitelné podoby\n> **Maximizer** — nechce průměrné řešení, ale co nejlepší prakticky použitelnou verzi\n> ## Primary inputs\n> Výstupy ostatních agentů k review\n> Kontext projektu a business omezení\n> Rozpracované dokumenty, návrhy nebo prezentace\n> ## Required outputs\n> **Verdikt:** `ready` / `needs refinement` / `fundamentally weak`\n> Pojmenování slabých míst a chybějících částí\n> Návrh zpřesnění, zkrácení nebo restrukturalizace\n> Konkrétní next step nebo rovnou použitelná verze výstupu\n> ## Handoff targets\n> Orchestrator\n> Creative\n> Content Writer\n> Libovolný agent, jehož výstup potřebuje oponenturu nebo rozhodnutí\n> ## Quality gate\n> [ ] Výstup má jasný účel a cílového uživatele\n> [ ] Není vágní, marketingový ani teoretický bez vazby na praxi\n> [ ] Slabá místa jsou pojmenována napřímo\n> [ ] Verdikt je explicitní (`ready` / `needs refinement` / `fundamentally weak`)\n> [ ] Výstup by Tomáš mohl vzít a použít bez zásadního přepracování\n> ## Ask-first triggers\n> K čemu je to reálně dobré?\n> Je tohle použitelné v praxi, nebo to jen dobře zní?\n> Co chybí, aby se to dalo rovnou použít?\n> ## Extra rules\n> Nejsi pasivní schvalovač. Jsi aktivní zástupce Tomáše pro rozhodování a oponenturu.\n> Bez zbytečné omáčky a korporátního balastu.\n> Preferuj formulace, které lze rovnou vložit do dokumentu nebo zadání.\n> Odmítej marketingové fráze bez obsahu a výstupy bez priorit a bez jasného doporučení.\n> ## Lore contract\n> Pokud projekt používá `~/.lore/`:\n> **Čtení:** `grep -r ~/.lore/`\n> **Zápis:** výhradně přes `lore new <typ> \"<název>\"`\n> **Zakázáno:** přímý `git commit` do `~/.lore/`\n> **Typy a destinace:**\n> | Typ | Cíl |\n> |---|---|\n> | `gotcha`, `heuristika`, `principle`, `lesson` | `lessons/` |\n> | `workflow`, `ritual` | `processes/` |\n> | `client`, `project` | `clients/` |",
+        "text": "Taky mam sam sebe zagentizovanyho, kdyz jdu spat, at agenti necekaj na \"Human-in-the-loop\" do rana :)\n> # TOM Agent\n> **Slug:** `tom-proxy`\n> **Order:** 95\n> **API:** `aiworkflow/v1` · `AgentDefinition`\n> ## Role\n> Zástupný Human-in-the-loop agent reprezentující člen komunity styl rozhodování, oponentury a prioritizace.\n> ## Mission\n> Zastupuj člen komunity jako decision a review proxy. Vyhodnocuj návrhy ostatních agentů podle reálné použitelnosti, business a technické hodnoty, dotaženosti a poměru value/effort. Koriguj příliš obecná, marketingová nebo nepraktická řešení.\n> ## Gallup profil\n> **Domény:** Strategic Thinking + Executing\n> **Talenty:** Strategic, Analytical, Achiever, Responsibility, Futuristic, Learner, Maximizer\n> **Strategic** — rychle rozlišuje mezi slepými cestami a použitelnými směry\n> **Analytical** — hledá logiku, důkazy, slabá místa a nekonzistence\n> **Achiever** — tlačí výstup do dotažené a použitelné podoby\n> **Maximizer** — nechce průměrné řešení, ale co nejlepší prakticky použitelnou verzi\n> ## Primary inputs\n> Výstupy ostatních agentů k review\n> Kontext projektu a business omezení\n> Rozpracované dokumenty, návrhy nebo prezentace\n> ## Required outputs\n> **Verdikt:** `ready` / `needs refinement` / `fundamentally weak`\n> Pojmenování slabých míst a chybějících částí\n> Návrh zpřesnění, zkrácení nebo restrukturalizace\n> Konkrétní next step nebo rovnou použitelná verze výstupu\n> ## Handoff targets\n> Orchestrator\n> Creative\n> Content Writer\n> Libovolný agent, jehož výstup potřebuje oponenturu nebo rozhodnutí\n> ## Quality gate\n> [ ] Výstup má jasný účel a cílového uživatele\n> [ ] Není vágní, marketingový ani teoretický bez vazby na praxi\n> [ ] Slabá místa jsou pojmenována napřímo\n> [ ] Verdikt je explicitní (`ready` / `needs refinement` / `fundamentally weak`)\n> [ ] Výstup by Tomáš mohl vzít a použít bez zásadního přepracování\n> ## Ask-first triggers\n> K čemu je to reálně dobré?\n> Je tohle použitelné v praxi, nebo to jen dobře zní?\n> Co chybí, aby se to dalo rovnou použít?\n> ## Extra rules\n> Nejsi pasivní schvalovač. Jsi aktivní zástupce člen komunity pro rozhodování a oponenturu.\n> Bez zbytečné omáčky a korporátního balastu.\n> Preferuj formulace, které lze rovnou vložit do dokumentu nebo zadání.\n> Odmítej marketingové fráze bez obsahu a výstupy bez priorit a bez jasného doporučení.\n> ## Lore contract\n> Pokud projekt používá `~/.lore/`:\n> **Čtení:** `grep -r ~/.lore/`\n> **Zápis:** výhradně přes `lore new <typ> \"<název>\"`\n> **Zakázáno:** přímý `git commit` do `~/.lore/`\n> **Typy a destinace:**\n> | Typ | Cíl |\n> |---|---|\n> | `gotcha`, `heuristika`, `principle`, `lesson` | `lessons/` |\n> | `workflow`, `ritual` | `processes/` |\n> | `client`, `project` | `clients/` |",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -7548,7 +7548,7 @@
       {
         "time": "15:18",
         "author": "člen komunity",
-        "text": "Well :)) s pivkem, neber to Jiří :) cheers",
+        "text": "Well :)) s pivkem, neber to člen komunity :) cheers",
         "group": "Vibe Coding"
       },
       {
@@ -7590,7 +7590,7 @@
       {
         "time": "15:45",
         "author": "člen komunity",
-        "text": "Projekty elektro? Tome jako stavaře zajímá, já jsem před časem dělal spolu na výpočet rizik, ale nedodelal",
+        "text": "Projekty elektro? člen komunity jako stavaře zajímá, já jsem před časem dělal spolu na výpočet rizik, ale nedodelal",
         "group": "Vibe Coding"
       },
       {
@@ -7964,7 +7964,7 @@
       {
         "time": "11:59",
         "author": "člen komunity",
-        "text": "Jirko, jestli Ty jsi zelenáč, tak ja jsem ještě nerozdelal ani oheň 😂🙈",
+        "text": "člen komunity, jestli Ty jsi zelenáč, tak ja jsem ještě nerozdelal ani oheň 😂🙈",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -7998,7 +7998,7 @@
       {
         "time": "20:45",
         "author": "Daniel",
-        "text": "*📅 TÝDENNÍ SOUHRN (25.5. - 31.5.)*\nJirka napsal v sobotu větu, kterou jsem několikrát zkoumal. Vlastně ani ne tak tu větu, jako ten dopad z toho, když s tím začnu něco dělat. Jen upozorňuju, že jsem nadšený power hobík. A to sdělení? Opus 4.7 a 4.8 pro většinu práce nepotřebujete. Jsou o dost náročnější na tokeny. Opus 4.6 bohatě stačí. V Claude Code CLI ho spustíte přes claude --model claude-opus-4-6.\nPDF export z webu. GoFullPage nebo Fireshot prý fungují skvěle. Nemám zkušenost, ale pokud byste to řešili, tak je to třeba inspirace. Podrobnosti ve Vibe Coding skupině.\nA pak věčné „česky nebo anglicky“. Čeština zabírá víc kontextového okna než angličtina. Tento týden z toho vznikla poznámka: „Instrukce a dokumentace v angličtině, promptování v češtině.“ SuperWhisper k tomu umí diktovat česky a výstup dodat anglicky. Stejně jako Uttero. :)\nPak tady byla bezpečnostní zpráva.\nOX Security zveřejnil zprávu o architektonické zranitelnosti v Anthropic MCP, která dovoluje vzdálené spuštění kódu přes dodavatelský řetězec AI. Nikol to sdílela uprostřed týdne. Jsem mega vděčný za tyhle updates. Sám stíhám sledovat jen část těchto novinek a jsem rád za každou podobnou zmínku. Jako hobíkovi mi umožňují přemýšlet o tom, jak a co dělám nejen v kontextu toho, co dělám, ale taky o tom pozadí, které tam prostě je.\nJo a taky Thuy navrhla sbírat moje iPhone a Mac hacky na jedno místo. Pro mě to je boží nápad. Zatím tada jen nápad. :D Těch tipů mám hromadu, jen tím nechci plevelit. Zajímalo by vás to? Napište!\nPoslední info – Show and Tell bude až ve středu 10. 6. v 18.30 na Zoomu. Musel (chtěl) jsem to posunout. Každopádně to bude boží a těším se na to. Informace v sekci Webináře a Workshopy.\nUžívejte večer.\nD.",
+        "text": "*📅 TÝDENNÍ SOUHRN (25.5. - 31.5.)*\nčlen komunity napsal v sobotu větu, kterou jsem několikrát zkoumal. Vlastně ani ne tak tu větu, jako ten dopad z toho, když s tím začnu něco dělat. Jen upozorňuju, že jsem nadšený power hobík. A to sdělení? Opus 4.7 a 4.8 pro většinu práce nepotřebujete. Jsou o dost náročnější na tokeny. Opus 4.6 bohatě stačí. V Claude Code CLI ho spustíte přes claude --model claude-opus-4-6.\nPDF export z webu. GoFullPage nebo Fireshot prý fungují skvěle. Nemám zkušenost, ale pokud byste to řešili, tak je to třeba inspirace. Podrobnosti ve Vibe Coding skupině.\nA pak věčné „česky nebo anglicky“. Čeština zabírá víc kontextového okna než angličtina. Tento týden z toho vznikla poznámka: „Instrukce a dokumentace v angličtině, promptování v češtině.“ SuperWhisper k tomu umí diktovat česky a výstup dodat anglicky. Stejně jako Uttero. :)\nPak tady byla bezpečnostní zpráva.\nOX Security zveřejnil zprávu o architektonické zranitelnosti v Anthropic MCP, která dovoluje vzdálené spuštění kódu přes dodavatelský řetězec AI. člen komunity to sdílela uprostřed týdne. Jsem mega vděčný za tyhle updates. Sám stíhám sledovat jen část těchto novinek a jsem rád za každou podobnou zmínku. Jako hobíkovi mi umožňují přemýšlet o tom, jak a co dělám nejen v kontextu toho, co dělám, ale taky o tom pozadí, které tam prostě je.\nJo a taky člen komunity navrhla sbírat moje iPhone a Mac hacky na jedno místo. Pro mě to je boží nápad. Zatím tada jen nápad. :D Těch tipů mám hromadu, jen tím nechci plevelit. Zajímalo by vás to? Napište!\nPoslední info – Show and Tell bude až ve středu 10. 6. v 18.30 na Zoomu. Musel (chtěl) jsem to posunout. Každopádně to bude boží a těším se na to. Informace v sekci Webináře a Workshopy.\nUžívejte večer.\nD.",
         "group": "Master the Flow — hlavní"
       },
       {
@@ -8052,7 +8052,7 @@
       {
         "time": "14:06",
         "author": "člen komunity",
-        "text": "Já s multimodálním contentem moc nepracuji, ale stejně jak o Aleš si myslím, že na to možná budou lepší nástroje, než čistý CC. Každopádně si dokážu představit, že multimedia žerou kontext víc a i když do kontextu Opusu se vejde 1M tokenů, stejně mám zkušeosti, že aniž by něco uteklo z kontextového okna, čím vejš(dál do historie) to je, tím větší chybovost to přináší (zapomíná, nedodržuje apod.",
+        "text": "Já s multimodálním contentem moc nepracuji, ale stejně jak o člen komunity si myslím, že na to možná budou lepší nástroje, než čistý CC. Každopádně si dokážu představit, že multimedia žerou kontext víc a i když do kontextu Opusu se vejde 1M tokenů, stejně mám zkušeosti, že aniž by něco uteklo z kontextového okna, čím vejš(dál do historie) to je, tím větší chybovost to přináší (zapomíná, nedodržuje apod.",
         "group": "Vibe Coding"
       },
       {
@@ -8312,7 +8312,7 @@
       {
         "time": "16:24",
         "author": "Daniel",
-        "text": "Beru to z pohledu power-user-hobíka. Dnešní zkušenost s ukázkou Claude Code na konzultaci. Byli tam 4 lidi. Jednání o tom, jestli budeme spolupracovat. Ukázal jsem jim, co umí CC. Jasně, že jsem použil terminál.\nBylo to hodně nepřítomné. Padaly slova jako „MS-DOS“, „T602“ a podobně. Zděšení, ale potichu. A to je v pohodě. Prokousávali jsme se tím krok za krokem. A pak Jana řekla: „Ty jo, ono to vlastně není vůbec špatné, stačí jen umět číst a formulovat, co chci.“\nI když se to nezdá, měl jsem to podobně. Na začátku jsem měl mega respekt z terminálu. A pak přišlo takový to, že stačí číst a formulovat. Mít srovnané, co chci. Doptávat se na věci, kterým nerozumím. Zvědavost i zvídavost. Pak to začalo fungovat.\nJen povzbuzení pro ty, co z toho máte respekt. CC, Codex apod. vypadají často strašidelně, ale ve finále je to jen o tom, že si povídáte s chatbotem, jen ten chatbot pracuje místo toho, aby jen odpovídal. Pokud máte záměr, víte, co chcete, není podle mě ta bariéra technologická. Na terminál (nebo Codex/CC v aplikaci) si zvyknete. Velmi rychle. Vlastní zkušenost nejen z mého podnikání, ale i z toho, jak se o tom bavím s lidmi.\nA teď už do práce, můj Top Management tým má pro mě nové zprávy, co můžu zlepšit u sebe. Jo, je to přísný a nikdy se na to netěším. 😀",
+        "text": "Beru to z pohledu power-user-hobíka. Dnešní zkušenost s ukázkou Claude Code na konzultaci. Byli tam 4 lidi. Jednání o tom, jestli budeme spolupracovat. Ukázal jsem jim, co umí CC. Jasně, že jsem použil terminál.\nBylo to hodně nepřítomné. Padaly slova jako „MS-DOS“, „T602“ a podobně. Zděšení, ale potichu. A to je v pohodě. Prokousávali jsme se tím krok za krokem. A pak člen komunity řekla: „Ty jo, ono to vlastně není vůbec špatné, stačí jen umět číst a formulovat, co chci.“\nI když se to nezdá, měl jsem to podobně. Na začátku jsem měl mega respekt z terminálu. A pak přišlo takový to, že stačí číst a formulovat. Mít srovnané, co chci. Doptávat se na věci, kterým nerozumím. Zvědavost i zvídavost. Pak to začalo fungovat.\nJen povzbuzení pro ty, co z toho máte respekt. CC, Codex apod. vypadají často strašidelně, ale ve finále je to jen o tom, že si povídáte s chatbotem, jen ten chatbot pracuje místo toho, aby jen odpovídal. Pokud máte záměr, víte, co chcete, není podle mě ta bariéra technologická. Na terminál (nebo Codex/CC v aplikaci) si zvyknete. Velmi rychle. Vlastní zkušenost nejen z mého podnikání, ale i z toho, jak se o tom bavím s lidmi.\nA teď už do práce, můj Top Management tým má pro mě nové zprávy, co můžu zlepšit u sebe. Jo, je to přísný a nikdy se na to netěším. 😀",
         "group": "Vibe Coding"
       },
       {
@@ -8464,13 +8464,13 @@
       {
         "time": "15:49",
         "author": "člen komunity",
-        "text": "Ailin, mockrat dekuji. ja bych chtela zustat jen v google space a resit to pres forms a pak zaznamy do google sheets, kde se to bude pocitat….",
+        "text": "člen komunity, mockrat dekuji. ja bych chtela zustat jen v google space a resit to pres forms a pak zaznamy do google sheets, kde se to bude pocitat….",
         "group": "Inspirace & Diskuze"
       },
       {
         "time": "15:50",
         "author": "člen komunity",
-        "text": "Ailin, pises ze: Google sheet som nechcela, lebo ten vie dokument len vytvoriť, nie ho potom meniť a to mi nevyhovovalo.  - rekni mi prosim vic?",
+        "text": "člen komunity, pises ze: Google sheet som nechcela, lebo ten vie dokument len vytvoriť, nie ho potom meniť a to mi nevyhovovalo.  - rekni mi prosim vic?",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -8530,7 +8530,7 @@
       {
         "time": "17:45",
         "author": "člen komunity",
-        "text": "Ailin, jak bys resila, ze v ramci cesty mam nektere dny nektera jidla, v jine dny ale ne?",
+        "text": "člen komunity, jak bys resila, ze v ramci cesty mam nektere dny nektera jidla, v jine dny ale ne?",
         "group": "Inspirace & Diskuze"
       },
       {
@@ -8770,7 +8770,7 @@
       {
         "time": "19:26",
         "author": "Daniel",
-        "text": "[obrázek] Už nevím kdo, ale v nějakých článcích jsem četl o tom, jak údajně Feynman přemýšlel (jestli je to pravda, kdo ví, každopádně mi to hezky funguje).\nDržte si v hlavě X otevřených otázek. Ne úkoly, ne cíle (nemám cíle). Otázky, na které nemáte odpověď, ale chcete ji najít.\nOtázky si nezkoušíte aktivně zodpovědět. Necháte je ležet. Pokaždé, když narazíte na nový nápad, článek, rozhovor nebo výsledek, otestujete ho proti každé z nich. Občas přijde shoda. Najednou zjistíte, že něco, co jste četli o výživě, odpovídá na otázku o práci. Nebo že přednáška o psychologii dětí sedí na rozhodování. Je to dlouhodobě aktivní filtr.\nMoje otázky vypadají takhle… Jak vychovat Olivera k samostatnosti? Jak mít hodně energie? Jak být v osmdesáti soběstačný? Dvanáct věcí, které mě zajímají dlouhodobě, napříč oblastmi. Rodina, zdraví, práce, peníze, obsah. Když čtu nebo poslouchám cokoliv, testuju, jestli to někam pasuje. Neplánuju to. Prostě se to děje. A protože vím, co hledám, často nacházím super spojitosti.",
+        "text": "[obrázek] Už nevím kdo, ale v nějakých článcích jsem četl o tom, jak údajně Feynman přemýšlel (jestli je to pravda, kdo ví, každopádně mi to hezky funguje).\nDržte si v hlavě X otevřených otázek. Ne úkoly, ne cíle (nemám cíle). Otázky, na které nemáte odpověď, ale chcete ji najít.\nOtázky si nezkoušíte aktivně zodpovědět. Necháte je ležet. Pokaždé, když narazíte na nový nápad, článek, rozhovor nebo výsledek, otestujete ho proti každé z nich. Občas přijde shoda. Najednou zjistíte, že něco, co jste četli o výživě, odpovídá na otázku o práci. Nebo že přednáška o psychologii dětí sedí na rozhodování. Je to dlouhodobě aktivní filtr.\nMoje otázky vypadají takhle… Jak vychovat člen komunity k samostatnosti? Jak mít hodně energie? Jak být v osmdesáti soběstačný? Dvanáct věcí, které mě zajímají dlouhodobě, napříč oblastmi. Rodina, zdraví, práce, peníze, obsah. Když čtu nebo poslouchám cokoliv, testuju, jestli to někam pasuje. Neplánuju to. Prostě se to děje. A protože vím, co hledám, často nacházím super spojitosti.",
         "group": "Inspirace & Diskuze"
       }
     ],

@@ -308,7 +308,7 @@
     "type": "INSIGHT",
     "title": "Zápisy ze schůzek pro netechnického uživatele",
     "excerpt": "V komunitě se řešilo, jak nastavit zápisy ze schůzek pro člověka přes 60 let, který si s IT moc nerozumí. Podmínky: telefon, výstup do počítače, žádná složitá automatizace.",
-    "body": "Jeden člen popsal konkrétní případ: člověk přes 60, hodně náročná práce, komunikuje s mnoha lidmi. Potřebuje zápisy ze schůzek do počítače, aby mohl pak posílat e-maily, delegovat, zakládat úkoly. Do složité automatizace se mu nechce.\n\nčlen komunity označil Plaud za nejlepší volbu pro takové případy. Funguje jako hardware i mobilní appka.\n\nGoogle Recorder padl jako dobrá zkušenost na živá setkání, ale problém je ruční export výstupu z appky.\n\nFilip zmínil i MS Teams Rooms Pro licenci pro offline schůzky v zasedačce. Umí rozpoznávat lidi i offline, ale potřebuje kompatibilní hardware a není to mobilní řešení.\n\nHlavní princip pro netechnického uživatele: čím míň kroků, tím líp. Jednodušší nástroj, který spolehlivě funguje, je lepší než výkonnější řešení, které občas přestane jet.",
+    "body": "Jeden člen popsal konkrétní případ: člověk přes 60, hodně náročná práce, komunikuje s mnoha lidmi. Potřebuje zápisy ze schůzek do počítače, aby mohl pak posílat e-maily, delegovat, zakládat úkoly. Do složité automatizace se mu nechce.\n\nčlen komunity označil Plaud za nejlepší volbu pro takové případy. Funguje jako hardware i mobilní appka.\n\nGoogle Recorder padl jako dobrá zkušenost na živá setkání, ale problém je ruční export výstupu z appky.\n\nčlen komunity zmínil i MS Teams Rooms Pro licenci pro offline schůzky v zasedačce. Umí rozpoznávat lidi i offline, ale potřebuje kompatibilní hardware a není to mobilní řešení.\n\nHlavní princip pro netechnického uživatele: čím míň kroků, tím líp. Jednodušší nástroj, který spolehlivě funguje, je lepší než výkonnější řešení, které občas přestane jet.",
     "source_date": "2026-06-03",
     "topics": [
       "AI nástroje",
@@ -333,7 +333,7 @@
     "type": "NÁSTROJE",
     "title": "Čím přepisovat schůzky offline a online",
     "excerpt": "Komunita porovnávala Plaud, Fireflies, Soniox a lokální Whisper. Řešila se hlavně potřeba přepisovat živá setkání na telefonu a co použít, když data nesmí do cloudu. Každý nástroj sedí na trochu jiný případ.",
-    "body": "Ve skupině se rozjela diskuze o zápisech ze schůzek. Hlavní otázka byla: co použít na živá setkání s telefonem a co dělat, když data nesmí ven?\n\nDaniel Gamrot popisuje dva režimy. Soniox používá pro cloudové věci. Zvládá více jazyků a rozpoznání řečníků, označil ho za nejpřesnější. Mají i appku, ale otestovanou jen částečně. Pro citlivé věci, kdy data do cloudu nesmí, běží lokální Whisper na Mac Mini. Výstupy jsou horší než ze Soniox.\n\nPlaud jako hardware zmínilo více členů. Daniel ho používá jako HW i SW v macOS. Jeden člen zvažuje Plaud kvůli hardwaru, ale přepisy by chtěl dělat jinde, protože Plaud AI mu přijde příliš drahý.\n\nTana Outliner má záznamník v ceně předplatného a Filipovi vyhovuje: nemusí nic překopírovávat a dostane ze schůzky přepis i vizualizaci jako na whiteboardu.\n\nGoogle Recorder padl jako dobrá zkušenost na živá setkání, ale hledalo se řešení funkční na Samsungu.",
+    "body": "Ve skupině se rozjela diskuze o zápisech ze schůzek. Hlavní otázka byla: co použít na živá setkání s telefonem a co dělat, když data nesmí ven?\n\nDaniel Gamrot popisuje dva režimy. Soniox používá pro cloudové věci. Zvládá více jazyků a rozpoznání řečníků, označil ho za nejpřesnější. Mají i appku, ale otestovanou jen částečně. Pro citlivé věci, kdy data do cloudu nesmí, běží lokální Whisper na Mac Mini. Výstupy jsou horší než ze Soniox.\n\nPlaud jako hardware zmínilo více členů. Daniel ho používá jako HW i SW v macOS. Jeden člen zvažuje Plaud kvůli hardwaru, ale přepisy by chtěl dělat jinde, protože Plaud AI mu přijde příliš drahý.\n\nTana Outliner má záznamník v ceně předplatného a člen komunity vyhovuje: nemusí nic překopírovávat a dostane ze schůzky přepis i vizualizaci jako na whiteboardu.\n\nGoogle Recorder padl jako dobrá zkušenost na živá setkání, ale hledalo se řešení funkční na Samsungu.",
     "source_date": "2026-06-03",
     "topics": [
       "Meeting"
@@ -867,7 +867,7 @@
     "id": "2026-05-20-04",
     "source_date": "2026-05-20",
     "excerpt": "Daniel sdílel epizodu Marka Prokopa s člen komunity. Dva členové k tomu doporučili aifirst.cz a naprimosai.cz jako vstupní bod pro vibe coding.",
-    "body": "Daniel sdílel epizodu Marka Prokopa s člen komunity na Spotify. Jeden člen potvrdil, že Jindrův podcast ho dostal k vibe codingu, a velmi doporučil celý kurz na aifirst.cz jako praktický první krok. Nikol sdílela z AI MSK komunity odkaz na naprimosai.cz jako zevrubný návod pro začínající.",
+    "body": "Daniel sdílel epizodu Marka Prokopa s člen komunity na Spotify. Jeden člen potvrdil, že člen komunity podcast ho dostal k vibe codingu, a velmi doporučil celý kurz na aifirst.cz jako praktický první krok. člen komunity sdílela z AI MSK komunity odkaz na naprimosai.cz jako zevrubný návod pro začínající.",
     "topics": [
       "Vibe Coding",
       "Claude Code"
@@ -891,7 +891,7 @@
     "id": "2026-05-20-02",
     "source_date": "2026-05-20",
     "excerpt": "V komunitě se pro novou roli ujalo pojmenování setuper: člověk, který freelancerům nastaví systémy, aby se mohli soustředit na tvorbu.",
-    "body": "Diskuze o Jiřího architektuře měla velký ohlas. Několik členů přiznalo, že systémová část je pro ně úplně jiný vesmír. Sám od sebe se objevil název pro novou profesní roli: setuper — člověk, který ostatním nastavuje AI infrastrukturu a pomáhá jim překonat technické překážky.",
+    "body": "Diskuze o člen komunity architektuře měla velký ohlas. Několik členů přiznalo, že systémová část je pro ně úplně jiný vesmír. Sám od sebe se objevil název pro novou profesní roli: setuper — člověk, který ostatním nastavuje AI infrastrukturu a pomáhá jim překonat technické překážky.",
     "topics": [
       "Fokus"
     ],
@@ -1022,7 +1022,7 @@
     "type": "NÁSTROJE",
     "title": "Plaud a Sionox pro přepisy v češtině a slovenštině",
     "excerpt": "Člen hledal alternativu k Fireflies pro slovenské přepisy. Z diskuze vzešla doporučení na Plaud a Soniox.",
-    "body": "Člen popisuje, že Fireflies dělá nepřesné přepisy ve slovenštině, stejně jako macWhisper a podobné nástroje. Plaud.ai prý dosahuje téměř dokonalého přepisu ve slovenštině, proto zvažuje jeho koupi.\n\nFilip potvrdil, že Plaud dělá kvalitní přepisy i podle vlastní šablony. Zároveň upozornil, že většina nástrojů má problém s kombinací češtiny a slovenštiny, angličtina s češtinou jsou prý lépe rozpoznatelné. Filip sám Plaud má prý v šuplíku přes půl roku, protože používá hlavně Tana.\n\nDaniel Gamrot doporučil Soniox, který má v nástroji Uttero. Podle něj zvládá střídat jazyky, detekuje mluvčí, čeština je kvalitní a má i realtime přepisy.",
+    "body": "Člen popisuje, že Fireflies dělá nepřesné přepisy ve slovenštině, stejně jako macWhisper a podobné nástroje. Plaud.ai prý dosahuje téměř dokonalého přepisu ve slovenštině, proto zvažuje jeho koupi.\n\nčlen komunity potvrdil, že Plaud dělá kvalitní přepisy i podle vlastní šablony. Zároveň upozornil, že většina nástrojů má problém s kombinací češtiny a slovenštiny, angličtina s češtinou jsou prý lépe rozpoznatelné. člen komunity sám Plaud má prý v šuplíku přes půl roku, protože používá hlavně Tana.\n\nDaniel Gamrot doporučil Soniox, který má v nástroji Uttero. Podle něj zvládá střídat jazyky, detekuje mluvčí, čeština je kvalitní a má i realtime přepisy.",
     "source_date": "2026-05-15",
     "topics": [
       "Meeting"
@@ -1188,8 +1188,8 @@
     "id": "2026-05-12-02",
     "type": "INSIGHT",
     "title": "Cowork jako mozek, Claude Code jako ruka",
-    "excerpt": "Ailin naznačila, že vidí velké využití v propojení coworku a Claude Code. Konkrétní workflow zatím nepopsala, ale kombinace obou nástrojů ji po prvním dni nadchla.",
-    "body": "Ze zprávy víme, že Ailin zkusila Claude Code po třech týdnech práce s coworkem a uspěla. Zároveň říká, že vidí velké využití v jejich propojení. Detaily teprve slíbila sdílet.\n\nCo z toho plyne: kombinace coworku a Claude Code zřejmě dává smysl i pro lidi bez IT zázemí. Jak přesně Ailin oba nástroje propojila a co konkrétně nastavila, ale zatím nevíme.\n\nAž sdílí postup, bude zajímavé sledovat, jak kontext z coworku do CC přenesla.",
+    "excerpt": "člen komunity naznačila, že vidí velké využití v propojení coworku a Claude Code. Konkrétní workflow zatím nepopsala, ale kombinace obou nástrojů ji po prvním dni nadchla.",
+    "body": "Ze zprávy víme, že člen komunity zkusila Claude Code po třech týdnech práce s coworkem a uspěla. Zároveň říká, že vidí velké využití v jejich propojení. Detaily teprve slíbila sdílet.\n\nCo z toho plyne: kombinace coworku a Claude Code zřejmě dává smysl i pro lidi bez IT zázemí. Jak přesně člen komunity oba nástroje propojila a co konkrétně nastavila, ale zatím nevíme.\n\nAž sdílí postup, bude zajímavé sledovat, jak kontext z coworku do CC přenesla.",
     "source_date": "2026-05-12",
     "topics": [
       "Claude Code",
@@ -1203,7 +1203,7 @@
     "type": "UKÁZKA",
     "title": "Bez IT zázemí nastavila CC za jeden den",
     "excerpt": "Obchodní manažerka po třech týdnech práce s coworkem poprvé zkusila Claude Code a dala to. Sdílí, že vidí velké využití v propojení CC a coworku. Podrobnosti slíbila popsat.",
-    "body": "Ailin pracuje s coworkem třetí týždeň a nikdy předtím nepoužívala nic, co by dělalo věci za ni. Vlastními slovy: total non-IT.\n\nDnes poprvé zkusila Claude Code. A zvládla to.\n\nV příspěvku to oznámila komunitě a zmínila, že vidí velké využití v propojení CC a coworku. Detaily slíbila sdílet. Zatím víme jen to, že přechod proběhl a že ji to nadchnulo.\n\nNic víc ze zprávy nevyplývá. Jaký přesně workflow použila nebo jak cowork do procesu zapojila, teprve popíše.",
+    "body": "člen komunity pracuje s coworkem třetí týždeň a nikdy předtím nepoužívala nic, co by dělalo věci za ni. Vlastními slovy: total non-IT.\n\nDnes poprvé zkusila Claude Code. A zvládla to.\n\nV příspěvku to oznámila komunitě a zmínila, že vidí velké využití v propojení CC a coworku. Detaily slíbila sdílet. Zatím víme jen to, že přechod proběhl a že ji to nadchnulo.\n\nNic víc ze zprávy nevyplývá. Jaký přesně workflow použila nebo jak cowork do procesu zapojila, teprve popíše.",
     "source_date": "2026-05-12",
     "topics": [
       "Claude Code",
@@ -1329,7 +1329,7 @@
     "type": "UKÁZKA",
     "title": "Velín: time tracking pro VA vibe codingem",
     "excerpt": "Jeden člen naší komunity si postavil vlastní nástroj na měření času pro virtuální asistenty. Alternativu k Togglu a Clockify. Aplikace vznikla vibe codingem a už běží v produkci.",
-    "body": "Aplikace Velín je time tracking nástroj postavený pro virtuální asistenty. Člen komunity sdílel, že za první týden testování přibylo spoustu nových funkcí. Většina VA trekuje v Togglu nebo Clockify, Velín má prý funkce nad rámec Togglu.\n\nV diskuzi padly dotazy na bezpečnost dat. Martina zmínila, že vibe coded appky bývají děravé a IT profíci před tím varovali.\n\nAutor popsal, jak to má:\n\n**Firebase Auth a Firestore** — základní zabezpečení postavené na Googlu. V security rules nastaveno, že přihlášený uživatel vidí jen svá data.\n\nAutor sám dodal, že by rád vyslechl názor někoho fundovanějšího, jestli je to dostačující.",
+    "body": "Aplikace Velín je time tracking nástroj postavený pro virtuální asistenty. Člen komunity sdílel, že za první týden testování přibylo spoustu nových funkcí. Většina VA trekuje v Togglu nebo Clockify, Velín má prý funkce nad rámec Togglu.\n\nV diskuzi padly dotazy na bezpečnost dat. člen komunity zmínila, že vibe coded appky bývají děravé a IT profíci před tím varovali.\n\nAutor popsal, jak to má:\n\n**Firebase Auth a Firestore** — základní zabezpečení postavené na Googlu. V security rules nastaveno, že přihlášený uživatel vidí jen svá data.\n\nAutor sám dodal, že by rád vyslechl názor někoho fundovanějšího, jestli je to dostačující.",
     "source_date": "2026-05-06",
     "topics": [
       "Vibe Coding",
@@ -1487,8 +1487,8 @@
   {
     "id": "2026-04-29-03",
     "source_date": "2026-04-29",
-    "excerpt": "Nikol si všimla, že je Daniel roztržitý. Účastníci to ale viděli úplně jinak.",
-    "body": "Nikol si v pondělí všimla, že Daniel působil roztržitě. Účastníci akce to ale viděli jinak. Aspoň tak to komentovala Nikol.",
+    "excerpt": "člen komunity si všimla, že je Daniel roztržitý. Účastníci to ale viděli úplně jinak.",
+    "body": "člen komunity si v pondělí všimla, že Daniel působil roztržitě. Účastníci akce to ale viděli jinak. Aspoň tak to komentovala člen komunity.",
     "topics": [
       "Fokus"
     ],
@@ -1499,7 +1499,7 @@
     "id": "2026-04-29-02",
     "source_date": "2026-04-29",
     "excerpt": "Přidat feedback od účastníků, nebo ne? Daniel vsadil na autenticitu okamžiku.",
-    "body": "Nikol navrhla Danielovi, aby k příspěvku na LinkedIn přidal zpětnou vazbu účastníků. Odmítl. Podle něj by tím příspěvek ztratil kouzlo. Lidi byli zlatí, akce boží, ale feedback přidávat nechce.",
+    "body": "člen komunity navrhla Danielovi, aby k příspěvku na LinkedIn přidal zpětnou vazbu účastníků. Odmítl. Podle něj by tím příspěvek ztratil kouzlo. Lidi byli zlatí, akce boží, ale feedback přidávat nechce.",
     "topics": [
       "Prompting"
     ],
@@ -1510,7 +1510,7 @@
     "id": "2026-04-29-01",
     "source_date": "2026-04-29",
     "excerpt": "Tři hodiny před svým blokem překopal celou přípravu. Akce dopadla jako bomba.",
-    "body": "Daniel vystupoval na živé akci a tři hodiny před svým blokem se rozhodl, že chce víc. Akce dopadla skvěle, označil ji za bombu. Napsal o ní příspěvek na LinkedIn. Nikol navrhla přidat feedback od účastníků, Daniel odmítl. Prý by to vzalo celému momentu kouzlo.",
+    "body": "Daniel vystupoval na živé akci a tři hodiny před svým blokem se rozhodl, že chce víc. Akce dopadla skvěle, označil ji za bombu. Napsal o ní příspěvek na LinkedIn. člen komunity navrhla přidat feedback od účastníků, Daniel odmítl. Prý by to vzalo celému momentu kouzlo.",
     "topics": [
       "Meeting"
     ],
@@ -1594,7 +1594,7 @@
     "id": "2026-04-24-01",
     "source_date": "2026-04-24",
     "excerpt": "Obsah na jednom místě v Obsidianu, konfigurace se průběžně ladí. Chybí už jen automatická zpětná vazba.",
-    "body": "Daniel popisuje, jak si v Obsidianu centralizuje obsah a přidává k němu personalizovaná doporučení. Průběžně to ladí a upravuje. Zatím mu chybí automatizace v sebeučení a zpětné vazbě. To chce dotáhnout a ukázat na webináři 7. 5. Ailin se nabídla, že se na to podívají spolu.",
+    "body": "Daniel popisuje, jak si v Obsidianu centralizuje obsah a přidává k němu personalizovaná doporučení. Průběžně to ladí a upravuje. Zatím mu chybí automatizace v sebeučení a zpětné vazbě. To chce dotáhnout a ukázat na webináři 7. 5. člen komunity se nabídla, že se na to podívají spolu.",
     "topics": [
       "Automatizace",
       "Obsidian"
@@ -1667,8 +1667,8 @@
     "id": "2026-04-17-04",
     "type": "INSIGHT",
     "title": "Středoškoláci postavili funkční appku za hodinu",
-    "excerpt": "Nikol sdílela zážitek z finále středoškolské soutěže v digitálních dovednostech. Studenti z různých oborů, elektrikáři, gymnazisté i ajťáci, zvládli za hodinu vytvořit funkční kvízovou aplikaci v Macaly.",
-    "body": "Nikol popsala, jak proběhlo finále jejich soutěže pro středoškoláky v digitálních dovednostech. Studenti tam tvořili vzdělávací obsah pro seniory, rozkrývali dezinformační narativy a vibe codovali.\n\nVšichni za hodinu zvládli vytvořit funkční aplikaci na kvízy v nástroji Macaly. Bez ohledu na obor. Rozdíly mezi nimi byly, ale do cíle se dostali všichni.",
+    "excerpt": "člen komunity sdílela zážitek z finále středoškolské soutěže v digitálních dovednostech. Studenti z různých oborů, elektrikáři, gymnazisté i ajťáci, zvládli za hodinu vytvořit funkční kvízovou aplikaci v člen komunity.",
+    "body": "člen komunity popsala, jak proběhlo finále jejich soutěže pro středoškoláky v digitálních dovednostech. Studenti tam tvořili vzdělávací obsah pro seniory, rozkrývali dezinformační narativy a vibe codovali.\n\nVšichni za hodinu zvládli vytvořit funkční aplikaci na kvízy v nástroji člen komunity. Bez ohledu na obor. Rozdíly mezi nimi byly, ale do cíle se dostali všichni.",
     "source_date": "2026-04-17",
     "topics": [
       "Vibe Coding",
@@ -1799,7 +1799,7 @@
     "type": "INSIGHT",
     "title": "Lokální AI pro citlivá data: zájem je, hardware brzdí",
     "excerpt": "Členka komunity zkusila rozjet AI lokálně kvůli bezpečnosti dat. Vše nainstalovala správně, ale její pevný počítač to nezvládl. Ptala se na minimální vybavení.",
-    "body": "Martina psala, že před pár měsíci zkoušela rozjet AI lokálně. Motivací byla bezpečnost dat v konkrétních případech. Vše nainstalovala podle návodu, ale pevný PC to nedal.\n\nPtala se Daniela, na jakém hardwaru to testoval a jaké je minimální vybavení.\n\nDaniel odpověděl, že to má otestované na MacBook Pro a funguje to dobře. Na stálý provoz ale nemá hardware, který by mu vyhovoval, MacBook není pořád zapnutý.\n\nOtázka na konkrétní minimální vybavení zůstala bez přímé odpovědi.",
+    "body": "člen komunity psala, že před pár měsíci zkoušela rozjet AI lokálně. Motivací byla bezpečnost dat v konkrétních případech. Vše nainstalovala podle návodu, ale pevný PC to nedal.\n\nPtala se Daniela, na jakém hardwaru to testoval a jaké je minimální vybavení.\n\nDaniel odpověděl, že to má otestované na MacBook Pro a funguje to dobře. Na stálý provoz ale nemá hardware, který by mu vyhovoval, MacBook není pořád zapnutý.\n\nOtázka na konkrétní minimální vybavení zůstala bez přímé odpovědi.",
     "source_date": "2026-04-13",
     "topics": [
       "AI nástroje"
@@ -1836,7 +1836,7 @@
     "type": "INSIGHT",
     "title": "Co jsou smečky agentů v praxi",
     "excerpt": "V komunitě padla přímá otázka: co vlastně znamená smečka agentů? Je to nástroj, skilly v Claudu, nebo něco jiného? Členové se pokusili vysvětlit základní myšlenku.",
-    "body": "Maja se zeptala přímo: co ten tým AI agentů prakticky znamená? Jde o OpenClaw, skilly v Claudu, Claude Code, nebo něco úplně jiného?\n\nZ reakcí v komunitě vyplývá, že jde obecně o situaci, kdy na jednom úkolu pracuje víc AI agentů, každý se svou rolí. Konkrétní technická vysvětlení ale v diskuzi nezazněla.\n\nVětšina následné konverzace se stočila jinam, k tématu bezpečnosti a citlivých dat. Přímá odpověď na Majinu otázku v dostupných zprávách není.\n\nPokud tenhle termín neznáte, dobrý první krok je zeptat se přímo AI nástroje, který používáte.",
+    "body": "člen komunity se zeptala přímo: co ten tým AI agentů prakticky znamená? Jde o OpenClaw, skilly v Claudu, Claude Code, nebo něco úplně jiného?\n\nZ reakcí v komunitě vyplývá, že jde obecně o situaci, kdy na jednom úkolu pracuje víc AI agentů, každý se svou rolí. Konkrétní technická vysvětlení ale v diskuzi nezazněla.\n\nVětšina následné konverzace se stočila jinam, k tématu bezpečnosti a citlivých dat. Přímá odpověď na člen komunity otázku v dostupných zprávách není.\n\nPokud tenhle termín neznáte, dobrý první krok je zeptat se přímo AI nástroje, který používáte.",
     "source_date": "2026-04-12",
     "topics": [
       "Claude Code",
@@ -1848,7 +1848,7 @@
     "type": "UKÁZKA",
     "title": "Grant dashboard pro klienta za 3 hodiny",
     "excerpt": "Členka komunity přešla z Manusu na Claude a za tři hodiny postavila funkční webovou aplikaci na mapování dotací pro konkrétního klienta. Výsledek: interaktivní klikací dashboard na míru. Je na sebe pyšná.",
-    "body": "Martina ukázala, co zvládla za odpoledne s Claudem. Přešla z Manusu a rovnou ho vzala do praxe: 3 hodiny práce a výsledkem je funkční webová aplikace na mapování dotací pro konkrétního klienta, který zakládá novou organizaci.\n\nDashboard je interaktivní a klikací. Klientovi dává přehled o tom, o co může žádat. Martina vidí přínos v tom, že každý klient může dostat vlastní přehled podle toho, co zrovna řeší.\n\nZ diskuze také padlo, že v tomto případě nejde o práci s daty, která by bylo potřeba zabezpečovat, spíš o interaktivní checklist na míru. Detaily ale členka komunity neznala. Bezpečnostní otázky jsou tedy otevřené a záleží na konkrétním nasazení.",
+    "body": "člen komunity ukázala, co zvládla za odpoledne s Claudem. Přešla z Manusu a rovnou ho vzala do praxe: 3 hodiny práce a výsledkem je funkční webová aplikace na mapování dotací pro konkrétního klienta, který zakládá novou organizaci.\n\nDashboard je interaktivní a klikací. Klientovi dává přehled o tom, o co může žádat. člen komunity vidí přínos v tom, že každý klient může dostat vlastní přehled podle toho, co zrovna řeší.\n\nZ diskuze také padlo, že v tomto případě nejde o práci s daty, která by bylo potřeba zabezpečovat, spíš o interaktivní checklist na míru. Detaily ale členka komunity neznala. Bezpečnostní otázky jsou tedy otevřené a záleží na konkrétním nasazení.",
     "source_date": "2026-04-12",
     "topics": [
       "Vibe Coding",
@@ -2151,7 +2151,7 @@
     "type": "INSIGHT",
     "title": "Projekty, které nikdo nechce používat",
     "excerpt": "Proč se staví tolik věcí, které pak nikdo nepoužívá? Jedním z důvodů je to, jak mozek reaguje na tvoření. Když vytvoříme něco nového, máme hned pocit pokroku. A je jedno, jestli to opravdu řeší nějaký skutečný problém.",
-    "body": "Daniel sdílel článek o dopaminové pasti tvůrce s poznámkou, že vytváření aplikací, které člověk nechce používat, z velké části pramení právě z tohohle.\n\nMaja to popsala z vlastní zkušenosti. Před příchodem Vibe Codingu si opakovala, že sice může mít skoro všechno, jen ne hned. Teď to hned mít může. A z toho se pro ni stala velká past. O to víc říká, že se musí zastavovat a uvědomovat si, co je opravdu důležité.\n\nNikol dodala, že je to hluboká králičí nora. Přišel nový hype. Časem se to snad srovná.",
+    "body": "Daniel sdílel článek o dopaminové pasti tvůrce s poznámkou, že vytváření aplikací, které člověk nechce používat, z velké části pramení právě z tohohle.\n\nčlen komunity to popsala z vlastní zkušenosti. Před příchodem Vibe Codingu si opakovala, že sice může mít skoro všechno, jen ne hned. Teď to hned mít může. A z toho se pro ni stala velká past. O to víc říká, že se musí zastavovat a uvědomovat si, co je opravdu důležité.\n\nčlen komunity dodala, že je to hluboká králičí nora. Přišel nový hype. Časem se to snad srovná.",
     "source_date": "2026-04-03",
     "topics": [
       "Produktivita",
@@ -2239,7 +2239,7 @@
     "type": "TÉMA TÝDNE",
     "title": "Kolik komunita měsíčně platí za AI",
     "excerpt": "Celá diskuze se točila kolem jedné otázky: kolik vlastně dáváme za AI nástroje. Členové psali částky od tisícovky až po 6 500 Kč měsíčně a výš. Hodně z nich přiznalo, že přemýšlí, co zrušit nebo osekat.",
-    "body": "Jeden člen otevřel téma tím, že sdílel svůj průměr kolem 6 500 Kč měsíčně, s tím, že se pohybuje mezi třemi a patnácti tisíci. A tím spustil vlnu přiznání od ostatních.\n\nNa jednom konci jsou lidi, kteří jedou skoro zadarmo. Google Workspace za základní poplatky, free plány AI nástrojů, žádná předplatná. Jiný člen má Cursor, Claude, Perplexity a Lovable, dohromady přes 3 000 Kč. Jeden člen napsal, že Claude Max, Google Workspace, ClickUp a Perplexity ho vychází na 130 eur (cca 3 200 Kč).\n\nNejčastěji se v diskuzi opakovala kombinace Claude a ChatGPT vedle sebe. Jeden na přemýšlení a psaní, druhý kvůli obrázkům nebo prostě ze zvyku. Dost lidí ale přiznalo, že tohle zdvojení moc nedává smysl a jeden z nich zruší.\n\nNikol zmínila podcast člen komunity, podle kterého platí přes 500 dolarů měsíčně. Byl to ale prý výjimečný měsíc fulltime vibe codování v Thajsku a do částky počítá databáze, Vercel a hodně projektů.",
+    "body": "Jeden člen otevřel téma tím, že sdílel svůj průměr kolem 6 500 Kč měsíčně, s tím, že se pohybuje mezi třemi a patnácti tisíci. A tím spustil vlnu přiznání od ostatních.\n\nNa jednom konci jsou lidi, kteří jedou skoro zadarmo. Google Workspace za základní poplatky, free plány AI nástrojů, žádná předplatná. Jiný člen má Cursor, Claude, Perplexity a Lovable, dohromady přes 3 000 Kč. Jeden člen napsal, že Claude Max, Google Workspace, ClickUp a Perplexity ho vychází na 130 eur (cca 3 200 Kč).\n\nNejčastěji se v diskuzi opakovala kombinace Claude a ChatGPT vedle sebe. Jeden na přemýšlení a psaní, druhý kvůli obrázkům nebo prostě ze zvyku. Dost lidí ale přiznalo, že tohle zdvojení moc nedává smysl a jeden z nich zruší.\n\nčlen komunity zmínila podcast člen komunity, podle kterého platí přes 500 dolarů měsíčně. Byl to ale prý výjimečný měsíc fulltime vibe codování v Thajsku a do částky počítá databáze, Vercel a hodně projektů.",
     "source_date": "2026-04-02",
     "topics": [
       "Vibe Coding",
@@ -2491,8 +2491,8 @@
     ]
   },
   {
-    "excerpt": "Michael sdílí odkaz na příspěvek o tom, jak překrývající se Claude skills žerou zdroje.",
-    "body": "Michael sdílí odkaz na LinkedIn příspěvek s postřehem, že příliš mnoho překrývajících se Claude skills žere zdroje. Bez dalšího komentáře.",
+    "excerpt": "člen komunity sdílí odkaz na příspěvek o tom, jak překrývající se Claude skills žerou zdroje.",
+    "body": "člen komunity sdílí odkaz na LinkedIn příspěvek s postřehem, že příliš mnoho překrývajících se Claude skills žere zdroje. Bez dalšího komentáře.",
     "id": "2026-03-25-06",
     "source_date": "2026-03-25",
     "topics": [
@@ -2503,8 +2503,8 @@
     "type": "INSIGHT"
   },
   {
-    "excerpt": "Aleš narazil na týdenní kreditní limit a zároveň řeší bug: text v teleprompterové appce běžel moc pomalu a nereagoval na tempo čtení.",
-    "body": "Aleš dostal hlášku, že spotřeboval 75 % týdenního limitu, a přitom mu přišlo, že toho moc nedělal. Zároveň nahlásil bug v teleprompter appce, na které pracuje Daniel: text běží pomalu a nereaguje na tempo čtení. V angličtině to bylo ještě horší, odhad čtených slov vůbec nefungoval.",
+    "excerpt": "člen komunity narazil na týdenní kreditní limit a zároveň řeší bug: text v teleprompterové appce běžel moc pomalu a nereagoval na tempo čtení.",
+    "body": "člen komunity dostal hlášku, že spotřeboval 75 % týdenního limitu, a přitom mu přišlo, že toho moc nedělal. Zároveň nahlásil bug v teleprompter appce, na které pracuje Daniel: text běží pomalu a nereaguje na tempo čtení. V angličtině to bylo ještě horší, odhad čtených slov vůbec nefungoval.",
     "id": "2026-03-25-05",
     "source_date": "2026-03-25",
     "topics": [
@@ -2525,8 +2525,8 @@
     "type": "INSIGHT"
   },
   {
-    "excerpt": "Dva členové dostali komentář, že podobný nástroj už existuje. Daniel a Radim se shodli, že taková reakce hází vše do jednoho pytle.",
-    "body": "Jedna členka schytala poznámku, ať raději šetří tokeny, když podobný nástroj už existuje. Daniel odpověděl, že přesně padnoucí řešení je samo o sobě důvod do toho jít. Hotové aplikace mají spoustu funkcí, které překážejí. Radim dodal, že kritici jeho appce vůbec nerozumí oblasti, které se týká, takže jejich komentář nemá přidanou hodnotu.",
+    "excerpt": "Dva členové dostali komentář, že podobný nástroj už existuje. Daniel a člen komunity se shodli, že taková reakce hází vše do jednoho pytle.",
+    "body": "Jedna členka schytala poznámku, ať raději šetří tokeny, když podobný nástroj už existuje. Daniel odpověděl, že přesně padnoucí řešení je samo o sobě důvod do toho jít. Hotové aplikace mají spoustu funkcí, které překážejí. člen komunity dodal, že kritici jeho appce vůbec nerozumí oblasti, které se týká, takže jejich komentář nemá přidanou hodnotu.",
     "id": "2026-03-25-03",
     "source_date": "2026-03-25",
     "topics": [
@@ -2579,7 +2579,7 @@
     "type": "INSIGHT",
     "title": "Proč mít poznámky v systému, který vlastníte",
     "excerpt": "Padla otázka, jestli si vlastní systém nahrazuje Notion nebo Obsidian. Daniel vysvětlil, v čem je přístup přes vlastní systémy flexibilnější.",
-    "body": "Maja se zeptala, jestli Daniel nahradil Notion nebo Obsidian vlastním systémem a jak je strukturovaný. Daniel to nevysvětlil přímo, ale z jeho zpráv vyplývá, že data má lokálně a přistupuje k nim přes vlastní nástroje.\n\nKonkrétní příklad, který zmínil: přes Telegram bota, který mu udělal deep research třeba na téma WhatsApp community, mu to uloží mezi poznámky a přidá další detaily. Je to flexibilnější. Pro něj.\n\nPavel pak sdílel video na stejné téma o nahrazení Notionu a Obsidianu přes Claude Code.\n\nOtázky Maji (struktura složek, printscreeny, vložené skeny) zůstaly bez odpovědi.",
+    "body": "člen komunity se zeptala, jestli Daniel nahradil Notion nebo Obsidian vlastním systémem a jak je strukturovaný. Daniel to nevysvětlil přímo, ale z jeho zpráv vyplývá, že data má lokálně a přistupuje k nim přes vlastní nástroje.\n\nKonkrétní příklad, který zmínil: přes Telegram bota, který mu udělal deep research třeba na téma WhatsApp community, mu to uloží mezi poznámky a přidá další detaily. Je to flexibilnější. Pro něj.\n\nčlen komunity pak sdílel video na stejné téma o nahrazení Notionu a Obsidianu přes Claude Code.\n\nOtázky člen komunity (struktura složek, printscreeny, vložené skeny) zůstaly bez odpovědi.",
     "source_date": "2026-03-24",
     "topics": [
       "Poznámky",
@@ -2704,7 +2704,7 @@
   {
     "id": "2026-03-21-04",
     "source_date": "2026-03-21",
-    "excerpt": "Alex sdílí svůj projekt gupt.eu jako obecnější variantu podobného nástroje.",
+    "excerpt": "člen komunity sdílí svůj projekt gupt.eu jako obecnější variantu podobného nástroje.",
     "body": "člen komunity sdílí odkaz na gupt.eu s tím, že dělal podobnou věc, jen obecněji.",
     "topics": [
       "AI nástroje"
@@ -2715,8 +2715,8 @@
   {
     "id": "2026-03-21-03",
     "source_date": "2026-03-21",
-    "excerpt": "Eliška přiznala, že odkládala budování systému v Notionu s tím, že to brzy udělá AI sama.",
-    "body": "Eliška pojmenovala věc, kterou sama dělala: odkládala budování systému v Notionu, protože čekala, až to za ni zvládne AI. Napsala to jako vtipné sebeodhalení. Jestli to je výmluva nebo rozumná strategie, každý posoudí sám.",
+    "excerpt": "člen komunity přiznala, že odkládala budování systému v Notionu s tím, že to brzy udělá AI sama.",
+    "body": "člen komunity pojmenovala věc, kterou sama dělala: odkládala budování systému v Notionu, protože čekala, až to za ni zvládne AI. Napsala to jako vtipné sebeodhalení. Jestli to je výmluva nebo rozumná strategie, každý posoudí sám.",
     "topics": [
       "Notion"
     ],
@@ -2726,8 +2726,8 @@
   {
     "id": "2026-03-21-02",
     "source_date": "2026-03-21",
-    "excerpt": "Aleš přepisuje přednášky z výcviku a nahrává si sny hned po probuzení. Obojí mu funguje.",
-    "body": "Dva use casy od Aleše: přepis odborných přednášek z výcviku funguje dobře. A druhý: iPhone na nočním stolku v letovém režimu, hned po probuzení namluvit sen do diktafonu. Aleš říká, že přepis přednášek mu vychází líp než nahrávání snů. Věci, které by jinak zmizely, takhle zůstanou.",
+    "excerpt": "člen komunity přepisuje přednášky z výcviku a nahrává si sny hned po probuzení. Obojí mu funguje.",
+    "body": "Dva use casy od člen komunity: přepis odborných přednášek z výcviku funguje dobře. A druhý: iPhone na nočním stolku v letovém režimu, hned po probuzení namluvit sen do diktafonu. člen komunity říká, že přepis přednášek mu vychází líp než nahrávání snů. Věci, které by jinak zmizely, takhle zůstanou.",
     "topics": [
       "AI nástroje",
       "Poznámky"
@@ -2804,8 +2804,8 @@
     "id": "2026-03-19-05",
     "type": "INSIGHT",
     "title": "Apple zamítá vibe-coded aplikace s externími API klíči",
-    "excerpt": "Nikol sdílela odkaz na článek o tom, že Apple zpřísňuje schvalování aplikací z vibe codingu. Daniel přiznal, že jeho aplikace má API klíče do externích služeb a uvidí, jak to dopadne.",
-    "body": "Nikol sdílí odkaz na článek z 9to5mac o tom, že Apple zpřísňuje schvalování vibe-coded aplikací.\n\nDaniel Gamrot článek nečetl, ale reagoval na situaci ze své zkušenosti: TestFlight prý zatím v pohodě funguje. Jeho aplikace má API klíče do externích služeb, takže uvidí, jestli to bude procházet. Jako záložní řešení zmínil sdílení zdrojáků, kdy si uživatel aplikaci nasadí přes Xcode sám.\n\nJestli Apple aplikace aktivně zamítá kvůli API klíčům v kódu, nebo jde o širší problém, ze zpráv přímo nevyplývá. Nikol jen sdílela odkaz s komentářem \"To nebude lehké.\"",
+    "excerpt": "člen komunity sdílela odkaz na článek o tom, že Apple zpřísňuje schvalování aplikací z vibe codingu. Daniel přiznal, že jeho aplikace má API klíče do externích služeb a uvidí, jak to dopadne.",
+    "body": "člen komunity sdílí odkaz na článek z 9to5mac o tom, že Apple zpřísňuje schvalování vibe-coded aplikací.\n\nDaniel Gamrot článek nečetl, ale reagoval na situaci ze své zkušenosti: TestFlight prý zatím v pohodě funguje. Jeho aplikace má API klíče do externích služeb, takže uvidí, jestli to bude procházet. Jako záložní řešení zmínil sdílení zdrojáků, kdy si uživatel aplikaci nasadí přes Xcode sám.\n\nJestli Apple aplikace aktivně zamítá kvůli API klíčům v kódu, nebo jde o širší problém, ze zpráv přímo nevyplývá. člen komunity jen sdílela odkaz s komentářem \"To nebude lehké.\"",
     "source_date": "2026-03-19",
     "topics": [
       "Vibe Coding",
@@ -2852,7 +2852,7 @@
     "type": "TÉMA TÝDNE",
     "title": "Den 5 výzvy: hotové projekty jdou ven",
     "excerpt": "Pátý den Vibe Coding výzvy byl o doladění a sdílení výsledků. V kanálu se objevily projekty stavěné v Lovable i Claude Code.",
-    "body": "Daniel Gamrot vyhlásil Den 5 heslem: dolaďte a sdílejte. Členové se podělili o to, co za pět dní postavili.\n\nV diskuzi bylo vidět, že lidi jedou na různých nástrojích. člen komunity používala na část věcí Gemini CLI a překvapilo ji, že Claude Code to teď zvládne taky. Daniel přiznal, že Lovable už nějakou dobu neotvírá a jede všechno přes Claude Code, protože nechce tříštit práci do více nástrojů.\n\nDen 5 byl také o App Store problémech, které Nikol sdílela odkazem na článek z 9to5mac.",
+    "body": "Daniel Gamrot vyhlásil Den 5 heslem: dolaďte a sdílejte. Členové se podělili o to, co za pět dní postavili.\n\nV diskuzi bylo vidět, že lidi jedou na různých nástrojích. člen komunity používala na část věcí Gemini CLI a překvapilo ji, že Claude Code to teď zvládne taky. Daniel přiznal, že Lovable už nějakou dobu neotvírá a jede všechno přes Claude Code, protože nechce tříštit práci do více nástrojů.\n\nDen 5 byl také o App Store problémech, které člen komunity sdílela odkazem na článek z 9to5mac.",
     "source_date": "2026-03-19",
     "topics": [
       "Claude Code",
@@ -2874,7 +2874,7 @@
     "id": "2026-03-18-04",
     "type": "UKÁZKA",
     "title": "Hlasová appka zachytí myšlenku a pošle ji do e-mailu",
-    "excerpt": "Eliška staví appku na problém, který dobře zná: zapsat myšlenku nebo úkol hned, bez odkladů. Plán je zmáčknout action button na iPhonu, říct to nahlas a dvakrát denně dostat roztříděné záznamy do e-mailu.",
+    "excerpt": "člen komunity staví appku na problém, který dobře zná: zapsat myšlenku nebo úkol hned, bez odkladů. Plán je zmáčknout action button na iPhonu, říct to nahlas a dvakrát denně dostat roztříděné záznamy do e-mailu.",
     "body": "člen komunity popisuje, že má celý život problém se zaznamenáváním věcí během dne. I zapsání jednoduchého úkolu trvá týdny a několik znovuzapomenutí.\n\nChce si postavit appku, která to zjednodušší. Zmáčkne action button na iPhonu, řekne myšlenku nebo úkol nahlas. Dvakrát denně (7:00 a 16:00) by jí přišel e-mail s záznamy roztříděnými od AI podle kategorií, připravenými na export.\n\nDlouhodobý cíl je automatické propojení s Things, task manažerem, který používá a nechce ho opustit. Sama ale není jistá, jestli to s Things půjde.\n\nDaniel Gamrot zmínil, že má podobnou appku postavenou přes Soniox, která přepisuje věci do textu a posílá je do jeho inboxu v poznámkové aplikaci.",
     "source_date": "2026-03-18",
     "topics": [
@@ -2989,8 +2989,8 @@
     "id": "2026-03-16-04",
     "type": "TÉMA TÝDNE",
     "title": "Obsidian, Apple Notes nebo vlastní systém",
-    "excerpt": "Nikol otevřela otázku, jak má komunita řešený druhý mozek. Padl Obsidian kvůli lokálním Markdown souborům. Jiné odpovědi ze zdrojů nejsou.",
-    "body": "Nikol se zeptala, jak mají členové řešený druhý mozek: poznámky, úkoly a podobně. Jestli staví na Obsidianu, Notionu nebo from scratch.\n\nZ diskuze přišla jedna konkrétní odpověď: jeden člen používá Obsidian hlavně kvůli možnosti práce na lokále s Markdown soubory.\n\nčlen komunity mezitím popsal svůj problém: každou neděli večer se marně snaží projít psané poznámky, poznámky v mobilu, v PC a v kalendáři. Chce postavit appku, která mu pomůže myšlenky a úkoly zpracovat a dát do přehledného task listu s upomínkami.\n\nDalší odpovědi na Nikolinu otázku ze zdrojových zpráv nejsou k dispozici.",
+    "excerpt": "člen komunity otevřela otázku, jak má komunita řešený druhý mozek. Padl Obsidian kvůli lokálním Markdown souborům. Jiné odpovědi ze zdrojů nejsou.",
+    "body": "člen komunity se zeptala, jak mají členové řešený druhý mozek: poznámky, úkoly a podobně. Jestli staví na Obsidianu, Notionu nebo from scratch.\n\nZ diskuze přišla jedna konkrétní odpověď: jeden člen používá Obsidian hlavně kvůli možnosti práce na lokále s Markdown soubory.\n\nčlen komunity mezitím popsal svůj problém: každou neděli večer se marně snaží projít psané poznámky, poznámky v mobilu, v PC a v kalendáři. Chce postavit appku, která mu pomůže myšlenky a úkoly zpracovat a dát do přehledného task listu s upomínkami.\n\nDalší odpovědi na člen komunity otázku ze zdrojových zpráv nejsou k dispozici.",
     "source_date": "2026-03-16",
     "topics": [
       "Poznámky",
@@ -3042,8 +3042,8 @@
   {
     "id": "2026-03-15-05",
     "source_date": "2026-03-15",
-    "excerpt": "Nikol pracovala v Claude Code na prezentaci pro komunitní akci. Apku má stále rozpracovanou, ale Claude instruovala, aby k ní vytvořil prezentaci.",
-    "body": "Nikol popsala svůj postup: má apku timetobrief.com rozpracovanou v Claude Code a Claude instruovala, aby k ní vytvořil prezentaci pro akci Fajné Prompty v MS kraji. Apka posílá denní brief aktualit do mailu. Nabídla podrobnější info zájemcům. Zadání výzvy bylo otestovat první nástroj, Nikol ho použila jinak.",
+    "excerpt": "člen komunity pracovala v Claude Code na prezentaci pro komunitní akci. Apku má stále rozpracovanou, ale Claude instruovala, aby k ní vytvořil prezentaci.",
+    "body": "člen komunity popsala svůj postup: má apku timetobrief.com rozpracovanou v Claude Code a Claude instruovala, aby k ní vytvořil prezentaci pro akci Fajné Prompty v MS kraji. Apka posílá denní brief aktualit do mailu. Nabídla podrobnější info zájemcům. Zadání výzvy bylo otestovat první nástroj, člen komunity ho použila jinak.",
     "topics": [
       "Claude Code",
       "Vibe Coding"
@@ -3054,7 +3054,7 @@
   {
     "id": "2026-03-15-04",
     "source_date": "2026-03-15",
-    "excerpt": "Martin zkoušel nástroj na hledání výběrových řízení. Narazil na nedostupnost API serverů veřejných zakázek.",
+    "excerpt": "člen komunity zkoušel nástroj na hledání výběrových řízení. Narazil na nedostupnost API serverů veřejných zakázek.",
     "body": "člen komunity napsal, že dělal něco, co by mu každý den hledalo výběrová řízení. Problém byl v nedostupnosti API serverů veřejných zakázek. Dodal, že zkouší dál. TED API ani paywally ve zprávách zmíněné nejsou.",
     "topics": [
       "Vibe Coding",
@@ -3067,7 +3067,7 @@
     "id": "2026-03-15-03",
     "source_date": "2026-03-15",
     "excerpt": "člen komunity sdílel aribena.com. Vývoj trval čtyři měsíce přes Claude v prohlížeči a poslední měsíc s Claude Code za tokeny.",
-    "body": "Alex popsal projekt slovy: \"Od té doby je to nekonečná jízda.\" Sám dodal kontrast k třídenní výzvě větou \"Takže nemožné do 3 dnů / zázraky na počkáni!\". Přidal odkaz na YouTube. Vývoj proběhl od prosince 2024 do dubna 2025.",
+    "body": "člen komunity popsal projekt slovy: \"Od té doby je to nekonečná jízda.\" Sám dodal kontrast k třídenní výzvě větou \"Takže nemožné do 3 dnů / zázraky na počkáni!\". Přidal odkaz na YouTube. Vývoj proběhl od prosince 2024 do dubna 2025.",
     "topics": [
       "Vibe Coding",
       "Claude Code"
@@ -3078,13 +3078,13 @@
   {
     "id": "2026-03-15-02",
     "source_date": "2026-03-15",
-    "excerpt": "Ze zdrojových zpráv není jasné, které nástroje členové první den nejčastěji používali. Alex zmínil Claude v prohlížeči a Claude Code.",
-    "body": "člen komunity popsal svůj projekt aribena.com: čtyři měsíce vývoje přes Claude v prohlížeči a poslední měsíc s Claude Code za tokeny. Jiné nástroje jako Lovable nebo Macaly se v těchto zprávách neobjevují. Jeden člen sdílel odkaz na svůj výsledek na Lovable, ale bez popisu procesu.",
+    "excerpt": "Ze zdrojových zpráv není jasné, které nástroje členové první den nejčastěji používali. člen komunity zmínil Claude v prohlížeči a Claude Code.",
+    "body": "člen komunity popsal svůj projekt aribena.com: čtyři měsíce vývoje přes Claude v prohlížeči a poslední měsíc s Claude Code za tokeny. Jiné nástroje jako Lovable nebo člen komunity se v těchto zprávách neobjevují. Jeden člen sdílel odkaz na svůj výsledek na Lovable, ale bez popisu procesu.",
     "topics": [
       "Claude Code",
       "Vibe Coding"
     ],
-    "title": "Lovable, Macaly nebo Claude Code — první den šlo všechno",
+    "title": "Lovable, člen komunity nebo Claude Code — první den šlo všechno",
     "type": "NÁSTROJE"
   },
   {
@@ -3104,7 +3104,7 @@
     "type": "INSIGHT",
     "title": "Nástroj bez API do moderního workflow nezapadne",
     "excerpt": "V diskuzi padl jasný postoj: když nástroj nemá API, nejde ho rozumně automatizovat ani napojit na vlastní systém. Pro pravidelné používání je to velká překážka.",
-    "body": "Daniel to řekl rovnou: dneska, pokud není u nástroje API, jde pryč. Je to pro něj základ.\n\nAlex to rozvinul: cokoli má API si lze napsat vlastní nebo stáhnout CLI nástroj s nápovědou. Ušetří to tokeny i čas. Pro každý projekt jde do memory Claudovi zapsat, jak se daný CLI nástroj používá, třeba pro deploy.\n\nPraktický dopad: nástroj s API se dá volat ze skriptu, propojit s jiným nástrojem nebo zapojit do vlastního workflow. Bez API se to nedá rozumně udělat.",
+    "body": "Daniel to řekl rovnou: dneska, pokud není u nástroje API, jde pryč. Je to pro něj základ.\n\nčlen komunity to rozvinul: cokoli má API si lze napsat vlastní nebo stáhnout CLI nástroj s nápovědou. Ušetří to tokeny i čas. Pro každý projekt jde do memory Claudovi zapsat, jak se daný CLI nástroj používá, třeba pro deploy.\n\nPraktický dopad: nástroj s API se dá volat ze skriptu, propojit s jiným nástrojem nebo zapojit do vlastního workflow. Bez API se to nedá rozumně udělat.",
     "source_date": "2026-03-14",
     "topics": [
       "Automatizace",

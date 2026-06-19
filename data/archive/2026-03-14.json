@@ -108,7 +108,7 @@
       "level": "Builder",
       "title": "Nástroj bez API do moderního workflow nezapadne",
       "excerpt": "V diskuzi padl jasný postoj: když nástroj nemá API, nejde ho rozumně automatizovat ani napojit na vlastní systém. Pro pravidelné používání je to velká překážka.",
-      "body": "Daniel to řekl rovnou: dneska, pokud není u nástroje API, jde pryč. Je to pro něj základ.\n\nAlex to rozvinul: cokoli má API si lze napsat vlastní nebo stáhnout CLI nástroj s nápovědou. Ušetří to tokeny i čas. Pro každý projekt jde do memory Claudovi zapsat, jak se daný CLI nástroj používá, třeba pro deploy.\n\nPraktický dopad: nástroj s API se dá volat ze skriptu, propojit s jiným nástrojem nebo zapojit do vlastního workflow. Bez API se to nedá rozumně udělat.",
+      "body": "Daniel to řekl rovnou: dneska, pokud není u nástroje API, jde pryč. Je to pro něj základ.\n\nčlen komunity to rozvinul: cokoli má API si lze napsat vlastní nebo stáhnout CLI nástroj s nápovědou. Ušetří to tokeny i čas. Pro každý projekt jde do memory Claudovi zapsat, jak se daný CLI nástroj používá, třeba pro deploy.\n\nPraktický dopad: nástroj s API se dá volat ze skriptu, propojit s jiným nástrojem nebo zapojit do vlastního workflow. Bez API se to nedá rozumně udělat.",
       "read_minutes": 2,
       "source_date": "2026-03-14",
       "topics": [
@@ -160,7 +160,7 @@
           {
             "time": "11:52",
             "author": "člen komunity",
-            "text": "Ahojte děkuji za pozvání Jirka"
+            "text": "Ahojte děkuji za pozvání člen komunity"
           },
           {
             "time": "12:06",

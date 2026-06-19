@@ -79,8 +79,8 @@
       "type": "TÉMA TÝDNE",
       "level": "Builder",
       "title": "Obsidian, Apple Notes nebo vlastní systém",
-      "excerpt": "Nikol otevřela otázku, jak má komunita řešený druhý mozek. Padl Obsidian kvůli lokálním Markdown souborům. Jiné odpovědi ze zdrojů nejsou.",
-      "body": "Nikol se zeptala, jak mají členové řešený druhý mozek: poznámky, úkoly a podobně. Jestli staví na Obsidianu, Notionu nebo from scratch.\n\nZ diskuze přišla jedna konkrétní odpověď: jeden člen používá Obsidian hlavně kvůli možnosti práce na lokále s Markdown soubory.\n\nčlen komunity mezitím popsal svůj problém: každou neděli večer se marně snaží projít psané poznámky, poznámky v mobilu, v PC a v kalendáři. Chce postavit appku, která mu pomůže myšlenky a úkoly zpracovat a dát do přehledného task listu s upomínkami.\n\nDalší odpovědi na Nikolinu otázku ze zdrojových zpráv nejsou k dispozici.",
+      "excerpt": "člen komunity otevřela otázku, jak má komunita řešený druhý mozek. Padl Obsidian kvůli lokálním Markdown souborům. Jiné odpovědi ze zdrojů nejsou.",
+      "body": "člen komunity se zeptala, jak mají členové řešený druhý mozek: poznámky, úkoly a podobně. Jestli staví na Obsidianu, Notionu nebo from scratch.\n\nZ diskuze přišla jedna konkrétní odpověď: jeden člen používá Obsidian hlavně kvůli možnosti práce na lokále s Markdown soubory.\n\nčlen komunity mezitím popsal svůj problém: každou neděli večer se marně snaží projít psané poznámky, poznámky v mobilu, v PC a v kalendáři. Chce postavit appku, která mu pomůže myšlenky a úkoly zpracovat a dát do přehledného task listu s upomínkami.\n\nDalší odpovědi na člen komunity otázku ze zdrojových zpráv nejsou k dispozici.",
       "read_minutes": 2,
       "source_date": "2026-03-16",
       "topics": [
@@ -130,7 +130,7 @@
           {
             "time": "02:15",
             "author": "Daniel",
-            "text": "Super, Aleši. Já, jako velký fanoušek Googlu, jsem zkoušel Gemini na vibe coding. Docela dlouho, ale ty výstupy jsou prostě jiné. CC vede. Za mě."
+            "text": "Super, člen komunity. Já, jako velký fanoušek Googlu, jsem zkoušel Gemini na vibe coding. Docela dlouho, ale ty výstupy jsou prostě jiné. CC vede. Za mě."
           },
           {
             "time": "07:59",
@@ -155,7 +155,7 @@
           {
             "time": "09:11",
             "author": "Daniel",
-            "text": "Tohle je úplně super. V tom vidím inspiraci i pro sebe. Chudák Oliver. 😀\nKaždopádně zrovna taky řeším dashboard pro „spolupráci“ s Claude Code na dálku. Bude co nevidět, pak kdyžtak nasdílím. Ale bohužel, smetí to zatím nevynese a postel neustele."
+            "text": "Tohle je úplně super. V tom vidím inspiraci i pro sebe. Chudák člen komunity. 😀\nKaždopádně zrovna taky řeším dashboard pro „spolupráci“ s Claude Code na dálku. Bude co nevidět, pak kdyžtak nasdílím. Ale bohužel, smetí to zatím nevynese a postel neustele."
           },
           {
             "time": "10:40",

@@ -33,13 +33,13 @@
     {
       "id": "2026-03-15-02",
       "source_date": "2026-03-15",
-      "excerpt": "Ze zdrojových zpráv není jasné, které nástroje členové první den nejčastěji používali. Alex zmínil Claude v prohlížeči a Claude Code.",
-      "body": "člen komunity popsal svůj projekt aribena.com: čtyři měsíce vývoje přes Claude v prohlížeči a poslední měsíc s Claude Code za tokeny. Jiné nástroje jako Lovable nebo Macaly se v těchto zprávách neobjevují. Jeden člen sdílel odkaz na svůj výsledek na Lovable, ale bez popisu procesu.",
+      "excerpt": "Ze zdrojových zpráv není jasné, které nástroje členové první den nejčastěji používali. člen komunity zmínil Claude v prohlížeči a Claude Code.",
+      "body": "člen komunity popsal svůj projekt aribena.com: čtyři měsíce vývoje přes Claude v prohlížeči a poslední měsíc s Claude Code za tokeny. Jiné nástroje jako Lovable nebo člen komunity se v těchto zprávách neobjevují. Jeden člen sdílel odkaz na svůj výsledek na Lovable, ale bez popisu procesu.",
       "topics": [
         "Claude Code",
         "Vibe Coding"
       ],
-      "title": "Lovable, Macaly nebo Claude Code — první den šlo všechno",
+      "title": "Lovable, člen komunity nebo Claude Code — první den šlo všechno",
       "source_group": "vibecoding",
       "source_msg_times": [
         "12:18",
@@ -52,7 +52,7 @@
       "id": "2026-03-15-03",
       "source_date": "2026-03-15",
       "excerpt": "člen komunity sdílel aribena.com. Vývoj trval čtyři měsíce přes Claude v prohlížeči a poslední měsíc s Claude Code za tokeny.",
-      "body": "Alex popsal projekt slovy: \"Od té doby je to nekonečná jízda.\" Sám dodal kontrast k třídenní výzvě větou \"Takže nemožné do 3 dnů / zázraky na počkáni!\". Přidal odkaz na YouTube. Vývoj proběhl od prosince 2024 do dubna 2025.",
+      "body": "člen komunity popsal projekt slovy: \"Od té doby je to nekonečná jízda.\" Sám dodal kontrast k třídenní výzvě větou \"Takže nemožné do 3 dnů / zázraky na počkáni!\". Přidal odkaz na YouTube. Vývoj proběhl od prosince 2024 do dubna 2025.",
       "topics": [
         "Vibe Coding",
         "Claude Code"
@@ -74,7 +74,7 @@
     {
       "id": "2026-03-15-04",
       "source_date": "2026-03-15",
-      "excerpt": "Martin zkoušel nástroj na hledání výběrových řízení. Narazil na nedostupnost API serverů veřejných zakázek.",
+      "excerpt": "člen komunity zkoušel nástroj na hledání výběrových řízení. Narazil na nedostupnost API serverů veřejných zakázek.",
       "body": "člen komunity napsal, že dělal něco, co by mu každý den hledalo výběrová řízení. Problém byl v nedostupnosti API serverů veřejných zakázek. Dodal, že zkouší dál. TED API ani paywally ve zprávách zmíněné nejsou.",
       "topics": [
         "Vibe Coding",
@@ -94,8 +94,8 @@
     {
       "id": "2026-03-15-05",
       "source_date": "2026-03-15",
-      "excerpt": "Nikol pracovala v Claude Code na prezentaci pro komunitní akci. Apku má stále rozpracovanou, ale Claude instruovala, aby k ní vytvořil prezentaci.",
-      "body": "Nikol popsala svůj postup: má apku timetobrief.com rozpracovanou v Claude Code a Claude instruovala, aby k ní vytvořil prezentaci pro akci Fajné Prompty v MS kraji. Apka posílá denní brief aktualit do mailu. Nabídla podrobnější info zájemcům. Zadání výzvy bylo otestovat první nástroj, Nikol ho použila jinak.",
+      "excerpt": "člen komunity pracovala v Claude Code na prezentaci pro komunitní akci. Apku má stále rozpracovanou, ale Claude instruovala, aby k ní vytvořil prezentaci.",
+      "body": "člen komunity popsala svůj postup: má apku timetobrief.com rozpracovanou v Claude Code a Claude instruovala, aby k ní vytvořil prezentaci pro akci Fajné Prompty v MS kraji. Apka posílá denní brief aktualit do mailu. Nabídla podrobnější info zájemcům. Zadání výzvy bylo otestovat první nástroj, člen komunity ho použila jinak.",
       "topics": [
         "Claude Code",
         "Vibe Coding"
@@ -138,7 +138,7 @@
           {
             "time": "12:18",
             "author": "Daniel",
-            "text": "💻 Den 1: OTESTUJTE PRVNÍ NÁSTROJ\n===============================\nPrvní den je zahřívací. Potřebuju, abyste začali pracovat s nějakým vibe coding nástrojem. Takže krok za krokem:\n1) VYBERTE SI JEDEN NÁSTROJ\nBojíte se terminálu? Berte Lovable (lovable.dev) nebo Macaly (macaly.com). Je to v prohlížeči, nic neinstalujete, za pět minut tam budete. Větším ale, že příští pátek už pojedete s Claude Code nebo Codexem v terminálu. Fakt je to o zvyku. A ty možnosti jsou pak úplně jinde.\n2) VYTVOŘTE SI ÚČET\nPokud nevíte jak, otevřete si ChatGPT nebo Claude a napište „Chci si vytvořit účet na Lovable, proveď mě tím krok za krokem“. Případně „Chci si nainstalovat Claude Code do počítače a nevím jak na to. Proveď mě tím krok za krokem“.\n3) VYTVOŘTE PRVNÍ ZADÁNÍ\nAž budete v nástroji, vytvořte první zadání. Třeba tohle (klidně to zkopírujte): „Vytvoř mi jednoduchou webovou stránku. Bude tam nadpis s mým jménem, krátký popis toho, čím se zabývám, a tlačítko, které kliknutím otevře e-mailového klienta, kterého uživatel používá, a vytvoří e-mail s předmětem 'Zpráva pro Daniela', adresátem 'daniel@gamrot.cz' a v těle e-mailu bude začátek e-mailu 'Danieli Gamrote, '. Zbytek pak doplní uživatel.“\nPokud si troufnete, zkuste to jakkoliv dostat do online. Lovable má funkci publish, s projektem v CC vám pomůže Claude.\n4) KOUKNĚTE, CO TO UDĚLÁ\nZkuste pak měnit barvy, text, cokoliv. Jenom si to osahat. Žádný tlak. Cíl dneška je jenom vidět, že to funguje. Hoďte do sem skupiny screenshot toho, co vám vzniklo.\n5) OTESTUJTE TO\nKlikněte na to vytvořené tlačítko na webu a pošlete mi zprávu. Napište cokoliv, třeba to, jaký máte aktuálně vztah k vibe codingu, co jste se naučili na webináři nebo jak byste rádi pokračovali dál.\nA abych nezahálel, hodil jsem to do Lovable (výstup za minutu) i Claude Code (tak nějak podobně). Jen abych poukázal na rozdíl – Lovable nemá definované žádné informace o mně. Barvy, písmo, styl, nic. Claude Code ano a ne málo. Proto po prvním (stejném) promptu věděl bez dalších informací, co má dělat a jak to má vypadat.\n- Lovable: https://hello-daniel-here.lovable.app\n- Claude Code: https://hello-daniel-here.pages.dev\nDo práce. Kdyby něco, pište sem.\nDaniel"
+            "text": "💻 Den 1: OTESTUJTE PRVNÍ NÁSTROJ\n===============================\nPrvní den je zahřívací. Potřebuju, abyste začali pracovat s nějakým vibe coding nástrojem. Takže krok za krokem:\n1) VYBERTE SI JEDEN NÁSTROJ\nBojíte se terminálu? Berte Lovable (lovable.dev) nebo člen komunity (macaly.com). Je to v prohlížeči, nic neinstalujete, za pět minut tam budete. Větším ale, že příští pátek už pojedete s Claude Code nebo Codexem v terminálu. Fakt je to o zvyku. A ty možnosti jsou pak úplně jinde.\n2) VYTVOŘTE SI ÚČET\nPokud nevíte jak, otevřete si ChatGPT nebo Claude a napište „Chci si vytvořit účet na Lovable, proveď mě tím krok za krokem“. Případně „Chci si nainstalovat Claude Code do počítače a nevím jak na to. Proveď mě tím krok za krokem“.\n3) VYTVOŘTE PRVNÍ ZADÁNÍ\nAž budete v nástroji, vytvořte první zadání. Třeba tohle (klidně to zkopírujte): „Vytvoř mi jednoduchou webovou stránku. Bude tam nadpis s mým jménem, krátký popis toho, čím se zabývám, a tlačítko, které kliknutím otevře e-mailového klienta, kterého uživatel používá, a vytvoří e-mail s předmětem 'Zpráva pro Daniela', adresátem 'daniel@gamrot.cz' a v těle e-mailu bude začátek e-mailu 'Danieli Gamrote, '. Zbytek pak doplní uživatel.“\nPokud si troufnete, zkuste to jakkoliv dostat do online. Lovable má funkci publish, s projektem v CC vám pomůže Claude.\n4) KOUKNĚTE, CO TO UDĚLÁ\nZkuste pak měnit barvy, text, cokoliv. Jenom si to osahat. Žádný tlak. Cíl dneška je jenom vidět, že to funguje. Hoďte do sem skupiny screenshot toho, co vám vzniklo.\n5) OTESTUJTE TO\nKlikněte na to vytvořené tlačítko na webu a pošlete mi zprávu. Napište cokoliv, třeba to, jaký máte aktuálně vztah k vibe codingu, co jste se naučili na webináři nebo jak byste rádi pokračovali dál.\nA abych nezahálel, hodil jsem to do Lovable (výstup za minutu) i Claude Code (tak nějak podobně). Jen abych poukázal na rozdíl – Lovable nemá definované žádné informace o mně. Barvy, písmo, styl, nic. Claude Code ano a ne málo. Proto po prvním (stejném) promptu věděl bez dalších informací, co má dělat a jak to má vypadat.\n- Lovable: https://hello-daniel-here.lovable.app\n- Claude Code: https://hello-daniel-here.pages.dev\nDo práce. Kdyby něco, pište sem.\nDaniel"
           },
           {
             "time": "12:23",
@@ -223,7 +223,7 @@
           {
             "time": "17:48",
             "author": "Daniel",
-            "text": "💻 Den 1: OTESTUJTE PRVNÍ NÁSTROJ\n===============================\nPrvní den je zahřívací. Potřebuju, abyste začali pracovat s nějakým vibe coding nástrojem. Takže krok za krokem:\n1) VYBERTE SI JEDEN NÁSTROJ\nBojíte se terminálu? Berte Lovable (lovable.dev) nebo Macaly (macaly.com). Je to v prohlížeči, nic neinstalujete, za pět minut tam budete. Větším ale, že příští pátek už pojedete s Claude Code nebo Codexem v terminálu. Fakt je to o zvyku. A ty možnosti jsou pak úplně jinde.\n2) VYTVOŘTE SI ÚČET\nPokud nevíte jak, otevřete si ChatGPT nebo Claude a napište „Chci si vytvořit účet na Lovable, proveď mě tím krok za krokem“. Případně „Chci si nainstalovat Claude Code do počítače a nevím jak na to. Proveď mě tím krok za krokem“.\n3) VYTVOŘTE PRVNÍ ZADÁNÍ\nAž budete v nástroji, vytvořte první zadání. Třeba tohle (klidně to zkopírujte): „Vytvoř mi jednoduchou webovou stránku. Bude tam nadpis s mým jménem, krátký popis toho, čím se zabývám, a tlačítko, které kliknutím otevře e-mailového klienta, kterého uživatel používá, a vytvoří e-mail s předmětem 'Zpráva pro Daniela', adresátem 'daniel@gamrot.cz' a v těle e-mailu bude začátek e-mailu 'Danieli Gamrote, '. Zbytek pak doplní uživatel.“\nPokud si troufnete, zkuste to jakkoliv dostat do online. Lovable má funkci publish, s projektem v CC vám pomůže Claude.\n4) KOUKNĚTE, CO TO UDĚLÁ\nZkuste pak měnit barvy, text, cokoliv. Jenom si to osahat. Žádný tlak. Cíl dneška je jenom vidět, že to funguje. Hoďte do sem skupiny screenshot toho, co vám vzniklo.\n5) OTESTUJTE TO\nKlikněte na to vytvořené tlačítko na webu a pošlete mi zprávu. Napište cokoliv, třeba to, jaký máte aktuálně vztah k vibe codingu, co jste se naučili na webináři nebo jak byste rádi pokračovali dál.\nA abych nezahálel, hodil jsem to do Lovable (výstup za minutu) i Claude Code (tak nějak podobně). Jen abych poukázal na rozdíl – Lovable nemá definované žádné informace o mně. Barvy, písmo, styl, nic. Claude Code ano a ne málo. Proto po prvním (stejném) promptu věděl bez dalších informací, co má dělat a jak to má vypadat.\n•⁠  ⁠Lovable: https://hello-daniel-here.lovable.app\n•⁠  ⁠Claude Code: https://hello-daniel-here.pages.dev\nDo práce. Kdyby něco, pište sem.\nDaniel"
+            "text": "💻 Den 1: OTESTUJTE PRVNÍ NÁSTROJ\n===============================\nPrvní den je zahřívací. Potřebuju, abyste začali pracovat s nějakým vibe coding nástrojem. Takže krok za krokem:\n1) VYBERTE SI JEDEN NÁSTROJ\nBojíte se terminálu? Berte Lovable (lovable.dev) nebo člen komunity (macaly.com). Je to v prohlížeči, nic neinstalujete, za pět minut tam budete. Větším ale, že příští pátek už pojedete s Claude Code nebo Codexem v terminálu. Fakt je to o zvyku. A ty možnosti jsou pak úplně jinde.\n2) VYTVOŘTE SI ÚČET\nPokud nevíte jak, otevřete si ChatGPT nebo Claude a napište „Chci si vytvořit účet na Lovable, proveď mě tím krok za krokem“. Případně „Chci si nainstalovat Claude Code do počítače a nevím jak na to. Proveď mě tím krok za krokem“.\n3) VYTVOŘTE PRVNÍ ZADÁNÍ\nAž budete v nástroji, vytvořte první zadání. Třeba tohle (klidně to zkopírujte): „Vytvoř mi jednoduchou webovou stránku. Bude tam nadpis s mým jménem, krátký popis toho, čím se zabývám, a tlačítko, které kliknutím otevře e-mailového klienta, kterého uživatel používá, a vytvoří e-mail s předmětem 'Zpráva pro Daniela', adresátem 'daniel@gamrot.cz' a v těle e-mailu bude začátek e-mailu 'Danieli Gamrote, '. Zbytek pak doplní uživatel.“\nPokud si troufnete, zkuste to jakkoliv dostat do online. Lovable má funkci publish, s projektem v CC vám pomůže Claude.\n4) KOUKNĚTE, CO TO UDĚLÁ\nZkuste pak měnit barvy, text, cokoliv. Jenom si to osahat. Žádný tlak. Cíl dneška je jenom vidět, že to funguje. Hoďte do sem skupiny screenshot toho, co vám vzniklo.\n5) OTESTUJTE TO\nKlikněte na to vytvořené tlačítko na webu a pošlete mi zprávu. Napište cokoliv, třeba to, jaký máte aktuálně vztah k vibe codingu, co jste se naučili na webináři nebo jak byste rádi pokračovali dál.\nA abych nezahálel, hodil jsem to do Lovable (výstup za minutu) i Claude Code (tak nějak podobně). Jen abych poukázal na rozdíl – Lovable nemá definované žádné informace o mně. Barvy, písmo, styl, nic. Claude Code ano a ne málo. Proto po prvním (stejném) promptu věděl bez dalších informací, co má dělat a jak to má vypadat.\n•⁠  ⁠Lovable: https://hello-daniel-here.lovable.app\n•⁠  ⁠Claude Code: https://hello-daniel-here.pages.dev\nDo práce. Kdyby něco, pište sem.\nDaniel"
           },
           {
             "time": "17:49",
@@ -263,7 +263,7 @@
           {
             "time": "22:09",
             "author": "člen komunity",
-            "text": "Ahoj všem, web budu ještě ladit, zatím v Macaly takto: https://macaly-hgs8m54fxvupotyt29p2o4yj.macaly.app. Zítra si koupím Claude. Používám nyní placené Gemini. Právě chci ladit jak design webu, tak úpravu struktury."
+            "text": "Ahoj všem, web budu ještě ladit, zatím v člen komunity takto: https://macaly-hgs8m54fxvupotyt29p2o4yj.macaly.app. Zítra si koupím Claude. Používám nyní placené Gemini. Právě chci ladit jak design webu, tak úpravu struktury."
           }
         ]
       }
