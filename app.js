@@ -1363,10 +1363,14 @@ async function subscribePush() {
     userVisibleOnly: true,
     applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC),
   });
-  await fetch('/api/subscribe', {
+  const resp = await fetch('/api/subscribe', {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(sub.toJSON()),
   });
+  if (!resp.ok) {
+    await sub.unsubscribe();
+    throw new Error('Subscription rejected by server: ' + resp.status);
+  }
   return sub;
 }
 
