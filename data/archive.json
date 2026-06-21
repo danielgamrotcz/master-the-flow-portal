@@ -903,6 +903,15 @@
         "Workflow",
         "Email"
       ]
+    },
+    {
+      "date": "2026-06-20",
+      "card_count": 1,
+      "topics": [
+        "Meeting",
+        "Workflow",
+        "AI nástroje"
+      ]
     }
   ]
 }
