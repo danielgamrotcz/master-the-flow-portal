@@ -49,7 +49,7 @@
       "level": "Builder",
       "title": "Tři projekty z komunity za týden",
       "excerpt": "Členové sdílí, co stavějí. Z diskuze vyplynuly projekty v různých fázích, ale konkrétní detaily jsou zatím kusé.",
-      "body": "Člen člen komunity píše, že je aktuálně na beta_v7, zbývá dokončit reporty a pak chce nasadit projekt na vlastní projekty. Optimalizoval zpracování tak, že Claude zpracovává jen změny, ne celý dataset.\n\nDalší člen vyzval ostatní, aby sdíleli, co kdo vytvořil. Daniel Gamrot reagoval, že by projekt chtěl upravit, ale bojí se, že si na něj za týden nevzpomene.\n\nO appce na výcvik psa ani o kalkulačce daňových doplatků se v těchto zprávách nepíše. Ty detaily ve zdrojích nejsou.",
+      "body": "Člen komunity píše, že je aktuálně na beta_v7, zbývá dokončit reporty a pak chce nasadit projekt na vlastní projekty. Optimalizoval zpracování tak, že Claude zpracovává jen změny, ne celý dataset.\n\nDalší člen vyzval ostatní, aby sdíleli, co kdo vytvořil. Daniel Gamrot reagoval, že by projekt chtěl upravit, ale bojí se, že si na něj za týden nevzpomene.\n\nO appce na výcvik psa ani o kalkulačce daňových doplatků se v těchto zprávách nepíše. Ty detaily ve zdrojích nejsou.",
       "read_minutes": 2,
       "source_date": "2026-05-05",
       "topics": [
@@ -63,9 +63,7 @@
         "14:16",
         "18:42"
       ],
-      "links": [
-        "https://www.jirkamartisek.cz/procvicovani/"
-      ]
+      "links": []
     }
   ],
   "resurfacing": {
