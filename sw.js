@@ -1,4 +1,4 @@
-const CACHE = 'mtf-v18';
+const CACHE = 'mtf-v19';
 const STATIC = ['/', '/index.html', '/app.js', '/styles.css', '/favicon.svg',
   '/manifest.webmanifest', '/icon-192.png', '/icon-512.png', '/apple-touch-icon.png'];
 // App shell — vždy zkus síť, fallback cache (offline). Brání stale verzi appky

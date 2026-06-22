@@ -783,7 +783,6 @@ function openCard(cardId) {
 
   $('overlay-meta').innerHTML = `
     <span class="card-type" style="color:${typeColor}">${esc(card.type)}</span>
-    ${getTopics(card).map(t => `<span class="card-topic">${esc(t)}</span>`).join('')}
   `;
 
   const dateStr = card.source_date || card.resurfaced_from || card.date || '';
