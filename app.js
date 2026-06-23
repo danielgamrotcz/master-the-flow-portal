@@ -2315,8 +2315,6 @@ function onTopicChange(topic) {
     btn.classList.toggle('active', isActive);
     btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
   });
-  const chips = $('topic-chips');
-  if (chips) chips.scrollLeft = 0;
   rerenderCurrentView();
 }
 
