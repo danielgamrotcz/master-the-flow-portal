@@ -914,6 +914,114 @@ a:hover { text-decoration: underline; }
 .card-link::after { content: "↗"; font-size: 11px; opacity: 0.7; }
 .card-link:hover { background: var(--accent); color: #fff; }
 
+/* ===== GALERIE OBRÁZKŮ (karta i přepis) ===== */
+.media-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 8px;
+  margin-top: 14px;
+}
+.media-gallery.single {
+  grid-template-columns: minmax(0, 320px);
+}
+.media-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg-card);
+  cursor: zoom-in;
+  transition: border-color 150ms ease, transform 150ms ease;
+}
+.media-gallery.single .media-thumb { aspect-ratio: auto; max-height: 360px; }
+.media-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.media-gallery.single .media-thumb img { object-fit: contain; max-height: 360px; }
+.media-thumb:hover { border-color: var(--accent); }
+.media-thumb:active { transform: scale(0.98); }
+
+/* Obrázky v přepisu — menší náhledy pod zprávou */
+.msg-body .media-gallery { margin-top: 8px; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); }
+.msg-body .media-gallery.single { grid-template-columns: minmax(0, 240px); }
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.94);
+  backdrop-filter: blur(4px);
+  animation: lightbox-in 160ms ease;
+}
+.lightbox.hidden { display: none; }
+@keyframes lightbox-in { from { opacity: 0; } to { opacity: 1; } }
+body.lightbox-open { overflow: hidden; }
+.lightbox-stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: 16px;
+}
+.lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.lightbox-close,
+.lightbox-nav {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 50%;
+  transition: background 150ms ease;
+}
+.lightbox-close:hover,
+.lightbox-nav:hover { background: rgba(0, 0, 0, 0.7); }
+.lightbox-close { top: calc(12px + var(--safe-top, 0px)); right: 12px; }
+.lightbox-nav { top: 50%; transform: translateY(-50%); }
+.lightbox-prev { left: 12px; }
+.lightbox-next { right: 12px; }
+.lightbox-footer {
+  flex-shrink: 0;
+  padding: 12px 20px calc(16px + var(--safe-bottom));
+  text-align: center;
+}
+.lightbox-counter {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 4px;
+}
+.lightbox-caption {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 640px;
+  margin: 0 auto;
+}
+@media (min-width: 700px) {
+  .media-thumb { cursor: zoom-in; }
+}
+
 /* Most na WhatsApp — decentní akce, laděná do portálu (ne křiklavé plné CTA) */
 .btn-icon {
   display: inline-flex;
@@ -928,6 +1036,8 @@ a:hover { text-decoration: underline; }
   transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
 }
 .btn-icon svg { width: 16px; height: 16px; flex-shrink: 0; }
+.btn-icon:has(.btn-icon-label) { gap: 6px; padding-left: 12px; padding-right: 12px; }
+.btn-icon-label { font-size: 13px; font-weight: 500; white-space: nowrap; }
 .btn-icon:hover {
   color: var(--accent);
   border-color: var(--border-hover);
@@ -994,6 +1104,7 @@ a:hover { text-decoration: underline; }
 .overlay-footer {
   padding: 16px 20px calc(16px + var(--safe-bottom));
   display: flex;
+  flex-wrap: nowrap;
   gap: 10px;
   border-top: 1px solid var(--border);
   flex-shrink: 0;
@@ -1035,12 +1146,24 @@ a:hover { text-decoration: underline; }
 
 .btn-ghost:hover { color: var(--text-secondary); }
 
-/* Úzké mobily — footer akce kompaktnější, ať se 4 tlačítka vejdou na 1 řádek */
+
+/* Úzké mobily — footer akce kompaktnější, vše drží na jednom řádku */
 @media (max-width: 480px) {
   .overlay-footer { gap: 6px; padding-left: 14px; padding-right: 14px; }
   .btn-ghost { padding: 10px 8px; font-size: 13px; }
   .btn-secondary { padding: 10px 12px; }
   .btn-icon { padding: 10px 9px; }
+  .btn-icon:has(.btn-icon-label) { padding-left: 9px; padding-right: 9px; gap: 5px; }
+  .btn-icon-label { font-size: 12px; }
+}
+
+/* Užší displeje (≤389px — 375px iPhony, malé Androidy) — schovat ikony u popsaných
+   tlačítek, ať se srdíčko + tři popisky vejdou na jeden řádek bez ořezu */
+@media (max-width: 389px) {
+  .overlay-footer { gap: 5px; padding-left: 12px; padding-right: 12px; }
+  .btn-icon:has(.btn-icon-label) { padding-left: 8px; padding-right: 8px; gap: 0; }
+  .btn-icon:has(.btn-icon-label) svg { display: none; }
+  .btn-icon-label { font-size: 12px; }
 }
 
 /* ===== BOTTOM NAV ===== */
@@ -1597,8 +1720,12 @@ a:hover { text-decoration: underline; }
 .sk-meta-xl   { height: 10px; width: 70px; }
 
 /* ===== READ CARDS ===== */
-.card.read { opacity: 0.45; }
-.card.read:hover { opacity: 0.75; }
+/* Přečtené karty jen lehce ztlumíme — silné ztlumení dřív (0.45) na tmavém
+   pozadí srazilo i tak šedý text pod čitelnost. Stav „přečteno" nese hlavně
+   značka v patičce, závoj je jen doplněk pro rychlý přehled. */
+.card.read { opacity: 0.72; }
+.card.read:hover { opacity: 1; }
+.card-readmore.is-read { color: var(--accent); }
 
 /* ===== CARD SWIPE ===== */
 .card-wrap {

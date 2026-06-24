@@ -30,7 +30,27 @@
       "links": [
         "https://github.com/Erozaxx/ProsperityGamesa"
       ],
-      "source_date": "2026-06-17"
+      "source_date": "2026-06-17",
+      "images": [
+        {
+          "file": "71676053-799f-49d0-a1f9-2da66901455b.jpg",
+          "w": 1080,
+          "h": 851,
+          "desc": "Screenshot mobilní aplikace Claude Code zobrazující přehled sessions s filtry „All 45"
+        },
+        {
+          "file": "6720a419-d977-4064-8e17-486b04a77c43.jpg",
+          "w": 946,
+          "h": 1600,
+          "desc": "Screenshot detailu session „Test access\" v Claude Code pro repozitář Erozaxx/ProsperityGamesa, popisující průběh úkolů T-004b, T-005 a T-008 zahrnujících UX/PWA práci, licencování a release gate. Agent hlásí, že T-004b je dokončen (1566/1566 souborů) a probíhá nezávislé ověření, že core/data soubory zůstaly nezměněny."
+        },
+        {
+          "file": "87c5c95f-091d-4b65-b8c0-ae38e54324ec.jpg",
+          "w": 738,
+          "h": 1600,
+          "desc": "Screenshot mobilní aplikace zobrazující dialog „Choose Branch\" s výběrem git větví: feature/iter-015-init až feature/iter-021-init, fix/mvp-importmap a main."
+        }
+      ]
     },
     {
       "id": "2026-06-17-02",
@@ -137,7 +157,27 @@
           {
             "time": "07:38",
             "author": "člen komunity",
-            "text": "[obrázek: Screenshot z mobilní aplikace Claude Code zobrazující přehled konverzací s nadpisem „Code\". Celkem 45 konverzací, z toho 6 čeká na vstup, a dnes proběhla konverzace „Test access\" v repozitáři Erozaxx/ProsperityGamesa, stará 5 hodin.] jinak v rámci testování Fable modelu, kdy jsem byl zrovna na RfP když byl k. dispozici, sem si vyzkoušel komplet agenticky vývoj jen z telefonu, cc v telefonu, který jel všechno v gh repo a musím říct že mě to nadchlo. Žádný komp běžící doma, žádný remote sessiony. Prostě tady máš gh repo, agenti si tam předávají vstupy výstupy, tady máš plán, workflow a hobluj dokud nebude výsledek 😁"
+            "text": "jinak v rámci testování Fable modelu, kdy jsem byl zrovna na RfP když byl k. dispozici, sem si vyzkoušel komplet agenticky vývoj jen z telefonu, cc v telefonu, který jel všechno v gh repo a musím říct že mě to nadchlo. Žádný komp běžící doma, žádný remote sessiony. Prostě tady máš gh repo, agenti si tam předávají vstupy výstupy, tady máš plán, workflow a hobluj dokud nebude výsledek 😁",
+            "images": [
+              {
+                "file": "71676053-799f-49d0-a1f9-2da66901455b.jpg",
+                "w": 1080,
+                "h": 851,
+                "desc": "Screenshot mobilní aplikace Claude Code zobrazující přehled sessions s filtry „All 45"
+              },
+              {
+                "file": "6720a419-d977-4064-8e17-486b04a77c43.jpg",
+                "w": 946,
+                "h": 1600,
+                "desc": "Screenshot detailu session „Test access\" v Claude Code pro repozitář Erozaxx/ProsperityGamesa, popisující průběh úkolů T-004b, T-005 a T-008 zahrnujících UX/PWA práci, licencování a release gate. Agent hlásí, že T-004b je dokončen (1566/1566 souborů) a probíhá nezávislé ověření, že core/data soubory zůstaly nezměněny."
+              },
+              {
+                "file": "87c5c95f-091d-4b65-b8c0-ae38e54324ec.jpg",
+                "w": 738,
+                "h": 1600,
+                "desc": "Screenshot mobilní aplikace zobrazující dialog „Choose Branch\" s výběrem git větví: feature/iter-015-init až feature/iter-021-init, fix/mvp-importmap a main."
+              }
+            ]
           },
           {
             "time": "07:38",

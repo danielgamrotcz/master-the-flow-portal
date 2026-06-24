@@ -113,7 +113,7 @@ let _preTranscriptHash = '';
 let _preEventHash = '';
 
 // Dočasně skryté tlačítko „Přepis" v detailu karty. Obnovit = true.
-const TRANSCRIPT_BTN_ENABLED = false;
+const TRANSCRIPT_BTN_ENABLED = true;
 
 /* ===== VOTES ===== */
 async function loadVoteMap() {
@@ -249,6 +249,107 @@ function renderCardLinks(card) {
   return `<div class="card-links"><span class="card-links-label">Odkazy</span>${items}</div>`;
 }
 
+/* ===== OBRÁZKY (galerie + lightbox) ===== */
+const MEDIA_BASE = '/data/media/';
+function mediaUrl(file) { return MEDIA_BASE + encodeURIComponent(file); }
+
+// Registr galerií pro aktuálně vykreslený pohled. Každá galerie dostane index;
+// náhledy na něj odkazují přes data-gallery, delegovaný klik otevře lightbox.
+let _galleries = [];
+function resetGalleries() { _galleries = []; }
+function _validImages(images) {
+  return Array.isArray(images)
+    ? images.filter(im => im && typeof im.file === 'string' && /^[\w.-]+\.(jpg|jpeg|png|webp)$/i.test(im.file))
+    : [];
+}
+function renderImages(images) {
+  const imgs = _validImages(images);
+  if (!imgs.length) return '';
+  const gid = _galleries.length;
+  _galleries.push(imgs);
+  const thumbs = imgs.map((im, i) =>
+    `<button class="media-thumb" type="button" data-gallery="${gid}" data-index="${i}" aria-label="Zvětšit obrázek">
+       <img src="${esc(mediaUrl(im.file))}" alt="${esc(im.desc || '')}" loading="lazy" decoding="async">
+     </button>`).join('');
+  return `<div class="media-gallery${imgs.length === 1 ? ' single' : ''}">${thumbs}</div>`;
+}
+
+// Lightbox
+let _lb = { items: [], index: 0 };
+function openLightbox(items, index) {
+  if (!items || !items.length) return;
+  _lb.items = items;
+  _lb.index = Math.max(0, Math.min(index || 0, items.length - 1));
+  renderLightbox();
+  $('lightbox').classList.remove('hidden');
+  document.body.classList.add('lightbox-open');
+}
+function closeLightbox() {
+  $('lightbox').classList.add('hidden');
+  document.body.classList.remove('lightbox-open');
+  const img = $('lightbox-img');
+  if (img) img.src = '';
+}
+function lbGo(delta) {
+  const n = _lb.items.length;
+  if (n < 2) return;
+  _lb.index = (_lb.index + delta + n) % n;
+  renderLightbox();
+}
+function renderLightbox() {
+  const it = _lb.items[_lb.index];
+  if (!it) return;
+  const img = $('lightbox-img');
+  img.src = mediaUrl(it.file);
+  img.alt = it.desc || '';
+  $('lightbox-caption').textContent = it.desc || '';
+  const n = _lb.items.length;
+  $('lightbox-counter').textContent = n > 1 ? `${_lb.index + 1} / ${n}` : '';
+  $('lightbox-prev').style.display = n > 1 ? '' : 'none';
+  $('lightbox-next').style.display = n > 1 ? '' : 'none';
+}
+
+function initLightbox() {
+  // Delegovaný klik na náhledy kdekoli v dokumentu
+  document.addEventListener('click', e => {
+    const thumb = e.target.closest('.media-thumb');
+    if (!thumb) return;
+    const gid = Number(thumb.dataset.gallery);
+    const idx = Number(thumb.dataset.index);
+    const gallery = _galleries[gid];
+    if (gallery) openLightbox(gallery, idx);
+  });
+
+  $('lightbox-close').addEventListener('click', closeLightbox);
+  $('lightbox-prev').addEventListener('click', () => lbGo(-1));
+  $('lightbox-next').addEventListener('click', () => lbGo(1));
+  // Klik na pozadí (mimo obrázek a ovládací tlačítka) zavře
+  $('lightbox').addEventListener('click', e => {
+    if (e.target.tagName === 'IMG') return;
+    if (e.target.closest('.lightbox-nav') || e.target.closest('.lightbox-close')) return;
+    closeLightbox();
+  });
+
+  // Swipe mezi obrázky na dotyku
+  const stage = $('lightbox').querySelector('.lightbox-stage');
+  let sx = 0, sy = 0, tracking = false;
+  stage.addEventListener('touchstart', e => {
+    if (e.touches.length !== 1) { tracking = false; return; }
+    sx = e.touches[0].clientX; sy = e.touches[0].clientY; tracking = true;
+  }, { passive: true });
+  stage.addEventListener('touchend', e => {
+    if (!tracking) return;
+    tracking = false;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - sx, dy = t.clientY - sy;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      lbGo(dx < 0 ? 1 : -1);
+    } else if (Math.abs(dy) > 80 && Math.abs(dy) > Math.abs(dx)) {
+      closeLightbox();  // swipe nahoru/dolů zavře
+    }
+  }, { passive: true });
+}
+
 /* ===== CARD HTML ===== */
 function renderCardEl(card, isResurfaced = false, query = '') {
   const typeColor = TYPE_COLORS[card.type] || 'var(--text-tertiary)';
@@ -279,7 +380,7 @@ function renderCardEl(card, isResurfaced = false, query = '') {
         <div class="card-title">${query ? highlightInHTML(esc(card.title), query) : esc(card.title)}</div>
         <div class="card-excerpt">${query ? highlightInHTML(esc(card.excerpt), query) : esc(card.excerpt)}</div>
         <div class="card-footer">
-          <span class="card-readmore">Číst dál ↓</span>
+          <span class="card-readmore${isRead(card.id) ? ' is-read' : ''}">${isRead(card.id) ? 'Přečteno ✓' : 'Číst dál ↓'}</span>
           <span class="card-footer-right">
             <span class="card-reads">${state.cardStats[card.id]?.reads ?? 0} čtení</span>
             <span class="card-hearts"><svg viewBox="0 0 24 24" fill="currentColor" width="11" height="11" style="vertical-align:-1px;margin-right:2px"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>${state.voteMap[card.id] || 0}</span>
@@ -771,7 +872,7 @@ function openCard(cardId) {
 
   const wasRead = isRead(cardId);
   markRead(cardId);
-  document.querySelectorAll(`.card[data-id="${CSS.escape(cardId)}"]`).forEach(el => el.classList.add('read'));
+  applyReadStateDOM(cardId, true);
 
   if (!location.hash.startsWith('#card/')) {
     _preCardHash = location.hash || '#';
@@ -820,7 +921,8 @@ function openCard(cardId) {
   const bodyHtml = (state.view === 'search' && state.searchQuery)
     ? highlightInHTML(rawHtml, state.searchQuery)
     : rawHtml;
-  $('overlay-text').innerHTML = bodyHtml + renderCardLinks(card);
+  resetGalleries();
+  $('overlay-text').innerHTML = bodyHtml + renderImages(card.images) + renderCardLinks(card);
   $('btn-show-transcript').dataset.date = dateStr;
   $('btn-show-transcript').dataset.sourceGroup = card.source_group || '';
   $('btn-show-transcript').dataset.sourceMsgTimes = JSON.stringify(card.source_msg_times || []);
@@ -1018,6 +1120,7 @@ async function showTranscript(dateStr, sourceGroup, sourceMsgTimes) {
     }
 
     let html = '';
+    resetGalleries();
     transcript.groups.forEach(group => {
       if (filtering && group.slug !== sourceGroup) return;
 
@@ -1041,12 +1144,14 @@ async function showTranscript(dateStr, sourceGroup, sourceMsgTimes) {
       messages.forEach(msg => {
         const isHost = msg.author === 'Daniel' || msg.author === 'Daniel Gamrot';
         const isSource = filtering && sourceMsgTimes.includes(msg.time);
+        const msgText = msg.text ? `<div class="msg-text">${esc(msg.text)}</div>` : '';
         html += `
           <div class="transcript-message${isSource ? ' is-source' : ''}">
             <div class="msg-time">${esc(msg.time || '')}</div>
             <div class="msg-body">
               <div class="msg-author${isHost ? ' is-host' : ''}">${esc(msg.author)}</div>
-              <div class="msg-text">${esc(msg.text)}</div>
+              ${msgText}
+              ${renderImages(msg.images)}
             </div>
           </div>
         `;
@@ -1448,9 +1553,22 @@ function markUnread(id) {
     const s = getReadCards();
     s.delete(id);
     localStorage.setItem('mtf_read', JSON.stringify([...s]));
-    document.querySelectorAll(`.card[data-id="${CSS.escape(id)}"]`).forEach(el => el.classList.remove('read'));
+    applyReadStateDOM(id, false);
     updatePageTitle();
   } catch {}
+}
+
+// Přepne stav „přečteno" na už vykreslených kartách bez nutnosti překreslit —
+// třídu (ztlumení) i text v patičce („Číst dál ↓" ↔ „Přečteno ✓").
+function applyReadStateDOM(id, read) {
+  document.querySelectorAll(`.card[data-id="${CSS.escape(id)}"]`).forEach(el => {
+    el.classList.toggle('read', read);
+    const rm = el.querySelector('.card-readmore');
+    if (rm) {
+      rm.classList.toggle('is-read', read);
+      rm.textContent = read ? 'Přečteno ✓' : 'Číst dál ↓';
+    }
+  });
 }
 
 /* ===== VOTING ===== */
@@ -2219,7 +2337,7 @@ function attachSwipeToCard(wrap) {
         showToast('Označeno jako nepřečtené');
       } else {
         markRead(id);
-        el.classList.add('read');
+        applyReadStateDOM(id, true);
         showToast('Označeno jako přečtené');
       }
       updatePageTitle();
@@ -2746,6 +2864,7 @@ function init() {
   initAutoRefresh();
   initPullToRefresh();
   initSwipeToClose();
+  initLightbox();
 
   // Po návratu do appky (PWA z pozadí, přepnutí tabu) obnov počty čtení a srdíček.
   // Throttle 20 s, ať rychlé přepínání negeneruje zbytečné requesty.
@@ -2878,6 +2997,14 @@ function init() {
   document.addEventListener('keydown', e => {
     const inInput = e.target.matches('input, textarea, [contenteditable]');
     const overlayOpen = !$('card-overlay').classList.contains('hidden');
+
+    // Lightbox má přednost před vším — je to nejvyšší modal.
+    if (!$('lightbox').classList.contains('hidden')) {
+      if (e.key === 'Escape') { closeLightbox(); return; }
+      if (e.key === 'ArrowLeft') { lbGo(-1); return; }
+      if (e.key === 'ArrowRight') { lbGo(1); return; }
+      return;
+    }
 
     if (e.key === 'Escape') {
       if (!$('more-sheet').classList.contains('hidden')) { closeMoreSheet(); return; }

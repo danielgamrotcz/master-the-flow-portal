@@ -1,4 +1,4 @@
-const CACHE = 'mtf-v20';
+const CACHE = 'mtf-v21';
 const STATIC = ['/', '/index.html', '/app.js', '/styles.css', '/favicon.svg',
   '/manifest.webmanifest', '/icon-192.png', '/icon-512.png', '/apple-touch-icon.png'];
 // App shell — vždy zkus síť, fallback cache (offline). Brání stale verzi appky
@@ -31,6 +31,21 @@ self.addEventListener('fetch', e => {
           return res;
         })
         .catch(() => caches.open(CACHE).then(c => c.match(e.request)))
+    );
+    return;
+  }
+
+  // Obrázky — cache-first, jména jsou neměnná UUID, takže se nemění obsah.
+  if (url.pathname.startsWith('/data/media/')) {
+    e.respondWith(
+      caches.open(CACHE).then(c =>
+        c.match(e.request).then(hit =>
+          hit || fetch(e.request).then(res => {
+            if (res.ok) c.put(e.request, res.clone());
+            return res;
+          })
+        )
+      )
     );
     return;
   }
