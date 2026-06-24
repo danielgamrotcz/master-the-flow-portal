@@ -25,21 +25,7 @@
         "08:17",
         "14:45"
       ],
-      "source_date": "2026-06-08",
-      "images": [
-        {
-          "file": "2007e780-9718-44bf-a8d1-ef1e9c53a79b.jpg",
-          "w": 1280,
-          "h": 463,
-          "desc": "Screenshot plánovače „Ideal Week\" zobrazující týdenní rozvrh s celkovým potem 37 hodin. Kategorie na pravé straně zahrnují Klientskou práci (cíl 25 %, ted 24 %), Vlastní projekty (20 %), Business time (20 %), Administrativu (10 %), Vzdělávání (10 %) a Breaks (10 %), přičemž nealokováno zůstává 7h 45min (21 %)."
-        },
-        {
-          "file": "73440148-2463-4dbb-8337-539234871348.jpg",
-          "w": 1600,
-          "h": 579,
-          "desc": "Screenshot stejného plánovače „Ideal Week\" jako první obrázek, zobrazený v širším rozlišení. Obsah a hodnoty kategorií jsou identické, celkový počet hodin je 37h týdně a nealokováno zůstává 7h 45min (21 %)."
-        }
-      ]
+      "source_date": "2026-06-08"
     },
     {
       "id": "2026-06-08-02",
@@ -59,21 +45,7 @@
         "08:17",
         "14:45"
       ],
-      "source_date": "2026-06-08",
-      "images": [
-        {
-          "file": "2007e780-9718-44bf-a8d1-ef1e9c53a79b.jpg",
-          "w": 1280,
-          "h": 463,
-          "desc": "Screenshot plánovače „Ideal Week\" zobrazující týdenní rozvrh s celkovým potem 37 hodin. Kategorie na pravé straně zahrnují Klientskou práci (cíl 25 %, ted 24 %), Vlastní projekty (20 %), Business time (20 %), Administrativu (10 %), Vzdělávání (10 %) a Breaks (10 %), přičemž nealokováno zůstává 7h 45min (21 %)."
-        },
-        {
-          "file": "73440148-2463-4dbb-8337-539234871348.jpg",
-          "w": 1600,
-          "h": 579,
-          "desc": "Screenshot stejného plánovače „Ideal Week\" jako první obrázek, zobrazený v širším rozlišení. Obsah a hodnoty kategorií jsou identické, celkový počet hodin je 37h týdně a nealokováno zůstává 7h 45min (21 %)."
-        }
-      ]
+      "source_date": "2026-06-08"
     },
     {
       "id": "2026-06-08-03",
@@ -147,21 +119,7 @@
           {
             "time": "08:17",
             "author": "člen komunity",
-            "text": "Ahoj, sdílím svojí víkendovou jednohubku :) zamýšlela jsem se nad tím, jak chci, aby vypadal můj ideální týden a vyrobila jsem si na to mini appku. Nastavím si, kolik hodin realisticky pracuju a kolik dělá třeba oběd nebo pauzy, z toho se mi spočítá fond hodin a pak už jen přidávám bloky a nastavuju, kolik % týdne chci, aby zabíraly. Není to plánování po úkolech, ale spíš vizualizace toho, kolik času chci mít pro klienty, kolik pro vlastní projekty nebo vzdělávání. A je to fajn start týdne 😊",
-            "images": [
-              {
-                "file": "2007e780-9718-44bf-a8d1-ef1e9c53a79b.jpg",
-                "w": 1280,
-                "h": 463,
-                "desc": "Screenshot plánovače „Ideal Week\" zobrazující týdenní rozvrh s celkovým potem 37 hodin. Kategorie na pravé straně zahrnují Klientskou práci (cíl 25 %, ted 24 %), Vlastní projekty (20 %), Business time (20 %), Administrativu (10 %), Vzdělávání (10 %) a Breaks (10 %), přičemž nealokováno zůstává 7h 45min (21 %)."
-              },
-              {
-                "file": "73440148-2463-4dbb-8337-539234871348.jpg",
-                "w": 1600,
-                "h": 579,
-                "desc": "Screenshot stejného plánovače „Ideal Week\" jako první obrázek, zobrazený v širším rozlišení. Obsah a hodnoty kategorií jsou identické, celkový počet hodin je 37h týdně a nealokováno zůstává 7h 45min (21 %)."
-              }
-            ]
+            "text": "[obrázek] Ahoj, sdílím svojí víkendovou jednohubku :) zamýšlela jsem se nad tím, jak chci, aby vypadal můj ideální týden a vyrobila jsem si na to mini appku. Nastavím si, kolik hodin realisticky pracuju a kolik dělá třeba oběd nebo pauzy, z toho se mi spočítá fond hodin a pak už jen přidávám bloky a nastavuju, kolik % týdne chci, aby zabíraly. Není to plánování po úkolech, ale spíš vizualizace toho, kolik času chci mít pro klienty, kolik pro vlastní projekty nebo vzdělávání. A je to fajn start týdne 😊"
           },
           {
             "time": "08:17",

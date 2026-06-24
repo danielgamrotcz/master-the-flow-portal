@@ -50,21 +50,7 @@
         "21:34",
         "23:15"
       ],
-      "source_date": "2026-06-09",
-      "images": [
-        {
-          "file": "4df14e1d-49a9-4a07-9b41-0863bde37e65.jpg",
-          "w": 1600,
-          "h": 1600,
-          "desc": "Srovnávací tabulka výkonnostních benchmarků modelů Claude Mythos 5 a Fable 5 oproti Claude Opus 4.8, GPT 5.5 a Gemini 3.1 Pro, například agentic coding (SWE-Bench Pro) 80,3 %, computer use 85,0 %, cybersecurity 78,0 %."
-        },
-        {
-          "file": "6eb78f83-6cd1-41bc-9bf6-c3112d9ae9fc.jpg",
-          "w": 1080,
-          "h": 1031,
-          "desc": "Screenshot výběru modelu v mobilní aplikaci Claude, kde jsou dostupné možnosti Fable 5 (označen jako vybraný, dostupný do 22. června), Opus 4.8, Sonnet 4.6 a Haiku 4.5."
-        }
-      ]
+      "source_date": "2026-06-09"
     },
     {
       "id": "2026-06-09-03",
@@ -85,14 +71,6 @@
       "source_date": "2026-06-09",
       "links": [
         "https://nvn-otazky.pages.dev/"
-      ],
-      "images": [
-        {
-          "file": "5e3d9a6f-49e0-4dcd-a693-62207ec19d0f.jpg",
-          "w": 1280,
-          "h": 655,
-          "desc": "Screenshot prezentace z webu danielgamrot.cz, slide č. 04 ze série „Na vlastní pěst"
-        }
       ]
     },
     {
@@ -114,14 +92,6 @@
       "source_date": "2026-06-09",
       "links": [
         "https://nvn-otazky.pages.dev/"
-      ],
-      "images": [
-        {
-          "file": "5e3d9a6f-49e0-4dcd-a693-62207ec19d0f.jpg",
-          "w": 1280,
-          "h": 655,
-          "desc": "Screenshot prezentace z webu danielgamrot.cz, slide č. 04 ze série „Na vlastní pěst"
-        }
       ]
     }
   ],
@@ -173,15 +143,7 @@
           {
             "time": "19:32",
             "author": "Daniel",
-            "text": "Měl jsem dneska jedno vystoupení. Název „tak dobří, že vás nepřehlédnou“. A vůbec jsem nevěděl, co s ti s tím počít. Chtěl jsem zapojit AI hned ze startu, ale udělal jsem to jinak. Oslovil jsem člověka, který se umí sakra dobře ptát. Potřeboval jsem tam člověka, ne stroj. Ukázal zadání.\nSešli jsme se, nahráli na Plaud. Hodně dlouhý rozhovor. Vlastně jsem měl v hlavě kostru v ten den, kdy ten rozhovor skončil. Ale nechal jsem samozřejmě své AI tools, aby mi to trošku učesaly.\nTy otázky byly fakt boží. A přišla mi škoda si je nechat pro sebe. Takže jsem dneska ráno připravil web pro lidi, kteří byli na akci, kde je 18 z nich (netuším, jestli jsou všechny, ale podle mě jo). Není to nic tajného, sdílím se svolením tázajícího se člověka.\nTřeba se to bude hodit.\nBTW mezi otázkami se pohybujete šipkami a klávesa R dává random otázku.\nhttps://nvn-otazky.pages.dev/\nPS Chtěl jsem to celé použít i během toho vystoupení, ale pak to nechal jen jako odkaz a pojal to svým oblíbeným freestyle způsobem.\n[kontext odkazu: Webová aplikace s otázkami k přednášce „Na vlastní pěst\" z dílny danielgamrot.cz, pravděpodobně určená pro interaktivní zapojení publika na workshopu nebo webináři.]",
-            "images": [
-              {
-                "file": "5e3d9a6f-49e0-4dcd-a693-62207ec19d0f.jpg",
-                "w": 1280,
-                "h": 655,
-                "desc": "Screenshot prezentace z webu danielgamrot.cz, slide č. 04 ze série „Na vlastní pěst"
-              }
-            ]
+            "text": "[obrázek: Screenshot webové aplikace „Na vlastní pěst\" zobrazující otázku č. 4 ze sady k přednášce o knize „Tak dobří, že vás nepřehlédnou\": „Co děláte tak dobře, že za to klienti platí bez diskuze?\"] Měl jsem dneska jedno vystoupení. Název „tak dobří, že vás nepřehlédnou“. A vůbec jsem nevěděl, co s ti s tím počít. Chtěl jsem zapojit AI hned ze startu, ale udělal jsem to jinak. Oslovil jsem člověka, který se umí sakra dobře ptát. Potřeboval jsem tam člověka, ne stroj. Ukázal zadání.\nSešli jsme se, nahráli na Plaud. Hodně dlouhý rozhovor. Vlastně jsem měl v hlavě kostru v ten den, kdy ten rozhovor skončil. Ale nechal jsem samozřejmě své AI tools, aby mi to trošku učesaly.\nTy otázky byly fakt boží. A přišla mi škoda si je nechat pro sebe. Takže jsem dneska ráno připravil web pro lidi, kteří byli na akci, kde je 18 z nich (netuším, jestli jsou všechny, ale podle mě jo). Není to nic tajného, sdílím se svolením tázajícího se člověka.\nTřeba se to bude hodit.\nBTW mezi otázkami se pohybujete šipkami a klávesa R dává random otázku.\nhttps://nvn-otazky.pages.dev/\nPS Chtěl jsem to celé použít i během toho vystoupení, ale pak to nechal jen jako odkaz a pojal to svým oblíbeným freestyle způsobem.\n[kontext odkazu: Webová aplikace s otázkami k přednášce „Na vlastní pěst\" z dílny danielgamrot.cz, pravděpodobně určená pro interaktivní zapojení publika na workshopu nebo webináři.]"
           },
           {
             "time": "19:38",
@@ -191,15 +153,7 @@
           {
             "time": "21:27",
             "author": "člen komunity",
-            "text": "",
-            "images": [
-              {
-                "file": "4df14e1d-49a9-4a07-9b41-0863bde37e65.jpg",
-                "w": 1600,
-                "h": 1600,
-                "desc": "Srovnávací tabulka výkonnostních benchmarků modelů Claude Mythos 5 a Fable 5 oproti Claude Opus 4.8, GPT 5.5 a Gemini 3.1 Pro, například agentic coding (SWE-Bench Pro) 80,3 %, computer use 85,0 %, cybersecurity 78,0 %."
-              }
-            ]
+            "text": "[obrázek: Srovnávací tabulka benchmarků modelů Claude Mythos 5 / Fable 5 oproti Claude Mythos Preview, Claude Opus 4.8, GPT 5.5 a Gemini 3.1 Pro, Claude Mythos 5/Fable 5 vede ve většině kategorií, např. agentic coding SWE-Bench Pro 80,3 %, computer use 85,0 %, cybersecurity 78,0 % a terminal coding 88,0 %.]"
           },
           {
             "time": "21:27",
@@ -209,15 +163,7 @@
           {
             "time": "21:32",
             "author": "člen komunity",
-            "text": "",
-            "images": [
-              {
-                "file": "6eb78f83-6cd1-41bc-9bf6-c3112d9ae9fc.jpg",
-                "w": 1080,
-                "h": 1031,
-                "desc": "Screenshot výběru modelu v mobilní aplikaci Claude, kde jsou dostupné možnosti Fable 5 (označen jako vybraný, dostupný do 22. června), Opus 4.8, Sonnet 4.6 a Haiku 4.5."
-              }
-            ]
+            "text": "[obrázek: Screenshot výběru modelu v mobilní aplikaci Claude zobrazující čtyři možnosti: Fable 5 (vybraný, dostupný zdarma do 22. června), Opus 4.8, Sonnet 4.6 a Haiku 4.5.]"
           },
           {
             "time": "21:34",

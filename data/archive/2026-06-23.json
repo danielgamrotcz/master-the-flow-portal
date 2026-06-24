@@ -69,27 +69,7 @@
         "19:53"
       ],
       "links": [],
-      "source_date": "2026-06-23",
-      "images": [
-        {
-          "file": "e00d5a33-0074-4145-9c0a-2a433677e348.jpg",
-          "w": 1043,
-          "h": 597,
-          "desc": "Terminál zobrazující výpis adresáře `~/.claude/communication_style/examples/` s markdown soubory a jedním pptx souborem datovanými od dubna do června 2026, plus výpis podadresáře `anti/` se dvěma soubory."
-        },
-        {
-          "file": "09fecedc-921e-4cdb-84dc-6a5630f6ae26.jpg",
-          "w": 1557,
-          "h": 551,
-          "desc": "Pokračování souboru `CONTRACT.md` obsahující sekce „Mandatorní pre-flight\" (4 kroky před psaním draftu) a začátek „Self-validation checklist\" s požadavky jako žádný em-dash a žádná dramatizace."
-        },
-        {
-          "file": "792e24b1-f419-4ba8-a130-08207d51a8e5.jpg",
-          "w": 1600,
-          "h": 806,
-          "desc": "Pokračování souboru `CONTRACT.md` s sekcemi „Anti-examples\" (struktura negativních vzorů v adresáři `examples/anti/`), „Eskalace\" (kdy se ptát místo hádat) a „Změny tohoto kontraktu\" (pravidla pro verzování)."
-        }
-      ]
+      "source_date": "2026-06-23"
     },
     {
       "id": "2026-06-23-04",
@@ -112,15 +92,7 @@
       "links": [
         "https://www.ronforbes.com/blog/building-your-ai-second-brain"
       ],
-      "source_date": "2026-06-23",
-      "images": [
-        {
-          "file": "ca2f3376-8738-4eac-9217-4c0b00c3e3a0.jpg",
-          "w": 575,
-          "h": 467,
-          "desc": "Screenshot nástroje pro správu projektů (pravděpodobně Notion nebo podobný) zobrazující Inbox, Templates a sekci 1_Projects se čtyřmi projekty: CRA-Portal (23.1.2026), TSP-TOP DEALY 2025 (1.1.2026), TSP-Velka porada Květen 2026 a ZUPA-RfP 2027 (1.6.2027)."
-        }
-      ]
+      "source_date": "2026-06-23"
     }
   ],
   "resurfacing": {
@@ -201,40 +173,12 @@
           {
             "time": "19:36",
             "author": "člen komunity",
-            "text": "Tak jo. Je tu někdo, kdo mi ke stávající architektuře second brain řekne: Ty jo, člen komunity, tohle dobrý, tohle odlaď. Takhle jsem si s tím hrál já, koukej.\nJe to můj prvotní nedokonalej výkop, jo? Začínala jsem od skillů, teď začínám postupně tvořit strategickou vrstvu.\nChci si ho ladit dál, ale brzí mě nedokonalá hluboká knowledge? Nevím, kam dál mohu dojít. A chci jít dál, proto píšu sem. Dovede mě někdo dál? Out of the box? Děkuju.",
-            "images": [
-              {
-                "file": "d19049f0-e557-4eba-b717-ebbf3e9e58a6.jpg",
-                "w": 833,
-                "h": 1600,
-                "desc": "Architekturní diagram systému „Druhý mozek člen komunity\" schválený 23. 6. 2026, popisující komponenty jako INBOX, RADAR, centrální MOZEK (náčelník štábu), čtyři výstupní větve (DĚLÁNÍ, PŘEMÝŠLENÍ, MOTOR IP, UČENÍ), MAPY, SCOREBOARD a RYTMUS. Páteří systému je školení firem ve změně jako hlavní příjem, podcast a kniha jako jádro poslání."
-              }
-            ]
+            "text": "[obrázek: Diagram architektury systému „Druhý mozek člen komunity] Tak jo. Je tu někdo, kdo mi ke stávající architektuře second brain řekne: Ty jo, člen komunity, tohle dobrý, tohle odlaď. Takhle jsem si s tím hrál já, koukej.\nJe to můj prvotní nedokonalej výkop, jo? Začínala jsem od skillů, teď začínám postupně tvořit strategickou vrstvu.\nChci si ho ladit dál, ale brzí mě nedokonalá hluboká knowledge? Nevím, kam dál mohu dojít. A chci jít dál, proto píšu sem. Dovede mě někdo dál? Out of the box? Děkuju."
           },
           {
             "time": "19:53",
             "author": "člen komunity",
-            "text": "Za me cajk, smer urcite dobrej (spravnej smer je kazdej, kterej vychazi z tvyho flow). Pro inspiraci - takhle definuji a rozvijim komunikacni styl, abych jeho vystupy nemusel moc predelavat.",
-            "images": [
-              {
-                "file": "e00d5a33-0074-4145-9c0a-2a433677e348.jpg",
-                "w": 1043,
-                "h": 597,
-                "desc": "Terminál zobrazující výpis adresáře `~/.claude/communication_style/examples/` s markdown soubory a jedním pptx souborem datovanými od dubna do června 2026, plus výpis podadresáře `anti/` se dvěma soubory."
-              },
-              {
-                "file": "09fecedc-921e-4cdb-84dc-6a5630f6ae26.jpg",
-                "w": 1557,
-                "h": 551,
-                "desc": "Pokračování souboru `CONTRACT.md` obsahující sekce „Mandatorní pre-flight\" (4 kroky před psaním draftu) a začátek „Self-validation checklist\" s požadavky jako žádný em-dash a žádná dramatizace."
-              },
-              {
-                "file": "792e24b1-f419-4ba8-a130-08207d51a8e5.jpg",
-                "w": 1600,
-                "h": 806,
-                "desc": "Pokračování souboru `CONTRACT.md` s sekcemi „Anti-examples\" (struktura negativních vzorů v adresáři `examples/anti/`), „Eskalace\" (kdy se ptát místo hádat) a „Změny tohoto kontraktu\" (pravidla pro verzování)."
-              }
-            ]
+            "text": "[obrázek: Screenshot terminálu zobrazující obsah složky ~/.claude/communication_style/examples/ s výpisem souborů (ll), kde jsou vidět markdown soubory pojmenované podle témat a dat (např. pozvanka_ai_workshop_2026-05-05.md, grafana_ai_availability_2026-05-14.md, grafana_onsite_invite_EN_2026-06-23.md) a podsložka anti/ obsahující negativní vzory draftu.] Za me cajk, smer urcite dobrej (spravnej smer je kazdej, kterej vychazi z tvyho flow). Pro inspiraci - takhle definuji a rozvijim komunikacni styl, abych jeho vystupy nemusel moc predelavat."
           },
           {
             "time": "19:53",
@@ -304,15 +248,7 @@
           {
             "time": "21:07",
             "author": "člen komunity",
-            "text": "Ok zkusim to jeste jinak:\nčlen komunity, mrkni treba na tenhle clanek: https://www.ronforbes.com/blog/building-your-ai-second-brain, myslim ze treba cast kolem trideni Inboxu, ktera vychazi ze systemu Tiaga Forte (Second Brain), napr. by tvuj llm agent mohl ten inbox pri spusten  projit a pripravit ti soupis zaznamu/poznamek/zvukovych stop a navrhnout jejich roztrideni treba zrovna podle Tiagovo systemu. U me treba ten system vypada takhle^\n===========\nMyslite, ze by priste vase rada mohla vypadat nejak takhle?\n[kontext odkazu: Článek popisuje, jak vybudovat osobní AI druhý mozek pomocí nástrojů Claude Code a Obsidian, s cílem lepší organizace znalostí a zvýšení produktivity.]",
-            "images": [
-              {
-                "file": "ca2f3376-8738-4eac-9217-4c0b00c3e3a0.jpg",
-                "w": 575,
-                "h": 467,
-                "desc": "Screenshot nástroje pro správu projektů (pravděpodobně Notion nebo podobný) zobrazující Inbox, Templates a sekci 1_Projects se čtyřmi projekty: CRA-Portal (23.1.2026), TSP-TOP DEALY 2025 (1.1.2026), TSP-Velka porada Květen 2026 a ZUPA-RfP 2027 (1.6.2027)."
-              }
-            ]
+            "text": "[obrázek: Screenshot aplikace (pravděpodobně Notion nebo podobný nástroj) zobrazující strukturu projektů s položkami: Inbox, Templates, 1_Projects obsahující CRA Portal (deadline 23.1.2026), TSP TOP DEALY 2025 (1.1.2026), TSP Velka porada Květen 2026 a ZUPA RfP 2027 (1.6.2027), dále sekce 2_Areas, 3_Resources, 4_Freezer.] Ok zkusim to jeste jinak:\nčlen komunity, mrkni treba na tenhle clanek: https://www.ronforbes.com/blog/building-your-ai-second-brain, myslim ze treba cast kolem trideni Inboxu, ktera vychazi ze systemu Tiaga Forte (Second Brain), napr. by tvuj llm agent mohl ten inbox pri spusten  projit a pripravit ti soupis zaznamu/poznamek/zvukovych stop a navrhnout jejich roztrideni treba zrovna podle Tiagovo systemu. U me treba ten system vypada takhle^\n===========\nMyslite, ze by priste vase rada mohla vypadat nejak takhle?\n[kontext odkazu: Článek popisuje, jak vybudovat osobní AI druhý mozek pomocí nástrojů Claude Code a Obsidian, s cílem lepší organizace znalostí a zvýšení produktivity.]"
           },
           {
             "time": "21:11",
@@ -332,15 +268,7 @@
           {
             "time": "22:48",
             "author": "Daniel",
-            "text": "Pro mě to je bez obsahu těžko uchopitelný. Chápu, jak to asi funguje, ale jinak nevím, co je ten obsah.\nJá to třeba řeším krok za krokem. Rozšiřuju to podle potřeby a návrhu systému, pokud jde o obsah i strukturu. A pak sem tam, když mě něco napadne.\nNemá to žádný standard, který bych převzal. A jak si psala i u sebe, je to nedokonalý. V tomhle mám hodně mezery a i pro to (pro sebe) jsem naplánovat ten další Show&Tell.",
-            "images": [
-              {
-                "file": "039d9b59-b7bb-40f7-84fb-1897d3ee3808.jpg",
-                "w": 1280,
-                "h": 679,
-                "desc": "Okno Finderu zobrazující obsah složky s 13 položkami: složky business, calendar, content, expertise, identity, knowledge, personal, projects, relationships, tools-systems a soubory CLAUDE.md, CONTEXT.md, README.md."
-              }
-            ]
+            "text": "[obrázek: Screenshot Finderu na Macu zobrazující obsah složky s projektem druhého mozku, který obsahuje složky business, calendar, content, expertise, identity, knowledge, personal, projects, relationships, tools-systems a soubory CLAUDE.md, CONTEXT.md, README.md.] Pro mě to je bez obsahu těžko uchopitelný. Chápu, jak to asi funguje, ale jinak nevím, co je ten obsah.\nJá to třeba řeším krok za krokem. Rozšiřuju to podle potřeby a návrhu systému, pokud jde o obsah i strukturu. A pak sem tam, když mě něco napadne.\nNemá to žádný standard, který bych převzal. A jak si psala i u sebe, je to nedokonalý. V tomhle mám hodně mezery a i pro to (pro sebe) jsem naplánovat ten další Show&Tell."
           },
           {
             "time": "22:49",
