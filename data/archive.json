@@ -964,6 +964,16 @@
       "date": "2026-06-25",
       "card_count": 0,
       "topics": []
+    },
+    {
+      "date": "2026-06-26",
+      "card_count": 1,
+      "topics": [
+        "Workflow",
+        "Vibe Coding",
+        "Produktivita",
+        "AI nástroje"
+      ]
     }
   ]
 }
