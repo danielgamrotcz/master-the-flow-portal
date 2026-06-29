@@ -982,6 +982,19 @@
         "Produktivita",
         "Workflow"
       ]
+    },
+    {
+      "date": "2026-06-28",
+      "card_count": 3,
+      "topics": [
+        "Workflow",
+        "Poznámky",
+        "Produktivita",
+        "Prompting",
+        "Obsidian",
+        "Vibe Coding",
+        "Claude Code"
+      ]
     }
   ]
 }
