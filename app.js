@@ -17,13 +17,12 @@ function storeAuth(token, expires) {
 function initGate() {
   if (isAuthenticated()) return;
 
-  document.getElementById('gate').classList.remove('hidden');
+  const gate = document.getElementById('gate');
+  gate.classList.remove('hidden');
 
   const input = document.getElementById('gate-input');
   const btn = document.getElementById('gate-submit');
   const err = document.getElementById('gate-error');
-
-  input.addEventListener('input', () => { err.textContent = ''; });
 
   async function tryUnlock() {
     const code = input.value.trim();
@@ -42,7 +41,9 @@ function initGate() {
       if (res.ok) {
         const { token, expires } = await res.json();
         storeAuth(token, expires);
-        document.getElementById('gate').classList.add('hidden');
+        document.documentElement.classList.add('auth-ok');
+        gate.classList.add('hidden');
+        input.value = '';
       } else {
         err.textContent = 'Nesprávný kód. Zkuste to znovu.';
         input.value = '';
@@ -55,9 +56,27 @@ function initGate() {
     }
   }
 
-  btn.addEventListener('click', tryUnlock);
-  input.addEventListener('keydown', e => { if (e.key === 'Enter') tryUnlock(); });
+  // Listenery jen jednou — initGate se může zavolat znovu při vypršení tokenu.
+  if (!btn.dataset.bound) {
+    btn.dataset.bound = '1';
+    input.addEventListener('input', () => { err.textContent = ''; });
+    btn.addEventListener('click', tryUnlock);
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') tryUnlock(); });
+  }
   input.focus();
+}
+
+// Server odmítl přístupový token (401) — vyprší jen na serveru (rotace kódu,
+// expirace nonce v KV), zatímco klientská brána věří starému localStorage.
+// Token zahodíme a vrátíme bránu, ať si uživatel obnoví přístup novým kódem.
+function handleAuthExpired() {
+  try { localStorage.removeItem('mtf_auth'); } catch {}
+  // auth-ok na <html> drží bránu skrytou (load-time guard) — bez jeho odebrání
+  // by se brána nezobrazila ani po odebrání třídy hidden.
+  document.documentElement.classList.remove('auth-ok');
+  if (!document.getElementById('card-overlay').classList.contains('hidden')) closeCard();
+  initGate();
+  showToast('Přístup vypršel, zadejte prosím kód znovu');
 }
 
 /* ===== THEME ===== */
@@ -1601,6 +1620,7 @@ async function castVote(id) {
       method: 'POST', headers: { 'Content-Type': 'application/json', 'x-mtf-token': chatGetToken() },
       body: JSON.stringify({ id }),
     });
+    if (r.status === 401) { handleAuthExpired(); return null; }  // token vypršel → znovu přihlásit
     if (!r.ok) return null;  // server odmítl — nemarkovat lokálně jako odhlasováno
     const j = await r.json();
     markVoted(id);
@@ -1621,6 +1641,7 @@ async function removeVote(id) {
       method: 'DELETE', headers: { 'Content-Type': 'application/json', 'x-mtf-token': chatGetToken() },
       body: JSON.stringify({ id }),
     });
+    if (r.status === 401) { handleAuthExpired(); return null; }  // token vypršel → znovu přihlásit
     if (!r.ok) return null;  // 409 (nehlasováno) i 5xx — neměnit lokální stav
     const j = await r.json();
     markUnvoted(id);
