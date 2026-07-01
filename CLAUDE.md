@@ -7,6 +7,10 @@ Statický web portál pro komunitu Master the Flow. Denní digest WhatsApp disku
 - **Hosting:** Cloudflare Pages (auto-deploy při push na main)
 - **Data:** JSON soubory v `/data/` — commitovány automaticky skriptem
 
+## Konvence
+
+- **CHANGELOG.md se u tohoto repa aktivně nevede.** Solo projekt bez releasů, nasazovaný průběžně, zdrojem pravdy o změnách je git historie (`git log`). Tím se ruší globální pravidlo o CHANGELOGu jen pro tento projekt. `CHANGELOG.md` zůstává jako historický archiv, nedoplňuje se.
+
 ## Architektura
 
 ```
