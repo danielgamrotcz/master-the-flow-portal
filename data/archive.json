@@ -1010,6 +1010,17 @@
       "date": "2026-06-30",
       "card_count": 0,
       "topics": []
+    },
+    {
+      "date": "2026-07-01",
+      "card_count": 5,
+      "topics": [
+        "Workflow",
+        "Automatizace",
+        "AI nástroje",
+        "Produktivita",
+        "Vibe Coding"
+      ]
     }
   ]
 }
