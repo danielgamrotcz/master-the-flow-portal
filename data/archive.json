@@ -1083,6 +1083,15 @@
         "AI nástroje",
         "Poznámky"
       ]
+    },
+    {
+      "date": "2026-07-11",
+      "card_count": 1,
+      "topics": [
+        "AI nástroje",
+        "Claude Code",
+        "Workflow"
+      ]
     }
   ]
 }
