@@ -1,0 +1,152 @@
+{
+  "date": "2026-07-02",
+  "generated_at": "2026-07-13T04:52:58Z",
+  "stats": {
+    "messages": 11,
+    "groups": 1,
+    "members": 1
+  },
+  "cards": [
+    {
+      "id": "2026-07-02-01",
+      "type": "INSIGHT",
+      "level": "Pokročilý",
+      "topics": [
+        "Claude Code",
+        "AI nástroje",
+        "Produktivita"
+      ],
+      "title": "Fable 5 přes API vs. subscription: cenový rozdíl",
+      "excerpt": "Jeden člen si spočítal, kolik by ho Fable 5 při jeho aktuálním využití stál přes API. Vyšlo mu 800 000 Kč měsíčně. Cursor má paušál za 200 dolarů s limitem 400 dolarů.",
+      "body": "Fable 5 je v předplatném Pro bez příplatku do 7. července 2026, a to v rámci běžného limitu. Potom se odečítá z kreditů. Přímé API stojí 10 dolarů za milion tokenů na vstupu a 50 dolarů za milion tokenů na výstupu. Jeden člen si spočítal, kolik by ho tenhle model při jeho aktuálním využití přes API stál, a vyšlo mu 800 000 Kč měsíčně. Pro srovnání, Cursor používá za 200 dolarů měsíčně s limitem 400 dolarů. Flat-rate předplatné tak může být pro náročné uživatele o několik řádů levnější než přímý přístup přes API.",
+      "read_minutes": 2,
+      "source_group": "vibe-coding",
+      "source_msg_times": [
+        "09:33",
+        "09:37"
+      ],
+      "links": [],
+      "source_date": "2026-07-02"
+    },
+    {
+      "id": "2026-07-02-02",
+      "type": "NÁSTROJE",
+      "level": "Pokročilý",
+      "topics": [
+        "AI nástroje",
+        "Produktivita",
+        "Workflow"
+      ],
+      "title": "Uttero a přesnost v odborné terminologii",
+      "excerpt": "Člen zkoušel jiné diktovací řešení a narážel na chyby v odborné terminologii. Po srovnání se vrátil k Utteru, protože přesněji přepisuje běžnou řeč i specializovaný slovník.",
+      "body": "Jeden člen komunity chvíli používal jiný diktovací nástroj. Na běžnou řeč mu stačil, ale u odborné terminologie, hlavně v medicíně, dělal chyby. Uttero podle něj přepisuje přesněji jak běžnou řeč, tak odborné výrazy. Po tomhle srovnání se k Utteru vrátil.",
+      "read_minutes": 1,
+      "source_group": "vibe-coding",
+      "source_msg_times": [
+        "10:56"
+      ],
+      "links": [],
+      "source_date": "2026-07-02"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-06-08-02",
+    "type": "INSIGHT",
+    "level": "Začátečník",
+    "topics": [
+      "Produktivita",
+      "Workflow",
+      "Fokus"
+    ],
+    "title": "Plánování týdne procenty místo úkolů",
+    "excerpt": "Místo klasického todo listu si rozhodni, kolik procent pracovního týdne patří jednotlivým oblastem. Jednoduchý posun v přístupu, který dá tvému týdnu strukturu ještě předtím, než řešíš konkrétní úkoly.",
+    "body": "Jedna členka komunity si přístup \"ideálního týdne\" zpracovala do mini appky. Místo klasického plánování po úkolech si nastavuje, kolik procent pracovního týdne má patřit jednotlivým oblastem. Kategorie jako klienti, vlastní projekty nebo vzdělávání.\n\nZáklad je fond hodin: pracovní čas minus oběd a přestávky. Na ten pak napasuje procenta.\n\nNejde o to, co konkrétně udělat. Jde o to, kolik prostoru chceš každé oblasti věnovat. Vizualizace ukáže, jestli záměr sedí na realitu.\n\nDaniel dodal, že tuhle myšlenku razí dlouho.",
+    "read_minutes": 2,
+    "source_group": "vibe-coding",
+    "source_msg_times": [
+      "08:17",
+      "14:45"
+    ],
+    "source_date": "2026-06-08",
+    "images": [
+      {
+        "file": "2007e780-9718-44bf-a8d1-ef1e9c53a79b.jpg",
+        "w": 1280,
+        "h": 463,
+        "desc": "Screenshot plánovače „Ideal Week\" zobrazující týdenní rozvrh s celkovým potem 37 hodin. Kategorie na pravé straně zahrnují Klientskou práci (cíl 25 %, ted 24 %), Vlastní projekty (20 %), Business time (20 %), Administrativu (10 %), Vzdělávání (10 %) a Breaks (10 %), přičemž nealokováno zůstává 7h 45min (21 %)."
+      },
+      {
+        "file": "73440148-2463-4dbb-8337-539234871348.jpg",
+        "w": 1600,
+        "h": 579,
+        "desc": "Screenshot stejného plánovače „Ideal Week\" jako první obrázek, zobrazený v širším rozlišení. Obsah a hodnoty kategorií jsou identické, celkový počet hodin je 37h týdně a nealokováno zůstává 7h 45min (21 %)."
+      }
+    ],
+    "resurfaced_from": "2026-06-08"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "vibe-coding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "00:13",
+            "author": "člen komunity",
+            "text": "Fable 5 už hodinu jede, kdo kodi?"
+          },
+          {
+            "time": "08:36",
+            "author": "člen komunity",
+            "text": "Agenti už jedou 😁"
+          },
+          {
+            "time": "09:14",
+            "author": "člen komunity",
+            "text": "Na Jake subscription?"
+          },
+          {
+            "time": "09:22",
+            "author": "člen komunity",
+            "text": "Pro"
+          },
+          {
+            "time": "09:29",
+            "author": "člen komunity",
+            "text": "Claude code? Za kolik?"
+          },
+          {
+            "time": "09:32",
+            "author": "člen komunity",
+            "text": "Cowork > Scheduled\n…ještě to napojit na Slack nějak. 🤔"
+          },
+          {
+            "time": "09:33",
+            "author": "člen komunity",
+            "text": "Mám Cursor za 200$ mám 400$ limit. Když jsem spočítal Mtokeny tak by mě tento měsíc vyšel fable na 800.000kc :)"
+          },
+          {
+            "time": "09:37",
+            "author": "člen komunity",
+            "text": "Through July 7, Claude Fable 5 is included in your subscription and draws from your plan’s usage, with no additional costs. You can use it for up to 50% of your weekly usage limits. After that, you can keep using it with usage credits.\nTry it: Select Claude Fable 5 with /model. Available at $10 input / $50 output per million tokens."
+          },
+          {
+            "time": "10:04",
+            "author": "člen komunity",
+            "text": "Nenapojoval jste někdo Basecamp přes MCP? Mám to jejich CLI napojení, ale to vidí jen do Claude Code, pro agenty to použít nejde. 🙁 Sakra."
+          },
+          {
+            "time": "10:24",
+            "author": "člen komunity",
+            "text": "Jaký model v Cursoru používáte?"
+          },
+          {
+            "time": "10:56",
+            "author": "člen komunity",
+            "text": "Já to chvíli používal. Byly tam chyby, zejména v mé odborné terminologii (medicína), ale pro běžnou řeč se mi to zdálo použitelné. Uttero má teda přesnější přepisy (běžná řeč i medicína), takže jsem zpátky.\nBez příkras a pochlebování. Tak to vidím já."
+          }
+        ]
+      }
+    ]
+  }
+}
