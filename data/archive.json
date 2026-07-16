@@ -1133,6 +1133,17 @@
       "date": "2026-07-14",
       "card_count": 0,
       "topics": []
+    },
+    {
+      "date": "2026-07-15",
+      "card_count": 3,
+      "topics": [
+        "Vibe Coding",
+        "Workflow",
+        "AI nástroje",
+        "Automatizace",
+        "Claude Code"
+      ]
     }
   ]
 }
