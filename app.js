@@ -139,7 +139,7 @@ function applyTheme(theme) {
   document.getElementById('icon-sun').classList.toggle('hidden', !isLight);
   document.getElementById('icon-moon').classList.toggle('hidden', isLight);
   const themeColor = document.querySelector('meta[name="theme-color"]');
-  if (themeColor) themeColor.setAttribute('content', isLight ? '#f4f4f4' : '#0f0f0f');
+  if (themeColor) themeColor.setAttribute('content', isLight ? '#faf6f2' : '#0f0f0f');
 }
 
 function toggleTheme() {
@@ -283,13 +283,15 @@ function trackSession() {
 }
 
 /* ===== TOPIC COLORS ===== */
+// Brand: jen šedá + oranžová pro INSIGHT. Tailwind paleta (blue/emerald/
+// violet/amber) působila jako generický AI web (audit 2026-07-17).
 const TYPE_COLORS = {
-  'INSIGHT': 'var(--accent)', /* sleduje theme — light má tmavší oranžovou kvůli kontrastu */
-  'NÁSTROJE': '#3b82f6',
-  'UKÁZKA': '#10b981',
-  'TIP': '#06b6d4',
-  'OTEVŘENÁ OTÁZKA': '#8b5cf6',
-  'TÉMA TÝDNE': '#f59e0b',
+  'INSIGHT': 'var(--accent)',
+  'NÁSTROJE': 'var(--text-secondary)',
+  'UKÁZKA': 'var(--text-secondary)',
+  'TIP': 'var(--text-secondary)',
+  'OTEVŘENÁ OTÁZKA': 'var(--text-secondary)',
+  'TÉMA TÝDNE': 'var(--text-secondary)',
 };
 
 /* ===== DATE FORMATTING ===== */
@@ -603,6 +605,7 @@ async function loadToday() {
     const isYesterdayData = data.date !== actualToday;
     $('cards-today').innerHTML = '';
     updateHeader(data, isYesterdayData);
+    renderDateline(data);
     buildTopicChips(data.cards || []);
 
     // Resurfacing karta se denně generuje v pipeline — zobrazit ji, i když
@@ -681,6 +684,32 @@ function poznatek(n) {
   if (n === 1) return 'poznatek';
   if (n >= 2 && n <= 4) return 'poznatky';
   return 'poznatků';
+}
+
+// Dateline nad digestem — deníkový charakter („Souhrn diskuzí ze čtvrtka
+// 17. července · 5 poznatků · čtení na 8 minut"). České vazby dnů potřebují
+// pevnou mapu (z pondělí / ze středy), genitiv měsíců už v MONTHS_CS je.
+const DAY_GENITIVE_CS = ['z\u00A0neděle', 'z\u00A0pondělí', 'z\u00A0úterý', 'ze\u00A0středy',
+  'ze\u00A0čtvrtka', 'z\u00A0pátku', 'ze\u00A0soboty'];
+
+function renderDateline(data) {
+  const el = $('digest-dateline');
+  if (!el) return;
+  const cards = data.cards || [];
+  if (!data.date || cards.length === 0) { el.classList.add('hidden'); return; }
+  const d = new Date(data.date + 'T12:00:00');
+  if (isNaN(d.getTime())) { el.classList.add('hidden'); return; }
+  const parts = [
+    `Souhrn diskuzí ${DAY_GENITIVE_CS[d.getDay()]} ${d.getDate()}.\u00A0${MONTHS_CS[d.getMonth()]}`,
+    `${cards.length}\u00A0${poznatek(cards.length)}`,
+  ];
+  const mins = cards.reduce((s, c) => s + (c.read_minutes || 0), 0);
+  if (mins > 0) {
+    const minWord = mins === 1 ? 'minutu' : (mins >= 2 && mins <= 4 ? 'minuty' : 'minut');
+    parts.push(`čtení na\u00A0${mins}\u00A0${minWord}`);
+  }
+  el.textContent = parts.join(' · ');
+  el.classList.remove('hidden');
 }
 
 function updateHeader(data, isYesterday) {

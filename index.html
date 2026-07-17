@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#f4f4f4">
+  <meta name="theme-color" content="#faf6f2">
   <meta name="description" content="Denní přehled diskuzí komunity Master the Flow &mdash; anonymizovaný, přehledný, prohledávatelný.">
   <meta property="og:title" content="Master the Flow — komunita">
   <meta property="og:description" content="Denní přehled diskuzí komunity Master the Flow. Anonymizovaný, přehledný, prohledávatelný.">
@@ -18,7 +18,7 @@
   <link rel="preload" href="fonts/IBMPlexSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/data/today.json" as="fetch" crossorigin>
   <link rel="stylesheet" href="styles.css">
-  <script>(function(){var saved=localStorage.getItem('theme');var t=saved||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='light'?'#f4f4f4':'#0f0f0f');try{var a=localStorage.getItem('mtf_auth');if(a&&Date.now()<JSON.parse(a).expires)document.documentElement.classList.add('auth-ok');}catch(e){}})()</script>
+  <script>(function(){var saved=localStorage.getItem('theme');var t=saved||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='light'?'#faf6f2':'#0f0f0f');try{var a=localStorage.getItem('mtf_auth');if(a&&Date.now()<JSON.parse(a).expires)document.documentElement.classList.add('auth-ok');}catch(e){}})()</script>
 </head>
 <body>
 
@@ -96,6 +96,7 @@
           </div>
         </div>
         <div id="event-teaser" class="event-teaser hidden"></div>
+        <div id="digest-dateline" class="digest-dateline hidden"></div>
         <div id="cards-today" class="cards-grid">
           <div class="card card-skeleton" aria-hidden="true"><div class="card-meta"><div class="sk sk-meta-md"></div></div><div class="sk sk-title"></div><div class="sk sk-line"></div><div class="sk sk-line sk-short"></div></div>
           <div class="card card-skeleton" aria-hidden="true"><div class="card-meta"><div class="sk sk-meta-xl"></div></div><div class="sk sk-title"></div><div class="sk sk-line"></div><div class="sk sk-line sk-short"></div></div>

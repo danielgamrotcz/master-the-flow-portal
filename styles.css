@@ -18,6 +18,7 @@
   --accent: #f06a15;
   --accent-dim: rgba(240, 106, 21, 0.15);
   --accent-hover: #d45500;
+  --danger: #ef4444;
 
   --border: #2a2a2a;
   --border-hover: #3d3d3d;
@@ -49,27 +50,32 @@
    --text-tertiary #888 měl 3,2:1 → #666 (5,2:1). */
 [data-theme="light"] {
   color-scheme: light;
-  --bg: #f4f4f4;
+  /* Teplá papírová paleta (brand vrstva, audit 2026-07-17): undertone ladí
+     s oranžovou a na slunci čte stejně dobře jako neutrální šeď. */
+  --bg: #faf6f2;
   --bg-elevated: #fff;
-  --bg-card: rgba(0, 0, 0, 0.04);
-  --bg-card-hover: rgba(0, 0, 0, 0.07);
-  --bg-overlay: rgba(0, 0, 0, 0.45);
-  --text-primary: #111;
-  --text-secondary: #444;
-  --text-tertiary: #666;
+  --bg-card: rgba(120, 80, 40, 0.05);
+  --bg-card-hover: rgba(120, 80, 40, 0.09);
+  --bg-overlay: rgba(30, 20, 10, 0.45);
+  --text-primary: #171310;
+  --text-secondary: #46403a;
+  --text-tertiary: #665e56;
   --accent: #b4500c;
   --accent-hover: #9a4409;
   --accent-dim: rgba(240, 106, 21, 0.12);
-  --border: #e0e0e0;
-  --border-hover: #c8c8c8;
-  --bg-header: rgba(244, 244, 244, 0.95);
-  --bg-nav: rgba(255, 255, 255, 0.97);
+  --danger: #c53030;
+  --border: #e8e1da;
+  --border-hover: #d4c9bd;
+  --bg-header: rgba(250, 246, 242, 0.92);
+  --bg-nav: rgba(255, 253, 251, 0.97);
   --bg-sheet: #fff;
   --bg-toast: #fff;
-  --btn-bg: rgba(0, 0, 0, 0.06);
-  --btn-bg-hover: rgba(0, 0, 0, 0.1);
-  --bg-active: #e0e0e0;
+  --btn-bg: rgba(120, 80, 40, 0.07);
+  --btn-bg-hover: rgba(120, 80, 40, 0.12);
+  --bg-active: #eae2d9;
 }
+
+::selection { background: var(--accent); color: #fff; }
 
 /* ===== RESET ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -112,6 +118,8 @@ a:hover { text-decoration: underline; }
   flex-shrink: 0;
   z-index: 50;
   background: var(--bg-header);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   padding: max(16px, env(safe-area-inset-top)) 20px 0;
 }
 
@@ -640,6 +648,15 @@ a:hover { text-decoration: underline; }
   padding: 8px 4px 12px;
 }
 
+.digest-dateline {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.01em;
+  padding: 2px 4px 12px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 14px;
+}
+
 .quiet-day-note {
   font-size: 14px;
   color: var(--text-secondary);
@@ -685,7 +702,11 @@ a:hover { text-decoration: underline; }
   border-color: var(--accent);
   color: #fff;
 }
-.push-primer-btn--primary:hover { background: var(--accent); opacity: 0.9; color: #fff; }
+.push-primer-btn--primary:hover {
+  background: var(--accent-hover);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(240, 106, 21, 0.4), 0 0 32px rgba(240, 106, 21, 0.15);
+}
 
 /* ===== iOS PUSH SHEET ===== */
 .ios-push-body { padding: 8px 20px 24px; }
@@ -1327,10 +1348,12 @@ body.lightbox-open { overflow: hidden; }
 }
 
 /* ===== CARD TYPE COLOR ACCENTS ===== */
-.card[data-type="NÁSTROJE"] .card-type { color: #3b82f6; }
-.card[data-type="UKÁZKA"] .card-type { color: #10b981; }
-.card[data-type="OTEVŘENÁ OTÁZKA"] .card-type { color: #8b5cf6; }
-.card[data-type="TÉMA TÝDNE"] .card-type { color: #f59e0b; }
+/* Brand: typy karet v šedé, jen INSIGHT nese oranžovou. Tailwind paleta
+   (blue/emerald/violet/amber) působila jako generický AI web. */
+.card[data-type="NÁSTROJE"] .card-type { color: var(--text-secondary); }
+.card[data-type="UKÁZKA"] .card-type { color: var(--text-secondary); }
+.card[data-type="OTEVŘENÁ OTÁZKA"] .card-type { color: var(--text-secondary); }
+.card[data-type="TÉMA TÝDNE"] .card-type { color: var(--text-secondary); }
 .card[data-type="INSIGHT"] .card-type { color: var(--accent); }
 
 /* ===== SEARCH HIGHLIGHT ===== */
@@ -1460,11 +1483,14 @@ body.lightbox-open { overflow: hidden; }
   transition: background 150ms ease;
 }
 
-.gate-btn:hover { background: var(--accent-hover); }
+.gate-btn:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 6px 20px rgba(240, 106, 21, 0.4), 0 0 32px rgba(240, 106, 21, 0.15);
+}
 
 .gate-error {
   font-size: 13px;
-  color: #ef4444;
+  color: var(--danger);
   text-align: center;
   min-height: 20px;
 }

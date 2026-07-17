@@ -6,7 +6,7 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
   X-Robots-Tag: noindex, nofollow
   Cross-Origin-Opener-Policy: same-origin
-  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-svZjCKBoQPb+pnk2gnKZ+0OLFAgg88k4a5NWb1LIkJk='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; manifest-src 'self'; worker-src 'self'; frame-ancestors 'none'; base-uri 'self'
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-q3btgboY1znz9Ya1tFhuwlR4WQlAzS1TjCmVRG2zHBI='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; manifest-src 'self'; worker-src 'self'; frame-ancestors 'none'; base-uri 'self'
 
 # Data JSON: vždy revalidovat přes ETag (304 = levné, ale nikdy stale).
 # POZOR: žádný max-age > 0 — PII scrub přepisuje archiv zpětně a stale cache
