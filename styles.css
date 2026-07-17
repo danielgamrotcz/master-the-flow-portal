@@ -139,8 +139,17 @@ a:hover { text-decoration: underline; }
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: color 150ms ease, background 150ms ease;
+  position: relative;
+}
+/* Dotyková plocha 44×44 bez změny vizuálu — ikona zůstává 32px,
+   neviditelný přesah rozšiřuje zásah prstu (WCAG 2.5.8). */
+.icon-btn::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
 }
 .icon-btn--lg { width: 44px; height: 44px; }
+.icon-btn--lg::after { inset: 0; }
 
 .bell-btn:hover { color: var(--text-secondary); }
 .bell-btn svg { width: 18px; height: 18px; }
@@ -617,6 +626,25 @@ a:hover { text-decoration: underline; }
   color: var(--text-tertiary);
   text-align: center;
   padding: 40px 0;
+}
+
+.search-fallback-note {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 8px 4px 12px;
+}
+
+/* Jen pro čtečky obrazovky — vizuálně skryté, ale oznamované. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* ===== TRANSCRIPT ===== */
@@ -1628,9 +1656,10 @@ body.lightbox-open { overflow: hidden; }
   cursor: pointer;
   transition: border-color 150ms ease, color 150ms ease;
 }
-.btn-vote:hover { border-color: #f43f5e; color: #f43f5e; }
-.btn-vote.voted { border-color: #f43f5e; color: #f43f5e; fill: #f43f5e; }
-.btn-vote.voted svg { fill: #f43f5e; stroke: #f43f5e; }
+/* Srdíčko v brand oranžové — cizí rose (#f43f5e) rozbíjelo paletu. */
+.btn-vote:hover { border-color: var(--accent); color: var(--accent); }
+.btn-vote.voted { border-color: var(--accent); color: var(--accent); fill: var(--accent); }
+.btn-vote.voted svg { fill: var(--accent); stroke: var(--accent); }
 
 #vote-count {
   font-size: 12px;
@@ -1728,7 +1757,11 @@ body.lightbox-open { overflow: hidden; }
 /* Přečtené karty jen lehce ztlumíme — silné ztlumení dřív (0.45) na tmavém
    pozadí srazilo i tak šedý text pod čitelnost. Stav „přečteno" nese hlavně
    značka v patičce, závoj je jen doplněk pro rychlý přehled. */
-.card.read { opacity: 0.72; }
+/* Přečtená karta: jen jemné ztlumení. Původních 0.72 srazilo texty pod
+   hranici čitelnosti (bug report člena 24. 6. — „texty na tmavém pozadí při
+   návratu z detailu špatně čitelné"). Signál přečtení nese hlavně
+   „Přečteno ✓" v patičce karty, ne ztmavení textu. */
+.card.read { opacity: 0.9; }
 .card.read:hover { opacity: 1; }
 .card-readmore.is-read { color: var(--accent); }
 
@@ -2161,7 +2194,7 @@ body.lightbox-open { overflow: hidden; }
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 9px 12px;
-  font-size: 15px;
+  font-size: max(16px, 1em); /* pod 16px iOS Safari zoomuje na fokus */
   color: var(--text-primary);
   resize: none;
   line-height: 1.4;

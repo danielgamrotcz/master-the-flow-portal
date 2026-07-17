@@ -1,6 +1,12 @@
-const CACHE = 'mtf-v21';
+// v23: úklid cache po odstranění ?v= cache-bustingu (nasypal do Cache Storage
+// stovky unikátních záznamů) + today.json v precache. Bump verze při aktivaci
+// všechny staré záznamy smaže.
+const CACHE = 'mtf-v23';
+// today.json v precache: při první návštěvě SW ještě neřídí stránku, takže by
+// se digest do cache nedostal a offline režim by fungoval až od druhé návštěvy.
 const STATIC = ['/', '/index.html', '/app.js', '/styles.css', '/favicon.svg',
-  '/manifest.webmanifest', '/icon-192.png', '/icon-512.png', '/apple-touch-icon.png'];
+  '/manifest.webmanifest', '/icon-192.png', '/icon-512.png', '/apple-touch-icon.png',
+  '/data/today.json'];
 // App shell — vždy zkus síť, fallback cache (offline). Brání stale verzi appky
 // bez nutnosti bumpovat CACHE při každé změně app.js/styles.css/index.html.
 const SHELL = new Set(['/', '/index.html', '/app.js', '/styles.css']);
@@ -88,7 +94,7 @@ function pocetPoznatku(n) {
 // Notifikace z digestu (today.json) — titulek = počet, text = výčet karet.
 async function digestNotification() {
   let title = 'Master the Flow';
-  let body = 'Mrkni, co je v komunitě nového.';
+  let body = 'Mrkněte, co je v komunitě nového.';
   let url = '/';
   try {
     const r = await fetch('/data/today.json');
@@ -125,6 +131,30 @@ self.addEventListener('push', e => {
       vibrate: [200, 100, 200],
       data: { url: n.url },
     });
+  })());
+});
+
+// Prohlížeč může subscription obměnit (rotace endpointu, obnova permission).
+// Bez tohoto handleru se změna nikdy nedostala na server a odběratel zmizel.
+const VAPID_PUBLIC = 'BEZFl-_nPGP_1u49UExtRaDl9kc6A9fKzrvUaA-mJTCKx-_LpoaxVw1bkh4Wtf1MeabUVa2vJCnUkv-uCaK4sEs';
+function urlBase64ToUint8Array(b64) {
+  const p = '='.repeat((4 - b64.length % 4) % 4);
+  const raw = atob((b64 + p).replace(/-/g, '+').replace(/_/g, '/'));
+  return new Uint8Array([...raw].map(c => c.charCodeAt(0)));
+}
+
+self.addEventListener('pushsubscriptionchange', e => {
+  e.waitUntil((async () => {
+    try {
+      const sub = await self.registration.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC),
+      });
+      await fetch('/api/subscribe', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(sub.toJSON()),
+      });
+    } catch { /* zkusí se při další změně / re-POSTu z klienta */ }
   })());
 });
 

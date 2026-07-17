@@ -6,4 +6,18 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
   X-Robots-Tag: noindex, nofollow
   Cross-Origin-Opener-Policy: same-origin
-  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-boKXnSMfJNdCRVgOkkxKXpzfMHvnmuxleXrH+YJW8vI='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; manifest-src 'self'; worker-src 'self'; frame-ancestors 'none'; base-uri 'self'
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-svZjCKBoQPb+pnk2gnKZ+0OLFAgg88k4a5NWb1LIkJk='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; manifest-src 'self'; worker-src 'self'; frame-ancestors 'none'; base-uri 'self'
+
+# Data JSON: vždy revalidovat přes ETag (304 = levné, ale nikdy stale).
+# POZOR: žádný max-age > 0 — PII scrub přepisuje archiv zpětně a stale cache
+# by mohla servírovat už vyscrubovaná jména.
+/data/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Média mají neměnná UUID jména — bezpečně immutable.
+/data/media/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonty se nemění (změna fontu = změna souborů).
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -64,6 +64,10 @@ export async function onRequestGet({ request, env }) {
       ...last30Days.map(d => env.MTF_DATA.get(`analytics:daily:${d}`)),
     ]);
 
+    // Počet aktivních push odběrů — jedno číslo, jestli návratový kanál žije.
+    const subsList = await env.MTF_DATA.list({ prefix: 'sub_', limit: 1000 });
+    const pushSubscriptions = (subsList.keys || []).length;
+
     const opens = opensRaw ? JSON.parse(opensRaw) : {};
     const reads = readsRaw ? JSON.parse(readsRaw) : {};
     const searches = searchRaw ? JSON.parse(searchRaw) : {};
@@ -133,8 +137,10 @@ export async function onRequestGet({ request, env }) {
       .slice(0, 20)
       .map(([date, count]) => ({ date, count }));
 
-    // Daily trend (last 30 days, oldest first) + aggregate hours
+    // Daily trend (last 30 days, oldest first) + aggregate hours + sources
     const hoursTotal = {};
+    const sourcesTotal = {};
+    let gateShown30d = 0, gatePassed30d = 0, newVisitors30d = 0;
     const dailyTrend = last30Days.map((date, i) => {
       const raw = dailyRaws[i];
       const d = raw ? JSON.parse(raw) : {};
@@ -143,6 +149,14 @@ export async function onRequestGet({ request, env }) {
           hoursTotal[h] = (hoursTotal[h] || 0) + c;
         }
       }
+      if (d.sources) {
+        for (const [s, c] of Object.entries(d.sources)) {
+          sourcesTotal[s] = (sourcesTotal[s] || 0) + c;
+        }
+      }
+      gateShown30d += d.gate_shown || 0;
+      gatePassed30d += d.gate_passed || 0;
+      newVisitors30d += d.new_visitors || 0;
       return {
         date,
         opens: d.opens || 0,
@@ -150,6 +164,11 @@ export async function onRequestGet({ request, env }) {
         sessions: d.sessions || 0,
         searches: d.searches || 0,
         shares: d.shares || 0,
+        new_visitors: d.new_visitors || 0,
+        returning: d.returning || {},
+        gate_shown: d.gate_shown || 0,
+        gate_passed: d.gate_passed || 0,
+        sources: d.sources || {},
       };
     }).reverse();
 
@@ -171,6 +190,12 @@ export async function onRequestGet({ request, env }) {
         total_shares: totalShares,
         sessions_last_30d: totalSessions30d,
         overall_read_through_rate: overallReadThrough,
+        push_subscriptions: pushSubscriptions,
+        new_visitors_30d: newVisitors30d,
+        gate_shown_30d: gateShown30d,
+        gate_passed_30d: gatePassed30d,
+        gate_conversion: gateShown30d > 0 ? Math.round((gatePassed30d / gateShown30d) * 100) : null,
+        sources_30d: sourcesTotal,
       },
       top_cards: topCards,
       top_searches: topSearches,

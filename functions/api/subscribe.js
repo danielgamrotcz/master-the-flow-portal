@@ -70,15 +70,20 @@ export async function onRequestPost({ request, env }) {
     const sub = await request.json();
     if (!isValidSubscription(sub)) return new Response('Bad request', { status: 400, headers });
 
-    // Global cap — prevent subscription flood
-    const existing = await env.MTF_DATA.list({ prefix: 'sub_', limit: SUB_GLOBAL_CAP + 1 });
-    if (existing.keys.length >= SUB_GLOBAL_CAP) {
-      return new Response('Service unavailable', { status: 503, headers });
-    }
-
     const clean = { endpoint: sub.endpoint, keys: { auth: sub.keys.auth, p256dh: sub.keys.p256dh } };
     const hash = await endpointHash(sub.endpoint);
     const key = 'sub_' + hash;
+
+    // Global cap — prevent subscription flood. Re-POST existujícího odběru
+    // (denní TTL obnova z klienta) cap neblokuje, jen přepisuje vlastní klíč.
+    const already = await env.MTF_DATA.get(key);
+    if (!already) {
+      const existing = await env.MTF_DATA.list({ prefix: 'sub_', limit: SUB_GLOBAL_CAP + 1 });
+      if (existing.keys.length >= SUB_GLOBAL_CAP) {
+        return new Response('Service unavailable', { status: 503, headers });
+      }
+    }
+
     await env.MTF_DATA.put(key, JSON.stringify(clean), { expirationTtl: 60 * 86400 });
     return new Response('OK', { headers });
   } catch (e) {

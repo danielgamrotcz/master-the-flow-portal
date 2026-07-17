@@ -15,7 +15,9 @@ const ALLOWED_EVENTS = new Set([
   'card_open', 'card_read', 'search',
   'share', 'transcript_view', 'random_card',
   'view_switch', 'overlay_nav', 'topic_filter', 'archive_date', 'session_visit',
+  'gate_shown', 'gate_passed',
 ]);
+const SRC_RE = /^[a-z0-9_-]{1,24}$/;
 
 function isValidDate(dateStr) {
   if (!DATE_RE.test(dateStr)) return false;
@@ -154,10 +156,26 @@ export async function onRequestPost({ request, env }) {
       const dailyField = {
         card_open: 'opens', card_read: 'reads', search: 'searches',
         share: 'shares', session_visit: 'sessions',
+        gate_shown: 'gate_shown', gate_passed: 'gate_passed',
       }[event];
       if (dailyField || hour !== null) {
         writes.push(kv_update(env.MTF_DATA, `analytics:daily:${date}`, obj => {
           if (dailyField) obj[dailyField] = (obj[dailyField] || 0) + 1;
+          // session_visit nese návštěvnický kontext: nový vs. vracející se
+          // (bucket podle odstupu) a zdroj návštěvy (?src= atribuce).
+          if (event === 'session_visit') {
+            if (data.is_new === true) obj.new_visitors = (obj.new_visitors || 0) + 1;
+            const ds = data.days_since_last;
+            if (typeof ds === 'number' && ds > 0 && ds < 400) {
+              if (!obj.returning) obj.returning = {};
+              const bucket = ds === 1 ? 'd1' : ds <= 7 ? 'd2_7' : ds <= 30 ? 'd8_30' : 'd30p';
+              obj.returning[bucket] = (obj.returning[bucket] || 0) + 1;
+            }
+            if (typeof data.src === 'string' && SRC_RE.test(data.src)) {
+              if (!obj.sources) obj.sources = {};
+              incr(obj.sources, data.src, 30);
+            }
+          }
           if (hour !== null) {
             if (!obj.hours) obj.hours = {};
             obj.hours[hour] = (obj.hours[hour] || 0) + 1;

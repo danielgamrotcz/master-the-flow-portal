@@ -3,14 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#f4f4f4">
   <meta name="description" content="Denní přehled diskuzí komunity Master the Flow &mdash; anonymizovaný, přehledný, prohledávatelný.">
+  <meta property="og:title" content="Master the Flow — komunita">
+  <meta property="og:description" content="Denní přehled diskuzí komunity Master the Flow. Anonymizovaný, přehledný, prohledávatelný.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://master-the-flow-portal.pages.dev/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Master the Flow — komunita</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/IBMPlexSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/data/today.json" as="fetch">
   <link rel="stylesheet" href="styles.css">
-  <script>(function(){var saved=localStorage.getItem('theme');var t=saved||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);try{var a=localStorage.getItem('mtf_auth');if(a&&Date.now()<JSON.parse(a).expires)document.documentElement.classList.add('auth-ok');}catch(e){}})()</script>
+  <script>(function(){var saved=localStorage.getItem('theme');var t=saved||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='light'?'#f4f4f4':'#0f0f0f');try{var a=localStorage.getItem('mtf_auth');if(a&&Date.now()<JSON.parse(a).expires)document.documentElement.classList.add('auth-ok');}catch(e){}})()</script>
 </head>
 <body>
 
@@ -22,15 +30,15 @@
       <div class="gate-form">
         <input id="gate-input" class="gate-input" type="text" inputmode="text"
           autocomplete="off" autocorrect="off" spellcheck="false"
-          placeholder="Zadejte kód" maxlength="20">
+          placeholder="Zadejte kód" aria-label="Přístupový kód" maxlength="20">
         <button id="gate-submit" class="gate-btn">Vstoupit</button>
-        <div id="gate-error" class="gate-error"></div>
+        <div id="gate-error" class="gate-error" role="alert"></div>
       </div>
       <p class="gate-hint">Přístup zůstane uložen&nbsp;30&nbsp;dní.</p>
     </div>
   </div>
 
-  <div id="refresh-banner" class="refresh-banner hidden">Nový digest k dispozici &mdash; klikni pro obnovení</div>
+  <div id="refresh-banner" class="refresh-banner hidden">Nový digest je&nbsp;venku, klikněte pro obnovení</div>
 
   <div id="pull-indicator" class="pull-indicator" aria-hidden="true">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
@@ -113,7 +121,8 @@
       <div id="view-search" class="view hidden">
         <div class="search-wrapper">
           <input id="search-input" class="search-input" type="search"
-            placeholder="Hledat v archivu…" autocomplete="off" autocorrect="off"
+            placeholder="Hledat v archivu…" aria-label="Hledat v archivu"
+            autocomplete="off" autocorrect="off"
             spellcheck="false" enterkeyhint="search">
           <button id="search-clear" class="search-clear icon-btn hidden" aria-label="Smazat hledání" tabindex="-1">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -143,7 +152,7 @@
       <div id="view-chat" class="view hidden">
         <div id="chat-messages" class="chat-messages" role="log" aria-live="polite" aria-label="Konverzace"></div>
         <div class="chat-composer">
-          <textarea id="chat-input" class="chat-input" placeholder="Zeptejte se na obsah komunity&hellip;" rows="1" maxlength="4000" enterkeyhint="send"></textarea>
+          <textarea id="chat-input" class="chat-input" placeholder="Zeptejte se na obsah komunity&hellip;" aria-label="Zpráva do chatu" rows="1" maxlength="4000" enterkeyhint="send"></textarea>
           <button id="chat-send" class="chat-send-btn" aria-label="Odeslat">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
               <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
@@ -177,7 +186,7 @@
 
       <div id="view-notfound" class="view hidden">
         <div class="notfound-hero">
-          <div class="notfound-emoji" aria-hidden="true">🧭</div>
+          <div class="notfound-emoji" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="48" height="48"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div>
           <h1 class="notfound-title">Tahle stránka tu není</h1>
           <p class="notfound-desc">Asi vedla někam, co už neexistuje, nebo se do&nbsp;adresy vloudil překlep. Nevadí. Tady je&nbsp;pár poznatků z&nbsp;komunity, ať jste sem nezabloudili zbytečně.</p>
           <a class="notfound-home" href="/">Zpět na&nbsp;úvod</a>
@@ -386,9 +395,10 @@
     </div>
   </div>
 
-  <div id="toast" class="toast hidden"></div>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  <div id="search-live" class="sr-only" aria-live="polite"></div>
 
-  <script src="fuse.min.js" integrity="sha256-42IbU8t3tOwwbexB7ZVRHm3YDRf65aBPPjRtIUufj5I=" crossorigin="anonymous"></script>
-  <script src="app.js"></script>
+  <script src="fuse.min.js" integrity="sha256-42IbU8t3tOwwbexB7ZVRHm3YDRf65aBPPjRtIUufj5I=" crossorigin="anonymous" defer></script>
+  <script src="app.js" defer></script>
 </body>
 </html>

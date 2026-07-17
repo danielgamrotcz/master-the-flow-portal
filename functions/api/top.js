@@ -33,9 +33,11 @@ export async function onRequestGet({ env, request }) {
   if (await checkRateLimit(env, ip)) {
     return new Response('Too Many Requests', { status: 429, headers: corsHeaders(origin) });
   }
-  // Počty hlasů z D1 (přesné, silně konzistentní).
+  // Počty hlasů z D1 (přesné, silně konzistentní). LIMIT 200: klient z téhle
+  // odpovědi staví voteMap pro všechny karty — s LIMIT 20 ukazovaly karty
+  // mimo top 20 falešnou nulu.
   const rows = await env.VOTES_DB
-    .prepare('SELECT card_id, COUNT(*) AS count FROM votes GROUP BY card_id ORDER BY count DESC LIMIT 20')
+    .prepare('SELECT card_id, COUNT(*) AS count FROM votes GROUP BY card_id ORDER BY count DESC LIMIT 200')
     .all();
   const entries = (rows.results || []).map(r => ({ id: r.card_id, count: r.count }));
   return Response.json(entries, {

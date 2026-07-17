@@ -19,6 +19,7 @@ function initGate() {
 
   const gate = document.getElementById('gate');
   gate.classList.remove('hidden');
+  trackEvent('gate_shown', {});
 
   const input = document.getElementById('gate-input');
   const btn = document.getElementById('gate-submit');
@@ -44,6 +45,7 @@ function initGate() {
         document.documentElement.classList.add('auth-ok');
         gate.classList.add('hidden');
         input.value = '';
+        trackEvent('gate_passed', {});
       } else {
         err.textContent = 'Nesprávný kód. Zkuste to znovu.';
         input.value = '';
@@ -180,11 +182,47 @@ function trackSearch(query) {
   }
 }
 
+// Atribuce zdroje: /?src=digest v odkazu z WhatsAppu řekne, odkud návštěva
+// přišla. Parametr se po přečtení odstraní z adresy, ať se nešíří dál sdílením.
+let _visitSrc = null;
+function readVisitSource() {
+  try {
+    const params = new URLSearchParams(location.search);
+    const src = params.get('src');
+    if (src && /^[a-z0-9_-]{1,24}$/i.test(src)) {
+      _visitSrc = src.toLowerCase();
+      params.delete('src');
+      const qs = params.toString();
+      history.replaceState(history.state, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+    }
+  } catch {}
+}
+
+// session_visit se posílá 1× denně na zařízení, takže „sessions" v insights
+// odpovídá denním unikátním zařízením. Posíláme jen is_new, odstup od minulé
+// návštěvy a zdroj — žádné ID, žádné PII.
 function trackSession() {
   const today = new Date().toISOString().slice(0, 10);
-  if (localStorage.getItem('mtf_last_visit') !== today) {
+  const prev = localStorage.getItem('mtf_last_visit');
+  if (prev !== today) {
     localStorage.setItem('mtf_last_visit', today);
-    trackEvent('session_visit', {});
+    let isNew = false;
+    try {
+      if (!localStorage.getItem('mtf_visitor')) {
+        localStorage.setItem('mtf_visitor', crypto.randomUUID());
+        isNew = !prev; // UUID chybělo a zároveň žádná dřívější návštěva
+      }
+    } catch {}
+    let daysSince = null;
+    if (prev) {
+      const diff = Math.round((new Date(today) - new Date(prev)) / 86400000);
+      if (diff > 0 && diff < 400) daysSince = diff;
+    }
+    trackEvent('session_visit', {
+      is_new: isNew,
+      days_since_last: daysSince,
+      src: _visitSrc,
+    });
   }
 }
 
@@ -458,13 +496,12 @@ function filterCards(cards) {
 /* ===== UNREAD BAR ===== */
 
 /* ===== RENDER CARDS ===== */
-function sortByVotes(cards) {
-  return [...cards].sort((a, b) => (state.voteMap[b.id] || 0) - (state.voteMap[a.id] || 0));
-}
-
+// Karty se záměrně neřadí podle srdíček: hlasy se načítají asynchronně, takže
+// řazení podle nich přeskládávalo karty pod rukama. Popularita má vlastní
+// view „Top", tady drží pořadí z pipeline (kurátorské) / podle data.
 function renderCards(cards, containerId, resurfaced = null) {
   const container = $(containerId);
-  const filtered = sortByVotes(filterCards(cards));
+  const filtered = filterCards(cards);
 
   let html = '';
 
@@ -483,7 +520,7 @@ function renderCards(cards, containerId, resurfaced = null) {
 
   html += filtered.map(c => renderCardEl(c)).join('');
 
-  if (resurfaced && (state.topic === 'all' || state.topic === resurfaced.topic)) {
+  if (resurfaced && (state.topic === 'all' || getTopics(resurfaced).includes(state.topic))) {
     html += `<div class="section-header">Z archivu</div>`;
     html += renderCardEl(resurfaced, true);
   }
@@ -512,8 +549,10 @@ async function loadToday() {
     updateHeader(data, isYesterdayData);
     buildTopicChips(data.cards || []);
 
-    if ((data.cards || []).length > 0) {
-      renderCards(data.cards, 'cards-today', null);
+    // Resurfacing karta se denně generuje v pipeline — zobrazit ji, i když
+    // dřív obě render místa předávala null a sekce „Z archivu" byla mrtvá.
+    if ((data.cards || []).length > 0 || data.resurfacing) {
+      renderCards(data.cards || [], 'cards-today', data.resurfacing || null);
     } else {
       $('cards-today').innerHTML =
         '<div class="empty-state"><p>Ze včerejška nejsou žádné poznatky.</p></div>';
@@ -524,6 +563,13 @@ async function loadToday() {
   } catch {
     $('cards-today').innerHTML = '';
     _setNavLabel('Včera');
+    // Odlišit výpadek připojení od „digest nevyšel" — jiná příčina, jiná rada.
+    const emptyP = $('empty-today') && $('empty-today').querySelector('p');
+    if (emptyP) {
+      emptyP.innerHTML = navigator.onLine
+        ? 'Včerejší digest zatím nevyšel. Generuje se v 5:15.'
+        : 'Jste offline. Digest se načte, jakmile budete zase připojeni.';
+    }
     show('empty-today');
   }
 }
@@ -770,6 +816,12 @@ async function loadArchiveNextPage(isFirst = false, gen = null) {
 }
 
 /* ===== SEARCH ===== */
+// Normalizace pro hledání: lowercase + odstranění diakritiky (NFD strip).
+// „nastroje" tak najde „nástroje" a naopak.
+function searchNorm(s) {
+  return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+}
+
 async function initSearch() {
   if (state.searchIndex) return;
   show('loading-search');
@@ -801,26 +853,61 @@ async function initSearch() {
       return true;
     });
     state.searchAll = deduped;
-    state.searchIndex = new Fuse(deduped, {
-      keys: ['title', 'excerpt', 'body', 'topic'],
+    // Index nad normalizovanými stínovými poli — diakritika nerozhoduje.
+    // Karty mají pole `topics` (pole stringů), dřívější klíč `topic` byl mrtvý.
+    const indexed = deduped.map(c => ({
+      card: c,
+      ntitle: searchNorm(c.title),
+      nexcerpt: searchNorm(c.excerpt),
+      nbody: searchNorm(c.body),
+      ntopics: searchNorm(getTopics(c).join(' ')),
+    }));
+    state.searchIndex = new Fuse(indexed, {
+      keys: [
+        { name: 'ntitle', weight: 3 },
+        { name: 'ntopics', weight: 2 },
+        { name: 'nexcerpt', weight: 2 },
+        { name: 'nbody', weight: 1 },
+      ],
       threshold: 0.35,
-      includeMatches: true,
+      ignoreLocation: true,
+      includeScore: true,
       minMatchCharLength: 2,
     });
 
     hide('loading-search');
     show('search-hint');
+
+    // Dotaz rozepsaný během načítání indexu se dřív tiše zahodil — spusť ho teď.
+    const pending = ($('search-input') && $('search-input').value.trim()) || state.searchQuery;
+    if (pending && pending.length >= 2 && state.view === 'search') runSearch(pending);
   } catch {
     hide('loading-search');
     show('search-hint');
   }
 }
 
+// Mapa základní znak → všechny české varianty. Highlight tak označí „nástroje"
+// i při dotazu „nastroje".
+const DIACRITIC_VARIANTS = {
+  a: 'aá', c: 'cč', d: 'dď', e: 'eéě', i: 'ií', n: 'nň', o: 'oó',
+  r: 'rř', s: 'sš', t: 'tť', u: 'uúů', y: 'yý', z: 'zž',
+};
+
+function diacriticInsensitivePattern(term) {
+  return term.split('').map(ch => {
+    const base = searchNorm(ch);
+    const variants = DIACRITIC_VARIANTS[base];
+    if (variants) return '[' + variants + ']';
+    return ch.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }).join('');
+}
+
 function highlightInHTML(html, query) {
   if (!query) return html;
   const terms = query.trim().split(/\s+/)
     .filter(t => t.length >= 2)
-    .map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+    .map(diacriticInsensitivePattern);
   if (!terms.length) return html;
   const re = new RegExp(`(?![^<]*>)(${terms.join('|')})`, 'gi');
   return html.replace(re, '<mark class="search-highlight">$1</mark>');
@@ -845,43 +932,71 @@ function runSearch(query) {
     return;
   }
 
-  let results = state.searchIndex.search(q);
+  const nq = searchNorm(q);
+  const fuseResults = state.searchIndex.search(nq);
 
-  // Fuse fuzzy matching returns false positives — require exact substring presence.
-  const lower = q.toLowerCase();
-  results = results.filter(r => {
-    const c = r.item;
-    return (c.title || '').toLowerCase().includes(lower) ||
-           (c.excerpt || '').toLowerCase().includes(lower) ||
-           (c.body || '').toLowerCase().includes(lower);
-  });
+  // Tokenový AND filtr nad normalizovanými poli: každé slovo dotazu musí být
+  // podřetězcem karty. Řeší falešné pozitivy fuzzy hledání, ale nevypíná
+  // diakritickou toleranci jako dřívější tvrdý substring na surových polích.
+  const tokens = nq.split(/\s+/).filter(t => t.length >= 2);
+  const haystack = r => r.item.ntitle + ' ' + r.item.nexcerpt + ' ' + r.item.nbody + ' ' + r.item.ntopics;
+  let results = tokens.length
+    ? fuseResults.filter(r => { const h = haystack(r); return tokens.every(t => h.includes(t)); })
+    : fuseResults;
 
-  buildTopicChips(results.map(r => r.item));
+  // Fuzzy fallback: při nule přesných shod ukaž nejbližší výsledky Fuse,
+  // ať překlep na mobilu není slepá ulička.
+  let isFallback = false;
+  if (results.length === 0 && fuseResults.length > 0) {
+    isFallback = true;
+    results = fuseResults.slice(0, 10);
+  }
+
+  buildTopicChips(results.map(r => r.item.card));
 
   // Topic filter
   if (state.topic !== 'all') {
-    results = results.filter(r => getTopics(r.item).includes(state.topic));
+    results = results.filter(r => getTopics(r.item.card).includes(state.topic));
   }
 
   _lastSearchResultCount = results.length;
+
+  // Oznámit počet výsledků čtečkám obrazovky (vizuálně skrytý live region).
+  const live = $('search-live');
+  if (live) {
+    const n = results.length;
+    const word = n === 1 ? 'výsledek' : (n >= 2 && n <= 4 ? 'výsledky' : 'výsledků');
+    live.textContent = n === 0 ? 'Žádné výsledky' : `${n} ${word}`;
+  }
 
   if (results.length === 0) {
     show('empty-search');
     return;
   }
 
-  const sorted = results.slice(0, 50)
-    .map(r => r.item)
+  // Řadit podle relevance (Fuse score, nižší = lepší), remíza podle data.
+  // Dřívější řazení podle srdíček pohřbívalo přesné shody pod populární karty.
+  const sorted = results.slice()
     .sort((a, b) => {
-      const vDiff = (state.voteMap[b.id] || 0) - (state.voteMap[a.id] || 0);
-      if (vDiff !== 0) return vDiff;
-      return (b.source_date || b.date || '').localeCompare(a.source_date || a.date || '');
+      const sDiff = (a.score ?? 0) - (b.score ?? 0);
+      if (Math.abs(sDiff) > 0.001) return sDiff;
+      const ca = a.item.card, cb = b.item.card;
+      return (cb.source_date || cb.date || '').localeCompare(ca.source_date || ca.date || '');
     })
-    .slice(0, 30);
+    .slice(0, 30)
+    .map(r => r.item.card);
 
-  $('cards-search').innerHTML = sorted.map(c => renderCardEl(c, false, q)).join('');
+  const fallbackNote = isFallback
+    ? '<div class="search-fallback-note">Přesnou shodu jsme nenašli. Tohle je nejbližší výsledek.</div>'
+    : '';
+  $('cards-search').innerHTML = fallbackNote + sorted.map(c => renderCardEl(c, false, isFallback ? '' : q)).join('');
   show('cards-search');
   attachCardListeners($('cards-search'));
+
+  // Sdílitelné URL dotazu — na opakované otázky v Diskuzi jde odpovědět odkazem.
+  if (state.view === 'search') {
+    history.replaceState({}, '', '#search/' + encodeURIComponent(q));
+  }
 }
 
 /* ===== CARD OVERLAY ===== */
@@ -893,11 +1008,18 @@ function openCard(cardId) {
   markRead(cardId);
   applyReadStateDOM(cardId, true);
 
+  // pushState (ne replaceState): karta dostane vlastní history entry, takže
+  // hardwarové zpět na Androidu kartu zavře místo opuštění webu / rozjetí
+  // view s adresou. U deep linku (hash už je #card/) se entry nepřidává.
   if (!location.hash.startsWith('#card/')) {
     _preCardHash = location.hash || '#';
+    state.activeCard = card;
+    history.pushState({ card: cardId, pushed: true }, '', `#card/${cardId}`);
+  } else {
+    state.activeCard = card;
+    const pushed = !!(history.state && history.state.pushed);
+    history.replaceState({ card: cardId, pushed }, '', `#card/${cardId}`);
   }
-  state.activeCard = card;
-  history.replaceState({ card: cardId }, '', `#card/${cardId}`);
 
   const typeColor = TYPE_COLORS[card.type] || 'var(--text-tertiary)';
 
@@ -1011,7 +1133,11 @@ function openCard(cardId) {
   trackEvent('card_open', { id: cardId, topic: getTopics(card)[0] || null, card_type: card.type || null });
 }
 
-function closeCard() {
+// UI část zavření karty — bez zásahu do history. Volá se z popstate (zpět)
+// i z closeCard (křížek/Esc), aby obě cesty vedly identickým úklidem.
+let _closingCard = false;
+function closeCardUI() {
+  _closingCard = false;
   if (state.activeCard && state.cardOpenedAt) {
     const duration_ms = Date.now() - state.cardOpenedAt;
     if (duration_ms >= 3000) {
@@ -1031,6 +1157,19 @@ function closeCard() {
   const banner = document.getElementById('refresh-banner');
   if (banner) banner.style.visibility = '';
   state.activeCard = null;
+}
+
+function closeCard() {
+  if (_closingCard) return;
+  // Karta s vlastní history entry (pushState v openCard): zkonzumuj ji přes
+  // history.back(), úklid UI proběhne v popstate. Křížek a hardwarové zpět
+  // tak vedou stejnou cestou a scroll pod overlayem zůstane netknutý.
+  if (location.hash.startsWith('#card/') && history.state && history.state.pushed) {
+    _closingCard = true;
+    history.back();
+    return;
+  }
+  closeCardUI();
   if (location.hash.startsWith('#card/')) {
     history.replaceState({}, '', _preCardHash || '#');
   }
@@ -1508,6 +1647,25 @@ async function unsubscribePush() {
   await sub.unsubscribe();
 }
 
+// Tichý re-POST subscription, throttlovaný 1× denně: server drží odběry
+// s 60denním TTL a bez obnovy tiše vypršely. Obnova při každé návštěvě
+// drží aktivní odběratele naživu, aniž spamuje rate limit (5/h na IP).
+async function refreshPushSubscription() {
+  try {
+    if (!('serviceWorker' in navigator) || !('PushManager' in window)) return;
+    const today = new Date().toISOString().slice(0, 10);
+    if (localStorage.getItem('mtf_sub_refreshed') === today) return;
+    const reg = await navigator.serviceWorker.ready;
+    const sub = await reg.pushManager.getSubscription();
+    if (!sub) return;
+    const resp = await fetch('/api/subscribe', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(sub.toJSON()),
+    });
+    if (resp.ok) localStorage.setItem('mtf_sub_refreshed', today);
+  } catch { /* offline nebo rate limit — zkusí se příště */ }
+}
+
 async function initPushBtn() {
   const btn = $('btn-bell');
   if (!btn || !('PushManager' in window) || !('serviceWorker' in navigator)) {
@@ -1535,7 +1693,7 @@ async function initPushBtn() {
 }
 function setPushBtnState(btn, active) {
   btn.classList.toggle('bell-active', active);
-  btn.setAttribute('title', active ? 'Notifikace zapnuty — klikni pro vypnutí' : 'Zapnout notifikace o novém digestu');
+  btn.setAttribute('title', active ? 'Notifikace zapnuty, klikněte pro vypnutí' : 'Zapnout notifikace o novém digestu');
   btn.setAttribute('aria-label', active ? 'Vypnout notifikace' : 'Zapnout notifikace');
 }
 
@@ -1845,7 +2003,7 @@ async function reloadCurrentView() {
 function initAutoRefresh() {
   setInterval(async () => {
     try {
-      const data = await fetch('/data/today.json?v=' + Date.now()).then(r => r.json());
+      const data = await fetch('/data/today.json', { cache: 'no-cache' }).then(r => r.json());
       if (_lastKnownDigestDate && data.date && data.date !== _lastKnownDigestDate) {
         showRefreshBanner();
       }
@@ -2143,8 +2301,11 @@ function openTopicInArchive(topic) {
 }
 
 /* ===== FETCH ===== */
+// Bez cache-busting query: čerstvost řeší network-first service worker + ETag
+// revalidace (viz _headers). Unikátní ?v= dřív rozbíjelo SW cache match a
+// Cache Storage rostla bez limitu.
 async function fetchJSON(url) {
-  const res = await fetch(url + '?v=' + Date.now());
+  const res = await fetch(url);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.json();
 }
@@ -2426,8 +2587,18 @@ function handleHash() {
     switchView('archive');
   } else if (hash === 'week') {
     switchView('week');
-  } else if (hash === 'search') {
+  } else if (hash === 'search' || hash.startsWith('search/')) {
     switchView('search');
+    // Sdílitelný dotaz: #search/nastroje otevře hledání s předvyplněným dotazem.
+    if (hash.startsWith('search/')) {
+      let q = '';
+      try { q = decodeURIComponent(hash.slice(7)); } catch {}
+      if (q) {
+        const inp = $('search-input');
+        if (inp) { inp.value = q; $('search-clear').classList.remove('hidden'); }
+        runSearch(q);
+      }
+    }
   } else if (hash === 'stats') {
     switchView('stats');
   } else if (hash === 'top') {
@@ -2463,7 +2634,7 @@ function rerenderCurrentView() {
     return;
   }
   if (state.view === 'today' && state.today) {
-    renderCards(state.today.cards || [], 'cards-today', null);
+    renderCards(state.today.cards || [], 'cards-today', state.today.resurfacing || null);
   } else if (state.view === 'archive' && state.archiveCards.length > 0) {
     const container = $('cards-archive');
     container.innerHTML = '';
@@ -2870,6 +3041,7 @@ function init() {
   state.activeCard = null;
 
   resetStaleVotesOnce();
+  readVisitSource();
   initGate();
   trackSession();
   applyTheme(document.documentElement.getAttribute('data-theme') || localStorage.getItem('theme') || 'light');
@@ -2880,7 +3052,7 @@ function init() {
     history.pushState({}, '', '#');
   });
 
-  registerSW().then(() => initPushBtn());
+  registerSW().then(() => { initPushBtn(); refreshPushSubscription(); });
   loadVoteMap().then(() => rerenderCurrentView());
   initAutoRefresh();
   initPullToRefresh();
@@ -3038,7 +3210,9 @@ function init() {
     }
     if (overlayOpen) {
       if (e.key === 'Tab') {
-        const sheet = document.querySelector('.overlay-sheet');
+        // Trap musí mířit na sheet OTEVŘENÉ karty — querySelector('.overlay-sheet')
+        // vracel první match v DOM, což je skryté „Více" menu, a trap nefungoval.
+        const sheet = document.querySelector('#card-overlay .overlay-sheet');
         const focusable = [...sheet.querySelectorAll('button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])')];
         if (!focusable.length) return;
         const first = focusable[0];
@@ -3065,12 +3239,23 @@ function init() {
   });
 
   window.addEventListener('popstate', () => {
-    if (!$('card-overlay').classList.contains('hidden')) {
-      closeCard();
+    const cardOverlayOpen = !$('card-overlay').classList.contains('hidden');
+
+    // Zpět z otevřené karty: jen uklidit overlay, view pod ním se nemění,
+    // takže se nesmí re-renderovat (rozbilo by obnovený scroll).
+    if (cardOverlayOpen && !location.hash.startsWith('#card/')) {
+      closeCardUI();
+      if (!$('event-overlay').classList.contains('hidden')) hide('event-overlay');
+      return;
     }
+
     if (!$('event-overlay').classList.contains('hidden')) {
       hide('event-overlay');
     }
+
+    // Zpět/vpřed mezi views: srovnat view s adresou. Dřív se URL změnila,
+    // ale view zůstalo — hardwarové zpět na Androidu tak rozjelo stav.
+    handleHash();
   });
 
   if (window.visualViewport) {
