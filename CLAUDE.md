@@ -4,7 +4,7 @@ Statický web portál pro komunitu Master the Flow. Denní digest WhatsApp disku
 
 - **URL (prod):** https://master-the-flow-portal.pages.dev (+ vlastní doména podle nastavení)
 - **Repozitář:** https://github.com/danielgamrotcz/master-the-flow-portal
-- **Hosting:** Cloudflare Pages (auto-deploy při push na main)
+- **Hosting:** Cloudflare Pages. POZOR: projekt NENÍ napojený na GitHub — `git push` sám o sobě NEnasazuje. Deploy je vždy ruční: `npx wrangler pages deploy . --project-name master-the-flow-portal --branch main --commit-dirty=false` (denní pipeline to dělá sama přes `wrangler_deploy()` v portal_cards.py)
 - **Data:** JSON soubory v `/data/` — commitovány automaticky skriptem
 
 ## Konvence
@@ -32,7 +32,7 @@ master-the-flow-portal/
 05:00  launchd → weekly_summary.py   Týdenní souhrn (jen pondělí)
 05:15  launchd → portal_cards.py     MD → JSON karty → git push
   ↓
-Cloudflare Pages auto-deploy (<60s)
+portal_cards.py → wrangler_deploy()   ruční deploy na Cloudflare Pages
 ```
 
 Generátor karet: `/Users/danielgamrot/Projects/whatsapp-export/scripts/portal_cards.py`
