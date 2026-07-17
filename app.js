@@ -949,29 +949,40 @@ function searchNorm(s) {
   return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
 }
 
+// Jeden request místo ~110: agregovaný cards-index.json z pipeline (vždy plná
+// regenerace kvůli PII scrubu). Fallback na per-file archiv, kdyby index
+// chyběl nebo byl prázdný.
+async function fetchAllCards() {
+  try {
+    const idx = await fetchJSON('/data/cards-index.json');
+    if (Array.isArray(idx.cards) && idx.cards.length > 0) return idx.cards;
+  } catch { /* fallback níže */ }
+  const index = await fetchJSON('/data/archive.json');
+  const allCards = [];
+  await Promise.all(
+    (index.dates || []).map(async entry => {
+      const d = typeof entry === 'string' ? entry : entry.date;
+      try {
+        let data = state.archiveCache[d];
+        if (!data) {
+          data = await fetchJSON(`/data/archive/${d}.json`);
+          state.archiveCache[d] = data;
+        }
+        (data.cards || []).forEach(c => allCards.push({ ...c, date: c.date || d }));
+        if (data.resurfacing) allCards.push({ ...data.resurfacing, date: d });
+      } catch { /* skip bad days */ }
+    })
+  );
+  return allCards;
+}
+
 async function initSearch() {
   if (state.searchIndex) return;
   show('loading-search');
   hide('search-hint');
 
   try {
-    const index = await fetchJSON('/data/archive.json');
-    const allCards = [];
-
-    await Promise.all(
-      (index.dates || []).map(async entry => {
-        const d = typeof entry === 'string' ? entry : entry.date;
-        try {
-          let data = state.archiveCache[d];
-          if (!data) {
-            data = await fetchJSON(`/data/archive/${d}.json`);
-            state.archiveCache[d] = data;
-          }
-          (data.cards || []).forEach(c => allCards.push({ ...c, date: c.date || d }));
-          if (data.resurfacing) allCards.push({ ...data.resurfacing, date: d });
-        } catch { /* skip bad days */ }
-      })
-    );
+    const allCards = await fetchAllCards();
 
     const seen = new Set();
     const deduped = allCards.filter(c => {
@@ -2020,19 +2031,7 @@ function getSimilarCards(card, n = 3) {
 /* ===== RANDOM CARD ===== */
 async function ensureSearchAll() {
   if (state.searchAll.length > 0) return;
-  await loadArchiveIndex();
-  const allCards = [];
-  await Promise.all(
-    (state.archiveIndex?.dates || []).map(async entry => {
-      const d = typeof entry === 'string' ? entry : entry.date;
-      try {
-        let data = state.archiveCache[d];
-        if (!data) { data = await fetchJSON('/data/archive/' + d + '.json'); state.archiveCache[d] = data; }
-        (data.cards || []).forEach(c => allCards.push({ ...c, date: c.date || d }));
-        if (data.resurfacing) allCards.push({ ...data.resurfacing, date: d });
-      } catch {}
-    })
-  );
+  const allCards = await fetchAllCards();
   const seen = new Set();
   state.searchAll = allCards.filter(c => {
     if (!c.id || seen.has(c.id)) return false;

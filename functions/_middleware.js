@@ -13,6 +13,7 @@ const BLOCKED_EXACT = new Set([
   '.dev.vars', '.env', '.gitignore', '.git', '.wrangler',
   'wrangler.toml', 'wrangler.json', 'wrangler.jsonc',
   'package.json', 'package-lock.json',
+  'tests',
 ]);
 // …nebo odpovídá jednomu z těchto vzorů (přípony / prefixy).
 const BLOCKED_PATTERN = /^(\.env(\..+)?|\.dev\.vars|.+\.(md|sql))$/i;

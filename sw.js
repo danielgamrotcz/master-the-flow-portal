@@ -71,6 +71,7 @@ self.addEventListener('fetch', e => {
 
   // today.json, archive index, events, notification — network-first, fall back to cache
   if (url.pathname === '/data/today.json' || url.pathname === '/data/archive.json'
+      || url.pathname === '/data/cards-index.json'
       || url.pathname === '/data/events.json' || url.pathname === '/data/notification.json') {
     e.respondWith(
       fetch(e.request)
