@@ -14,12 +14,61 @@ function storeAuth(token, expires) {
   localStorage.setItem('mtf_auth', JSON.stringify({ token, expires }));
 }
 
+// Magic link: ?k=KÓD v odkazu odemkne portál bez přepisování kódu z WhatsAppu.
+// Parametr se z adresy odstraní hned po přečtení (nešíří se dál historií ani
+// sdílením), kód do odkazů vkládá výhradně shareCard() — nikdy ruční psaní.
+function readMagicKey() {
+  try {
+    const params = new URLSearchParams(location.search);
+    const k = params.get('k');
+    if (!k) return null;
+    params.delete('k');
+    const qs = params.toString();
+    history.replaceState(history.state, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+    return /^[\w-]{1,40}$/.test(k) ? k : null;
+  } catch { return null; }
+}
+
+async function tryMagicUnlock(code) {
+  try {
+    const res = await fetch('/api/auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ code }),
+    });
+    if (!res.ok) return false;
+    const { token, expires } = await res.json();
+    storeAuth(token, expires);
+    try { localStorage.setItem('mtf_code', code.trim()); } catch {}
+    document.documentElement.classList.add('auth-ok');
+    trackEvent('gate_passed', { method: 'magic' });
+    return true;
+  } catch { return false; }
+}
+
 function initGate() {
   if (isAuthenticated()) return;
 
   const gate = document.getElementById('gate');
   gate.classList.remove('hidden');
   trackEvent('gate_shown', {});
+
+  // Kdo přišel deep linkem na kartu, vidí nad formulářem, co ho za bránou
+  // čeká — zeď s kódem bez kontextu byla hlavní ztrátové místo funnelu.
+  (async () => {
+    const m = location.hash.match(/^#card\/((\d{4}-\d{2}-\d{2})-\d{2})$/);
+    if (!m) return;
+    try {
+      const d = await fetchJSON(`/data/archive/${m[2]}.json`);
+      const card = (d.cards || []).find(c => c.id === m[1])
+        || (d.resurfacing && d.resurfacing.id === m[1] ? d.resurfacing : null);
+      if (card && card.title) {
+        const teaser = document.getElementById('gate-card-teaser');
+        teaser.textContent = 'Za bránou na vás čeká: „' + card.title + '“';
+        teaser.classList.remove('hidden');
+      }
+    } catch {}
+  })();
 
   const input = document.getElementById('gate-input');
   const btn = document.getElementById('gate-submit');
@@ -42,10 +91,12 @@ function initGate() {
       if (res.ok) {
         const { token, expires } = await res.json();
         storeAuth(token, expires);
+        // Kód se pamatuje kvůli magic linkům ve sdílených odkazech (shareCard).
+        try { localStorage.setItem('mtf_code', code); } catch {}
         document.documentElement.classList.add('auth-ok');
         gate.classList.add('hidden');
         input.value = '';
-        trackEvent('gate_passed', {});
+        trackEvent('gate_passed', { method: 'code' });
       } else {
         err.textContent = 'Nesprávný kód. Zkuste to znovu.';
         input.value = '';
@@ -206,6 +257,11 @@ function trackSession() {
   const prev = localStorage.getItem('mtf_last_visit');
   if (prev !== today) {
     localStorage.setItem('mtf_last_visit', today);
+    // Čítač návštěvních dní řídí push primer (ukázat až od 2. dne).
+    try {
+      const days = parseInt(localStorage.getItem('mtf_visit_days') || '0', 10);
+      localStorage.setItem('mtf_visit_days', String(days + 1));
+    } catch {}
     let isNew = false;
     try {
       if (!localStorage.getItem('mtf_visitor')) {
@@ -228,7 +284,7 @@ function trackSession() {
 
 /* ===== TOPIC COLORS ===== */
 const TYPE_COLORS = {
-  'INSIGHT': '#f06a15',
+  'INSIGHT': 'var(--accent)', /* sleduje theme — light má tmavší oranžovou kvůli kontrastu */
   'NÁSTROJE': '#3b82f6',
   'UKÁZKA': '#10b981',
   'TIP': '#06b6d4',
@@ -551,11 +607,11 @@ async function loadToday() {
 
     // Resurfacing karta se denně generuje v pipeline — zobrazit ji, i když
     // dřív obě render místa předávala null a sekce „Z archivu" byla mrtvá.
-    if ((data.cards || []).length > 0 || data.resurfacing) {
-      renderCards(data.cards || [], 'cards-today', data.resurfacing || null);
+    if ((data.cards || []).length > 0) {
+      renderCards(data.cards, 'cards-today', data.resurfacing || null);
     } else {
-      $('cards-today').innerHTML =
-        '<div class="empty-state"><p>Ze včerejška nejsou žádné poznatky.</p></div>';
+      // Klidný den (0 karet, ~12 % dní): místo mrtvého konce výběr z archivu.
+      renderQuietDay(data);
     }
     updatePageTitle();
     renderEventTeaser();
@@ -572,6 +628,48 @@ async function loadToday() {
     }
     show('empty-today');
   }
+}
+
+// Klidný den: 0 nových karet. Místo prázdné stránky resurfacing karta
+// + pár nepřečtených kousků z archivu (starších 14 dní, isRead filtr),
+// ať klik z notifikace nikdy nekončí ve zdi. Fallback: prostý empty state.
+async function renderQuietDay(data) {
+  const container = $('cards-today');
+  const note = '<div class="quiet-day-note">Klidný den, žádné nové diskuze. Mezitím pár poznatků, které možná unikly.</div>';
+  let html = '';
+
+  if (data.resurfacing && (state.topic === 'all' || getTopics(data.resurfacing).includes(state.topic))) {
+    html += '<div class="section-header">Z\u00A0archivu</div>';
+    html += renderCardEl(data.resurfacing, true);
+  }
+
+  try {
+    await ensureSearchAll();
+    const cutoff = Date.now() - 14 * 86400000;
+    const resId = data.resurfacing && data.resurfacing.id;
+    const pool = state.searchAll.filter(c =>
+      c.id !== resId &&
+      !isRead(c.id) &&
+      new Date(c.source_date || c.date || 0).getTime() < cutoff
+    );
+    // náhodný výběr 3 karet — pokaždé jiné, ať se klidné dny neokoukají
+    for (let i = pool.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [pool[i], pool[j]] = [pool[j], pool[i]];
+    }
+    const picks = pool.slice(0, 3);
+    if (picks.length) {
+      html += '<div class="section-header">Co jste možná minuli</div>';
+      html += picks.map(c => renderCardEl(c)).join('');
+    }
+  } catch { /* archiv nedostupný — zůstane resurfacing / empty */ }
+
+  if (!html) {
+    container.innerHTML = '<div class="empty-state"><p>Ze\u00A0včerejška nejsou žádné poznatky.</p></div>';
+    return;
+  }
+  container.innerHTML = note + html;
+  attachCardListeners(container);
 }
 
 function _setNavLabel(label) {
@@ -1666,12 +1764,46 @@ async function refreshPushSubscription() {
   } catch { /* offline nebo rate limit — zkusí se příště */ }
 }
 
+// iOS Safari mimo nainstalovanou PWA nemá PushManager — zvoneček se dřív
+// skryl a členi na iPhonu se o notifikacích neměli jak dozvědět. Teď se
+// zvoneček ukáže a otevře instruktáž „Přidat na plochu".
+function isIOS() {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent)
+    || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+}
+function isStandalone() {
+  return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches)
+    || navigator.standalone === true;
+}
+function openIosPushSheet() { show('ios-push-sheet'); }
+function closeIosPushSheet() { hide('ios-push-sheet'); }
+
+async function enablePushFlow(btn) {
+  const reg = await navigator.serviceWorker.ready.catch(() => null);
+  if (!reg) { showToast('Nepodařilo se změnit nastavení'); return false; }
+  const perm = await Notification.requestPermission();
+  if (perm !== 'granted') { showToast('Přístup k notifikacím zamítnut'); return false; }
+  await subscribePush();
+  if (btn) setPushBtnState(btn, true);
+  showToast('Notifikace zapnuty');
+  return true;
+}
+
 async function initPushBtn() {
   const btn = $('btn-bell');
-  if (!btn || !('PushManager' in window) || !('serviceWorker' in navigator)) {
-    if (btn) btn.style.display = 'none';
+  if (!btn) return;
+
+  // iOS bez instalace: zvoneček vede na instruktáž místo skrytí.
+  if (!('PushManager' in window) || !('serviceWorker' in navigator)) {
+    if (isIOS() && !isStandalone()) {
+      btn.setAttribute('title', 'Zapnout notifikace');
+      btn.addEventListener('click', openIosPushSheet);
+      return;
+    }
+    btn.style.display = 'none';
     return;
   }
+
   const reg = await navigator.serviceWorker.ready.catch(() => null);
   if (!reg) { btn.style.display = 'none'; return; }
   const sub = await reg.pushManager.getSubscription();
@@ -1683,13 +1815,50 @@ async function initPushBtn() {
       if (current) {
         await unsubscribePush(); setPushBtnState(btn, false); showToast('Notifikace vypnuty');
       } else {
-        const perm = await Notification.requestPermission();
-        if (perm !== 'granted') { showToast('Přístup k notifikacím zamítnut'); return; }
-        await subscribePush(); setPushBtnState(btn, true); showToast('Notifikace zapnuty');
+        const ok = await enablePushFlow(btn);
+        if (ok) hidePushPrimer(true);
       }
     } catch { showToast('Nepodařilo se změnit nastavení'); }
     finally { btn.disabled = false; }
   });
+}
+
+/* ===== PUSH PRIMER =====
+   Kontextová nabídka notifikací po 2.+ návštěvním dni — studený zvoneček
+   v rohu si nikdo nevšimne (audit: 2 odběratelé z 540). Zobrazí se jen do
+   rozhodnutí, „Teď ne" ho zavře natrvalo. */
+function hidePushPrimer(permanently) {
+  hide('push-primer');
+  if (permanently) { try { localStorage.setItem('mtf_push_primer_done', '1'); } catch {} }
+}
+
+async function initPushPrimer() {
+  try {
+    if (!isAuthenticated()) return;
+    if (localStorage.getItem('mtf_push_primer_done') === '1') return;
+    const visitDays = parseInt(localStorage.getItem('mtf_visit_days') || '0', 10);
+    if (visitDays < 2) return;
+
+    const iosNeedsInstall = isIOS() && !isStandalone() && !('PushManager' in window);
+    if (!iosNeedsInstall) {
+      if (!('PushManager' in window) || !('serviceWorker' in navigator)) return;
+      if (Notification.permission === 'denied') return;
+      const reg = await navigator.serviceWorker.ready.catch(() => null);
+      if (!reg) return;
+      if (await reg.pushManager.getSubscription()) {
+        hidePushPrimer(true);
+        return;
+      }
+    }
+
+    show('push-primer');
+    $('push-primer-on').addEventListener('click', async () => {
+      if (iosNeedsInstall) { openIosPushSheet(); hidePushPrimer(true); return; }
+      const ok = await enablePushFlow($('btn-bell'));
+      hidePushPrimer(ok);
+    });
+    $('push-primer-off').addEventListener('click', () => hidePushPrimer(true));
+  } catch { /* primer je bonus, nikdy nesmí shodit init */ }
 }
 function setPushBtnState(btn, active) {
   btn.classList.toggle('bell-active', active);
@@ -2534,8 +2703,14 @@ async function shareCard() {
 
   trackEvent('share', { id: card.id });
 
-  // /card/ID místo #card/ID — server (Pages Function) dodá náhled při sdílení
-  const url = `${location.origin}/card/${card.id}`;
+  // /card/ID místo #card/ID — server (Pages Function) dodá náhled při sdílení.
+  // Magic link (?k=): příjemce se dostane rovnou na kartu bez přepisování kódu.
+  let magic = '';
+  try {
+    const code = localStorage.getItem('mtf_code');
+    if (code && /^[\w-]{1,40}$/.test(code)) magic = `?k=${encodeURIComponent(code)}`;
+  } catch {}
+  const url = `${location.origin}/card/${card.id}${magic}`;
   const text = `${card.title} — z komunity Master the Flow`;
 
   if (navigator.share) {
@@ -3042,7 +3217,14 @@ function init() {
 
   resetStaleVotesOnce();
   readVisitSource();
-  initGate();
+  // Magic link se zkouší před gate, ať člověk s platným odkazem bránu nikdy
+  // neuvidí. Při neúspěchu (starý kód po rotaci) se gate ukáže normálně.
+  const magicKey = readMagicKey();
+  if (magicKey && !isAuthenticated()) {
+    tryMagicUnlock(magicKey).finally(() => initGate());
+  } else {
+    initGate();
+  }
   trackSession();
   applyTheme(document.documentElement.getAttribute('data-theme') || localStorage.getItem('theme') || 'light');
   document.getElementById('btn-theme').addEventListener('click', toggleTheme);
@@ -3052,7 +3234,9 @@ function init() {
     history.pushState({}, '', '#');
   });
 
-  registerSW().then(() => { initPushBtn(); refreshPushSubscription(); });
+  registerSW().then(() => { initPushBtn(); refreshPushSubscription(); initPushPrimer(); });
+  $('ios-push-close')?.addEventListener('click', closeIosPushSheet);
+  $('ios-push-backdrop')?.addEventListener('click', closeIosPushSheet);
   loadVoteMap().then(() => rerenderCurrentView());
   initAutoRefresh();
   initPullToRefresh();

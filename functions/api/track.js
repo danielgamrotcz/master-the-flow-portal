@@ -161,6 +161,10 @@ export async function onRequestPost({ request, env }) {
       if (dailyField || hour !== null) {
         writes.push(kv_update(env.MTF_DATA, `analytics:daily:${date}`, obj => {
           if (dailyField) obj[dailyField] = (obj[dailyField] || 0) + 1;
+          // Kolik průchodů bránou obstaral magic link (?k= v odkazu).
+          if (event === 'gate_passed' && data.method === 'magic') {
+            obj.gate_magic = (obj.gate_magic || 0) + 1;
+          }
           // session_visit nese návštěvnický kontext: nový vs. vracející se
           // (bucket podle odstupu) a zdroj návštěvy (?src= atribuce).
           if (event === 'session_visit') {

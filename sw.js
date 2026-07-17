@@ -92,10 +92,13 @@ function pocetPoznatku(n) {
 }
 
 // Notifikace z digestu (today.json) — titulek = počet, text = výčet karet.
+// Deep link vede na první kartu (s ?src=push atribucí), ne jen na homepage.
+// Klidný den (0 karet): poctivě označit „Z archivu", ať push neslibuje
+// novinky, které tam nejsou — to je nejrychlejší cesta k vypnutí notifikací.
 async function digestNotification() {
   let title = 'Master the Flow';
   let body = 'Mrkněte, co je v komunitě nového.';
-  let url = '/';
+  let url = '/?src=push';
   try {
     const r = await fetch('/data/today.json');
     const data = r.ok ? await r.json() : null;
@@ -105,6 +108,11 @@ async function digestNotification() {
       const titles = cards.map(c => c.title).filter(Boolean);
       const shown = titles.slice(0, 6);
       body = shown.join(' · ') + (titles.length > shown.length ? ' a další' : '');
+      if (cards[0].id) url = '/?src=push#card/' + cards[0].id;
+    } else if (data?.resurfacing?.title) {
+      title = 'Z archivu';
+      body = data.resurfacing.title;
+      if (data.resurfacing.id) url = '/?src=push#card/' + data.resurfacing.id;
     }
   } catch {}
   return { title, body, tag: 'digest', url };

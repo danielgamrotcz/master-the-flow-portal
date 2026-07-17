@@ -42,7 +42,16 @@ export async function onRequestGet({ params, request }) {
     } catch { /* fallback zůstává */ }
   }
   const canonical = `${origin}/card/${id}`;
-  const spa = `${origin}/#card/${id}`;
+  // Magic link a atribuce: whitelistované parametry (k, src) projdou redirectem
+  // do SPA, aby auto-unlock a měření zdroje fungovaly i přes /card/ náhled.
+  const inParams = new URL(request.url).searchParams;
+  const passthrough = new URLSearchParams();
+  for (const p of ['k', 'src']) {
+    const v = inParams.get(p);
+    if (v && /^[\w-]{1,40}$/.test(v)) passthrough.set(p, v);
+  }
+  const qs = passthrough.toString();
+  const spa = `${origin}/${qs ? '?' + qs : ''}#card/${id}`;
 
   const html = `<!DOCTYPE html>
 <html lang="cs">

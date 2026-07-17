@@ -42,7 +42,11 @@
   --bg-active: #2c2c2c;
 }
 
-/* ===== LIGHT THEME ===== */
+/* ===== LIGHT THEME =====
+   Kontrast (WCAG AA, audit 2026-07-17): #f06a15 má na světlém pozadí jen
+   ~2,8:1, proto light přepisuje --accent na tmavší #b4500c (4,7:1 jako text,
+   5,1:1 pod bílým textem). Dark si drží plnou brand oranžovou.
+   --text-tertiary #888 měl 3,2:1 → #666 (5,2:1). */
 [data-theme="light"] {
   color-scheme: light;
   --bg: #f4f4f4;
@@ -52,7 +56,9 @@
   --bg-overlay: rgba(0, 0, 0, 0.45);
   --text-primary: #111;
   --text-secondary: #444;
-  --text-tertiary: #888;
+  --text-tertiary: #666;
+  --accent: #b4500c;
+  --accent-hover: #9a4409;
   --accent-dim: rgba(240, 106, 21, 0.12);
   --border: #e0e0e0;
   --border-hover: #c8c8c8;
@@ -633,6 +639,66 @@ a:hover { text-decoration: underline; }
   color: var(--text-secondary);
   padding: 8px 4px 12px;
 }
+
+.quiet-day-note {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding: 4px 4px 14px;
+}
+
+/* ===== PUSH PRIMER ===== */
+.push-primer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+.push-primer-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin: 0;
+  flex: 1 1 220px;
+}
+.push-primer-actions { display: flex; gap: 8px; flex-shrink: 0; }
+.push-primer-btn {
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
+}
+.push-primer-btn:hover { color: var(--text-primary); border-color: var(--border-hover); }
+.push-primer-btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.push-primer-btn--primary:hover { background: var(--accent); opacity: 0.9; color: #fff; }
+
+/* ===== iOS PUSH SHEET ===== */
+.ios-push-body { padding: 8px 20px 24px; }
+.ios-push-title { font-size: 18px; font-weight: 600; margin: 0 0 8px; }
+.ios-push-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.5; margin: 0 0 14px; }
+.ios-push-steps {
+  margin: 0 0 18px;
+  padding-left: 22px;
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+.ios-push-close-btn { width: 100%; }
 
 /* Jen pro čtečky obrazovky — vizuálně skryté, ale oznamované. */
 .sr-only {
@@ -1410,6 +1476,28 @@ body.lightbox-open { overflow: hidden; }
   line-height: 1.5;
 }
 
+/* Teaser karty, kvůli které návštěvník kliknul — kontext nad formulářem. */
+.gate-card-teaser {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.gate-community {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  text-align: center;
+  margin-top: 6px;
+}
+.gate-community a { color: var(--accent); text-decoration: none; }
+.gate-community a:hover { text-decoration: underline; }
+
 /* ===== WEEK VIEW ===== */
 
 /* ===== STATS ===== */
@@ -1530,6 +1618,8 @@ body.lightbox-open { overflow: hidden; }
 .cal-day-i1 { background: rgba(240,106,21,0.25); color: var(--accent); }
 .cal-day-i2 { background: rgba(240,106,21,0.6); color: #fff; }
 .cal-day-i3 { background: var(--accent); color: #fff; }
+/* Světlý režim: bílá na 60% oranžové měla 2,08:1 — nejhorší kontrast auditu. */
+[data-theme="light"] .cal-day-i2 { color: #4a2000; }
 
 .stats-loading {
   font-size: 13px;

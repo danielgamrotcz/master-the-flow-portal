@@ -1,5 +1,7 @@
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
-const TOKEN_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
+// 90 dní: kratší TTL nutilo členy přepisovat kód z WhatsAppu každý měsíc,
+// což je největší tření vstupu (audit 2026-07-17, gate jako díra ve funnelu).
+const TOKEN_TTL_MS = 90 * 24 * 60 * 60 * 1000;
 
 function corsHeaders(origin) {
   const allowed = origin && (origin === SITE_ORIGIN || /^http:\/\/localhost(:\d+)?$/.test(origin));
@@ -38,7 +40,7 @@ async function generateToken(secret, env) {
   const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(payload));
   const sigHex = Array.from(new Uint8Array(sig)).map(b => b.toString(16).padStart(2, '0')).join('');
   if (env?.MTF_DATA) {
-    await env.MTF_DATA.put('token:' + nonce, '1', { expirationTtl: 30 * 86400 });
+    await env.MTF_DATA.put('token:' + nonce, '1', { expirationTtl: 90 * 86400 });
   }
   return payload + ':' + sigHex;
 }

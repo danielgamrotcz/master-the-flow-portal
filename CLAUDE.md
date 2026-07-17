@@ -33,6 +33,8 @@ master-the-flow-portal/
 05:15  launchd → portal_cards.py     MD → JSON karty → git push
   ↓
 portal_cards.py → wrangler_deploy()   ruční deploy na Cloudflare Pages
+07:30  launchd → push_notify.py      push notifikace (cz.gamrot.portal-push;
+                                     odděleně od generování — push v 5:15 budil)
 ```
 
 Generátor karet: `/Users/danielgamrot/Projects/whatsapp-export/scripts/portal_cards.py`

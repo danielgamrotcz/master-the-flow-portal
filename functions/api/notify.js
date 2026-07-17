@@ -67,24 +67,31 @@ export async function onRequestPost({ request, env }) {
   const list = await env.MTF_DATA.list({ prefix: 'sub_' });
   let sent = 0, failed = 0;
 
-  await Promise.all(list.keys.map(async ({ name }) => {
-    try {
-      const raw = await env.MTF_DATA.get(name);
-      if (!raw) return;
-      const sub = JSON.parse(raw);
-      const status = await sendPush(sub, privateKey, vapidPub, vapidSubject);
-      if (status === 410 || status === 404) {
-        // Odběr zanikl — smazat.
-        await env.MTF_DATA.delete(name);
-        failed++;
-      } else if (status >= 200 && status < 300) {
-        sent++;
-      } else {
-        // 403 (špatný VAPID), 400 atd. — neúspěch, odběr ale nemazat.
-        failed++;
-      }
-    } catch { failed++; }
-  }));
+  // Dávky po 40 místo Promise.all přes všechno: Workers mají limit
+  // souběžných subrequestů, při stovkách odběrů by hromadné odeslání
+  // spadlo na limitu a část pushů by tiše nedošla.
+  const BATCH = 40;
+  for (let i = 0; i < list.keys.length; i += BATCH) {
+    const batch = list.keys.slice(i, i + BATCH);
+    await Promise.all(batch.map(async ({ name }) => {
+      try {
+        const raw = await env.MTF_DATA.get(name);
+        if (!raw) return;
+        const sub = JSON.parse(raw);
+        const status = await sendPush(sub, privateKey, vapidPub, vapidSubject);
+        if (status === 410 || status === 404) {
+          // Odběr zanikl — smazat.
+          await env.MTF_DATA.delete(name);
+          failed++;
+        } else if (status >= 200 && status < 300) {
+          sent++;
+        } else {
+          // 403 (špatný VAPID), 400 atd. — neúspěch, odběr ale nemazat.
+          failed++;
+        }
+      } catch { failed++; }
+    }));
+  }
 
   return Response.json({ sent, failed, total: list.keys.length });
 }

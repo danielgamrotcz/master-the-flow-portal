@@ -16,7 +16,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preload" href="fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/IBMPlexSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/data/today.json" as="fetch">
+  <link rel="preload" href="/data/today.json" as="fetch" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <script>(function(){var saved=localStorage.getItem('theme');var t=saved||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='light'?'#f4f4f4':'#0f0f0f');try{var a=localStorage.getItem('mtf_auth');if(a&&Date.now()<JSON.parse(a).expires)document.documentElement.classList.add('auth-ok');}catch(e){}})()</script>
 </head>
@@ -26,7 +26,8 @@
   <div id="gate" class="hidden">
     <div class="gate-inner">
       <div class="gate-title">Master&nbsp;the&nbsp;<span class="gate-accent">Flow</span></div>
-      <p class="gate-desc">Portál je&nbsp;přístupný členům komunity. Přístupový kód najdete ve&nbsp;WhatsApp skupině.</p>
+      <div id="gate-card-teaser" class="gate-card-teaser hidden"></div>
+      <p class="gate-desc">Portál je&nbsp;přístupný členům komunity. Přístupový kód najdete v&nbsp;připnuté zprávě WhatsApp skupiny.</p>
       <div class="gate-form">
         <input id="gate-input" class="gate-input" type="text" inputmode="text"
           autocomplete="off" autocorrect="off" spellcheck="false"
@@ -34,7 +35,8 @@
         <button id="gate-submit" class="gate-btn">Vstoupit</button>
         <div id="gate-error" class="gate-error" role="alert"></div>
       </div>
-      <p class="gate-hint">Přístup zůstane uložen&nbsp;30&nbsp;dní.</p>
+      <p class="gate-hint">Přístup zůstane uložen&nbsp;90&nbsp;dní.</p>
+      <p class="gate-community">Ještě nejste v&nbsp;komunitě? <a href="https://danielgamrot.cz/komunita/" rel="noopener">Je&nbsp;zdarma.</a></p>
     </div>
   </div>
 
@@ -86,6 +88,13 @@
     <main id="main-content">
 
       <div id="view-today" class="view">
+        <div id="push-primer" class="push-primer hidden">
+          <p class="push-primer-text">Ať&nbsp;vám nový digest neuteče. Jedna tichá notifikace ráno, nic&nbsp;víc.</p>
+          <div class="push-primer-actions">
+            <button id="push-primer-on" class="push-primer-btn push-primer-btn--primary">Zapnout</button>
+            <button id="push-primer-off" class="push-primer-btn">Teď&nbsp;ne</button>
+          </div>
+        </div>
         <div id="event-teaser" class="event-teaser hidden"></div>
         <div id="cards-today" class="cards-grid">
           <div class="card card-skeleton" aria-hidden="true"><div class="card-meta"><div class="sk sk-meta-md"></div></div><div class="sk sk-title"></div><div class="sk sk-line"></div><div class="sk sk-line sk-short"></div></div>
@@ -392,6 +401,24 @@
     <div class="lightbox-footer">
       <div id="lightbox-counter" class="lightbox-counter"></div>
       <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- iOS: notifikace fungují jen v appce přidané na plochu — instruktáž. -->
+  <div id="ios-push-sheet" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="ios-push-title">
+    <div class="overlay-backdrop" id="ios-push-backdrop"></div>
+    <div class="overlay-sheet">
+      <div class="overlay-handle"></div>
+      <div class="ios-push-body">
+        <h2 id="ios-push-title" class="ios-push-title">Notifikace na&nbsp;iPhonu</h2>
+        <p class="ios-push-desc">Safari umí posílat notifikace jen z&nbsp;aplikace přidané na&nbsp;plochu. Zabere to tři kroky.</p>
+        <ol class="ios-push-steps">
+          <li>Klepněte dole na&nbsp;<strong>Sdílet</strong> (čtverec se&nbsp;šipkou nahoru).</li>
+          <li>Vyberte <strong>Přidat na&nbsp;plochu</strong>.</li>
+          <li>Otevřete Master the Flow z&nbsp;plochy a&nbsp;klepněte na&nbsp;zvoneček.</li>
+        </ol>
+        <button id="ios-push-close" class="gate-btn ios-push-close-btn">Rozumím</button>
+      </div>
     </div>
   </div>
 
