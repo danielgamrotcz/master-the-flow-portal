@@ -1144,6 +1144,18 @@
         "Automatizace",
         "Claude Code"
       ]
+    },
+    {
+      "date": "2026-07-16",
+      "card_count": 3,
+      "topics": [
+        "Automatizace",
+        "Workflow",
+        "Prompting",
+        "Databáze",
+        "Subagenti",
+        "AI nástroje"
+      ]
     }
   ]
 }
