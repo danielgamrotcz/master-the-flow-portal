@@ -1207,6 +1207,19 @@
         "Automatizace",
         "Poznámky"
       ]
+    },
+    {
+      "date": "2026-07-22",
+      "card_count": 5,
+      "topics": [
+        "Claude Code",
+        "AI nástroje",
+        "Workflow",
+        "Produktivita",
+        "Automatizace",
+        "Prompting",
+        "Vibe Coding"
+      ]
     }
   ]
 }
