@@ -1235,6 +1235,17 @@
         "Claude Code",
         "Databáze"
       ]
+    },
+    {
+      "date": "2026-07-24",
+      "card_count": 2,
+      "topics": [
+        "Vibe Coding",
+        "Automatizace",
+        "Workflow",
+        "AI nástroje",
+        "Subagenti"
+      ]
     }
   ]
 }
