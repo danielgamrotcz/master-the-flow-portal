@@ -1246,6 +1246,17 @@
         "AI nástroje",
         "Subagenti"
       ]
+    },
+    {
+      "date": "2026-07-25",
+      "card_count": 3,
+      "topics": [
+        "Workflow",
+        "Cursor",
+        "Claude Code",
+        "Vibe Coding",
+        "AI nástroje"
+      ]
     }
   ]
 }
