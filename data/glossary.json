@@ -344,7 +344,7 @@
       "term": "Commit",
       "category": "kod",
       "short": "Uložený snímek změn s popiskem, co se změnilo.",
-      "plain": "Něco jako uložit pozici ve hře. Zaznamená stav souborů v daný moment, takže se k němu dá vrátit. Ta poznámka u toho není formalita, za měsíc si bez ní nevzpomenete, co jste tenkrát dělali.",
+      "plain": "Něco jako uložit pozici ve hře. Zaznamená stav souborů v daný moment a vy se k němu můžete kdykoli vrátit. Ta poznámka u toho není formalita, za měsíc si bez ní nevzpomenete, co jste tenkrát dělali.",
       "why": null,
       "related": [
         "git",
@@ -359,7 +359,7 @@
         "commitem",
         "commitů"
       ],
-      "search": "commit ulozeny snimek zmen s popiskem, co se zmenilo. neco jako ulozit pozici ve hre. zaznamena stav souboru v dany moment, takze se k nemu da vratit. ta poznamka u toho neni formalita, za mesic si bez ni nevzpomenete, co jste tenkrat delali.  commit commitu commity commitu commitnout commitem commitu",
+      "search": "commit ulozeny snimek zmen s popiskem, co se zmenilo. neco jako ulozit pozici ve hre. zaznamena stav souboru v dany moment a vy se k nemu muzete kdykoli vratit. ta poznamka u toho neni formalita, za mesic si bez ni nevzpomenete, co jste tenkrat delali.  commit commitu commity commitu commitnout commitem commitu",
       "mentions": 16,
       "card_hits": 3,
       "days": 9,
