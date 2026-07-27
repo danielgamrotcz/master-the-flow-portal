@@ -1,3 +1,4 @@
+import { rateLimit, ipKey } from './_ratelimit.js';
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 const TOP_RATE_LIMIT = 30; // max 30 requests per minute per IP
 
@@ -13,13 +14,7 @@ function corsHeaders(origin) {
 }
 
 async function checkRateLimit(env, ip) {
-  if (!env.MTF_DATA) return false;
-  const key = 'ratelimit:top:' + ip;
-  const raw = await env.MTF_DATA.get(key);
-  const count = raw ? parseInt(raw, 10) : 0;
-  if (count >= TOP_RATE_LIMIT) return true;
-  await env.MTF_DATA.put(key, String(count + 1), { expirationTtl: 60 });
-  return false;
+  return rateLimit(env, 'top:' + ipKey(ip), TOP_RATE_LIMIT, 60);
 }
 
 export async function onRequestOptions({ request }) {

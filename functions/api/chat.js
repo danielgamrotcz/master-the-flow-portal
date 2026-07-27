@@ -1,3 +1,4 @@
+import { rateLimit, ipKey } from './_ratelimit.js';
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 const TOKEN_TTL_MS = 30 * 24 * 60 * 60 * 1000;
 const MAX_MESSAGES = 40;
@@ -48,23 +49,19 @@ async function verifyToken(token, gateCode, env) {
   } catch { return false; }
 }
 
-// Obecný denní čítač v KV. Vrací true, když je limit překročen.
+// Obecný denní čítač. Atomicky přes D1 — na KV se souběžné requesty sečetly
+// jako jeden, což u tohohle endpointu neškrtilo požadavky, ale účet za API.
 async function bumpDailyLimit(env, key, limit) {
-  if (!env.MTF_DATA) return false;
-  const raw = await env.MTF_DATA.get(key);
-  const count = raw ? parseInt(raw, 10) : 0;
-  if (count >= limit) return true;
-  await env.MTF_DATA.put(key, String(count + 1), { expirationTtl: 86400 });
-  return false;
+  return rateLimit(env, key, limit, 86400);
 }
 
 // Vrstvy ochrany proti nákladovému zneužití chatu (LLM stojí peníze):
 // per-IP, per-token a globální denní strop na celý portál (tvrdá pojistka na účet).
 async function checkChatLimits(env, ip, nonce) {
   const day = new Date().toISOString().slice(0, 10); // YYYY-MM-DD (UTC)
-  if (await bumpDailyLimit(env, 'ratelimit:chat:' + ip, CHAT_RATE_LIMIT)) return true;
-  if (nonce && await bumpDailyLimit(env, 'ratelimit:chat:tok:' + nonce, CHAT_TOKEN_LIMIT)) return true;
-  if (await bumpDailyLimit(env, 'ratelimit:chat:global:' + day, CHAT_GLOBAL_LIMIT)) return true;
+  if (await bumpDailyLimit(env, 'chat:' + ipKey(ip), CHAT_RATE_LIMIT)) return true;
+  if (nonce && await bumpDailyLimit(env, 'chat:tok:' + nonce, CHAT_TOKEN_LIMIT)) return true;
+  if (await bumpDailyLimit(env, 'chat:global:' + day, CHAT_GLOBAL_LIMIT)) return true;
   return false;
 }
 

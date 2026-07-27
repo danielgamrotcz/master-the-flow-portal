@@ -1,3 +1,4 @@
+import { rateLimit, ipKey } from './_ratelimit.js';
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 // 90 dní: kratší TTL nutilo členy přepisovat kód z WhatsAppu každý měsíc,
 // což je největší tření vstupu (audit 2026-07-17, gate jako díra ve funnelu).
@@ -51,13 +52,9 @@ export async function onRequestOptions({ request }) {
 }
 
 async function checkRateLimit(env, ip) {
-  if (!env.MTF_DATA) return false;
-  const key = 'ratelimit:auth:' + ip;
-  const raw = await env.MTF_DATA.get(key);
-  const attempts = raw ? parseInt(raw, 10) : 0;
-  if (attempts >= 10) return true; // 10 attempts per 15 min window
-  await env.MTF_DATA.put(key, String(attempts + 1), { expirationTtl: 900 });
-  return false;
+  // 10 pokusů na 15 minut. Atomicky přes D1 — KV tenhle limit pod souběhem
+  // vůbec nezapojilo (audit 27. 7. 2026).
+  return rateLimit(env, 'auth:' + ipKey(ip), 10, 900);
 }
 
 export async function onRequestPost({ request, env }) {

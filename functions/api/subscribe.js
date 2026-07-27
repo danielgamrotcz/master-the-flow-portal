@@ -1,3 +1,4 @@
+import { rateLimit, ipKey } from './_ratelimit.js';
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 const SUB_RATE_LIMIT = 5; // max subscriptions per IP per hour
 const SUB_GLOBAL_CAP = 500; // hard cap on total stored subscriptions
@@ -12,13 +13,7 @@ async function endpointHash(endpoint) {
 }
 
 async function checkSubRateLimit(env, ip) {
-  if (!env.MTF_DATA) return false;
-  const key = 'ratelimit:sub:' + ip;
-  const raw = await env.MTF_DATA.get(key);
-  const count = raw ? parseInt(raw, 10) : 0;
-  if (count >= SUB_RATE_LIMIT) return true;
-  await env.MTF_DATA.put(key, String(count + 1), { expirationTtl: 3600 });
-  return false;
+  return rateLimit(env, 'sub:' + ipKey(ip), SUB_RATE_LIMIT, 3600);
 }
 
 function corsHeaders(origin) {

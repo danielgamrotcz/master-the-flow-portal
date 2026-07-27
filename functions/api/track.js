@@ -1,14 +1,10 @@
+import { rateLimit, ipKey } from './_ratelimit.js';
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 const CARD_ID_RE = /^[a-zA-Z0-9_-]{1,80}$/;
 
 async function checkTrackRateLimit(env, ip) {
-  if (!env.MTF_DATA) return false;
-  const key = 'ratelimit:track:' + ip;
-  const raw = await env.MTF_DATA.get(key);
-  const count = raw ? parseInt(raw, 10) : 0;
-  if (count >= 120) return true; // max 120 events / 60s / IP — pokryje běžné používání, blokuje flood
-  await env.MTF_DATA.put(key, String(count + 1), { expirationTtl: 60 });
-  return false;
+  // max 120 událostí / 60 s / IP — pokryje běžné používání, blokuje flood
+  return rateLimit(env, 'track:' + ipKey(ip), 120, 60);
 }
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const ALLOWED_EVENTS = new Set([

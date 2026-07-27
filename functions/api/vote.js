@@ -1,3 +1,4 @@
+import { rateLimit, ipKey } from './_ratelimit.js';
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 const VOTE_ID_RE = /^[a-zA-Z0-9_-]{1,80}$/;
 const RESERVED_PREFIXES = ['analytics', 'sub_', 'community_', 'voted_', 'vote_', 'v:'];
@@ -31,13 +32,8 @@ async function tokenNonce(token, gateCode, env) {
 }
 
 async function checkVoteRateLimit(env, ip) {
-  if (!env.MTF_DATA) return false;
-  const key = 'ratelimit:vote:' + ip;
-  const raw = await env.MTF_DATA.get(key);
-  const count = raw ? parseInt(raw, 10) : 0;
-  if (count >= 20) return true; // max 20 vote actions per 60s per IP
-  await env.MTF_DATA.put(key, String(count + 1), { expirationTtl: 60 });
-  return false;
+  // max 20 hlasovacích akcí za 60 s na IP
+  return rateLimit(env, 'vote:' + ipKey(ip), 20, 60);
 }
 
 function isSafeVoteId(id) {
