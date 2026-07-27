@@ -22,6 +22,26 @@
       "status": null
     },
     {
+      "id": "evt-2026-08-14-sraz-olomouc",
+      "type": "SETKÁNÍ",
+      "title": "Sraz masterflowáků v Olomouci",
+      "date": "2026-08-14",
+      "time_from": "18:00",
+      "time_to": null,
+      "location": "Olomouc",
+      "short": "Neformální sraz na Moravě. Pátek 14. srpna od 18:00, místo upřesníme později.",
+      "description": "Sraz členů z Olomouce, Přerova a okolí. Viky jede v srpnu do rodného kraje, tak se při té příležitosti sejdeme, popovídáme si a vyměníme si tipy, kdo na čem dělá. Žádný program, jen pokec dobrých lidí. Začínáme v pátek 14. srpna v 18:00, přesné místo doplníme později. Kdo by dorazil, ať dá vědět pod jejím postem ve skupině.",
+      "program": null,
+      "registration_url": null,
+      "is_paid": false,
+      "price": null,
+      "discount_code": null,
+      "detail_url": null,
+      "recording_url": null,
+      "recording_password": null,
+      "status": null
+    },
+    {
       "id": "evt-2026-07-15-second-brain",
       "type": "SHOW-AND-TELL",
       "title": "Show & Tell: Second Brain",
