@@ -1,5 +1,6 @@
 // E2E test měření: ?src= atribuce a session_visit payload
 const { chromium } = require('playwright');
+const { authenticate } = require('./_auth.js');
 let failures = 0;
 function check(name, cond, detail = '') {
   console.log(`${cond ? 'PASS' : 'FAIL'}  ${name}${cond ? '' : '  <-- ' + detail}`);
@@ -8,10 +9,8 @@ function check(name, cond, detail = '') {
 (async () => {
   const browser = await chromium.launch();
   const ctx = await browser.newContext();
+  await authenticate(ctx);
   const page = await ctx.newPage();
-  await ctx.addInitScript(() => {
-    localStorage.setItem('mtf_auth', JSON.stringify({ token: 'test', expires: Date.now() + 86400000 }));
-  });
 
   // Zachytit track requesty
   const tracked = [];
@@ -39,7 +38,8 @@ function check(name, cond, detail = '') {
   await page.waitForTimeout(800);
   check('Druhá návštěva tentýž den neposílá session_visit', !tracked.find(t => t.event === 'session_visit'));
 
-  // Gate flow: bez auth → gate_shown
+  // Gate flow: bez auth → gate_shown. Tenhle kontext zůstává schválně
+  // nepřihlášený, jinak by se brána nezobrazila a test by neměřil, co má.
   const ctx2 = await browser.newContext();
   const page2 = await ctx2.newPage();
   const tracked2 = [];

@@ -17,7 +17,10 @@ const check = (n, c, d='') => { console.log(`${c?'PASS':'FAIL'}  ${n}${c?'':'  <
   // 1. Cizí člověk BEZ auth, BEZ magic klíče → gate + teaser karty + community link
   const ctx1 = await browser.newContext();
   const page1 = await ctx1.newPage();
-  const cardId = await (await fetch('http://localhost:8788/data/today.json').then(r=>r.json())).cards[0].id;
+  // today.json je za přihlašovací cookie; id karty si vezmeme rovnou
+  // ze souboru, je to jen vstup do testu, ne testovaná věc.
+  const cardId = JSON.parse(require('fs').readFileSync(
+    require('path').join(__dirname, '..', 'data', 'today.json'), 'utf8')).cards[0].id;
   await page1.goto('http://localhost:8788/#card/' + cardId, { waitUntil: 'networkidle' });
   await page1.waitForTimeout(1200);
   check('Gate viditelný bez auth', await page1.evaluate(() => !document.getElementById('gate').classList.contains('hidden')));

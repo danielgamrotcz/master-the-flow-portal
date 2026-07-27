@@ -1,6 +1,7 @@
 // E2E test slovníčku: navigace, hledání, kategorie, detail výrazu,
 // propojení s hledáním v poznatcích a výrazy v detailu karty.
 const { chromium } = require('playwright');
+const { authenticate } = require('./_auth.js');
 let failures = 0;
 function check(name, cond, detail = '') {
   console.log(`${cond ? 'PASS' : 'FAIL'}  ${name}${cond ? '' : '  <-- ' + detail}`);
@@ -10,9 +11,7 @@ function check(name, cond, detail = '') {
 (async () => {
   const browser = await chromium.launch();
   const ctx = await browser.newContext();
-  await ctx.addInitScript(() => {
-    localStorage.setItem('mtf_auth', JSON.stringify({ token: 'test', expires: Date.now() + 86400000 }));
-  });
+  await authenticate(ctx);
   const page = await ctx.newPage();
 
   const jsErrors = [];

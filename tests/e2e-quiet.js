@@ -1,4 +1,5 @@
 const { chromium } = require('playwright');
+const { authenticate } = require('./_auth.js');
 let failures = 0;
 const check = (n, c, d='') => { console.log(`${c?'PASS':'FAIL'}  ${n}${c?'':'  <-- '+d}`); if(!c) failures++; };
 // Test si sám podvrhne 0-karet today.json a po doběhu ho vrátí.
@@ -18,10 +19,8 @@ const BACKUP = TODAY + '.e2e-backup';
 
   const browser = await chromium.launch();
   const ctx = await browser.newContext();
+  await authenticate(ctx);
   const page = await ctx.newPage();
-  await ctx.addInitScript(() => {
-    localStorage.setItem('mtf_auth', JSON.stringify({ token: 'test', expires: Date.now() + 86400000 }));
-  });
   await page.goto('http://localhost:8788/', { waitUntil: 'networkidle' });
   await page.waitForTimeout(2500); // ensureSearchAll stahuje archiv
 

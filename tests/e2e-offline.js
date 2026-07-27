@@ -1,14 +1,13 @@
 // Offline test: SW cache musí po opravě ?v= reálně servírovat data
 const { chromium } = require('playwright');
+const { authenticate } = require('./_auth.js');
 let failures = 0;
 const check = (n, c, d='') => { console.log(`${c?'PASS':'FAIL'}  ${n}${c?'':'  <-- '+d}`); if(!c) failures++; };
 (async () => {
   const browser = await chromium.launch();
   const ctx = await browser.newContext();
+  await authenticate(ctx);
   const page = await ctx.newPage();
-  await ctx.addInitScript(() => {
-    localStorage.setItem('mtf_auth', JSON.stringify({ token: 'test', expires: Date.now() + 86400000 }));
-  });
 
   // 1. online návštěva — SW se zaregistruje a nacachuje
   await page.goto('http://localhost:8788/', { waitUntil: 'networkidle' });

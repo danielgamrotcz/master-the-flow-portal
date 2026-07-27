@@ -1,5 +1,6 @@
 // E2E test fáze 1 (dávky A-C) proti wrangler pages dev na :8788
 const { chromium } = require('playwright');
+const { authenticate } = require('./_auth.js');
 
 const BASE = 'http://localhost:8788';
 let failures = 0;
@@ -11,16 +12,14 @@ function check(name, cond, detail = '') {
 (async () => {
   const browser = await chromium.launch();
   const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } }); // mobil
+  await authenticate(ctx);
   const page = await ctx.newPage();
 
   const consoleErrors = [];
   page.on('console', m => { if (m.type() === 'error') consoleErrors.push(m.text()); });
   page.on('pageerror', e => consoleErrors.push('PAGEERROR: ' + e.message));
 
-  // Obejít gate (lokální test, data JSONy nejsou za server auth)
-  await ctx.addInitScript(() => {
-    localStorage.setItem('mtf_auth', JSON.stringify({ token: 'test-token', expires: Date.now() + 86400000 }));
-  });
+  // Přihlášení řeší authenticate() výš — datové JSONy jsou za serverovou bránou.
 
   // ===== 1. Načtení + dnešek =====
   await page.goto(BASE + '/', { waitUntil: 'networkidle' });
