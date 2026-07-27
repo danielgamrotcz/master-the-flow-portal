@@ -1,3 +1,4 @@
+import { rateLimit, ipKey } from './_ratelimit.js';
 // VAPID public key is defined client-side in app.js — server derives it from the VAPID_PRIVATE JWK.
 
 function b64urlEncode(buf) {
@@ -46,9 +47,33 @@ async function sendPush(sub, privateKey, vapidPub, subject) {
   return resp.status;
 }
 
+// Stejná primitiva jako v auth.js. Porovnání přes hash má konstantní dobu
+// běhu, takže z délky odpovědi nejde odvodit, kolik znaků tajemství sedí.
+async function timingSafeEqual(a, b) {
+  const enc = new TextEncoder();
+  const [ha, hb] = await Promise.all([
+    crypto.subtle.digest('SHA-256', enc.encode(a)),
+    crypto.subtle.digest('SHA-256', enc.encode(b)),
+  ]);
+  const ba = new Uint8Array(ha), bb = new Uint8Array(hb);
+  let diff = 0;
+  for (let i = 0; i < 32; i++) diff |= ba[i] ^ bb[i];
+  return diff === 0;
+}
+
 export async function onRequestPost({ request, env }) {
+  // Legitimní volající je denní pipeline, tedy jeden request za den. Limit je
+  // tu proti hádání tajemství, ne proti provozu, a je proto schválně nízko.
+  const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+  if (await rateLimit(env, 'notify:' + ipKey(ip), 10, 3600)) {
+    return new Response('Too Many Requests', { status: 429 });
+  }
+
   const secret = request.headers.get('x-notify-secret');
-  if (!env.NOTIFY_SECRET || secret !== env.NOTIFY_SECRET) {
+  if (!env.NOTIFY_SECRET || typeof secret !== 'string') {
+    return new Response('Unauthorized', { status: 401 });
+  }
+  if (!await timingSafeEqual(secret, env.NOTIFY_SECRET)) {
     return new Response('Unauthorized', { status: 401 });
   }
 
