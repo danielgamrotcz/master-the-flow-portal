@@ -1,0 +1,1387 @@
+{
+  "_comment": "Zdroj obsahu slovníčku. Ručně psaná hesla i schválená z pipeline. Po úpravě spusť tools/build_glossary.py.",
+  "categories": [
+    {
+      "id": "ai",
+      "label": "AI a modely",
+      "hint": "Jak vlastně fungují modely, se kterými si píšete."
+    },
+    {
+      "id": "cc",
+      "label": "Claude Code a vibe coding",
+      "hint": "Slovník, kterým se tady mluví nejčastěji."
+    },
+    {
+      "id": "kod",
+      "label": "Kód a verzování",
+      "hint": "Jak se drží pořádek v tom, co vzniká."
+    },
+    {
+      "id": "web",
+      "label": "Web, servery a nasazení",
+      "hint": "Cesta od „běží mi to doma“ k „vidí to lidi“."
+    },
+    {
+      "id": "pc",
+      "label": "Práce s počítačem",
+      "hint": "Věci, které vypadají složitě, ale nejsou."
+    },
+    {
+      "id": "nastroje",
+      "label": "Nástroje z komunity",
+      "hint": "Co tady lidi reálně používají."
+    },
+    {
+      "id": "data",
+      "label": "Data a bezpečnost",
+      "hint": "Co si pohlídat, než něco pustíte ven."
+    }
+  ],
+  "terms": [
+    {
+      "slug": "llm",
+      "term": "LLM",
+      "cat": "ai",
+      "match": [
+        "LLM",
+        "LLMs"
+      ],
+      "short": "Velký jazykový model, tedy to, co pohání Claude nebo ChatGPT.",
+      "plain": "Zkratka pro large language model, česky velký jazykový model. Je to program natrénovaný na obrovském množství textu, který se naučil odhadovat, jaká slova mají následovat. Z toho odhadování vzniká všechno ostatní, odpovědi, překlady i kód.",
+      "why": "Když někdo řekne model, myslí skoro vždycky tohle. Claude, GPT i Gemini jsou LLM.",
+      "related": [
+        "model",
+        "token",
+        "halucinace"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "model",
+      "term": "Model",
+      "cat": "ai",
+      "match": [
+        "model",
+        "modelu",
+        "modely",
+        "modelů",
+        "modelem"
+      ],
+      "short": "Konkrétní verze AI, kterou zrovna používáte.",
+      "plain": "Model je konkrétní verze AI, kterou zrovna používáte. Liší se silou, rychlostí a cenou. Silnější model víc rozumí složitému zadání, ale je pomalejší a dražší, slabší je rychlý na jednoduché věci.",
+      "why": "Proto se ve skupině řeší, na co stačí slabší model a kdy sáhnout po silnějším.",
+      "related": [
+        "llm",
+        "claude-modely",
+        "token"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "token",
+      "term": "Token",
+      "cat": "ai",
+      "match": [
+        "token",
+        "tokenu",
+        "tokeny",
+        "tokenů",
+        "tokenem",
+        "tokenech"
+      ],
+      "short": "Kousky slov, na které si model dělí text. Podle nich se počítá cena i délka.",
+      "plain": "Model nečte slova, ale kousky slov, kterým se říká tokeny. Jedno české slovo bývá dva až tři tokeny, anglické často jen jeden. Proto se ve skupině občas píše, že se do stejného místa vejde víc angličtiny než češtiny.",
+      "why": "Cena i to, kolik toho model zvládne najednou, se počítá v tokenech. Kdo chápe tokeny, přestane se divit účtu.",
+      "related": [
+        "kontextove-okno",
+        "model",
+        "rate-limit"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "kontextove-okno",
+      "term": "Kontextové okno",
+      "cat": "ai",
+      "match": [
+        "kontextové okno",
+        "kontextového okna",
+        "kontextovém okně",
+        "context window"
+      ],
+      "short": "Kolik textu si model udrží najednou před očima.",
+      "plain": "Všechno, co model v jedné konverzaci vidí, se musí vejít do kontextového okna. Měří se to v tokenech. Jakmile se okno zaplní, nejstarší část konverzace se shrne nebo vypadne. Model pak zapomene, co bylo na začátku, a začne se ptát na věci, které jste mu už řekli.",
+      "why": "Tohle stojí za tím, když se dlouhé vlákno začne chovat divně. Většinou pomůže založit nové.",
+      "related": [
+        "token",
+        "kontext",
+        "session"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "kontext",
+      "term": "Kontext",
+      "cat": "ai",
+      "match": [
+        "kontext",
+        "kontextu",
+        "kontextem"
+      ],
+      "short": "Všechno, co model v danou chvíli ví o vašem zadání.",
+      "plain": "Kontext je souhrn toho, co má model po ruce. Vaše zprávy, jeho odpovědi, obsah souborů, které si přečetl, a instrukce, které dostal. Když mu naházíte všechno, co vás napadne, utopí se v tom. Míň informací, ale trefnějších, funguje líp.",
+      "why": "Odtud ta rada psát stručně. Delší zadání neznamená lepší výsledek.",
+      "related": [
+        "kontextove-okno",
+        "prompt",
+        "claude-md"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "prompt",
+      "term": "Prompt",
+      "cat": "ai",
+      "match": [
+        "prompt",
+        "promptu",
+        "prompty",
+        "promptů",
+        "promptem",
+        "promptování",
+        "promptovat"
+      ],
+      "short": "Zadání, které modelu napíšete.",
+      "plain": "Prompt je text, kterým modelu říkáte, co má udělat. Žádná kouzelná formulka v tom není. Nejlíp funguje obyčejný jasný popis toho, co chcete, pro koho to je a jak má výsledek vypadat.",
+      "why": "Většina zklamání z AI pochází z vágního zadání, ne ze slabého modelu.",
+      "related": [
+        "kontext",
+        "llm"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "halucinace",
+      "term": "Halucinace",
+      "cat": "ai",
+      "match": [
+        "halucinace",
+        "halucinaci",
+        "halucinacemi",
+        "halucinací",
+        "halucinuje"
+      ],
+      "short": "Když si model něco vymyslí a tváří se u toho stejně jistě jako když má pravdu.",
+      "plain": "Model skládá text tak, aby vypadal pravděpodobně. O pravdivosti sám nic neví. Když odpověď nezná, klidně si ji vymyslí i s čísly, jmény a odkazy. A napíše to stejně sebejistě jako věc, kterou má ověřenou.",
+      "why": "Proto se u čísel, citací a odkazů ověřuje zdroj, obzvlášť když jdou ven.",
+      "related": [
+        "llm",
+        "model"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "agent",
+      "term": "Agent",
+      "cat": "ai",
+      "match": [
+        "agent",
+        "agenta",
+        "agentem",
+        "agenti",
+        "agentů",
+        "agentické",
+        "agentický",
+        "agentic"
+      ],
+      "short": "Model, který nejen odpovídá, ale sám dělá kroky, dokud není hotovo.",
+      "plain": "Běžný chat odpoví a čeká. Agent místo toho pracuje ve smyčce, přečte soubor, spustí příkaz, podívá se na výsledek, opraví se a pokračuje. Sám se rozhoduje, jaký krok udělá další.",
+      "why": "Tohle je rozdíl mezi „poradí mi“ a „udělá to za mě“.",
+      "related": [
+        "harness",
+        "subagent",
+        "claude-code"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "subagent",
+      "term": "Subagent",
+      "cat": "ai",
+      "match": [
+        "subagent",
+        "subagenta",
+        "subagenty",
+        "subagentů",
+        "subagenti"
+      ],
+      "short": "Pomocník, kterému hlavní agent předá dílčí úkol.",
+      "plain": "Hlavní agent si může zavolat pomocné agenty a rozdělit mezi ně práci. Každý pracuje ve vlastním kontextu. Hlavnímu tím nezaplní okno vším, co cestou přečetl. Zpátky pošle jen výsledek.",
+      "why": "Používá se, když je práce moc velká na jedno vlákno.",
+      "related": [
+        "agent",
+        "kontextove-okno"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "mcp",
+      "term": "MCP",
+      "cat": "ai",
+      "match": [
+        "MCP"
+      ],
+      "short": "Standard, kterým se k modelu připojují další nástroje a zdroje dat.",
+      "plain": "Model Context Protocol je otevřený standard od Anthropicu. Funguje jako univerzální zásuvka, díky které umí model sáhnout do kalendáře, databáze nebo interního systému, aniž by to někdo musel programovat pokaždé znovu. Kdo napíše MCP server jednou, připojí ho do libovolného nástroje, který standard podporuje.",
+      "why": "Ve skupině je to jeden z nejčastějších pojmů vůbec, obvykle ve smyslu „připojil jsem si k tomu tohle“.",
+      "related": [
+        "agent",
+        "api",
+        "claude-code"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "claude-modely",
+      "term": "Modelové řady Claude",
+      "cat": "ai",
+      "match": [
+        "Opus",
+        "Sonnet",
+        "Haiku",
+        "Fable"
+      ],
+      "short": "Opus, Sonnet, Haiku a další. Liší se silou, rychlostí a cenou.",
+      "plain": "Anthropic vydává Claude ve víc řadách, jmenují se třeba Opus, Sonnet nebo Haiku. Silnější řady zvládají složitější úvahy a rozsáhlé úkoly, rychlejší jsou levnější a hodí se na jednoduchou práci ve velkém množství. Které verze jsou zrovna aktuální se v čase mění, princip zůstává.",
+      "why": "Volba řady je hlavní páka na poměr cena a kvalita.",
+      "related": [
+        "model",
+        "rate-limit"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "rate-limit",
+      "term": "Limity a rate limit",
+      "cat": "ai",
+      "match": [
+        "rate limit",
+        "limit",
+        "limity",
+        "limitů",
+        "limitu",
+        "limitem"
+      ],
+      "short": "Strop, kolik toho smíte za dané období použít.",
+      "plain": "Každý tarif má hranici, kolik práce do něj za hodinu nebo týden vejde. Když ji vyčerpáte, musíte chvíli počkat, než se limit obnoví. Silnější modely limit spotřebovávají rychleji než slabší.",
+      "why": "Odtud rady pracovat mimo špičku nebo přepnout na slabší model na rutinu.",
+      "related": [
+        "token",
+        "claude-modely"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "lokalni-model",
+      "term": "Lokální model",
+      "cat": "ai",
+      "match": [
+        "lokální model",
+        "lokálně",
+        "lokální modely",
+        "lokálního modelu"
+      ],
+      "short": "Model běžící přímo na vašem počítači místo v cloudu.",
+      "plain": "Místo posílání dotazů na internet běží model přímo u vás. Data neopustí váš stroj, takže se to hodí na citlivé věci. Zaplatíte za to výkonem, potřebujete silnější počítač a výsledky bývají slabší než u velkých cloudových modelů.",
+      "why": "Ve skupině se řeší hlavně u přepisů a u dat, která nesmí ven.",
+      "related": [
+        "whisper",
+        "gdpr",
+        "model"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "vibe-coding",
+      "term": "Vibe coding",
+      "cat": "cc",
+      "match": [
+        "vibe coding",
+        "vibe codingu",
+        "vibecoding",
+        "vibe kódování"
+      ],
+      "short": "Stavění aplikací tak, že popisujete, co chcete, a kód píše AI.",
+      "plain": "Vy říkáte, co má věc dělat, AI píše kód a vy výsledek zkoušíte a usměrňujete. Programovat umět nemusíte. Stačí umět popsat, co chcete, a poznat, kdy výsledek nesedí. Jede se po malých kouscích, protože velký skok se špatně kontroluje a chyba se v něm hůř hledá.",
+      "why": "Kolem tohohle vznikla celá komunita. Je to nejčastější pojem ve skupině vůbec.",
+      "related": [
+        "claude-code",
+        "agent",
+        "mvp"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "claude-code",
+      "term": "Claude Code",
+      "cat": "cc",
+      "match": [
+        "Claude Code",
+        "Claude Codu",
+        "ClaudeCode",
+        "CC"
+      ],
+      "short": "Claude, který běží v terminálu a sám pracuje se soubory ve vašem projektu.",
+      "plain": "Není to chat v prohlížeči. Claude Code běží u vás na počítači, vidí složku s projektem, umí soubory číst i měnit, spouštět příkazy a ověřovat si výsledek. Ve skupině se často zkracuje na CC.",
+      "why": "Většina projektů, které tady lidi ukazují, vznikla přesně tímhle.",
+      "related": [
+        "harness",
+        "claude-md",
+        "skill",
+        "terminal"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "harness",
+      "term": "Harness",
+      "cat": "cc",
+      "match": [
+        "harness",
+        "harnessu",
+        "harnessem"
+      ],
+      "short": "Obal kolem modelu, který mu teprve dá schopnosti.",
+      "plain": "Samotný model umí jedinou věc, psát text. Harness je všechno okolo, co z něj udělá použitelný nástroj. Přístup k souborům, možnost spustit příkaz, paměť a hlavně smyčka, ve které si model výsledek ověří a opraví se. Dva nástroje můžou jet na úplně stejném modelu a chovat se jinak, protože mají jiný harness.",
+      "why": "Když ve skupině padne, že něco má lepší harness, řeč není o inteligenci modelu, ale o tom, co kolem něj běží.",
+      "related": [
+        "agent",
+        "claude-code",
+        "model"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "skill",
+      "term": "Skill",
+      "cat": "cc",
+      "match": [
+        "skill",
+        "skillu",
+        "skilly",
+        "skillů",
+        "skills"
+      ],
+      "short": "Balíček instrukcí pro postup, který děláte opakovaně.",
+      "plain": "Skill je uložený návod, jak přesně nějakou práci udělat. Místo abyste popisovali postup pokaždé znovu, zavoláte ho jménem a Claude ví, co má dělat a v jakém pořadí.",
+      "why": "Typické použití je opakovaná rutina, třeba příprava podkladů nebo kontrola před vypuštěním ven.",
+      "related": [
+        "claude-code",
+        "hook",
+        "claude-md"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "hook",
+      "term": "Hook",
+      "cat": "cc",
+      "match": [
+        "hook",
+        "hooku",
+        "hooky",
+        "hooků",
+        "hooks"
+      ],
+      "short": "Automatická pojistka, která se spustí sama, bez vyžádání.",
+      "plain": "Hook je pravidlo navázané na událost. Když nastane, akce proběhne sama, i když jste na ni dávno zapomněli. Typicky se používá jako kontrola, například zablokovat uložení, když v kódu zůstal přístupový klíč.",
+      "why": "Rozdíl proti skillu je jednoduchý. Skill si zavoláte, hook se ozve sám.",
+      "related": [
+        "skill",
+        "api-klic",
+        "claude-code"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "claude-md",
+      "term": "CLAUDE.md",
+      "cat": "cc",
+      "match": [
+        "CLAUDE.md",
+        "claude.md"
+      ],
+      "short": "Soubor s instrukcemi, které si Claude Code přečte při každém spuštění.",
+      "plain": "Textový soubor uložený v projektu, do kterého si napíšete, jak se v něm má pracovat. Je to trvalá poznámka ve stylu tady to děláme takhle. Stejné věci se pak nemusí opakovat v každé konverzaci.",
+      "why": "Ve skupině se často řeší, že má být krátký. Dlouhý soubor spolyká kontext a instrukce se v něm ztratí.",
+      "related": [
+        "kontext",
+        "skill",
+        "claude-code"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "session",
+      "term": "Session",
+      "cat": "cc",
+      "match": [
+        "session",
+        "sessions",
+        "sezení",
+        "vlákno",
+        "vlákna"
+      ],
+      "short": "Jedno souvislé sezení, ve kterém si AI pamatuje, o čem jste mluvili.",
+      "plain": "Session drží společnou paměť konverzace. Když ji ukončíte a začnete znovu, začínáte s čistým stolem a nic z minula se nepřenáší, pokud to není zapsané v souborech nebo v paměti.",
+      "why": "Dlouhá session zaplní kontextové okno. Krátká a soustředěná dává lepší výsledky.",
+      "related": [
+        "kontextove-okno",
+        "claude-md"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "yolo",
+      "term": "YOLO mód",
+      "cat": "cc",
+      "match": [
+        "yolo",
+        "yolo mód",
+        "yolo mode"
+      ],
+      "short": "Režim, kdy agentovi odsouhlasíte všechno dopředu a on se pak neptá.",
+      "plain": "Běžně se agent před zásahem ptá o svolení. V tomhle režimu potvrzování vypnete a agent si dělá, co uzná za vhodné. Je to rychlé, ale nemáte záchrannou brzdu. Nehodí se to tam, kde může něco smazat nebo poslat ven.",
+      "why": "Ve skupině se u toho pravidelně připomíná izolace, tedy pouštět to radši v Dockeru nebo na odděleném stroji.",
+      "related": [
+        "sandbox",
+        "docker",
+        "agent"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "mvp",
+      "term": "MVP",
+      "cat": "cc",
+      "match": [
+        "MVP"
+      ],
+      "short": "Nejmenší verze, která už dává smysl a dá se vyzkoušet.",
+      "plain": "Minimum viable product, tedy nejjednodušší varianta věci, která už reálně funguje a jde ji použít. Smysl je ověřit nápad dřív, než do něj nasypete spoustu času.",
+      "why": "Základní rada pro vibe coding zní začni nejmenším MVP, protože malý celek se dá uhlídat.",
+      "related": [
+        "vibe-coding",
+        "prototyp"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "prototyp",
+      "term": "Prototyp",
+      "cat": "cc",
+      "match": [
+        "prototyp",
+        "prototypu",
+        "prototypy"
+      ],
+      "short": "Rychlá zkušební verze, která má něco ověřit, ne vydržet.",
+      "plain": "Rychlá verze, na které si osaháte, jestli nápad funguje a jak se to ovládá. Počítá se s tím, že se zahodí.",
+      "why": null,
+      "related": [
+        "mvp",
+        "vibe-coding"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "git",
+      "term": "Git",
+      "cat": "kod",
+      "match": [
+        "Git",
+        "gitu",
+        "gitem"
+      ],
+      "short": "Systém, který si pamatuje každou změnu v souborech projektu.",
+      "plain": "Git hlídá historii projektu. Každou uloženou změnu si pamatuje. Kdykoli se dá podívat, co se kdy změnilo, a v případě průšvihu se vrátit do stavu, kdy to fungovalo. Běží u vás na počítači a internet k tomu nepotřebuje.",
+      "why": "Tohle je ta záchranná síť, díky které se člověk nebojí zkoušet. Vrátit se jde vždycky.",
+      "related": [
+        "github",
+        "repozitar",
+        "commit"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "github",
+      "term": "GitHub",
+      "cat": "kod",
+      "match": [
+        "GitHub",
+        "GitHubu",
+        "github.com",
+        "githubu"
+      ],
+      "short": "Web, kam se Git projekty ukládají online, aby šly sdílet a zálohovat.",
+      "plain": "GitHub je služba, kde váš projekt bydlí na internetu. Díky tomu se k němu dostanete z víc počítačů, máte ho zálohovaný a můžete ho ukázat ostatním. Git a GitHub jsou dvě různé věci. Git je ten systém, GitHub je jedno z míst, kde může projekt bydlet.",
+      "why": "Když někdo ve skupině sdílí projekt, obvykle sdílí odkaz na GitHub.",
+      "related": [
+        "git",
+        "repozitar",
+        "open-source"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "repozitar",
+      "term": "Repozitář",
+      "cat": "kod",
+      "match": [
+        "repozitář",
+        "repozitáře",
+        "repozitáři",
+        "repozitářů",
+        "repo",
+        "repa"
+      ],
+      "short": "Složka projektu, kterou hlídá Git. Zkráceně repo.",
+      "plain": "Repozitář je jeden projekt i s celou svojí historií.",
+      "why": null,
+      "related": [
+        "git",
+        "github",
+        "commit"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "commit",
+      "term": "Commit",
+      "cat": "kod",
+      "match": [
+        "commit",
+        "commitu",
+        "commity",
+        "commitů",
+        "commitnout",
+        "commitem",
+        "commitů"
+      ],
+      "short": "Uložený snímek změn s popiskem, co se změnilo.",
+      "plain": "Něco jako uložit pozici ve hře. Zaznamená stav souborů v daný moment a vy se k němu můžete kdykoli vrátit. Ta poznámka u toho není formalita, za měsíc si bez ní nevzpomenete, co jste tenkrát dělali.",
+      "why": null,
+      "related": [
+        "git",
+        "repozitar"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "branch",
+      "term": "Branch a merge",
+      "cat": "kod",
+      "match": [
+        "branch",
+        "branche",
+        "větev",
+        "merge",
+        "mergnout"
+      ],
+      "short": "Odbočka, kde se dá zkoušet bez rizika, a její pozdější spojení zpátky.",
+      "plain": "Branch je paralelní větev projektu. Zkoušíte v ní změny, aniž byste sáhli na funkční verzi. Když se nápad povede, merge ji spojí zpátky do hlavní větve, když ne, prostě se zahodí.",
+      "why": null,
+      "related": [
+        "git",
+        "commit"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "open-source",
+      "term": "Open source",
+      "cat": "kod",
+      "match": [
+        "open source",
+        "opensource",
+        "open-source",
+        "otevřený zdrojový kód"
+      ],
+      "short": "Software s veřejně dostupným kódem, který smí kdokoli číst a upravovat.",
+      "plain": "U open source projektu je vidět, jak je udělaný uvnitř. Kdokoli si ho může stáhnout, prohlédnout, upravit a většinou i použít zdarma. Podmínky určuje licence, běžná a hodně volná je licence MIT.",
+      "why": null,
+      "related": [
+        "github",
+        "git"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "api",
+      "term": "API",
+      "cat": "web",
+      "match": [
+        "API"
+      ],
+      "short": "Rozhraní, kterým spolu dva programy mluví.",
+      "plain": "API je domluvený způsob, jak si dva programy předávají data. Když si aplikace někde tahá informace nebo posílá dotaz do AI modelu, jde to přes API. Uživatel z toho nevidí nic, běží to na pozadí.",
+      "why": "Platit za API znamená platit za jednotlivé dotazy místo měsíčního předplatného. U malého objemu to vyjde levněji.",
+      "related": [
+        "api-klic",
+        "mcp",
+        "json"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "deploy",
+      "term": "Deploy a nasazení",
+      "cat": "web",
+      "match": [
+        "deploy",
+        "deploynout",
+        "nasazení",
+        "nasadit",
+        "nasazuje",
+        "deployment"
+      ],
+      "short": "Vypuštění hotové verze ven, aby ji viděli ostatní.",
+      "plain": "Dokud projekt běží jen u vás na počítači, vidíte ho jen vy. Nasazení znamená přenést ho na server, kde je dostupný na internetu. Do té doby je to soukromá hračka.",
+      "why": null,
+      "related": [
+        "server",
+        "hosting",
+        "build"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "hosting",
+      "term": "Hosting",
+      "cat": "web",
+      "match": [
+        "hosting",
+        "hostingu",
+        "hostovat",
+        "hostování"
+      ],
+      "short": "Místo, kde váš web nebo aplikace trvale běží.",
+      "plain": "Hosting je pronajatý prostor na cizím serveru, který je zapnutý pořád. Pro malé weby existují služby, kde to nic nestojí, protože se platí až od většího provozu.",
+      "why": null,
+      "related": [
+        "deploy",
+        "server",
+        "cloudflare-vercel"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "server",
+      "term": "Server",
+      "cat": "web",
+      "match": [
+        "server",
+        "serveru",
+        "servery",
+        "serverů",
+        "serveri"
+      ],
+      "short": "Počítač, který běží nepřetržitě a obsluhuje ostatní.",
+      "plain": "Server je stroj, jehož jediná práce je čekat na dotazy a odpovídat na ně. Může to být obří stroj v datovém centru i obyčejný počítač doma, který nikdy nevypínáte.",
+      "why": null,
+      "related": [
+        "hosting",
+        "localhost",
+        "deploy"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "localhost",
+      "term": "Localhost",
+      "cat": "web",
+      "match": [
+        "localhost",
+        "lokálně na počítači"
+      ],
+      "short": "Váš vlastní počítač v roli serveru. Vidíte to jen vy.",
+      "plain": "Když si aplikaci spustíte u sebe, běží na localhostu. Adresa vypadá jako web, ale ven nevede.",
+      "why": null,
+      "related": [
+        "server",
+        "deploy"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "build",
+      "term": "Build",
+      "cat": "web",
+      "match": [
+        "build",
+        "buildu",
+        "buildnout",
+        "sestavení"
+      ],
+      "short": "Sestavení hotové verze ze zdrojových souborů.",
+      "plain": "Zdrojový kód se před vypuštěním převede do podoby, které rozumí prohlížeč, a zároveň se zmenší a pospojuje. Když build spadne, ven se nepustí nic.",
+      "why": null,
+      "related": [
+        "deploy",
+        "framework"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "json",
+      "term": "JSON",
+      "cat": "web",
+      "match": [
+        "JSON",
+        "JSONu"
+      ],
+      "short": "Textový formát na strukturovaná data, čitelný i pro člověka.",
+      "plain": "Běžný způsob, jak si programy předávají informace. Je to obyčejný text uspořádaný do dvojic název a hodnota. Otevřete ho v poznámkovém bloku a přečtete.",
+      "why": null,
+      "related": [
+        "api",
+        "markdown"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "frontend-backend",
+      "term": "Frontend a backend",
+      "cat": "web",
+      "match": [
+        "frontend",
+        "backend",
+        "frontendu",
+        "backendu"
+      ],
+      "short": "To, co uživatel vidí, a to, co běží schované na pozadí.",
+      "plain": "Frontend je viditelná část, tedy vzhled, tlačítka a texty v prohlížeči. Backend je to, co běží na serveru, počítá, ukládá a hlídá data. Když někdo řekne fullstack, dělá obojí.",
+      "why": null,
+      "related": [
+        "framework",
+        "server",
+        "api"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "framework",
+      "term": "Framework",
+      "cat": "web",
+      "match": [
+        "framework",
+        "frameworku",
+        "frameworky"
+      ],
+      "short": "Připravená kostra, na které se aplikace staví.",
+      "plain": "Framework je sada hotových základů a pravidel, díky které nemusíte psát všechno od nuly. Ušetří spoustu práce, ale musíte přijmout, jak to jeho autoři vymysleli.",
+      "why": null,
+      "related": [
+        "frontend-backend",
+        "build"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "pwa",
+      "term": "PWA",
+      "cat": "web",
+      "match": [
+        "PWA"
+      ],
+      "short": "Web, který si přidáte na plochu telefonu a chová se skoro jako aplikace.",
+      "plain": "Progresivní webová aplikace vypadá a funguje jako běžná appka, ale je to web. Nemusí se instalovat z obchodu, umí běžet i offline a posílat upozornění.",
+      "why": "Portál Master the Flow je přesně tohle, proto si ho můžete dát na plochu.",
+      "related": [
+        "offline",
+        "deploy"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "offline",
+      "term": "Offline režim",
+      "cat": "web",
+      "match": [
+        "offline"
+      ],
+      "short": "Funguje i bez připojení, protože si data uložil dopředu.",
+      "plain": "Aplikace si stáhne obsah do zařízení, takže ho ukáže i bez internetu. Nové věci se dotáhnou, jakmile se připojení vrátí.",
+      "why": null,
+      "related": [
+        "pwa"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "terminal",
+      "term": "Terminál",
+      "cat": "pc",
+      "match": [
+        "terminál",
+        "terminálu",
+        "terminálem",
+        "příkazová řádka",
+        "příkazové řádce"
+      ],
+      "short": "Okno, kde se počítači píšou příkazy místo klikání.",
+      "plain": "Textové okno, do kterého napíšete příkaz a počítač ho provede. Vypadá to nepřívětivě, ale je to jen jiný způsob ovládání. Na Macu se aplikace jmenuje Terminál.",
+      "why": "Claude Code běží tady. Je to první místo, kde se člověk musí přemoct.",
+      "related": [
+        "cli",
+        "gui",
+        "claude-code"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "cli",
+      "term": "CLI",
+      "cat": "pc",
+      "match": [
+        "CLI"
+      ],
+      "short": "Ovládání programu psaním příkazů.",
+      "plain": "Command line interface, tedy program bez oken a tlačítek, který se ovládá napsanými příkazy. Výhoda je, že se dá snadno zautomatizovat a zopakovat, protože příkaz se dá uložit a pustit znovu.",
+      "why": null,
+      "related": [
+        "terminal",
+        "gui",
+        "skript"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "gui",
+      "term": "GUI",
+      "cat": "pc",
+      "match": [
+        "GUI"
+      ],
+      "short": "Grafické rozhraní, tedy okna, tlačítka a myš.",
+      "plain": "Opak CLI. Všechno, co se ovládá klikáním.",
+      "why": null,
+      "related": [
+        "cli",
+        "terminal"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "skript",
+      "term": "Skript",
+      "cat": "pc",
+      "match": [
+        "skript",
+        "skriptu",
+        "skripty",
+        "skriptů",
+        "script"
+      ],
+      "short": "Malý program, který za vás udělá sérii kroků.",
+      "plain": "Soubor s posloupností příkazů, které se spustí jedním zavoláním. Typicky něco, co byste jinak dělali ručně pořád dokola, třeba přejmenovat stovku souborů nebo stáhnout a zpracovat data.",
+      "why": null,
+      "related": [
+        "cli",
+        "automatizace",
+        "cron"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "automatizace",
+      "term": "Automatizace",
+      "cat": "pc",
+      "match": [
+        "automatizace",
+        "automatizaci",
+        "automatizovat",
+        "automatizované"
+      ],
+      "short": "Nastavíte jednou, běží pak samo.",
+      "plain": "Postup, který po nastavení proběhne bez vašeho zásahu. Může běžet v určený čas, nebo se spustit, když nastane nějaká událost. Smysl je zbavit se opakované ruční práce.",
+      "why": null,
+      "related": [
+        "skript",
+        "cron",
+        "workflow"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "workflow",
+      "term": "Workflow",
+      "cat": "pc",
+      "match": [
+        "workflow",
+        "workflowu",
+        "workflows"
+      ],
+      "short": "Ustálený postup, jak něco děláte od začátku do konce.",
+      "plain": "Sled kroků, který vede od zadání k výsledku. Nemusí být zautomatizovaný, workflow je i to, když víte, že po nahrávce vždycky následuje přepis, pak shrnutí a nakonec uložení do poznámek.",
+      "why": null,
+      "related": [
+        "automatizace",
+        "skript"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "cron",
+      "term": "Cron",
+      "cat": "pc",
+      "match": [
+        "cron",
+        "cronu",
+        "crontab",
+        "launchd"
+      ],
+      "short": "Plánovač, který spouští úlohy v nastavený čas.",
+      "plain": "Nastavíte, že se něco má stát každý den v pět ráno, a systém to od té chvíle hlídá za vás. Na Macu tuhle roli plní launchd.",
+      "why": null,
+      "related": [
+        "automatizace",
+        "skript"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "docker",
+      "term": "Docker",
+      "cat": "pc",
+      "match": [
+        "Docker",
+        "Dockeru",
+        "dockeru",
+        "kontejner",
+        "kontejneru"
+      ],
+      "short": "Krabice, ve které program běží oddělený od zbytku počítače.",
+      "plain": "Docker spustí aplikaci v izolovaném prostředí, které má vlastní obsah a nevidí na zbytek systému. Používá se, aby věc běžela všude stejně, a taky jako bezpečnostní hranice.",
+      "why": "Ve skupině padá hlavně jako odpověď na otázku, jak pustit AI agenta tak, aby nemohl sáhnout na cokoli mimo projekt.",
+      "related": [
+        "sandbox",
+        "yolo",
+        "vm"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "sandbox",
+      "term": "Sandbox",
+      "cat": "pc",
+      "match": [
+        "sandbox",
+        "sandboxu",
+        "sandboxing",
+        "izolace"
+      ],
+      "short": "Ohraničený prostor, ze kterého program nemůže ven.",
+      "plain": "Bezpečnostní pojistka, která programu dovolí sáhnout jen na to, co mu výslovně povolíte. Když se něco pokazí, škoda zůstane uvnitř.",
+      "why": null,
+      "related": [
+        "docker",
+        "yolo",
+        "vm"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "vm",
+      "term": "Virtuální stroj",
+      "cat": "pc",
+      "match": [
+        "virtuální stroj",
+        "virtuálním stroji",
+        "VM"
+      ],
+      "short": "Celý druhý počítač běžící jako program uvnitř toho vašeho.",
+      "plain": "Simulovaný počítač s vlastním systémem, oddělený od hostitele. Jde v něm zkoušet věci, u kterých nechcete riskovat vlastní systém.",
+      "why": null,
+      "related": [
+        "docker",
+        "sandbox"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "ssh",
+      "term": "SSH",
+      "cat": "pc",
+      "match": [
+        "SSH"
+      ],
+      "short": "Zabezpečené připojení k jinému počítači přes příkazy.",
+      "plain": "Způsob, jak se z vašeho počítače přihlásit na vzdálený stroj a ovládat ho, jako byste u něj seděli. Spojení je šifrované.",
+      "why": null,
+      "related": [
+        "terminal",
+        "server"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "markdown",
+      "term": "Markdown",
+      "cat": "pc",
+      "match": [
+        "markdown",
+        "markdownu",
+        ".md",
+        "md soubor"
+      ],
+      "short": "Formátování textu pomocí obyčejných znaků.",
+      "plain": "Jednoduchý zápis, kde hvězdičky udělají tučné písmo a mřížky nadpisy. Zůstává to čitelný text. Soubor otevřete čímkoli a Word na to nepotřebujete.",
+      "why": "V tomhle formátu jsou poznámky v Obsidianu i instrukce v CLAUDE.md.",
+      "related": [
+        "obsidian",
+        "claude-md"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "obsidian",
+      "term": "Obsidian",
+      "cat": "nastroje",
+      "match": [
+        "Obsidian",
+        "Obsidianu",
+        "Obsidianem",
+        "obsidian"
+      ],
+      "short": "Poznámky uložené jako obyčejné textové soubory u vás na disku.",
+      "plain": "Aplikace na psaní a propojování poznámek. Soubory zůstávají vaše, leží u vás ve složce jako obyčejný text a otevřete je čímkoli, i kdyby Obsidian zítra skončil. To je hlavní rozdíl proti cloudovým službám.",
+      "why": "Kolem druhého mozku v Obsidianu se ve skupině točí jedno z nejsilnějších témat.",
+      "related": [
+        "markdown",
+        "notion",
+        "second-brain"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "second-brain",
+      "term": "Druhý mozek",
+      "cat": "nastroje",
+      "match": [
+        "druhý mozek",
+        "druhého mozku",
+        "second brain",
+        "druhym mozkem"
+      ],
+      "short": "Systém poznámek, který si pamatuje za vás.",
+      "plain": "Uspořádané místo, kam ukládáte myšlenky, zdroje a rozpracované věci tak, abyste je později našli a mohli na nich stavět. Není to o tom mít hodně poznámek, ale o tom umět se k nim vrátit.",
+      "why": null,
+      "related": [
+        "obsidian",
+        "markdown"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "raycast",
+      "term": "Raycast",
+      "cat": "nastroje",
+      "match": [
+        "Raycast",
+        "Raycastu",
+        "raycast"
+      ],
+      "short": "Vyhledávací a spouštěcí lišta pro Mac, náhrada Spotlightu.",
+      "plain": "Vyskočí přes klávesovou zkratku a odsud se ovládá skoro cokoli, hledání souborů, spouštění aplikací, počítání, schránka nebo vlastní příkazy. Rozšiřuje se doplňky.",
+      "why": null,
+      "related": [
+        "automatizace",
+        "workflow"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "cursor",
+      "term": "Cursor",
+      "cat": "nastroje",
+      "match": [
+        "Cursor",
+        "Cursoru",
+        "cursor"
+      ],
+      "short": "Editor kódu s vestavěnou AI.",
+      "plain": "Vypadá jako klasický editor, ale umí psát a upravovat kód na požádání přímo v souboru. Alternativa ke Claude Code pro ty, kdo chtějí vidět kód před sebou v okně.",
+      "why": null,
+      "related": [
+        "claude-code",
+        "vibe-coding"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "codex",
+      "term": "Codex",
+      "cat": "nastroje",
+      "match": [
+        "Codex",
+        "Codexu",
+        "codex"
+      ],
+      "short": "Kódovací nástroj od OpenAI, konkurence Claude Code.",
+      "plain": "Nástroj, který podobně jako Claude Code umí pracovat s kódem v projektu. Ve skupině se pravidelně srovnávají, výsledek se liší podle typu úkolu.",
+      "why": null,
+      "related": [
+        "claude-code",
+        "vibe-coding"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "notion",
+      "term": "Notion",
+      "cat": "nastroje",
+      "match": [
+        "Notion",
+        "Notionu",
+        "notion"
+      ],
+      "short": "Poznámky, databáze a wiki v jednom, uložené v cloudu.",
+      "plain": "Nástroj na organizaci informací, kde se míchají dokumenty s tabulkami a databázemi. Na rozdíl od Obsidianu obsah leží u poskytovatele, ne u vás na disku.",
+      "why": null,
+      "related": [
+        "obsidian",
+        "second-brain"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "whisper",
+      "term": "Whisper",
+      "cat": "nastroje",
+      "match": [
+        "Whisper",
+        "Whisperu",
+        "whisper"
+      ],
+      "short": "Model na převod řeči na text.",
+      "plain": "Přepisovací model od OpenAI. Dá se používat přes internet i pustit přímo na vlastním počítači, takže nahrávka nemusí nikam odcházet.",
+      "why": "Ve skupině stojí na Whisperu většina domácích řešení na přepis schůzek a hlasových poznámek.",
+      "related": [
+        "lokalni-model",
+        "transkripce"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "transkripce",
+      "term": "Transkripce a diarizace",
+      "cat": "nastroje",
+      "match": [
+        "transkripce",
+        "přepis",
+        "přepisu",
+        "přepisy",
+        "diarizace"
+      ],
+      "short": "Převod mluvení na text a rozlišení, kdo z mluvčích mluví.",
+      "plain": "Transkripce udělá z nahrávky text. Diarizace k tomu přidá, který úsek řekl který mluvčí. U schůzek bývá ta druhá věc důležitější než samotný přepis.",
+      "why": null,
+      "related": [
+        "whisper",
+        "lokalni-model"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "supabase",
+      "term": "Supabase",
+      "cat": "nastroje",
+      "match": [
+        "Supabase",
+        "supabase"
+      ],
+      "short": "Hotová databáze a zázemí pro aplikaci, bez vlastního serveru.",
+      "plain": "Služba, která vám dá databázi, přihlašování uživatelů a ukládání souborů jako hotovou věc. Používá se, když aplikace potřebuje někam ukládat data, ale nechcete stavět backend od nuly.",
+      "why": null,
+      "related": [
+        "frontend-backend",
+        "server"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "cloudflare-vercel",
+      "term": "Cloudflare Pages a Vercel",
+      "cat": "nastroje",
+      "match": [
+        "Cloudflare",
+        "Vercel",
+        "Netlify",
+        "cloudflare",
+        "vercel"
+      ],
+      "short": "Služby, kde se dá web zdarma vypustit na internet.",
+      "plain": "Vezmou hotové soubory webu a rozmístí je po světě, aby se rychle načítaly. U malých projektů to obvykle nic nestojí. Portál Master the Flow běží na Cloudflare Pages.",
+      "why": null,
+      "related": [
+        "deploy",
+        "hosting"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "stripe",
+      "term": "Stripe",
+      "cat": "nastroje",
+      "match": [
+        "Stripe",
+        "Stripu",
+        "stripe"
+      ],
+      "short": "Platební brána pro příjem plateb kartou.",
+      "plain": "Služba, přes kterou lze vybírat peníze za produkt nebo předplatné. Postará se o platby, faktury i opakované strhávání.",
+      "why": null,
+      "related": [
+        "api"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "npm",
+      "term": "npm a balíčky",
+      "cat": "nastroje",
+      "match": [
+        "npm",
+        "npx",
+        "balíček",
+        "balíčky",
+        "knihovna",
+        "knihovny"
+      ],
+      "short": "Hotové kusy cizího kódu, které si do projektu doplníte.",
+      "plain": "Místo psaní všeho od začátku se do projektu přidá hotová knihovna, která už umí, co potřebujete. npm je nástroj, který tyhle balíčky stahuje a spravuje. Každý přidaný balíček je ale i závazek, protože ho někdo musí udržovat.",
+      "why": null,
+      "related": [
+        "framework",
+        "build"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "scraping",
+      "term": "Scraping",
+      "cat": "nastroje",
+      "match": [
+        "scraping",
+        "scraper",
+        "scrapovat",
+        "scrapování",
+        "Playwright",
+        "Apify",
+        "Firecrawl"
+      ],
+      "short": "Automatické vytahování dat z webových stránek.",
+      "plain": "Program projde stránku a vytáhne z ní údaje, které by člověk jinak vypisoval ručně. Weby se proti tomu často brání, proto na to existují specializované nástroje.",
+      "why": "Ve skupině se řeší hlavně u srovnávání nabídek a sbírání recenzí.",
+      "related": [
+        "automatizace",
+        "api"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "api-klic",
+      "term": "API klíč",
+      "cat": "data",
+      "match": [
+        "API klíč",
+        "API klíče",
+        "API key",
+        "klíč k API",
+        "api klíč"
+      ],
+      "short": "Heslo, kterým se váš program prokáže u jiné služby.",
+      "plain": "Dlouhý řetězec znaků, kterým se váš program přihlásí u cizí služby. Kdo ho má, může tu službu používat na váš účet a na vaše náklady. Proto se nedává do sdíleného kódu a neposílá v chatu.",
+      "why": "Nejčastější bezpečnostní chyba začátečníků. Klíč patří do proměnných prostředí, ne do souboru, který jde na GitHub.",
+      "related": [
+        "env",
+        "github",
+        "hook"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "env",
+      "term": "Proměnné prostředí a .env",
+      "cat": "data",
+      "match": [
+        ".env",
+        "proměnné prostředí",
+        "environment",
+        "env soubor"
+      ],
+      "short": "Místo, kam se ukládají hesla a klíče mimo samotný kód.",
+      "plain": "Citlivé údaje se nepíšou přímo do programu, ale nastaví se vedle něj. Program si je přečte při spuštění. Soubor .env se běžně vylučuje z verzování, aby se omylem nedostal ven.",
+      "why": null,
+      "related": [
+        "api-klic",
+        "git"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "gdpr",
+      "term": "GDPR",
+      "cat": "data",
+      "match": [
+        "GDPR"
+      ],
+      "short": "Evropská pravidla pro nakládání s osobními údaji.",
+      "plain": "Určují, co se smí dělat s údaji o lidech, jak dlouho se smí držet a co musíte dotyčným říct. Týká se to i malých projektů, pokud v nich figurují data reálných osob.",
+      "why": "Připomíná se pokaždé, když se řeší nahrávání schůzek nebo posílání firemních dat do cloudu.",
+      "related": [
+        "pii",
+        "lokalni-model"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "pii",
+      "term": "Osobní údaje (PII)",
+      "cat": "data",
+      "match": [
+        "PII",
+        "osobní údaje",
+        "osobních údajů"
+      ],
+      "short": "Údaje, podle kterých jde konkrétního člověka poznat.",
+      "plain": "Jméno, e-mail, telefon, adresa nebo cokoli dalšího, co vede ke konkrétní osobě. Než dáte data ven nebo do cizí služby, tyhle údaje se z nich obvykle odstraňují.",
+      "why": "Přepisy na tomhle portálu procházejí přesně takovým čištěním, proto v nich čtete jen člen komunity.",
+      "related": [
+        "gdpr",
+        "anonymizace"
+      ],
+      "source": "hand"
+    },
+    {
+      "slug": "anonymizace",
+      "term": "Anonymizace",
+      "cat": "data",
+      "match": [
+        "anonymizace",
+        "anonymizovat",
+        "anonymizovaný",
+        "anonymizované"
+      ],
+      "short": "Odstranění údajů, podle kterých by šlo poznat konkrétní lidi.",
+      "plain": "Z textu nebo dat se vymažou nebo nahradí jména a další identifikátory tak, aby zůstal obsah, ale zmizela vazba na osoby.",
+      "why": null,
+      "related": [
+        "pii",
+        "gdpr"
+      ],
+      "source": "hand"
+    }
+  ]
+}

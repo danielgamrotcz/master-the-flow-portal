@@ -2440,3 +2440,143 @@ body.lightbox-open { overflow: hidden; }
   transition: opacity 150ms ease;
 }
 .notfound-home:hover { opacity: 0.9; text-decoration: none; }
+
+/* ===== SLOVNÍČEK ===== */
+.gloss-intro { padding: 4px 0 14px; }
+.gloss-title { font-size: 24px; font-weight: 700; color: var(--text-primary); margin: 0 0 6px; }
+.gloss-lede { font-size: 14px; line-height: 1.55; color: var(--text-secondary); margin: 0; max-width: 62ch; }
+
+.gloss-searchbar { position: relative; margin-bottom: 12px; }
+.gloss-search-icon {
+  position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+  width: 16px; height: 16px; color: var(--text-tertiary); pointer-events: none;
+}
+.gloss-input {
+  width: 100%; padding: 12px 44px 12px 40px;
+  font-size: 16px; font-family: inherit; color: var(--text-primary);
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-md); outline: none; transition: border-color 150ms ease;
+}
+.gloss-input:focus { border-color: var(--accent); }
+.gloss-input::placeholder { color: var(--text-tertiary); }
+.gloss-input::-webkit-search-cancel-button { display: none; }
+.gloss-clear { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); }
+.gloss-clear:hover { color: var(--text-primary); background: var(--btn-bg); }
+
+/* Na mobilu jedna posuvná řada místo tří zabalených — ušetří půl obrazovky.
+   Stejný vzor jako .topic-chips ve zbytku appky. */
+.gloss-cats {
+  display: flex; flex-wrap: nowrap; gap: 8px;
+  padding-bottom: 10px; overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.gloss-cats::-webkit-scrollbar { display: none; }
+.gloss-cats .chip { flex: none; }
+@media (min-width: 960px) {
+  .gloss-cats { flex-wrap: wrap; overflow-x: visible; }
+}
+
+/* Hledání a kategorie zůstanou po ruce i po odrolování seznamu. */
+.gloss-sticky {
+  position: sticky; top: 0; z-index: 5;
+  background: var(--bg); padding-top: 4px;
+  margin: 0 -20px; padding-left: 20px; padding-right: 20px;
+}
+
+.gloss-note { font-size: 12px; color: var(--text-tertiary); margin: 6px 0 0; }
+.gloss-count-line { font-size: 12px; color: var(--text-tertiary); padding: 2px 0 8px; }
+
+.gloss-cat-hint {
+  font-size: 13px; color: var(--text-tertiary);
+  margin: 0 0 10px; line-height: 1.5;
+}
+.gloss-section { margin-bottom: 8px; }
+
+.gloss-grid {
+  display: grid; grid-template-columns: 1fr; gap: 10px;
+}
+@media (min-width: 640px) {
+  .gloss-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.gloss-item {
+  display: flex; flex-direction: column; gap: 6px; width: 100%;
+  text-align: left; padding: 14px 16px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); cursor: pointer; font-family: inherit;
+  transition: background 150ms ease, border-color 150ms ease, transform 100ms ease;
+}
+.gloss-item:hover { background: var(--bg-card-hover); border-color: var(--border-hover); }
+.gloss-item:active { background: var(--bg-active); transform: scale(0.992); }
+.gloss-item-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.gloss-item-term { font-size: 16px; font-weight: 600; color: var(--text-primary); }
+.gloss-count {
+  flex: none; font-size: 11px; font-weight: 600; color: var(--accent);
+  background: var(--accent-dim); border-radius: 999px; padding: 2px 8px;
+}
+.gloss-item-short { font-size: 14px; line-height: 1.5; color: var(--text-secondary); }
+
+/* Detail výrazu */
+.term-title { font-size: 24px; font-weight: 700; line-height: 1.2; margin: 10px 0 12px; color: var(--text-primary); }
+.term-plain { font-size: 16px; line-height: 1.65; color: var(--text-primary); margin: 0 0 16px; }
+.term-why {
+  background: var(--bg-elevated); border-left: 2px solid var(--accent);
+  border-radius: var(--radius-sm); padding: 12px 14px; margin-bottom: 16px;
+}
+.term-why-label {
+  display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
+}
+.term-why p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--text-secondary); }
+.term-stat { font-size: 13px; color: var(--text-tertiary); margin-bottom: 18px; }
+.term-stat strong { color: var(--text-secondary); font-weight: 600; }
+
+.term-related { margin-bottom: 18px; }
+.term-related-label {
+  display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 8px;
+}
+.term-related-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.term-rel {
+  font-family: inherit; font-size: 13px; color: var(--text-secondary);
+  background: var(--btn-bg); border: 1px solid var(--border);
+  border-radius: 999px; padding: 6px 12px; cursor: pointer;
+  transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
+}
+.term-rel:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-dim); }
+
+.term-cta-row { display: flex; gap: 10px; padding-bottom: 8px; }
+.term-cta {
+  font-family: inherit; font-size: 14px; font-weight: 600;
+  color: var(--text-primary); background: var(--btn-bg);
+  border: 1px solid var(--border); border-radius: var(--radius-md);
+  padding: 11px 18px; cursor: pointer;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+.term-cta:hover { background: var(--btn-bg-hover); border-color: var(--border-hover); }
+
+/* Nález ze slovníčku nad výsledky hledání */
+.search-gloss { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+.search-gloss-hit {
+  display: flex; flex-direction: column; gap: 4px; width: 100%; text-align: left;
+  font-family: inherit; cursor: pointer; padding: 12px 14px;
+  background: var(--accent-dim); border: 1px solid transparent;
+  border-left: 2px solid var(--accent); border-radius: var(--radius-md);
+  transition: border-color 150ms ease;
+}
+.search-gloss-hit:hover { border-color: var(--accent); }
+.search-gloss-label {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--accent);
+}
+.search-gloss-term { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+.search-gloss-short { font-size: 13px; line-height: 1.5; color: var(--text-secondary); }
+
+/* Výrazy ze slovníčku pod textem poznatku */
+.card-terms { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); }
+.card-terms-label {
+  display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 8px;
+}
+.card-terms-row { display: flex; flex-wrap: wrap; gap: 8px; }

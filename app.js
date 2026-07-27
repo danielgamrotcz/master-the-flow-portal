@@ -177,12 +177,17 @@ const state = {
   topCards: [],
   transcriptDate: null,
   searchQuery: '',
+  glossary: null,
+  glossaryLoaded: false,
+  glossQuery: '',
+  glossCat: 'all',
 };
 
 let _lastKnownDigestDate = null;
 let _preCardHash = '';
 let _preTranscriptHash = '';
 let _preEventHash = '';
+let _preTermHash = '';
 
 // Dočasně skryté tlačítko „Přepis" v detailu karty. Obnovit = true.
 const TRANSCRIPT_BTN_ENABLED = true;
@@ -1054,6 +1059,7 @@ function highlightInHTML(html, query) {
 function runSearch(query) {
   const q = query.trim();
   state.searchQuery = q;
+  renderSearchGloss(q);
   hide('empty-search');
   hide('cards-search');
   $('cards-search').innerHTML = '';
@@ -1201,7 +1207,17 @@ function openCard(cardId) {
     ? highlightInHTML(rawHtml, state.searchQuery)
     : rawHtml;
   resetGalleries();
-  $('overlay-text').innerHTML = bodyHtml + renderImages(card.images) + renderCardLinks(card);
+  $('overlay-text').innerHTML = bodyHtml + renderImages(card.images) + renderCardLinks(card)
+    + renderCardTerms(card);
+  // Slovníček se načítá líně — když ještě není, doplň výrazy až dorazí.
+  if (!state.glossaryLoaded) {
+    loadGlossary().then(() => {
+      if (state.activeCard?.id === cardId) {
+        const box = $('overlay-text');
+        if (box && !box.querySelector('.card-terms')) box.insertAdjacentHTML('beforeend', renderCardTerms(card));
+      }
+    });
+  }
   $('btn-show-transcript').dataset.date = dateStr;
   $('btn-show-transcript').dataset.sourceGroup = card.source_group || '';
   $('btn-show-transcript').dataset.sourceMsgTimes = JSON.stringify(card.source_msg_times || []);
@@ -1683,6 +1699,240 @@ function renderEventTeaser() {
   }).catch(() => {});
 }
 
+/* ===== SLOVNÍČEK =====
+   Termíny, které v komunitě reálně padají, vysvětlené pro lidi bez zázemí.
+   Data z data/glossary.json (generuje tools/build_glossary.py). */
+
+// Pod tímhle počtem výskytů se číslo neukazuje (netvrdíme nic, co nemá váhu).
+const GLOSS_BADGE_MIN = 5;
+
+async function loadGlossary() {
+  if (state.glossaryLoaded) return state.glossary;
+  show('loading-glossary');
+  try {
+    const data = await fetchJSON('/data/glossary.json');
+    state.glossary = data && Array.isArray(data.terms) ? data : { terms: [], categories: [] };
+  } catch {
+    state.glossary = { terms: [], categories: [] };
+  } finally {
+    state.glossaryLoaded = true;
+    hide('loading-glossary');
+  }
+  return state.glossary;
+}
+
+function glossCatLabel(id) {
+  const c = (state.glossary?.categories || []).find(x => x.id === id);
+  return c ? c.label : id;
+}
+
+function glossFiltered() {
+  const terms = state.glossary?.terms || [];
+  const q = searchNorm(state.glossQuery.trim());
+  const hits = terms.filter(t => {
+    if (state.glossCat !== 'all' && t.category !== state.glossCat) return false;
+    if (!q) return true;
+    // `search` je předpočítané pole bez diakritiky (termín + popis + aliasy)
+    return (t.search || '').includes(q) || searchNorm(t.term).includes(q);
+  });
+  // Nejčastější výrazy nahoru — to je to, co člověk ve skupině potká nejdřív.
+  return hits.sort((a, b) => (b.mentions - a.mentions) || a.term.localeCompare(b.term, 'cs'));
+}
+
+function glossTermCardHtml(t) {
+  // Pod prahem odznak neukazujeme — „1×“ nic neříká a působí to slabě.
+  const badge = t.mentions >= GLOSS_BADGE_MIN
+    ? `<span class="gloss-count" title="Kolikrát výraz padl v denních přepisech">${t.mentions}×</span>`
+    : '';
+  return `
+    <button class="gloss-item" data-term="${esc(t.slug)}" type="button">
+      <span class="gloss-item-head">
+        <span class="gloss-item-term">${esc(t.term)}</span>
+        ${badge}
+      </span>
+      <span class="gloss-item-short">${esc(t.short)}</span>
+    </button>`;
+}
+
+function renderGlossaryCats() {
+  const el = $('gloss-cats');
+  if (!el) return;
+  const terms = state.glossary?.terms || [];
+  const cats = state.glossary?.categories || [];
+  const counts = {};
+  terms.forEach(t => { counts[t.category] = (counts[t.category] || 0) + 1; });
+  const chip = (id, label, n) => `
+    <button class="chip ${state.glossCat === id ? 'active' : ''}" data-cat="${esc(id)}" type="button" role="tab"
+            aria-selected="${state.glossCat === id}">${esc(label)}<span class="chip-count">${n}</span></button>`;
+  el.innerHTML = chip('all', 'Vše', terms.length)
+    + cats.filter(c => counts[c.id]).map(c => chip(c.id, c.label, counts[c.id])).join('');
+}
+
+function renderGlossary() {
+  const wrap = $('gloss-results');
+  if (!wrap) return;
+  renderGlossaryCats();
+
+  const list = glossFiltered();
+  $('gloss-empty').classList.toggle('hidden', list.length > 0);
+  $('gloss-clear').classList.toggle('hidden', !state.glossQuery);
+
+  // Kolik toho filtr našel — bez toho člověk neví, jestli vidí všechno.
+  const countEl = $('gloss-count-line');
+  if (countEl) {
+    const filtered = state.glossQuery.trim() || state.glossCat !== 'all';
+    const n = list.length;
+    const word = n === 1 ? 'výraz' : (n >= 2 && n <= 4 ? 'výrazy' : 'výrazů');
+    countEl.textContent = filtered ? `${n} ${word}` : '';
+    countEl.classList.toggle('hidden', !filtered);
+  }
+
+  // Bez filtru seskupíme podle kategorií, ať je vidět struktura oboru.
+  // S filtrem dává větší smysl jeden plochý seznam výsledků.
+  const grouped = state.glossCat === 'all' && !state.glossQuery.trim();
+  if (!grouped) {
+    wrap.innerHTML = `<div class="gloss-grid">${list.map(glossTermCardHtml).join('')}</div>`;
+  } else {
+    const cats = state.glossary?.categories || [];
+    wrap.innerHTML = cats.map(c => {
+      const items = list.filter(t => t.category === c.id);
+      if (!items.length) return '';
+      return `
+        <section class="gloss-section">
+          <div class="section-header">${esc(c.label)}</div>
+          ${c.hint ? `<p class="gloss-cat-hint">${esc(c.hint)}</p>` : ''}
+          <div class="gloss-grid">${items.map(glossTermCardHtml).join('')}</div>
+        </section>`;
+    }).join('');
+  }
+}
+
+function showGlossary() {
+  loadGlossary().then(() => renderGlossary());
+}
+
+function glossTermBySlug(slug) {
+  return (state.glossary?.terms || []).find(t => t.slug === slug);
+}
+
+function showTerm(slug) {
+  const t = glossTermBySlug(slug);
+  if (!t) {
+    if (!state.glossaryLoaded) { loadGlossary().then(() => showTerm(slug)); return; }
+    showToast('Výraz nenalezen');
+    return;
+  }
+  if (!location.hash.startsWith('#term/')) _preTermHash = location.hash || '#';
+  history.replaceState({ term: slug }, '', '#term/' + slug);
+  trackEvent('term_view', { slug });
+
+  const related = (t.related || []).map(glossTermBySlug).filter(Boolean);
+  const stat = t.mentions >= GLOSS_BADGE_MIN
+    ? `<div class="term-stat">Ve&nbsp;skupině padlo <strong>${t.mentions}×</strong>${t.days ? ` během ${t.days} dnů` : ''}${t.first_seen ? `, poprvé ${formatDateLong(t.first_seen)}` : ''}.</div>`
+    : '';
+
+  $('term-ov-meta').innerHTML = `<span class="card-type" style="color:var(--accent)">${esc(glossCatLabel(t.category))}</span>`;
+  $('term-ov-content').innerHTML = `
+    <h2 id="term-ov-title" class="term-title">${esc(t.term)}</h2>
+    <p class="term-plain">${esc(t.plain)}</p>
+    ${t.why ? `<div class="term-why"><span class="term-why-label">Proč to potkáte</span><p>${esc(t.why)}</p></div>` : ''}
+    ${stat}
+    ${related.length ? `
+      <div class="term-related">
+        <span class="term-related-label">Souvisí s</span>
+        <div class="term-related-row">
+          ${related.map(r => `<button class="term-rel" data-term="${esc(r.slug)}" type="button">${esc(r.term)}</button>`).join('')}
+        </div>
+      </div>` : ''}
+    ${t.card_hits > 0 ? `
+    <div class="term-cta-row">
+      <button class="term-cta" data-find="${esc(t.term)}" type="button">Najít v&nbsp;poznatcích</button>
+    </div>` : ''}`;
+  $('term-overlay-body').scrollTop = 0;
+  show('term-overlay');
+}
+
+function closeTerm() {
+  if ($('term-overlay').classList.contains('hidden')) return;
+  hide('term-overlay');
+  const target = _preTermHash || '#';
+  _preTermHash = '';
+  history.replaceState({}, '', target);
+}
+
+// Nejsilnější místo, kde slovníček pomůže: čtenář narazí na neznámé slovo
+// přímo v poznatku. Text karty nesaháme, jen pod něj nabídneme dotčené výrazy.
+function renderCardTerms(card) {
+  if (!state.glossaryLoaded || !card) return '';
+  const hay = searchNorm([card.title, card.excerpt, card.body].filter(Boolean).join(' '));
+  const hits = [];
+  for (const t of (state.glossary?.terms || [])) {
+    const forms = [t.term, ...(t.aliases || [])];
+    const found = forms.some(f => {
+      const nf = searchNorm(f);
+      if (nf.length < 3) return false;               // „AI", „UI" by chytaly všude
+      const i = hay.indexOf(nf);
+      if (i < 0) return false;
+      // hrubá hranice slova, ať „git" nenajde „digital"
+      const before = i > 0 ? hay[i - 1] : ' ';
+      const after = hay[i + nf.length] || ' ';
+      return !/[a-z0-9]/.test(before) && !/[a-z0-9]/.test(after);
+    });
+    if (found) hits.push(t);
+    if (hits.length >= 4) break;
+  }
+  if (!hits.length) return '';
+  return `
+    <div class="card-terms">
+      <span class="card-terms-label">Výrazy z tohoto poznatku</span>
+      <div class="card-terms-row">
+        ${hits.map(t => `<button class="term-rel" data-term="${esc(t.slug)}" type="button">${esc(t.term)}</button>`).join('')}
+      </div>
+    </div>`;
+}
+
+// Opačný směr než findTermInCards: kdo hledá neznámé slovo, má dostat
+// vysvětlení i tehdy, když se na něj netrefí žádná karta. Tohle je hlavní
+// místo, kde na slovníček narazí i lidi, co ho v menu nikdy nehledali.
+function renderSearchGloss(q) {
+  const el = $('search-gloss');
+  if (!el) return;
+  const query = (q || '').trim();
+  if (query.length < 2) { el.classList.add('hidden'); el.innerHTML = ''; return; }
+
+  if (!state.glossaryLoaded) {
+    // Doplní se, jakmile se slovníček donačte — hledání kvůli tomu nečeká.
+    loadGlossary().then(() => {
+      if (state.view === 'search' && state.searchQuery === q) renderSearchGloss(q);
+    });
+    return;
+  }
+
+  const nq = searchNorm(query);
+  const hits = (state.glossary?.terms || []).filter(t =>
+    searchNorm(t.term).includes(nq) || (t.aliases || []).some(a => searchNorm(a) === nq)
+  ).slice(0, 2);
+
+  if (!hits.length) { el.classList.add('hidden'); el.innerHTML = ''; return; }
+  el.innerHTML = hits.map(t => `
+    <button class="search-gloss-hit" data-term="${esc(t.slug)}" type="button">
+      <span class="search-gloss-label">Ve slovníčku</span>
+      <span class="search-gloss-term">${esc(t.term)}</span>
+      <span class="search-gloss-short">${esc(t.short)}</span>
+    </button>`).join('');
+  el.classList.remove('hidden');
+}
+
+// Ze slovníčku rovnou do obsahu portálu — tohle má lidi vtáhnout dál,
+// ne je nechat u definice.
+function findTermInCards(term) {
+  closeTerm();
+  state.searchQuery = term;
+  const inp = $('search-input');
+  if (inp) inp.value = term;
+  switchView('search');
+}
+
 function openMoreSheet() { show('more-sheet'); }
 function closeMoreSheet() { hide('more-sheet'); }
 
@@ -1692,19 +1942,20 @@ function switchView(viewName) {
 
   // Přepnutí pohledu zavře případný otevřený detail akce (sheet).
   $('event-overlay')?.classList.add('hidden');
+  $('term-overlay')?.classList.add('hidden');
 
   document.getElementById('site-header').classList.toggle('stats-mode', viewName === 'stats');
 
-  const noChipsViews = new Set(['chat', 'transcript', 'stats', 'events', 'notfound']);
+  const noChipsViews = new Set(['chat', 'transcript', 'stats', 'events', 'glossary', 'notfound']);
   $('topic-chips').classList.toggle('hidden', noChipsViews.has(viewName));
 
-  ['today', 'week', 'archive', 'search', 'stats', 'transcript', 'top', 'chat', 'events', 'notfound'].forEach(v => {
+  ['today', 'week', 'archive', 'search', 'stats', 'transcript', 'top', 'chat', 'events', 'glossary', 'notfound'].forEach(v => {
     const el = $(`view-${v}`);
     if (el) el.classList.toggle('hidden', v !== viewName);
   });
 
   // Pohledy schované pod „Více" zvýrazní tlačítko Více.
-  const moreViews = new Set(['stats', 'events', 'chat']);
+  const moreViews = new Set(['stats', 'events', 'glossary', 'chat']);
   const navTarget = moreViews.has(viewName) ? 'more' : viewName;
   document.querySelectorAll('.nav-btn').forEach(btn => {
     const isActive = btn.dataset.view === navTarget;
@@ -1742,6 +1993,8 @@ function switchView(viewName) {
     initChat();
   } else if (viewName === 'events') {
     showEvents();
+  } else if (viewName === 'glossary') {
+    showGlossary();
   }
 }
 
@@ -2815,6 +3068,13 @@ function handleHash() {
     const id = hash.slice(6);
     switchView('events');
     showEvent(id);
+  } else if (hash === 'glossary') {
+    switchView('glossary');
+  } else if (hash.startsWith('term/')) {
+    // Sdílitelný odkaz na jeden výraz: #term/harness
+    const slug = hash.slice(5);
+    switchView('glossary');
+    showTerm(slug);
   } else {
     switchView('today');
   }
@@ -3310,6 +3570,44 @@ function init() {
   $('event-overlay-close').addEventListener('click', closeEvent);
   $('event-overlay-backdrop').addEventListener('click', closeEvent);
 
+  // Slovníček: hledání, kategorie, otevření výrazu.
+  $('gloss-input').addEventListener('input', e => {
+    state.glossQuery = e.target.value;
+    renderGlossary();
+  });
+  $('gloss-clear').addEventListener('click', () => {
+    state.glossQuery = '';
+    $('gloss-input').value = '';
+    renderGlossary();
+    $('gloss-input').focus();
+  });
+  $('gloss-cats').addEventListener('click', e => {
+    const btn = e.target.closest('[data-cat]');
+    if (!btn) return;
+    state.glossCat = btn.dataset.cat;
+    renderGlossary();
+  });
+  $('gloss-results').addEventListener('click', e => {
+    const btn = e.target.closest('[data-term]');
+    if (btn) showTerm(btn.dataset.term);
+  });
+  $('overlay-text').addEventListener('click', e => {
+    const btn = e.target.closest('.card-terms [data-term]');
+    if (btn) showTerm(btn.dataset.term);
+  });
+  $('search-gloss').addEventListener('click', e => {
+    const btn = e.target.closest('[data-term]');
+    if (btn) showTerm(btn.dataset.term);
+  });
+  $('term-overlay-close').addEventListener('click', closeTerm);
+  $('term-overlay-backdrop').addEventListener('click', closeTerm);
+  $('term-ov-content').addEventListener('click', e => {
+    const rel = e.target.closest('[data-term]');
+    if (rel) { showTerm(rel.dataset.term); return; }
+    const find = e.target.closest('[data-find]');
+    if (find) findTermInCards(find.dataset.find);
+  });
+
   $('overlay-close').addEventListener('click', closeCard);
   $('overlay-backdrop').addEventListener('click', closeCard);
   $('overlay-prev').addEventListener('click', () => navigateOverlay(-1));
@@ -3415,6 +3713,7 @@ function init() {
     if (e.key === 'Escape') {
       if (!$('more-sheet').classList.contains('hidden')) { closeMoreSheet(); return; }
       if (!$('event-overlay').classList.contains('hidden')) { closeEvent(); return; }
+      if (!$('term-overlay').classList.contains('hidden')) { closeTerm(); return; }
       if (overlayOpen) { closeCard(); return; }
       if (state.view === 'transcript') { $('btn-transcript-back').click(); return; }
       const shortcutsPanel = document.getElementById('shortcuts-panel');

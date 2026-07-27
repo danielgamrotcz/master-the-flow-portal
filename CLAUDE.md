@@ -21,9 +21,53 @@ master-the-flow-portal/
 ├── data/
 │   ├── today.json    Dnešní digest (přepisuje se každý den)
 │   ├── archive.json  Index všech dostupných dat
+│   ├── events.json   Akce (ruční soubor, negeneruje se)
+│   ├── glossary.json Slovníček výrazů (generuje tools/build_glossary.py)
 │   └── archive/      Archiv: YYYY-MM-DD.json pro každý den
+├── tools/
+│   └── build_glossary.py   Zdroj obsahu slovníčku + počítání výskytů
 └── CLAUDE.md
 ```
+
+## Slovníček
+
+Vysvětlivky cizích výrazů, na které lidi ve skupině narazí (harness, Git, MCP…).
+Cíl je, aby začátečník nemusel nic dohledávat jinde.
+
+- **Obsah hesel je v `tools/glossary_terms.json`** (data, ne kód, aby do nich
+  mohla přisypávat i pipeline). `tools/build_glossary.py` k nim dopočítá čísla,
+  doplní nezlomitelné mezery a zapíše `data/glossary.json`.
+- **Počítá se jen z denních přepisů**, ne z týdenních souhrnů. Ty obsah opakují
+  a čísla by nafoukly, takže by tvrzení „padlo Xkrát" neobstálo.
+- Přegenerování po úpravě termínů: `python3 tools/build_glossary.py`
+- Termín bez jediného výskytu v přepisech do slovníčku nepatří, generátor
+  na něj upozorní.
+- Odznak s počtem se ukazuje až od 5 výskytů (`GLOSS_BADGE_MIN` v `app.js`).
+- `card_hits` počítá, kolik karet výraz zmiňuje. Když je nula, detail nenabídne
+  tlačítko „Najít v poznatcích", aby nevedlo do prázdna. Přepočítá se
+  z `data/cards-index.json` při každém běhu generátoru.
+- V seznamu se řadí podle četnosti, ne abecedně. Začátečník potřebuje nejdřív
+  to, na co narazí nejčastěji, na cílené dohledání je nahoře hledání.
+
+Vstupní body pro uživatele: menu Více → Slovníček, `#glossary`, `#term/<slug>`,
+nález ve výsledcích hledání a výrazy pod textem v detailu karty.
+
+### Automatické doplňování
+
+Denní pipeline po vygenerování karet projede stejný přepis ještě jednou a hledá
+výrazy, které ve slovníčku chybí (`whatsapp-export/scripts/glossary_scan.py`).
+
+**Návrhy nejdou rovnou ven.** Model si u pojmů domýšlí fakta, která v přepisu
+nejsou, a píše přesně těmi obraty, které se ze slovníčku ručně vyhazují. Každý
+návrh proto projde automatickou kontrolou (halucinace, duplicita, slop vzory,
+typografie, opakování v rámci dávky) a pak čeká ve frontě.
+
+- fronta: `whatsapp-export/state/glossary-pending.json`
+- upozornění na Telegram, když něco přibude
+- schválení: `python3 scripts/glossary_review.py` v repu whatsapp-export
+- schválené heslo se zapíše do `tools/glossary_terms.json` a slovníček se
+  přegeneruje, publikace na web je pak samostatný krok
+- hesla z pipeline mají `source: "auto"`, ručně psaná `source: "hand"`
 
 ## Automation pipeline
 

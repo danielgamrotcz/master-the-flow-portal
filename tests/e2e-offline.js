@@ -19,13 +19,19 @@ const check = (n, c, d='') => { console.log(`${c?'PASS':'FAIL'}  ${n}${c?'':'  <
   });
   check('Service worker aktivní', swActive);
 
-  const cacheInfo = await page.evaluate(async () => {
+  // Verzi cache čteme ze sw.js, ne natvrdo — jinak test spadne po každém
+  // zvednutí verze, i když je všechno v pořádku.
+  const swSrc = await (await fetch('http://localhost:8788/sw.js')).text();
+  const CACHE_NAME = (swSrc.match(/CACHE\s*=\s*['"]([^'"]+)['"]/) || [])[1];
+  check('sw.js má název cache', !!CACHE_NAME, swSrc.slice(0, 80));
+
+  const cacheInfo = await page.evaluate(async (cacheName) => {
     const names = await caches.keys();
-    const c = await caches.open('mtf-v23');
+    const c = await caches.open(cacheName);
     const keys = await c.keys();
     return { names, count: keys.length, hasToday: keys.some(k => k.url.includes('today.json')), anyQuery: keys.some(k => k.url.includes('?v=')) };
-  });
-  check('Cache mtf-v23 existuje', cacheInfo.names.includes('mtf-v23'), JSON.stringify(cacheInfo.names));
+  }, CACHE_NAME);
+  check(`Cache ${CACHE_NAME} existuje`, cacheInfo.names.includes(CACHE_NAME), JSON.stringify(cacheInfo.names));
   check('today.json je v cache', cacheInfo.hasToday);
   check('Žádné ?v= záznamy v cache (dřív ~110/návštěvu)', !cacheInfo.anyQuery);
 

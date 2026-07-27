@@ -139,6 +139,7 @@
           </button>
         </div>
         <div id="search-hint" class="search-hint">Zadejte aspoň 2 znaky</div>
+        <div id="search-gloss" class="search-gloss hidden"></div>
         <div id="cards-search" class="cards-grid hidden"></div>
         <div id="empty-search" class="empty-state hidden">
           <p>Nic nenalezeno. Zkuste kratší výraz nebo jiné slovo.</p>
@@ -192,6 +193,32 @@
           <div id="events-past" class="cards-grid"></div>
         </div>
         <div id="loading-events" class="loading-state hidden"><div class="spinner"></div></div>
+      </div>
+
+      <div id="view-glossary" class="view hidden">
+        <div class="gloss-intro">
+          <h1 class="gloss-title">Slovníček</h1>
+          <p class="gloss-lede">Výrazy, které ve&nbsp;skupině běžně padají, vysvětlené normálně. Bez&nbsp;předpokladu, že něco víte předem.</p>
+          <p class="gloss-note">Číslo u&nbsp;výrazu říká, kolikrát padl v&nbsp;diskuzích. Nejčastější jsou nahoře.</p>
+        </div>
+        <div class="gloss-sticky">
+        <div class="gloss-searchbar">
+          <svg class="gloss-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input id="gloss-input" type="search" class="gloss-input" placeholder="Hledat výraz…" autocomplete="off" aria-label="Hledat ve slovníčku">
+          <button id="gloss-clear" class="gloss-clear icon-btn hidden" aria-label="Smazat hledání" tabindex="-1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+        <div id="gloss-cats" class="gloss-cats" role="tablist" aria-label="Kategorie"></div>
+        </div>
+        <div id="gloss-count-line" class="gloss-count-line hidden" aria-live="polite"></div>
+        <div id="gloss-results" class="gloss-results"></div>
+        <div id="gloss-empty" class="empty-state hidden">
+          <p>Nic takového tu&nbsp;zatím není. Zkuste jiný výraz, nebo se&nbsp;zeptejte ve&nbsp;skupině.</p>
+        </div>
+        <div id="loading-glossary" class="loading-state hidden"><div class="spinner"></div></div>
       </div>
 
       <div id="view-notfound" class="view hidden">
@@ -286,6 +313,12 @@
         </svg>
         <span>Události</span>
       </button>
+      <button class="more-item" data-view="glossary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="13" y2="11"/>
+        </svg>
+        <span>Slovníček</span>
+      </button>
       <button class="more-item" data-view="stats">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
           <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
@@ -316,6 +349,25 @@
       </div>
       <div id="event-overlay-body" class="overlay-body">
         <div id="event-ov-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="term-overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="term-ov-title">
+    <div class="overlay-backdrop" id="term-overlay-backdrop"></div>
+    <div class="overlay-sheet">
+      <div class="overlay-handle"></div>
+      <div class="overlay-header">
+        <div id="term-ov-meta" class="overlay-meta"></div>
+        <button id="term-overlay-close" class="overlay-close-btn icon-btn icon-btn--lg" aria-label="Zavřít">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div id="term-overlay-body" class="overlay-body">
+        <div id="term-ov-content"></div>
       </div>
     </div>
   </div>

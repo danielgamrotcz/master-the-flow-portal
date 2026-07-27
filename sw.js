@@ -1,7 +1,7 @@
 // v23: úklid cache po odstranění ?v= cache-bustingu (nasypal do Cache Storage
 // stovky unikátních záznamů) + today.json v precache. Bump verze při aktivaci
 // všechny staré záznamy smaže.
-const CACHE = 'mtf-v23';
+const CACHE = 'mtf-v24';
 // today.json v precache: při první návštěvě SW ještě neřídí stránku, takže by
 // se digest do cache nedostal a offline režim by fungoval až od druhé návštěvy.
 const STATIC = ['/', '/index.html', '/app.js', '/styles.css', '/favicon.svg',
@@ -72,7 +72,8 @@ self.addEventListener('fetch', e => {
   // today.json, archive index, events, notification — network-first, fall back to cache
   if (url.pathname === '/data/today.json' || url.pathname === '/data/archive.json'
       || url.pathname === '/data/cards-index.json'
-      || url.pathname === '/data/events.json' || url.pathname === '/data/notification.json') {
+      || url.pathname === '/data/events.json' || url.pathname === '/data/notification.json'
+      || url.pathname === '/data/glossary.json') {
     e.respondWith(
       fetch(e.request)
         .then(res => {
