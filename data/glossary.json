@@ -260,7 +260,7 @@
       "category": "cc",
       "short": "Soubor s instrukcemi, které si Claude Code přečte při každém spuštění.",
       "plain": "Textový soubor uložený v projektu, do kterého si napíšete, jak se v něm má pracovat. Je to trvalá poznámka ve stylu tady to děláme takhle. Stejné věci se pak nemusí opakovat v každé konverzaci.",
-      "why": "Ve skupině se často řeší, že má být krátký. Dlouhý soubor spolyká kontext a instrukce se v něm ztratí.",
+      "why": "Často se připomíná, že má být krátký. Dlouhý soubor spolyká kontext a instrukce se v něm ztratí.",
       "related": [
         "kontext",
         "skill",
@@ -271,7 +271,7 @@
         "claude.md"
       ],
       "source": "hand",
-      "search": "claude.md soubor s instrukcemi, ktere si claude code precte pri kazdem spusteni. textovy soubor ulozeny v projektu, do ktereho si napisete, jak se v nem ma pracovat. je to trvala poznamka ve stylu tady to delame takhle. stejne veci se pak nemusi opakovat v kazde konverzaci. ve skupine se casto resi, ze ma byt kratky. dlouhy soubor spolyka kontext a instrukce se v nem ztrati. claude.md claude.md",
+      "search": "claude.md soubor s instrukcemi, ktere si claude code precte pri kazdem spusteni. textovy soubor ulozeny v projektu, do ktereho si napisete, jak se v nem ma pracovat. je to trvala poznamka ve stylu tady to delame takhle. stejne veci se pak nemusi opakovat v kazde konverzaci. casto se pripomina, ze ma byt kratky. dlouhy soubor spolyka kontext a instrukce se v nem ztrati. claude.md claude.md",
       "mentions": 31,
       "days": 12,
       "first_seen": "2026-03-14",
@@ -378,6 +378,35 @@
       "first_seen": "2026-03-31",
       "last_seen": "2026-07-22",
       "card_hits": 3
+    },
+    {
+      "slug": "cowork",
+      "term": "Cowork",
+      "category": "cc",
+      "short": "Claude v prohlížeči, ovládaný klikáním místo psaní do terminálu.",
+      "plain": "Cowork běží v prohlížeči a všechno se v něm odklikává. Nemusíte nic instalovat ani psát příkazy. Pro spoustu lidí je to schůdnější vstup než Claude Code. Nastavení a paměť si ale drží v cloudu. Claude Code má oboje v textových souborech u vás na disku, a přenést je jinam je pak snazší.",
+      "why": "Otázka čím začít tady padá pořád dokola. Odpověď se liší podle toho, jestli chcete terminál, nebo ne.",
+      "related": [
+        "claude-code",
+        "gui",
+        "terminal"
+      ],
+      "aliases": [
+        "Cowork",
+        "cowork",
+        "CoWork",
+        "Coworku",
+        "coworku",
+        "Coworkem",
+        "coworkem"
+      ],
+      "source": "auto",
+      "search": "cowork claude v prohlizeci, ovladany klikanim misto psani do terminalu. cowork bezi v prohlizeci a vsechno se v nem odklikava. nemusite nic instalovat ani psat prikazy. pro spoustu lidi je to schudnejsi vstup nez claude code. nastaveni a pamet si ale drzi v cloudu. claude code ma oboje v textovych souborech u vas na disku, a prenest je jinam je pak snazsi. otazka cim zacit tady pada porad dokola. odpoved se lisi podle toho, jestli chcete terminal, nebo ne. cowork cowork cowork coworku coworku coworkem coworkem",
+      "mentions": 123,
+      "days": 23,
+      "first_seen": "2026-03-19",
+      "last_seen": "2026-07-26",
+      "card_hits": 15
     },
     {
       "slug": "cron",
@@ -911,7 +940,7 @@
       "category": "ai",
       "short": "Model běžící přímo na vašem počítači místo v cloudu.",
       "plain": "Místo posílání dotazů na internet běží model přímo u vás. Data neopustí váš stroj, takže se to hodí na citlivé věci. Zaplatíte za to výkonem, potřebujete silnější počítač a výsledky bývají slabší než u velkých cloudových modelů.",
-      "why": "Ve skupině se řeší hlavně u přepisů a u dat, která nesmí ven.",
+      "why": "Řeší se hlavně u přepisů a u dat, která nesmí ven.",
       "related": [
         "whisper",
         "gdpr",
@@ -924,7 +953,7 @@
         "lokálního modelu"
       ],
       "source": "hand",
-      "search": "lokalni model model bezici primo na vasem pocitaci misto v cloudu. misto posilani dotazu na internet bezi model primo u vas. data neopusti vas stroj, takze se to hodi na citlive veci. zaplatite za to vykonem, potrebujete silnejsi pocitac a vysledky byvaji slabsi nez u velkych cloudovych modelu. ve skupine se resi hlavne u prepisu a u dat, ktera nesmi ven. lokalni model lokalne lokalni modely lokalniho modelu",
+      "search": "lokalni model model bezici primo na vasem pocitaci misto v cloudu. misto posilani dotazu na internet bezi model primo u vas. data neopusti vas stroj, takze se to hodi na citlive veci. zaplatite za to vykonem, potrebujete silnejsi pocitac a vysledky byvaji slabsi nez u velkych cloudovych modelu. resi se hlavne u prepisu a u dat, ktera nesmi ven. lokalni model lokalne lokalni modely lokalniho modelu",
       "mentions": 38,
       "days": 26,
       "first_seen": "2026-03-20",
@@ -1054,6 +1083,31 @@
       "card_hits": 0
     },
     {
+      "slug": "notebooklm",
+      "term": "NotebookLM",
+      "category": "nastroje",
+      "short": "Nástroj od Googlu na dlouhé materiály, přepisy a nahrávky.",
+      "plain": "Nahrajete do něj soubory nebo nahrávku a on z toho udělá shrnutí, odpoví na otázky nebo vyrobí zvukový přehled. Hodí se na dlouhé materiály, kde byste jinak ručně hledali, co je podstatné. Data jdou do Googlu, u citlivých věcí proto pozor na GDPR.",
+      "why": "Padl jako tip na zpracování dlouhých nahrávek ze schůzek a koučovacích sezení.",
+      "related": [
+        "transkripce",
+        "gdpr"
+      ],
+      "aliases": [
+        "NotebookLM",
+        "notebooklm",
+        "Notebook LM",
+        "NotebookLM'"
+      ],
+      "source": "auto",
+      "search": "notebooklm nastroj od googlu na dlouhe materialy, prepisy a nahravky. nahrajete do nej soubory nebo nahravku a on z toho udela shrnuti, odpovi na otazky nebo vyrobi zvukovy prehled. hodi se na dlouhe materialy, kde byste jinak rucne hledali, co je podstatne. data jdou do googlu, u citlivych veci proto pozor na gdpr. padl jako tip na zpracovani dlouhych nahravek ze schuzek a koucovacich sezeni. notebooklm notebooklm notebook lm notebooklm'",
+      "mentions": 51,
+      "days": 13,
+      "first_seen": "2026-03-14",
+      "last_seen": "2026-07-25",
+      "card_hits": 6
+    },
+    {
       "slug": "notion",
       "term": "Notion",
       "category": "nastroje",
@@ -1175,6 +1229,32 @@
       "first_seen": "2026-04-30",
       "last_seen": "2026-07-25",
       "card_hits": 5
+    },
+    {
+      "slug": "openrouter",
+      "term": "OpenRouter",
+      "category": "nastroje",
+      "short": "Rozcestník k modelům od různých firem přes jedno napojení.",
+      "plain": "Napojíte se jednou a přepínáte mezi modely od různých poskytovatelů podle toho, co zrovna potřebujete nebo co je levnější. Odpadá zakládání účtu u každé firmy zvlášť. Část modelů bývá dostupná i zdarma.",
+      "why": "Padlo jako tip, když se ve skupině řešilo testování alternativ ke Claude a GPT. S upozorněním, že levnějším modelům čeština většinou nejde.",
+      "related": [
+        "model",
+        "claude-modely",
+        "api"
+      ],
+      "aliases": [
+        "OpenRouter",
+        "openrouter",
+        "Open Router",
+        "OpenRouteru"
+      ],
+      "source": "auto",
+      "search": "openrouter rozcestnik k modelum od ruznych firem pres jedno napojeni. napojite se jednou a prepinate mezi modely od ruznych poskytovatelu podle toho, co zrovna potrebujete nebo co je levnejsi. odpada zakladani uctu u kazde firmy zvlast. cast modelu byva dostupna i zdarma. padlo jako tip, kdyz se ve skupine resilo testovani alternativ ke claude a gpt. s upozornenim, ze levnejsim modelum cestina vetsinou nejde. openrouter openrouter open router openrouteru",
+      "mentions": 3,
+      "days": 2,
+      "first_seen": "2026-07-09",
+      "last_seen": "2026-07-25",
+      "card_hits": 2
     },
     {
       "slug": "pii",
@@ -1383,7 +1463,7 @@
       "category": "nastroje",
       "short": "Automatické vytahování dat z webových stránek.",
       "plain": "Program projde stránku a vytáhne z ní údaje, které by člověk jinak vypisoval ručně. Weby se proti tomu často brání, proto na to existují specializované nástroje.",
-      "why": "Ve skupině se řeší hlavně u srovnávání nabídek a sbírání recenzí.",
+      "why": "Nejčastěji u srovnávání nabídek a sbírání recenzí.",
       "related": [
         "automatizace",
         "api"
@@ -1398,7 +1478,7 @@
         "Firecrawl"
       ],
       "source": "hand",
-      "search": "scraping automaticke vytahovani dat z webovych stranek. program projde stranku a vytahne z ni udaje, ktere by clovek jinak vypisoval rucne. weby se proti tomu casto brani, proto na to existuji specializovane nastroje. ve skupine se resi hlavne u srovnavani nabidek a sbirani recenzi. scraping scraper scrapovat scrapovani playwright apify firecrawl",
+      "search": "scraping automaticke vytahovani dat z webovych stranek. program projde stranku a vytahne z ni udaje, ktere by clovek jinak vypisoval rucne. weby se proti tomu casto brani, proto na to existuji specializovane nastroje. nejcasteji u srovnavani nabidek a sbirani recenzi. scraping scraper scrapovat scrapovani playwright apify firecrawl",
       "mentions": 32,
       "days": 5,
       "first_seen": "2026-03-19",
@@ -1743,7 +1823,7 @@
       "category": "nastroje",
       "short": "Model na převod řeči na text.",
       "plain": "Přepisovací model od OpenAI. Dá se používat přes internet i pustit přímo na vlastním počítači, takže nahrávka nemusí nikam odcházet.",
-      "why": "Ve skupině stojí na Whisperu většina domácích řešení na přepis schůzek a hlasových poznámek.",
+      "why": "Stojí na něm většina domácích řešení na přepis schůzek a hlasových poznámek.",
       "related": [
         "lokalni-model",
         "transkripce"
@@ -1754,7 +1834,7 @@
         "whisper"
       ],
       "source": "hand",
-      "search": "whisper model na prevod reci na text. prepisovaci model od openai. da se pouzivat pres internet i pustit primo na vlastnim pocitaci, takze nahravka nemusi nikam odchazet. ve skupine stoji na whisperu vetsina domacich reseni na prepis schuzek a hlasovych poznamek. whisper whisperu whisper",
+      "search": "whisper model na prevod reci na text. prepisovaci model od openai. da se pouzivat pres internet i pustit primo na vlastnim pocitaci, takze nahravka nemusi nikam odchazet. stoji na nem vetsina domacich reseni na prepis schuzek a hlasovych poznamek. whisper whisperu whisper",
       "mentions": 24,
       "days": 7,
       "first_seen": "2026-03-31",

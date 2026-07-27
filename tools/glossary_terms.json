@@ -293,7 +293,7 @@
       ],
       "short": "Model běžící přímo na vašem počítači místo v cloudu.",
       "plain": "Místo posílání dotazů na internet běží model přímo u vás. Data neopustí váš stroj, takže se to hodí na citlivé věci. Zaplatíte za to výkonem, potřebujete silnější počítač a výsledky bývají slabší než u velkých cloudových modelů.",
-      "why": "Ve skupině se řeší hlavně u přepisů a u dat, která nesmí ven.",
+      "why": "Řeší se hlavně u přepisů a u dat, která nesmí ven.",
       "related": [
         "whisper",
         "gdpr",
@@ -413,7 +413,7 @@
       ],
       "short": "Soubor s instrukcemi, které si Claude Code přečte při každém spuštění.",
       "plain": "Textový soubor uložený v projektu, do kterého si napíšete, jak se v něm má pracovat. Je to trvalá poznámka ve stylu tady to děláme takhle. Stejné věci se pak nemusí opakovat v každé konverzaci.",
-      "why": "Ve skupině se často řeší, že má být krátký. Dlouhý soubor spolyká kontext a instrukce se v něm ztratí.",
+      "why": "Často se připomíná, že má být krátký. Dlouhý soubor spolyká kontext a instrukce se v něm ztratí.",
       "related": [
         "kontext",
         "skill",
@@ -1166,7 +1166,7 @@
       ],
       "short": "Model na převod řeči na text.",
       "plain": "Přepisovací model od OpenAI. Dá se používat přes internet i pustit přímo na vlastním počítači, takže nahrávka nemusí nikam odcházet.",
-      "why": "Ve skupině stojí na Whisperu většina domácích řešení na přepis schůzek a hlasových poznámek.",
+      "why": "Stojí na něm většina domácích řešení na přepis schůzek a hlasových poznámek.",
       "related": [
         "lokalni-model",
         "transkripce"
@@ -1283,7 +1283,7 @@
       ],
       "short": "Automatické vytahování dat z webových stránek.",
       "plain": "Program projde stránku a vytáhne z ní údaje, které by člověk jinak vypisoval ručně. Weby se proti tomu často brání, proto na to existují specializované nástroje.",
-      "why": "Ve skupině se řeší hlavně u srovnávání nabídek a sbírání recenzí.",
+      "why": "Nejčastěji u srovnávání nabídek a sbírání recenzí.",
       "related": [
         "automatizace",
         "api"
@@ -1382,6 +1382,68 @@
         "gdpr"
       ],
       "source": "hand"
+    },
+    {
+      "slug": "cowork",
+      "term": "Cowork",
+      "cat": "cc",
+      "match": [
+        "Cowork",
+        "cowork",
+        "CoWork",
+        "Coworku",
+        "coworku",
+        "Coworkem",
+        "coworkem"
+      ],
+      "short": "Claude v prohlížeči, ovládaný klikáním místo psaní do terminálu.",
+      "plain": "Cowork běží v prohlížeči a všechno se v něm odklikává. Nemusíte nic instalovat ani psát příkazy. Pro spoustu lidí je to schůdnější vstup než Claude Code. Nastavení a paměť si ale drží v cloudu. Claude Code má oboje v textových souborech u vás na disku, a přenést je jinam je pak snazší.",
+      "why": "Otázka čím začít tady padá pořád dokola. Odpověď se liší podle toho, jestli chcete terminál, nebo ne.",
+      "related": [
+        "claude-code",
+        "gui",
+        "terminal"
+      ],
+      "source": "auto"
+    },
+    {
+      "slug": "openrouter",
+      "term": "OpenRouter",
+      "cat": "nastroje",
+      "match": [
+        "OpenRouter",
+        "openrouter",
+        "Open Router",
+        "OpenRouteru"
+      ],
+      "short": "Rozcestník k modelům od různých firem přes jedno napojení.",
+      "plain": "Napojíte se jednou a přepínáte mezi modely od různých poskytovatelů podle toho, co zrovna potřebujete nebo co je levnější. Odpadá zakládání účtu u každé firmy zvlášť. Část modelů bývá dostupná i zdarma.",
+      "why": "Padlo jako tip, když se ve skupině řešilo testování alternativ ke Claude a GPT. S upozorněním, že levnějším modelům čeština většinou nejde.",
+      "related": [
+        "model",
+        "claude-modely",
+        "api"
+      ],
+      "source": "auto"
+    },
+    {
+      "slug": "notebooklm",
+      "term": "NotebookLM",
+      "cat": "nastroje",
+      "match": [
+        "NotebookLM",
+        "notebooklm",
+        "Notebook LM",
+        "NotebookLM'"
+      ],
+      "short": "Nástroj od Googlu na dlouhé materiály, přepisy a nahrávky.",
+      "plain": "Nahrajete do něj soubory nebo nahrávku a on z toho udělá shrnutí, odpoví na otázky nebo vyrobí zvukový přehled. Hodí se na dlouhé materiály, kde byste jinak ručně hledali, co je podstatné. Data jdou do Googlu, u citlivých věcí proto pozor na GDPR.",
+      "why": "Padl jako tip na zpracování dlouhých nahrávek ze schůzek a koučovacích sezení.",
+      "related": [
+        "transkripce",
+        "gdpr"
+      ],
+      "source": "auto"
     }
   ]
 }
