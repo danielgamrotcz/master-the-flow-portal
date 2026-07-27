@@ -1,18 +1,28 @@
 // v23: úklid cache po odstranění ?v= cache-bustingu (nasypal do Cache Storage
 // stovky unikátních záznamů) + today.json v precache. Bump verze při aktivaci
 // všechny staré záznamy smaže.
-const CACHE = 'mtf-v24';
-// today.json v precache: při první návštěvě SW ještě neřídí stránku, takže by
-// se digest do cache nedostal a offline režim by fungoval až od druhé návštěvy.
+const CACHE = 'mtf-v25';
 const STATIC = ['/', '/index.html', '/app.js', '/styles.css', '/favicon.svg',
-  '/manifest.webmanifest', '/icon-192.png', '/icon-512.png', '/apple-touch-icon.png',
-  '/data/today.json'];
+  '/manifest.webmanifest', '/icon-192.png', '/icon-512.png', '/apple-touch-icon.png'];
+// today.json se předcachuje zvlášť a smí selhat. Patří do precache, protože
+// při první návštěvě service worker ještě neřídí stránku a bez toho by offline
+// režim fungoval až od druhé návštěvy. Zároveň je ale za přihlašovací cookie,
+// takže u nepřihlášeného návštěvníka vrátí 403 — a addAll je „všechno nebo
+// nic“, jediná 403 uvnitř by shodila instalaci celého SW. Proto stranou.
+const STATIC_OPTIONAL = ['/data/today.json'];
 // App shell — vždy zkus síť, fallback cache (offline). Brání stale verzi appky
 // bez nutnosti bumpovat CACHE při každé změně app.js/styles.css/index.html.
 const SHELL = new Set(['/', '/index.html', '/app.js', '/styles.css']);
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(STATIC)).then(() => self.skipWaiting()));
+  e.waitUntil(
+    caches.open(CACHE)
+      .then(async c => {
+        await c.addAll(STATIC);
+        await Promise.all(STATIC_OPTIONAL.map(u => c.add(u).catch(() => {})));
+      })
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener('activate', e => {

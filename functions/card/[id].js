@@ -1,6 +1,8 @@
 // Náhled sdílené karty. Crawlerům (WhatsApp, LinkedIn, Facebook, Twitter)
 // vrátí HTML s Open Graph meta tagy konkrétní karty (titulek + úryvek + obrázek).
 // Člověka přesměruje meta-refreshem do SPA (#card/ID) — CSP-safe, bez inline JS.
+import { loadCard } from '../_carddata.js';
+
 const ID_RE = /^\d{4}-\d{2}-\d{2}-\d{2}$/;
 
 function esc(s) {
@@ -9,7 +11,7 @@ function esc(s) {
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
-export async function onRequestGet({ params, request }) {
+export async function onRequestGet({ params, request, env }) {
   const id = params.id;
   const origin = new URL(request.url).origin;
 
@@ -17,17 +19,8 @@ export async function onRequestGet({ params, request }) {
     return Response.redirect(origin + '/', 302);
   }
 
-  // Najdi kartu v archivu daného dne
-  let card = null;
-  try {
-    const date = id.slice(0, 10);
-    const r = await fetch(`${origin}/data/archive/${date}.json`);
-    if (r.ok) {
-      const d = await r.json();
-      card = (d.cards || []).find(c => c.id === id)
-        || (d.resurfacing && d.resurfacing.id === id ? d.resurfacing : null);
-    }
-  } catch { /* fallback níže */ }
+  // Archiv je za bránou, proto přes ASSETS a ne přes fetch na vlastní origin.
+  const card = await loadCard(env, request, id);
 
   const title = card ? card.title : 'Master the Flow';
   const desc = card ? card.excerpt : 'Poznatky komunity Master the Flow — AI, nástroje a produktivita.';

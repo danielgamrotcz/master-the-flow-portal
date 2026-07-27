@@ -51,7 +51,9 @@ export async function rateLimit(env, key, limit, windowSec) {
     if (!row) return true;
     if (Math.random() < 0.01) {
       // Občasný úklid prošlých řádků, ať tabulka neroste donekonečna.
-      env.__gc = db.prepare('DELETE FROM rate_limits WHERE expires <= ?1').bind(now).run();
+      // Nečeká se — výsledek nikoho nezajímá a nesmí zdržet odpověď.
+      db.prepare('DELETE FROM rate_limits WHERE expires <= ?1').bind(now).run()
+        .catch(() => { /* úklid smí selhat, limit tím netrpí */ });
     }
     return row.count > limit;
   } catch {

@@ -1,4 +1,5 @@
 import { rateLimit, ipKey } from './_ratelimit.js';
+import { gateCookie } from '../_token.js';
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 // 90 dní: kratší TTL nutilo členy přepisovat kód z WhatsAppu každý měsíc,
 // což je největší tření vstupu (audit 2026-07-17, gate jako díra ve funnelu).
@@ -90,8 +91,14 @@ export async function onRequestPost({ request, env }) {
     const token = await generateToken(env.GATE_CODE, env);
     const expires = Date.now() + TOKEN_TTL_MS;
 
+    // Token jde ven dvakrát: v těle pro localStorage (hlavička u API volání)
+    // a v cookie pro datové soubory, které načítá i service worker.
     return Response.json({ ok: true, token, expires }, {
-      headers: { ...headers, 'Cache-Control': 'no-store' },
+      headers: {
+        ...headers,
+        'Cache-Control': 'no-store',
+        'Set-Cookie': gateCookie(request, token),
+      },
     });
   } catch {
     return Response.json({ error: 'Internal error' }, { status: 500, headers });

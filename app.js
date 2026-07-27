@@ -14,6 +14,29 @@ function storeAuth(token, expires) {
   localStorage.setItem('mtf_auth', JSON.stringify({ token, expires }));
 }
 
+// Datové soubory chrání HttpOnly cookie, protože je načítá i service worker
+// a ten by vlastní hlavičku do requestu nepřidal. Kdo se přihlásil dřív, než
+// cookie existovala, má token jen v localStorage — tohle mu ji doplní, aby
+// nemusel znovu opisovat kód z WhatsAppu. Cookie je HttpOnly, takže se na ni
+// JS nemůže zeptat; místo toho si jednou za relaci poznamenáme, že je hotovo.
+async function ensureGateCookie() {
+  if (!isAuthenticated()) return;
+  try {
+    if (sessionStorage.getItem('mtf_cookie_ok')) return;
+  } catch { /* sessionStorage může být zakázané, pak se zeptáme pokaždé */ }
+  try {
+    const token = JSON.parse(localStorage.getItem('mtf_auth') || '{}').token || '';
+    if (!token) return;
+    const r = await fetch('/api/session', {
+      method: 'POST',
+      headers: { 'x-mtf-token': token },
+    });
+    if (r.ok) {
+      try { sessionStorage.setItem('mtf_cookie_ok', '1'); } catch { /* neškodí */ }
+    }
+  } catch { /* offline — cookie z minula v prohlížeči zůstává */ }
+}
+
 // Magic link: ?k=KÓD v odkazu odemkne portál bez přepisování kódu z WhatsAppu.
 // Parametr se z adresy odstraní hned po přečtení (nešíří se dál historií ani
 // sdílením), kód do odkazů vkládá výhradně shareCard() — nikdy ruční psaní.
@@ -59,9 +82,9 @@ function initGate() {
     const m = location.hash.match(/^#card\/((\d{4}-\d{2}-\d{2})-\d{2})$/);
     if (!m) return;
     try {
-      const d = await fetchJSON(`/data/archive/${m[2]}.json`);
-      const card = (d.cards || []).find(c => c.id === m[1])
-        || (d.resurfacing && d.resurfacing.id === m[1] ? d.resurfacing : null);
+      // Jen titulek a úryvek. Dřív se kvůli tomu stahoval celý archivní soubor
+      // dne, tedy i těla karet a přepisy diskuzí, a to nepřihlášenému člověku.
+      const card = await fetchJSON(`/api/card-meta?id=${encodeURIComponent(m[1])}`);
       if (card && card.title) {
         const teaser = document.getElementById('gate-card-teaser');
         teaser.textContent = 'Za bránou na vás čeká: „' + card.title + '“';
@@ -97,6 +120,10 @@ function initGate() {
         gate.classList.add('hidden');
         input.value = '';
         trackEvent('gate_passed', { method: 'code' });
+        // Data se do téhle chvíle nenačetla, protože bez přihlášení vrací 403.
+        // Bez tohohle by po zadání kódu zůstal portál prázdný až do reloadu.
+        handleHash();
+        loadArchiveIndex();
       } else {
         err.textContent = 'Nesprávný kód. Zkuste to znovu.';
         input.value = '';
@@ -2789,7 +2816,11 @@ function openTopicInArchive(topic) {
 // Cache Storage rostla bez limitu.
 async function fetchJSON(url) {
   const res = await fetch(url);
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  if (!res.ok) {
+    // Nepřečtené tělo drží spojení otevřené, i když odpověď zahazujeme.
+    try { res.body?.cancel(); } catch { /* některé prohlížeče body nemají */ }
+    throw new Error(`HTTP ${res.status}`);
+  }
   return res.json();
 }
 
@@ -3531,7 +3562,11 @@ async function showNotFound() {
   }
 }
 
-function init() {
+async function init() {
+  // Cookie musí být na místě dřív, než se sáhne pro data — bez ní vrátí
+  // chráněné soubory 403 a portál by se načetl prázdný.
+  await ensureGateCookie();
+
   // Defensive: ensure overlay is hidden on every page load (handles bfcache and edge cases)
   $('card-overlay')?.classList.add('hidden');
   state.activeCard = null;
@@ -3542,7 +3577,9 @@ function init() {
   // neuvidí. Při neúspěchu (starý kód po rotaci) se gate ukáže normálně.
   const magicKey = readMagicKey();
   if (magicKey && !isAuthenticated()) {
-    tryMagicUnlock(magicKey).finally(() => initGate());
+    // Čeká se schválně. Data jsou za bránou, takže kdyby se načítala souběžně
+    // s odemykáním, stihla by dostat 403 a portál by zůstal prázdný.
+    try { await tryMagicUnlock(magicKey); } finally { initGate(); }
   } else {
     initGate();
   }
