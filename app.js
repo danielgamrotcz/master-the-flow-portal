@@ -1638,6 +1638,7 @@ function showEvent(id) {
     <div class="event-detail-meta">${meta}</div>
     ${ev.description ? `<p class="event-detail-desc">${esc(ev.description).replace(/\n/g, '<br>')}</p>` : ''}
     ${renderProgram(ev.program)}
+    ${renderCardLinks(ev)}
     ${eventCtaHtml(ev)}`;
   $('event-overlay-body').scrollTop = 0;
   show('event-overlay');
