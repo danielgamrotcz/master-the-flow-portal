@@ -1,0 +1,1744 @@
+{
+  "generated_at": "2026-07-27",
+  "source": {
+    "daily_notes": 122,
+    "range": [
+      "2026-03-14",
+      "2026-07-26"
+    ]
+  },
+  "categories": [
+    {
+      "id": "ai",
+      "label": "AI a modely",
+      "hint": "Jak vlastně fungují modely, se kterými si píšete."
+    },
+    {
+      "id": "cc",
+      "label": "Claude Code a vibe coding",
+      "hint": "Slovník, kterým se tady mluví nejčastěji."
+    },
+    {
+      "id": "kod",
+      "label": "Kód a verzování",
+      "hint": "Jak se drží pořádek v tom, co vzniká."
+    },
+    {
+      "id": "web",
+      "label": "Web, servery a nasazení",
+      "hint": "Cesta od „běží mi to doma“ k „vidí to lidi“."
+    },
+    {
+      "id": "pc",
+      "label": "Práce s počítačem",
+      "hint": "Věci, které vypadají složitě, ale nejsou."
+    },
+    {
+      "id": "nastroje",
+      "label": "Nástroje z komunity",
+      "hint": "Co tady lidi reálně používají."
+    },
+    {
+      "id": "data",
+      "label": "Data a bezpečnost",
+      "hint": "Co si pohlídat, než něco pustíte ven."
+    }
+  ],
+  "terms": [
+    {
+      "slug": "agent",
+      "term": "Agent",
+      "category": "ai",
+      "short": "Model, který nejen odpovídá, ale sám dělá kroky, dokud není hotovo.",
+      "plain": "Běžný chat odpoví a čeká. Agent místo toho pracuje ve smyčce, přečte soubor, spustí příkaz, podívá se na výsledek, opraví se a pokračuje. Sám se rozhoduje, jaký krok udělá další.",
+      "why": "Tohle je rozdíl mezi „poradí mi“ a „udělá to za mě“.",
+      "related": [
+        "harness",
+        "subagent",
+        "claude-code"
+      ],
+      "aliases": [
+        "agent",
+        "agenta",
+        "agentem",
+        "agenti",
+        "agentů",
+        "agentické",
+        "agentický",
+        "agentic"
+      ],
+      "search": "agent model, ktery nejen odpovida, ale sam dela kroky, dokud neni hotovo. bezny chat odpovi a ceka. agent misto toho pracuje ve smycce, precte soubor, spusti prikaz, podiva se na vysledek, opravi se a pokracuje. sam se rozhoduje, jaky krok udela dalsi. tohle je rozdil mezi „poradi mi“ a „udela to za me“. agent agenta agentem agenti agentu agenticke agenticky agentic",
+      "mentions": 100,
+      "card_hits": 27,
+      "days": 36,
+      "first_seen": "2026-03-29",
+      "last_seen": "2026-07-24"
+    },
+    {
+      "slug": "anonymizace",
+      "term": "Anonymizace",
+      "category": "data",
+      "short": "Odstranění údajů, podle kterých by šlo poznat konkrétní lidi.",
+      "plain": "Z textu nebo dat se vymažou nebo nahradí jména a další identifikátory tak, aby zůstal obsah, ale zmizela vazba na osoby.",
+      "why": null,
+      "related": [
+        "pii",
+        "gdpr"
+      ],
+      "aliases": [
+        "anonymizace",
+        "anonymizovat",
+        "anonymizovaný",
+        "anonymizované"
+      ],
+      "search": "anonymizace odstraneni udaju, podle kterych by slo poznat konkretni lidi. z textu nebo dat se vymazou nebo nahradi jmena a dalsi identifikatory tak, aby zustal obsah, ale zmizela vazba na osoby.  anonymizace anonymizovat anonymizovany anonymizovane",
+      "mentions": 5,
+      "card_hits": 1,
+      "days": 5,
+      "first_seen": "2026-05-17",
+      "last_seen": "2026-07-23"
+    },
+    {
+      "slug": "api",
+      "term": "API",
+      "category": "web",
+      "short": "Rozhraní, kterým spolu dva programy mluví.",
+      "plain": "API je domluvený způsob, jak si dva programy předávají data. Když si aplikace někde tahá informace nebo posílá dotaz do AI modelu, jde to přes API. Uživatel z toho nevidí nic, běží to na pozadí.",
+      "why": "Platit za API znamená platit za jednotlivé dotazy místo měsíčního předplatného. U malého objemu to vyjde levněji.",
+      "related": [
+        "api-klic",
+        "mcp",
+        "json"
+      ],
+      "aliases": [
+        "API"
+      ],
+      "search": "api rozhrani, kterym spolu dva programy mluvi. api je domluveny zpusob, jak si dva programy predavaji data. kdyz si aplikace nekde taha informace nebo posila dotaz do ai modelu, jde to pres api. uzivatel z toho nevidi nic, bezi to na pozadi. platit za api znamena platit za jednotlive dotazy misto mesicniho predplatneho. u maleho objemu to vyjde levneji. api",
+      "mentions": 80,
+      "card_hits": 23,
+      "days": 28,
+      "first_seen": "2026-03-14",
+      "last_seen": "2026-07-25"
+    },
+    {
+      "slug": "api-klic",
+      "term": "API klíč",
+      "category": "data",
+      "short": "Heslo, kterým se váš program prokáže u jiné služby.",
+      "plain": "Dlouhý řetězec znaků, kterým se váš program přihlásí u cizí služby. Kdo ho má, může tu službu používat na váš účet a na vaše náklady. Proto se nedává do sdíleného kódu a neposílá v chatu.",
+      "why": "Nejčastější bezpečnostní chyba začátečníků. Klíč patří do proměnných prostředí, ne do souboru, který jde na GitHub.",
+      "related": [
+        "env",
+        "github",
+        "hook"
+      ],
+      "aliases": [
+        "API klíč",
+        "API klíče",
+        "API key",
+        "klíč k API",
+        "api klíč"
+      ],
+      "search": "api klic heslo, kterym se vas program prokaze u jine sluzby. dlouhy retezec znaku, kterym se vas program prihlasi u cizi sluzby. kdo ho ma, muze tu sluzbu pouzivat na vas ucet a na vase naklady. proto se nedava do sdileneho kodu a neposila v chatu. nejcastejsi bezpecnostni chyba zacatecniku. klic patri do promennych prostredi, ne do souboru, ktery jde na github. api klic api klice api key klic k api api klic",
+      "mentions": 12,
+      "card_hits": 5,
+      "days": 8,
+      "first_seen": "2026-03-16",
+      "last_seen": "2026-07-01"
+    },
+    {
+      "slug": "automatizace",
+      "term": "Automatizace",
+      "category": "pc",
+      "short": "Nastavíte jednou, běží pak samo.",
+      "plain": "Postup, který po nastavení proběhne bez vašeho zásahu. Může běžet v určený čas, nebo se spustit, když nastane nějaká událost. Smysl je zbavit se opakované ruční práce.",
+      "why": null,
+      "related": [
+        "skript",
+        "cron",
+        "workflow"
+      ],
+      "aliases": [
+        "automatizace",
+        "automatizaci",
+        "automatizovat",
+        "automatizované"
+      ],
+      "search": "automatizace nastavite jednou, bezi pak samo. postup, ktery po nastaveni probehne bez vaseho zasahu. muze bezet v urceny cas, nebo se spustit, kdyz nastane nejaka udalost. smysl je zbavit se opakovane rucni prace.  automatizace automatizaci automatizovat automatizovane",
+      "mentions": 59,
+      "card_hits": 19,
+      "days": 33,
+      "first_seen": "2026-03-14",
+      "last_seen": "2026-07-25"
+    },
+    {
+      "slug": "branch",
+      "term": "Branch a merge",
+      "category": "kod",
+      "short": "Odbočka, kde se dá zkoušet bez rizika, a její pozdější spojení zpátky.",
+      "plain": "Branch je paralelní větev projektu. Zkoušíte v ní změny, aniž byste sáhli na funkční verzi. Když se nápad povede, merge ji spojí zpátky do hlavní větve, když ne, prostě se zahodí.",
+      "why": null,
+      "related": [
+        "git",
+        "commit"
+      ],
+      "aliases": [
+        "branch",
+        "branche",
+        "větev",
+        "merge",
+        "mergnout"
+      ],
+      "search": "branch a merge odbocka, kde se da zkouset bez rizika, a jeji pozdejsi spojeni zpatky. branch je paralelni vetev projektu. zkousite v ni zmeny, aniz byste sahli na funkcni verzi. kdyz se napad povede, merge ji spoji zpatky do hlavni vetve, kdyz ne, proste se zahodi.  branch branche vetev merge mergnout",
+      "mentions": 1,
+      "card_hits": 0,
+      "days": 1,
+      "first_seen": "2026-06-17",
+      "last_seen": "2026-06-17"
+    },
+    {
+      "slug": "build",
+      "term": "Build",
+      "category": "web",
+      "short": "Sestavení hotové verze ze zdrojových souborů.",
+      "plain": "Zdrojový kód se před vypuštěním převede do podoby, které rozumí prohlížeč, a zároveň se zmenší a pospojuje. Když build spadne, ven se nepustí nic.",
+      "why": null,
+      "related": [
+        "deploy",
+        "framework"
+      ],
+      "aliases": [
+        "build",
+        "buildu",
+        "buildnout",
+        "sestavení"
+      ],
+      "search": "build sestaveni hotove verze ze zdrojovych souboru. zdrojovy kod se pred vypustenim prevede do podoby, ktere rozumi prohlizec, a zaroven se zmensi a pospojuje. kdyz build spadne, ven se nepusti nic.  build buildu buildnout sestaveni",
+      "mentions": 7,
+      "card_hits": 2,
+      "days": 5,
+      "first_seen": "2026-03-17",
+      "last_seen": "2026-07-22"
+    },
+    {
+      "slug": "claude-code",
+      "term": "Claude Code",
+      "category": "cc",
+      "short": "Claude, který běží v terminálu a sám pracuje se soubory ve vašem projektu.",
+      "plain": "Není to chat v prohlížeči. Claude Code běží u vás na počítači, vidí složku s projektem, umí soubory číst i měnit, spouštět příkazy a ověřovat si výsledek. Ve skupině se často zkracuje na CC.",
+      "why": "Většina projektů, které tady lidi ukazují, vznikla přesně tímhle.",
+      "related": [
+        "harness",
+        "claude-md",
+        "skill",
+        "terminal"
+      ],
+      "aliases": [
+        "Claude Code",
+        "Claude Codu",
+        "ClaudeCode",
+        "CC"
+      ],
+      "search": "claude code claude, ktery bezi v terminalu a sam pracuje se soubory ve vasem projektu. neni to chat v prohlizeci. claude code bezi u vas na pocitaci, vidi slozku s projektem, umi soubory cist i menit, spoustet prikazy a overovat si vysledek. ve skupine se casto zkracuje na cc. vetsina projektu, ktere tady lidi ukazuji, vznikla presne timhle. claude code claude codu claudecode cc",
+      "mentions": 462,
+      "card_hits": 93,
+      "days": 78,
+      "first_seen": "2026-03-14",
+      "last_seen": "2026-07-26"
+    },
+    {
+      "slug": "claude-md",
+      "term": "CLAUDE.md",
+      "category": "cc",
+      "short": "Soubor s instrukcemi, které si Claude Code přečte při každém spuštění.",
+      "plain": "Textový soubor uložený v projektu, do kterého si napíšete, jak se v něm má pracovat. Je to trvalá poznámka ve stylu tady to děláme takhle. Stejné věci se pak nemusí opakovat v každé konverzaci.",
+      "why": "Ve skupině se často řeší, že má být krátký. Dlouhý soubor spolyká kontext a instrukce se v něm ztratí.",
+      "related": [
+        "kontext",
+        "skill",
+        "claude-code"
+      ],
+      "aliases": [
+        "CLAUDE.md",
+        "claude.md"
+      ],
+      "search": "claude.md soubor s instrukcemi, ktere si claude code precte pri kazdem spusteni. textovy soubor ulozeny v projektu, do ktereho si napisete, jak se v nem ma pracovat. je to trvala poznamka ve stylu tady to delame takhle. stejne veci se pak nemusi opakovat v kazde konverzaci. ve skupine se casto resi, ze ma byt kratky. dlouhy soubor spolyka kontext a instrukce se v nem ztrati. claude.md claude.md",
+      "mentions": 31,
+      "card_hits": 12,
+      "days": 12,
+      "first_seen": "2026-03-14",
+      "last_seen": "2026-07-22"
+    },
+    {
+      "slug": "cli",
+      "term": "CLI",
+      "category": "pc",
+      "short": "Ovládání programu psaním příkazů.",
+      "plain": "Command line interface, tedy program bez oken a tlačítek, který se ovládá napsanými příkazy. Výhoda je, že se dá snadno zautomatizovat a zopakovat, protože příkaz se dá uložit a pustit znovu.",
+      "why": null,
+      "related": [
+        "terminal",
+        "gui",
+        "skript"
+      ],
+      "aliases": [
+        "CLI"
+      ],
+      "search": "cli ovladani programu psanim prikazu. command line interface, tedy program bez oken a tlacitek, ktery se ovlada napsanymi prikazy. vyhoda je, ze se da snadno zautomatizovat a zopakovat, protoze prikaz se da ulozit a pustit znovu.  cli",
+      "mentions": 43,
+      "card_hits": 15,
+      "days": 18,
+      "first_seen": "2026-03-14",
+      "last_seen": "2026-07-26"
+    },
+    {
+      "slug": "cloudflare-vercel",
+      "term": "Cloudflare Pages a Vercel",
+      "category": "nastroje",
+      "short": "Služby, kde se dá web zdarma vypustit na internet.",
+      "plain": "Vezmou hotové soubory webu a rozmístí je po světě, aby se rychle načítaly. U malých projektů to obvykle nic nestojí. Portál Master the Flow běží na Cloudflare Pages.",
+      "why": null,
+      "related": [
+        "deploy",
+        "hosting"
+      ],
+      "aliases": [
+        "Cloudflare",
+        "Vercel",
+        "Netlify",
+        "cloudflare",
+        "vercel"
+      ],
+      "search": "cloudflare pages a vercel sluzby, kde se da web zdarma vypustit na internet. vezmou hotove soubory webu a rozmisti je po svete, aby se rychle nacitaly. u malych projektu to obvykle nic nestoji. portal master the flow bezi na cloudflare pages.  cloudflare vercel netlify cloudflare vercel",
+      "mentions": 28,
+      "card_hits": 7,
+      "days": 11,
+      "first_seen": "2026-03-16",
+      "last_seen": "2026-06-22"
+    },
+    {
+      "slug": "codex",
+      "term": "Codex",
+      "category": "nastroje",
+      "short": "Kódovací nástroj od OpenAI, konkurence Claude Code.",
+      "plain": "Nástroj, který podobně jako Claude Code umí pracovat s kódem v projektu. Ve skupině se pravidelně srovnávají, výsledek se liší podle typu úkolu.",
+      "why": null,
+      "related": [
+        "claude-code",
+        "vibe-coding"
+      ],
+      "aliases": [
+        "Codex",
+        "Codexu",
+        "codex"
+      ],
+      "search": "codex kodovaci nastroj od openai, konkurence claude code. nastroj, ktery podobne jako claude code umi pracovat s kodem v projektu. ve skupine se pravidelne srovnavaji, vysledek se lisi podle typu ukolu.  codex codexu codex",
+      "mentions": 87,
+      "card_hits": 14,
+      "days": 25,
+      "first_seen": "2026-03-18",
+      "last_seen": "2026-07-25"
+    },
+    {
+      "slug": "commit",
+      "term": "Commit",
+      "category": "kod",
+      "short": "Uložený snímek změn s popiskem, co se změnilo.",
+      "plain": "Něco jako uložit pozici ve hře. Zaznamená stav souborů v daný moment, takže se k němu dá vrátit. Ta poznámka u toho není formalita, za měsíc si bez ní nevzpomenete, co jste tenkrát dělali.",
+      "why": null,
+      "related": [
+        "git",
+        "repozitar"
+      ],
+      "aliases": [
+        "commit",
+        "commitu",
+        "commity",
+        "commitů",
+        "commitnout",
+        "commitem",
+        "commitů"
+      ],
+      "search": "commit ulozeny snimek zmen s popiskem, co se zmenilo. neco jako ulozit pozici ve hre. zaznamena stav souboru v dany moment, takze se k nemu da vratit. ta poznamka u toho neni formalita, za mesic si bez ni nevzpomenete, co jste tenkrat delali.  commit commitu commity commitu commitnout commitem commitu",
+      "mentions": 16,
+      "card_hits": 3,
+      "days": 9,
+      "first_seen": "2026-03-31",
+      "last_seen": "2026-07-22"
+    },
+    {
+      "slug": "cron",
+      "term": "Cron",
+      "category": "pc",
+      "short": "Plánovač, který spouští úlohy v nastavený čas.",
+      "plain": "Nastavíte, že se něco má stát každý den v pět ráno, a systém to od té chvíle hlídá za vás. Na Macu tuhle roli plní launchd.",
+      "why": null,
+      "related": [
+        "automatizace",
+        "skript"
+      ],
+      "aliases": [
+        "cron",
+        "cronu",
+        "crontab",
+        "launchd"
+      ],
+      "search": "cron planovac, ktery spousti ulohy v nastaveny cas. nastavite, ze se neco ma stat kazdy den v pet rano, a system to od te chvile hlida za vas. na macu tuhle roli plni launchd.  cron cronu crontab launchd",
+      "mentions": 5,
+      "card_hits": 0,
+      "days": 3,
+      "first_seen": "2026-03-31",
+      "last_seen": "2026-05-05"
+    },
+    {
+      "slug": "cursor",
+      "term": "Cursor",
+      "category": "nastroje",
+      "short": "Editor kódu s vestavěnou AI.",
+      "plain": "Vypadá jako klasický editor, ale umí psát a upravovat kód na požádání přímo v souboru. Alternativa ke Claude Code pro ty, kdo chtějí vidět kód před sebou v okně.",
+      "why": null,
+      "related": [
+        "claude-code",
+        "vibe-coding"
+      ],
+      "aliases": [
+        "Cursor",
+        "Cursoru",
+        "cursor"
+      ],
+      "search": "cursor editor kodu s vestavenou ai. vypada jako klasicky editor, ale umi psat a upravovat kod na pozadani primo v souboru. alternativa ke claude code pro ty, kdo chteji videt kod pred sebou v okne.  cursor cursoru cursor",
+      "mentions": 62,
+      "card_hits": 14,
+      "days": 21,
+      "first_seen": "2026-03-16",
+      "last_seen": "2026-07-26"
+    },
+    {
+      "slug": "deploy",
+      "term": "Deploy a nasazení",
+      "category": "web",
+      "short": "Vypuštění hotové verze ven, aby ji viděli ostatní.",
+      "plain": "Dokud projekt běží jen u vás na počítači, vidíte ho jen vy. Nasazení znamená přenést ho na server, kde je dostupný na internetu. Do té doby je to soukromá hračka.",
+      "why": null,
+      "related": [
+        "server",
+        "hosting",
+        "build"
+      ],
+      "aliases": [
+        "deploy",
+        "deploynout",
+        "nasazení",
+        "nasadit",
+        "nasazuje",
+        "deployment"
+      ],
+      "search": "deploy a nasazeni vypusteni hotove verze ven, aby ji videli ostatni. dokud projekt bezi jen u vas na pocitaci, vidite ho jen vy. nasazeni znamena prenest ho na server, kde je dostupny na internetu. do te doby je to soukroma hracka.  deploy deploynout nasazeni nasadit nasazuje deployment",
+      "mentions": 16,
+      "card_hits": 8,
+      "days": 11,
+      "first_seen": "2026-03-14",
+      "last_seen": "2026-07-26"
+    },
+    {
+      "slug": "docker",
+      "term": "Docker",
+      "category": "pc",
+      "short": "Krabice, ve které program běží oddělený od zbytku počítače.",
+      "plain": "Docker spustí aplikaci v izolovaném prostředí, které má vlastní obsah a nevidí na zbytek systému. Používá se, aby věc běžela všude stejně, a taky jako bezpečnostní hranice.",
+      "why": "Ve skupině padá hlavně jako odpověď na otázku, jak pustit AI agenta tak, aby nemohl sáhnout na cokoli mimo projekt.",
+      "related": [
+        "sandbox",
+        "yolo",
+        "vm"
+      ],
+      "aliases": [
+        "Docker",
+        "Dockeru",
+        "dockeru",
+        "kontejner",
+        "kontejneru"
+      ],
+      "search": "docker krabice, ve ktere program bezi oddeleny od zbytku pocitace. docker spusti aplikaci v izolovanem prostredi, ktere ma vlastni obsah a nevidi na zbytek systemu. pouziva se, aby vec bezela vsude stejne, a taky jako bezpecnostni hranice. ve skupine pada hlavne jako odpoved na otazku, jak pustit ai agenta tak, aby nemohl sahnout na cokoli mimo projekt. docker dockeru dockeru kontejner kontejneru",
+      "mentions": 28,
+      "card_hits": 5,
+      "days": 8,
+      "first_seen": "2026-04-10",
+      "last_seen": "2026-07-15"
+    },
+    {
+      "slug": "second-brain",
+      "term": "Druhý mozek",
+      "category": "nastroje",
+      "short": "Systém poznámek, který si pamatuje za vás.",
+      "plain": "Uspořádané místo, kam ukládáte myšlenky, zdroje a rozpracované věci tak, abyste je později našli a mohli na nich stavět. Není to o tom mít hodně poznámek, ale o tom umět se k nim vrátit.",
+      "why": null,
+      "related": [
+        "obsidian",
+        "markdown"
+      ],
+      "aliases": [
+        "druhý mozek",
+        "druhého mozku",
+        "second brain",
+        "druhym mozkem"
+      ],
+      "search": "druhy mozek system poznamek, ktery si pamatuje za vas. usporadane misto, kam ukladate myslenky, zdroje a rozpracovane veci tak, abyste je pozdeji nasli a mohli na nich stavet. neni to o tom mit hodne poznamek, ale o tom umet se k nim vratit.  druhy mozek druheho mozku second brain druhym mozkem",
+      "mentions": 45,
+      "card_hits": 8,
+      "days": 16,
+      "first_seen": "2026-03-16",
+      "last_seen": "2026-07-25"
+    },
+    {
+      "slug": "framework",
+      "term": "Framework",
+      "category": "web",
+      "short": "Připravená kostra, na které se aplikace staví.",
+      "plain": "Framework je sada hotových základů a pravidel, díky které nemusíte psát všechno od nuly. Ušetří spoustu práce, ale musíte přijmout, jak to jeho autoři vymysleli.",
+      "why": null,
+      "related": [
+        "frontend-backend",
+        "build"
+      ],
+      "aliases": [
+        "framework",
+        "frameworku",
+        "frameworky"
+      ],
+      "search": "framework pripravena kostra, na ktere se aplikace stavi. framework je sada hotovych zakladu a pravidel, diky ktere nemusite psat vsechno od nuly. usetri spoustu prace, ale musite prijmout, jak to jeho autori vymysleli.  framework frameworku frameworky",
+      "mentions": 5,
+      "card_hits": 4,
+      "days": 5,
+      "first_seen": "2026-04-02",
+      "last_seen": "2026-06-28"
+    },
+    {
+      "slug": "frontend-backend",
+      "term": "Frontend a backend",
+      "category": "web",
+      "short": "To, co uživatel vidí, a to, co běží schované na pozadí.",
+      "plain": "Frontend je viditelná část, tedy vzhled, tlačítka a texty v prohlížeči. Backend je to, co běží na serveru, počítá, ukládá a hlídá data. Když někdo řekne fullstack, dělá obojí.",
+      "why": null,
+      "related": [
+        "framework",
+        "server",
+        "api"
+      ],
+      "aliases": [
+        "frontend",
+        "backend",
+        "frontendu",
+        "backendu"
+      ],
+      "search": "frontend a backend to, co uzivatel vidi, a to, co bezi schovane na pozadi. frontend je viditelna cast, tedy vzhled, tlacitka a texty v prohlizeci. backend je to, co bezi na serveru, pocita, uklada a hlida data. kdyz nekdo rekne fullstack, dela oboji.  frontend backend frontendu backendu",
+      "mentions": 2,
+      "card_hits": 2,
+      "days": 2,
+      "first_seen": "2026-05-11",
+      "last_seen": "2026-05-20"
+    },
+    {
+      "slug": "gdpr",
+      "term": "GDPR",
+      "category": "data",
+      "short": "Evropská pravidla pro nakládání s osobními údaji.",
+      "plain": "Určují, co se smí dělat s údaji o lidech, jak dlouho se smí držet a co musíte dotyčným říct. Týká se to i malých projektů, pokud v nich figurují data reálných osob.",
+      "why": "Připomíná se pokaždé, když se řeší nahrávání schůzek nebo posílání firemních dat do cloudu.",
+      "related": [
+        "pii",
+        "lokalni-model"
+      ],
+      "aliases": [
+        "GDPR"
+      ],
+      "search": "gdpr evropska pravidla pro nakladani s osobnimi udaji. urcuji, co se smi delat s udaji o lidech, jak dlouho se smi drzet a co musite dotycnym rict. tyka se to i malych projektu, pokud v nich figuruji data realnych osob. pripomina se pokazde, kdyz se resi nahravani schuzek nebo posilani firemnich dat do cloudu. gdpr",
+      "mentions": 11,
+      "card_hits": 2,
+      "days": 5,
+      "first_seen": "2026-03-16",
+      "last_seen": "2026-07-25"
+    },
+    {
+      "slug": "git",
+      "term": "Git",
+      "category": "kod",
+      "short": "Systém, který si pamatuje každou změnu v souborech projektu.",
+      "plain": "Git hlídá historii projektu. Každou uloženou změnu si pamatuje. Kdykoli se dá podívat, co se kdy změnilo, a v případě průšvihu se vrátit do stavu, kdy to fungovalo. Běží u vás na počítači a internet k tomu nepotřebuje.",
+      "why": "Tohle je ta záchranná síť, díky které se člověk nebojí zkoušet. Vrátit se jde vždycky.",
+      "related": [
+        "github",
+        "repozitar",
+        "commit"
+      ],
+      "aliases": [
+        "Git",
+        "gitu",
+        "gitem"
+      ],
+      "search": "git system, ktery si pamatuje kazdou zmenu v souborech projektu. git hlida historii projektu. kazdou ulozenou zmenu si pamatuje. kdykoli se da podivat, co se kdy zmenilo, a v pripade prusvihu se vratit do stavu, kdy to fungovalo. bezi u vas na pocitaci a internet k tomu nepotrebuje. tohle je ta zachranna sit, diky ktere se clovek neboji zkouset. vratit se jde vzdycky. git gitu gitem",
+      "mentions": 34,
+      "card_hits": 7,
+      "days": 16,
+      "first_seen": "2026-03-15",
+      "last_seen": "2026-07-22"
+    },
+    {
+      "slug": "github",
+      "term": "GitHub",
+      "category": "kod",
+      "short": "Web, kam se Git projekty ukládají online, aby šly sdílet a zálohovat.",
+      "plain": "GitHub je služba, kde váš projekt bydlí na internetu. Díky tomu se k němu dostanete z víc počítačů, máte ho zálohovaný a můžete ho ukázat ostatním. Git a GitHub jsou dvě různé věci. Git je ten systém, GitHub je jedno z míst, kde může projekt bydlet.",
+      "why": "Když někdo ve skupině sdílí projekt, obvykle sdílí odkaz na GitHub.",
+      "related": [
+        "git",
+        "repozitar",
+        "open-source"
+      ],
+      "aliases": [
+        "GitHub",
+        "GitHubu",
+        "github.com",
+        "githubu"
+      ],
+      "search": "github web, kam se git projekty ukladaji online, aby sly sdilet a zalohovat. github je sluzba, kde vas projekt bydli na internetu. diky tomu se k nemu dostanete z vic pocitacu, mate ho zalohovany a muzete ho ukazat ostatnim. git a github jsou dve ruzne veci. git je ten system, github je jedno z mist, kde muze projekt bydlet. kdyz nekdo ve skupine sdili projekt, obvykle sdili odkaz na github. github githubu github.com githubu",
+      "mentions": 74,
+      "card_hits": 19,
+      "days": 32,
+      "first_seen": "2026-03-14",
+      "last_seen": "2026-07-22"
+    },
+    {
+      "slug": "gui",
+      "term": "GUI",
+      "category": "pc",
+      "short": "Grafické rozhraní, tedy okna, tlačítka a myš.",
+      "plain": "Opak CLI. Všechno, co se ovládá klikáním.",
+      "why": null,
+      "related": [
+        "cli",
+        "terminal"
+      ],
+      "aliases": [
+        "GUI"
+      ],
+      "search": "gui graficke rozhrani, tedy okna, tlacitka a mys. opak cli. vsechno, co se ovlada klikanim.  gui",
+      "mentions": 10,
+      "card_hits": 5,
+      "days": 6,
+      "first_seen": "2026-04-02",
+      "last_seen": "2026-07-25"
+    },
+    {
+      "slug": "halucinace",
+      "term": "Halucinace",
+      "category": "ai",
+      "short": "Když si model něco vymyslí a tváří se u toho stejně jistě jako když má pravdu.",
+      "plain": "Model skládá text tak, aby vypadal pravděpodobně. O pravdivosti sám nic neví. Když odpověď nezná, klidně si ji vymyslí i s čísly, jmény a odkazy. A napíše to stejně sebejistě jako věc, kterou má ověřenou.",
+      "why": "Proto se u čísel, citací a odkazů ověřuje zdroj, obzvlášť když jdou ven.",
+      "related": [
+        "llm",
+        "model"
+      ],
+      "aliases": [
+        "halucinace",
+        "halucinaci",
+        "halucinacemi",
+        "halucinací",
+        "halucinuje"
+      ],
+      "search": "halucinace kdyz si model neco vymysli a tvari se u toho stejne jiste jako kdyz ma pravdu. model sklada text tak, aby vypadal pravdepodobne. o pravdivosti sam nic nevi. kdyz odpoved nezna, klidne si ji vymysli i s cisly, jmeny a odkazy. a napise to stejne sebejiste jako vec, kterou ma overenou. proto se u cisel, citaci a odkazu overuje zdroj, obzvlast kdyz jdou ven. halucinace halucinaci halucinacemi halucinaci halucinuje",
+      "mentions": 5,
+      "card_hits": 3,
+      "days": 3,
+      "first_seen": "2026-05-14",
+      "last_seen": "2026-05-21"
+    },
+    {
+      "slug": "harness",
+      "term": "Harness",
+      "category": "cc",
+      "short": "Obal kolem modelu, který mu teprve dá schopnosti.",
+      "plain": "Samotný model umí jedinou věc, psát text. Harness je všechno okolo, co z něj udělá použitelný nástroj. Přístup k souborům, možnost spustit příkaz, paměť a hlavně smyčka, ve které si model výsledek ověří a opraví se. Dva nástroje můžou jet na úplně stejném modelu a chovat se jinak, protože mají jiný harness.",
+      "why": "Když ve skupině padne, že něco má lepší harness, řeč není o inteligenci modelu, ale o tom, co kolem něj běží.",
+      "related": [
+        "agent",
+        "claude-code",
+        "model"
+      ],
+      "aliases": [
+        "harness",
+        "harnessu",
+        "harnessem"
+      ],
+      "search": "harness obal kolem modelu, ktery mu teprve da schopnosti. samotny model umi jedinou vec, psat text. harness je vsechno okolo, co z nej udela pouzitelny nastroj. pristup k souborum, moznost spustit prikaz, pamet a hlavne smycka, ve ktere si model vysledek overi a opravi se. dva nastroje muzou jet na uplne stejnem modelu a chovat se jinak, protoze maji jiny harness. kdyz ve skupine padne, ze neco ma lepsi harness, rec neni o inteligenci modelu, ale o tom, co kolem nej bezi. harness harnessu harnessem",
+      "mentions": 7,
+      "card_hits": 2,
+      "days": 4,
+      "first_seen": "2026-05-22",
+      "last_seen": "2026-07-26"
+    },
+    {
+      "slug": "hook",
+      "term": "Hook",
+      "category": "cc",
+      "short": "Automatická pojistka, která se spustí sama, bez vyžádání.",
+      "plain": "Hook je pravidlo navázané na událost. Když nastane, akce proběhne sama, i když jste na ni dávno zapomněli. Typicky se používá jako kontrola, například zablokovat uložení, když v kódu zůstal přístupový klíč.",
+      "why": "Rozdíl proti skillu je jednoduchý. Skill si zavoláte, hook se ozve sám.",
+      "related": [
+        "skill",
+        "api-klic",
+        "claude-code"
+      ],
+      "aliases": [
+        "hook",
+        "hooku",
+        "hooky",
+        "hooků",
+        "hooks"
+      ],
+      "search": "hook automaticka pojistka, ktera se spusti sama, bez vyzadani. hook je pravidlo navazane na udalost. kdyz nastane, akce probehne sama, i kdyz jste na ni davno zapomneli. typicky se pouziva jako kontrola, napriklad zablokovat ulozeni, kdyz v kodu zustal pristupovy klic. rozdil proti skillu je jednoduchy. skill si zavolate, hook se ozve sam. hook hooku hooky hooku hooks",
+      "mentions": 28,
+      "card_hits": 5,
+      "days": 10,
+      "first_seen": "2026-03-31",
+      "last_seen": "2026-07-07"
+    },
+    {
+      "slug": "hosting",
+      "term": "Hosting",
+      "category": "web",
+      "short": "Místo, kde váš web nebo aplikace trvale běží.",
+      "plain": "Hosting je pronajatý prostor na cizím serveru, který je zapnutý pořád. Pro malé weby existují služby, kde to nic nestojí, protože se platí až od většího provozu.",
+      "why": null,
+      "related": [
+        "deploy",
+        "server",
+        "cloudflare-vercel"
+      ],
+      "aliases": [
+        "hosting",
+        "hostingu",
+        "hostovat",
+        "hostování"
+      ],
+      "search": "hosting misto, kde vas web nebo aplikace trvale bezi. hosting je pronajaty prostor na cizim serveru, ktery je zapnuty porad. pro male weby existuji sluzby, kde to nic nestoji, protoze se plati az od vetsiho provozu.  hosting hostingu hostovat hostovani",
+      "mentions": 7,
+      "card_hits": 3,
+      "days": 3,
+      "first_seen": "2026-03-15",
+      "last_seen": "2026-05-05"
+    },
+    {
+      "slug": "json",
+      "term": "JSON",
+      "category": "web",
+      "short": "Textový formát na strukturovaná data, čitelný i pro člověka.",
+      "plain": "Běžný způsob, jak si programy předávají informace. Je to obyčejný text uspořádaný do dvojic název a hodnota. Otevřete ho v poznámkovém bloku a přečtete.",
+      "why": null,
+      "related": [
+        "api",
+        "markdown"
+      ],
+      "aliases": [
+        "JSON",
+        "JSONu"
+      ],
+      "search": "json textovy format na strukturovana data, citelny i pro cloveka. bezny zpusob, jak si programy predavaji informace. je to obycejny text usporadany do dvojic nazev a hodnota. otevrete ho v poznamkovem bloku a prectete.  json jsonu",
+      "mentions": 17,
+      "card_hits": 7,
+      "days": 11,
+      "first_seen": "2026-04-01",
+      "last_seen": "2026-07-25"
+    },
+    {
+      "slug": "kontext",
+      "term": "Kontext",
+      "category": "ai",
+      "short": "Všechno, co model v danou chvíli ví o vašem zadání.",
+      "plain": "Kontext je souhrn toho, co má model po ruce. Vaše zprávy, jeho odpovědi, obsah souborů, které si přečetl, a instrukce, které dostal. Když mu naházíte všechno, co vás napadne, utopí se v tom. Míň informací, ale trefnějších, funguje líp.",
+      "why": "Odtud ta rada psát stručně. Delší zadání neznamená lepší výsledek.",
+      "related": [
+        "kontextove-okno",
+        "prompt",
+        "claude-md"
+      ],
+      "aliases": [
+        "kontext",
+        "kontextu",
+        "kontextem"
+      ],
+      "search": "kontext vsechno, co model v danou chvili vi o vasem zadani. kontext je souhrn toho, co ma model po ruce. vase zpravy, jeho odpovedi, obsah souboru, ktere si precetl, a instrukce, ktere dostal. kdyz mu nahazite vsechno, co vas napadne, utopi se v tom. min informaci, ale trefnejsich, funguje lip. odtud ta rada psat strucne. delsi zadani neznamena lepsi vysledek. kontext kontextu kontextem",
+      "mentions": 152,
+      "card_hits": 34,
+      "days": 65,
+      "first_seen": "2026-03-17",
+      "last_seen": "2026-07-25"
+    },
+    {
+      "slug": "kontextove-okno",
+      "term": "Kontextové okno",
+      "category": "ai",
+      "short": "Kolik textu si model udrží najednou před očima.",
+      "plain": "Všechno, co model v jedné konverzaci vidí, se musí vejít do kontextového okna. Měří se to v tokenech. Jakmile se okno zaplní, nejstarší část konverzace se shrne nebo vypadne. Model pak zapomene, co bylo na začátku, a začne se ptát na věci, které jste mu už řekli.",
+      "why": "Tohle stojí za tím, když se dlouhé vlákno začne chovat divně. Většinou pomůže založit nové.",
+      "related": [
+        "token",
+        "kontext",
+        "session"
+      ],
+      "aliases": [
+        "kontextové okno",
+        "kontextového okna",
+        "kontextovém okně",
+        "context window"
+      ],
+      "search": "kontextove okno kolik textu si model udrzi najednou pred ocima. vsechno, co model v jedne konverzaci vidi, se musi vejit do kontextoveho okna. meri se to v tokenech. jakmile se okno zaplni, nejstarsi cast konverzace se shrne nebo vypadne. model pak zapomene, co bylo na zacatku, a zacne se ptat na veci, ktere jste mu uz rekli. tohle stoji za tim, kdyz se dlouhe vlakno zacne chovat divne. vetsinou pomuze zalozit nove. kontextove okno kontextoveho okna kontextovem okne context window",
+      "mentions": 6,
+      "card_hits": 5,
+      "days": 2,
+      "first_seen": "2026-05-27",
+      "last_seen": "2026-06-02"
+    },
+    {
+      "slug": "rate-limit",
+      "term": "Limity a rate limit",
+      "category": "ai",
+      "short": "Strop, kolik toho smíte za dané období použít.",
+      "plain": "Každý tarif má hranici, kolik práce do něj za hodinu nebo týden vejde. Když ji vyčerpáte, musíte chvíli počkat, než se limit obnoví. Silnější modely limit spotřebovávají rychleji než slabší.",
+      "why": "Odtud rady pracovat mimo špičku nebo přepnout na slabší model na rutinu.",
+      "related": [
+        "token",
+        "claude-modely"
+      ],
+      "aliases": [
+        "rate limit",
+        "limit",
+        "limity",
+        "limitů",
+        "limitu",
+        "limitem"
+      ],
+      "search": "limity a rate limit strop, kolik toho smite za dane obdobi pouzit. kazdy tarif ma hranici, kolik prace do nej za hodinu nebo tyden vejde. kdyz ji vycerpate, musite chvili pockat, nez se limit obnovi. silnejsi modely limit spotrebovavaji rychleji nez slabsi. odtud rady pracovat mimo spicku nebo prepnout na slabsi model na rutinu. rate limit limit limity limitu limitu limitem",
+      "mentions": 76,
+      "card_hits": 23,
+      "days": 38,
+      "first_seen": "2026-03-15",
+      "last_seen": "2026-07-25"
+    },
+    {
+      "slug": "llm",
+      "term": "LLM",
+      "category": "ai",
+      "short": "Velký jazykový model, tedy to, co pohání Claude nebo ChatGPT.",
+      "plain": "Zkratka pro large language model, česky velký jazykový model. Je to program natrénovaný na obrovském množství textu, který se naučil odhadovat, jaká slova mají následovat. Z toho odhadování vzniká všechno ostatní, odpovědi, překlady i kód.",
+      "why": "Když někdo řekne model, myslí skoro vždycky tohle. Claude, GPT i Gemini jsou LLM.",
+      "related": [
+        "model",
+        "token",
+        "halucinace"
+      ],
+      "aliases": [
+        "LLM",
+        "LLMs"
+      ],
+      "search": "llm velky jazykovy model, tedy to, co pohani claude nebo chatgpt. zkratka pro large language model, cesky velky jazykovy model. je to program natrenovany na obrovskem mnozstvi textu, ktery se naucil odhadovat, jaka slova maji nasledovat. z toho odhadovani vznika vsechno ostatni, odpovedi, preklady i kod. kdyz nekdo rekne model, mysli skoro vzdycky tohle. claude, gpt i gemini jsou llm. llm llms",
+      "mentions": 34,
+      "card_hits": 6,
+      "days": 23,
+      "first_seen": "2026-03-20",
+      "last_seen": "2026-07-25"
+    },
+    {
+      "slug": "localhost",
+      "term": "Localhost",
+      "category": "web",
+      "short": "Váš vlastní počítač v roli serveru. Vidíte to jen vy.",
+      "plain": "Když si aplikaci spustíte u sebe, běží na localhostu. Adresa vypadá jako web, ale ven nevede.",
+      "why": null,
+      "related": [
+        "server",
+        "deploy"
+      ],
+      "aliases": [
+        "localhost",
+        "lokálně na počítači"
+      ],
+      "search": "localhost vas vlastni pocitac v roli serveru. vidite to jen vy. kdyz si aplikaci spustite u sebe, bezi na localhostu. adresa vypada jako web, ale ven nevede.  localhost lokalne na pocitaci",
+      "mentions": 1,
+      "card_hits": 0,
+      "days": 1,
+      "first_seen": "2026-03-18",
+      "last_seen": "2026-03-18"
+    },
+    {
+      "slug": "lokalni-model",
+      "term": "Lokální model",
+      "category": "ai",
+      "short": "Model běžící přímo na vašem počítači místo v cloudu.",
+      "plain": "Místo posílání dotazů na internet běží model přímo u vás. Data neopustí váš stroj, takže se to hodí na citlivé věci. Zaplatíte za to výkonem, potřebujete silnější počítač a výsledky bývají slabší než u velkých cloudových modelů.",
+      "why": "Ve skupině se řeší hlavně u přepisů a u dat, která nesmí ven.",
+      "related": [
+        "whisper",
+        "gdpr",
+        "model"
+      ],
+      "aliases": [
+        "lokální model",
+        "lokálně",
+        "lokální modely",
+        "lokálního modelu"
+      ],
+      "search": "lokalni model model bezici primo na vasem pocitaci misto v cloudu. misto posilani dotazu na internet bezi model primo u vas. data neopusti vas stroj, takze se to hodi na citlive veci. zaplatite za to vykonem, potrebujete silnejsi pocitac a vysledky byvaji slabsi nez u velkych cloudovych modelu. ve skupine se resi hlavne u prepisu a u dat, ktera nesmi ven. lokalni model lokalne lokalni modely lokalniho modelu",
+      "mentions": 38,
+      "card_hits": 20,
+      "days": 26,
+      "first_seen": "2026-03-20",
+      "last_seen": "2026-07-15"
+    },
+    {
+      "slug": "markdown",
+      "term": "Markdown",
+      "category": "pc",
+      "short": "Formátování textu pomocí obyčejných znaků.",
+      "plain": "Jednoduchý zápis, kde hvězdičky udělají tučné písmo a mřížky nadpisy. Zůstává to čitelný text. Soubor otevřete čímkoli a Word na to nepotřebujete.",
+      "why": "V tomhle formátu jsou poznámky v Obsidianu i instrukce v CLAUDE.md.",
+      "related": [
+        "obsidian",
+        "claude-md"
+      ],
+      "aliases": [
+        "markdown",
+        "markdownu",
+        "\\.md",
+        "md soubor"
+      ],
+      "search": "markdown formatovani textu pomoci obycejnych znaku. jednoduchy zapis, kde hvezdicky udelaji tucne pismo a mrizky nadpisy. zustava to citelny text. soubor otevrete cimkoli a word na to nepotrebujete. v tomhle formatu jsou poznamky v obsidianu i instrukce v claude.md. markdown markdownu \\.md md soubor",
+      "mentions": 41,
+      "card_hits": 11,
+      "days": 25,
+      "first_seen": "2026-03-14",
+      "last_seen": "2026-07-18"
+    },
+    {
+      "slug": "mcp",
+      "term": "MCP",
+      "category": "ai",
+      "short": "Standard, kterým se k modelu připojují další nástroje a zdroje dat.",
+      "plain": "Model Context Protocol je otevřený standard od Anthropicu. Funguje jako univerzální zásuvka, díky které umí model sáhnout do kalendáře, databáze nebo interního systému, aniž by to někdo musel programovat pokaždé znovu. Kdo napíše MCP server jednou, připojí ho do libovolného nástroje, který standard podporuje.",
+      "why": "Ve skupině je to jeden z nejčastějších pojmů vůbec, obvykle ve smyslu „připojil jsem si k tomu tohle“.",
+      "related": [
+        "agent",
+        "api",
+        "claude-code"
+      ],
+      "aliases": [
+        "MCP"
+      ],
+      "search": "mcp standard, kterym se k modelu pripojuji dalsi nastroje a zdroje dat. model context protocol je otevreny standard od anthropicu. funguje jako univerzalni zasuvka, diky ktere umi model sahnout do kalendare, databaze nebo interniho systemu, aniz by to nekdo musel programovat pokazde znovu. kdo napise mcp server jednou, pripoji ho do libovolneho nastroje, ktery standard podporuje. ve skupine je to jeden z nejcastejsich pojmu vubec, obvykle ve smyslu „pripojil jsem si k tomu tohle“. mcp",
+      "mentions": 117,
+      "card_hits": 18,
+      "days": 25,
+      "first_seen": "2026-03-16",
+      "last_seen": "2026-07-25"
+    },
+    {
+      "slug": "model",
+      "term": "Model",
+      "category": "ai",
+      "short": "Konkrétní verze AI, kterou zrovna používáte.",
+      "plain": "Model je konkrétní verze AI, kterou zrovna používáte. Liší se silou, rychlostí a cenou. Silnější model víc rozumí složitému zadání, ale je pomalejší a dražší, slabší je rychlý na jednoduché věci.",
+      "why": "Proto se ve skupině řeší, na co stačí slabší model a kdy sáhnout po silnějším.",
+      "related": [
+        "llm",
+        "claude-modely",
+        "token"
+      ],
+      "aliases": [
+        "model",
+        "modelu",
+        "modely",
+        "modelů",
+        "modelem"
+      ],
+      "search": "model konkretni verze ai, kterou zrovna pouzivate. model je konkretni verze ai, kterou zrovna pouzivate. lisi se silou, rychlosti a cenou. silnejsi model vic rozumi slozitemu zadani, ale je pomalejsi a drazsi, slabsi je rychly na jednoduche veci. proto se ve skupine resi, na co staci slabsi model a kdy sahnout po silnejsim. model modelu modely modelu modelem",
+      "mentions": 176,
+      "card_hits": 52,
+      "days": 55,
+      "first_seen": "2026-03-17",
+      "last_seen": "2026-07-25"
+    },
+    {
+      "slug": "claude-modely",
+      "term": "Modelové řady Claude",
+      "category": "ai",
+      "short": "Opus, Sonnet, Haiku a další. Liší se silou, rychlostí a cenou.",
+      "plain": "Anthropic vydává Claude ve víc řadách, jmenují se třeba Opus, Sonnet nebo Haiku. Silnější řady zvládají složitější úvahy a rozsáhlé úkoly, rychlejší jsou levnější a hodí se na jednoduchou práci ve velkém množství. Které verze jsou zrovna aktuální se v čase mění, princip zůstává.",
+      "why": "Volba řady je hlavní páka na poměr cena a kvalita.",
+      "related": [
+        "model",
+        "rate-limit"
+      ],
+      "aliases": [
+        "Opus",
+        "Sonnet",
+        "Haiku",
+        "Fable"
+      ],
+      "search": "modelove rady claude opus, sonnet, haiku a dalsi. lisi se silou, rychlosti a cenou. anthropic vydava claude ve vic radach, jmenuji se treba opus, sonnet nebo haiku. silnejsi rady zvladaji slozitejsi uvahy a rozsahle ukoly, rychlejsi jsou levnejsi a hodi se na jednoduchou praci ve velkem mnozstvi. ktere verze jsou zrovna aktualni se v case meni, princip zustava. volba rady je hlavni paka na pomer cena a kvalita. opus sonnet haiku fable",
+      "mentions": 161,
+      "card_hits": 27,
+      "days": 37,
+      "first_seen": "2026-03-17",
+      "last_seen": "2026-07-26"
+    },
+    {
+      "slug": "mvp",
+      "term": "MVP",
+      "category": "cc",
+      "short": "Nejmenší verze, která už dává smysl a dá se vyzkoušet.",
+      "plain": "Minimum viable product, tedy nejjednodušší varianta věci, která už reálně funguje a jde ji použít. Smysl je ověřit nápad dřív, než do něj nasypete spoustu času.",
+      "why": "Základní rada pro vibe coding zní začni nejmenším MVP, protože malý celek se dá uhlídat.",
+      "related": [
+        "vibe-coding",
+        "prototyp"
+      ],
+      "aliases": [
+        "MVP"
+      ],
+      "search": "mvp nejmensi verze, ktera uz dava smysl a da se vyzkouset. minimum viable product, tedy nejjednodussi varianta veci, ktera uz realne funguje a jde ji pouzit. smysl je overit napad driv, nez do nej nasypete spoustu casu. zakladni rada pro vibe coding zni zacni nejmensim mvp, protoze maly celek se da uhlidat. mvp",
+      "mentions": 7,
+      "card_hits": 0,
+      "days": 4,
+      "first_seen": "2026-03-15",
+      "last_seen": "2026-06-17"
+    },
+    {
+      "slug": "notion",
+      "term": "Notion",
+      "category": "nastroje",
+      "short": "Poznámky, databáze a wiki v jednom, uložené v cloudu.",
+      "plain": "Nástroj na organizaci informací, kde se míchají dokumenty s tabulkami a databázemi. Na rozdíl od Obsidianu obsah leží u poskytovatele, ne u vás na disku.",
+      "why": null,
+      "related": [
+        "obsidian",
+        "second-brain"
+      ],
+      "aliases": [
+        "Notion",
+        "Notionu",
+        "notion"
+      ],
+      "search": "notion poznamky, databaze a wiki v jednom, ulozene v cloudu. nastroj na organizaci informaci, kde se michaji dokumenty s tabulkami a databazemi. na rozdil od obsidianu obsah lezi u poskytovatele, ne u vas na disku.  notion notionu notion",
+      "mentions": 60,
+      "card_hits": 10,
+      "days": 23,
+      "first_seen": "2026-03-16",
+      "last_seen": "2026-07-25"
+    },
+    {
+      "slug": "npm",
+      "term": "npm a balíčky",
+      "category": "nastroje",
+      "short": "Hotové kusy cizího kódu, které si do projektu doplníte.",
+      "plain": "Místo psaní všeho od začátku se do projektu přidá hotová knihovna, která už umí, co potřebujete. npm je nástroj, který tyhle balíčky stahuje a spravuje. Každý přidaný balíček je ale i závazek, protože ho někdo musí udržovat.",
+      "why": null,
+      "related": [
+        "framework",
+        "build"
+      ],
+      "aliases": [
+        "npm",
+        "npx",
+        "balíček",
+        "balíčky",
+        "knihovna",
+        "knihovny"
+      ],
+      "search": "npm a balicky hotove kusy ciziho kodu, ktere si do projektu doplnite. misto psani vseho od zacatku se do projektu prida hotova knihovna, ktera uz umi, co potrebujete. npm je nastroj, ktery tyhle balicky stahuje a spravuje. kazdy pridany balicek je ale i zavazek, protoze ho nekdo musi udrzovat.  npm npx balicek balicky knihovna knihovny",
+      "mentions": 21,
+      "card_hits": 3,
+      "days": 4,
+      "first_seen": "2026-04-01",
+      "last_seen": "2026-05-14"
+    },
+    {
+      "slug": "obsidian",
+      "term": "Obsidian",
+      "category": "nastroje",
+      "short": "Poznámky uložené jako obyčejné textové soubory u vás na disku.",
+      "plain": "Aplikace na psaní a propojování poznámek. Soubory zůstávají vaše, leží u vás ve složce jako obyčejný text a otevřete je čímkoli, i kdyby Obsidian zítra skončil. To je hlavní rozdíl proti cloudovým službám.",
+      "why": "Kolem druhého mozku v Obsidianu se ve skupině točí jedno z nejsilnějších témat.",
+      "related": [
+        "markdown",
+        "notion",
+        "second-brain"
+      ],
+      "aliases": [
+        "Obsidian",
+        "Obsidianu",
+        "Obsidianem",
+        "obsidian"
+      ],
+      "search": "obsidian poznamky ulozene jako obycejne textove soubory u vas na disku. aplikace na psani a propojovani poznamek. soubory zustavaji vase, lezi u vas ve slozce jako obycejny text a otevrete je cimkoli, i kdyby obsidian zitra skoncil. to je hlavni rozdil proti cloudovym sluzbam. kolem druheho mozku v obsidianu se ve skupine toci jedno z nejsilnejsich temat. obsidian obsidianu obsidianem obsidian",
+      "mentions": 166,
+      "card_hits": 36,
+      "days": 43,
+      "first_seen": "2026-03-16",
+      "last_seen": "2026-07-26"
+    },
+    {
+      "slug": "offline",
+      "term": "Offline režim",
+      "category": "web",
+      "short": "Funguje i bez připojení, protože si data uložil dopředu.",
+      "plain": "Aplikace si stáhne obsah do zařízení, takže ho ukáže i bez internetu. Nové věci se dotáhnou, jakmile se připojení vrátí.",
+      "why": null,
+      "related": [
+        "pwa"
+      ],
+      "aliases": [
+        "offline"
+      ],
+      "search": "offline rezim funguje i bez pripojeni, protoze si data ulozil dopredu. aplikace si stahne obsah do zarizeni, takze ho ukaze i bez internetu. nove veci se dotahnou, jakmile se pripojeni vrati.  offline",
+      "mentions": 15,
+      "card_hits": 10,
+      "days": 8,
+      "first_seen": "2026-03-17",
+      "last_seen": "2026-06-17"
+    },
+    {
+      "slug": "open-source",
+      "term": "Open source",
+      "category": "kod",
+      "short": "Software s veřejně dostupným kódem, který smí kdokoli číst a upravovat.",
+      "plain": "U open source projektu je vidět, jak je udělaný uvnitř. Kdokoli si ho může stáhnout, prohlédnout, upravit a většinou i použít zdarma. Podmínky určuje licence, běžná a hodně volná je licence MIT.",
+      "why": null,
+      "related": [
+        "github",
+        "git"
+      ],
+      "aliases": [
+        "open source",
+        "opensource",
+        "open-source",
+        "otevřený zdrojový kód"
+      ],
+      "search": "open source software s verejne dostupnym kodem, ktery smi kdokoli cist a upravovat. u open source projektu je videt, jak je udelany uvnitr. kdokoli si ho muze stahnout, prohlednout, upravit a vetsinou i pouzit zdarma. podminky urcuje licence, bezna a hodne volna je licence mit.  open source opensource open-source otevreny zdrojovy kod",
+      "mentions": 9,
+      "card_hits": 5,
+      "days": 6,
+      "first_seen": "2026-04-30",
+      "last_seen": "2026-07-25"
+    },
+    {
+      "slug": "pii",
+      "term": "Osobní údaje (PII)",
+      "category": "data",
+      "short": "Údaje, podle kterých jde konkrétního člověka poznat.",
+      "plain": "Jméno, e-mail, telefon, adresa nebo cokoli dalšího, co vede ke konkrétní osobě. Než dáte data ven nebo do cizí služby, tyhle údaje se z nich obvykle odstraňují.",
+      "why": "Přepisy na tomhle portálu procházejí přesně takovým čištěním, proto v nich čtete jen člen komunity.",
+      "related": [
+        "gdpr",
+        "anonymizace"
+      ],
+      "aliases": [
+        "PII",
+        "osobní údaje",
+        "osobních údajů"
+      ],
+      "search": "osobni udaje (pii) udaje, podle kterych jde konkretniho cloveka poznat. jmeno, e-mail, telefon, adresa nebo cokoli dalsiho, co vede ke konkretni osobe. nez date data ven nebo do cizi sluzby, tyhle udaje se z nich obvykle odstranuji. prepisy na tomhle portalu prochazeji presne takovym cistenim, proto v nich ctete jen clen komunity. pii osobni udaje osobnich udaju",
+      "mentions": 2,
+      "card_hits": 0,
+      "days": 1,
+      "first_seen": "2026-06-19",
+      "last_seen": "2026-06-19"
+    },
+    {
+      "slug": "env",
+      "term": "Proměnné prostředí a .env",
+      "category": "data",
+      "short": "Místo, kam se ukládají hesla a klíče mimo samotný kód.",
+      "plain": "Citlivé údaje se nepíšou přímo do programu, ale nastaví se vedle něj. Program si je přečte při spuštění. Soubor .env se běžně vylučuje z verzování, aby se omylem nedostal ven.",
+      "why": null,
+      "related": [
+        "api-klic",
+        "git"
+      ],
+      "aliases": [
+        "\\.env",
+        "proměnné prostředí",
+        "environment",
+        "env soubor"
+      ],
+      "search": "promenne prostredi a .env misto, kam se ukladaji hesla a klice mimo samotny kod. citlive udaje se nepisou primo do programu, ale nastavi se vedle nej. program si je precte pri spusteni. soubor .env se bezne vylucuje z verzovani, aby se omylem nedostal ven.  \\.env promenne prostredi environment env soubor",
+      "mentions": 1,
+      "card_hits": 0,
+      "days": 1,
+      "first_seen": "2026-07-22",
+      "last_seen": "2026-07-22"
+    },
+    {
+      "slug": "prompt",
+      "term": "Prompt",
+      "category": "ai",
+      "short": "Zadání, které modelu napíšete.",
+      "plain": "Prompt je text, kterým modelu říkáte, co má udělat. Žádná kouzelná formulka v tom není. Nejlíp funguje obyčejný jasný popis toho, co chcete, pro koho to je a jak má výsledek vypadat.",
+      "why": "Většina zklamání z AI pochází z vágního zadání, ne ze slabého modelu.",
+      "related": [
+        "kontext",
+        "llm"
+      ],
+      "aliases": [
+        "prompt",
+        "promptu",
+        "prompty",
+        "promptů",
+        "promptem",
+        "promptování",
+        "promptovat"
+      ],
+      "search": "prompt zadani, ktere modelu napisete. prompt je text, kterym modelu rikate, co ma udelat. zadna kouzelna formulka v tom neni. nejlip funguje obycejny jasny popis toho, co chcete, pro koho to je a jak ma vysledek vypadat. vetsina zklamani z ai pochazi z vagniho zadani, ne ze slabeho modelu. prompt promptu prompty promptu promptem promptovani promptovat",
+      "mentions": 53,
+      "card_hits": 21,
+      "days": 27,
+      "first_seen": "2026-03-15",
+      "last_seen": "2026-07-26"
+    },
+    {
+      "slug": "prototyp",
+      "term": "Prototyp",
+      "category": "cc",
+      "short": "Rychlá zkušební verze, která má něco ověřit, ne vydržet.",
+      "plain": "Rychlá verze, na které si osaháte, jestli nápad funguje a jak se to ovládá. Počítá se s tím, že se zahodí.",
+      "why": null,
+      "related": [
+        "mvp",
+        "vibe-coding"
+      ],
+      "aliases": [
+        "prototyp",
+        "prototypu",
+        "prototypy"
+      ],
+      "search": "prototyp rychla zkusebni verze, ktera ma neco overit, ne vydrzet. rychla verze, na ktere si osahate, jestli napad funguje a jak se to ovlada. pocita se s tim, ze se zahodi.  prototyp prototypu prototypy",
+      "mentions": 7,
+      "card_hits": 3,
+      "days": 7,
+      "first_seen": "2026-03-16",
+      "last_seen": "2026-07-25"
+    },
+    {
+      "slug": "pwa",
+      "term": "PWA",
+      "category": "web",
+      "short": "Web, který si přidáte na plochu telefonu a chová se skoro jako aplikace.",
+      "plain": "Progresivní webová aplikace vypadá a funguje jako běžná appka, ale je to web. Nemusí se instalovat z obchodu, umí běžet i offline a posílat upozornění.",
+      "why": "Portál Master the Flow je přesně tohle, proto si ho můžete dát na plochu.",
+      "related": [
+        "offline",
+        "deploy"
+      ],
+      "aliases": [
+        "PWA"
+      ],
+      "search": "pwa web, ktery si pridate na plochu telefonu a chova se skoro jako aplikace. progresivni webova aplikace vypada a funguje jako bezna appka, ale je to web. nemusi se instalovat z obchodu, umi bezet i offline a posilat upozorneni. portal master the flow je presne tohle, proto si ho muzete dat na plochu. pwa",
+      "mentions": 5,
+      "card_hits": 1,
+      "days": 2,
+      "first_seen": "2026-03-16",
+      "last_seen": "2026-06-17"
+    },
+    {
+      "slug": "raycast",
+      "term": "Raycast",
+      "category": "nastroje",
+      "short": "Vyhledávací a spouštěcí lišta pro Mac, náhrada Spotlightu.",
+      "plain": "Vyskočí přes klávesovou zkratku a odsud se ovládá skoro cokoli, hledání souborů, spouštění aplikací, počítání, schránka nebo vlastní příkazy. Rozšiřuje se doplňky.",
+      "why": null,
+      "related": [
+        "automatizace",
+        "workflow"
+      ],
+      "aliases": [
+        "Raycast",
+        "Raycastu",
+        "raycast"
+      ],
+      "search": "raycast vyhledavaci a spousteci lista pro mac, nahrada spotlightu. vyskoci pres klavesovou zkratku a odsud se ovlada skoro cokoli, hledani souboru, spousteni aplikaci, pocitani, schranka nebo vlastni prikazy. rozsiruje se doplnky.  raycast raycastu raycast",
+      "mentions": 71,
+      "card_hits": 10,
+      "days": 17,
+      "first_seen": "2026-03-19",
+      "last_seen": "2026-07-23"
+    },
+    {
+      "slug": "repozitar",
+      "term": "Repozitář",
+      "category": "kod",
+      "short": "Složka projektu, kterou hlídá Git. Zkráceně repo.",
+      "plain": "Repozitář je jeden projekt i s celou svojí historií.",
+      "why": null,
+      "related": [
+        "git",
+        "github",
+        "commit"
+      ],
+      "aliases": [
+        "repozitář",
+        "repozitáře",
+        "repozitáři",
+        "repozitářů",
+        "repo",
+        "repa"
+      ],
+      "search": "repozitar slozka projektu, kterou hlida git. zkracene repo. repozitar je jeden projekt i s celou svoji historii.  repozitar repozitare repozitari repozitaru repo repa",
+      "mentions": 27,
+      "card_hits": 5,
+      "days": 14,
+      "first_seen": "2026-03-25",
+      "last_seen": "2026-07-22"
+    },
+    {
+      "slug": "sandbox",
+      "term": "Sandbox",
+      "category": "pc",
+      "short": "Ohraničený prostor, ze kterého program nemůže ven.",
+      "plain": "Bezpečnostní pojistka, která programu dovolí sáhnout jen na to, co mu výslovně povolíte. Když se něco pokazí, škoda zůstane uvnitř.",
+      "why": null,
+      "related": [
+        "docker",
+        "yolo",
+        "vm"
+      ],
+      "aliases": [
+        "sandbox",
+        "sandboxu",
+        "sandboxing",
+        "izolace"
+      ],
+      "search": "sandbox ohraniceny prostor, ze ktereho program nemuze ven. bezpecnostni pojistka, ktera programu dovoli sahnout jen na to, co mu vyslovne povolite. kdyz se neco pokazi, skoda zustane uvnitr.  sandbox sandboxu sandboxing izolace",
+      "mentions": 2,
+      "card_hits": 3,
+      "days": 2,
+      "first_seen": "2026-06-04",
+      "last_seen": "2026-06-05"
+    },
+    {
+      "slug": "scraping",
+      "term": "Scraping",
+      "category": "nastroje",
+      "short": "Automatické vytahování dat z webových stránek.",
+      "plain": "Program projde stránku a vytáhne z ní údaje, které by člověk jinak vypisoval ručně. Weby se proti tomu často brání, proto na to existují specializované nástroje.",
+      "why": "Ve skupině se řeší hlavně u srovnávání nabídek a sbírání recenzí.",
+      "related": [
+        "automatizace",
+        "api"
+      ],
+      "aliases": [
+        "scraping",
+        "scraper",
+        "scrapovat",
+        "scrapování",
+        "Playwright",
+        "Apify",
+        "Firecrawl"
+      ],
+      "search": "scraping automaticke vytahovani dat z webovych stranek. program projde stranku a vytahne z ni udaje, ktere by clovek jinak vypisoval rucne. weby se proti tomu casto brani, proto na to existuji specializovane nastroje. ve skupine se resi hlavne u srovnavani nabidek a sbirani recenzi. scraping scraper scrapovat scrapovani playwright apify firecrawl",
+      "mentions": 32,
+      "card_hits": 4,
+      "days": 5,
+      "first_seen": "2026-03-19",
+      "last_seen": "2026-07-25"
+    },
+    {
+      "slug": "server",
+      "term": "Server",
+      "category": "web",
+      "short": "Počítač, který běží nepřetržitě a obsluhuje ostatní.",
+      "plain": "Server je stroj, jehož jediná práce je čekat na dotazy a odpovídat na ně. Může to být obří stroj v datovém centru i obyčejný počítač doma, který nikdy nevypínáte.",
+      "why": null,
+      "related": [
+        "hosting",
+        "localhost",
+        "deploy"
+      ],
+      "aliases": [
+        "server",
+        "serveru",
+        "servery",
+        "serverů",
+        "serveri"
+      ],
+      "search": "server pocitac, ktery bezi nepretrzite a obsluhuje ostatni. server je stroj, jehoz jedina prace je cekat na dotazy a odpovidat na ne. muze to byt obri stroj v datovem centru i obycejny pocitac doma, ktery nikdy nevypinate.  server serveru servery serveru serveri",
+      "mentions": 36,
+      "card_hits": 11,
+      "days": 17,
+      "first_seen": "2026-03-15",
+      "last_seen": "2026-07-18"
+    },
+    {
+      "slug": "session",
+      "term": "Session",
+      "category": "cc",
+      "short": "Jedno souvislé sezení, ve kterém si AI pamatuje, o čem jste mluvili.",
+      "plain": "Session drží společnou paměť konverzace. Když ji ukončíte a začnete znovu, začínáte s čistým stolem a nic z minula se nepřenáší, pokud to není zapsané v souborech nebo v paměti.",
+      "why": "Dlouhá session zaplní kontextové okno. Krátká a soustředěná dává lepší výsledky.",
+      "related": [
+        "kontextove-okno",
+        "claude-md"
+      ],
+      "aliases": [
+        "session",
+        "sessions",
+        "sezení",
+        "vlákno",
+        "vlákna"
+      ],
+      "search": "session jedno souvisle sezeni, ve kterem si ai pamatuje, o cem jste mluvili. session drzi spolecnou pamet konverzace. kdyz ji ukoncite a zacnete znovu, zacinate s cistym stolem a nic z minula se neprenasi, pokud to neni zapsane v souborech nebo v pameti. dlouha session zaplni kontextove okno. kratka a soustredena dava lepsi vysledky. session sessions sezeni vlakno vlakna",
+      "mentions": 139,
+      "card_hits": 25,
+      "days": 46,
+      "first_seen": "2026-03-15",
+      "last_seen": "2026-07-26"
+    },
+    {
+      "slug": "skill",
+      "term": "Skill",
+      "category": "cc",
+      "short": "Balíček instrukcí pro postup, který děláte opakovaně.",
+      "plain": "Skill je uložený návod, jak přesně nějakou práci udělat. Místo abyste popisovali postup pokaždé znovu, zavoláte ho jménem a Claude ví, co má dělat a v jakém pořadí.",
+      "why": "Typické použití je opakovaná rutina, třeba příprava podkladů nebo kontrola před vypuštěním ven.",
+      "related": [
+        "claude-code",
+        "hook",
+        "claude-md"
+      ],
+      "aliases": [
+        "skill",
+        "skillu",
+        "skilly",
+        "skillů",
+        "skills"
+      ],
+      "search": "skill balicek instrukci pro postup, ktery delate opakovane. skill je ulozeny navod, jak presne nejakou praci udelat. misto abyste popisovali postup pokazde znovu, zavolate ho jmenem a claude vi, co ma delat a v jakem poradi. typicke pouziti je opakovana rutina, treba priprava podkladu nebo kontrola pred vypustenim ven. skill skillu skilly skillu skills",
+      "mentions": 153,
+      "card_hits": 33,
+      "days": 41,
+      "first_seen": "2026-03-18",
+      "last_seen": "2026-07-26"
+    },
+    {
+      "slug": "skript",
+      "term": "Skript",
+      "category": "pc",
+      "short": "Malý program, který za vás udělá sérii kroků.",
+      "plain": "Soubor s posloupností příkazů, které se spustí jedním zavoláním. Typicky něco, co byste jinak dělali ručně pořád dokola, třeba přejmenovat stovku souborů nebo stáhnout a zpracovat data.",
+      "why": null,
+      "related": [
+        "cli",
+        "automatizace",
+        "cron"
+      ],
+      "aliases": [
+        "skript",
+        "skriptu",
+        "skripty",
+        "skriptů",
+        "script"
+      ],
+      "search": "skript maly program, ktery za vas udela serii kroku. soubor s posloupnosti prikazu, ktere se spusti jednim zavolanim. typicky neco, co byste jinak delali rucne porad dokola, treba prejmenovat stovku souboru nebo stahnout a zpracovat data.  skript skriptu skripty skriptu script",
+      "mentions": 32,
+      "card_hits": 18,
+      "days": 15,
+      "first_seen": "2026-03-17",
+      "last_seen": "2026-07-15"
+    },
+    {
+      "slug": "ssh",
+      "term": "SSH",
+      "category": "pc",
+      "short": "Zabezpečené připojení k jinému počítači přes příkazy.",
+      "plain": "Způsob, jak se z vašeho počítače přihlásit na vzdálený stroj a ovládat ho, jako byste u něj seděli. Spojení je šifrované.",
+      "why": null,
+      "related": [
+        "terminal",
+        "server"
+      ],
+      "aliases": [
+        "SSH"
+      ],
+      "search": "ssh zabezpecene pripojeni k jinemu pocitaci pres prikazy. zpusob, jak se z vaseho pocitace prihlasit na vzdaleny stroj a ovladat ho, jako byste u nej sedeli. spojeni je sifrovane.  ssh",
+      "mentions": 6,
+      "card_hits": 5,
+      "days": 4,
+      "first_seen": "2026-04-01",
+      "last_seen": "2026-07-12"
+    },
+    {
+      "slug": "stripe",
+      "term": "Stripe",
+      "category": "nastroje",
+      "short": "Platební brána pro příjem plateb kartou.",
+      "plain": "Služba, přes kterou lze vybírat peníze za produkt nebo předplatné. Postará se o platby, faktury i opakované strhávání.",
+      "why": null,
+      "related": [
+        "api"
+      ],
+      "aliases": [
+        "Stripe",
+        "Stripu",
+        "stripe"
+      ],
+      "search": "stripe platebni brana pro prijem plateb kartou. sluzba, pres kterou lze vybirat penize za produkt nebo predplatne. postara se o platby, faktury i opakovane strhavani.  stripe stripu stripe",
+      "mentions": 13,
+      "card_hits": 3,
+      "days": 5,
+      "first_seen": "2026-05-07",
+      "last_seen": "2026-07-21"
+    },
+    {
+      "slug": "subagent",
+      "term": "Subagent",
+      "category": "ai",
+      "short": "Pomocník, kterému hlavní agent předá dílčí úkol.",
+      "plain": "Hlavní agent si může zavolat pomocné agenty a rozdělit mezi ně práci. Každý pracuje ve vlastním kontextu. Hlavnímu tím nezaplní okno vším, co cestou přečetl. Zpátky pošle jen výsledek.",
+      "why": "Používá se, když je práce moc velká na jedno vlákno.",
+      "related": [
+        "agent",
+        "kontextove-okno"
+      ],
+      "aliases": [
+        "subagent",
+        "subagenta",
+        "subagenty",
+        "subagentů",
+        "subagenti"
+      ],
+      "search": "subagent pomocnik, kteremu hlavni agent preda dilci ukol. hlavni agent si muze zavolat pomocne agenty a rozdelit mezi ne praci. kazdy pracuje ve vlastnim kontextu. hlavnimu tim nezaplni okno vsim, co cestou precetl. zpatky posle jen vysledek. pouziva se, kdyz je prace moc velka na jedno vlakno. subagent subagenta subagenty subagentu subagenti",
+      "mentions": 3,
+      "card_hits": 2,
+      "days": 2,
+      "first_seen": "2026-06-02",
+      "last_seen": "2026-06-04"
+    },
+    {
+      "slug": "supabase",
+      "term": "Supabase",
+      "category": "nastroje",
+      "short": "Hotová databáze a zázemí pro aplikaci, bez vlastního serveru.",
+      "plain": "Služba, která vám dá databázi, přihlašování uživatelů a ukládání souborů jako hotovou věc. Používá se, když aplikace potřebuje někam ukládat data, ale nechcete stavět backend od nuly.",
+      "why": null,
+      "related": [
+        "frontend-backend",
+        "server"
+      ],
+      "aliases": [
+        "Supabase",
+        "supabase"
+      ],
+      "search": "supabase hotova databaze a zazemi pro aplikaci, bez vlastniho serveru. sluzba, ktera vam da databazi, prihlasovani uzivatelu a ukladani souboru jako hotovou vec. pouziva se, kdyz aplikace potrebuje nekam ukladat data, ale nechcete stavet backend od nuly.  supabase supabase",
+      "mentions": 14,
+      "card_hits": 4,
+      "days": 4,
+      "first_seen": "2026-03-16",
+      "last_seen": "2026-06-04"
+    },
+    {
+      "slug": "terminal",
+      "term": "Terminál",
+      "category": "pc",
+      "short": "Okno, kde se počítači píšou příkazy místo klikání.",
+      "plain": "Textové okno, do kterého napíšete příkaz a počítač ho provede. Vypadá to nepřívětivě, ale je to jen jiný způsob ovládání. Na Macu se aplikace jmenuje Terminál.",
+      "why": "Claude Code běží tady. Je to první místo, kde se člověk musí přemoct.",
+      "related": [
+        "cli",
+        "gui",
+        "claude-code"
+      ],
+      "aliases": [
+        "terminál",
+        "terminálu",
+        "terminálem",
+        "příkazová řádka",
+        "příkazové řádce"
+      ],
+      "search": "terminal okno, kde se pocitaci pisou prikazy misto klikani. textove okno, do ktereho napisete prikaz a pocitac ho provede. vypada to neprivetive, ale je to jen jiny zpusob ovladani. na macu se aplikace jmenuje terminal. claude code bezi tady. je to prvni misto, kde se clovek musi premoct. terminal terminalu terminalem prikazova radka prikazove radce",
+      "mentions": 93,
+      "card_hits": 20,
+      "days": 28,
+      "first_seen": "2026-03-14",
+      "last_seen": "2026-07-26"
+    },
+    {
+      "slug": "token",
+      "term": "Token",
+      "category": "ai",
+      "short": "Kousky slov, na které si model dělí text. Podle nich se počítá cena i délka.",
+      "plain": "Model nečte slova, ale kousky slov, kterým se říká tokeny. Jedno české slovo bývá dva až tři tokeny, anglické často jen jeden. Proto se ve skupině občas píše, že se do stejného místa vejde víc angličtiny než češtiny.",
+      "why": "Cena i to, kolik toho model zvládne najednou, se počítá v tokenech. Kdo chápe tokeny, přestane se divit účtu.",
+      "related": [
+        "kontextove-okno",
+        "model",
+        "rate-limit"
+      ],
+      "aliases": [
+        "token",
+        "tokenu",
+        "tokeny",
+        "tokenů",
+        "tokenem",
+        "tokenech"
+      ],
+      "search": "token kousky slov, na ktere si model deli text. podle nich se pocita cena i delka. model necte slova, ale kousky slov, kterym se rika tokeny. jedno ceske slovo byva dva az tri tokeny, anglicke casto jen jeden. proto se ve skupine obcas pise, ze se do stejneho mista vejde vic anglictiny nez cestiny. cena i to, kolik toho model zvladne najednou, se pocita v tokenech. kdo chape tokeny, prestane se divit uctu. token tokenu tokeny tokenu tokenem tokenech",
+      "mentions": 77,
+      "card_hits": 25,
+      "days": 31,
+      "first_seen": "2026-03-14",
+      "last_seen": "2026-07-25"
+    },
+    {
+      "slug": "transkripce",
+      "term": "Transkripce a diarizace",
+      "category": "nastroje",
+      "short": "Převod mluvení na text a rozlišení, kdo z mluvčích mluví.",
+      "plain": "Transkripce udělá z nahrávky text. Diarizace k tomu přidá, který úsek řekl který mluvčí. U schůzek bývá ta druhá věc důležitější než samotný přepis.",
+      "why": null,
+      "related": [
+        "whisper",
+        "lokalni-model"
+      ],
+      "aliases": [
+        "transkripce",
+        "přepis",
+        "přepisu",
+        "přepisy",
+        "diarizace"
+      ],
+      "search": "transkripce a diarizace prevod mluveni na text a rozliseni, kdo z mluvcich mluvi. transkripce udela z nahravky text. diarizace k tomu prida, ktery usek rekl ktery mluvci. u schuzek byva ta druha vec dulezitejsi nez samotny prepis.  transkripce prepis prepisu prepisy diarizace",
+      "mentions": 97,
+      "card_hits": 31,
+      "days": 31,
+      "first_seen": "2026-03-14",
+      "last_seen": "2026-07-25"
+    },
+    {
+      "slug": "vibe-coding",
+      "term": "Vibe coding",
+      "category": "cc",
+      "short": "Stavění aplikací tak, že popisujete, co chcete, a kód píše AI.",
+      "plain": "Vy říkáte, co má věc dělat, AI píše kód a vy výsledek zkoušíte a usměrňujete. Programovat umět nemusíte. Stačí umět popsat, co chcete, a poznat, kdy výsledek nesedí. Jede se po malých kouscích, protože velký skok se špatně kontroluje a chyba se v něm hůř hledá.",
+      "why": "Kolem tohohle vznikla celá komunita. Je to nejčastější pojem ve skupině vůbec.",
+      "related": [
+        "claude-code",
+        "agent",
+        "mvp"
+      ],
+      "aliases": [
+        "vibe coding",
+        "vibe codingu",
+        "vibecoding",
+        "vibe kódování"
+      ],
+      "search": "vibe coding staveni aplikaci tak, ze popisujete, co chcete, a kod pise ai. vy rikate, co ma vec delat, ai pise kod a vy vysledek zkousite a usmernujete. programovat umet nemusite. staci umet popsat, co chcete, a poznat, kdy vysledek nesedi. jede se po malych kouscich, protoze velky skok se spatne kontroluje a chyba se v nem hur hleda. kolem tohohle vznikla cela komunita. je to nejcastejsi pojem ve skupine vubec. vibe coding vibe codingu vibecoding vibe kodovani",
+      "mentions": 299,
+      "card_hits": 41,
+      "days": 94,
+      "first_seen": "2026-03-14",
+      "last_seen": "2026-07-26"
+    },
+    {
+      "slug": "vm",
+      "term": "Virtuální stroj",
+      "category": "pc",
+      "short": "Celý druhý počítač běžící jako program uvnitř toho vašeho.",
+      "plain": "Simulovaný počítač s vlastním systémem, oddělený od hostitele. Jde v něm zkoušet věci, u kterých nechcete riskovat vlastní systém.",
+      "why": null,
+      "related": [
+        "docker",
+        "sandbox"
+      ],
+      "aliases": [
+        "virtuální stroj",
+        "virtuálním stroji",
+        "VM"
+      ],
+      "search": "virtualni stroj cely druhy pocitac bezici jako program uvnitr toho vaseho. simulovany pocitac s vlastnim systemem, oddeleny od hostitele. jde v nem zkouset veci, u kterych nechcete riskovat vlastni system.  virtualni stroj virtualnim stroji vm",
+      "mentions": 5,
+      "card_hits": 0,
+      "days": 1,
+      "first_seen": "2026-06-05",
+      "last_seen": "2026-06-05"
+    },
+    {
+      "slug": "whisper",
+      "term": "Whisper",
+      "category": "nastroje",
+      "short": "Model na převod řeči na text.",
+      "plain": "Přepisovací model od OpenAI. Dá se používat přes internet i pustit přímo na vlastním počítači, takže nahrávka nemusí nikam odcházet.",
+      "why": "Ve skupině stojí na Whisperu většina domácích řešení na přepis schůzek a hlasových poznámek.",
+      "related": [
+        "lokalni-model",
+        "transkripce"
+      ],
+      "aliases": [
+        "Whisper",
+        "Whisperu",
+        "whisper"
+      ],
+      "search": "whisper model na prevod reci na text. prepisovaci model od openai. da se pouzivat pres internet i pustit primo na vlastnim pocitaci, takze nahravka nemusi nikam odchazet. ve skupine stoji na whisperu vetsina domacich reseni na prepis schuzek a hlasovych poznamek. whisper whisperu whisper",
+      "mentions": 24,
+      "card_hits": 6,
+      "days": 7,
+      "first_seen": "2026-03-31",
+      "last_seen": "2026-07-25"
+    },
+    {
+      "slug": "workflow",
+      "term": "Workflow",
+      "category": "pc",
+      "short": "Ustálený postup, jak něco děláte od začátku do konce.",
+      "plain": "Sled kroků, který vede od zadání k výsledku. Nemusí být zautomatizovaný, workflow je i to, když víte, že po nahrávce vždycky následuje přepis, pak shrnutí a nakonec uložení do poznámek.",
+      "why": null,
+      "related": [
+        "automatizace",
+        "skript"
+      ],
+      "aliases": [
+        "workflow",
+        "workflowu",
+        "workflows"
+      ],
+      "search": "workflow ustaleny postup, jak neco delate od zacatku do konce. sled kroku, ktery vede od zadani k vysledku. nemusi byt zautomatizovany, workflow je i to, kdyz vite, ze po nahravce vzdycky nasleduje prepis, pak shrnuti a nakonec ulozeni do poznamek.  workflow workflowu workflows",
+      "mentions": 107,
+      "card_hits": 39,
+      "days": 55,
+      "first_seen": "2026-03-14",
+      "last_seen": "2026-07-25"
+    },
+    {
+      "slug": "yolo",
+      "term": "YOLO mód",
+      "category": "cc",
+      "short": "Režim, kdy agentovi odsouhlasíte všechno dopředu a on se pak neptá.",
+      "plain": "Běžně se agent před zásahem ptá o svolení. V tomhle režimu potvrzování vypnete a agent si dělá, co uzná za vhodné. Je to rychlé, ale nemáte záchrannou brzdu. Nehodí se to tam, kde může něco smazat nebo poslat ven.",
+      "why": "Ve skupině se u toho pravidelně připomíná izolace, tedy pouštět to radši v Dockeru nebo na odděleném stroji.",
+      "related": [
+        "sandbox",
+        "docker",
+        "agent"
+      ],
+      "aliases": [
+        "yolo",
+        "yolo mód",
+        "yolo mode"
+      ],
+      "search": "yolo mod rezim, kdy agentovi odsouhlasite vsechno dopredu a on se pak nepta. bezne se agent pred zasahem pta o svoleni. v tomhle rezimu potvrzovani vypnete a agent si dela, co uzna za vhodne. je to rychle, ale nemate zachrannou brzdu. nehodi se to tam, kde muze neco smazat nebo poslat ven. ve skupine se u toho pravidelne pripomina izolace, tedy poustet to radsi v dockeru nebo na oddelenem stroji. yolo yolo mod yolo mode",
+      "mentions": 7,
+      "card_hits": 2,
+      "days": 4,
+      "first_seen": "2026-04-28",
+      "last_seen": "2026-07-15"
+    }
+  ]
+}
