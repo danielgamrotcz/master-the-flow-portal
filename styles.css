@@ -2580,3 +2580,37 @@ body.lightbox-open { overflow: hidden; }
   text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 8px;
 }
 .card-terms-row { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* Vstupní cesta pro nováčky. Číslování tu není ozdoba, pořadí nese informaci. */
+.gloss-start {
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 16px; margin-bottom: 18px;
+}
+.gloss-start-head { margin-bottom: 12px; }
+.gloss-start-label {
+  display: block; font-size: 11px; font-weight: 600; letter-spacing: .05em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
+}
+.gloss-start-lede { margin: 0; font-size: 13px; line-height: 1.5; color: var(--text-secondary); }
+.gloss-start-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.gloss-start-item {
+  display: grid; grid-template-columns: 26px minmax(0, auto) minmax(0, 1fr);
+  align-items: baseline; gap: 10px; width: 100%; text-align: left;
+  font-family: inherit; cursor: pointer; padding: 9px 8px;
+  background: none; border: none; border-radius: var(--radius-sm);
+  transition: background 140ms ease;
+}
+.gloss-start-item:hover { background: var(--bg-card-hover); }
+.gloss-start-num {
+  font-size: 12px; font-weight: 700; color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.gloss-start-term { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+.gloss-start-short {
+  font-size: 13px; color: var(--text-tertiary); line-height: 1.45;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .gloss-start-item { grid-template-columns: 22px 1fr; row-gap: 2px; }
+  .gloss-start-short { grid-column: 2; white-space: normal; }
+}

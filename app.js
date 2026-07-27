@@ -1768,10 +1768,42 @@ function renderGlossaryCats() {
     + cats.filter(c => counts[c.id]).map(c => chip(c.id, c.label, counts[c.id])).join('');
 }
 
+// Pro nováčka je 73 hesel bez ladu a skladu. Tohle je pořadí, ve kterém
+// na sebe pojmy navazují, aby se z toho dalo něco naučit, ne jen dohledat.
+function renderGlossaryStart() {
+  const el = $('gloss-start');
+  if (!el) return;
+  // Cesta má smysl jen na nefiltrovaném seznamu, jinak plete.
+  const show = state.glossCat === 'all' && !state.glossQuery.trim();
+  el.classList.toggle('hidden', !show);
+  if (!show) { el.innerHTML = ''; return; }
+
+  const path = (state.glossary?.terms || [])
+    .filter(t => t.starter)
+    .sort((a, b) => a.starter - b.starter);
+  if (!path.length) { el.classList.add('hidden'); el.innerHTML = ''; return; }
+
+  el.innerHTML = `
+    <div class="gloss-start-head">
+      <span class="gloss-start-label">Když jste tu poprvé</span>
+      <p class="gloss-start-lede">Šest výrazů v&nbsp;pořadí, ve&nbsp;kterém na&nbsp;sebe navazují. Zbytek dohledáte, až na&nbsp;něj narazíte.</p>
+    </div>
+    <ol class="gloss-start-list">
+      ${path.map(t => `
+        <li><button class="gloss-start-item" data-term="${esc(t.slug)}" type="button">
+          <span class="gloss-start-num">${t.starter}</span>
+          <span class="gloss-start-term">${esc(t.term)}</span>
+          <span class="gloss-start-short">${esc(t.short)}</span>
+        </button></li>`).join('')}
+    </ol>`;
+}
+
 function renderGlossary() {
   const wrap = $('gloss-results');
   if (!wrap) return;
   renderGlossaryCats();
+
+  renderGlossaryStart();
 
   const list = glossFiltered();
   $('gloss-empty').classList.toggle('hidden', list.length > 0);
@@ -3588,6 +3620,10 @@ function init() {
     renderGlossary();
   });
   $('gloss-results').addEventListener('click', e => {
+    const btn = e.target.closest('[data-term]');
+    if (btn) showTerm(btn.dataset.term);
+  });
+  $('gloss-start').addEventListener('click', e => {
     const btn = e.target.closest('[data-term]');
     if (btn) showTerm(btn.dataset.term);
   });

@@ -68,14 +68,15 @@
         "modelem"
       ],
       "short": "Konkrétní verze AI, kterou zrovna používáte.",
-      "plain": "Model je konkrétní verze AI, kterou zrovna používáte. Liší se silou, rychlostí a cenou. Silnější model víc rozumí složitému zadání, ale je pomalejší a dražší, slabší je rychlý na jednoduché věci.",
-      "why": "Proto se ve skupině řeší, na co stačí slabší model a kdy sáhnout po silnějším.",
+      "plain": "Modelů je víc a liší se silou, rychlostí a cenou. Silnější zvládne složité zadání, ale je pomalejší a dražší. Slabší odbaví rutinu skoro hned. Když někdo ve skupině píše, že něco jede na Opusu a něco na Sonnetu, mluví přesně o téhle volbě.",
+      "why": "Volba modelu je hlavní páka na to, kolik za práci s AI zaplatíte.",
       "related": [
         "llm",
         "claude-modely",
         "token"
       ],
-      "source": "hand"
+      "source": "hand",
+      "starter": 2
     },
     {
       "slug": "token",
@@ -130,13 +131,14 @@
       ],
       "short": "Všechno, co model v danou chvíli ví o vašem zadání.",
       "plain": "Kontext je souhrn toho, co má model po ruce. Vaše zprávy, jeho odpovědi, obsah souborů, které si přečetl, a instrukce, které dostal. Když mu naházíte všechno, co vás napadne, utopí se v tom. Míň informací, ale trefnějších, funguje líp.",
-      "why": "Odtud ta rada psát stručně. Delší zadání neznamená lepší výsledek.",
+      "why": "Odtud ta rada psát stručně. Když do zadání naházíte pět nesouvisejících věcí, výsledek bude horší, než kdybyste řekli jednu.",
       "related": [
         "kontextove-okno",
         "prompt",
         "claude-md"
       ],
-      "source": "hand"
+      "source": "hand",
+      "starter": 4
     },
     {
       "slug": "prompt",
@@ -153,12 +155,13 @@
       ],
       "short": "Zadání, které modelu napíšete.",
       "plain": "Prompt je text, kterým modelu říkáte, co má udělat. Žádná kouzelná formulka v tom není. Nejlíp funguje obyčejný jasný popis toho, co chcete, pro koho to je a jak má výsledek vypadat.",
-      "why": "Většina zklamání z AI pochází z vágního zadání, ne ze slabého modelu.",
+      "why": "Většina zklamání z AI pochází z vágního zadání, ne ze slabého modelu. Napsat „shrň mi to“ a „shrň mi to do pěti bodů pro kolegu, který u toho nebyl“ dá úplně jiný výsledek.",
       "related": [
         "kontext",
         "llm"
       ],
-      "source": "hand"
+      "source": "hand",
+      "starter": 3
     },
     {
       "slug": "halucinace",
@@ -173,12 +176,13 @@
       ],
       "short": "Když si model něco vymyslí a tváří se u toho stejně jistě jako když má pravdu.",
       "plain": "Model skládá text tak, aby vypadal pravděpodobně. O pravdivosti sám nic neví. Když odpověď nezná, klidně si ji vymyslí i s čísly, jmény a odkazy. A napíše to stejně sebejistě jako věc, kterou má ověřenou.",
-      "why": "Proto se u čísel, citací a odkazů ověřuje zdroj, obzvlášť když jdou ven.",
+      "why": "Proto se u čísel, jmen a odkazů ověřuje zdroj, obzvlášť když jdou ven. Vymyšlený odkaz vypadá úplně stejně věrohodně jako pravý.",
       "related": [
         "llm",
         "model"
       ],
-      "source": "hand"
+      "source": "hand",
+      "starter": 6
     },
     {
       "slug": "agent",
@@ -231,9 +235,9 @@
       "match": [
         "MCP"
       ],
-      "short": "Standard, kterým se k modelu připojují další nástroje a zdroje dat.",
-      "plain": "Model Context Protocol je otevřený standard od Anthropicu. Funguje jako univerzální zásuvka, díky které umí model sáhnout do kalendáře, databáze nebo interního systému, aniž by to někdo musel programovat pokaždé znovu. Kdo napíše MCP server jednou, připojí ho do libovolného nástroje, který standard podporuje.",
-      "why": "Ve skupině je to jeden z nejčastějších pojmů vůbec, obvykle ve smyslu „připojil jsem si k tomu tohle“.",
+      "short": "Způsob, jak Claudovi zpřístupnit vaše další aplikace.",
+      "plain": "Model sám o sobě vidí jen to, co mu napíšete. Přes MCP se k němu dá připojit kalendář, e-mail, databáze nebo interní systém a on s nimi pak umí pracovat. Hotová napojení se dají nainstalovat, psát je nikdo nemusí. Zkratka znamená Model Context Protocol a je to otevřený standard od Anthropicu, takže jedno napojení funguje ve víc nástrojích.",
+      "why": "Když někdo ve skupině napíše, že si k tomu připojil Gmail nebo Notion, mluví o tomhle.",
       "related": [
         "agent",
         "api",
@@ -319,7 +323,8 @@
         "agent",
         "mvp"
       ],
-      "source": "hand"
+      "source": "hand",
+      "starter": 1
     },
     {
       "slug": "claude-code",
@@ -332,7 +337,7 @@
         "CC"
       ],
       "short": "Claude, který běží v terminálu a sám pracuje se soubory ve vašem projektu.",
-      "plain": "Není to chat v prohlížeči. Claude Code běží u vás na počítači, vidí složku s projektem, umí soubory číst i měnit, spouštět příkazy a ověřovat si výsledek. Ve skupině se často zkracuje na CC.",
+      "plain": "Není to chat v prohlížeči. Claude Code běží u vás na počítači, vidí složku s projektem, umí soubory číst i měnit, spouštět příkazy a ověřovat si výsledek. Spouští se v terminálu napsáním claude. Ve skupině se často zkracuje na CC.",
       "why": "Většina projektů, které tady lidi ukazují, vznikla přesně tímhle.",
       "related": [
         "harness",
@@ -340,7 +345,8 @@
         "skill",
         "terminal"
       ],
-      "source": "hand"
+      "source": "hand",
+      "starter": 5
     },
     {
       "slug": "harness",
@@ -373,8 +379,8 @@
         "skills"
       ],
       "short": "Balíček instrukcí pro postup, který děláte opakovaně.",
-      "plain": "Skill je uložený návod, jak přesně nějakou práci udělat. Místo abyste popisovali postup pokaždé znovu, zavoláte ho jménem a Claude ví, co má dělat a v jakém pořadí.",
-      "why": "Typické použití je opakovaná rutina, třeba příprava podkladů nebo kontrola před vypuštěním ven.",
+      "plain": "Skill je uložený návod, jak přesně nějakou práci udělat. Místo abyste postup popisovali pokaždé znovu, napíšete lomítko a jeho jméno, třeba /review, a Claude ví, co má dělat a v jakém pořadí.",
+      "why": "Hodí se na rutinu, kterou děláte pořád stejně. Příprava podkladů, kontrola před vypuštěním ven, uklizení poznámek.",
       "related": [
         "claude-code",
         "hook",
@@ -570,7 +576,7 @@
       ],
       "short": "Uložený snímek změn s popiskem, co se změnilo.",
       "plain": "Něco jako uložit pozici ve hře. Zaznamená stav souborů v daný moment a vy se k němu můžete kdykoli vrátit. Ta poznámka u toho není formalita, za měsíc si bez ní nevzpomenete, co jste tenkrát dělali.",
-      "why": null,
+      "why": "Bez commitů se nedá vrátit zpátky. S nimi je návrat otázka jednoho příkazu.",
       "related": [
         "git",
         "repozitar"
@@ -625,7 +631,7 @@
       ],
       "short": "Rozhraní, kterým spolu dva programy mluví.",
       "plain": "API je domluvený způsob, jak si dva programy předávají data. Když si aplikace někde tahá informace nebo posílá dotaz do AI modelu, jde to přes API. Uživatel z toho nevidí nic, běží to na pozadí.",
-      "why": "Platit za API znamená platit za jednotlivé dotazy místo měsíčního předplatného. U malého objemu to vyjde levněji.",
+      "why": "Narazíte na to ve chvíli, kdy vás nějaká appka požádá o API klíč, nebo když někdo řekne, že přes API to vyjde levněji než předplatné.",
       "related": [
         "api-klic",
         "mcp",
@@ -647,7 +653,7 @@
       ],
       "short": "Vypuštění hotové verze ven, aby ji viděli ostatní.",
       "plain": "Dokud projekt běží jen u vás na počítači, vidíte ho jen vy. Nasazení znamená přenést ho na server, kde je dostupný na internetu. Do té doby je to soukromá hračka.",
-      "why": null,
+      "why": "Dokud nenasadíte, nikdo to neuvidí, ani když to máte hotové týden.",
       "related": [
         "server",
         "hosting",
@@ -830,7 +836,7 @@
         "příkazové řádce"
       ],
       "short": "Okno, kde se počítači píšou příkazy místo klikání.",
-      "plain": "Textové okno, do kterého napíšete příkaz a počítač ho provede. Vypadá to nepřívětivě, ale je to jen jiný způsob ovládání. Na Macu se aplikace jmenuje Terminál.",
+      "plain": "Textové okno, do kterého napíšete příkaz a počítač ho provede. Vypadá to nepřívětivě, ale je to jen jiný způsob ovládání. Na Macu se aplikace jmenuje Terminál a najdete ji přes Spotlight, když napíšete její jméno.",
       "why": "Claude Code běží tady. Je to první místo, kde se člověk musí přemoct.",
       "related": [
         "cli",
@@ -848,7 +854,7 @@
       ],
       "short": "Ovládání programu psaním příkazů.",
       "plain": "Command line interface, tedy program bez oken a tlačítek, který se ovládá napsanými příkazy. Výhoda je, že se dá snadno zautomatizovat a zopakovat, protože příkaz se dá uložit a pustit znovu.",
-      "why": null,
+      "why": "Výhoda proti klikání je, že příkaz se dá uložit a pustit znovu. Odtud vede cesta k automatizaci.",
       "related": [
         "terminal",
         "gui",
@@ -903,9 +909,9 @@
         "automatizovat",
         "automatizované"
       ],
-      "short": "Nastavíte jednou, běží pak samo.",
-      "plain": "Postup, který po nastavení proběhne bez vašeho zásahu. Může běžet v určený čas, nebo se spustit, když nastane nějaká událost. Smysl je zbavit se opakované ruční práce.",
-      "why": null,
+      "short": "Postup, který po nastavení běží bez vás.",
+      "plain": "Nastavíte jednou a pak už to jede samo, buď v určený čas, nebo když nastane nějaká událost. Typicky něco, co byste jinak dělali pořád dokola. Ve skupině to bývá stahování přepisů z nahrávek, ranní souhrn do poznámek nebo hlídání, jestli něco nespadlo.",
+      "why": "Většina projektů, které tady lidi ukazují, začala jako otrava, kterou je nebavilo dělat ručně.",
       "related": [
         "skript",
         "cron",
@@ -923,8 +929,8 @@
         "workflows"
       ],
       "short": "Ustálený postup, jak něco děláte od začátku do konce.",
-      "plain": "Sled kroků, který vede od zadání k výsledku. Nemusí být zautomatizovaný, workflow je i to, když víte, že po nahrávce vždycky následuje přepis, pak shrnutí a nakonec uložení do poznámek.",
-      "why": null,
+      "plain": "Sled kroků, který vede od zadání k výsledku. Nemusí být zautomatizovaný. Workflow je i to, když víte, že po nahrávce vždycky následuje přepis, pak shrnutí a nakonec uložení do poznámek.",
+      "why": "Ve skupině se sdílí spíš workflow než jednotlivé nástroje. Nástroj se dá vyměnit, postup zůstává.",
       "related": [
         "automatizace",
         "skript"
@@ -1076,7 +1082,7 @@
       ],
       "short": "Systém poznámek, který si pamatuje za vás.",
       "plain": "Uspořádané místo, kam ukládáte myšlenky, zdroje a rozpracované věci tak, abyste je později našli a mohli na nich stavět. Není to o tom mít hodně poznámek, ale o tom umět se k nim vrátit.",
-      "why": null,
+      "why": "Ve skupině je to jedno z nejsilnějších témat. Nejde o množství poznámek, ale o to, umět se k nim vrátit.",
       "related": [
         "obsidian",
         "markdown"

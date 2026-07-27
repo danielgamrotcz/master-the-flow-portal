@@ -53,6 +53,18 @@ function check(name, cond, detail = '') {
   const cats = await page.locator('#gloss-cats .chip').count();
   check('vykreslí kategorie', cats >= 5, String(cats));
 
+  // ---- vstupní cesta pro nováčky ----
+  const startN = await page.locator('.gloss-start-item').count();
+  check('vstupní cesta je vidět', startN >= 4, String(startN));
+  const nums = await page.locator('.gloss-start-num').allTextContents();
+  check('cesta je číslovaná po pořadí',
+    nums.join(',') === nums.map((_, i) => i + 1).join(','), nums.join(','));
+  await page.locator('.gloss-start-item').first().click();
+  await page.waitForSelector('#term-overlay:not(.hidden)', { timeout: 5000 });
+  check('kliknutí ve vstupní cestě otevře výraz', true);
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(200);
+
   // ---- hledání ----
   await page.fill('#gloss-input', 'harness');
   await page.waitForTimeout(150);

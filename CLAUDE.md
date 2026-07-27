@@ -57,17 +57,22 @@ nález ve výsledcích hledání a výrazy pod textem v detailu karty.
 Denní pipeline po vygenerování karet projede stejný přepis ještě jednou a hledá
 výrazy, které ve slovníčku chybí (`whatsapp-export/scripts/glossary_scan.py`).
 
-**Návrhy nejdou rovnou ven.** Model si u pojmů domýšlí fakta, která v přepisu
-nejsou, a píše přesně těmi obraty, které se ze slovníčku ručně vyhazují. Každý
-návrh proto projde automatickou kontrolou (halucinace, duplicita, slop vzory,
-typografie, opakování v rámci dávky) a pak čeká ve frontě.
+Hesla se zveřejňují sama, ale až po čtyřech filtrech. Model si totiž domýšlí
+fakta a píše obraty, které se ze slovníčku ručně vyhazují.
 
-- fronta: `whatsapp-export/state/glossary-pending.json`
-- upozornění na Telegram, když něco přibude
-- schválení: `python3 scripts/glossary_review.py` v repu whatsapp-export
-- schválené heslo se zapíše do `tools/glossary_terms.json` a slovníček se
-  přegeneruje, publikace na web je pak samostatný krok
+1. kontrola (výskyt v přepisu, duplicita, dřívější zamítnutí, slop, typografie)
+2. redakce druhým průchodem modelu, pak kontrola znovu
+3. práh významnosti, jednorázová zmínka ven sama nejde
+4. zápis a přegenerování, při chybě se zápis vrátí
+
+Co neprojde, čeká ve frontě (`whatsapp-export/state/glossary-pending.json`)
+a projde se přes `glossary_review.py`. Na Telegram chodí, co přibylo.
+
+- stažení hesla zpět: `glossary_review.py --remove <slug>`, zároveň se zapíše
+  mezi zamítnuté, aby ho pipeline nenavrhla znovu
 - hesla z pipeline mají `source: "auto"`, ručně psaná `source: "hand"`
+- denní běh commituje i `tools/glossary_terms.json`, jinak by se zdroj
+  rozešel s tím, co je na webu
 
 ## Automation pipeline
 

@@ -136,6 +136,7 @@ def build(quiet: bool = False) -> dict:
             "related": t.get("related", []),
             "aliases": t.get("match", []),
             "source": t.get("source", "hand"),
+            "starter": t.get("starter"),   # pořadí ve vstupní cestě pro nováčky
             "search": _fold(" ".join([t["term"], t["short"], t["plain"],
                                       t.get("why") or "",
                                       " ".join(t.get("match") or [])])),
