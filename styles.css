@@ -17,6 +17,7 @@
 
   --accent: #f06a15;
   --accent-dim: rgba(240, 106, 21, 0.15);
+  --accent-line: rgba(240, 106, 21, 0.22);
   --accent-hover: #d45500;
   --danger: #ef4444;
 
@@ -63,6 +64,7 @@
   --accent: #b4500c;
   --accent-hover: #9a4409;
   --accent-dim: rgba(240, 106, 21, 0.12);
+  --accent-line: rgba(180, 80, 12, 0.18);
   --danger: #c53030;
   --border: #e8e1da;
   --border-hover: #d4c9bd;
@@ -2378,23 +2380,55 @@ body.lightbox-open { overflow: hidden; }
 .event-note { font-size: 13px; color: var(--text-secondary); margin-top: 10px; }
 .event-note strong { color: var(--text-primary); }
 
-.event-teaser { margin-bottom: 16px; position: relative; }
-.event-teaser-inner {
-  display: flex; flex-direction: column; gap: 2px; width: 100%; text-align: left;
-  padding: 12px 44px 12px 16px; background: var(--accent-dim); border: 1px solid var(--accent);
-  border-radius: var(--radius-lg); cursor: pointer;
+/* Nejbližší akce — jeden rámeček, uvnitř až tři řádky. Tři samostatné
+   rámečky by na úvodní obrazovce překřičely karty dne. Datum je vlevo ve
+   sloupci, protože oko při hledání „kdy to je" jede po jedné svislici. */
+.event-teaser {
+  margin-bottom: 16px;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.event-teaser-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 8px; padding: 10px 6px 8px 16px;
+}
+.event-teaser-label {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.05em; color: var(--accent);
 }
 .event-teaser-close {
-  position: absolute; top: 0; right: 0;
   display: flex; align-items: center; justify-content: center;
-  width: 40px; height: 40px; padding: 0;
-  color: var(--text-tertiary); border-radius: var(--radius-lg);
+  width: 32px; height: 32px; padding: 0; flex-shrink: 0;
+  color: var(--text-tertiary); border-radius: var(--radius-md);
   transition: color 150ms ease;
 }
 .event-teaser-close:hover { color: var(--text-secondary); }
-.event-teaser-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); }
-.event-teaser-title { font-size: 15px; font-weight: 600; color: var(--text-primary); }
-.event-teaser-date { font-size: 13px; color: var(--text-secondary); }
+.event-teaser-row {
+  display: flex; align-items: baseline; gap: 12px;
+  width: 100%; text-align: left; padding: 10px 16px 12px;
+  background: none; border: none; border-top: 1px solid var(--accent-line);
+  cursor: pointer; transition: background 150ms ease;
+}
+.event-teaser-row:hover { background: var(--accent-dim); }
+.event-teaser-when {
+  display: flex; flex-direction: column; gap: 1px;
+  flex-shrink: 0; min-width: 54px;
+}
+.event-teaser-day {
+  font-size: 14px; font-weight: 700; color: var(--accent);
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+.event-teaser-time {
+  font-size: 12px; color: var(--text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+.event-teaser-title {
+  font-size: 15px; font-weight: 600; color: var(--text-primary); line-height: 1.35;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 .more-sheet { padding-bottom: max(20px, env(safe-area-inset-bottom)); }
 .more-item {
