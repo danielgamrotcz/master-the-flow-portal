@@ -11,13 +11,12 @@ Statický web portál pro komunitu Master the Flow. Denní digest WhatsApp disku
 
 - **CHANGELOG.md se u tohoto repa aktivně nevede.** Solo projekt bez releasů, nasazovaný průběžně, zdrojem pravdy o změnách je git historie (`git log`). Tím se ruší globální pravidlo o CHANGELOGu jen pro tento projekt. `CHANGELOG.md` zůstává jako historický archiv, nedoplňuje se.
 
-- **Názvy srazů mají tvar „Sraz s Master the Flow v <městě>“.** Platí pro
+- **Názvy srazů mají tvar „Sraz Master the Flow v <městě>“.** Platí pro
   všechny srazy, které na portál přibudou. Z názvu musí být na první pohled
   jasné, co to je a kde to je, protože stejný název se ukazuje na dvou místech
   (proužek nejbližších akcí na úvodní obrazovce a seznam událostí) a jinde než
   v detailu se místo konání jinak nezobrazí. Značka se píše „Master the Flow“
-  s malým „the“. Po jednopísmenných předložkách nezlomitelná mezera, tedy
-  „s Master“ a „v Olomouci“.
+  s malým „the“. Po předložce nezlomitelná mezera, tedy „v Olomouci“.
 
 ## Architektura
 
