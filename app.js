@@ -2038,9 +2038,14 @@ function switchView(viewName) {
     if (el) el.classList.toggle('hidden', v !== viewName);
   });
 
-  // Pohledy schované pod „Více" zvýrazní tlačítko Více.
+  // Na mobilu jsou tyhle pohledy schované pod „Více", takže se zvýrazní ono.
+  // Na širokém displeji mají v liště vlastní tlačítko, a pak se zvýrazní to.
+  // Rozhoduje se podle toho, co je zrovna vidět, ne podle šířky okna — jinak
+  // by se to muselo držet v souladu s breakpointem v CSS na dvou místech.
   const moreViews = new Set(['stats', 'events', 'glossary', 'chat']);
-  const navTarget = moreViews.has(viewName) ? 'more' : viewName;
+  const own = document.querySelector(`.nav-btn[data-view="${viewName}"]`);
+  const ownVisible = !!own && own.offsetParent !== null;
+  const navTarget = (moreViews.has(viewName) && !ownVisible) ? 'more' : viewName;
   document.querySelectorAll('.nav-btn').forEach(btn => {
     const isActive = btn.dataset.view === navTarget;
     btn.classList.toggle('active', isActive);

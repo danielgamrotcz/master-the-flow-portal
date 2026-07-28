@@ -1320,6 +1320,9 @@ body.lightbox-open { overflow: hidden; }
   transition: transform 0.08s ease, opacity 0.08s ease;
 }
 .nav-btn.active { color: var(--accent); }
+/* Položky, které se na mobilu vejdou jen pod „Více“. Zapínají se až
+   na širokém displeji, kde má svislá lišta místo. */
+.nav-btn--wide { display: none; }
 
 .nav-icon {
   width: 22px;
@@ -2070,6 +2073,10 @@ body.lightbox-open { overflow: hidden; }
     gap: 3px;
     min-height: auto;
   }
+
+  .nav-btn--wide { display: flex; }
+  /* Tři tečky jsou tu k ničemu, všechno se vejde přímo do lišty. */
+  .nav-btn[data-view="more"] { display: none; }
 
   .nav-btn span { display: block; font-size: 9px; opacity: 0.75; text-align: center; line-height: 1.2; }
   .nav-btn.active span { opacity: 1; }
