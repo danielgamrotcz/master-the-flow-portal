@@ -1450,6 +1450,22 @@
         "gdpr"
       ],
       "source": "auto"
+    },
+    {
+      "slug": "p-a-r-a",
+      "term": "P.A.R.A",
+      "cat": "nastroje",
+      "match": [
+        "P.A.R.A",
+        "PARA",
+        "P.A.R.A.",
+        "I.T.P.A.R.A"
+      ],
+      "short": "Systém pro organizaci poznámek a projektů do čtyř kategorií od Tiaga Forte.",
+      "plain": "P.A.R.A. rozděluje všechno, co si ukládáte do druhého mozku, do čtyř košů: Projects jsou věci s konkrétním cílem a termínem, Areas jsou oblasti, které průběžně spravujete, Resources jsou materiály k tématům, která vás zajímají, a Archives jsou věci momentálně na ledu.",
+      "why": "Narazíte na to, jakmile začnete budovat druhý mozek a řešit, kam co ukládat.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
