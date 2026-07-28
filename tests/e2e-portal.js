@@ -28,15 +28,28 @@ function check(name, cond, detail = '') {
   const gateHidden = await page.evaluate(() => document.getElementById('gate').classList.contains('hidden') || getComputedStyle(document.getElementById('gate')).display === 'none');
   check('Gate skrytý (auth-ok)', gateHidden);
 
+  // Očekávání se čte z dat, ne z natvrdo zapsaného čísla. Digest má jiný počet
+  // karet každý den a resurfacing kartu jen někdy, takže pevná hodnota
+  // znamenala červenou zhruba každý čtvrtý den bez chyby v aplikaci.
+  const today = JSON.parse(require('fs').readFileSync(
+    require('path').join(__dirname, '..', 'data', 'today.json'), 'utf8'));
+  const hasResurfacing = !!today.resurfacing;
+  const expectedCards = (today.cards || []).length + (hasResurfacing ? 1 : 0);
+
   const cardCount = await page.locator('#cards-today .card').count();
-  check('Dnešek renderuje karty (3 + resurfacing = 4)', cardCount === 4, `count=${cardCount}`);
+  check(`Dnešek renderuje karty (${(today.cards || []).length} + resurfacing = ${expectedCards})`,
+    cardCount === expectedCards, `count=${cardCount}`);
 
   const resurfacedVisible = await page.locator('#cards-today .card.resurfaced').count();
-  check('Resurfacing karta „Z archivu" viditelná (dřív mrtvá)', resurfacedVisible === 1, `count=${resurfacedVisible}`);
+  check('Resurfacing karta odpovídá datům',
+    resurfacedVisible === (hasResurfacing ? 1 : 0),
+    `data=${hasResurfacing ? 'ANO' : 'ne'} render=${resurfacedVisible}`);
 
-  const sectionHeader = await page.locator('#cards-today .section-header').textContent().catch(() => '');
-  // pevná mezera (U+00A0) je správná česká typografie
-  check('Sekce „Z archivu" má nadpis', /Z[\s ]archivu/.test(sectionHeader || ''), sectionHeader);
+  if (hasResurfacing) {
+    const sectionHeader = await page.locator('#cards-today .section-header').textContent().catch(() => '');
+    // pevná mezera (U+00A0) je správná česká typografie
+    check('Sekce „Z archivu" má nadpis', /Z[\s ]archivu/.test(sectionHeader || ''), sectionHeader);
+  }
 
   // theme-color je light
   const themeColor = await page.evaluate(() => document.querySelector('meta[name="theme-color"]').getAttribute('content'));

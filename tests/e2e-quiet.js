@@ -12,6 +12,15 @@ const BACKUP = TODAY + '.e2e-backup';
   fs.copyFileSync(TODAY, BACKUP);
   const data = JSON.parse(fs.readFileSync(TODAY, 'utf8'));
   data.cards = [];
+  // Resurfacing kartu si test dosadí sám. Digest ji má jen některé dny (za
+  // sledované období čtyři z dvanácti), takže spoléhat na ostrá data znamená
+  // padat každý čtvrtý den na něčem, co se vůbec nerozbilo.
+  if (!data.resurfacing) {
+    const idx = JSON.parse(fs.readFileSync(
+      path.join(__dirname, '..', 'data', 'cards-index.json'), 'utf8'));
+    const pool = Array.isArray(idx) ? idx : (idx.cards || Object.values(idx));
+    data.resurfacing = { ...pool[0], resurfaced_from: pool[0].date || pool[0].source_date };
+  }
   fs.writeFileSync(TODAY, JSON.stringify(data, null, 2));
   process.on('exit', () => {
     try { fs.copyFileSync(BACKUP, TODAY); fs.unlinkSync(BACKUP); } catch {}
