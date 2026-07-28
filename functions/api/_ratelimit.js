@@ -62,6 +62,26 @@ export async function rateLimit(env, key, limit, windowSec) {
 }
 
 /**
+ * Přečte stav čítače bez zvýšení. Slouží tam, kde se má počítat jen neúspěch
+ * (přihlášení), ale zamčení musí platit ještě před ověřením — jinak by se
+ * útočník po vyčerpání pokusů dostal dovnitř tím, že by konečně uhodl.
+ */
+export async function rateLimitPeek(env, key, limit) {
+  const db = env.VOTES_DB;
+  if (!db) return true;
+  try {
+    await ensureSchema(db);
+    const row = await db.prepare(
+      'SELECT count, expires FROM rate_limits WHERE k = ?1').bind(key).first();
+    if (!row) return false;
+    if (row.expires <= Math.floor(Date.now() / 1000)) return false;  // okno vypršelo
+    return row.count >= limit;
+  } catch {
+    return true;
+  }
+}
+
+/**
  * Klíč z IP adresy. IPv6 se ořezává na /64, protože jednomu klientovi běžně
  * patří celý prefix — bez ořezu má útočník prakticky nekonečnou zásobu
  * čerstvých čítačů. Komprimovaný zápis se musí nejdřív rozvinout, jinak

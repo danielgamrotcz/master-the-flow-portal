@@ -1,4 +1,4 @@
-import { rateLimit, ipKey } from './_ratelimit.js';
+import { rateLimit, rateLimitPeek, ipKey } from './_ratelimit.js';
 import { gateCookie } from '../_token.js';
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 // 90 dní: kratší TTL nutilo členy přepisovat kód z WhatsAppu každý měsíc,
@@ -52,10 +52,21 @@ export async function onRequestOptions({ request }) {
   return new Response(null, { headers: corsHeaders(origin) });
 }
 
-async function checkRateLimit(env, ip) {
-  // 10 pokusů na 15 minut. Atomicky přes D1 — KV tenhle limit pod souběhem
-  // vůbec nezapojilo (audit 27. 7. 2026).
-  return rateLimit(env, 'auth:' + ipKey(ip), 10, 900);
+// 10 NEÚSPĚŠNÝCH pokusů na 15 minut. Atomicky přes D1 — KV tenhle limit pod
+// souběhem vůbec nezapojilo (audit 27. 7. 2026).
+//
+// Počítají se jen neúspěchy. Když se počítala i úspěšná přihlášení, narazila
+// na strop běžná situace, kdy se z jedné sítě přihlásí víc lidí za sebou
+// (a spolehlivě i vlastní testovací sada, která se hlásí devětkrát).
+const AUTH_LIMIT = 10, AUTH_WINDOW = 900;
+const authKey = ip => 'auth:' + ipKey(ip);
+
+async function isLockedOut(env, ip) {
+  return rateLimitPeek(env, authKey(ip), AUTH_LIMIT);
+}
+
+async function noteFailedAttempt(env, ip) {
+  return rateLimit(env, authKey(ip), AUTH_LIMIT, AUTH_WINDOW);
 }
 
 export async function onRequestPost({ request, env }) {
@@ -71,7 +82,7 @@ export async function onRequestPost({ request, env }) {
   }
 
   const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
-  const blocked = await checkRateLimit(env, ip);
+  const blocked = await isLockedOut(env, ip);
   if (blocked) {
     return Response.json({ ok: false, error: 'Too many attempts' }, { status: 429, headers });
   }
@@ -85,6 +96,7 @@ export async function onRequestPost({ request, env }) {
     const valid = await timingSafeEqual(code.trim().toUpperCase(), env.GATE_CODE.trim().toUpperCase());
 
     if (!valid) {
+      await noteFailedAttempt(env, ip);
       return Response.json({ ok: false }, { status: 401, headers });
     }
 
