@@ -257,12 +257,28 @@ function trackEvent(event, data) {
 
 let searchTrackTimer = null;
 let _lastSearchResultCount = -1;
+let _pendingSearch = null;
+let _sentSearch = '';
+
+// Hledání se hlásí až na konci epizody, ne během psaní. Dřív se posílalo
+// dvě vteřiny po druhém znaku, takže kdo psal se zaváháním, uložil do
+// statistik tři „dotazy" místo jednoho — reálně tam leželo „cla", „claud"
+// i „claude" jako tři různá hledání a přebila veškerá skutečná data.
 function trackSearch(query) {
+  const q = query.trim();
   clearTimeout(searchTrackTimer);
-  if (query.trim().length >= 2) {
-    const capturedCount = _lastSearchResultCount;
-    searchTrackTimer = setTimeout(() => trackEvent('search', { query: query.trim(), result_count: capturedCount }), 2000);
-  }
+  _pendingSearch = q.length >= 2 ? { query: q, count: _lastSearchResultCount } : null;
+  // Pojistka pro toho, kdo dotaz napíše a zůstane na výsledcích koukat.
+  if (_pendingSearch) searchTrackTimer = setTimeout(flushSearch, 8000);
+}
+
+function flushSearch() {
+  clearTimeout(searchTrackTimer);
+  const p = _pendingSearch;
+  _pendingSearch = null;
+  if (!p || p.query === _sentSearch) return;
+  _sentSearch = p.query;
+  trackEvent('search', { query: p.query, result_count: p.count });
 }
 
 // Atribuce zdroje: /?src=digest v odkazu z WhatsAppu řekne, odkud návštěva
@@ -1311,6 +1327,8 @@ function openCard(cardId) {
   const banner = document.getElementById('refresh-banner');
   if (banner) banner.style.visibility = 'hidden';
   state.cardOpenedAt = Date.now();
+  // Otevření karty z výsledků je konec hledání, a to ten úspěšný.
+  if (state.view === 'search') flushSearch();
   trackEvent('card_open', { id: cardId, topic: getTopics(card)[0] || null, card_type: card.type || null });
 }
 
@@ -1822,11 +1840,17 @@ function renderGlossaryCats() {
 
 // Pro nováčka je 73 hesel bez ladu a skladu. Tohle je pořadí, ve kterém
 // na sebe pojmy navazují, aby se z toho dalo něco naučit, ne jen dohledat.
+const GLOSS_START_DISMISSED = 'mtf_gloss_start_dismissed';
+
 function renderGlossaryStart() {
   const el = $('gloss-start');
   if (!el) return;
   // Cesta má smysl jen na nefiltrovaném seznamu, jinak plete.
-  const show = state.glossCat === 'all' && !state.glossQuery.trim();
+  // Zavření je natrvalo. Na rozdíl od akcí, které se vracejí s každou novou,
+  // je tohle uvítání — kdo ho jednou odklikne, ten už ho nepotřebuje.
+  let dismissed = false;
+  try { dismissed = localStorage.getItem(GLOSS_START_DISMISSED) === '1'; } catch {}
+  const show = !dismissed && state.glossCat === 'all' && !state.glossQuery.trim();
   el.classList.toggle('hidden', !show);
   if (!show) { el.innerHTML = ''; return; }
 
@@ -1837,7 +1861,12 @@ function renderGlossaryStart() {
 
   el.innerHTML = `
     <div class="gloss-start-head">
-      <span class="gloss-start-label">Když jste tu poprvé</span>
+      <div class="gloss-start-headline">
+        <span class="gloss-start-label">Když jste tu poprvé</span>
+        <button class="gloss-start-close" type="button" aria-label="Skrýt úvod" title="Skrýt">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="14" height="14"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
       <p class="gloss-start-lede">Šest výrazů v&nbsp;pořadí, ve&nbsp;kterém na&nbsp;sebe navazují. Zbytek dohledáte, až na&nbsp;něj narazíte.</p>
     </div>
     <ol class="gloss-start-list">
@@ -1848,6 +1877,12 @@ function renderGlossaryStart() {
           <span class="gloss-start-short">${esc(t.short)}</span>
         </button></li>`).join('')}
     </ol>`;
+
+  el.querySelector('.gloss-start-close').addEventListener('click', () => {
+    try { localStorage.setItem(GLOSS_START_DISMISSED, '1'); } catch {}
+    el.classList.add('hidden');
+    el.innerHTML = '';
+  });
 }
 
 function renderGlossary() {
@@ -2023,6 +2058,10 @@ function closeMoreSheet() { hide('more-sheet'); }
 /* ===== NAVIGATION ===== */
 function switchView(viewName) {
   const prevView = state.view;
+
+  // Odchod z hledání epizodu uzavírá, dotaz se odešle v podobě, v jaké
+  // ho člověk doopravdy dopsal.
+  if (prevView === 'search' && viewName !== 'search') flushSearch();
 
   // Přepnutí pohledu zavře případný otevřený detail akce (sheet).
   $('event-overlay')?.classList.add('hidden');
@@ -3641,6 +3680,9 @@ async function init() {
   // Throttle 20 s, ať rychlé přepínání negeneruje zbytečné requesty.
   let _lastStatsRefresh = Date.now();
   document.addEventListener('visibilitychange', () => {
+    // Odchod ze stránky epizodu hledání taky uzavírá. trackEvent posílá
+    // s keepalive, takže se to stihne i při zavírání panelu.
+    if (document.visibilityState === 'hidden') flushSearch();
     if (document.visibilityState === 'visible' && Date.now() - _lastStatsRefresh > 20000) {
       _lastStatsRefresh = Date.now();
       loadVoteMap().then(() => rerenderCurrentView());

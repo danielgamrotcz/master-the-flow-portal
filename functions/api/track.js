@@ -12,7 +12,13 @@ const ALLOWED_EVENTS = new Set([
   'share', 'transcript_view', 'random_card',
   'view_switch', 'overlay_nav', 'topic_filter', 'archive_date', 'session_visit',
   'gate_shown', 'gate_passed',
+  // Přidáno 28. 7. 2026. Klient je posílal od začátku, ale chyběly tady,
+  // takže se vracelo 400 a otevření výrazu ve slovníčku ani detailu akce
+  // se vůbec neměřilo.
+  'term_view', 'event_view',
 ]);
+// Slugy slovníčku i id akcí jsou ASCII, viz build_glossary.py a events.json.
+const SLUG_RE = /^[a-z0-9-]{1,60}$/;
 const SRC_RE = /^[a-z0-9_-]{1,24}$/;
 
 function isValidDate(dateStr) {
@@ -121,6 +127,16 @@ export async function onRequestPost({ request, env }) {
       writes.push(kv_update(env.MTF_DATA, 'analytics:shares', obj => incr(obj, data.id, 2000)));
     }
 
+    // --- Slovníček: otevření výrazu ---
+    if (event === 'term_view' && data.slug && SLUG_RE.test(data.slug)) {
+      writes.push(kv_update(env.MTF_DATA, 'analytics:terms', obj => incr(obj, data.slug, 500)));
+    }
+
+    // --- Detail akce ---
+    if (event === 'event_view' && data.id && SLUG_RE.test(data.id)) {
+      writes.push(kv_update(env.MTF_DATA, 'analytics:event_views', obj => incr(obj, data.id, 200)));
+    }
+
     // --- Transcript view ---
     if (event === 'transcript_view' && data.date && isValidDate(data.date)) {
       writes.push(kv_update(env.MTF_DATA, 'analytics:transcripts', obj => incr(obj, data.date, 500)));
@@ -151,7 +167,7 @@ export async function onRequestPost({ request, env }) {
     if (date) {
       const dailyField = {
         card_open: 'opens', card_read: 'reads', search: 'searches',
-        share: 'shares', session_visit: 'sessions',
+        share: 'shares', session_visit: 'sessions', term_view: 'term_views',
         gate_shown: 'gate_shown', gate_passed: 'gate_passed',
       }[event];
       if (dailyField || hour !== null) {

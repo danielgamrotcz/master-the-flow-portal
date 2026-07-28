@@ -2628,10 +2628,20 @@ body.lightbox-open { overflow: hidden; }
   border-radius: var(--radius-lg); padding: 16px; margin-bottom: 18px;
 }
 .gloss-start-head { margin-bottom: 12px; }
+.gloss-start-headline {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 8px;
+}
 .gloss-start-label {
   display: block; font-size: 11px; font-weight: 600; letter-spacing: .05em;
   text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
 }
+.gloss-start-close {
+  display: flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; margin: -6px -6px 0 0; padding: 0; flex-shrink: 0;
+  color: var(--text-tertiary); background: none; border: none; cursor: pointer;
+  border-radius: var(--radius-sm); transition: color 150ms ease;
+}
+.gloss-start-close:hover { color: var(--text-secondary); }
 .gloss-start-lede { margin: 0; font-size: 13px; line-height: 1.5; color: var(--text-secondary); }
 .gloss-start-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
 .gloss-start-item {
