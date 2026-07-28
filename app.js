@@ -3224,9 +3224,15 @@ function rerenderCurrentView() {
 
 /* ===== SWIPE TO CLOSE ===== */
 function initSwipeToClose() {
-  // Swipe dolů zavře sheet — pro kartu i pro detail akce (každý svůj overlay).
+  // Swipe dolů zavře sheet. Musí sedět na KAŽDÉM overlayi, který má nahoře
+  // úchyt — ten swipe vizuálně slibuje, takže když nefunguje, působí to jako
+  // rozbitá appka. Slovníček se sem přidával později a zapomněl se.
   initSheetSwipe('card-overlay', 'overlay-body', closeCard);
   initSheetSwipe('event-overlay', 'event-overlay-body', closeEvent);
+  initSheetSwipe('term-overlay', 'term-overlay-body', closeTerm);
+  // Menu a iOS návod nemají rolovatelné tělo, proto bez bodyId.
+  initSheetSwipe('more-sheet', null, closeMoreSheet);
+  initSheetSwipe('ios-push-sheet', null, closeIosPushSheet);
 }
 
 function initSheetSwipe(overlayId, bodyId, closeFn) {
