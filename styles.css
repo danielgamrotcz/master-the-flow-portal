@@ -886,6 +886,12 @@ a:hover { text-decoration: underline; }
 
 .overlay.hidden { display: none; }
 
+/* Výraz ze slovníčku se otevírá i z rozkliknutého poznatku, takže musí ležet
+   nad kartou. Se stejným z-indexem rozhodovalo pořadí v DOM a #card-overlay
+   je v index.html později — sheet s výrazem se otevíral neviditelně pod kartou
+   a vykoukl až po jejím zavření. */
+#term-overlay { z-index: 110; }
+
 .overlay-backdrop {
   position: absolute;
   inset: 0;

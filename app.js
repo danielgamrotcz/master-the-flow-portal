@@ -215,6 +215,7 @@ let _preCardHash = '';
 let _preTranscriptHash = '';
 let _preEventHash = '';
 let _preTermHash = '';
+let _preTermState = null;
 
 // Dočasně skryté tlačítko „Přepis" v detailu karty. Obnovit = true.
 const TRANSCRIPT_BTN_ENABLED = true;
@@ -1941,7 +1942,13 @@ function showTerm(slug) {
     showToast('Výraz nenalezen');
     return;
   }
-  if (!location.hash.startsWith('#term/')) _preTermHash = location.hash || '#';
+  if (!location.hash.startsWith('#term/')) {
+    _preTermHash = location.hash || '#';
+    // Ukládá se celý stav, ne jen adresa. Pod výrazem může ležet otevřená
+    // karta a ta má v history příznak pushed — bez něj by ji zavření poslalo
+    // jinudy, než kterou přišla, a v historii by zůstala viset její položka.
+    _preTermState = history.state;
+  }
   history.replaceState({ term: slug }, '', '#term/' + slug);
   trackEvent('term_view', { slug });
 
@@ -1975,8 +1982,20 @@ function closeTerm() {
   if ($('term-overlay').classList.contains('hidden')) return;
   hide('term-overlay');
   const target = _preTermHash || '#';
+  const prevState = _preTermState;
   _preTermHash = '';
-  history.replaceState({}, '', target);
+  _preTermState = null;
+  history.replaceState(prevState || {}, '', target);
+}
+
+// Zavření bez sahání do history. Používá se tam, kde adresu mění už samotná
+// navigace (popstate, přepnutí pohledu) — replaceState by tam přepsal záznam,
+// na který se právě přeskočilo.
+function dismissTerm() {
+  if ($('term-overlay').classList.contains('hidden')) return;
+  hide('term-overlay');
+  _preTermHash = '';
+  _preTermState = null;
 }
 
 // Nejsilnější místo, kde slovníček pomůže: čtenář narazí na neznámé slovo
@@ -2046,6 +2065,9 @@ function renderSearchGloss(q) {
 // ne je nechat u definice.
 function findTermInCards(term) {
   closeTerm();
+  // Výraz jde otevřít i z rozkliknutého poznatku. Bez zavření karty by
+  // hledání naběhlo pod ní a tlačítko by navenek neudělalo nic.
+  if (!$('card-overlay').classList.contains('hidden')) closeCard();
   state.searchQuery = term;
   const inp = $('search-input');
   if (inp) inp.value = term;
@@ -2065,7 +2087,7 @@ function switchView(viewName) {
 
   // Přepnutí pohledu zavře případný otevřený detail akce (sheet).
   $('event-overlay')?.classList.add('hidden');
-  $('term-overlay')?.classList.add('hidden');
+  dismissTerm();
 
   document.getElementById('site-header').classList.toggle('stats-mode', viewName === 'stats');
 
@@ -3875,7 +3897,10 @@ async function init() {
       if (e.key === 'Tab') {
         // Trap musí mířit na sheet OTEVŘENÉ karty — querySelector('.overlay-sheet')
         // vracel první match v DOM, což je skryté „Více" menu, a trap nefungoval.
-        const sheet = document.querySelector('#card-overlay .overlay-sheet');
+        // Nad kartou může ještě ležet výraz ze slovníčku, a ten má přednost.
+        const termOpen = !$('term-overlay').classList.contains('hidden');
+        const sheet = document.querySelector(
+          (termOpen ? '#term-overlay' : '#card-overlay') + ' .overlay-sheet');
         const focusable = [...sheet.querySelectorAll('button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])')];
         if (!focusable.length) return;
         const first = focusable[0];
@@ -3887,6 +3912,9 @@ async function init() {
         }
         return;
       }
+      // Když nad kartou leží výraz ze slovníčku, klávesy patří jemu. Jinak by
+      // se hlasovalo a listovalo v kartě, kterou zrovna není vidět.
+      if (!$('term-overlay').classList.contains('hidden')) return;
       if (!inInput && (e.key === 'h' || e.key === 'H')) $('btn-vote')?.click();
       if (!inInput && e.key === 'j') { navigateOverlay(1); return; }
       if (!inInput && e.key === 'k') { navigateOverlay(-1); return; }
@@ -3909,12 +3937,16 @@ async function init() {
     if (cardOverlayOpen && !location.hash.startsWith('#card/')) {
       closeCardUI();
       if (!$('event-overlay').classList.contains('hidden')) hide('event-overlay');
+      // Výraz leží nad kartou. Kdyby zůstal, visel by po zavření karty
+      // sám nad pohledem, ke kterému nepatří.
+      dismissTerm();
       return;
     }
 
     if (!$('event-overlay').classList.contains('hidden')) {
       hide('event-overlay');
     }
+    dismissTerm();
 
     // Zpět/vpřed mezi views: srovnat view s adresou. Dřív se URL změnila,
     // ale view zůstalo — hardwarové zpět na Androidu tak rozjelo stav.
@@ -3937,8 +3969,10 @@ async function init() {
     if (e.persisted) {
       $('card-overlay')?.classList.add('hidden');
       $('event-overlay')?.classList.add('hidden');
+      dismissTerm();
       state.activeCard = null;
-      if (location.hash.startsWith('#card/') || location.hash.startsWith('#event/')) history.replaceState({}, '', '#');
+      if (location.hash.startsWith('#card/') || location.hash.startsWith('#event/')
+          || location.hash.startsWith('#term/')) history.replaceState({}, '', '#');
     }
   });
 

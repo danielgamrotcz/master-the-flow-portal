@@ -144,6 +144,45 @@ function check(name, cond, detail = '') {
     const terms = await page.locator('.card-terms [data-term]').count();
     console.log(`      (v detailu karty nabídnuto výrazů: ${terms})`);
     check('detail karty se otevře i se slovníčkem', true);
+
+    // Regrese 29. 7. 2026: #term-overlay a #card-overlay měly stejný z-index
+    // a karta je v DOM později, takže se výraz otevřel neviditelně POD kartou
+    // a vykoukl až po jejím zavření. Samotné „není hidden" to nechytí —
+    // musí se ptát, co je na tom místě opravdu vidět.
+    if (terms > 0) {
+      await page.locator('.card-terms [data-term]').first().click();
+      await page.waitForSelector('#term-overlay:not(.hidden)', { timeout: 5000 });
+      await page.waitForTimeout(250);
+      const onTop = await page.evaluate(() => {
+        const sheet = document.querySelector('#term-overlay .overlay-sheet');
+        if (!sheet) return 'chybí sheet';
+        const r = sheet.getBoundingClientRect();
+        const el = document.elementFromPoint(r.left + r.width / 2, r.top + 8);
+        if (!el) return 'nic';
+        if (el.closest('#term-overlay')) return 'nahoře';
+        if (el.closest('#card-overlay')) return 'pod kartou';
+        return 'jinde';
+      });
+      check('výraz otevřený z poznatku leží nad kartou', onTop === 'nahoře', onTop);
+
+      await page.locator('#term-overlay-close').click();
+      await page.waitForTimeout(250);
+      check('zavření výrazu vrátí zpět na otevřený poznatek',
+        await page.locator('#card-overlay:not(.hidden)').count() === 1);
+      check('adresa se vrátí na kartu',
+        /#card\//.test(page.url()), page.url());
+
+      // Zavření karty musí pořád projít přes history (příznak pushed), jinak
+      // by v historii zůstala viset položka karty.
+      const entriesBefore = await page.evaluate(() => history.length);
+      await page.locator('#overlay-close').click();
+      await page.waitForTimeout(300);
+      check('karta jde po výrazu normálně zavřít',
+        await page.locator('#card-overlay.hidden').count() === 1);
+      const entriesAfter = await page.evaluate(() => history.length);
+      check('zavření karty nepřidalo položku do historie',
+        entriesAfter <= entriesBefore, `${entriesBefore} → ${entriesAfter}`);
+    }
   }
 
   check('žádné chyby v konzoli', jsErrors.length === 0, jsErrors.join(' | '));
