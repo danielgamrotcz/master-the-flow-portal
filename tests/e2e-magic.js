@@ -19,8 +19,11 @@ const check = (n, c, d='') => { console.log(`${c?'PASS':'FAIL'}  ${n}${c?'':'  <
   const page1 = await ctx1.newPage();
   // today.json je za přihlašovací cookie; id karty si vezmeme rovnou
   // ze souboru, je to jen vstup do testu, ne testovaná věc.
-  const cardId = JSON.parse(require('fs').readFileSync(
-    require('path').join(__dirname, '..', 'data', 'today.json'), 'utf8')).cards[0].id;
+  // V klidný den je cards prázdné, ale resurfacing karta tam je vždycky.
+  const _today = JSON.parse(require('fs').readFileSync(
+    require('path').join(__dirname, '..', 'data', 'today.json'), 'utf8'));
+  const cardId = _today.cards?.[0]?.id || _today.resurfacing?.id;
+  check('máme id karty pro deep link', !!cardId, String(cardId));
   await page1.goto('http://localhost:8788/#card/' + cardId, { waitUntil: 'networkidle' });
   await page1.waitForTimeout(1200);
   check('Gate viditelný bez auth', await page1.evaluate(() => !document.getElementById('gate').classList.contains('hidden')));

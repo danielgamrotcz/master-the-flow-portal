@@ -34,11 +34,20 @@ function check(name, cond, detail = '') {
   const today = JSON.parse(require('fs').readFileSync(
     require('path').join(__dirname, '..', 'data', 'today.json'), 'utf8'));
   const hasResurfacing = !!today.resurfacing;
+  // Klidný den (0 nových karet, ~12 % dní) renderuje resurfacing plus náhodný
+  // výběr z archivu, takže přesný počet z dat spočítat nejde. Klidný den má
+  // vlastní test (e2e-quiet), tady se jen ověří, že něco přišlo.
+  const quietDay = (today.cards || []).length === 0;
   const expectedCards = (today.cards || []).length + (hasResurfacing ? 1 : 0);
 
   const cardCount = await page.locator('#cards-today .card').count();
-  check(`Dnešek renderuje karty (${(today.cards || []).length} + resurfacing = ${expectedCards})`,
-    cardCount === expectedCards, `count=${cardCount}`);
+  if (quietDay) {
+    console.log('      (klidný den — přesný počet karet ověřuje e2e-quiet)');
+    check('Klidný den vykreslí aspoň resurfacing kartu', cardCount >= 1, `count=${cardCount}`);
+  } else {
+    check(`Dnešek renderuje karty (${(today.cards || []).length} + resurfacing = ${expectedCards})`,
+      cardCount === expectedCards, `count=${cardCount}`);
+  }
 
   const resurfacedVisible = await page.locator('#cards-today .card.resurfaced').count();
   check('Resurfacing karta odpovídá datům',
@@ -46,7 +55,9 @@ function check(name, cond, detail = '') {
     `data=${hasResurfacing ? 'ANO' : 'ne'} render=${resurfacedVisible}`);
 
   if (hasResurfacing) {
-    const sectionHeader = await page.locator('#cards-today .section-header').textContent().catch(() => '');
+    // .first() — klidný den má nadpisy dva („Z archivu" i „Co jste možná
+    // minuli") a textContent() na vícenásobném locatoru vyhodí výjimku.
+    const sectionHeader = await page.locator('#cards-today .section-header').first().textContent().catch(() => '');
     // pevná mezera (U+00A0) je správná česká typografie
     check('Sekce „Z archivu" má nadpis', /Z[\s ]archivu/.test(sectionHeader || ''), sectionHeader);
   }
@@ -123,10 +134,13 @@ function check(name, cond, detail = '') {
   check('Deep link #search/diktování funguje', deepLinkResults > 0 && deepLinkInput === 'diktování', `count=${deepLinkResults} input=${deepLinkInput}`);
 
   // ===== 7. Deep link na kartu → zpět neopustí web (pushed=false → replaceState) =====
+  // V klidný den je cards prázdné, ale resurfacing karta tam je vždycky.
+  // Bez fallbacku spadl celý test na undefined a zbytek kontrol neproběhl.
   const cardId = await page.evaluate(async () => {
     const d = await fetch('/data/today.json').then(r => r.json());
-    return d.cards[0].id;
+    return d.cards?.[0]?.id || d.resurfacing?.id || null;
   });
+  check('máme id karty pro deep link', !!cardId, String(cardId));
   await page.goto(BASE + '/#card/' + cardId, { waitUntil: 'networkidle' });
   await page.waitForTimeout(800);
   overlayOpen = await page.evaluate(() => !document.getElementById('card-overlay').classList.contains('hidden'));
