@@ -93,7 +93,9 @@ body {
 button { cursor: pointer; font-family: inherit; border: none; background: none; color: inherit; }
 button, a, [role="button"] { touch-action: manipulation; }
 a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+@media (hover: hover) {
+  a:hover { text-decoration: underline; }
+}
 
 /* Focus rings for keyboard navigation */
 :focus-visible {
@@ -167,11 +169,15 @@ a:hover { text-decoration: underline; }
 .icon-btn--lg { width: 44px; height: 44px; }
 .icon-btn--lg::after { inset: 0; }
 
-.bell-btn:hover { color: var(--text-secondary); }
+@media (hover: hover) {
+  .bell-btn:hover { color: var(--text-secondary); }
+}
 .bell-btn svg { width: 18px; height: 18px; }
 .bell-btn.bell-active { color: var(--accent); }
 
-.theme-toggle-btn:hover { color: var(--text-secondary); }
+@media (hover: hover) {
+  .theme-toggle-btn:hover { color: var(--text-secondary); }
+}
 .theme-toggle-btn svg { width: 18px; height: 18px; }
 
 .site-title {
@@ -182,7 +188,9 @@ a:hover { text-decoration: underline; }
   cursor: pointer;
   user-select: none;
 }
-.site-title:hover { color: var(--accent); transition: color 150ms ease; }
+@media (hover: hover) {
+  .site-title:hover { color: var(--accent); transition: color 150ms ease; }
+}
 
 .site-date {
   font-size: 13px;
@@ -260,7 +268,9 @@ a:hover { text-decoration: underline; }
   touch-action: manipulation;
 }
 
-.chip:hover { color: var(--text-secondary); border-color: var(--border-hover); }
+@media (hover: hover) {
+  .chip:hover { color: var(--text-secondary); border-color: var(--border-hover); }
+}
 .chip.active { color: var(--accent); border-color: var(--accent); background: var(--accent-dim); }
 .chip-count {
   font-size: 10px;
@@ -307,9 +317,11 @@ a:hover { text-decoration: underline; }
   overflow: hidden;
 }
 
-.card:hover {
-  background: var(--bg-card-hover);
-  border-color: var(--border-hover);
+@media (hover: hover) {
+  .card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-hover);
+  }
 }
 
 .card:active {
@@ -391,8 +403,10 @@ a:hover { text-decoration: underline; }
 .overlay-date-label.has-link {
   cursor: pointer;
 }
-.overlay-date-label.has-link:hover {
-  color: var(--accent);
+@media (hover: hover) {
+  .overlay-date-label.has-link:hover {
+    color: var(--accent);
+  }
 }
 
 .overlay-read-badge {
@@ -425,11 +439,19 @@ a:hover { text-decoration: underline; }
   cursor: pointer;
   transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
 }
-.overlay-chip:hover,
+/* .active se od :hover musí oddělit. Vybraný stav platí i na dotyku,
+   zvýraznění pod kurzorem ne. */
 .overlay-chip.active {
   color: var(--accent);
   border-color: var(--accent);
   background: rgba(240, 106, 21, 0.08);
+}
+@media (hover: hover) {
+  .overlay-chip:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: rgba(240, 106, 21, 0.08);
+  }
 }
 
 .card-title {
@@ -563,7 +585,9 @@ a:hover { text-decoration: underline; }
   cursor: pointer;
   transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
 }
-.archive-preset:hover { border-color: var(--border-hover); color: var(--text-primary); }
+@media (hover: hover) {
+  .archive-preset:hover { border-color: var(--border-hover); color: var(--text-primary); }
+}
 .archive-preset.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
 
 .archive-range {
@@ -604,7 +628,9 @@ a:hover { text-decoration: underline; }
   transition: background 150ms ease, color 150ms ease;
   white-space: nowrap;
 }
-.archive-range-btn:hover { background: var(--accent); color: #fff; }
+@media (hover: hover) {
+  .archive-range-btn:hover { background: var(--accent); color: #fff; }
+}
 
 /* ===== SEARCH ===== */
 .search-wrapper {
@@ -618,7 +644,9 @@ a:hover { text-decoration: underline; }
   top: 50%;
   transform: translateY(-50%);
 }
-.search-clear:hover { color: var(--text-primary); background: var(--btn-bg); }
+@media (hover: hover) {
+  .search-clear:hover { color: var(--text-primary); background: var(--btn-bg); }
+}
 
 .search-input {
   width: 100%;
@@ -698,16 +726,20 @@ a:hover { text-decoration: underline; }
   cursor: pointer;
   transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
 }
-.push-primer-btn:hover { color: var(--text-primary); border-color: var(--border-hover); }
+@media (hover: hover) {
+  .push-primer-btn:hover { color: var(--text-primary); border-color: var(--border-hover); }
+}
 .push-primer-btn--primary {
   background: var(--accent);
   border-color: var(--accent);
   color: #fff;
 }
-.push-primer-btn--primary:hover {
-  background: var(--accent-hover);
-  color: #fff;
-  box-shadow: 0 6px 20px rgba(240, 106, 21, 0.4), 0 0 32px rgba(240, 106, 21, 0.15);
+@media (hover: hover) {
+  .push-primer-btn--primary:hover {
+    background: var(--accent-hover);
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(240, 106, 21, 0.4), 0 0 32px rgba(240, 106, 21, 0.15);
+  }
 }
 
 /* ===== iOS PUSH SHEET ===== */
@@ -863,9 +895,11 @@ a:hover { text-decoration: underline; }
   letter-spacing: 0;
 }
 
-.card-ctx-menu button:hover {
-  background: var(--btn-bg-hover);
-  color: var(--text-primary);
+@media (hover: hover) {
+  .card-ctx-menu button:hover {
+    background: var(--btn-bg-hover);
+    color: var(--text-primary);
+  }
 }
 
 .card-ctx-sep {
@@ -954,7 +988,9 @@ a:hover { text-decoration: underline; }
   min-width: 0;
 }
 
-.overlay-close-btn:hover { color: var(--text-primary); }
+@media (hover: hover) {
+  .overlay-close-btn:hover { color: var(--text-primary); }
+}
 .overlay-close-btn svg { width: 18px; height: 18px; }
 
 .overlay-body {
@@ -1040,7 +1076,9 @@ a:hover { text-decoration: underline; }
   transition: background 150ms ease, color 150ms ease;
 }
 .card-link::after { content: "↗"; font-size: 11px; opacity: 0.7; }
-.card-link:hover { background: var(--accent); color: #fff; }
+@media (hover: hover) {
+  .card-link:hover { background: var(--accent); color: #fff; }
+}
 
 /* ===== GALERIE OBRÁZKŮ (karta i přepis) ===== */
 .media-gallery {
@@ -1072,7 +1110,9 @@ a:hover { text-decoration: underline; }
   display: block;
 }
 .media-gallery.single .media-thumb img { object-fit: contain; max-height: 360px; }
-.media-thumb:hover { border-color: var(--accent); }
+@media (hover: hover) {
+  .media-thumb:hover { border-color: var(--accent); }
+}
 .media-thumb:active { transform: scale(0.98); }
 
 /* Obrázky v přepisu — menší náhledy pod zprávou */
@@ -1123,8 +1163,10 @@ body.lightbox-open { overflow: hidden; }
   border-radius: 50%;
   transition: background 150ms ease;
 }
-.lightbox-close:hover,
-.lightbox-nav:hover { background: rgba(0, 0, 0, 0.7); }
+@media (hover: hover) {
+  .lightbox-close:hover,
+  .lightbox-nav:hover { background: rgba(0, 0, 0, 0.7); }
+}
 .lightbox-close { top: calc(12px + var(--safe-top, 0px)); right: 12px; }
 .lightbox-nav { top: 50%; transform: translateY(-50%); }
 .lightbox-prev { left: 12px; }
@@ -1166,11 +1208,13 @@ body.lightbox-open { overflow: hidden; }
 .btn-icon svg { width: 16px; height: 16px; flex-shrink: 0; }
 .btn-icon:has(.btn-icon-label) { gap: 6px; padding-left: 12px; padding-right: 12px; }
 .btn-icon-label { font-size: 13px; font-weight: 500; white-space: nowrap; }
-.btn-icon:hover {
-  color: var(--accent);
-  border-color: var(--border-hover);
-  background: var(--btn-bg-hover);
-  text-decoration: none;
+@media (hover: hover) {
+  .btn-icon:hover {
+    color: var(--accent);
+    border-color: var(--border-hover);
+    background: var(--btn-bg-hover);
+    text-decoration: none;
+  }
 }
 
 .overlay-text ul,
@@ -1255,7 +1299,9 @@ body.lightbox-open { overflow: hidden; }
 
 .btn-secondary svg { width: 16px; height: 16px; }
 .btn-secondary { white-space: nowrap; }
-.btn-secondary:hover { background: var(--btn-bg-hover); border-color: var(--border-hover); }
+@media (hover: hover) {
+  .btn-secondary:hover { background: var(--btn-bg-hover); border-color: var(--border-hover); }
+}
 
 .btn-ghost {
   display: inline-flex;
@@ -1272,7 +1318,9 @@ body.lightbox-open { overflow: hidden; }
 /* Druhý ghost v řadě (Nepřečtené) už nemá odstrkávat — auto margin jen prvnímu */
 .btn-ghost + .btn-ghost { margin-left: 0; }
 
-.btn-ghost:hover { color: var(--text-secondary); }
+@media (hover: hover) {
+  .btn-ghost:hover { color: var(--text-secondary); }
+}
 
 
 /* Úzké mobily — footer akce kompaktnější, vše drží na jednom řádku */
@@ -1319,7 +1367,9 @@ body.lightbox-open { overflow: hidden; }
   transition: color 150ms ease;
 }
 
-.nav-btn:hover { color: var(--text-secondary); }
+@media (hover: hover) {
+  .nav-btn:hover { color: var(--text-secondary); }
+}
 .nav-btn:active {
   transform: scale(0.9);
   opacity: 0.7;
@@ -1406,7 +1456,9 @@ body.lightbox-open { overflow: hidden; }
   text-decoration: none;
 }
 
-.site-footer a:hover { color: var(--text-secondary); }
+@media (hover: hover) {
+  .site-footer a:hover { color: var(--text-secondary); }
+}
 
 .footer-links {
   display: flex;
@@ -1494,9 +1546,11 @@ body.lightbox-open { overflow: hidden; }
   transition: background 150ms ease;
 }
 
-.gate-btn:hover {
-  background: var(--accent-hover);
-  box-shadow: 0 6px 20px rgba(240, 106, 21, 0.4), 0 0 32px rgba(240, 106, 21, 0.15);
+@media (hover: hover) {
+  .gate-btn:hover {
+    background: var(--accent-hover);
+    box-shadow: 0 6px 20px rgba(240, 106, 21, 0.4), 0 0 32px rgba(240, 106, 21, 0.15);
+  }
 }
 
 .gate-error {
@@ -1533,7 +1587,9 @@ body.lightbox-open { overflow: hidden; }
   margin-top: 6px;
 }
 .gate-community a { color: var(--accent); text-decoration: none; }
-.gate-community a:hover { text-decoration: underline; }
+@media (hover: hover) {
+  .gate-community a:hover { text-decoration: underline; }
+}
 
 /* ===== WEEK VIEW ===== */
 
@@ -1605,7 +1661,9 @@ body.lightbox-open { overflow: hidden; }
   transition: border-color 150ms ease, color 150ms ease;
   touch-action: manipulation;
 }
-.cal-nav-btn:hover { border-color: var(--border-hover); color: var(--text-primary); }
+@media (hover: hover) {
+  .cal-nav-btn:hover { border-color: var(--border-hover); color: var(--text-primary); }
+}
 .cal-nav-disabled { opacity: 0.25; cursor: default; pointer-events: none; }
 
 .activity-cal-grid {
@@ -1650,7 +1708,9 @@ body.lightbox-open { overflow: hidden; }
   font-weight: 600;
   transition: opacity 120ms ease;
 }
-.cal-day-active:hover { opacity: 0.8; }
+@media (hover: hover) {
+  .cal-day-active:hover { opacity: 0.8; }
+}
 
 .cal-day-i1 { background: rgba(240,106,21,0.25); color: var(--accent); }
 .cal-day-i2 { background: rgba(240,106,21,0.6); color: #fff; }
@@ -1724,11 +1784,15 @@ body.lightbox-open { overflow: hidden; }
   cursor: pointer;
   transition: background 150ms ease, color 150ms ease;
 }
-.stats-topic-clickable:hover {
-  background: var(--bg-card-hover);
-  color: var(--accent);
+@media (hover: hover) {
+  .stats-topic-clickable:hover {
+    background: var(--bg-card-hover);
+    color: var(--accent);
+  }
 }
-.stats-topic-clickable:hover .stats-topic-count { color: var(--accent); opacity: 0.7; }
+@media (hover: hover) {
+  .stats-topic-clickable:hover .stats-topic-count { color: var(--accent); opacity: 0.7; }
+}
 
 .stats-topic-count {
   color: var(--text-tertiary);
@@ -1753,7 +1817,9 @@ body.lightbox-open { overflow: hidden; }
   cursor: pointer;
   transition: border-color 150ms;
 }
-.stats-top-card:hover { border-color: var(--border-hover); }
+@media (hover: hover) {
+  .stats-top-card:hover { border-color: var(--border-hover); }
+}
 
 .stats-top-heart {
   font-size: 11px;
@@ -1784,7 +1850,9 @@ body.lightbox-open { overflow: hidden; }
   transition: border-color 150ms ease, color 150ms ease;
 }
 /* Srdíčko v brand oranžové — cizí rose (#f43f5e) rozbíjelo paletu. */
-.btn-vote:hover { border-color: var(--accent); color: var(--accent); }
+@media (hover: hover) {
+  .btn-vote:hover { border-color: var(--accent); color: var(--accent); }
+}
 .btn-vote.voted { border-color: var(--accent); color: var(--accent); fill: var(--accent); }
 .btn-vote.voted svg { fill: var(--accent); stroke: var(--accent); }
 
@@ -1817,7 +1885,9 @@ body.lightbox-open { overflow: hidden; }
   transition: color 150ms;
 }
 .similar-card:last-child { border-bottom: none; }
-.similar-card:hover .similar-title { color: var(--accent); }
+@media (hover: hover) {
+  .similar-card:hover .similar-title { color: var(--accent); }
+}
 
 .similar-date {
   font-size: 11px;
@@ -1843,7 +1913,9 @@ body.lightbox-open { overflow: hidden; }
   line-height: 1;
   transition: color 150ms;
 }
-.similar-card:hover .similar-arrow { color: var(--accent); }
+@media (hover: hover) {
+  .similar-card:hover .similar-arrow { color: var(--accent); }
+}
 
 /* ===== VIEW TRANSITIONS ===== */
 
@@ -1889,7 +1961,9 @@ body.lightbox-open { overflow: hidden; }
    návratu z detailu špatně čitelné"). Signál přečtení nese hlavně
    „Přečteno ✓" v patičce karty, ne ztmavení textu. */
 .card.read { opacity: 0.9; }
-.card.read:hover { opacity: 1; }
+@media (hover: hover) {
+  .card.read:hover { opacity: 1; }
+}
 .card-readmore.is-read { color: var(--accent); }
 
 /* ===== CARD SWIPE ===== */
@@ -1952,7 +2026,9 @@ body.lightbox-open { overflow: hidden; }
 }
 
 /* ===== RANDOM BUTTON ===== */
-.random-btn:hover { color: var(--accent); }
+@media (hover: hover) {
+  .random-btn:hover { color: var(--accent); }
+}
 .random-btn svg { width: 16px; height: 16px; }
 
 /* ===== REFRESH BANNER ===== */
@@ -2145,7 +2221,9 @@ body.lightbox-open { overflow: hidden; }
   line-height: 1;
   padding: 0 4px;
 }
-.shortcuts-close:hover { color: var(--text-primary); }
+@media (hover: hover) {
+  .shortcuts-close:hover { color: var(--text-primary); }
+}
 .shortcuts-grid {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -2190,7 +2268,9 @@ body.lightbox-open { overflow: hidden; }
   flex-shrink: 0;
 }
 .overlay-nav-btn { touch-action: manipulation; }
-.overlay-nav-btn:hover { background: var(--bg-active); color: var(--text-primary); }
+@media (hover: hover) {
+  .overlay-nav-btn:hover { background: var(--bg-active); color: var(--text-primary); }
+}
 .overlay-nav-btn:disabled { opacity: 0.2; cursor: default; pointer-events: none; }
 .overlay-close-btn { margin-left: 4px; }
 
@@ -2291,9 +2371,11 @@ body.lightbox-open { overflow: hidden; }
   text-overflow: ellipsis;
   max-width: 200px;
 }
-.chat-citation-chip:hover {
-  background: var(--accent-dim);
-  border-color: var(--accent);
+@media (hover: hover) {
+  .chat-citation-chip:hover {
+    background: var(--accent-dim);
+    border-color: var(--accent);
+  }
 }
 
 .chat-clear-btn {
@@ -2307,7 +2389,9 @@ body.lightbox-open { overflow: hidden; }
   cursor: pointer;
   margin-bottom: 4px;
 }
-.chat-clear-btn:hover { color: var(--text-secondary); border-color: var(--border-hover); }
+@media (hover: hover) {
+  .chat-clear-btn:hover { color: var(--text-secondary); border-color: var(--border-hover); }
+}
 
 .chat-composer {
   position: sticky;
@@ -2352,7 +2436,9 @@ body.lightbox-open { overflow: hidden; }
   flex-shrink: 0;
   transition: background 150ms ease;
 }
-.chat-send-btn:hover { background: var(--accent-hover); }
+@media (hover: hover) {
+  .chat-send-btn:hover { background: var(--accent-hover); }
+}
 .chat-send-btn:disabled { opacity: 0.4; cursor: default; }
 
 @media (min-width: 960px) {
@@ -2389,7 +2475,9 @@ body.lightbox-open { overflow: hidden; }
 .event-cta { display: inline-flex; align-items: center; justify-content: center; padding: 12px 20px; border-radius: var(--radius-md); font-size: 15px; font-weight: 600; text-decoration: none; transition: opacity 150ms ease; }
 .event-cta-primary { background: var(--accent); color: #fff; }
 .event-cta-secondary { background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border); }
-.event-cta:hover { opacity: 0.9; text-decoration: none; }
+@media (hover: hover) {
+  .event-cta:hover { opacity: 0.9; text-decoration: none; }
+}
 .event-note { font-size: 13px; color: var(--text-secondary); margin-top: 10px; }
 .event-note strong { color: var(--text-primary); }
 
@@ -2417,14 +2505,18 @@ body.lightbox-open { overflow: hidden; }
   color: var(--text-tertiary); border-radius: var(--radius-md);
   transition: color 150ms ease;
 }
-.event-teaser-close:hover { color: var(--text-secondary); }
+@media (hover: hover) {
+  .event-teaser-close:hover { color: var(--text-secondary); }
+}
 .event-teaser-row {
   display: flex; align-items: baseline; gap: 12px;
   width: 100%; text-align: left; padding: 10px 16px 12px;
   background: none; border: none; border-top: 1px solid var(--accent-line);
   cursor: pointer; transition: background 150ms ease;
 }
-.event-teaser-row:hover { background: var(--accent-dim); }
+@media (hover: hover) {
+  .event-teaser-row:hover { background: var(--accent-dim); }
+}
 .event-teaser-when {
   display: flex; flex-direction: column; gap: 1px;
   flex-shrink: 0; min-width: 54px;
@@ -2449,7 +2541,9 @@ body.lightbox-open { overflow: hidden; }
   background: none; border: none; cursor: pointer; font-size: 16px;
   color: var(--text-primary); text-align: left; border-radius: var(--radius-md);
 }
-.more-item:hover { background: var(--bg-card); }
+@media (hover: hover) {
+  .more-item:hover { background: var(--bg-card); }
+}
 .more-item svg { color: var(--text-secondary); flex-shrink: 0; }
 
 /* ===== 404 / NOT FOUND ===== */
@@ -2486,7 +2580,9 @@ body.lightbox-open { overflow: hidden; }
   text-decoration: none;
   transition: opacity 150ms ease;
 }
-.notfound-home:hover { opacity: 0.9; text-decoration: none; }
+@media (hover: hover) {
+  .notfound-home:hover { opacity: 0.9; text-decoration: none; }
+}
 
 /* ===== SLOVNÍČEK ===== */
 .gloss-intro { padding: 4px 0 14px; }
@@ -2508,7 +2604,9 @@ body.lightbox-open { overflow: hidden; }
 .gloss-input::placeholder { color: var(--text-tertiary); }
 .gloss-input::-webkit-search-cancel-button { display: none; }
 .gloss-clear { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); }
-.gloss-clear:hover { color: var(--text-primary); background: var(--btn-bg); }
+@media (hover: hover) {
+  .gloss-clear:hover { color: var(--text-primary); background: var(--btn-bg); }
+}
 
 /* Na mobilu jedna posuvná řada místo tří zabalených — ušetří půl obrazovky.
    Stejný vzor jako .topic-chips ve zbytku appky. */
@@ -2554,7 +2652,9 @@ body.lightbox-open { overflow: hidden; }
   border-radius: var(--radius-lg); cursor: pointer; font-family: inherit;
   transition: background 150ms ease, border-color 150ms ease, transform 100ms ease;
 }
-.gloss-item:hover { background: var(--bg-card-hover); border-color: var(--border-hover); }
+@media (hover: hover) {
+  .gloss-item:hover { background: var(--bg-card-hover); border-color: var(--border-hover); }
+}
 .gloss-item:active { background: var(--bg-active); transform: scale(0.992); }
 .gloss-item-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
 .gloss-item-term { font-size: 16px; font-weight: 600; color: var(--text-primary); }
@@ -2591,7 +2691,15 @@ body.lightbox-open { overflow: hidden; }
   border-radius: 999px; padding: 6px 12px; cursor: pointer;
   transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
 }
-.term-rel:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-dim); }
+/* Dotykové prohlížeče drží :hover na místě posledního klepnutí, dokud se
+   neklepne jinam. Klepnutí na související výraz překreslí obsah sheetu na
+   místě, takže oranžová naskočila na ten chip, který se pod prstem ocitl po
+   překreslení — vypadalo to jako náhodně označený výraz. Zvýraznění patří
+   jen zařízením se skutečným kurzorem, na dotyku stačí odezva na stisk. */
+@media (hover: hover) {
+  .term-rel:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-dim); }
+}
+.term-rel:active { background: var(--bg-active); }
 
 .term-cta-row { display: flex; gap: 10px; padding-bottom: 8px; }
 .term-cta {
@@ -2601,7 +2709,9 @@ body.lightbox-open { overflow: hidden; }
   padding: 11px 18px; cursor: pointer;
   transition: background 150ms ease, border-color 150ms ease;
 }
-.term-cta:hover { background: var(--btn-bg-hover); border-color: var(--border-hover); }
+@media (hover: hover) {
+  .term-cta:hover { background: var(--btn-bg-hover); border-color: var(--border-hover); }
+}
 
 /* Nález ze slovníčku nad výsledky hledání */
 .search-gloss { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
@@ -2612,7 +2722,12 @@ body.lightbox-open { overflow: hidden; }
   border-left: 2px solid var(--accent); border-radius: var(--radius-md);
   transition: border-color 150ms ease;
 }
-.search-gloss-hit:hover { border-color: var(--accent); }
+/* Totéž co u .term-rel: nález otevře výraz v sheetu, a po jeho zavření by
+   pod ním zůstal viset oranžově orámovaný řádek jako by byl vybraný. */
+@media (hover: hover) {
+  .search-gloss-hit:hover { border-color: var(--accent); }
+}
+.search-gloss-hit:active { background: var(--bg-active); }
 .search-gloss-label {
   font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
   text-transform: uppercase; color: var(--accent);
@@ -2647,7 +2762,9 @@ body.lightbox-open { overflow: hidden; }
   color: var(--text-tertiary); background: none; border: none; cursor: pointer;
   border-radius: var(--radius-sm); transition: color 150ms ease;
 }
-.gloss-start-close:hover { color: var(--text-secondary); }
+@media (hover: hover) {
+  .gloss-start-close:hover { color: var(--text-secondary); }
+}
 .gloss-start-lede { margin: 0; font-size: 13px; line-height: 1.5; color: var(--text-secondary); }
 .gloss-start-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
 .gloss-start-item {
@@ -2657,7 +2774,9 @@ body.lightbox-open { overflow: hidden; }
   background: none; border: none; border-radius: var(--radius-sm);
   transition: background 140ms ease;
 }
-.gloss-start-item:hover { background: var(--bg-card-hover); }
+@media (hover: hover) {
+  .gloss-start-item:hover { background: var(--bg-card-hover); }
+}
 .gloss-start-num {
   font-size: 12px; font-weight: 700; color: var(--accent);
   font-variant-numeric: tabular-nums;

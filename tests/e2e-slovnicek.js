@@ -1,6 +1,6 @@
 // E2E test slovníčku: navigace, hledání, kategorie, detail výrazu,
 // propojení s hledáním v poznatcích a výrazy v detailu karty.
-const { chromium } = require('playwright');
+const { chromium, devices } = require('playwright');
 const { authenticate } = require('./_auth.js');
 let failures = 0;
 function check(name, cond, detail = '') {
@@ -104,6 +104,19 @@ function check(name, cond, detail = '') {
     await page.waitForTimeout(250);
     check('„souvisí s" přepne na jiný výraz',
       (await page.locator('#term-ov-title').textContent()) !== before);
+
+    // Na počítači zvýraznění zůstat musí — mobilní varianta se testuje níž.
+    const chip = page.locator('.term-rel').first();
+    const borderOf = () => chip.evaluate(el => getComputedStyle(el).borderTopColor);
+    await page.mouse.move(0, 0);
+    await page.waitForTimeout(200);
+    const idleDesktop = await borderOf();
+    await chip.hover();
+    await page.waitForTimeout(200);
+    check('s kurzorem se související výraz zvýrazní', (await borderOf()) !== idleDesktop,
+      `klidový ${idleDesktop} → pod kurzorem ${await borderOf()}`);
+    await page.mouse.move(0, 0);
+    await page.waitForTimeout(150);
   }
 
   // ---- ze slovníčku do poznatků ----
@@ -186,6 +199,68 @@ function check(name, cond, detail = '') {
   }
 
   check('žádné chyby v konzoli', jsErrors.length === 0, jsErrors.join(' | '));
+
+  // ---- mobil: zvýraznění nesmí zůstat viset po klepnutí ----
+  // Regrese 29. 7. 2026: dotykové prohlížeče drží :hover na místě posledního
+  // klepnutí. Klepnutí na související výraz překreslí obsah sheetu, oranžová
+  // pak naskočila na chip, který se pod prstem ocitl po překreslení, a vypadal
+  // jako vybraný. Mobilní kontext hlásí (hover: none), takže se to dá změřit.
+  const mctx = await browser.newContext({ ...devices['Pixel 5'] });
+  await authenticate(mctx);
+  const mpage = await mctx.newPage();
+  check('mobilní kontext hlásí zařízení bez kurzoru',
+    await mpage.evaluate(() => matchMedia('(hover: none)').matches) !== false);
+
+  await mpage.goto('http://localhost:8788/#glossary');
+  await mpage.waitForSelector('.gloss-item', { timeout: 10000 });
+
+  // najdi výraz, který nabízí aspoň jeden související
+  let idx = 0;
+  await mpage.locator('.gloss-item').first().click();
+  await mpage.waitForSelector('#term-overlay:not(.hidden)', { timeout: 5000 });
+  while (await mpage.locator('.term-rel').count() === 0 && idx < 20) {
+    await mpage.keyboard.press('Escape');
+    await mpage.waitForTimeout(120);
+    idx++;
+    await mpage.locator('.gloss-item').nth(idx).click();
+    await mpage.waitForSelector('#term-overlay:not(.hidden)', { timeout: 5000 });
+    await mpage.waitForTimeout(120);
+  }
+
+  if (await mpage.locator('.term-rel').count() > 0) {
+    const before = await mpage.locator('#term-ov-title').textContent();
+    // Klepnutí přes myš schválně: nechá ukazatel ležet na místě, přesně jako
+    // prst na skle. Právě to zvýraznění drželo.
+    await mpage.locator('.term-rel').first().click();
+    await mpage.waitForTimeout(400);
+    check('klepnutí na související výraz ho otevře',
+      (await mpage.locator('#term-ov-title').textContent()) !== before);
+
+    const accent = await mpage.evaluate(() =>
+      getComputedStyle(document.documentElement).getPropertyValue('--accent').trim());
+    const highlighted = await mpage.evaluate(() =>
+      [...document.querySelectorAll('.term-rel')]
+        .filter(el => el.matches(':hover'))
+        .map(el => ({ t: el.textContent.trim(), border: getComputedStyle(el).borderTopColor })));
+    console.log(`      (accent=${accent}, pod ukazatelem: ${JSON.stringify(highlighted)})`);
+
+    const stuck = await mpage.evaluate(() => {
+      const hex = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
+      const probe = document.createElement('span');
+      probe.style.color = hex;
+      document.body.appendChild(probe);
+      const accentRgb = getComputedStyle(probe).color;
+      probe.remove();
+      return [...document.querySelectorAll('.term-rel')]
+        .filter(el => getComputedStyle(el).borderTopColor === accentRgb)
+        .map(el => el.textContent.trim());
+    });
+    check('po klepnutí nezůstane žádný související výraz zvýrazněný',
+      stuck.length === 0, stuck.join(', '));
+  } else {
+    console.log('      (žádný výraz s odkazy „souvisí s", přeskočeno)');
+  }
+  await mctx.close();
 
   await browser.close();
   console.log(failures ? `\n${failures} selhání` : '\nvše prošlo');

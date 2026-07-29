@@ -18,6 +18,15 @@ Statický web portál pro komunitu Master the Flow. Denní digest WhatsApp disku
   v detailu se místo konání jinak nezobrazí. Značka se píše „Master the Flow“
   s malým „the“. Po předložce nezlomitelná mezera, tedy „v Olomouci“.
 
+- **Každé `:hover` patří do `@media (hover: hover)`.** Dotykové prohlížeče
+  drží hover na místě posledního klepnutí, dokud se neklepne jinam. Kde se
+  obsah po klepnutí překreslí na místě (souvisejícé výrazy ve slovníčku),
+  zvýraznění naskočí na prvek, který se pod prstem ocitl až po překreslení,
+  a vypadá to jako náhodně vybraná položka. Ve `styles.css` je takto ošetřené
+  úplně všechno. Když je `:hover` v jednom seznamu selektorů s `.active`,
+  musí se nejdřív rozdělit, jinak vybraný stav na dotyku zmizí taky.
+  Odezvu na stisk na dotyku dělá `:active`, ne hover.
+
 ## Architektura
 
 ```
