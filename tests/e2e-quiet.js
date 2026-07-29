@@ -41,6 +41,26 @@ const BACKUP = TODAY + '.e2e-backup';
   check('Archivní výběr (1-3 karty)', picks >= 1 && picks <= 3, String(picks));
   const headers = await page.locator('#cards-today .section-header').allTextContents();
   check('Sekce „Co jste možná minuli"', headers.some(h => h.includes('minuli')), headers.join('|'));
+  // Regrese 29. 7. 2026: rerenderCurrentView() volal renderCards() s prázdným
+  // polem karet, takže z klidného dne zbyl jen resurfacing. Spouští se hned po
+  // načtení (loadVoteMap), při hlasu, filtru i návratu do panelu — úvodní věta
+  // a celá sekce „Co jste možná minuli“ jen probliknuly a zmizely.
+  // Test volá překreslení napřímo, aby nezáviselo na tom, kdo vyhraje závod.
+  const idsBefore = await page.locator('#cards-today .card:not(.resurfaced)')
+    .evaluateAll(els => els.map(e => e.dataset.id || e.id));
+  await page.evaluate(() => rerenderCurrentView());
+  await page.waitForTimeout(600);
+
+  const noteAfter = await page.locator('.quiet-day-note').textContent().catch(() => '');
+  check('překreslení nesmaže poznámku o klidném dni', (noteAfter || '').includes('Klidný den'), noteAfter);
+  const headersAfter = await page.locator('#cards-today .section-header').allTextContents();
+  check('překreslení nesmaže sekci „Co jste možná minuli“',
+    headersAfter.some(h => h.includes('minuli')), headersAfter.join('|'));
+  const idsAfter = await page.locator('#cards-today .card:not(.resurfaced)')
+    .evaluateAll(els => els.map(e => e.dataset.id || e.id));
+  check('překreslení nepřelosuje výběr',
+    idsAfter.join(',') === idsBefore.join(','), `${idsBefore.join(',')} → ${idsAfter.join(',')}`);
+
   // karty jsou klikatelné
   await page.locator('#cards-today .card:not(.resurfaced)').first().click();
   await page.waitForTimeout(400);

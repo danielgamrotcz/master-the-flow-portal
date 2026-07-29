@@ -197,6 +197,10 @@ const state = {
   _archiveObserver: null,
   _archiveGen: 0,
   cardOpenedAt: null,
+  // Výběr „Co jste možná minuli“. Losuje se jednou na načtení dat, ne při
+  // každém překreslení — jinak by karty skákaly po každém hlasu i po
+  // návratu do panelu.
+  quietPicks: null,
   statsMonth: null,
   statsMsgCountByDate: null,
   voteMap: {},
@@ -647,6 +651,9 @@ async function loadToday() {
 
     // today.json je vždy nejnovější digest — zobrazíme ho, i když má 0 karet
     // (klidný den). 0 karet je validní stav, ne „digest ještě nevyšel".
+    // Nový výběr „Co jste možná minuli“ jen když dorazil jiný den. Obnovení
+    // téhož digestu (auto-refresh, stažení dolů) nemá karty přeházet.
+    if (state.today?.date !== data.date) state.quietPicks = null;
     state.today = data;
     _lastKnownDigestDate = data.date;
     state.archiveCache[data.date] = data;
@@ -682,9 +689,27 @@ async function loadToday() {
   }
 }
 
+// Tři nepřečtené kousky z archivu staršího 14 dnů. Náhodně, ať se klidné dny
+// neokoukají, ale jen jednou za digest — výsledek drží state.quietPicks.
+async function pickQuietCards(data) {
+  await ensureSearchAll();
+  const cutoff = Date.now() - 14 * 86400000;
+  const resId = data.resurfacing && data.resurfacing.id;
+  const pool = state.searchAll.filter(c =>
+    c.id !== resId &&
+    !isRead(c.id) &&
+    new Date(c.source_date || c.date || 0).getTime() < cutoff
+  );
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  return pool.slice(0, 3);
+}
+
 // Klidný den: 0 nových karet. Místo prázdné stránky resurfacing karta
-// + pár nepřečtených kousků z archivu (starších 14 dní, isRead filtr),
-// ať klik z notifikace nikdy nekončí ve zdi. Fallback: prostý empty state.
+// + pár nepřečtených kousků z archivu, ať klik z notifikace nikdy nekončí
+// ve zdi. Fallback: prostý empty state.
 async function renderQuietDay(data) {
   const container = $('cards-today');
   const note = '<div class="quiet-day-note">Klidný den, žádné nové diskuze. Mezitím pár poznatků, které možná unikly.</div>';
@@ -696,20 +721,12 @@ async function renderQuietDay(data) {
   }
 
   try {
-    await ensureSearchAll();
-    const cutoff = Date.now() - 14 * 86400000;
-    const resId = data.resurfacing && data.resurfacing.id;
-    const pool = state.searchAll.filter(c =>
-      c.id !== resId &&
-      !isRead(c.id) &&
-      new Date(c.source_date || c.date || 0).getTime() < cutoff
-    );
-    // náhodný výběr 3 karet — pokaždé jiné, ať se klidné dny neokoukají
-    for (let i = pool.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [pool[i], pool[j]] = [pool[j], pool[i]];
-    }
-    const picks = pool.slice(0, 3);
+    // Losuje se jen jednou na digest. Příslib se uloží ještě před prvním
+    // awaitem, takže dvě souběžná překreslení si nevylosují každé svoje.
+    if (!state.quietPicks) state.quietPicks = pickQuietCards(data);
+    // Filtr témat platí i tady, jinak by přepnutí tématu nechalo dole viset
+    // karty, které do vybraného tématu nepatří.
+    const picks = filterCards(await state.quietPicks);
     if (picks.length) {
       html += '<div class="section-header">Co jste možná minuli</div>';
       html += picks.map(c => renderCardEl(c)).join('');
@@ -3252,7 +3269,15 @@ function rerenderCurrentView() {
     return;
   }
   if (state.view === 'today' && state.today) {
-    renderCards(state.today.cards || [], 'cards-today', state.today.resurfacing || null);
+    // Klidný den se musí překreslit tou svojí cestou. renderCards() dostane
+    // prázdné pole a vykreslí jen resurfacing, čímž smaže úvodní větu
+    // i sekci „Co jste možná minuli“ — a protože tohle běží hned po načtení
+    // (loadVoteMap), stihlo to jen probliknout.
+    if ((state.today.cards || []).length === 0) {
+      renderQuietDay(state.today);
+    } else {
+      renderCards(state.today.cards, 'cards-today', state.today.resurfacing || null);
+    }
   } else if (state.view === 'archive' && state.archiveCards.length > 0) {
     const container = $('cards-archive');
     container.innerHTML = '';
