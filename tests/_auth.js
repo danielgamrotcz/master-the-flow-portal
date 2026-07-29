@@ -12,7 +12,9 @@ const path = require('path');
 
 // Adresa běžícího serveru. Testy jedou proti lokálnímu wrangler dev, ale přes
 // MTF_BASE se dají pustit i proti jinému portu nebo náhledové adrese.
-const BASE = process.env.MTF_BASE || 'http://localhost:8788';
+// Koncové lomítko se ustřihne hned tady, protože cesty se dál skládají
+// řetězením (base + '/api/auth') a jinak by vznikly adresy s dvojím lomítkem.
+const BASE = (process.env.MTF_BASE || 'http://localhost:8788').replace(/\/+$/, '');
 
 function gateCode() {
   const p = path.join(__dirname, '..', '.dev.vars');
