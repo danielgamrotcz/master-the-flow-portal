@@ -1,5 +1,5 @@
 const { chromium } = require('playwright');
-const { authenticate } = require('./_auth.js');
+const { authenticate, BASE } = require('./_auth.js');
 let failures = 0;
 const check = (n, c, d='') => { console.log(`${c?'PASS':'FAIL'}  ${n}${c?'':'  <-- '+d}`); if(!c) failures++; };
 // Test si sám podvrhne 0-karet today.json a po doběhu ho vrátí.
@@ -30,7 +30,7 @@ const BACKUP = TODAY + '.e2e-backup';
   const ctx = await browser.newContext();
   await authenticate(ctx);
   const page = await ctx.newPage();
-  await page.goto('http://localhost:8788/', { waitUntil: 'networkidle' });
+  await page.goto(BASE + '/', { waitUntil: 'networkidle' });
   await page.waitForTimeout(2500); // ensureSearchAll stahuje archiv
 
   const note = await page.locator('.quiet-day-note').textContent().catch(() => '');

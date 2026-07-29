@@ -17,6 +17,10 @@ npx wrangler pages dev . --port 8788   # v jednom terminálu
 ./tests/run-all.sh                      # v druhém
 ```
 
+Adresu serveru drží proměnná `MTF_BASE`, bez ní testy míří na
+`http://localhost:8788`. Na jiném portu tedy stačí
+`MTF_BASE=http://localhost:9000 ./tests/run-all.sh`.
+
 Playwright se bere přes NODE_PATH z ~/Projects/voice-browser/node_modules
 (portál záměrně nemá package.json — deployoval by se).
 

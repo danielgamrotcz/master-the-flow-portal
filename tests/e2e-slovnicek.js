@@ -1,7 +1,7 @@
 // E2E test slovníčku: navigace, hledání, kategorie, detail výrazu,
 // propojení s hledáním v poznatcích a výrazy v detailu karty.
 const { chromium, devices } = require('playwright');
-const { authenticate } = require('./_auth.js');
+const { authenticate, BASE } = require('./_auth.js');
 let failures = 0;
 function check(name, cond, detail = '') {
   console.log(`${cond ? 'PASS' : 'FAIL'}  ${name}${cond ? '' : '  <-- ' + detail}`);
@@ -18,7 +18,7 @@ function check(name, cond, detail = '') {
   page.on('pageerror', e => jsErrors.push(e.message));
 
   // ---- data ----
-  const res = await page.goto('http://localhost:8788/data/glossary.json');
+  const res = await page.goto(BASE + '/data/glossary.json');
   const data = await res.json();
   check('glossary.json se servíruje', res.status() === 200, String(res.status()));
   check('obsahuje termíny', Array.isArray(data.terms) && data.terms.length >= 50, `${data.terms?.length}`);
@@ -35,14 +35,14 @@ function check(name, cond, detail = '') {
   // Tlačítko „Najít v poznatcích" nesmí vést do prázdna.
   const noCards = data.terms.find(t => t.card_hits === 0);
   if (noCards) {
-    await page.goto('http://localhost:8788/#term/' + noCards.slug);
+    await page.goto(BASE + '/#term/' + noCards.slug);
     await page.waitForSelector('#term-overlay:not(.hidden)', { timeout: 8000 });
     check(`výraz bez karet (${noCards.term}) nenabízí hledání`,
       await page.locator('.term-cta').count() === 0);
   }
 
   // ---- navigace ----
-  await page.goto('http://localhost:8788/#glossary');
+  await page.goto(BASE + '/#glossary');
   await page.waitForSelector('#view-glossary:not(.hidden)', { timeout: 8000 });
   check('#glossary otevře pohled', true);
   await page.waitForSelector('.gloss-item', { timeout: 8000 });
@@ -141,13 +141,13 @@ function check(name, cond, detail = '') {
   }
 
   // ---- deep link na výraz ----
-  await page.goto('http://localhost:8788/#term/harness');
+  await page.goto(BASE + '/#term/harness');
   await page.waitForSelector('#term-overlay:not(.hidden)', { timeout: 8000 });
   check('deep link #term/harness otevře výraz',
     /harness/i.test(await page.locator('#term-ov-title').textContent()));
 
   // ---- výrazy v detailu karty ----
-  await page.goto('http://localhost:8788/');
+  await page.goto(BASE + '/');
   await page.waitForSelector('#cards-today .card:not(.card-skeleton)', { timeout: 10000 });
   const cardsN = await page.locator('#cards-today .card:not(.card-skeleton)').count();
   if (cardsN > 0) {
@@ -211,7 +211,7 @@ function check(name, cond, detail = '') {
   check('mobilní kontext hlásí zařízení bez kurzoru',
     await mpage.evaluate(() => matchMedia('(hover: none)').matches) !== false);
 
-  await mpage.goto('http://localhost:8788/#glossary');
+  await mpage.goto(BASE + '/#glossary');
   await mpage.waitForSelector('.gloss-item', { timeout: 10000 });
 
   // najdi výraz, který nabízí aspoň jeden související

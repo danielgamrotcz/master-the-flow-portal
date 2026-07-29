@@ -1,6 +1,6 @@
 // E2E test měření: ?src= atribuce a session_visit payload
 const { chromium } = require('playwright');
-const { authenticate } = require('./_auth.js');
+const { authenticate, BASE } = require('./_auth.js');
 let failures = 0;
 function check(name, cond, detail = '') {
   console.log(`${cond ? 'PASS' : 'FAIL'}  ${name}${cond ? '' : '  <-- ' + detail}`);
@@ -20,7 +20,7 @@ function check(name, cond, detail = '') {
     }
   });
 
-  await page.goto('http://localhost:8788/?src=digest', { waitUntil: 'networkidle' });
+  await page.goto(BASE + '/?src=digest', { waitUntil: 'networkidle' });
   await page.waitForTimeout(1000);
 
   // src se odstranil z URL
@@ -48,7 +48,7 @@ function check(name, cond, detail = '') {
       try { tracked2.push(JSON.parse(r.postData())); } catch {}
     }
   });
-  await page2.goto('http://localhost:8788/', { waitUntil: 'networkidle' });
+  await page2.goto(BASE + '/', { waitUntil: 'networkidle' });
   await page2.waitForTimeout(800);
   const gateVisible = await page2.evaluate(() => !document.getElementById('gate').classList.contains('hidden'));
   check('Gate se zobrazí bez auth', gateVisible);

@@ -1,8 +1,7 @@
-// E2E test fáze 1 (dávky A-C) proti wrangler pages dev na :8788
+// E2E test fáze 1 (dávky A-C) proti wrangler pages dev (adresa v MTF_BASE)
 const { chromium } = require('playwright');
-const { authenticate } = require('./_auth.js');
+const { authenticate, BASE } = require('./_auth.js');
 
-const BASE = 'http://localhost:8788';
 let failures = 0;
 function check(name, cond, detail = '') {
   console.log(`${cond ? 'PASS' : 'FAIL'}  ${name}${cond ? '' : '  <-- ' + detail}`);

@@ -1,5 +1,6 @@
 // E2E: magic link + gate vylepšení
 const { chromium } = require('playwright');
+const { BASE } = require('./_auth.js');
 const fs = require('fs');
 const path = require('path');
 // GATE_CODE se čte z .dev.vars za běhu — nikdy ho nehardcodovat do testu.
@@ -24,7 +25,7 @@ const check = (n, c, d='') => { console.log(`${c?'PASS':'FAIL'}  ${n}${c?'':'  <
     require('path').join(__dirname, '..', 'data', 'today.json'), 'utf8'));
   const cardId = _today.cards?.[0]?.id || _today.resurfacing?.id;
   check('máme id karty pro deep link', !!cardId, String(cardId));
-  await page1.goto('http://localhost:8788/#card/' + cardId, { waitUntil: 'networkidle' });
+  await page1.goto(BASE + '/#card/' + cardId, { waitUntil: 'networkidle' });
   await page1.waitForTimeout(1200);
   check('Gate viditelný bez auth', await page1.evaluate(() => !document.getElementById('gate').classList.contains('hidden')));
   const teaser = await page1.locator('#gate-card-teaser').textContent().catch(() => '');
@@ -36,7 +37,7 @@ const check = (n, c, d='') => { console.log(`${c?'PASS':'FAIL'}  ${n}${c?'':'  <
   // 2. Magic link → auto-unlock bez gate
   const ctx2 = await browser.newContext();
   const page2 = await ctx2.newPage();
-  await page2.goto(`http://localhost:8788/?k=${CODE}#card/${cardId}`, { waitUntil: 'networkidle' });
+  await page2.goto(`${BASE}/?k=${CODE}#card/${cardId}`, { waitUntil: 'networkidle' });
   await page2.waitForTimeout(1500);
   check('Magic link: gate se nezobrazí', await page2.evaluate(() => document.getElementById('gate').classList.contains('hidden')));
   check('Magic link: ?k= zmizel z adresy', !page2.url().includes('k='), page2.url());
@@ -49,12 +50,12 @@ const check = (n, c, d='') => { console.log(`${c?'PASS':'FAIL'}  ${n}${c?'':'  <
   // 3. Špatný magic klíč → gate se ukáže normálně
   const ctx3 = await browser.newContext();
   const page3 = await ctx3.newPage();
-  await page3.goto('http://localhost:8788/?k=SPATNYKOD', { waitUntil: 'networkidle' });
+  await page3.goto(BASE + '/?k=SPATNYKOD', { waitUntil: 'networkidle' });
   await page3.waitForTimeout(1500);
   check('Špatný kód: gate se zobrazí', await page3.evaluate(() => !document.getElementById('gate').classList.contains('hidden')));
 
   // 4. /card/ redirect zachová k parametr
-  const resp = await fetch(`http://localhost:8788/card/${cardId}?k=${CODE}&src=push`);
+  const resp = await fetch(`${BASE}/card/${cardId}?k=${CODE}&src=push`);
   const html = await resp.text();
   check('/card/ redirect nese ?k= i ?src=', html.includes('k=' + CODE) && html.includes('src=push'), html.match(/url=[^"]*/)?.[0]);
 

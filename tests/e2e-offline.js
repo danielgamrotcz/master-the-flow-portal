@@ -1,6 +1,6 @@
 // Offline test: SW cache musí po opravě ?v= reálně servírovat data
 const { chromium } = require('playwright');
-const { authenticate } = require('./_auth.js');
+const { authenticate, BASE } = require('./_auth.js');
 let failures = 0;
 const check = (n, c, d='') => { console.log(`${c?'PASS':'FAIL'}  ${n}${c?'':'  <-- '+d}`); if(!c) failures++; };
 (async () => {
@@ -10,7 +10,7 @@ const check = (n, c, d='') => { console.log(`${c?'PASS':'FAIL'}  ${n}${c?'':'  <
   const page = await ctx.newPage();
 
   // 1. online návštěva — SW se zaregistruje a nacachuje
-  await page.goto('http://localhost:8788/', { waitUntil: 'networkidle' });
+  await page.goto(BASE + '/', { waitUntil: 'networkidle' });
   await page.waitForTimeout(2500); // čas na SW install + cache
   const swActive = await page.evaluate(async () => {
     const reg = await navigator.serviceWorker.getRegistration();
@@ -20,7 +20,7 @@ const check = (n, c, d='') => { console.log(`${c?'PASS':'FAIL'}  ${n}${c?'':'  <
 
   // Verzi cache čteme ze sw.js, ne natvrdo — jinak test spadne po každém
   // zvednutí verze, i když je všechno v pořádku.
-  const swSrc = await (await fetch('http://localhost:8788/sw.js')).text();
+  const swSrc = await (await fetch(BASE + '/sw.js')).text();
   const CACHE_NAME = (swSrc.match(/CACHE\s*=\s*['"]([^'"]+)['"]/) || [])[1];
   check('sw.js má název cache', !!CACHE_NAME, swSrc.slice(0, 80));
 

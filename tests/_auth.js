@@ -10,6 +10,10 @@
 const fs = require('fs');
 const path = require('path');
 
+// Adresa běžícího serveru. Testy jedou proti lokálnímu wrangler dev, ale přes
+// MTF_BASE se dají pustit i proti jinému portu nebo náhledové adrese.
+const BASE = process.env.MTF_BASE || 'http://localhost:8788';
+
 function gateCode() {
   const p = path.join(__dirname, '..', '.dev.vars');
   let raw;
@@ -30,7 +34,7 @@ function gateCode() {
  *
  * ctx.request sdílí úložiště cookies s kontextem, proto stačí jedno volání.
  */
-async function authenticate(ctx, base = 'http://localhost:8788') {
+async function authenticate(ctx, base = BASE) {
   const res = await ctx.request.post(base + '/api/auth', {
     headers: { 'Content-Type': 'application/json', Origin: base },
     data: { code: gateCode() },
@@ -48,4 +52,4 @@ async function authenticate(ctx, base = 'http://localhost:8788') {
   return { token, expires };
 }
 
-module.exports = { authenticate, gateCode };
+module.exports = { authenticate, gateCode, BASE };

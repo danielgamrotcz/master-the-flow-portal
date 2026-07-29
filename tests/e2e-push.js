@@ -1,6 +1,6 @@
 // E2E: push primer + iOS sheet
 const { chromium, webkit } = require('playwright');
-const { authenticate } = require('./_auth.js');
+const { authenticate, BASE } = require('./_auth.js');
 let failures = 0;
 const check = (n, c, d='') => { console.log(`${c?'PASS':'FAIL'}  ${n}${c?'':'  <-- '+d}`); if(!c) failures++; };
 (async () => {
@@ -10,7 +10,7 @@ const check = (n, c, d='') => { console.log(`${c?'PASS':'FAIL'}  ${n}${c?'':'  <
   const ctx1 = await browser.newContext();
   await authenticate(ctx1);
   const p1 = await ctx1.newPage();
-  await p1.goto('http://localhost:8788/', { waitUntil: 'networkidle' });
+  await p1.goto(BASE + '/', { waitUntil: 'networkidle' });
   await p1.waitForTimeout(1200);
   check('Primer skrytý 1. den', await p1.evaluate(() => document.getElementById('push-primer').classList.contains('hidden')));
 
@@ -23,7 +23,7 @@ const check = (n, c, d='') => { console.log(`${c?'PASS':'FAIL'}  ${n}${c?'':'  <
     // headless hlásí denied bez ohledu na grantPermissions — stub na default
     Object.defineProperty(Notification, 'permission', { get: () => 'default' });
   });
-  await p2.goto('http://localhost:8788/', { waitUntil: 'networkidle' });
+  await p2.goto(BASE + '/', { waitUntil: 'networkidle' });
   await p2.waitForTimeout(1500);
   const primerVisible = await p2.evaluate(() => !document.getElementById('push-primer').classList.contains('hidden'));
   check('Primer viditelný od 2. dne', primerVisible);
@@ -47,7 +47,7 @@ const check = (n, c, d='') => { console.log(`${c?'PASS':'FAIL'}  ${n}${c?'':'  <
     // simulace iOS Safari: PushManager neexistuje
     delete window.PushManager;
   });
-  await p3.goto('http://localhost:8788/', { waitUntil: 'networkidle' });
+  await p3.goto(BASE + '/', { waitUntil: 'networkidle' });
   await p3.waitForTimeout(1200);
   const bellVisible = await p3.evaluate(() => {
     const b = document.getElementById('btn-bell');
