@@ -2476,12 +2476,12 @@ async function openRandomCard() {
 /* ===== PAGE TITLE UNREAD COUNT ===== */
 function updatePageTitle() {
   const cards = state.today?.cards || [];
-  if (!cards.length) { document.title = 'Master the Flow — komunita'; return; }
+  if (!cards.length) { document.title = 'Master the Flow portál'; return; }
   const readSet = getReadCards();
   const unread = cards.filter(c => !readSet.has(c.id)).length;
   document.title = unread > 0
-    ? `(${unread}) Master the Flow — komunita`
-    : 'Master the Flow — komunita';
+    ? `(${unread}) Master the Flow portál`
+    : 'Master the Flow portál';
 }
 
 /* ===== OVERLAY PREV/NEXT NAVIGATION ===== */
