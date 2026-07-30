@@ -1285,6 +1285,15 @@
       "date": "2026-07-28",
       "card_count": 0,
       "topics": []
+    },
+    {
+      "date": "2026-07-29",
+      "card_count": 3,
+      "topics": [
+        "Automatizace",
+        "Claude Code",
+        "Workflow"
+      ]
     }
   ]
 }
