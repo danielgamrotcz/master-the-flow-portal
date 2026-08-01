@@ -1466,6 +1466,22 @@
       "why": "Narazíte na to, jakmile začnete budovat druhý mozek a řešit, kam co ukládat.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "raspberry-pi",
+      "term": "Raspberry Pi",
+      "cat": "pc",
+      "match": [
+        "Raspberry Pi",
+        "Raspberry Piem",
+        "Raspberry Piu",
+        "Raspberry Pia"
+      ],
+      "short": "Malý plnohodnotný počítač velikosti kreditní karty, oblíbený pro domácí automatizaci a fyzické projekty.",
+      "plain": "Raspberry Pi je malý plnohodnotný počítač, který se vejde do dlaně. Nejčastěji ho uvidíte jako základ pro Home Assistant nebo vlastní domácí server, ovládaný přes SSH odkudkoliv. Bastléři ho ale využívají i na fyzické projekty a profesionální testovací přípravky.",
+      "why": "Setkáte se s ním ve světě bastlení, domácí automatizace a vzdálené správy malých serverů.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
