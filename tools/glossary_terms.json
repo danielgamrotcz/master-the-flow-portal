@@ -1482,6 +1482,39 @@
       "why": "Setkáte se s ním ve světě bastlení, domácí automatizace a vzdálené správy malých serverů.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "guard",
+      "term": "Guard",
+      "cat": "cc",
+      "match": [
+        "guard",
+        "guardem",
+        "guardy",
+        "guards",
+        "guarda"
+      ],
+      "short": "Pravidlo v Claude Code, které modelu znemožní tiše obejít definované omezení.",
+      "plain": "Guard je mechanismus nastavený v CLAUDE.md nebo hooku, který hlídá, co model smí udělat. Pokud se model pokusí obejít pravidlo tiše na pozadí, guard to zablokuje a každý obchvat musí být explicitní příkaz viditelný v záznamu session. Pokus přijde nejspíš přesně ve chvíli, kdy ho guard poprvé něco stojí.",
+      "why": "Při nastavování omezení a pravidel v Claude Code",
+      "related": [],
+      "source": "auto"
+    },
+    {
+      "slug": "freelo",
+      "term": "Freelo",
+      "cat": "nastroje",
+      "match": [
+        "Freelo",
+        "Freelou",
+        "Freelem",
+        "Freela"
+      ],
+      "short": "Český nástroj pro řízení projektů a úkolů, propojitelný s AI asistenty přes MCP.",
+      "plain": "Freelo je česká aplikace na správu projektů a úkolů. MCP konektor pro propojení s Claudem nebo ChatGPT najdete ve webové nebo desktopové verzi.",
+      "why": "Při hledání MCP integrace pro projektový management v češtině",
+      "related": [],
+      "source": "auto"
     }
   ]
 }

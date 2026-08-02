@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-01",
+  "generated_at": "2026-08-02",
   "source": {
-    "daily_notes": 127,
+    "daily_notes": 128,
     "range": [
       "2026-03-14",
-      "2026-07-31"
+      "2026-08-01"
     ]
   },
   "categories": [
@@ -74,7 +74,7 @@
       "days": 38,
       "first_seen": "2026-03-29",
       "last_seen": "2026-07-31",
-      "card_hits": 27
+      "card_hits": 28
     },
     {
       "slug": "anonymizace",
@@ -256,11 +256,11 @@
       "source": "hand",
       "starter": 5,
       "search": "claude code claude, ktery bezi v terminalu a sam pracuje se soubory ve vasem projektu. neni to chat v prohlizeci. claude code bezi u vas na pocitaci, vidi slozku s projektem, umi soubory cist i menit, spoustet prikazy a overovat si vysledek. spousti se v terminalu napsanim claude. ve skupine se casto zkracuje na cc. vetsina projektu, ktere tady lidi ukazuji, vznikla presne timhle. claude code claude codu claudecode cc",
-      "mentions": 483,
-      "days": 83,
+      "mentions": 487,
+      "days": 84,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-07-31",
-      "card_hits": 98
+      "last_seen": "2026-08-01",
+      "card_hits": 99
     },
     {
       "slug": "claude-md",
@@ -361,7 +361,7 @@
       "days": 26,
       "first_seen": "2026-03-18",
       "last_seen": "2026-07-31",
-      "card_hits": 14
+      "card_hits": 15
     },
     {
       "slug": "commit",
@@ -420,7 +420,7 @@
       "days": 26,
       "first_seen": "2026-03-19",
       "last_seen": "2026-07-31",
-      "card_hits": 16
+      "card_hits": 17
     },
     {
       "slug": "cron",
@@ -582,6 +582,29 @@
       "card_hits": 4
     },
     {
+      "slug": "freelo",
+      "term": "Freelo",
+      "category": "nastroje",
+      "short": "Český nástroj pro řízení projektů a úkolů, propojitelný s AI asistenty přes MCP.",
+      "plain": "Freelo je česká aplikace na správu projektů a úkolů. MCP konektor pro propojení s Claudem nebo ChatGPT najdete ve webové nebo desktopové verzi.",
+      "why": "Při hledání MCP integrace pro projektový management v češtině",
+      "related": [],
+      "aliases": [
+        "Freelo",
+        "Freelou",
+        "Freelem",
+        "Freela"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "freelo cesky nastroj pro rizeni projektu a ukolu, propojitelny s ai asistenty pres mcp. freelo je ceska aplikace na spravu projektu a ukolu. mcp konektor pro propojeni s claudem nebo chatgpt najdete ve webove nebo desktopove verzi. pri hledani mcp integrace pro projektovy management v cestine freelo freelou freelem freela",
+      "mentions": 15,
+      "days": 3,
+      "first_seen": "2026-04-02",
+      "last_seen": "2026-08-01",
+      "card_hits": 0
+    },
+    {
       "slug": "frontend-backend",
       "term": "Frontend a backend",
       "category": "web",
@@ -683,6 +706,30 @@
       "first_seen": "2026-03-14",
       "last_seen": "2026-07-27",
       "card_hits": 19
+    },
+    {
+      "slug": "guard",
+      "term": "Guard",
+      "category": "cc",
+      "short": "Pravidlo v Claude Code, které modelu znemožní tiše obejít definované omezení.",
+      "plain": "Guard je mechanismus nastavený v CLAUDE.md nebo hooku, který hlídá, co model smí udělat. Pokud se model pokusí obejít pravidlo tiše na pozadí, guard to zablokuje a každý obchvat musí být explicitní příkaz viditelný v záznamu session. Pokus přijde nejspíš přesně ve chvíli, kdy ho guard poprvé něco stojí.",
+      "why": "Při nastavování omezení a pravidel v Claude Code",
+      "related": [],
+      "aliases": [
+        "guard",
+        "guardem",
+        "guardy",
+        "guards",
+        "guarda"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "guard pravidlo v claude code, ktere modelu znemozni tise obejit definovane omezeni. guard je mechanismus nastaveny v claude.md nebo hooku, ktery hlida, co model smi udelat. pokud se model pokusi obejit pravidlo tise na pozadi, guard to zablokuje a kazdy obchvat musi byt explicitni prikaz viditelny v zaznamu session. pokus prijde nejspis presne ve chvili, kdy ho guard poprve neco stoji. pri nastavovani omezeni a pravidel v claude code guard guardem guardy guards guarda",
+      "mentions": 6,
+      "days": 1,
+      "first_seen": "2026-08-01",
+      "last_seen": "2026-08-01",
+      "card_hits": 0
     },
     {
       "slug": "gui",
@@ -859,10 +906,10 @@
       "source": "hand",
       "starter": 4,
       "search": "kontext vsechno, co model v danou chvili vi o vasem zadani. kontext je souhrn toho, co ma model po ruce. vase zpravy, jeho odpovedi, obsah souboru, ktere si precetl, a instrukce, ktere dostal. kdyz mu nahazite vsechno, co vas napadne, utopi se v tom. min informaci, ale trefnejsich, funguje lip. odtud ta rada psat strucne. kdyz do zadani nahazite pet nesouvisejicich veci, vysledek bude horsi, nez kdybyste rekli jednu. kontext kontextu kontextem",
-      "mentions": 160,
-      "days": 68,
+      "mentions": 161,
+      "days": 69,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-07-31",
+      "last_seen": "2026-08-01",
       "card_hits": 35
     },
     {
@@ -994,7 +1041,7 @@
       "days": 26,
       "first_seen": "2026-03-20",
       "last_seen": "2026-07-15",
-      "card_hits": 20
+      "card_hits": 21
     },
     {
       "slug": "markdown",
@@ -1020,7 +1067,7 @@
       "days": 27,
       "first_seen": "2026-03-14",
       "last_seen": "2026-07-31",
-      "card_hits": 13
+      "card_hits": 14
     },
     {
       "slug": "mcp",
@@ -1040,10 +1087,10 @@
       "source": "hand",
       "starter": null,
       "search": "mcp zpusob, jak claudovi zpristupnit vase dalsi aplikace. model sam o sobe vidi jen to, co mu napisete. pres mcp se k nemu da pripojit kalendar, e-mail, databaze nebo interni system a on s nimi pak umi pracovat. hotova napojeni se daji nainstalovat, psat je nikdo nemusi. zkratka znamena model context protocol a je to otevreny standard od anthropicu, takze jedno napojeni funguje ve vic nastrojich. kdyz nekdo ve skupine napise, ze si k tomu pripojil gmail nebo notion, mluvi o tomhle. mcp",
-      "mentions": 127,
-      "days": 26,
+      "mentions": 137,
+      "days": 27,
       "first_seen": "2026-03-16",
-      "last_seen": "2026-07-27",
+      "last_seen": "2026-08-01",
       "card_hits": 20
     },
     {
@@ -1068,10 +1115,10 @@
       "source": "hand",
       "starter": 2,
       "search": "model konkretni verze ai, kterou zrovna pouzivate. modelu je vic a lisi se silou, rychlosti a cenou. silnejsi zvladne slozite zadani, ale je pomalejsi a drazsi. slabsi odbavi rutinu skoro hned. kdyz nekdo ve skupine pise, ze neco jede na opusu a neco na sonnetu, mluvi presne o tehle volbe. volba modelu je hlavni paka na to, kolik za praci s ai zaplatite. model modelu modely modelu modelem",
-      "mentions": 182,
-      "days": 56,
+      "mentions": 183,
+      "days": 57,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-07-27",
+      "last_seen": "2026-08-01",
       "card_hits": 57
     },
     {
@@ -1094,10 +1141,10 @@
       "source": "hand",
       "starter": null,
       "search": "modelove rady claude opus, sonnet, haiku a dalsi. lisi se silou, rychlosti a cenou. anthropic vydava claude ve vic radach, jmenuji se treba opus, sonnet nebo haiku. silnejsi rady zvladaji slozitejsi uvahy a rozsahle ukoly, rychlejsi jsou levnejsi a hodi se na jednoduchou praci ve velkem mnozstvi. ktere verze jsou zrovna aktualni se v case meni, princip zustava. volba rady je hlavni paka na pomer cena a kvalita. opus sonnet haiku fable",
-      "mentions": 162,
-      "days": 38,
+      "mentions": 163,
+      "days": 39,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-07-27",
+      "last_seen": "2026-08-01",
       "card_hits": 27
     },
     {
@@ -1172,7 +1219,7 @@
       "days": 23,
       "first_seen": "2026-03-16",
       "last_seen": "2026-07-25",
-      "card_hits": 10
+      "card_hits": 11
     },
     {
       "slug": "npm",
@@ -1476,7 +1523,7 @@
       "days": 3,
       "first_seen": "2026-03-29",
       "last_seen": "2026-07-31",
-      "card_hits": 2
+      "card_hits": 4
     },
     {
       "slug": "raycast",
@@ -1610,10 +1657,10 @@
       "source": "hand",
       "starter": null,
       "search": "server pocitac, ktery bezi nepretrzite a obsluhuje ostatni. server je stroj, jehoz jedina prace je cekat na dotazy a odpovidat na ne. muze to byt obri stroj v datovem centru i obycejny pocitac doma, ktery nikdy nevypinate.  server serveru servery serveru serveri",
-      "mentions": 38,
-      "days": 18,
+      "mentions": 39,
+      "days": 19,
       "first_seen": "2026-03-15",
-      "last_seen": "2026-07-27",
+      "last_seen": "2026-08-01",
       "card_hits": 12
     },
     {
@@ -1641,7 +1688,7 @@
       "days": 48,
       "first_seen": "2026-03-15",
       "last_seen": "2026-07-31",
-      "card_hits": 26
+      "card_hits": 28
     },
     {
       "slug": "skill",
@@ -1720,7 +1767,7 @@
       "days": 5,
       "first_seen": "2026-04-01",
       "last_seen": "2026-07-31",
-      "card_hits": 5
+      "card_hits": 6
     },
     {
       "slug": "stripe",
@@ -1819,10 +1866,10 @@
       "source": "hand",
       "starter": null,
       "search": "terminal okno, kde se pocitaci pisou prikazy misto klikani. textove okno, do ktereho napisete prikaz a pocitac ho provede. vypada to neprivetive, ale je to jen jiny zpusob ovladani. na macu se aplikace jmenuje terminal a najdete ji pres spotlight, kdyz napisete jeji jmeno. claude code bezi tady. je to prvni misto, kde se clovek musi premoct. terminal terminalu terminalem prikazova radka prikazove radce",
-      "mentions": 98,
-      "days": 30,
+      "mentions": 100,
+      "days": 31,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-07-30",
+      "last_seen": "2026-08-01",
       "card_hits": 21
     },
     {
@@ -1902,11 +1949,11 @@
       "source": "hand",
       "starter": 1,
       "search": "vibe coding staveni aplikaci tak, ze popisujete, co chcete, a kod pise ai. vy rikate, co ma vec delat, ai pise kod a vy vysledek zkousite a usmernujete. programovat umet nemusite. staci umet popsat, co chcete, a poznat, kdy vysledek nesedi. jede se po malych kouscich, protoze velky skok se spatne kontroluje a chyba se v nem hur hleda. kolem tohohle vznikla cela komunita. je to nejcastejsi pojem ve skupine vubec. vibe coding vibe codingu vibecoding vibe kodovani",
-      "mentions": 307,
-      "days": 97,
+      "mentions": 308,
+      "days": 98,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-07-31",
-      "card_hits": 41
+      "last_seen": "2026-08-01",
+      "card_hits": 42
     },
     {
       "slug": "vm",
@@ -1981,7 +2028,7 @@
       "days": 58,
       "first_seen": "2026-03-14",
       "last_seen": "2026-07-31",
-      "card_hits": 40
+      "card_hits": 42
     },
     {
       "slug": "yolo",
