@@ -1,18 +1,21 @@
+// v26: dokončené runtime zápisy + offline klidný den a Fuse dependency.
 // v23: úklid cache po odstranění ?v= cache-bustingu (nasypal do Cache Storage
 // stovky unikátních záznamů) + today.json v precache. Bump verze při aktivaci
 // všechny staré záznamy smaže.
-const CACHE = 'mtf-v25';
+const CACHE = 'mtf-v26';
 const STATIC = ['/', '/index.html', '/app.js', '/styles.css', '/favicon.svg',
-  '/manifest.webmanifest', '/icon-192.png', '/icon-512.png', '/apple-touch-icon.png'];
-// today.json se předcachuje zvlášť a smí selhat. Patří do precache, protože
-// při první návštěvě service worker ještě neřídí stránku a bez toho by offline
-// režim fungoval až od druhé návštěvy. Zároveň je ale za přihlašovací cookie,
-// takže u nepřihlášeného návštěvníka vrátí 403 — a addAll je „všechno nebo
-// nic“, jediná 403 uvnitř by shodila instalaci celého SW. Proto stranou.
-const STATIC_OPTIONAL = ['/data/today.json'];
+  '/fuse.min.js', '/manifest.webmanifest', '/icon-192.png', '/icon-512.png',
+  '/apple-touch-icon.png'];
+// Datové minimum se předcachuje zvlášť a smí selhat. Při první návštěvě service
+// worker ještě nemusí řídit stránku; bez instalační cache by offline režim
+// fungoval až od další návštěvy. Klidný den bere náhradní karty z agregovaného
+// indexu, proto potřebuje oba soubory. U nepřihlášeného návštěvníka mohou vrátit
+// 403; oddělení od addAll zabrání pádu celé instalace a po přihlášení je doplní
+// runtime network-first větev.
+const STATIC_OPTIONAL = ['/data/today.json', '/data/cards-index.json'];
 // App shell — vždy zkus síť, fallback cache (offline). Brání stale verzi appky
 // bez nutnosti bumpovat CACHE při každé změně app.js/styles.css/index.html.
-const SHELL = new Set(['/', '/index.html', '/app.js', '/styles.css']);
+const SHELL = new Set(['/', '/index.html', '/app.js', '/styles.css', '/fuse.min.js']);
 
 self.addEventListener('install', e => {
   e.waitUntil(
@@ -32,6 +35,39 @@ self.addEventListener('activate', e => {
   );
 });
 
+// Cache zápis navázat na životnost fetch eventu, ale neblokovat jím odpověď.
+// Fire-and-forget c.put() může prohlížeč po vrácení sítě ukončit a offline
+// kopie pak nikdy nevznikne. Selhání pomocné cache nesmí shodit online fetch.
+function fetchAndCache(event) {
+  const network = fetch(event.request);
+  event.waitUntil(
+    network.then(async response => {
+      if (!response.ok) return;
+      const cache = await caches.open(CACHE);
+      await cache.put(event.request, response.clone());
+    }).catch(() => {})
+  );
+  return network;
+}
+
+// U cache-first větve nevíme synchronně, zda síť vůbec bude potřeba. Celý
+// lookup proto sestavíme předem a jeho případný zápis registrujeme přes
+// waitUntil ještě během obsluhy eventu, ne až v pozdějším callbacku.
+function cacheFirst(event) {
+  const lookup = caches.open(CACHE).then(async cache => {
+    const hit = await cache.match(event.request);
+    if (hit) return { response: hit };
+    const response = await fetch(event.request);
+    return { response, cache, copy: response.ok ? response.clone() : null };
+  });
+  event.waitUntil(
+    lookup.then(async ({ cache, copy }) => {
+      if (cache && copy) await cache.put(event.request, copy);
+    }).catch(() => {})
+  );
+  return lookup.then(({ response }) => response);
+}
+
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
 
@@ -41,11 +77,7 @@ self.addEventListener('fetch', e => {
   // App shell — network-first so app.js/styles.css/index.html stay fresh
   if (url.origin === location.origin && SHELL.has(url.pathname)) {
     e.respondWith(
-      fetch(e.request)
-        .then(res => {
-          if (res.ok) caches.open(CACHE).then(c => c.put(e.request, res.clone()));
-          return res;
-        })
+      fetchAndCache(e)
         .catch(() => caches.open(CACHE).then(c => c.match(e.request)))
     );
     return;
@@ -53,27 +85,14 @@ self.addEventListener('fetch', e => {
 
   // Obrázky — cache-first, jména jsou neměnná UUID, takže se nemění obsah.
   if (url.pathname.startsWith('/data/media/')) {
-    e.respondWith(
-      caches.open(CACHE).then(c =>
-        c.match(e.request).then(hit =>
-          hit || fetch(e.request).then(res => {
-            if (res.ok) c.put(e.request, res.clone());
-            return res;
-          })
-        )
-      )
-    );
+    e.respondWith(cacheFirst(e));
     return;
   }
 
   // Archive date files — network-first, fall back to cache
   if (url.pathname.startsWith('/data/archive/') && url.pathname.endsWith('.json')) {
     e.respondWith(
-      fetch(e.request)
-        .then(res => {
-          if (res.ok) caches.open(CACHE).then(c => c.put(e.request, res.clone()));
-          return res;
-        })
+      fetchAndCache(e)
         .catch(() => caches.open(CACHE).then(c => c.match(e.request)))
     );
     return;
@@ -85,11 +104,7 @@ self.addEventListener('fetch', e => {
       || url.pathname === '/data/events.json' || url.pathname === '/data/notification.json'
       || url.pathname === '/data/glossary.json') {
     e.respondWith(
-      fetch(e.request)
-        .then(res => {
-          if (res.ok) caches.open(CACHE).then(c => c.put(e.request, res.clone()));
-          return res;
-        })
+      fetchAndCache(e)
         .catch(() => caches.open(CACHE).then(c => c.match(e.request)))
     );
     return;

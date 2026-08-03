@@ -29,6 +29,22 @@ function gateCode() {
   return m[1].trim().replace(/^["']|["']$/g, '');
 }
 
+// Deep-link scénáře nesmí záviset na obsahu proměnlivého today.json. Den bez
+// zpráv může legitimně nemít ani novou, ani resurfacing kartu. Agregovaný index
+// je stabilní testovací zdroj a vybíráme jen kartu, jejíž archivní soubor
+// skutečně existuje.
+function fixtureCardId() {
+  const dataDir = path.join(__dirname, '..', 'data');
+  const raw = JSON.parse(fs.readFileSync(path.join(dataDir, 'cards-index.json'), 'utf8'));
+  const cards = Array.isArray(raw) ? raw : (raw.cards || []);
+  const card = cards.find(item => {
+    const date = typeof item?.id === 'string' && item.id.match(/^(\d{4}-\d{2}-\d{2})-/)?.[1];
+    return date && fs.existsSync(path.join(dataDir, 'archive', `${date}.json`));
+  });
+  if (!card) throw new Error('cards-index.json neobsahuje použitelnou archivní kartu');
+  return card.id;
+}
+
 /**
  * Přihlásí browser context: získá platný token, uloží ho do localStorage
  * (odtud ho appka bere pro API volání) a nechá cookie přistát v context jaru
@@ -54,4 +70,4 @@ async function authenticate(ctx, base = BASE) {
   return { token, expires };
 }
 
-module.exports = { authenticate, gateCode, BASE };
+module.exports = { authenticate, gateCode, fixtureCardId, BASE };

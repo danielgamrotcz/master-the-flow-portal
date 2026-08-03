@@ -1,6 +1,6 @@
 // E2E test fáze 1 (dávky A-C) proti wrangler pages dev (adresa v MTF_BASE)
 const { chromium } = require('playwright');
-const { authenticate, BASE } = require('./_auth.js');
+const { authenticate, fixtureCardId, BASE } = require('./_auth.js');
 
 let failures = 0;
 function check(name, cond, detail = '') {
@@ -133,12 +133,9 @@ function check(name, cond, detail = '') {
   check('Deep link #search/diktování funguje', deepLinkResults > 0 && deepLinkInput === 'diktování', `count=${deepLinkResults} input=${deepLinkInput}`);
 
   // ===== 7. Deep link na kartu → zpět neopustí web (pushed=false → replaceState) =====
-  // V klidný den je cards prázdné, ale resurfacing karta tam je vždycky.
-  // Bez fallbacku spadl celý test na undefined a zbytek kontrol neproběhl.
-  const cardId = await page.evaluate(async () => {
-    const d = await fetch('/data/today.json').then(r => r.json());
-    return d.cards?.[0]?.id || d.resurfacing?.id || null;
-  });
+  // Aktuální digest může legitimně nemít žádnou kartu ani resurfacing.
+  // Deep-link chování proto testujeme na existující archivní fixture.
+  const cardId = fixtureCardId();
   check('máme id karty pro deep link', !!cardId, String(cardId));
   await page.goto(BASE + '/#card/' + cardId, { waitUntil: 'networkidle' });
   await page.waitForTimeout(800);

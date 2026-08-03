@@ -1,6 +1,6 @@
 // E2E: magic link + gate vylepšení
 const { chromium } = require('playwright');
-const { BASE } = require('./_auth.js');
+const { fixtureCardId, BASE } = require('./_auth.js');
 const fs = require('fs');
 const path = require('path');
 // GATE_CODE se čte z .dev.vars za běhu — nikdy ho nehardcodovat do testu.
@@ -18,12 +18,9 @@ const check = (n, c, d='') => { console.log(`${c?'PASS':'FAIL'}  ${n}${c?'':'  <
   // 1. Cizí člověk BEZ auth, BEZ magic klíče → gate + teaser karty + community link
   const ctx1 = await browser.newContext();
   const page1 = await ctx1.newPage();
-  // today.json je za přihlašovací cookie; id karty si vezmeme rovnou
-  // ze souboru, je to jen vstup do testu, ne testovaná věc.
-  // V klidný den je cards prázdné, ale resurfacing karta tam je vždycky.
-  const _today = JSON.parse(require('fs').readFileSync(
-    require('path').join(__dirname, '..', 'data', 'today.json'), 'utf8'));
-  const cardId = _today.cards?.[0]?.id || _today.resurfacing?.id;
+  // Proměnlivý denní digest může být bez karet i resurfacingu. Magic-link
+  // chování proto testujeme na existující archivní fixture.
+  const cardId = fixtureCardId();
   check('máme id karty pro deep link', !!cardId, String(cardId));
   await page1.goto(BASE + '/#card/' + cardId, { waitUntil: 'networkidle' });
   await page1.waitForTimeout(1200);
