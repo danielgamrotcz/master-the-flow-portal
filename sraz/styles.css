@@ -123,9 +123,17 @@ h2 { margin: 12px 0 20px; font-size: clamp(36px, 4.6vw, 58px); line-height: 1.02
 .attendee-initials { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; background: var(--bg-soft); color: var(--accent); font-size: 14px; font-weight: 700; letter-spacing: .04em; }
 .attendee-card h3 { min-width: 0; margin: 0; font-size: 21px; line-height: 1.25; letter-spacing: -.025em; overflow-wrap: anywhere; }
 .attendee-attendance { width: fit-content; margin: 18px 0 0; padding: 6px 10px; border: 1px solid var(--border-strong); border-radius: 999px; color: var(--text-secondary); font-size: 11px; font-weight: 700; line-height: 1.35; }
-.attendee-bio { margin: 17px 0 0; color: var(--text-secondary); line-height: 1.68; white-space: pre-line; overflow-wrap: anywhere; }
+.attendee-bio { margin: 17px 0 0; display: -webkit-box; color: var(--text-secondary); line-height: 1.68; white-space: pre-line; overflow: hidden; overflow-wrap: anywhere; -webkit-box-orient: vertical; -webkit-line-clamp: 4; }
+.attendee-card.is-bio-expanded .attendee-bio { display: block; overflow: visible; }
+.attendee-bio-toggle { min-height: 44px; margin: 7px 0 -10px; padding: 8px 0; border: 0; background: transparent; color: var(--accent); font-size: 13px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.attendee-bio-toggle[hidden] { display: none; }
+.attendees-grid:not(.is-expanded) .attendee-card:nth-of-type(n+7) { display: none; }
 .attendees-status { grid-column: 1 / -1; margin: 0; padding: 30px 28px; border: 1px dashed var(--border-strong); border-radius: 16px; color: var(--text-secondary); text-align: center; }
 .attendees-status-error { color: var(--text-tertiary); }
+.attendees-actions { margin-top: 26px; text-align: center; }
+.attendees-toggle { min-height: 48px; padding: 0 20px; border: 1px solid var(--border-strong); border-radius: 8px; background: transparent; color: var(--text-primary); font-weight: 700; cursor: pointer; }
+.attendees-toggle[hidden] { display: none; }
+.attendees-toggle:active, .attendee-bio-toggle:active { transform: scale(.98); }
 
 .program { padding-top: 110px; }
 .section-heading { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 56px; align-items: end; margin-bottom: 44px; }
@@ -197,6 +205,8 @@ details p { max-width: 720px; margin: -2px 0 24px; color: var(--text-secondary);
   .button-whatsapp:hover { background: #1fbe5b; }
   .community-qr-link:hover { color: var(--accent); }
   .hero-calendar-links a:hover, summary:hover { color: var(--accent-hover); }
+  .attendees-toggle:hover { border-color: var(--accent); color: var(--accent); }
+  .attendee-bio-toggle:hover { color: var(--accent-hover); }
 }
 
 @media (max-width: 1040px) {
@@ -248,7 +258,9 @@ details p { max-width: 720px; margin: -2px 0 24px; color: var(--text-secondary);
   .manifesto-copy p { font-size: 17px; }
   .attendees, .program, .practical, .registration, .faq { padding-top: 84px; }
   .attendees-grid { grid-template-columns: 1fr; }
+  .attendees-grid:not(.is-expanded) .attendee-card:nth-of-type(n+5) { display: none; }
   .attendee-card { padding: 24px 22px; }
+  .attendees-toggle { width: 100%; }
   .timeline-item { grid-template-columns: 1fr; gap: 10px; padding: 26px 0 29px; }
   .timeline-content h3 { font-size: 22px; }
   .practical-grid { grid-template-columns: 1fr; }

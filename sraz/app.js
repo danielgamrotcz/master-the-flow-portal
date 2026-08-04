@@ -58,10 +58,48 @@ function attendeeInitials(name) {
   return name.trim().split(/\s+/).slice(0, 2).map(part => part.charAt(0)).join('').toLocaleUpperCase('cs');
 }
 
+function refreshAttendeeBioToggles() {
+  document.querySelectorAll('.attendee-card').forEach(card => {
+    if (!card.getClientRects().length) return;
+    const bio = card.querySelector('.attendee-bio');
+    const toggle = card.querySelector('.attendee-bio-toggle');
+    if (!bio || !toggle) return;
+    if (card.classList.contains('is-bio-expanded')) {
+      toggle.hidden = false;
+      return;
+    }
+    toggle.hidden = bio.scrollHeight <= bio.clientHeight + 1;
+  });
+}
+
+function updateAttendeesControls() {
+  const list = document.getElementById('attendees-list');
+  const toggle = document.getElementById('attendees-toggle');
+  if (!list || !toggle) return;
+  const count = list.querySelectorAll('.attendee-card').length;
+  const limit = window.matchMedia('(max-width: 720px)').matches ? 4 : 6;
+  const expanded = list.classList.contains('is-expanded');
+  toggle.hidden = count <= limit;
+  toggle.setAttribute('aria-expanded', String(expanded));
+  toggle.textContent = expanded ? 'Zobrazit jen první' : `Zobrazit všechny účastníky (${count})`;
+  requestAnimationFrame(refreshAttendeeBioToggles);
+}
+
+function resetAttendeesControls() {
+  const list = document.getElementById('attendees-list');
+  const toggle = document.getElementById('attendees-toggle');
+  if (list) list.classList.remove('is-expanded');
+  if (toggle) {
+    toggle.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+}
+
 function renderAttendees(attendees) {
   const list = document.getElementById('attendees-list');
   if (!list) return;
   list.replaceChildren();
+  resetAttendeesControls();
 
   if (!attendees.length) {
     const status = document.createElement('p');
@@ -72,7 +110,7 @@ function renderAttendees(attendees) {
     return;
   }
 
-  attendees.forEach(attendee => {
+  attendees.sort((first, second) => first.name.localeCompare(second.name, 'cs', { sensitivity: 'base' })).forEach((attendee, index) => {
     const card = document.createElement('article');
     card.className = 'attendee-card';
 
@@ -91,11 +129,25 @@ function renderAttendees(attendees) {
     attendance.textContent = attendanceLabels[attendee.attendance];
     const bio = document.createElement('p');
     bio.className = 'attendee-bio';
+    bio.id = `attendee-bio-${index + 1}`;
     bio.textContent = attendee.bio;
-    card.append(header, attendance, bio);
+    const bioToggle = document.createElement('button');
+    bioToggle.className = 'attendee-bio-toggle';
+    bioToggle.type = 'button';
+    bioToggle.hidden = true;
+    bioToggle.setAttribute('aria-controls', bio.id);
+    bioToggle.setAttribute('aria-expanded', 'false');
+    bioToggle.textContent = 'Celé představení';
+    bioToggle.addEventListener('click', () => {
+      const expanded = card.classList.toggle('is-bio-expanded');
+      bioToggle.setAttribute('aria-expanded', String(expanded));
+      bioToggle.textContent = expanded ? 'Zkrátit představení' : 'Celé představení';
+    });
+    card.append(header, attendance, bio, bioToggle);
     list.append(card);
   });
   list.setAttribute('aria-busy', 'false');
+  updateAttendeesControls();
 }
 
 function renderAttendeesError() {
@@ -105,11 +157,20 @@ function renderAttendeesError() {
   status.className = 'attendees-status attendees-status-error';
   status.textContent = 'Seznam účastníků teď nejde načíst. Registrace funguje dál.';
   list.replaceChildren(status);
+  resetAttendeesControls();
   list.setAttribute('aria-busy', 'false');
 }
 
 async function initAttendees() {
-  if (!document.getElementById('attendees-list')) return;
+  const list = document.getElementById('attendees-list');
+  const toggle = document.getElementById('attendees-toggle');
+  if (!list || !toggle) return;
+  toggle.addEventListener('click', () => {
+    list.classList.toggle('is-expanded');
+    updateAttendeesControls();
+  });
+  window.matchMedia('(max-width: 720px)').addEventListener('change', updateAttendeesControls);
+  window.addEventListener('resize', () => requestAnimationFrame(refreshAttendeeBioToggles));
   try {
     const response = await fetch('/api/meetup-attendees', { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
