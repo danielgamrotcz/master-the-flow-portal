@@ -96,6 +96,20 @@ function check(name, cond, detail = '') {
   check('Registrace je tlačítko s odkazem na Google Forms', /^https:\/\/docs\.google\.com\/forms\//.test(registrationHref || ''), String(registrationHref));
   check('Registrační blok má titulek Registrovat se', await page.locator('#registration-title').textContent() === 'Registrovat se');
   check('Akce je výslovně otevřená i mimo komunitu', /Přijít může kdokoli/.test(await page.locator('.practical').innerText()));
+  const whatsappHref = await page.locator('#whatsapp-group-link').getAttribute('href');
+  const whatsappUrl = new URL(whatsappHref);
+  check('WhatsApp pozvánka vede do zadané skupiny', whatsappUrl.hostname === 'chat.whatsapp.com' && whatsappUrl.pathname === '/CYjDrgCPeq18wldgqScjFh' && whatsappUrl.searchParams.get('mode') === 'gi_t', String(whatsappHref));
+  check('Vstup do skupiny není zaměněný za registraci', /nenahrazuje registraci na sraz/.test((await page.locator('.community-note').innerText()).replace(/\u00a0/g, ' ')));
+  check('Členství ve WhatsApp skupině není podmínkou účasti', /členství ve WhatsApp skupině není podmínkou/.test((await page.locator('.faq').textContent()).replace(/\u00a0/g, ' ')));
+  check('WhatsApp tlačítko má dostatečně velkou dotykovou plochu', await page.locator('#whatsapp-group-link').evaluate(el => el.getBoundingClientRect().height >= 44));
+  check('WhatsApp sekce se na mobilu skládá pod sebe', await page.locator('.community-panel').evaluate(el => {
+    const copy = el.querySelector('.community-copy').getBoundingClientRect();
+    const qr = el.querySelector('.community-qr-link').getBoundingClientRect();
+    return qr.top >= copy.bottom && qr.left >= 0 && qr.right <= window.innerWidth;
+  }));
+  const qrImage = page.locator('.community-qr');
+  const qrResponse = await page.request.get(BASE + await qrImage.getAttribute('src'));
+  check('QR kód má alternativní text a dostupný PNG soubor', /QR kód/.test(await qrImage.getAttribute('alt') || '') && qrResponse.ok() && /^image\/png/.test(qrResponse.headers()['content-type'] || ''));
   check('Informační sekce netvrdí, že jde o časté otázky', !(await page.locator('.faq').innerText()).includes('Časté otázky'));
 
   const mainText = await page.locator('main').innerText();

@@ -147,6 +147,16 @@ h2 { margin: 12px 0 20px; font-size: clamp(36px, 4.6vw, 58px); line-height: 1.02
 .button-light { background: var(--accent); color: #1a120d; }
 [data-theme="light"] .button-light { color: #fff; }
 
+.community { padding-top: 0; padding-bottom: 110px; }
+.community-panel { padding: clamp(38px, 6vw, 66px); display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: clamp(42px, 7vw, 84px); align-items: center; border: 1px solid var(--border); border-radius: 22px; background: var(--bg-elevated); }
+.community-copy { max-width: 650px; }
+.community-copy h2 { margin-bottom: 22px; font-size: clamp(34px, 4.2vw, 52px); }
+.community-copy > p:not(.section-kicker):not(.community-note) { margin: 0; color: var(--text-secondary); font-size: 18px; line-height: 1.68; }
+.button-whatsapp { width: fit-content; margin-top: 30px; background: #25d366; color: #082b14; }
+.community-note { margin: 13px 0 0; color: var(--text-tertiary); font-size: 12px; }
+.community-qr-link { min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 13px; color: var(--text-secondary); font-size: 12px; font-weight: 600; text-align: center; text-decoration: none; }
+.community-qr { width: 100%; height: auto; display: block; border: 10px solid #fff; border-radius: 14px; background: #fff; }
+
 .faq { max-width: 840px; padding-top: 100px; }
 .faq h2 { margin-bottom: 38px; }
 .faq-list { border-top: 1px solid var(--border); }
@@ -170,6 +180,8 @@ details p { max-width: 720px; margin: -2px 0 24px; color: var(--text-secondary);
   .brand:hover, .portal-link:hover, .footer a:hover { color: var(--accent); }
   .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
   .button-primary:hover, .button-light:hover { background: var(--accent-hover); }
+  .button-whatsapp:hover { background: #1fbe5b; }
+  .community-qr-link:hover { color: var(--accent); }
   .hero-calendar-links a:hover, summary:hover { color: var(--accent-hover); }
 }
 
@@ -214,6 +226,11 @@ details p { max-width: 720px; margin: -2px 0 24px; color: var(--text-secondary);
   .registration-panel { padding: 38px 24px 42px; border-radius: 16px; }
   .registration-panel > p:not(.section-kicker) { font-size: 17px; }
   .registration-panel .button { width: 100%; }
+  .community { padding-top: 0; padding-bottom: 84px; }
+  .community-panel { padding: 38px 24px 42px; grid-template-columns: 1fr; gap: 34px; border-radius: 16px; }
+  .community-copy > p:not(.section-kicker):not(.community-note) { font-size: 17px; }
+  .button-whatsapp { width: 100%; }
+  .community-qr-link { width: min(100%, 210px); justify-self: center; }
   .closing { margin: 24px 20px 0; padding: 72px 0; }
   .footer { padding-left: 20px; padding-right: 20px; padding-bottom: calc(108px + env(safe-area-inset-bottom)); }
   .sticky-register { position: fixed; z-index: 30; left: 12px; right: 12px; bottom: calc(10px + env(safe-area-inset-bottom)); min-height: 62px; padding: 8px 9px 8px 16px; display: flex; align-items: center; justify-content: space-between; gap: 14px; border: 1px solid var(--border); border-radius: 14px; background: var(--header); color: var(--text-primary); box-shadow: 0 12px 38px rgba(0,0,0,.24); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); text-decoration: none; transform: translateY(calc(100% + 24px)); opacity: 0; pointer-events: none; transition: transform 180ms ease, opacity 180ms ease; }
