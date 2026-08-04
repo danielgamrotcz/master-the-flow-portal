@@ -28,9 +28,9 @@
       "date": "2026-08-14",
       "time_from": "18:00",
       "time_to": null,
-      "location": "Olomouc",
-      "short": "Neformální sraz na Moravě. Pátek 14. srpna od 18:00, místo upřesníme později.",
-      "description": "Sraz členů z Olomouce, Přerova a okolí. Viky jede v srpnu do rodného kraje, tak se při té příležitosti sejdeme, popovídáme si a vyměníme si tipy, kdo na čem dělá. Žádný program, jen pokec dobrých lidí. Začínáme v pátek 14. srpna v 18:00, přesné místo doplníme později. Kdo by dorazil, ať dá vědět pod jejím postem ve skupině.",
+      "location": "Long Story Short Café, Olomouc",
+      "short": "Neformální sraz na Moravě. Pátek 14. srpna od 18:00 v Long Story Short Café, venku na terase.",
+      "description": "Sraz členů z Olomouce, Přerova a okolí. Viky jede v srpnu do rodného kraje, tak se při té příležitosti sejdeme, popovídáme si a vyměníme si tipy, kdo na čem dělá. Žádný program, jen pokec dobrých lidí. Sejdeme se v pátek 14. srpna v 18:00 v Long Story Short Café na venkovní terase. Pokud bude nepříznivé počasí, přesuneme se dovnitř. Kdo by dorazil, ať dá vědět pod jejím postem ve skupině.",
       "program": null,
       "registration_url": null,
       "is_paid": false,
@@ -39,7 +39,10 @@
       "detail_url": null,
       "recording_url": null,
       "recording_password": null,
-      "status": null
+      "status": null,
+      "links": [
+        "https://www.google.com/maps/search/?api=1&query=Long+Story+Short+Caf%C3%A9%2C+Ko%C5%BEelu%C5%BEsk%C3%A1+945%2F31%2C+Olomouc"
+      ]
     },
     {
       "id": "evt-2026-07-15-second-brain",
