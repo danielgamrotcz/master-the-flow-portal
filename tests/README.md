@@ -9,6 +9,7 @@ Vznikly při přestavbě 17. 7. 2026 (audit → fáze 1+2 + brand vrstva). Hlíd
 - `e2e-push.js` — push primer, iOS instruktáž
 - `e2e-quiet.js` — klidný den (sám si mockuje 0-karet today.json a vrací zpět)
 - `e2e-slovnicek.js` — slovníček: data, hledání, kategorie, detail výrazu, deep linky, propojení s hledáním a s detailem karty (26 kontrol)
+- `e2e-sraz.js` — veřejná podstránka pražského srazu: obsah, harmonogram, kalendář, registrace a mobilní CTA
 
 Spuštění:
 

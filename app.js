@@ -1669,7 +1669,7 @@ function renderProgram(program) {
 
 function eventCtaHtml(ev) {
   const isPast = eventEndTs(ev) < Date.now();
-  const safe = u => (typeof u === 'string' && /^https?:\/\//i.test(u)) ? u : null;
+  const safe = u => (typeof u === 'string' && (/^https?:\/\//i.test(u) || /^\/(?!\/)/.test(u))) ? u : null;
   const reg = safe(ev.registration_url);
   const rec = safe(ev.recording_url);
   const detail = safe(ev.detail_url);
@@ -1685,7 +1685,10 @@ function eventCtaHtml(ev) {
     }
   }
   if (rec) btns.push(`<a class="event-cta event-cta-secondary" href="${esc(rec)}" target="_blank" rel="noopener noreferrer nofollow">Záznam</a>`);
-  if (detail) btns.push(`<a class="event-cta event-cta-secondary" href="${esc(detail)}" target="_blank" rel="noopener noreferrer nofollow">Detail akce</a>`);
+  if (detail) {
+    const attrs = detail.startsWith('/') ? '' : ' target="_blank" rel="noopener noreferrer nofollow"';
+    btns.push(`<a class="event-cta event-cta-secondary" href="${esc(detail)}"${attrs}>Detail akce</a>`);
+  }
 
   let html = '';
   if (buyShown && ev.discount_code) {

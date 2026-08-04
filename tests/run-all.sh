@@ -15,7 +15,7 @@ if ! curl -s -o /dev/null "$MTF_BASE/"; then
 fi
 
 FAILED=0
-for t in e2e-portal e2e-mereni e2e-offline e2e-magic e2e-push e2e-quiet e2e-slovnicek; do
+for t in e2e-portal e2e-mereni e2e-offline e2e-magic e2e-push e2e-quiet e2e-slovnicek e2e-sraz; do
   echo "===== $t ====="
   node "$t.js" || FAILED=1
 done
