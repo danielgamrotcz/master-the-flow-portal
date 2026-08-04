@@ -15,3 +15,4 @@ database_id = "609b4aa0-8949-4635-87f2-e2df613fab3b"
 # Secrets (set via: wrangler secret put ADMIN_SECRET)
 # ADMIN_SECRET — chrání POST /api/community (aktualizace počtu členů)
 # NOTIFY_SECRET — chrání POST /api/notify (odesílání push notifikací)
+# ATTENDEES_SYNC_SECRET — chrání POST /api/meetup-attendees (Google Forms sync)

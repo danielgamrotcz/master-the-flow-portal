@@ -113,6 +113,20 @@ h2 { margin: 12px 0 20px; font-size: clamp(36px, 4.6vw, 58px); line-height: 1.02
 .manifesto-copy p { margin: 0 0 18px; color: var(--text-secondary); font-size: 18px; line-height: 1.72; }
 .manifesto-copy p:last-child { margin-bottom: 0; color: var(--text-primary); font-weight: 600; }
 
+.attendees { padding-top: 110px; }
+.attendees-heading { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 56px; align-items: end; margin-bottom: 44px; }
+.attendees-heading h2 { max-width: 690px; margin-bottom: 0; }
+.attendees-heading > p { margin: 0 0 5px; color: var(--text-secondary); font-size: 16px; line-height: 1.65; }
+.attendees-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.attendee-card { min-width: 0; padding: 28px; border: 1px solid var(--border); border-radius: 16px; background: var(--bg-elevated); }
+.attendee-card-header { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 15px; align-items: center; }
+.attendee-initials { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; background: var(--bg-soft); color: var(--accent); font-size: 14px; font-weight: 700; letter-spacing: .04em; }
+.attendee-card h3 { min-width: 0; margin: 0; font-size: 21px; line-height: 1.25; letter-spacing: -.025em; overflow-wrap: anywhere; }
+.attendee-attendance { width: fit-content; margin: 18px 0 0; padding: 6px 10px; border: 1px solid var(--border-strong); border-radius: 999px; color: var(--text-secondary); font-size: 11px; font-weight: 700; line-height: 1.35; }
+.attendee-bio { margin: 17px 0 0; color: var(--text-secondary); line-height: 1.68; white-space: pre-line; overflow-wrap: anywhere; }
+.attendees-status { grid-column: 1 / -1; margin: 0; padding: 30px 28px; border: 1px dashed var(--border-strong); border-radius: 16px; color: var(--text-secondary); text-align: center; }
+.attendees-status-error { color: var(--text-tertiary); }
+
 .program { padding-top: 110px; }
 .section-heading { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 56px; align-items: end; margin-bottom: 44px; }
 .section-heading h2 { max-width: 690px; margin-bottom: 0; }
@@ -190,8 +204,23 @@ details p { max-width: 720px; margin: -2px 0 24px; color: var(--text-secondary);
 }
 
 @media (max-width: 900px) {
-  .section-heading { grid-template-columns: 1fr; gap: 18px; }
-  .section-heading > p { max-width: 600px; }
+  .section-heading, .attendees-heading { grid-template-columns: 1fr; gap: 18px; }
+  .section-heading > p, .attendees-heading > p { max-width: 600px; }
+}
+
+@media (min-width: 721px) and (max-height: 900px) {
+  .hero { min-height: calc(100svh - 70px); padding: clamp(24px, 4svh, 40px) 32px clamp(28px, 4.5svh, 44px); }
+  .hero-title-prefix { margin-bottom: 12px; font-size: clamp(22px, 2.4vw, 30px); }
+  .hero-title-brand { font-size: clamp(60px, min(7.4vw, 11svh), 99px); }
+  .hero-title-place { margin-top: 10px; font-size: 12px; }
+  .hero-facts { margin-top: 28px; }
+  .hero-fact { padding-top: 15px; padding-bottom: 16px; }
+  .hero-content { margin-top: 24px; }
+  .hero-lede { font-size: clamp(17px, 1.4vw, 19px); line-height: 1.5; }
+  .hero-conversion { margin-top: 18px; }
+  .hero-actions .button { min-height: 48px; }
+  .hero-note { margin-top: 7px; }
+  .hero-calendar-links { margin-top: 12px; }
 }
 
 @media (max-width: 720px) {
@@ -217,7 +246,9 @@ details p { max-width: 720px; margin: -2px 0 24px; color: var(--text-secondary);
   .manifesto-label { margin-bottom: 22px; }
   .manifesto-copy { padding-top: 0; }
   .manifesto-copy p { font-size: 17px; }
-  .program, .practical, .registration, .faq { padding-top: 84px; }
+  .attendees, .program, .practical, .registration, .faq { padding-top: 84px; }
+  .attendees-grid { grid-template-columns: 1fr; }
+  .attendee-card { padding: 24px 22px; }
   .timeline-item { grid-template-columns: 1fr; gap: 10px; padding: 26px 0 29px; }
   .timeline-content h3 { font-size: 22px; }
   .practical-grid { grid-template-columns: 1fr; }

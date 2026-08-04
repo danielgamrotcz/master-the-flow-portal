@@ -20,6 +20,14 @@ function check(name, cond, detail = '') {
   const response = await page.goto(BASE + '/sraz/', { waitUntil: 'networkidle' });
   check('/sraz/ vrací úspěšnou odpověď', response && response.ok(), String(response && response.status()));
   check('Stránka je veřejná bez přístupové brány', await page.locator('#gate').count() === 0);
+  const attendeesResponse = await page.request.get(BASE + '/api/meetup-attendees');
+  const attendeesPayload = await attendeesResponse.json();
+  check('Veřejné API účastníků vrací seznam bez cache', attendeesResponse.ok() && Array.isArray(attendeesPayload.attendees) && attendeesResponse.headers()['cache-control'] === 'no-store');
+  const unauthorizedAttendeesWrite = await page.request.post(BASE + '/api/meetup-attendees', {
+    data: { attendees: [] },
+    headers: { 'Content-Type': 'application/json' }
+  });
+  check('API účastníků odmítá neautorizovaný zápis', unauthorizedAttendeesWrite.status() === 401, String(unauthorizedAttendeesWrite.status()));
   check('Titulek pojmenovává sraz v Praze', await page.locator('h1').textContent() === 'Sraz Master the Flow v Praze');
   const heroDate = page.locator('time[datetime="2026-08-29"]');
   check('Datum je viditelné a strojově čitelné', await heroDate.isVisible() && await heroDate.getAttribute('aria-label') === '29. srpna 2026');
@@ -90,6 +98,9 @@ function check(name, cond, detail = '') {
     const [intro, copy] = el.children;
     return copy.getBoundingClientRect().top > intro.getBoundingClientRect().top;
   }));
+  check('Seznam účastníků vysvětluje souhlas i ochranu e-mailu', /pouze lidi, kteří se zveřejněním souhlasili/.test((await page.locator('.attendees').innerText()).replace(/\u00a0/g, ' ')) && /E-mail ani další odpovědi/.test(await page.locator('.attendees').innerText()));
+  check('Seznam účastníků je na mobilu v jednom sloupci', await page.locator('.attendees-grid').evaluate(el => getComputedStyle(el).gridTemplateColumns.trim().split(/\s+/).length === 1));
+  check('Prázdný seznam má srozumitelný stav', /První účastníci se tu objeví/.test(await page.locator('#attendees-list').innerText()));
 
   check('Stránka nevkládá Google Form do iframe', await page.locator('iframe').count() === 0);
   const registrationHref = await page.locator('#registration-link').getAttribute('href');
@@ -168,6 +179,52 @@ function check(name, cond, detail = '') {
     await widerPage.close();
   }
   check('Hero bezpečně přechází mezi telefonem, tabletem a desktopem', widerProblems.length === 0, widerProblems.join(' | '));
+
+  const shallowViewports = [
+    { width: 744, height: 650 },
+    { width: 1024, height: 600 },
+    { width: 1280, height: 600 },
+    { width: 1280, height: 720 },
+    { width: 1366, height: 768 },
+    { width: 1440, height: 800 },
+    { width: 1728, height: 900 }
+  ];
+  const shallowProblems = [];
+  for (const viewport of shallowViewports) {
+    const shallowPage = await browser.newPage({ viewport });
+    await shallowPage.goto(BASE + '/sraz/', { waitUntil: 'networkidle' });
+    const state = await shallowPage.evaluate(() => {
+      const hero = document.querySelector('.hero').getBoundingClientRect();
+      const calendar = document.querySelector('.hero-calendar-links').getBoundingClientRect();
+      const cta = document.querySelector('.hero .button-primary').getBoundingClientRect();
+      return {
+        heroBottom: hero.bottom,
+        viewportHeight: window.innerHeight,
+        calendarVisible: calendar.bottom <= window.innerHeight + 1,
+        ctaVisible: cta.bottom <= window.innerHeight + 1 && cta.height >= 44,
+        fits: hero.bottom <= window.innerHeight + 1
+      };
+    });
+    if (!state.fits || !state.calendarVisible || !state.ctaVisible) shallowProblems.push(`${viewport.width}x${viewport.height}=${JSON.stringify(state)}`);
+    await shallowPage.close();
+  }
+  check('Hero je celé viditelné i v nízkých desktopových oknech', shallowProblems.length === 0, shallowProblems.join(' | '));
+
+  const attendeePreview = await browser.newPage({ viewport: { width: 1180, height: 900 } });
+  await attendeePreview.route('**/api/meetup-attendees', route => route.fulfill({
+    status: 200,
+    contentType: 'application/json',
+    headers: { 'Cache-Control': 'no-store' },
+    body: JSON.stringify({ attendees: [
+      { name: 'Účastník A', bio: 'Věnuje se testování a rád si popovídá o kvalitě.', attendance: 'official' },
+      { name: '<img src=x onerror=alert(1)>', bio: 'Bezpečnostní test vykreslení jako text.', attendance: 'official_and_picnic' }
+    ] })
+  }));
+  await attendeePreview.goto(BASE + '/sraz/', { waitUntil: 'networkidle' });
+  check('Seznam vykreslí zveřejněné profily a rozsah účasti', await attendeePreview.locator('.attendee-card').count() === 2 && /Oficiální část 13:00–18:00/.test(await attendeePreview.locator('.attendee-card').nth(0).innerText()) && /Oficiální část \+ piknik/.test(await attendeePreview.locator('.attendee-card').nth(1).innerText()));
+  check('Údaje účastníků se vkládají jako text, ne jako HTML', await attendeePreview.locator('.attendee-card img').count() === 0 && (await attendeePreview.locator('.attendee-card h3').nth(1).textContent()) === '<img src=x onerror=alert(1)>');
+  check('Desktopový seznam účastníků používá dva sloupce', await attendeePreview.locator('.attendees-grid').evaluate(el => getComputedStyle(el).gridTemplateColumns.trim().split(/\s+/).length === 2));
+  await attendeePreview.close();
 
   await browser.close();
   console.log(failures === 0 ? '\nVŠECHNY TESTY SRAZU PROŠLY' : `\n${failures} TESTŮ SRAZU SELHALO`);
