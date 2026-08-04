@@ -62,6 +62,20 @@ const attendeeFilterMatches = {
   uncertain: attendance => attendance === 'uncertain'
 };
 
+function registeredCountLabel(count) {
+  if (count === 1) return 'účastník';
+  if (count >= 2 && count <= 4) return 'účastníci';
+  return 'účastníků';
+}
+
+function renderRegisteredCount(count) {
+  const value = document.getElementById('registered-count');
+  const note = document.getElementById('registered-count-note');
+  if (!value || !note || !Number.isSafeInteger(count) || count < 0) return;
+  value.textContent = String(count);
+  note.textContent = registeredCountLabel(count);
+}
+
 function attendeeInitials(name) {
   return name.trim().split(/\s+/).slice(0, 2).map(part => part.charAt(0)).join('').toLocaleUpperCase('cs');
 }
@@ -237,6 +251,10 @@ async function initAttendees() {
       typeof attendee.bio === 'string' && attendee.bio.trim() &&
       Object.hasOwn(attendanceLabels, attendee.attendance)
     )) : [];
+    const registeredCount = Number.isSafeInteger(payload.registeredCount) && payload.registeredCount >= 0
+      ? payload.registeredCount
+      : attendees.length;
+    renderRegisteredCount(registeredCount);
     renderAttendees(attendees);
   } catch (error) {
     renderAttendeesError();

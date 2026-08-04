@@ -4,6 +4,7 @@ const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 const SECRET_HEADER = 'x-attendees-secret';
 const KV_KEY = 'event:2026-08-29:public-attendees';
 const MAX_ATTENDEES = 200;
+const MAX_REGISTERED_COUNT = 10000;
 const MAX_NAME_LENGTH = 100;
 const MAX_BIO_LENGTH = 1200;
 const STORE_TTL_SECONDS = 60 * 24 * 60 * 60;
@@ -60,6 +61,12 @@ function cleanBio(value) {
   return clean;
 }
 
+function cleanRegisteredCount(value, fallback) {
+  if (value === undefined) return fallback;
+  if (!Number.isSafeInteger(value) || value < 0 || value > MAX_REGISTERED_COUNT) return null;
+  return value;
+}
+
 function sanitizeAttendee(value, requireConsent = false) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return null;
   if ('email' in value || 'e-mail' in value) return null;
@@ -87,12 +94,14 @@ export async function onRequestGet({ request, env }) {
   try {
     const raw = await env.MTF_DATA.get(KV_KEY);
     const stored = raw ? JSON.parse(raw) : [];
-    if (!Array.isArray(stored)) return json({ attendees: [] }, { headers });
-    const attendees = stored
+    const payload = Array.isArray(stored) ? { attendees: stored } : stored;
+    if (!payload || !Array.isArray(payload.attendees)) return json({ attendees: [], registeredCount: 0 }, { headers });
+    const attendees = payload.attendees
       .slice(0, MAX_ATTENDEES)
       .map(value => sanitizeAttendee(value))
       .filter(Boolean);
-    return json({ attendees }, { headers });
+    const registeredCount = cleanRegisteredCount(payload.registeredCount, attendees.length);
+    return json({ attendees, registeredCount: registeredCount === null ? attendees.length : registeredCount }, { headers });
   } catch {
     return json({ attendees: [] }, { headers });
   }
@@ -127,8 +136,10 @@ export async function onRequestPost({ request, env }) {
     if (attendees.some(value => !value)) {
       return json({ error: 'Invalid attendee' }, { status: 400, headers });
     }
-    await env.MTF_DATA.put(KV_KEY, JSON.stringify(attendees), { expirationTtl: STORE_TTL_SECONDS });
-    return json({ count: attendees.length }, { headers });
+    const registeredCount = cleanRegisteredCount(payload.registeredCount, attendees.length);
+    if (registeredCount === null) return json({ error: 'Invalid registered count' }, { status: 400, headers });
+    await env.MTF_DATA.put(KV_KEY, JSON.stringify({ attendees, registeredCount }), { expirationTtl: STORE_TTL_SECONDS });
+    return json({ count: attendees.length, registeredCount }, { headers });
   } catch (error) {
     if (error instanceof SyntaxError) return json({ error: 'Bad Request' }, { status: 400, headers });
     return json({ error: 'Internal error' }, { status: 500, headers });

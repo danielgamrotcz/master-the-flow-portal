@@ -22,7 +22,7 @@ function check(name, cond, detail = '') {
   check('Stránka je veřejná bez přístupové brány', await page.locator('#gate').count() === 0);
   const attendeesResponse = await page.request.get(BASE + '/api/meetup-attendees');
   const attendeesPayload = await attendeesResponse.json();
-  check('Veřejné API účastníků vrací seznam bez cache', attendeesResponse.ok() && Array.isArray(attendeesPayload.attendees) && attendeesResponse.headers()['cache-control'] === 'no-store');
+  check('Veřejné API účastníků vrací seznam a počet registrací bez cache', attendeesResponse.ok() && Array.isArray(attendeesPayload.attendees) && Number.isSafeInteger(attendeesPayload.registeredCount) && attendeesResponse.headers()['cache-control'] === 'no-store');
   const unauthorizedAttendeesWrite = await page.request.post(BASE + '/api/meetup-attendees', {
     data: { attendees: [] },
     headers: { 'Content-Type': 'application/json' }
@@ -41,6 +41,7 @@ function check(name, cond, detail = '') {
   check('Hero snižuje tření registrace', /Google formulář.*přibližně 1 minuta.*zdarma/.test(heroNoteText));
   check('Hero potvrzuje registraci bez Google účtu', /bez Google účtu/.test(heroNoteText));
   check('Hero vysvětluje, jak se lidé dozvědí adresu', /adresu pošlu e-mailem/.test(await page.locator('.hero-facts').innerText()));
+  check('Hero ukazuje počet registrací', await page.locator('#registered-count').innerText() !== '—');
   check('Značka Master the Flow se v titulku neláme', await page.locator('h1 .no-break').evaluate(el => getComputedStyle(el).whiteSpace === 'nowrap'));
 
   const buttonContrast = async () => page.locator('.hero .button-primary').evaluate(el => {
@@ -176,7 +177,7 @@ function check(name, cond, detail = '') {
         brandFits: brand.left >= 0 && brand.right <= window.innerWidth,
         placeAligned: Math.abs(place.right - brand.right) <= 1,
         factsFit: factRects.every(rect => rect.left >= 0 && rect.right <= window.innerWidth),
-        correctGrid: breakpoint <= 720 ? columns === 2 : columns === 3
+        correctGrid: breakpoint <= 720 ? columns === 2 : columns === 4
       };
     }, width);
     if (state.overflow || !state.brandFits || !state.placeAligned || !state.factsFit || !state.correctGrid) widerProblems.push(`${width}px=${JSON.stringify(state)}`);
@@ -220,7 +221,7 @@ function check(name, cond, detail = '') {
     status: 200,
     contentType: 'application/json',
     headers: { 'Cache-Control': 'no-store' },
-    body: JSON.stringify({ attendees: [
+    body: JSON.stringify({ registeredCount: 11, attendees: [
       { name: 'Účastník H', bio: 'Věnuje se testování a rád si popovídá o kvalitě.', attendance: 'official' },
       { name: 'Účastník A', bio: longBio, attendance: 'official_and_picnic' },
       { name: 'Účastník B', bio: 'Testovací profil B.', attendance: 'uncertain' },
@@ -232,6 +233,7 @@ function check(name, cond, detail = '') {
     ] })
   }));
   await attendeePreview.goto(BASE + '/sraz/', { waitUntil: 'networkidle' });
+  check('Hero počítá všechny registrace, nejen zveřejněné profily', await attendeePreview.locator('#registered-count').innerText() === '11' && /účastníků/.test(await attendeePreview.locator('#registered-count-note').innerText()));
   const renderedNames = await attendeePreview.locator('.attendee-card h3').allTextContents();
   check('Seznam vykreslí zveřejněné profily a rozsah účasti', await attendeePreview.locator('.attendee-card').count() === 8 && /Oficiální část 13:00–18:00/.test(await attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník H' }).innerText()) && /Oficiální část \+ piknik/.test(await attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník A' }).innerText()) && /Jen piknik po 18:00/.test(await attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník G' }).innerText()));
   check('Účastníci jsou seřazení abecedně', renderedNames.join('|') === [...renderedNames].sort((a, b) => a.localeCompare(b, 'cs', { sensitivity: 'base' })).join('|'), renderedNames.join(' | '));
