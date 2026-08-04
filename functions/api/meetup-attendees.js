@@ -102,14 +102,13 @@ export async function onRequestPost({ request, env }) {
   const origin = request.headers.get('Origin');
   const headers = { ...corsHeaders(origin, 'GET, POST, OPTIONS'), 'Cache-Control': 'no-store' };
   const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
-  // Form submit trigger může při zveřejnění registrace poslat větší dávku
-  // legitimních požadavků. Limit brání neomezenému hádání tajemství, ale
-  // ponechává rezervu pro registrační špičku a pravidelnou synchronizaci.
-  if (await rateLimit(env, 'attendees-sync:' + ipKey(ip), SYNC_RATE_LIMIT_PER_HOUR, 3600)) {
-    return new Response('Too Many Requests', { status: 429, headers });
-  }
   const providedSecret = request.headers.get(SECRET_HEADER);
   if (!providedSecret || !env.ATTENDEES_SYNC_SECRET || !await timingSafeEqual(providedSecret, env.ATTENDEES_SYNC_SECRET)) {
+    // Limit je potřeba pro hádání tajemství, ale nesmí být závislostí úspěšné
+    // registrace: legitimní synchronizace už tajemstvím prokázala oprávnění.
+    if (await rateLimit(env, 'attendees-sync:' + ipKey(ip), SYNC_RATE_LIMIT_PER_HOUR, 3600)) {
+      return new Response('Too Many Requests', { status: 429, headers });
+    }
     return new Response('Unauthorized', { status: 401, headers });
   }
   if (!request.headers.get('content-type')?.includes('application/json')) {

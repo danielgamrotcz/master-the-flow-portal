@@ -62,6 +62,23 @@ function check(name, condition, detail = '') {
   });
   check('Zápis bez tajemství je odmítnutý', unauthorized.status === 401, String(unauthorized.status));
 
+  const syncWithoutD1Store = new Map();
+  const syncWithoutD1 = await onRequestPost({
+    env: {
+      ATTENDEES_SYNC_SECRET: 'test-only-secret',
+      MTF_DATA: {
+        get: async key => syncWithoutD1Store.get(key) || null,
+        put: async (key, value) => syncWithoutD1Store.set(key, value),
+      },
+    },
+    request: new Request('http://localhost/api/meetup-attendees', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-attendees-secret': 'test-only-secret' },
+      body: JSON.stringify({ attendees: [{ consent: true, name: 'Účastník pro synchronizaci', bio: 'Bez D1.', attendance: 'official' }] }),
+    }),
+  });
+  check('Ověřená synchronizace nezávisí na D1 rate limitu', syncWithoutD1.status === 200, String(syncWithoutD1.status));
+
   const leakedEmail = await onRequestPost({
     env,
     request: new Request('http://localhost/api/meetup-attendees', {
