@@ -51,7 +51,6 @@ const attendanceLabels = {
   official: 'Oficiální část 13:00–18:00',
   official_and_picnic: 'Oficiální část + piknik',
   picnic_only: 'Jen piknik po 18:00',
-  partial: 'Část programu',
   uncertain: 'Účast ještě upřesní'
 };
 
@@ -60,7 +59,6 @@ const attendeeFilterMatches = {
   official: attendance => attendance === 'official' || attendance === 'official_and_picnic',
   picnic: attendance => attendance === 'official_and_picnic' || attendance === 'picnic_only',
   picnic_only: attendance => attendance === 'picnic_only',
-  partial: attendance => attendance === 'partial',
   uncertain: attendance => attendance === 'uncertain'
 };
 

@@ -61,6 +61,16 @@ function check(name, condition, detail = '') {
   check('Veřejná odpověď se neukládá do cache', publicResponse.headers.get('cache-control') === 'no-store');
   check('Uložená data neobsahují e-mail ani souhlas', !JSON.stringify([...store.values()]).includes('email') && !JSON.stringify([...store.values()]).includes('consent'));
 
+  const retiredPartialAttendance = await onRequestPost({
+    env,
+    request: new Request('http://localhost/api/meetup-attendees', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-attendees-secret': 'test-only-secret' },
+      body: JSON.stringify({ attendees: [{ consent: true, name: 'Účastník D', bio: 'Test.', attendance: 'partial' }] }),
+    }),
+  });
+  check('Zrušený neurčitý rozsah účasti je odmítnutý', retiredPartialAttendance.status === 400, String(retiredPartialAttendance.status));
+
   const noConsent = await onRequestPost({
     env,
     request: new Request('http://localhost/api/meetup-attendees', {

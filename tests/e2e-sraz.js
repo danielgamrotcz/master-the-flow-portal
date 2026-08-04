@@ -220,7 +220,6 @@ function check(name, cond, detail = '') {
     body: JSON.stringify({ attendees: [
       { name: 'Účastník H', bio: 'Věnuje se testování a rád si popovídá o kvalitě.', attendance: 'official' },
       { name: 'Účastník A', bio: longBio, attendance: 'official_and_picnic' },
-      { name: 'Účastník C', bio: 'Testovací profil C.', attendance: 'partial' },
       { name: 'Účastník B', bio: 'Testovací profil B.', attendance: 'uncertain' },
       { name: 'Účastník D', bio: 'Testovací profil D.', attendance: 'official' },
       { name: 'Účastník E', bio: 'Testovací profil E.', attendance: 'official' },
@@ -231,7 +230,7 @@ function check(name, cond, detail = '') {
   }));
   await attendeePreview.goto(BASE + '/sraz/', { waitUntil: 'networkidle' });
   const renderedNames = await attendeePreview.locator('.attendee-card h3').allTextContents();
-  check('Seznam vykreslí zveřejněné profily a rozsah účasti', await attendeePreview.locator('.attendee-card').count() === 9 && /Oficiální část 13:00–18:00/.test(await attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník H' }).innerText()) && /Oficiální část \+ piknik/.test(await attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník A' }).innerText()) && /Jen piknik po 18:00/.test(await attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník G' }).innerText()));
+  check('Seznam vykreslí zveřejněné profily a rozsah účasti', await attendeePreview.locator('.attendee-card').count() === 8 && /Oficiální část 13:00–18:00/.test(await attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník H' }).innerText()) && /Oficiální část \+ piknik/.test(await attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník A' }).innerText()) && /Jen piknik po 18:00/.test(await attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník G' }).innerText()));
   check('Účastníci jsou seřazení abecedně', renderedNames.join('|') === [...renderedNames].sort((a, b) => a.localeCompare(b, 'cs', { sensitivity: 'base' })).join('|'), renderedNames.join(' | '));
   check('Údaje účastníků se vkládají jako text, ne jako HTML', await attendeePreview.locator('.attendee-card img').count() === 0 && renderedNames.includes('Z <img src=x onerror=alert(1)>'));
   check('Desktopový seznam účastníků používá dva sloupce', await attendeePreview.locator('.attendees-grid').evaluate(el => getComputedStyle(el).gridTemplateColumns.trim().split(/\s+/).length === 2));
@@ -242,24 +241,21 @@ function check(name, cond, detail = '') {
   const officialFilter = filters.locator('[data-attendee-filter="official"]');
   const picnicFilter = filters.locator('[data-attendee-filter="picnic"]');
   const picnicOnlyFilter = filters.locator('[data-attendee-filter="picnic_only"]');
-  const partialFilter = filters.locator('[data-attendee-filter="partial"]');
   const uncertainFilter = filters.locator('[data-attendee-filter="uncertain"]');
-  check('Filtry ukazují počty včetně překryvu oficiální části a pikniku', await filters.isVisible() && /9/.test(await allFilter.innerText()) && /6/.test(await officialFilter.innerText()) && /3/.test(await picnicFilter.innerText()) && /1/.test(await picnicOnlyFilter.innerText()) && /1/.test(await partialFilter.innerText()) && /1/.test(await uncertainFilter.innerText()));
+  check('Filtry ukazují počty včetně překryvu oficiální části a pikniku', await filters.isVisible() && /8/.test(await allFilter.innerText()) && /6/.test(await officialFilter.innerText()) && /3/.test(await picnicFilter.innerText()) && /1/.test(await picnicOnlyFilter.innerText()) && /1/.test(await uncertainFilter.innerText()) && await filters.locator('[data-attendee-filter="partial"]').count() === 0);
   await picnicFilter.click();
   check('Filtr pikniku ukáže všechny lidi, kteří dorazí po 18:00', await attendeePreview.locator('.attendee-card:visible').count() === 3 && await attendeesToggle.isHidden() && (await attendeePreview.locator('.attendee-card:visible').allTextContents()).every(text => /piknik/.test(text)) && await picnicFilter.getAttribute('aria-pressed') === 'true');
   await picnicOnlyFilter.click();
   check('Filtr Jen piknik ukáže pouze lidi bez oficiální části', await attendeePreview.locator('.attendee-card:visible').count() === 1 && /Jen piknik po 18:00/.test(await attendeePreview.locator('.attendee-card:visible').innerText()) && await picnicOnlyFilter.getAttribute('aria-pressed') === 'true');
   await officialFilter.click();
   check('Filtr oficiální části zahrnuje i lidi pokračující na piknik', await attendeePreview.locator('.attendee-card:visible').count() === 6 && await attendeesToggle.isHidden());
-  await partialFilter.click();
-  check('Filtr části programu ukáže odpovídající účast', await attendeePreview.locator('.attendee-card:visible').count() === 1 && /Část programu/.test(await attendeePreview.locator('.attendee-card:visible').innerText()));
   await uncertainFilter.click();
   check('Filtr nejisté účasti ukáže odpovídající profil', await attendeePreview.locator('.attendee-card:visible').count() === 1 && /Účast ještě upřesní/.test(await attendeePreview.locator('.attendee-card:visible').innerText()));
   await allFilter.click();
   check('Filtr Všichni obnoví výchozí limit', await attendeePreview.locator('.attendee-card:visible').count() === 6 && await allFilter.getAttribute('aria-pressed') === 'true');
-  check('Tlačítko uvádí celkový počet účastníků', await attendeesToggle.isVisible() && /\(9\)/.test(await attendeesToggle.innerText()));
+  check('Tlačítko uvádí celkový počet účastníků', await attendeesToggle.isVisible() && /\(8\)/.test(await attendeesToggle.innerText()));
   await attendeesToggle.click();
-  check('Rozbalení zpřístupní všechny profily', await attendeePreview.locator('.attendee-card:visible').count() === 9 && await attendeesToggle.getAttribute('aria-expanded') === 'true');
+  check('Rozbalení zpřístupní všechny profily', await attendeePreview.locator('.attendee-card:visible').count() === 8 && await attendeesToggle.getAttribute('aria-expanded') === 'true');
   const longBioCard = attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník A' });
   const bioToggle = longBioCard.locator('.attendee-bio-toggle');
   check('Dlouhé představení má vlastní rozbalení', await bioToggle.isVisible() && await bioToggle.getAttribute('aria-expanded') === 'false');
@@ -272,7 +268,7 @@ function check(name, cond, detail = '') {
   check('Mobil nejdřív ukáže čtyři profily', await attendeePreview.locator('.attendee-card:visible').count() === 4);
   check('Mobilní filtry nevytvářejí přesah celé stránky', await attendeePreview.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
   await attendeesToggle.click();
-  check('Na mobilu lze zobrazit všechny profily', await attendeePreview.locator('.attendee-card:visible').count() === 9);
+  check('Na mobilu lze zobrazit všechny profily', await attendeePreview.locator('.attendee-card:visible').count() === 8);
   await attendeePreview.close();
 
   await browser.close();
