@@ -1,3 +1,5 @@
+import { rateLimit, ipKey } from './_ratelimit.js';
+
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 const SECRET_HEADER = 'x-attendees-secret';
 const KV_KEY = 'event:2026-08-29:public-attendees';
@@ -5,6 +7,7 @@ const MAX_ATTENDEES = 200;
 const MAX_NAME_LENGTH = 100;
 const MAX_BIO_LENGTH = 1200;
 const STORE_TTL_SECONDS = 60 * 24 * 60 * 60;
+const SYNC_RATE_LIMIT_PER_HOUR = 120;
 const ATTENDANCE_TYPES = new Set(['official', 'official_and_picnic', 'picnic_only', 'uncertain']);
 
 function corsHeaders(origin, methods = 'GET, OPTIONS') {
@@ -98,6 +101,13 @@ export async function onRequestGet({ request, env }) {
 export async function onRequestPost({ request, env }) {
   const origin = request.headers.get('Origin');
   const headers = { ...corsHeaders(origin, 'GET, POST, OPTIONS'), 'Cache-Control': 'no-store' };
+  const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+  // Form submit trigger může při zveřejnění registrace poslat větší dávku
+  // legitimních požadavků. Limit brání neomezenému hádání tajemství, ale
+  // ponechává rezervu pro registrační špičku a pravidelnou synchronizaci.
+  if (await rateLimit(env, 'attendees-sync:' + ipKey(ip), SYNC_RATE_LIMIT_PER_HOUR, 3600)) {
+    return new Response('Too Many Requests', { status: 429, headers });
+  }
   const providedSecret = request.headers.get(SECRET_HEADER);
   if (!providedSecret || !env.ATTENDEES_SYNC_SECRET || !await timingSafeEqual(providedSecret, env.ATTENDEES_SYNC_SECRET)) {
     return new Response('Unauthorized', { status: 401, headers });

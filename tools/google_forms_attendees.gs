@@ -1,6 +1,6 @@
 // Synchronizace veřejného seznamu účastníků z Google Formuláře do Cloudflare KV.
-// Skript neposílá e-maily ani odpovědi bez výslovného souhlasu. E-mail používá
-// pouze uvnitř Google Formuláře k deduplikaci opakovaných registrací.
+// Skript neposílá e-maily ani odpovědi bez výslovného souhlasu. E-mail zadaný
+// respondentem používá pouze uvnitř formuláře k deduplikaci registrací.
 
 const ATTENDEE_SYNC = Object.freeze({
   formId: '17-Nq5w_Ean8iaHNQNBmZxRFvft9a4XUCxxr-StVCqvU',
@@ -8,7 +8,6 @@ const ATTENDEE_SYNC = Object.freeze({
   publishUntil: new Date('2026-09-06T21:59:59Z'),
   questions: Object.freeze({
     name: 'Jméno a příjmení',
-    email: 'E-mail',
     bio: 'Pár vět o vás',
     attendance: 'Jak to zatím vidíte s účastí?',
     consent: 'Zveřejnění na stránce srazu',
@@ -41,7 +40,9 @@ function attendeePayload_() {
 
   responses.forEach(response => {
     const answers = attendeeAnswers_(response);
-    const email = String(answers[ATTENDEE_SYNC.questions.email] || '').trim().toLowerCase();
+    // Formulář musí sbírat e-mail volbou „Zadání od respondentů“. Přihlášení
+    // ke Google účtu se nevyžaduje; e-mail zůstává pouze interním klíčem.
+    const email = String(response.getRespondentEmail() || '').trim().toLowerCase();
     if (!email) return;
     if (answers[ATTENDEE_SYNC.questions.consent] !== ATTENDEE_SYNC.consentYes) {
       byEmail.delete(email);

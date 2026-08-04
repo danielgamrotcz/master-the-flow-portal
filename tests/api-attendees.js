@@ -8,12 +8,44 @@ function check(name, condition, detail = '') {
 }
 
 (async () => {
-  const source = fs.readFileSync(path.join(__dirname, '..', 'functions', 'api', 'meetup-attendees.js'), 'utf8');
+  const rateLimitSource = fs.readFileSync(path.join(__dirname, '..', 'functions', 'api', '_ratelimit.js'), 'utf8');
+  const rateLimitModuleUrl = 'data:text/javascript;base64,' + Buffer.from(rateLimitSource).toString('base64');
+  const source = fs.readFileSync(path.join(__dirname, '..', 'functions', 'api', 'meetup-attendees.js'), 'utf8')
+    .replace("'./_ratelimit.js'", `'${rateLimitModuleUrl}'`);
   const moduleUrl = 'data:text/javascript;base64,' + Buffer.from(source).toString('base64');
   const { onRequestGet, onRequestPost } = await import(moduleUrl);
   const store = new Map();
+
+  function createD1Mock() {
+    const counters = new Map();
+    return {
+      prepare(sql) {
+        const statement = {
+          bindings: [],
+          bind(...values) {
+            this.bindings = values;
+            return this;
+          },
+          async run() {
+            return { success: true };
+          },
+          async first() {
+            if (!sql.includes('INSERT INTO rate_limits')) return null;
+            const [key, expires, now] = this.bindings;
+            const previous = counters.get(key);
+            const count = !previous || previous.expires <= now ? 1 : previous.count + 1;
+            counters.set(key, { count, expires: !previous || previous.expires <= now ? expires : previous.expires });
+            return { count };
+          },
+        };
+        return statement;
+      },
+    };
+  }
+
   const env = {
     ATTENDEES_SYNC_SECRET: 'test-only-secret',
+    VOTES_DB: createD1Mock(),
     MTF_DATA: {
       get: async key => store.get(key) || null,
       put: async (key, value) => store.set(key, value),
@@ -61,6 +93,18 @@ function check(name, condition, detail = '') {
   check('Veřejná odpověď se neukládá do cache', publicResponse.headers.get('cache-control') === 'no-store');
   check('Uložená data neobsahují e-mail ani souhlas', !JSON.stringify([...store.values()]).includes('email') && !JSON.stringify([...store.values()]).includes('consent'));
 
+  const foreignOriginResponse = await onRequestGet({
+    env,
+    request: new Request('http://localhost/api/meetup-attendees', { headers: { Origin: 'https://evil.example' } }),
+  });
+  check('Cizí origin nedostane CORS oprávnění', !foreignOriginResponse.headers.has('access-control-allow-origin'));
+
+  const siteOriginResponse = await onRequestGet({
+    env,
+    request: new Request('http://localhost/api/meetup-attendees', { headers: { Origin: 'https://master-the-flow-portal.pages.dev' } }),
+  });
+  check('Produkční origin dostane CORS oprávnění', siteOriginResponse.headers.get('access-control-allow-origin') === 'https://master-the-flow-portal.pages.dev');
+
   const retiredPartialAttendance = await onRequestPost({
     env,
     request: new Request('http://localhost/api/meetup-attendees', {
@@ -80,6 +124,25 @@ function check(name, condition, detail = '') {
     }),
   });
   check('Záznam bez souhlasu je odmítnutý', noConsent.status === 400, String(noConsent.status));
+
+  const limitedEnv = { ...env, VOTES_DB: createD1Mock() };
+  const limitedStatuses = [];
+  for (let i = 0; i < 121; i++) {
+    const response = await onRequestPost({
+      env: limitedEnv,
+      request: new Request('http://localhost/api/meetup-attendees', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'CF-Connecting-IP': '203.0.113.10',
+          'x-attendees-secret': 'wrong-secret',
+        },
+        body: JSON.stringify({ attendees: [] }),
+      }),
+    });
+    limitedStatuses.push(response.status);
+  }
+  check('Hádání tajemství je po bezpečné rezervě omezené', limitedStatuses.slice(0, 120).every(status => status === 401) && limitedStatuses[120] === 429, limitedStatuses.join(','));
 
   console.log(failures === 0 ? '\nAPI ÚČASTNÍKŮ: VŠE PROŠLO' : `\n${failures} TESTŮ API ÚČASTNÍKŮ SELHALO`);
   process.exit(failures === 0 ? 0 : 1);

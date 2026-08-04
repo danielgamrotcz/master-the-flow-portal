@@ -39,6 +39,7 @@ function check(name, cond, detail = '') {
   const heroNoteText = (await page.locator('.hero-note').innerText()).replace(/\u00a0/g, ' ');
   check('Hero říká, proč přijít, a nezavírá se lidem mimo komunitu', /Poznejte osobně lidi z Master the Flow/.test(heroLedeText) && /Přijít může kdokoli/.test(heroLedeText));
   check('Hero snižuje tření registrace', /Google formulář.*přibližně 1 minuta.*zdarma/.test(heroNoteText));
+  check('Hero potvrzuje registraci bez Google účtu', /bez Google účtu/.test(heroNoteText));
   check('Hero vysvětluje, jak se lidé dozvědí adresu', /adresu pošlu e-mailem/.test(await page.locator('.hero-facts').innerText()));
   check('Značka Master the Flow se v titulku neláme', await page.locator('h1 .no-break').evaluate(el => getComputedStyle(el).whiteSpace === 'nowrap'));
 
@@ -70,6 +71,8 @@ function check(name, cond, detail = '') {
   check('Skupinová aktivita zmiňuje zařízení', /notebook|mobil/i.test(deviceCopy));
   check('Zařízení je výslovně dobrovolné', /není povinn|není podmínkou|povinné nejsou|i bez něj/i.test(deviceCopy));
   check('Organizační text mluví v první osobě', /Potřebuju|abych vybral/.test(await page.locator('.registration-panel').innerText()));
+  const registrationText = (await page.locator('.registration-panel').innerText()).replace(/\u00a0/g, ' ');
+  check('Registrace vysvětluje dostupnost, ochranu e-mailu a změnu souhlasu', /Google účet nepotřebujete/.test(registrationText) && /e-mail se na web neposílá/.test(registrationText) && /odvolání souhlasu/.test(registrationText));
   check('Úvod nepopisuje sraz jako offline akci', !/offline/i.test(await page.locator('.manifesto-band').innerText()));
   check('Text se nevymezuje přes formálnost nebo konferenci', !/formáln|konferenci/i.test(await page.locator('main').innerText()));
 

@@ -10,6 +10,9 @@ Vznikly při přestavbě 17. 7. 2026 (audit → fáze 1+2 + brand vrstva). Hlíd
 - `e2e-quiet.js` — klidný den (sám si mockuje 0-karet today.json a vrací zpět)
 - `e2e-slovnicek.js` — slovníček: data, hledání, kategorie, detail výrazu, deep linky, propojení s hledáním a s detailem karty (26 kontrol)
 - `e2e-sraz.js` — veřejná podstránka pražského srazu: obsah, harmonogram, kalendář, registrace a mobilní CTA
+- `api-attendees.js` — veřejný seznam účastníků: allowlist polí, souhlas, CORS, cache a rate limit chráněného zápisu
+- `google-forms-attendees.js` — synchronizace používá zadaný e-mail jen interně, respektuje odvolání souhlasu a e-mail neexportuje
+- `privacy-public-data.js` — verzovaná veřejná JSON data neobsahují e-maily mimo výslovně povolený kontaktní údaj
 
 Spuštění:
 
