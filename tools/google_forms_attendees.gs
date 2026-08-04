@@ -43,6 +43,19 @@ function publicBio_(value) {
   return `${shortened}…`;
 }
 
+function attendeeEmail_(response, answers) {
+  const respondentEmail = String(response.getRespondentEmail() || '').trim();
+  if (respondentEmail) return respondentEmail.toLowerCase();
+
+  // Bez přihlášení ke Google účtu Forms nevyplní getRespondentEmail(), ale
+  // adresu vrátí jako běžnou odpověď. Podporujeme i typografickou pomlčku v
+  // názvu otázky „E-mail“; e-mail zůstává pouze interním klíčem.
+  const manualEmail = Object.entries(answers).find(([title]) => (
+    String(title).replace(/[\s\u2010-\u2015-]/g, '').toLowerCase() === 'email'
+  ));
+  return String(manualEmail ? manualEmail[1] : '').trim().toLowerCase();
+}
+
 function attendeePayload_() {
   if (new Date() > ATTENDEE_SYNC.publishUntil) return { attendees: [], registeredCount: 0 };
   const responses = FormApp.openById(ATTENDEE_SYNC.formId).getResponses();
@@ -51,9 +64,7 @@ function attendeePayload_() {
 
   responses.forEach(response => {
     const answers = attendeeAnswers_(response);
-    // Formulář musí sbírat e-mail volbou „Zadání od respondentů“. Přihlášení
-    // ke Google účtu se nevyžaduje; e-mail zůstává pouze interním klíčem.
-    const email = String(response.getRespondentEmail() || '').trim().toLowerCase();
+    const email = attendeeEmail_(response, answers);
     if (!email) return;
     registrationsByEmail.set(email, true);
     if (answers[ATTENDEE_SYNC.questions.consent] !== ATTENDEE_SYNC.consentYes) {

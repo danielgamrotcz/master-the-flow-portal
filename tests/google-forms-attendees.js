@@ -54,17 +54,26 @@ check('Počet registrací zahrnuje i lidi bez veřejného profilu', result.regis
 
 responses.push(formResponse('', {
   ...baseAnswers,
-  'Jméno a příjmení': 'Neověřený profil',
+  'E‑mail': 'manual@example.test',
+  'Jméno a příjmení': 'Profil s ručně zadaným e-mailem',
 }));
 result = payload();
-check('Odpověď bez zadaného e-mailu se ignoruje', result.attendees.length === 1 && result.registeredCount === 1);
+check('Ručně zadaný e-mail bez Google účtu se započítá', result.attendees.length === 2 && result.registeredCount === 2);
+check('Ručně zadaný e-mail se nezveřejní', !JSON.stringify(result).includes('manual@example.test'));
+
+responses.push(formResponse('', {
+  ...baseAnswers,
+  'Jméno a příjmení': 'Profil bez e-mailu',
+}));
+result = payload();
+check('Odpověď bez e-mailu se ignoruje', result.attendees.length === 2 && result.registeredCount === 2);
 
 responses.push(formResponse('submitted@example.test', {
   ...baseAnswers,
   'Zveřejnění na stránce srazu': 'Nechci být na stránce uveden/a',
 }));
 result = payload();
-check('Pozdější odvolání souhlasu profil odstraní', result.attendees.length === 0 && result.registeredCount === 1);
+check('Pozdější odvolání souhlasu profil odstraní', result.attendees.length === 1 && result.registeredCount === 2);
 
 responses.length = 0;
 responses.push(formResponse('long@example.test', {
