@@ -39,6 +39,10 @@
 - Denní digesty, archiv, indexy, přepisy a média považuj za data vlastněná
   externí automatizací. Neupravuj je ručně, pokud zadání výslovně necílí na
   data. `data/events.json` je ruční výjimka.
+- U každé akce v `data/events.json` nastav `is_paid` explicitně jako boolean;
+  chybějící hodnota se v současném UI zobrazí jako „Zdarma“.
+- Klikatelné URL akce ukládej do pole `links`, ne do `description`, které se
+  při vykreslení escapuje.
 - Zdroj slovníčku je `tools/glossary_terms.json`. Po jeho změně spusť
   `python3 tools/build_glossary.py`, zkontroluj vygenerovaný
   `data/glossary.json` a nevydávej nedoložený termín bez výskytu.
