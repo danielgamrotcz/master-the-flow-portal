@@ -28,6 +28,7 @@ function attendeeType_(answer) {
   const mapping = {
     'Dorazím na oficiální část 13:00–18:00': 'official',
     'Dorazím na oficiální část i na společný piknik po 18:00': 'official_and_picnic',
+    'Přijdu jen na piknik po 18:00': 'picnic_only',
     'Přijdu později nebo odejdu dříve': 'partial',
     'Zatím nevím přesně': 'uncertain',
   };

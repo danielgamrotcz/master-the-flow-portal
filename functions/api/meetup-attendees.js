@@ -5,7 +5,7 @@ const MAX_ATTENDEES = 200;
 const MAX_NAME_LENGTH = 100;
 const MAX_BIO_LENGTH = 1200;
 const STORE_TTL_SECONDS = 60 * 24 * 60 * 60;
-const ATTENDANCE_TYPES = new Set(['official', 'official_and_picnic', 'partial', 'uncertain']);
+const ATTENDANCE_TYPES = new Set(['official', 'official_and_picnic', 'picnic_only', 'partial', 'uncertain']);
 
 function corsHeaders(origin, methods = 'GET, OPTIONS') {
   const allowed = origin && (origin === SITE_ORIGIN || /^http:\/\/localhost(:\d+)?$/.test(origin));

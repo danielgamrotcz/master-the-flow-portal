@@ -50,8 +50,18 @@ function initStickyRegistration() {
 const attendanceLabels = {
   official: 'Oficiální část 13:00–18:00',
   official_and_picnic: 'Oficiální část + piknik',
+  picnic_only: 'Jen piknik po 18:00',
   partial: 'Část programu',
   uncertain: 'Účast ještě upřesní'
+};
+
+const attendeeFilterMatches = {
+  all: () => true,
+  official: attendance => attendance === 'official' || attendance === 'official_and_picnic',
+  picnic: attendance => attendance === 'official_and_picnic' || attendance === 'picnic_only',
+  picnic_only: attendance => attendance === 'picnic_only',
+  partial: attendance => attendance === 'partial',
+  uncertain: attendance => attendance === 'uncertain'
 };
 
 function attendeeInitials(name) {
@@ -76,22 +86,57 @@ function updateAttendeesControls() {
   const list = document.getElementById('attendees-list');
   const toggle = document.getElementById('attendees-toggle');
   if (!list || !toggle) return;
-  const count = list.querySelectorAll('.attendee-card').length;
+  const filter = Object.hasOwn(attendeeFilterMatches, list.dataset.filter) ? list.dataset.filter : 'all';
   const limit = window.matchMedia('(max-width: 720px)').matches ? 4 : 6;
   const expanded = list.classList.contains('is-expanded');
+  let count = 0;
+  list.querySelectorAll('.attendee-card').forEach(card => {
+    const matches = attendeeFilterMatches[filter](card.dataset.attendance);
+    card.classList.toggle('is-filter-hidden', !matches);
+    if (!matches) {
+      card.classList.remove('is-limit-hidden');
+      return;
+    }
+    count++;
+    card.classList.toggle('is-limit-hidden', !expanded && count > limit);
+  });
   toggle.hidden = count <= limit;
   toggle.setAttribute('aria-expanded', String(expanded));
-  toggle.textContent = expanded ? 'Zobrazit jen první' : `Zobrazit všechny účastníky (${count})`;
+  toggle.textContent = expanded ? 'Zobrazit jen první' : `${filter === 'all' ? 'Zobrazit všechny účastníky' : 'Zobrazit všechny ve výběru'} (${count})`;
   requestAnimationFrame(refreshAttendeeBioToggles);
+}
+
+function updateAttendeeFilterCounts() {
+  const filters = document.getElementById('attendee-filters');
+  const cards = [...document.querySelectorAll('.attendee-card')];
+  if (!filters) return;
+  filters.querySelectorAll('[data-attendee-filter]').forEach(button => {
+    const filter = button.dataset.attendeeFilter;
+    const count = cards.filter(card => attendeeFilterMatches[filter](card.dataset.attendance)).length;
+    const countLabel = button.querySelector('[data-attendee-count]');
+    if (countLabel) countLabel.textContent = String(count);
+    button.disabled = count === 0;
+  });
+  filters.hidden = cards.length === 0;
 }
 
 function resetAttendeesControls() {
   const list = document.getElementById('attendees-list');
   const toggle = document.getElementById('attendees-toggle');
-  if (list) list.classList.remove('is-expanded');
+  const filters = document.getElementById('attendee-filters');
+  if (list) {
+    list.classList.remove('is-expanded');
+    list.dataset.filter = 'all';
+  }
   if (toggle) {
     toggle.hidden = true;
     toggle.setAttribute('aria-expanded', 'false');
+  }
+  if (filters) {
+    filters.hidden = true;
+    filters.querySelectorAll('[data-attendee-filter]').forEach(button => {
+      button.setAttribute('aria-pressed', String(button.dataset.attendeeFilter === 'all'));
+    });
   }
 }
 
@@ -113,6 +158,7 @@ function renderAttendees(attendees) {
   attendees.sort((first, second) => first.name.localeCompare(second.name, 'cs', { sensitivity: 'base' })).forEach((attendee, index) => {
     const card = document.createElement('article');
     card.className = 'attendee-card';
+    card.dataset.attendance = attendee.attendance;
 
     const header = document.createElement('div');
     header.className = 'attendee-card-header';
@@ -147,6 +193,7 @@ function renderAttendees(attendees) {
     list.append(card);
   });
   list.setAttribute('aria-busy', 'false');
+  updateAttendeeFilterCounts();
   updateAttendeesControls();
 }
 
@@ -164,7 +211,18 @@ function renderAttendeesError() {
 async function initAttendees() {
   const list = document.getElementById('attendees-list');
   const toggle = document.getElementById('attendees-toggle');
-  if (!list || !toggle) return;
+  const filters = document.getElementById('attendee-filters');
+  if (!list || !toggle || !filters) return;
+  filters.addEventListener('click', event => {
+    const button = event.target.closest('[data-attendee-filter]');
+    if (!button || button.disabled) return;
+    list.dataset.filter = button.dataset.attendeeFilter;
+    list.classList.remove('is-expanded');
+    filters.querySelectorAll('[data-attendee-filter]').forEach(filterButton => {
+      filterButton.setAttribute('aria-pressed', String(filterButton === button));
+    });
+    updateAttendeesControls();
+  });
   toggle.addEventListener('click', () => {
     list.classList.toggle('is-expanded');
     updateAttendeesControls();

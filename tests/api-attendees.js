@@ -48,14 +48,16 @@ function check(name, condition, detail = '') {
       body: JSON.stringify({ attendees: [
         { consent: true, name: '  Účastník A  ', bio: 'Pár vět\n\no testování.', attendance: 'official' },
         { consent: true, name: 'Účastnice B', bio: 'Delší testovací profil.', attendance: 'official_and_picnic' },
+        { consent: true, name: 'Účastník C', bio: 'Dorazí jen na piknik.', attendance: 'picnic_only' },
       ] }),
     }),
   });
-  check('Platný opt-in seznam se uloží', accepted.status === 200 && (await accepted.json()).count === 2, String(accepted.status));
+  check('Platný opt-in seznam včetně účasti jen na pikniku se uloží', accepted.status === 200 && (await accepted.json()).count === 3, String(accepted.status));
 
   const publicResponse = await onRequestGet({ env, request: new Request('http://localhost/api/meetup-attendees') });
   const publicPayload = await publicResponse.json();
-  check('Veřejné API vrátí pouze bezpečná pole', publicPayload.attendees.length === 2 && Object.keys(publicPayload.attendees[0]).sort().join(',') === 'attendance,bio,name');
+  check('Veřejné API vrátí pouze bezpečná pole', publicPayload.attendees.length === 3 && Object.keys(publicPayload.attendees[0]).sort().join(',') === 'attendance,bio,name');
+  check('Veřejné API zachová účast pouze na pikniku', publicPayload.attendees.some(attendee => attendee.attendance === 'picnic_only'));
   check('Veřejná odpověď se neukládá do cache', publicResponse.headers.get('cache-control') === 'no-store');
   check('Uložená data neobsahují e-mail ani souhlas', !JSON.stringify([...store.values()]).includes('email') && !JSON.stringify([...store.values()]).includes('consent'));
 
