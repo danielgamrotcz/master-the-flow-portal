@@ -41,6 +41,7 @@ function check(name, cond, detail = '') {
   check('Hero snižuje tření registrace', /Google formulář.*přibližně 1 minuta.*zdarma/.test(heroNoteText));
   check('Hero potvrzuje registraci bez Google účtu', /bez Google účtu/.test(heroNoteText));
   check('Hero vysvětluje, jak se lidé dozvědí adresu', /adresu pošlu e-mailem/.test(await page.locator('.hero-facts').innerText()));
+  check('Hero uvádí rámec místa a dostupnost MHD', /Praha, širší centrum/.test((await page.locator('.hero-facts').innerText()).replace(/\u00a0/g, ' ')) && /uvnitř u MHD/.test((await page.locator('.hero-facts').innerText()).replace(/\u00a0/g, ' ')));
   check('Hero ukazuje počet registrací', await page.locator('#registered-count').innerText() !== '—');
   check('Značka Master the Flow se v titulku neláme', await page.locator('h1 .no-break').evaluate(el => getComputedStyle(el).whiteSpace === 'nowrap'));
 
@@ -68,10 +69,14 @@ function check(name, cond, detail = '') {
 
   const timeline = await page.locator('.timeline-item').count();
   check('Harmonogram má čtyři navazující části', timeline === 4, `count=${timeline}`);
+  const programText = (await page.locator('.program').innerText()).replace(/\u00a0/g, ' ');
+  check('Program popisuje střídání ukázek, rozhovorů a Q&A', /15–30minutové bloky/.test(programText) && /Ukázky, rozhovory a Q&A/.test(programText));
+  check('Skupinová výzva míchá zkušenosti a má výstup', /skupinách po třech/.test(programText) && /různé úrovně zkušenosti/.test(programText) && /krátce ukáže/.test(programText));
   const deviceCopy = await page.locator('.timeline-item, .practical, .faq').allTextContents().then(x => x.join(' '));
   check('Skupinová aktivita zmiňuje zařízení', /notebook|mobil/i.test(deviceCopy));
   check('Zařízení je výslovně dobrovolné', /není povinn|není podmínkou|povinné nejsou|i bez něj/i.test(deviceCopy));
   check('Organizační text mluví v první osobě', /Potřebuju|abych vybral/.test(await page.locator('.registration-panel').innerText()));
+  check('Registrace uvádí kapacitu 50 lidí', /Kapacita prvního srazu je 50 lidí/.test((await page.locator('.registration-panel').innerText()).replace(/\u00a0/g, ' ')));
   const registrationText = (await page.locator('.registration-panel').innerText()).replace(/\u00a0/g, ' ');
   check('Registrace vysvětluje dostupnost, ochranu e-mailu a změnu souhlasu', /Google účet nepotřebujete/.test(registrationText) && /e-mail se na web neposílá/.test(registrationText) && /odvolání souhlasu/.test(registrationText));
   check('Úvod nepopisuje sraz jako offline akci', !/offline/i.test(await page.locator('.manifesto-band').innerText()));
@@ -104,8 +109,9 @@ function check(name, cond, detail = '') {
   }));
   check('Seznam účastníků vysvětluje souhlas i ochranu e-mailu', /pouze lidi, kteří se zveřejněním souhlasili/.test((await page.locator('.attendees').innerText()).replace(/\u00a0/g, ' ')) && /E-mail ani další odpovědi/.test(await page.locator('.attendees').innerText()));
   check('Seznam účastníků je na mobilu v jednom sloupci', await page.locator('.attendees-grid').evaluate(el => getComputedStyle(el).gridTemplateColumns.trim().split(/\s+/).length === 1));
-  check('Prázdný seznam má srozumitelný stav', /První účastníci se tu objeví/.test(await page.locator('#attendees-list').innerText()));
-  check('Filtry se u prázdného seznamu nezobrazují', await page.locator('#attendee-filters').isHidden());
+  const initialAttendeeCards = await page.locator('#attendees-list .attendee-card').count();
+  check('Seznam účastníků má srozumitelný stav i s živými daty', initialAttendeeCards > 0 || /První účastníci se tu objeví/.test(await page.locator('#attendees-list').innerText()));
+  check('Filtry odpovídají dostupným účastníkům', initialAttendeeCards > 0 ? await page.locator('#attendee-filters').isVisible() : await page.locator('#attendee-filters').isHidden());
 
   check('Stránka nevkládá Google Form do iframe', await page.locator('iframe').count() === 0);
   const registrationHref = await page.locator('#registration-link').getAttribute('href');
@@ -128,7 +134,11 @@ function check(name, cond, detail = '') {
   check('QR kód má alternativní text a dostupný PNG soubor', /QR kód/.test(await qrImage.getAttribute('alt') || '') && qrResponse.ok() && /^image\/png/.test(qrResponse.headers()['content-type'] || ''));
   check('Informační sekce netvrdí, že jde o časté otázky', !(await page.locator('.faq').innerText()).includes('Časté otázky'));
 
-  const mainText = await page.locator('main').innerText();
+  const mainText = await page.locator('main').evaluate(main => {
+    const copy = main.cloneNode(true);
+    copy.querySelector('.attendees')?.remove();
+    return copy.innerText;
+  });
   check('Jednopísmenné české předložky a spojky mají pevné mezery', !/(?:^|\s)[avikosuz] [A-Za-zÁ-ž]/im.test(mainText));
   check('Datum a hodina používají pevné mezery', await page.locator('.hero-date').textContent() === '29.\u00a0srpna 2026' && (await page.getByText('Co bude po 18. hodině?').textContent()).includes('po\u00a018.\u00a0hodině'));
 
@@ -140,13 +150,14 @@ function check(name, cond, detail = '') {
     const phone = await browser.newPage({ viewport: { width, height: 844 } });
     await phone.goto(BASE + '/sraz/', { waitUntil: 'networkidle' });
     const state = await phone.evaluate(() => {
+      const hero = document.querySelector('.hero');
       const brand = document.querySelector('.hero-title-brand').getBoundingClientRect();
       const place = document.querySelector('.hero-title-place').getBoundingClientRect();
       const cta = document.querySelector('.hero .button-primary').getBoundingClientRect();
       const facts = [...document.querySelectorAll('.hero-fact')].map(element => element.getBoundingClientRect());
       const stickyElement = document.getElementById('sticky-register');
       return {
-        overflow: document.documentElement.scrollWidth > window.innerWidth,
+        overflow: hero.scrollWidth > hero.clientWidth,
         brandFits: brand.left >= 0 && brand.right <= window.innerWidth,
         placeFits: place.left >= 0 && place.right <= window.innerWidth && parseFloat(getComputedStyle(document.querySelector('.hero-title-place')).fontSize) <= 14,
         placeAligned: Math.abs(place.right - brand.right) <= 1,

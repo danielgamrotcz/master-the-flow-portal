@@ -69,7 +69,7 @@ a { color: var(--accent); }
 
 .hero {
   max-width: 1120px; min-height: min(800px, calc(100svh - 68px)); margin: 0 auto; padding: clamp(62px, 7vw, 88px) 32px clamp(78px, 8vw, 100px);
-  display: flex; flex-direction: column; justify-content: center;
+  display: flex; flex-direction: column; justify-content: center; overflow-x: clip;
 }
 .hero-title-block { width: max-content; max-width: 100%; min-width: 0; }
 .hero h1 { width: fit-content; max-width: 100%; margin: 0; display: grid; line-height: .86; letter-spacing: -.07em; }
@@ -82,7 +82,7 @@ a { color: var(--accent); }
 .hero-fact:first-child { padding-left: 0; border-left: 0; }
 .hero-fact dt { margin: 0 0 7px; color: var(--text-tertiary); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .hero-fact dd { margin: 0; display: flex; flex-direction: column; line-height: 1.25; }
-.hero-fact time, .hero-fact strong { color: var(--text-primary); font-size: clamp(19px, 2vw, 24px); font-weight: 600; letter-spacing: -.025em; font-variant-numeric: tabular-nums; }
+.hero-fact time, .hero-fact strong { color: var(--text-primary); font-size: clamp(19px, 2vw, 24px); font-weight: 600; letter-spacing: -.025em; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
 .hero-fact dd > span { margin-top: 4px; color: var(--text-tertiary); font-size: 12px; }
 .hero-content { max-width: 760px; margin-top: clamp(34px, 4vw, 44px); }
 .hero-lede { max-width: 740px; margin: 0; color: var(--text-secondary); font-size: clamp(18px, 1.6vw, 21px); line-height: 1.62; text-wrap: pretty; }
@@ -230,15 +230,15 @@ details p { max-width: 720px; margin: -2px 0 24px; color: var(--text-secondary);
 }
 
 @media (min-width: 721px) and (max-height: 900px) {
-  .hero { min-height: calc(100svh - 70px); padding: clamp(24px, 4svh, 40px) 32px clamp(28px, 4.5svh, 44px); }
+  .hero { min-height: calc(100svh - 70px); padding: clamp(20px, 3.2svh, 34px) 32px clamp(22px, 3.6svh, 36px); }
   .hero-title-prefix { margin-bottom: 12px; font-size: clamp(22px, 2.4vw, 30px); }
   .hero-title-brand { font-size: clamp(60px, min(7.4vw, 11svh), 99px); }
   .hero-title-place { margin-top: 10px; font-size: 12px; }
-  .hero-facts { margin-top: 28px; }
-  .hero-fact { padding-top: 15px; padding-bottom: 16px; }
-  .hero-content { margin-top: 24px; }
+  .hero-facts { margin-top: 20px; }
+  .hero-fact { padding-top: 12px; padding-bottom: 13px; }
+  .hero-content { margin-top: 18px; }
   .hero-lede { font-size: clamp(17px, 1.4vw, 19px); line-height: 1.5; }
-  .hero-conversion { margin-top: 18px; }
+  .hero-conversion { margin-top: 14px; }
   .hero-actions .button { min-height: 48px; }
   .hero-note { margin-top: 7px; }
   .hero-calendar-links { margin-top: 12px; }

@@ -63,9 +63,8 @@ const attendeeFilterMatches = {
 };
 
 function registeredCountLabel(count) {
-  if (count === 1) return 'účastník';
-  if (count >= 2 && count <= 4) return 'účastníci';
-  return 'účastníků';
+  const label = count === 1 ? 'účastník' : count >= 2 && count <= 4 ? 'účastníci' : 'účastníků';
+  return `${label} z 50 míst`;
 }
 
 function renderRegisteredCount(count) {

@@ -1607,8 +1607,12 @@ function eventBadge(ev) {
 
 function renderEventCardEl(ev) {
   const color = EVENT_TYPE_COLORS[ev.type] || 'var(--text-tertiary)';
+  const isUpcoming = eventEndTs(ev) >= Date.now();
+  const registrationCta = isUpcoming && ev.registration_url
+    ? `<a class="event-card-register" href="${esc(ev.registration_url)}" target="_blank" rel="noopener noreferrer nofollow">Registrovat se <span aria-hidden="true">→</span></a>`
+    : '';
   return `
-    <div class="card event-card" data-event-id="${esc(ev.id)}" role="article" tabindex="0" aria-label="${esc(ev.title)}">
+    <div class="card event-card${registrationCta ? ' event-card--registerable' : ''}" data-event-id="${esc(ev.id)}" role="article" tabindex="0" aria-label="${esc(ev.title)}">
       <div class="card-meta">
         <div class="card-meta-left"><span class="card-type" style="color:${color}">${esc(ev.type || 'AKCE')}</span></div>
         ${eventBadge(ev)}
@@ -1619,6 +1623,7 @@ function renderEventCardEl(ev) {
         <span class="card-date">${esc(eventDateLabel(ev))}</span>
         ${ev.location ? `<span class="card-footer-right"><span class="card-date">${esc(ev.location)}</span></span>` : ''}
       </div>
+      ${registrationCta}
     </div>`;
 }
 
@@ -1627,6 +1632,9 @@ function attachEventCardListeners(container) {
     const open = () => showEvent(el.dataset.eventId);
     el.addEventListener('click', open);
     el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+  });
+  container.querySelectorAll('.event-card-register').forEach(link => {
+    link.addEventListener('click', event => event.stopPropagation());
   });
 }
 
@@ -1762,13 +1770,16 @@ function renderEventTeaser() {
     if (!evs.length || dismissed === key) { el.classList.add('hidden'); el.innerHTML = ''; return; }
 
     const rows = evs.map(ev => `
-      <button class="event-teaser-row" type="button" data-event-id="${esc(ev.id)}">
+      <div class="event-teaser-row">
+        <button class="event-teaser-open" type="button" data-event-id="${esc(ev.id)}" aria-label="Detail akce: ${esc(ev.title)}">
         <span class="event-teaser-when">
           <span class="event-teaser-day">${esc(eventDateShort(ev))}</span>
           ${ev.time_from ? `<span class="event-teaser-time">${esc(ev.time_from)}</span>` : ''}
         </span>
         <span class="event-teaser-title">${esc(ev.title)}</span>
-      </button>`).join('');
+        </button>
+        ${ev.registration_url ? `<a class="event-teaser-register" href="${esc(ev.registration_url)}" target="_blank" rel="noopener noreferrer nofollow">Registrace <span aria-hidden="true">→</span></a>` : ''}
+      </div>`).join('');
 
     el.innerHTML = `
       <div class="event-teaser-head">
@@ -1779,7 +1790,7 @@ function renderEventTeaser() {
       </div>
       <div class="event-teaser-list">${rows}</div>`;
     el.classList.remove('hidden');
-    el.querySelectorAll('.event-teaser-row').forEach(row => {
+    el.querySelectorAll('.event-teaser-open').forEach(row => {
       row.addEventListener('click', () => showEvent(row.dataset.eventId));
     });
     el.querySelector('.event-teaser-close').addEventListener('click', () => {
