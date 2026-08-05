@@ -64,9 +64,6 @@ function check(name, cond, detail = '') {
   // theme-color je light
   const themeColor = await page.evaluate(() => document.querySelector('meta[name="theme-color"]').getAttribute('content'));
   check('theme-color odpovídá light defaultu', themeColor === '#faf6f2', themeColor);
-  const meetupBanner = page.locator('.meetup-banner');
-  check('Registrační banner je vidět na hlavní stránce', await meetupBanner.isVisible());
-  check('Registrační banner vede na veřejnou stránku srazu', await meetupBanner.locator('a').getAttribute('href') === '/sraz/');
 
   // ===== 2. Karta: otevřít → hardwarové zpět =====
   await page.locator('#cards-today .card').first().click();
@@ -109,8 +106,7 @@ function check(name, cond, detail = '') {
   await page.waitForSelector('.event-card[data-event-id="evt-2026-08-29-sraz"]', { timeout: 15000 }).catch(() => {});
   const srazCard = page.locator('.event-card[data-event-id="evt-2026-08-29-sraz"]');
   check('Sraz má v přehledu událostí výraznou registraci', await srazCard.locator('.event-card-register').isVisible());
-  check('Registrace z karty míří na formulář', /^https:\/\/docs\.google\.com\/forms\//.test(await srazCard.locator('.event-card-register').getAttribute('href') || ''));
-  check('Registrační banner zůstává dostupný i v přehledu událostí', await meetupBanner.isVisible());
+  check('Registrace z karty míří na stránku srazu', await srazCard.locator('.event-card-register').getAttribute('href') === '/sraz/');
 
   // ===== 5. Hledání: diakritika + fallback + sdílitelné URL =====
   await page.locator('.nav-btn[data-view="search"]').click();

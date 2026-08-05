@@ -18,6 +18,7 @@
         { "time": "od 18:00", "label": "Společný piknik pro zájemce; přesné místo ještě upřesním" }
       ],
       "registration_url": "https://docs.google.com/forms/d/e/1FAIpQLSc-IoU8ka75ur-VzBTfb88PZZMBjvVc7kVU2_BKeHdIM7YN7g/viewform",
+      "registration_page_url": "/sraz/",
       "is_paid": false,
       "price": null,
       "discount_code": null,

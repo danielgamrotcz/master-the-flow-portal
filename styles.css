@@ -292,27 +292,8 @@ a { color: var(--accent); text-decoration: none; }
   flex-direction: column;
 }
 
-/* Registrace je jediná časově citlivá výzva napříč portálem. Zůstává v horní
-   části obsahu i při přepnutí do Slovníčku nebo Událostí, ale její pohyb lze
-   systémově vypnout pro lidi s omezením animací. */
-.meetup-banner {
-  position: sticky; top: 0; z-index: 3;
-  display: flex; align-items: center; justify-content: space-between; gap: 16px;
-  width: calc(100% + 40px); margin: 0 -20px; padding: 12px 20px;
-  background: color-mix(in srgb, var(--bg) 88%, var(--accent));
-  border-bottom: 1px solid var(--accent);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 16%, transparent);
-}
-.meetup-banner > div { min-width: 0; display: grid; gap: 2px; }
-.meetup-banner-kicker { color: var(--accent); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-.meetup-banner strong { color: var(--text-primary); font-size: 14px; line-height: 1.25; }
-.meetup-banner-copy { color: var(--text-secondary); font-size: 12px; line-height: 1.35; }
-.meetup-banner-cta, .event-card-register, .event-teaser-register { text-decoration: none; font-weight: 700; }
-.meetup-banner-cta { flex: 0 0 auto; min-height: 40px; display: inline-flex; align-items: center; gap: 6px; padding: 0 13px; border-radius: var(--radius-md); background: var(--accent); color: #fff; font-size: 13px; box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 48%, transparent); animation: meetup-cta-pulse 2.6s ease-in-out infinite; }
-.meetup-banner-cta:active, .event-card-register:active, .event-teaser-register:active { transform: scale(.98); }
-@keyframes meetup-cta-pulse { 50% { box-shadow: 0 0 0 7px transparent; } }
-@media (hover: hover) { .meetup-banner-cta:hover { background: var(--accent-hover); text-decoration: none; } }
-@media (prefers-reduced-motion: reduce) { .meetup-banner-cta { animation: none; } }
+.event-card-register, .event-teaser-register { text-decoration: none; font-weight: 700; }
+.event-card-register:active, .event-teaser-register:active { transform: scale(.98); }
 
 .view { display: block; margin: 0 -20px; border-top: 1px solid var(--border); padding: 16px 20px 0; }
 .view.hidden { display: none; }
@@ -2566,8 +2547,6 @@ body.lightbox-open { overflow: hidden; }
 @media (hover: hover) { .event-teaser-register:hover { background: var(--accent); color: #fff; text-decoration: none; } }
 
 @media (max-width: 460px) {
-  .meetup-banner { align-items: flex-start; }
-  .meetup-banner-copy { display: none; }
   .event-teaser-row { align-items: center; gap: 9px; }
   .event-teaser-register { padding: 0 7px; }
 }

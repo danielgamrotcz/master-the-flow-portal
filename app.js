@@ -1608,8 +1608,9 @@ function eventBadge(ev) {
 function renderEventCardEl(ev) {
   const color = EVENT_TYPE_COLORS[ev.type] || 'var(--text-tertiary)';
   const isUpcoming = eventEndTs(ev) >= Date.now();
-  const registrationCta = isUpcoming && ev.registration_url
-    ? `<a class="event-card-register" href="${esc(ev.registration_url)}" target="_blank" rel="noopener noreferrer nofollow">Registrovat se <span aria-hidden="true">→</span></a>`
+  const registrationTarget = ev.registration_page_url || ev.registration_url;
+  const registrationCta = isUpcoming && registrationTarget
+    ? `<a class="event-card-register" href="${esc(registrationTarget)}"${registrationTarget.startsWith('/') ? '' : ' target="_blank" rel="noopener noreferrer nofollow"'}>Registrovat se <span aria-hidden="true">→</span></a>`
     : '';
   return `
     <div class="card event-card${registrationCta ? ' event-card--registerable' : ''}" data-event-id="${esc(ev.id)}" role="article" tabindex="0" aria-label="${esc(ev.title)}">
@@ -1778,7 +1779,7 @@ function renderEventTeaser() {
         </span>
         <span class="event-teaser-title">${esc(ev.title)}</span>
         </button>
-        ${ev.registration_url ? `<a class="event-teaser-register" href="${esc(ev.registration_url)}" target="_blank" rel="noopener noreferrer nofollow">Registrace <span aria-hidden="true">→</span></a>` : ''}
+        ${(ev.registration_page_url || ev.registration_url) ? `<a class="event-teaser-register" href="${esc(ev.registration_page_url || ev.registration_url)}"${(ev.registration_page_url || ev.registration_url).startsWith('/') ? '' : ' target="_blank" rel="noopener noreferrer nofollow"'}>Registrace <span aria-hidden="true">→</span></a>` : ''}
       </div>`).join('');
 
     el.innerHTML = `
