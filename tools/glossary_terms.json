@@ -1515,6 +1515,20 @@
       "why": "Při hledání MCP integrace pro projektový management v češtině",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "tailscale",
+      "term": "Tailscale",
+      "cat": "nastroje",
+      "match": [
+        "Tailscale",
+        "tailscale"
+      ],
+      "short": "Nástroj, který propojí vaše zařízení do privátní sítě přes internet bez nastavování firewallu nebo routeru.",
+      "plain": "Tailscale vytvoří šifrovaný tunel mezi vašimi zařízeními, ať jsou kdekoliv. Dostanete se k Raspberry Pi nebo domácímu serveru stejně pohodlně, jako byste seděli doma na síti. Neřešíte port forwarding ani vlastní VPN server, funguje to hned po přihlášení.",
+      "why": "Používá se, když chcete přistupovat k domácímu serveru nebo Raspberry Pi odkudkoliv mimo domov.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }

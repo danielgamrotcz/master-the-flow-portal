@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-02",
+  "generated_at": "2026-08-05",
   "source": {
-    "daily_notes": 128,
+    "daily_notes": 129,
     "range": [
       "2026-03-14",
-      "2026-08-01"
+      "2026-08-04"
     ]
   },
   "categories": [
@@ -70,10 +70,10 @@
       "source": "hand",
       "starter": null,
       "search": "agent model, ktery nejen odpovida, ale sam dela kroky, dokud neni hotovo. bezny chat odpovi a ceka. agent misto toho pracuje ve smycce, precte soubor, spusti prikaz, podiva se na vysledek, opravi se a pokracuje. sam se rozhoduje, jaky krok udela dalsi. tohle je rozdil mezi „poradi mi“ a „udela to za me“. agent agenta agentem agenti agentu agenticke agenticky agentic",
-      "mentions": 108,
-      "days": 38,
+      "mentions": 110,
+      "days": 39,
       "first_seen": "2026-03-29",
-      "last_seen": "2026-07-31",
+      "last_seen": "2026-08-04",
       "card_hits": 28
     },
     {
@@ -256,11 +256,11 @@
       "source": "hand",
       "starter": 5,
       "search": "claude code claude, ktery bezi v terminalu a sam pracuje se soubory ve vasem projektu. neni to chat v prohlizeci. claude code bezi u vas na pocitaci, vidi slozku s projektem, umi soubory cist i menit, spoustet prikazy a overovat si vysledek. spousti se v terminalu napsanim claude. ve skupine se casto zkracuje na cc. vetsina projektu, ktere tady lidi ukazuji, vznikla presne timhle. claude code claude codu claudecode cc",
-      "mentions": 487,
-      "days": 84,
+      "mentions": 490,
+      "days": 85,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-01",
-      "card_hits": 99
+      "last_seen": "2026-08-04",
+      "card_hits": 100
     },
     {
       "slug": "claude-md",
@@ -357,10 +357,10 @@
       "source": "hand",
       "starter": null,
       "search": "codex kodovaci nastroj od openai, konkurence claude code. nastroj, ktery podobne jako claude code umi pracovat s kodem v projektu. ve skupine se pravidelne srovnavaji, vysledek se lisi podle typu ukolu.  codex codexu codex",
-      "mentions": 89,
-      "days": 26,
+      "mentions": 90,
+      "days": 27,
       "first_seen": "2026-03-18",
-      "last_seen": "2026-07-31",
+      "last_seen": "2026-08-04",
       "card_hits": 15
     },
     {
@@ -442,10 +442,10 @@
       "source": "hand",
       "starter": null,
       "search": "cron planovac, ktery spousti ulohy v nastaveny cas. nastavite, ze se neco ma stat kazdy den v pet rano, a system to od te chvile hlida za vas. na macu tuhle roli plni launchd.  cron cronu crontab launchd",
-      "mentions": 5,
-      "days": 3,
+      "mentions": 7,
+      "days": 4,
       "first_seen": "2026-03-31",
-      "last_seen": "2026-05-05",
+      "last_seen": "2026-08-04",
       "card_hits": 0
     },
     {
@@ -550,10 +550,10 @@
       "source": "hand",
       "starter": null,
       "search": "druhy mozek system poznamek, ktery si pamatuje za vas. usporadane misto, kam ukladate myslenky, zdroje a rozpracovane veci tak, abyste je pozdeji nasli a mohli na nich stavet. neni to o tom mit hodne poznamek, ale o tom umet se k nim vratit. ve skupine je to jedno z nejsilnejsich temat. nejde o mnozstvi poznamek, ale o to, umet se k nim vratit. druhy mozek druheho mozku second brain druhym mozkem",
-      "mentions": 51,
-      "days": 18,
+      "mentions": 54,
+      "days": 19,
       "first_seen": "2026-03-16",
-      "last_seen": "2026-07-30",
+      "last_seen": "2026-08-04",
       "card_hits": 10
     },
     {
@@ -602,7 +602,7 @@
       "days": 3,
       "first_seen": "2026-04-02",
       "last_seen": "2026-08-01",
-      "card_hits": 0
+      "card_hits": 1
     },
     {
       "slug": "frontend-backend",
@@ -701,10 +701,10 @@
       "source": "hand",
       "starter": null,
       "search": "github web, kam se git projekty ukladaji online, aby sly sdilet a zalohovat. github je sluzba, kde vas projekt bydli na internetu. diky tomu se k nemu dostanete z vic pocitacu, mate ho zalohovany a muzete ho ukazat ostatnim. git a github jsou dve ruzne veci. git je ten system, github je jedno z mist, kde muze projekt bydlet. kdyz nekdo ve skupine sdili projekt, obvykle sdili odkaz na github. github githubu github.com githubu",
-      "mentions": 78,
-      "days": 33,
+      "mentions": 79,
+      "days": 34,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-07-27",
+      "last_seen": "2026-08-04",
       "card_hits": 19
     },
     {
@@ -729,7 +729,7 @@
       "days": 1,
       "first_seen": "2026-08-01",
       "last_seen": "2026-08-01",
-      "card_hits": 0
+      "card_hits": 1
     },
     {
       "slug": "gui",
@@ -829,10 +829,10 @@
       "source": "hand",
       "starter": null,
       "search": "hook automaticka pojistka, ktera se spusti sama, bez vyzadani. hook je pravidlo navazane na udalost. kdyz nastane, akce probehne sama, i kdyz jste na ni davno zapomneli. typicky se pouziva jako kontrola, napriklad zablokovat ulozeni, kdyz v kodu zustal pristupovy klic. rozdil proti skillu je jednoduchy. skill si zavolate, hook se ozve sam. hook hooku hooky hooku hooks",
-      "mentions": 28,
-      "days": 10,
+      "mentions": 29,
+      "days": 11,
       "first_seen": "2026-03-31",
-      "last_seen": "2026-07-07",
+      "last_seen": "2026-08-04",
       "card_hits": 5
     },
     {
@@ -986,10 +986,10 @@
       "source": "hand",
       "starter": null,
       "search": "llm velky jazykovy model, tedy to, co pohani claude nebo chatgpt. zkratka pro large language model, cesky velky jazykovy model. je to program natrenovany na obrovskem mnozstvi textu, ktery se naucil odhadovat, jaka slova maji nasledovat. z toho odhadovani vznika vsechno ostatni, odpovedi, preklady i kod. kdyz nekdo rekne model, mysli skoro vzdycky tohle. claude, gpt i gemini jsou llm. llm llms",
-      "mentions": 36,
-      "days": 25,
+      "mentions": 40,
+      "days": 26,
       "first_seen": "2026-03-20",
-      "last_seen": "2026-07-29",
+      "last_seen": "2026-08-04",
       "card_hits": 7
     },
     {
@@ -1063,10 +1063,10 @@
       "source": "hand",
       "starter": null,
       "search": "markdown formatovani textu pomoci obycejnych znaku. jednoduchy zapis, kde hvezdicky udelaji tucne pismo a mrizky nadpisy. zustava to citelny text. soubor otevrete cimkoli a word na to nepotrebujete. v tomhle formatu jsou poznamky v obsidianu i instrukce v claude.md. markdown markdownu .md md soubor",
-      "mentions": 43,
-      "days": 27,
+      "mentions": 45,
+      "days": 28,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-07-31",
+      "last_seen": "2026-08-04",
       "card_hits": 14
     },
     {
@@ -1091,7 +1091,7 @@
       "days": 27,
       "first_seen": "2026-03-16",
       "last_seen": "2026-08-01",
-      "card_hits": 20
+      "card_hits": 21
     },
     {
       "slug": "model",
@@ -1119,7 +1119,7 @@
       "days": 57,
       "first_seen": "2026-03-17",
       "last_seen": "2026-08-01",
-      "card_hits": 57
+      "card_hits": 58
     },
     {
       "slug": "claude-modely",
@@ -1145,7 +1145,7 @@
       "days": 39,
       "first_seen": "2026-03-17",
       "last_seen": "2026-08-01",
-      "card_hits": 27
+      "card_hits": 28
     },
     {
       "slug": "mvp",
@@ -1270,10 +1270,10 @@
       "source": "hand",
       "starter": null,
       "search": "obsidian poznamky ulozene jako obycejne textove soubory u vas na disku. aplikace na psani a propojovani poznamek. soubory zustavaji vase, lezi u vas ve slozce jako obycejny text a otevrete je cimkoli, i kdyby obsidian zitra skoncil. to je hlavni rozdil proti cloudovym sluzbam. kolem druheho mozku v obsidianu se ve skupine toci jedno z nejsilnejsich temat. obsidian obsidianu obsidianem obsidian",
-      "mentions": 178,
-      "days": 45,
+      "mentions": 183,
+      "days": 46,
       "first_seen": "2026-03-16",
-      "last_seen": "2026-07-30",
+      "last_seen": "2026-08-04",
       "card_hits": 39
     },
     {
@@ -1519,10 +1519,10 @@
       "source": "auto",
       "starter": null,
       "search": "raspberry pi maly plnohodnotny pocitac velikosti kreditni karty, oblibeny pro domaci automatizaci a fyzicke projekty. raspberry pi je maly plnohodnotny pocitac, ktery se vejde do dlane. nejcasteji ho uvidite jako zaklad pro home assistant nebo vlastni domaci server, ovladany pres ssh odkudkoliv. bastleri ho ale vyuzivaji i na fyzicke projekty a profesionalni testovaci pripravky. setkate se s nim ve svete bastleni, domaci automatizace a vzdalene spravy malych serveru. raspberry pi raspberry piem raspberry piu raspberry pia",
-      "mentions": 6,
-      "days": 3,
+      "mentions": 10,
+      "days": 4,
       "first_seen": "2026-03-29",
-      "last_seen": "2026-07-31",
+      "last_seen": "2026-08-04",
       "card_hits": 4
     },
     {
@@ -1684,10 +1684,10 @@
       "source": "hand",
       "starter": null,
       "search": "session jedno souvisle sezeni, ve kterem si ai pamatuje, o cem jste mluvili. session drzi spolecnou pamet konverzace. kdyz ji ukoncite a zacnete znovu, zacinate s cistym stolem a nic z minula se neprenasi, pokud to neni zapsane v souborech nebo v pameti. dlouha session zaplni kontextove okno. kratka a soustredena dava lepsi vysledky. session sessions sezeni vlakno vlakna",
-      "mentions": 143,
-      "days": 48,
+      "mentions": 144,
+      "days": 49,
       "first_seen": "2026-03-15",
-      "last_seen": "2026-07-31",
+      "last_seen": "2026-08-04",
       "card_hits": 28
     },
     {
@@ -1712,10 +1712,10 @@
       "source": "hand",
       "starter": null,
       "search": "skill balicek instrukci pro postup, ktery delate opakovane. skill je ulozeny navod, jak presne nejakou praci udelat. misto abyste postup popisovali pokazde znovu, napisete lomitko a jeho jmeno, treba /review, a claude vi, co ma delat a v jakem poradi. hodi se na rutinu, kterou delate porad stejne. priprava podkladu, kontrola pred vypustenim ven, uklizeni poznamek. skill skillu skilly skillu skills",
-      "mentions": 169,
-      "days": 45,
+      "mentions": 170,
+      "days": 46,
       "first_seen": "2026-03-18",
-      "last_seen": "2026-07-31",
+      "last_seen": "2026-08-04",
       "card_hits": 36
     },
     {
@@ -1845,6 +1845,27 @@
       "card_hits": 4
     },
     {
+      "slug": "tailscale",
+      "term": "Tailscale",
+      "category": "nastroje",
+      "short": "Nástroj, který propojí vaše zařízení do privátní sítě přes internet bez nastavování firewallu nebo routeru.",
+      "plain": "Tailscale vytvoří šifrovaný tunel mezi vašimi zařízeními, ať jsou kdekoliv. Dostanete se k Raspberry Pi nebo domácímu serveru stejně pohodlně, jako byste seděli doma na síti. Neřešíte port forwarding ani vlastní VPN server, funguje to hned po přihlášení.",
+      "why": "Používá se, když chcete přistupovat k domácímu serveru nebo Raspberry Pi odkudkoliv mimo domov.",
+      "related": [],
+      "aliases": [
+        "Tailscale",
+        "tailscale"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "tailscale nastroj, ktery propoji vase zarizeni do privatni site pres internet bez nastavovani firewallu nebo routeru. tailscale vytvori sifrovany tunel mezi vasimi zarizenimi, at jsou kdekoliv. dostanete se k raspberry pi nebo domacimu serveru stejne pohodlne, jako byste sedeli doma na siti. neresite port forwarding ani vlastni vpn server, funguje to hned po prihlaseni. pouziva se, kdyz chcete pristupovat k domacimu serveru nebo raspberry pi odkudkoliv mimo domov. tailscale tailscale",
+      "mentions": 5,
+      "days": 2,
+      "first_seen": "2026-04-09",
+      "last_seen": "2026-08-04",
+      "card_hits": 1
+    },
+    {
       "slug": "terminal",
       "term": "Terminál",
       "category": "pc",
@@ -1922,10 +1943,10 @@
       "source": "hand",
       "starter": null,
       "search": "transkripce a diarizace prevod mluveni na text a rozliseni, kdo z mluvcich mluvi. transkripce udela z nahravky text. diarizace k tomu prida, ktery usek rekl ktery mluvci. u schuzek byva ta druha vec dulezitejsi nez samotny prepis.  transkripce prepis prepisu prepisy diarizace",
-      "mentions": 99,
-      "days": 33,
+      "mentions": 100,
+      "days": 34,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-07-30",
+      "last_seen": "2026-08-04",
       "card_hits": 31
     },
     {
@@ -2024,10 +2045,10 @@
       "source": "hand",
       "starter": null,
       "search": "workflow ustaleny postup, jak neco delate od zacatku do konce. sled kroku, ktery vede od zadani k vysledku. nemusi byt zautomatizovany. workflow je i to, kdyz vite, ze po nahravce vzdycky nasleduje prepis, pak shrnuti a nakonec ulozeni do poznamek. ve skupine se sdili spis workflow nez jednotlive nastroje. nastroj se da vymenit, postup zustava. workflow workflowu workflows",
-      "mentions": 110,
-      "days": 58,
+      "mentions": 111,
+      "days": 59,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-07-31",
+      "last_seen": "2026-08-04",
       "card_hits": 42
     },
     {
