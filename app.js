@@ -1754,23 +1754,13 @@ function eventDateShort(ev) {
   return d.getFullYear() === new Date().getFullYear() ? s : `${s} ${d.getFullYear()}`;
 }
 
-// Proužek s nejbližšími akcemi na úvodní obrazovce. Ukazuje až tři, méně když
-// jich tolik není.
-function renderEventTeaser() {
-  const el = $('event-teaser');
-  if (!el) return;
-  loadEvents().then(() => {
-    const { upcoming } = splitEvents(state.events || []);
-    const evs = upcoming.filter(e => !e.status)  // přeskoč zrušené/vyprodané
-      .slice(0, TEASER_MAX_EVENTS);
-    // Zavření se pamatuje podle složení seznamu, ne podle jedné akce. Když
-    // přibude bližší akce nebo některá proběhne, proužek se ukáže znovu.
-    const key = evs.map(e => e.id).join('|');
+function renderEventTeaserInto(el, evs, storageKey, label) {
+  const key = evs.map(e => e.id).join('|');
     let dismissed = '';
-    try { dismissed = localStorage.getItem('mtf_teaser_dismissed') || ''; } catch {}
-    if (!evs.length || dismissed === key) { el.classList.add('hidden'); el.innerHTML = ''; return; }
+  try { dismissed = localStorage.getItem(storageKey) || ''; } catch {}
+  if (!evs.length || dismissed === key) { el.classList.add('hidden'); el.innerHTML = ''; return; }
 
-    const rows = evs.map(ev => `
+  const rows = evs.map(ev => `
       <div class="event-teaser-row">
         <button class="event-teaser-open" type="button" data-event-id="${esc(ev.id)}" aria-label="Detail akce: ${esc(ev.title)}">
         <span class="event-teaser-when">
@@ -1780,25 +1770,46 @@ function renderEventTeaser() {
         <span class="event-teaser-title">${esc(ev.title)}</span>
         </button>
         ${(ev.registration_page_url || ev.registration_url) ? `<a class="event-teaser-register" href="${esc(ev.registration_page_url || ev.registration_url)}"${(ev.registration_page_url || ev.registration_url).startsWith('/') ? '' : ' target="_blank" rel="noopener noreferrer nofollow"'}>Registrace <span aria-hidden="true">→</span></a>` : ''}
-      </div>`).join('');
+    </div>`).join('');
 
-    el.innerHTML = `
+  el.innerHTML = `
       <div class="event-teaser-head">
-        <span class="event-teaser-label">Nejbližší akce</span>
+        <span class="event-teaser-label">${esc(label)}</span>
         <button class="event-teaser-close" type="button" aria-label="Skrýt akce" title="Skrýt">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="14" height="14"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
       <div class="event-teaser-list">${rows}</div>`;
-    el.classList.remove('hidden');
-    el.querySelectorAll('.event-teaser-open').forEach(row => {
-      row.addEventListener('click', () => showEvent(row.dataset.eventId));
-    });
-    el.querySelector('.event-teaser-close').addEventListener('click', () => {
-      try { localStorage.setItem('mtf_teaser_dismissed', key); } catch {}
-      el.classList.add('hidden');
-      el.innerHTML = '';
-    });
+  el.classList.remove('hidden');
+  el.querySelectorAll('.event-teaser-open').forEach(row => {
+    row.addEventListener('click', () => showEvent(row.dataset.eventId));
+  });
+  el.querySelector('.event-teaser-close').addEventListener('click', () => {
+    try { localStorage.setItem(storageKey, key); } catch {}
+    el.classList.add('hidden');
+    el.innerHTML = '';
+  });
+}
+
+// Proužek s nejbližšími akcemi na úvodní obrazovce. Ukazuje až tři, méně když
+// jich tolik není.
+function renderEventTeaser() {
+  const el = $('event-teaser');
+  if (!el) return;
+  loadEvents().then(() => {
+    const { upcoming } = splitEvents(state.events || []);
+    const evs = upcoming.filter(e => !e.status).slice(0, TEASER_MAX_EVENTS);
+    renderEventTeaserInto(el, evs, 'mtf_teaser_dismissed', 'Nejbližší akce');
+  }).catch(() => {});
+}
+
+function renderGlossaryEventTeaser() {
+  const el = $('glossary-event-teaser');
+  if (!el) return;
+  loadEvents().then(() => {
+    const { upcoming } = splitEvents(state.events || []);
+    const pragueMeetup = upcoming.filter(e => e.id === 'evt-2026-08-29-sraz' && !e.status);
+    renderEventTeaserInto(el, pragueMeetup, 'mtf_glossary_teaser_dismissed', 'Sraz v Praze');
   }).catch(() => {});
 }
 
@@ -1960,6 +1971,7 @@ function renderGlossary() {
 }
 
 function showGlossary() {
+  renderGlossaryEventTeaser();
   loadGlossary().then(() => renderGlossary());
 }
 
