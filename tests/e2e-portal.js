@@ -108,11 +108,11 @@ function check(name, cond, detail = '') {
   check('Sraz má v přehledu událostí výraznou registraci', await srazCard.locator('.event-card-register').isVisible());
   check('Registrace z karty míří na stránku srazu', await srazCard.locator('.event-card-register').getAttribute('href') === '/sraz/');
 
-  // ===== 4c. Slovníček: zavíratelný proužek jen pro pražský sraz =====
+  // ===== 4c. Slovníček: zavíratelný proužek se dvěma srazy =====
   await page.evaluate(() => document.querySelector('.nav-btn[data-view="glossary"]')?.click());
   await page.waitForSelector('#glossary-event-teaser:not(.hidden)', { timeout: 15000 }).catch(() => {});
   const glossaryTeaser = page.locator('#glossary-event-teaser');
-  check('Slovníček ukazuje jen pražský sraz', await glossaryTeaser.isVisible() && /Sraz v Praze/i.test(await glossaryTeaser.innerText()) && !/Olomouci/.test(await glossaryTeaser.innerText()));
+  check('Slovníček ukazuje srazy v Praze i Olomouci', await glossaryTeaser.isVisible() && /Sraz v Praze/i.test(await glossaryTeaser.innerText()) && /Sraz v Olomouci/i.test(await glossaryTeaser.innerText()));
   check('Proužek ve Slovníčku vede na stránku srazu', await glossaryTeaser.locator('.event-teaser-register').getAttribute('href') === '/sraz/');
   await glossaryTeaser.locator('.event-teaser-close').click();
   check('Proužek ve Slovníčku lze zavřít', await glossaryTeaser.isHidden());

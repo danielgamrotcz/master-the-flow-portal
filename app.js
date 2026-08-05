@@ -1754,7 +1754,13 @@ function eventDateShort(ev) {
   return d.getFullYear() === new Date().getFullYear() ? s : `${s} ${d.getFullYear()}`;
 }
 
-function renderEventTeaserInto(el, evs, storageKey, label, compactOnMobile = false) {
+function eventTeaserTitle(ev) {
+  if (ev.id === 'evt-2026-08-29-sraz') return 'Sraz v Praze';
+  if (ev.id === 'evt-2026-08-14-sraz-olomouc') return 'Sraz v Olomouci';
+  return ev.title;
+}
+
+function renderEventTeaserInto(el, evs, storageKey, label) {
   const key = evs.map(e => e.id).join('|');
     let dismissed = '';
   try { dismissed = localStorage.getItem(storageKey) || ''; } catch {}
@@ -1767,8 +1773,7 @@ function renderEventTeaserInto(el, evs, storageKey, label, compactOnMobile = fal
           <span class="event-teaser-day">${esc(eventDateShort(ev))}</span>
           ${ev.time_from ? `<span class="event-teaser-time">${esc(ev.time_from)}</span>` : ''}
         </span>
-        <span class="event-teaser-title">${esc(ev.title)}</span>
-        <span class="event-teaser-mobile-copy">Potkáme se</span>
+        <span class="event-teaser-title">${esc(eventTeaserTitle(ev))}</span>
         </button>
         ${(ev.registration_page_url || ev.registration_url) ? `<a class="event-teaser-register" href="${esc(ev.registration_page_url || ev.registration_url)}"${(ev.registration_page_url || ev.registration_url).startsWith('/') ? '' : ' target="_blank" rel="noopener noreferrer nofollow"'}>Registrace <span aria-hidden="true">→</span></a>` : ''}
     </div>`).join('');
@@ -1781,7 +1786,6 @@ function renderEventTeaserInto(el, evs, storageKey, label, compactOnMobile = fal
         </button>
       </div>
       <div class="event-teaser-list">${rows}</div>`;
-  el.classList.toggle('event-teaser--compact-mobile', compactOnMobile);
   el.classList.remove('hidden');
   el.querySelectorAll('.event-teaser-open').forEach(row => {
     row.addEventListener('click', () => showEvent(row.dataset.eventId));
@@ -1810,8 +1814,8 @@ function renderGlossaryEventTeaser() {
   if (!el) return;
   loadEvents().then(() => {
     const { upcoming } = splitEvents(state.events || []);
-    const pragueMeetup = upcoming.filter(e => e.id === 'evt-2026-08-29-sraz' && !e.status);
-    renderEventTeaserInto(el, pragueMeetup, 'mtf_glossary_teaser_dismissed', 'Sraz v Praze', true);
+    const meetups = upcoming.filter(e => (e.id === 'evt-2026-08-29-sraz' || e.id === 'evt-2026-08-14-sraz-olomouc') && !e.status);
+    renderEventTeaserInto(el, meetups, 'mtf_glossary_teaser_dismissed', 'Srazy v komunitě');
   }).catch(() => {});
 }
 
