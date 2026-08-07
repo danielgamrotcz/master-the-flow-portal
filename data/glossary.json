@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-05",
+  "generated_at": "2026-08-07",
   "source": {
-    "daily_notes": 129,
+    "daily_notes": 131,
     "range": [
       "2026-03-14",
-      "2026-08-04"
+      "2026-08-06"
     ]
   },
   "categories": [
@@ -74,7 +74,7 @@
       "days": 39,
       "first_seen": "2026-03-29",
       "last_seen": "2026-08-04",
-      "card_hits": 28
+      "card_hits": 29
     },
     {
       "slug": "anonymizace",
@@ -179,7 +179,7 @@
       "days": 35,
       "first_seen": "2026-03-14",
       "last_seen": "2026-07-29",
-      "card_hits": 19
+      "card_hits": 20
     },
     {
       "slug": "branch",
@@ -260,7 +260,7 @@
       "days": 85,
       "first_seen": "2026-03-14",
       "last_seen": "2026-08-04",
-      "card_hits": 100
+      "card_hits": 102
     },
     {
       "slug": "claude-md",
@@ -361,7 +361,7 @@
       "days": 27,
       "first_seen": "2026-03-18",
       "last_seen": "2026-08-04",
-      "card_hits": 15
+      "card_hits": 16
     },
     {
       "slug": "commit",
@@ -446,7 +446,7 @@
       "days": 4,
       "first_seen": "2026-03-31",
       "last_seen": "2026-08-04",
-      "card_hits": 0
+      "card_hits": 1
     },
     {
       "slug": "cursor",
@@ -554,7 +554,7 @@
       "days": 19,
       "first_seen": "2026-03-16",
       "last_seen": "2026-08-04",
-      "card_hits": 10
+      "card_hits": 11
     },
     {
       "slug": "framework",
@@ -906,10 +906,10 @@
       "source": "hand",
       "starter": 4,
       "search": "kontext vsechno, co model v danou chvili vi o vasem zadani. kontext je souhrn toho, co ma model po ruce. vase zpravy, jeho odpovedi, obsah souboru, ktere si precetl, a instrukce, ktere dostal. kdyz mu nahazite vsechno, co vas napadne, utopi se v tom. min informaci, ale trefnejsich, funguje lip. odtud ta rada psat strucne. kdyz do zadani nahazite pet nesouvisejicich veci, vysledek bude horsi, nez kdybyste rekli jednu. kontext kontextu kontextem",
-      "mentions": 161,
-      "days": 69,
+      "mentions": 166,
+      "days": 71,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-01",
+      "last_seen": "2026-08-06",
       "card_hits": 35
     },
     {
@@ -1067,7 +1067,7 @@
       "days": 28,
       "first_seen": "2026-03-14",
       "last_seen": "2026-08-04",
-      "card_hits": 14
+      "card_hits": 15
     },
     {
       "slug": "mcp",
@@ -1115,10 +1115,10 @@
       "source": "hand",
       "starter": 2,
       "search": "model konkretni verze ai, kterou zrovna pouzivate. modelu je vic a lisi se silou, rychlosti a cenou. silnejsi zvladne slozite zadani, ale je pomalejsi a drazsi. slabsi odbavi rutinu skoro hned. kdyz nekdo ve skupine pise, ze neco jede na opusu a neco na sonnetu, mluvi presne o tehle volbe. volba modelu je hlavni paka na to, kolik za praci s ai zaplatite. model modelu modely modelu modelem",
-      "mentions": 183,
-      "days": 57,
+      "mentions": 188,
+      "days": 58,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-01",
+      "last_seen": "2026-08-06",
       "card_hits": 58
     },
     {
@@ -1215,10 +1215,10 @@
       "source": "hand",
       "starter": null,
       "search": "notion poznamky, databaze a wiki v jednom, ulozene v cloudu. nastroj na organizaci informaci, kde se michaji dokumenty s tabulkami a databazemi. na rozdil od obsidianu obsah lezi u poskytovatele, ne u vas na disku.  notion notionu notion",
-      "mentions": 60,
-      "days": 23,
+      "mentions": 61,
+      "days": 24,
       "first_seen": "2026-03-16",
-      "last_seen": "2026-07-25",
+      "last_seen": "2026-08-06",
       "card_hits": 11
     },
     {
@@ -1523,7 +1523,7 @@
       "days": 4,
       "first_seen": "2026-03-29",
       "last_seen": "2026-08-04",
-      "card_hits": 4
+      "card_hits": 5
     },
     {
       "slug": "raycast",
@@ -1636,6 +1636,29 @@
       "card_hits": 4
     },
     {
+      "slug": "scratch",
+      "term": "Scratch",
+      "category": "kod",
+      "short": "Vizuální programovací prostředí pro děti, kde se program skládá přetahováním barevných bloků.",
+      "plain": "Prostředí od MIT, kde místo psaní textu přetahujete barevné bloky a skládáte z nich program. Výsledkem může být animace, hra nebo interaktivní příběh. Hodně škol ho používá jako první krok k programování, protože chyba v syntaxi tu neexistuje. Bloky do sebe buď zapadnou, nebo ne.",
+      "why": "Zazní vždy, když někdo mluví o výuce programování u dětí.",
+      "related": [],
+      "aliases": [
+        "Scratch",
+        "Scratchi",
+        "Scratchem",
+        "Scratche"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "scratch vizualni programovaci prostredi pro deti, kde se program sklada pretahovanim barevnych bloku. prostredi od mit, kde misto psani textu pretahujete barevne bloky a skladate z nich program. vysledkem muze byt animace, hra nebo interaktivni pribeh. hodne skol ho pouziva jako prvni krok k programovani, protoze chyba v syntaxi tu neexistuje. bloky do sebe bud zapadnou, nebo ne. zazni vzdy, kdyz nekdo mluvi o vyuce programovani u deti. scratch scratchi scratchem scratche",
+      "mentions": 6,
+      "days": 4,
+      "first_seen": "2026-03-16",
+      "last_seen": "2026-08-06",
+      "card_hits": 1
+    },
+    {
       "slug": "server",
       "term": "Server",
       "category": "web",
@@ -1684,11 +1707,11 @@
       "source": "hand",
       "starter": null,
       "search": "session jedno souvisle sezeni, ve kterem si ai pamatuje, o cem jste mluvili. session drzi spolecnou pamet konverzace. kdyz ji ukoncite a zacnete znovu, zacinate s cistym stolem a nic z minula se neprenasi, pokud to neni zapsane v souborech nebo v pameti. dlouha session zaplni kontextove okno. kratka a soustredena dava lepsi vysledky. session sessions sezeni vlakno vlakna",
-      "mentions": 144,
-      "days": 49,
+      "mentions": 146,
+      "days": 50,
       "first_seen": "2026-03-15",
-      "last_seen": "2026-08-04",
-      "card_hits": 28
+      "last_seen": "2026-08-06",
+      "card_hits": 29
     },
     {
       "slug": "skill",
@@ -1716,7 +1739,7 @@
       "days": 46,
       "first_seen": "2026-03-18",
       "last_seen": "2026-08-04",
-      "card_hits": 36
+      "card_hits": 37
     },
     {
       "slug": "skript",
@@ -1863,7 +1886,7 @@
       "days": 2,
       "first_seen": "2026-04-09",
       "last_seen": "2026-08-04",
-      "card_hits": 1
+      "card_hits": 2
     },
     {
       "slug": "terminal",
@@ -1947,7 +1970,7 @@
       "days": 34,
       "first_seen": "2026-03-14",
       "last_seen": "2026-08-04",
-      "card_hits": 31
+      "card_hits": 32
     },
     {
       "slug": "vibe-coding",
@@ -2049,7 +2072,7 @@
       "days": 59,
       "first_seen": "2026-03-14",
       "last_seen": "2026-08-04",
-      "card_hits": 42
+      "card_hits": 43
     },
     {
       "slug": "yolo",

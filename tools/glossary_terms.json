@@ -1529,6 +1529,22 @@
       "why": "Používá se, když chcete přistupovat k domácímu serveru nebo Raspberry Pi odkudkoliv mimo domov.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "scratch",
+      "term": "Scratch",
+      "cat": "kod",
+      "match": [
+        "Scratch",
+        "Scratchi",
+        "Scratchem",
+        "Scratche"
+      ],
+      "short": "Vizuální programovací prostředí pro děti, kde se program skládá přetahováním barevných bloků.",
+      "plain": "Prostředí od MIT, kde místo psaní textu přetahujete barevné bloky a skládáte z nich program. Výsledkem může být animace, hra nebo interaktivní příběh. Hodně škol ho používá jako první krok k programování, protože chyba v syntaxi tu neexistuje. Bloky do sebe buď zapadnou, nebo ne.",
+      "why": "Zazní vždy, když někdo mluví o výuce programování u dětí.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
