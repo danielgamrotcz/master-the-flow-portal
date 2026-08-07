@@ -93,6 +93,8 @@ a { color: var(--accent); }
 .button:active { transform: scale(.98); }
 .button-primary { background: var(--accent); color: #1a120d; }
 [data-theme="light"] .button-primary { color: #fff; }
+.button.is-registration-unavailable, .sticky-register.is-registration-unavailable { cursor: not-allowed; opacity: .58; }
+.button.is-registration-unavailable { background: var(--text-tertiary); color: var(--bg); }
 .hero-calendar-links { width: max-content; max-width: 100%; margin: 21px 0 0; display: flex; flex-wrap: wrap; gap: 4px 13px; color: var(--text-tertiary); font-size: 12px; }
 .hero-calendar-links span { flex-basis: 100%; }
 .hero-calendar-links a { font-weight: 600; text-underline-offset: 3px; }
@@ -210,6 +212,7 @@ details p { max-width: 720px; margin: -2px 0 24px; color: var(--text-secondary);
   .brand:hover, .portal-link:hover, .footer a:hover { color: var(--accent); }
   .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
   .button-primary:hover, .button-light:hover { background: var(--accent-hover); }
+  .button.is-registration-unavailable:hover { background: var(--text-tertiary); }
   .button-whatsapp:hover { background: #1fbe5b; }
   .community-qr-link:hover { color: var(--accent); }
   .hero-calendar-links a:hover, summary:hover { color: var(--accent-hover); }
@@ -290,6 +293,7 @@ details p { max-width: 720px; margin: -2px 0 24px; color: var(--text-secondary);
   .footer { padding-left: 20px; padding-right: 20px; padding-bottom: calc(108px + env(safe-area-inset-bottom)); }
   .sticky-register { position: fixed; z-index: 30; left: 12px; right: 12px; bottom: calc(10px + env(safe-area-inset-bottom)); min-height: 62px; padding: 8px 9px 8px 16px; display: flex; align-items: center; justify-content: space-between; gap: 14px; border: 1px solid var(--border); border-radius: 14px; background: var(--header); color: var(--text-primary); box-shadow: 0 12px 38px rgba(0,0,0,.24); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); text-decoration: none; transform: translateY(calc(100% + 24px)); opacity: 0; pointer-events: none; transition: transform 180ms ease, opacity 180ms ease; }
   .sticky-register.is-visible { transform: translateY(0); opacity: 1; pointer-events: auto; }
+  .sticky-register.is-registration-unavailable.is-visible { pointer-events: none; }
   .sticky-register span:first-child { display: flex; flex-direction: column; }
   .sticky-register strong { font-size: 13px; }
   .sticky-register small { color: var(--text-tertiary); font-size: 11px; }

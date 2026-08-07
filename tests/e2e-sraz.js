@@ -43,6 +43,11 @@ function check(name, cond, detail = '') {
   check('Hero vysvětluje, jak se lidé dozvědí adresu', /adresu pošlu e-mailem/.test(await page.locator('.hero-facts').innerText()));
   check('Hero uvádí rámec místa a dostupnost MHD', /Praha, širší centrum/.test((await page.locator('.hero-facts').innerText()).replace(/\u00a0/g, ' ')) && /uvnitř u MHD/.test((await page.locator('.hero-facts').innerText()).replace(/\u00a0/g, ' ')));
   check('Hero ukazuje počet registrací', await page.locator('#registered-count').innerText() !== '—');
+  const shouldBeFull = attendeesPayload.registeredCount >= 30;
+  check('Registrační tlačítka odpovídají aktuální kapacitě', await page.locator('[data-registration-link]').evaluateAll((links, full) => links.every(link => full
+    ? link.getAttribute('aria-disabled') === 'true' && !link.hasAttribute('href')
+    : link.getAttribute('aria-disabled') === 'false' && /^https:\/\/docs\.google\.com\/forms\//.test(link.getAttribute('href') || '')
+  ), shouldBeFull));
   check('Značka Master the Flow se v titulku neláme', await page.locator('h1 .no-break').evaluate(el => getComputedStyle(el).whiteSpace === 'nowrap'));
 
   const buttonContrast = async () => page.locator('.hero .button-primary').evaluate(el => {
@@ -76,7 +81,7 @@ function check(name, cond, detail = '') {
   check('Skupinová aktivita zmiňuje zařízení', /notebook|mobil/i.test(deviceCopy));
   check('Zařízení je výslovně dobrovolné', /není povinn|není podmínkou|povinné nejsou|i bez něj/i.test(deviceCopy));
   check('Organizační text mluví v první osobě', /Potřebuju|abych vybral/.test(await page.locator('.registration-panel').innerText()));
-  check('Registrace uvádí kapacitu 50 lidí', /Kapacita prvního srazu je 50 lidí/.test((await page.locator('.registration-panel').innerText()).replace(/\u00a0/g, ' ')));
+  check('Registrace uvádí kapacitu 30 lidí', /Kapacita prvního srazu je 30 lidí/.test((await page.locator('.registration-panel').innerText()).replace(/\u00a0/g, ' ')));
   const registrationText = (await page.locator('.registration-panel').innerText()).replace(/\u00a0/g, ' ');
   check('Registrace vysvětluje dostupnost, ochranu e-mailu a změnu souhlasu', /Google účet nepotřebujete/.test(registrationText) && /e-mail se na web neposílá/.test(registrationText) && /odvolání souhlasu/.test(registrationText));
   check('Úvod nepopisuje sraz jako offline akci', !/offline/i.test(await page.locator('.manifesto-band').innerText()));
@@ -248,6 +253,18 @@ function check(name, cond, detail = '') {
   const renderedNames = await attendeePreview.locator('.attendee-card h3').allTextContents();
   check('Seznam vykreslí zveřejněné profily a rozsah účasti', await attendeePreview.locator('.attendee-card').count() === 8 && /Oficiální část 13:00–18:00/.test(await attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník H' }).innerText()) && /Oficiální část \+ piknik/.test(await attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník A' }).innerText()) && /Jen piknik po 18:00/.test(await attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník G' }).innerText()));
   check('Účastníci jsou seřazení abecedně', renderedNames.join('|') === [...renderedNames].sort((a, b) => a.localeCompare(b, 'cs', { sensitivity: 'base' })).join('|'), renderedNames.join(' | '));
+
+  const fullCapacityPreview = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  await fullCapacityPreview.route('**/api/meetup-attendees', route => route.fulfill({
+    status: 200,
+    contentType: 'application/json',
+    headers: { 'Cache-Control': 'no-store' },
+    body: JSON.stringify({ registeredCount: 30, attendees: [] })
+  }));
+  await fullCapacityPreview.goto(BASE + '/sraz/', { waitUntil: 'networkidle' });
+  check('Při naplněné kapacitě jsou všechna registrační tlačítka zneaktivněná', await fullCapacityPreview.locator('[data-registration-link]').evaluateAll(links => links.length === 3 && links.every(link => link.getAttribute('aria-disabled') === 'true' && !link.hasAttribute('href') && link.classList.contains('is-registration-unavailable'))));
+  check('Naplněná kapacita je na tlačítkách srozumitelně popsána', await fullCapacityPreview.locator('[data-registration-link]').allTextContents().then(labels => labels.every(label => label.includes('Kapacita naplněna'))));
+  await fullCapacityPreview.close();
   check('Údaje účastníků se vkládají jako text, ne jako HTML', await attendeePreview.locator('.attendee-card img').count() === 0 && renderedNames.includes('Z <img src=x onerror=alert(1)>'));
   check('Desktopový seznam účastníků používá dva sloupce', await attendeePreview.locator('.attendees-grid').evaluate(el => getComputedStyle(el).gridTemplateColumns.trim().split(/\s+/).length === 2));
   check('Desktop nejdřív ukáže šest profilů', await attendeePreview.locator('.attendee-card:visible').count() === 6);

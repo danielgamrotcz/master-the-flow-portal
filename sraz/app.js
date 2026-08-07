@@ -47,6 +47,8 @@ function initStickyRegistration() {
   registrationObserver.observe(registration);
 }
 
+const EVENT_CAPACITY = 30;
+
 const attendanceLabels = {
   official: 'Oficiální část 13:00–18:00',
   official_and_picnic: 'Oficiální část + piknik',
@@ -64,7 +66,29 @@ const attendeeFilterMatches = {
 
 function registeredCountLabel(count) {
   const label = count === 1 ? 'účastník' : count >= 2 && count <= 4 ? 'účastníci' : 'účastníků';
-  return `${label} z 50 míst`;
+  return `${label} z ${EVENT_CAPACITY} míst`;
+}
+
+function setRegistrationAvailability(registeredCount) {
+  const isFull = registeredCount >= EVENT_CAPACITY;
+  document.querySelectorAll('[data-registration-link]').forEach(link => {
+    const label = link.querySelector('[data-registration-label]') || link;
+    if (!label.dataset.registrationOpenLabel) label.dataset.registrationOpenLabel = label.textContent.trim();
+    if (!link.dataset.registrationHref) link.dataset.registrationHref = link.getAttribute('href') || '';
+
+    link.classList.toggle('is-registration-unavailable', isFull);
+    link.setAttribute('aria-disabled', String(isFull));
+    link.setAttribute('aria-label', isFull ? 'Registrace je uzavřena, kapacita je naplněna' : label.dataset.registrationOpenLabel);
+    label.textContent = isFull ? 'Kapacita naplněna' : label.dataset.registrationOpenLabel;
+
+    if (isFull) {
+      link.removeAttribute('href');
+      link.removeAttribute('target');
+    } else if (link.dataset.registrationHref) {
+      link.setAttribute('href', link.dataset.registrationHref);
+      link.setAttribute('target', '_blank');
+    }
+  });
 }
 
 function renderRegisteredCount(count) {
@@ -73,6 +97,7 @@ function renderRegisteredCount(count) {
   if (!value || !note || !Number.isSafeInteger(count) || count < 0) return;
   value.textContent = String(count);
   note.textContent = registeredCountLabel(count);
+  setRegistrationAvailability(count);
 }
 
 function attendeeInitials(name) {
