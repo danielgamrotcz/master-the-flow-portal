@@ -1,6 +1,10 @@
 /* ===== GATE ===== */
 const VAPID_PUBLIC = 'BEZFl-_nPGP_1u49UExtRaDl9kc6A9fKzrvUaA-mJTCKx-_LpoaxVw1bkh4Wtf1MeabUVa2vJCnUkv-uCaK4sEs';
 
+// Starší verze ukládala globální gate kód kvůli magic odkazům. Nové sdílení
+// používá krátkodobý ticket, takže legacy credential při prvním startu smažeme.
+try { localStorage.removeItem('mtf_code'); } catch {}
+
 function isAuthenticated() {
   try {
     const raw = localStorage.getItem('mtf_auth');
@@ -12,6 +16,11 @@ function isAuthenticated() {
 
 function storeAuth(token, expires) {
   localStorage.setItem('mtf_auth', JSON.stringify({ token, expires }));
+}
+
+function getAuthToken() {
+  try { return JSON.parse(localStorage.getItem('mtf_auth') || '{}').token || ''; }
+  catch { return ''; }
 }
 
 // Datové soubory chrání HttpOnly cookie, protože je načítá i service worker
@@ -37,34 +46,34 @@ async function ensureGateCookie() {
   } catch { /* offline — cookie z minula v prohlížeči zůstává */ }
 }
 
-// Magic link: ?k=KÓD v odkazu odemkne portál bez přepisování kódu z WhatsAppu.
-// Parametr se z adresy odstraní hned po přečtení (nešíří se dál historií ani
-// sdílením), kód do odkazů vkládá výhradně shareCard() — nikdy ruční psaní.
-function readMagicKey() {
+// Sdílený odkaz nese krátkodobý serverem podepsaný ticket, nikdy globální
+// GATE_CODE. Parametr se odstraní hned po přečtení, aby dál necestoval historií
+// ani referrerem.
+function readShareTicket() {
   try {
     const params = new URLSearchParams(location.search);
-    const k = params.get('k');
-    if (!k) return null;
-    params.delete('k');
+    const ticket = params.get('s');
+    if (!ticket) return null;
+    params.delete('s');
     const qs = params.toString();
     history.replaceState(history.state, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
-    return /^[\w-]{1,40}$/.test(k) ? k : null;
+    return /^[0-9A-Za-z._-]{1,180}$/.test(ticket) ? ticket : null;
   } catch { return null; }
 }
 
-async function tryMagicUnlock(code) {
+async function tryShareUnlock(ticket) {
   try {
-    const res = await fetch('/api/auth', {
+    const res = await fetch('/api/share-auth', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ code }),
+      body: JSON.stringify({ ticket }),
     });
     if (!res.ok) return false;
     const { token, expires } = await res.json();
     storeAuth(token, expires);
-    try { localStorage.setItem('mtf_code', code.trim()); } catch {}
     document.documentElement.classList.add('auth-ok');
-    trackEvent('gate_passed', { method: 'magic' });
+    trackEvent('gate_passed', { method: 'share' });
+    trackSession();
     return true;
   } catch { return false; }
 }
@@ -114,12 +123,11 @@ function initGate() {
       if (res.ok) {
         const { token, expires } = await res.json();
         storeAuth(token, expires);
-        // Kód se pamatuje kvůli magic linkům ve sdílených odkazech (shareCard).
-        try { localStorage.setItem('mtf_code', code); } catch {}
         document.documentElement.classList.add('auth-ok');
         gate.classList.add('hidden');
         input.value = '';
         trackEvent('gate_passed', { method: 'code' });
+        trackSession();
         // Data se do téhle chvíle nenačetla, protože bez přihlášení vrací 403.
         // Bez tohohle by po zadání kódu zůstal portál prázdný až do reloadu.
         handleHash();
@@ -252,9 +260,12 @@ async function loadVoteMap() {
 function trackEvent(event, data) {
   const now = new Date();
   const enriched = { ...data, hour_utc: now.getUTCHours(), date: now.toISOString().slice(0, 10) };
+  const headers = { 'Content-Type': 'application/json' };
+  const token = getAuthToken();
+  if (token) headers['x-mtf-token'] = token;
   fetch('/api/track', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers,
     body: JSON.stringify({ event, data: enriched }),
     keepalive: true,
   }).catch(() => {});
@@ -3044,12 +3055,7 @@ function showCardContextMenu(x, y, cardId) {
         markRead(cardId); rerenderCurrentView(); showToast('Označeno jako přečtené');
       }
     } else if (action === 'share') {
-      const url = `${location.origin}/card/${cardId}`;
-      const text = card ? `${card.title} — z komunity Master the Flow` : url;
-      try {
-        if (navigator.share) await navigator.share({ title: card?.title || 'Master the Flow', text, url });
-        else { await navigator.clipboard.writeText(`${text}\n${url}`); showToast('Odkaz zkopírován'); }
-      } catch { /* uživatel zrušil sdílení */ }
+      await shareCardById(cardId, card);
     } else if (action === 'transcript' && card) {
       showTranscript(card.source_date, card.source_group, card.source_msg_times);
     }
@@ -3183,25 +3189,35 @@ function attachSwipeToCard(wrap) {
 }
 
 /* ===== SHARE ===== */
-async function shareCard() {
-  const card = state.activeCard;
-  if (!card) return;
+async function createShareUrl(cardId) {
+  const token = getAuthToken();
+  const headers = { 'Content-Type': 'application/json' };
+  if (token) headers['x-mtf-token'] = token;
+  const res = await fetch('/api/share', {
+    method: 'POST',
+    headers,
+    body: JSON.stringify({ id: cardId }),
+  });
+  if (!res.ok) throw new Error('Share ticket rejected: ' + res.status);
+  const { ticket } = await res.json();
+  if (!ticket || !/^[0-9A-Za-z._-]{1,180}$/.test(ticket)) throw new Error('Invalid share ticket');
+  return `${location.origin}/card/${cardId}?s=${encodeURIComponent(ticket)}`;
+}
 
-  trackEvent('share', { id: card.id });
-
-  // /card/ID místo #card/ID — server (Pages Function) dodá náhled při sdílení.
-  // Magic link (?k=): příjemce se dostane rovnou na kartu bez přepisování kódu.
-  let magic = '';
+async function shareCardById(cardId, card) {
+  trackEvent('share', { id: cardId });
+  let url;
   try {
-    const code = localStorage.getItem('mtf_code');
-    if (code && /^[\w-]{1,40}$/.test(code)) magic = `?k=${encodeURIComponent(code)}`;
-  } catch {}
-  const url = `${location.origin}/card/${card.id}${magic}`;
-  const text = `${card.title} — z komunity Master the Flow`;
+    url = await createShareUrl(cardId);
+  } catch {
+    // Bezpečný fallback: karta se sdílí bez credentialu a příjemce uvidí gate.
+    url = `${location.origin}/card/${cardId}`;
+  }
+  const text = card ? `${card.title} — z komunity Master the Flow` : url;
 
   if (navigator.share) {
     try {
-      await navigator.share({ title: card.title, text, url });
+      await navigator.share({ title: card?.title || 'Master the Flow', text, url });
       return;
     } catch { /* fall through to clipboard */ }
   }
@@ -3212,6 +3228,12 @@ async function shareCard() {
   } catch {
     showToast('Nepodařilo se zkopírovat');
   }
+}
+
+async function shareCard() {
+  const card = state.activeCard;
+  if (!card) return;
+  await shareCardById(card.id, card);
 }
 
 /* ===== HASH ROUTING ===== */
@@ -3440,7 +3462,7 @@ const chatState = {
 };
 
 function chatGetToken() {
-  try { return JSON.parse(localStorage.getItem('mtf_auth') || '{}').token || ''; } catch { return ''; }
+  return getAuthToken();
 }
 
 function chatSaveHistory() {
@@ -3728,17 +3750,17 @@ async function init() {
 
   resetStaleVotesOnce();
   readVisitSource();
-  // Magic link se zkouší před gate, ať člověk s platným odkazem bránu nikdy
-  // neuvidí. Při neúspěchu (starý kód po rotaci) se gate ukáže normálně.
-  const magicKey = readMagicKey();
-  if (magicKey && !isAuthenticated()) {
+  // Podepsaný share ticket se zkouší před gate. Při neúspěchu nebo expiraci se
+  // gate ukáže normálně; globální přístupový kód nikdy nebyl v URL.
+  const shareTicket = readShareTicket();
+  if (shareTicket && !isAuthenticated()) {
     // Čeká se schválně. Data jsou za bránou, takže kdyby se načítala souběžně
     // s odemykáním, stihla by dostat 403 a portál by zůstal prázdný.
-    try { await tryMagicUnlock(magicKey); } finally { initGate(); }
+    try { await tryShareUnlock(shareTicket); } finally { initGate(); }
   } else {
     initGate();
   }
-  trackSession();
+  if (isAuthenticated()) trackSession();
   applyTheme(document.documentElement.getAttribute('data-theme') || localStorage.getItem('theme') || 'light');
   document.getElementById('btn-theme').addEventListener('click', toggleTheme);
   $('btn-random')?.addEventListener('click', openRandomCard);

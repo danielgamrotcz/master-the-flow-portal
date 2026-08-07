@@ -8,8 +8,27 @@
 // requestu vlastní hlavičku nepřidá, takže hlavičkou by se offline režim
 // rozbil. Cookie prohlížeč připojí sám, včetně fetchů ze service workeru.
 
-const TOKEN_TTL_MS = 90 * 24 * 60 * 60 * 1000;
+export const TOKEN_TTL_MS = 90 * 24 * 60 * 60 * 1000;
 export const COOKIE_NAME = 'mtf_gate';
+
+export async function generateToken(secret, env) {
+  const nonceBytes = crypto.getRandomValues(new Uint8Array(16));
+  const nonce = Array.from(nonceBytes).map(b => b.toString(16).padStart(2, '0')).join('');
+  const payload = Date.now() + ':' + nonce;
+  const key = await crypto.subtle.importKey(
+    'raw',
+    new TextEncoder().encode(secret),
+    { name: 'HMAC', hash: 'SHA-256' },
+    false,
+    ['sign']
+  );
+  const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(payload));
+  const sigHex = Array.from(new Uint8Array(sig)).map(b => b.toString(16).padStart(2, '0')).join('');
+  if (env?.MTF_DATA) {
+    await env.MTF_DATA.put('token:' + nonce, '1', { expirationTtl: Math.floor(TOKEN_TTL_MS / 1000) });
+  }
+  return payload + ':' + sigHex;
+}
 
 export async function verifyToken(token, gateCode, env) {
   if (!token || typeof token !== 'string' || !gateCode) return null;
@@ -46,6 +65,10 @@ export function readCookie(request, name) {
     if (part.slice(0, eq).trim() === name) return part.slice(eq + 1).trim();
   }
   return '';
+}
+
+export function readRequestToken(request) {
+  return request.headers.get('x-mtf-token') || readCookie(request, COOKIE_NAME);
 }
 
 /** Set-Cookie pro přístupový token. Secure jen přes https, jinak by cookie

@@ -33,6 +33,7 @@ function needsGate(pathname) {
   const p = pathname.toLowerCase();
   if (p === '/data/today.json') return true;
   if (p === '/data/cards-index.json') return true;
+  if (p === '/data/chat-corpus.json') return true;
   if (p === '/data/chat-transcripts.json') return true;
   if (p.startsWith('/data/archive/') && p.endsWith('.json')) return true;
   return false;

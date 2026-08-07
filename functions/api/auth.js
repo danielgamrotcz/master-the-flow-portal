@@ -1,9 +1,6 @@
 import { rateLimit, rateLimitPeek, ipKey } from './_ratelimit.js';
-import { gateCookie } from '../_token.js';
+import { generateToken, gateCookie, TOKEN_TTL_MS } from '../_token.js';
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
-// 90 dní: kratší TTL nutilo členy přepisovat kód z WhatsAppu každý měsíc,
-// což je největší tření vstupu (audit 2026-07-17, gate jako díra ve funnelu).
-const TOKEN_TTL_MS = 90 * 24 * 60 * 60 * 1000;
 
 function corsHeaders(origin) {
   const allowed = origin && (origin === SITE_ORIGIN || /^http:\/\/localhost(:\d+)?$/.test(origin));
@@ -26,25 +23,6 @@ async function timingSafeEqual(a, b) {
   let diff = 0;
   for (let i = 0; i < 32; i++) diff |= ba[i] ^ bb[i];
   return diff === 0;
-}
-
-async function generateToken(secret, env) {
-  const nonceBytes = crypto.getRandomValues(new Uint8Array(16));
-  const nonce = Array.from(nonceBytes).map(b => b.toString(16).padStart(2, '0')).join('');
-  const payload = Date.now() + ':' + nonce;
-  const key = await crypto.subtle.importKey(
-    'raw',
-    new TextEncoder().encode(secret),
-    { name: 'HMAC', hash: 'SHA-256' },
-    false,
-    ['sign']
-  );
-  const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(payload));
-  const sigHex = Array.from(new Uint8Array(sig)).map(b => b.toString(16).padStart(2, '0')).join('');
-  if (env?.MTF_DATA) {
-    await env.MTF_DATA.put('token:' + nonce, '1', { expirationTtl: 90 * 86400 });
-  }
-  return payload + ':' + sigHex;
 }
 
 export async function onRequestOptions({ request }) {

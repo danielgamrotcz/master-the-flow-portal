@@ -35,14 +35,14 @@ export async function onRequestGet({ params, request, env }) {
     } catch { /* fallback zůstává */ }
   }
   const canonical = `${origin}/card/${id}`;
-  // Magic link a atribuce: whitelistované parametry (k, src) projdou redirectem
-  // do SPA, aby auto-unlock a měření zdroje fungovaly i přes /card/ náhled.
+  // Share ticket a atribuce projdou redirectem do SPA. Globální gate kód se v
+  // URL nikdy nepřenáší.
   const inParams = new URL(request.url).searchParams;
   const passthrough = new URLSearchParams();
-  for (const p of ['k', 'src']) {
-    const v = inParams.get(p);
-    if (v && /^[\w-]{1,40}$/.test(v)) passthrough.set(p, v);
-  }
+  const share = inParams.get('s');
+  if (share && /^[0-9A-Za-z._-]{1,180}$/.test(share)) passthrough.set('s', share);
+  const src = inParams.get('src');
+  if (src && /^[\w-]{1,24}$/.test(src)) passthrough.set('src', src);
   const qs = passthrough.toString();
   const spa = `${origin}/${qs ? '?' + qs : ''}#card/${id}`;
 
@@ -70,6 +70,11 @@ export async function onRequestGet({ params, request, env }) {
 </html>`;
 
   return new Response(html, {
-    headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'public, max-age=300' },
+    headers: {
+      'Content-Type': 'text/html; charset=utf-8',
+      // Odpověď se share ticketem je credential-bearing a nesmí do sdílené
+      // cache. Běžný OG teaser bez ticketu zůstává krátce cacheovatelný.
+      'Cache-Control': share ? 'private, no-store' : 'public, max-age=300',
+    },
   });
 }

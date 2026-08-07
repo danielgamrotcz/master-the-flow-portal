@@ -1,4 +1,5 @@
 import { rateLimit, ipKey } from './_ratelimit.js';
+import { readRequestToken, verifyToken } from '../_token.js';
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 const CARD_ID_RE = /^[a-zA-Z0-9_-]{1,80}$/;
 
@@ -32,7 +33,7 @@ function corsHeaders(origin) {
   const allowed = origin && (origin === SITE_ORIGIN || /^http:\/\/localhost(:\d+)?$/.test(origin));
   const headers = {
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Headers': 'Content-Type, x-mtf-token',
     'Vary': 'Origin',
   };
   if (allowed) headers['Access-Control-Allow-Origin'] = origin;
@@ -78,9 +79,29 @@ export async function onRequestPost({ request, env }) {
       return new Response('Bad Request', { status: 400, headers });
     }
 
+    // Jen samotné zobrazení vstupní brány musí fungovat před přihlášením.
+    // Všechny členské události a jejich klientem řízené dimenze vyžadují
+    // platnou session, jinak by šla interní analytika libovolně kontaminovat.
+    if (event !== 'gate_shown'
+        && !await verifyToken(readRequestToken(request), env.GATE_CODE, env)) {
+      return new Response('Unauthorized', { status: 401, headers });
+    }
+
     const hour = typeof data.hour_utc === 'number' && data.hour_utc >= 0 && data.hour_utc <= 23 ? data.hour_utc : null;
     const date = typeof data.date === 'string' && isValidDate(data.date) ? data.date : null;
     const writes = [];
+
+    // Veřejná větev nepřebírá žádné textové dimenze ani jiné názvy eventů.
+    // Zapíše jen agregovaný počet zobrazení brány pro dnešní datum.
+    if (event === 'gate_shown') {
+      if (date) {
+        writes.push(kv_update(env.MTF_DATA, `analytics:daily:${date}`, obj => {
+          obj.gate_shown = (obj.gate_shown || 0) + 1;
+        }));
+      }
+      await Promise.all(writes);
+      return new Response('OK', { headers });
+    }
 
     // --- Card open ---
     if (event === 'card_open' && data.id && CARD_ID_RE.test(data.id)) {
@@ -173,8 +194,8 @@ export async function onRequestPost({ request, env }) {
       if (dailyField || hour !== null) {
         writes.push(kv_update(env.MTF_DATA, `analytics:daily:${date}`, obj => {
           if (dailyField) obj[dailyField] = (obj[dailyField] || 0) + 1;
-          // Kolik průchodů bránou obstaral magic link (?k= v odkazu).
-          if (event === 'gate_passed' && data.method === 'magic') {
+          // Kolik průchodů bránou obstaral podepsaný share ticket.
+          if (event === 'gate_passed' && data.method === 'share') {
             obj.gate_magic = (obj.gate_magic || 0) + 1;
           }
           // session_visit nese návštěvnický kontext: nový vs. vracející se

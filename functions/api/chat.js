@@ -1,4 +1,5 @@
 import { rateLimit, ipKey } from './_ratelimit.js';
+import { loadJsonAsset } from '../_carddata.js';
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 const TOKEN_TTL_MS = 30 * 24 * 60 * 60 * 1000;
 const MAX_MESSAGES = 40;
@@ -224,14 +225,8 @@ export async function onRequestPost({ request, env }) {
     return new Response('Message too long', { status: 400, headers: cors });
   }
 
-  const base = new URL(request.url).origin;
-
-  let corpus;
-  try {
-    const r = await fetch(`${base}/data/chat-corpus.json`);
-    if (!r.ok) throw new Error('corpus not found');
-    corpus = await r.json();
-  } catch {
+  const corpus = await loadJsonAsset(env, request, '/data/chat-corpus.json');
+  if (!Array.isArray(corpus)) {
     return new Response('Corpus unavailable', { status: 503, headers: cors });
   }
 
@@ -332,8 +327,8 @@ export async function onRequestPost({ request, env }) {
             try {
               if (block.name === 'search_transcripts') {
                 if (!transcriptsCache) {
-                  const r = await fetch(`${base}/data/chat-transcripts.json`);
-                  transcriptsCache = await r.json();
+                  transcriptsCache = await loadJsonAsset(env, request, '/data/chat-transcripts.json');
+                  if (!transcriptsCache) throw new Error('transcripts unavailable');
                 }
                 const hits = await searchTranscripts(transcriptsCache, block.input.query || '', block.input.limit);
                 result = hits.length
@@ -344,11 +339,10 @@ export async function onRequestPost({ request, env }) {
                 if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
                   result = 'Neplatné datum.';
                 } else {
-                  const r = await fetch(`${base}/data/archive/${date}.json`);
-                  if (!r.ok) {
+                  const data = await loadJsonAsset(env, request, `/data/archive/${date}.json`);
+                  if (!data) {
                     result = `Přepis pro ${date} nenalezen.`;
                   } else {
-                    const data = await r.json();
                     const groups = (data.transcript?.groups || []).map(g =>
                       `=== ${g.name} ===\n` + (g.messages || []).map(m => `[${m.time}] ${m.author}: ${m.text}`).join('\n')
                     );

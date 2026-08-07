@@ -1,4 +1,5 @@
 import { rateLimit, ipKey } from './_ratelimit.js';
+import { readRequestToken, verifyToken } from '../_token.js';
 const SITE_ORIGIN = 'https://master-the-flow-portal.pages.dev';
 const SUB_RATE_LIMIT = 5; // max subscriptions per IP per hour
 const SUB_GLOBAL_CAP = 500; // hard cap on total stored subscriptions
@@ -51,6 +52,10 @@ export async function onRequestPost({ request, env }) {
   const origin = request.headers.get('Origin');
   const headers = corsHeaders(origin);
 
+  if (!await verifyToken(readRequestToken(request), env.GATE_CODE, env)) {
+    return new Response('Unauthorized', { status: 401, headers });
+  }
+
   if (!request.headers.get('content-type')?.includes('application/json')) {
     return new Response('Bad Request', { status: 400, headers });
   }
@@ -90,6 +95,9 @@ export async function onRequestPost({ request, env }) {
 export async function onRequestDelete({ request, env }) {
   const origin = request.headers.get('Origin');
   const headers = corsHeaders(origin);
+  if (!await verifyToken(readRequestToken(request), env.GATE_CODE, env)) {
+    return new Response('Unauthorized', { status: 401, headers });
+  }
   const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
   if (await checkSubRateLimit(env, ip)) {
     return new Response('Too Many Requests', { status: 429, headers });
