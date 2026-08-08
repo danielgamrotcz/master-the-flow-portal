@@ -1367,6 +1367,19 @@
         "Google",
         "Fokus"
       ]
+    },
+    {
+      "date": "2026-08-07",
+      "card_count": 6,
+      "topics": [
+        "Claude Code",
+        "Workflow",
+        "Automatizace",
+        "Vibe Coding",
+        "AI nástroje",
+        "Meeting",
+        "Obsidian"
+      ]
     }
   ]
 }

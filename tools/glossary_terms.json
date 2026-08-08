@@ -1545,6 +1545,38 @@
       "why": "Zazní vždy, když někdo mluví o výuce programování u dětí.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "plaud",
+      "term": "Plaud",
+      "cat": "nastroje",
+      "match": [
+        "Plaud",
+        "Plaudu",
+        "Plaudem",
+        "Plaude"
+      ],
+      "short": "Kompaktní hardwarové nahrávací zařízení navržené přímo pro schůzky a konzultace.",
+      "plain": "Plaud je fyzické nahrávací zařízení určené pro schůzky. Jde o jednoúčelový přístroj, takže vás nepřeruší příchozí hovor ani notifikace z mobilu. Vlastní aplikace zvládne přepis nahrávky a pozná, kdo co říkal.",
+      "why": "V diskuzích o automatizovaném zpracování záznamu ze schůzek a konzultací.",
+      "related": [],
+      "source": "auto"
+    },
+    {
+      "slug": "crm",
+      "term": "CRM",
+      "cat": "nastroje",
+      "match": [
+        "CRM",
+        "CRM systém",
+        "CRM systému",
+        "crm"
+      ],
+      "short": "Software pro evidenci zákazníků, historii schůzek a otevřených úkolů v jednom místě.",
+      "plain": "Zkratka za Customer Relationship Management. Eviduje kontakty, historii komunikace a připomíná, co má být hotové a kdy. Používají ho hlavně obchodní týmy a konzultanti, kteří pracují s víc klienty najednou.",
+      "why": "Při automatizaci follow-upu po schůzkách nebo propojování workflow s klientskými záznamy.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
