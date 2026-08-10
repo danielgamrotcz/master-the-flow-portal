@@ -40,8 +40,9 @@ function check(name, cond, detail = '') {
   check('Hero říká, proč přijít, a nezavírá se lidem mimo komunitu', /Poznejte osobně lidi z Master the Flow/.test(heroLedeText) && /Přijít může kdokoli/.test(heroLedeText));
   check('Hero snižuje tření registrace', /Google formulář.*přibližně 1 minuta.*zdarma/.test(heroNoteText));
   check('Hero potvrzuje registraci bez Google účtu', /bez Google účtu/.test(heroNoteText));
-  check('Hero vysvětluje, jak se lidé dozvědí adresu', /adresu pošlu e-mailem/.test(await page.locator('.hero-facts').innerText()));
-  check('Hero uvádí rámec místa a dostupnost MHD', /Praha, širší centrum/.test((await page.locator('.hero-facts').innerText()).replace(/\u00a0/g, ' ')) && /uvnitř u MHD/.test((await page.locator('.hero-facts').innerText()).replace(/\u00a0/g, ' ')));
+  const heroFactsText = (await page.locator('.hero-facts').innerText()).replace(/\u00a0/g, ' ');
+  check('Hero uvádí potvrzené místo srazu', /Lampárna Lidická/.test(heroFactsText) && /Lidická 31.*Praha 5/.test(heroFactsText));
+  check('Hero odkazuje na Lampárnu Lidická', await page.locator('.hero-fact-place a').getAttribute('href') === 'https://www.lamparnalidicka.cz/');
   check('Hero ukazuje počet registrací', await page.locator('#registered-count').innerText() !== '—');
   const shouldBeFull = attendeesPayload.registeredCount >= 30;
   check('Registrační tlačítka odpovídají aktuální kapacitě', await page.locator('[data-registration-link]').evaluateAll((links, full) => links.every(link => full
@@ -93,10 +94,12 @@ function check(name, cond, detail = '') {
   const googleCalendarUrl = new URL(googleCalendarHref);
   check('Google Kalendář má přímý odkaz', googleCalendarUrl.hostname === 'calendar.google.com' && googleCalendarUrl.searchParams.get('action') === 'TEMPLATE');
   check('Google Kalendář používá správný čas', googleCalendarUrl.searchParams.get('dates') === '20260829T130000/20260829T180000');
+  check('Google Kalendář obsahuje potvrzené místo', googleCalendarUrl.searchParams.get('location') === 'Lampárna Lidická, Lidická 31, 150 00 Praha 5');
   const calendarResponse = await page.request.get(BASE + calendarHref);
   check('ICS soubor je dostupný', calendarResponse.ok());
   check('ICS používá správný termín', (await calendarResponse.text()).includes('DTSTART;TZID=Europe/Prague:20260829T130000'));
   check('ICS končí v 18:00', (await calendarResponse.text()).includes('DTEND;TZID=Europe/Prague:20260829T180000'));
+  check('ICS obsahuje potvrzené místo', (await calendarResponse.text()).includes('LOCATION:Lampárna Lidická\\, Lidická 31\\, 150 00 Praha 5'));
 
   const sticky = page.locator('#sticky-register');
   check('Mobilní registrace má dostatečně velkou dotykovou plochu', await sticky.evaluate(el => el.getBoundingClientRect().height >= 44));
@@ -262,7 +265,7 @@ function check(name, cond, detail = '') {
     body: JSON.stringify({ registeredCount: 30, attendees: [] })
   }));
   await fullCapacityPreview.goto(BASE + '/sraz/', { waitUntil: 'networkidle' });
-  check('Při naplněné kapacitě jsou všechna registrační tlačítka zneaktivněná', await fullCapacityPreview.locator('[data-registration-link]').evaluateAll(links => links.length === 3 && links.every(link => link.getAttribute('aria-disabled') === 'true' && !link.hasAttribute('href') && link.classList.contains('is-registration-unavailable'))));
+  check('Při naplněné kapacitě jsou všechna registrační tlačítka zneaktivněná', await fullCapacityPreview.locator('[data-registration-link]').evaluateAll(links => links.length === 4 && links.every(link => link.getAttribute('aria-disabled') === 'true' && !link.hasAttribute('href') && link.classList.contains('is-registration-unavailable'))));
   check('Naplněná kapacita je na tlačítkách srozumitelně popsána', await fullCapacityPreview.locator('[data-registration-link]').allTextContents().then(labels => labels.every(label => label.includes('Kapacita naplněna'))));
   await fullCapacityPreview.close();
   check('Údaje účastníků se vkládají jako text, ne jako HTML', await attendeePreview.locator('.attendee-card img').count() === 0 && renderedNames.includes('Z <img src=x onerror=alert(1)>'));
