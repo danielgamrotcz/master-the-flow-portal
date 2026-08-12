@@ -77,6 +77,10 @@ function check(name, cond, detail = '') {
   check('Harmonogram má čtyři navazující části', timeline === 4, `count=${timeline}`);
   const programText = (await page.locator('.program').innerText()).replace(/\u00a0/g, ' ');
   check('Program popisuje střídání ukázek, rozhovorů a Q&A', /15–30minutové bloky/.test(programText) && /Ukázky, rozhovory a Q&A/.test(programText));
+  check('Program uvádí potvrzený Tomášův blok', /14:30–14:50/.test(programText) && /Tomáš „Vilík“ Pospíchal/.test(programText) && /Od firemní rutiny k hotovému AI workflow/.test(programText));
+  check('Tomášův medailonek odpovídá podpisu', /AI Solution Architect a Ničitel firemní rutiny v BeeAI/.test(programText));
+  check('Tři nepotvrzené bloky zůstávají anonymní', (programText.match(/Program připravujeme/g) || []).length === 3 && !/\b(?:Aneta|Vojta|Alex)\b/.test(programText));
+  check('Program uvádí Danielovy bloky', /14:00–14:10[\s\S]*Daniel Gamrot[\s\S]*Úvod/.test(programText) && /15:30–15:55[\s\S]*Od inspirace k vlastnímu systému/.test(programText) && /15:55–16:00[\s\S]*Instrukce ke skupinové výzvě/.test(programText));
   check('Skupinová výzva míchá zkušenosti a má výstup', /skupinách po třech/.test(programText) && /různé úrovně zkušenosti/.test(programText) && /krátce ukáže/.test(programText));
   const deviceCopy = await page.locator('.timeline-item, .practical, .faq').allTextContents().then(x => x.join(' '));
   check('Skupinová aktivita zmiňuje zařízení', /notebook|mobil/i.test(deviceCopy));
