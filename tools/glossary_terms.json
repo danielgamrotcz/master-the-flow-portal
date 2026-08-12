@@ -1577,6 +1577,22 @@
       "why": "Při automatizaci follow-upu po schůzkách nebo propojování workflow s klientskými záznamy.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "wispr-flow-notetaker",
+      "term": "Wispr Flow Notetaker",
+      "cat": "nastroje",
+      "match": [
+        "Wispr Flow Notetaker",
+        "Wispr Flow",
+        "wisprflow",
+        "Notetaker"
+      ],
+      "short": "Aplikace na automatický přepis online schůzek, která pozná a pojmenuje jednotlivé mluvčí.",
+      "plain": "Sleduje schůzku na Zoomu, Google Meet, Teams nebo Slacku a přepis rozdělí podle toho, kdo co říkal. Jména přiřadí podle účastníků meetingu. Do schůzky nemusíte zvát žádného robota. Mobilní verze zatím neexistuje.",
+      "why": "Hodí se, když vedete nebo se účastníte online schůzek s více lidmi a chcete z nich mít přepis rozdělený podle mluvčích, bez ručního psaní.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }

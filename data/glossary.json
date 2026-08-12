@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-08",
+  "generated_at": "2026-08-12",
   "source": {
-    "daily_notes": 132,
+    "daily_notes": 136,
     "range": [
       "2026-03-14",
-      "2026-08-07"
+      "2026-08-11"
     ]
   },
   "categories": [
@@ -70,11 +70,11 @@
       "source": "hand",
       "starter": null,
       "search": "agent model, ktery nejen odpovida, ale sam dela kroky, dokud neni hotovo. bezny chat odpovi a ceka. agent misto toho pracuje ve smycce, precte soubor, spusti prikaz, podiva se na vysledek, opravi se a pokracuje. sam se rozhoduje, jaky krok udela dalsi. tohle je rozdil mezi „poradi mi“ a „udela to za me“. agent agenta agentem agenti agentu agenticke agenticky agentic",
-      "mentions": 110,
-      "days": 39,
+      "mentions": 112,
+      "days": 40,
       "first_seen": "2026-03-29",
-      "last_seen": "2026-08-04",
-      "card_hits": 29
+      "last_seen": "2026-08-08",
+      "card_hits": 31
     },
     {
       "slug": "anonymizace",
@@ -228,11 +228,11 @@
       "source": "hand",
       "starter": null,
       "search": "build sestaveni hotove verze ze zdrojovych souboru. zdrojovy kod se pred vypustenim prevede do podoby, ktere rozumi prohlizec, a zaroven se zmensi a pospojuje. kdyz build spadne, ven se nepusti nic.  build buildu buildnout sestaveni",
-      "mentions": 7,
-      "days": 5,
+      "mentions": 10,
+      "days": 6,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-07-22",
-      "card_hits": 2
+      "last_seen": "2026-08-09",
+      "card_hits": 3
     },
     {
       "slug": "claude-code",
@@ -256,11 +256,11 @@
       "source": "hand",
       "starter": 5,
       "search": "claude code claude, ktery bezi v terminalu a sam pracuje se soubory ve vasem projektu. neni to chat v prohlizeci. claude code bezi u vas na pocitaci, vidi slozku s projektem, umi soubory cist i menit, spoustet prikazy a overovat si vysledek. spousti se v terminalu napsanim claude. ve skupine se casto zkracuje na cc. vetsina projektu, ktere tady lidi ukazuji, vznikla presne timhle. claude code claude codu claudecode cc",
-      "mentions": 497,
-      "days": 86,
+      "mentions": 500,
+      "days": 87,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-07",
-      "card_hits": 102
+      "last_seen": "2026-08-08",
+      "card_hits": 103
     },
     {
       "slug": "claude-md",
@@ -357,11 +357,11 @@
       "source": "hand",
       "starter": null,
       "search": "codex kodovaci nastroj od openai, konkurence claude code. nastroj, ktery podobne jako claude code umi pracovat s kodem v projektu. ve skupine se pravidelne srovnavaji, vysledek se lisi podle typu ukolu.  codex codexu codex",
-      "mentions": 94,
-      "days": 28,
+      "mentions": 95,
+      "days": 29,
       "first_seen": "2026-03-18",
-      "last_seen": "2026-08-07",
-      "card_hits": 16
+      "last_seen": "2026-08-10",
+      "card_hits": 17
     },
     {
       "slug": "commit",
@@ -519,10 +519,10 @@
       "source": "hand",
       "starter": null,
       "search": "deploy a nasazeni vypusteni hotove verze ven, aby ji videli ostatni. dokud projekt bezi jen u vas na pocitaci, vidite ho jen vy. nasazeni znamena prenest ho na server, kde je dostupny na internetu. do te doby je to soukroma hracka. dokud nenasadite, nikdo to neuvidi, ani kdyz to mate hotove tyden. deploy deploynout nasazeni nasadit nasazuje deployment",
-      "mentions": 16,
-      "days": 11,
+      "mentions": 17,
+      "days": 12,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-07-26",
+      "last_seen": "2026-08-08",
       "card_hits": 8
     },
     {
@@ -573,11 +573,11 @@
       "source": "hand",
       "starter": null,
       "search": "druhy mozek system poznamek, ktery si pamatuje za vas. usporadane misto, kam ukladate myslenky, zdroje a rozpracovane veci tak, abyste je pozdeji nasli a mohli na nich stavet. neni to o tom mit hodne poznamek, ale o tom umet se k nim vratit. ve skupine je to jedno z nejsilnejsich temat. nejde o mnozstvi poznamek, ale o to, umet se k nim vratit. druhy mozek druheho mozku second brain druhym mozkem",
-      "mentions": 54,
-      "days": 19,
+      "mentions": 55,
+      "days": 20,
       "first_seen": "2026-03-16",
-      "last_seen": "2026-08-04",
-      "card_hits": 11
+      "last_seen": "2026-08-08",
+      "card_hits": 12
     },
     {
       "slug": "framework",
@@ -728,7 +728,7 @@
       "days": 35,
       "first_seen": "2026-03-14",
       "last_seen": "2026-08-07",
-      "card_hits": 19
+      "card_hits": 20
     },
     {
       "slug": "guard",
@@ -929,11 +929,11 @@
       "source": "hand",
       "starter": 4,
       "search": "kontext vsechno, co model v danou chvili vi o vasem zadani. kontext je souhrn toho, co ma model po ruce. vase zpravy, jeho odpovedi, obsah souboru, ktere si precetl, a instrukce, ktere dostal. kdyz mu nahazite vsechno, co vas napadne, utopi se v tom. min informaci, ale trefnejsich, funguje lip. odtud ta rada psat strucne. kdyz do zadani nahazite pet nesouvisejicich veci, vysledek bude horsi, nez kdybyste rekli jednu. kontext kontextu kontextem",
-      "mentions": 167,
-      "days": 72,
+      "mentions": 172,
+      "days": 75,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-07",
-      "card_hits": 35
+      "last_seen": "2026-08-11",
+      "card_hits": 36
     },
     {
       "slug": "kontextove-okno",
@@ -984,11 +984,11 @@
       "source": "hand",
       "starter": null,
       "search": "limity a rate limit strop, kolik toho smite za dane obdobi pouzit. kazdy tarif ma hranici, kolik prace do nej za hodinu nebo tyden vejde. kdyz ji vycerpate, musite chvili pockat, nez se limit obnovi. silnejsi modely limit spotrebovavaji rychleji nez slabsi. odtud rady pracovat mimo spicku nebo prepnout na slabsi model na rutinu. rate limit limit limity limitu limitu limitem",
-      "mentions": 78,
-      "days": 39,
+      "mentions": 79,
+      "days": 40,
       "first_seen": "2026-03-15",
-      "last_seen": "2026-07-27",
-      "card_hits": 24
+      "last_seen": "2026-08-11",
+      "card_hits": 25
     },
     {
       "slug": "llm",
@@ -1110,10 +1110,10 @@
       "source": "hand",
       "starter": null,
       "search": "mcp zpusob, jak claudovi zpristupnit vase dalsi aplikace. model sam o sobe vidi jen to, co mu napisete. pres mcp se k nemu da pripojit kalendar, e-mail, databaze nebo interni system a on s nimi pak umi pracovat. hotova napojeni se daji nainstalovat, psat je nikdo nemusi. zkratka znamena model context protocol a je to otevreny standard od anthropicu, takze jedno napojeni funguje ve vic nastrojich. kdyz nekdo ve skupine napise, ze si k tomu pripojil gmail nebo notion, mluvi o tomhle. mcp",
-      "mentions": 138,
-      "days": 28,
+      "mentions": 144,
+      "days": 29,
       "first_seen": "2026-03-16",
-      "last_seen": "2026-08-07",
+      "last_seen": "2026-08-11",
       "card_hits": 21
     },
     {
@@ -1138,11 +1138,11 @@
       "source": "hand",
       "starter": 2,
       "search": "model konkretni verze ai, kterou zrovna pouzivate. modelu je vic a lisi se silou, rychlosti a cenou. silnejsi zvladne slozite zadani, ale je pomalejsi a drazsi. slabsi odbavi rutinu skoro hned. kdyz nekdo ve skupine pise, ze neco jede na opusu a neco na sonnetu, mluvi presne o tehle volbe. volba modelu je hlavni paka na to, kolik za praci s ai zaplatite. model modelu modely modelu modelem",
-      "mentions": 189,
-      "days": 59,
+      "mentions": 197,
+      "days": 62,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-07",
-      "card_hits": 60
+      "last_seen": "2026-08-11",
+      "card_hits": 62
     },
     {
       "slug": "claude-modely",
@@ -1213,10 +1213,10 @@
       "source": "auto",
       "starter": null,
       "search": "notebooklm nastroj od googlu na dlouhe materialy, prepisy a nahravky. nahrajete do nej soubory nebo nahravku a on z toho udela shrnuti, odpovi na otazky nebo vyrobi zvukovy prehled. hodi se na dlouhe materialy, kde byste jinak rucne hledali, co je podstatne. data jdou do googlu, u citlivych veci proto pozor na gdpr. padl jako tip na zpracovani dlouhych nahravek ze schuzek a koucovacich sezeni. notebooklm notebooklm notebook lm notebooklm'",
-      "mentions": 52,
-      "days": 14,
+      "mentions": 55,
+      "days": 15,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-07",
+      "last_seen": "2026-08-11",
       "card_hits": 6
     },
     {
@@ -1293,11 +1293,11 @@
       "source": "hand",
       "starter": null,
       "search": "obsidian poznamky ulozene jako obycejne textove soubory u vas na disku. aplikace na psani a propojovani poznamek. soubory zustavaji vase, lezi u vas ve slozce jako obycejny text a otevrete je cimkoli, i kdyby obsidian zitra skoncil. to je hlavni rozdil proti cloudovym sluzbam. kolem druheho mozku v obsidianu se ve skupine toci jedno z nejsilnejsich temat. obsidian obsidianu obsidianem obsidian",
-      "mentions": 192,
-      "days": 47,
+      "mentions": 196,
+      "days": 48,
       "first_seen": "2026-03-16",
-      "last_seen": "2026-08-07",
-      "card_hits": 39
+      "last_seen": "2026-08-08",
+      "card_hits": 42
     },
     {
       "slug": "offline",
@@ -1341,11 +1341,11 @@
       "source": "hand",
       "starter": null,
       "search": "open source software s verejne dostupnym kodem, ktery smi kdokoli cist a upravovat. u open source projektu je videt, jak je udelany uvnitr. kdokoli si ho muze stahnout, prohlednout, upravit a vetsinou i pouzit zdarma. podminky urcuje licence, bezna a hodne volna je licence mit.  open source opensource open-source otevreny zdrojovy kod",
-      "mentions": 10,
-      "days": 7,
+      "mentions": 14,
+      "days": 9,
       "first_seen": "2026-04-30",
-      "last_seen": "2026-07-27",
-      "card_hits": 7
+      "last_seen": "2026-08-11",
+      "card_hits": 8
     },
     {
       "slug": "openrouter",
@@ -1439,11 +1439,11 @@
       "source": "auto",
       "starter": null,
       "search": "plaud kompaktni hardwarove nahravaci zarizeni navrzene primo pro schuzky a konzultace. plaud je fyzicke nahravaci zarizeni urcene pro schuzky. jde o jednoucelovy pristroj, takze vas neprerusi prichozi hovor ani notifikace z mobilu. vlastni aplikace zvladne prepis nahravky a pozna, kdo co rikal. v diskuzich o automatizovanem zpracovani zaznamu ze schuzek a konzultaci. plaud plaudu plaudem plaude",
-      "mentions": 110,
-      "days": 21,
+      "mentions": 120,
+      "days": 22,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-07",
-      "card_hits": 17
+      "last_seen": "2026-08-11",
+      "card_hits": 20
     },
     {
       "slug": "env",
@@ -1498,7 +1498,7 @@
       "days": 28,
       "first_seen": "2026-03-15",
       "last_seen": "2026-07-29",
-      "card_hits": 22
+      "card_hits": 23
     },
     {
       "slug": "prototyp",
@@ -1623,7 +1623,7 @@
       "days": 17,
       "first_seen": "2026-03-25",
       "last_seen": "2026-08-07",
-      "card_hits": 7
+      "card_hits": 8
     },
     {
       "slug": "sandbox",
@@ -1726,11 +1726,11 @@
       "source": "hand",
       "starter": null,
       "search": "server pocitac, ktery bezi nepretrzite a obsluhuje ostatni. server je stroj, jehoz jedina prace je cekat na dotazy a odpovidat na ne. muze to byt obri stroj v datovem centru i obycejny pocitac doma, ktery nikdy nevypinate.  server serveru servery serveru serveri",
-      "mentions": 39,
-      "days": 19,
+      "mentions": 40,
+      "days": 20,
       "first_seen": "2026-03-15",
-      "last_seen": "2026-08-01",
-      "card_hits": 12
+      "last_seen": "2026-08-10",
+      "card_hits": 13
     },
     {
       "slug": "session",
@@ -1753,11 +1753,11 @@
       "source": "hand",
       "starter": null,
       "search": "session jedno souvisle sezeni, ve kterem si ai pamatuje, o cem jste mluvili. session drzi spolecnou pamet konverzace. kdyz ji ukoncite a zacnete znovu, zacinate s cistym stolem a nic z minula se neprenasi, pokud to neni zapsane v souborech nebo v pameti. dlouha session zaplni kontextove okno. kratka a soustredena dava lepsi vysledky. session sessions sezeni vlakno vlakna",
-      "mentions": 152,
-      "days": 51,
+      "mentions": 156,
+      "days": 52,
       "first_seen": "2026-03-15",
-      "last_seen": "2026-08-07",
-      "card_hits": 30
+      "last_seen": "2026-08-08",
+      "card_hits": 32
     },
     {
       "slug": "skill",
@@ -1781,11 +1781,11 @@
       "source": "hand",
       "starter": null,
       "search": "skill balicek instrukci pro postup, ktery delate opakovane. skill je ulozeny navod, jak presne nejakou praci udelat. misto abyste postup popisovali pokazde znovu, napisete lomitko a jeho jmeno, treba /review, a claude vi, co ma delat a v jakem poradi. hodi se na rutinu, kterou delate porad stejne. priprava podkladu, kontrola pred vypustenim ven, uklizeni poznamek. skill skillu skilly skillu skills",
-      "mentions": 177,
-      "days": 47,
+      "mentions": 181,
+      "days": 48,
       "first_seen": "2026-03-18",
-      "last_seen": "2026-08-07",
-      "card_hits": 37
+      "last_seen": "2026-08-08",
+      "card_hits": 40
     },
     {
       "slug": "skript",
@@ -1813,7 +1813,7 @@
       "days": 15,
       "first_seen": "2026-03-17",
       "last_seen": "2026-07-15",
-      "card_hits": 18
+      "card_hits": 19
     },
     {
       "slug": "ssh",
@@ -1960,7 +1960,7 @@
       "days": 31,
       "first_seen": "2026-03-14",
       "last_seen": "2026-08-01",
-      "card_hits": 21
+      "card_hits": 22
     },
     {
       "slug": "token",
@@ -2012,11 +2012,11 @@
       "source": "hand",
       "starter": null,
       "search": "transkripce a diarizace prevod mluveni na text a rozliseni, kdo z mluvcich mluvi. transkripce udela z nahravky text. diarizace k tomu prida, ktery usek rekl ktery mluvci. u schuzek byva ta druha vec dulezitejsi nez samotny prepis.  transkripce prepis prepisu prepisy diarizace",
-      "mentions": 108,
-      "days": 35,
+      "mentions": 115,
+      "days": 36,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-07",
-      "card_hits": 32
+      "last_seen": "2026-08-11",
+      "card_hits": 34
     },
     {
       "slug": "vibe-coding",
@@ -2039,11 +2039,11 @@
       "source": "hand",
       "starter": 1,
       "search": "vibe coding staveni aplikaci tak, ze popisujete, co chcete, a kod pise ai. vy rikate, co ma vec delat, ai pise kod a vy vysledek zkousite a usmernujete. programovat umet nemusite. staci umet popsat, co chcete, a poznat, kdy vysledek nesedi. jede se po malych kouscich, protoze velky skok se spatne kontroluje a chyba se v nem hur hleda. kolem tohohle vznikla cela komunita. je to nejcastejsi pojem ve skupine vubec. vibe coding vibe codingu vibecoding vibe kodovani",
-      "mentions": 310,
-      "days": 99,
+      "mentions": 315,
+      "days": 100,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-07",
-      "card_hits": 42
+      "last_seen": "2026-08-10",
+      "card_hits": 44
     },
     {
       "slug": "vm",
@@ -2089,11 +2089,34 @@
       "source": "hand",
       "starter": null,
       "search": "whisper model na prevod reci na text. prepisovaci model od openai. da se pouzivat pres internet i pustit primo na vlastnim pocitaci, takze nahravka nemusi nikam odchazet. stoji na nem vetsina domacich reseni na prepis schuzek a hlasovych poznamek. whisper whisperu whisper",
-      "mentions": 25,
-      "days": 8,
+      "mentions": 33,
+      "days": 9,
       "first_seen": "2026-03-31",
-      "last_seen": "2026-08-07",
+      "last_seen": "2026-08-11",
       "card_hits": 6
+    },
+    {
+      "slug": "wispr-flow-notetaker",
+      "term": "Wispr Flow Notetaker",
+      "category": "nastroje",
+      "short": "Aplikace na automatický přepis online schůzek, která pozná a pojmenuje jednotlivé mluvčí.",
+      "plain": "Sleduje schůzku na Zoomu, Google Meet, Teams nebo Slacku a přepis rozdělí podle toho, kdo co říkal. Jména přiřadí podle účastníků meetingu. Do schůzky nemusíte zvát žádného robota. Mobilní verze zatím neexistuje.",
+      "why": "Hodí se, když vedete nebo se účastníte online schůzek s více lidmi a chcete z nich mít přepis rozdělený podle mluvčích, bez ručního psaní.",
+      "related": [],
+      "aliases": [
+        "Wispr Flow Notetaker",
+        "Wispr Flow",
+        "wisprflow",
+        "Notetaker"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "wispr flow notetaker aplikace na automaticky prepis online schuzek, ktera pozna a pojmenuje jednotlive mluvci. sleduje schuzku na zoomu, google meet, teams nebo slacku a prepis rozdeli podle toho, kdo co rikal. jmena priradi podle ucastniku meetingu. do schuzky nemusite zvat zadneho robota. mobilni verze zatim neexistuje. hodi se, kdyz vedete nebo se ucastnite online schuzek s vice lidmi a chcete z nich mit prepis rozdeleny podle mluvcich, bez rucniho psani. wispr flow notetaker wispr flow wisprflow notetaker",
+      "mentions": 29,
+      "days": 9,
+      "first_seen": "2026-03-19",
+      "last_seen": "2026-08-11",
+      "card_hits": 5
     },
     {
       "slug": "workflow",
@@ -2114,11 +2137,11 @@
       "source": "hand",
       "starter": null,
       "search": "workflow ustaleny postup, jak neco delate od zacatku do konce. sled kroku, ktery vede od zadani k vysledku. nemusi byt zautomatizovany. workflow je i to, kdyz vite, ze po nahravce vzdycky nasleduje prepis, pak shrnuti a nakonec ulozeni do poznamek. ve skupine se sdili spis workflow nez jednotlive nastroje. nastroj se da vymenit, postup zustava. workflow workflowu workflows",
-      "mentions": 114,
-      "days": 60,
+      "mentions": 115,
+      "days": 61,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-07",
-      "card_hits": 43
+      "last_seen": "2026-08-11",
+      "card_hits": 44
     },
     {
       "slug": "yolo",
