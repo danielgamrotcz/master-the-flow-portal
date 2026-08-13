@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-12",
+  "generated_at": "2026-08-13",
   "source": {
-    "daily_notes": 136,
+    "daily_notes": 137,
     "range": [
       "2026-03-14",
-      "2026-08-11"
+      "2026-08-12"
     ]
   },
   "categories": [
@@ -984,10 +984,10 @@
       "source": "hand",
       "starter": null,
       "search": "limity a rate limit strop, kolik toho smite za dane obdobi pouzit. kazdy tarif ma hranici, kolik prace do nej za hodinu nebo tyden vejde. kdyz ji vycerpate, musite chvili pockat, nez se limit obnovi. silnejsi modely limit spotrebovavaji rychleji nez slabsi. odtud rady pracovat mimo spicku nebo prepnout na slabsi model na rutinu. rate limit limit limity limitu limitu limitem",
-      "mentions": 79,
-      "days": 40,
+      "mentions": 80,
+      "days": 41,
       "first_seen": "2026-03-15",
-      "last_seen": "2026-08-11",
+      "last_seen": "2026-08-12",
       "card_hits": 25
     },
     {
@@ -1060,10 +1060,10 @@
       "source": "hand",
       "starter": null,
       "search": "lokalni model model bezici primo na vasem pocitaci misto v cloudu. misto posilani dotazu na internet bezi model primo u vas. data neopusti vas stroj, takze se to hodi na citlive veci. zaplatite za to vykonem, potrebujete silnejsi pocitac a vysledky byvaji slabsi nez u velkych cloudovych modelu. resi se hlavne u prepisu a u dat, ktera nesmi ven. lokalni model lokalne lokalni modely lokalniho modelu",
-      "mentions": 38,
-      "days": 26,
+      "mentions": 42,
+      "days": 27,
       "first_seen": "2026-03-20",
-      "last_seen": "2026-07-15",
+      "last_seen": "2026-08-12",
       "card_hits": 21
     },
     {
@@ -1114,7 +1114,7 @@
       "days": 29,
       "first_seen": "2026-03-16",
       "last_seen": "2026-08-11",
-      "card_hits": 21
+      "card_hits": 23
     },
     {
       "slug": "model",
@@ -1138,10 +1138,10 @@
       "source": "hand",
       "starter": 2,
       "search": "model konkretni verze ai, kterou zrovna pouzivate. modelu je vic a lisi se silou, rychlosti a cenou. silnejsi zvladne slozite zadani, ale je pomalejsi a drazsi. slabsi odbavi rutinu skoro hned. kdyz nekdo ve skupine pise, ze neco jede na opusu a neco na sonnetu, mluvi presne o tehle volbe. volba modelu je hlavni paka na to, kolik za praci s ai zaplatite. model modelu modely modelu modelem",
-      "mentions": 197,
-      "days": 62,
+      "mentions": 199,
+      "days": 63,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-11",
+      "last_seen": "2026-08-12",
       "card_hits": 62
     },
     {
@@ -1293,10 +1293,10 @@
       "source": "hand",
       "starter": null,
       "search": "obsidian poznamky ulozene jako obycejne textove soubory u vas na disku. aplikace na psani a propojovani poznamek. soubory zustavaji vase, lezi u vas ve slozce jako obycejny text a otevrete je cimkoli, i kdyby obsidian zitra skoncil. to je hlavni rozdil proti cloudovym sluzbam. kolem druheho mozku v obsidianu se ve skupine toci jedno z nejsilnejsich temat. obsidian obsidianu obsidianem obsidian",
-      "mentions": 196,
-      "days": 48,
+      "mentions": 197,
+      "days": 49,
       "first_seen": "2026-03-16",
-      "last_seen": "2026-08-08",
+      "last_seen": "2026-08-12",
       "card_hits": 42
     },
     {
@@ -1439,11 +1439,11 @@
       "source": "auto",
       "starter": null,
       "search": "plaud kompaktni hardwarove nahravaci zarizeni navrzene primo pro schuzky a konzultace. plaud je fyzicke nahravaci zarizeni urcene pro schuzky. jde o jednoucelovy pristroj, takze vas neprerusi prichozi hovor ani notifikace z mobilu. vlastni aplikace zvladne prepis nahravky a pozna, kdo co rikal. v diskuzich o automatizovanem zpracovani zaznamu ze schuzek a konzultaci. plaud plaudu plaudem plaude",
-      "mentions": 120,
-      "days": 22,
+      "mentions": 129,
+      "days": 23,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-11",
-      "card_hits": 20
+      "last_seen": "2026-08-12",
+      "card_hits": 21
     },
     {
       "slug": "env",
@@ -1547,6 +1547,28 @@
       "first_seen": "2026-03-16",
       "last_seen": "2026-06-17",
       "card_hits": 1
+    },
+    {
+      "slug": "pyannote",
+      "term": "Pyannote",
+      "category": "nastroje",
+      "short": "Pythonová knihovna, která v nahrávce rozliší a označí jednotlivé mluvčí.",
+      "plain": "Pyannote se specializuje na diarizaci, tedy určení kdo a kdy mluvil v nahrávce. Kombinujete ho s Whisperem, který slova přepíše do textu. Výsledek je přepis, kde každá promluva nese označení mluvčího. Běží lokálně, data nikam neodesíláte.",
+      "why": "Používá se jako součást lokálního postupu pro přepis schůzek nebo rozhovorů s více účastníky.",
+      "related": [],
+      "aliases": [
+        "pyannote",
+        "Pyannote",
+        "pyannote.audio"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "pyannote pythonova knihovna, ktera v nahravce rozlisi a oznaci jednotlive mluvci. pyannote se specializuje na diarizaci, tedy urceni kdo a kdy mluvil v nahravce. kombinujete ho s whisperem, ktery slova prepise do textu. vysledek je prepis, kde kazda promluva nese oznaceni mluvciho. bezi lokalne, data nikam neodesilate. pouziva se jako soucast lokalniho postupu pro prepis schuzek nebo rozhovoru s vice ucastniky. pyannote pyannote pyannote.audio",
+      "mentions": 7,
+      "days": 2,
+      "first_seen": "2026-08-11",
+      "last_seen": "2026-08-12",
+      "card_hits": 0
     },
     {
       "slug": "raspberry-pi",
@@ -2012,11 +2034,11 @@
       "source": "hand",
       "starter": null,
       "search": "transkripce a diarizace prevod mluveni na text a rozliseni, kdo z mluvcich mluvi. transkripce udela z nahravky text. diarizace k tomu prida, ktery usek rekl ktery mluvci. u schuzek byva ta druha vec dulezitejsi nez samotny prepis.  transkripce prepis prepisu prepisy diarizace",
-      "mentions": 115,
-      "days": 36,
+      "mentions": 122,
+      "days": 37,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-11",
-      "card_hits": 34
+      "last_seen": "2026-08-12",
+      "card_hits": 36
     },
     {
       "slug": "vibe-coding",
@@ -2089,11 +2111,11 @@
       "source": "hand",
       "starter": null,
       "search": "whisper model na prevod reci na text. prepisovaci model od openai. da se pouzivat pres internet i pustit primo na vlastnim pocitaci, takze nahravka nemusi nikam odchazet. stoji na nem vetsina domacich reseni na prepis schuzek a hlasovych poznamek. whisper whisperu whisper",
-      "mentions": 33,
-      "days": 9,
+      "mentions": 37,
+      "days": 10,
       "first_seen": "2026-03-31",
-      "last_seen": "2026-08-11",
-      "card_hits": 6
+      "last_seen": "2026-08-12",
+      "card_hits": 7
     },
     {
       "slug": "wispr-flow-notetaker",
@@ -2116,7 +2138,7 @@
       "days": 9,
       "first_seen": "2026-03-19",
       "last_seen": "2026-08-11",
-      "card_hits": 5
+      "card_hits": 6
     },
     {
       "slug": "workflow",

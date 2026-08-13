@@ -1421,6 +1421,17 @@
         "Meeting",
         "MCP"
       ]
+    },
+    {
+      "date": "2026-08-12",
+      "card_count": 2,
+      "topics": [
+        "Meeting",
+        "Obsidian",
+        "Automatizace",
+        "Workflow",
+        "AI nástroje"
+      ]
     }
   ]
 }

@@ -1593,6 +1593,21 @@
       "why": "Hodí se, když vedete nebo se účastníte online schůzek s více lidmi a chcete z nich mít přepis rozdělený podle mluvčích, bez ručního psaní.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "pyannote",
+      "term": "Pyannote",
+      "cat": "nastroje",
+      "match": [
+        "pyannote",
+        "Pyannote",
+        "pyannote.audio"
+      ],
+      "short": "Pythonová knihovna, která v nahrávce rozliší a označí jednotlivé mluvčí.",
+      "plain": "Pyannote se specializuje na diarizaci, tedy určení kdo a kdy mluvil v nahrávce. Kombinujete ho s Whisperem, který slova přepíše do textu. Výsledek je přepis, kde každá promluva nese označení mluvčího. Běží lokálně, data nikam neodesíláte.",
+      "why": "Používá se jako součást lokálního postupu pro přepis schůzek nebo rozhovorů s více účastníky.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
