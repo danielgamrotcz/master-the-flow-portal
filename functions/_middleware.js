@@ -12,7 +12,7 @@ import { verifyToken, readCookie, COOKIE_NAME } from './_token.js';
 
 // Citlivý je celý segment, který se přesně rovná jednomu z těchto názvů…
 const BLOCKED_EXACT = new Set([
-  '.dev.vars', '.env', '.gitignore', '.git', '.wrangler',
+  '.dev.vars', '.env', '.gitignore', '.git', '.github', '.wrangler',
   'wrangler.toml', 'wrangler.json', 'wrangler.jsonc',
   'package.json', 'package-lock.json',
   'tests', 'tools', '__pycache__',

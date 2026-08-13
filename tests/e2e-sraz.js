@@ -20,6 +20,8 @@ function check(name, cond, detail = '') {
   const response = await page.goto(BASE + '/sraz/', { waitUntil: 'networkidle' });
   check('/sraz/ vrací úspěšnou odpověď', response && response.ok(), String(response && response.status()));
   check('Stránka je veřejná bez přístupové brány', await page.locator('#gate').count() === 0);
+  const workflowResponse = await page.request.get(BASE + '/.github/workflows/sraz-e2e.yml');
+  check('Interní GitHub workflow není veřejně dostupný', workflowResponse.status() === 404, String(workflowResponse.status()));
   const attendeesResponse = await page.request.get(BASE + '/api/meetup-attendees');
   const attendeesPayload = await attendeesResponse.json();
   check('Veřejné API účastníků vrací seznam a počet registrací bez cache', attendeesResponse.ok() && Array.isArray(attendeesPayload.attendees) && Number.isSafeInteger(attendeesPayload.registeredCount) && attendeesResponse.headers()['cache-control'] === 'no-store');
@@ -68,6 +70,7 @@ function check(name, cond, detail = '') {
   const firstThemeLabel = await page.locator('#theme-toggle').getAttribute('aria-label');
   const firstThemeContrast = await buttonContrast();
   await page.locator('#theme-toggle').click();
+  await page.waitForTimeout(200);
   const secondThemeLabel = await page.locator('#theme-toggle').getAttribute('aria-label');
   const secondThemeContrast = await buttonContrast();
   check('Přepínač tématu popisuje cílový režim', firstThemeLabel !== secondThemeLabel && /Přepnout na (tmavý|světlý) režim/.test(firstThemeLabel || '') && /Přepnout na (tmavý|světlý) režim/.test(secondThemeLabel || ''));

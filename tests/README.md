@@ -30,3 +30,16 @@ Playwright se bere přes NODE_PATH z ~/Projects/voice-browser/node_modules
 (portál záměrně nemá package.json — deployoval by se).
 
 Složka tests/ je blokovaná v functions/_middleware.js, na produkci není dostupná.
+
+### CI kontrola stránky srazu
+
+Workflow `.github/workflows/sraz-e2e.yml` spouští `tests/e2e-sraz.js` při pull
+requestu nebo pushi do `main`, pokud se změnila stránka srazu, její funkce,
+fonty, hlavičky, Wrangler konfigurace nebo samotný test. Lze ho spustit také
+ručně přes `workflow_dispatch`.
+
+Playwright a Wrangler se v CI instalují v připnutých verzích pouze do
+`RUNNER_TEMP`; repozitář proto dál nemá `package.json` ani `node_modules`.
+Workflow používá lokální Pages server, nemá produkční tajemství a neobsahuje
+žádný push ani deploy krok. Produkční nasazení zůstává samostatnou ručně
+schvalovanou akcí.

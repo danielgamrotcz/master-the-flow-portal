@@ -1,0 +1,98 @@
+name: Sraz E2E
+
+on:
+  pull_request:
+    paths:
+      - "sraz/**"
+      - "functions/**"
+      - "fonts/**"
+      - "_headers"
+      - "_redirects"
+      - "wrangler.toml"
+      - "tests/_auth.js"
+      - "tests/e2e-sraz.js"
+      - ".github/workflows/sraz-e2e.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "sraz/**"
+      - "functions/**"
+      - "fonts/**"
+      - "_headers"
+      - "_redirects"
+      - "wrangler.toml"
+      - "tests/_auth.js"
+      - "tests/e2e-sraz.js"
+      - ".github/workflows/sraz-e2e.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sraz-e2e-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  e2e:
+    name: Public meetup page
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      MTF_BASE: http://127.0.0.1:8788
+      PLAYWRIGHT_VERSION: 1.61.0
+      WRANGLER_VERSION: 4.91.0
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+
+      - name: Install isolated test tools
+        shell: bash
+        run: |
+          npm install \
+            --prefix "$RUNNER_TEMP/mtf-sraz-ci" \
+            --no-save \
+            --no-package-lock \
+            --no-audit \
+            --no-fund \
+            "playwright@$PLAYWRIGHT_VERSION" \
+            "wrangler@$WRANGLER_VERSION"
+          "$RUNNER_TEMP/mtf-sraz-ci/node_modules/.bin/playwright" install --with-deps chromium
+
+      - name: Run meetup checks against local Pages server
+        shell: bash
+        env:
+          NODE_PATH: ${{ runner.temp }}/mtf-sraz-ci/node_modules
+        run: |
+          set -Eeuo pipefail
+          "$RUNNER_TEMP/mtf-sraz-ci/node_modules/.bin/wrangler" pages dev . --port 8788 \
+            > "$RUNNER_TEMP/mtf-sraz-wrangler.log" 2>&1 &
+          wrangler_pid=$!
+          trap 'kill "$wrangler_pid" 2> /dev/null || true' EXIT
+
+          for attempt in {1..60}; do
+            if curl --fail --silent --show-error "$MTF_BASE/sraz/" > /dev/null; then
+              break
+            fi
+            if ! kill -0 "$wrangler_pid" 2> /dev/null; then
+              cat "$RUNNER_TEMP/mtf-sraz-wrangler.log"
+              exit 1
+            fi
+            if [[ "$attempt" == 60 ]]; then
+              cat "$RUNNER_TEMP/mtf-sraz-wrangler.log"
+              exit 1
+            fi
+            sleep 1
+          done
+
+          if ! node tests/e2e-sraz.js; then
+            cat "$RUNNER_TEMP/mtf-sraz-wrangler.log"
+            exit 1
+          fi
