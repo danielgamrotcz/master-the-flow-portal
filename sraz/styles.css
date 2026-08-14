@@ -88,6 +88,7 @@ a { color: var(--accent); }
 .hero-lede { max-width: 740px; margin: 0; color: var(--text-secondary); font-size: clamp(18px, 1.6vw, 21px); line-height: 1.62; text-wrap: pretty; }
 .hero-conversion { width: min(100%, 360px); min-width: 0; margin-top: 28px; }
 .hero-picnic-proof { margin: 0 0 11px; padding-left: 16px; position: relative; color: var(--text-primary); font-size: 14px; line-height: 1.4; }
+.hero-picnic-proof[hidden] { display: none; }
 .hero-picnic-proof::before { content: ''; width: 8px; height: 8px; position: absolute; top: .43em; left: 0; border-radius: 50%; background: var(--accent); }
 .hero-picnic-proof strong { color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; }
 .hero-actions { display: grid; }

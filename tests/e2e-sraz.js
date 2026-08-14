@@ -46,7 +46,7 @@ function check(name, cond, detail = '') {
   check('Hero uvádí potvrzené místo srazu', /Lampárna Lidická/.test(heroFactsText) && /Lidická 31.*Praha 5/.test(heroFactsText));
   check('Hero odkazuje na Lampárnu Lidická', await page.locator('.hero-fact-place a').getAttribute('href') === 'https://www.lamparnalidicka.cz/');
   check('Hero ukazuje kapacitu hlavního programu', /\/30$/.test(await page.locator('#official-registered-count').innerText()));
-  check('Hero ukazuje živý počet přihlášených na piknik', await page.locator('#hero-picnic-registered-count').innerText() === String(attendeesPayload.picnicRegisteredCount) && /Na piknik už se přihlásil/.test(await page.locator('.hero-picnic-proof').innerText()));
+  check('Hero ukazuje živý počet přihlášených na piknik', await page.locator('.hero-picnic-proof').isVisible() && await page.locator('#hero-picnic-registered-count').innerText() === String(attendeesPayload.picnicRegisteredCount) && /Na piknik už se přihlásil/.test(await page.locator('.hero-picnic-proof').innerText()));
   check('Pikniková registrace zůstává dostupná i při plném hlavním programu', await page.locator('[data-registration-link]').evaluateAll(links => links.length === 4 && links.every(link => /^https:\/\/docs\.google\.com\/forms\//.test(link.getAttribute('href') || '') && link.getAttribute('aria-disabled') !== 'true')));
   check('Značka Master the Flow se v titulku neláme', await page.locator('h1 .no-break').evaluate(el => getComputedStyle(el).whiteSpace === 'nowrap'));
 

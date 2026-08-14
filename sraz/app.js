@@ -74,11 +74,13 @@ function renderRegistrationCounts(officialCount, picnicCount) {
 
   const picnicValues = document.querySelectorAll('[data-picnic-registered-count]');
   const picnicCopy = document.getElementById('picnic-registered-count-copy');
+  const picnicProof = document.querySelector('.hero-picnic-proof');
   const picnicProofPrefix = document.getElementById('hero-picnic-proof-prefix');
   const picnicProofNoun = document.getElementById('hero-picnic-registered-noun');
   if (Number.isSafeInteger(picnicCount) && picnicCount >= 0) {
     picnicValues.forEach(value => { value.textContent = String(picnicCount); });
     if (picnicCopy) picnicCopy.hidden = false;
+    if (picnicProof) picnicProof.hidden = false;
     if (picnicProofPrefix && picnicProofNoun) {
       if (picnicCount === 1) {
         picnicProofPrefix.textContent = 'Na piknik už se přihlásil ';
