@@ -1608,6 +1608,54 @@
       "why": "Používá se jako součást lokálního postupu pro přepis schůzek nebo rozhovorů s více účastníky.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "tmux",
+      "term": "Tmux",
+      "cat": "pc",
+      "match": [
+        "tmux",
+        "tmuxem",
+        "tmuxa"
+      ],
+      "short": "Program, který terminálové okno rozdělí na více panelů a nechá relaci běžet i po zavření notebooku.",
+      "plain": "Spustíte ho v příkazovém řádku a pracujete ve více panelech najednou. Celá relace zůstane aktivní, i když notebook zavřete nebo se odpojíte od vzdáleného stroje. Příště se připojíte a vše je přesně tam, kde jste to nechali. Hodí se hlavně když máte jeden centrální počítač doma a připojujete se k němu z různých zařízení přes Tailscale nebo SSH.",
+      "why": "Při práci s centrálním strojem přes Tailscale nebo SSH.",
+      "related": [],
+      "source": "auto"
+    },
+    {
+      "slug": "governance",
+      "term": "Governance",
+      "cat": "ai",
+      "match": [
+        "governance",
+        "governancí",
+        "governanci"
+      ],
+      "short": "Soubor pravidel a kontrolních mechanismů, které hlídají, jak se AI agent chová v produkci.",
+      "plain": "Když nasadíte AI agenta u zákazníka, nestačí, že funguje. Musíte mít jasno, kdo za jeho výstupy ručí a co platí, když udělá chybu. Tohle všechno spadá pod governance.",
+      "why": "Při nasazování AI agentů ve firmách nebo při práci s citlivými daty.",
+      "related": [],
+      "source": "auto"
+    },
+    {
+      "slug": "model-agnosticky",
+      "term": "Model-agnostický",
+      "cat": "ai",
+      "match": [
+        "model-agnostický",
+        "model-agnostická",
+        "model-agnostické",
+        "model-agnostickou",
+        "modelově agnostická",
+        "model-agnostic"
+      ],
+      "short": "Vlastnost nástroje, který funguje s libovolným AI modelem a nezamyká vás k jednomu poskytovateli.",
+      "plain": "Když se o nástroji řekne, že je model-agnostický, znamená to, že si sami vyberete, se kterým AI modelem ho propojíte. Třeba NCM z OpenTechLab funguje s ChatGPT, Claude i Gemini zároveň.",
+      "why": "Při výběru AI nástrojů a při porovnávání různých platforem.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }

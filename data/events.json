@@ -8,16 +8,16 @@
       "date": "2026-08-29",
       "time_from": "13:00",
       "time_to": "18:00",
-      "location": "Praha, širší centrum",
-      "short": "Otevřené odpolední setkání v Praze: ukázky systémů, moderované rozhovory, Q&A, skupinová výzva a po 18. hodině piknik. Kapacita 50 lidí.",
-      "description": "Sejdeme se v sobotu 29. srpna v Praze, širším centru. Oficiální část proběhne od 13:00 do 18:00 a potom budeme pokračovat společným piknikem. Sezení bude uvnitř a u MHD. Přijít může kdokoli, stačí se zaregistrovat. Kapacita prvního srazu je 50 lidí; přesnou adresu, místo pikniku a konkrétní témata pošlu registrovaným.",
+      "location": "Lampárna Lidická, Praha 5",
+      "short": "Hlavní program má 30 z 30 míst. Registrace zůstává otevřená na společný piknik po 18. hodině, i pro lidi mimo komunitu a bez účasti na programu.",
+      "description": "Sejdeme se v sobotu 29. srpna v Lampárně Lidická. Hlavní program od 13:00 do 18:00 je naplněný. Po 18. hodině pokračujeme společným piknikem, na který se mohou registrovat lidé z komunity i zvenku a také bez účasti na hlavním programu. Přesné místo pikniku pošlu registrovaným.",
       "program": [
         { "time": "13:00–14:00", "label": "Volný příchod, networking a volný program" },
         { "time": "14:00–16:00", "label": "Ukázky systémů, moderované rozhovory a Q&A v 15–30minutových blocích" },
         { "time": "16:00–18:00", "label": "Skupinová výzva v promíchaných týmech; notebook nebo mobil se mohou hodit, nejsou povinné" },
-        { "time": "od 18:00", "label": "Společný piknik pro zájemce; přesné místo ještě upřesním" }
+        { "time": "od 18:00", "label": "Společný piknik otevřený i bez účasti na hlavním programu; přesné místo pošlu registrovaným" }
       ],
-      "registration_url": "https://docs.google.com/forms/d/e/1FAIpQLSc-IoU8ka75ur-VzBTfb88PZZMBjvVc7kVU2_BKeHdIM7YN7g/viewform",
+      "registration_url": "https://docs.google.com/forms/d/e/1FAIpQLSdIuELRt6vZGy9Rwq1-g0X7dS7DcMIpeJDjr5bOpyQpAwdRlg/viewform",
       "registration_page_url": "/sraz/",
       "is_paid": false,
       "price": null,

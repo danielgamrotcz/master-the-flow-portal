@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-13",
+  "generated_at": "2026-08-14",
   "source": {
-    "daily_notes": 137,
+    "daily_notes": 138,
     "range": [
       "2026-03-14",
-      "2026-08-12"
+      "2026-08-13"
     ]
   },
   "categories": [
@@ -70,10 +70,10 @@
       "source": "hand",
       "starter": null,
       "search": "agent model, ktery nejen odpovida, ale sam dela kroky, dokud neni hotovo. bezny chat odpovi a ceka. agent misto toho pracuje ve smycce, precte soubor, spusti prikaz, podiva se na vysledek, opravi se a pokracuje. sam se rozhoduje, jaky krok udela dalsi. tohle je rozdil mezi „poradi mi“ a „udela to za me“. agent agenta agentem agenti agentu agenticke agenticky agentic",
-      "mentions": 112,
-      "days": 40,
+      "mentions": 120,
+      "days": 41,
       "first_seen": "2026-03-29",
-      "last_seen": "2026-08-08",
+      "last_seen": "2026-08-13",
       "card_hits": 31
     },
     {
@@ -175,10 +175,10 @@
       "source": "hand",
       "starter": null,
       "search": "automatizace postup, ktery po nastaveni bezi bez vas. nastavite jednou a pak uz to jede samo, bud v urceny cas, nebo kdyz nastane nejaka udalost. typicky neco, co byste jinak delali porad dokola. ve skupine to byva stahovani prepisu z nahravek, ranni souhrn do poznamek nebo hlidani, jestli neco nespadlo. vetsina projektu, ktere tady lidi ukazuji, zacala jako otrava, kterou je nebavilo delat rucne. automatizace automatizaci automatizovat automatizovane",
-      "mentions": 64,
-      "days": 36,
+      "mentions": 65,
+      "days": 37,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-07",
+      "last_seen": "2026-08-13",
       "card_hits": 20
     },
     {
@@ -281,10 +281,10 @@
       "source": "hand",
       "starter": null,
       "search": "claude.md soubor s instrukcemi, ktere si claude code precte pri kazdem spusteni. textovy soubor ulozeny v projektu, do ktereho si napisete, jak se v nem ma pracovat. je to trvala poznamka ve stylu tady to delame takhle. stejne veci se pak nemusi opakovat v kazde konverzaci. casto se pripomina, ze ma byt kratky. dlouhy soubor spolyka kontext a instrukce se v nem ztrati. claude.md claude.md",
-      "mentions": 31,
-      "days": 12,
+      "mentions": 33,
+      "days": 13,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-07-22",
+      "last_seen": "2026-08-13",
       "card_hits": 12
     },
     {
@@ -416,10 +416,10 @@
       "source": "auto",
       "starter": null,
       "search": "cowork claude v prohlizeci, ovladany klikanim misto psani do terminalu. cowork bezi v prohlizeci a vsechno se v nem odklikava. nemusite nic instalovat ani psat prikazy. pro spoustu lidi je to schudnejsi vstup nez claude code. nastaveni a pamet si ale drzi v cloudu. claude code ma oboje v textovych souborech u vas na disku, a prenest je jinam je pak snazsi. otazka cim zacit tady pada porad dokola. odpoved se lisi podle toho, jestli chcete terminal, nebo ne. cowork cowork cowork coworku coworku coworkem coworkem",
-      "mentions": 141,
-      "days": 26,
+      "mentions": 142,
+      "days": 27,
       "first_seen": "2026-03-19",
-      "last_seen": "2026-07-31",
+      "last_seen": "2026-08-13",
       "card_hits": 17
     },
     {
@@ -519,10 +519,10 @@
       "source": "hand",
       "starter": null,
       "search": "deploy a nasazeni vypusteni hotove verze ven, aby ji videli ostatni. dokud projekt bezi jen u vas na pocitaci, vidite ho jen vy. nasazeni znamena prenest ho na server, kde je dostupny na internetu. do te doby je to soukroma hracka. dokud nenasadite, nikdo to neuvidi, ani kdyz to mate hotove tyden. deploy deploynout nasazeni nasadit nasazuje deployment",
-      "mentions": 17,
-      "days": 12,
+      "mentions": 18,
+      "days": 13,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-08",
+      "last_seen": "2026-08-13",
       "card_hits": 8
     },
     {
@@ -573,10 +573,10 @@
       "source": "hand",
       "starter": null,
       "search": "druhy mozek system poznamek, ktery si pamatuje za vas. usporadane misto, kam ukladate myslenky, zdroje a rozpracovane veci tak, abyste je pozdeji nasli a mohli na nich stavet. neni to o tom mit hodne poznamek, ale o tom umet se k nim vratit. ve skupine je to jedno z nejsilnejsich temat. nejde o mnozstvi poznamek, ale o to, umet se k nim vratit. druhy mozek druheho mozku second brain druhym mozkem",
-      "mentions": 55,
-      "days": 20,
+      "mentions": 56,
+      "days": 21,
       "first_seen": "2026-03-16",
-      "last_seen": "2026-08-08",
+      "last_seen": "2026-08-13",
       "card_hits": 12
     },
     {
@@ -724,11 +724,33 @@
       "source": "hand",
       "starter": null,
       "search": "github web, kam se git projekty ukladaji online, aby sly sdilet a zalohovat. github je sluzba, kde vas projekt bydli na internetu. diky tomu se k nemu dostanete z vic pocitacu, mate ho zalohovany a muzete ho ukazat ostatnim. git a github jsou dve ruzne veci. git je ten system, github je jedno z mist, kde muze projekt bydlet. kdyz nekdo ve skupine sdili projekt, obvykle sdili odkaz na github. github githubu github.com githubu",
-      "mentions": 81,
-      "days": 35,
+      "mentions": 83,
+      "days": 36,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-07",
+      "last_seen": "2026-08-13",
       "card_hits": 20
+    },
+    {
+      "slug": "governance",
+      "term": "Governance",
+      "category": "ai",
+      "short": "Soubor pravidel a kontrolních mechanismů, které hlídají, jak se AI agent chová v produkci.",
+      "plain": "Když nasadíte AI agenta u zákazníka, nestačí, že funguje. Musíte mít jasno, kdo za jeho výstupy ručí a co platí, když udělá chybu. Tohle všechno spadá pod governance.",
+      "why": "Při nasazování AI agentů ve firmách nebo při práci s citlivými daty.",
+      "related": [],
+      "aliases": [
+        "governance",
+        "governancí",
+        "governanci"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "governance soubor pravidel a kontrolnich mechanismu, ktere hlidaji, jak se ai agent chova v produkci. kdyz nasadite ai agenta u zakaznika, nestaci, ze funguje. musite mit jasno, kdo za jeho vystupy ruci a co plati, kdyz udela chybu. tohle vsechno spada pod governance. pri nasazovani ai agentu ve firmach nebo pri praci s citlivymi daty. governance governanci governanci",
+      "mentions": 7,
+      "days": 3,
+      "first_seen": "2026-05-19",
+      "last_seen": "2026-08-13",
+      "card_hits": 0
     },
     {
       "slug": "guard",
@@ -798,10 +820,10 @@
       "source": "hand",
       "starter": 6,
       "search": "halucinace kdyz si model neco vymysli a tvari se u toho stejne jiste jako kdyz ma pravdu. model sklada text tak, aby vypadal pravdepodobne. o pravdivosti sam nic nevi. kdyz odpoved nezna, klidne si ji vymysli i s cisly, jmeny a odkazy. a napise to stejne sebejiste jako vec, kterou ma overenou. proto se u cisel, jmen a odkazu overuje zdroj, obzvlast kdyz jdou ven. vymysleny odkaz vypada uplne stejne verohodne jako pravy. halucinace halucinaci halucinacemi halucinaci halucinuje",
-      "mentions": 5,
-      "days": 3,
+      "mentions": 7,
+      "days": 4,
       "first_seen": "2026-05-14",
-      "last_seen": "2026-05-21",
+      "last_seen": "2026-08-13",
       "card_hits": 3
     },
     {
@@ -929,10 +951,10 @@
       "source": "hand",
       "starter": 4,
       "search": "kontext vsechno, co model v danou chvili vi o vasem zadani. kontext je souhrn toho, co ma model po ruce. vase zpravy, jeho odpovedi, obsah souboru, ktere si precetl, a instrukce, ktere dostal. kdyz mu nahazite vsechno, co vas napadne, utopi se v tom. min informaci, ale trefnejsich, funguje lip. odtud ta rada psat strucne. kdyz do zadani nahazite pet nesouvisejicich veci, vysledek bude horsi, nez kdybyste rekli jednu. kontext kontextu kontextem",
-      "mentions": 172,
-      "days": 75,
+      "mentions": 177,
+      "days": 76,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-11",
+      "last_seen": "2026-08-13",
       "card_hits": 36
     },
     {
@@ -1009,10 +1031,10 @@
       "source": "hand",
       "starter": null,
       "search": "llm velky jazykovy model, tedy to, co pohani claude nebo chatgpt. zkratka pro large language model, cesky velky jazykovy model. je to program natrenovany na obrovskem mnozstvi textu, ktery se naucil odhadovat, jaka slova maji nasledovat. z toho odhadovani vznika vsechno ostatni, odpovedi, preklady i kod. kdyz nekdo rekne model, mysli skoro vzdycky tohle. claude, gpt i gemini jsou llm. llm llms",
-      "mentions": 40,
-      "days": 26,
+      "mentions": 42,
+      "days": 27,
       "first_seen": "2026-03-20",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-13",
       "card_hits": 7
     },
     {
@@ -1033,10 +1055,10 @@
       "source": "hand",
       "starter": null,
       "search": "localhost vas vlastni pocitac v roli serveru. vidite to jen vy. kdyz si aplikaci spustite u sebe, bezi na localhostu. adresa vypada jako web, ale ven nevede.  localhost lokalne na pocitaci",
-      "mentions": 1,
-      "days": 1,
+      "mentions": 2,
+      "days": 2,
       "first_seen": "2026-03-18",
-      "last_seen": "2026-03-18",
+      "last_seen": "2026-08-13",
       "card_hits": 0
     },
     {
@@ -1060,11 +1082,11 @@
       "source": "hand",
       "starter": null,
       "search": "lokalni model model bezici primo na vasem pocitaci misto v cloudu. misto posilani dotazu na internet bezi model primo u vas. data neopusti vas stroj, takze se to hodi na citlive veci. zaplatite za to vykonem, potrebujete silnejsi pocitac a vysledky byvaji slabsi nez u velkych cloudovych modelu. resi se hlavne u prepisu a u dat, ktera nesmi ven. lokalni model lokalne lokalni modely lokalniho modelu",
-      "mentions": 42,
-      "days": 27,
+      "mentions": 43,
+      "days": 28,
       "first_seen": "2026-03-20",
-      "last_seen": "2026-08-12",
-      "card_hits": 21
+      "last_seen": "2026-08-13",
+      "card_hits": 22
     },
     {
       "slug": "markdown",
@@ -1138,11 +1160,36 @@
       "source": "hand",
       "starter": 2,
       "search": "model konkretni verze ai, kterou zrovna pouzivate. modelu je vic a lisi se silou, rychlosti a cenou. silnejsi zvladne slozite zadani, ale je pomalejsi a drazsi. slabsi odbavi rutinu skoro hned. kdyz nekdo ve skupine pise, ze neco jede na opusu a neco na sonnetu, mluvi presne o tehle volbe. volba modelu je hlavni paka na to, kolik za praci s ai zaplatite. model modelu modely modelu modelem",
-      "mentions": 199,
-      "days": 63,
+      "mentions": 202,
+      "days": 64,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-12",
-      "card_hits": 62
+      "last_seen": "2026-08-13",
+      "card_hits": 63
+    },
+    {
+      "slug": "model-agnosticky",
+      "term": "Model-agnostický",
+      "category": "ai",
+      "short": "Vlastnost nástroje, který funguje s libovolným AI modelem a nezamyká vás k jednomu poskytovateli.",
+      "plain": "Když se o nástroji řekne, že je model-agnostický, znamená to, že si sami vyberete, se kterým AI modelem ho propojíte. Třeba NCM z OpenTechLab funguje s ChatGPT, Claude i Gemini zároveň.",
+      "why": "Při výběru AI nástrojů a při porovnávání různých platforem.",
+      "related": [],
+      "aliases": [
+        "model-agnostický",
+        "model-agnostická",
+        "model-agnostické",
+        "model-agnostickou",
+        "modelově agnostická",
+        "model-agnostic"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "model-agnosticky vlastnost nastroje, ktery funguje s libovolnym ai modelem a nezamyka vas k jednomu poskytovateli. kdyz se o nastroji rekne, ze je model-agnosticky, znamena to, ze si sami vyberete, se kterym ai modelem ho propojite. treba ncm z opentechlab funguje s chatgpt, claude i gemini zaroven. pri vyberu ai nastroju a pri porovnavani ruznych platforem. model-agnosticky model-agnosticka model-agnosticke model-agnostickou modelove agnosticka model-agnostic",
+      "mentions": 5,
+      "days": 3,
+      "first_seen": "2026-06-16",
+      "last_seen": "2026-08-13",
+      "card_hits": 1
     },
     {
       "slug": "claude-modely",
@@ -1297,7 +1344,7 @@
       "days": 49,
       "first_seen": "2026-03-16",
       "last_seen": "2026-08-12",
-      "card_hits": 42
+      "card_hits": 43
     },
     {
       "slug": "offline",
@@ -1443,7 +1490,7 @@
       "days": 23,
       "first_seen": "2026-03-17",
       "last_seen": "2026-08-12",
-      "card_hits": 21
+      "card_hits": 23
     },
     {
       "slug": "env",
@@ -1519,10 +1566,10 @@
       "source": "hand",
       "starter": null,
       "search": "prototyp rychla zkusebni verze, ktera ma neco overit, ne vydrzet. rychla verze, na ktere si osahate, jestli napad funguje a jak se to ovlada. pocita se s tim, ze se zahodi.  prototyp prototypu prototypy",
-      "mentions": 7,
-      "days": 7,
+      "mentions": 8,
+      "days": 8,
       "first_seen": "2026-03-16",
-      "last_seen": "2026-07-25",
+      "last_seen": "2026-08-13",
       "card_hits": 3
     },
     {
@@ -1568,7 +1615,7 @@
       "days": 2,
       "first_seen": "2026-08-11",
       "last_seen": "2026-08-12",
-      "card_hits": 0
+      "card_hits": 2
     },
     {
       "slug": "raspberry-pi",
@@ -1775,10 +1822,10 @@
       "source": "hand",
       "starter": null,
       "search": "session jedno souvisle sezeni, ve kterem si ai pamatuje, o cem jste mluvili. session drzi spolecnou pamet konverzace. kdyz ji ukoncite a zacnete znovu, zacinate s cistym stolem a nic z minula se neprenasi, pokud to neni zapsane v souborech nebo v pameti. dlouha session zaplni kontextove okno. kratka a soustredena dava lepsi vysledky. session sessions sezeni vlakno vlakna",
-      "mentions": 156,
-      "days": 52,
+      "mentions": 159,
+      "days": 53,
       "first_seen": "2026-03-15",
-      "last_seen": "2026-08-08",
+      "last_seen": "2026-08-13",
       "card_hits": 32
     },
     {
@@ -1803,10 +1850,10 @@
       "source": "hand",
       "starter": null,
       "search": "skill balicek instrukci pro postup, ktery delate opakovane. skill je ulozeny navod, jak presne nejakou praci udelat. misto abyste postup popisovali pokazde znovu, napisete lomitko a jeho jmeno, treba /review, a claude vi, co ma delat a v jakem poradi. hodi se na rutinu, kterou delate porad stejne. priprava podkladu, kontrola pred vypustenim ven, uklizeni poznamek. skill skillu skilly skillu skills",
-      "mentions": 181,
-      "days": 48,
+      "mentions": 184,
+      "days": 49,
       "first_seen": "2026-03-18",
-      "last_seen": "2026-08-08",
+      "last_seen": "2026-08-13",
       "card_hits": 40
     },
     {
@@ -1950,10 +1997,10 @@
       "source": "auto",
       "starter": null,
       "search": "tailscale nastroj, ktery propoji vase zarizeni do privatni site pres internet bez nastavovani firewallu nebo routeru. tailscale vytvori sifrovany tunel mezi vasimi zarizenimi, at jsou kdekoliv. dostanete se k raspberry pi nebo domacimu serveru stejne pohodlne, jako byste sedeli doma na siti. neresite port forwarding ani vlastni vpn server, funguje to hned po prihlaseni. pouziva se, kdyz chcete pristupovat k domacimu serveru nebo raspberry pi odkudkoliv mimo domov. tailscale tailscale",
-      "mentions": 5,
-      "days": 2,
+      "mentions": 8,
+      "days": 3,
       "first_seen": "2026-04-09",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-13",
       "card_hits": 2
     },
     {
@@ -1983,6 +2030,28 @@
       "first_seen": "2026-03-14",
       "last_seen": "2026-08-01",
       "card_hits": 22
+    },
+    {
+      "slug": "tmux",
+      "term": "Tmux",
+      "category": "pc",
+      "short": "Program, který terminálové okno rozdělí na více panelů a nechá relaci běžet i po zavření notebooku.",
+      "plain": "Spustíte ho v příkazovém řádku a pracujete ve více panelech najednou. Celá relace zůstane aktivní, i když notebook zavřete nebo se odpojíte od vzdáleného stroje. Příště se připojíte a vše je přesně tam, kde jste to nechali. Hodí se hlavně když máte jeden centrální počítač doma a připojujete se k němu z různých zařízení přes Tailscale nebo SSH.",
+      "why": "Při práci s centrálním strojem přes Tailscale nebo SSH.",
+      "related": [],
+      "aliases": [
+        "tmux",
+        "tmuxem",
+        "tmuxa"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "tmux program, ktery terminalove okno rozdeli na vice panelu a necha relaci bezet i po zavreni notebooku. spustite ho v prikazovem radku a pracujete ve vice panelech najednou. cela relace zustane aktivni, i kdyz notebook zavrete nebo se odpojite od vzdaleneho stroje. priste se pripojite a vse je presne tam, kde jste to nechali. hodi se hlavne kdyz mate jeden centralni pocitac doma a pripojujete se k nemu z ruznych zarizeni pres tailscale nebo ssh. pri praci s centralnim strojem pres tailscale nebo ssh. tmux tmuxem tmuxa",
+      "mentions": 7,
+      "days": 4,
+      "first_seen": "2026-05-21",
+      "last_seen": "2026-08-13",
+      "card_hits": 2
     },
     {
       "slug": "token",
@@ -2038,7 +2107,7 @@
       "days": 37,
       "first_seen": "2026-03-14",
       "last_seen": "2026-08-12",
-      "card_hits": 36
+      "card_hits": 38
     },
     {
       "slug": "vibe-coding",
@@ -2115,7 +2184,7 @@
       "days": 10,
       "first_seen": "2026-03-31",
       "last_seen": "2026-08-12",
-      "card_hits": 7
+      "card_hits": 9
     },
     {
       "slug": "wispr-flow-notetaker",
@@ -2159,10 +2228,10 @@
       "source": "hand",
       "starter": null,
       "search": "workflow ustaleny postup, jak neco delate od zacatku do konce. sled kroku, ktery vede od zadani k vysledku. nemusi byt zautomatizovany. workflow je i to, kdyz vite, ze po nahravce vzdycky nasleduje prepis, pak shrnuti a nakonec ulozeni do poznamek. ve skupine se sdili spis workflow nez jednotlive nastroje. nastroj se da vymenit, postup zustava. workflow workflowu workflows",
-      "mentions": 115,
-      "days": 61,
+      "mentions": 116,
+      "days": 62,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-11",
+      "last_seen": "2026-08-13",
       "card_hits": 44
     },
     {
