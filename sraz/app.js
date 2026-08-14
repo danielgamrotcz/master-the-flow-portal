@@ -47,7 +47,7 @@ function initStickyRegistration() {
   registrationObserver.observe(registration);
 }
 
-const EVENT_CAPACITY = 30;
+const OFFICIAL_CAPACITY = 30;
 
 const attendanceLabels = {
   official: 'Oficiální část 13:00–18:00',
@@ -64,40 +64,20 @@ const attendeeFilterMatches = {
   uncertain: attendance => attendance === 'uncertain'
 };
 
-function registeredCountLabel(count) {
-  const label = count === 1 ? 'účastník' : count >= 2 && count <= 4 ? 'účastníci' : 'účastníků';
-  return `${label} z ${EVENT_CAPACITY} míst`;
-}
+function renderRegistrationCounts(officialCount, picnicCount) {
+  const officialValue = document.getElementById('official-registered-count');
+  const officialNote = document.getElementById('official-registered-count-note');
+  if (officialValue && officialNote && Number.isSafeInteger(officialCount) && officialCount >= 0) {
+    officialValue.textContent = `${officialCount}/${OFFICIAL_CAPACITY}`;
+    officialNote.textContent = officialCount >= OFFICIAL_CAPACITY ? 'kapacita naplněná' : 'obsazených míst';
+  }
 
-function setRegistrationAvailability(registeredCount) {
-  const isFull = registeredCount >= EVENT_CAPACITY;
-  document.querySelectorAll('[data-registration-link]').forEach(link => {
-    const label = link.querySelector('[data-registration-label]') || link;
-    if (!label.dataset.registrationOpenLabel) label.dataset.registrationOpenLabel = label.textContent.trim();
-    if (!link.dataset.registrationHref) link.dataset.registrationHref = link.getAttribute('href') || '';
-
-    link.classList.toggle('is-registration-unavailable', isFull);
-    link.setAttribute('aria-disabled', String(isFull));
-    link.setAttribute('aria-label', isFull ? 'Registrace je uzavřena, kapacita je naplněna' : label.dataset.registrationOpenLabel);
-    label.textContent = isFull ? 'Kapacita naplněna' : label.dataset.registrationOpenLabel;
-
-    if (isFull) {
-      link.removeAttribute('href');
-      link.removeAttribute('target');
-    } else if (link.dataset.registrationHref) {
-      link.setAttribute('href', link.dataset.registrationHref);
-      link.setAttribute('target', '_blank');
-    }
-  });
-}
-
-function renderRegisteredCount(count) {
-  const value = document.getElementById('registered-count');
-  const note = document.getElementById('registered-count-note');
-  if (!value || !note || !Number.isSafeInteger(count) || count < 0) return;
-  value.textContent = String(count);
-  note.textContent = registeredCountLabel(count);
-  setRegistrationAvailability(count);
+  const picnicValue = document.getElementById('picnic-registered-count');
+  const picnicCopy = document.getElementById('picnic-registered-count-copy');
+  if (picnicValue && picnicCopy && Number.isSafeInteger(picnicCount) && picnicCount >= 0) {
+    picnicValue.textContent = String(picnicCount);
+    picnicCopy.hidden = false;
+  }
 }
 
 function attendeeInitials(name) {
@@ -275,10 +255,15 @@ async function initAttendees() {
       typeof attendee.bio === 'string' && attendee.bio.trim() &&
       Object.hasOwn(attendanceLabels, attendee.attendance)
     )) : [];
-    const registeredCount = Number.isSafeInteger(payload.registeredCount) && payload.registeredCount >= 0
-      ? payload.registeredCount
+    const officialRegisteredCount = Number.isSafeInteger(payload.officialRegisteredCount) && payload.officialRegisteredCount >= 0
+      ? payload.officialRegisteredCount
+      : Number.isSafeInteger(payload.registeredCount) && payload.registeredCount >= 0
+        ? payload.registeredCount
       : attendees.length;
-    renderRegisteredCount(registeredCount);
+    const picnicRegisteredCount = Number.isSafeInteger(payload.picnicRegisteredCount) && payload.picnicRegisteredCount >= 0
+      ? payload.picnicRegisteredCount
+      : attendees.filter(attendee => attendee.attendance === 'official_and_picnic' || attendee.attendance === 'picnic_only').length;
+    renderRegistrationCounts(officialRegisteredCount, picnicRegisteredCount);
     renderAttendees(attendees);
   } catch (error) {
     renderAttendeesError();

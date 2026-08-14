@@ -182,6 +182,13 @@ h2 { margin: 12px 0 20px; font-size: clamp(36px, 4.6vw, 58px); line-height: 1.02
 .registration-panel .section-kicker { color: var(--accent); }
 .registration-panel h2 { max-width: 640px; margin-bottom: 22px; }
 .registration-panel > p:not(.section-kicker) { max-width: 690px; margin: 0; color: var(--registration-muted); font-size: 18px; line-height: 1.68; }
+.registration-status { margin: 30px 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); overflow: hidden; border: 1px solid color-mix(in srgb, var(--registration-text) 14%, transparent); border-radius: 14px; }
+.registration-status-item { min-width: 0; padding: 22px 24px; display: flex; flex-direction: column; }
+.registration-status-item + .registration-status-item { border-left: 1px solid color-mix(in srgb, var(--registration-text) 14%, transparent); }
+.registration-status-label { margin-bottom: 13px; color: var(--registration-muted); font-size: 11px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+.registration-status-item strong { color: var(--registration-text); font-size: clamp(25px, 4vw, 36px); line-height: 1.05; letter-spacing: -.035em; font-variant-numeric: tabular-nums; }
+.registration-status-item > span:last-child { margin-top: 7px; color: var(--registration-muted); font-size: 14px; }
+.registration-status-picnic { background: color-mix(in srgb, var(--accent) 9%, transparent); }
 .registration-points { max-width: 700px; margin: 30px 0 34px; padding: 0; list-style: none; display: grid; gap: 12px; }
 .registration-points li { position: relative; padding-left: 25px; color: var(--registration-muted); }
 .registration-points li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
@@ -294,6 +301,9 @@ details p { max-width: 720px; margin: -2px 0 24px; color: var(--text-secondary);
   .mini-card:last-child { border-bottom: 0; }
   .registration-panel { padding: 38px 24px 42px; border-radius: 16px; }
   .registration-panel > p:not(.section-kicker) { font-size: 17px; }
+  .registration-status { grid-template-columns: 1fr; }
+  .registration-status-item { padding: 20px; }
+  .registration-status-item + .registration-status-item { border-top: 1px solid color-mix(in srgb, var(--registration-text) 14%, transparent); border-left: 0; }
   .registration-panel .button { width: 100%; }
   .community { padding-top: 0; padding-bottom: 84px; }
   .community-panel { padding: 38px 24px 42px; grid-template-columns: 1fr; gap: 34px; border-radius: 16px; }

@@ -90,20 +90,35 @@ export async function onRequestOptions({ request }) {
 
 export async function onRequestGet({ request, env }) {
   const headers = responseHeaders(request.headers.get('Origin'));
-  if (!env.MTF_DATA) return json({ attendees: [] }, { headers });
+  if (!env.MTF_DATA) return json({ attendees: [], registeredCount: 0, officialRegisteredCount: 0, picnicRegisteredCount: 0 }, { headers });
   try {
     const raw = await env.MTF_DATA.get(KV_KEY);
     const stored = raw ? JSON.parse(raw) : [];
     const payload = Array.isArray(stored) ? { attendees: stored } : stored;
-    if (!payload || !Array.isArray(payload.attendees)) return json({ attendees: [], registeredCount: 0 }, { headers });
+    if (!payload || !Array.isArray(payload.attendees)) {
+      return json({ attendees: [], registeredCount: 0, officialRegisteredCount: 0, picnicRegisteredCount: 0 }, { headers });
+    }
     const attendees = payload.attendees
       .slice(0, MAX_ATTENDEES)
       .map(value => sanitizeAttendee(value))
       .filter(Boolean);
-    const registeredCount = cleanRegisteredCount(payload.registeredCount, attendees.length);
-    return json({ attendees, registeredCount: registeredCount === null ? attendees.length : registeredCount }, { headers });
+    const legacyRegisteredCount = cleanRegisteredCount(payload.registeredCount, attendees.length);
+    const safeLegacyCount = legacyRegisteredCount === null ? attendees.length : legacyRegisteredCount;
+    const officialRegisteredCount = cleanRegisteredCount(payload.officialRegisteredCount, safeLegacyCount);
+    const publicPicnicCount = attendees.filter(attendee => (
+      attendee.attendance === 'official_and_picnic' || attendee.attendance === 'picnic_only'
+    )).length;
+    const picnicRegisteredCount = cleanRegisteredCount(payload.picnicRegisteredCount, publicPicnicCount);
+    const safeOfficialCount = officialRegisteredCount === null ? safeLegacyCount : officialRegisteredCount;
+    const safePicnicCount = picnicRegisteredCount === null ? publicPicnicCount : picnicRegisteredCount;
+    return json({
+      attendees,
+      registeredCount: safeOfficialCount,
+      officialRegisteredCount: safeOfficialCount,
+      picnicRegisteredCount: safePicnicCount,
+    }, { headers });
   } catch {
-    return json({ attendees: [] }, { headers });
+    return json({ attendees: [], registeredCount: 0, officialRegisteredCount: 0, picnicRegisteredCount: 0 }, { headers });
   }
 }
 
@@ -136,10 +151,22 @@ export async function onRequestPost({ request, env }) {
     if (attendees.some(value => !value)) {
       return json({ error: 'Invalid attendee' }, { status: 400, headers });
     }
-    const registeredCount = cleanRegisteredCount(payload.registeredCount, attendees.length);
-    if (registeredCount === null) return json({ error: 'Invalid registered count' }, { status: 400, headers });
-    await env.MTF_DATA.put(KV_KEY, JSON.stringify({ attendees, registeredCount }), { expirationTtl: STORE_TTL_SECONDS });
-    return json({ count: attendees.length, registeredCount }, { headers });
+    const legacyRegisteredCount = cleanRegisteredCount(payload.registeredCount, attendees.length);
+    const officialRegisteredCount = cleanRegisteredCount(payload.officialRegisteredCount, legacyRegisteredCount);
+    const publicPicnicCount = attendees.filter(attendee => (
+      attendee.attendance === 'official_and_picnic' || attendee.attendance === 'picnic_only'
+    )).length;
+    const picnicRegisteredCount = cleanRegisteredCount(payload.picnicRegisteredCount, publicPicnicCount);
+    if (legacyRegisteredCount === null || officialRegisteredCount === null || picnicRegisteredCount === null) {
+      return json({ error: 'Invalid registration count' }, { status: 400, headers });
+    }
+    await env.MTF_DATA.put(KV_KEY, JSON.stringify({
+      attendees,
+      registeredCount: officialRegisteredCount,
+      officialRegisteredCount,
+      picnicRegisteredCount,
+    }), { expirationTtl: STORE_TTL_SECONDS });
+    return json({ count: attendees.length, registeredCount: officialRegisteredCount, officialRegisteredCount, picnicRegisteredCount }, { headers });
   } catch (error) {
     if (error instanceof SyntaxError) return json({ error: 'Bad Request' }, { status: 400, headers });
     return json({ error: 'Internal error' }, { status: 500, headers });
