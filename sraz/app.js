@@ -72,11 +72,25 @@ function renderRegistrationCounts(officialCount, picnicCount) {
     officialNote.textContent = officialCount >= OFFICIAL_CAPACITY ? 'kapacita naplněná' : 'obsazených míst';
   }
 
-  const picnicValue = document.getElementById('picnic-registered-count');
+  const picnicValues = document.querySelectorAll('[data-picnic-registered-count]');
   const picnicCopy = document.getElementById('picnic-registered-count-copy');
-  if (picnicValue && picnicCopy && Number.isSafeInteger(picnicCount) && picnicCount >= 0) {
-    picnicValue.textContent = String(picnicCount);
-    picnicCopy.hidden = false;
+  const picnicProofPrefix = document.getElementById('hero-picnic-proof-prefix');
+  const picnicProofNoun = document.getElementById('hero-picnic-registered-noun');
+  if (Number.isSafeInteger(picnicCount) && picnicCount >= 0) {
+    picnicValues.forEach(value => { value.textContent = String(picnicCount); });
+    if (picnicCopy) picnicCopy.hidden = false;
+    if (picnicProofPrefix && picnicProofNoun) {
+      if (picnicCount === 1) {
+        picnicProofPrefix.textContent = 'Na piknik už se přihlásil ';
+        picnicProofNoun.textContent = 'člověk';
+      } else if (picnicCount >= 2 && picnicCount <= 4) {
+        picnicProofPrefix.textContent = 'Na piknik už se přihlásili ';
+        picnicProofNoun.textContent = 'lidé';
+      } else {
+        picnicProofPrefix.textContent = 'Na piknik už se přihlásilo ';
+        picnicProofNoun.textContent = 'lidí';
+      }
+    }
   }
 }
 

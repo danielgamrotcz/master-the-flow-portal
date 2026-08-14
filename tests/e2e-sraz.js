@@ -46,6 +46,7 @@ function check(name, cond, detail = '') {
   check('Hero uvádí potvrzené místo srazu', /Lampárna Lidická/.test(heroFactsText) && /Lidická 31.*Praha 5/.test(heroFactsText));
   check('Hero odkazuje na Lampárnu Lidická', await page.locator('.hero-fact-place a').getAttribute('href') === 'https://www.lamparnalidicka.cz/');
   check('Hero ukazuje kapacitu hlavního programu', /\/30$/.test(await page.locator('#official-registered-count').innerText()));
+  check('Hero ukazuje živý počet přihlášených na piknik', await page.locator('#hero-picnic-registered-count').innerText() === String(attendeesPayload.picnicRegisteredCount) && /Na piknik už se přihlásil/.test(await page.locator('.hero-picnic-proof').innerText()));
   check('Pikniková registrace zůstává dostupná i při plném hlavním programu', await page.locator('[data-registration-link]').evaluateAll(links => links.length === 4 && links.every(link => /^https:\/\/docs\.google\.com\/forms\//.test(link.getAttribute('href') || '') && link.getAttribute('aria-disabled') !== 'true')));
   check('Značka Master the Flow se v titulku neláme', await page.locator('h1 .no-break').evaluate(el => getComputedStyle(el).whiteSpace === 'nowrap'));
 
@@ -269,6 +270,7 @@ function check(name, cond, detail = '') {
   }));
   await attendeePreview.goto(BASE + '/sraz/', { waitUntil: 'networkidle' });
   check('Hero počítá hlavní program nezávisle na zveřejněných profilech', await attendeePreview.locator('#official-registered-count').innerText() === '11/30' && /obsazených míst/.test(await attendeePreview.locator('#official-registered-count-note').innerText()));
+  check('Hero přebírá úplný počet pikniku z API a správně jej skloňuje', await attendeePreview.locator('#hero-picnic-registered-count').innerText() === '4' && /přihlásili 4 lidé/.test((await attendeePreview.locator('.hero-picnic-proof').innerText()).replace(/\u00a0/g, ' ')));
   check('Registrační blok ukazuje samostatný úplný počet pikniku', await attendeePreview.locator('#picnic-registered-count').innerText() === '4' && await attendeePreview.locator('#picnic-registered-count-copy').isVisible());
   const renderedNames = await attendeePreview.locator('.attendee-card h3').allTextContents();
   check('Seznam vykreslí zveřejněné profily a rozsah účasti', await attendeePreview.locator('.attendee-card').count() === 8 && /Oficiální část 13:00–18:00/.test(await attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník H' }).innerText()) && /Oficiální část \+ piknik/.test(await attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník A' }).innerText()) && /Jen piknik po 18:00/.test(await attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník G' }).innerText()));
@@ -283,7 +285,7 @@ function check(name, cond, detail = '') {
   }));
   await fullCapacityPreview.goto(BASE + '/sraz/', { waitUntil: 'networkidle' });
   check('Při naplněném programu zůstávají všechna pikniková CTA aktivní', await fullCapacityPreview.locator('[data-registration-link]').evaluateAll(links => links.length === 4 && links.every(link => /^https:\/\/docs\.google\.com\/forms\//.test(link.getAttribute('href') || '') && link.getAttribute('aria-disabled') !== 'true')));
-  check('Naplněná kapacita a počet pikniku jsou popsány odděleně', await fullCapacityPreview.locator('#official-registered-count').innerText() === '30/30' && /kapacita naplněná/.test(await fullCapacityPreview.locator('#official-registered-count-note').innerText()) && await fullCapacityPreview.locator('#picnic-registered-count').innerText() === '19');
+  check('Naplněná kapacita a počet pikniku jsou popsány odděleně', await fullCapacityPreview.locator('#official-registered-count').innerText() === '30/30' && /kapacita naplněná/.test(await fullCapacityPreview.locator('#official-registered-count-note').innerText()) && await fullCapacityPreview.locator('#hero-picnic-registered-count').innerText() === '19' && /přihlásilo 19 lidí/.test((await fullCapacityPreview.locator('.hero-picnic-proof').innerText()).replace(/\u00a0/g, ' ')) && await fullCapacityPreview.locator('#picnic-registered-count').innerText() === '19');
   check('Mobil skládá dva stavy registrační karty pod sebe', await fullCapacityPreview.locator('.registration-status').evaluate(element => getComputedStyle(element).gridTemplateColumns.trim().split(/\s+/).length === 1));
   await fullCapacityPreview.close();
   check('Údaje účastníků se vkládají jako text, ne jako HTML', await attendeePreview.locator('.attendee-card img').count() === 0 && renderedNames.includes('Z <img src=x onerror=alert(1)>'));
