@@ -73,7 +73,7 @@ function check(name, cond, detail = '') {
   check('Primární CTA má AA kontrast v obou režimech', firstThemeContrast >= 4.5 && secondThemeContrast >= 4.5, `${firstThemeContrast.toFixed(2)} / ${secondThemeContrast.toFixed(2)}`);
 
   const timeline = await page.locator('.timeline-item').count();
-  check('Harmonogram má čtyři navazující části', timeline === 4, `count=${timeline}`);
+  check('Harmonogram má pět navazujících částí včetně pauzy', timeline === 5, `count=${timeline}`);
   const programText = (await page.locator('.program').innerText()).replace(/\u00a0/g, ' ');
   check('Program popisuje dvacetiminutové hostovské bloky', /Hostovská část poběží ve dvacetiminutových blocích/.test(programText) && /Ukázky, rozhovory a Q&A/.test(programText));
   check('Úvod programu shrnuje všechny potvrzené vstupy', /Potvrzené jsou bloky Alexe Trejtnara, Tomáše „Vilíka“ Pospíchala i moje vstupy/.test(programText) && /U dvou zbývajících hostů doplním jména a témata/.test(programText) && !/Tomášův blok je potvrzený/.test(programText));
@@ -87,7 +87,20 @@ function check(name, cond, detail = '') {
   check('Danielův blok vypráví vznik Uttera napříč platformami', /15:30–15:55[\s\S]*Jak jsem stavěl Uttero[\s\S]*macOS, iOS a Android/.test(programText));
   check('Tři potvrzené hlavní bloky mají zvýraznění', await page.locator('.program-slot-confirmed').count() === 3 && await page.locator('.program-slot-confirmed').filter({ hasText: 'Alex Trejtnar' }).count() === 1 && await page.locator('.program-slot-confirmed').filter({ hasText: 'Tomáš „Vilík“ Pospíchal' }).count() === 1 && await page.locator('.program-slot-confirmed').filter({ hasText: 'Jak jsem stavěl Uttero' }).count() === 1);
   check('Program uvádí instrukce ke skupinové výzvě', /15:55–16:00[\s\S]*Instrukce ke skupinové výzvě/.test(programText));
+  check('Před skupinovou výzvou je patnáctiminutová pauza', /16:00–16:15[\s\S]*Pauza[\s\S]*občerstvení/.test(programText));
+  check('Skupinová výzva začíná v 16:15 a končí v 18:00', /16:15–18:00[\s\S]*Skupinová výzva/.test(programText));
   check('Skupinová výzva míchá zkušenosti a má výstup', /skupinách po třech/.test(programText) && /různé úrovně zkušenosti/.test(programText) && /krátce ukáže/.test(programText));
+  const slotEdgeBorders = await page.locator('.program-slots').evaluate(slots => {
+    const first = slots.firstElementChild;
+    const last = slots.lastElementChild;
+    return {
+      beforeFirst: getComputedStyle(slots).borderTopWidth,
+      afterLast: last ? getComputedStyle(last).borderBottomWidth : null,
+      count: slots.children.length,
+      firstExists: Boolean(first)
+    };
+  });
+  check('Vnitřní program nemá linku před prvním ani za posledním vstupem', slotEdgeBorders.firstExists && slotEdgeBorders.count === 7 && slotEdgeBorders.beforeFirst === '0px' && slotEdgeBorders.afterLast === '0px', JSON.stringify(slotEdgeBorders));
   const deviceCopy = await page.locator('.timeline-item, .practical, .faq').allTextContents().then(x => x.join(' ').replace(/\u00a0/g, ' '));
   check('Skupinová aktivita zmiňuje zařízení', /notebook|mobil/i.test(deviceCopy));
   check('Zařízení je výslovně dobrovolné', /není povinn|není podmínkou|povinné nejsou|i bez něj/i.test(deviceCopy));
@@ -100,22 +113,11 @@ function check(name, cond, detail = '') {
   check('Registrace zve i lidi mimo program a komunitu', /nejste v Master the Flow/.test(registrationText) && /na hlavním programu nebudete/.test(registrationText));
   check('Registrace vysvětluje jednoduchý formulář a důvod pro e-mail', /Jméno a e-mail jsou povinné/.test(registrationText) && /pár slov o sobě přidáte dobrovolně/.test(registrationText) && /pošlu přesné místo/.test(registrationText) && /Google účet nepotřebujete/.test(registrationText));
   check('Registrace vysvětluje výslovný opt-in veřejné karty', /Na web se dostanou jen vaše jméno a popis/.test(registrationText) && /jen když to výslovně potvrdíte/.test(registrationText) && /e-mail se na web neposílá/.test(registrationText));
-  check('Registrace popisuje piknik jako volné setkání bez techniky', /volné setkání bez programu/.test(registrationText) && /Notebook ani telefon nepotřebujete/.test(registrationText) && /nemusíte nic nosit/.test(registrationText));
+  check('Registrace popisuje piknik jako volné setkání bez elektroniky', /volné setkání bez programu/.test(registrationText) && /nepotřebujete notebook, telefon ani jinou elektroniku/.test(registrationText) && !/nemusíte nic nosit/.test(registrationText));
   check('Úvod nepopisuje sraz jako offline akci', !/offline/i.test(await page.locator('.manifesto-band').innerText()));
   check('Text se nevymezuje přes formálnost nebo konferenci', !/formáln|konferenci/i.test(await page.locator('main').innerText()));
 
-  const calendarHref = await page.locator('a[download]').getAttribute('href');
-  check('Kalendář má vlastní ICS soubor', calendarHref === '/sraz/sraz-master-the-flow-praha-2026.ics', String(calendarHref));
-  const googleCalendarHref = await page.locator('#google-calendar-link').getAttribute('href');
-  const googleCalendarUrl = new URL(googleCalendarHref);
-  check('Google Kalendář má přímý odkaz', googleCalendarUrl.hostname === 'calendar.google.com' && googleCalendarUrl.searchParams.get('action') === 'TEMPLATE');
-  check('Google Kalendář používá správný čas', googleCalendarUrl.searchParams.get('dates') === '20260829T130000/20260829T180000');
-  check('Google Kalendář obsahuje potvrzené místo', googleCalendarUrl.searchParams.get('location') === 'Lampárna Lidická, Lidická 31, 150 00 Praha 5');
-  const calendarResponse = await page.request.get(BASE + calendarHref);
-  check('ICS soubor je dostupný', calendarResponse.ok());
-  check('ICS používá správný termín', (await calendarResponse.text()).includes('DTSTART;TZID=Europe/Prague:20260829T130000'));
-  check('ICS končí v 18:00', (await calendarResponse.text()).includes('DTEND;TZID=Europe/Prague:20260829T180000'));
-  check('ICS obsahuje potvrzené místo', (await calendarResponse.text()).includes('LOCATION:Lampárna Lidická\\, Lidická 31\\, 150 00 Praha 5'));
+  check('Hero nenabízí kalendář naplněného hlavního programu', await page.locator('.hero-calendar-links, #google-calendar-link, .hero a[download]').count() === 0 && !/kalendář/i.test(await page.locator('.hero').innerText()));
 
   const sticky = page.locator('#sticky-register');
   check('Mobilní registrace má dostatečně velkou dotykovou plochu', await sticky.evaluate(el => el.getBoundingClientRect().height >= 44));
@@ -235,17 +237,15 @@ function check(name, cond, detail = '') {
     await shallowPage.goto(BASE + '/sraz/', { waitUntil: 'networkidle' });
     const state = await shallowPage.evaluate(() => {
       const hero = document.querySelector('.hero').getBoundingClientRect();
-      const calendar = document.querySelector('.hero-calendar-links').getBoundingClientRect();
       const cta = document.querySelector('.hero .button-primary').getBoundingClientRect();
       return {
         heroBottom: hero.bottom,
         viewportHeight: window.innerHeight,
-        calendarVisible: calendar.bottom <= window.innerHeight + 1,
         ctaVisible: cta.bottom <= window.innerHeight + 1 && cta.height >= 44,
         fits: hero.bottom <= window.innerHeight + 1
       };
     });
-    if (!state.fits || !state.calendarVisible || !state.ctaVisible) shallowProblems.push(`${viewport.width}x${viewport.height}=${JSON.stringify(state)}`);
+    if (!state.fits || !state.ctaVisible) shallowProblems.push(`${viewport.width}x${viewport.height}=${JSON.stringify(state)}`);
     await shallowPage.close();
   }
   check('Hero je celé viditelné i v nízkých desktopových oknech', shallowProblems.length === 0, shallowProblems.join(' | '));
