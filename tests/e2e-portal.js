@@ -108,14 +108,50 @@ function check(name, cond, detail = '') {
   check('Sraz má v přehledu událostí výraznou registraci', await srazCard.locator('.event-card-register').isVisible());
   check('Registrace z karty míří na stránku srazu', await srazCard.locator('.event-card-register').getAttribute('href') === '/sraz/');
 
-  // ===== 4c. Slovníček: zavíratelný proužek se dvěma srazy =====
+  // ===== 4c. Slovníček: zavíratelný proužek jen s nadcházejícími srazy =====
+  // Očekávání se odvozuje z events.json. Pevný seznam začal oprávněně padat
+  // den po olomouckém srazu, protože aplikace už proběhlé akce skrývá.
+  const eventData = JSON.parse(require('fs').readFileSync(
+    require('path').join(__dirname, '..', 'data', 'events.json'), 'utf8'));
+  const glossaryMeetupIds = new Set(['evt-2026-08-29-sraz', 'evt-2026-08-14-sraz-olomouc']);
+  const eventEnd = ev => {
+    const time = ev.time_to && /^\d{1,2}:\d{2}$/.test(ev.time_to) ? ev.time_to : '23:59';
+    return new Date(`${ev.date}T${time}:00`).getTime();
+  };
+  const expectedGlossaryMeetups = (eventData.events || [])
+    .filter(ev => glossaryMeetupIds.has(ev.id) && !ev.status && eventEnd(ev) >= Date.now())
+    .sort((a, b) => a.date.localeCompare(b.date) || (a.time_from || '').localeCompare(b.time_from || ''));
+  const expectedGlossaryIds = expectedGlossaryMeetups.map(ev => ev.id);
+  const expectedGlossaryTitles = expectedGlossaryMeetups.map(ev =>
+    ev.id === 'evt-2026-08-29-sraz' ? 'Sraz v Praze' : 'Sraz v Olomouci');
+
   await page.evaluate(() => document.querySelector('.nav-btn[data-view="glossary"]')?.click());
-  await page.waitForSelector('#glossary-event-teaser:not(.hidden)', { timeout: 15000 }).catch(() => {});
   const glossaryTeaser = page.locator('#glossary-event-teaser');
-  check('Slovníček ukazuje srazy v Praze i Olomouci', await glossaryTeaser.isVisible() && /Sraz v Praze/i.test(await glossaryTeaser.innerText()) && /Sraz v Olomouci/i.test(await glossaryTeaser.innerText()));
-  check('Proužek ve Slovníčku vede na stránku srazu', await glossaryTeaser.locator('.event-teaser-register').getAttribute('href') === '/sraz/');
-  await glossaryTeaser.locator('.event-teaser-close').click();
-  check('Proužek ve Slovníčku lze zavřít', await glossaryTeaser.isHidden());
+  if (expectedGlossaryMeetups.length) {
+    await page.waitForSelector('#glossary-event-teaser:not(.hidden)', { timeout: 15000 }).catch(() => {});
+    const renderedGlossaryIds = await glossaryTeaser.locator('.event-teaser-open').evaluateAll(
+      rows => rows.map(row => row.dataset.eventId));
+    const glossaryText = await glossaryTeaser.innerText();
+    check('Slovníček ukazuje právě nadcházející komunitní srazy',
+      await glossaryTeaser.isVisible()
+        && JSON.stringify(renderedGlossaryIds) === JSON.stringify(expectedGlossaryIds)
+        && expectedGlossaryTitles.every(title => glossaryText.includes(title)),
+      `data=${expectedGlossaryIds.join(',')} render=${renderedGlossaryIds.join(',')}`);
+
+    const expectedRegistrationLinks = expectedGlossaryMeetups
+      .map(ev => ev.registration_page_url || ev.registration_url)
+      .filter(Boolean);
+    const renderedRegistrationLinks = await glossaryTeaser.locator('.event-teaser-register').evaluateAll(
+      links => links.map(link => link.getAttribute('href')));
+    check('Registrační odkazy v proužku odpovídají datům',
+      JSON.stringify(renderedRegistrationLinks) === JSON.stringify(expectedRegistrationLinks),
+      `data=${expectedRegistrationLinks.join(',')} render=${renderedRegistrationLinks.join(',')}`);
+
+    await glossaryTeaser.locator('.event-teaser-close').click();
+    check('Proužek ve Slovníčku lze zavřít', await glossaryTeaser.isHidden());
+  } else {
+    check('Slovníček bez nadcházejícího srazu proužek nezobrazuje', await glossaryTeaser.isHidden());
+  }
 
   // ===== 5. Hledání: diakritika + fallback + sdílitelné URL =====
   await page.locator('.nav-btn[data-view="search"]').click();

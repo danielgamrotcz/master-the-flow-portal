@@ -14,6 +14,8 @@ Vznikly při přestavbě 17. 7. 2026 (audit → fáze 1+2 + brand vrstva). Hlíd
 - `google-forms-attendees.js` — synchronizace používá zadaný e-mail jen interně, respektuje odvolání souhlasu a e-mail neexportuje
 - `privacy-public-data.js` — verzovaná veřejná JSON data neobsahují e-maily mimo výslovně povolený kontaktní údaj
 - `security-regressions.js` — negativní a pozitivní auth scénáře pro chat corpus, tracking, push subscription a cache policy
+- `sraz-asset-versions.js` — shoda sedmimístných cache hashů CSS a JavaScriptu
+  stránky srazu s aktuálním obsahem souborů
 
 Spuštění:
 
@@ -35,8 +37,9 @@ Složka tests/ je blokovaná v functions/_middleware.js, na produkci není dostu
 
 Workflow `.github/workflows/sraz-e2e.yml` spouští `tests/e2e-sraz.js` při pull
 requestu nebo pushi do `main`, pokud se změnila stránka srazu, její funkce,
-fonty, hlavičky, Wrangler konfigurace nebo samotný test. Lze ho spustit také
-ručně přes `workflow_dispatch`.
+fonty, hlavičky, Wrangler konfigurace nebo samotný test. Před E2E kontroluje
+také shodu cache hashů pomocí `tests/sraz-asset-versions.js`. Lze ho spustit
+také ručně přes `workflow_dispatch`.
 
 Playwright a Wrangler se v CI instalují v připnutých verzích pouze do
 `RUNNER_TEMP`; repozitář proto dál nemá `package.json` ani `node_modules`.

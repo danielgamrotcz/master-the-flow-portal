@@ -18,6 +18,9 @@
 - Pro lehkou kontrolu spusť `node --check` nad změněnými klientskými nebo
   testovacími JS soubory. Pages Functions kontroluj jako ESM pomocí
   `node --input-type=module --check < cesta/k/souboru.js`.
+- Po změně `sraz/styles.css` nebo `sraz/app.js` aktualizuj sedmimístný SHA-256
+  query parametr v `sraz/index.html`; shodu ověřuje
+  `node tests/sraz-asset-versions.js`.
 - Po změně `tests/run-all.sh` spusť `bash -n tests/run-all.sh`. Po změně
   `tools/build_glossary.py` ověř Python syntaxi bez vytvoření `__pycache__`:
   `python3 -c 'import ast, pathlib; ast.parse(pathlib.Path("tools/build_glossary.py").read_text())'`.
