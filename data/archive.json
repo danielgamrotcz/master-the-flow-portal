@@ -1443,6 +1443,16 @@
         "Automatizace",
         "Produktivita"
       ]
+    },
+    {
+      "date": "2026-08-14",
+      "card_count": 2,
+      "topics": [
+        "Workflow",
+        "Claude Code",
+        "Produktivita",
+        "Automatizace"
+      ]
     }
   ]
 }
