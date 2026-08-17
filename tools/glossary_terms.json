@@ -1656,6 +1656,20 @@
       "why": "Při výběru AI nástrojů a při porovnávání různých platforem.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "soniox",
+      "term": "Soniox",
+      "cat": "nastroje",
+      "match": [
+        "Soniox",
+        "soniox"
+      ],
+      "short": "Webová služba pro přepis řeči s rozlišením jednotlivých mluvčích.",
+      "plain": "Soniox je webové rozhraní pro přepis řeči. Dostanete text i s tím, kdo co říkal, a nic instalovat nemusíte. Hodí se, když potřebujete přesnější výsledek nebo jasné rozlišení řečníků.",
+      "why": "U hledání alternativy k Plaudu nebo jiným přepisovým nástrojům.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }

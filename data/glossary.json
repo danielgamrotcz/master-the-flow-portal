@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-14",
+  "generated_at": "2026-08-17",
   "source": {
-    "daily_notes": 138,
+    "daily_notes": 140,
     "range": [
       "2026-03-14",
-      "2026-08-13"
+      "2026-08-16"
     ]
   },
   "categories": [
@@ -70,11 +70,11 @@
       "source": "hand",
       "starter": null,
       "search": "agent model, ktery nejen odpovida, ale sam dela kroky, dokud neni hotovo. bezny chat odpovi a ceka. agent misto toho pracuje ve smycce, precte soubor, spusti prikaz, podiva se na vysledek, opravi se a pokracuje. sam se rozhoduje, jaky krok udela dalsi. tohle je rozdil mezi „poradi mi“ a „udela to za me“. agent agenta agentem agenti agentu agenticke agenticky agentic",
-      "mentions": 120,
-      "days": 41,
+      "mentions": 124,
+      "days": 42,
       "first_seen": "2026-03-29",
-      "last_seen": "2026-08-13",
-      "card_hits": 31
+      "last_seen": "2026-08-14",
+      "card_hits": 33
     },
     {
       "slug": "anonymizace",
@@ -120,10 +120,10 @@
       "source": "hand",
       "starter": null,
       "search": "api rozhrani, kterym spolu dva programy mluvi. api je domluveny zpusob, jak si dva programy predavaji data. kdyz si aplikace nekde taha informace nebo posila dotaz do ai modelu, jde to pres api. uzivatel z toho nevidi nic, bezi to na pozadi. narazite na to ve chvili, kdy vas nejaka appka pozada o api klic, nebo kdyz nekdo rekne, ze pres api to vyjde levneji nez predplatne. api",
-      "mentions": 87,
-      "days": 29,
+      "mentions": 89,
+      "days": 30,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-07-27",
+      "last_seen": "2026-08-16",
       "card_hits": 24
     },
     {
@@ -175,11 +175,11 @@
       "source": "hand",
       "starter": null,
       "search": "automatizace postup, ktery po nastaveni bezi bez vas. nastavite jednou a pak uz to jede samo, bud v urceny cas, nebo kdyz nastane nejaka udalost. typicky neco, co byste jinak delali porad dokola. ve skupine to byva stahovani prepisu z nahravek, ranni souhrn do poznamek nebo hlidani, jestli neco nespadlo. vetsina projektu, ktere tady lidi ukazuji, zacala jako otrava, kterou je nebavilo delat rucne. automatizace automatizaci automatizovat automatizovane",
-      "mentions": 65,
-      "days": 37,
+      "mentions": 66,
+      "days": 38,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-13",
-      "card_hits": 20
+      "last_seen": "2026-08-14",
+      "card_hits": 21
     },
     {
       "slug": "branch",
@@ -256,10 +256,10 @@
       "source": "hand",
       "starter": 5,
       "search": "claude code claude, ktery bezi v terminalu a sam pracuje se soubory ve vasem projektu. neni to chat v prohlizeci. claude code bezi u vas na pocitaci, vidi slozku s projektem, umi soubory cist i menit, spoustet prikazy a overovat si vysledek. spousti se v terminalu napsanim claude. ve skupine se casto zkracuje na cc. vetsina projektu, ktere tady lidi ukazuji, vznikla presne timhle. claude code claude codu claudecode cc",
-      "mentions": 500,
-      "days": 87,
+      "mentions": 503,
+      "days": 88,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-08",
+      "last_seen": "2026-08-14",
       "card_hits": 103
     },
     {
@@ -285,7 +285,7 @@
       "days": 13,
       "first_seen": "2026-03-14",
       "last_seen": "2026-08-13",
-      "card_hits": 12
+      "card_hits": 13
     },
     {
       "slug": "cli",
@@ -357,11 +357,11 @@
       "source": "hand",
       "starter": null,
       "search": "codex kodovaci nastroj od openai, konkurence claude code. nastroj, ktery podobne jako claude code umi pracovat s kodem v projektu. ve skupine se pravidelne srovnavaji, vysledek se lisi podle typu ukolu.  codex codexu codex",
-      "mentions": 95,
-      "days": 29,
+      "mentions": 96,
+      "days": 30,
       "first_seen": "2026-03-18",
-      "last_seen": "2026-08-10",
-      "card_hits": 17
+      "last_seen": "2026-08-14",
+      "card_hits": 18
     },
     {
       "slug": "commit",
@@ -416,10 +416,10 @@
       "source": "auto",
       "starter": null,
       "search": "cowork claude v prohlizeci, ovladany klikanim misto psani do terminalu. cowork bezi v prohlizeci a vsechno se v nem odklikava. nemusite nic instalovat ani psat prikazy. pro spoustu lidi je to schudnejsi vstup nez claude code. nastaveni a pamet si ale drzi v cloudu. claude code ma oboje v textovych souborech u vas na disku, a prenest je jinam je pak snazsi. otazka cim zacit tady pada porad dokola. odpoved se lisi podle toho, jestli chcete terminal, nebo ne. cowork cowork cowork coworku coworku coworkem coworkem",
-      "mentions": 142,
-      "days": 27,
+      "mentions": 144,
+      "days": 28,
       "first_seen": "2026-03-19",
-      "last_seen": "2026-08-13",
+      "last_seen": "2026-08-14",
       "card_hits": 17
     },
     {
@@ -519,11 +519,11 @@
       "source": "hand",
       "starter": null,
       "search": "deploy a nasazeni vypusteni hotove verze ven, aby ji videli ostatni. dokud projekt bezi jen u vas na pocitaci, vidite ho jen vy. nasazeni znamena prenest ho na server, kde je dostupny na internetu. do te doby je to soukroma hracka. dokud nenasadite, nikdo to neuvidi, ani kdyz to mate hotove tyden. deploy deploynout nasazeni nasadit nasazuje deployment",
-      "mentions": 18,
-      "days": 13,
+      "mentions": 19,
+      "days": 14,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-13",
-      "card_hits": 8
+      "last_seen": "2026-08-16",
+      "card_hits": 9
     },
     {
       "slug": "docker",
@@ -577,7 +577,7 @@
       "days": 21,
       "first_seen": "2026-03-16",
       "last_seen": "2026-08-13",
-      "card_hits": 12
+      "card_hits": 13
     },
     {
       "slug": "framework",
@@ -598,10 +598,10 @@
       "source": "hand",
       "starter": null,
       "search": "framework pripravena kostra, na ktere se aplikace stavi. framework je sada hotovych zakladu a pravidel, diky ktere nemusite psat vsechno od nuly. usetri spoustu prace, ale musite prijmout, jak to jeho autori vymysleli.  framework frameworku frameworky",
-      "mentions": 5,
-      "days": 5,
+      "mentions": 6,
+      "days": 6,
       "first_seen": "2026-04-02",
-      "last_seen": "2026-06-28",
+      "last_seen": "2026-08-14",
       "card_hits": 4
     },
     {
@@ -697,11 +697,11 @@
       "source": "hand",
       "starter": null,
       "search": "git system, ktery si pamatuje kazdou zmenu v souborech projektu. git hlida historii projektu. kazdou ulozenou zmenu si pamatuje. kdykoli se da podivat, co se kdy zmenilo, a v pripade prusvihu se vratit do stavu, kdy to fungovalo. bezi u vas na pocitaci a internet k tomu nepotrebuje. tohle je ta zachranna sit, diky ktere se clovek neboji zkouset. vratit se jde vzdycky. git gitu gitem",
-      "mentions": 37,
-      "days": 17,
+      "mentions": 38,
+      "days": 18,
       "first_seen": "2026-03-15",
-      "last_seen": "2026-07-27",
-      "card_hits": 8
+      "last_seen": "2026-08-14",
+      "card_hits": 9
     },
     {
       "slug": "github",
@@ -728,7 +728,7 @@
       "days": 36,
       "first_seen": "2026-03-14",
       "last_seen": "2026-08-13",
-      "card_hits": 20
+      "card_hits": 21
     },
     {
       "slug": "governance",
@@ -750,7 +750,7 @@
       "days": 3,
       "first_seen": "2026-05-19",
       "last_seen": "2026-08-13",
-      "card_hits": 0
+      "card_hits": 1
     },
     {
       "slug": "guard",
@@ -824,7 +824,7 @@
       "days": 4,
       "first_seen": "2026-05-14",
       "last_seen": "2026-08-13",
-      "card_hits": 3
+      "card_hits": 4
     },
     {
       "slug": "harness",
@@ -955,7 +955,7 @@
       "days": 76,
       "first_seen": "2026-03-17",
       "last_seen": "2026-08-13",
-      "card_hits": 36
+      "card_hits": 40
     },
     {
       "slug": "kontextove-okno",
@@ -1035,7 +1035,7 @@
       "days": 27,
       "first_seen": "2026-03-20",
       "last_seen": "2026-08-13",
-      "card_hits": 7
+      "card_hits": 8
     },
     {
       "slug": "localhost",
@@ -1059,7 +1059,7 @@
       "days": 2,
       "first_seen": "2026-03-18",
       "last_seen": "2026-08-13",
-      "card_hits": 0
+      "card_hits": 1
     },
     {
       "slug": "lokalni-model",
@@ -1082,11 +1082,11 @@
       "source": "hand",
       "starter": null,
       "search": "lokalni model model bezici primo na vasem pocitaci misto v cloudu. misto posilani dotazu na internet bezi model primo u vas. data neopusti vas stroj, takze se to hodi na citlive veci. zaplatite za to vykonem, potrebujete silnejsi pocitac a vysledky byvaji slabsi nez u velkych cloudovych modelu. resi se hlavne u prepisu a u dat, ktera nesmi ven. lokalni model lokalne lokalni modely lokalniho modelu",
-      "mentions": 43,
-      "days": 28,
+      "mentions": 45,
+      "days": 30,
       "first_seen": "2026-03-20",
-      "last_seen": "2026-08-13",
-      "card_hits": 22
+      "last_seen": "2026-08-16",
+      "card_hits": 24
     },
     {
       "slug": "markdown",
@@ -1160,11 +1160,11 @@
       "source": "hand",
       "starter": 2,
       "search": "model konkretni verze ai, kterou zrovna pouzivate. modelu je vic a lisi se silou, rychlosti a cenou. silnejsi zvladne slozite zadani, ale je pomalejsi a drazsi. slabsi odbavi rutinu skoro hned. kdyz nekdo ve skupine pise, ze neco jede na opusu a neco na sonnetu, mluvi presne o tehle volbe. volba modelu je hlavni paka na to, kolik za praci s ai zaplatite. model modelu modely modelu modelem",
-      "mentions": 202,
-      "days": 64,
+      "mentions": 205,
+      "days": 65,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-13",
-      "card_hits": 63
+      "last_seen": "2026-08-16",
+      "card_hits": 64
     },
     {
       "slug": "model-agnosticky",
@@ -1189,7 +1189,7 @@
       "days": 3,
       "first_seen": "2026-06-16",
       "last_seen": "2026-08-13",
-      "card_hits": 1
+      "card_hits": 2
     },
     {
       "slug": "claude-modely",
@@ -1486,10 +1486,10 @@
       "source": "auto",
       "starter": null,
       "search": "plaud kompaktni hardwarove nahravaci zarizeni navrzene primo pro schuzky a konzultace. plaud je fyzicke nahravaci zarizeni urcene pro schuzky. jde o jednoucelovy pristroj, takze vas neprerusi prichozi hovor ani notifikace z mobilu. vlastni aplikace zvladne prepis nahravky a pozna, kdo co rikal. v diskuzich o automatizovanem zpracovani zaznamu ze schuzek a konzultaci. plaud plaudu plaudem plaude",
-      "mentions": 129,
-      "days": 23,
+      "mentions": 133,
+      "days": 24,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-12",
+      "last_seen": "2026-08-16",
       "card_hits": 23
     },
     {
@@ -1570,7 +1570,7 @@
       "days": 8,
       "first_seen": "2026-03-16",
       "last_seen": "2026-08-13",
-      "card_hits": 3
+      "card_hits": 4
     },
     {
       "slug": "pwa",
@@ -1795,11 +1795,11 @@
       "source": "hand",
       "starter": null,
       "search": "server pocitac, ktery bezi nepretrzite a obsluhuje ostatni. server je stroj, jehoz jedina prace je cekat na dotazy a odpovidat na ne. muze to byt obri stroj v datovem centru i obycejny pocitac doma, ktery nikdy nevypinate.  server serveru servery serveru serveri",
-      "mentions": 40,
-      "days": 20,
+      "mentions": 44,
+      "days": 22,
       "first_seen": "2026-03-15",
-      "last_seen": "2026-08-10",
-      "card_hits": 13
+      "last_seen": "2026-08-16",
+      "card_hits": 14
     },
     {
       "slug": "session",
@@ -1826,7 +1826,7 @@
       "days": 53,
       "first_seen": "2026-03-15",
       "last_seen": "2026-08-13",
-      "card_hits": 32
+      "card_hits": 33
     },
     {
       "slug": "skill",
@@ -1854,7 +1854,7 @@
       "days": 49,
       "first_seen": "2026-03-18",
       "last_seen": "2026-08-13",
-      "card_hits": 40
+      "card_hits": 41
     },
     {
       "slug": "skript",
@@ -1878,11 +1878,32 @@
       "source": "hand",
       "starter": null,
       "search": "skript maly program, ktery za vas udela serii kroku. soubor s posloupnosti prikazu, ktere se spusti jednim zavolanim. typicky neco, co byste jinak delali rucne porad dokola, treba prejmenovat stovku souboru nebo stahnout a zpracovat data.  skript skriptu skripty skriptu script",
-      "mentions": 32,
-      "days": 15,
+      "mentions": 33,
+      "days": 16,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-07-15",
+      "last_seen": "2026-08-16",
       "card_hits": 19
+    },
+    {
+      "slug": "soniox",
+      "term": "Soniox",
+      "category": "nastroje",
+      "short": "Webová služba pro přepis řeči s rozlišením jednotlivých mluvčích.",
+      "plain": "Soniox je webové rozhraní pro přepis řeči. Dostanete text i s tím, kdo co říkal, a nic instalovat nemusíte. Hodí se, když potřebujete přesnější výsledek nebo jasné rozlišení řečníků.",
+      "why": "U hledání alternativy k Plaudu nebo jiným přepisovým nástrojům.",
+      "related": [],
+      "aliases": [
+        "Soniox",
+        "soniox"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "soniox webova sluzba pro prepis reci s rozlisenim jednotlivych mluvcich. soniox je webove rozhrani pro prepis reci. dostanete text i s tim, kdo co rikal, a nic instalovat nemusite. hodi se, kdyz potrebujete presnejsi vysledek nebo jasne rozliseni recniku. u hledani alternativy k plaudu nebo jinym prepisovym nastrojum. soniox soniox",
+      "mentions": 70,
+      "days": 23,
+      "first_seen": "2026-03-17",
+      "last_seen": "2026-08-16",
+      "card_hits": 18
     },
     {
       "slug": "ssh",
@@ -1997,11 +2018,11 @@
       "source": "auto",
       "starter": null,
       "search": "tailscale nastroj, ktery propoji vase zarizeni do privatni site pres internet bez nastavovani firewallu nebo routeru. tailscale vytvori sifrovany tunel mezi vasimi zarizenimi, at jsou kdekoliv. dostanete se k raspberry pi nebo domacimu serveru stejne pohodlne, jako byste sedeli doma na siti. neresite port forwarding ani vlastni vpn server, funguje to hned po prihlaseni. pouziva se, kdyz chcete pristupovat k domacimu serveru nebo raspberry pi odkudkoliv mimo domov. tailscale tailscale",
-      "mentions": 8,
-      "days": 3,
+      "mentions": 11,
+      "days": 4,
       "first_seen": "2026-04-09",
-      "last_seen": "2026-08-13",
-      "card_hits": 2
+      "last_seen": "2026-08-14",
+      "card_hits": 4
     },
     {
       "slug": "terminal",
@@ -2025,11 +2046,11 @@
       "source": "hand",
       "starter": null,
       "search": "terminal okno, kde se pocitaci pisou prikazy misto klikani. textove okno, do ktereho napisete prikaz a pocitac ho provede. vypada to neprivetive, ale je to jen jiny zpusob ovladani. na macu se aplikace jmenuje terminal a najdete ji pres spotlight, kdyz napisete jeji jmeno. claude code bezi tady. je to prvni misto, kde se clovek musi premoct. terminal terminalu terminalem prikazova radka prikazove radce",
-      "mentions": 100,
-      "days": 31,
+      "mentions": 102,
+      "days": 33,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-01",
-      "card_hits": 22
+      "last_seen": "2026-08-16",
+      "card_hits": 23
     },
     {
       "slug": "tmux",
@@ -2047,11 +2068,11 @@
       "source": "auto",
       "starter": null,
       "search": "tmux program, ktery terminalove okno rozdeli na vice panelu a necha relaci bezet i po zavreni notebooku. spustite ho v prikazovem radku a pracujete ve vice panelech najednou. cela relace zustane aktivni, i kdyz notebook zavrete nebo se odpojite od vzdaleneho stroje. priste se pripojite a vse je presne tam, kde jste to nechali. hodi se hlavne kdyz mate jeden centralni pocitac doma a pripojujete se k nemu z ruznych zarizeni pres tailscale nebo ssh. pri praci s centralnim strojem pres tailscale nebo ssh. tmux tmuxem tmuxa",
-      "mentions": 7,
-      "days": 4,
+      "mentions": 8,
+      "days": 5,
       "first_seen": "2026-05-21",
-      "last_seen": "2026-08-13",
-      "card_hits": 2
+      "last_seen": "2026-08-14",
+      "card_hits": 3
     },
     {
       "slug": "token",
@@ -2076,10 +2097,10 @@
       "source": "hand",
       "starter": null,
       "search": "token kousky slov, na ktere si model deli text. podle nich se pocita cena i delka. model necte slova, ale kousky slov, kterym se rika tokeny. jedno ceske slovo byva dva az tri tokeny, anglicke casto jen jeden. proto se ve skupine obcas pise, ze se do stejneho mista vejde vic anglictiny nez cestiny. cena i to, kolik toho model zvladne najednou, se pocita v tokenech. kdo chape tokeny, prestane se divit uctu. token tokenu tokeny tokenu tokenem tokenech",
-      "mentions": 81,
-      "days": 32,
+      "mentions": 83,
+      "days": 33,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-07-27",
+      "last_seen": "2026-08-16",
       "card_hits": 26
     },
     {
@@ -2103,10 +2124,10 @@
       "source": "hand",
       "starter": null,
       "search": "transkripce a diarizace prevod mluveni na text a rozliseni, kdo z mluvcich mluvi. transkripce udela z nahravky text. diarizace k tomu prida, ktery usek rekl ktery mluvci. u schuzek byva ta druha vec dulezitejsi nez samotny prepis.  transkripce prepis prepisu prepisy diarizace",
-      "mentions": 122,
-      "days": 37,
+      "mentions": 126,
+      "days": 38,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-12",
+      "last_seen": "2026-08-16",
       "card_hits": 38
     },
     {
@@ -2180,10 +2201,10 @@
       "source": "hand",
       "starter": null,
       "search": "whisper model na prevod reci na text. prepisovaci model od openai. da se pouzivat pres internet i pustit primo na vlastnim pocitaci, takze nahravka nemusi nikam odchazet. stoji na nem vetsina domacich reseni na prepis schuzek a hlasovych poznamek. whisper whisperu whisper",
-      "mentions": 37,
-      "days": 10,
+      "mentions": 40,
+      "days": 11,
       "first_seen": "2026-03-31",
-      "last_seen": "2026-08-12",
+      "last_seen": "2026-08-16",
       "card_hits": 9
     },
     {
@@ -2228,11 +2249,11 @@
       "source": "hand",
       "starter": null,
       "search": "workflow ustaleny postup, jak neco delate od zacatku do konce. sled kroku, ktery vede od zadani k vysledku. nemusi byt zautomatizovany. workflow je i to, kdyz vite, ze po nahravce vzdycky nasleduje prepis, pak shrnuti a nakonec ulozeni do poznamek. ve skupine se sdili spis workflow nez jednotlive nastroje. nastroj se da vymenit, postup zustava. workflow workflowu workflows",
-      "mentions": 116,
-      "days": 62,
+      "mentions": 119,
+      "days": 63,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-13",
-      "card_hits": 44
+      "last_seen": "2026-08-14",
+      "card_hits": 45
     },
     {
       "slug": "yolo",
