@@ -1469,6 +1469,21 @@
         "Workflow",
         "Meeting"
       ]
+    },
+    {
+      "date": "2026-08-17",
+      "card_count": 6,
+      "topics": [
+        "Cursor",
+        "Produktivita",
+        "Meeting",
+        "Workflow",
+        "Vibe Coding",
+        "Claude Code",
+        "MCP",
+        "AI nástroje",
+        "Automatizace"
+      ]
     }
   ]
 }
