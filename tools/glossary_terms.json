@@ -1670,6 +1670,22 @@
       "why": "U hledání alternativy k Plaudu nebo jiným přepisovým nástrojům.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "reasoning",
+      "term": "Reasoning",
+      "cat": "ai",
+      "match": [
+        "reasoning",
+        "reasoningu",
+        "reasoningem",
+        "extended thinking"
+      ],
+      "short": "Nastavení AI modelu, které určuje, jak pečlivě model přemýšlí, než odpoví.",
+      "plain": "Modely s reasoning módem si před odpovědí projdou mezikrok, kde rozepisují postup řešení. Úrovní bývá víc, typicky Low, Medium, High a Max. Vyšší úroveň dá pečlivější výstup za cenu více tokenů a delšího čekání. Má smysl zapnout ho na Maximum u analytických nebo kódovacích úloh, kde na přesnosti záleží.",
+      "why": "Při práci v Claude nebo jiných AI nástrojích, které ho jako nastavení nabízejí.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }

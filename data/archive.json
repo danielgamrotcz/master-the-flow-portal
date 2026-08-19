@@ -1484,6 +1484,19 @@
         "AI nástroje",
         "Automatizace"
       ]
+    },
+    {
+      "date": "2026-08-18",
+      "card_count": 5,
+      "topics": [
+        "Produktivita",
+        "Subagenti",
+        "Workflow",
+        "Automatizace",
+        "AI nástroje",
+        "Vibe Coding",
+        "Claude Code"
+      ]
     }
   ]
 }
