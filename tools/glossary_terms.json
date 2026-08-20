@@ -1686,6 +1686,22 @@
       "why": "Při práci v Claude nebo jiných AI nástrojích, které ho jako nastavení nabízejí.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "clamshell",
+      "term": "Clamshell",
+      "cat": "pc",
+      "match": [
+        "clamshell",
+        "clamshell mode",
+        "clamshell mód",
+        "zavřeném clamshell"
+      ],
+      "short": "Mód, kdy má laptop zavřené víko a obraz jde jen přes připojený externí monitor.",
+      "plain": "Na MacBooku s čipem T2 nebo Apple Silicon se při zavření víka mikrofon hardwarově odpojí. K mikrofonu pak nemá přístup žádná aplikace, bez ohledu na oprávnění. Hlasové nástroje jako Uttero v clamshell módu proto přestanou fungovat.",
+      "why": "Narazíte na to při ladění problémů s mikrofonem na Macu připojeném k externímu monitoru.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
