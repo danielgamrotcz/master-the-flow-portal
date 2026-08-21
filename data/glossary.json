@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-20",
+  "generated_at": "2026-08-21",
   "source": {
-    "daily_notes": 143,
+    "daily_notes": 144,
     "range": [
       "2026-03-14",
-      "2026-08-19"
+      "2026-08-20"
     ]
   },
   "categories": [
@@ -75,6 +75,29 @@
       "first_seen": "2026-03-29",
       "last_seen": "2026-08-18",
       "card_hits": 36
+    },
+    {
+      "slug": "ai-act",
+      "term": "AI Act",
+      "category": "ai",
+      "short": "Evropská regulace určující povinnosti firem při vývoji a nasazení umělé inteligence.",
+      "plain": "AI Act je zákon Evropské unie, který vstoupil v platnost v roce 2024. Dělí AI systémy do skupin podle míry rizika a pro každou skupinu platí jiná pravidla. Firmy musí transparentně označovat AI-generovaný obsah včetně deepfaků a informovat uživatele, že komunikují se systémem AI. Za porušení hrozí pokuta až 35 milionů eur nebo 7 % globálního obratu.",
+      "why": "Narazíte na to, jakmile ve firmě nasadíte jakýkoli AI nástroj nebo budujete produkt postavený na AI.",
+      "related": [],
+      "aliases": [
+        "AI Act",
+        "AI Actu",
+        "AI Actem",
+        "AI Acta"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "ai act evropska regulace urcujici povinnosti firem pri vyvoji a nasazeni umele inteligence. ai act je zakon evropske unie, ktery vstoupil v platnost v roce 2024. deli ai systemy do skupin podle miry rizika a pro kazdou skupinu plati jina pravidla. firmy musi transparentne oznacovat ai-generovany obsah vcetne deepfaku a informovat uzivatele, ze komunikuji se systemem ai. za poruseni hrozi pokuta az 35 milionu eur nebo 7 % globalniho obratu. narazite na to, jakmile ve firme nasadite jakykoli ai nastroj nebo budujete produkt postaveny na ai. ai act ai actu ai actem ai acta",
+      "mentions": 9,
+      "days": 2,
+      "first_seen": "2026-08-18",
+      "last_seen": "2026-08-20",
+      "card_hits": 0
     },
     {
       "slug": "anonymizace",
@@ -255,7 +278,7 @@
       "days": 1,
       "first_seen": "2026-08-19",
       "last_seen": "2026-08-19",
-      "card_hits": 0
+      "card_hits": 1
     },
     {
       "slug": "claude-code",
@@ -279,10 +302,10 @@
       "source": "hand",
       "starter": 5,
       "search": "claude code claude, ktery bezi v terminalu a sam pracuje se soubory ve vasem projektu. neni to chat v prohlizeci. claude code bezi u vas na pocitaci, vidi slozku s projektem, umi soubory cist i menit, spoustet prikazy a overovat si vysledek. spousti se v terminalu napsanim claude. ve skupine se casto zkracuje na cc. vetsina projektu, ktere tady lidi ukazuji, vznikla presne timhle. claude code claude codu claudecode cc",
-      "mentions": 515,
-      "days": 90,
+      "mentions": 521,
+      "days": 91,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-18",
+      "last_seen": "2026-08-20",
       "card_hits": 110
     },
     {
@@ -328,10 +351,10 @@
       "source": "hand",
       "starter": null,
       "search": "cli ovladani programu psanim prikazu. command line interface, tedy program bez oken a tlacitek, ktery se ovlada napsanymi prikazy. vyhoda je, ze se da snadno zautomatizovat a zopakovat, protoze prikaz se da ulozit a pustit znovu. vyhoda proti klikani je, ze prikaz se da ulozit a pustit znovu. odtud vede cesta k automatizaci. cli",
-      "mentions": 47,
-      "days": 21,
+      "mentions": 48,
+      "days": 22,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-18",
+      "last_seen": "2026-08-20",
       "card_hits": 16
     },
     {
@@ -380,10 +403,10 @@
       "source": "hand",
       "starter": null,
       "search": "codex kodovaci nastroj od openai, konkurence claude code. nastroj, ktery podobne jako claude code umi pracovat s kodem v projektu. ve skupine se pravidelne srovnavaji, vysledek se lisi podle typu ukolu.  codex codexu codex",
-      "mentions": 124,
-      "days": 32,
+      "mentions": 128,
+      "days": 33,
       "first_seen": "2026-03-18",
-      "last_seen": "2026-08-19",
+      "last_seen": "2026-08-20",
       "card_hits": 20
     },
     {
@@ -466,7 +489,7 @@
       "days": 11,
       "first_seen": "2026-03-18",
       "last_seen": "2026-08-19",
-      "card_hits": 8
+      "card_hits": 9
     },
     {
       "slug": "cron",
@@ -974,10 +997,10 @@
       "source": "hand",
       "starter": 4,
       "search": "kontext vsechno, co model v danou chvili vi o vasem zadani. kontext je souhrn toho, co ma model po ruce. vase zpravy, jeho odpovedi, obsah souboru, ktere si precetl, a instrukce, ktere dostal. kdyz mu nahazite vsechno, co vas napadne, utopi se v tom. min informaci, ale trefnejsich, funguje lip. odtud ta rada psat strucne. kdyz do zadani nahazite pet nesouvisejicich veci, vysledek bude horsi, nez kdybyste rekli jednu. kontext kontextu kontextem",
-      "mentions": 191,
-      "days": 79,
+      "mentions": 196,
+      "days": 80,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-19",
+      "last_seen": "2026-08-20",
       "card_hits": 43
     },
     {
@@ -1029,10 +1052,10 @@
       "source": "hand",
       "starter": null,
       "search": "limity a rate limit strop, kolik toho smite za dane obdobi pouzit. kazdy tarif ma hranici, kolik prace do nej za hodinu nebo tyden vejde. kdyz ji vycerpate, musite chvili pockat, nez se limit obnovi. silnejsi modely limit spotrebovavaji rychleji nez slabsi. odtud rady pracovat mimo spicku nebo prepnout na slabsi model na rutinu. rate limit limit limity limitu limitu limitem",
-      "mentions": 80,
-      "days": 41,
+      "mentions": 90,
+      "days": 42,
       "first_seen": "2026-03-15",
-      "last_seen": "2026-08-12",
+      "last_seen": "2026-08-20",
       "card_hits": 26
     },
     {
@@ -1183,11 +1206,11 @@
       "source": "hand",
       "starter": 2,
       "search": "model konkretni verze ai, kterou zrovna pouzivate. modelu je vic a lisi se silou, rychlosti a cenou. silnejsi zvladne slozite zadani, ale je pomalejsi a drazsi. slabsi odbavi rutinu skoro hned. kdyz nekdo ve skupine pise, ze neco jede na opusu a neco na sonnetu, mluvi presne o tehle volbe. volba modelu je hlavni paka na to, kolik za praci s ai zaplatite. model modelu modely modelu modelem",
-      "mentions": 240,
-      "days": 68,
+      "mentions": 242,
+      "days": 69,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-19",
-      "card_hits": 72
+      "last_seen": "2026-08-20",
+      "card_hits": 74
     },
     {
       "slug": "model-agnosticky",
@@ -1234,11 +1257,11 @@
       "source": "hand",
       "starter": null,
       "search": "modelove rady claude opus, sonnet, haiku a dalsi. lisi se silou, rychlosti a cenou. anthropic vydava claude ve vic radach, jmenuji se treba opus, sonnet nebo haiku. silnejsi rady zvladaji slozitejsi uvahy a rozsahle ukoly, rychlejsi jsou levnejsi a hodi se na jednoduchou praci ve velkem mnozstvi. ktere verze jsou zrovna aktualni se v case meni, princip zustava. volba rady je hlavni paka na pomer cena a kvalita. opus sonnet haiku fable",
-      "mentions": 172,
-      "days": 42,
+      "mentions": 173,
+      "days": 43,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-19",
-      "card_hits": 29
+      "last_seen": "2026-08-20",
+      "card_hits": 31
     },
     {
       "slug": "mvp",
@@ -1415,7 +1438,7 @@
       "days": 11,
       "first_seen": "2026-04-30",
       "last_seen": "2026-08-19",
-      "card_hits": 9
+      "card_hits": 10
     },
     {
       "slug": "openrouter",
@@ -2047,7 +2070,7 @@
       "days": 5,
       "first_seen": "2026-03-16",
       "last_seen": "2026-08-19",
-      "card_hits": 4
+      "card_hits": 5
     },
     {
       "slug": "tailscale",
@@ -2092,10 +2115,10 @@
       "source": "hand",
       "starter": null,
       "search": "terminal okno, kde se pocitaci pisou prikazy misto klikani. textove okno, do ktereho napisete prikaz a pocitac ho provede. vypada to neprivetive, ale je to jen jiny zpusob ovladani. na macu se aplikace jmenuje terminal a najdete ji pres spotlight, kdyz napisete jeji jmeno. claude code bezi tady. je to prvni misto, kde se clovek musi premoct. terminal terminalu terminalem prikazova radka prikazove radce",
-      "mentions": 102,
-      "days": 33,
+      "mentions": 105,
+      "days": 34,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-16",
+      "last_seen": "2026-08-20",
       "card_hits": 23
     },
     {
@@ -2143,10 +2166,10 @@
       "source": "hand",
       "starter": null,
       "search": "token kousky slov, na ktere si model deli text. podle nich se pocita cena i delka. model necte slova, ale kousky slov, kterym se rika tokeny. jedno ceske slovo byva dva az tri tokeny, anglicke casto jen jeden. proto se ve skupine obcas pise, ze se do stejneho mista vejde vic anglictiny nez cestiny. cena i to, kolik toho model zvladne najednou, se pocita v tokenech. kdo chape tokeny, prestane se divit uctu. token tokenu tokeny tokenu tokenem tokenech",
-      "mentions": 86,
-      "days": 36,
+      "mentions": 90,
+      "days": 37,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-19",
+      "last_seen": "2026-08-20",
       "card_hits": 27
     },
     {
@@ -2197,11 +2220,11 @@
       "source": "hand",
       "starter": 1,
       "search": "vibe coding staveni aplikaci tak, ze popisujete, co chcete, a kod pise ai. vy rikate, co ma vec delat, ai pise kod a vy vysledek zkousite a usmernujete. programovat umet nemusite. staci umet popsat, co chcete, a poznat, kdy vysledek nesedi. jede se po malych kouscich, protoze velky skok se spatne kontroluje a chyba se v nem hur hleda. kolem tohohle vznikla cela komunita. je to nejcastejsi pojem ve skupine vubec. vibe coding vibe codingu vibecoding vibe kodovani",
-      "mentions": 322,
-      "days": 102,
+      "mentions": 325,
+      "days": 103,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-19",
-      "card_hits": 44
+      "last_seen": "2026-08-20",
+      "card_hits": 47
     },
     {
       "slug": "vm",

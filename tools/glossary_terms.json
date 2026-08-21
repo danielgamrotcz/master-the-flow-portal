@@ -1702,6 +1702,22 @@
       "why": "Narazíte na to při ladění problémů s mikrofonem na Macu připojeném k externímu monitoru.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "ai-act",
+      "term": "AI Act",
+      "cat": "ai",
+      "match": [
+        "AI Act",
+        "AI Actu",
+        "AI Actem",
+        "AI Acta"
+      ],
+      "short": "Evropská regulace určující povinnosti firem při vývoji a nasazení umělé inteligence.",
+      "plain": "AI Act je zákon Evropské unie, který vstoupil v platnost v roce 2024. Dělí AI systémy do skupin podle míry rizika a pro každou skupinu platí jiná pravidla. Firmy musí transparentně označovat AI-generovaný obsah včetně deepfaků a informovat uživatele, že komunikují se systémem AI. Za porušení hrozí pokuta až 35 milionů eur nebo 7 % globálního obratu.",
+      "why": "Narazíte na to, jakmile ve firmě nasadíte jakýkoli AI nástroj nebo budujete produkt postavený na AI.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
