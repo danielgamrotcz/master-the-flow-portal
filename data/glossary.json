@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-21",
+  "generated_at": "2026-08-22",
   "source": {
-    "daily_notes": 144,
+    "daily_notes": 145,
     "range": [
       "2026-03-14",
-      "2026-08-20"
+      "2026-08-21"
     ]
   },
   "categories": [
@@ -70,10 +70,10 @@
       "source": "hand",
       "starter": null,
       "search": "agent model, ktery nejen odpovida, ale sam dela kroky, dokud neni hotovo. bezny chat odpovi a ceka. agent misto toho pracuje ve smycce, precte soubor, spusti prikaz, podiva se na vysledek, opravi se a pokracuje. sam se rozhoduje, jaky krok udela dalsi. tohle je rozdil mezi „poradi mi“ a „udela to za me“. agent agenta agentem agenti agentu agenticke agenticky agentic",
-      "mentions": 136,
-      "days": 43,
+      "mentions": 138,
+      "days": 44,
       "first_seen": "2026-03-29",
-      "last_seen": "2026-08-18",
+      "last_seen": "2026-08-21",
       "card_hits": 36
     },
     {
@@ -97,7 +97,7 @@
       "days": 2,
       "first_seen": "2026-08-18",
       "last_seen": "2026-08-20",
-      "card_hits": 0
+      "card_hits": 1
     },
     {
       "slug": "anonymizace",
@@ -143,10 +143,10 @@
       "source": "hand",
       "starter": null,
       "search": "api rozhrani, kterym spolu dva programy mluvi. api je domluveny zpusob, jak si dva programy predavaji data. kdyz si aplikace nekde taha informace nebo posila dotaz do ai modelu, jde to pres api. uzivatel z toho nevidi nic, bezi to na pozadi. narazite na to ve chvili, kdy vas nejaka appka pozada o api klic, nebo kdyz nekdo rekne, ze pres api to vyjde levneji nez predplatne. api",
-      "mentions": 94,
-      "days": 32,
+      "mentions": 97,
+      "days": 33,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-19",
+      "last_seen": "2026-08-21",
       "card_hits": 26
     },
     {
@@ -306,7 +306,7 @@
       "days": 91,
       "first_seen": "2026-03-14",
       "last_seen": "2026-08-20",
-      "card_hits": 110
+      "card_hits": 112
     },
     {
       "slug": "claude-md",
@@ -351,10 +351,10 @@
       "source": "hand",
       "starter": null,
       "search": "cli ovladani programu psanim prikazu. command line interface, tedy program bez oken a tlacitek, ktery se ovlada napsanymi prikazy. vyhoda je, ze se da snadno zautomatizovat a zopakovat, protoze prikaz se da ulozit a pustit znovu. vyhoda proti klikani je, ze prikaz se da ulozit a pustit znovu. odtud vede cesta k automatizaci. cli",
-      "mentions": 48,
-      "days": 22,
+      "mentions": 55,
+      "days": 23,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "card_hits": 16
     },
     {
@@ -407,7 +407,7 @@
       "days": 33,
       "first_seen": "2026-03-18",
       "last_seen": "2026-08-20",
-      "card_hits": 20
+      "card_hits": 21
     },
     {
       "slug": "commit",
@@ -717,10 +717,31 @@
       "source": "hand",
       "starter": null,
       "search": "gdpr evropska pravidla pro nakladani s osobnimi udaji. urcuji, co se smi delat s udaji o lidech, jak dlouho se smi drzet a co musite dotycnym rict. tyka se to i malych projektu, pokud v nich figuruji data realnych osob. pripomina se pokazde, kdyz se resi nahravani schuzek nebo posilani firemnich dat do cloudu. gdpr",
-      "mentions": 11,
-      "days": 5,
+      "mentions": 13,
+      "days": 6,
       "first_seen": "2026-03-16",
-      "last_seen": "2026-07-25",
+      "last_seen": "2026-08-21",
+      "card_hits": 2
+    },
+    {
+      "slug": "gemini-cli",
+      "term": "Gemini CLI",
+      "category": "ai",
+      "short": "Nástroj od Googlu pro práci s AI přímo v terminálu, bez grafického rozhraní.",
+      "plain": "Gemini CLI je program, který spustíte v terminálu a komunikujete s ním přes textové příkazy. Pro osobní Google účty funguje zdarma bez dalšího nastavení. Firemní a školní Workspace účty potřebují navíc Google Cloud Project a jednorázovou autorizaci přes prohlížeč. Neoficiální způsoby obejití tohoto nastavení riskují trvalé zablokování celého Google účtu včetně e-mailu.",
+      "why": "Narazíte na to, když chcete AI asistenci v příkazové řádce bez placení za API.",
+      "related": [],
+      "aliases": [
+        "Gemini CLI",
+        "Gemini cli"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "gemini cli nastroj od googlu pro praci s ai primo v terminalu, bez grafickeho rozhrani. gemini cli je program, ktery spustite v terminalu a komunikujete s nim pres textove prikazy. pro osobni google ucty funguje zdarma bez dalsiho nastaveni. firemni a skolni workspace ucty potrebuji navic google cloud project a jednorazovou autorizaci pres prohlizec. neoficialni zpusoby obejiti tohoto nastaveni riskuji trvale zablokovani celeho google uctu vcetne e-mailu. narazite na to, kdyz chcete ai asistenci v prikazove radce bez placeni za api. gemini cli gemini cli",
+      "mentions": 8,
+      "days": 3,
+      "first_seen": "2026-03-19",
+      "last_seen": "2026-08-21",
       "card_hits": 2
     },
     {
@@ -997,10 +1018,10 @@
       "source": "hand",
       "starter": 4,
       "search": "kontext vsechno, co model v danou chvili vi o vasem zadani. kontext je souhrn toho, co ma model po ruce. vase zpravy, jeho odpovedi, obsah souboru, ktere si precetl, a instrukce, ktere dostal. kdyz mu nahazite vsechno, co vas napadne, utopi se v tom. min informaci, ale trefnejsich, funguje lip. odtud ta rada psat strucne. kdyz do zadani nahazite pet nesouvisejicich veci, vysledek bude horsi, nez kdybyste rekli jednu. kontext kontextu kontextem",
-      "mentions": 196,
-      "days": 80,
+      "mentions": 198,
+      "days": 81,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "card_hits": 43
     },
     {
@@ -1056,7 +1077,7 @@
       "days": 42,
       "first_seen": "2026-03-15",
       "last_seen": "2026-08-20",
-      "card_hits": 26
+      "card_hits": 28
     },
     {
       "slug": "llm",
@@ -1210,7 +1231,7 @@
       "days": 69,
       "first_seen": "2026-03-17",
       "last_seen": "2026-08-20",
-      "card_hits": 74
+      "card_hits": 75
     },
     {
       "slug": "model-agnosticky",
@@ -1261,7 +1282,7 @@
       "days": 43,
       "first_seen": "2026-03-17",
       "last_seen": "2026-08-20",
-      "card_hits": 31
+      "card_hits": 32
     },
     {
       "slug": "mvp",
@@ -1891,10 +1912,10 @@
       "source": "hand",
       "starter": null,
       "search": "session jedno souvisle sezeni, ve kterem si ai pamatuje, o cem jste mluvili. session drzi spolecnou pamet konverzace. kdyz ji ukoncite a zacnete znovu, zacinate s cistym stolem a nic z minula se neprenasi, pokud to neni zapsane v souborech nebo v pameti. dlouha session zaplni kontextove okno. kratka a soustredena dava lepsi vysledky. session sessions sezeni vlakno vlakna",
-      "mentions": 161,
-      "days": 54,
+      "mentions": 164,
+      "days": 55,
       "first_seen": "2026-03-15",
-      "last_seen": "2026-08-17",
+      "last_seen": "2026-08-21",
       "card_hits": 34
     },
     {
@@ -2115,10 +2136,10 @@
       "source": "hand",
       "starter": null,
       "search": "terminal okno, kde se pocitaci pisou prikazy misto klikani. textove okno, do ktereho napisete prikaz a pocitac ho provede. vypada to neprivetive, ale je to jen jiny zpusob ovladani. na macu se aplikace jmenuje terminal a najdete ji pres spotlight, kdyz napisete jeji jmeno. claude code bezi tady. je to prvni misto, kde se clovek musi premoct. terminal terminalu terminalem prikazova radka prikazove radce",
-      "mentions": 105,
-      "days": 34,
+      "mentions": 107,
+      "days": 35,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "card_hits": 23
     },
     {
@@ -2170,7 +2191,7 @@
       "days": 37,
       "first_seen": "2026-03-14",
       "last_seen": "2026-08-20",
-      "card_hits": 27
+      "card_hits": 29
     },
     {
       "slug": "transkripce",

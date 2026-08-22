@@ -1718,6 +1718,20 @@
       "why": "Narazíte na to, jakmile ve firmě nasadíte jakýkoli AI nástroj nebo budujete produkt postavený na AI.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "gemini-cli",
+      "term": "Gemini CLI",
+      "cat": "ai",
+      "match": [
+        "Gemini CLI",
+        "Gemini cli"
+      ],
+      "short": "Nástroj od Googlu pro práci s AI přímo v terminálu, bez grafického rozhraní.",
+      "plain": "Gemini CLI je program, který spustíte v terminálu a komunikujete s ním přes textové příkazy. Pro osobní Google účty funguje zdarma bez dalšího nastavení. Firemní a školní Workspace účty potřebují navíc Google Cloud Project a jednorázovou autorizaci přes prohlížeč. Neoficiální způsoby obejití tohoto nastavení riskují trvalé zablokování celého Google účtu včetně e-mailu.",
+      "why": "Narazíte na to, když chcete AI asistenci v příkazové řádce bez placení za API.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
