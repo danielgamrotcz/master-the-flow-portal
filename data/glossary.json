@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-22",
+  "generated_at": "2026-08-23",
   "source": {
-    "daily_notes": 145,
+    "daily_notes": 146,
     "range": [
       "2026-03-14",
-      "2026-08-21"
+      "2026-08-22"
     ]
   },
   "categories": [
@@ -74,7 +74,7 @@
       "days": 44,
       "first_seen": "2026-03-29",
       "last_seen": "2026-08-21",
-      "card_hits": 36
+      "card_hits": 37
     },
     {
       "slug": "ai-act",
@@ -205,6 +205,29 @@
       "card_hits": 22
     },
     {
+      "slug": "brain-dump",
+      "term": "brain dump",
+      "category": "cc",
+      "short": "Vychrlení všech surových myšlenek najednou, bez třídění nebo úprav.",
+      "plain": "Napíšete nebo nadiktujete všechno, co vám koluje hlavou, přesně tak chaoticky, jak to je. Žádné opravování, žádná struktura. Model pak ten chaos zpracuje a vytáhne z toho smysl, místo abyste ho dvacet minut třídili ručně.",
+      "why": "Při zpracování poznámek z meetingu, brainstormingu nebo diktátu přes hlasový nástroj jako Utter.",
+      "related": [],
+      "aliases": [
+        "brain dump",
+        "brain dumpu",
+        "brain dumpem",
+        "brain dumpy"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "brain dump vychrleni vsech surovych myslenek najednou, bez trideni nebo uprav. napisete nebo nadiktujete vsechno, co vam koluje hlavou, presne tak chaoticky, jak to je. zadne opravovani, zadna struktura. model pak ten chaos zpracuje a vytahne z toho smysl, misto abyste ho dvacet minut tridili rucne. pri zpracovani poznamek z meetingu, brainstormingu nebo diktatu pres hlasovy nastroj jako utter. brain dump brain dumpu brain dumpem brain dumpy",
+      "mentions": 7,
+      "days": 2,
+      "first_seen": "2026-04-02",
+      "last_seen": "2026-08-22",
+      "card_hits": 1
+    },
+    {
       "slug": "branch",
       "term": "Branch a merge",
       "category": "kod",
@@ -302,10 +325,10 @@
       "source": "hand",
       "starter": 5,
       "search": "claude code claude, ktery bezi v terminalu a sam pracuje se soubory ve vasem projektu. neni to chat v prohlizeci. claude code bezi u vas na pocitaci, vidi slozku s projektem, umi soubory cist i menit, spoustet prikazy a overovat si vysledek. spousti se v terminalu napsanim claude. ve skupine se casto zkracuje na cc. vetsina projektu, ktere tady lidi ukazuji, vznikla presne timhle. claude code claude codu claudecode cc",
-      "mentions": 521,
-      "days": 91,
+      "mentions": 526,
+      "days": 92,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-22",
       "card_hits": 112
     },
     {
@@ -355,7 +378,7 @@
       "days": 23,
       "first_seen": "2026-03-14",
       "last_seen": "2026-08-21",
-      "card_hits": 16
+      "card_hits": 17
     },
     {
       "slug": "cloudflare-vercel",
@@ -403,10 +426,10 @@
       "source": "hand",
       "starter": null,
       "search": "codex kodovaci nastroj od openai, konkurence claude code. nastroj, ktery podobne jako claude code umi pracovat s kodem v projektu. ve skupine se pravidelne srovnavaji, vysledek se lisi podle typu ukolu.  codex codexu codex",
-      "mentions": 128,
-      "days": 33,
+      "mentions": 132,
+      "days": 34,
       "first_seen": "2026-03-18",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-22",
       "card_hits": 21
     },
     {
@@ -536,10 +559,10 @@
       "source": "hand",
       "starter": null,
       "search": "cursor editor kodu s vestavenou ai. vypada jako klasicky editor, ale umi psat a upravovat kod na pozadani primo v souboru. alternativa ke claude code pro ty, kdo chteji videt kod pred sebou v okne.  cursor cursoru cursor",
-      "mentions": 74,
-      "days": 25,
+      "mentions": 76,
+      "days": 26,
       "first_seen": "2026-03-16",
-      "last_seen": "2026-08-18",
+      "last_seen": "2026-08-22",
       "card_hits": 17
     },
     {
@@ -742,7 +765,7 @@
       "days": 3,
       "first_seen": "2026-03-19",
       "last_seen": "2026-08-21",
-      "card_hits": 2
+      "card_hits": 3
     },
     {
       "slug": "git",
@@ -791,10 +814,10 @@
       "source": "hand",
       "starter": null,
       "search": "github web, kam se git projekty ukladaji online, aby sly sdilet a zalohovat. github je sluzba, kde vas projekt bydli na internetu. diky tomu se k nemu dostanete z vic pocitacu, mate ho zalohovany a muzete ho ukazat ostatnim. git a github jsou dve ruzne veci. git je ten system, github je jedno z mist, kde muze projekt bydlet. kdyz nekdo ve skupine sdili projekt, obvykle sdili odkaz na github. github githubu github.com githubu",
-      "mentions": 89,
-      "days": 38,
+      "mentions": 90,
+      "days": 39,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-18",
+      "last_seen": "2026-08-22",
       "card_hits": 24
     },
     {
@@ -941,10 +964,10 @@
       "source": "hand",
       "starter": null,
       "search": "hook automaticka pojistka, ktera se spusti sama, bez vyzadani. hook je pravidlo navazane na udalost. kdyz nastane, akce probehne sama, i kdyz jste na ni davno zapomneli. typicky se pouziva jako kontrola, napriklad zablokovat ulozeni, kdyz v kodu zustal pristupovy klic. rozdil proti skillu je jednoduchy. skill si zavolate, hook se ozve sam. hook hooku hooky hooku hooks",
-      "mentions": 29,
-      "days": 11,
+      "mentions": 30,
+      "days": 12,
       "first_seen": "2026-03-31",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-22",
       "card_hits": 5
     },
     {
@@ -1018,10 +1041,10 @@
       "source": "hand",
       "starter": 4,
       "search": "kontext vsechno, co model v danou chvili vi o vasem zadani. kontext je souhrn toho, co ma model po ruce. vase zpravy, jeho odpovedi, obsah souboru, ktere si precetl, a instrukce, ktere dostal. kdyz mu nahazite vsechno, co vas napadne, utopi se v tom. min informaci, ale trefnejsich, funguje lip. odtud ta rada psat strucne. kdyz do zadani nahazite pet nesouvisejicich veci, vysledek bude horsi, nez kdybyste rekli jednu. kontext kontextu kontextem",
-      "mentions": 198,
-      "days": 81,
+      "mentions": 199,
+      "days": 82,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-21",
+      "last_seen": "2026-08-22",
       "card_hits": 43
     },
     {
@@ -1073,10 +1096,10 @@
       "source": "hand",
       "starter": null,
       "search": "limity a rate limit strop, kolik toho smite za dane obdobi pouzit. kazdy tarif ma hranici, kolik prace do nej za hodinu nebo tyden vejde. kdyz ji vycerpate, musite chvili pockat, nez se limit obnovi. silnejsi modely limit spotrebovavaji rychleji nez slabsi. odtud rady pracovat mimo spicku nebo prepnout na slabsi model na rutinu. rate limit limit limity limitu limitu limitem",
-      "mentions": 90,
-      "days": 42,
+      "mentions": 91,
+      "days": 43,
       "first_seen": "2026-03-15",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-22",
       "card_hits": 28
     },
     {
@@ -1227,10 +1250,10 @@
       "source": "hand",
       "starter": 2,
       "search": "model konkretni verze ai, kterou zrovna pouzivate. modelu je vic a lisi se silou, rychlosti a cenou. silnejsi zvladne slozite zadani, ale je pomalejsi a drazsi. slabsi odbavi rutinu skoro hned. kdyz nekdo ve skupine pise, ze neco jede na opusu a neco na sonnetu, mluvi presne o tehle volbe. volba modelu je hlavni paka na to, kolik za praci s ai zaplatite. model modelu modely modelu modelem",
-      "mentions": 242,
-      "days": 69,
+      "mentions": 245,
+      "days": 70,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-22",
       "card_hits": 75
     },
     {
@@ -1278,10 +1301,10 @@
       "source": "hand",
       "starter": null,
       "search": "modelove rady claude opus, sonnet, haiku a dalsi. lisi se silou, rychlosti a cenou. anthropic vydava claude ve vic radach, jmenuji se treba opus, sonnet nebo haiku. silnejsi rady zvladaji slozitejsi uvahy a rozsahle ukoly, rychlejsi jsou levnejsi a hodi se na jednoduchou praci ve velkem mnozstvi. ktere verze jsou zrovna aktualni se v case meni, princip zustava. volba rady je hlavni paka na pomer cena a kvalita. opus sonnet haiku fable",
-      "mentions": 173,
-      "days": 43,
+      "mentions": 179,
+      "days": 44,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-22",
       "card_hits": 32
     },
     {
@@ -1301,10 +1324,10 @@
       "source": "hand",
       "starter": null,
       "search": "mvp nejmensi verze, ktera uz dava smysl a da se vyzkouset. minimum viable product, tedy nejjednodussi varianta veci, ktera uz realne funguje a jde ji pouzit. smysl je overit napad driv, nez do nej nasypete spoustu casu. zakladni rada pro vibe coding zni zacni nejmensim mvp, protoze maly celek se da uhlidat. mvp",
-      "mentions": 7,
-      "days": 4,
+      "mentions": 9,
+      "days": 5,
       "first_seen": "2026-03-15",
-      "last_seen": "2026-06-17",
+      "last_seen": "2026-08-22",
       "card_hits": 0
     },
     {
@@ -1380,10 +1403,10 @@
       "source": "hand",
       "starter": null,
       "search": "npm a balicky hotove kusy ciziho kodu, ktere si do projektu doplnite. misto psani vseho od zacatku se do projektu prida hotova knihovna, ktera uz umi, co potrebujete. npm je nastroj, ktery tyhle balicky stahuje a spravuje. kazdy pridany balicek je ale i zavazek, protoze ho nekdo musi udrzovat.  npm npx balicek balicky knihovna knihovny",
-      "mentions": 24,
-      "days": 5,
+      "mentions": 25,
+      "days": 6,
       "first_seen": "2026-04-01",
-      "last_seen": "2026-07-27",
+      "last_seen": "2026-08-22",
       "card_hits": 4
     },
     {
@@ -1608,10 +1631,10 @@
       "source": "hand",
       "starter": 3,
       "search": "prompt zadani, ktere modelu napisete. prompt je text, kterym modelu rikate, co ma udelat. zadna kouzelna formulka v tom neni. nejlip funguje obycejny jasny popis toho, co chcete, pro koho to je a jak ma vysledek vypadat. vetsina zklamani z ai pochazi z vagniho zadani, ne ze slabeho modelu. napsat „shrn mi to“ a „shrn mi to do peti bodu pro kolegu, ktery u toho nebyl“ da uplne jiny vysledek. prompt promptu prompty promptu promptem promptovani promptovat",
-      "mentions": 60,
-      "days": 29,
+      "mentions": 72,
+      "days": 30,
       "first_seen": "2026-03-15",
-      "last_seen": "2026-08-18",
+      "last_seen": "2026-08-22",
       "card_hits": 25
     },
     {
@@ -1912,10 +1935,10 @@
       "source": "hand",
       "starter": null,
       "search": "session jedno souvisle sezeni, ve kterem si ai pamatuje, o cem jste mluvili. session drzi spolecnou pamet konverzace. kdyz ji ukoncite a zacnete znovu, zacinate s cistym stolem a nic z minula se neprenasi, pokud to neni zapsane v souborech nebo v pameti. dlouha session zaplni kontextove okno. kratka a soustredena dava lepsi vysledky. session sessions sezeni vlakno vlakna",
-      "mentions": 164,
-      "days": 55,
+      "mentions": 165,
+      "days": 56,
       "first_seen": "2026-03-15",
-      "last_seen": "2026-08-21",
+      "last_seen": "2026-08-22",
       "card_hits": 34
     },
     {
@@ -1940,10 +1963,10 @@
       "source": "hand",
       "starter": null,
       "search": "skill balicek instrukci pro postup, ktery delate opakovane. skill je ulozeny navod, jak presne nejakou praci udelat. misto abyste postup popisovali pokazde znovu, napisete lomitko a jeho jmeno, treba /review, a claude vi, co ma delat a v jakem poradi. hodi se na rutinu, kterou delate porad stejne. priprava podkladu, kontrola pred vypustenim ven, uklizeni poznamek. skill skillu skilly skillu skills",
-      "mentions": 202,
-      "days": 52,
+      "mentions": 217,
+      "days": 53,
       "first_seen": "2026-03-18",
-      "last_seen": "2026-08-19",
+      "last_seen": "2026-08-22",
       "card_hits": 46
     },
     {
@@ -1989,10 +2012,10 @@
       "source": "auto",
       "starter": null,
       "search": "soniox webova sluzba pro prepis reci s rozlisenim jednotlivych mluvcich. soniox je webove rozhrani pro prepis reci. dostanete text i s tim, kdo co rikal, a nic instalovat nemusite. hodi se, kdyz potrebujete presnejsi vysledek nebo jasne rozliseni recniku. u hledani alternativy k plaudu nebo jinym prepisovym nastrojum. soniox soniox",
-      "mentions": 71,
-      "days": 24,
+      "mentions": 72,
+      "days": 25,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-19",
+      "last_seen": "2026-08-22",
       "card_hits": 19
     },
     {
@@ -2140,7 +2163,7 @@
       "days": 35,
       "first_seen": "2026-03-14",
       "last_seen": "2026-08-21",
-      "card_hits": 23
+      "card_hits": 24
     },
     {
       "slug": "tmux",
@@ -2214,10 +2237,10 @@
       "source": "hand",
       "starter": null,
       "search": "transkripce a diarizace prevod mluveni na text a rozliseni, kdo z mluvcich mluvi. transkripce udela z nahravky text. diarizace k tomu prida, ktery usek rekl ktery mluvci. u schuzek byva ta druha vec dulezitejsi nez samotny prepis.  transkripce prepis prepisu prepisy diarizace",
-      "mentions": 129,
-      "days": 40,
+      "mentions": 133,
+      "days": 41,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-19",
+      "last_seen": "2026-08-22",
       "card_hits": 40
     },
     {
@@ -2241,10 +2264,10 @@
       "source": "hand",
       "starter": 1,
       "search": "vibe coding staveni aplikaci tak, ze popisujete, co chcete, a kod pise ai. vy rikate, co ma vec delat, ai pise kod a vy vysledek zkousite a usmernujete. programovat umet nemusite. staci umet popsat, co chcete, a poznat, kdy vysledek nesedi. jede se po malych kouscich, protoze velky skok se spatne kontroluje a chyba se v nem hur hleda. kolem tohohle vznikla cela komunita. je to nejcastejsi pojem ve skupine vubec. vibe coding vibe codingu vibecoding vibe kodovani",
-      "mentions": 325,
-      "days": 103,
+      "mentions": 330,
+      "days": 104,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-22",
       "card_hits": 47
     },
     {
@@ -2339,10 +2362,10 @@
       "source": "hand",
       "starter": null,
       "search": "workflow ustaleny postup, jak neco delate od zacatku do konce. sled kroku, ktery vede od zadani k vysledku. nemusi byt zautomatizovany. workflow je i to, kdyz vite, ze po nahravce vzdycky nasleduje prepis, pak shrnuti a nakonec ulozeni do poznamek. ve skupine se sdili spis workflow nez jednotlive nastroje. nastroj se da vymenit, postup zustava. workflow workflowu workflows",
-      "mentions": 127,
-      "days": 66,
+      "mentions": 129,
+      "days": 67,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-19",
+      "last_seen": "2026-08-22",
       "card_hits": 47
     },
     {

@@ -1732,6 +1732,22 @@
       "why": "Narazíte na to, když chcete AI asistenci v příkazové řádce bez placení za API.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "brain-dump",
+      "term": "brain dump",
+      "cat": "cc",
+      "match": [
+        "brain dump",
+        "brain dumpu",
+        "brain dumpem",
+        "brain dumpy"
+      ],
+      "short": "Vychrlení všech surových myšlenek najednou, bez třídění nebo úprav.",
+      "plain": "Napíšete nebo nadiktujete všechno, co vám koluje hlavou, přesně tak chaoticky, jak to je. Žádné opravování, žádná struktura. Model pak ten chaos zpracuje a vytáhne z toho smysl, místo abyste ho dvacet minut třídili ručně.",
+      "why": "Při zpracování poznámek z meetingu, brainstormingu nebo diktátu přes hlasový nástroj jako Utter.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
