@@ -1748,6 +1748,21 @@
       "why": "Při zpracování poznámek z meetingu, brainstormingu nebo diktátu přes hlasový nástroj jako Utter.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "google-workspace",
+      "term": "Google Workspace",
+      "cat": "nastroje",
+      "match": [
+        "Google Workspace",
+        "Workspace",
+        "G Suite"
+      ],
+      "short": "Sada cloudových nástrojů od Googlu zahrnující Gmail, Kalendář, Drive a Dokumenty.",
+      "plain": "Google Workspace je balíček cloudových služeb od Googlu. Zahrnuje Gmail, Kalendář, Drive, Dokumenty, Tabulky a Prezentace, všechny pod jedním účtem. Jde o přímou konkurenci Microsoft 365.",
+      "why": "Narazíte na to při propojování AI nástrojů s firemními službami Googlu.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }

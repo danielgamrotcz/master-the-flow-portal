@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-23",
+  "generated_at": "2026-08-24",
   "source": {
-    "daily_notes": 146,
+    "daily_notes": 147,
     "range": [
       "2026-03-14",
-      "2026-08-22"
+      "2026-08-23"
     ]
   },
   "categories": [
@@ -325,11 +325,11 @@
       "source": "hand",
       "starter": 5,
       "search": "claude code claude, ktery bezi v terminalu a sam pracuje se soubory ve vasem projektu. neni to chat v prohlizeci. claude code bezi u vas na pocitaci, vidi slozku s projektem, umi soubory cist i menit, spoustet prikazy a overovat si vysledek. spousti se v terminalu napsanim claude. ve skupine se casto zkracuje na cc. vetsina projektu, ktere tady lidi ukazuji, vznikla presne timhle. claude code claude codu claudecode cc",
-      "mentions": 526,
-      "days": 92,
+      "mentions": 531,
+      "days": 93,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-22",
-      "card_hits": 112
+      "last_seen": "2026-08-23",
+      "card_hits": 113
     },
     {
       "slug": "claude-md",
@@ -374,10 +374,10 @@
       "source": "hand",
       "starter": null,
       "search": "cli ovladani programu psanim prikazu. command line interface, tedy program bez oken a tlacitek, ktery se ovlada napsanymi prikazy. vyhoda je, ze se da snadno zautomatizovat a zopakovat, protoze prikaz se da ulozit a pustit znovu. vyhoda proti klikani je, ze prikaz se da ulozit a pustit znovu. odtud vede cesta k automatizaci. cli",
-      "mentions": 55,
-      "days": 23,
+      "mentions": 56,
+      "days": 24,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-21",
+      "last_seen": "2026-08-23",
       "card_hits": 17
     },
     {
@@ -563,7 +563,7 @@
       "days": 26,
       "first_seen": "2026-03-16",
       "last_seen": "2026-08-22",
-      "card_hits": 17
+      "card_hits": 18
     },
     {
       "slug": "deploy",
@@ -821,6 +821,28 @@
       "card_hits": 24
     },
     {
+      "slug": "google-workspace",
+      "term": "Google Workspace",
+      "category": "nastroje",
+      "short": "Sada cloudových nástrojů od Googlu zahrnující Gmail, Kalendář, Drive a Dokumenty.",
+      "plain": "Google Workspace je balíček cloudových služeb od Googlu. Zahrnuje Gmail, Kalendář, Drive, Dokumenty, Tabulky a Prezentace, všechny pod jedním účtem. Jde o přímou konkurenci Microsoft 365.",
+      "why": "Narazíte na to při propojování AI nástrojů s firemními službami Googlu.",
+      "related": [],
+      "aliases": [
+        "Google Workspace",
+        "Workspace",
+        "G Suite"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "google workspace sada cloudovych nastroju od googlu zahrnujici gmail, kalendar, drive a dokumenty. google workspace je balicek cloudovych sluzeb od googlu. zahrnuje gmail, kalendar, drive, dokumenty, tabulky a prezentace, vsechny pod jednim uctem. jde o primou konkurenci microsoft 365. narazite na to pri propojovani ai nastroju s firemnimi sluzbami googlu. google workspace workspace g suite",
+      "mentions": 59,
+      "days": 20,
+      "first_seen": "2026-04-01",
+      "last_seen": "2026-08-23",
+      "card_hits": 14
+    },
+    {
       "slug": "governance",
       "term": "Governance",
       "category": "ai",
@@ -968,7 +990,7 @@
       "days": 12,
       "first_seen": "2026-03-31",
       "last_seen": "2026-08-22",
-      "card_hits": 5
+      "card_hits": 6
     },
     {
       "slug": "hosting",
@@ -1045,7 +1067,7 @@
       "days": 82,
       "first_seen": "2026-03-17",
       "last_seen": "2026-08-22",
-      "card_hits": 43
+      "card_hits": 44
     },
     {
       "slug": "kontextove-okno",
@@ -1198,10 +1220,10 @@
       "source": "hand",
       "starter": null,
       "search": "markdown formatovani textu pomoci obycejnych znaku. jednoduchy zapis, kde hvezdicky udelaji tucne pismo a mrizky nadpisy. zustava to citelny text. soubor otevrete cimkoli a word na to nepotrebujete. v tomhle formatu jsou poznamky v obsidianu i instrukce v claude.md. markdown markdownu .md md soubor",
-      "mentions": 45,
-      "days": 28,
+      "mentions": 47,
+      "days": 29,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-23",
       "card_hits": 15
     },
     {
@@ -1254,7 +1276,7 @@
       "days": 70,
       "first_seen": "2026-03-17",
       "last_seen": "2026-08-22",
-      "card_hits": 75
+      "card_hits": 77
     },
     {
       "slug": "model-agnosticky",
@@ -1375,10 +1397,10 @@
       "source": "hand",
       "starter": null,
       "search": "notion poznamky, databaze a wiki v jednom, ulozene v cloudu. nastroj na organizaci informaci, kde se michaji dokumenty s tabulkami a databazemi. na rozdil od obsidianu obsah lezi u poskytovatele, ne u vas na disku.  notion notionu notion",
-      "mentions": 61,
-      "days": 24,
+      "mentions": 63,
+      "days": 25,
       "first_seen": "2026-03-16",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-23",
       "card_hits": 11
     },
     {
@@ -1635,7 +1657,7 @@
       "days": 30,
       "first_seen": "2026-03-15",
       "last_seen": "2026-08-22",
-      "card_hits": 25
+      "card_hits": 27
     },
     {
       "slug": "prototyp",
@@ -1908,10 +1930,10 @@
       "source": "hand",
       "starter": null,
       "search": "server pocitac, ktery bezi nepretrzite a obsluhuje ostatni. server je stroj, jehoz jedina prace je cekat na dotazy a odpovidat na ne. muze to byt obri stroj v datovem centru i obycejny pocitac doma, ktery nikdy nevypinate.  server serveru servery serveru serveri",
-      "mentions": 46,
-      "days": 24,
+      "mentions": 47,
+      "days": 25,
       "first_seen": "2026-03-15",
-      "last_seen": "2026-08-18",
+      "last_seen": "2026-08-23",
       "card_hits": 14
     },
     {
@@ -1967,7 +1989,7 @@
       "days": 53,
       "first_seen": "2026-03-18",
       "last_seen": "2026-08-22",
-      "card_hits": 46
+      "card_hits": 47
     },
     {
       "slug": "skript",
@@ -1995,7 +2017,7 @@
       "days": 17,
       "first_seen": "2026-03-17",
       "last_seen": "2026-08-18",
-      "card_hits": 20
+      "card_hits": 21
     },
     {
       "slug": "soniox",
@@ -2016,7 +2038,7 @@
       "days": 25,
       "first_seen": "2026-03-17",
       "last_seen": "2026-08-22",
-      "card_hits": 19
+      "card_hits": 20
     },
     {
       "slug": "ssh",
@@ -2241,7 +2263,7 @@
       "days": 41,
       "first_seen": "2026-03-14",
       "last_seen": "2026-08-22",
-      "card_hits": 40
+      "card_hits": 41
     },
     {
       "slug": "vibe-coding",
@@ -2362,10 +2384,10 @@
       "source": "hand",
       "starter": null,
       "search": "workflow ustaleny postup, jak neco delate od zacatku do konce. sled kroku, ktery vede od zadani k vysledku. nemusi byt zautomatizovany. workflow je i to, kdyz vite, ze po nahravce vzdycky nasleduje prepis, pak shrnuti a nakonec ulozeni do poznamek. ve skupine se sdili spis workflow nez jednotlive nastroje. nastroj se da vymenit, postup zustava. workflow workflowu workflows",
-      "mentions": 129,
-      "days": 67,
+      "mentions": 130,
+      "days": 68,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-22",
+      "last_seen": "2026-08-23",
       "card_hits": 47
     },
     {
