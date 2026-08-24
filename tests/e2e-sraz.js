@@ -77,7 +77,7 @@ function check(name, cond, detail = '') {
   check('Harmonogram má pět navazujících částí včetně pauzy', timeline === 5, `count=${timeline}`);
   const programText = (await page.locator('.program').innerText()).replace(/\u00a0/g, ' ');
   check('Program popisuje dvacetiminutové hostovské bloky', /Hostovská část poběží ve dvacetiminutových blocích/.test(programText) && /Ukázky, rozhovory a Q&A/.test(programText));
-  check('Úvod programu shrnuje všech pět hostů a pravdivě vymezuje otevřená témata', /Postupně vystoupí Alex Trejtnar, Martin Pavlíček, Tomáš „Vilík“ Pospíchal, Aneta Martinek a Vojtěch Veselý/.test(programText) && /Témata Anety a Vojtěcha doplním, jakmile je doladíme/.test(programText));
+  check('Úvod programu shrnuje všech šest hostů a pravdivě vymezuje otevřená témata', /Postupně vystoupí Alex Trejtnar, Martin Pavlíček, Tomáš „Vilík“ Pospíchal, Aneta Martinek, Vojtěch Veselý a Ondřej Tyl/.test(programText) && /Témata Anety a Vojtěcha doplním, jakmile je doladíme/.test(programText));
   check('Program uvádí potvrzený Alexův blok', /14:05–14:25[\s\S]*Alex Trejtnar[\s\S]*AI radar od novinek k tomu, co má smysl zavést/.test(programText));
   check('Alexův medailonek uvádí pozici a popisuje výběr využitelných novinek', /Bořič stereotypů/.test(programText) && /automaticky sbírá AI novinky, vyhodnocuje jejich význam a ukazuje, co má smysl zavést, proč a kde začít/.test(programText));
   check('Program uvádí potvrzený Tomášův blok', /14:45–15:05/.test(programText) && /Tomáš „Vilík“ Pospíchal/.test(programText) && /Od firemní rutiny k hotovému AI workflow/.test(programText));
@@ -85,13 +85,14 @@ function check(name, cond, detail = '') {
   check('Tomášův medailonek neopakuje samozřejmý prostor na otázky', !/následovaná otázkami/.test(programText));
   check('Martinův pojmenovaný blok zachovává profilový medailonek', /14:25–14:45[\s\S]*Martin Pavlíček[\s\S]*Já a můj Second Brain[\s\S]*Director v poradenské divizi Deloitte[\s\S]*Přes třináct let/.test(programText));
   check('Aneta a Vojtěch čekají na téma a mají jen profilový medailonek', /15:05–15:25[\s\S]*Aneta Martinek[\s\S]*Téma připravujeme[\s\S]*#HolkyzMarketingu[\s\S]*#HolkyzByznysu/.test(programText) && /15:25–15:45[\s\S]*Vojtěch Veselý[\s\S]*Téma připravujeme[\s\S]*Gemini i Claude[\s\S]*grantů, vývoje, kvality a servisu/.test(programText) && (programText.match(/Téma připravujeme/g) || []).length === 2 && !/Popis bloku připravujeme|Efektivita a produktivita|společný brainstorming|AI v malém R&D týmu|kontrola na člověku/.test(programText));
-  check('Hosté jsou ve schváleném pořadí', /Alex Trejtnar[\s\S]*Martin Pavlíček[\s\S]*Tomáš „Vilík“ Pospíchal[\s\S]*Aneta Martinek[\s\S]*Vojtěch Veselý/.test(programText));
+  check('Ondřejův blok má potvrzený čas, název, medailonek a odkaz', /15:45–16:05[\s\S]*Ondřej Tyl[\s\S]*Hraju si s GrokBotem[\s\S]*Bývalý CEO Benefit Plus[\s\S]*zakladatel LYT Works/.test(programText) && await page.locator('.program-slot-speaker a[href="https://ondrejtyl.cz/"]').getAttribute('target') === '_blank');
+  check('Hosté jsou ve schváleném pořadí', /Alex Trejtnar[\s\S]*Martin Pavlíček[\s\S]*Tomáš „Vilík“ Pospíchal[\s\S]*Aneta Martinek[\s\S]*Vojtěch Veselý[\s\S]*Ondřej Tyl/.test(programText));
   check('Úvod představuje sraz a úvodní moudra organizátora', /14:00–14:05[\s\S]*Daniel Gamrot[\s\S]*Představení celého srazu a úvodní moudra organizátora/.test(programText));
-  check('Danielův blok vypráví vznik Uttera napříč platformami', /15:45–16:00[\s\S]*Jak jsem stavěl Uttero[\s\S]*macOS, iOS a Android/.test(programText));
-  check('Čtyři potvrzené hlavní bloky mají zvýraznění', await page.locator('.program-slot-confirmed').count() === 4 && await page.locator('.program-slot-confirmed').filter({ hasText: 'Alex Trejtnar' }).count() === 1 && await page.locator('.program-slot-confirmed').filter({ hasText: 'Martin Pavlíček' }).count() === 1 && await page.locator('.program-slot-confirmed').filter({ hasText: 'Tomáš „Vilík“ Pospíchal' }).count() === 1 && await page.locator('.program-slot-confirmed').filter({ hasText: 'Jak jsem stavěl Uttero' }).count() === 1 && await page.locator('.program-slot-pending').filter({ hasText: 'Aneta Martinek' }).count() === 1 && await page.locator('.program-slot-pending').filter({ hasText: 'Vojtěch Veselý' }).count() === 1);
-  check('Instrukce začínají až se skupinovou výzvou', /16:15–18:00[\s\S]*Skupinová výzva[\s\S]*Na začátku vysvětlím zadání/.test(programText) && !/15:55–16:00/.test(programText));
-  check('Před skupinovou výzvou je patnáctiminutová pauza', /16:00–16:15[\s\S]*Pauza[\s\S]*občerstvení/.test(programText));
-  check('Skupinová výzva začíná v 16:15 a končí v 18:00', /16:15–18:00[\s\S]*Skupinová výzva/.test(programText));
+  check('Danielův desetiminutový blok vypráví vznik Uttera napříč platformami', /16:05–16:15[\s\S]*Jak jsem stavěl Uttero[\s\S]*macOS, iOS a Android/.test(programText));
+  check('Pět potvrzených hlavních bloků má zvýraznění', await page.locator('.program-slot-confirmed').count() === 5 && await page.locator('.program-slot-confirmed').filter({ hasText: 'Alex Trejtnar' }).count() === 1 && await page.locator('.program-slot-confirmed').filter({ hasText: 'Martin Pavlíček' }).count() === 1 && await page.locator('.program-slot-confirmed').filter({ hasText: 'Tomáš „Vilík“ Pospíchal' }).count() === 1 && await page.locator('.program-slot-confirmed').filter({ hasText: 'Ondřej Tyl' }).count() === 1 && await page.locator('.program-slot-confirmed').filter({ hasText: 'Jak jsem stavěl Uttero' }).count() === 1 && await page.locator('.program-slot-pending').filter({ hasText: 'Aneta Martinek' }).count() === 1 && await page.locator('.program-slot-pending').filter({ hasText: 'Vojtěch Veselý' }).count() === 1);
+  check('Instrukce začínají až se skupinovou výzvou', /16:30–18:00[\s\S]*Skupinová výzva[\s\S]*Na začátku vysvětlím zadání/.test(programText) && !/16:25–16:30[\s\S]*Instrukce/.test(programText));
+  check('Před skupinovou výzvou je posunutá patnáctiminutová pauza', /16:15–16:30[\s\S]*Pauza[\s\S]*občerstvení/.test(programText));
+  check('Skupinová výzva začíná v 16:30 a končí v 18:00', /16:30–18:00[\s\S]*Skupinová výzva/.test(programText));
   check('Skupinová výzva míchá zkušenosti a má hratelný výstup', /malých týmů/.test(programText) && /různou úrovní zkušeností/.test(programText) && /vlastní hru/.test(programText) && /hratelnou verzi/.test(programText) && /bez návodu otestovat jiným týmem/.test(programText));
   const slotEdgeBorders = await page.locator('.program-slots').evaluate(slots => {
     const first = slots.firstElementChild;
@@ -103,7 +104,7 @@ function check(name, cond, detail = '') {
       firstExists: Boolean(first)
     };
   });
-  check('Vnitřní program nemá linku před prvním ani za posledním vstupem', slotEdgeBorders.firstExists && slotEdgeBorders.count === 7 && slotEdgeBorders.beforeFirst === '0px' && slotEdgeBorders.afterLast === '0px', JSON.stringify(slotEdgeBorders));
+  check('Vnitřní program nemá linku před prvním ani za posledním vstupem', slotEdgeBorders.firstExists && slotEdgeBorders.count === 8 && slotEdgeBorders.beforeFirst === '0px' && slotEdgeBorders.afterLast === '0px', JSON.stringify(slotEdgeBorders));
   const deviceCopy = await page.locator('.timeline-item, .practical, .faq').allTextContents().then(x => x.join(' ').replace(/\u00a0/g, ' '));
   check('Skupinová aktivita zmiňuje zařízení', /notebook|mobil/i.test(deviceCopy));
   check('Zařízení je výslovně dobrovolné', /není povinn|není podmínkou|povinné nejsou|i bez něj/i.test(deviceCopy));
