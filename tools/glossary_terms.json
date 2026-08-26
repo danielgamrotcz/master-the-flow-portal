@@ -1763,6 +1763,20 @@
       "why": "Narazíte na to při propojování AI nástrojů s firemními službami Googlu.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "plash",
+      "term": "Plash",
+      "cat": "nastroje",
+      "match": [
+        "Plash",
+        "Plash dashboard"
+      ],
+      "short": "Aplikace pro Mac, která zobrazí libovolnou webovou stránku jako živou tapetu plochy.",
+      "plain": "Plash je malá aplikace pro Mac, která na plochu místo statického obrázku umístí živou webovou stránku. Stránka se aktualizuje, takže plocha funguje jako osobní přehledník. Dá se propojit s vlastním dashboardem, takže si třeba zobrazíte zprávy z komunity spolu s personalizovanými doporučeními.",
+      "why": "Narazíte na něj, když hledáte způsob, jak mít na ploše Macu živý přehled místo statické tapety.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
