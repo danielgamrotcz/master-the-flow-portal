@@ -126,6 +126,22 @@ function check(name, cond, detail = '') {
   check('Text se nevymezuje přes formálnost nebo konferenci', !/formáln|konferenci/i.test(await page.locator('main').innerText()));
 
   check('Hero znovu nabízí kalendář hlavního programu', await page.locator('#google-calendar-link').count() === 1 && await page.locator('.hero a[download]').count() === 1);
+  const calendarLayout = await page.locator('.hero-calendar-links').evaluate(element => {
+    const label = element.querySelector('span').getBoundingClientRect();
+    const links = [...element.querySelectorAll('a')].map(link => link.getBoundingClientRect());
+    const linksOverlap = links.length === 2
+      && links[0].left < links[1].right
+      && links[0].right > links[1].left
+      && links[0].top < links[1].bottom
+      && links[0].bottom > links[1].top;
+    return {
+      labelAboveLinks: links.every(link => link.top >= label.bottom),
+      linksFit: links.every(link => link.left >= 0 && link.right <= window.innerWidth),
+      touchTargets: links.every(link => link.height >= 44),
+      linksOverlap,
+    };
+  });
+  check('Mobilní odkazy do kalendáře jsou oddělené a dobře ovladatelné', calendarLayout.labelAboveLinks && calendarLayout.linksFit && calendarLayout.touchTargets && !calendarLayout.linksOverlap, JSON.stringify(calendarLayout));
 
   const sticky = page.locator('#sticky-register');
   check('Mobilní registrace má dostatečně velkou dotykovou plochu', await sticky.evaluate(el => el.getBoundingClientRect().height >= 44));
@@ -189,6 +205,8 @@ function check(name, cond, detail = '') {
       const place = document.querySelector('.hero-title-place').getBoundingClientRect();
       const cta = document.querySelector('.hero .button-primary').getBoundingClientRect();
       const facts = [...document.querySelectorAll('.hero-fact')].map(element => element.getBoundingClientRect());
+      const calendarLabel = document.querySelector('.hero-calendar-links > span').getBoundingClientRect();
+      const calendarLinks = [...document.querySelectorAll('.hero-calendar-links a')].map(element => element.getBoundingClientRect());
       const stickyElement = document.getElementById('sticky-register');
       return {
         overflow: hero.scrollWidth > hero.clientWidth,
@@ -197,10 +215,13 @@ function check(name, cond, detail = '') {
         placeAligned: Math.abs(place.right - brand.right) <= 1,
         factsFit: facts.every(rect => rect.left >= 0 && rect.right <= window.innerWidth),
         ctaFits: cta.left >= 0 && cta.right <= window.innerWidth && cta.height >= 44,
+        calendarFits: calendarLinks.every(rect => rect.left >= 0 && rect.right <= window.innerWidth),
+        calendarTouchTargets: calendarLinks.every(rect => rect.height >= 44),
+        calendarLabelAboveLinks: calendarLinks.every(rect => rect.top >= calendarLabel.bottom),
         stickyHidden: !stickyElement.classList.contains('is-visible')
       };
     });
-    if (state.overflow || !state.brandFits || !state.placeFits || !state.placeAligned || !state.factsFit || !state.ctaFits || !state.stickyHidden) phoneProblems.push(`${width}px=${JSON.stringify(state)}`);
+    if (state.overflow || !state.brandFits || !state.placeFits || !state.placeAligned || !state.factsFit || !state.ctaFits || !state.calendarFits || !state.calendarTouchTargets || !state.calendarLabelAboveLinks || !state.stickyHidden) phoneProblems.push(`${width}px=${JSON.stringify(state)}`);
     await phone.close();
   }
   check('Hero je bezpečný na běžných šířkách telefonů 320–430 px', phoneProblems.length === 0, phoneProblems.join(' | '));

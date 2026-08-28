@@ -100,6 +100,9 @@ a { color: var(--accent); }
 .button.is-registration-unavailable, .sticky-register.is-registration-unavailable { cursor: not-allowed; opacity: .58; }
 .button.is-registration-unavailable { background: var(--text-tertiary); color: var(--bg); }
 .hero-note { margin: 10px 0 0; color: var(--text-secondary); font-size: 12px; line-height: 1.45; }
+.hero-calendar-links { margin: 16px 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; color: var(--text-tertiary); font-size: 12px; line-height: 1.35; }
+.hero-calendar-links > span { width: 100%; }
+.hero-calendar-links a { min-height: 44px; padding: 0 13px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--border-strong); border-radius: 8px; color: var(--accent); font-weight: 600; text-decoration: none; white-space: nowrap; }
 
 .section { max-width: 1120px; margin: 0 auto; padding: 86px 32px; }
 .section-kicker { margin: 0; color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
@@ -238,6 +241,7 @@ details p { max-width: 720px; margin: -2px 0 24px; color: var(--text-secondary);
   [data-theme="light"] .attendee-filters button[aria-pressed="true"]:hover { color: #fff; }
   .attendees-toggle:hover { border-color: var(--accent); color: var(--accent); }
   .attendee-bio-toggle:hover { color: var(--accent-hover); }
+  .hero-calendar-links a:hover { border-color: var(--accent); color: var(--accent-hover); }
 }
 
 @media (max-width: 1040px) {
@@ -261,6 +265,9 @@ details p { max-width: 720px; margin: -2px 0 24px; color: var(--text-secondary);
   .hero-conversion { margin-top: 14px; }
   .hero-actions .button { min-height: 48px; }
   .hero-note { margin-top: 7px; }
+  .hero-calendar-links { margin-top: 7px; flex-wrap: nowrap; gap: 7px; }
+  .hero-calendar-links > span { width: auto; margin-right: 2px; }
+  .hero-calendar-links a { min-height: 34px; padding: 0 9px; }
 }
 
 @media (max-width: 720px) {
@@ -279,6 +286,7 @@ details p { max-width: 720px; margin: -2px 0 24px; color: var(--text-secondary);
   .hero-lede { font-size: 17px; }
   .hero-conversion { width: 100%; margin-top: 20px; }
   .hero-actions { max-width: none; }
+  .hero-calendar-links a { flex: 1 1 0; padding-left: 8px; padding-right: 8px; }
   .section { padding: 72px 20px; }
   .manifesto { grid-template-columns: 1fr; gap: 22px; }
   .manifesto-intro { padding-left: 22px; }
