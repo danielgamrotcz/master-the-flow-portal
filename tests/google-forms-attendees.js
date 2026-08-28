@@ -42,10 +42,49 @@ check('Čistý formulář povoluje jen čtyři potřebná pole', /allowedIds = n
 check('Konfigurace formuláře nevyžaduje přihlášení ke Google účtu', /\.setCollectEmail\(false\)[\s\S]*\.setLimitOneResponsePerUser\(false\)/.test(source));
 check('Konfigurace nahradí vestavěný sběr vlastní validovanou e-mailovou otázkou', /form\.addTextItem\(\)\.setTitle\('E-mail'\)/.test(source) && /requireTextIsEmail\(\)/.test(source));
 check('Popis profilu je nepovinný a zveřejnění má povinnou volbu', /addParagraphTextItem\(\)[\s\S]*bioItem[\s\S]*\.setRequired\(false\)/.test(source) && /consentItem[\s\S]*\.setChoiceValues\(\[ATTENDEE_SYNC\.consentYes, ATTENDEE_SYNC\.consentNo\]\)[\s\S]*\.setRequired\(true\)/.test(source));
-check('Původní formulář se uzavře, ale jeho odpovědi se nemažou', /archiveOriginalRegistrationForm/.test(source) && /setAcceptingResponses\(false\)/.test(source) && !/deleteResponse/.test(source));
+const archiveFunctionSource = source.match(/function archiveOriginalRegistrationForm\(\) \{[\s\S]*?\n\}/)?.[0] || '';
+check('Původní formulář se uzavře, ale jeho odpovědi se nemažou', /setAcceptingResponses\(false\)/.test(archiveFunctionSource) && !/deleteResponse/.test(archiveFunctionSource));
 check('Původní formulář lze bezpečně obnovit pro hlavní program i piknik', /restoreOriginalRegistrationForm/.test(source) && /setAcceptingResponses\(true\)/.test(source) && /Přijdu jen na piknik po 18:00/.test(source) && /PageNavigationType\.CONTINUE/.test(source));
 check('Samostatný piknikový formulář po obnově netvrdí, že je hlavní program plný', /znovu otevřená i registrace na hlavní program/.test(source));
 check('Synchronizace čte archivní i nový piknikový formulář', /\.\.\.legacyResponses, \.\.\.picnicResponses/.test(source));
+check('Automat odhlášek běží po dvou hodinách a má závěrečný trigger', /installMeetupCancellationAutomation/.test(source) && /everyHours\(2\)/.test(source) && /\.at\(CANCELLATION_AUTOMATION\.eventStartsAt\)/.test(source));
+check('Automat po začátku srazu odstraní svoje triggery', /now >= cutoff\) removeMeetupCancellationTriggers_\(\)/.test(source));
+check('Automat ignoruje spam a koš', /-in:spam -in:trash/.test(source));
+check('Mazání se opakuje bezpečně podle e-mailu a následně synchronizuje počítadla', /removeRegistrationByEmail_/.test(source) && /uniqueRows = new Map/.test(source) && /deleteResponse/.test(source) && /syncAttendees\(\)/.test(source));
+check('Mazání v Tabulce podporuje živou českou hlavičku a všechny e-mailové sloupce', /casovaznacka/.test(source) && /emailovaadresa/.test(source) && /emailColumns\.some/.test(source));
+
+function classify(body) {
+  return vm.runInContext(`classifyMeetupCancellation_(${JSON.stringify(body)})`, context);
+}
+
+check('Jednoznačné NEDORAZÍM se automaticky zpracuje', classify('NEDORAZÍM\n\nOmlouvám se.').action === 'cancel');
+check('Běžná omluva s explicitní neúčastí se automaticky zpracuje', classify('Ahoj, bohužel zítra nepřijdu.').action === 'cancel');
+check('Překlep NEODRAZÍM zůstává rozpoznaný', classify('NEODRAZÍM\nS omluvou').action === 'cancel');
+check('Citovaný text původního e-mailu se ignoruje', classify('Dorazím.\n\nOn Wed wrote:\nNEDORAZÍM').action === 'ignore');
+check('Rozporuplná odpověď se nemaže automaticky', classify('Původně jsem psal NEDORAZÍM, ale nakonec dorazím.').action === 'review');
+check('Odhláška pouze z pikniku se předá k ruční kontrole', classify('Bohužel nedorazím na piknik.').action === 'review');
+check('Odhláška pouze z oficiální části se předá k ruční kontrole', classify('Omlouvám se, nepřijdu na oficiální část.').action === 'review');
+
+const exactEmailIdentity = vm.runInContext(`resolveRegistrationIdentity_(
+  { name: 'Jiný člověk', email: 'registered@example.test' },
+  [{ email: 'registered@example.test', name: 'Registrovaný člověk' }]
+)`, context);
+check('Párování preferuje přesný e-mail', exactEmailIdentity.status === 'matched' && exactEmailIdentity.method === 'email');
+
+const uniqueNameIdentity = vm.runInContext(`resolveRegistrationIdentity_(
+  { name: 'Jedinečné Jméno', email: 'other@example.test' },
+  [{ email: 'registered@example.test', name: 'Jedinečné Jméno' }]
+)`, context);
+check('Párování dovolí unikátní přesné celé jméno', uniqueNameIdentity.status === 'matched' && uniqueNameIdentity.method === 'unique_name');
+
+const ambiguousNameIdentity = vm.runInContext(`resolveRegistrationIdentity_(
+  { name: 'Stejné Jméno', email: '' },
+  [
+    { email: 'first@example.test', name: 'Stejné Jméno' },
+    { email: 'second@example.test', name: 'Stejné Jméno' }
+  ]
+)`, context);
+check('Neunikátní jméno se automaticky nemaže', ambiguousNameIdentity.status === 'review');
 
 function payload() {
   return vm.runInContext('attendeePayload_()', context);
