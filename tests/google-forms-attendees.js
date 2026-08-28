@@ -43,6 +43,8 @@ check('Konfigurace formuláře nevyžaduje přihlášení ke Google účtu', /\.
 check('Konfigurace nahradí vestavěný sběr vlastní validovanou e-mailovou otázkou', /form\.addTextItem\(\)\.setTitle\('E-mail'\)/.test(source) && /requireTextIsEmail\(\)/.test(source));
 check('Popis profilu je nepovinný a zveřejnění má povinnou volbu', /addParagraphTextItem\(\)[\s\S]*bioItem[\s\S]*\.setRequired\(false\)/.test(source) && /consentItem[\s\S]*\.setChoiceValues\(\[ATTENDEE_SYNC\.consentYes, ATTENDEE_SYNC\.consentNo\]\)[\s\S]*\.setRequired\(true\)/.test(source));
 check('Původní formulář se uzavře, ale jeho odpovědi se nemažou', /archiveOriginalRegistrationForm/.test(source) && /setAcceptingResponses\(false\)/.test(source) && !/deleteResponse/.test(source));
+check('Původní formulář lze bezpečně obnovit pro hlavní program i piknik', /restoreOriginalRegistrationForm/.test(source) && /setAcceptingResponses\(true\)/.test(source) && /Přijdu jen na piknik po 18:00/.test(source) && /PageNavigationType\.CONTINUE/.test(source));
+check('Samostatný piknikový formulář po obnově netvrdí, že je hlavní program plný', /znovu otevřená i registrace na hlavní program/.test(source));
 check('Synchronizace čte archivní i nový piknikový formulář', /\.\.\.legacyResponses, \.\.\.picnicResponses/.test(source));
 
 function payload() {

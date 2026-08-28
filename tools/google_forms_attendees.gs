@@ -3,7 +3,7 @@
 // respondentem používá pouze uvnitř formuláře k deduplikaci registrací.
 
 const ATTENDEE_SYNC = Object.freeze({
-  // Původní formulář s 30 registracemi zůstává beze změny jako archiv.
+  // Původní formulář znovu přijímá registrace na hlavní program i piknik.
   formId: '17-Nq5w_Ean8iaHNQNBmZxRFvft9a4XUCxxr-StVCqvU',
   webhookUrl: 'https://master-the-flow-portal.pages.dev/api/meetup-attendees',
   publishUntil: new Date('2026-09-06T21:59:59Z'),
@@ -18,10 +18,26 @@ const ATTENDEE_SYNC = Object.freeze({
   consentNo: 'Nechci být na stránce uveden/a',
 });
 
+const ORIGINAL_FORM = Object.freeze({
+  title: 'Registrace – Sraz Master the Flow v Praze 29. 8. 2026',
+  description: [
+    'První sraz Master the Flow proběhne v sobotu 29. 8. 2026 v Lampárně Lidická, Praha 5. Hlavní program je od 13:00 do 18:00 a potom pokračujeme společným piknikem.',
+    'Po několika odhláškách je registrace znovu otevřená do naplnění kapacity 30 lidí. Přijít můžete, i když nejste v Master the Flow. Ve formuláři zvolíte hlavní program, piknik, obojí, nebo zatím nejistou účast.',
+    'Jméno a e-mail používám k organizaci srazu a zaslání praktických informací. Jméno a případný popis zveřejním na stránce srazu jen při vašem výslovném souhlasu; e-mail se na web neposílá. Formulář provozuje Google.',
+  ].join('\n\n'),
+  confirmation: 'Díky, s vámi na srazu počítám. Praktické informace pošlu na zadaný e-mail. Pokud se váš plán změní, upravte svoji odpověď přes odkaz, který vám Google po odeslání nabídne.',
+  attendanceChoices: Object.freeze([
+    'Dorazím na oficiální část 13:00–18:00',
+    'Dorazím na oficiální část i na společný piknik po 18:00',
+    'Přijdu jen na piknik po 18:00',
+    'Zatím nevím přesně',
+  ]),
+});
+
 const PICNIC_FORM = Object.freeze({
   title: 'Piknik po srazu Master the Flow v Praze — 29. 8. 2026',
   description: [
-    'Hlavní program srazu je naplněný. Tento formulář slouží pouze k registraci na společný piknik po 18:00. Přijít můžete, i když nejste v Master the Flow. Piknik je volné setkání bez programu a kvůli účasti nepotřebujete notebook ani telefon. Přesné místo a organizační informace pošlu registrovaným, až budu znát počet lidí.',
+    'Po několika odhláškách je znovu otevřená i registrace na hlavní program. Tento samostatný formulář dál slouží pouze lidem, kteří chtějí přijít na společný piknik po 18:00. Na hlavní program nebo na obě části se registrujte v hlavním formuláři: https://docs.google.com/forms/d/e/1FAIpQLSc-IoU8ka75ur-VzBTfb88PZZMBjvVc7kVU2_BKeHdIM7YN7g/viewform',
     '',
     'Jméno, e-mail a případný popis používám k organizaci pikniku 29. 8. 2026. Jméno a popis zveřejním na stránce srazu jen při vašem výslovném souhlasu; e-mail se na web neposílá. Formulář provozuje Google.',
   ].join('\n'),
@@ -121,6 +137,51 @@ function archiveOriginalRegistrationForm() {
   // Zpráva uzavřeného formuláře s odkazem na nový piknikový formulář je
   // nastavená v publikačním dialogu Google Forms; současné Forms API ji pro
   // publikovaný formulář odmítá aktualizovat.
+}
+
+function restoreOriginalRegistrationForm() {
+  const form = FormApp.openById(ATTENDEE_SYNC.formId);
+  form
+    .setTitle(ORIGINAL_FORM.title)
+    .setDescription(ORIGINAL_FORM.description)
+    .setConfirmationMessage(ORIGINAL_FORM.confirmation)
+    .setAcceptingResponses(true)
+    .setAllowResponseEdits(true)
+    .setCollectEmail(false)
+    .setLimitOneResponsePerUser(false)
+    .setPublishingSummary(false)
+    .setShowLinkToRespondAgain(true);
+
+  const emailItem = findFormItemByTitle_(form, 'E-mail').asTextItem();
+  emailItem
+    .setRequired(true)
+    .setValidation(FormApp.createTextValidation().requireTextIsEmail().build())
+    .setHelpText('Použiju ho jen k organizaci srazu a zaslání praktických informací. Na web se neposílá.');
+  findFormItemByTitle_(form, ATTENDEE_SYNC.questions.name).asTextItem().setRequired(true);
+  findFormItemByTitle_(form, ATTENDEE_SYNC.questions.attendance)
+    .asMultipleChoiceItem()
+    .setChoiceValues([...ORIGINAL_FORM.attendanceChoices])
+    .setRequired(true);
+  findFormItemByTitle_(form, ATTENDEE_SYNC.questions.bio)
+    .asParagraphTextItem()
+    .setRequired(false)
+    .setHelpText('Nepovinné. Zobrazí se na stránce jen tehdy, když níže souhlasíte se zveřejněním.');
+  findFormItemByTitle_(form, ATTENDEE_SYNC.questions.consent)
+    .asMultipleChoiceItem()
+    .setChoiceValues([ATTENDEE_SYNC.consentYes, ATTENDEE_SYNC.consentNo])
+    .setRequired(true)
+    .setHelpText('Zveřejnění není podmínkou účasti. E-mail ani další odpovědi nezveřejním.');
+
+  const detailsPage = form.getItems(FormApp.ItemType.PAGE_BREAK)[0];
+  if (!detailsPage) throw new Error('Původní formulář nemá očekávanou druhou sekci.');
+  detailsPage.asPageBreakItem()
+    .setTitle('Účast a pár slov o vás')
+    .setHelpText('')
+    .setGoToPage(FormApp.PageNavigationType.CONTINUE);
+
+  // Starý samostatný odkaz na piknik zůstává funkční, ale nesmí tvrdit, že je
+  // hlavní program plný.
+  configureCleanPicnicForm_(picnicForm_());
 }
 
 function attendeeAnswers_(response) {

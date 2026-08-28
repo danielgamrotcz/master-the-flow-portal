@@ -39,15 +39,19 @@ function check(name, cond, detail = '') {
   check('Hero neslibuje nepotvrzená témata', !/produktiv|automatiz|vibe coding/i.test(await page.locator('.hero-lede').innerText()));
   const heroLedeText = (await page.locator('.hero-lede').innerText()).replace(/\u00a0/g, ' ');
   const heroNoteText = (await page.locator('.hero-note').innerText()).replace(/\u00a0/g, ' ');
-  check('Hero odděluje plný program od otevřeného pikniku', /Hlavní program se naplnil/.test(heroLedeText) && /bez účasti na programu/.test(heroLedeText) && /bez členství/.test(heroLedeText));
-  check('Hero snižuje tření registrace', /Google formulář.*1–2 minuty.*zdarma/.test(heroNoteText));
+  check('Hero vysvětluje znovu otevřenou registraci', /Po několika odhláškách/.test(heroLedeText) && /znovu volná místa/.test(heroLedeText) && /Přijít může kdokoli/.test(heroLedeText));
+  check('Hero snižuje tření registrace', /Google formulář.*přibližně 1 minuta.*zdarma/.test(heroNoteText));
   check('Hero potvrzuje registraci bez Google účtu', /bez Google účtu/.test(heroNoteText));
   const heroFactsText = (await page.locator('.hero-facts').innerText()).replace(/\u00a0/g, ' ');
   check('Hero uvádí potvrzené místo srazu', /Lampárna Lidická/.test(heroFactsText) && /Lidická 31.*Praha 5/.test(heroFactsText));
   check('Hero odkazuje na Lampárnu Lidická', await page.locator('.hero-fact-place a').getAttribute('href') === 'https://www.lamparnalidicka.cz/');
   check('Hero ukazuje kapacitu hlavního programu', /\/30$/.test(await page.locator('#official-registered-count').innerText()));
   check('Hero ukazuje živý počet přihlášených na piknik', await page.locator('.hero-picnic-proof').isVisible() && await page.locator('#hero-picnic-registered-count').innerText() === String(attendeesPayload.picnicRegisteredCount) && /Na piknik už se přihlásil/.test(await page.locator('.hero-picnic-proof').innerText()));
-  check('Pikniková registrace zůstává dostupná i při plném hlavním programu', await page.locator('[data-registration-link]').evaluateAll(links => links.length === 4 && links.every(link => /^https:\/\/docs\.google\.com\/forms\//.test(link.getAttribute('href') || '') && link.getAttribute('aria-disabled') !== 'true')));
+  const shouldBeFull = attendeesPayload.officialRegisteredCount >= 30;
+  check('Registrační tlačítka odpovídají aktuální kapacitě', await page.locator('[data-registration-link]').evaluateAll((links, full) => links.every(link => full
+    ? link.getAttribute('aria-disabled') === 'true' && !link.hasAttribute('href')
+    : link.getAttribute('aria-disabled') === 'false' && /^https:\/\/docs\.google\.com\/forms\//.test(link.getAttribute('href') || '')
+  ), shouldBeFull));
   check('Značka Master the Flow se v titulku neláme', await page.locator('h1 .no-break').evaluate(el => getComputedStyle(el).whiteSpace === 'nowrap'));
 
   const buttonContrast = async () => page.locator('.hero .button-primary').evaluate(el => {
@@ -111,17 +115,17 @@ function check(name, cond, detail = '') {
   check('Organizační text mluví v první osobě', /Potřebuju|přijímám|pošlu/.test(await page.locator('main').innerText()));
   const manifestoText = (await page.locator('.manifesto-band').innerText()).replace(/\u00a0/g, ' ');
   check('Stránka zachovává aktivní charakter srazu', /Nechci dělat akci, kterou si jen odsedíte/.test(manifestoText) && /jeden konkrétní nápad/.test(manifestoText) && /jméno člověka/.test(manifestoText));
-  check('Aktivní charakter přechází do otevřené pozvánky na piknik', /Hlavní program je už plný/.test(manifestoText) && /na večerní piknik zvu i lidi mimo komunitu/.test(manifestoText));
+  check('Manifest se nevrací k překonanému tvrzení o plné kapacitě', !/Hlavní program je už plný|hlavní program se naplnil/i.test(manifestoText));
   const registrationText = (await page.locator('.registration-panel').innerText()).replace(/\u00a0/g, ' ');
-  check('Registrační karta odděluje naplněný hlavní program od pikniku', /Hlavní program[\s\S]*Naplněno[\s\S]*30 z 30 míst/i.test(registrationText) && /Piknik po 18:00/i.test(registrationText) && await page.locator('.registration-status-item').count() === 2);
-  check('Registrace zve i lidi mimo program a komunitu', /nejste v Master the Flow/.test(registrationText) && /na hlavním programu nebudete/.test(registrationText));
-  check('Registrace vysvětluje jednoduchý formulář a důvod pro e-mail', /Jméno a e-mail jsou povinné/.test(registrationText) && /pár slov o sobě přidáte dobrovolně/.test(registrationText) && /pošlu přesné místo/.test(registrationText) && /Google účet nepotřebujete/.test(registrationText));
+  check('Registrační karta odděluje živý stav hlavního programu od pikniku', /Hlavní program[\s\S]*z 30 míst/i.test(registrationText) && /Piknik po 18:00/i.test(registrationText) && await page.locator('.registration-status-item').count() === 2);
+  check('Registrace zve i lidi mimo komunitu', /otevřená i lidem mimo komunitu/.test(registrationText));
+  check('Registrace vysvětluje rozsah účasti a jednoduchý formulář', /hlavní program, piknik, nebo obojí/.test(registrationText) && /Google účet nepotřebujete/.test(registrationText));
   check('Registrace vysvětluje výslovný opt-in veřejné karty', /Na web se dostanou jen vaše jméno a popis/.test(registrationText) && /jen když to výslovně potvrdíte/.test(registrationText) && /e-mail se na web neposílá/.test(registrationText));
-  check('Registrace popisuje piknik jako volné setkání bez elektroniky', /volné setkání bez programu/.test(registrationText) && /nepotřebujete notebook, telefon ani jinou elektroniku/.test(registrationText) && !/nemusíte nic nosit/.test(registrationText));
+  check('Registrace obnovuje hlavní program, ne pouze piknik', /registrace znovu otevřená/.test(registrationText) && !/Přidat se na piknik/.test(registrationText));
   check('Úvod nepopisuje sraz jako offline akci', !/offline/i.test(await page.locator('.manifesto-band').innerText()));
   check('Text se nevymezuje přes formálnost nebo konferenci', !/formáln|konferenci/i.test(await page.locator('main').innerText()));
 
-  check('Hero nenabízí kalendář naplněného hlavního programu', await page.locator('.hero-calendar-links, #google-calendar-link, .hero a[download]').count() === 0 && !/kalendář/i.test(await page.locator('.hero').innerText()));
+  check('Hero znovu nabízí kalendář hlavního programu', await page.locator('#google-calendar-link').count() === 1 && await page.locator('.hero a[download]').count() === 1);
 
   const sticky = page.locator('#sticky-register');
   check('Mobilní registrace má dostatečně velkou dotykovou plochu', await sticky.evaluate(el => el.getBoundingClientRect().height >= 44));
@@ -146,13 +150,13 @@ function check(name, cond, detail = '') {
   check('Stránka nevkládá Google Form do iframe', await page.locator('iframe').count() === 0);
   const registrationHref = await page.locator('#registration-link').getAttribute('href');
   check('Registrace je tlačítko s odkazem na Google Forms', /^https:\/\/docs\.google\.com\/forms\//.test(registrationHref || ''), String(registrationHref));
-  check('Registrační blok má titulek Přidat se na piknik', (await page.locator('#registration-title').textContent()).replace(/\u00a0/g, ' ') === 'Přidat se na piknik');
-  check('Piknik je výslovně otevřený i mimo komunitu', /Piknik je otevřený všem/.test(await page.locator('.practical').innerText()) && /Nemusíte být v Master the Flow/.test((await page.locator('.practical').innerText()).replace(/\u00a0/g, ' ')));
+  check('Registrační blok má titulek Registrovat se na sraz', (await page.locator('#registration-title').textContent()).replace(/\u00a0/g, ' ') === 'Registrovat se na sraz');
+  check('Akce je výslovně otevřená i mimo komunitu', /Přijít může kdokoli/.test(await page.locator('.practical').innerText()));
   const whatsappHref = await page.locator('#whatsapp-group-link').getAttribute('href');
   const whatsappUrl = new URL(whatsappHref);
   check('WhatsApp pozvánka vede do zadané skupiny', whatsappUrl.hostname === 'chat.whatsapp.com' && whatsappUrl.pathname === '/CYjDrgCPeq18wldgqScjFh' && whatsappUrl.searchParams.get('mode') === 'gi_t', String(whatsappHref));
-  check('Vstup do skupiny není zaměněný za registraci', /nenahrazuje registraci na piknik/.test((await page.locator('.community-note').innerText()).replace(/\u00a0/g, ' ')));
-  check('Členství v komunitě není podmínkou pikniku', /Piknik je otevřený i lidem mimo komunitu/.test((await page.locator('.faq').textContent()).replace(/\u00a0/g, ' ')));
+  check('Vstup do skupiny není zaměněný za registraci', /nenahrazuje registraci na sraz/.test((await page.locator('.community-note').innerText()).replace(/\u00a0/g, ' ')));
+  check('Členství ve WhatsApp skupině není podmínkou účasti', /členství ve WhatsApp skupině není podmínkou/.test((await page.locator('.faq').textContent()).replace(/\u00a0/g, ' ')));
   check('WhatsApp tlačítko má dostatečně velkou dotykovou plochu', await page.locator('#whatsapp-group-link').evaluate(el => el.getBoundingClientRect().height >= 44));
   check('WhatsApp sekce se na mobilu skládá pod sebe', await page.locator('.community-panel').evaluate(el => {
     const copy = el.querySelector('.community-copy').getBoundingClientRect();
@@ -170,7 +174,7 @@ function check(name, cond, detail = '') {
     return copy.innerText;
   });
   check('Jednopísmenné české předložky a spojky mají pevné mezery', !/(?:^|\s)[avikosuz] [A-Za-zÁ-ž]/im.test(mainText));
-  check('Datum a hodina používají pevné mezery', await page.locator('.hero-date').textContent() === '29.\u00a0srpna 2026' && (await page.locator('.closing-overline').textContent()).includes('od\u00a018:00'));
+  check('Datum a hodina používají pevné mezery', await page.locator('.hero-date').textContent() === '29.\u00a0srpna 2026' && (await page.getByText('Můžu přijít jen na piknik?').textContent()).includes('jen na\u00a0piknik'));
 
   check('Stránka nemá vlastní JS chyby', consoleErrors.length === 0, consoleErrors.join(' | '));
 
@@ -272,7 +276,8 @@ function check(name, cond, detail = '') {
     ] })
   }));
   await attendeePreview.goto(BASE + '/sraz/', { waitUntil: 'networkidle' });
-  check('Hero počítá hlavní program nezávisle na zveřejněných profilech', await attendeePreview.locator('#official-registered-count').innerText() === '11/30' && /obsazených míst/.test(await attendeePreview.locator('#official-registered-count-note').innerText()));
+  check('Hero počítá hlavní program a volná místa nezávisle na zveřejněných profilech', await attendeePreview.locator('#official-registered-count').innerText() === '11/30' && /19 volných míst/.test(await attendeePreview.locator('#official-registered-count-note').innerText()));
+  check('Registrační blok přebírá živý počet hlavního programu', await attendeePreview.locator('#registration-official-count').innerText() === '11 z 30 míst' && /19 volných míst/.test(await attendeePreview.locator('#registration-official-count-note').innerText()));
   check('Hero přebírá úplný počet pikniku z API a správně jej skloňuje', await attendeePreview.locator('#hero-picnic-registered-count').innerText() === '4' && /přihlásili 4 lidé/.test((await attendeePreview.locator('.hero-picnic-proof').innerText()).replace(/\u00a0/g, ' ')));
   check('Registrační blok ukazuje samostatný úplný počet pikniku', await attendeePreview.locator('#picnic-registered-count').innerText() === '4' && await attendeePreview.locator('#picnic-registered-count-copy').isVisible());
   const renderedNames = await attendeePreview.locator('.attendee-card h3').allTextContents();
@@ -287,8 +292,8 @@ function check(name, cond, detail = '') {
     body: JSON.stringify({ registeredCount: 30, officialRegisteredCount: 30, picnicRegisteredCount: 19, attendees: [] })
   }));
   await fullCapacityPreview.goto(BASE + '/sraz/', { waitUntil: 'networkidle' });
-  check('Při naplněném programu zůstávají všechna pikniková CTA aktivní', await fullCapacityPreview.locator('[data-registration-link]').evaluateAll(links => links.length === 4 && links.every(link => /^https:\/\/docs\.google\.com\/forms\//.test(link.getAttribute('href') || '') && link.getAttribute('aria-disabled') !== 'true')));
-  check('Naplněná kapacita a počet pikniku jsou popsány odděleně', await fullCapacityPreview.locator('#official-registered-count').innerText() === '30/30' && /kapacita naplněná/.test(await fullCapacityPreview.locator('#official-registered-count-note').innerText()) && await fullCapacityPreview.locator('#hero-picnic-registered-count').innerText() === '19' && /přihlásilo 19 lidí/.test((await fullCapacityPreview.locator('.hero-picnic-proof').innerText()).replace(/\u00a0/g, ' ')) && await fullCapacityPreview.locator('#picnic-registered-count').innerText() === '19');
+  check('Při naplněném programu jsou všechna registrační CTA zneaktivněná', await fullCapacityPreview.locator('[data-registration-link]').evaluateAll(links => links.length === 4 && links.every(link => link.getAttribute('aria-disabled') === 'true' && !link.hasAttribute('href') && link.classList.contains('is-registration-unavailable'))));
+  check('Naplněná kapacita a počet pikniku jsou popsány odděleně', await fullCapacityPreview.locator('#official-registered-count').innerText() === '30/30' && /kapacita naplněná/.test(await fullCapacityPreview.locator('#official-registered-count-note').innerText()) && await fullCapacityPreview.locator('#registration-official-count').innerText() === '30 z 30 míst' && /kapacita naplněná/.test(await fullCapacityPreview.locator('#registration-official-count-note').innerText()) && await fullCapacityPreview.locator('#hero-picnic-registered-count').innerText() === '19' && /přihlásilo 19 lidí/.test((await fullCapacityPreview.locator('.hero-picnic-proof').innerText()).replace(/\u00a0/g, ' ')) && await fullCapacityPreview.locator('#picnic-registered-count').innerText() === '19');
   check('Mobil skládá dva stavy registrační karty pod sebe', await fullCapacityPreview.locator('.registration-status').evaluate(element => getComputedStyle(element).gridTemplateColumns.trim().split(/\s+/).length === 1));
   await fullCapacityPreview.close();
   check('Údaje účastníků se vkládají jako text, ne jako HTML', await attendeePreview.locator('.attendee-card img').count() === 0 && renderedNames.includes('Z <img src=x onerror=alert(1)>'));

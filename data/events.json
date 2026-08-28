@@ -9,15 +9,15 @@
       "time_from": "13:00",
       "time_to": "18:00",
       "location": "Lampárna Lidická, Praha 5",
-      "short": "Hlavní program má 30 z 30 míst. Registrace zůstává otevřená na společný piknik po 18. hodině, i pro lidi mimo komunitu a bez účasti na programu.",
-      "description": "Sejdeme se v sobotu 29. srpna v Lampárně Lidická. Hlavní program od 13:00 do 18:00 je naplněný. Po 18. hodině pokračujeme společným piknikem, na který se mohou registrovat lidé z komunity i zvenku a také bez účasti na hlavním programu. Přesné místo pikniku pošlu registrovaným.",
+      "short": "Po několika odhláškách je registrace na hlavní program znovu otevřená do naplnění kapacity 30 lidí. Po 18. hodině pokračujeme společným piknikem.",
+      "description": "Sejdeme se v sobotu 29. srpna v Lampárně Lidická. Hlavní program proběhne od 13:00 do 18:00 a po několika odhláškách je registrace znovu otevřená. Po 18. hodině pokračujeme společným piknikem. Přesné místo pikniku pošlu registrovaným.",
       "program": [
         { "time": "13:00–14:00", "label": "Volný příchod, networking a volný program" },
         { "time": "14:00–16:00", "label": "Ukázky systémů, moderované rozhovory a Q&A v 15–30minutových blocích" },
         { "time": "16:00–18:00", "label": "Skupinová výzva v promíchaných týmech; notebook nebo mobil se mohou hodit, nejsou povinné" },
         { "time": "od 18:00", "label": "Společný piknik otevřený i bez účasti na hlavním programu; přesné místo pošlu registrovaným" }
       ],
-      "registration_url": "https://docs.google.com/forms/d/e/1FAIpQLSdIuELRt6vZGy9Rwq1-g0X7dS7DcMIpeJDjr5bOpyQpAwdRlg/viewform",
+      "registration_url": "https://docs.google.com/forms/d/e/1FAIpQLSc-IoU8ka75ur-VzBTfb88PZZMBjvVc7kVU2_BKeHdIM7YN7g/viewform",
       "registration_page_url": "/sraz/",
       "is_paid": false,
       "price": null,

@@ -64,12 +64,47 @@ const attendeeFilterMatches = {
   uncertain: attendance => attendance === 'uncertain'
 };
 
+function setRegistrationAvailability(officialCount) {
+  const isFull = officialCount >= OFFICIAL_CAPACITY;
+  document.querySelectorAll('[data-registration-link]').forEach(link => {
+    const label = link.querySelector('[data-registration-label]') || link;
+    if (!label.dataset.registrationOpenLabel) label.dataset.registrationOpenLabel = label.textContent.trim();
+    if (!link.dataset.registrationHref) link.dataset.registrationHref = link.getAttribute('href') || '';
+
+    link.classList.toggle('is-registration-unavailable', isFull);
+    link.setAttribute('aria-disabled', String(isFull));
+    link.setAttribute('aria-label', isFull ? 'Registrace je uzavřena, kapacita je naplněna' : label.dataset.registrationOpenLabel);
+    label.textContent = isFull ? 'Kapacita naplněna' : label.dataset.registrationOpenLabel;
+
+    if (isFull) {
+      link.removeAttribute('href');
+      link.removeAttribute('target');
+    } else if (link.dataset.registrationHref) {
+      link.setAttribute('href', link.dataset.registrationHref);
+      link.setAttribute('target', '_blank');
+    }
+  });
+}
+
+function remainingSeatLabel(remaining) {
+  if (remaining === 1) return '1 volné místo';
+  if (remaining >= 2 && remaining <= 4) return `${remaining} volná místa`;
+  return `${remaining} volných míst`;
+}
+
 function renderRegistrationCounts(officialCount, picnicCount) {
   const officialValue = document.getElementById('official-registered-count');
   const officialNote = document.getElementById('official-registered-count-note');
   if (officialValue && officialNote && Number.isSafeInteger(officialCount) && officialCount >= 0) {
+    const remaining = Math.max(OFFICIAL_CAPACITY - officialCount, 0);
+    const remainingLabel = remainingSeatLabel(remaining);
     officialValue.textContent = `${officialCount}/${OFFICIAL_CAPACITY}`;
-    officialNote.textContent = officialCount >= OFFICIAL_CAPACITY ? 'kapacita naplněná' : 'obsazených míst';
+    officialNote.textContent = officialCount >= OFFICIAL_CAPACITY ? 'kapacita naplněná' : remainingLabel;
+    const registrationOfficialCount = document.getElementById('registration-official-count');
+    const registrationOfficialNote = document.getElementById('registration-official-count-note');
+    if (registrationOfficialCount) registrationOfficialCount.textContent = `${officialCount} z ${OFFICIAL_CAPACITY} míst`;
+    if (registrationOfficialNote) registrationOfficialNote.textContent = officialCount >= OFFICIAL_CAPACITY ? 'kapacita naplněná' : remainingLabel;
+    setRegistrationAvailability(officialCount);
   }
 
   const picnicValues = document.querySelectorAll('[data-picnic-registered-count]');
