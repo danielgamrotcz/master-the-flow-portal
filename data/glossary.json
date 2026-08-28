@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-26",
+  "generated_at": "2026-08-28",
   "source": {
-    "daily_notes": 149,
+    "daily_notes": 151,
     "range": [
       "2026-03-14",
-      "2026-08-25"
+      "2026-08-27"
     ]
   },
   "categories": [
@@ -70,10 +70,10 @@
       "source": "hand",
       "starter": null,
       "search": "agent model, ktery nejen odpovida, ale sam dela kroky, dokud neni hotovo. bezny chat odpovi a ceka. agent misto toho pracuje ve smycce, precte soubor, spusti prikaz, podiva se na vysledek, opravi se a pokracuje. sam se rozhoduje, jaky krok udela dalsi. tohle je rozdil mezi „poradi mi“ a „udela to za me“. agent agenta agentem agenti agentu agenticke agenticky agentic",
-      "mentions": 140,
-      "days": 45,
+      "mentions": 144,
+      "days": 46,
       "first_seen": "2026-03-29",
-      "last_seen": "2026-08-24",
+      "last_seen": "2026-08-27",
       "card_hits": 38
     },
     {
@@ -143,11 +143,11 @@
       "source": "hand",
       "starter": null,
       "search": "api rozhrani, kterym spolu dva programy mluvi. api je domluveny zpusob, jak si dva programy predavaji data. kdyz si aplikace nekde taha informace nebo posila dotaz do ai modelu, jde to pres api. uzivatel z toho nevidi nic, bezi to na pozadi. narazite na to ve chvili, kdy vas nejaka appka pozada o api klic, nebo kdyz nekdo rekne, ze pres api to vyjde levneji nez predplatne. api",
-      "mentions": 108,
-      "days": 35,
+      "mentions": 110,
+      "days": 36,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-25",
-      "card_hits": 29
+      "last_seen": "2026-08-27",
+      "card_hits": 30
     },
     {
       "slug": "api-klic",
@@ -325,10 +325,10 @@
       "source": "hand",
       "starter": 5,
       "search": "claude code claude, ktery bezi v terminalu a sam pracuje se soubory ve vasem projektu. neni to chat v prohlizeci. claude code bezi u vas na pocitaci, vidi slozku s projektem, umi soubory cist i menit, spoustet prikazy a overovat si vysledek. spousti se v terminalu napsanim claude. ve skupine se casto zkracuje na cc. vetsina projektu, ktere tady lidi ukazuji, vznikla presne timhle. claude code claude codu claudecode cc",
-      "mentions": 538,
-      "days": 94,
+      "mentions": 540,
+      "days": 95,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-24",
+      "last_seen": "2026-08-26",
       "card_hits": 115
     },
     {
@@ -588,10 +588,10 @@
       "source": "hand",
       "starter": null,
       "search": "deploy a nasazeni vypusteni hotove verze ven, aby ji videli ostatni. dokud projekt bezi jen u vas na pocitaci, vidite ho jen vy. nasazeni znamena prenest ho na server, kde je dostupny na internetu. do te doby je to soukroma hracka. dokud nenasadite, nikdo to neuvidi, ani kdyz to mate hotove tyden. deploy deploynout nasazeni nasadit nasazuje deployment",
-      "mentions": 20,
-      "days": 15,
+      "mentions": 21,
+      "days": 16,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-18",
+      "last_seen": "2026-08-27",
       "card_hits": 10
     },
     {
@@ -646,7 +646,7 @@
       "days": 22,
       "first_seen": "2026-03-16",
       "last_seen": "2026-08-25",
-      "card_hits": 13
+      "card_hits": 14
     },
     {
       "slug": "framework",
@@ -766,6 +766,33 @@
       "first_seen": "2026-03-19",
       "last_seen": "2026-08-21",
       "card_hits": 3
+    },
+    {
+      "slug": "gemini-flash-a-gemini-pro",
+      "term": "Gemini Flash a Gemini Pro",
+      "category": "ai",
+      "short": "Řady modelů Gemini pro různé typy úloh.",
+      "plain": "Flash je řada modelů Gemini zaměřená na rychlé zpracování a nižší cenu. Pro se používá pro náročnější úlohy. V týmu AI agentů můžete každému vybrat řadu podle jeho úkolu.",
+      "why": "Narazíte na ně při výběru modelu v Gemini API nebo při sestavování týmu AI agentů.",
+      "related": [],
+      "aliases": [
+        "Gemini Flash",
+        "Gemini Pro",
+        "modelem Flash",
+        "model Flash",
+        "modelem Pro",
+        "model Pro",
+        "Flash model",
+        "Pro model"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "gemini flash a gemini pro rady modelu gemini pro ruzne typy uloh. flash je rada modelu gemini zamerena na rychle zpracovani a nizsi cenu. pro se pouziva pro narocnejsi ulohy. v tymu ai agentu muzete kazdemu vybrat radu podle jeho ukolu. narazite na ne pri vyberu modelu v gemini api nebo pri sestavovani tymu ai agentu. gemini flash gemini pro modelem flash model flash modelem pro model pro flash model pro model",
+      "mentions": 8,
+      "days": 7,
+      "first_seen": "2026-03-16",
+      "last_seen": "2026-08-27",
+      "card_hits": 8
     },
     {
       "slug": "git",
@@ -1063,10 +1090,10 @@
       "source": "hand",
       "starter": 4,
       "search": "kontext vsechno, co model v danou chvili vi o vasem zadani. kontext je souhrn toho, co ma model po ruce. vase zpravy, jeho odpovedi, obsah souboru, ktere si precetl, a instrukce, ktere dostal. kdyz mu nahazite vsechno, co vas napadne, utopi se v tom. min informaci, ale trefnejsich, funguje lip. odtud ta rada psat strucne. kdyz do zadani nahazite pet nesouvisejicich veci, vysledek bude horsi, nez kdybyste rekli jednu. kontext kontextu kontextem",
-      "mentions": 202,
-      "days": 84,
+      "mentions": 203,
+      "days": 85,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-25",
+      "last_seen": "2026-08-26",
       "card_hits": 44
     },
     {
@@ -1122,7 +1149,7 @@
       "days": 44,
       "first_seen": "2026-03-15",
       "last_seen": "2026-08-25",
-      "card_hits": 28
+      "card_hits": 29
     },
     {
       "slug": "llm",
@@ -1272,11 +1299,11 @@
       "source": "hand",
       "starter": 2,
       "search": "model konkretni verze ai, kterou zrovna pouzivate. modelu je vic a lisi se silou, rychlosti a cenou. silnejsi zvladne slozite zadani, ale je pomalejsi a drazsi. slabsi odbavi rutinu skoro hned. kdyz nekdo ve skupine pise, ze neco jede na opusu a neco na sonnetu, mluvi presne o tehle volbe. volba modelu je hlavni paka na to, kolik za praci s ai zaplatite. model modelu modely modelu modelem",
-      "mentions": 246,
-      "days": 71,
+      "mentions": 249,
+      "days": 73,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-24",
-      "card_hits": 78
+      "last_seen": "2026-08-27",
+      "card_hits": 80
     },
     {
       "slug": "model-agnosticky",
@@ -1323,11 +1350,11 @@
       "source": "hand",
       "starter": null,
       "search": "modelove rady claude opus, sonnet, haiku a dalsi. lisi se silou, rychlosti a cenou. anthropic vydava claude ve vic radach, jmenuji se treba opus, sonnet nebo haiku. silnejsi rady zvladaji slozitejsi uvahy a rozsahle ukoly, rychlejsi jsou levnejsi a hodi se na jednoduchou praci ve velkem mnozstvi. ktere verze jsou zrovna aktualni se v case meni, princip zustava. volba rady je hlavni paka na pomer cena a kvalita. opus sonnet haiku fable",
-      "mentions": 179,
-      "days": 44,
+      "mentions": 182,
+      "days": 45,
       "first_seen": "2026-03-17",
-      "last_seen": "2026-08-22",
-      "card_hits": 32
+      "last_seen": "2026-08-26",
+      "card_hits": 33
     },
     {
       "slug": "mvp",
@@ -1531,7 +1558,7 @@
       "days": 4,
       "first_seen": "2026-07-09",
       "last_seen": "2026-08-25",
-      "card_hits": 2
+      "card_hits": 3
     },
     {
       "slug": "pii",
@@ -1600,7 +1627,7 @@
       "days": 2,
       "first_seen": "2026-08-08",
       "last_seen": "2026-08-25",
-      "card_hits": 2
+      "card_hits": 3
     },
     {
       "slug": "plaud",
@@ -2284,7 +2311,7 @@
       "days": 41,
       "first_seen": "2026-03-14",
       "last_seen": "2026-08-22",
-      "card_hits": 41
+      "card_hits": 42
     },
     {
       "slug": "vibe-coding",
@@ -2405,11 +2432,11 @@
       "source": "hand",
       "starter": null,
       "search": "workflow ustaleny postup, jak neco delate od zacatku do konce. sled kroku, ktery vede od zadani k vysledku. nemusi byt zautomatizovany. workflow je i to, kdyz vite, ze po nahravce vzdycky nasleduje prepis, pak shrnuti a nakonec ulozeni do poznamek. ve skupine se sdili spis workflow nez jednotlive nastroje. nastroj se da vymenit, postup zustava. workflow workflowu workflows",
-      "mentions": 130,
-      "days": 68,
+      "mentions": 133,
+      "days": 69,
       "first_seen": "2026-03-14",
-      "last_seen": "2026-08-23",
-      "card_hits": 48
+      "last_seen": "2026-08-26",
+      "card_hits": 49
     },
     {
       "slug": "yolo",

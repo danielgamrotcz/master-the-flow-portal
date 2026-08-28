@@ -1590,6 +1590,16 @@
         "Prompting",
         "ChatGPT"
       ]
+    },
+    {
+      "date": "2026-08-27",
+      "card_count": 1,
+      "topics": [
+        "Automatizace",
+        "Subagenti",
+        "Workflow",
+        "Google"
+      ]
     }
   ]
 }

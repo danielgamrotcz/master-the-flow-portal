@@ -1777,6 +1777,26 @@
       "why": "Narazíte na něj, když hledáte způsob, jak mít na ploše Macu živý přehled místo statické tapety.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "gemini-flash-a-gemini-pro",
+      "term": "Gemini Flash a Gemini Pro",
+      "cat": "ai",
+      "match": [
+        "Gemini Flash",
+        "Gemini Pro",
+        "modelem Flash",
+        "model Flash",
+        "modelem Pro",
+        "model Pro",
+        "Flash model",
+        "Pro model"
+      ],
+      "short": "Řady modelů Gemini pro různé typy úloh.",
+      "plain": "Flash je řada modelů Gemini zaměřená na rychlé zpracování a nižší cenu. Pro se používá pro náročnější úlohy. V týmu AI agentů můžete každému vybrat řadu podle jeho úkolu.",
+      "why": "Narazíte na ně při výběru modelu v Gemini API nebo při sestavování týmu AI agentů.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
