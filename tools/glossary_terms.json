@@ -1797,6 +1797,23 @@
       "why": "Narazíte na ně při výběru modelu v Gemini API nebo při sestavování týmu AI agentů.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "orchestrator",
+      "term": "Orchestrátor",
+      "cat": "ai",
+      "match": [
+        "orchestrátor",
+        "orchestrátoru",
+        "orchestrátorem",
+        "orchestrator",
+        "orchestratoru"
+      ],
+      "short": "Orchestrátor řídí pořadí kroků a předává výstupy mezi několika modely nebo nástroji.",
+      "plain": "Orchestrátor je program, který koordinuje práci více modelů nebo nástrojů. Může třeba poslat text do DeepL, výsledek nechat upravit dalšími modely a nakonec ho předat modelu k posouzení.",
+      "why": "Narazíte na něj při stavbě složitějších postupů, ve kterých spolupracuje více AI modelů nebo nástrojů.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
