@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="cs" data-view="admin">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#171714">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Rozdělení do týmů · Master the Flow</title>
+  <meta name="description" content="Organizátorské rozhraní pro rozdělení účastníků do týmů.">
+  <link rel="stylesheet" href="/skupinky/styles.css?v=a8e0799">
+  <script src="/skupinky/app.js?v=0a20b35" defer></script>
+</head>
+<body>
+  <main class="shell admin-shell">
+    <header class="brand" aria-label="Master the Flow">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Master the Flow</span>
+      <span class="admin-label">Režie</span>
+    </header>
+
+    <section class="intro admin-intro">
+      <p class="eyebrow">Skupinová výzva</p>
+      <h1>Rozdělení do týmů.</h1>
+      <p class="lede">Nech lidi naskenovat QR, sleduj příchozí odpovědi a až budou všichni, jedním krokem zveřejni týmy.</p>
+    </section>
+
+    <section class="admin-grid">
+      <article class="card join-card">
+        <div class="card-heading compact">
+          <span class="step">01</span>
+          <div><h2>Otevři hlasování</h2><p>Účastníci použijí mobil bez přihlášení.</p></div>
+        </div>
+        <img class="join-qr" src="/skupinky/qr.png" width="248" height="248" alt="QR kód pro otevření hlasování na telefonu">
+        <p class="join-url">mastertheflow.cz/skupinky</p>
+      </article>
+
+      <article class="card roster-card">
+        <div class="card-heading compact">
+          <span class="step">02</span>
+          <div><h2>Počkej na všechny</h2><p><strong id="admin-participant-count">0</strong> odpovědí</p></div>
+        </div>
+        <div class="admin-login" id="admin-login">
+          <label class="field" for="admin-code"><span>Kód organizátora</span><input id="admin-code" type="password" autocomplete="current-password"></label>
+          <button class="button button-secondary" id="admin-connect" type="button">Otevřít režii</button>
+          <p class="form-message" id="admin-message" role="alert" hidden></p>
+        </div>
+        <div class="roster-list" id="roster-list" hidden></div>
+      </article>
+    </section>
+
+    <section class="card finalize-card" id="finalize-card" hidden>
+      <div>
+        <p class="eyebrow">Poslední krok</p>
+        <h2>Všichni hotovi?</h2>
+        <p>Rozdělení je nevratné. Po zveřejnění už nikdo odpověď nezmění a výsledky uvidí všechny telefony.</p>
+      </div>
+      <button class="button button-primary" id="finalize-button" type="button">Rozdělit do týmů</button>
+    </section>
+
+    <section class="results admin-results" id="results" hidden aria-labelledby="results-heading">
+      <p class="eyebrow">Hotovo</p>
+      <h2 id="results-heading">Týmy jsou zveřejněné.</h2>
+      <p class="results-lede">Stejné rozdělení už vidí i účastníci na telefonech.</p>
+      <div class="teams-grid" id="teams-grid"></div>
+    </section>
+
+    <dialog id="confirm-dialog">
+      <form method="dialog">
+        <p class="eyebrow">Zveřejnit natrvalo</p>
+        <h2>Opravdu rozdělit týmy?</h2>
+        <p>Po potvrzení už nepůjde přidat člověka ani upravit odpověď.</p>
+        <div class="dialog-actions"><button class="button button-ghost" value="cancel">Ještě počkat</button><button class="button button-primary" value="confirm">Ano, rozdělit</button></div>
+      </form>
+    </dialog>
+  </main>
+</body>
+</html>

@@ -30,6 +30,10 @@
 /data/media/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Skupinky průběžně mění stav a po zveřejnění se nesmí vracet starý formulář.
+/skupinky/*
+  Cache-Control: no-store
+
 # Fonty se nemění (změna fontu = změna souborů).
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable

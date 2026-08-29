@@ -16,12 +16,19 @@ Vznikly při přestavbě 17. 7. 2026 (audit → fáze 1+2 + brand vrstva). Hlíd
 - `security-regressions.js` — negativní a pozitivní auth scénáře pro chat corpus, tracking, push subscription a cache policy
 - `sraz-asset-versions.js` — shoda sedmimístných cache hashů CSS a JavaScriptu
   stránky srazu s aktuálním obsahem souborů
+- `groups-algorithm.js` — deterministické složení týmů po 3–4, zkušenostní
+  kotvy, vyvážení a pokrytí notebooky
+- `groups-asset-versions.js` — shoda cache hashů mobilní a admin stránky
+  skupinek
+- `e2e-groups.js` — celý mobilní a organizátorský průchod: odeslání, úprava,
+  ochrana kódem, nevratné rozdělení a veřejný výsledek bez neveřejných polí
 
 Spuštění:
 
 ```bash
-npx wrangler pages dev . --port 8788   # v jednom terminálu
-./tests/run-all.sh                      # v druhém
+GROUPS_TEST_ADMIN_SECRET=local-groups-test \
+  npx wrangler pages dev . --port 8788 --binding GROUPS_ADMIN_SECRET=local-groups-test
+GROUPS_TEST_ADMIN_SECRET=local-groups-test ./tests/run-all.sh
 ```
 
 Adresu serveru drží proměnná `MTF_BASE`, bez ní testy míří na
@@ -33,13 +40,13 @@ Playwright se bere přes NODE_PATH z ~/Projects/voice-browser/node_modules
 
 Složka tests/ je blokovaná v functions/_middleware.js, na produkci není dostupná.
 
-### CI kontrola stránky srazu
+### CI kontrola stránky srazu a skupinek
 
-Workflow `.github/workflows/sraz-e2e.yml` spouští `tests/e2e-sraz.js` při pull
-requestu nebo pushi do `main`, pokud se změnila stránka srazu, její funkce,
-fonty, hlavičky, Wrangler konfigurace nebo samotný test. Před E2E kontroluje
-také shodu cache hashů pomocí `tests/sraz-asset-versions.js`. Lze ho spustit
-také ručně přes `workflow_dispatch`.
+Workflow `.github/workflows/sraz-e2e.yml` spouští `tests/e2e-sraz.js` a
+`tests/e2e-groups.js` při pull requestu nebo pushi do `main`, pokud se změnila
+stránka srazu, skupinky, jejich funkce, fonty, hlavičky, Wrangler konfigurace
+nebo samotné testy. Před E2E kontroluje také algoritmus a shodu cache hashů.
+Lze ho spustit také ručně přes `workflow_dispatch`.
 
 Playwright a Wrangler se v CI instalují v připnutých verzích pouze do
 `RUNNER_TEMP`; repozitář proto dál nemá `package.json` ani `node_modules`.

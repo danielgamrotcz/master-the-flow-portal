@@ -16,3 +16,4 @@ database_id = "609b4aa0-8949-4635-87f2-e2df613fab3b"
 # ADMIN_SECRET — chrání POST /api/community (aktualizace počtu členů)
 # NOTIFY_SECRET — chrání POST /api/notify (odesílání push notifikací)
 # ATTENDEES_SYNC_SECRET — chrání POST /api/meetup-attendees (Google Forms sync)
+# GROUPS_ADMIN_SECRET — chrání seznam odpovědí a nevratné rozdělení skupinek
