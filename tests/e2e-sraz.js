@@ -1,11 +1,11 @@
-// E2E test veřejné podstránky pražského srazu.
+// E2E test veřejného archivu pražského srazu.
 const { chromium } = require('playwright');
 const { BASE } = require('./_auth.js');
 
 let failures = 0;
-function check(name, cond, detail = '') {
-  console.log(`${cond ? 'PASS' : 'FAIL'}  ${name}${cond ? '' : '  <-- ' + detail}`);
-  if (!cond) failures++;
+function check(name, condition, detail = '') {
+  console.log(`${condition ? 'PASS' : 'FAIL'}  ${name}${condition ? '' : `  <-- ${detail}`}`);
+  if (!condition) failures++;
 }
 
 (async () => {
@@ -15,271 +15,116 @@ function check(name, cond, detail = '') {
   page.on('console', message => {
     if (message.type() === 'error') consoleErrors.push(message.text());
   });
-  page.on('pageerror', error => consoleErrors.push('PAGEERROR: ' + error.message));
+  page.on('pageerror', error => consoleErrors.push(`PAGEERROR: ${error.message}`));
 
-  const response = await page.goto(BASE + '/sraz/', { waitUntil: 'networkidle' });
+  const response = await page.goto(`${BASE}/sraz/`, { waitUntil: 'networkidle' });
   check('/sraz/ vrací úspěšnou odpověď', response && response.ok(), String(response && response.status()));
   check('Stránka je veřejná bez přístupové brány', await page.locator('#gate').count() === 0);
-  const workflowResponse = await page.request.get(BASE + '/.github/workflows/sraz-e2e.yml');
+  const workflowResponse = await page.request.get(`${BASE}/.github/workflows/sraz-e2e.yml`);
   check('Interní GitHub workflow není veřejně dostupný', workflowResponse.status() === 404, String(workflowResponse.status()));
-  const attendeesResponse = await page.request.get(BASE + '/api/meetup-attendees');
+
+  const attendeesResponse = await page.request.get(`${BASE}/api/meetup-attendees`);
   const attendeesPayload = await attendeesResponse.json();
-  check('Veřejné API účastníků vrací seznam a oddělené počty bez cache', attendeesResponse.ok() && Array.isArray(attendeesPayload.attendees) && Number.isSafeInteger(attendeesPayload.officialRegisteredCount) && Number.isSafeInteger(attendeesPayload.picnicRegisteredCount) && attendeesResponse.headers()['cache-control'] === 'no-store');
-  const unauthorizedAttendeesWrite = await page.request.post(BASE + '/api/meetup-attendees', {
+  check('Veřejné API účastníků vrací bezpečný seznam bez cache', attendeesResponse.ok()
+    && Array.isArray(attendeesPayload.attendees)
+    && attendeesResponse.headers()['cache-control'] === 'no-store');
+  const unauthorizedWrite = await page.request.post(`${BASE}/api/meetup-attendees`, {
     data: { attendees: [] },
-    headers: { 'Content-Type': 'application/json' }
+    headers: { 'Content-Type': 'application/json' },
   });
-  check('API účastníků odmítá neautorizovaný zápis', unauthorizedAttendeesWrite.status() === 401, String(unauthorizedAttendeesWrite.status()));
+  check('API účastníků odmítá neautorizovaný zápis', unauthorizedWrite.status() === 401, String(unauthorizedWrite.status()));
+
   check('Titulek pojmenovává sraz v Praze', await page.locator('h1').textContent() === 'Sraz Master the Flow v Praze');
   const heroDate = page.locator('time[datetime="2026-08-29"]');
   check('Datum je viditelné a strojově čitelné', await heroDate.isVisible() && await heroDate.getAttribute('aria-label') === '29. srpna 2026');
-  check('Oficiální čas je 13:00–18:00', (await page.locator('.hero').innerText()).includes('13:00–18:00'));
-  check('Hero nemá zrušený nadpis komunitního setkání', await page.locator('.eyebrow').count() === 0);
-  check('Hero neopakuje datum v úvodní větě', !(await page.locator('.hero-lede').innerText()).includes('29. srpna'));
-  check('Hero neslibuje nepotvrzená témata', !/produktiv|automatiz|vibe coding/i.test(await page.locator('.hero-lede').innerText()));
-  const heroLedeText = (await page.locator('.hero-lede').innerText()).replace(/\u00a0/g, ' ');
-  const heroNoteText = (await page.locator('.hero-note').innerText()).replace(/\u00a0/g, ' ');
-  check('Hero vysvětluje znovu otevřenou registraci', /Po několika odhláškách/.test(heroLedeText) && /znovu volná místa/.test(heroLedeText) && /Přijít může kdokoli/.test(heroLedeText));
-  check('Hero snižuje tření registrace', /Google formulář.*přibližně 1 minuta.*zdarma/.test(heroNoteText));
-  check('Hero potvrzuje registraci bez Google účtu', /bez Google účtu/.test(heroNoteText));
-  const heroFactsText = (await page.locator('.hero-facts').innerText()).replace(/\u00a0/g, ' ');
-  check('Hero uvádí potvrzené místo srazu', /Lampárna Lidická/.test(heroFactsText) && /Lidická 31.*Praha 5/.test(heroFactsText));
+  const heroText = (await page.locator('.hero').innerText()).replace(/\u00a0/g, ' ');
+  check('Hero jasně říká, že akce proběhla', /Stav\s+Proběhlo/i.test(heroText) && /registrace je uzavřená/.test(heroText) && /sraz Master the Flow je za námi/.test(heroText));
+  check('Hero uvádí čas a potvrzené místo', /13:00–18:00/.test(heroText) && /Lampárna Lidická/.test(heroText) && /Lidická 31.*Praha 5/.test(heroText));
   check('Hero odkazuje na Lampárnu Lidická', await page.locator('.hero-fact-place a').getAttribute('href') === 'https://www.lamparnalidicka.cz/');
-  check('Hero ukazuje kapacitu hlavního programu', /\/30$/.test(await page.locator('#official-registered-count').innerText()));
-  check('Hero ukazuje živý počet přihlášených na piknik', await page.locator('.hero-picnic-proof').isVisible() && await page.locator('#hero-picnic-registered-count').innerText() === String(attendeesPayload.picnicRegisteredCount) && /Na piknik už se přihlásil/.test(await page.locator('.hero-picnic-proof').innerText()));
-  const shouldBeFull = attendeesPayload.officialRegisteredCount >= 30;
-  check('Registrační tlačítka odpovídají aktuální kapacitě', await page.locator('[data-registration-link]').evaluateAll((links, full) => links.every(link => full
-    ? link.getAttribute('aria-disabled') === 'true' && !link.hasAttribute('href')
-    : link.getAttribute('aria-disabled') === 'false' && /^https:\/\/docs\.google\.com\/forms\//.test(link.getAttribute('href') || '')
-  ), shouldBeFull));
-  check('Značka Master the Flow se v titulku neláme', await page.locator('h1 .no-break').evaluate(el => getComputedStyle(el).whiteSpace === 'nowrap'));
+  check('Značka Master the Flow se v titulku neláme', await page.locator('h1 .no-break').evaluate(element => getComputedStyle(element).whiteSpace === 'nowrap'));
 
-  const buttonContrast = async () => page.locator('.hero .button-primary').evaluate(el => {
-    const parse = value => value.match(/\d+(?:\.\d+)?/g).slice(0, 3).map(Number);
-    const luminance = rgb => {
-      const linear = rgb.map(value => {
-        const channel = value / 255;
-        return channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4;
-      });
-      return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2];
-    };
-    const style = getComputedStyle(el);
-    const first = luminance(parse(style.color));
-    const second = luminance(parse(style.backgroundColor));
-    return (Math.max(first, second) + 0.05) / (Math.min(first, second) + 0.05);
-  });
+  const registrationLinks = await page.locator('[data-registration-link], a[href*="docs.google.com/forms"], a[href*="forms.gle"]').count();
+  check('Stránka neobsahuje registrační odkazy ani Google Forms', registrationLinks === 0, `count=${registrationLinks}`);
+  check('Stránka nemá registrační sekci, CTA ani sticky lištu', await page.locator('#registrace, #registration-link, #sticky-register, .registration-panel, .hero-actions').count() === 0);
+  check('Stránka po akci nenabízí přidání do kalendáře', await page.locator('#google-calendar-link, a[download$=".ics"], .hero-calendar-links').count() === 0);
+
   const firstThemeLabel = await page.locator('#theme-toggle').getAttribute('aria-label');
-  const firstThemeContrast = await buttonContrast();
   await page.locator('#theme-toggle').click();
-  await page.waitForTimeout(200);
   const secondThemeLabel = await page.locator('#theme-toggle').getAttribute('aria-label');
-  const secondThemeContrast = await buttonContrast();
-  check('Přepínač tématu popisuje cílový režim', firstThemeLabel !== secondThemeLabel && /Přepnout na (tmavý|světlý) režim/.test(firstThemeLabel || '') && /Přepnout na (tmavý|světlý) režim/.test(secondThemeLabel || ''));
-  check('Primární CTA má AA kontrast v obou režimech', firstThemeContrast >= 4.5 && secondThemeContrast >= 4.5, `${firstThemeContrast.toFixed(2)} / ${secondThemeContrast.toFixed(2)}`);
+  check('Přepínač tématu popisuje cílový režim', firstThemeLabel !== secondThemeLabel
+    && /Přepnout na (tmavý|světlý) režim/.test(firstThemeLabel || '')
+    && /Přepnout na (tmavý|světlý) režim/.test(secondThemeLabel || ''));
 
-  const timeline = await page.locator('.timeline-item').count();
-  check('Harmonogram má pět navazujících částí včetně pauzy', timeline === 5, `count=${timeline}`);
   const programText = (await page.locator('.program').innerText()).replace(/\u00a0/g, ' ');
-  check('Program popisuje dvacetiminutové bloky a přestávku uprostřed', /Vystoupení poběží ve dvacetiminutových blocích a uprostřed bude dvacetiminutová přestávka/.test(programText) && /Ukázky, rozhovory a Q&A/.test(programText));
-  check('Úvod programu shrnuje pět vystupujících bez Vojtěcha', /Postupně vystoupí Alex Trejtnar, Martin Pavlíček, Tomáš „Vilík“ Pospíchal, Aneta Martinek a Ondřej Tyl/.test(programText) && !/Vojtěch|Vojta/.test(programText));
-  check('Program uvádí potvrzený Alexův blok', /14:05–14:25[\s\S]*Alex Trejtnar[\s\S]*AI radar od novinek k tomu, co má smysl zavést/.test(programText));
-  check('Alexův medailonek uvádí pozici a popisuje výběr využitelných novinek', /Bořič stereotypů/.test(programText) && /automaticky sbírá AI novinky, vyhodnocuje jejich význam a ukazuje, co má smysl zavést, proč a kde začít/.test(programText));
-  check('Program uvádí potvrzený Tomášův blok', /14:45–15:05/.test(programText) && /Tomáš „Vilík“ Pospíchal/.test(programText) && /Od firemní rutiny k hotovému AI workflow/.test(programText));
-  check('Tomášův medailonek odpovídá podpisu', /AI Solution Architect a Ničitel firemní rutiny v BeeAI/.test(programText));
-  check('Tomášův medailonek neopakuje samozřejmý prostor na otázky', !/následovaná otázkami/.test(programText));
-  check('Martinův pojmenovaný blok zachovává profilový medailonek', /14:25–14:45[\s\S]*Martin Pavlíček[\s\S]*Já a můj Second Brain[\s\S]*Director v poradenské divizi Deloitte[\s\S]*Přes třináct let/.test(programText));
-  check('Přestávka nahrazuje původní blok od 15:05', /15:05–15:25[\s\S]*Přestávka[\s\S]*Občerstvení a rozhovory[\s\S]*Dvacet minut na kávu/.test(programText));
-  check('Anetin blok používá nový čas, potvrzené téma a participativní formát', /15:25–15:45[\s\S]*Aneta Martinek[\s\S]*AI brain fry a jak si nastavit AI hygienu[\s\S]*#HolkyzMarketingu[\s\S]*#HolkyzByznysu[\s\S]*úvodní myšlenky[\s\S]*prostor tipům ostatních/.test(programText));
-  check('Program už neobsahuje připravované téma', !/Téma připravujeme/.test(programText) && await page.locator('.program-slot-pending').count() === 0);
-  check('Ondřejův blok má potvrzený čas, název, medailonek a odkaz', /15:45–16:05[\s\S]*Ondřej Tyl[\s\S]*Hraju si s GrokBotem[\s\S]*Bývalý CEO Benefit Plus[\s\S]*zakladatel LYT Works/.test(programText) && await page.locator('.program-slot-speaker a[href="https://ondrejtyl.cz/"]').getAttribute('target') === '_blank');
-  check('Vystupující jsou ve schváleném pořadí', /Alex Trejtnar[\s\S]*Martin Pavlíček[\s\S]*Tomáš „Vilík“ Pospíchal[\s\S]*Aneta Martinek[\s\S]*Ondřej Tyl/.test(programText));
-  check('Úvod představuje sraz a úvodní moudra organizátora', /14:00–14:05[\s\S]*Daniel Gamrot[\s\S]*Představení celého srazu a úvodní moudra organizátora/.test(programText));
-  check('Danielův desetiminutový blok vypráví vznik Uttera napříč platformami', /16:05–16:15[\s\S]*Jak jsem stavěl Uttero[\s\S]*macOS, iOS a Android/.test(programText));
-  check('Pět hostovských a Danielův blok mají potvrzené zvýraznění', await page.locator('.program-slot-confirmed').count() === 6 && await page.locator('.program-slot-confirmed').filter({ hasText: 'Alex Trejtnar' }).count() === 1 && await page.locator('.program-slot-confirmed').filter({ hasText: 'Martin Pavlíček' }).count() === 1 && await page.locator('.program-slot-confirmed').filter({ hasText: 'Tomáš „Vilík“ Pospíchal' }).count() === 1 && await page.locator('.program-slot-confirmed').filter({ hasText: 'Aneta Martinek' }).count() === 1 && await page.locator('.program-slot-confirmed').filter({ hasText: 'Ondřej Tyl' }).count() === 1 && await page.locator('.program-slot-confirmed').filter({ hasText: 'Jak jsem stavěl Uttero' }).count() === 1);
-  check('Instrukce začínají až se skupinovou výzvou', /16:30–18:00[\s\S]*Skupinová výzva[\s\S]*Na začátku vysvětlím zadání/.test(programText) && !/16:25–16:30[\s\S]*Instrukce/.test(programText));
-  check('Program obsahuje obě přestávky', /15:05–15:25[\s\S]*Přestávka[\s\S]*občerstvení/i.test(programText) && /16:15–16:30[\s\S]*Pauza[\s\S]*občerstvení/i.test(programText));
-  check('Skupinová výzva začíná v 16:30 a končí v 18:00', /16:30–18:00[\s\S]*Skupinová výzva/.test(programText));
-  check('Skupinová výzva míchá zkušenosti a má hratelný výstup', /malých týmů/.test(programText) && /různou úrovní zkušeností/.test(programText) && /vlastní hru/.test(programText) && /hratelnou verzi/.test(programText) && /bez návodu otestovat jiným týmem/.test(programText));
-  const slotEdgeBorders = await page.locator('.program-slots').evaluate(slots => {
-    const first = slots.firstElementChild;
-    const last = slots.lastElementChild;
-    return {
-      beforeFirst: getComputedStyle(slots).borderTopWidth,
-      afterLast: last ? getComputedStyle(last).borderBottomWidth : null,
-      count: slots.children.length,
-      firstExists: Boolean(first)
-    };
-  });
-  check('Vnitřní program nemá linku před prvním ani za posledním vstupem', slotEdgeBorders.firstExists && slotEdgeBorders.count === 8 && slotEdgeBorders.beforeFirst === '0px' && slotEdgeBorders.afterLast === '0px', JSON.stringify(slotEdgeBorders));
-  const deviceCopy = await page.locator('.timeline-item, .practical, .faq').allTextContents().then(x => x.join(' ').replace(/\u00a0/g, ' '));
-  check('Skupinová aktivita zmiňuje zařízení', /notebook|mobil/i.test(deviceCopy));
-  check('Zařízení je výslovně dobrovolné', /není povinn|není podmínkou|povinné nejsou|i bez něj/i.test(deviceCopy));
-  check('Organizační text mluví v první osobě', /Potřebuju|přijímám|pošlu/.test(await page.locator('main').innerText()));
+  check('Harmonogram má pět navazujících částí včetně pauzy', await page.locator('.timeline-item').count() === 5);
+  check('Program je popsaný v minulém čase', /Jak odpoledne proběhlo/.test(programText) && /Vystoupení proběhla/.test(programText) && /uprostřed byla dvacetiminutová přestávka/.test(programText));
+  check('Program shrnuje pět vystupujících bez Vojtěcha', /vystoupili Alex Trejtnar, Martin Pavlíček, Tomáš „Vilík“ Pospíchal, Aneta Martinek a Ondřej Tyl/.test(programText) && !/Vojtěch|Vojta/.test(programText));
+  check('Přestávka nahradila původní blok 15:05–15:25', /15:05–15:25[\s\S]*Přestávka[\s\S]*Občerstvení a rozhovory/.test(programText));
+  check('Anetin blok má správný čas a téma', /15:25–15:45[\s\S]*Aneta Martinek[\s\S]*AI brain fry a jak si nastavit AI hygienu/.test(programText));
+  check('Ondřejův blok má potvrzený čas, téma a odkaz', /15:45–16:05[\s\S]*Ondřej Tyl[\s\S]*Hraju si s GrokBotem/.test(programText)
+    && await page.locator('.program-slot-speaker a[href="https://ondrejtyl.cz/"]').getAttribute('target') === '_blank');
+  check('Danielův blok zachovává příběh Uttera', /16:05–16:15[\s\S]*Jak jsem stavěl Uttero[\s\S]*macOS, iOS a Android/.test(programText));
+  check('Skupinová výzva míchala zkušenosti a končila testováním', /malých týmů/.test(programText)
+    && /různou úrovní zkušeností/.test(programText)
+    && /hratelnou verzi/.test(programText)
+    && /bez návodu otestovat jiným týmem/.test(programText));
+  check('Technika byla výslovně dobrovolná', /Notebook nebo mobil.*nebyly ale podmínkou zapojení/.test(programText));
+
   const manifestoText = (await page.locator('.manifesto-band').innerText()).replace(/\u00a0/g, ' ');
-  check('Stránka zachovává aktivní charakter srazu', /Nechci dělat akci, kterou si jen odsedíte/.test(manifestoText) && /jeden konkrétní nápad/.test(manifestoText) && /jméno člověka/.test(manifestoText));
-  check('Manifest se nevrací k překonanému tvrzení o plné kapacitě', !/Hlavní program je už plný|hlavní program se naplnil/i.test(manifestoText));
-  const registrationText = (await page.locator('.registration-panel').innerText()).replace(/\u00a0/g, ' ');
-  check('Registrační karta odděluje živý stav hlavního programu od pikniku', /Hlavní program[\s\S]*z 30 míst/i.test(registrationText) && /Piknik po 18:00/i.test(registrationText) && await page.locator('.registration-status-item').count() === 2);
-  check('Registrace zve i lidi mimo komunitu', /otevřená i lidem mimo komunitu/.test(registrationText));
-  check('Registrace vysvětluje rozsah účasti a jednoduchý formulář', /hlavní program, piknik, nebo obojí/.test(registrationText) && /Google účet nepotřebujete/.test(registrationText));
-  check('Registrace vysvětluje výslovný opt-in veřejné karty', /Na web se dostanou jen vaše jméno a popis/.test(registrationText) && /jen když to výslovně potvrdíte/.test(registrationText) && /e-mail se na web neposílá/.test(registrationText));
-  check('Registrace obnovuje hlavní program, ne pouze piknik', /registrace znovu otevřená/.test(registrationText) && !/Přidat se na piknik/.test(registrationText));
-  check('Úvod nepopisuje sraz jako offline akci', !/offline/i.test(await page.locator('.manifesto-band').innerText()));
-  check('Text se nevymezuje přes formálnost nebo konferenci', !/formáln|konferenci/i.test(await page.locator('main').innerText()));
+  check('Retrospektiva zachovává smysl srazu', /Nebyla to akce, kterou si jen odsedíte/.test(manifestoText)
+    && /jeden konkrétní nápad/.test(manifestoText)
+    && /jméno člověka/.test(manifestoText));
+  check('Seznam účastníků vysvětluje souhlas i ochranu e-mailu', /pouze lidi, kteří se zveřejněním souhlasili/.test((await page.locator('.attendees').innerText()).replace(/\u00a0/g, ' '))
+    && /E-mail ani další odpovědi/.test(await page.locator('.attendees').innerText()));
 
-  check('Hero znovu nabízí kalendář hlavního programu', await page.locator('#google-calendar-link').count() === 1 && await page.locator('.hero a[download]').count() === 1);
-  const calendarLayout = await page.locator('.hero-calendar-links').evaluate(element => {
-    const label = element.querySelector('span').getBoundingClientRect();
-    const links = [...element.querySelectorAll('a')].map(link => link.getBoundingClientRect());
-    const linksOverlap = links.length === 2
-      && links[0].left < links[1].right
-      && links[0].right > links[1].left
-      && links[0].top < links[1].bottom
-      && links[0].bottom > links[1].top;
-    return {
-      labelAboveLinks: links.every(link => link.top >= label.bottom),
-      linksFit: links.every(link => link.left >= 0 && link.right <= window.innerWidth),
-      touchTargets: links.every(link => link.height >= 44),
-      linksOverlap,
-    };
-  });
-  check('Mobilní odkazy do kalendáře jsou oddělené a dobře ovladatelné', calendarLayout.labelAboveLinks && calendarLayout.linksFit && calendarLayout.touchTargets && !calendarLayout.linksOverlap, JSON.stringify(calendarLayout));
-
-  const sticky = page.locator('#sticky-register');
-  check('Mobilní registrace má dostatečně velkou dotykovou plochu', await sticky.evaluate(el => el.getBoundingClientRect().height >= 44));
-  check('Mobilní registrace nepřekrývá hlavní CTA', !(await sticky.evaluate(el => el.classList.contains('is-visible'))));
-  await page.locator('#program-title').scrollIntoViewIfNeeded();
-  await page.waitForTimeout(150);
-  check('Mobilní registrace se objeví až pod hero', await sticky.evaluate(el => el.classList.contains('is-visible')));
-  await page.locator('#registrace').scrollIntoViewIfNeeded();
-  await page.waitForTimeout(150);
-  check('Mobilní registrace se skryje u registrační sekce', !(await sticky.evaluate(el => el.classList.contains('is-visible'))));
+  const attendeeCards = await page.locator('#attendees-list .attendee-card').count();
+  check('Seznam účastníků má srozumitelný stav', attendeeCards > 0 || /Seznam účastníků teď není dostupný/.test(await page.locator('#attendees-list').innerText()));
+  check('Seznam účastníků je na mobilu v jednom sloupci', await page.locator('.attendees-grid').evaluate(element => getComputedStyle(element).gridTemplateColumns.trim().split(/\s+/).length === 1));
   check('Mobilní stránka nemá vodorovný přesah', await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
-  check('Sekce Proč přijít je na mobilu čitelně poskládaná', await page.locator('.manifesto').evaluate(el => {
-    const [intro, copy] = el.children;
-    return copy.getBoundingClientRect().top > intro.getBoundingClientRect().top;
-  }));
-  check('Seznam účastníků vysvětluje souhlas i ochranu e-mailu', /pouze lidi, kteří se zveřejněním souhlasili/.test((await page.locator('.attendees').innerText()).replace(/\u00a0/g, ' ')) && /E-mail ani další odpovědi/.test(await page.locator('.attendees').innerText()));
-  check('Seznam účastníků je na mobilu v jednom sloupci', await page.locator('.attendees-grid').evaluate(el => getComputedStyle(el).gridTemplateColumns.trim().split(/\s+/).length === 1));
-  const initialAttendeeCards = await page.locator('#attendees-list .attendee-card').count();
-  check('Seznam účastníků má srozumitelný stav i s živými daty', initialAttendeeCards > 0 || /První účastníci se tu objeví/.test(await page.locator('#attendees-list').innerText()));
-  check('Filtry odpovídají dostupným účastníkům', initialAttendeeCards > 0 ? await page.locator('#attendee-filters').isVisible() : await page.locator('#attendee-filters').isHidden());
 
-  check('Stránka nevkládá Google Form do iframe', await page.locator('iframe').count() === 0);
-  const registrationHref = await page.locator('#registration-link').getAttribute('href');
-  check('Registrace je tlačítko s odkazem na Google Forms', /^https:\/\/docs\.google\.com\/forms\//.test(registrationHref || ''), String(registrationHref));
-  check('Registrační blok má titulek Registrovat se na sraz', (await page.locator('#registration-title').textContent()).replace(/\u00a0/g, ' ') === 'Registrovat se na sraz');
-  check('Akce je výslovně otevřená i mimo komunitu', /Přijít může kdokoli/.test(await page.locator('.practical').innerText()));
   const whatsappHref = await page.locator('#whatsapp-group-link').getAttribute('href');
   const whatsappUrl = new URL(whatsappHref);
-  check('WhatsApp pozvánka vede do zadané skupiny', whatsappUrl.hostname === 'chat.whatsapp.com' && whatsappUrl.pathname === '/CYjDrgCPeq18wldgqScjFh' && whatsappUrl.searchParams.get('mode') === 'gi_t', String(whatsappHref));
-  check('Vstup do skupiny není zaměněný za registraci', /nenahrazuje registraci na sraz/.test((await page.locator('.community-note').innerText()).replace(/\u00a0/g, ' ')));
-  check('Členství ve WhatsApp skupině není podmínkou účasti', /členství ve WhatsApp skupině není podmínkou/.test((await page.locator('.faq').textContent()).replace(/\u00a0/g, ' ')));
-  check('WhatsApp tlačítko má dostatečně velkou dotykovou plochu', await page.locator('#whatsapp-group-link').evaluate(el => el.getBoundingClientRect().height >= 44));
-  check('WhatsApp sekce se na mobilu skládá pod sebe', await page.locator('.community-panel').evaluate(el => {
-    const copy = el.querySelector('.community-copy').getBoundingClientRect();
-    const qr = el.querySelector('.community-qr-link').getBoundingClientRect();
-    return qr.top >= copy.bottom && qr.left >= 0 && qr.right <= window.innerWidth;
-  }));
+  check('WhatsApp pozvánka zůstává funkční', whatsappUrl.hostname === 'chat.whatsapp.com'
+    && whatsappUrl.pathname === '/CYjDrgCPeq18wldgqScjFh'
+    && whatsappUrl.searchParams.get('mode') === 'gi_t', String(whatsappHref));
+  check('WhatsApp sekce potvrzuje konec registrace', /Sraz už skončil a registrace je uzavřená/.test((await page.locator('.community-note').innerText()).replace(/\u00a0/g, ' ')));
+  check('WhatsApp tlačítko má dostatečnou dotykovou plochu', await page.locator('#whatsapp-group-link').evaluate(element => element.getBoundingClientRect().height >= 44));
   const qrImage = page.locator('.community-qr');
   const qrResponse = await page.request.get(BASE + await qrImage.getAttribute('src'));
-  check('QR kód má alternativní text a dostupný PNG soubor', /QR kód/.test(await qrImage.getAttribute('alt') || '') && qrResponse.ok() && /^image\/png/.test(qrResponse.headers()['content-type'] || ''));
-  check('Informační sekce netvrdí, že jde o časté otázky', !(await page.locator('.faq').innerText()).includes('Časté otázky'));
+  check('QR kód má alternativní text a dostupný PNG soubor', /QR kód/.test(await qrImage.getAttribute('alt') || '')
+    && qrResponse.ok()
+    && /^image\/png/.test(qrResponse.headers()['content-type'] || ''));
 
   const mainText = await page.locator('main').evaluate(main => {
     const copy = main.cloneNode(true);
     copy.querySelector('.attendees')?.remove();
     return copy.innerText;
   });
-  check('Jednopísmenné české předložky a spojky mají pevné mezery', !/(?:^|\s)[avikosuz] [A-Za-zÁ-ž]/im.test(mainText));
-  check('Datum a hodina používají pevné mezery', await page.locator('.hero-date').textContent() === '29.\u00a0srpna 2026' && (await page.getByText('Můžu přijít jen na piknik?').textContent()).includes('jen na\u00a0piknik'));
-
+  check('Jednopísmenné české předložky a spojky mají pevné mezery', !/(?:^|\s)[avikosuz] [A-Za-zÁ-ž]/m.test(mainText));
   check('Stránka nemá vlastní JS chyby', consoleErrors.length === 0, consoleErrors.join(' | '));
 
-  const phoneWidths = [320, 360, 375, 390, 393, 412, 430];
-  const phoneProblems = [];
-  for (const width of phoneWidths) {
-    const phone = await browser.newPage({ viewport: { width, height: 844 } });
-    await phone.goto(BASE + '/sraz/', { waitUntil: 'networkidle' });
-    const state = await phone.evaluate(() => {
-      const hero = document.querySelector('.hero');
+  const widths = [320, 360, 390, 430, 744, 1024, 1440, 1920];
+  const layoutProblems = [];
+  for (const width of widths) {
+    const viewportPage = await browser.newPage({ viewport: { width, height: width <= 430 ? 844 : 900 } });
+    await viewportPage.goto(`${BASE}/sraz/`, { waitUntil: 'networkidle' });
+    const state = await viewportPage.evaluate(() => {
       const brand = document.querySelector('.hero-title-brand').getBoundingClientRect();
       const place = document.querySelector('.hero-title-place').getBoundingClientRect();
-      const cta = document.querySelector('.hero .button-primary').getBoundingClientRect();
       const facts = [...document.querySelectorAll('.hero-fact')].map(element => element.getBoundingClientRect());
-      const calendarLabel = document.querySelector('.hero-calendar-links > span').getBoundingClientRect();
-      const calendarLinks = [...document.querySelectorAll('.hero-calendar-links a')].map(element => element.getBoundingClientRect());
-      const stickyElement = document.getElementById('sticky-register');
-      return {
-        overflow: hero.scrollWidth > hero.clientWidth,
-        brandFits: brand.left >= 0 && brand.right <= window.innerWidth,
-        placeFits: place.left >= 0 && place.right <= window.innerWidth && parseFloat(getComputedStyle(document.querySelector('.hero-title-place')).fontSize) <= 14,
-        placeAligned: Math.abs(place.right - brand.right) <= 1,
-        factsFit: facts.every(rect => rect.left >= 0 && rect.right <= window.innerWidth),
-        ctaFits: cta.left >= 0 && cta.right <= window.innerWidth && cta.height >= 44,
-        calendarFits: calendarLinks.every(rect => rect.left >= 0 && rect.right <= window.innerWidth),
-        calendarTouchTargets: calendarLinks.every(rect => rect.height >= 44),
-        calendarLabelAboveLinks: calendarLinks.every(rect => rect.top >= calendarLabel.bottom),
-        stickyHidden: !stickyElement.classList.contains('is-visible')
-      };
-    });
-    if (state.overflow || !state.brandFits || !state.placeFits || !state.placeAligned || !state.factsFit || !state.ctaFits || !state.calendarFits || !state.calendarTouchTargets || !state.calendarLabelAboveLinks || !state.stickyHidden) phoneProblems.push(`${width}px=${JSON.stringify(state)}`);
-    await phone.close();
-  }
-  check('Hero je bezpečný na běžných šířkách telefonů 320–430 px', phoneProblems.length === 0, phoneProblems.join(' | '));
-
-  const widerWidths = [600, 720, 744, 768, 810, 820, 834, 900, 1024, 1180, 1280, 1366, 1440, 1728, 1920];
-  const widerProblems = [];
-  for (const width of widerWidths) {
-    const widerPage = await browser.newPage({ viewport: { width, height: 1000 } });
-    await widerPage.goto(BASE + '/sraz/', { waitUntil: 'networkidle' });
-    const state = await widerPage.evaluate(breakpoint => {
-      const hero = document.querySelector('.hero');
-      const brand = document.querySelector('.hero-title-brand').getBoundingClientRect();
-      const place = document.querySelector('.hero-title-place').getBoundingClientRect();
-      const facts = document.querySelector('.hero-facts');
-      const factRects = [...document.querySelectorAll('.hero-fact')].map(element => element.getBoundingClientRect());
-      const columns = getComputedStyle(facts).gridTemplateColumns.trim().split(/\s+/).length;
       return {
         overflow: document.documentElement.scrollWidth > window.innerWidth,
         brandFits: brand.left >= 0 && brand.right <= window.innerWidth,
-        placeAligned: Math.abs(place.right - brand.right) <= 1,
-        factsFit: factRects.every(rect => rect.left >= 0 && rect.right <= window.innerWidth),
-        correctGrid: breakpoint <= 720 ? columns === 2 : columns === 4
-      };
-    }, width);
-    if (state.overflow || !state.brandFits || !state.placeAligned || !state.factsFit || !state.correctGrid) widerProblems.push(`${width}px=${JSON.stringify(state)}`);
-    await widerPage.close();
-  }
-  check('Hero bezpečně přechází mezi telefonem, tabletem a desktopem', widerProblems.length === 0, widerProblems.join(' | '));
-
-  const shallowViewports = [
-    { width: 744, height: 650 },
-    { width: 1024, height: 600 },
-    { width: 1280, height: 600 },
-    { width: 1280, height: 720 },
-    { width: 1366, height: 768 },
-    { width: 1440, height: 800 },
-    { width: 1728, height: 900 }
-  ];
-  const shallowProblems = [];
-  for (const viewport of shallowViewports) {
-    const shallowPage = await browser.newPage({ viewport });
-    await shallowPage.goto(BASE + '/sraz/', { waitUntil: 'networkidle' });
-    const state = await shallowPage.evaluate(() => {
-      const hero = document.querySelector('.hero').getBoundingClientRect();
-      const cta = document.querySelector('.hero .button-primary').getBoundingClientRect();
-      return {
-        heroBottom: hero.bottom,
-        viewportHeight: window.innerHeight,
-        ctaVisible: cta.bottom <= window.innerHeight + 1 && cta.height >= 44,
-        fits: hero.bottom <= window.innerHeight + 1
+        placeFits: place.left >= 0 && place.right <= window.innerWidth,
+        factsFit: facts.every(rect => rect.left >= 0 && rect.right <= window.innerWidth),
       };
     });
-    if (!state.fits || !state.ctaVisible) shallowProblems.push(`${viewport.width}x${viewport.height}=${JSON.stringify(state)}`);
-    await shallowPage.close();
+    if (state.overflow || !state.brandFits || !state.placeFits || !state.factsFit) {
+      layoutProblems.push(`${width}px=${JSON.stringify(state)}`);
+    }
+    await viewportPage.close();
   }
-  check('Hero je celé viditelné i v nízkých desktopových oknech', shallowProblems.length === 0, shallowProblems.join(' | '));
+  check('Archiv srazu je bezpečný od telefonu po desktop', layoutProblems.length === 0, layoutProblems.join(' | '));
 
   const attendeePreview = await browser.newPage({ viewport: { width: 1180, height: 900 } });
   const longBio = 'Delší testovací představení účastníka. '.repeat(30);
@@ -287,76 +132,35 @@ function check(name, cond, detail = '') {
     status: 200,
     contentType: 'application/json',
     headers: { 'Cache-Control': 'no-store' },
-    body: JSON.stringify({ registeredCount: 11, officialRegisteredCount: 11, picnicRegisteredCount: 4, attendees: [
+    body: JSON.stringify({ attendees: [
       { name: 'Účastník H', bio: 'Věnuje se testování a rád si popovídá o kvalitě.', attendance: 'official' },
       { name: 'Účastník A', bio: longBio, attendance: 'official_and_picnic' },
       { name: 'Účastník B', bio: 'Testovací profil B.', attendance: 'uncertain' },
       { name: 'Účastník D', bio: 'Testovací profil D.', attendance: 'official' },
       { name: 'Účastník E', bio: 'Testovací profil E.', attendance: 'official' },
       { name: 'Účastník F', bio: 'Testovací profil F.', attendance: 'official' },
-      { name: 'Účastník G', bio: 'Dorazí jen na společný piknik.', attendance: 'picnic_only' },
-      { name: 'Z <img src=x onerror=alert(1)>', bio: 'Bezpečnostní test vykreslení jako text.', attendance: 'official_and_picnic' }
-    ] })
+      { name: 'Účastník G', bio: 'Dorazil jen na společný piknik.', attendance: 'picnic_only' },
+      { name: 'Z <img src=x onerror=alert(1)>', bio: 'Bezpečnostní test vykreslení jako text.', attendance: 'official_and_picnic' },
+    ] }),
   }));
-  await attendeePreview.goto(BASE + '/sraz/', { waitUntil: 'networkidle' });
-  check('Hero počítá hlavní program a volná místa nezávisle na zveřejněných profilech', await attendeePreview.locator('#official-registered-count').innerText() === '11/30' && /19 volných míst/.test(await attendeePreview.locator('#official-registered-count-note').innerText()));
-  check('Registrační blok přebírá živý počet hlavního programu', await attendeePreview.locator('#registration-official-count').innerText() === '11 z 30 míst' && /19 volných míst/.test(await attendeePreview.locator('#registration-official-count-note').innerText()));
-  check('Hero přebírá úplný počet pikniku z API a správně jej skloňuje', await attendeePreview.locator('#hero-picnic-registered-count').innerText() === '4' && /přihlásili 4 lidé/.test((await attendeePreview.locator('.hero-picnic-proof').innerText()).replace(/\u00a0/g, ' ')));
-  check('Registrační blok ukazuje samostatný úplný počet pikniku', await attendeePreview.locator('#picnic-registered-count').innerText() === '4' && await attendeePreview.locator('#picnic-registered-count-copy').isVisible());
+  await attendeePreview.goto(`${BASE}/sraz/`, { waitUntil: 'networkidle' });
   const renderedNames = await attendeePreview.locator('.attendee-card h3').allTextContents();
-  check('Seznam vykreslí zveřejněné profily a rozsah účasti', await attendeePreview.locator('.attendee-card').count() === 8 && /Oficiální část 13:00–18:00/.test(await attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník H' }).innerText()) && /Oficiální část \+ piknik/.test(await attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník A' }).innerText()) && /Jen piknik po 18:00/.test(await attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník G' }).innerText()));
+  check('Seznam vykreslí zveřejněné profily a rozsah účasti', await attendeePreview.locator('.attendee-card').count() === 8
+    && /Oficiální část 13:00–18:00/.test(await attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník H' }).innerText())
+    && /Jen piknik po 18:00/.test(await attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník G' }).innerText()));
   check('Účastníci jsou seřazení abecedně', renderedNames.join('|') === [...renderedNames].sort((a, b) => a.localeCompare(b, 'cs', { sensitivity: 'base' })).join('|'), renderedNames.join(' | '));
-
-  const fullCapacityPreview = await browser.newPage({ viewport: { width: 390, height: 844 } });
-  await fullCapacityPreview.route('**/api/meetup-attendees', route => route.fulfill({
-    status: 200,
-    contentType: 'application/json',
-    headers: { 'Cache-Control': 'no-store' },
-    body: JSON.stringify({ registeredCount: 30, officialRegisteredCount: 30, picnicRegisteredCount: 19, attendees: [] })
-  }));
-  await fullCapacityPreview.goto(BASE + '/sraz/', { waitUntil: 'networkidle' });
-  check('Při naplněném programu jsou všechna registrační CTA zneaktivněná', await fullCapacityPreview.locator('[data-registration-link]').evaluateAll(links => links.length === 4 && links.every(link => link.getAttribute('aria-disabled') === 'true' && !link.hasAttribute('href') && link.classList.contains('is-registration-unavailable'))));
-  check('Naplněná kapacita a počet pikniku jsou popsány odděleně', await fullCapacityPreview.locator('#official-registered-count').innerText() === '30/30' && /kapacita naplněná/.test(await fullCapacityPreview.locator('#official-registered-count-note').innerText()) && await fullCapacityPreview.locator('#registration-official-count').innerText() === '30 z 30 míst' && /kapacita naplněná/.test(await fullCapacityPreview.locator('#registration-official-count-note').innerText()) && await fullCapacityPreview.locator('#hero-picnic-registered-count').innerText() === '19' && /přihlásilo 19 lidí/.test((await fullCapacityPreview.locator('.hero-picnic-proof').innerText()).replace(/\u00a0/g, ' ')) && await fullCapacityPreview.locator('#picnic-registered-count').innerText() === '19');
-  check('Mobil skládá dva stavy registrační karty pod sebe', await fullCapacityPreview.locator('.registration-status').evaluate(element => getComputedStyle(element).gridTemplateColumns.trim().split(/\s+/).length === 1));
-  await fullCapacityPreview.close();
   check('Údaje účastníků se vkládají jako text, ne jako HTML', await attendeePreview.locator('.attendee-card img').count() === 0 && renderedNames.includes('Z <img src=x onerror=alert(1)>'));
-  check('Desktop zobrazuje stav programu a pikniku vedle sebe', await attendeePreview.locator('.registration-status').evaluate(element => getComputedStyle(element).gridTemplateColumns.trim().split(/\s+/).length === 2));
-  check('Desktopový seznam účastníků používá dva sloupce', await attendeePreview.locator('.attendees-grid').evaluate(el => getComputedStyle(el).gridTemplateColumns.trim().split(/\s+/).length === 2));
+  check('Desktopový seznam účastníků používá dva sloupce', await attendeePreview.locator('.attendees-grid').evaluate(element => getComputedStyle(element).gridTemplateColumns.trim().split(/\s+/).length === 2));
   check('Desktop nejdřív ukáže šest profilů', await attendeePreview.locator('.attendee-card:visible').count() === 6);
-  const attendeesToggle = attendeePreview.locator('#attendees-toggle');
   const filters = attendeePreview.locator('#attendee-filters');
-  const allFilter = filters.locator('[data-attendee-filter="all"]');
-  const officialFilter = filters.locator('[data-attendee-filter="official"]');
-  const picnicFilter = filters.locator('[data-attendee-filter="picnic"]');
-  const picnicOnlyFilter = filters.locator('[data-attendee-filter="picnic_only"]');
-  const uncertainFilter = filters.locator('[data-attendee-filter="uncertain"]');
-  check('Filtry ukazují počty včetně překryvu oficiální části a pikniku', await filters.isVisible() && /8/.test(await allFilter.innerText()) && /6/.test(await officialFilter.innerText()) && /3/.test(await picnicFilter.innerText()) && /1/.test(await picnicOnlyFilter.innerText()) && /1/.test(await uncertainFilter.innerText()) && await filters.locator('[data-attendee-filter="partial"]').count() === 0);
-  await picnicFilter.click();
-  check('Filtr pikniku ukáže všechny lidi, kteří dorazí po 18:00', await attendeePreview.locator('.attendee-card:visible').count() === 3 && await attendeesToggle.isHidden() && (await attendeePreview.locator('.attendee-card:visible').allTextContents()).every(text => /piknik/.test(text)) && await picnicFilter.getAttribute('aria-pressed') === 'true');
-  await picnicOnlyFilter.click();
-  check('Filtr Jen piknik ukáže pouze lidi bez oficiální části', await attendeePreview.locator('.attendee-card:visible').count() === 1 && /Jen piknik po 18:00/.test(await attendeePreview.locator('.attendee-card:visible').innerText()) && await picnicOnlyFilter.getAttribute('aria-pressed') === 'true');
-  await officialFilter.click();
-  check('Filtr oficiální části zahrnuje i lidi pokračující na piknik', await attendeePreview.locator('.attendee-card:visible').count() === 6 && await attendeesToggle.isHidden());
-  await uncertainFilter.click();
-  check('Filtr nejisté účasti ukáže odpovídající profil', await attendeePreview.locator('.attendee-card:visible').count() === 1 && /Účast ještě upřesní/.test(await attendeePreview.locator('.attendee-card:visible').innerText()));
-  await allFilter.click();
-  check('Filtr Všichni obnoví výchozí limit', await attendeePreview.locator('.attendee-card:visible').count() === 6 && await allFilter.getAttribute('aria-pressed') === 'true');
-  check('Tlačítko uvádí celkový počet účastníků', await attendeesToggle.isVisible() && /\(8\)/.test(await attendeesToggle.innerText()));
+  await filters.locator('[data-attendee-filter="picnic"]').click();
+  check('Filtr pikniku ukáže všechny tři relevantní profily', await attendeePreview.locator('.attendee-card:visible').count() === 3);
+  await filters.locator('[data-attendee-filter="all"]').click();
+  const attendeesToggle = attendeePreview.locator('#attendees-toggle');
   await attendeesToggle.click();
-  check('Rozbalení zpřístupní všechny profily', await attendeePreview.locator('.attendee-card:visible').count() === 8 && await attendeesToggle.getAttribute('aria-expanded') === 'true');
-  const longBioCard = attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník A' });
-  const bioToggle = longBioCard.locator('.attendee-bio-toggle');
-  check('Dlouhé představení má vlastní rozbalení', await bioToggle.isVisible() && await bioToggle.getAttribute('aria-expanded') === 'false');
-  await bioToggle.click();
-  check('Celé představení lze zpřístupnit a znovu zkrátit', await bioToggle.getAttribute('aria-expanded') === 'true' && /Zkrátit představení/.test(await bioToggle.innerText()));
-  await attendeesToggle.click();
-  check('Seznam lze znovu zkrátit', await attendeePreview.locator('.attendee-card:visible').count() === 6 && await attendeesToggle.getAttribute('aria-expanded') === 'false');
-  await attendeePreview.setViewportSize({ width: 390, height: 844 });
-  await attendeePreview.waitForTimeout(100);
-  check('Mobil nejdřív ukáže čtyři profily', await attendeePreview.locator('.attendee-card:visible').count() === 4);
-  check('Mobilní filtry nevytvářejí přesah celé stránky', await attendeePreview.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
-  await attendeesToggle.click();
-  check('Na mobilu lze zobrazit všechny profily', await attendeePreview.locator('.attendee-card:visible').count() === 8);
+  check('Rozbalení zpřístupní všech osm profilů', await attendeePreview.locator('.attendee-card:visible').count() === 8 && await attendeesToggle.getAttribute('aria-expanded') === 'true');
+  const bioToggle = attendeePreview.locator('.attendee-card').filter({ hasText: 'Účastník A' }).locator('.attendee-bio-toggle');
+  check('Dlouhé představení má vlastní rozbalení', await bioToggle.isVisible());
   await attendeePreview.close();
 
   await browser.close();

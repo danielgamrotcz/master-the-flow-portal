@@ -9,26 +9,21 @@ Vznikly při přestavbě 17. 7. 2026 (audit → fáze 1+2 + brand vrstva). Hlíd
 - `e2e-push.js` — push primer, iOS instruktáž
 - `e2e-quiet.js` — klidný den (sám si mockuje 0-karet today.json a vrací zpět)
 - `e2e-slovnicek.js` — slovníček: data, hledání, kategorie, detail výrazu, deep linky, propojení s hledáním a s detailem karty (26 kontrol)
-- `e2e-sraz.js` — veřejná podstránka pražského srazu: obsah, harmonogram, kalendář, registrace a mobilní CTA
+- `e2e-sraz.js` — veřejný archiv pražského srazu: ukončený stav, odstraněná registrace, program, účastníci a responzivita
 - `api-attendees.js` — veřejný seznam účastníků: allowlist polí, souhlas, CORS, cache a rate limit chráněného zápisu
 - `google-forms-attendees.js` — synchronizace používá zadaný e-mail jen interně, respektuje odvolání souhlasu a e-mail neexportuje
 - `privacy-public-data.js` — verzovaná veřejná JSON data neobsahují e-maily mimo výslovně povolený kontaktní údaj
 - `security-regressions.js` — negativní a pozitivní auth scénáře pro chat corpus, tracking, push subscription a cache policy
 - `sraz-asset-versions.js` — shoda sedmimístných cache hashů CSS a JavaScriptu
   stránky srazu s aktuálním obsahem souborů
-- `groups-algorithm.js` — deterministické složení týmů po 3–4, zkušenostní
-  kotvy, vyvážení a pokrytí notebooky
-- `groups-asset-versions.js` — shoda cache hashů mobilní a admin stránky
-  skupinek
-- `e2e-groups.js` — celý mobilní a organizátorský průchod: odeslání, úprava,
-  ochrana kódem, nevratné rozdělení a veřejný výsledek bez neveřejných polí
+- `archived-groups.js` — vyřazené stránky a API Skupinek vracejí 410 bez
+  historického obsahu a bez cache
 
 Spuštění:
 
 ```bash
-GROUPS_TEST_ADMIN_SECRET=local-groups-test \
-  npx wrangler pages dev . --port 8788 --binding GROUPS_ADMIN_SECRET=local-groups-test
-GROUPS_TEST_ADMIN_SECRET=local-groups-test ./tests/run-all.sh
+npx wrangler pages dev . --port 8788
+./tests/run-all.sh
 ```
 
 Adresu serveru drží proměnná `MTF_BASE`, bez ní testy míří na
@@ -40,12 +35,12 @@ Playwright se bere přes NODE_PATH z ~/Projects/voice-browser/node_modules
 
 Složka tests/ je blokovaná v functions/_middleware.js, na produkci není dostupná.
 
-### CI kontrola stránky srazu a skupinek
+### CI kontrola archivu srazu a vyřazených Skupinek
 
 Workflow `.github/workflows/sraz-e2e.yml` spouští `tests/e2e-sraz.js` a
-`tests/e2e-groups.js` při pull requestu nebo pushi do `main`, pokud se změnila
-stránka srazu, skupinky, jejich funkce, fonty, hlavičky, Wrangler konfigurace
-nebo samotné testy. Před E2E kontroluje také algoritmus a shodu cache hashů.
+`tests/archived-groups.js` při pull requestu nebo pushi do `main`, pokud se
+změnila stránka srazu, middleware, fonty, hlavičky, Wrangler konfigurace nebo
+samotné testy. Před E2E kontroluje také shodu cache hashů stránky srazu.
 Lze ho spustit také ručně přes `workflow_dispatch`.
 
 Playwright a Wrangler se v CI instalují v připnutých verzích pouze do

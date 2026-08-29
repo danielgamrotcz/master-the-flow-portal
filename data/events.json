@@ -9,23 +9,23 @@
       "time_from": "13:00",
       "time_to": "18:00",
       "location": "Lampárna Lidická, Praha 5",
-      "short": "Po několika odhláškách je registrace na hlavní program znovu otevřená do naplnění kapacity 30 lidí. Po 18. hodině pokračujeme společným piknikem.",
-      "description": "Sejdeme se v sobotu 29. srpna v Lampárně Lidická. Hlavní program proběhne od 13:00 do 18:00 a po několika odhláškách je registrace znovu otevřená. Po 18. hodině pokračujeme společným piknikem. Přesné místo pikniku pošlu registrovaným.",
+      "short": "První pražský sraz Master the Flow proběhl 29. srpna v Lampárně Lidická. Registrace je uzavřená.",
+      "description": "První pražský sraz Master the Flow proběhl v sobotu 29. srpna v Lampárně Lidická. Hlavní program byl od 13:00 do 18:00 a po něm následoval společný piknik. Registrace je uzavřená.",
       "program": [
         { "time": "13:00–14:00", "label": "Volný příchod, networking a volný program" },
         { "time": "14:00–16:00", "label": "Ukázky systémů, moderované rozhovory a Q&A v 15–30minutových blocích" },
         { "time": "16:00–18:00", "label": "Skupinová výzva v promíchaných týmech; notebook nebo mobil se mohou hodit, nejsou povinné" },
-        { "time": "od 18:00", "label": "Společný piknik otevřený i bez účasti na hlavním programu; přesné místo pošlu registrovaným" }
+        { "time": "od 18:00", "label": "Společný piknik po hlavním programu" }
       ],
-      "registration_url": "https://docs.google.com/forms/d/e/1FAIpQLSc-IoU8ka75ur-VzBTfb88PZZMBjvVc7kVU2_BKeHdIM7YN7g/viewform",
-      "registration_page_url": "/sraz/",
+      "registration_url": null,
+      "registration_page_url": null,
       "is_paid": false,
       "price": null,
       "discount_code": null,
       "detail_url": "/sraz/",
       "recording_url": null,
       "recording_password": null,
-      "status": null
+      "status": "Proběhlo"
     },
     {
       "id": "evt-2026-08-14-sraz-olomouc",

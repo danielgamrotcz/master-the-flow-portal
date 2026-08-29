@@ -1597,7 +1597,7 @@ function splitEvents(events) {
   const upcoming = [], past = [];
   for (const ev of events) {
     if (!ev || !ev.date) continue;
-    (eventEndTs(ev) >= now ? upcoming : past).push(ev);
+    (ev.status || eventEndTs(ev) < now ? past : upcoming).push(ev);
   }
   upcoming.sort((a, b) => a.date.localeCompare(b.date) || (a.time_from || '').localeCompare(b.time_from || ''));
   past.sort((a, b) => b.date.localeCompare(a.date) || (b.time_from || '').localeCompare(a.time_from || ''));

@@ -39,6 +39,14 @@ function needsGate(pathname) {
   return false;
 }
 
+// Skupinky byly jednorázový nástroj pro pražský sraz. Po skončení akce
+// vracíme záměrné 410 místo historického formuláře nebo obecné 404.
+function isRetiredRoute(pathname) {
+  const p = pathname.toLowerCase();
+  return p === '/skupinky' || p.startsWith('/skupinky/')
+    || p === '/api/groups' || p.startsWith('/api/groups/');
+}
+
 export async function onRequest(context) {
   const { request, env } = context;
   let pathname;
@@ -46,6 +54,15 @@ export async function onRequest(context) {
     pathname = decodeURIComponent(new URL(request.url).pathname);
   } catch {
     return new Response('Bad Request', { status: 400 });
+  }
+  if (isRetiredRoute(pathname)) {
+    return new Response(null, {
+      status: 410,
+      headers: {
+        'Cache-Control': 'no-store',
+        'X-Content-Type-Options': 'nosniff',
+      },
+    });
   }
   const segments = pathname.split('/').filter(Boolean);
   if (segments.some(isBlockedSegment)) {

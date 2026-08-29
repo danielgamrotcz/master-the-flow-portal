@@ -101,18 +101,24 @@ function check(name, cond, detail = '') {
   const todayVisible = await page.evaluate(() => !document.getElementById('view-today').classList.contains('hidden'));
   check('Zpět mezi views srovná view s adresou (dřív rozjeté)', todayVisible);
 
-  // ===== 4b. Události: sraz má viditelnou přímou registraci =====
+  // ===== 4b. Události: ukončený sraz je v archivu bez registrace =====
   await page.evaluate(() => document.querySelector('.nav-btn[data-view="events"]')?.click());
   await page.waitForSelector('.event-card[data-event-id="evt-2026-08-29-sraz"]', { timeout: 15000 }).catch(() => {});
   const srazCard = page.locator('.event-card[data-event-id="evt-2026-08-29-sraz"]');
-  check('Sraz má v přehledu událostí výraznou registraci', await srazCard.locator('.event-card-register').isVisible());
-  check('Registrace z karty míří na stránku srazu', await srazCard.locator('.event-card-register').getAttribute('href') === '/sraz/');
+  check('Pražský sraz je v přehledu minulých akcí', await page.locator('#events-past .event-card[data-event-id="evt-2026-08-29-sraz"]').count() === 1);
+  check('Pražský sraz je označený jako proběhlý', (await srazCard.locator('.event-badge-status').innerText()).trim() === 'Proběhlo');
+  check('Ukončený sraz nenabízí registraci', await srazCard.locator('.event-card-register').count() === 0);
 
   // ===== 4c. Slovníček: zavíratelný proužek jen s nadcházejícími srazy =====
   // Očekávání se odvozuje z events.json. Pevný seznam začal oprávněně padat
   // den po olomouckém srazu, protože aplikace už proběhlé akce skrývá.
   const eventData = JSON.parse(require('fs').readFileSync(
     require('path').join(__dirname, '..', 'data', 'events.json'), 'utf8'));
+  const pragueMeetup = eventData.events.find(event => event.id === 'evt-2026-08-29-sraz');
+  check('Data pražského srazu ruší oba registrační cíle', pragueMeetup?.status === 'Proběhlo'
+    && pragueMeetup.registration_url === null
+    && pragueMeetup.registration_page_url === null);
+  check('Pražský sraz už není v registračním proužku portálu', await page.locator('#event-teaser [data-event-id="evt-2026-08-29-sraz"]').count() === 0);
   const glossaryMeetupIds = new Set(['evt-2026-08-29-sraz', 'evt-2026-08-14-sraz-olomouc']);
   const eventEnd = ev => {
     const time = ev.time_to && /^\d{1,2}:\d{2}$/.test(ev.time_to) ? ev.time_to : '23:59';
