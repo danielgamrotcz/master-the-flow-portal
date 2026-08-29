@@ -107,6 +107,17 @@ function check(name, condition, detail = '') {
   const layoutProblems = [];
   for (const width of widths) {
     const viewportPage = await browser.newPage({ viewport: { width, height: width <= 430 ? 844 : 900 } });
+    await viewportPage.route('**/api/meetup-attendees', route => route.fulfill({
+      status: 200,
+      contentType: 'application/json',
+      headers: { 'Cache-Control': 'no-store' },
+      body: JSON.stringify({ attendees: [
+        { name: 'Alena', bio: 'Testovací profil.', attendance: 'official' },
+        { name: 'Boris', bio: 'Testovací profil.', attendance: 'official_and_picnic' },
+        { name: 'Cyril', bio: 'Testovací profil.', attendance: 'picnic_only' },
+        { name: 'Dana', bio: 'Testovací profil.', attendance: 'uncertain' },
+      ] }),
+    }));
     await viewportPage.goto(`${BASE}/sraz/`, { waitUntil: 'networkidle' });
     const state = await viewportPage.evaluate(() => {
       const brand = document.querySelector('.hero-title-brand').getBoundingClientRect();

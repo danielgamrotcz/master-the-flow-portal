@@ -294,7 +294,7 @@ details p { max-width: 720px; margin: -2px 0 24px; color: var(--text-secondary);
   .manifesto-copy { padding-top: 0; }
   .manifesto-copy p { font-size: 17px; }
   .attendees, .program, .practical, .registration, .faq { padding-top: 84px; }
-  .attendee-filters { margin-right: -20px; padding-right: 20px; }
+  .attendee-filters { margin-right: 0; padding-right: 0; }
   .attendees-grid { grid-template-columns: 1fr; }
   .attendee-card { padding: 24px 22px; }
   .attendees-toggle { width: 100%; }
