@@ -64,10 +64,11 @@ function check(name, condition, detail = '') {
   check('Ondřejův blok má potvrzený čas, téma a odkaz', /15:45–16:05[\s\S]*Ondřej Tyl[\s\S]*Hraju si s GrokBotem/.test(programText)
     && await page.locator('.program-slot-speaker a[href="https://ondrejtyl.cz/"]').getAttribute('target') === '_blank');
   check('Danielův blok zachovává příběh Uttera', /16:05–16:15[\s\S]*Jak jsem stavěl Uttero[\s\S]*macOS, iOS a Android/.test(programText));
-  check('Skupinová výzva míchala zkušenosti a končila testováním', /malých týmů/.test(programText)
+  check('Skupinová výzva uvádí skutečné zadání a výsledek', /malých týmů/.test(programText)
     && /různou úrovní zkušeností/.test(programText)
-    && /hratelnou verzi/.test(programText)
-    && /bez návodu otestovat jiným týmem/.test(programText));
+    && /Nasyť mě\. Seznam mě\. Pobav mě\./.test(programText)
+    && /během půl hodiny společně vytvořili 6 vibe coded aplikací/.test(programText)
+    && !/vlastní hru|hratelnou verzi|bez návodu otestovat jiným týmem/.test(programText));
   check('Technika byla výslovně dobrovolná', /Notebook nebo mobil.*nebyly ale podmínkou zapojení/.test(programText));
 
   const manifestoText = (await page.locator('.manifesto-band').innerText()).replace(/\u00a0/g, ' ');
