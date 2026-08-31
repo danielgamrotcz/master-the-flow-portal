@@ -1618,6 +1618,22 @@
       "date": "2026-08-29",
       "card_count": 0,
       "topics": []
+    },
+    {
+      "date": "2026-08-30",
+      "card_count": 5,
+      "topics": [
+        "Raycast",
+        "Databáze",
+        "Vibe Coding",
+        "Claude Code",
+        "Subagenti",
+        "AI nástroje",
+        "Produktivita",
+        "Prompting",
+        "Dokumentace",
+        "Workflow"
+      ]
     }
   ]
 }
