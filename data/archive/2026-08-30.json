@@ -1,6 +1,6 @@
 {
   "date": "2026-08-30",
-  "generated_at": "2026-08-31T00:02:47Z",
+  "generated_at": "2026-08-31T05:17:33Z",
   "stats": {
     "messages": 29,
     "groups": 2,
@@ -12,13 +12,14 @@
       "type": "NÁSTROJE",
       "level": "Začátečník",
       "topics": [
-        "Raycast",
+        "AI nástroje",
         "Produktivita",
+        "Raycast",
         "Workflow"
       ],
       "title": "Vorssaint při přechodu na Mac",
-      "excerpt": "Jeden člen doporučil Vorssaint všem, kdo přecházejí z Windows na Mac. Jemu nahradil Raycast a doplnil funkce, které mu v macOS chyběly nebo fungovaly jinak.",
-      "body": "Vorssaint je bezplatná open source sada nástrojů pro macOS. Podle veřejného repozitáře nabízí správu oken a schránky, ovládání zvuku, systémový monitor, snímání obrazovky, odinstalaci aplikací a další funkce. Jeden z členů ji ocenil hlavně při přechodu z Windows. Osobně mu nahradila i Raycast. Sdílel odkaz na repozitář a krátké úvodní video. Projekt je určený pro počítače s Apple Silicon a macOS 14 nebo novějším.",
+      "excerpt": "Jeden z členů doporučil Vorssaint lidem, kteří přecházejí z Windows na Mac. Jemu samotnému aplikace nahradila Raycast a přidala funkce, které mu v macOS chyběly.",
+      "body": "Vorssaint je bezplatná open source sada nástrojů pro macOS. Nabízí správu oken a schránky, ovládání zvuku, systémový monitor, snímání obrazovky nebo odinstalaci aplikací. Člen ji doporučil hlavně lidem, kteří jsou zvyklí na základní funkce Windows, jež Mac řeší jinak. Podle jeho zkušeností zvládne nahradit Raycast i další nástroje. Sdílený repozitář uvádí podporu Apple Silicon a macOS 14 nebo novějšího. Ve zprávě byl také odkaz na krátké úvodní video.",
       "read_minutes": 1,
       "source_group": "inspirace--diskuze",
       "source_msg_times": [
@@ -35,19 +36,18 @@
       "type": "TIP",
       "level": "Expert",
       "topics": [
-        "Claude Code",
         "AI nástroje",
+        "Claude Code",
         "Workflow",
         "Prompting"
       ],
-      "title": "Self-attribution bias při kontrole AI",
-      "excerpt": "Sdílený článek vysvětluje, proč může model své starší výstupy hodnotit mírněji. V komunitě také zaznělo, že při kontrole kódu si vedly lépe výkonné modely od jiného výrobce.",
-      "body": "Jeden člen to shrnul jako self-attribution bias. Odkázal na test, ve kterém modely hodnotily své dřívější výstupy jako bezpečnější a správnější než stejné výstupy zasazené do nového kontextu. Podle článku kleslo AUROC při kontrole správnosti kódu z 0,99 mimo vlastní distribuci na 0,89 u vlastních výstupů. Delší uvažování navíc zkreslení spolehlivě neodstranilo. Člen také uvedl, že silné modely kontrolovaly kód modelů stejné firmy až pětkrát hůř než kód modelů jiné firmy.",
+      "title": "Self-attribution bias při kontrole kódu",
+      "excerpt": "Sdílený článek vysvětluje, proč mohou modely hodnotit své starší výstupy mírněji. Jeden člen jeho závěr shrnul tak, že výrazně lépe dopadla kontrola silným modelem od jiného výrobce.",
+      "body": "Člen nejdřív popsal test se 70 prompty. Pak článek doplnil o takzvaný self-attribution bias. Došel k závěru, že silné modely mohou kontrolovat kód od stejné firmy až pětkrát hůř než model jiného výrobce. Podle článku kleslo AUROC při kontrole správnosti kódu z 0,99 u výstupů mimo vlastní distribuci na 0,89 při hodnocení vlastních výstupů. Delší uvažování toto zkreslení v popsaných testech spolehlivě neodstranilo.",
       "read_minutes": 1,
       "source_group": "inspirace--diskuze",
       "source_msg_times": [
         "21:13",
-        "21:19",
         "21:27",
         "21:39"
       ],
@@ -64,11 +64,11 @@
         "Claude Code",
         "Workflow",
         "Subagenti",
-        "Prompting"
+        "AI nástroje"
       ],
-      "title": "Vícevrstvá kontrola výstupu modelu",
-      "excerpt": "Jeden člen popsal kontrolní workflow, ve kterém kombinuje modely od stejného i jiného výrobce. Podle jeho zkušeností pomáhá oddělený kontext. Nejlepší výsledky mu ale zatím dává závěrečná kontrola přes Codex.",
-      "body": "Workflow začíná výstupem z Opusu. Pak ho interně zkontroluje jiný model stejného výrobce. Dostane vlastní zadání bez historie původního úkolu. Nakonec výstup projde kontrolou přes Codex.\n\nPodle člena funguje resetovaný kontext lépe než kontrola s celou historií. Ještě lepší výsledky má ale s modelem od jiného výrobce. Upozornil také na zacyklení při řešení drobných chyb. Ve svých interních pravidlech proto chyby sleduje jako opakující se vzory. Když se podobná chyba na jednom místě objeví víc než dvakrát, přejde k ručnímu řešení. Další člen jeho zkušenost potvrdil.",
+      "title": "Třífázová oponentura výstupů modelů",
+      "excerpt": "Jeden člen popsal vlastní postup kontroly, ve kterém kombinuje modely od Anthropicu a Codex. Reset kontextu pomohl, nejlepší výsledky ale přinesla finální kontrola modelem od jiného výrobce.",
+      "body": "Popsané workflow začíná výstupem z Opusu. Pak následuje interní kontrola modelem Fable nebo Sonet, který nevidí historii původního úkolu a dostane vlastní zadání. Nakonec přijde kontrola přes Codex. Podle jednoho člena funguje oddělený kontext lépe než kontrola zatížená historií. Ještě lepší výsledky má s modelem od jiného výrobce. Zároveň upozornil, že se model může zacyklit na drobných chybách. Ve svých pravidlech proto sleduje opakující se vzory. Když se podobná chyba na jednom místě objeví víc než dvakrát, přejde k ručnímu řešení. Další člen jeho zkušenost potvrdil.",
       "read_minutes": 1,
       "source_group": "inspirace--diskuze",
       "source_msg_times": [
@@ -84,17 +84,16 @@
       "level": "Expert",
       "topics": [
         "Vibe Coding",
-        "Databáze",
         "AI nástroje",
-        "Dokumentace"
+        "Databáze",
+        "Workflow"
       ],
-      "title": "Lokální monitor limitů Codexu",
-      "excerpt": "Jeden člen ukázal vlastní nástroj pro sledování spotřeby a resetů Codexu. Data průběžně ukládá lokálně, protože se podle něj kromě omezeného přehledu v profilu běžně nearchivují.",
-      "body": "Vibecodovaný monitor ukládá data do lokální databáze a vývoj kvót zobrazuje v grafu. Ve sdílené ukázce označovala červená čára sedmidenní limit a fialová pětihodinový. Člen na svém účtu zaznamenal, že se při resetu sedmidenního limitu resetoval i ten pětihodinový. Z databáze vytáhl také přesné časy resetů a zbývající kvótu v danou chvíli. Monitor vytvořil kvůli častým resetům. Podle jeho záznamů proběhly během týdne tři.",
+      "title": "Lokální monitor spotřeby Codexu",
+      "excerpt": "Člen ukázal vlastní monitor, který lokálně ukládá údaje o spotřebě a resetech limitů Codexu. Graf zvlášť zobrazuje sedmidenní a pětihodinový limit a sleduje jejich změny v čase.",
+      "body": "Monitor vznikl pomocí vibe codingu a data ukládá do lokální databáze v notebooku. Podle autora jsou údaje dostupné, běžně se ale mimo omezený přehled v profilu neukládají. Ukázaný panel sledoval zbývající kvótu, spotřebu a vývoj za posledních 24 hodin. Červená čára označovala sedmidenní limit, fialová pětihodinový. Při zachyceném resetu sedmidenního limitu se zároveň obnovil i pětihodinový limit. Člen z databáze vytáhl také přesné časy několika automatických resetů a stav kvóty v době, kdy proběhly.",
       "read_minutes": 1,
       "source_group": "vibe-coding",
       "source_msg_times": [
-        "09:08",
         "09:19",
         "09:27",
         "09:38"
@@ -116,12 +115,12 @@
       "level": "Pokročilý",
       "topics": [
         "AI nástroje",
-        "Produktivita",
-        "Dokumentace"
+        "Workflow",
+        "Produktivita"
       ],
-      "title": "Veřejný tracker resetů Codexu",
-      "excerpt": "Člen sdílel veřejnou stránku, která sleduje oznámené resety limitů Codexu a ChatGPT Work. Později upozornil, že tracker nerozlišuje firemní a soukromé resety a u uložených resetů není přesný.",
-      "body": "Web codex-resets.com sbírá časy resetů a odhaduje, kdy se limity obnoví příště. V době sdílení uváděl poslední reset 29. srpna 2026 ve 20:43 UTC, celkem 48 resetů a průměrný interval 7,4 dne. Člen komunity si chtěl stránku uložit jako užitečný přehled, pak ale upozornil na dvě omezení. Podle jeho zkušenosti měl uložený více než jeden reset, zatímco tracker ukazoval něco jiného. Stránka také neuváděla, zda šlo o reset firemního, nebo soukromého účtu.",
+      "title": "Veřejný přehled resetů Codexu",
+      "excerpt": "Člen sdílel web se statistikami a odhady dalších resetů limitů Codexu. Pak ale upozornil, že přehled není přesný a nerozlišuje všechny typy resetů.",
+      "body": "Web codex-resets.com sleduje oznámení o resetování limitů Codexu a ChatGPT Work. V době sdílení uváděl poslední reset 29. srpna 2026 ve 20:43 UTC. Celkem evidoval 48 resetů, průměrný interval 7,4 dne a nejdelší čekání 67,7 dne. Nabízel také odhad dalšího resetu. Člen označil celkový přehled za užitečný, později ale přidal dvě výhrady. Počet uložených resetů podle něj nebyl přesný a web nerozlišoval mezi firemními a soukromými resety.",
       "read_minutes": 1,
       "source_group": "vibe-coding",
       "source_msg_times": [
@@ -132,39 +131,48 @@
         "https://codex-resets.com/"
       ],
       "source_date": "2026-08-30"
+    },
+    {
+      "id": "2026-08-30-06",
+      "type": "UKÁZKA",
+      "level": "Pokročilý",
+      "topics": [
+        "AI nástroje",
+        "Produktivita",
+        "Workflow"
+      ],
+      "title": "Denní přehled článků v NORSU",
+      "excerpt": "Ve skupině se objevila ukázka obrazovky Denního přehledu z aplikace NORSU v1.3.0. Obsahovala článek, datum, krátké shrnutí a procentní hodnocení relevance.",
+      "body": "Mobilní obrazovka NORSU ukazovala článek z Hacker News s relevancí 68 procent a datem 29. srpna 2026. Přehled obsahoval i krátké shrnutí. Podle něj má na produktivitu větší vliv dobrá firemní kultura než samotné nástroje AI. Umělá inteligence totiž zesiluje stávající úroveň komunikace, architektury a spolupráce. Ukázka předvedla, jak aplikace v denním přehledu propojuje zdrojový článek, hodnocení relevance a stručný výtah hlavní myšlenky.",
+      "read_minutes": 1,
+      "source_group": "vibe-coding",
+      "source_msg_times": [
+        "08:40"
+      ],
+      "links": [],
+      "source_date": "2026-08-30"
     }
   ],
   "resurfacing": {
-    "id": "2026-08-14-01",
+    "id": "2026-08-06-05",
     "type": "INSIGHT",
-    "level": "Pokročilý",
+    "level": "Začátečník",
     "topics": [
       "Workflow",
-      "Automatizace",
       "Produktivita"
     ],
-    "title": "Přenos screenshotů přes Tailscale bez cloudu",
-    "excerpt": "Jeden člen popsal konkrétní postup v šesti krocích, jak přenést soubory z MacBooku na Mac mini. Celé to běží přes terminál a Tailscale, bez ručního nahrávání do cloudu.",
-    "body": "Postup je jednoduchý: udělám screenshot na MacBooku, přetáhnu ho do terminálu, Codex z cesty k souboru pozná, o co jde, stáhne si ho přes Tailscale na Mac mini a tam ho analyzuje. Přenáší se vždycky jen konkrétní soubor, tmux nechává rozpracovanou práci na místě. Výsledek je o pár sekund pomalejší než práce lokálně, ale bez dalších ručních kroků.",
+    "title": "Fyzický robot před abstraktním kódem",
+    "excerpt": "Před výukou Arduina vedoucí tábora zařazuje roboty Edison nebo mBot. Děti nejdřív musí vidět, že jejich akce mají hned nějaký efekt. Teprve pak má smysl vysvětlovat piny a signály. Hmatatelný výsledek jim otevře cestu k dalšímu učení.",
+    "body": "Člen, který vede technologický tábor, popisuje osvědčený postup. Roboti Edison nebo mBot jedou, vrčí a reagují na příkazy, takže děti hned vidí, že něco ovlivňují. Až potom přechází na Arduino a abstraktnější vysvětlování signálů. Jiný člen popsal podobnou zkušenost z jiného prostředí. Jeho syn se aktivně zapojil při ovládání skutečného auta přes autodiagnostiku v tabletu, kde mohl zapínat okna, světla nebo stírače. Fyzický a viditelný výsledek děti motivuje k dalšímu zkoumání.",
     "read_minutes": 1,
     "source_group": "inspirace--diskuze",
     "source_msg_times": [
-      "08:04",
-      "08:43",
-      "08:48",
-      "08:58"
+      "13:45",
+      "13:51"
     ],
     "links": [],
-    "source_date": "2026-08-14",
-    "images": [
-      {
-        "file": "8b8da701-3cff-49bf-8751-339b6d3b1840.jpg",
-        "w": 867,
-        "h": 535,
-        "desc": "Screenshot popisující workflow přenosu obrázků z MacBooku na Mac mini v 6 krocích: screenshot na MacBooku, přetažení do terminálu, Codex pozná cestu, stažení přes Tailscale, analýza na Mac mini, vše bez cloudu a ručního uploadu. Doplněno poznámkou, že se přenáší jen vybraný soubor a že tmux drží práci."
-      }
-    ],
-    "resurfaced_from": "2026-08-14"
+    "source_date": "2026-08-06",
+    "resurfaced_from": "2026-08-06"
   },
   "transcript": {
     "groups": [
