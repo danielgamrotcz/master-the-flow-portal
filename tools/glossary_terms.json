@@ -1814,6 +1814,24 @@
       "why": "Narazíte na něj při stavbě složitějších postupů, ve kterých spolupracuje více AI modelů nebo nástrojů.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "microsoft-copilot",
+      "term": "Microsoft Copilot",
+      "cat": "nastroje",
+      "match": [
+        "Copilot",
+        "Copilota",
+        "Copilotem",
+        "Copilotu",
+        "Microsoft Copilot",
+        "Microsoft 365 Copilot"
+      ],
+      "short": "AI pomocník od Microsoftu pro práci s texty, soubory, e-maily a kalendářem.",
+      "plain": "Microsoft Copilot vytváří texty, shrnuje informace a pracuje s obsahem v aplikacích Microsoftu. Jeho možnosti závisí na verzi, nastavení organizace a přístupu k souborům a službám. Během konverzace může ztratit předchozí instrukce nebo kontext.",
+      "why": "Narazíte na něj ve Windows a v pracovních aplikacích, jako jsou Outlook, Word nebo Teams.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
