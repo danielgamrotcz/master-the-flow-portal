@@ -74,6 +74,9 @@ a { color: var(--accent); }
 .button:active { transform: scale(.98); }
 .button-primary { background: var(--accent); color: #fff; }
 .button-secondary { border-color: var(--border-strong); color: var(--text-primary); }
+.calendar-actions { margin-top: 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.calendar-actions-label { margin-right: 4px; color: var(--text-tertiary); font-size: 13px; font-weight: 600; }
+.calendar-link { min-height: 44px; padding: 0 15px; border: 1px solid var(--border-strong); border-radius: 7px; display: inline-flex; align-items: center; justify-content: center; color: var(--text-primary); font-size: 13px; font-weight: 700; text-decoration: none; transition: border-color 150ms ease, color 150ms ease, background 150ms ease; }
 .hero-note { margin: 14px 0 0; color: var(--text-tertiary); font-size: 13px; }
 
 .section { max-width: 1120px; margin: 0 auto; padding: 106px 32px; }
@@ -131,7 +134,7 @@ details p { max-width: 720px; margin: -2px 0 26px; color: var(--text-secondary);
   .brand:hover, .portal-link:hover, .footer a:hover { color: var(--accent); }
   .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
   .button-primary:hover, .button-light:hover { background: var(--accent-hover); }
-  .button-secondary:hover { border-color: var(--accent); color: var(--accent); }
+  .button-secondary:hover, .calendar-link:hover { border-color: var(--accent); color: var(--accent); }
   .meet-link:hover, summary:hover { color: var(--accent); }
 }
 
@@ -156,6 +159,9 @@ details p { max-width: 720px; margin: -2px 0 26px; color: var(--text-secondary);
   .hero-facts > div:nth-child(odd) { padding-left: 0; }
   .hero-actions { display: grid; }
   .button { width: 100%; }
+  .calendar-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .calendar-actions-label { grid-column: 1 / -1; margin: 0 0 2px; }
+  .calendar-link { min-width: 0; padding: 0 8px; }
   .steps { grid-template-columns: 1fr; }
   .steps li, .steps li:nth-child(even) { min-height: 0; padding: 25px 0 27px; border-right: 0; }
   .program { padding-top: 82px; padding-bottom: 82px; }

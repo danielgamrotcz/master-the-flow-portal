@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Master the Flow//Online Show and Tell//CS
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:20260922T160000Z-show-and-tell@master-the-flow-portal.pages.dev
+DTSTAMP:20260902T143000Z
+DTSTART:20260922T160000Z
+DTEND:20260922T173000Z
+SUMMARY:AI\, která mi fakt funguje - online Show & Tell
+DESCRIPTION:Online Show & Tell pouze pro členy Master the Flow.
+ Vystoupení je nepovinné\; můžete se jen připojit a sledovat.
+ Setkání se nahrává a záznam je určený komunitě.\n\nGoogle Meet:
+ https://meet.google.com/cvt-kkjs-cyk
+LOCATION:Google Meet
+URL:https://master-the-flow-portal.pages.dev/show-and-tell/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:0
+END:VEVENT
+END:VCALENDAR

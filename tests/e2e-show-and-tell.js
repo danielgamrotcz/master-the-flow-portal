@@ -50,17 +50,44 @@ function check(name, condition, detail = '') {
     && new Set(await registrationLinks.evaluateAll(links => links.map(link => link.href))).size === 1
     && (await registrationLinks.first().getAttribute('href') || '').startsWith('https://docs.google.com/forms/d/e/'));
 
-  const calendarHref = await page.locator('.button-secondary').getAttribute('href');
+  const calendarHref = await page.locator('[data-calendar="google"]').getAttribute('href');
   const calendarUrl = new URL(calendarHref);
   check('Kalendářní CTA má správný interval v UTC', calendarUrl.hostname === 'calendar.google.com'
     && calendarUrl.searchParams.get('action') === 'TEMPLATE'
     && calendarUrl.searchParams.get('dates') === '20260922T160000Z/20260922T173000Z');
 
+  const outlookUrl = new URL(await page.locator('[data-calendar="outlook"]').getAttribute('href'));
+  check('Outlook CTA má správný interval v UTC', outlookUrl.hostname === 'outlook.office.com'
+    && outlookUrl.pathname === '/calendar/deeplink/compose'
+    && outlookUrl.searchParams.get('rru') === 'addevent'
+    && outlookUrl.searchParams.get('startdt') === '2026-09-22T16:00:00Z'
+    && outlookUrl.searchParams.get('enddt') === '2026-09-22T17:30:00Z');
+
+  const icsLink = page.locator('[data-calendar="ics"]');
+  const icsHref = await icsLink.getAttribute('href');
+  const icsResponse = await page.request.get(`${BASE}${icsHref}`);
+  const icsBody = await icsResponse.text();
+  const icsLines = icsBody.split('\r\n');
+  const usesOnlyCrLf = icsLines.length > 1 && !icsBody.replace(/\r\n/g, '').includes('\n');
+  const foldedToRfcLimit = icsLines.every(line => Buffer.byteLength(line, 'utf8') <= 75);
+  check('Apple / ICS CTA stahuje validní kalendářní soubor', await icsLink.getAttribute('download') !== null
+    && icsResponse.ok()
+    && /^text\/calendar/.test(icsResponse.headers()['content-type'] || '')
+    && /BEGIN:VCALENDAR/.test(icsBody)
+    && /DTSTART:20260922T160000Z/.test(icsBody)
+    && /DTEND:20260922T173000Z/.test(icsBody)
+    && /https:\/\/meet\.google\.com\//.test(icsBody));
+  check('ICS používá CRLF a řádky splňují limit 75 oktetů', usesOnlyCrLf && foldedToRfcLimit,
+    `CRLF=${usesOnlyCrLf}, max=${Math.max(...icsLines.map(line => Buffer.byteLength(line, 'utf8')))}`);
+
   const meetUrl = new URL(await page.locator('.meet-link').getAttribute('href'));
   check('Meet CTA vede na Google Meet', meetUrl.hostname === 'meet.google.com' && /^\/[a-z]{3}-[a-z]{4}-[a-z]{3}$/.test(meetUrl.pathname));
-  check('Program má šest navazujících bloků', await page.locator('.timeline li').count() === 6
+  const programText = await page.locator('.timeline').innerText();
+  check('Program má pět navazujících bloků bez pauzy', await page.locator('.timeline li').count() === 5
     && /18:00/.test(await page.locator('.timeline li').first().innerText())
-    && /19:30/.test(await page.locator('.timeline li').last().innerText()));
+    && /19:25/.test(await page.locator('.timeline li').last().innerText())
+    && /19:30/.test(await page.locator('.timeline li').last().innerText())
+    && !/pauza/i.test(programText));
 
   const themeBefore = await page.locator('html').getAttribute('data-theme');
   await page.locator('#theme-toggle').click();

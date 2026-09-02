@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T14:02:00Z",
+  "generated_at": "2026-09-02T14:40:00Z",
   "events": [
     {
       "id": "evt-2026-09-22-ai-ktera-mi-fakt-funguje",
@@ -14,9 +14,8 @@
       "program": [
         { "time": "18:00–18:08", "label": "Přivítání a pravidla" },
         { "time": "18:08–18:38", "label": "První tři desetiminutové ukázky" },
-        { "time": "18:38–18:43", "label": "Pětiminutová pauza" },
-        { "time": "18:43–19:13", "label": "Další tři desetiminutové ukázky" },
-        { "time": "19:13–19:25", "label": "Společná diskuse" },
+        { "time": "18:38–19:08", "label": "Další dvě až tři desetiminutové ukázky" },
+        { "time": "19:08–19:25", "label": "Společná diskuse" },
         { "time": "19:25–19:30", "label": "Závěr" }
       ],
       "registration_url": "https://docs.google.com/forms/d/e/1FAIpQLSd0-YWI6c5OeXGuCLkIzNm4aw4Y99r-BHitWH39czLA7KnE2A/viewform?usp=publish-editor",
