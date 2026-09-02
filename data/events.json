@@ -1,6 +1,38 @@
 {
-  "generated_at": "2026-06-19T11:00:00Z",
+  "generated_at": "2026-09-02T14:02:00Z",
   "events": [
+    {
+      "id": "evt-2026-09-22-ai-ktera-mi-fakt-funguje",
+      "type": "SHOW-AND-TELL",
+      "title": "AI, která mi fakt funguje — online Show & Tell",
+      "date": "2026-09-22",
+      "time_from": "18:00",
+      "time_to": "19:30",
+      "location": "Google Meet",
+      "short": "Pět až šest desetiminutových ukázek toho, co lidem z Master the Flow s AI opravdu funguje. Přijít můžete i jen jako divák.",
+      "description": "Online Show & Tell pouze pro členy Master the Flow. Pět až šest lidí ukáže jednu konkrétní věc, kterou s AI opravdu používá — od malé vychytávky po vlastní systém. Vystoupení je nepovinné, akce je zdarma a setkání se nahrává pro komunitu.",
+      "program": [
+        { "time": "18:00–18:08", "label": "Přivítání a pravidla" },
+        { "time": "18:08–18:38", "label": "První tři desetiminutové ukázky" },
+        { "time": "18:38–18:43", "label": "Pětiminutová pauza" },
+        { "time": "18:43–19:13", "label": "Další tři desetiminutové ukázky" },
+        { "time": "19:13–19:25", "label": "Společná diskuse" },
+        { "time": "19:25–19:30", "label": "Závěr" }
+      ],
+      "registration_url": "https://docs.google.com/forms/d/e/1FAIpQLSd0-YWI6c5OeXGuCLkIzNm4aw4Y99r-BHitWH39czLA7KnE2A/viewform?usp=publish-editor",
+      "registration_page_url": "/show-and-tell/",
+      "is_paid": false,
+      "price": null,
+      "discount_code": null,
+      "detail_url": "/show-and-tell/",
+      "recording_url": null,
+      "recording_password": null,
+      "status": null,
+      "links": [
+        "https://meet.google.com/cvt-kkjs-cyk",
+        "https://calendar.google.com/calendar/render?action=TEMPLATE&text=AI%2C+kter%C3%A1+mi+fakt+funguje+%E2%80%94+online+Show+%26+Tell&dates=20260922T160000Z%2F20260922T173000Z&details=Online+Show+%26+Tell+pouze+pro+%C4%8Dleny+Master+the+Flow.+Vystoupen%C3%AD+je+nepovinn%C3%A9%3B+m%C5%AF%C5%BEete+se+jen+p%C5%99ipojit+a+sledovat.+Setk%C3%A1n%C3%AD+se+nahr%C3%A1v%C3%A1+a+z%C3%A1znam+je+ur%C4%8Den%C3%BD+komunit%C4%9B.%0A%0AGoogle+Meet%3A+https%3A%2F%2Fmeet.google.com%2Fcvt-kkjs-cyk&location=Google+Meet"
+      ]
+    },
     {
       "id": "evt-2026-08-29-sraz",
       "type": "SETKÁNÍ",
