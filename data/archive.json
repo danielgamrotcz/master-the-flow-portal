@@ -1645,6 +1645,21 @@
         "Email",
         "Workflow"
       ]
+    },
+    {
+      "date": "2026-09-01",
+      "card_count": 5,
+      "topics": [
+        "Email",
+        "AI nástroje",
+        "Claude Code",
+        "Subagenti",
+        "Automatizace",
+        "Dokumentace",
+        "Workflow",
+        "Produktivita",
+        "Google"
+      ]
     }
   ]
 }
