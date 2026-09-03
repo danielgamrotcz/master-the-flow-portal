@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#faf6f2">
   <meta name="description" content="Online Show & Tell komunity Master the Flow. V úterý 22. září od 18:00 si ukážeme konkrétní postupy, které nám dnes s AI fungují.">
   <meta property="og:title" content="AI, která mi fakt funguje — online Show & Tell">
-  <meta property="og:description" content="Pět až šest praktických ukázek od lidí z Master the Flow. 22. září 2026 od 18:00 na Google Meetu.">
+  <meta property="og:description" content="Pět až šest praktických ukázek od lidí z Master the Flow. 22. září 2026 od 18:00 online.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://master-the-flow-portal.pages.dev/og-default.png">
   <meta property="og:locale" content="cs_CZ">
@@ -45,9 +45,9 @@
           <dt>Čas</dt>
           <dd><strong>18:00–19:30</strong><span>90 minut</span></dd>
         </div>
-        <div>
-          <dt>Místo</dt>
-          <dd><strong>Google Meet</strong><span>online</span></dd>
+        <div class="hero-fact-attendees">
+          <dt>Přihlášeno</dt>
+          <dd><strong id="registered-count" aria-live="polite">—</strong><span id="registered-count-note">účastníků</span></dd>
         </div>
         <div>
           <dt>Vstup</dt>
@@ -58,13 +58,7 @@
       <div class="hero-actions">
         <a class="button button-primary" data-registration-link href="https://docs.google.com/forms/d/e/1FAIpQLSd0-YWI6c5OeXGuCLkIzNm4aw4Y99r-BHitWH39czLA7KnE2A/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Registrovat se</a>
       </div>
-      <div class="calendar-actions" aria-label="Přidat akci do kalendáře">
-        <span class="calendar-actions-label">Přidat do kalendáře</span>
-        <a class="calendar-link" data-calendar="google" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=AI%2C+kter%C3%A1+mi+fakt+funguje+%E2%80%94+online+Show+%26+Tell&amp;dates=20260922T160000Z%2F20260922T173000Z&amp;details=Online+Show+%26+Tell+pouze+pro+%C4%8Dleny+Master+the+Flow.+P%C4%9Bt+a%C5%BE+%C5%A1est+lid%C3%AD+z+komunity+uk%C3%A1%C5%BEe+konkr%C3%A9tn%C3%AD+postup%2C+kter%C3%BD+jim+dnes+s+AI+funguje.+M%C5%AF%C5%BEete+se+jen+p%C5%99ipojit+a+sledovat%3B+nab%C3%ADdka+vystoupen%C3%AD+je+nepovinn%C3%A1.+Akce+je+zdarma+a+bude+se+nahr%C3%A1vat.+Z%C3%A1znam+je+ur%C4%8Den%C3%BD+komunit%C4%9B+Master+the+Flow.%0A%0AGoogle+Meet%3A+https%3A%2F%2Fmeet.google.com%2Fcvt-kkjs-cyk%0AStr%C3%A1nka+akce%3A+https%3A%2F%2Fmaster-the-flow-portal.pages.dev%2Fshow-and-tell%2F&amp;location=Google+Meet" target="_blank" rel="noopener noreferrer">Google</a>
-        <a class="calendar-link" data-calendar="outlook" href="https://outlook.office.com/calendar/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;allday=false&amp;subject=AI%2C+kter%C3%A1+mi+fakt+funguje+%E2%80%94+online+Show+%26+Tell&amp;startdt=2026-09-22T16%3A00%3A00Z&amp;enddt=2026-09-22T17%3A30%3A00Z&amp;body=Online+Show+%26+Tell+pouze+pro+%C4%8Dleny+Master+the+Flow.+P%C4%9Bt+a%C5%BE+%C5%A1est+lid%C3%AD+z+komunity+uk%C3%A1%C5%BEe+konkr%C3%A9tn%C3%AD+postup%2C+kter%C3%BD+jim+dnes+s+AI+funguje.+M%C5%AF%C5%BEete+se+jen+p%C5%99ipojit+a+sledovat%3B+nab%C3%ADdka+vystoupen%C3%AD+je+nepovinn%C3%A1.+Akce+je+zdarma+a+bude+se+nahr%C3%A1vat.+Z%C3%A1znam+je+ur%C4%8Den%C3%BD+komunit%C4%9B+Master+the+Flow.%0A%0AGoogle+Meet%3A+https%3A%2F%2Fmeet.google.com%2Fcvt-kkjs-cyk%0AStr%C3%A1nka+akce%3A+https%3A%2F%2Fmaster-the-flow-portal.pages.dev%2Fshow-and-tell%2F&amp;location=Google+Meet" target="_blank" rel="noopener noreferrer">Outlook</a>
-        <a class="calendar-link" data-calendar="ics" href="/show-and-tell/ai-ktera-mi-fakt-funguje.ics" download>Apple / ICS</a>
-      </div>
-      <p class="hero-note">Můžete se jen připojit a sledovat. Vystoupení není podmínkou registrace.</p>
+      <p class="hero-note">Můžete se jen připojit a sledovat. Vystoupení není podmínkou registrace. Po registraci vám přijde pozvánka do kalendáře s odkazem na online setkání.</p>
     </section>
 
     <section class="manifesto-band" aria-labelledby="why-title">
@@ -104,11 +98,10 @@
           <h2 id="program-title">Jak večer proběhne</h2>
         </div>
         <ol class="timeline">
-          <li><time>18:00</time><div><h3>Přivítání a pravidla</h3><p>Na začátku si řekneme pravidla a každý může odpovědět do chatu.</p></div></li>
-          <li><time>18:08</time><div><h3>První tři ukázky</h3><p>Každá má deset minut včetně krátké reakce.</p></div></li>
-          <li><time>18:38</time><div><h3>Další dvě až tři ukázky</h3><p>Pokud jich bude jen pět, zůstane víc času na diskusi.</p></div></li>
-          <li><time>19:08</time><div><h3>Společná diskuse</h3><p>Otázky, podobné use cases a co chceme vyzkoušet.</p></div></li>
-          <li><time>19:25</time><div><h3>Závěr</h3><p>Co vyzkoušíme a poděkování. V 19:30 končíme.</p></div></li>
+          <li><time>18:00–18:10</time><div><h3>Přivítání, detaily a pravidla</h3><p>Na začátku si řekneme, jak bude večer probíhat, a připomenu nahrávání.</p></div></li>
+          <li><time>18:10–19:10</time><div><h3>Pět až šest ukázek</h3><p>Každý má deset minut na konkrétní postup včetně krátké reakce.</p></div></li>
+          <li><time>19:10–19:25</time><div><h3>Společná diskuse a rezerva</h3><p>Otázky, podobné use cases a prostor, pokud se některá ukázka protáhne.</p></div></li>
+          <li><time>19:25–19:30</time><div><h3>Závěr</h3><p>Co vyzkoušíme a poděkování. V 19:30 končíme.</p></div></li>
         </ol>
       </div>
     </section>
@@ -125,7 +118,6 @@
         </ul>
         <div class="registration-actions">
           <a class="button button-light" data-registration-link href="https://docs.google.com/forms/d/e/1FAIpQLSd0-YWI6c5OeXGuCLkIzNm4aw4Y99r-BHitWH39czLA7KnE2A/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Vyplnit registraci</a>
-          <a class="meet-link" href="https://meet.google.com/cvt-kkjs-cyk" target="_blank" rel="noopener noreferrer">Otevřít Google Meet</a>
         </div>
       </div>
     </section>

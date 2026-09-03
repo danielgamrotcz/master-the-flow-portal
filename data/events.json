@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T14:40:00Z",
+  "generated_at": "2026-09-03T00:00:00Z",
   "events": [
     {
       "id": "evt-2026-09-22-ai-ktera-mi-fakt-funguje",
@@ -8,14 +8,13 @@
       "date": "2026-09-22",
       "time_from": "18:00",
       "time_to": "19:30",
-      "location": "Google Meet",
+      "location": "Online — odkaz přijde po registraci",
       "short": "Pět až šest desetiminutových ukázek postupů, které lidem z Master the Flow s AI fungují. Přijít můžete i jen jako divák.",
       "description": "Online Show & Tell pouze pro členy Master the Flow. Pět až šest lidí z komunity ukáže konkrétní postup, který jim dnes s AI funguje. Můžete se jen připojit a sledovat; nabídka vystoupení je nepovinná. Akce je zdarma a bude se nahrávat. Záznam je určený komunitě Master the Flow.",
       "program": [
-        { "time": "18:00–18:08", "label": "Přivítání a pravidla" },
-        { "time": "18:08–18:38", "label": "První tři desetiminutové ukázky" },
-        { "time": "18:38–19:08", "label": "Další dvě až tři desetiminutové ukázky" },
-        { "time": "19:08–19:25", "label": "Společná diskuse" },
+        { "time": "18:00–18:10", "label": "Přivítání, detaily a pravidla" },
+        { "time": "18:10–19:10", "label": "Pět až šest desetiminutových ukázek" },
+        { "time": "19:10–19:25", "label": "Společná diskuse a časová rezerva" },
         { "time": "19:25–19:30", "label": "Závěr" }
       ],
       "registration_url": "https://docs.google.com/forms/d/e/1FAIpQLSd0-YWI6c5OeXGuCLkIzNm4aw4Y99r-BHitWH39czLA7KnE2A/viewform?usp=publish-editor",
@@ -26,11 +25,7 @@
       "detail_url": "/show-and-tell/",
       "recording_url": null,
       "recording_password": null,
-      "status": null,
-      "links": [
-        "https://meet.google.com/cvt-kkjs-cyk",
-        "https://calendar.google.com/calendar/render?action=TEMPLATE&text=AI%2C+kter%C3%A1+mi+fakt+funguje+%E2%80%94+online+Show+%26+Tell&dates=20260922T160000Z%2F20260922T173000Z&details=Online+Show+%26+Tell+pouze+pro+%C4%8Dleny+Master+the+Flow.+P%C4%9Bt+a%C5%BE+%C5%A1est+lid%C3%AD+z+komunity+uk%C3%A1%C5%BEe+konkr%C3%A9tn%C3%AD+postup%2C+kter%C3%BD+jim+dnes+s+AI+funguje.+M%C5%AF%C5%BEete+se+jen+p%C5%99ipojit+a+sledovat%3B+nab%C3%ADdka+vystoupen%C3%AD+je+nepovinn%C3%A1.+Akce+je+zdarma+a+bude+se+nahr%C3%A1vat.+Z%C3%A1znam+je+ur%C4%8Den%C3%BD+komunit%C4%9B+Master+the+Flow.%0A%0AGoogle+Meet%3A+https%3A%2F%2Fmeet.google.com%2Fcvt-kkjs-cyk%0AStr%C3%A1nka+akce%3A+https%3A%2F%2Fmaster-the-flow-portal.pages.dev%2Fshow-and-tell%2F&location=Google+Meet"
-      ]
+      "status": null
     },
     {
       "id": "evt-2026-08-29-sraz",

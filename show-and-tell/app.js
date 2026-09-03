@@ -32,4 +32,28 @@
       stickyRegister.classList.add('is-visible');
     }
   }
+
+  function registeredCountLabel(count) {
+    if (count === 1) return 'účastník';
+    if (count >= 2 && count <= 4) return 'účastníci';
+    return 'účastníků';
+  }
+
+  async function loadRegisteredCount() {
+    const value = document.getElementById('registered-count');
+    const note = document.getElementById('registered-count-note');
+    if (!value || !note) return;
+    try {
+      const response = await fetch('/api/show-and-tell-registrations', { cache: 'no-store' });
+      if (!response.ok) return;
+      const payload = await response.json();
+      if (!Number.isSafeInteger(payload.registeredCount) || payload.registeredCount < 0) return;
+      value.textContent = String(payload.registeredCount);
+      note.textContent = registeredCountLabel(payload.registeredCount);
+    } catch {
+      // Pomlčka je záměrný fallback: při chybě netvrdíme, že je registrováno nula lidí.
+    }
+  }
+
+  loadRegisteredCount();
 })();

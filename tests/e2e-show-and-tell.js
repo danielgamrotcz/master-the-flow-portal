@@ -11,6 +11,11 @@ function check(name, condition, detail = '') {
 (async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  await page.route('**/api/show-and-tell-registrations', route => route.fulfill({
+    status: 200,
+    contentType: 'application/json',
+    body: JSON.stringify({ registeredCount: 7, updatedAt: '2026-09-03T10:00:00Z' }),
+  }));
   const consoleErrors = [];
   page.on('console', message => {
     if (message.type() === 'error') consoleErrors.push(message.text());
@@ -24,8 +29,6 @@ function check(name, condition, detail = '') {
 
   const eventData = JSON.parse(require('fs').readFileSync(require('path').join(__dirname, '..', 'data', 'events.json'), 'utf8'));
   const portalEvent = eventData.events.find(event => event.id === 'evt-2026-09-22-ai-ktera-mi-fakt-funguje');
-  const expectedTitle = 'AI, která mi fakt funguje — online Show & Tell';
-  const expectedCalendarDescription = 'Online Show & Tell pouze pro členy Master the Flow. Pět až šest lidí z komunity ukáže konkrétní postup, který jim dnes s AI funguje. Můžete se jen připojit a sledovat; nabídka vystoupení je nepovinná. Akce je zdarma a bude se nahrávat. Záznam je určený komunitě Master the Flow.\n\nGoogle Meet: https://meet.google.com/cvt-kkjs-cyk\nStránka akce: https://master-the-flow-portal.pages.dev/show-and-tell/';
   check('Portálová karta má správný termín a registrační cestu', portalEvent?.date === '2026-09-22'
     && portalEvent?.time_from === '18:00'
     && portalEvent?.time_to === '19:30'
@@ -37,7 +40,7 @@ function check(name, condition, detail = '') {
     date: /22\. září 2026/.test(mainText),
     time: /18:00–19:30/.test(mainText),
     duration: /90 minut/i.test(mainText),
-    place: /Google Meet/.test(mainText),
+    place: /online setkání/i.test(mainText),
     price: /Zdarma/i.test(mainText),
     audience: /pouze pro (?:členy )?Master the Flow/i.test(mainText),
   };
@@ -47,59 +50,33 @@ function check(name, condition, detail = '') {
   check('Veřejný text nepoužívá zakázané výrazy', !/\b(?:opravdu|skutečně|věc|věci)\b/i.test(mainText));
   check('Stránka uvádí 5–6 desetiminutových ukázek', /5–6/.test(mainText) && /deset minut/i.test(mainText));
   check('Stránka upozorňuje na nahrávání', /Setkání se nahrává/.test(mainText) && /záznam je určený pro komunitu/.test(mainText));
+  check('Hero ukáže anonymní počet přihlášených', await page.locator('#registered-count').innerText() === '7'
+    && await page.locator('#registered-count-note').innerText() === 'účastníků');
 
   const registrationLinks = page.locator('[data-registration-link]');
   check('Všechna tři registrační CTA vedou na tentýž publikovaný formulář', await registrationLinks.count() === 3
     && new Set(await registrationLinks.evaluateAll(links => links.map(link => link.href))).size === 1
     && (await registrationLinks.first().getAttribute('href') || '').startsWith('https://docs.google.com/forms/d/e/'));
 
-  const calendarHref = await page.locator('[data-calendar="google"]').getAttribute('href');
-  const calendarUrl = new URL(calendarHref);
-  check('Kalendářní CTA má správný interval v UTC', calendarUrl.hostname === 'calendar.google.com'
-    && calendarUrl.searchParams.get('action') === 'TEMPLATE'
-    && calendarUrl.searchParams.get('dates') === '20260922T160000Z/20260922T173000Z');
-  check('Google Calendar má sjednocený název, popis a místo', calendarUrl.searchParams.get('text') === expectedTitle
-    && calendarUrl.searchParams.get('details') === expectedCalendarDescription
-    && calendarUrl.searchParams.get('location') === 'Google Meet'
-    && portalEvent?.links?.includes(calendarHref));
-
-  const outlookUrl = new URL(await page.locator('[data-calendar="outlook"]').getAttribute('href'));
-  check('Outlook CTA má správný interval v UTC', outlookUrl.hostname === 'outlook.office.com'
-    && outlookUrl.pathname === '/calendar/deeplink/compose'
-    && outlookUrl.searchParams.get('rru') === 'addevent'
-    && outlookUrl.searchParams.get('startdt') === '2026-09-22T16:00:00Z'
-    && outlookUrl.searchParams.get('enddt') === '2026-09-22T17:30:00Z');
-  check('Outlook má sjednocený název, popis a místo', outlookUrl.searchParams.get('subject') === expectedTitle
-    && outlookUrl.searchParams.get('body') === expectedCalendarDescription
-    && outlookUrl.searchParams.get('location') === 'Google Meet');
-
-  const icsLink = page.locator('[data-calendar="ics"]');
-  const icsHref = await icsLink.getAttribute('href');
-  const icsResponse = await page.request.get(`${BASE}${icsHref}`);
-  const icsBody = await icsResponse.text();
-  const icsLines = icsBody.split('\r\n');
-  const unfoldedIcs = icsBody.replace(/\r\n[ \t]/g, '');
-  const usesOnlyCrLf = icsLines.length > 1 && !icsBody.replace(/\r\n/g, '').includes('\n');
-  const foldedToRfcLimit = icsLines.every(line => Buffer.byteLength(line, 'utf8') <= 75);
-  check('Apple / ICS CTA stahuje validní kalendářní soubor', await icsLink.getAttribute('download') !== null
-    && icsResponse.ok()
-    && /^text\/calendar/.test(icsResponse.headers()['content-type'] || '')
-    && /BEGIN:VCALENDAR/.test(icsBody)
-    && /DTSTART:20260922T160000Z/.test(icsBody)
-    && /DTEND:20260922T173000Z/.test(icsBody)
-    && unfoldedIcs.includes(`SUMMARY:${expectedTitle.replace(',', '\\,')}`)
-    && /Pět až šest lidí z komunity ukáže konkrétní postup/.test(unfoldedIcs)
-    && /https:\/\/meet\.google\.com\//.test(icsBody));
-  check('ICS používá CRLF a řádky splňují limit 75 oktetů', usesOnlyCrLf && foldedToRfcLimit,
-    `CRLF=${usesOnlyCrLf}, max=${Math.max(...icsLines.map(line => Buffer.byteLength(line, 'utf8')))}`);
-
-  const meetUrl = new URL(await page.locator('.meet-link').getAttribute('href'));
-  check('Meet CTA vede na Google Meet', meetUrl.hostname === 'meet.google.com' && /^\/[a-z]{3}-[a-z]{4}-[a-z]{3}$/.test(meetUrl.pathname));
+  const publicHrefs = await page.locator('a').evaluateAll(links => links.map(link => link.href));
+  check('Veřejná stránka nenabízí Meet ani přidání do kalendáře', !publicHrefs.some(href => /meet\.google\.com|calendar\.google\.com|outlook\.office\.com|\.ics(?:$|\?)/.test(href))
+    && await page.locator('[data-calendar], .meet-link, .calendar-actions').count() === 0,
+  publicHrefs.join(' | '));
+  check('Portálová eventová data nezpřístupňují Meet ani kalendář', !portalEvent?.links
+    && portalEvent?.location === 'Online — odkaz přijde po registraci');
+  const legacyIcsResponse = await page.request.get(`${BASE}/show-and-tell/ai-ktera-mi-fakt-funguje.ics`);
+  const legacyIcsBody = await legacyIcsResponse.text();
+  check('Dříve publikovaný ICS už neumožní obejít registraci', legacyIcsResponse.ok()
+    && !/meet\.google\.com/i.test(legacyIcsBody)
+    && /Registrace je povinná/.test(legacyIcsBody));
+  check('Stránka vysvětluje doručení pozvánky po registraci', /Po registraci vám přijde pozvánka do kalendáře/.test(mainText));
   const programText = await page.locator('.timeline').innerText();
-  check('Program má pět navazujících bloků bez pauzy', await page.locator('.timeline li').count() === 5
-    && /18:00/.test(await page.locator('.timeline li').first().innerText())
-    && /19:25/.test(await page.locator('.timeline li').last().innerText())
-    && /19:30/.test(await page.locator('.timeline li').last().innerText())
+  check('Program má čtyři navazující bloky bez pauzy', await page.locator('.timeline li').count() === 4
+    && /18:00–18:10/.test(programText)
+    && /18:10–19:10/.test(programText)
+    && /19:10–19:25/.test(programText)
+    && /19:25–19:30/.test(programText)
+    && /rezerva/i.test(programText)
     && !/pauza/i.test(programText));
 
   const themeBefore = await page.locator('html').getAttribute('data-theme');
