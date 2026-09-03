@@ -9,6 +9,7 @@ const SHOW_AND_TELL = {
   webhookUrl: 'https://master-the-flow-portal.pages.dev/api/show-and-tell-registrations',
   emailQuestionTitles: ['E-mail', 'E‑mail'],
   confirmationMessage: 'Díky, s vaší účastí počítám. Pozvánku do kalendáře s odkazem na online setkání pošlu na e-mail uvedený ve formuláři. Pokud jste nabídli ukázku, ozvu se vám po výběru 5–6 příspěvků. Když se váš plán změní, upravte odpověď přes odkaz po odeslání.',
+  activationProperty: 'SHOW_AND_TELL_ACTIVATED_AT',
 };
 
 function normalizeShowAndTellEmail_(value) {
@@ -106,23 +107,45 @@ function onShowAndTellFormSubmit(event) {
   }
 }
 
+function reconcileShowAndTellRegistrations() {
+  const activationRaw = PropertiesService.getScriptProperties()
+    .getProperty(SHOW_AND_TELL.activationProperty);
+  const activationMs = Number(activationRaw);
+  if (!Number.isSafeInteger(activationMs) || activationMs <= 0) {
+    throw new Error('Chybí platný čas aktivace Show & Tell automatizace.');
+  }
+  const responses = FormApp.openById(SHOW_AND_TELL.formId).getResponses();
+  responses
+    .filter(response => response.getTimestamp().getTime() >= activationMs)
+    .forEach(response => inviteShowAndTellGuest_(showAndTellEmailFromResponse_(response)));
+  return syncShowAndTellRegistrationCount();
+}
+
 function installShowAndTellRegistrationAutomation() {
   const form = FormApp.openById(SHOW_AND_TELL.formId);
+  const properties = PropertiesService.getScriptProperties();
+  if (!properties.getProperty(SHOW_AND_TELL.activationProperty)) {
+    properties.setProperty(SHOW_AND_TELL.activationProperty, String(Date.now()));
+  }
   form.setConfirmationMessage(SHOW_AND_TELL.confirmationMessage);
   protectShowAndTellGuestPrivacy_(showAndTellEvent_());
 
-  const managedHandlers = new Set(['onShowAndTellFormSubmit', 'syncShowAndTellRegistrationCount']);
+  const managedHandlers = new Set([
+    'onShowAndTellFormSubmit',
+    'syncShowAndTellRegistrationCount',
+    'reconcileShowAndTellRegistrations',
+  ]);
   ScriptApp.getProjectTriggers().forEach(trigger => {
     if (managedHandlers.has(trigger.getHandlerFunction())) ScriptApp.deleteTrigger(trigger);
   });
   ScriptApp.newTrigger('onShowAndTellFormSubmit').forForm(form).onFormSubmit().create();
-  ScriptApp.newTrigger('syncShowAndTellRegistrationCount').timeBased().everyHours(6).create();
-  return syncShowAndTellRegistrationCount();
+  ScriptApp.newTrigger('reconcileShowAndTellRegistrations').timeBased().everyHours(6).create();
+  return reconcileShowAndTellRegistrations();
 }
 
 function verifyShowAndTellRegistrationAutomation() {
   const event = showAndTellEvent_();
-  const managedHandlers = new Set(['onShowAndTellFormSubmit', 'syncShowAndTellRegistrationCount']);
+  const managedHandlers = new Set(['onShowAndTellFormSubmit', 'reconcileShowAndTellRegistrations']);
   const managedTriggers = ScriptApp.getProjectTriggers()
     .filter(trigger => managedHandlers.has(trigger.getHandlerFunction()));
   return {

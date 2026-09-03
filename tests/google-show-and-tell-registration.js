@@ -16,6 +16,7 @@ function responseFor(email) {
       getItem: () => ({ getTitle: () => 'E-mail' }),
       getResponse: () => email,
     }],
+    getTimestamp: () => new Date(email.startsWith('old') ? 1000 : 3000),
   };
 }
 const event = {
@@ -33,10 +34,17 @@ const form = {
   getId: () => '1UZC9CuzpTSxeLC-wi8q4tklMm3nINzXzDVEn3ViE5yA',
   getResponses: () => [responseFor('first@example.test'), responseFor('second@example.test'), responseFor('FIRST@example.test')],
 };
+const scriptProperties = new Map([
+  ['SHOW_AND_TELL_SYNC_SECRET', 'test-only-secret'],
+  ['SHOW_AND_TELL_ACTIVATED_AT', '2000'],
+]);
 const context = vm.createContext({
   CalendarApp: { getDefaultCalendar: () => ({ getEvents: () => [event] }) },
   FormApp: { openById: () => form },
-  PropertiesService: { getScriptProperties: () => ({ getProperty: () => 'test-only-secret' }) },
+  PropertiesService: { getScriptProperties: () => ({
+    getProperty: name => scriptProperties.get(name) || null,
+    setProperty: (name, value) => scriptProperties.set(name, value),
+  }) },
   UrlFetchApp: { fetch: (url, options) => {
     calls.push(['fetch', url, options]);
     return { getResponseCode: () => 200 };
@@ -73,8 +81,15 @@ vm.runInContext('onShowAndTellFormSubmit(__event)', context);
 check('Opakovaný trigger neposílá druhou pozvánku', calls.filter(call => call[0] === 'addGuest').length === 0);
 check('Opakovaný trigger počet znovu sladí', calls.filter(call => call[0] === 'fetch').length === 1);
 
-check('Historické odpovědi se používají jen pro agregát, ne pro backfill hostů',
-  !/getResponses\(\)[\s\S]{0,500}inviteShowAndTellGuest_/.test(source));
+calls.length = 0;
+form.getResponses = () => [responseFor('old@example.test'), responseFor('retry@example.test')];
+vm.runInContext('reconcileShowAndTellRegistrations()', context);
+check('Reconciliation nepozve odpověď starší než aktivace',
+  !calls.some(call => call[0] === 'addGuest' && call[1] === 'old@example.test'));
+check('Reconciliation dorovná pozvánku nové odpovědi',
+  calls.some(call => call[0] === 'addGuest' && call[1] === 'retry@example.test'));
+check('Reconciliation po retry znovu sladí anonymní počet',
+  calls.filter(call => call[0] === 'fetch').length === 1);
 
 console.log(failures === 0 ? '\nSHOW & TELL GOOGLE AUTOMATIZACE: VŠE PROŠLO' : `\n${failures} TESTŮ AUTOMATIZACE SELHALO`);
 process.exit(failures === 0 ? 0 : 1);
