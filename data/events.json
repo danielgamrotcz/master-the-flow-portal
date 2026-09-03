@@ -9,8 +9,8 @@
       "time_from": "18:00",
       "time_to": "19:30",
       "location": "Google Meet",
-      "short": "Pět až šest desetiminutových ukázek toho, co lidem z Master the Flow s AI opravdu funguje. Přijít můžete i jen jako divák.",
-      "description": "Online Show & Tell pouze pro členy Master the Flow. Pět až šest lidí ukáže jednu konkrétní věc, kterou s AI opravdu používá — od malé vychytávky po vlastní systém. Vystoupení je nepovinné, akce je zdarma a setkání se nahrává pro komunitu.",
+      "short": "Pět až šest desetiminutových ukázek postupů, které lidem z Master the Flow s AI fungují. Přijít můžete i jen jako divák.",
+      "description": "Online Show & Tell pouze pro členy Master the Flow. Pět až šest lidí z komunity ukáže konkrétní postup, který jim dnes s AI funguje. Můžete se jen připojit a sledovat; nabídka vystoupení je nepovinná. Akce je zdarma a bude se nahrávat. Záznam je určený komunitě Master the Flow.",
       "program": [
         { "time": "18:00–18:08", "label": "Přivítání a pravidla" },
         { "time": "18:08–18:38", "label": "První tři desetiminutové ukázky" },
@@ -29,7 +29,7 @@
       "status": null,
       "links": [
         "https://meet.google.com/cvt-kkjs-cyk",
-        "https://calendar.google.com/calendar/render?action=TEMPLATE&text=AI%2C+kter%C3%A1+mi+fakt+funguje+%E2%80%94+online+Show+%26+Tell&dates=20260922T160000Z%2F20260922T173000Z&details=Online+Show+%26+Tell+pouze+pro+%C4%8Dleny+Master+the+Flow.+Vystoupen%C3%AD+je+nepovinn%C3%A9%3B+m%C5%AF%C5%BEete+se+jen+p%C5%99ipojit+a+sledovat.+Setk%C3%A1n%C3%AD+se+nahr%C3%A1v%C3%A1+a+z%C3%A1znam+je+ur%C4%8Den%C3%BD+komunit%C4%9B.%0A%0AGoogle+Meet%3A+https%3A%2F%2Fmeet.google.com%2Fcvt-kkjs-cyk&location=Google+Meet"
+        "https://calendar.google.com/calendar/render?action=TEMPLATE&text=AI%2C+kter%C3%A1+mi+fakt+funguje+%E2%80%94+online+Show+%26+Tell&dates=20260922T160000Z%2F20260922T173000Z&details=Online+Show+%26+Tell+pouze+pro+%C4%8Dleny+Master+the+Flow.+P%C4%9Bt+a%C5%BE+%C5%A1est+lid%C3%AD+z+komunity+uk%C3%A1%C5%BEe+konkr%C3%A9tn%C3%AD+postup%2C+kter%C3%BD+jim+dnes+s+AI+funguje.+M%C5%AF%C5%BEete+se+jen+p%C5%99ipojit+a+sledovat%3B+nab%C3%ADdka+vystoupen%C3%AD+je+nepovinn%C3%A1.+Akce+je+zdarma+a+bude+se+nahr%C3%A1vat.+Z%C3%A1znam+je+ur%C4%8Den%C3%BD+komunit%C4%9B+Master+the+Flow.%0A%0AGoogle+Meet%3A+https%3A%2F%2Fmeet.google.com%2Fcvt-kkjs-cyk%0AStr%C3%A1nka+akce%3A+https%3A%2F%2Fmaster-the-flow-portal.pages.dev%2Fshow-and-tell%2F&location=Google+Meet"
       ]
     },
     {
