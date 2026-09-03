@@ -24,6 +24,8 @@ function check(name, condition, detail = '') {
 
   const eventData = JSON.parse(require('fs').readFileSync(require('path').join(__dirname, '..', 'data', 'events.json'), 'utf8'));
   const portalEvent = eventData.events.find(event => event.id === 'evt-2026-09-22-ai-ktera-mi-fakt-funguje');
+  const expectedTitle = 'AI, která mi fakt funguje — online Show & Tell';
+  const expectedCalendarDescription = 'Online Show & Tell pouze pro členy Master the Flow. Pět až šest lidí z komunity ukáže konkrétní postup, který jim dnes s AI funguje. Můžete se jen připojit a sledovat; nabídka vystoupení je nepovinná. Akce je zdarma a bude se nahrávat. Záznam je určený komunitě Master the Flow.\n\nGoogle Meet: https://meet.google.com/cvt-kkjs-cyk\nStránka akce: https://master-the-flow-portal.pages.dev/show-and-tell/';
   check('Portálová karta má správný termín a registrační cestu', portalEvent?.date === '2026-09-22'
     && portalEvent?.time_from === '18:00'
     && portalEvent?.time_to === '19:30'
@@ -42,6 +44,7 @@ function check(name, condition, detail = '') {
   check('Závazné údaje jsou konzistentní', Object.values(facts).every(Boolean), JSON.stringify(facts));
   check('Vystoupení je výslovně nepovinné', /Můžete se jen připojit a sledovat/.test(mainText)
     && /Vystoupení není podmínkou registrace/.test(mainText));
+  check('Veřejný text nepoužívá zakázané výrazy', !/\b(?:opravdu|skutečně|věc|věci)\b/i.test(mainText));
   check('Stránka uvádí 5–6 desetiminutových ukázek', /5–6/.test(mainText) && /deset minut/i.test(mainText));
   check('Stránka upozorňuje na nahrávání', /Setkání se nahrává/.test(mainText) && /záznam je určený pro komunitu/.test(mainText));
 
@@ -55,6 +58,10 @@ function check(name, condition, detail = '') {
   check('Kalendářní CTA má správný interval v UTC', calendarUrl.hostname === 'calendar.google.com'
     && calendarUrl.searchParams.get('action') === 'TEMPLATE'
     && calendarUrl.searchParams.get('dates') === '20260922T160000Z/20260922T173000Z');
+  check('Google Calendar má sjednocený název, popis a místo', calendarUrl.searchParams.get('text') === expectedTitle
+    && calendarUrl.searchParams.get('details') === expectedCalendarDescription
+    && calendarUrl.searchParams.get('location') === 'Google Meet'
+    && portalEvent?.links?.includes(calendarHref));
 
   const outlookUrl = new URL(await page.locator('[data-calendar="outlook"]').getAttribute('href'));
   check('Outlook CTA má správný interval v UTC', outlookUrl.hostname === 'outlook.office.com'
@@ -62,12 +69,16 @@ function check(name, condition, detail = '') {
     && outlookUrl.searchParams.get('rru') === 'addevent'
     && outlookUrl.searchParams.get('startdt') === '2026-09-22T16:00:00Z'
     && outlookUrl.searchParams.get('enddt') === '2026-09-22T17:30:00Z');
+  check('Outlook má sjednocený název, popis a místo', outlookUrl.searchParams.get('subject') === expectedTitle
+    && outlookUrl.searchParams.get('body') === expectedCalendarDescription
+    && outlookUrl.searchParams.get('location') === 'Google Meet');
 
   const icsLink = page.locator('[data-calendar="ics"]');
   const icsHref = await icsLink.getAttribute('href');
   const icsResponse = await page.request.get(`${BASE}${icsHref}`);
   const icsBody = await icsResponse.text();
   const icsLines = icsBody.split('\r\n');
+  const unfoldedIcs = icsBody.replace(/\r\n[ \t]/g, '');
   const usesOnlyCrLf = icsLines.length > 1 && !icsBody.replace(/\r\n/g, '').includes('\n');
   const foldedToRfcLimit = icsLines.every(line => Buffer.byteLength(line, 'utf8') <= 75);
   check('Apple / ICS CTA stahuje validní kalendářní soubor', await icsLink.getAttribute('download') !== null
@@ -76,6 +87,8 @@ function check(name, condition, detail = '') {
     && /BEGIN:VCALENDAR/.test(icsBody)
     && /DTSTART:20260922T160000Z/.test(icsBody)
     && /DTEND:20260922T173000Z/.test(icsBody)
+    && unfoldedIcs.includes(`SUMMARY:${expectedTitle.replace(',', '\\,')}`)
+    && /Pět až šest lidí z komunity ukáže konkrétní postup/.test(unfoldedIcs)
     && /https:\/\/meet\.google\.com\//.test(icsBody));
   check('ICS používá CRLF a řádky splňují limit 75 oktetů', usesOnlyCrLf && foldedToRfcLimit,
     `CRLF=${usesOnlyCrLf}, max=${Math.max(...icsLines.map(line => Buffer.byteLength(line, 'utf8')))}`);

@@ -2,11 +2,11 @@
 # E2E sada portálu — spouštět proti lokálnímu wrangler dev.
 # Před spuštěním: npx wrangler pages dev . --port 8788
 # Jiný port nebo adresu si sada vezme z MTF_BASE, testy čtou tutéž proměnnou.
-# Playwright se bere z voice-browser projektu (portál nemá node_modules,
+# Playwright se bere z archivovaného voice-browser projektu (portál nemá node_modules,
 # package.json by se deployoval a middleware ho blokuje).
 set -e
 cd "$(dirname "$0")"
-export NODE_PATH="${NODE_PATH:-$HOME/Projects/voice-browser/node_modules}"
+export NODE_PATH="${NODE_PATH:-$HOME/Projects/archive/voice-browser/node_modules}"
 export MTF_BASE="${MTF_BASE:-http://localhost:8788}"
 
 if ! curl -s -o /dev/null "$MTF_BASE/"; then

@@ -33,9 +33,10 @@
   ```
 
   Testy čtou lokální `GATE_CODE` přes existující helper a Playwright berou z
-  `~/Projects/voice-browser/node_modules`. Obsah `.dev.vars` nikdy nevypisuj,
-  nekopíruj do konverzace ani necommituj. Pokud Wrangler potřebuje download nebo
-  prostředí chybí, řekni to místo změny dependency modelu projektu.
+  `~/Projects/archive/voice-browser/node_modules`. Obsah `.dev.vars` nikdy
+  nevypisuj, nekopíruj do konverzace ani necommituj. Pokud Wrangler potřebuje
+  download nebo prostředí chybí, řekni to místo změny dependency modelu
+  projektu.
 
 ## Data a bezpečnost
 
