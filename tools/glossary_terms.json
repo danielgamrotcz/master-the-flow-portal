@@ -1832,6 +1832,22 @@
       "why": "Narazíte na něj ve Windows a v pracovních aplikacích, jako jsou Outlook, Word nebo Teams.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "google-antigravity",
+      "term": "Google Antigravity",
+      "cat": "cc",
+      "match": [
+        "Google Antigravity",
+        "Antigravity",
+        "Anti Gravity",
+        "Antigravity 2.0"
+      ],
+      "short": "Vývojové prostředí Googlu pro práci na kódu s AI agenty.",
+      "plain": "Google Antigravity je vývojové prostředí pro práci na kódu s AI agenty. Verze 2.0 podporuje připojení k MCP serverům. Dostupnost a limity se liší podle Google účtu a předplatného.",
+      "why": "Narazíte na něj při porovnávání nástrojů pro vibe coding nebo při výběru osobního či firemního předplatného Googlu.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
