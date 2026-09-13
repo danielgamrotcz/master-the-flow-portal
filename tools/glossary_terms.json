@@ -1848,6 +1848,26 @@
       "why": "Narazíte na něj při porovnávání nástrojů pro vibe coding nebo při výběru osobního či firemního předplatného Googlu.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "reseller",
+      "term": "Reseller",
+      "cat": "nastroje",
+      "match": [
+        "reseller",
+        "resellera",
+        "resellerovi",
+        "resellerem",
+        "reselleři",
+        "resellerů",
+        "resellerům",
+        "resellery"
+      ],
+      "short": "Reseller přeprodává služby jiné firmy a může k nim nabídnout podporu nebo konzultace.",
+      "plain": "Reseller je prostředník, přes kterého si koupíte službu jiné firmy. Český reseller vám může nabídnout podporu a konzultace. Limity a podmínky služby však obvykle určuje původní poskytovatel.",
+      "why": "Narazíte na něj třeba při nákupu firemních účtů a předplatných AI služeb.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }

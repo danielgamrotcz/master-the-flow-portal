@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-12",
+  "generated_at": "2026-09-13",
   "source": {
-    "daily_notes": 12,
+    "daily_notes": 13,
     "range": [
       "2026-08-30",
-      "2026-09-11"
+      "2026-09-12"
     ]
   },
   "categories": [
@@ -70,10 +70,10 @@
       "source": "hand",
       "starter": null,
       "search": "agent model, ktery nejen odpovida, ale sam dela kroky, dokud neni hotovo. bezny chat odpovi a ceka. agent misto toho pracuje ve smycce, precte soubor, spusti prikaz, podiva se na vysledek, opravi se a pokracuje. sam se rozhoduje, jaky krok udela dalsi. tohle je rozdil mezi „poradi mi“ a „udela to za me“. agent agenta agentem agenti agentu agenticke agenticky agentic",
-      "mentions": 14,
-      "days": 4,
+      "mentions": 16,
+      "days": 5,
       "first_seen": "2026-08-31",
-      "last_seen": "2026-09-10",
+      "last_seen": "2026-09-12",
       "card_hits": 43
     },
     {
@@ -147,7 +147,7 @@
       "days": 3,
       "first_seen": "2026-09-01",
       "last_seen": "2026-09-11",
-      "card_hits": 32
+      "card_hits": 34
     },
     {
       "slug": "api-klic",
@@ -202,7 +202,7 @@
       "days": 3,
       "first_seen": "2026-09-01",
       "last_seen": "2026-09-11",
-      "card_hits": 23
+      "card_hits": 24
     },
     {
       "slug": "brain-dump",
@@ -426,10 +426,10 @@
       "source": "hand",
       "starter": null,
       "search": "codex kodovaci nastroj od openai, konkurence claude code. nastroj, ktery podobne jako claude code umi pracovat s kodem v projektu. ve skupine se pravidelne srovnavaji, vysledek se lisi podle typu ukolu.  codex codexu codex",
-      "mentions": 13,
-      "days": 2,
+      "mentions": 16,
+      "days": 3,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-12",
       "card_hits": 26
     },
     {
@@ -864,11 +864,11 @@
       "source": "auto",
       "starter": null,
       "search": "google antigravity vyvojove prostredi googlu pro praci na kodu s ai agenty. google antigravity je vyvojove prostredi pro praci na kodu s ai agenty. verze 2.0 podporuje pripojeni k mcp serverum. dostupnost a limity se lisi podle google uctu a predplatneho. narazite na nej pri porovnavani nastroju pro vibe coding nebo pri vyberu osobniho ci firemniho predplatneho googlu. google antigravity antigravity anti gravity antigravity 2.0",
-      "mentions": 7,
-      "days": 1,
+      "mentions": 12,
+      "days": 2,
       "first_seen": "2026-09-11",
-      "last_seen": "2026-09-11",
-      "card_hits": 4
+      "last_seen": "2026-09-12",
+      "card_hits": 5
     },
     {
       "slug": "google-workspace",
@@ -886,11 +886,11 @@
       "source": "auto",
       "starter": null,
       "search": "google workspace sada cloudovych nastroju od googlu zahrnujici gmail, kalendar, drive a dokumenty. google workspace je balicek cloudovych sluzeb od googlu. zahrnuje gmail, kalendar, drive, dokumenty, tabulky a prezentace, vsechny pod jednim uctem. jde o primou konkurenci microsoft 365. narazite na to pri propojovani ai nastroju s firemnimi sluzbami googlu. google workspace workspace g suite",
-      "mentions": 4,
-      "days": 2,
+      "mentions": 5,
+      "days": 3,
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-11",
-      "card_hits": 17
+      "last_seen": "2026-09-12",
+      "card_hits": 18
     },
     {
       "slug": "governance",
@@ -1113,11 +1113,11 @@
       "source": "hand",
       "starter": 4,
       "search": "kontext vsechno, co model v danou chvili vi o vasem zadani. kontext je souhrn toho, co ma model po ruce. vase zpravy, jeho odpovedi, obsah souboru, ktere si precetl, a instrukce, ktere dostal. kdyz mu nahazite vsechno, co vas napadne, utopi se v tom. min informaci, ale trefnejsich, funguje lip. odtud ta rada psat strucne. kdyz do zadani nahazite pet nesouvisejicich veci, vysledek bude horsi, nez kdybyste rekli jednu. kontext kontextu kontextem",
-      "mentions": 33,
-      "days": 8,
+      "mentions": 34,
+      "days": 9,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-11",
-      "card_hits": 49
+      "last_seen": "2026-09-12",
+      "card_hits": 50
     },
     {
       "slug": "kontextove-okno",
@@ -1168,11 +1168,11 @@
       "source": "hand",
       "starter": null,
       "search": "limity a rate limit strop, kolik toho smite za dane obdobi pouzit. kazdy tarif ma hranici, kolik prace do nej za hodinu nebo tyden vejde. kdyz ji vycerpate, musite chvili pockat, nez se limit obnovi. silnejsi modely limit spotrebovavaji rychleji nez slabsi. odtud rady pracovat mimo spicku nebo prepnout na slabsi model na rutinu. rate limit limit limity limitu limitu limitem",
-      "mentions": 15,
-      "days": 3,
+      "mentions": 21,
+      "days": 4,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-11",
-      "card_hits": 34
+      "last_seen": "2026-09-12",
+      "card_hits": 35
     },
     {
       "slug": "llm",
@@ -1298,7 +1298,7 @@
       "days": 2,
       "first_seen": "2026-09-10",
       "last_seen": "2026-09-11",
-      "card_hits": 25
+      "card_hits": 27
     },
     {
       "slug": "microsoft-copilot",
@@ -1323,7 +1323,7 @@
       "days": 3,
       "first_seen": "2026-08-31",
       "last_seen": "2026-09-11",
-      "card_hits": 3
+      "card_hits": 4
     },
     {
       "slug": "model",
@@ -1351,7 +1351,7 @@
       "days": 5,
       "first_seen": "2026-08-30",
       "last_seen": "2026-09-11",
-      "card_hits": 88
+      "card_hits": 89
     },
     {
       "slug": "model-agnosticky",
@@ -1531,7 +1531,7 @@
       "days": 1,
       "first_seen": "2026-09-11",
       "last_seen": "2026-09-11",
-      "card_hits": 43
+      "card_hits": 44
     },
     {
       "slug": "offline",
@@ -1602,10 +1602,10 @@
       "source": "auto",
       "starter": null,
       "search": "openrouter rozcestnik k modelum od ruznych firem pres jedno napojeni. napojite se jednou a prepinate mezi modely od ruznych poskytovatelu podle toho, co zrovna potrebujete nebo co je levnejsi. odpada zakladani uctu u kazde firmy zvlast. cast modelu byva dostupna i zdarma. padlo jako tip, kdyz se ve skupine resilo testovani alternativ ke claude a gpt. s upozornenim, ze levnejsim modelum cestina vetsinou nejde. openrouter openrouter open router openrouteru",
-      "mentions": 1,
-      "days": 1,
+      "mentions": 2,
+      "days": 2,
       "first_seen": "2026-09-11",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-12",
       "card_hits": 3
     },
     {
@@ -1722,7 +1722,7 @@
       "days": 2,
       "first_seen": "2026-08-30",
       "last_seen": "2026-09-11",
-      "card_hits": 25
+      "card_hits": 29
     },
     {
       "slug": "env",
@@ -1777,7 +1777,7 @@
       "days": 2,
       "first_seen": "2026-08-30",
       "last_seen": "2026-09-11",
-      "card_hits": 30
+      "card_hits": 31
     },
     {
       "slug": "prototyp",
@@ -1950,6 +1950,33 @@
       "card_hits": 12
     },
     {
+      "slug": "reseller",
+      "term": "Reseller",
+      "category": "nastroje",
+      "short": "Reseller přeprodává služby jiné firmy a může k nim nabídnout podporu nebo konzultace.",
+      "plain": "Reseller je prostředník, přes kterého si koupíte službu jiné firmy. Český reseller vám může nabídnout podporu a konzultace. Limity a podmínky služby však obvykle určuje původní poskytovatel.",
+      "why": "Narazíte na něj třeba při nákupu firemních účtů a předplatných AI služeb.",
+      "related": [],
+      "aliases": [
+        "reseller",
+        "resellera",
+        "resellerovi",
+        "resellerem",
+        "reselleři",
+        "resellerů",
+        "resellerům",
+        "resellery"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "reseller reseller preprodava sluzby jine firmy a muze k nim nabidnout podporu nebo konzultace. reseller je prostrednik, pres ktereho si koupite sluzbu jine firmy. cesky reseller vam muze nabidnout podporu a konzultace. limity a podminky sluzby vsak obvykle urcuje puvodni poskytovatel. narazite na nej treba pri nakupu firemnich uctu a predplatnych ai sluzeb. reseller resellera resellerovi resellerem reselleri reselleru resellerum resellery",
+      "mentions": 5,
+      "days": 1,
+      "first_seen": "2026-09-12",
+      "last_seen": "2026-09-12",
+      "card_hits": 0
+    },
+    {
       "slug": "sandbox",
       "term": "Sandbox",
       "category": "pc",
@@ -2050,11 +2077,11 @@
       "source": "hand",
       "starter": null,
       "search": "server pocitac, ktery bezi nepretrzite a obsluhuje ostatni. server je stroj, jehoz jedina prace je cekat na dotazy a odpovidat na ne. muze to byt obri stroj v datovem centru i obycejny pocitac doma, ktery nikdy nevypinate.  server serveru servery serveru serveri",
-      "mentions": 3,
-      "days": 2,
+      "mentions": 4,
+      "days": 3,
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-11",
-      "card_hits": 14
+      "last_seen": "2026-09-12",
+      "card_hits": 15
     },
     {
       "slug": "session",
@@ -2077,10 +2104,10 @@
       "source": "hand",
       "starter": null,
       "search": "session jedno souvisle sezeni, ve kterem si ai pamatuje, o cem jste mluvili. session drzi spolecnou pamet konverzace. kdyz ji ukoncite a zacnete znovu, zacinate s cistym stolem a nic z minula se neprenasi, pokud to neni zapsane v souborech nebo v pameti. dlouha session zaplni kontextove okno. kratka a soustredena dava lepsi vysledky. session sessions sezeni vlakno vlakna",
-      "mentions": 8,
-      "days": 4,
+      "mentions": 9,
+      "days": 5,
       "first_seen": "2026-09-04",
-      "last_seen": "2026-09-09",
+      "last_seen": "2026-09-12",
       "card_hits": 35
     },
     {
@@ -2109,7 +2136,7 @@
       "days": 1,
       "first_seen": "2026-09-11",
       "last_seen": "2026-09-11",
-      "card_hits": 47
+      "card_hits": 48
     },
     {
       "slug": "skript",
@@ -2158,7 +2185,7 @@
       "days": 1,
       "first_seen": "2026-09-11",
       "last_seen": "2026-09-11",
-      "card_hits": 20
+      "card_hits": 21
     },
     {
       "slug": "ssh",
@@ -2383,7 +2410,7 @@
       "days": 1,
       "first_seen": "2026-09-11",
       "last_seen": "2026-09-11",
-      "card_hits": 42
+      "card_hits": 43
     },
     {
       "slug": "vibe-coding",
@@ -2410,7 +2437,7 @@
       "days": 9,
       "first_seen": "2026-08-30",
       "last_seen": "2026-09-10",
-      "card_hits": 48
+      "card_hits": 49
     },
     {
       "slug": "vm",
@@ -2508,7 +2535,7 @@
       "days": 3,
       "first_seen": "2026-08-30",
       "last_seen": "2026-09-11",
-      "card_hits": 51
+      "card_hits": 52
     },
     {
       "slug": "yolo",
