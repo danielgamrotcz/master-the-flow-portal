@@ -1751,6 +1751,21 @@
         "Workflow",
         "Google"
       ]
+    },
+    {
+      "date": "2026-09-13",
+      "card_count": 3,
+      "topics": [
+        "Hooky",
+        "Automatizace",
+        "Email",
+        "Cursor",
+        "Notion",
+        "Claude Code",
+        "MCP",
+        "AI nástroje",
+        "Subagenti"
+      ]
     }
   ]
 }
