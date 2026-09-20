@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-13",
+  "generated_at": "2026-09-20",
   "source": {
-    "daily_notes": 13,
+    "daily_notes": 17,
     "range": [
       "2026-08-30",
-      "2026-09-12"
+      "2026-09-19"
     ]
   },
   "categories": [
@@ -70,11 +70,33 @@
       "source": "hand",
       "starter": null,
       "search": "agent model, ktery nejen odpovida, ale sam dela kroky, dokud neni hotovo. bezny chat odpovi a ceka. agent misto toho pracuje ve smycce, precte soubor, spusti prikaz, podiva se na vysledek, opravi se a pokracuje. sam se rozhoduje, jaky krok udela dalsi. tohle je rozdil mezi „poradi mi“ a „udela to za me“. agent agenta agentem agenti agentu agenticke agenticky agentic",
-      "mentions": 16,
-      "days": 5,
+      "mentions": 28,
+      "days": 8,
       "first_seen": "2026-08-31",
-      "last_seen": "2026-09-12",
-      "card_hits": 43
+      "last_seen": "2026-09-19",
+      "card_hits": 45
+    },
+    {
+      "slug": "agents-md",
+      "term": "AGENTS.md",
+      "category": "cc",
+      "short": "Soubor s pokyny pro AI nástroje, které pracují s kódem v daném projektu.",
+      "plain": "AGENTS.md je textový soubor s pravidly a informacemi pro AI nástroje pracující na projektu. Stejný soubor mohou používat různé nástroje, například Codex a Claude Code. Claude Code ho načte, když ve složce chybí CLAUDE.md.",
+      "why": "Narazíte na něj ve složkách projektů připravených pro práci s AI nástroji.",
+      "related": [],
+      "aliases": [
+        "AGENTS.md",
+        "Agents.md",
+        "agents.md"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "agents.md soubor s pokyny pro ai nastroje, ktere pracuji s kodem v danem projektu. agents.md je textovy soubor s pravidly a informacemi pro ai nastroje pracujici na projektu. stejny soubor mohou pouzivat ruzne nastroje, napriklad codex a claude code. claude code ho nacte, kdyz ve slozce chybi claude.md. narazite na nej ve slozkach projektu pripravenych pro praci s ai nastroji. agents.md agents.md agents.md",
+      "mentions": 5,
+      "days": 1,
+      "first_seen": "2026-09-19",
+      "last_seen": "2026-09-19",
+      "card_hits": 2
     },
     {
       "slug": "ai-act",
@@ -198,10 +220,10 @@
       "source": "hand",
       "starter": null,
       "search": "automatizace postup, ktery po nastaveni bezi bez vas. nastavite jednou a pak uz to jede samo, bud v urceny cas, nebo kdyz nastane nejaka udalost. typicky neco, co byste jinak delali porad dokola. ve skupine to byva stahovani prepisu z nahravek, ranni souhrn do poznamek nebo hlidani, jestli neco nespadlo. vetsina projektu, ktere tady lidi ukazuji, zacala jako otrava, kterou je nebavilo delat rucne. automatizace automatizaci automatizovat automatizovane",
-      "mentions": 6,
-      "days": 3,
+      "mentions": 8,
+      "days": 4,
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-14",
       "card_hits": 24
     },
     {
@@ -325,11 +347,11 @@
       "source": "hand",
       "starter": 5,
       "search": "claude code claude, ktery bezi v terminalu a sam pracuje se soubory ve vasem projektu. neni to chat v prohlizeci. claude code bezi u vas na pocitaci, vidi slozku s projektem, umi soubory cist i menit, spoustet prikazy a overovat si vysledek. spousti se v terminalu napsanim claude. ve skupine se casto zkracuje na cc. vetsina projektu, ktere tady lidi ukazuji, vznikla presne timhle. claude code claude codu claudecode cc",
-      "mentions": 10,
-      "days": 4,
+      "mentions": 14,
+      "days": 6,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-11",
-      "card_hits": 117
+      "last_seen": "2026-09-19",
+      "card_hits": 118
     },
     {
       "slug": "claude-md",
@@ -350,10 +372,10 @@
       "source": "hand",
       "starter": null,
       "search": "claude.md soubor s instrukcemi, ktere si claude code precte pri kazdem spusteni. textovy soubor ulozeny v projektu, do ktereho si napisete, jak se v nem ma pracovat. je to trvala poznamka ve stylu tady to delame takhle. stejne veci se pak nemusi opakovat v kazde konverzaci. casto se pripomina, ze ma byt kratky. dlouhy soubor spolyka kontext a instrukce se v nem ztrati. claude.md claude.md",
-      "mentions": 0,
-      "days": 0,
-      "first_seen": null,
-      "last_seen": null,
+      "mentions": 5,
+      "days": 1,
+      "first_seen": "2026-09-19",
+      "last_seen": "2026-09-19",
       "card_hits": 14
     },
     {
@@ -426,11 +448,11 @@
       "source": "hand",
       "starter": null,
       "search": "codex kodovaci nastroj od openai, konkurence claude code. nastroj, ktery podobne jako claude code umi pracovat s kodem v projektu. ve skupine se pravidelne srovnavaji, vysledek se lisi podle typu ukolu.  codex codexu codex",
-      "mentions": 16,
-      "days": 3,
+      "mentions": 18,
+      "days": 5,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-12",
-      "card_hits": 26
+      "last_seen": "2026-09-19",
+      "card_hits": 27
     },
     {
       "slug": "commit",
@@ -559,11 +581,11 @@
       "source": "hand",
       "starter": null,
       "search": "cursor editor kodu s vestavenou ai. vypada jako klasicky editor, ale umi psat a upravovat kod na pozadani primo v souboru. alternativa ke claude code pro ty, kdo chteji videt kod pred sebou v okne.  cursor cursoru cursor",
-      "mentions": 0,
-      "days": 0,
-      "first_seen": null,
-      "last_seen": null,
-      "card_hits": 18
+      "mentions": 7,
+      "days": 1,
+      "first_seen": "2026-09-13",
+      "last_seen": "2026-09-13",
+      "card_hits": 19
     },
     {
       "slug": "deploy",
@@ -841,10 +863,10 @@
       "source": "hand",
       "starter": null,
       "search": "github web, kam se git projekty ukladaji online, aby sly sdilet a zalohovat. github je sluzba, kde vas projekt bydli na internetu. diky tomu se k nemu dostanete z vic pocitacu, mate ho zalohovany a muzete ho ukazat ostatnim. git a github jsou dve ruzne veci. git je ten system, github je jedno z mist, kde muze projekt bydlet. kdyz nekdo ve skupine sdili projekt, obvykle sdili odkaz na github. github githubu github.com githubu",
-      "mentions": 2,
-      "days": 2,
+      "mentions": 3,
+      "days": 3,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-10",
+      "last_seen": "2026-09-13",
       "card_hits": 24
     },
     {
@@ -868,7 +890,7 @@
       "days": 2,
       "first_seen": "2026-09-11",
       "last_seen": "2026-09-12",
-      "card_hits": 5
+      "card_hits": 7
     },
     {
       "slug": "google-workspace",
@@ -890,7 +912,7 @@
       "days": 3,
       "first_seen": "2026-09-01",
       "last_seen": "2026-09-12",
-      "card_hits": 18
+      "card_hits": 19
     },
     {
       "slug": "governance",
@@ -1036,11 +1058,11 @@
       "source": "hand",
       "starter": null,
       "search": "hook automaticka pojistka, ktera se spusti sama, bez vyzadani. hook je pravidlo navazane na udalost. kdyz nastane, akce probehne sama, i kdyz jste na ni davno zapomneli. typicky se pouziva jako kontrola, napriklad zablokovat ulozeni, kdyz v kodu zustal pristupovy klic. rozdil proti skillu je jednoduchy. skill si zavolate, hook se ozve sam. hook hooku hooky hooku hooks",
-      "mentions": 0,
-      "days": 0,
-      "first_seen": null,
-      "last_seen": null,
-      "card_hits": 6
+      "mentions": 3,
+      "days": 1,
+      "first_seen": "2026-09-13",
+      "last_seen": "2026-09-13",
+      "card_hits": 7
     },
     {
       "slug": "hosting",
@@ -1113,11 +1135,11 @@
       "source": "hand",
       "starter": 4,
       "search": "kontext vsechno, co model v danou chvili vi o vasem zadani. kontext je souhrn toho, co ma model po ruce. vase zpravy, jeho odpovedi, obsah souboru, ktere si precetl, a instrukce, ktere dostal. kdyz mu nahazite vsechno, co vas napadne, utopi se v tom. min informaci, ale trefnejsich, funguje lip. odtud ta rada psat strucne. kdyz do zadani nahazite pet nesouvisejicich veci, vysledek bude horsi, nez kdybyste rekli jednu. kontext kontextu kontextem",
-      "mentions": 34,
-      "days": 9,
+      "mentions": 43,
+      "days": 12,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-12",
-      "card_hits": 50
+      "last_seen": "2026-09-19",
+      "card_hits": 51
     },
     {
       "slug": "kontextove-okno",
@@ -1172,7 +1194,7 @@
       "days": 4,
       "first_seen": "2026-08-30",
       "last_seen": "2026-09-12",
-      "card_hits": 35
+      "card_hits": 36
     },
     {
       "slug": "llm",
@@ -1270,11 +1292,11 @@
       "source": "hand",
       "starter": null,
       "search": "markdown formatovani textu pomoci obycejnych znaku. jednoduchy zapis, kde hvezdicky udelaji tucne pismo a mrizky nadpisy. zustava to citelny text. soubor otevrete cimkoli a word na to nepotrebujete. v tomhle formatu jsou poznamky v obsidianu i instrukce v claude.md. markdown markdownu .md md soubor",
-      "mentions": 0,
-      "days": 0,
-      "first_seen": null,
-      "last_seen": null,
-      "card_hits": 16
+      "mentions": 7,
+      "days": 1,
+      "first_seen": "2026-09-13",
+      "last_seen": "2026-09-13",
+      "card_hits": 17
     },
     {
       "slug": "mcp",
@@ -1294,11 +1316,11 @@
       "source": "hand",
       "starter": null,
       "search": "mcp zpusob, jak claudovi zpristupnit vase dalsi aplikace. model sam o sobe vidi jen to, co mu napisete. pres mcp se k nemu da pripojit kalendar, e-mail, databaze nebo interni system a on s nimi pak umi pracovat. hotova napojeni se daji nainstalovat, psat je nikdo nemusi. zkratka znamena model context protocol a je to otevreny standard od anthropicu, takze jedno napojeni funguje ve vic nastrojich. kdyz nekdo ve skupine napise, ze si k tomu pripojil gmail nebo notion, mluvi o tomhle. mcp",
-      "mentions": 10,
-      "days": 2,
+      "mentions": 14,
+      "days": 3,
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-11",
-      "card_hits": 27
+      "last_seen": "2026-09-13",
+      "card_hits": 28
     },
     {
       "slug": "microsoft-copilot",
@@ -1472,11 +1494,11 @@
       "source": "hand",
       "starter": null,
       "search": "notion poznamky, databaze a wiki v jednom, ulozene v cloudu. nastroj na organizaci informaci, kde se michaji dokumenty s tabulkami a databazemi. na rozdil od obsidianu obsah lezi u poskytovatele, ne u vas na disku.  notion notionu notion",
-      "mentions": 1,
-      "days": 1,
+      "mentions": 3,
+      "days": 2,
       "first_seen": "2026-08-31",
-      "last_seen": "2026-08-31",
-      "card_hits": 13
+      "last_seen": "2026-09-13",
+      "card_hits": 14
     },
     {
       "slug": "npm",
@@ -1575,10 +1597,10 @@
       "source": "hand",
       "starter": null,
       "search": "open source software s verejne dostupnym kodem, ktery smi kdokoli cist a upravovat. u open source projektu je videt, jak je udelany uvnitr. kdokoli si ho muze stahnout, prohlednout, upravit a vetsinou i pouzit zdarma. podminky urcuje licence, bezna a hodne volna je licence mit.  open source opensource open-source otevreny zdrojovy kod",
-      "mentions": 2,
-      "days": 2,
+      "mentions": 3,
+      "days": 3,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-10",
+      "last_seen": "2026-09-19",
       "card_hits": 11
     },
     {
@@ -1606,7 +1628,7 @@
       "days": 2,
       "first_seen": "2026-09-11",
       "last_seen": "2026-09-12",
-      "card_hits": 3
+      "card_hits": 4
     },
     {
       "slug": "orchestrator",
@@ -1974,7 +1996,7 @@
       "days": 1,
       "first_seen": "2026-09-12",
       "last_seen": "2026-09-12",
-      "card_hits": 0
+      "card_hits": 1
     },
     {
       "slug": "sandbox",
@@ -2255,11 +2277,11 @@
       "source": "hand",
       "starter": null,
       "search": "subagent pomocnik, kteremu hlavni agent preda dilci ukol. hlavni agent si muze zavolat pomocne agenty a rozdelit mezi ne praci. kazdy pracuje ve vlastnim kontextu. hlavnimu tim nezaplni okno vsim, co cestou precetl. zpatky posle jen vysledek. pouziva se, kdyz je prace moc velka na jedno vlakno. subagent subagenta subagenty subagentu subagenti",
-      "mentions": 4,
-      "days": 2,
+      "mentions": 7,
+      "days": 3,
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-07",
-      "card_hits": 5
+      "last_seen": "2026-09-13",
+      "card_hits": 6
     },
     {
       "slug": "supabase",
@@ -2406,10 +2428,10 @@
       "source": "hand",
       "starter": null,
       "search": "transkripce a diarizace prevod mluveni na text a rozliseni, kdo z mluvcich mluvi. transkripce udela z nahravky text. diarizace k tomu prida, ktery usek rekl ktery mluvci. u schuzek byva ta druha vec dulezitejsi nez samotny prepis.  transkripce prepis prepisu prepisy diarizace",
-      "mentions": 4,
-      "days": 1,
+      "mentions": 5,
+      "days": 2,
       "first_seen": "2026-09-11",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-14",
       "card_hits": 43
     },
     {
@@ -2433,10 +2455,10 @@
       "source": "hand",
       "starter": 1,
       "search": "vibe coding staveni aplikaci tak, ze popisujete, co chcete, a kod pise ai. vy rikate, co ma vec delat, ai pise kod a vy vysledek zkousite a usmernujete. programovat umet nemusite. staci umet popsat, co chcete, a poznat, kdy vysledek nesedi. jede se po malych kouscich, protoze velky skok se spatne kontroluje a chyba se v nem hur hleda. kolem tohohle vznikla cela komunita. je to nejcastejsi pojem ve skupine vubec. vibe coding vibe codingu vibecoding vibe kodovani",
-      "mentions": 16,
-      "days": 9,
+      "mentions": 23,
+      "days": 12,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-10",
+      "last_seen": "2026-09-19",
       "card_hits": 49
     },
     {

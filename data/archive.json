@@ -1795,6 +1795,16 @@
         "Workflow",
         "Automatizace"
       ]
+    },
+    {
+      "date": "2026-09-19",
+      "card_count": 1,
+      "topics": [
+        "Vibe Coding",
+        "Workflow",
+        "Dokumentace",
+        "Claude Code"
+      ]
     }
   ]
 }

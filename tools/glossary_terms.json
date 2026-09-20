@@ -1868,6 +1868,21 @@
       "why": "Narazíte na něj třeba při nákupu firemních účtů a předplatných AI služeb.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "agents-md",
+      "term": "AGENTS.md",
+      "cat": "cc",
+      "match": [
+        "AGENTS.md",
+        "Agents.md",
+        "agents.md"
+      ],
+      "short": "Soubor s pokyny pro AI nástroje, které pracují s kódem v daném projektu.",
+      "plain": "AGENTS.md je textový soubor s pravidly a informacemi pro AI nástroje pracující na projektu. Stejný soubor mohou používat různé nástroje, například Codex a Claude Code. Claude Code ho načte, když ve složce chybí CLAUDE.md.",
+      "why": "Narazíte na něj ve složkách projektů připravených pro práci s AI nástroji.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
