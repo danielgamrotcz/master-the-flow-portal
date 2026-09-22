@@ -1810,6 +1810,16 @@
       "date": "2026-09-20",
       "card_count": 0,
       "topics": []
+    },
+    {
+      "date": "2026-09-21",
+      "card_count": 3,
+      "topics": [
+        "AI nástroje",
+        "Email",
+        "Workflow",
+        "Automatizace"
+      ]
     }
   ]
 }

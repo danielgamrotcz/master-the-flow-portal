@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-20",
+  "generated_at": "2026-09-22",
   "source": {
-    "daily_notes": 17,
+    "daily_notes": 18,
     "range": [
       "2026-08-30",
-      "2026-09-19"
+      "2026-09-21"
     ]
   },
   "categories": [
@@ -96,7 +96,7 @@
       "days": 1,
       "first_seen": "2026-09-19",
       "last_seen": "2026-09-19",
-      "card_hits": 2
+      "card_hits": 3
     },
     {
       "slug": "ai-act",
@@ -220,10 +220,10 @@
       "source": "hand",
       "starter": null,
       "search": "automatizace postup, ktery po nastaveni bezi bez vas. nastavite jednou a pak uz to jede samo, bud v urceny cas, nebo kdyz nastane nejaka udalost. typicky neco, co byste jinak delali porad dokola. ve skupine to byva stahovani prepisu z nahravek, ranni souhrn do poznamek nebo hlidani, jestli neco nespadlo. vetsina projektu, ktere tady lidi ukazuji, zacala jako otrava, kterou je nebavilo delat rucne. automatizace automatizaci automatizovat automatizovane",
-      "mentions": 8,
-      "days": 4,
+      "mentions": 9,
+      "days": 5,
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-21",
       "card_hits": 24
     },
     {
@@ -351,7 +351,7 @@
       "days": 6,
       "first_seen": "2026-08-30",
       "last_seen": "2026-09-19",
-      "card_hits": 118
+      "card_hits": 119
     },
     {
       "slug": "claude-md",
@@ -376,7 +376,7 @@
       "days": 1,
       "first_seen": "2026-09-19",
       "last_seen": "2026-09-19",
-      "card_hits": 14
+      "card_hits": 15
     },
     {
       "slug": "cli",
@@ -448,11 +448,11 @@
       "source": "hand",
       "starter": null,
       "search": "codex kodovaci nastroj od openai, konkurence claude code. nastroj, ktery podobne jako claude code umi pracovat s kodem v projektu. ve skupine se pravidelne srovnavaji, vysledek se lisi podle typu ukolu.  codex codexu codex",
-      "mentions": 18,
-      "days": 5,
+      "mentions": 20,
+      "days": 6,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-19",
-      "card_hits": 27
+      "last_seen": "2026-09-21",
+      "card_hits": 28
     },
     {
       "slug": "commit",
@@ -610,10 +610,10 @@
       "source": "hand",
       "starter": null,
       "search": "deploy a nasazeni vypusteni hotove verze ven, aby ji videli ostatni. dokud projekt bezi jen u vas na pocitaci, vidite ho jen vy. nasazeni znamena prenest ho na server, kde je dostupny na internetu. do te doby je to soukroma hracka. dokud nenasadite, nikdo to neuvidi, ani kdyz to mate hotove tyden. deploy deploynout nasazeni nasadit nasazuje deployment",
-      "mentions": 0,
-      "days": 0,
-      "first_seen": null,
-      "last_seen": null,
+      "mentions": 3,
+      "days": 1,
+      "first_seen": "2026-09-21",
+      "last_seen": "2026-09-21",
       "card_hits": 11
     },
     {
@@ -863,10 +863,10 @@
       "source": "hand",
       "starter": null,
       "search": "github web, kam se git projekty ukladaji online, aby sly sdilet a zalohovat. github je sluzba, kde vas projekt bydli na internetu. diky tomu se k nemu dostanete z vic pocitacu, mate ho zalohovany a muzete ho ukazat ostatnim. git a github jsou dve ruzne veci. git je ten system, github je jedno z mist, kde muze projekt bydlet. kdyz nekdo ve skupine sdili projekt, obvykle sdili odkaz na github. github githubu github.com githubu",
-      "mentions": 3,
-      "days": 3,
+      "mentions": 5,
+      "days": 4,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-21",
       "card_hits": 24
     },
     {
@@ -1092,6 +1092,28 @@
       "card_hits": 3
     },
     {
+      "slug": "jev",
+      "term": "Jev",
+      "category": "ai",
+      "short": "Specializovaný rozhodovací model, který rychle vrací výsledek v předem daném formátu a odhad své jistoty.",
+      "plain": "Jev je model od TypeSafe AI určený pro rychlá automatizovaná rozhodnutí. Vrací výsledek v předem daném formátu spolu s kalibrovanou pravděpodobností. Hodí se třeba pro třídění položek, kontrolu výstupů nebo výběr dalšího postupu.",
+      "why": "Narazíte na něj při automatizaci úloh, kde potřebujete rychle zpracovat velké množství vstupů.",
+      "related": [],
+      "aliases": [
+        "Jev",
+        "Jevu",
+        "Jevem"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "jev specializovany rozhodovaci model, ktery rychle vraci vysledek v predem danem formatu a odhad sve jistoty. jev je model od typesafe ai urceny pro rychla automatizovana rozhodnuti. vraci vysledek v predem danem formatu spolu s kalibrovanou pravdepodobnosti. hodi se treba pro trideni polozek, kontrolu vystupu nebo vyber dalsiho postupu. narazite na nej pri automatizaci uloh, kde potrebujete rychle zpracovat velke mnozstvi vstupu. jev jevu jevem",
+      "mentions": 13,
+      "days": 1,
+      "first_seen": "2026-09-21",
+      "last_seen": "2026-09-21",
+      "card_hits": 1
+    },
+    {
       "slug": "json",
       "term": "JSON",
       "category": "web",
@@ -1135,10 +1157,10 @@
       "source": "hand",
       "starter": 4,
       "search": "kontext vsechno, co model v danou chvili vi o vasem zadani. kontext je souhrn toho, co ma model po ruce. vase zpravy, jeho odpovedi, obsah souboru, ktere si precetl, a instrukce, ktere dostal. kdyz mu nahazite vsechno, co vas napadne, utopi se v tom. min informaci, ale trefnejsich, funguje lip. odtud ta rada psat strucne. kdyz do zadani nahazite pet nesouvisejicich veci, vysledek bude horsi, nez kdybyste rekli jednu. kontext kontextu kontextem",
-      "mentions": 43,
-      "days": 12,
+      "mentions": 47,
+      "days": 13,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-19",
+      "last_seen": "2026-09-21",
       "card_hits": 51
     },
     {
@@ -1369,10 +1391,10 @@
       "source": "hand",
       "starter": 2,
       "search": "model konkretni verze ai, kterou zrovna pouzivate. modelu je vic a lisi se silou, rychlosti a cenou. silnejsi zvladne slozite zadani, ale je pomalejsi a drazsi. slabsi odbavi rutinu skoro hned. kdyz nekdo ve skupine pise, ze neco jede na opusu a neco na sonnetu, mluvi presne o tehle volbe. volba modelu je hlavni paka na to, kolik za praci s ai zaplatite. model modelu modely modelu modelem",
-      "mentions": 28,
-      "days": 5,
+      "mentions": 35,
+      "days": 6,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-21",
       "card_hits": 89
     },
     {
@@ -1601,7 +1623,7 @@
       "days": 3,
       "first_seen": "2026-08-30",
       "last_seen": "2026-09-19",
-      "card_hits": 11
+      "card_hits": 12
     },
     {
       "slug": "openrouter",
@@ -1795,10 +1817,10 @@
       "source": "hand",
       "starter": 3,
       "search": "prompt zadani, ktere modelu napisete. prompt je text, kterym modelu rikate, co ma udelat. zadna kouzelna formulka v tom neni. nejlip funguje obycejny jasny popis toho, co chcete, pro koho to je a jak ma vysledek vypadat. vetsina zklamani z ai pochazi z vagniho zadani, ne ze slabeho modelu. napsat „shrn mi to“ a „shrn mi to do peti bodu pro kolegu, ktery u toho nebyl“ da uplne jiny vysledek. prompt promptu prompty promptu promptem promptovani promptovat",
-      "mentions": 3,
-      "days": 2,
+      "mentions": 5,
+      "days": 3,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-21",
       "card_hits": 31
     },
     {
@@ -1936,10 +1958,10 @@
       "source": "auto",
       "starter": null,
       "search": "reasoning nastaveni ai modelu, ktere urcuje, jak peclive model premysli, nez odpovi. modely s reasoning modem si pred odpovedi projdou mezikrok, kde rozepisuji postup reseni. urovni byva vic, typicky low, medium, high a max. vyssi uroven da peclivejsi vystup za cenu vice tokenu a delsiho cekani. ma smysl zapnout ho na maximum u analytickych nebo kodovacich uloh, kde na presnosti zalezi. pri praci v claude nebo jinych ai nastrojich, ktere ho jako nastaveni nabizeji. reasoning reasoningu reasoningem extended thinking",
-      "mentions": 0,
-      "days": 0,
-      "first_seen": null,
-      "last_seen": null,
+      "mentions": 4,
+      "days": 1,
+      "first_seen": "2026-09-21",
+      "last_seen": "2026-09-21",
       "card_hits": 5
     },
     {
@@ -1965,10 +1987,10 @@
       "source": "hand",
       "starter": null,
       "search": "repozitar slozka projektu, kterou hlida git. zkracene repo. repozitar je jeden projekt i s celou svoji historii.  repozitar repozitare repozitari repozitaru repo repa",
-      "mentions": 2,
-      "days": 2,
+      "mentions": 4,
+      "days": 3,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-09-21",
       "card_hits": 12
     },
     {
@@ -2401,10 +2423,10 @@
       "source": "hand",
       "starter": null,
       "search": "token kousky slov, na ktere si model deli text. podle nich se pocita cena i delka. model necte slova, ale kousky slov, kterym se rika tokeny. jedno ceske slovo byva dva az tri tokeny, anglicke casto jen jeden. proto se ve skupine obcas pise, ze se do stejneho mista vejde vic anglictiny nez cestiny. cena i to, kolik toho model zvladne najednou, se pocita v tokenech. kdo chape tokeny, prestane se divit uctu. token tokenu tokeny tokenu tokenem tokenech",
-      "mentions": 11,
-      "days": 4,
+      "mentions": 12,
+      "days": 5,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-10",
+      "last_seen": "2026-09-21",
       "card_hits": 33
     },
     {
@@ -2455,10 +2477,10 @@
       "source": "hand",
       "starter": 1,
       "search": "vibe coding staveni aplikaci tak, ze popisujete, co chcete, a kod pise ai. vy rikate, co ma vec delat, ai pise kod a vy vysledek zkousite a usmernujete. programovat umet nemusite. staci umet popsat, co chcete, a poznat, kdy vysledek nesedi. jede se po malych kouscich, protoze velky skok se spatne kontroluje a chyba se v nem hur hleda. kolem tohohle vznikla cela komunita. je to nejcastejsi pojem ve skupine vubec. vibe coding vibe codingu vibecoding vibe kodovani",
-      "mentions": 23,
-      "days": 12,
+      "mentions": 24,
+      "days": 13,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-19",
+      "last_seen": "2026-09-21",
       "card_hits": 49
     },
     {

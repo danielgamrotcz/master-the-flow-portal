@@ -1883,6 +1883,21 @@
       "why": "Narazíte na něj ve složkách projektů připravených pro práci s AI nástroji.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "jev",
+      "term": "Jev",
+      "cat": "ai",
+      "match": [
+        "Jev",
+        "Jevu",
+        "Jevem"
+      ],
+      "short": "Specializovaný rozhodovací model, který rychle vrací výsledek v předem daném formátu a odhad své jistoty.",
+      "plain": "Jev je model od TypeSafe AI určený pro rychlá automatizovaná rozhodnutí. Vrací výsledek v předem daném formátu spolu s kalibrovanou pravděpodobností. Hodí se třeba pro třídění položek, kontrolu výstupů nebo výběr dalšího postupu.",
+      "why": "Narazíte na něj při automatizaci úloh, kde potřebujete rychle zpracovat velké množství vstupů.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
