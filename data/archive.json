@@ -1845,6 +1845,16 @@
       "date": "2026-09-26",
       "card_count": 0,
       "topics": []
+    },
+    {
+      "date": "2026-09-27",
+      "card_count": 1,
+      "topics": [
+        "Produktivita",
+        "Workflow",
+        "AI nástroje",
+        "Claude Code"
+      ]
     }
   ]
 }
