@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-22",
+  "generated_at": "2026-09-30",
   "source": {
-    "daily_notes": 18,
+    "daily_notes": 23,
     "range": [
       "2026-08-30",
-      "2026-09-21"
+      "2026-09-29"
     ]
   },
   "categories": [
@@ -220,10 +220,10 @@
       "source": "hand",
       "starter": null,
       "search": "automatizace postup, ktery po nastaveni bezi bez vas. nastavite jednou a pak uz to jede samo, bud v urceny cas, nebo kdyz nastane nejaka udalost. typicky neco, co byste jinak delali porad dokola. ve skupine to byva stahovani prepisu z nahravek, ranni souhrn do poznamek nebo hlidani, jestli neco nespadlo. vetsina projektu, ktere tady lidi ukazuji, zacala jako otrava, kterou je nebavilo delat rucne. automatizace automatizaci automatizovat automatizovane",
-      "mentions": 9,
-      "days": 5,
+      "mentions": 12,
+      "days": 6,
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-23",
       "card_hits": 24
     },
     {
@@ -347,11 +347,11 @@
       "source": "hand",
       "starter": 5,
       "search": "claude code claude, ktery bezi v terminalu a sam pracuje se soubory ve vasem projektu. neni to chat v prohlizeci. claude code bezi u vas na pocitaci, vidi slozku s projektem, umi soubory cist i menit, spoustet prikazy a overovat si vysledek. spousti se v terminalu napsanim claude. ve skupine se casto zkracuje na cc. vetsina projektu, ktere tady lidi ukazuji, vznikla presne timhle. claude code claude codu claudecode cc",
-      "mentions": 14,
-      "days": 6,
+      "mentions": 19,
+      "days": 7,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-19",
-      "card_hits": 119
+      "last_seen": "2026-09-27",
+      "card_hits": 120
     },
     {
       "slug": "claude-md",
@@ -452,7 +452,7 @@
       "days": 6,
       "first_seen": "2026-08-30",
       "last_seen": "2026-09-21",
-      "card_hits": 28
+      "card_hits": 29
     },
     {
       "slug": "commit",
@@ -477,10 +477,10 @@
       "source": "hand",
       "starter": null,
       "search": "commit ulozeny snimek zmen s popiskem, co se zmenilo. neco jako ulozit pozici ve hre. zaznamena stav souboru v dany moment a vy se k nemu muzete kdykoli vratit. ta poznamka u toho neni formalita, za mesic si bez ni nevzpomenete, co jste tenkrat delali. bez commitu se neda vratit zpatky. s nimi je navrat otazka jednoho prikazu. commit commitu commity commitu commitnout commitem commitu",
-      "mentions": 0,
-      "days": 0,
-      "first_seen": null,
-      "last_seen": null,
+      "mentions": 1,
+      "days": 1,
+      "first_seen": "2026-09-29",
+      "last_seen": "2026-09-29",
       "card_hits": 3
     },
     {
@@ -614,7 +614,29 @@
       "days": 1,
       "first_seen": "2026-09-21",
       "last_seen": "2026-09-21",
-      "card_hits": 11
+      "card_hits": 12
+    },
+    {
+      "slug": "dictate-keyboard",
+      "term": "Dictate Keyboard",
+      "category": "nastroje",
+      "short": "Open source klávesnice pro Android, která převádí mluvenou řeč na psaný text.",
+      "plain": "Dictate Keyboard nabízí hlasové diktování s online i offline přepisem. Podporuje také úpravy textu pomocí AI.",
+      "why": "Narazíte na ni při hledání klávesnice s hlasovým zadáváním pro Android.",
+      "related": [],
+      "aliases": [
+        "Dictate Keyboard",
+        "DictateKeyboard",
+        "DicateKeyboard"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "dictate keyboard open source klavesnice pro android, ktera prevadi mluvenou rec na psany text. dictate keyboard nabizi hlasove diktovani s online i offline prepisem. podporuje take upravy textu pomoci ai. narazite na ni pri hledani klavesnice s hlasovym zadavanim pro android. dictate keyboard dictatekeyboard dicatekeyboard",
+      "mentions": 6,
+      "days": 1,
+      "first_seen": "2026-09-29",
+      "last_seen": "2026-09-29",
+      "card_hits": 0
     },
     {
       "slug": "docker",
@@ -664,10 +686,10 @@
       "source": "hand",
       "starter": null,
       "search": "druhy mozek system poznamek, ktery si pamatuje za vas. usporadane misto, kam ukladate myslenky, zdroje a rozpracovane veci tak, abyste je pozdeji nasli a mohli na nich stavet. neni to o tom mit hodne poznamek, ale o tom umet se k nim vratit. ve skupine je to jedno z nejsilnejsich temat. nejde o mnozstvi poznamek, ale o to, umet se k nim vratit. druhy mozek druheho mozku second brain druhym mozkem",
-      "mentions": 1,
-      "days": 1,
+      "mentions": 7,
+      "days": 3,
       "first_seen": "2026-08-31",
-      "last_seen": "2026-08-31",
+      "last_seen": "2026-09-29",
       "card_hits": 14
     },
     {
@@ -814,7 +836,7 @@
       "days": 2,
       "first_seen": "2026-09-10",
       "last_seen": "2026-09-11",
-      "card_hits": 10
+      "card_hits": 11
     },
     {
       "slug": "git",
@@ -863,10 +885,10 @@
       "source": "hand",
       "starter": null,
       "search": "github web, kam se git projekty ukladaji online, aby sly sdilet a zalohovat. github je sluzba, kde vas projekt bydli na internetu. diky tomu se k nemu dostanete z vic pocitacu, mate ho zalohovany a muzete ho ukazat ostatnim. git a github jsou dve ruzne veci. git je ten system, github je jedno z mist, kde muze projekt bydlet. kdyz nekdo ve skupine sdili projekt, obvykle sdili odkaz na github. github githubu github.com githubu",
-      "mentions": 5,
-      "days": 4,
+      "mentions": 6,
+      "days": 5,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-29",
       "card_hits": 24
     },
     {
@@ -1111,7 +1133,7 @@
       "days": 1,
       "first_seen": "2026-09-21",
       "last_seen": "2026-09-21",
-      "card_hits": 1
+      "card_hits": 4
     },
     {
       "slug": "json",
@@ -1157,10 +1179,10 @@
       "source": "hand",
       "starter": 4,
       "search": "kontext vsechno, co model v danou chvili vi o vasem zadani. kontext je souhrn toho, co ma model po ruce. vase zpravy, jeho odpovedi, obsah souboru, ktere si precetl, a instrukce, ktere dostal. kdyz mu nahazite vsechno, co vas napadne, utopi se v tom. min informaci, ale trefnejsich, funguje lip. odtud ta rada psat strucne. kdyz do zadani nahazite pet nesouvisejicich veci, vysledek bude horsi, nez kdybyste rekli jednu. kontext kontextu kontextem",
-      "mentions": 47,
-      "days": 13,
+      "mentions": 50,
+      "days": 15,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-29",
       "card_hits": 51
     },
     {
@@ -1212,10 +1234,10 @@
       "source": "hand",
       "starter": null,
       "search": "limity a rate limit strop, kolik toho smite za dane obdobi pouzit. kazdy tarif ma hranici, kolik prace do nej za hodinu nebo tyden vejde. kdyz ji vycerpate, musite chvili pockat, nez se limit obnovi. silnejsi modely limit spotrebovavaji rychleji nez slabsi. odtud rady pracovat mimo spicku nebo prepnout na slabsi model na rutinu. rate limit limit limity limitu limitu limitem",
-      "mentions": 21,
-      "days": 4,
+      "mentions": 26,
+      "days": 5,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-12",
+      "last_seen": "2026-09-22",
       "card_hits": 36
     },
     {
@@ -1288,10 +1310,10 @@
       "source": "hand",
       "starter": null,
       "search": "lokalni model model bezici primo na vasem pocitaci misto v cloudu. misto posilani dotazu na internet bezi model primo u vas. data neopusti vas stroj, takze se to hodi na citlive veci. zaplatite za to vykonem, potrebujete silnejsi pocitac a vysledky byvaji slabsi nez u velkych cloudovych modelu. resi se hlavne u prepisu a u dat, ktera nesmi ven. lokalni model lokalne lokalni modely lokalniho modelu",
-      "mentions": 1,
-      "days": 1,
+      "mentions": 3,
+      "days": 2,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-08-30",
+      "last_seen": "2026-09-27",
       "card_hits": 28
     },
     {
@@ -1391,11 +1413,11 @@
       "source": "hand",
       "starter": 2,
       "search": "model konkretni verze ai, kterou zrovna pouzivate. modelu je vic a lisi se silou, rychlosti a cenou. silnejsi zvladne slozite zadani, ale je pomalejsi a drazsi. slabsi odbavi rutinu skoro hned. kdyz nekdo ve skupine pise, ze neco jede na opusu a neco na sonnetu, mluvi presne o tehle volbe. volba modelu je hlavni paka na to, kolik za praci s ai zaplatite. model modelu modely modelu modelem",
-      "mentions": 35,
-      "days": 6,
+      "mentions": 37,
+      "days": 8,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-21",
-      "card_hits": 89
+      "last_seen": "2026-09-29",
+      "card_hits": 91
     },
     {
       "slug": "model-agnosticky",
@@ -1516,10 +1538,10 @@
       "source": "hand",
       "starter": null,
       "search": "notion poznamky, databaze a wiki v jednom, ulozene v cloudu. nastroj na organizaci informaci, kde se michaji dokumenty s tabulkami a databazemi. na rozdil od obsidianu obsah lezi u poskytovatele, ne u vas na disku.  notion notionu notion",
-      "mentions": 3,
-      "days": 2,
+      "mentions": 6,
+      "days": 3,
       "first_seen": "2026-08-31",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-23",
       "card_hits": 14
     },
     {
@@ -1593,10 +1615,10 @@
       "source": "hand",
       "starter": null,
       "search": "offline rezim funguje i bez pripojeni, protoze si data ulozil dopredu. aplikace si stahne obsah do zarizeni, takze ho ukaze i bez internetu. nove veci se dotahnou, jakmile se pripojeni vrati.  offline",
-      "mentions": 1,
-      "days": 1,
+      "mentions": 2,
+      "days": 2,
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-01",
+      "last_seen": "2026-09-29",
       "card_hits": 10
     },
     {
@@ -1619,10 +1641,10 @@
       "source": "hand",
       "starter": null,
       "search": "open source software s verejne dostupnym kodem, ktery smi kdokoli cist a upravovat. u open source projektu je videt, jak je udelany uvnitr. kdokoli si ho muze stahnout, prohlednout, upravit a vetsinou i pouzit zdarma. podminky urcuje licence, bezna a hodne volna je licence mit.  open source opensource open-source otevreny zdrojovy kod",
-      "mentions": 3,
-      "days": 3,
+      "mentions": 6,
+      "days": 4,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-19",
+      "last_seen": "2026-09-29",
       "card_hits": 12
     },
     {
@@ -1821,7 +1843,7 @@
       "days": 3,
       "first_seen": "2026-08-30",
       "last_seen": "2026-09-21",
-      "card_hits": 31
+      "card_hits": 32
     },
     {
       "slug": "prototyp",
@@ -1962,7 +1984,7 @@
       "days": 1,
       "first_seen": "2026-09-21",
       "last_seen": "2026-09-21",
-      "card_hits": 5
+      "card_hits": 7
     },
     {
       "slug": "repozitar",
@@ -1987,11 +2009,11 @@
       "source": "hand",
       "starter": null,
       "search": "repozitar slozka projektu, kterou hlida git. zkracene repo. repozitar je jeden projekt i s celou svoji historii.  repozitar repozitare repozitari repozitaru repo repa",
-      "mentions": 4,
-      "days": 3,
+      "mentions": 5,
+      "days": 4,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-21",
-      "card_hits": 12
+      "last_seen": "2026-09-29",
+      "card_hits": 14
     },
     {
       "slug": "reseller",
@@ -2148,10 +2170,10 @@
       "source": "hand",
       "starter": null,
       "search": "session jedno souvisle sezeni, ve kterem si ai pamatuje, o cem jste mluvili. session drzi spolecnou pamet konverzace. kdyz ji ukoncite a zacnete znovu, zacinate s cistym stolem a nic z minula se neprenasi, pokud to neni zapsane v souborech nebo v pameti. dlouha session zaplni kontextove okno. kratka a soustredena dava lepsi vysledky. session sessions sezeni vlakno vlakna",
-      "mentions": 9,
-      "days": 5,
+      "mentions": 10,
+      "days": 6,
       "first_seen": "2026-09-04",
-      "last_seen": "2026-09-12",
+      "last_seen": "2026-09-29",
       "card_hits": 35
     },
     {
@@ -2204,11 +2226,11 @@
       "source": "hand",
       "starter": null,
       "search": "skript maly program, ktery za vas udela serii kroku. soubor s posloupnosti prikazu, ktere se spusti jednim zavolanim. typicky neco, co byste jinak delali rucne porad dokola, treba prejmenovat stovku souboru nebo stahnout a zpracovat data.  skript skriptu skripty skriptu script",
-      "mentions": 0,
-      "days": 0,
-      "first_seen": null,
-      "last_seen": null,
-      "card_hits": 24
+      "mentions": 1,
+      "days": 1,
+      "first_seen": "2026-09-27",
+      "last_seen": "2026-09-27",
+      "card_hits": 25
     },
     {
       "slug": "soniox",
@@ -2225,10 +2247,10 @@
       "source": "auto",
       "starter": null,
       "search": "soniox webova sluzba pro prepis reci s rozlisenim jednotlivych mluvcich. soniox je webove rozhrani pro prepis reci. dostanete text i s tim, kdo co rikal, a nic instalovat nemusite. hodi se, kdyz potrebujete presnejsi vysledek nebo jasne rozliseni recniku. u hledani alternativy k plaudu nebo jinym prepisovym nastrojum. soniox soniox",
-      "mentions": 7,
-      "days": 1,
+      "mentions": 8,
+      "days": 2,
       "first_seen": "2026-09-11",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-29",
       "card_hits": 21
     },
     {
@@ -2372,11 +2394,11 @@
       "source": "hand",
       "starter": null,
       "search": "terminal okno, kde se pocitaci pisou prikazy misto klikani. textove okno, do ktereho napisete prikaz a pocitac ho provede. vypada to neprivetive, ale je to jen jiny zpusob ovladani. na macu se aplikace jmenuje terminal a najdete ji pres spotlight, kdyz napisete jeji jmeno. claude code bezi tady. je to prvni misto, kde se clovek musi premoct. terminal terminalu terminalem prikazova radka prikazove radce",
-      "mentions": 3,
-      "days": 2,
+      "mentions": 5,
+      "days": 3,
       "first_seen": "2026-09-05",
-      "last_seen": "2026-09-09",
-      "card_hits": 26
+      "last_seen": "2026-09-27",
+      "card_hits": 27
     },
     {
       "slug": "tmux",
@@ -2450,11 +2472,34 @@
       "source": "hand",
       "starter": null,
       "search": "transkripce a diarizace prevod mluveni na text a rozliseni, kdo z mluvcich mluvi. transkripce udela z nahravky text. diarizace k tomu prida, ktery usek rekl ktery mluvci. u schuzek byva ta druha vec dulezitejsi nez samotny prepis.  transkripce prepis prepisu prepisy diarizace",
-      "mentions": 5,
-      "days": 2,
+      "mentions": 6,
+      "days": 3,
       "first_seen": "2026-09-11",
-      "last_seen": "2026-09-14",
+      "last_seen": "2026-09-23",
       "card_hits": 43
+    },
+    {
+      "slug": "uttero",
+      "term": "Uttero",
+      "category": "nastroje",
+      "short": "Nástroj pro hlasové diktování na Androidu s průběžným přepisem.",
+      "plain": "Uttero umožňuje na Androidu diktovat text hlasem. Má plovoucí mikrofon a přepis zobrazuje už během diktování.",
+      "why": "Můžete na něj narazit při hledání nástroje pro diktování na Androidu.",
+      "related": [],
+      "aliases": [
+        "Uttero",
+        "Uttera",
+        "Utteru",
+        "Utterem"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "uttero nastroj pro hlasove diktovani na androidu s prubeznym prepisem. uttero umoznuje na androidu diktovat text hlasem. ma plovouci mikrofon a prepis zobrazuje uz behem diktovani. muzete na nej narazit pri hledani nastroje pro diktovani na androidu. uttero uttera utteru utterem",
+      "mentions": 14,
+      "days": 3,
+      "first_seen": "2026-09-11",
+      "last_seen": "2026-09-29",
+      "card_hits": 15
     },
     {
       "slug": "vibe-coding",
@@ -2477,10 +2522,10 @@
       "source": "hand",
       "starter": 1,
       "search": "vibe coding staveni aplikaci tak, ze popisujete, co chcete, a kod pise ai. vy rikate, co ma vec delat, ai pise kod a vy vysledek zkousite a usmernujete. programovat umet nemusite. staci umet popsat, co chcete, a poznat, kdy vysledek nesedi. jede se po malych kouscich, protoze velky skok se spatne kontroluje a chyba se v nem hur hleda. kolem tohohle vznikla cela komunita. je to nejcastejsi pojem ve skupine vubec. vibe coding vibe codingu vibecoding vibe kodovani",
-      "mentions": 24,
-      "days": 13,
+      "mentions": 26,
+      "days": 14,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-27",
       "card_hits": 49
     },
     {
@@ -2527,10 +2572,10 @@
       "source": "hand",
       "starter": null,
       "search": "whisper model na prevod reci na text. prepisovaci model od openai. da se pouzivat pres internet i pustit primo na vlastnim pocitaci, takze nahravka nemusi nikam odchazet. stoji na nem vetsina domacich reseni na prepis schuzek a hlasovych poznamek. whisper whisperu whisper",
-      "mentions": 0,
-      "days": 0,
-      "first_seen": null,
-      "last_seen": null,
+      "mentions": 1,
+      "days": 1,
+      "first_seen": "2026-09-29",
+      "last_seen": "2026-09-29",
       "card_hits": 10
     },
     {
@@ -2550,10 +2595,10 @@
       "source": "auto",
       "starter": null,
       "search": "wispr flow notetaker aplikace na automaticky prepis online schuzek, ktera pozna a pojmenuje jednotlive mluvci. sleduje schuzku na zoomu, google meet, teams nebo slacku a prepis rozdeli podle toho, kdo co rikal. jmena priradi podle ucastniku meetingu. do schuzky nemusite zvat zadneho robota. mobilni verze zatim neexistuje. hodi se, kdyz vedete nebo se ucastnite online schuzek s vice lidmi a chcete z nich mit prepis rozdeleny podle mluvcich, bez rucniho psani. wispr flow notetaker wispr flow wisprflow notetaker",
-      "mentions": 0,
-      "days": 0,
-      "first_seen": null,
-      "last_seen": null,
+      "mentions": 1,
+      "days": 1,
+      "first_seen": "2026-09-29",
+      "last_seen": "2026-09-29",
       "card_hits": 6
     },
     {
@@ -2575,10 +2620,10 @@
       "source": "hand",
       "starter": null,
       "search": "workflow ustaleny postup, jak neco delate od zacatku do konce. sled kroku, ktery vede od zadani k vysledku. nemusi byt zautomatizovany. workflow je i to, kdyz vite, ze po nahravce vzdycky nasleduje prepis, pak shrnuti a nakonec ulozeni do poznamek. ve skupine se sdili spis workflow nez jednotlive nastroje. nastroj se da vymenit, postup zustava. workflow workflowu workflows",
-      "mentions": 4,
-      "days": 3,
+      "mentions": 9,
+      "days": 6,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-11",
+      "last_seen": "2026-09-29",
       "card_hits": 52
     },
     {

@@ -1898,6 +1898,37 @@
       "why": "Narazíte na něj při automatizaci úloh, kde potřebujete rychle zpracovat velké množství vstupů.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "uttero",
+      "term": "Uttero",
+      "cat": "nastroje",
+      "match": [
+        "Uttero",
+        "Uttera",
+        "Utteru",
+        "Utterem"
+      ],
+      "short": "Nástroj pro hlasové diktování na Androidu s průběžným přepisem.",
+      "plain": "Uttero umožňuje na Androidu diktovat text hlasem. Má plovoucí mikrofon a přepis zobrazuje už během diktování.",
+      "why": "Můžete na něj narazit při hledání nástroje pro diktování na Androidu.",
+      "related": [],
+      "source": "auto"
+    },
+    {
+      "slug": "dictate-keyboard",
+      "term": "Dictate Keyboard",
+      "cat": "nastroje",
+      "match": [
+        "Dictate Keyboard",
+        "DictateKeyboard",
+        "DicateKeyboard"
+      ],
+      "short": "Open source klávesnice pro Android, která převádí mluvenou řeč na psaný text.",
+      "plain": "Dictate Keyboard nabízí hlasové diktování s online i offline přepisem. Podporuje také úpravy textu pomocí AI.",
+      "why": "Narazíte na ni při hledání klávesnice s hlasovým zadáváním pro Android.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
