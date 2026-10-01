@@ -1929,6 +1929,21 @@
       "why": "Narazíte na ni při hledání klávesnice s hlasovým zadáváním pro Android.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "aivo-relay",
+      "term": "AiVo Relay",
+      "cat": "nastroje",
+      "match": [
+        "AiVo Relay",
+        "AiVo relay",
+        "AIVORelay"
+      ],
+      "short": "Bezplatná open source aplikace pro převod řeči na text ve Windows.",
+      "plain": "AiVo Relay podporuje lokální i cloudové modely, živý přepis přes Soniox a přepis zvukových souborů.",
+      "why": "Hodí se pro diktování a přepis mluveného slova ve Windows.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
