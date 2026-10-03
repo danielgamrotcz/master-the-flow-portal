@@ -1944,6 +1944,22 @@
       "why": "Hodí se pro diktování a přepis mluveného slova ve Windows.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "pocket-ai",
+      "term": "Pocket AI",
+      "cat": "nastroje",
+      "match": [
+        "Pocket AI",
+        "Pocket",
+        "Pocketu",
+        "pocket"
+      ],
+      "short": "Malé zařízení pro nahrávání rozhovorů, jejich přepis a shrnutí.",
+      "plain": "Pocket AI je malé zařízení pro nahrávání schůzek a rozhovorů. Nabízí přepis a tři základní typy shrnutí bez předplatného, další funkce mohou být placené.",
+      "why": "Narazíte na něj při srovnávání samostatných nahrávacích zařízení, jako je Plaud, s diktafonem v telefonu.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
