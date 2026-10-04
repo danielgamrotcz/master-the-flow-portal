@@ -1960,6 +1960,26 @@
       "why": "Narazíte na něj při srovnávání samostatných nahrávacích zařízení, jako je Plaud, s diktafonem v telefonu.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "kiolo",
+      "term": "Kiolo",
+      "cat": "nastroje",
+      "match": [
+        "Kiolo",
+        "kiolo",
+        "Kiola",
+        "kiola",
+        "Kiolu",
+        "kiolu",
+        "Kiolem",
+        "kiolem"
+      ],
+      "short": "Kiolo je zařízení pro nahrávání rozhovorů, jejich přepis a automatické shrnutí.",
+      "plain": "Kiolo se magneticky připevní k telefonu a funguje s iOS i Androidem. Výrobce uvádí šifrování a ukládání dat v EU.",
+      "why": "Narazíte na něj při hledání zařízení pro záznam hovorů, školení nebo rozhovorů.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }

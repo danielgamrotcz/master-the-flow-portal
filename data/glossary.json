@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-03",
+  "generated_at": "2026-10-04",
   "source": {
-    "daily_notes": 26,
+    "daily_notes": 27,
     "range": [
       "2026-08-30",
-      "2026-10-02"
+      "2026-10-03"
     ]
   },
   "categories": [
@@ -74,7 +74,7 @@
       "days": 9,
       "first_seen": "2026-08-31",
       "last_seen": "2026-10-02",
-      "card_hits": 45
+      "card_hits": 46
     },
     {
       "slug": "agents-md",
@@ -191,7 +191,7 @@
       "days": 4,
       "first_seen": "2026-09-01",
       "last_seen": "2026-10-02",
-      "card_hits": 34
+      "card_hits": 35
     },
     {
       "slug": "api-klic",
@@ -242,10 +242,10 @@
       "source": "hand",
       "starter": null,
       "search": "automatizace postup, ktery po nastaveni bezi bez vas. nastavite jednou a pak uz to jede samo, bud v urceny cas, nebo kdyz nastane nejaka udalost. typicky neco, co byste jinak delali porad dokola. ve skupine to byva stahovani prepisu z nahravek, ranni souhrn do poznamek nebo hlidani, jestli neco nespadlo. vetsina projektu, ktere tady lidi ukazuji, zacala jako otrava, kterou je nebavilo delat rucne. automatizace automatizaci automatizovat automatizovane",
-      "mentions": 16,
-      "days": 8,
+      "mentions": 17,
+      "days": 9,
       "first_seen": "2026-09-01",
-      "last_seen": "2026-10-02",
+      "last_seen": "2026-10-03",
       "card_hits": 24
     },
     {
@@ -1182,6 +1182,33 @@
       "card_hits": 8
     },
     {
+      "slug": "kiolo",
+      "term": "Kiolo",
+      "category": "nastroje",
+      "short": "Kiolo je zařízení pro nahrávání rozhovorů, jejich přepis a automatické shrnutí.",
+      "plain": "Kiolo se magneticky připevní k telefonu a funguje s iOS i Androidem. Výrobce uvádí šifrování a ukládání dat v EU.",
+      "why": "Narazíte na něj při hledání zařízení pro záznam hovorů, školení nebo rozhovorů.",
+      "related": [],
+      "aliases": [
+        "Kiolo",
+        "kiolo",
+        "Kiola",
+        "kiola",
+        "Kiolu",
+        "kiolu",
+        "Kiolem",
+        "kiolem"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "kiolo kiolo je zarizeni pro nahravani rozhovoru, jejich prepis a automaticke shrnuti. kiolo se magneticky pripevni k telefonu a funguje s ios i androidem. vyrobce uvadi sifrovani a ukladani dat v eu. narazite na nej pri hledani zarizeni pro zaznam hovoru, skoleni nebo rozhovoru. kiolo kiolo kiola kiola kiolu kiolu kiolem kiolem",
+      "mentions": 5,
+      "days": 1,
+      "first_seen": "2026-10-03",
+      "last_seen": "2026-10-03",
+      "card_hits": 0
+    },
+    {
       "slug": "kontext",
       "term": "Kontext",
       "category": "ai",
@@ -1201,10 +1228,10 @@
       "source": "hand",
       "starter": 4,
       "search": "kontext vsechno, co model v danou chvili vi o vasem zadani. kontext je souhrn toho, co ma model po ruce. vase zpravy, jeho odpovedi, obsah souboru, ktere si precetl, a instrukce, ktere dostal. kdyz mu nahazite vsechno, co vas napadne, utopi se v tom. min informaci, ale trefnejsich, funguje lip. odtud ta rada psat strucne. kdyz do zadani nahazite pet nesouvisejicich veci, vysledek bude horsi, nez kdybyste rekli jednu. kontext kontextu kontextem",
-      "mentions": 52,
-      "days": 17,
+      "mentions": 53,
+      "days": 18,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-03",
       "card_hits": 51
     },
     {
@@ -1362,7 +1389,7 @@
       "days": 3,
       "first_seen": "2026-09-13",
       "last_seen": "2026-10-02",
-      "card_hits": 17
+      "card_hits": 19
     },
     {
       "slug": "mcp",
@@ -1386,7 +1413,7 @@
       "days": 4,
       "first_seen": "2026-09-10",
       "last_seen": "2026-10-02",
-      "card_hits": 28
+      "card_hits": 29
     },
     {
       "slug": "microsoft-copilot",
@@ -1615,11 +1642,11 @@
       "source": "hand",
       "starter": null,
       "search": "obsidian poznamky ulozene jako obycejne textove soubory u vas na disku. aplikace na psani a propojovani poznamek. soubory zustavaji vase, lezi u vas ve slozce jako obycejny text a otevrete je cimkoli, i kdyby obsidian zitra skoncil. to je hlavni rozdil proti cloudovym sluzbam. kolem druheho mozku v obsidianu se ve skupine toci jedno z nejsilnejsich temat. obsidian obsidianu obsidianem obsidian",
-      "mentions": 14,
-      "days": 2,
+      "mentions": 18,
+      "days": 3,
       "first_seen": "2026-09-11",
-      "last_seen": "2026-10-02",
-      "card_hits": 44
+      "last_seen": "2026-10-03",
+      "card_hits": 45
     },
     {
       "slug": "offline",
@@ -1762,11 +1789,11 @@
       "source": "auto",
       "starter": null,
       "search": "p.a.r.a system pro organizaci poznamek a projektu do ctyr kategorii od tiaga forte. p.a.r.a. rozdeluje vsechno, co si ukladate do druheho mozku, do ctyr kosu: projects jsou veci s konkretnim cilem a terminem, areas jsou oblasti, ktere prubezne spravujete, resources jsou materialy k tematum, ktera vas zajimaji, a archives jsou veci momentalne na ledu. narazite na to, jakmile zacnete budovat druhy mozek a resit, kam co ukladat. p.a.r.a para p.a.r.a. i.t.p.a.r.a",
-      "mentions": 3,
-      "days": 1,
+      "mentions": 7,
+      "days": 2,
       "first_seen": "2026-10-02",
-      "last_seen": "2026-10-02",
-      "card_hits": 5
+      "last_seen": "2026-10-03",
+      "card_hits": 6
     },
     {
       "slug": "plash",
@@ -1806,11 +1833,11 @@
       "source": "auto",
       "starter": null,
       "search": "plaud kompaktni hardwarove nahravaci zarizeni navrzene primo pro schuzky a konzultace. plaud je fyzicke nahravaci zarizeni urcene pro schuzky. jde o jednoucelovy pristroj, takze vas neprerusi prichozi hovor ani notifikace z mobilu. vlastni aplikace zvladne prepis nahravky a pozna, kdo co rikal. v diskuzich o automatizovanem zpracovani zaznamu ze schuzek a konzultaci. plaud plaudu plaudem plaude",
-      "mentions": 32,
-      "days": 4,
+      "mentions": 38,
+      "days": 5,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-02",
-      "card_hits": 29
+      "last_seen": "2026-10-03",
+      "card_hits": 30
     },
     {
       "slug": "pocket-ai",
@@ -1833,7 +1860,7 @@
       "days": 2,
       "first_seen": "2026-09-11",
       "last_seen": "2026-10-02",
-      "card_hits": 2
+      "card_hits": 3
     },
     {
       "slug": "env",
@@ -2215,10 +2242,10 @@
       "source": "hand",
       "starter": null,
       "search": "session jedno souvisle sezeni, ve kterem si ai pamatuje, o cem jste mluvili. session drzi spolecnou pamet konverzace. kdyz ji ukoncite a zacnete znovu, zacinate s cistym stolem a nic z minula se neprenasi, pokud to neni zapsane v souborech nebo v pameti. dlouha session zaplni kontextove okno. kratka a soustredena dava lepsi vysledky. session sessions sezeni vlakno vlakna",
-      "mentions": 10,
-      "days": 6,
+      "mentions": 11,
+      "days": 7,
       "first_seen": "2026-09-04",
-      "last_seen": "2026-09-29",
+      "last_seen": "2026-10-03",
       "card_hits": 35
     },
     {
@@ -2292,11 +2319,11 @@
       "source": "auto",
       "starter": null,
       "search": "soniox webova sluzba pro prepis reci s rozlisenim jednotlivych mluvcich. soniox je webove rozhrani pro prepis reci. dostanete text i s tim, kdo co rikal, a nic instalovat nemusite. hodi se, kdyz potrebujete presnejsi vysledek nebo jasne rozliseni recniku. u hledani alternativy k plaudu nebo jinym prepisovym nastrojum. soniox soniox",
-      "mentions": 24,
-      "days": 4,
+      "mentions": 27,
+      "days": 5,
       "first_seen": "2026-09-11",
-      "last_seen": "2026-10-02",
-      "card_hits": 22
+      "last_seen": "2026-10-03",
+      "card_hits": 23
     },
     {
       "slug": "ssh",
@@ -2517,11 +2544,11 @@
       "source": "hand",
       "starter": null,
       "search": "transkripce a diarizace prevod mluveni na text a rozliseni, kdo z mluvcich mluvi. transkripce udela z nahravky text. diarizace k tomu prida, ktery usek rekl ktery mluvci. u schuzek byva ta druha vec dulezitejsi nez samotny prepis.  transkripce prepis prepisu prepisy diarizace",
-      "mentions": 29,
-      "days": 5,
+      "mentions": 31,
+      "days": 6,
       "first_seen": "2026-09-11",
-      "last_seen": "2026-10-02",
-      "card_hits": 45
+      "last_seen": "2026-10-03",
+      "card_hits": 49
     },
     {
       "slug": "uttero",
@@ -2617,10 +2644,10 @@
       "source": "hand",
       "starter": null,
       "search": "whisper model na prevod reci na text. prepisovaci model od openai. da se pouzivat pres internet i pustit primo na vlastnim pocitaci, takze nahravka nemusi nikam odchazet. stoji na nem vetsina domacich reseni na prepis schuzek a hlasovych poznamek. whisper whisperu whisper",
-      "mentions": 5,
-      "days": 3,
+      "mentions": 10,
+      "days": 4,
       "first_seen": "2026-09-29",
-      "last_seen": "2026-10-02",
+      "last_seen": "2026-10-03",
       "card_hits": 10
     },
     {
@@ -2669,7 +2696,7 @@
       "days": 8,
       "first_seen": "2026-08-30",
       "last_seen": "2026-10-02",
-      "card_hits": 52
+      "card_hits": 54
     },
     {
       "slug": "yolo",
