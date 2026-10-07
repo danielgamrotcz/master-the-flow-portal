@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-04",
+  "generated_at": "2026-10-07",
   "source": {
-    "daily_notes": 27,
+    "daily_notes": 29,
     "range": [
       "2026-08-30",
-      "2026-10-03"
+      "2026-10-06"
     ]
   },
   "categories": [
@@ -222,6 +222,29 @@
       "card_hits": 5
     },
     {
+      "slug": "asd-ste100",
+      "term": "ASD-STE100",
+      "category": "ai",
+      "short": "Mezinárodní specifikace pro jasnou a jednoznačnou technickou angličtinu.",
+      "plain": "ASD-STE100 omezuje slovní zásobu a gramatická pravidla zjednodušené technické angličtiny. Používá se hlavně v leteckém průmyslu. Jeho zásady můžete využít v zadání pro AI, třeba požadovat krátké věty, aktivní rod a stálé názvy pro stejné věci.",
+      "why": "Narazíte na něj při psaní technické dokumentace nebo při zadávání požadavků na srozumitelnější výstupy AI.",
+      "related": [],
+      "aliases": [
+        "ASD-STE100",
+        "ASD STE100",
+        "STE100",
+        "Simplified Technical English"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "asd-ste100 mezinarodni specifikace pro jasnou a jednoznacnou technickou anglictinu. asd-ste100 omezuje slovni zasobu a gramaticka pravidla zjednodusene technicke anglictiny. pouziva se hlavne v leteckem prumyslu. jeho zasady muzete vyuzit v zadani pro ai, treba pozadovat kratke vety, aktivni rod a stale nazvy pro stejne veci. narazite na nej pri psani technicke dokumentace nebo pri zadavani pozadavku na srozumitelnejsi vystupy ai. asd-ste100 asd ste100 ste100 simplified technical english",
+      "mentions": 5,
+      "days": 1,
+      "first_seen": "2026-10-06",
+      "last_seen": "2026-10-06",
+      "card_hits": 0
+    },
+    {
       "slug": "automatizace",
       "term": "Automatizace",
       "category": "pc",
@@ -369,11 +392,11 @@
       "source": "hand",
       "starter": 5,
       "search": "claude code claude, ktery bezi v terminalu a sam pracuje se soubory ve vasem projektu. neni to chat v prohlizeci. claude code bezi u vas na pocitaci, vidi slozku s projektem, umi soubory cist i menit, spoustet prikazy a overovat si vysledek. spousti se v terminalu napsanim claude. ve skupine se casto zkracuje na cc. vetsina projektu, ktere tady lidi ukazuji, vznikla presne timhle. claude code claude codu claudecode cc",
-      "mentions": 19,
-      "days": 7,
+      "mentions": 23,
+      "days": 8,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-27",
-      "card_hits": 120
+      "last_seen": "2026-10-04",
+      "card_hits": 121
     },
     {
       "slug": "claude-md",
@@ -418,10 +441,10 @@
       "source": "hand",
       "starter": null,
       "search": "cli ovladani programu psanim prikazu. command line interface, tedy program bez oken a tlacitek, ktery se ovlada napsanymi prikazy. vyhoda je, ze se da snadno zautomatizovat a zopakovat, protoze prikaz se da ulozit a pustit znovu. vyhoda proti klikani je, ze prikaz se da ulozit a pustit znovu. odtud vede cesta k automatizaci. cli",
-      "mentions": 3,
-      "days": 3,
+      "mentions": 4,
+      "days": 4,
       "first_seen": "2026-09-07",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-06",
       "card_hits": 19
     },
     {
@@ -474,7 +497,7 @@
       "days": 6,
       "first_seen": "2026-08-30",
       "last_seen": "2026-09-21",
-      "card_hits": 29
+      "card_hits": 30
     },
     {
       "slug": "commit",
@@ -529,11 +552,11 @@
       "source": "auto",
       "starter": null,
       "search": "cowork claude v prohlizeci, ovladany klikanim misto psani do terminalu. cowork bezi v prohlizeci a vsechno se v nem odklikava. nemusite nic instalovat ani psat prikazy. pro spoustu lidi je to schudnejsi vstup nez claude code. nastaveni a pamet si ale drzi v cloudu. claude code ma oboje v textovych souborech u vas na disku, a prenest je jinam je pak snazsi. otazka cim zacit tady pada porad dokola. odpoved se lisi podle toho, jestli chcete terminal, nebo ne. cowork cowork cowork coworku coworku coworkem coworkem",
-      "mentions": 4,
-      "days": 1,
+      "mentions": 8,
+      "days": 3,
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-01",
-      "card_hits": 17
+      "last_seen": "2026-10-06",
+      "card_hits": 19
     },
     {
       "slug": "crm",
@@ -783,10 +806,10 @@
       "source": "hand",
       "starter": null,
       "search": "frontend a backend to, co uzivatel vidi, a to, co bezi schovane na pozadi. frontend je viditelna cast, tedy vzhled, tlacitka a texty v prohlizeci. backend je to, co bezi na serveru, pocita, uklada a hlida data. kdyz nekdo rekne fullstack, dela oboji.  frontend backend frontendu backendu",
-      "mentions": 1,
-      "days": 1,
+      "mentions": 3,
+      "days": 2,
       "first_seen": "2026-09-07",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-10-04",
       "card_hits": 2
     },
     {
@@ -1206,7 +1229,7 @@
       "days": 1,
       "first_seen": "2026-10-03",
       "last_seen": "2026-10-03",
-      "card_hits": 0
+      "card_hits": 1
     },
     {
       "slug": "kontext",
@@ -1228,10 +1251,10 @@
       "source": "hand",
       "starter": 4,
       "search": "kontext vsechno, co model v danou chvili vi o vasem zadani. kontext je souhrn toho, co ma model po ruce. vase zpravy, jeho odpovedi, obsah souboru, ktere si precetl, a instrukce, ktere dostal. kdyz mu nahazite vsechno, co vas napadne, utopi se v tom. min informaci, ale trefnejsich, funguje lip. odtud ta rada psat strucne. kdyz do zadani nahazite pet nesouvisejicich veci, vysledek bude horsi, nez kdybyste rekli jednu. kontext kontextu kontextem",
-      "mentions": 53,
-      "days": 18,
+      "mentions": 59,
+      "days": 20,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-03",
+      "last_seen": "2026-10-06",
       "card_hits": 51
     },
     {
@@ -1283,11 +1306,11 @@
       "source": "hand",
       "starter": null,
       "search": "limity a rate limit strop, kolik toho smite za dane obdobi pouzit. kazdy tarif ma hranici, kolik prace do nej za hodinu nebo tyden vejde. kdyz ji vycerpate, musite chvili pockat, nez se limit obnovi. silnejsi modely limit spotrebovavaji rychleji nez slabsi. odtud rady pracovat mimo spicku nebo prepnout na slabsi model na rutinu. rate limit limit limity limitu limitu limitem",
-      "mentions": 33,
-      "days": 6,
+      "mentions": 34,
+      "days": 7,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-30",
-      "card_hits": 36
+      "last_seen": "2026-10-04",
+      "card_hits": 37
     },
     {
       "slug": "llm",
@@ -1359,10 +1382,10 @@
       "source": "hand",
       "starter": null,
       "search": "lokalni model model bezici primo na vasem pocitaci misto v cloudu. misto posilani dotazu na internet bezi model primo u vas. data neopusti vas stroj, takze se to hodi na citlive veci. zaplatite za to vykonem, potrebujete silnejsi pocitac a vysledky byvaji slabsi nez u velkych cloudovych modelu. resi se hlavne u prepisu a u dat, ktera nesmi ven. lokalni model lokalne lokalni modely lokalniho modelu",
-      "mentions": 5,
-      "days": 4,
+      "mentions": 6,
+      "days": 5,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-02",
+      "last_seen": "2026-10-06",
       "card_hits": 28
     },
     {
@@ -1462,11 +1485,11 @@
       "source": "hand",
       "starter": 2,
       "search": "model konkretni verze ai, kterou zrovna pouzivate. modelu je vic a lisi se silou, rychlosti a cenou. silnejsi zvladne slozite zadani, ale je pomalejsi a drazsi. slabsi odbavi rutinu skoro hned. kdyz nekdo ve skupine pise, ze neco jede na opusu a neco na sonnetu, mluvi presne o tehle volbe. volba modelu je hlavni paka na to, kolik za praci s ai zaplatite. model modelu modely modelu modelem",
-      "mentions": 42,
-      "days": 10,
+      "mentions": 47,
+      "days": 12,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-02",
-      "card_hits": 93
+      "last_seen": "2026-10-06",
+      "card_hits": 94
     },
     {
       "slug": "model-agnosticky",
@@ -1837,7 +1860,7 @@
       "days": 5,
       "first_seen": "2026-08-30",
       "last_seen": "2026-10-03",
-      "card_hits": 30
+      "card_hits": 31
     },
     {
       "slug": "pocket-ai",
@@ -1911,10 +1934,10 @@
       "source": "hand",
       "starter": 3,
       "search": "prompt zadani, ktere modelu napisete. prompt je text, kterym modelu rikate, co ma udelat. zadna kouzelna formulka v tom neni. nejlip funguje obycejny jasny popis toho, co chcete, pro koho to je a jak ma vysledek vypadat. vetsina zklamani z ai pochazi z vagniho zadani, ne ze slabeho modelu. napsat „shrn mi to“ a „shrn mi to do peti bodu pro kolegu, ktery u toho nebyl“ da uplne jiny vysledek. prompt promptu prompty promptu promptem promptovani promptovat",
-      "mentions": 5,
-      "days": 3,
+      "mentions": 6,
+      "days": 4,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-10-06",
       "card_hits": 32
     },
     {
@@ -1936,11 +1959,11 @@
       "source": "hand",
       "starter": null,
       "search": "prototyp rychla zkusebni verze, ktera ma neco overit, ne vydrzet. rychla verze, na ktere si osahate, jestli napad funguje a jak se to ovlada. pocita se s tim, ze se zahodi.  prototyp prototypu prototypy",
-      "mentions": 0,
-      "days": 0,
-      "first_seen": null,
-      "last_seen": null,
-      "card_hits": 5
+      "mentions": 3,
+      "days": 1,
+      "first_seen": "2026-10-04",
+      "last_seen": "2026-10-04",
+      "card_hits": 6
     },
     {
       "slug": "pwa",
@@ -2004,11 +2027,11 @@
       "source": "auto",
       "starter": null,
       "search": "raspberry pi maly plnohodnotny pocitac velikosti kreditni karty, oblibeny pro domaci automatizaci a fyzicke projekty. raspberry pi je maly plnohodnotny pocitac, ktery se vejde do dlane. nejcasteji ho uvidite jako zaklad pro home assistant nebo vlastni domaci server, ovladany pres ssh odkudkoliv. bastleri ho ale vyuzivaji i na fyzicke projekty a profesionalni testovaci pripravky. setkate se s nim ve svete bastleni, domaci automatizace a vzdalene spravy malych serveru. raspberry pi raspberry piem raspberry piu raspberry pia",
-      "mentions": 0,
-      "days": 0,
-      "first_seen": null,
-      "last_seen": null,
-      "card_hits": 5
+      "mentions": 6,
+      "days": 1,
+      "first_seen": "2026-10-04",
+      "last_seen": "2026-10-04",
+      "card_hits": 6
     },
     {
       "slug": "raycast",
@@ -2242,10 +2265,10 @@
       "source": "hand",
       "starter": null,
       "search": "session jedno souvisle sezeni, ve kterem si ai pamatuje, o cem jste mluvili. session drzi spolecnou pamet konverzace. kdyz ji ukoncite a zacnete znovu, zacinate s cistym stolem a nic z minula se neprenasi, pokud to neni zapsane v souborech nebo v pameti. dlouha session zaplni kontextove okno. kratka a soustredena dava lepsi vysledky. session sessions sezeni vlakno vlakna",
-      "mentions": 11,
-      "days": 7,
+      "mentions": 12,
+      "days": 8,
       "first_seen": "2026-09-04",
-      "last_seen": "2026-10-03",
+      "last_seen": "2026-10-06",
       "card_hits": 35
     },
     {
@@ -2323,7 +2346,7 @@
       "days": 5,
       "first_seen": "2026-09-11",
       "last_seen": "2026-10-03",
-      "card_hits": 23
+      "card_hits": 24
     },
     {
       "slug": "ssh",
@@ -2548,7 +2571,7 @@
       "days": 6,
       "first_seen": "2026-09-11",
       "last_seen": "2026-10-03",
-      "card_hits": 49
+      "card_hits": 51
     },
     {
       "slug": "uttero",
@@ -2594,10 +2617,10 @@
       "source": "hand",
       "starter": 1,
       "search": "vibe coding staveni aplikaci tak, ze popisujete, co chcete, a kod pise ai. vy rikate, co ma vec delat, ai pise kod a vy vysledek zkousite a usmernujete. programovat umet nemusite. staci umet popsat, co chcete, a poznat, kdy vysledek nesedi. jede se po malych kouscich, protoze velky skok se spatne kontroluje a chyba se v nem hur hleda. kolem tohohle vznikla cela komunita. je to nejcastejsi pojem ve skupine vubec. vibe coding vibe codingu vibecoding vibe kodovani",
-      "mentions": 26,
-      "days": 14,
+      "mentions": 28,
+      "days": 15,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-27",
+      "last_seen": "2026-10-06",
       "card_hits": 49
     },
     {
@@ -2648,7 +2671,7 @@
       "days": 4,
       "first_seen": "2026-09-29",
       "last_seen": "2026-10-03",
-      "card_hits": 10
+      "card_hits": 11
     },
     {
       "slug": "wispr-flow-notetaker",

@@ -1927,6 +1927,19 @@
       "date": "2026-10-05",
       "card_count": 0,
       "topics": []
+    },
+    {
+      "date": "2026-10-06",
+      "card_count": 6,
+      "topics": [
+        "Workflow",
+        "ChatGPT",
+        "Vibe Coding",
+        "Produktivita",
+        "AI nástroje",
+        "Prompting",
+        "Dokumentace"
+      ]
     }
   ]
 }

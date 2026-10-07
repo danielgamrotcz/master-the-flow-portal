@@ -1980,6 +1980,22 @@
       "why": "Narazíte na něj při hledání zařízení pro záznam hovorů, školení nebo rozhovorů.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "asd-ste100",
+      "term": "ASD-STE100",
+      "cat": "ai",
+      "match": [
+        "ASD-STE100",
+        "ASD STE100",
+        "STE100",
+        "Simplified Technical English"
+      ],
+      "short": "Mezinárodní specifikace pro jasnou a jednoznačnou technickou angličtinu.",
+      "plain": "ASD-STE100 omezuje slovní zásobu a gramatická pravidla zjednodušené technické angličtiny. Používá se hlavně v leteckém průmyslu. Jeho zásady můžete využít v zadání pro AI, třeba požadovat krátké věty, aktivní rod a stálé názvy pro stejné věci.",
+      "why": "Narazíte na něj při psaní technické dokumentace nebo při zadávání požadavků na srozumitelnější výstupy AI.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
