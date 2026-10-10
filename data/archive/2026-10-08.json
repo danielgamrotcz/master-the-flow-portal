@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-08",
+  "generated_at": "2026-10-10T06:19:27Z",
+  "stats": {
+    "messages": 3,
+    "groups": 2,
+    "members": 2
+  },
+  "cards": [
+    {
+      "id": "2026-10-08-01",
+      "type": "UKÁZKA",
+      "level": "Expert",
+      "topics": [
+        "Automatizace",
+        "Workflow",
+        "Obsidian",
+        "MCP"
+      ],
+      "title": "Hlasové workflow pro konferenční výstupy",
+      "excerpt": "Jeden z členů ukázal systém, který z hlasových vstupů připraví poznámky, souhrny, úkoly i podklady pro prezentace. Podle něj má výstupy do 10 minut uložené na vlastním disku a celý proces už funguje skoro bez ručních úprav.",
+      "body": "Schéma propojuje hlasové poznámky z iPhonu nebo Plaud přes Termius s Macem mini. Na něm běží tmux, Codex, MCP servery a Obsidian. Podle typu vstupu systém vytvoří poznámku, souhrn, další kroky, denní přehled nebo zadaný úkol, nabídku, prezentaci či handout.\n\nJeden z členů použil workflow také při třech konferenčních vystoupeních pro různá publika. Slajdy si nechal vygenerovat podle kostry, svého workflow a nadiktované přípravy. Systém podle něj vyžadoval průběžné ladění, teď už ale funguje víceméně bez ručních úprav.",
+      "read_minutes": 1,
+      "source_group": "vibe-coding",
+      "source_msg_times": [
+        "18:14"
+      ],
+      "links": [],
+      "source_date": "2026-10-08"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-09-19-01",
+    "type": "TIP",
+    "level": "Expert",
+    "topics": [
+      "Claude Code",
+      "Vibe Coding",
+      "Dokumentace",
+      "Workflow"
+    ],
+    "title": "AGENTS.md nově funguje v Claude Code",
+    "excerpt": "Člen sdílel zprávu, že Claude Code nově podporuje soubor AGENTS.md, a označil to za fajn krok. Stejný soubor s instrukcemi tak může fungovat v Claude Code i v nástrojích typu Codex.",
+    "body": "Podle zprávy od AI Weekly používá Claude Code 2.1.277 soubor AGENTS.md, pokud ve složce chybí CLAUDE.md. Tuto specifikaci údajně využívá přes 60 000 open-source projektů. Stejné instrukční soubory tak mohou fungovat v nástrojích jako Codex i Claude Code. Jeden člen komunity změnu označil za užitečný krok ke kompatibilitě. V navazující debatě ale zaznělo, že praktický přínos vždy záleží i na obsahu instrukčního souboru.",
+    "read_minutes": 1,
+    "source_group": "vibe-coding",
+    "source_msg_times": [
+      "14:42",
+      "16:25",
+      "16:31"
+    ],
+    "links": [
+      "https://aiweekly.co/alerts/anthropic-adopts-openais-agentsmd-spec-in-claude-code-21277-falls-back-to-it"
+    ],
+    "source_date": "2026-09-19",
+    "resurfaced_from": "2026-09-19"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "master-the-flow-—-hlavní",
+        "name": "Master the Flow — hlavní",
+        "messages": [
+          {
+            "time": "18:18",
+            "author": "Daniel",
+            "text": "Sem tam mi někdo napíše, jestli může někoho přidat tady do skupiny.\nJasně, že jo!\nProto jsem ji vytvořil. Já sám tu čerpám kotel inspirace a boží kontakty. Jsem mega rád, že mě to letos v březnu napadlo.\nZačal jsem taky zvát aktivněji, třeba dnes dopoledne a odpoledne. Jako je to se mnou těžký, protože nemívám na akcích slajdy (a na flipchart se ty QR kreslí blbě).\nAle když už jsem je tentokrát vytvořil, tenhle nesměl chybět."
+          }
+        ]
+      },
+      {
+        "slug": "vibe-coding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "18:14",
+            "author": "Daniel",
+            "text": "Na tenhle slajd balím holky. Ne, kecám, ale je kolem toho hodně diskuze.\nMěl jsem včera a dnes celkem tři vystoupení na konferencích. Pokaždé úplně jiné publikum. Původně slajdy neměly být, ale nakonec jsem rád, že jsem to tam večer před tím prvním vystoupením pustil a nechal je vygenerovat podle kostry, mého workflow a nadiktované přípravy.\nJe to jedno drobné workflow z několika desítek, tohle je pro hlasové vstupy. Na základě vstupu se pak generují materiály, prezentace, úkoly, nabídky… Skončí akce nebo nadiktuju poznámku a do 10 minut mám u sebe na disku výstupy, které u toho mají být nebo o které jsem požádal.\nVšechny ty věci u počítače, u kterých jsem potil prsty, vznikají z mobilu. Jo, chtělo to průběžné ladění, ale dneska to je víceméně bez manuálních korekcí.\nTřeba to bude fajn inspirace."
+          },
+          {
+            "time": "18:48",
+            "author": "člen komunity",
+            "text": "Doplnil bych (klidně ručně) na WP favicon. 🙂"
+          }
+        ]
+      }
+    ]
+  }
+}
