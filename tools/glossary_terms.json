@@ -1996,6 +1996,42 @@
       "why": "Narazíte na něj při psaní technické dokumentace nebo při zadávání požadavků na srozumitelnější výstupy AI.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "deduplikace",
+      "term": "Deduplikace",
+      "cat": "data",
+      "match": [
+        "deduplikace",
+        "deduplikaci",
+        "deduplikací",
+        "deduplikovat",
+        "duplicita",
+        "duplicity",
+        "duplicit",
+        "duplicitní"
+      ],
+      "short": "Vyhledání a řešení více kopií stejného souboru nebo záznamu.",
+      "plain": "Nástroj vyhledá možné kopie podle názvu, velikosti nebo obsahu. Před smazáním výsledky zkontrolujte a rozhodněte, kterou kopii chcete ponechat, zvlášť u záloh.",
+      "why": "Hodí se při úklidu disku nebo třídění stovek gigabajtů souborů a záloh.",
+      "related": [],
+      "source": "auto"
+    },
+    {
+      "slug": "wordpress",
+      "term": "WordPress",
+      "cat": "web",
+      "match": [
+        "WordPress",
+        "WordPressu",
+        "WordPressem",
+        "WP"
+      ],
+      "short": "Systém pro tvorbu a správu webů přes administraci, šablony a doplňky.",
+      "plain": "Ve WordPressu můžete přes webovou administraci upravovat stránky a publikovat obsah. Vzhled měníte pomocí šablon a funkce rozšiřujete doplňky. Systém, šablony i doplňky je potřeba pravidelně aktualizovat.",
+      "why": "Používá se pro firemní weby, blogy, magazíny a internetové obchody.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }

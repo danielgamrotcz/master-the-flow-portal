@@ -1960,6 +1960,16 @@
       "date": "2026-10-09",
       "card_count": 0,
       "topics": []
+    },
+    {
+      "date": "2026-10-10",
+      "card_count": 2,
+      "topics": [
+        "Automatizace",
+        "Workflow",
+        "AI nástroje",
+        "Hooky"
+      ]
     }
   ]
 }

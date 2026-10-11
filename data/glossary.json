@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-07",
+  "generated_at": "2026-10-11",
   "source": {
-    "daily_notes": 29,
+    "daily_notes": 31,
     "range": [
       "2026-08-30",
-      "2026-10-06"
+      "2026-10-10"
     ]
   },
   "categories": [
@@ -242,7 +242,7 @@
       "days": 1,
       "first_seen": "2026-10-06",
       "last_seen": "2026-10-06",
-      "card_hits": 0
+      "card_hits": 1
     },
     {
       "slug": "automatizace",
@@ -265,10 +265,10 @@
       "source": "hand",
       "starter": null,
       "search": "automatizace postup, ktery po nastaveni bezi bez vas. nastavite jednou a pak uz to jede samo, bud v urceny cas, nebo kdyz nastane nejaka udalost. typicky neco, co byste jinak delali porad dokola. ve skupine to byva stahovani prepisu z nahravek, ranni souhrn do poznamek nebo hlidani, jestli neco nespadlo. vetsina projektu, ktere tady lidi ukazuji, zacala jako otrava, kterou je nebavilo delat rucne. automatizace automatizaci automatizovat automatizovane",
-      "mentions": 17,
-      "days": 9,
+      "mentions": 18,
+      "days": 10,
       "first_seen": "2026-09-01",
-      "last_seen": "2026-10-03",
+      "last_seen": "2026-10-08",
       "card_hits": 24
     },
     {
@@ -445,7 +445,7 @@
       "days": 4,
       "first_seen": "2026-09-07",
       "last_seen": "2026-10-06",
-      "card_hits": 19
+      "card_hits": 20
     },
     {
       "slug": "cloudflare-vercel",
@@ -493,11 +493,11 @@
       "source": "hand",
       "starter": null,
       "search": "codex kodovaci nastroj od openai, konkurence claude code. nastroj, ktery podobne jako claude code umi pracovat s kodem v projektu. ve skupine se pravidelne srovnavaji, vysledek se lisi podle typu ukolu.  codex codexu codex",
-      "mentions": 20,
-      "days": 6,
+      "mentions": 22,
+      "days": 7,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-21",
-      "card_hits": 30
+      "last_seen": "2026-10-08",
+      "card_hits": 31
     },
     {
       "slug": "commit",
@@ -552,10 +552,10 @@
       "source": "auto",
       "starter": null,
       "search": "cowork claude v prohlizeci, ovladany klikanim misto psani do terminalu. cowork bezi v prohlizeci a vsechno se v nem odklikava. nemusite nic instalovat ani psat prikazy. pro spoustu lidi je to schudnejsi vstup nez claude code. nastaveni a pamet si ale drzi v cloudu. claude code ma oboje v textovych souborech u vas na disku, a prenest je jinam je pak snazsi. otazka cim zacit tady pada porad dokola. odpoved se lisi podle toho, jestli chcete terminal, nebo ne. cowork cowork cowork coworku coworku coworkem coworkem",
-      "mentions": 8,
-      "days": 3,
+      "mentions": 9,
+      "days": 4,
       "first_seen": "2026-09-01",
-      "last_seen": "2026-10-06",
+      "last_seen": "2026-10-10",
       "card_hits": 19
     },
     {
@@ -631,6 +631,33 @@
       "first_seen": "2026-09-13",
       "last_seen": "2026-09-13",
       "card_hits": 19
+    },
+    {
+      "slug": "deduplikace",
+      "term": "Deduplikace",
+      "category": "data",
+      "short": "Vyhledání a řešení více kopií stejného souboru nebo záznamu.",
+      "plain": "Nástroj vyhledá možné kopie podle názvu, velikosti nebo obsahu. Před smazáním výsledky zkontrolujte a rozhodněte, kterou kopii chcete ponechat, zvlášť u záloh.",
+      "why": "Hodí se při úklidu disku nebo třídění stovek gigabajtů souborů a záloh.",
+      "related": [],
+      "aliases": [
+        "deduplikace",
+        "deduplikaci",
+        "deduplikací",
+        "deduplikovat",
+        "duplicita",
+        "duplicity",
+        "duplicit",
+        "duplicitní"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "deduplikace vyhledani a reseni vice kopii stejneho souboru nebo zaznamu. nastroj vyhleda mozne kopie podle nazvu, velikosti nebo obsahu. pred smazanim vysledky zkontrolujte a rozhodnete, kterou kopii chcete ponechat, zvlast u zaloh. hodi se pri uklidu disku nebo trideni stovek gigabajtu souboru a zaloh. deduplikace deduplikaci deduplikaci deduplikovat duplicita duplicity duplicit duplicitni",
+      "mentions": 5,
+      "days": 2,
+      "first_seen": "2026-10-06",
+      "last_seen": "2026-10-10",
+      "card_hits": 2
     },
     {
       "slug": "deploy",
@@ -1251,10 +1278,10 @@
       "source": "hand",
       "starter": 4,
       "search": "kontext vsechno, co model v danou chvili vi o vasem zadani. kontext je souhrn toho, co ma model po ruce. vase zpravy, jeho odpovedi, obsah souboru, ktere si precetl, a instrukce, ktere dostal. kdyz mu nahazite vsechno, co vas napadne, utopi se v tom. min informaci, ale trefnejsich, funguje lip. odtud ta rada psat strucne. kdyz do zadani nahazite pet nesouvisejicich veci, vysledek bude horsi, nez kdybyste rekli jednu. kontext kontextu kontextem",
-      "mentions": 59,
-      "days": 20,
+      "mentions": 60,
+      "days": 21,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-06",
+      "last_seen": "2026-10-10",
       "card_hits": 51
     },
     {
@@ -1408,10 +1435,10 @@
       "source": "hand",
       "starter": null,
       "search": "markdown formatovani textu pomoci obycejnych znaku. jednoduchy zapis, kde hvezdicky udelaji tucne pismo a mrizky nadpisy. zustava to citelny text. soubor otevrete cimkoli a word na to nepotrebujete. v tomhle formatu jsou poznamky v obsidianu i instrukce v claude.md. markdown markdownu .md md soubor",
-      "mentions": 11,
-      "days": 3,
+      "mentions": 16,
+      "days": 4,
       "first_seen": "2026-09-13",
-      "last_seen": "2026-10-02",
+      "last_seen": "2026-10-10",
       "card_hits": 19
     },
     {
@@ -1432,11 +1459,11 @@
       "source": "hand",
       "starter": null,
       "search": "mcp zpusob, jak claudovi zpristupnit vase dalsi aplikace. model sam o sobe vidi jen to, co mu napisete. pres mcp se k nemu da pripojit kalendar, e-mail, databaze nebo interni system a on s nimi pak umi pracovat. hotova napojeni se daji nainstalovat, psat je nikdo nemusi. zkratka znamena model context protocol a je to otevreny standard od anthropicu, takze jedno napojeni funguje ve vic nastrojich. kdyz nekdo ve skupine napise, ze si k tomu pripojil gmail nebo notion, mluvi o tomhle. mcp",
-      "mentions": 18,
-      "days": 4,
+      "mentions": 20,
+      "days": 5,
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-02",
-      "card_hits": 29
+      "last_seen": "2026-10-08",
+      "card_hits": 30
     },
     {
       "slug": "microsoft-copilot",
@@ -1489,7 +1516,7 @@
       "days": 12,
       "first_seen": "2026-08-30",
       "last_seen": "2026-10-06",
-      "card_hits": 94
+      "card_hits": 97
     },
     {
       "slug": "model-agnosticky",
@@ -1665,11 +1692,11 @@
       "source": "hand",
       "starter": null,
       "search": "obsidian poznamky ulozene jako obycejne textove soubory u vas na disku. aplikace na psani a propojovani poznamek. soubory zustavaji vase, lezi u vas ve slozce jako obycejny text a otevrete je cimkoli, i kdyby obsidian zitra skoncil. to je hlavni rozdil proti cloudovym sluzbam. kolem druheho mozku v obsidianu se ve skupine toci jedno z nejsilnejsich temat. obsidian obsidianu obsidianem obsidian",
-      "mentions": 18,
-      "days": 3,
+      "mentions": 21,
+      "days": 4,
       "first_seen": "2026-09-11",
-      "last_seen": "2026-10-03",
-      "card_hits": 45
+      "last_seen": "2026-10-08",
+      "card_hits": 46
     },
     {
       "slug": "offline",
@@ -1856,11 +1883,11 @@
       "source": "auto",
       "starter": null,
       "search": "plaud kompaktni hardwarove nahravaci zarizeni navrzene primo pro schuzky a konzultace. plaud je fyzicke nahravaci zarizeni urcene pro schuzky. jde o jednoucelovy pristroj, takze vas neprerusi prichozi hovor ani notifikace z mobilu. vlastni aplikace zvladne prepis nahravky a pozna, kdo co rikal. v diskuzich o automatizovanem zpracovani zaznamu ze schuzek a konzultaci. plaud plaudu plaudem plaude",
-      "mentions": 38,
-      "days": 5,
+      "mentions": 40,
+      "days": 6,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-03",
-      "card_hits": 31
+      "last_seen": "2026-10-08",
+      "card_hits": 32
     },
     {
       "slug": "pocket-ai",
@@ -1938,7 +1965,7 @@
       "days": 4,
       "first_seen": "2026-08-30",
       "last_seen": "2026-10-06",
-      "card_hits": 32
+      "card_hits": 33
     },
     {
       "slug": "prototyp",
@@ -2238,11 +2265,11 @@
       "source": "hand",
       "starter": null,
       "search": "server pocitac, ktery bezi nepretrzite a obsluhuje ostatni. server je stroj, jehoz jedina prace je cekat na dotazy a odpovidat na ne. muze to byt obri stroj v datovem centru i obycejny pocitac doma, ktery nikdy nevypinate.  server serveru servery serveru serveri",
-      "mentions": 4,
-      "days": 3,
+      "mentions": 5,
+      "days": 4,
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-12",
-      "card_hits": 15
+      "last_seen": "2026-10-08",
+      "card_hits": 16
     },
     {
       "slug": "session",
@@ -2511,11 +2538,11 @@
       "source": "auto",
       "starter": null,
       "search": "tmux program, ktery terminalove okno rozdeli na vice panelu a necha relaci bezet i po zavreni notebooku. spustite ho v prikazovem radku a pracujete ve vice panelech najednou. cela relace zustane aktivni, i kdyz notebook zavrete nebo se odpojite od vzdaleneho stroje. priste se pripojite a vse je presne tam, kde jste to nechali. hodi se hlavne kdyz mate jeden centralni pocitac doma a pripojujete se k nemu z ruznych zarizeni pres tailscale nebo ssh. pri praci s centralnim strojem pres tailscale nebo ssh. tmux tmuxem tmuxa",
-      "mentions": 1,
-      "days": 1,
+      "mentions": 2,
+      "days": 2,
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-10",
-      "card_hits": 4
+      "last_seen": "2026-10-08",
+      "card_hits": 5
     },
     {
       "slug": "token",
@@ -2617,11 +2644,11 @@
       "source": "hand",
       "starter": 1,
       "search": "vibe coding staveni aplikaci tak, ze popisujete, co chcete, a kod pise ai. vy rikate, co ma vec delat, ai pise kod a vy vysledek zkousite a usmernujete. programovat umet nemusite. staci umet popsat, co chcete, a poznat, kdy vysledek nesedi. jede se po malych kouscich, protoze velky skok se spatne kontroluje a chyba se v nem hur hleda. kolem tohohle vznikla cela komunita. je to nejcastejsi pojem ve skupine vubec. vibe coding vibe codingu vibecoding vibe kodovani",
-      "mentions": 28,
-      "days": 15,
+      "mentions": 32,
+      "days": 17,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-06",
-      "card_hits": 49
+      "last_seen": "2026-10-10",
+      "card_hits": 50
     },
     {
       "slug": "vm",
@@ -2697,6 +2724,29 @@
       "card_hits": 7
     },
     {
+      "slug": "wordpress",
+      "term": "WordPress",
+      "category": "web",
+      "short": "Systém pro tvorbu a správu webů přes administraci, šablony a doplňky.",
+      "plain": "Ve WordPressu můžete přes webovou administraci upravovat stránky a publikovat obsah. Vzhled měníte pomocí šablon a funkce rozšiřujete doplňky. Systém, šablony i doplňky je potřeba pravidelně aktualizovat.",
+      "why": "Používá se pro firemní weby, blogy, magazíny a internetové obchody.",
+      "related": [],
+      "aliases": [
+        "WordPress",
+        "WordPressu",
+        "WordPressem",
+        "WP"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "wordpress system pro tvorbu a spravu webu pres administraci, sablony a doplnky. ve wordpressu muzete pres webovou administraci upravovat stranky a publikovat obsah. vzhled menite pomoci sablon a funkce rozsirujete doplnky. system, sablony i doplnky je potreba pravidelne aktualizovat. pouziva se pro firemni weby, blogy, magaziny a internetove obchody. wordpress wordpressu wordpressem wp",
+      "mentions": 7,
+      "days": 3,
+      "first_seen": "2026-09-10",
+      "last_seen": "2026-10-10",
+      "card_hits": 2
+    },
+    {
       "slug": "workflow",
       "term": "Workflow",
       "category": "pc",
@@ -2715,11 +2765,11 @@
       "source": "hand",
       "starter": null,
       "search": "workflow ustaleny postup, jak neco delate od zacatku do konce. sled kroku, ktery vede od zadani k vysledku. nemusi byt zautomatizovany. workflow je i to, kdyz vite, ze po nahravce vzdycky nasleduje prepis, pak shrnuti a nakonec ulozeni do poznamek. ve skupine se sdili spis workflow nez jednotlive nastroje. nastroj se da vymenit, postup zustava. workflow workflowu workflows",
-      "mentions": 14,
-      "days": 8,
+      "mentions": 18,
+      "days": 10,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-02",
-      "card_hits": 54
+      "last_seen": "2026-10-10",
+      "card_hits": 55
     },
     {
       "slug": "yolo",

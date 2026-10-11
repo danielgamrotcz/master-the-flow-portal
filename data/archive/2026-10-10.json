@@ -1,0 +1,145 @@
+{
+  "date": "2026-10-10",
+  "generated_at": "2026-10-11T00:05:03Z",
+  "stats": {
+    "messages": 10,
+    "groups": 2,
+    "members": 2
+  },
+  "cards": [
+    {
+      "id": "2026-10-10-01",
+      "type": "UKÁZKA",
+      "level": "Pokročilý",
+      "topics": [
+        "AI nástroje",
+        "Workflow",
+        "Hooky"
+      ],
+      "title": "Úprava formátu podcastových videí",
+      "excerpt": "Jedna členka vytvořila s Claudem nástroj na sestřih podcastových epizod a krátkých videí. Když jí klesla sledovanost, změnila záběr, úvod i závěrečný vizuál. Nový formát podle ní funguje.",
+      "body": "Nástroj na sestřih podcastových epizod a krátkých videí fungoval několik měsíců. Pak začala klesat sledovanost. Členka se místo stavby dalšího nástroje vrátila k původnímu řešení a upravila samotný výstup. Vyzkoušela jiný záběr, nový začátek a závěrečný vizuál, který má diváka zaujmout. Podle její zkušenosti může změna zavedeného postupu fungovat lépe než pokračovat pořád stejně.",
+      "read_minutes": 1,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "14:34"
+      ],
+      "links": [],
+      "source_date": "2026-10-10"
+    },
+    {
+      "id": "2026-10-10-02",
+      "type": "NÁSTROJE",
+      "level": "Pokročilý",
+      "topics": [
+        "AI nástroje",
+        "Automatizace",
+        "Workflow"
+      ],
+      "title": "Claude při třídění 200 GB souborů",
+      "excerpt": "Jeden člen s Claudem třídí zhruba 200 GB dat a nastavil mu, co smí dělat. V diskuzi se řešily i duplicity, zálohy a třídění fotek podle EXIF dat.",
+      "body": "Při třídění zhruba 200 GB souborů jeden člen použil Claude a předem mu určil, co smí a nesmí dělat. Claude sám nic nemaže, konečné rozhodnutí tak zůstává na člověku. Jiný člen upozornil, že software sice najde duplicity, ale sám nepozná, kterou kopii nebo zálohu odstranit. Doporučil nejdřív přesunout všechny soubory do jedné složky, nepřepisovat přitom položky s jinou velikostí a pak fotografie rozdělit podle EXIF dat.",
+      "read_minutes": 1,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "17:05",
+        "17:12",
+        "17:14"
+      ],
+      "links": [],
+      "source_date": "2026-10-10"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-09-12-01",
+    "type": "NÁSTROJE",
+    "level": "Pokročilý",
+    "topics": [
+      "AI nástroje",
+      "Google",
+      "Workflow"
+    ],
+    "title": "Proměnlivé podmínky Google Antigravity",
+    "excerpt": "Členové řešili rozdíly mezi variantami Google Antigravity i nečekané převedení na tarif Starter. Časté změny podmínek a názvů služeb podle nich ztěžují orientaci.",
+    "body": "Jeden člen vyzkoušel obě probírané možnosti. V obou případech ho systém převedl na tarif Starter. Další člen si prošel konkrétní podmínky a zjistil, že se varianty zásadně liší, i když je původně považoval za téměř stejné. V diskuzi zazněla i kritika častých změn podmínek a názvů služeb Googlu. Český reseller by mohl nabídnout dostupnější podporu a konzultace. Jiný člen ale upozornil, že právě s těmito omezeními reseller většinou nepomůže.",
+    "read_minutes": 1,
+    "source_group": "inspirace--diskuze",
+    "source_msg_times": [
+      "08:26",
+      "08:51",
+      "08:56",
+      "09:06",
+      "09:14",
+      "09:38"
+    ],
+    "links": [],
+    "source_date": "2026-09-12",
+    "resurfaced_from": "2026-09-12"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspirace--diskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "14:34",
+            "author": "člen komunity",
+            "text": "Mám drobnej dotaz: Pozoruju u lidí (i u sebe), že stavíme nové nástroje. Líbí se mi to a fandím tomu. Jen mám pocit, že u toho zapomínáme zkoušet nový cesty u toho, co už máme a nějak funguje.\nTak se ptám ze svý zvídavosti: máte nějakou drobnost, kterou jste na už hotový věci změnili, a přineslo to nečekaný obrat?\nZačnu od sebe. Postavila jsem s Claude nástroj na sestřih epizod podcastu a short videí. Měsíce to jelo a jelo, až jsem v číslech zaznamenala pokles sledovanosti. Tak jsem si k tomu sedla a zkoušela: jiný záběr, jiný začátek, na konec vizuál, který ťukne. Nový formát ukazuje, že jiná cesta funguje.\nUsnuli jste taky někdy na vavřínech? Co jste naposledy u něčeho, co vám dlouhodobě fachalo, zkusili jinak?"
+          },
+          {
+            "time": "17:05",
+            "author": "člen komunity",
+            "text": "Google na ty duplicity upozorňuje a jsou na to specializované sw.\nAle člověk musí rozhodnout co smazat. A poznat zalohu od zálohy zálohy...😂\nNejjednodušší je vysyspat vše do jedné složky neprepisovat pokud je jiná velikost. Pak dle exifu rozdělit dle libosti"
+          },
+          {
+            "time": "17:12",
+            "author": "člen komunity",
+            "text": "Ja jsem to proste nacpal do coworku"
+          },
+          {
+            "time": "17:12",
+            "author": "člen komunity",
+            "text": "Potrebuju vytridit 200gb"
+          },
+          {
+            "time": "17:12",
+            "author": "člen komunity",
+            "text": "To je asi otázka priorit, kapacit. pokud momentálně dává smysl řešit něco jiného tak se nevracim.\nNěkdy se ale stane že vidím že vybraná cesta je špatná a celé to předělat nechci tak se tomu už nevěnuji."
+          },
+          {
+            "time": "17:13",
+            "author": "člen komunity",
+            "text": "Není to jako když ti v garáži uklidí manželka? Najdeš to pak ? Claude určitě.."
+          },
+          {
+            "time": "17:14",
+            "author": "člen komunity",
+            "text": "Nemam garaz. Jsem rad ze zaparkuju kdekoliv 😂😂"
+          },
+          {
+            "time": "17:14",
+            "author": "člen komunity",
+            "text": "Ale chapu point. Claude jsem naucil co ma a co nema delat. Sam nic nesmaze."
+          },
+          {
+            "time": "17:33",
+            "author": "člen komunity",
+            "text": "Dokumenty Google přidávají nativní podporu pro Markdown. Nechybí živá spolupráce – Živě.cz https://share.google/dRDztnVFZu9gTMHum\n[kontext odkazu: Článek na Živě.cz informuje o nativní podpoře souborů Markdown v Dokumentech a na Disku Google, včetně úprav bez konverze a živé spolupráce více uživatelů. Podpora nezahrnuje všechny formátovací funkce, soubory je nutné nahrát z počítače a funkce má být dostupná pro všechny typy účtů.]"
+          }
+        ]
+      },
+      {
+        "slug": "vibe-coding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "17:27",
+            "author": "člen komunity",
+            "text": "Proč to je ve WP?\nNa to imho stačí statická stránka, bude rychlejší a bez problémů s hackery , updaty prostě bez WProblem"
+          }
+        ]
+      }
+    ]
+  }
+}
