@@ -1,7 +1,7 @@
 # TASK-002 — Zjednodušení landing page „Vibe coding nezačíná promptem“
 
-Stav: Review
-Poslední checkpoint: 2026-10-11 19:40 CEST
+Stav: Done
+Poslední checkpoint: 2026-10-11 20:02 CEST
 Tracker: [TASKS.md](../../TASKS.md)
 
 ## Výsledek a acceptance
@@ -16,7 +16,7 @@ Tracker: [TASKS.md](../../TASKS.md)
 ## Scope a nepovolené kroky
 
 - V rozsahu: `live/vibe-coding/`, odpovídající položka v `data/events.json`, cílený E2E test a task dokumentace.
-- Mimo rozsah: Google Form, Calendar událost, Apps Script automatizace, jiné části portálu, commit, push a produkční deploy.
+- Mimo rozsah implementace: Google Form, Calendar událost, Apps Script automatizace a jiné části portálu.
 - Historický TASK-001 a jeho release důkazy zůstávají beze změny.
 
 ## Routing packet
@@ -43,6 +43,7 @@ Tracker: [TASKS.md](../../TASKS.md)
 - [x] Upravit obsah, strukturu, vizuál, eventová data a cílený test.
 - [x] Spustit technické, responzivní a vizuální ověření.
 - [x] Získat nezávislou acceptance kontrolu a přesunout task do Review.
+- [x] Po Danielově schválení commitnout, pushnout, nasadit a ověřit produkci.
 
 ## Ověření
 
@@ -57,13 +58,16 @@ Tracker: [TASKS.md](../../TASKS.md)
 - První nezávislá kontrola našla rozpor mezi `program` a portálovým nadpisem „Program“; oprava změnila hodnotu na `null` a skutečný runtime rozpor odstranila.
 - Fresh verifier `/root/vibe_revision_verifier_final` — VERIFIED; finální funkční snapshot zůstal stabilní.
 - Funkční snapshot: HTML `a7c977d…`, CSS `e81dc55…`, app `a14add9…`, foto `ac67504…`, eventy `4d4be43…`, cílený E2E `da90431…`.
+- Implementační commit `626ea8a50b9d3a21b2905ea57477ad96cb12b611` byl pushnut na `origin/main`.
+- Cloudflare Pages deployment: `https://4adbdf37.master-the-flow-portal.pages.dev`.
+- Produkce `https://mastertheflow.cz/live/vibe-coding/` — stránka i fotografie HTTP 200; cílené E2E 23/23 prošlo.
+- Produkční ochrana: `.dev.vars`, `tools/` a `tests/` vracejí 404; `/docs/` vrací pouze kořenovou přístupovou bránu portálu, ne interní dokumentaci.
 
-## Neověřeno a rozhodnutí před publikací
+## Neověřeno po publikaci
 
-- Produkční stránka nebyla změněna ani ověřována.
 - Google Form a Calendar zůstaly beze změny; nebyla odeslána testovací registrace.
-- Fotografie je ověřená jako Alexova veřejná profilová fotografie a je uložena lokálně, ale oprávnění k jejímu opětovnému použití nebylo nezávisle doloženo. Před veřejným nasazením je vhodné mít Alexovo potvrzení.
+- Fotografie je ověřená jako Alexova veřejná profilová fotografie a je uložena lokálně. Daniel použití připravených podkladů schválil; samostatné potvrzení držitele práv nebylo nezávisle doloženo.
 
 ## Recovery
 
-- Změny jsou do samostatného schválení pouze lokální. Návrat znamená odstranit změny TASK-002; předchozí vydaná verze zůstává na commitu `226eba6` a v produkci.
+- Nasazený funkční stav odpovídá commitu `626ea8a`. Návrat lze provést novým reverzním commitem a následným Cloudflare Pages deploymentem; předchozí vydaná verze byla na commitu `226eba6`.
