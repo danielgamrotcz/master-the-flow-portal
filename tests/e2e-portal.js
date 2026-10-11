@@ -108,12 +108,18 @@ function check(name, cond, detail = '') {
   check('Pražský sraz je v přehledu minulých akcí', await page.locator('#events-past .event-card[data-event-id="evt-2026-08-29-sraz"]').count() === 1);
   check('Pražský sraz je označený jako proběhlý', (await srazCard.locator('.event-badge-status').innerText()).trim() === 'Proběhlo');
   check('Ukončený sraz nenabízí registraci', await srazCard.locator('.event-card-register').count() === 0);
+  const hiddenInterviewId = 'evt-2026-10-21-vibe-coding-nezacina-promptem';
+  check('Připravovaný rozhovor není vidět na hlavním portálu',
+    await page.locator(`.event-card[data-event-id="${hiddenInterviewId}"]`).count() === 0
+      && await page.locator(`#event-teaser [data-event-id="${hiddenInterviewId}"]`).count() === 0);
 
   // ===== 4c. Slovníček: zavíratelný proužek jen s nadcházejícími srazy =====
   // Očekávání se odvozuje z events.json. Pevný seznam začal oprávněně padat
   // den po olomouckém srazu, protože aplikace už proběhlé akce skrývá.
   const eventData = JSON.parse(require('fs').readFileSync(
     require('path').join(__dirname, '..', 'data', 'events.json'), 'utf8'));
+  const hiddenInterview = eventData.events.find(event => event.id === hiddenInterviewId);
+  check('Skrytí rozhovoru je řízené vratným datovým příznakem', hiddenInterview?.portal_hidden === true);
   const pragueMeetup = eventData.events.find(event => event.id === 'evt-2026-08-29-sraz');
   check('Data pražského srazu ruší oba registrační cíle', pragueMeetup?.status === 'Proběhlo'
     && pragueMeetup.registration_url === null

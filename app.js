@@ -1577,7 +1577,7 @@ async function loadEvents() {
   if (state.eventsLoaded) return state.events;
   try {
     const data = await fetchJSON('/data/events.json');
-    state.events = Array.isArray(data.events) ? data.events : [];
+    state.events = Array.isArray(data.events) ? data.events.filter(event => !event?.portal_hidden) : [];
   } catch {
     state.events = [];
   }

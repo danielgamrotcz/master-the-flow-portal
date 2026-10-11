@@ -28,6 +28,7 @@ function check(name, condition, detail = '') {
     && portalEvent?.time_from === '18:00'
     && portalEvent?.time_to === '19:30'
     && portalEvent?.registration_page_url === '/live/vibe-coding/'
+    && portalEvent?.portal_hidden === true
     && portalEvent?.is_paid === false);
   check('Portál nevydává otevřené otázky za pevný program', portalEvent?.program === null);
 

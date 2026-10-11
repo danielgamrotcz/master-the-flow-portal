@@ -14,6 +14,7 @@
       "program": null,
       "registration_url": "https://docs.google.com/forms/d/e/1FAIpQLSeavG37wav2Bb0KeigdLCVToTIPhlXvWU5a8O7ONAxWm0_mUw/viewform?usp=publish-editor",
       "registration_page_url": "/live/vibe-coding/",
+      "portal_hidden": true,
       "is_paid": false,
       "price": null,
       "discount_code": null,
