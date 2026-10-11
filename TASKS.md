@@ -24,14 +24,19 @@ _Žádné položky._
 
 ## Review
 
+_Žádné položky._
+
+## Done
+
 ### TASK-001 — Landing page „Vibe coding nezačíná promptem“
 
 - Started: 2026-10-11
 - Resumed: 2026-10-11 — Daniel dokončil interaktivní přihlášení a potvrdil vytvoření formuláře, Calendar události a automatických soukromých pozvánek.
+- Accepted: 2026-10-11 — Daniel schválil commit, push a produkční nasazení.
 - Owner: Codex
 - ExecPlan: [docs/plans/TASK-001-vibe-coding-live.md](docs/plans/TASK-001-vibe-coding-live.md)
 - Výsledek: veřejná landing page pro bezplatný live stream 21. 10. 2026 od 18:00, registrační Google Form a soukromé Calendar pozvánky s Google Meet.
-- Scope: lokální implementace a ověření; bez commitu, pushnutí, deploye, veřejného oznámení nebo rozeslání záznamu.
+- Release: commit `9894067`, push na `origin/main` a Cloudflare Pages production deployment `4e3b7cdb-1a38-4c8a-a4dc-c80a8301abac` dokončeny.
 
 #### Verification
 
@@ -48,10 +53,7 @@ _Žádné položky._
 - Verifier: `/root/vibe_release_verifier` — completed — VERIFIED
 - Post-review snapshot: nezměněn — stabilní implementační hashe jsou uložené v ExecPlanu.
 - ExecPlan: [docs/plans/TASK-001-vibe-coding-live.md](docs/plans/TASK-001-vibe-coding-live.md)
-
-## Done
-
-_Žádné položky._
+- Produkce: `https://mastertheflow.cz/live/vibe-coding/` — HTTP 200 a cílené E2E 20/20 — prošlo.
 
 ## Blocked
 

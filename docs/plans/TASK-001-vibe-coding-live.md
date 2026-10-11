@@ -1,7 +1,7 @@
 # TASK-001 — Landing page „Vibe coding nezačíná promptem“
 
-Stav: Review
-Poslední checkpoint: 2026-10-11 18:51 CEST
+Stav: Done
+Poslední checkpoint: 2026-10-11 19:10 CEST
 Tracker: [TASKS.md](../../TASKS.md)
 
 ## Výsledek a acceptance
@@ -18,7 +18,7 @@ Tracker: [TASKS.md](../../TASKS.md)
 ## Scope a nepovolené kroky
 
 - V rozsahu: nový statický eventový povrch, eventová data, cílené testy, registrační formulář, Calendar událost, Apps Script automatizace a lokální vizuální kontrola.
-- Mimo rozsah: konkrétní obsah dema, platební tok, automatické rozeslání záznamu po akci, produkční deploy, commit, push a veřejná propagace.
+- Mimo rozsah: konkrétní obsah dema, platební tok, automatické rozeslání záznamu po akci a veřejná propagace. Commit, push a produkční deploy byly později samostatně schváleny Danielem.
 - Zachovat statickou architekturu bez `package.json`, buildu nebo nové závislosti.
 
 ## Aktuální stav
@@ -67,16 +67,22 @@ Tracker: [TASKS.md](../../TASKS.md)
 - Nezávislý pre-release verifier `/root/vibe_release_verifier` — completed — VERIFIED. Cílené E2E 20/20, Apps Script test 10/10, syntaxe, JSON, diff, veřejný formulář a lokální blokace interních cest prošly.
 - Stabilní post-review snapshot: `events 4fa82c14`, `HTML 62e8a663`, `CSS bc57594a`, `app a14add94`, `landing test d0673ed7`, `Apps test 69395a58`, `Apps Script d48ba0f4`, `run-all a756d14d`.
 - Review tracker snapshot: `TASKS.md` SHA-256 `9808901ad41e1c398cabd20d5d8582c69301c9893d34060b80268358b523dbbe`.
+- Git release — commit `9894067318f55e0e74f7b25ea2ebde323fbf8fb6` byl pushnut na `origin/main`.
+- Cloudflare Pages — production deployment `4e3b7cdb-1a38-4c8a-a4dc-c80a8301abac` na větvi `main` používá source `9894067`.
+- Produkční landing — `https://mastertheflow.cz/live/vibe-coding/` vrací HTTP 200 a cílené E2E prošlo 20/20.
+- Produkční eventová data obsahují správné ID, termín, čas, `is_paid: false` a `recording_url: null`.
+- Produkční `/.dev.vars`, `/tools/`, `/tests/` a `/docs/` vracejí HTTP 404. Deploy byl vytvořen z čistého `git archive`, ne z pracovního adresáře.
+- Done tracker snapshot: `TASKS.md` SHA-256 `2d58310b7e2d4955e92814fb7b9f044e0d1f46198dac9347a43d181b19b348b1`.
 
 ## Blockery a recovery
 
 - Žádný aktivní implementační blocker. Daniel potvrdil, že souběžná událost „Základní střih 2h“ je rezervace studia pro stream.
-- Web není commitnutý, pushnutý ani nasazený.
+- Rollback webu: v Cloudflare Pages vrátit předchozí production deployment `4b51a4f1-23fb-482e-8166-5e3a2b96dc90` nebo nasadit čistý archiv předchozího SHA `bfd7d3d`; Google Form, Calendar a Apps Script jsou samostatná rollback plocha.
 
 Obnovení: 2026-10-11 — Daniel dokončil přihlášení a potvrdil vytvoření formuláře, Calendar události a automatických soukromých pozvánek. Čerstvý fetch potvrdil `main` v synchronizaci s `origin/main`; dirty stav přesně odpovídá checkpointu TASK-001. Formulář je publikovaný pro lidi s odkazem, stránka používá skutečnou respondent URL, Calendar událost obsahuje Google Meet a oba automatizační triggery jsou aktivní.
 
 ## Výsledek a retrospektiva
 
-- Implementace je připravena k Danielově review. Produkční deploy, commit a push nebyly provedeny.
+- Daniel výsledek přijal; implementace je commitnutá, pushnutá a ověřená v produkci.
 - Pokročilý Alexův systém je na stránce záměrně vysvětlen jako postupně vznikající vrstvy, ne jako povinný startovní setup.
 - Registrační tok používá jednoduchý Google Form, soukromou Calendar pozvánku a dvě cesty doručení: okamžitý submit trigger a šestihodinovou reconciliation pojistku.
