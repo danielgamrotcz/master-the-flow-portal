@@ -28,6 +28,33 @@ _Žádné položky._
 
 ## Done
 
+### TASK-004 — Vyvážení rolí Daniela a Alexe v textu landing page
+
+- Started: 2026-10-11
+- Accepted: 2026-10-11 — Daniel schválil commit, push a produkční nasazení.
+- Owner: Codex
+- Výsledek: hero ani další text nesrovnávají Danielovu pokročilost s Alexem. Alexova odbornost je pojmenovaná přímo, bez shazování moderátora.
+- Release: commit `84d50db`, push na `origin/main` a Cloudflare Pages deployment `b11218e0.master-the-flow-portal.pages.dev` dokončeny.
+
+#### Verification
+
+- [x] Landing page ani eventová data neobsahují sebeumenšující srovnání Daniela s Alexem.
+- [x] Text konkrétně uznává Alexovu zkušenost a propracovaný systém.
+- [x] Cílené E2E a vizuální kontrola prošly.
+- [x] Nezávislý verifier potvrdil acceptance criteria.
+- [x] Produkční landing page a nový deployment vracejí HTTP 200.
+- [x] Produkční cílené E2E prošlo 27/27 a hlavní portálový E2E prošel.
+
+#### Evidence
+
+- Cílené E2E: `tests/e2e-vibe-coding-live.js` — 27/27 — prošlo lokálně, na deployment URL i na kanonické produkci.
+- Portálový E2E: `tests/e2e-portal.js` — prošlo lokálně i na kanonické produkci.
+- Vizuální kontrola: desktop 1440 × 900 a mobil 390 × 844 — prošlo bez overflow.
+- Verifier: `/root/vibe_role_balance_verifier_final` — completed — VERIFIED
+- Post-review snapshot: nezměněn — HTML `aab256b…`, CSS `77fe5c6…`, eventy `4351944…`, E2E `8c9c0a5…`.
+- ExecPlan: nepoužit; šlo o krátkou změnu v jedné session.
+- Produkce: `https://mastertheflow.cz/live/vibe-coding/` — HTTP 200.
+
 ### TASK-003 — Přesun Alexovy fotografie a civilnější text landing page
 
 - Started: 2026-10-11
