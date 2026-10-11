@@ -24,7 +24,22 @@ _Žádné položky._
 
 ## Review
 
-_Žádné položky._
+### TASK-002 — Zjednodušení landing page „Vibe coding nezačíná promptem“
+
+- Started: 2026-10-11
+- Owner: Codex
+- ExecPlan: [docs/plans/TASK-002-vibe-coding-live-revision.md](docs/plans/TASK-002-vibe-coding-live-revision.md)
+- Výsledek: stručnější a vizuálně sjednocená landing page postavená na Danielových otázkách člověka, který používá Lovable či coding agenty, ale stále nedostává zamýšlené výstupy.
+- Omezení: zachovat závazné provozní údaje a registrační tok; nezavazovat se ke konkrétním ukázkám, programu ani podílu screen sharingu.
+
+#### Evidence
+
+- [x] Cílené E2E landing page — 23/23 — prošlo.
+- [x] Hlavní portál vykresluje kartu a detail akce bez sekce „Program“.
+- [x] Desktop a mobil — vizuálně zkontrolováno; společný grid, bez overflow.
+- [x] Registrační automatizace — 10/10 — prošlo a zůstala beze změny.
+- [x] Nezávislý verifier `/root/vibe_revision_verifier_final` — VERIFIED; funkční snapshot zůstal stabilní.
+- [ ] Produkce — nebyla změněna ani ověřována; commit, push a deploy čekají na samostatné schválení.
 
 ## Done
 

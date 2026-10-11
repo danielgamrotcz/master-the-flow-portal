@@ -29,6 +29,7 @@ function check(name, condition, detail = '') {
     && portalEvent?.time_to === '19:30'
     && portalEvent?.registration_page_url === '/live/vibe-coding/'
     && portalEvent?.is_paid === false);
+  check('Portál nevydává otevřené otázky za pevný program', portalEvent?.program === null);
 
   const mainText = (await page.locator('main').innerText()).replace(/\s+/g, ' ');
   const facts = {
@@ -41,14 +42,20 @@ function check(name, condition, detail = '') {
     recording: /Záznam (?:pošleme|dostanou) všem registrovaným/i.test(mainText),
   };
   check('Závazné údaje jsou konzistentní', Object.values(facts).every(Boolean), JSON.stringify(facts));
-  check('Stránka míří na mírně pokročilé', /Lovable/.test(mainText) && /Codex/.test(mainText)
-    && /Claude Code/.test(mainText) && /Ne od nuly/.test(mainText));
-  check('Nosná myšlenka začíná před prvním promptem', /co promyslet a nastavit ještě před prvním promptem/i.test(mainText)
-    && /Postup, který začíná dřív než generování/i.test(mainText));
-  check('Pokročilý Alexův setup není vydáván za povinnost', /není povinný nákupní seznam/i.test(mainText)
-    && /Co zatím klidně vynechat/i.test(mainText));
-  check('Vizuální část má jasný příslib', /polovinu vysílání strávíme nad sdílenou obrazovkou/i.test(mainText)
-    && /Připravené checkpointy místo čekání/i.test(mainText));
+  const startingPoint = {
+    lovable: /Lovable/.test(mainText),
+    codingAgent: /coding agentem/i.test(mainText),
+    desiredOutput: /výsledkem, který pořád není ono/i.test(mainText),
+  };
+  check('Stránka vychází ze zkušenosti s coding nástroji', Object.values(startingPoint).every(Boolean), JSON.stringify(startingPoint));
+  check('Nosná otázka není redukovaná na lepší prompt', /další prompty spíš lepí důsledky/i.test(mainText)
+    && /Proč to není ono, i když už s AI umím mluvit/i.test(mainText));
+  check('Alexův setup není vydáván za povinnost', /pokročilý systém.*povinná výbava/i.test(mainText)
+    && /co zatím vůbec nepotřebuji/i.test(mainText));
+  check('Ukázky jsou podmíněné užitečností pro odpověď', /Obrazovka, když něco vysvětlí/i.test(mainText)
+    && /Když bude pro odpověď užitečné něco vidět/i.test(mainText));
+  check('Stránka neslibuje pevný program ani polovinu vysílání', /nejsou kapitoly ani slíbený program/i.test(mainText)
+    && !/polovinu vysílání|připravené checkpointy|šest okruhů/i.test(mainText));
   check('Stránka neslibuje konkrétní aplikaci dema', !/postavíme (?:aplikaci|appku)|vyrobíme (?:aplikaci|appku)/i.test(mainText));
 
   const registrationLinks = page.locator('[data-registration-link]');
@@ -66,17 +73,31 @@ function check(name, condition, detail = '') {
     && portalEvent?.recording_url === null
     && portalEvent?.location === 'Online — odkaz přijde po registraci');
 
+  const portrait = page.locator('.guest-portrait img');
+  const portraitData = await portrait.evaluate(image => ({
+    src: image.getAttribute('src'),
+    alt: image.getAttribute('alt'),
+    complete: image.complete,
+    width: image.naturalWidth,
+    height: image.naturalHeight,
+  }));
+  check('Alexova fotografie je lokální, popsaná a načtená', portraitData.src === '/live/vibe-coding/alex-trejtnar.jpg'
+    && portraitData.alt === 'Alex Trejtnar'
+    && portraitData.complete
+    && portraitData.width === 600
+    && portraitData.height === 600,
+  JSON.stringify(portraitData));
   check('Alexův profil stojí na ověřitelných zdrojích', /Alex Trejtnar/.test(mainText)
     && /dvacet let zkušeností/i.test(mainText)
     && /ARIBENA/.test(mainText)
     && await page.locator('.guest-links a').count() === 3);
 
-  const programText = await page.locator('.topic-list').innerText();
-  check('Stránka uvádí šest okruhů bez časového harmonogramu', await page.locator('.topic-list li').count() === 6
-    && /prompt-first/i.test(programText)
-    && /Alexův workflow/i.test(programText)
-    && /otázky/i.test(programText)
-    && !/18:\d{2}/.test(programText));
+  const questionsText = await page.locator('.question-grid').innerText();
+  check('Stránka používá čtyři otevřené otázky místo harmonogramu', await page.locator('.question-grid article').count() === 4
+    && /výsledek rozchází s představou/i.test(questionsText)
+    && /Co má smysl mít v systému/i.test(questionsText)
+    && /workflow/i.test(questionsText)
+    && !/18:\d{2}/.test(questionsText));
 
   const themeBefore = await page.locator('html').getAttribute('data-theme');
   await page.locator('#theme-toggle').click();
@@ -104,8 +125,12 @@ function check(name, condition, detail = '') {
         const rect = element.getBoundingClientRect();
         return rect.left >= 0 && rect.right <= window.innerWidth;
       }),
+      portrait: (() => {
+        const rect = document.querySelector('.guest-portrait').getBoundingClientRect();
+        return rect.left >= 0 && rect.right <= window.innerWidth;
+      })(),
     }));
-    if (state.overflow || !state.heading || !state.actions) layoutProblems.push(`${width}px=${JSON.stringify(state)}`);
+    if (state.overflow || !state.heading || !state.actions || !state.portrait) layoutProblems.push(`${width}px=${JSON.stringify(state)}`);
   }
   check('Layout je bezpečný od telefonu po desktop', layoutProblems.length === 0, layoutProblems.join(' | '));
 
