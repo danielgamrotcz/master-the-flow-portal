@@ -1,6 +1,34 @@
 {
-  "generated_at": "2026-09-03T00:00:00Z",
+  "generated_at": "2026-10-11T00:00:00Z",
   "events": [
+    {
+      "id": "evt-2026-10-21-vibe-coding-nezacina-promptem",
+      "type": "SHOW-AND-TELL",
+      "title": "Vibe coding nezačíná promptem — Master the Flow Live #1",
+      "date": "2026-10-21",
+      "time_from": "18:00",
+      "time_to": "19:30",
+      "location": "Online — odkaz přijde po registraci",
+      "short": "Praktický rozhovor s Alexem Trejtnarem o tom, co promyslet, připravit a ověřit ještě před prvním promptem.",
+      "description": "Bezplatný veřejný live stream pro lidi, kteří už zkusili Lovable, Codex, Claude Code nebo jiný coding nástroj, ale chtějí méně bastlit a pracovat systematičtěji. S Alexem Trejtnarem rozebereme rozhodování před prvním promptem, kontext projektu, malé změny a ověřování výsledku. Přibližně polovinu vysílání strávíme nad sdílenou obrazovkou. Záznam dostanou všichni registrovaní.",
+      "program": [
+        "Proč prompt-first vede k bastlení",
+        "Co vlastně stojí za to vyrobit",
+        "Co má mít projekt nastavené",
+        "Alexův workflow na obrazovce",
+        "Slepá místa a otázky",
+        "Co udělat u dalšího projektu"
+      ],
+      "registration_url": "https://docs.google.com/forms/d/e/1FAIpQLSeavG37wav2Bb0KeigdLCVToTIPhlXvWU5a8O7ONAxWm0_mUw/viewform?usp=publish-editor",
+      "registration_page_url": "/live/vibe-coding/",
+      "is_paid": false,
+      "price": null,
+      "discount_code": null,
+      "detail_url": "/live/vibe-coding/",
+      "recording_url": null,
+      "recording_password": null,
+      "status": null
+    },
     {
       "id": "evt-2026-09-22-ai-ktera-mi-fakt-funguje",
       "type": "SHOW-AND-TELL",

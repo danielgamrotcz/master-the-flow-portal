@@ -1,6 +1,6 @@
 # Projektové úkoly
 
-Aktualizováno: 2026-09-04
+Aktualizováno: 2026-10-11
 
 Backlog není souhlas začít; Ready vyžaduje schválení a WIP limit je jeden.
 Review obsahuje čerstvé cílené E2E důkazy, Done přijetí. Task neautorizuje
@@ -24,7 +24,30 @@ _Žádné položky._
 
 ## Review
 
-_Žádné položky._
+### TASK-001 — Landing page „Vibe coding nezačíná promptem“
+
+- Started: 2026-10-11
+- Resumed: 2026-10-11 — Daniel dokončil interaktivní přihlášení a potvrdil vytvoření formuláře, Calendar události a automatických soukromých pozvánek.
+- Owner: Codex
+- ExecPlan: [docs/plans/TASK-001-vibe-coding-live.md](docs/plans/TASK-001-vibe-coding-live.md)
+- Výsledek: veřejná landing page pro bezplatný live stream 21. 10. 2026 od 18:00, registrační Google Form a soukromé Calendar pozvánky s Google Meet.
+- Scope: lokální implementace a ověření; bez commitu, pushnutí, deploye, veřejného oznámení nebo rozeslání záznamu.
+
+#### Verification
+
+- [x] Veřejná stránka a eventová data jsou konzistentní se skutečným formulářem.
+- [x] Registrační CTA vedou na nový formulář a veřejně neodhalují Meet ani záznam.
+- [x] Lokální test registrační logiky chrání adresy hostů a neposílá duplicitní pozvánky.
+- [x] Responzivní cílené E2E nové stránky prošlo 20/20.
+- [x] Calendar událost, aktivace Apps Scriptu, bezpečnostní kontrola a nezávislý verifier jsou dokončené.
+
+#### Evidence
+
+- Cílené E2E: `tests/e2e-vibe-coding-live.js` — 20/20 — prošlo.
+- Registrační automatizace: `tests/google-vibe-coding-live-registration.js` — 10/10 — prošlo.
+- Verifier: `/root/vibe_release_verifier` — completed — VERIFIED
+- Post-review snapshot: nezměněn — stabilní implementační hashe jsou uložené v ExecPlanu.
+- ExecPlan: [docs/plans/TASK-001-vibe-coding-live.md](docs/plans/TASK-001-vibe-coding-live.md)
 
 ## Done
 
