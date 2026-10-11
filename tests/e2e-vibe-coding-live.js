@@ -1,4 +1,4 @@
-// E2E test veřejné landing page Master the Flow Live #1.
+// E2E test veřejné landing page série Rozhovory Master the Flow.
 const { chromium } = require('playwright');
 const { BASE } = require('./_auth.js');
 
@@ -34,6 +34,14 @@ function check(name, condition, detail = '') {
   const mainText = (await page.locator('main').innerText()).replace(/\s+/g, ' ');
   const pageMarkup = await page.content();
   const publicCopy = `${pageMarkup} ${JSON.stringify(portalEvent)}`;
+  const naming = {
+    type: portalEvent?.type === 'ROZHOVOR',
+    title: portalEvent?.title === 'Vibe coding nezačíná promptem | Alex Trejtnar',
+    eyebrow: await page.locator('.eyebrow').textContent() === 'Rozhovory Master the Flow · online · zdarma',
+    guest: await page.locator('.guest-intro .section-kicker').textContent() === 'Host rozhovoru',
+    legacyLabelAbsent: !/Master the Flow Live|Live #1|Host prvního/i.test(`${await page.title()} ${publicCopy}`),
+  };
+  check('Akce používá název série rozhovorů bez falešného číslování', Object.values(naming).every(Boolean), JSON.stringify(naming));
   const facts = {
     date: /21\. října 2026/.test(mainText),
     day: /středa/i.test(mainText),

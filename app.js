@@ -1570,6 +1570,7 @@ const EVENT_TYPE_COLORS = {
   'WEBINÁŘ': '#3b82f6',
   'ŠKOLENÍ': '#8b5cf6',
   'SHOW-AND-TELL': '#10b981',
+  'ROZHOVOR': '#f06a15',
 };
 
 async function loadEvents() {
