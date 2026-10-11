@@ -64,7 +64,6 @@ img { max-width: 100%; }
 .hero h1 { max-width: 800px; margin: 0; font-size: clamp(64px, 8.4vw, 116px); line-height: .87; letter-spacing: -.072em; text-wrap: balance; }
 .hero h1 span { color: var(--accent); }
 .hero-lede { max-width: 790px; margin: 38px 0 0; color: var(--text-secondary); font-size: clamp(18px, 1.8vw, 23px); line-height: 1.62; text-wrap: pretty; }
-.hero-aside { margin: 20px 0 0; padding-left: 19px; border-left: 2px solid var(--accent); color: var(--text-primary); font-size: 15px; font-weight: 600; }
 
 .hero-facts { width: 100%; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .hero-facts > div { min-width: 0; padding: 20px 26px 22px; border-left: 1px solid var(--border); }

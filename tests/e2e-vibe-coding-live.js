@@ -32,6 +32,8 @@ function check(name, condition, detail = '') {
   check('Portál nevydává otevřené otázky za pevný program', portalEvent?.program === null);
 
   const mainText = (await page.locator('main').innerText()).replace(/\s+/g, ' ');
+  const pageMarkup = await page.content();
+  const publicCopy = `${pageMarkup} ${JSON.stringify(portalEvent)}`;
   const facts = {
     date: /21\. října 2026/.test(mainText),
     day: /středa/i.test(mainText),
@@ -48,10 +50,14 @@ function check(name, condition, detail = '') {
     desiredOutput: /výsledek není takový, jaký jste chtěli/i.test(mainText),
   };
   check('Stránka vychází ze zkušenosti s coding nástroji', Object.values(startingPoint).every(Boolean), JSON.stringify(startingPoint));
-  check('Nosná otázka není redukovaná na lepší prompt', /co řeší ještě před prvním promptem/i.test(mainText)
+  check('Nosná otázka není redukovaná na lepší prompt', /co rozhoduje ještě před prvním promptem/i.test(mainText)
     && /Co si připravit před prvním promptem/i.test(mainText));
-  check('Alexův setup není vydáván za povinnost', /Nebudeme ho kopírovat/i.test(mainText)
-    && /co můžeme zatím vynechat/i.test(mainText));
+  check('Alexův setup není vydáván za povinnost', /co z Alexova systému má smysl převzít jako první/i.test(mainText)
+    && /co má smysl přidat až později/i.test(mainText));
+  check('Alexova odbornost není postavená na shazování Daniela', /propracovaný systém/i.test(mainText)
+    && /digitálu přes dvacet let/i.test(mainText)
+    && /ARIBENA/i.test(mainText)
+    && !/Mám to stejně|Nejsem vývojář|dál než (?:já|ten můj)|Co dělá jinak než já|co mi při stavění aplikací nefunguje|méně pokročil|o (?:několik|pár) úrovní přede mnou|teprve začínám|Daniel[^.]{0,80}(?:bastlí|nezvládá|trvá déle)/i.test(publicCopy));
   const faqText = await page.locator('.faq-list').textContent();
   check('Ukázky jsou podmíněné užitečností pro odpověď', /Když bude odpověď lépe vidět než popsat/i.test(faqText)
     && /ukázky vybereme až při přípravě/i.test(faqText));
@@ -74,7 +80,6 @@ function check(name, condition, detail = '') {
     && portalEvent?.recording_url === null
     && portalEvent?.location === 'Online, odkaz přijde po registraci');
 
-  const pageMarkup = await page.content();
   check('Landing page ani data této akce neobsahují dlouhou pomlčku', !pageMarkup.includes('—')
     && !JSON.stringify(portalEvent).includes('—'));
 
@@ -107,7 +112,7 @@ function check(name, condition, detail = '') {
   check('Stránka používá čtyři otevřené otázky místo harmonogramu', await page.locator('.question-grid article').count() === 4
     && /z nápadu vznikne dobrá aplikace/i.test(questionsText)
     && /Co má být nastavené v projektu/i.test(questionsText)
-    && /Alexova systému/i.test(questionsText)
+    && /Alexova systému.*převzít jako první/i.test(questionsText)
     && !/18:\d{2}/.test(questionsText));
   check('Stránka neopakuje samostatnou sekci o formátu', await page.locator('.format').count() === 0);
 
