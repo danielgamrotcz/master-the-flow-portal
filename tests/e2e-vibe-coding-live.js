@@ -45,16 +45,17 @@ function check(name, condition, detail = '') {
   const startingPoint = {
     lovable: /Lovable/.test(mainText),
     codingAgent: /coding agentem/i.test(mainText),
-    desiredOutput: /výsledkem, který pořád není ono/i.test(mainText),
+    desiredOutput: /výsledek není takový, jaký jste chtěli/i.test(mainText),
   };
   check('Stránka vychází ze zkušenosti s coding nástroji', Object.values(startingPoint).every(Boolean), JSON.stringify(startingPoint));
-  check('Nosná otázka není redukovaná na lepší prompt', /další prompty spíš lepí důsledky/i.test(mainText)
-    && /Proč to není ono, i když už s AI umím mluvit/i.test(mainText));
-  check('Alexův setup není vydáván za povinnost', /pokročilý systém.*povinná výbava/i.test(mainText)
-    && /co zatím vůbec nepotřebuji/i.test(mainText));
-  check('Ukázky jsou podmíněné užitečností pro odpověď', /Obrazovka, když něco vysvětlí/i.test(mainText)
-    && /Když bude pro odpověď užitečné něco vidět/i.test(mainText));
-  check('Stránka neslibuje pevný program ani polovinu vysílání', /nejsou kapitoly ani slíbený program/i.test(mainText)
+  check('Nosná otázka není redukovaná na lepší prompt', /co řeší ještě před prvním promptem/i.test(mainText)
+    && /Co si připravit před prvním promptem/i.test(mainText));
+  check('Alexův setup není vydáván za povinnost', /Nebudeme ho kopírovat/i.test(mainText)
+    && /co můžeme zatím vynechat/i.test(mainText));
+  const faqText = await page.locator('.faq-list').textContent();
+  check('Ukázky jsou podmíněné užitečností pro odpověď', /Když bude odpověď lépe vidět než popsat/i.test(faqText)
+    && /ukázky vybereme až při přípravě/i.test(faqText));
+  check('Stránka neslibuje pevný program ani polovinu vysílání', /Není to program/i.test(mainText)
     && !/polovinu vysílání|připravené checkpointy|šest okruhů/i.test(mainText));
   check('Stránka neslibuje konkrétní aplikaci dema', !/postavíme (?:aplikaci|appku)|vyrobíme (?:aplikaci|appku)/i.test(mainText));
 
@@ -71,9 +72,13 @@ function check(name, condition, detail = '') {
   publicHrefs.join(' | '));
   check('Eventová data neodhalují Meet ani záznam', !portalEvent?.links
     && portalEvent?.recording_url === null
-    && portalEvent?.location === 'Online — odkaz přijde po registraci');
+    && portalEvent?.location === 'Online, odkaz přijde po registraci');
 
-  const portrait = page.locator('.guest-portrait img');
+  const pageMarkup = await page.content();
+  check('Landing page ani data této akce neobsahují dlouhou pomlčku', !pageMarkup.includes('—')
+    && !JSON.stringify(portalEvent).includes('—'));
+
+  const portrait = page.locator('.guest-band .guest-portrait img');
   const portraitData = await portrait.evaluate(image => ({
     src: image.getAttribute('src'),
     alt: image.getAttribute('alt'),
@@ -87,17 +92,24 @@ function check(name, condition, detail = '') {
     && portraitData.width === 600
     && portraitData.height === 600,
   JSON.stringify(portraitData));
+  const portraitBox = await page.locator('.guest-portrait').boundingBox();
+  check('Alexova fotografie není v hero a v oranžové sekci je čtvercová', await page.locator('.hero .guest-portrait').count() === 0
+    && await page.locator('.guest-band .guest-portrait').count() === 1
+    && portraitBox
+    && Math.abs(portraitBox.width - portraitBox.height) < 1,
+  JSON.stringify(portraitBox));
   check('Alexův profil stojí na ověřitelných zdrojích', /Alex Trejtnar/.test(mainText)
-    && /dvacet let zkušeností/i.test(mainText)
+    && /digitálu přes dvacet let/i.test(mainText)
     && /ARIBENA/.test(mainText)
     && await page.locator('.guest-links a').count() === 3);
 
   const questionsText = await page.locator('.question-grid').innerText();
   check('Stránka používá čtyři otevřené otázky místo harmonogramu', await page.locator('.question-grid article').count() === 4
-    && /výsledek rozchází s představou/i.test(questionsText)
-    && /Co má smysl mít v systému/i.test(questionsText)
-    && /workflow/i.test(questionsText)
+    && /z nápadu vznikne dobrá aplikace/i.test(questionsText)
+    && /Co má být nastavené v projektu/i.test(questionsText)
+    && /Alexova systému/i.test(questionsText)
     && !/18:\d{2}/.test(questionsText));
+  check('Stránka neopakuje samostatnou sekci o formátu', await page.locator('.format').count() === 0);
 
   const themeBefore = await page.locator('html').getAttribute('data-theme');
   await page.locator('#theme-toggle').click();
