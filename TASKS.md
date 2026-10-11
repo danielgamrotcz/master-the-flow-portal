@@ -24,29 +24,35 @@ _Žádné položky._
 
 ## Review
 
+_Žádné položky._
+
+## Done
+
 ### TASK-003 — Přesun Alexovy fotografie a civilnější text landing page
 
 - Started: 2026-10-11
+- Accepted: 2026-10-11 — Daniel schválil commit, push a produkční nasazení.
 - Owner: Codex
 - Výsledek: hero zůstává bez portrétu; Alexova fotografie je jako čtverec pouze v oranžové profilové sekci. Text stránky neobsahuje dlouhé pomlčky a je kratší, konkrétnější a civilnější.
+- Release: commit `7cc97d6`, push na `origin/main` a Cloudflare Pages deployment `672b7fe7.master-the-flow-portal.pages.dev` dokončeny.
 
 #### Verification
 
 - [x] Cílené E2E potvrzuje jediné umístění fotografie mimo hero a čtvercový formát.
 - [x] Veřejná stránka ani eventová data této akce neobsahují dlouhou pomlčku.
 - [x] Desktop 1440 × 900 a mobil 390 × 844 jsou vizuálně zkontrolované bez overflow.
-- [x] Hlavní portálový E2E po změně eventových dat prošel.
+- [x] Produkční landing page vrací HTTP 200 a cílené E2E 26/26 prošlo.
+- [x] Produkční hlavní portálový E2E po změně eventových dat prošel.
 - [x] Nezávislý verifier potvrdil acceptance criteria.
 
 #### Evidence
 
-- Cílené E2E: `tests/e2e-vibe-coding-live.js` — 26/26 — prošlo.
-- Portálový E2E: `tests/e2e-portal.js` — prošlo.
+- Cílené E2E: `tests/e2e-vibe-coding-live.js` — 26/26 — prošlo lokálně i v produkci.
+- Portálový E2E: `tests/e2e-portal.js` — prošlo lokálně i v produkci.
 - Verifier: `/root/vibe_photo_copy_verifier` — completed — VERIFIED
 - Post-review snapshot: nezměněn — HTML `9fecdb4…`, CSS `bbf0c53…`, eventy `82a84ab…`, E2E `11d75fa…`.
 - ExecPlan: nepoužit; šlo o krátkou změnu v jedné session.
-
-## Done
+- Produkce: `https://mastertheflow.cz/live/vibe-coding/` — HTTP 200.
 
 ### TASK-002 — Zjednodušení landing page „Vibe coding nezačíná promptem“
 
