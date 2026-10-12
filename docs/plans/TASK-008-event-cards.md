@@ -1,6 +1,6 @@
 # TASK-008 — Světlé náhledové karty všech akcí
 
-Stav: In Progress
+Stav: Blocked (pouze nezávislá acceptance; produkce nasazená)
 Poslední checkpoint: 2026-10-12 Europe/Prague
 Tracker: [TASKS.md](../../TASKS.md)
 
@@ -24,7 +24,7 @@ datum a časy. Nepřenášet celé event objekty do teaserů ani logů.
 - [x] Opakovatelná HTML/CSS šablona, devět PNG a metadata.
 - [x] Cílené testy, vizuální QA a security.
 - [ ] Nezávislé ověření (agentní limit); self-review dokončen.
-- [ ] Cílený commit, push, deploy a produkční důkazy.
+- [x] Cílený commit, push, deploy a produkční důkazy.
 
 ## Rozhodnutí a objevy
 
@@ -43,6 +43,10 @@ datum a časy. Nepřenášet celé event objekty do teaserů ani logů.
 - Start: AGENTS.md obsahuje schválené nové pravidlo; tools/build_glossary.py
   je nesouvisející cizí změna, hash 166465a57fed8c01a232f1c0bc2a9b7f1351e90c5d4b5f5fa230f2826a5ec289.
 - Data events baseline SHA-256 d22492f24daea9d767bf163e413bfb6497042b745a920af24222c35e6c727f6e.
+- Release: `197e386f6906df58bdd678360db404ffc2a06fb3`, push origin/main dokončený.
+- Cloudflare Production: `5d798075-dc7b-4ccf-997f-bde47d8d6e0c`, source `197e386`.
+  Nasazen čistý Git export; nesouvisející slovníček zůstává pouze lokální.
+- Tracker checkpoint SHA-256: fdb8c95f863652cf1698d680935b5907246d61cd1348f2748a2b0dee869b14fe.
 
 ## Ověření
 
@@ -58,13 +62,27 @@ datum a časy. Nepřenášet celé event objekty do teaserů ani logů.
   Samostatné nezávislé review zůstává neprovedené, nejde o jeho úspěch.
 - Dvě chyby plné sady (slovníček, starší attendees fixture) jsou doložené
   před tímto taskem. Nerozšiřovat scope opravami těchto částí.
+- Produkce mastertheflow.cz: e2e-event-cards.js 72/72 a
+  e2e-vibe-coding-live.js 36/36 — prošlo po deployi. PNG všech devíti akcí
+  jsou byte-identické s lokálním releasem a veřejně dostupné.
+- GitHub CI Sraz E2E run 38252081793 pro commit 197e386 — success.
+- Před release commitem checker vrátil 2 kvůli devíti nepodporovaným PNG.
+  Dodatečný scan textových additions stejnými pravidly: 19 souborů, nula
+  nálezů. PNG zvlášť ověřené: staged obsah shodný s vizuálně prohlédnutým,
+  pouze obrazové chunky, bez EXIF/textových metadat a trailing payloadu.
 
 ## Blockery a recovery
 
 Nezávislou acceptance blokuje limit agentních vláken. Funkční implementace
-má lokální důkazy; release je výslovně schválený. Rollback je deploy exportu předchozího commitu 6e1138a;
+má lokální i produkční důkazy; výslovně schválený release byl dokončen.
+Zbývá pouze fresh nezávislé review po uvolnění agentní kapacity.
+Rollback je deploy exportu předchozího commitu 6e1138a;
 nesouvisející pracovní soubory nestashovat, nemazat ani nenasazovat.
 
 ## Výsledek a retrospektiva
 
-Připraveno k autorizovanému releasu s výslovně zaznamenaným omezením review.
+Všech devět karet, metadata a sdílení jsou v produkci. Celkový verdikt zůstává
+PARTIALLY VERIFIED pouze kvůli chybějícímu nezávislému reviewerovi.
+Dokumentační checkpoint po releasu nemění běžící implementaci a nevyžaduje
+nový produkční deploy. Znovupoužitelný generátor chrání jednotný vizuál i
+oddělení veřejných údajů od neveřejných eventových polí.

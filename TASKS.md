@@ -20,6 +20,10 @@ _Žádné položky._
 
 ## In Progress
 
+_Žádné položky._
+
+## Blocked
+
 ### TASK-008 — Světlé náhledové karty všech akcí
 
 - Started: 2026-10-12
@@ -27,14 +31,18 @@ _Žádné položky._
 - Výsledek: devět samostatných světlých karet, metadata a použitelné sdílecí adresy všech akcí v portálu.
 - Scope: portál včetně historických akcí; bez úprav externích webů, formulářů, kalendáře a komunitní automatizace. Commit, push a produkční deploy výslovně schválené.
 - ExecPlan: [docs/plans/TASK-008-event-cards.md](docs/plans/TASK-008-event-cards.md)
+- Blocked: 2026-10-12 — zbývá nezávislá acceptance; spawn i follow-up blokuje limit agentních vláken. Implementace i autorizovaný release dokončené.
+- Last safe state: commit `197e386` pushnut a nasazen; produkční karty 72/72 a stránka rozhovoru 36/36 prošly.
+- Resume from: ExecPlan, pouze nezávislé review aktuální implementace po uvolnění agentní kapacity; bez automatického nového deploye.
 
 #### Verification
 
 - [x] Všech devět akcí má vlastní světlou kartu a OG/Twitter metadata.
 - [x] Sdílení z portálu používá HTTP adresu akce, nikoli samotný hash.
 - [x] Nové veřejné podklady neobsahují přístupové údaje, záznamové ani soukromé odkazy.
-- [ ] Vizuální, funkční, bezpečnostní a nezávislá kontrola dokončené.
-- [ ] Commit, push a produkční ověření dokončené.
+- [x] Vizuální, funkční a bezpečnostní kontrola dokončené.
+- [ ] Nezávislá kontrola dokončená.
+- [x] Commit, push a produkční ověření dokončené.
 
 #### Evidence
 
@@ -45,8 +53,9 @@ _Žádné položky._
 - Rapid security proti 6e1138a: žádná potvrzená nová regrese; escapované veřejné pole, allowlist cest, žádné share tickety/privátní údaje, brána zachovaná. Externí sociální sítě nebyly použity k odeslání.
 - Nezávislý verifier: NOT TESTED — spawn i follow-up odmítl limit agentních vláken; proveden oddělený self-review. Celkový verdikt PARTIALLY VERIFIED, nikoli plná nezávislá acceptance.
 - Post-review snapshot: nezměněn — app 3ebf7ef…, model 72ec3e8…, generátor f76fe5f…, E2E c8307c7…; events.json i cizí tools/build_glossary.py shodné s baseline. Těla tří landing pages byte-identická s 6e1138a.
-
-## Blocked
+- Release: `197e386f6906df58bdd678360db404ffc2a06fb3`, origin/main; Cloudflare Production `5d798075-dc7b-4ccf-997f-bde47d8d6e0c`. Deploy z čistého Git exportu bez cizí změny slovníčku.
+- Produkce `https://mastertheflow.cz`: `e2e-event-cards.js` 72/72 a `e2e-vibe-coding-live.js` 36/36 — prošlo; všech devět PNG byte-identických s releasem. CI Sraz E2E run `38252081793` — success pro `197e386`.
+- Staged secret scan: textové additions bez nálezu; devět nepodporovaných PNG ověřeno zvlášť proti prohlédnutým souborům, bez textových/EXIF metadat a připojeného obsahu.
 
 ### TASK-006 — Podpora živé účasti na rozhovoru
 
