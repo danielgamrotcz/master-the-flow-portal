@@ -14,7 +14,7 @@
       "program": null,
       "registration_url": "https://docs.google.com/forms/d/e/1FAIpQLSeavG37wav2Bb0KeigdLCVToTIPhlXvWU5a8O7ONAxWm0_mUw/viewform?usp=publish-editor",
       "registration_page_url": "/rozhovory/1-vibe-coding-s-alexem/",
-      "portal_hidden": true,
+      "portal_hidden": false,
       "is_paid": false,
       "price": null,
       "discount_code": null,

@@ -24,6 +24,37 @@ _Žádné položky._
 
 ## Blocked
 
+### TASK-010 — Zobrazení rozhovoru na hlavním portálu
+
+- Started: 2026-10-12
+- Owner: Codex
+- Výsledek: rozhovor s Alexem v obvyklém banneru hlavní stránky i mezi nadcházejícími akcemi.
+- Scope: odkrytí existující akce a odpovídající testy; beze změn designu, landing page, registrace a ostatních akcí. Bez commitu, pushnutí a deploye.
+- Režim: contained; nový pokyn nahrazuje dřívější požadavek skrytí.
+- Release oprávnění: 2026-10-12 — Daniel výslovně schválil commit, push a produkční nasazení banneru a odkrytí akce. Původní omezení scope na lokální změny je tím pro release nahrazené.
+- Blocked: 2026-10-12 — implementace a lokální kontroly dokončené; nezávislý verifier nedostupný kvůli limitu vláken.
+- Last safe state: necommitnuté lokální změny, produkce beze změny.
+- Resume from: nezávislá acceptance finálního diffu; případný commit, push a deploy vyžadují samostatný pokyn.
+
+#### Verification
+
+- [x] Banner a přehled zobrazují rozhovor se správným termínem a odkazem.
+- [x] Mobilní a desktopový náhled a relevantní E2E ověřené.
+- [ ] Nezávislá acceptance dokončená, chráněné změny zachované.
+
+#### Evidence
+
+- Čerstvý fetch: main 0/0. Cizí tools/build_glossary.py beze změny, SHA-256 166465a57fed8c01a232f1c0bc2a9b7f1351e90c5d4b5f5fa230f2826a5ec289.
+- Změna: pouze portal_hidden=false a stručný název ve stávajícím banneru. Ostatní eventová pole a akce byte-významově shodné s HEAD; layout ani registrace nezměněné.
+- Cílený e2e-portal po poslední změně: 32 kontrol prošlo; syntaxe všech tří JS a git diff --check prošly. Landing page 37/37, eventové karty 73/73 prošly.
+- Kompletní sada: 18 scénářů prošlo, dvě známá selhání ve slovníčku a google-forms-attendees se opakovala. Dotčené testy a jejich zdrojová data/skript jsou shodné s HEAD. Celý běh začal před finálním zkrácením banneru; hlavní portálový E2E a vizuální kontrola pak zopakované.
+- Prohlížeč 390 a 1440 px: banner, detail a nadcházející karta prohlédnuté, bez horizontálního přesahu. Mobilní tap i desktopový klik otevřely LP; zavření banneru přežilo reload a neodstranilo kartu akcí.
+- Verifier: NOT TESTED — spawn homepage_alex_final_acceptance odmítnut kvůli limitu vláken; druhý read-only self-review provedený, není nezávislý. Verdikt PARTIALLY VERIFIED.
+- Post-review snapshot: implementace nezměněná — app 1c2392b…, events 9e67ba4…, portal E2E 25a0ccf…, LP E2E a2be8f5….
+- ExecPlan: nepoužit, krátká lokální změna. Commit, push a produkční nasazení nebyly spuštěné.
+- Strukturální audit boardu: selhal na 43 chybějících polích dřívějších TASK-001 až TASK-007, žádný nález u nové TASK-010. Historické karty nebyly hromadně přeformátované.
+- Predeploy rapid security proti 36bfaeb: žádná potvrzená nová bezpečnostní regrese; pevný escapovaný titulek, pouze veřejná akce, odkazy a všechny serverové ochrany beze změn. Lokální security-regressions 14/14 prošly. Cizí slovníček se do commitu ani exportu nezahrnuje; úplný audit aplikace mimo scope.
+
 ### TASK-009 — Text rozhovoru podle Alexových podkladů
 
 - Started: 2026-10-12

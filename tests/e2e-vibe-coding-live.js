@@ -40,7 +40,7 @@ function check(name, condition, detail = '') {
     && portalEvent?.time_to === '20:00'
     && portalEvent?.registration_page_url === episodePath
     && portalEvent?.detail_url === episodePath
-    && portalEvent?.portal_hidden === true
+    && portalEvent?.portal_hidden === false
     && portalEvent?.is_paid === false);
   check('Portál nevydává otevřené otázky za pevný program', portalEvent?.program === null);
 

@@ -108,18 +108,29 @@ function check(name, cond, detail = '') {
   check('Pražský sraz je v přehledu minulých akcí', await page.locator('#events-past .event-card[data-event-id="evt-2026-08-29-sraz"]').count() === 1);
   check('Pražský sraz je označený jako proběhlý', (await srazCard.locator('.event-badge-status').innerText()).trim() === 'Proběhlo');
   check('Ukončený sraz nenabízí registraci', await srazCard.locator('.event-card-register').count() === 0);
-  const hiddenInterviewId = 'evt-2026-10-21-vibe-coding-nezacina-promptem';
-  check('Připravovaný rozhovor není vidět na hlavním portálu',
-    await page.locator(`.event-card[data-event-id="${hiddenInterviewId}"]`).count() === 0
-      && await page.locator(`#event-teaser [data-event-id="${hiddenInterviewId}"]`).count() === 0);
+  const interviewId = 'evt-2026-10-21-vibe-coding-nezacina-promptem';
+  // Akce zůstává viditelná i po skončení, kdy se přesune mezi minulé.
+  const interviewUpcoming = Date.now() <= Date.parse('2026-10-21T20:00:00+02:00');
+  check('Rozhovor je ve správném přehledu akcí',
+    await page.locator(`#events-${interviewUpcoming ? 'upcoming' : 'past'} .event-card[data-event-id="${interviewId}"]`).count() === 1);
+  check('Banner propaguje rozhovor jen do konce akce',
+    await page.locator(`#event-teaser [data-event-id="${interviewId}"]`).count() === (interviewUpcoming ? 1 : 0));
+  if (interviewUpcoming) {
+    check('Banner používá krátký název rozhovoru',
+      await page.locator(`#event-teaser [data-event-id="${interviewId}"] .event-teaser-title`).innerText() === 'Vibecoding s Alexem');
+    const registration = page.locator('#event-teaser .event-teaser-row')
+      .filter({ has: page.locator(`[data-event-id="${interviewId}"]`) }).locator('.event-teaser-register');
+    check('Registrace z banneru vede na stránku rozhovoru',
+      await registration.getAttribute('href') === '/rozhovory/1-vibe-coding-s-alexem/');
+  }
 
   // ===== 4c. Slovníček: zavíratelný proužek jen s nadcházejícími srazy =====
   // Očekávání se odvozuje z events.json. Pevný seznam začal oprávněně padat
   // den po olomouckém srazu, protože aplikace už proběhlé akce skrývá.
   const eventData = JSON.parse(require('fs').readFileSync(
     require('path').join(__dirname, '..', 'data', 'events.json'), 'utf8'));
-  const hiddenInterview = eventData.events.find(event => event.id === hiddenInterviewId);
-  check('Skrytí rozhovoru je řízené vratným datovým příznakem', hiddenInterview?.portal_hidden === true);
+  const interview = eventData.events.find(event => event.id === interviewId);
+  check('Rozhovor je v datech výslovně odkrytý', interview?.portal_hidden === false);
   const pragueMeetup = eventData.events.find(event => event.id === 'evt-2026-08-29-sraz');
   check('Data pražského srazu ruší oba registrační cíle', pragueMeetup?.status === 'Proběhlo'
     && pragueMeetup.registration_url === null

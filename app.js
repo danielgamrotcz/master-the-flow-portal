@@ -1792,6 +1792,7 @@ function eventDateShort(ev) {
 }
 
 function eventTeaserTitle(ev) {
+  if (ev.id === 'evt-2026-10-21-vibe-coding-nezacina-promptem') return 'Vibecoding s Alexem';
   if (ev.id === 'evt-2026-08-29-sraz') return 'Sraz v Praze';
   if (ev.id === 'evt-2026-08-14-sraz-olomouc') return 'Sraz v Olomouci';
   return ev.title;
