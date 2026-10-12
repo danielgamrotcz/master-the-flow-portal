@@ -20,6 +20,10 @@ _Žádné položky._
 
 ## In Progress
 
+_Žádné položky._
+
+## Blocked
+
 ### TASK-006 — Podpora živé účasti na rozhovoru
 
 - Started: 2026-10-12
@@ -27,6 +31,9 @@ _Žádné položky._
 - Výsledek: jasný důvod přijít živě, nenápadný záznam, účast bez přípravy, registrace pouze s povinným e-mailem a užitečné potvrzení.
 - Scope: bez připomínek, propagace s Alexem a organizace vysílání. Zachovat otázky a odpovědi formuláře, adresu registračního e-mailového pole, pozvánkovou automatizaci, portrét a skrytí v portálu.
 - Oprávnění: uživatel schválil úpravy webu a registrace, commit, push a produkční deploy.
+- Blocked: 2026-10-12 — čeká potvrzení uložení změn živého Google Forms v browser workflow; webová část je dokončená.
+- Last safe state: webový commit `63e76bd` pushnut a nasazen, produkční cílené E2E 31/31 prošlo; formulář nezměněný.
+- Resume from: [ExecPlan](docs/plans/TASK-006-live-attendance.md), potvrdit uživatelovu odpověď a nastavení živého formuláře.
 
 #### Verification
 
@@ -46,7 +53,8 @@ _Žádné položky._
 - Vizuální kontrola: 390 a 1440 px, světlý a tmavý režim — prošlo; E2E pokrývá 320–1920 px.
 - Živý Google Form: dosud beze změny; čeká potvrzení uživatele pro uložení nepovinného jména, informační věty a nového potvrzení. Před změnou vyžaduje e-mail i jméno; ostatní otázky jsou nepovinné.
 - Recovery: web obnovit deployem předchozího commitu; formulář vrátit z nepovinného jména na povinné a obnovit původní potvrzení uložené v Git baseline. Odpovědi ani otázky se nemažou.
-- ExecPlan: nepoužit; krátká změna v jedné session.
+- ExecPlan: [docs/plans/TASK-006-live-attendance.md](docs/plans/TASK-006-live-attendance.md)
+- Produkce: deployment `6b77342e`, source `63e76bd`. HTML/CSS/JS na `https://mastertheflow.cz/live/vibe-coding/` mají HTTP 200 a přesně odpovídají releasu; E2E 31/31 prošlo.
 
 ## Review
 
@@ -175,7 +183,3 @@ _Žádné položky._
 - Post-review snapshot: nezměněn — stabilní implementační hashe jsou uložené v ExecPlanu.
 - ExecPlan: [docs/plans/TASK-001-vibe-coding-live.md](docs/plans/TASK-001-vibe-coding-live.md)
 - Produkce: `https://mastertheflow.cz/live/vibe-coding/` — HTTP 200 a cílené E2E 20/20 — prošlo.
-
-## Blocked
-
-_Žádné položky._
