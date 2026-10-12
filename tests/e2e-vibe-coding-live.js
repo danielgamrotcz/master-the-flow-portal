@@ -29,7 +29,7 @@ function check(name, condition, detail = '') {
   const response = await page.goto(`${BASE}${episodePath}`, { waitUntil: 'networkidle' });
   check('Stránka vrací úspěšnou odpověď', response && response.ok(), String(response && response.status()));
   check('Stránka je veřejná bez přístupové brány', await page.locator('#gate').count() === 0);
-  check('Titulek pojmenovává díl s Alexem', (await page.locator('h1').innerText()).replace(/\s+/g, ' ') === 'Vibe coding s Alexem.');
+  check('Titulek pojmenovává díl s Alexem', (await page.locator('h1').innerText()).replace(/\s+/g, ' ') === 'Vibecoding s Alexem.');
   check('Sdílení používá kanonickou adresu nového dílu', await page.locator('link[rel="canonical"]').getAttribute('href') === `https://mastertheflow.cz${episodePath}`
     && await page.locator('meta[property="og:url"]').getAttribute('content') === `https://mastertheflow.cz${episodePath}`);
 
@@ -49,7 +49,7 @@ function check(name, condition, detail = '') {
   const publicCopy = `${pageMarkup} ${JSON.stringify(portalEvent)}`;
   const naming = {
     type: portalEvent?.type === 'ROZHOVOR',
-    title: portalEvent?.title === 'Vibe coding s Alexem | Rozhovory Master the Flow #1',
+    title: portalEvent?.title === 'Vibecoding s Alexem | Rozhovory Master the Flow #1',
     pageTitle: await page.title() === portalEvent?.title,
     eyebrow: await page.locator('.eyebrow').textContent() === 'Rozhovory Master the Flow · 1. díl',
     guest: await page.locator('#guest-title').textContent() === 'Alex Trejtnar',
@@ -70,7 +70,7 @@ function check(name, condition, detail = '') {
   check('Závazné údaje jsou konzistentní', Object.values(facts).every(Boolean), JSON.stringify(facts));
   check('Živá účast nabízí vlastní otázky bez povinné přípravy', /Přijďte s vlastní otázkou/.test(mainText)
     && /Na otázky bude prostor i během vysílání/.test(mainText)
-    && /Nemusíte nic instalovat ani mít připravený projekt/.test(mainText));
+    && /Bez instalace a připraveného projektu/.test(mainText));
   const recordingPlacement = await page.locator('.registration-actions').evaluate(element => {
     const button = element.querySelector('[data-registration-link]');
     const note = element.querySelector('.registration-note');
@@ -80,18 +80,18 @@ function check(name, condition, detail = '') {
   check('Záznam je zachovaný jako doplňková informace pod registračním tlačítkem', recordingPlacement);
   const startingPoint = {
     lovable: /Lovable/.test(mainText),
-    codingAgent: /coding agentem/i.test(mainText),
-    desiredOutput: /výsledek pořád není ono/i.test(mainText),
+    codingAgent: /coding agenta/i.test(mainText),
+    desiredOutput: /výsledek není ono/i.test(mainText),
   };
   check('Stránka vychází ze zkušenosti s coding nástroji', Object.values(startingPoint).every(Boolean), JSON.stringify(startingPoint));
-  check('Nosná otázka není redukovaná na lepší prompt', /co si připravit, než začnete zadávat/i.test(mainText)
-    && /Jak si ujasnit, co vlastně stavět/i.test(mainText));
-  check('Alexův setup není vydáván za povinnost', /co z Alexova systému převzít a co zatím vynechat/i.test(mainText));
-  check('Alexova odbornost není postavená na shazování Daniela', /jeho systém práce/i.test(mainText)
-    && /digitálu přes dvacet let/i.test(mainText)
-    && /ARIBENA/i.test(mainText)
+  check('Nosná otázka odpovídá Alexovu tématu přemýšlení', /Vibecoding vás učí každý\. Přemýšlet málokdo\./.test(mainText)
+    && /Jak uvidět problém dřív, než začnete zadávat/.test(mainText)
+    && /Jak výsledek ověřit a používat v praxi/.test(mainText));
+  check('Alexův setup není vydáván za povinnost', /Co si vzít z Alexova systému práce s agentem/.test(mainText));
+  check('Alexova odbornost není postavená na shazování Daniela', /20 let digitalizuje firmy/i.test(mainText)
+    && /Učí jejich týmy, jak o AI přemýšlet/i.test(mainText)
     && !/Mám to stejně|Nejsem vývojář|dál než (?:já|ten můj)|Co dělá jinak než já|co mi při stavění aplikací nefunguje|méně pokročil|o (?:několik|pár) úrovní přede mnou|teprve začínám|Daniel[^.]{0,80}(?:bastlí|nezvládá|trvá déle)/i.test(publicCopy));
-  check('Ukázky jsou podmíněné užitečností pro odpověď', /Kde to pomůže, Alex ukáže svůj postup na obrazovce/i.test(mainText));
+  check('Ukázky jsou podmíněné užitečností pro odpověď', /Alex podle potřeby nasdílí obrazovku/i.test(mainText));
   check('Stránka neslibuje pevný program ani polovinu vysílání', /O čem se budeme bavit/i.test(mainText)
     && !/polovinu vysílání|připravené checkpointy|šest okruhů/i.test(mainText));
   check('Stránka neslibuje konkrétní aplikaci dema', !/postavíme (?:aplikaci|appku)|vyrobíme (?:aplikaci|appku)/i.test(mainText));
@@ -134,17 +134,20 @@ function check(name, condition, detail = '') {
     && portraitBox
     && Math.abs(portraitBox.width - portraitBox.height) < 1,
   JSON.stringify(portraitBox));
-  check('Alexův profil stojí na ověřitelných zdrojích', /Alex Trejtnar/.test(mainText)
-    && /digitálu přes dvacet let/i.test(mainText)
-    && /ARIBENA/.test(mainText)
+  // Trvalý obsahový kontrakt: medailonek dodaný Alexem ve WhatsAppu 12. 10. 2026.
+  const guestBio = '20 let digitalizuje firmy: vývoj, marketing, procesy, obchod, automatizace. Dnes hlavně s AI. S klienty spolupracuje dlouhodobě. Vytváří s nimi nástroje, systémy a aplikace, které šetří čas, náklady a pomáhají pracovat s AI bezpečně. Učí jejich týmy, jak o AI přemýšlet a jak s ní pracovat.';
+  check('Alexův medailonek odpovídá jeho dodanému textu', await page.locator('.guest-copy > p').innerText() === guestBio
     && await page.locator('.guest-links a').count() === 3);
 
   const questionsText = await page.locator('.question-list').innerText();
-  check('Stránka uvádí témata místo harmonogramu', /co vlastně stavět/i.test(questionsText)
-    && /Co nastavit v projektu/i.test(questionsText)
-    && /Alexova systému.*vynechat/i.test(questionsText)
+  check('Stránka uvádí témata místo harmonogramu', /uvidět problém/i.test(questionsText)
+    && /Alexova systému práce s agentem/i.test(questionsText)
+    && /ověřit a používat/i.test(questionsText)
     && !/18:\d{2}/.test(questionsText));
   check('Stránka neopakuje samostatnou sekci o formátu', await page.locator('.format').count() === 0);
+  check('Minimalistický rozsah nepřidává propagaci kurzu', await page.locator('main > section').count() === 4
+    && await page.locator('.question-list li').count() === 3
+    && !/leden 2027|do 15 lidí|Novum Organon/.test(mainText));
 
   const themeBefore = await page.locator('html').getAttribute('data-theme');
   await page.locator('#theme-toggle').click();

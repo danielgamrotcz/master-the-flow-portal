@@ -24,6 +24,37 @@ _Žádné položky._
 
 ## Blocked
 
+### TASK-009 — Text rozhovoru podle Alexových podkladů
+
+- Started: 2026-10-12
+- Owner: Codex
+- Výsledek: minimalistická stránka s Alexovým medailonkem, jeho tématem přemýšlení o AI a názvem „Vibecoding s Alexem“.
+- Scope: texty, metadata a karta tohoto rozhovoru; neměnit layout, registraci, termín, skrytí v portálu ani jiné akce. Forms a Calendar mimo scope.
+- Release oprávnění: 2026-10-12 — Daniel výslovně schválil commit, push a produkční nasazení této revize.
+- Zdroj: Alexovy dvě screenshotové přílohy a teaser/index.html z ZIPu, dodané ve WhatsAppu 2026-10-12. Importován pouze požadovaný veřejný text, nikoli kód teaseru, formulář nebo propagace kurzu.
+- Režim: coordinated; mapper nedostupný (limit vláken), read-only self-map dokončený. ExecPlan nepoužit, krátká textová úprava.
+- Blocked: 2026-10-12 — implementace dokončená; nezávislou acceptance blokuje limit agentních vláken.
+- Last safe state: lokální změny ověřené cílenými E2E a vizuálně; bez commitu, pushnutí a deploye.
+- Resume from: čerstvý nezávislý read-only review tohoto diffu po uvolnění kapacity. Autorizovaný release je samostatný krok a chybějící review nenahrazuje.
+
+#### Verification
+
+- [x] Medailonek a slogan odpovídají dodaným podkladům; název je konzistentní s kartou.
+- [x] Počet sekcí, registrace, termín, portrét, skrytí a ostatní akce zachované.
+- [x] Cílené testy, mobil a desktop ověřené po změně.
+- [ ] Čerstvá nezávislá acceptance dokončená.
+
+#### Evidence
+
+- Baseline `ffc46ce`; čerstvý fetch 0/0. Jediná cizí změna tools/build_glossary.py (166465a57fed8c01a232f1c0bc2a9b7f1351e90c5d4b5f5fa230f2826a5ec289) je mimo scope.
+- Cílené E2E: e2e-vibe-coding-live.js 37/37; e2e-event-cards.js 72/72 — prošlo lokálně. Syntaxe obou změněných JS a diff check — prošlo. Plná sada nebyla v této textové revizi spuštěna.
+- Vizuální kontrola: desktop a 390px mobil v reálném prohlížeči, nová PNG karta — prošlo. Čtyři stejné sekce, hlavní text 183 → 189 slov.
+- Všechny body HTML tagy a atributy jsou identické s baseline. CSS, JS, portrét a cizí změna mají původní hashe. U akce změněn pouze title/description; všechny ostatní akce a jejich karty beze změny.
+- Verifier: NOT TESTED — spawn `/root/alex_copy_acceptance` odmítl limit vláken. Oddělený druhý průchod textu, zdrojů a diffu proveden; celkový verdikt PARTIALLY VERIFIED, nikoli nezávislá acceptance.
+- Post-review snapshot: HTML f56aa96…, data e350f86…, model 872b760…, test 4ead669…, PNG 4ec5b4e…; implementační snapshot nezměněn.
+- Surové přílohy zůstaly jen v dočasné složce /private/tmp/alex-landing-sources-HKUqj9. WhatsApp pouze čtený; žádná zpráva odeslána, žádný kód ze ZIPu spuštěný nebo importovaný.
+- Predeploy rapid security proti ffc46ce: pouze veřejný text a PNG, HTML tagy/atributy v body, odkazy, registrační formulář, ochrany a runtime kód beze změny; žádná potvrzená nová bezpečnostní regrese. Chráněný cizí slovníček se nenasazuje. Celkový limit nezávislé acceptance trvá.
+
 ### TASK-008 — Světlé náhledové karty všech akcí
 
 - Started: 2026-10-12
