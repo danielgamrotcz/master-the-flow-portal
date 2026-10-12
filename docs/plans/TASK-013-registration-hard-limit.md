@@ -1,6 +1,6 @@
 # TASK-013 — Pevný limit registrací
 
-Stav: In Progress
+Stav: Blocked (jen nedostupná nezávislá acceptance; provozně aktivní)
 Tracker: ../../TASKS.md
 Poslední checkpoint: 2026-10-12
 
@@ -26,11 +26,11 @@ neprovádět syntetickou registraci ani hromadné rozesílání.
 - [x] Implementace uzamčeného přidělení míst, uzavření, lokální testy.
 - [x] Read-only security self-review a UI plného stavu.
 - [ ] Nezávislá acceptance (spawn odmítnut limitem vláken).
-- [ ] Schválená aktivace a release.
+- [x] Schválená aktivace a release.
 
 Aktivace Google dokončena. Uživatel po konkrétním popisu false positive
 tests/google-vibe-coding-count.js:22 výslovně požádal dokončit vše pro aktivaci.
-Tento nález přijatý; pokračovat schváleným commitem, pushem a deployem.
+Tento nález přijatý; commit, push a produkční deploy dokončené.
 
 ## Rozhodnutí
 
@@ -138,3 +138,22 @@ slovníček166465a5. Po odděleném self-review stejné hashe; žádný externí
 - Commit, push a webový deploy zatím neprovedeny. Google hard limit už aktivní
   nezávisle na releasu frontendového CTA. Nepřepisovat ani znovu neinstalovat
   triggery při pokračování, jen dokončit Git/release po potvrzení nálezu.
+
+## Dokončený release 2026-10-12
+
+- Uživatel přijal popsaný falešný nález. Opakovaný staged scan identifikoval
+  jen stejný nález, žádné další; scanner ani test nebyly obcházeny úpravou kódu.
+- Commit bfcbcf432f54c0a709fef4ced6f672e07f0ca6c1 pushnutý do origin/main.
+- Čistý export tohoto commitu /private/tmp/mtf-hard-cap-release.ezSaqp nasazen
+  na Cloudflare Pages, deployment e1d81633-633e-4495-abe7-c88f5a110032,
+  Production/main/source bfcbcf4. Wrangler exit0. Cizí slovníček mimo export.
+- Vlastní doména https://mastertheflow.cz/rozhovory/1-vibe-coding-s-alexem/
+  vrací klient13609ec a jeho úplný hash shodný s lokálním commitem.
+- Produkční e2e-vibe-coding-live37/37, exit0. Produkční e2e-vibe-capacity
+  (plno simulováno jen v prohlížeči, včetně výpadku a obnovy) exit0.
+- Veřejné API:23 přidělených míst,75 zbývá, updatedAt16:02:14.064Z.
+  Google ochrana z předchozí ověřené aktivace beze změny, runtime počet roste.
+- GitHub run list pro commit prázdný; jediný workflow sraz-e2e.yml filtruje
+  jiné cesty. CI pro tento release nebylo spuštěno, není vydáváno za success.
+- Zbývá pouze nedostupná nezávislá acceptance; provozní aktivace a release
+  dokončeny. Nepřepínat Google zpět ani neopakovat instalátor/deploy při resume.

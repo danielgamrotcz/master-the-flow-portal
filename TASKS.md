@@ -20,6 +20,10 @@ _Žádné položky._
 
 ## In Progress
 
+_Žádné položky._
+
+## Blocked
+
 ### TASK-013 — Pevný limit 98 míst
 
 - Started: 2026-10-12
@@ -29,8 +33,9 @@ _Žádné položky._
 - ExecPlan: [docs/plans/TASK-013-registration-hard-limit.md](docs/plans/TASK-013-registration-hard-limit.md)
 - Resumed: 2026-10-12 — uživatel schválil živou aktivaci, změnu potvrzení formuláře, odmítací e-mail bez Meet, commit, push a deploy. Fresh fetch 0/0, chráněné změny zachované. Nezávislý verifier zatím nedostupný kvůli limitu vláken.
 - Resumed: uživatel po konkrétním popisu false positive výslovně požádal dokončit vše pro aktivaci. Nález tests/google-vibe-coding-count.js:22 přijatý; commit/push/deploy schválené. Nezávislý verifier stále nedostupný.
-- Last safe state: Google limit98 aktivní17:55:26, započteno21 registrací; count21/77, časový běh17:57:45 dokončen. Čtyři triggery zachované. Webový release neproveden, taskové soubory staged, slovníček mimo index.
-- Resume from: ExecPlan, po přijetí konkrétního nálezu dokončit commit/push/deploy a produkční E2E. Neopakovat aktivaci ani instalátor pozvánek.
+- Blocked: provozní výsledek dokončen; pouze nezávislá acceptance zůstává nedostupná kvůli limitu vláken. PARTIALLY VERIFIED.
+- Last safe state: Google limit98 aktivní, čtyři triggery zachované. Commit bfcbcf4 pushnutý; produkce e1d81633-633e-4495-abe7-c88f5a110032 ze stejného commitu. Produkční E2E rozhovoru i kapacity exit0; snapshot23/75.
+- Resume from: pouze nezávislá acceptance, až bude dostupná. Neopakovat aktivaci, instalátor ani deploy. Uživatelský slovníček zůstal mimo release.
 
 #### Verification
 
@@ -38,7 +43,7 @@ _Žádné položky._
 - [x] Mock formuláře se zavře a nepřijatý člověk nedostane Meet; 100 odpovědí znamená 98 pozvánek a dvě odmítnutí.
 - [x] Web při plné kapacitě nenabízí registraci, ověřeno E2E i vizuálně na mobilu a desktopu.
 - [x] Google aktivace, shoda živých skriptů s lokálními soubory a skutečný časový běh.
-- [ ] Webový release a produkční ověření frontendové změny.
+- [x] Webový release a produkční ověření frontendové změny.
 
 #### Evidence
 
@@ -47,7 +52,7 @@ _Žádné položky._
 - Verifier: NOT TESTED — capacity_hard_limit_acceptance spawn odmítnut limitem vláken. Oddělený self-review nenahrazuje nezávislé ověření; PARTIALLY VERIFIED.
 - Post-review snapshot: invitation GS4b267b44, count GS4c298abb, klient13609ecd, HTMLa99fee6f, capacity test14becf48. Chráněný slovníček166465a5 zachovaný.
 
-## Blocked
+- Release: bfcbcf4 → origin/main → Production e1d81633. Vlastní doména vrací klient13609ecd; produkční rozhovor37/37 a capacity E2E exit0. API23/75, updatedAt2026-10-12T16:02:14.064Z. CI se pro tyto cesty podle existujícího workflow nespouští.
 
 ### TASK-012 — Živé počty registrací a kapacita rozhovoru
 
