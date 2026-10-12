@@ -20,7 +20,33 @@ _Žádné položky._
 
 ## In Progress
 
-_Žádné položky._
+### TASK-006 — Podpora živé účasti na rozhovoru
+
+- Started: 2026-10-12
+- Owner: Codex
+- Výsledek: jasný důvod přijít živě, nenápadný záznam, účast bez přípravy, registrace pouze s povinným e-mailem a užitečné potvrzení.
+- Scope: bez připomínek, propagace s Alexem a organizace vysílání. Zachovat otázky a odpovědi formuláře, adresu registračního e-mailového pole, pozvánkovou automatizaci, portrét a skrytí v portálu.
+- Oprávnění: uživatel schválil úpravy webu a registrace, commit, push a produkční deploy.
+
+#### Verification
+
+- [x] Web vysvětluje živé dotazy a účast bez instalace či připraveného projektu; záznam je pod CTA.
+- [ ] Formulář vyžaduje jen e-mail; zkušenosti, vlastní otázky a jméno zůstávají nepovinné.
+- [ ] Potvrzení vysvětluje doručení pozvánky a kontakt při nedoručení, bez spuštění automatizace.
+- [x] Mobil, desktop, relevantní testy, bezpečnostní a nezávislá kontrola webové části dokončené.
+
+#### Evidence
+
+- Baseline: `6e2b591`; čistý `main`, čerstvý fetch potvrdil synchronizaci.
+- Mapper: `/root/live_attendance_impact` — completed. E-mailový titulek a Calendar lookup jsou chráněné kontrakty; instalátor automatizace se nesmí spouštět kvůli textu.
+- Cílené E2E 31/31 a lokální test automatizace 11/11 — prošlo. Celá sada 17 scénářů prošlo, 2 selhaly na reprodukovaných chybách nedotčeného slovníčku a registrací srazu. Syntaxe a diff — prošlo.
+- Rapid security check proti `6e2b591`: bez nové potvrzené regrese. Odkazy, e-mailový titulek, Calendar lookup, ochrana hostů, deduplikace a hlavičky beze změny. Změna skriptu je omezena na potvrzovací text; živý skript nebyl spuštěn ani upraven.
+- Verifier: `/root/live_attendance_acceptance` — completed — VERIFIED pro lokální web a zdroj potvrzení; živý formulář NOT TESTED.
+- Post-review snapshot: nezměněn — HTML `85122fa…`, CSS `8763095…`, E2E `ad1f09e…`, test automatizace `9c8f049…`, skript `c6a72d2…`.
+- Vizuální kontrola: 390 a 1440 px, světlý a tmavý režim — prošlo; E2E pokrývá 320–1920 px.
+- Živý Google Form: dosud beze změny; čeká potvrzení uživatele pro uložení nepovinného jména, informační věty a nového potvrzení. Před změnou vyžaduje e-mail i jméno; ostatní otázky jsou nepovinné.
+- Recovery: web obnovit deployem předchozího commitu; formulář vrátit z nepovinného jména na povinné a obnovit původní potvrzení uložené v Git baseline. Odpovědi ani otázky se nemažou.
+- ExecPlan: nepoužit; krátká změna v jedné session.
 
 ## Review
 

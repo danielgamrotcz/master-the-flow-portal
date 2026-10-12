@@ -53,6 +53,16 @@ function check(name, condition, detail = '') {
     recording: /Záznam (?:pošleme všem registrovaným|dostanou všichni registrovaní)/i.test(mainText),
   };
   check('Závazné údaje jsou konzistentní', Object.values(facts).every(Boolean), JSON.stringify(facts));
+  check('Živá účast nabízí vlastní otázky bez povinné přípravy', /Přijďte s vlastní otázkou/.test(mainText)
+    && /Na otázky bude prostor i během vysílání/.test(mainText)
+    && /Nemusíte nic instalovat ani mít připravený projekt/.test(mainText));
+  const recordingPlacement = await page.locator('.registration-actions').evaluate(element => {
+    const button = element.querySelector('[data-registration-link]');
+    const note = element.querySelector('.registration-note');
+    return Boolean(button && note && /Záznam dostanou všichni registrovaní/.test(note.textContent)
+      && note.getBoundingClientRect().top >= button.getBoundingClientRect().bottom);
+  });
+  check('Záznam je zachovaný jako doplňková informace pod registračním tlačítkem', recordingPlacement);
   const startingPoint = {
     lovable: /Lovable/.test(mainText),
     codingAgent: /coding agentem/i.test(mainText),

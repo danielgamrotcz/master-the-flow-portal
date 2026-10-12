@@ -6,7 +6,7 @@ const VIBE_CODING_LIVE = {
   eventStartMs: Date.parse('2026-10-21T16:00:00Z'),
   eventEndMs: Date.parse('2026-10-21T17:30:00Z'),
   emailQuestionTitles: ['E-mail', 'E‑mail'],
-  confirmationMessage: 'Děkuji, registrace je hotová. Do e-mailu vám přijde soukromá pozvánka do kalendáře s odkazem na Google Meet. Po akci pošlu všem registrovaným také záznam.',
+  confirmationMessage: 'Děkuji, registrace je hotová. Pozvánka do kalendáře s odkazem na Google Meet vám přijde e-mailem. Pokud ji nenajdete, zkontrolujte spam nebo napište na daniel@gamrot.cz. Těším se 21. října v 18:00. Záznam dostanou všichni registrovaní.',
   activationProperty: 'VIBE_CODING_LIVE_ACTIVATED_AT',
 };
 

@@ -90,6 +90,8 @@ calls.length = 0;
 vm.runInContext('installVibeCodingLiveRegistrationAutomation()', context);
 check('Instalace nastaví potvrzení formuláře', calls.some(call => call[0] === 'confirmation'
   && /Google Meet/.test(call[1]) && /záznam/i.test(call[1])));
+check('Potvrzení nabízí postup při nedoručení pozvánky', calls.some(call => call[0] === 'confirmation'
+  && /e-mailem/.test(call[1]) && /spam/.test(call[1]) && /daniel@gamrot\.cz/.test(call[1])));
 check('Instalace vytvoří submit a reconciliation trigger', calls.filter(call => call[0] === 'trigger').length === 2
   && calls.some(call => call[1] === 'onVibeCodingLiveFormSubmit')
   && calls.some(call => call[1] === 'reconcileVibeCodingLiveRegistrations' && call[2] === 6));
