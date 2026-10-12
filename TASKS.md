@@ -33,8 +33,8 @@ _Žádné položky._
 - Režim: contained; nový pokyn nahrazuje dřívější požadavek skrytí.
 - Release oprávnění: 2026-10-12 — Daniel výslovně schválil commit, push a produkční nasazení banneru a odkrytí akce. Původní omezení scope na lokální změny je tím pro release nahrazené.
 - Blocked: 2026-10-12 — implementace a lokální kontroly dokončené; nezávislý verifier nedostupný kvůli limitu vláken.
-- Last safe state: necommitnuté lokální změny, produkce beze změny.
-- Resume from: nezávislá acceptance finálního diffu; případný commit, push a deploy vyžadují samostatný pokyn.
+- Last safe state: commit 5874eab pushnutý a nasazený; produkční portál 32/32 a LP 37/37 prošly. Zbývá pouze nezávislá acceptance.
+- Resume from: nezávislá acceptance finálního diffu po uvolnění vláken; nový deploy automaticky neopakovat.
 
 #### Verification
 
@@ -54,6 +54,8 @@ _Žádné položky._
 - ExecPlan: nepoužit, krátká lokální změna. Commit, push a produkční nasazení nebyly spuštěné.
 - Strukturální audit boardu: selhal na 43 chybějících polích dřívějších TASK-001 až TASK-007, žádný nález u nové TASK-010. Historické karty nebyly hromadně přeformátované.
 - Predeploy rapid security proti 36bfaeb: žádná potvrzená nová bezpečnostní regrese; pevný escapovaný titulek, pouze veřejná akce, odkazy a všechny serverové ochrany beze změn. Lokální security-regressions 14/14 prošly. Cizí slovníček se do commitu ani exportu nezahrnuje; úplný audit aplikace mimo scope.
+- Release: 5874eabb7f3bede0a8fc6b4c86bbbd38cd89fb3f pushnutý do origin/main. Cloudflare Production 356c4b1e-0a13-46dd-9c4d-75dba1303e94, branch main, source 5874eab. Nasazený čistý Git export bez cizí změny slovníčku.
+- Produkce https://mastertheflow.cz: e2e-portal 32/32 a e2e-vibe-coding-live 37/37 prošly. app.js a data/events.json jsou byte-identické s releasem. Banner i nadcházející karta ověřené v prohlížeči na 390 a 1440 px, registrační cesta správná. Staged secret scan bez nálezu. CI v tomto kroku nebylo ověřováno; dříve uvedená omezení nezávislé acceptance a plné sady trvají.
 
 ### TASK-009 — Text rozhovoru podle Alexových podkladů
 
