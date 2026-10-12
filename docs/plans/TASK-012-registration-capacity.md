@@ -1,6 +1,6 @@
 # TASK-012 — Živé počty a kapacita
 
-Stav: In Progress
+Stav: Blocked
 Tracker: ../../TASKS.md
 Poslední checkpoint: 2026-10-12
 
@@ -87,3 +87,29 @@ Tracker checkpoint SHA-256: bffd8e7c85bd67ad3d5e5a70c63fd9986623f0d4383d6c9e2901
 Resume 2026-10-12: uživatel výslovně přijal oba požadované kroky, včetně
 konkrétních tří false positives scanneru. Žádná globální výjimka se nepřidává.
 Čerstvý fetch 0 ahead / 0 behind. Pokračuje schválený release a živé propojení.
+
+## Produkční checkpoint 2026-10-12
+
+- Commit 3dcef634737ee2b68db43483267c13d387b39b8c pushnutý, main 0/0.
+- Produkční deploy 48f88d95-77b2-476e-9fa0-c75207a51256, main/source3dcef63,
+  z čistého Git exportu /private/tmp/mtf-capacity-release.yh5uMB.
+- Produkční e2e-vibe-coding-live 37/37 exit0 a e2e-vibe-capacity exit0.
+  Druhý test simuluje API pouze v testovacím prohlížeči, nedokazuje živý sync.
+- Produkční API GET funguje; dosud správně vrací null count/remaining.
+- Mobilní screenshot 390px prohlédnutý; fallback čitelný, bez přesahu.
+- VIBE_CODING_SYNC_SECRET vytvořen CSPRNG 32bytes a uložen jako Secret do
+  Cloudflare Production i Google Script Properties. Hodnota nikde v Gitu.
+- Samostatný count GS vložen do živého projektu; kopie přes editor má přesnou
+  SHA-256 658d078131a3a952dd7952fa036bcad2a1d1191a687bffb43d496457c5138e4b.
+- Instalace zastavila na Google OAuth: nově Připojení k externí službě.
+  Auto-review klik odmítl kvůli kombinaci s již existujícími 4 oprávněními
+  (Forms, send-mail, automatický běh, široký Calendar). Nové konkrétní
+  potvrzení o této kombinaci vyžádáno; zamítnutí nebylo obcházeno.
+- Čeká schválení Google dialogu, dokončení installVibeCodingCountSync,
+  ověření čtyř triggerů (dva původní + dva count), reálného počtu a aktualizace.
+  Neopakovat commit/deploy 3dcef63 ani původní instalátor pozvánek.
+- Implementační hashe i chráněný slovníček shodné s předchozím snapshotem.
+  Celkový verdikt PARTIALLY VERIFIED: Google sync a nezávislý verifier chybí.
+- Živé executions ověřené: onVibeCodingLiveFormSubmit 17:18:59 a 17:21:40
+  mají stav Dokončeno, tedy pozvánkový handler běží i po přidání count souboru.
+  Není to důkaz doručení do schránky; žádné testovací zprávy jsme neposílali.

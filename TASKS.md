@@ -20,6 +20,10 @@ _Žádné položky._
 
 ## In Progress
 
+_Žádné položky._
+
+## Blocked
+
 ### TASK-012 — Živé počty registrací a kapacita rozhovoru
 
 - Started: 2026-10-12
@@ -28,7 +32,9 @@ _Žádné položky._
 - Scope: landing page, chráněné API a synchronizace Google Forms. Commit, push a produkční deploy včetně předchozí opravy pozvánek výslovně schválené. Cizí tools/build_glossary.py mimo scope.
 - ExecPlan: [docs/plans/TASK-012-registration-capacity.md](docs/plans/TASK-012-registration-capacity.md)
 - Resumed: 2026-10-12 — uživatel konkrétně schválil uložení klíče do Cloudflare a Google skriptu, anonymní synchronizaci a přijetí tří false positives scanneru. Čerstvý fetch main 0/0, cizí slovníček zachovaný.
-- Resume: potvrdit tyto dvě bezpečnostní výjimky, dokončit zabezpečené propojení, commit/push/deploy a produkční ověření. Nepřepisovat existující pozvánkové triggery, nesahat na cizí slovníček.
+- Blocked: web commitnutý, pushnutý a nasazený; Google OAuth potvrzení automatická bezpečnostní kontrola odmítla kvůli kombinaci nového external-request scope s již existujícími širokými právy. Konkrétní souhlas s kombinací znovu vyžádán.
+- Last safe state: commit 3dcef63 / Production48f88d95, oba produkční E2E prošly. Secret na obou stranách uložený; count GS byte-shodný. API vrací unknown, žádná syntetická registrace či e-mail.
+- Resume: dokončit Google OAuth a count-only instalátor, ověřit skutečný count a čtyři triggery. Nasazení neopakovat. Původní pozvánkové triggery ani cizí slovníček neměnit.
 
 #### Verification
 
@@ -36,8 +42,6 @@ _Žádné položky._
 - [x] Obnovování, nula, plno a výpadek pokryté testy.
 - [ ] Mobil a desktop vizuálně ověřené.
 - [ ] Commit, push a produkční kontrola dokončené.
-
-## Blocked
 
 ### TASK-011 — Oprava doručování registračních pozvánek
 
