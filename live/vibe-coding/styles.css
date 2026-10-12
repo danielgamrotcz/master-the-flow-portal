@@ -71,6 +71,9 @@ img { max-width: 100%; }
 .button:active { transform: scale(.98); }
 .button-primary { background: var(--button); color: #fff; }
 .hero-note { margin: 12px 0 0; color: var(--text-secondary); font-size: 13px; }
+.registration-availability { margin: 14px 0 0; color: var(--text-secondary); font-size: 14px; font-variant-numeric: tabular-nums; }
+.registration-availability strong { color: var(--text-primary); font-weight: 600; }
+.registration-actions .registration-availability { margin: 0 0 12px; max-width: 30ch; }
 
 .section { max-width: 1180px; margin: 0 auto; padding: 76px 32px; }
 h2 { margin: 0; font-size: clamp(32px, 3.8vw, 48px); line-height: 1.12; letter-spacing: -.04em; text-wrap: balance; }

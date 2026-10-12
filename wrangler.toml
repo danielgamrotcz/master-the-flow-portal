@@ -17,3 +17,4 @@ database_id = "609b4aa0-8949-4635-87f2-e2df613fab3b"
 # NOTIFY_SECRET — chrání POST /api/notify (odesílání push notifikací)
 # ATTENDEES_SYNC_SECRET — chrání POST /api/meetup-attendees (Google Forms sync)
 # SHOW_AND_TELL_SYNC_SECRET — chrání POST /api/show-and-tell-registrations
+# VIBE_CODING_SYNC_SECRET — chrání POST /api/vibe-coding-registrations

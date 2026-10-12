@@ -20,9 +20,44 @@ _Žádné položky._
 
 ## In Progress
 
-_Žádné položky._
+### TASK-012 — Živé počty registrací a kapacita rozhovoru
+
+- Started: 2026-10-12
+- Owner: Codex
+- Výsledek: anonymní počet unikátních registrací a zbývající místa z kapacity 98, automatické obnovování bez falešných údajů při výpadku.
+- Scope: landing page, chráněné API a synchronizace Google Forms. Commit, push a produkční deploy včetně předchozí opravy pozvánek výslovně schválené. Cizí tools/build_glossary.py mimo scope.
+- ExecPlan: [docs/plans/TASK-012-registration-capacity.md](docs/plans/TASK-012-registration-capacity.md)
+- Resumed: 2026-10-12 — uživatel konkrétně schválil uložení klíče do Cloudflare a Google skriptu, anonymní synchronizaci a přijetí tří false positives scanneru. Čerstvý fetch main 0/0, cizí slovníček zachovaný.
+- Resume: potvrdit tyto dvě bezpečnostní výjimky, dokončit zabezpečené propojení, commit/push/deploy a produkční ověření. Nepřepisovat existující pozvánkové triggery, nesahat na cizí slovníček.
+
+#### Verification
+
+- [ ] Počet z reálných registrací, deduplikace a soukromí ověřené.
+- [x] Obnovování, nula, plno a výpadek pokryté testy.
+- [ ] Mobil a desktop vizuálně ověřené.
+- [ ] Commit, push a produkční kontrola dokončené.
 
 ## Blocked
+
+### TASK-011 — Oprava doručování registračních pozvánek
+
+- Started: 2026-10-12
+- Owner: Codex
+- Výsledek: potvrzení nové registrace e-mailem i pořadateli; stabilní vazba na událost, správný název a čas, připojená tabulka a odstraněná pouze Danielova dnešní testovací odpověď.
+- Scope: explicitně schválená oprava živého registračního toku a cílené smazání testu. Bez commitu, pushnutí, deploye portálu a syntetických registrací nebo hromadného rozesílání.
+- ExecPlan: [docs/plans/TASK-011-registration-delivery.md](docs/plans/TASK-011-registration-delivery.md)
+- Resumed: 2026-10-12 — uživatel schválil oprávnění, aktivaci a cílené odstranění své testovací odpovědi.
+- Release scope: 2026-10-12 — uživatel povolil zahrnout tuto opravu do společného commitu, pushnutí a release TASK-012.
+- Blocked: aktivace dokončena, čeká pouze uživatelský retest doručení a nezávislá acceptance (limit vláken); PARTIALLY VERIFIED.
+- Last safe state: live verify 16:33:12 prošel, dva triggery, soukromá tabulka připojená, schválený test odstraněný, Forms 0 odpovědí. Žádný e-mail ručně odeslán.
+- Resume: uživatel provede novou registraci, pak ověřit execution a doručení; neopakovat migraci ani mazání.
+
+#### Verification
+
+- [x] Doručování, retry, deduplikace a soukromí pokryté 25 procházejícími mock testy; syntaxe ověřena.
+- [x] Živý skript, triggery, tabulka a kalendář ověřené po opravě.
+- [x] Pouze schválený test odstraněný, připraveno pro Danielův retest.
+- [ ] Skutečné doručení potvrzené uživatelem.
 
 ### TASK-010 — Zobrazení rozhovoru na hlavním portálu
 
