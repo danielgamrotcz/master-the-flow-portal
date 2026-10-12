@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-11",
+  "generated_at": "2026-10-12T00:06:01Z",
+  "stats": {
+    "messages": 7,
+    "groups": 2,
+    "members": 3
+  },
+  "cards": [
+    {
+      "id": "2026-10-11-01",
+      "type": "TIP",
+      "level": "Pokročilý",
+      "topics": [
+        "AI nástroje",
+        "Workflow",
+        "ChatGPT",
+        "Dokumentace"
+      ],
+      "title": "Business HQ proti závislosti na AI",
+      "excerpt": "Sdílený příspěvek řeší, že se AI služby můžou zhoršovat a uživatelé se můžou stát závislými na konkrétních poskytovatelích. Člen doporučil projít i komentáře pod příspěvkem.",
+      "body": "Autor příspěvku popisuje lokální systém „Business HQ“, kde ukládá pracovní postupy do souborů Markdown. Díky tomu může rychle přecházet mezi nástroji Claude, ChatGPT a Codex. Řešení spojuje s obavami ze zhoršování AI služeb a rostoucí závislosti na jejich poskytovatelích. Zvažuje také, že systém zveřejní jako open source. Člen, který odkaz sdílel ve skupině, upozornil i na navazující komentáře.",
+      "read_minutes": 1,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "12:12"
+      ],
+      "links": [
+        "https://lnkd.in/p/dRyPn3ky"
+      ],
+      "source_date": "2026-10-11"
+    }
+  ],
+  "resurfacing": null,
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspirace--diskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "12:12",
+            "author": "člen komunity",
+            "text": "https://lnkd.in/p/dRyPn3ky\nKoukněte i na komenty 👀\nPS: Pokud myslíte, že to tu spamuju infem z Linkáče, 👂🏻dejte mi klidně pls vědět... 🙏🏻\n[kontext odkazu: Příspěvek na LinkedInu se zamýšlí nad možným zhoršováním AI služeb a růstem závislosti na konkrétních poskytovatelích. Popisuje lokální systém „Business HQ“ s pracovními postupy v souborech Markdown, který umožňuje rychle přecházet mezi nástroji Claude, ChatGPT a Codex, a zvažuje jeho zveřejnění jako open source.]"
+          },
+          {
+            "time": "16:51",
+            "author": "člen komunity",
+            "text": "Nemyslím, že spamuješ, jen třeba já mám ráda vlastní zkušenosti od lidí. Mluvím za sebe. Ráda vidím vaše (tvý) fuckups, ráda vidím nový směry a tak. That is all 🙂 Takže by mě to víc bavilo od tebe než od člen komunity. Protože mě zajímáš, jak se k tomu stavíš ty. Ne člen komunity."
+          },
+          {
+            "time": "16:55",
+            "author": "člen komunity",
+            "text": "Za mě klíďo tu příště (uvažuju takhle já) tohle jsem si přečetl, takhle jsem se zařídil, tohle jsem změnil, nebo jak to stavíte vy? Já se chytnu, protože uvidím, že milamil, si jede svoje."
+          },
+          {
+            "time": "17:09",
+            "author": "člen komunity",
+            "text": "Souhlasím s člen komunity. Z toho linkedinu jsem vlastně celkem přehlcenej a líbil by se mi zde vlastně takový ten zpracovaný pohled s podnětem k diskuzi. Jako nějak tu diskuzi aktivně rozjet :)"
+          },
+          {
+            "time": "17:17",
+            "author": "člen komunity",
+            "text": "Já mám hodně informací. Zajímá mě, jak se s tím lidé perou po svým :)"
+          },
+          {
+            "time": "18:22",
+            "author": "člen komunity",
+            "text": "🤔 OK, na Linkáči je toho mraky, takže třeba filtrovat. Je tam hezky vidět ten počáteční hype, jak se to zklidní a časem se vrátí postřehy. Takže lze zachytit trend z většího vzorku příspěvků. Zde mi to přijde hodně individuální, což se určitě hodí, ale ne úplně vše a vždy pro každého. Proto čerpám poznatky více tam a jestli je to od člen komunity, ode mne či od úplně jinýho, mne až tolik netrápí. Každý užitečný nebo zajímavý postřeh uvítám, obzvlášť když to přinutí další tamní diskutující jména komentovat z jakýchkoliv pohnutek."
+          }
+        ]
+      },
+      {
+        "slug": "vibe-coding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "18:57",
+            "author": "člen komunity",
+            "text": "[soubor: Máte hooky?] hooky-claude-code-prednaska"
+          }
+        ]
+      }
+    ]
+  }
+}
