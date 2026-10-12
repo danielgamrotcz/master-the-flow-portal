@@ -69,6 +69,14 @@ export async function onRequest(context) {
     return new Response('Not Found', { status: 404 });
   }
 
+  // Zachovat již sdílené odkazy na první rozhovor. Assety na původní cestě
+  // zůstávají dostupné; přesměrováváme pouze dokument, včetně query parametrů.
+  if (['/live/vibe-coding', '/live/vibe-coding/', '/live/vibe-coding/index.html'].includes(pathname)) {
+    const target = new URL(request.url);
+    target.pathname = '/rozhovory/1-vibe-coding-s-alexem/';
+    return Response.redirect(target.toString(), 301);
+  }
+
   if (needsGate(pathname)) {
     const token = readCookie(request, COOKIE_NAME);
     if (!await verifyToken(token, env.GATE_CODE, env)) {

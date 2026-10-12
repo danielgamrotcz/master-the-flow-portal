@@ -58,6 +58,33 @@ _Žádné položky._
 
 ## Review
 
+### TASK-007 — První díl v části Rozhovory
+
+- Started: 2026-10-12
+- Owner: Codex
+- Výsledek: `/rozhovory/1-vibe-coding-s-alexem/`, název „Vibe coding s Alexem“, číslování první epizody a trvalé přesměrování původní URL.
+- Scope: změna webu a jeho eventových odkazů; registrace, kalendář a skrytí v portálu zachované. Následný pokyn prodloužil webový čas do 20:00: rozhovor 18:00–19:30, otázky a odpovědi diváků 19:30–20:00. Živý formulář z TASK-006 zůstává oddělený a nedokončený.
+
+#### Verification
+
+- [x] Nová veřejná cesta, číslo dílu, titulek a metadata jsou konzistentní.
+- [x] Stará cesta s lomítkem, bez něj a s index.html přesměruje bez ztráty query a fragmentu.
+- [x] Registrační odkazy, assety, skrytí v portálu a bezpečnostní ochrany zachované.
+- [x] Vizuální, funkční, bezpečnostní a nezávislá kontrola dokončené.
+
+#### Evidence
+
+- Baseline `a0fe75a`; čistý `main`, čerstvý fetch, bez rozdílu proti upstreamu.
+- Mapper: `/root/interview_route_impact` — completed; veřejný název není Calendar lookup.
+- Cílené E2E 36/36, bezpečnostní regrese 14/14, syntaxe a diff — prošlo. Celá sada selhala na dvou již doložených problémech slovníčku a registrací srazu; ostatních 17 scénářů prošlo.
+- Rapid security: přesný same-origin redirect, stávající ochrany beze změny; nezávislé HTTP potvrdilo CSP, chráněná data 403/no-store, interní testy 404 a archivované Skupinky 410/no-store.
+- Vizuální kontrola mobilu i desktopu, světlého i tmavého režimu — prošlo. Cílené E2E pokrývá 320–1920 px.
+- Verifier: `/root/interview_route_acceptance` — completed — VERIFIED
+- Post-review snapshot: nezměněn — HTML `38978d9…`, middleware `ed49ea6…`, E2E `cb2a3de…`, eventy `824a70c…`; CSS, JS, portrét a registrační skript shodné s baseline.
+- ExecPlan: nepoužit; krátká změna v jedné session.
+- Doplnění času: cílené E2E 36/36, syntaxe testu a vizuální kontrola desktopu a mobilu 390 px prošly po poslední úpravě. Aktuální HTML `e4bbd81…`, eventy `d22492f…`, E2E `c890945…`. Předchozí nezávislá kontrola se týká přesunu a názvu, nikoli následné časové úpravy.
+- Release: uživatel 2026-10-12 výslovně schválil commit, push a produkční deploy. Živý formulář, Calendar ani odeslání registrace nejsou součástí releasu; pozvánková automatizace dosud používá konec 19:30 a vyžaduje samostatné sladění.
+
 ### TASK-005 — Minimalistická revize stránky rozhovoru
 
 - Started: 2026-10-12

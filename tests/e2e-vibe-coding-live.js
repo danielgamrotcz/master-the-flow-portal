@@ -17,17 +17,29 @@ function check(name, condition, detail = '') {
   });
   page.on('pageerror', error => consoleErrors.push(`PAGEERROR: ${error.message}`));
 
-  const response = await page.goto(`${BASE}/live/vibe-coding/`, { waitUntil: 'networkidle' });
+  const episodePath = '/rozhovory/1-vibe-coding-s-alexem/';
+  for (const legacyPath of ['/live/vibe-coding', '/live/vibe-coding/', '/live/vibe-coding/index.html']) {
+    const redirect = await page.request.get(`${BASE}${legacyPath}?src=pozvanka`, { maxRedirects: 0 });
+    const target = new URL(redirect.headers().location || '/', BASE);
+    check(`Původní cesta ${legacyPath} trvale přesměruje na první rozhovor`, redirect.status() === 301
+      && target.origin === new URL(BASE).origin && target.pathname === episodePath && target.search === '?src=pozvanka');
+  }
+  await page.goto(`${BASE}/live/vibe-coding/?src=pozvanka#registrace`, { waitUntil: 'networkidle' });
+  check('Přesměrování v prohlížeči zachová odkaz na registraci', page.url() === `${BASE}${episodePath}?src=pozvanka#registrace`);
+  const response = await page.goto(`${BASE}${episodePath}`, { waitUntil: 'networkidle' });
   check('Stránka vrací úspěšnou odpověď', response && response.ok(), String(response && response.status()));
   check('Stránka je veřejná bez přístupové brány', await page.locator('#gate').count() === 0);
-  check('Titulek nese hlavní myšlenku', (await page.locator('h1').innerText()).replace(/\s+/g, ' ') === 'Vibe coding nezačíná promptem.');
+  check('Titulek pojmenovává díl s Alexem', (await page.locator('h1').innerText()).replace(/\s+/g, ' ') === 'Vibe coding s Alexem.');
+  check('Sdílení používá kanonickou adresu nového dílu', await page.locator('link[rel="canonical"]').getAttribute('href') === `https://mastertheflow.cz${episodePath}`
+    && await page.locator('meta[property="og:url"]').getAttribute('content') === `https://mastertheflow.cz${episodePath}`);
 
   const eventData = JSON.parse(require('fs').readFileSync(require('path').join(__dirname, '..', 'data', 'events.json'), 'utf8'));
   const portalEvent = eventData.events.find(event => event.id === 'evt-2026-10-21-vibe-coding-nezacina-promptem');
   check('Portálová karta má správný termín a interní registrační cestu', portalEvent?.date === '2026-10-21'
     && portalEvent?.time_from === '18:00'
-    && portalEvent?.time_to === '19:30'
-    && portalEvent?.registration_page_url === '/live/vibe-coding/'
+    && portalEvent?.time_to === '20:00'
+    && portalEvent?.registration_page_url === episodePath
+    && portalEvent?.detail_url === episodePath
     && portalEvent?.portal_hidden === true
     && portalEvent?.is_paid === false);
   check('Portál nevydává otevřené otázky za pevný program', portalEvent?.program === null);
@@ -37,17 +49,20 @@ function check(name, condition, detail = '') {
   const publicCopy = `${pageMarkup} ${JSON.stringify(portalEvent)}`;
   const naming = {
     type: portalEvent?.type === 'ROZHOVOR',
-    title: portalEvent?.title === 'Vibe coding nezačíná promptem | Alex Trejtnar',
-    eyebrow: await page.locator('.eyebrow').textContent() === 'Rozhovory Master the Flow',
+    title: portalEvent?.title === 'Vibe coding s Alexem | Rozhovory Master the Flow #1',
+    pageTitle: await page.title() === portalEvent?.title,
+    eyebrow: await page.locator('.eyebrow').textContent() === 'Rozhovory Master the Flow · 1. díl',
     guest: await page.locator('#guest-title').textContent() === 'Alex Trejtnar',
     legacyLabelAbsent: !/Master the Flow Live|Live #1|Host prvního/i.test(`${await page.title()} ${publicCopy}`),
   };
-  check('Akce používá název série rozhovorů bez falešného číslování', Object.values(naming).every(Boolean), JSON.stringify(naming));
+  check('Akce používá název série rozhovorů a číslo prvního dílu', Object.values(naming).every(Boolean), JSON.stringify(naming));
   const facts = {
     date: /21\. října 2026/.test(mainText),
     day: /středa/i.test(mainText),
-    time: /18:00–19:30/.test(mainText),
-    duration: /90 minut/i.test(mainText),
+    time: /18:00–20:00/.test(mainText),
+    interview: /18:00–19:30 rozhovor/.test(mainText),
+    audienceQuestions: /19:30–20:00 otázky a odpovědi diváků/.test(mainText),
+    oldDurationAbsent: !/90 minut/i.test(mainText),
     place: /Google Meet/.test(mainText),
     price: /Zdarma/i.test(mainText),
     recording: /Záznam (?:pošleme všem registrovaným|dostanou všichni registrovaní)/i.test(mainText),
