@@ -15,7 +15,7 @@ if ! curl -s -o /dev/null "$MTF_BASE/"; then
 fi
 
 FAILED=0
-for t in e2e-portal e2e-mereni e2e-offline e2e-magic e2e-push e2e-quiet e2e-slovnicek api-attendees api-show-and-tell-registrations api-vibe-coding-registrations google-forms-attendees google-show-and-tell-registration google-vibe-coding-live-registration google-vibe-coding-count privacy-public-data security-regressions sraz-asset-versions e2e-sraz e2e-show-and-tell e2e-vibe-coding-live e2e-vibe-capacity e2e-event-cards archived-groups; do
+for t in e2e-portal e2e-mereni e2e-offline e2e-magic e2e-push e2e-quiet e2e-slovnicek api-attendees api-show-and-tell-registrations api-vibe-coding-registrations google-forms-attendees google-show-and-tell-registration google-vibe-coding-live-registration google-vibe-coding-count google-vibe-coding-capacity privacy-public-data security-regressions sraz-asset-versions e2e-sraz e2e-show-and-tell e2e-vibe-coding-live e2e-vibe-capacity e2e-event-cards archived-groups; do
   echo "===== $t ====="
   node "$t.js" || FAILED=1
 done

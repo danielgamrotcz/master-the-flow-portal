@@ -20,7 +20,32 @@ _Žádné položky._
 
 ## In Progress
 
-_Žádné položky._
+### TASK-013 — Pevný limit 98 míst
+
+- Started: 2026-10-12
+- Owner: Codex
+- Výsledek: při naplnění98 míst zavřít Google Forms a nepřidělit další pozvánku ani při souběhu.
+- Scope: registrační a count skript, stav plno na LP a regresní testy. Žádné mazání registrací, odebírání pozvánek, změny Meet ani cizího slovníčku. Commit/push/deploy a živá aktivace nové změny vyžadují konkrétní potvrzení.
+- ExecPlan: [docs/plans/TASK-013-registration-hard-limit.md](docs/plans/TASK-013-registration-hard-limit.md)
+- Resumed: 2026-10-12 — uživatel schválil živou aktivaci, změnu potvrzení formuláře, odmítací e-mail bez Meet, commit, push a deploy. Fresh fetch 0/0, chráněné změny zachované. Nezávislý verifier zatím nedostupný kvůli limitu vláken.
+- Resumed: uživatel po konkrétním popisu false positive výslovně požádal dokončit vše pro aktivaci. Nález tests/google-vibe-coding-count.js:22 přijatý; commit/push/deploy schválené. Nezávislý verifier stále nedostupný.
+- Last safe state: Google limit98 aktivní17:55:26, započteno21 registrací; count21/77, časový běh17:57:45 dokončen. Čtyři triggery zachované. Webový release neproveden, taskové soubory staged, slovníček mimo index.
+- Resume from: ExecPlan, po přijetí konkrétního nálezu dokončit commit/push/deploy a produkční E2E. Neopakovat aktivaci ani instalátor pozvánek.
+
+#### Verification
+
+- [x] Lokální testy: nejvýše 98 unikátních míst, pořadí triggerů, sdílený zámek, duplicity, retry a smazání odpovědi.
+- [x] Mock formuláře se zavře a nepřijatý člověk nedostane Meet; 100 odpovědí znamená 98 pozvánek a dvě odmítnutí.
+- [x] Web při plné kapacitě nenabízí registraci, ověřeno E2E i vizuálně na mobilu a desktopu.
+- [x] Google aktivace, shoda živých skriptů s lokálními soubory a skutečný časový běh.
+- [ ] Webový release a produkční ověření frontendové změny.
+
+#### Evidence
+
+- Relevantní syntaxe, diff-check, tři Google mock testy a API test prošly. Lokální E2E rozhovoru 37/37, capacity E2E včetně výpadku, obnovy a čtyř viewportů prošly.
+- Celá sada exit 1: pouze dvě již evidovaná nesouvisející selhání (slovníček bez doloženého výskytu, google-forms-attendees fixture). Neopravováno mimo scope.
+- Verifier: NOT TESTED — capacity_hard_limit_acceptance spawn odmítnut limitem vláken. Oddělený self-review nenahrazuje nezávislé ověření; PARTIALLY VERIFIED.
+- Post-review snapshot: invitation GS4b267b44, count GS4c298abb, klient13609ecd, HTMLa99fee6f, capacity test14becf48. Chráněný slovníček166465a5 zachovaný.
 
 ## Blocked
 

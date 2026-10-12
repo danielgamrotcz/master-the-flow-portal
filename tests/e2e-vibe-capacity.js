@@ -28,10 +28,15 @@ const BASE = process.env.MTF_BASE || 'http://localhost:8788';
       await page.evaluate(() => window.dispatchEvent(new Event('pageshow')));
       await page.waitForFunction(text => document.querySelector('[data-registration-availability]').textContent.includes(text), expected);
       assert.ok(!(await rows.first().innerText()).includes('Zbývá -'));
+      for (const link of await page.locator('[data-registration-link]').all()) {
+        assert.equal(await link.getAttribute('aria-disabled'), value >= 98 ? 'true' : null);
+        assert.equal(!!await link.getAttribute('href'), value < 98);
+      }
     }
     count = 7; stale = true;
     await page.evaluate(() => window.dispatchEvent(new Event('pageshow')));
     await page.waitForFunction(() => document.querySelector('[data-registration-availability]').textContent.includes('není dostupná'));
+    assert.equal(await page.locator('[data-registration-link]').first().getAttribute('href'), null, 'výpadek po plnu neobnoví CTA');
     stale = false; fail = true;
     await page.evaluate(() => window.dispatchEvent(new Event('pageshow')));
     await page.waitForTimeout(100);

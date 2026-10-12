@@ -37,6 +37,8 @@
   const availability = [...document.querySelectorAll('[data-registration-availability]')];
   if (availability.length) {
     const capacity = 98;
+    const registrationLinks = [...document.querySelectorAll('[data-registration-link]')]
+      .map(element => ({ element, href: element.getAttribute('href'), text: element.textContent }));
     const maxAge = 15 * 60 * 1000;
     let pending = false;
     let timer;
@@ -45,6 +47,20 @@
       const age = data ? Date.now() - Date.parse(data.updatedAt) : NaN;
       const valid = Number.isSafeInteger(count) && count >= 0 && count <= 10000
         && data.capacity === capacity && Number.isFinite(age) && age >= -60000 && age <= maxAge;
+      // Nedostupnost dat po zjištěném vyprodání nesmí znovu otevřít CTA.
+      if (valid) for (const { element, href, text } of registrationLinks) {
+        if (count >= capacity) {
+          element.removeAttribute('href');
+          element.setAttribute('role', 'link');
+          element.setAttribute('aria-disabled', 'true');
+          element.textContent = 'Kapacita naplněna';
+        } else {
+          element.setAttribute('href', href);
+          element.removeAttribute('role');
+          element.removeAttribute('aria-disabled');
+          element.textContent = text;
+        }
+      }
       for (const element of availability) {
         element.replaceChildren();
         if (!valid) {

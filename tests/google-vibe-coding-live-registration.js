@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
+const crypto = require('crypto');
 
 let failures = 0;
 function check(name, condition, detail = '') {
@@ -48,12 +49,18 @@ const form = {
   setDescription: value => calls.push(['formDescription', value]),
   getItems: () => [{ getTitle: () => 'Jméno a příjmení', asTextItem: () => ({ setRequired: value => calls.push(['nameRequired', value]) }) }],
   getDestinationId: () => 'response-sheet-fixture',
+  setCustomClosedFormMessage: () => {},
+  setAcceptingResponses: () => {},
+  isAcceptingResponses: () => true,
 };
 
 const scriptProperties = new Map([['VIBE_CODING_LIVE_ACTIVATED_AT', '2000']]);
 scriptProperties.set('VIBE_CODING_LIVE_EMAIL_ACTIVATED_AT', '2000');
 scriptProperties.set('VIBE_CODING_LIVE_MEET_URL', 'https://meet.google.com/aaa-bbbb-ccc');
+scriptProperties.set('VIBE_CODING_LIVE_SEATS_V1', '[]');
 const context = vm.createContext({
+  Utilities: { DigestAlgorithm: { SHA_256: 'sha256' }, Charset: { UTF_8: 'utf8' },
+    computeDigest: (algorithm, value) => [...crypto.createHash(algorithm).update(value).digest()] },
   CalendarApp: { getDefaultCalendar: () => ({ getEvents: () => [event], getEventById: id => id === event.getId() ? event : null }) },
   MailApp: {
     getRemainingDailyQuota: () => quota,
@@ -135,8 +142,8 @@ check('Reconciliation používá stejný zámek jako submit trigger',
 calls.length = 0;
 const sentBeforeInstall = sent.length;
 vm.runInContext('installVibeCodingLiveRegistrationAutomation()', context);
-check('Instalace nastaví potvrzení formuláře', calls.some(call => call[0] === 'confirmation'
-  && /Google Meet/.test(call[1]) && /záznam/i.test(call[1])));
+check('Potvrzení formuláře neslibuje místo před ověřením kapacity', calls.some(call => call[0] === 'confirmation'
+  && /až po potvrzení e-mailem/.test(call[1]) && /98/.test(call[1])));
 check('Potvrzení nabízí postup při nedoručení pozvánky', calls.some(call => call[0] === 'confirmation'
   && /e-mailem/.test(call[1]) && /spam/.test(call[1]) && /daniel@gamrot\.cz/.test(call[1])));
 check('Instalace vytvoří submit a reconciliation trigger', calls.filter(call => call[0] === 'trigger').length === 2
