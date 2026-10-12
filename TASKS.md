@@ -20,7 +20,31 @@ _Žádné položky._
 
 ## In Progress
 
-_Žádné položky._
+### TASK-008 — Světlé náhledové karty všech akcí
+
+- Started: 2026-10-12
+- Owner: Codex
+- Výsledek: devět samostatných světlých karet, metadata a použitelné sdílecí adresy všech akcí v portálu.
+- Scope: portál včetně historických akcí; bez úprav externích webů, formulářů, kalendáře a komunitní automatizace. Commit, push a produkční deploy výslovně schválené.
+- ExecPlan: [docs/plans/TASK-008-event-cards.md](docs/plans/TASK-008-event-cards.md)
+
+#### Verification
+
+- [x] Všech devět akcí má vlastní světlou kartu a OG/Twitter metadata.
+- [x] Sdílení z portálu používá HTTP adresu akce, nikoli samotný hash.
+- [x] Nové veřejné podklady neobsahují přístupové údaje, záznamové ani soukromé odkazy.
+- [ ] Vizuální, funkční, bezpečnostní a nezávislá kontrola dokončené.
+- [ ] Commit, push a produkční ověření dokončené.
+
+#### Evidence
+
+- Baseline `6e1138a`; fetch potvrdil 0/0. Existující pravidlo v AGENTS.md patří do releasu, cizí tools/build_glossary.py zůstane mimo něj.
+- Mapper: `/root/event_cards_impact` — completed; 3 landing pages, 3 externí detaily, 3 pouze hashové detaily.
+- Cílené E2E: 72/72 prošlo. Celá sada: 18 scénářů prošlo, 2 předchozí selhání (slovníček a google-forms-attendees) se opakovala. Security regrese 14/14 prošly.
+- Všech devět PNG vizuálně zkontrolováno, sdílecí stránka otevřená na desktopu a mobilu 390 px. Druhý render má identické hashe všech výstupů.
+- Rapid security proti 6e1138a: žádná potvrzená nová regrese; escapované veřejné pole, allowlist cest, žádné share tickety/privátní údaje, brána zachovaná. Externí sociální sítě nebyly použity k odeslání.
+- Nezávislý verifier: NOT TESTED — spawn i follow-up odmítl limit agentních vláken; proveden oddělený self-review. Celkový verdikt PARTIALLY VERIFIED, nikoli plná nezávislá acceptance.
+- Post-review snapshot: nezměněn — app 3ebf7ef…, model 72ec3e8…, generátor f76fe5f…, E2E c8307c7…; events.json i cizí tools/build_glossary.py shodné s baseline. Těla tří landing pages byte-identická s 6e1138a.
 
 ## Blocked
 

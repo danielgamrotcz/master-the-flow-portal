@@ -1710,6 +1710,7 @@ function eventCtaHtml(ev) {
     const attrs = detail.startsWith('/') ? '' : ' target="_blank" rel="noopener noreferrer nofollow"';
     btns.push(`<a class="event-cta event-cta-secondary" href="${esc(detail)}"${attrs}>Detail akce</a>`);
   }
+  btns.push('<button type="button" class="event-cta event-cta-secondary" data-share-event>Sdílet akci</button>');
 
   let html = '';
   if (buyShown && ev.discount_code) {
@@ -1744,7 +1745,31 @@ function showEvent(id) {
     ${renderCardLinks(ev)}
     ${eventCtaHtml(ev)}`;
   $('event-overlay-body').scrollTop = 0;
+  $('event-ov-content').querySelector('[data-share-event]').addEventListener('click', () => shareEvent(ev));
   show('event-overlay');
+}
+
+async function shareEvent(ev) {
+  // Samostatná HTTP adresa má vlastní metadata; hash portálu je crawlerům neviditelný.
+  // Nepřenášet share tickety, hesla k záznamům ani jiná pole event objektu.
+  const localDetail = typeof ev.detail_url === 'string' && /^\/[a-z0-9/-]+\/$/.test(ev.detail_url)
+    && !ev.detail_url.startsWith('//') ? ev.detail_url : null;
+  if (!/^evt-\d{4}-\d{2}-\d{2}-[a-z0-9-]+$/.test(ev.id)) return;
+  const url = location.origin + (localDetail || `/akce/${ev.id}/`);
+  if (navigator.share) {
+    try {
+      await navigator.share({ title: ev.title, url });
+      return;
+    } catch (error) {
+      if (error.name === 'AbortError') return;
+    }
+  }
+  try {
+    await navigator.clipboard.writeText(url);
+    showToast('Odkaz na akci zkopírován');
+  } catch {
+    showToast('Odkaz se nepodařilo zkopírovat');
+  }
 }
 
 function closeEvent() {

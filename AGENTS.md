@@ -70,6 +70,34 @@
 - Neměň fungující generovaná data, závislosti ani strukturu repozitáře jako
   vedlejší úklid.
 
+## Náhledové karty při sdílení
+
+- Každá veřejná stránka konkrétní akce (webinář, rozhovor, sraz i další
+  formáty) musí mít vlastní vygenerovanou náhledovou kartu pro sdílení odkazu.
+  Globální karta portálu ji nenahrazuje; ta patří hlavní stránce portálu.
+- Výchozí vizuál karet je světlý, minimalistický a v designu Master the Flow:
+  světlé pozadí, tmavý čitelný text a střídmý oranžový akcent. Tmavý vizuál
+  použij jen na Danielův výslovný pokyn.
+- Karta má rozpoznatelně pojmenovat konkrétní akci. Použij minimum textu;
+  hosta, číslo dílu nebo termín přidej jen podle relevance a ověřených údajů.
+- Stránka musí odkazovat na svou kartu v `og:image` a `twitter:image`, nikoli
+  na `og-default.png`. Název a popis sdílení musí odpovídat dané akci.
+- Před zveřejněním ověř shodu s obsahem stránky, čitelnost v malém náhledu,
+  ořezy a veřejnou dostupnost obrázku bez přihlášení. Po změně názvu, hosta
+  nebo termínu zkontroluj i kartu; nové pravidlo samo nepovoluje hromadné
+  přegenerování starších karet ani publikaci.
+
+## Obnova náhledů akcí
+
+- Zdrojem termínů a názvů je `data/events.json`; stručnou podobu textu karty
+  určuje `tools/event-card-model.js`. Novou akci přidej i do jeho katalogu.
+- Karty a metadata obnoví `NODE_PATH=/Users/danielgamrot/Projects/archive/voice-browser/node_modules node tools/generate_event_cards.js`.
+  Používá existující Playwright, lokální fonty a žádné externí služby.
+- Výstupy jsou v `event-cards/`, sdílecí stránky akcí bez vlastní landing page
+  v `akce/`. Generátor upravuje jen metadata existujících landing pages.
+- Po obnově vizuálně ověř PNG a spusť `tests/e2e-event-cards.js` se stejným
+  `NODE_PATH` proti lokálnímu Wrangleru. Generátor nikdy nespouští deploy.
+
 ## Produkční akce
 
 - `git push` sám portál nenasazuje.

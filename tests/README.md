@@ -14,6 +14,8 @@ Vznikly při přestavbě 17. 7. 2026 (audit → fáze 1+2 + brand vrstva). Hlíd
 - `google-forms-attendees.js` — synchronizace používá zadaný e-mail jen interně, respektuje odvolání souhlasu a e-mail neexportuje
 - `privacy-public-data.js` — verzovaná veřejná JSON data neobsahují e-maily mimo výslovně povolený kontaktní údaj
 - `security-regressions.js` — negativní a pozitivní auth scénáře pro chat corpus, tracking, push subscription a cache policy
+- `e2e-event-cards.js` — samostatný veřejný PNG, OG/Twitter metadata a sdílecí
+  URL každé akce, soukromí veřejné projekce, tlačítko sdílení a zachování brány
 - `sraz-asset-versions.js` — shoda sedmimístných cache hashů CSS a JavaScriptu
   stránky srazu s aktuálním obsahem souborů
 - `archived-groups.js` — vyřazené stránky a API Skupinek vracejí 410 bez

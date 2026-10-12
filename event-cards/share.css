@@ -1,0 +1,11 @@
+@font-face { font-family: Plex; src: url('/fonts/IBMPlexSans-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 48px 20px; background: #faf6f2; color: #171411; font-family: Plex, sans-serif; }
+main { max-width: 960px; margin: auto; }
+h1 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+img { display: block; width: 100%; height: auto; }
+a { display: inline-block; margin-top: 28px; padding: 16px 24px; background: #a94305; color: white; border-radius: 8px; text-decoration: none; }
+a:focus-visible { outline: 3px solid #171411; outline-offset: 4px; }
+a:active { opacity: .8; }
+@media (hover: hover) { a:hover { background: #873703; } }
+p { font-size: 14px; color: #6f6259; }
