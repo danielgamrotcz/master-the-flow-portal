@@ -1,6 +1,6 @@
 # TASK-012 — Živé počty a kapacita
 
-Stav: Blocked
+Stav: Blocked — pouze nezávislá acceptance; provozní výsledek dokončen
 Tracker: ../../TASKS.md
 Poslední checkpoint: 2026-10-12
 
@@ -25,8 +25,8 @@ Nespouštět žádné syntetické registrace či rozesílání pozvánek.
 - [x] Read-only mapa existujícího Show & Tell API a Apps Script precedensu.
 - [x] Čerstvý fetch main 0/0; předchozí oprava explicitně přijata do scope.
 - [x] Implementace a relevantní testy.
-- [ ] Živá synchronizace a prvotní anonymní snapshot.
-- [ ] Release a produkční ověření.
+- [x] Živá synchronizace a prvotní anonymní snapshot.
+- [x] Release a produkční ověření.
 
 ## Rozhodnutí
 
@@ -113,3 +113,28 @@ konkrétních tří false positives scanneru. Žádná globální výjimka se ne
 - Živé executions ověřené: onVibeCodingLiveFormSubmit 17:18:59 a 17:21:40
   mají stav Dokončeno, tedy pozvánkový handler běží i po přidání count souboru.
   Není to důkaz doručení do schránky; žádné testovací zprávy jsme neposílali.
+
+Resume: uživatel následně výslovně schválil kombinaci stávajících práv a
+external-request. OAuth potvrzen, instalátor znovu spuštěn. Původní release
+zůstává beze změny; probíhá konečné provozní ověření.
+
+## Aktivace ověřena
+
+Instalátor dokončen 17:24:14, prvotní skutečný počet 16. Produkční API
+vrátilo 16 přihlášených, 82 volných míst a updatedAt 15:24:12.362Z, HTTP200,
+Cache-Control:no-store. Nejde o pevný údaj pro budoucnost, ale časový snapshot.
+Obě místa na landing page zobrazila stejná čísla. Reálný desktop i telefon
+390px vizuálně prohlédnuté; screenshot /private/tmp/mtf-capacity-live-1791818723032.png.
+Existují přesně dva původní pozvánkové a dva nové count triggery. Minutový
+trigger má v Google UI vybrané Každých 5 minut. Submit trigger patří formuláři.
+API test, count GS test a všech 25 pozvánkových kontrol po aktivaci znovu exit0.
+Skutečný submit trigger nebyl provokován testovací registrací; nic jsme
+neodeslali a nečetli ani nezveřejnili kontakty účastníků.
+
+Automatický časový běh 17:27:45 dokončen za13.94s. Veřejné API následně vrátilo
+novější updatedAt2026-10-12T15:27:59.174Z, count16/remaining82. Obnova tedy
+ověřena i provozně, nikoli jen existencí triggeru. Závěrečná míra ověření:
+funkční produkční scénář podpořen, nezávislá acceptance NOT TESTED kvůli
+limitu vláken. Plná sada má dvě známé baseline chyby mimo scope. Zbývající
+task blocker není žádná další akce uživatele ani nefunkční synchronizace.
+Finální tracker SHA-256: 428b2bc5ebb0c456f5cab9bf657c0c2d0b1b3bb021cc5500b62d4925f7e388fb.

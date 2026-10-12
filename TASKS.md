@@ -32,16 +32,26 @@ _Žádné položky._
 - Scope: landing page, chráněné API a synchronizace Google Forms. Commit, push a produkční deploy včetně předchozí opravy pozvánek výslovně schválené. Cizí tools/build_glossary.py mimo scope.
 - ExecPlan: [docs/plans/TASK-012-registration-capacity.md](docs/plans/TASK-012-registration-capacity.md)
 - Resumed: 2026-10-12 — uživatel konkrétně schválil uložení klíče do Cloudflare a Google skriptu, anonymní synchronizaci a přijetí tří false positives scanneru. Čerstvý fetch main 0/0, cizí slovníček zachovaný.
-- Blocked: web commitnutý, pushnutý a nasazený; Google OAuth potvrzení automatická bezpečnostní kontrola odmítla kvůli kombinaci nového external-request scope s již existujícími širokými právy. Konkrétní souhlas s kombinací znovu vyžádán.
-- Last safe state: commit 3dcef63 / Production48f88d95, oba produkční E2E prošly. Secret na obou stranách uložený; count GS byte-shodný. API vrací unknown, žádná syntetická registrace či e-mail.
-- Resume: dokončit Google OAuth a count-only instalátor, ověřit skutečný count a čtyři triggery. Nasazení neopakovat. Původní pozvánkové triggery ani cizí slovníček neměnit.
+- Resumed: konkrétní kombinace Google oprávnění uživatelem schválena a OAuth potvrzen. Probíhá aktivace a produkční kontrola, nový deploy není potřeba.
+- Blocked: provozní výsledek kompletní; zbývá jen nezávislá acceptance, jejíž spawn blokuje limit vláken. Celkový formální verdikt PARTIALLY VERIFIED.
+- Last safe state: commit 3dcef63 / Production48f88d95, oba produkční E2E prošly. Živý počet16 / zbývá82 ověřený 17:29; automatický časový běh 17:27:45 dokončen. Čtyři správné triggery, bez syntetických registrací a zpráv.
+- Resume: pouze nezávislá acceptance finálního snapshotu, až bude dostupná. Neopakovat OAuth, instalátor, nasazení ani registrace.
 
 #### Verification
 
-- [ ] Počet z reálných registrací, deduplikace a soukromí ověřené.
+- [x] Počet z reálných registrací, deduplikace a soukromí ověřené.
 - [x] Obnovování, nula, plno a výpadek pokryté testy.
-- [ ] Mobil a desktop vizuálně ověřené.
-- [ ] Commit, push a produkční kontrola dokončené.
+- [x] Mobil a desktop vizuálně ověřené.
+- [x] Commit, push a produkční kontrola dokončené.
+
+#### Evidence
+
+- Produkce: https://mastertheflow.cz/rozhovory/1-vibe-coding-s-alexem/, deploy48f88d95 / source3dcef63. Web neměněn po úspěšných produkčních E2E.
+- Google instalátor dokončen 17:24:14, skutečný anonymní snapshot16/82. Časový trigger 17:27:45 dokončen13.94s, veřejné API updatedAt15:27:59.174Z. Žádný kontakt neopouští Google.
+- Mobil390px i desktop vizuálně ověřené se skutečnými počty. Jednotkové API a count testy znovu exit0, pozvánky25/25. Plná sada má dvě popsaná dřívější nesouvisející selhání.
+- Verifier: NOT TESTED — registration_capacity_acceptance spawn odmítnut limitem vláken; self-review není nezávislý.
+- Post-review snapshot: API bb535e82, count GS658d0781, klient47fe0dfe, CSS c0f14268, HTML733cb4ce; chráněný slovníček166465a5 beze změny.
+- ExecPlan: [docs/plans/TASK-012-registration-capacity.md](docs/plans/TASK-012-registration-capacity.md)
 
 ### TASK-011 — Oprava doručování registračních pozvánek
 
