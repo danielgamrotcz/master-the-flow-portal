@@ -34,7 +34,7 @@ _Žádné položky._
 - Zdroj: Alexovy dvě screenshotové přílohy a teaser/index.html z ZIPu, dodané ve WhatsAppu 2026-10-12. Importován pouze požadovaný veřejný text, nikoli kód teaseru, formulář nebo propagace kurzu.
 - Režim: coordinated; mapper nedostupný (limit vláken), read-only self-map dokončený. ExecPlan nepoužit, krátká textová úprava.
 - Blocked: 2026-10-12 — implementace dokončená; nezávislou acceptance blokuje limit agentních vláken.
-- Last safe state: lokální změny ověřené cílenými E2E a vizuálně; bez commitu, pushnutí a deploye.
+- Last safe state: commit `6906b5d` pushnutý a nasazený; produkční cílené E2E 37/37 a karty 72/72 prošly. Nezávislá acceptance zůstává neprovedená.
 - Resume from: čerstvý nezávislý read-only review tohoto diffu po uvolnění kapacity. Autorizovaný release je samostatný krok a chybějící review nenahrazuje.
 
 #### Verification
@@ -54,6 +54,9 @@ _Žádné položky._
 - Post-review snapshot: HTML f56aa96…, data e350f86…, model 872b760…, test 4ead669…, PNG 4ec5b4e…; implementační snapshot nezměněn.
 - Surové přílohy zůstaly jen v dočasné složce /private/tmp/alex-landing-sources-HKUqj9. WhatsApp pouze čtený; žádná zpráva odeslána, žádný kód ze ZIPu spuštěný nebo importovaný.
 - Predeploy rapid security proti ffc46ce: pouze veřejný text a PNG, HTML tagy/atributy v body, odkazy, registrační formulář, ochrany a runtime kód beze změny; žádná potvrzená nová bezpečnostní regrese. Chráněný cizí slovníček se nenasazuje. Celkový limit nezávislé acceptance trvá.
+- Release: commit `6906b5da533352daff48814bb1ec73155b7bfb14`, push origin/main a Cloudflare Production `49fb0ed8-c5df-4236-ad9a-a2b5c75d7a5f` dokončené. Nasazen čistý Git export bez lokálního slovníčku.
+- Produkce: e2e-vibe-coding-live.js 37/37, e2e-event-cards.js 72/72 — prošlo. Veřejné HTML HTTP 200 a byte-identické s releasem (f56aa96…). První deploy selhal interní chybou Cloudflare, druhý stejný commit úspěšný. První browser test ještě načetl starý text; opakování po nasazení prošlo beze změny kódu.
+- Release gate: bezpečnostní regrese 14/14 prošly; staged text secret scan bez nálezu, PNG zvlášť shodný s prohlédnutým hashem bez textových metadat či připojeného obsahu. CI se pro tyto cesty nespustilo; nejde o úspěšný CI běh. Dokumentační doplnění po releasu nemění runtime a nenasazuje se znovu.
 
 ### TASK-008 — Světlé náhledové karty všech akcí
 
