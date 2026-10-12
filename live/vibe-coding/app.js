@@ -4,6 +4,7 @@
   const metaTheme = document.querySelector('meta[name="theme-color"]');
   const stickyRegister = document.querySelector('.sticky-register');
   const heroRegister = document.querySelector('.hero-actions [data-registration-link]');
+  const finalRegister = document.querySelector('.registration-actions [data-registration-link]');
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
@@ -24,7 +25,9 @@
 
   if (stickyRegister && heroRegister) {
     const updateStickyRegister = () => {
-      stickyRegister.classList.toggle('is-visible', heroRegister.getBoundingClientRect().bottom < 0);
+      const finalButtonTop = finalRegister ? finalRegister.getBoundingClientRect().top : Infinity;
+      // U závěrečné registrace už stačí tlačítko přímo v obsahu.
+      stickyRegister.classList.toggle('is-visible', heroRegister.getBoundingClientRect().bottom < 0 && finalButtonTop >= window.innerHeight);
     };
     window.addEventListener('scroll', updateStickyRegister, { passive: true });
     window.addEventListener('resize', updateStickyRegister);

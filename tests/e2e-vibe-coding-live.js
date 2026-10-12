@@ -38,8 +38,8 @@ function check(name, condition, detail = '') {
   const naming = {
     type: portalEvent?.type === 'ROZHOVOR',
     title: portalEvent?.title === 'Vibe coding nezačíná promptem | Alex Trejtnar',
-    eyebrow: await page.locator('.eyebrow').textContent() === 'Rozhovory Master the Flow · online · zdarma',
-    guest: await page.locator('.guest-intro .section-kicker').textContent() === 'Host rozhovoru',
+    eyebrow: await page.locator('.eyebrow').textContent() === 'Rozhovory Master the Flow',
+    guest: await page.locator('#guest-title').textContent() === 'Alex Trejtnar',
     legacyLabelAbsent: !/Master the Flow Live|Live #1|Host prvního/i.test(`${await page.title()} ${publicCopy}`),
   };
   check('Akce používá název série rozhovorů bez falešného číslování', Object.values(naming).every(Boolean), JSON.stringify(naming));
@@ -50,27 +50,24 @@ function check(name, condition, detail = '') {
     duration: /90 minut/i.test(mainText),
     place: /Google Meet/.test(mainText),
     price: /Zdarma/i.test(mainText),
-    recording: /Záznam (?:pošleme|dostanou) všem registrovaným/i.test(mainText),
+    recording: /Záznam (?:pošleme všem registrovaným|dostanou všichni registrovaní)/i.test(mainText),
   };
   check('Závazné údaje jsou konzistentní', Object.values(facts).every(Boolean), JSON.stringify(facts));
   const startingPoint = {
     lovable: /Lovable/.test(mainText),
     codingAgent: /coding agentem/i.test(mainText),
-    desiredOutput: /výsledek není takový, jaký jste chtěli/i.test(mainText),
+    desiredOutput: /výsledek pořád není ono/i.test(mainText),
   };
   check('Stránka vychází ze zkušenosti s coding nástroji', Object.values(startingPoint).every(Boolean), JSON.stringify(startingPoint));
-  check('Nosná otázka není redukovaná na lepší prompt', /co rozhoduje ještě před prvním promptem/i.test(mainText)
-    && /Co si připravit před prvním promptem/i.test(mainText));
-  check('Alexův setup není vydáván za povinnost', /co z Alexova systému má smysl převzít jako první/i.test(mainText)
-    && /co má smysl přidat až později/i.test(mainText));
-  check('Alexova odbornost není postavená na shazování Daniela', /propracovaný systém/i.test(mainText)
+  check('Nosná otázka není redukovaná na lepší prompt', /co si připravit, než začnete zadávat/i.test(mainText)
+    && /Jak si ujasnit, co vlastně stavět/i.test(mainText));
+  check('Alexův setup není vydáván za povinnost', /co z Alexova systému převzít a co zatím vynechat/i.test(mainText));
+  check('Alexova odbornost není postavená na shazování Daniela', /jeho systém práce/i.test(mainText)
     && /digitálu přes dvacet let/i.test(mainText)
     && /ARIBENA/i.test(mainText)
     && !/Mám to stejně|Nejsem vývojář|dál než (?:já|ten můj)|Co dělá jinak než já|co mi při stavění aplikací nefunguje|méně pokročil|o (?:několik|pár) úrovní přede mnou|teprve začínám|Daniel[^.]{0,80}(?:bastlí|nezvládá|trvá déle)/i.test(publicCopy));
-  const faqText = await page.locator('.faq-list').textContent();
-  check('Ukázky jsou podmíněné užitečností pro odpověď', /Když bude odpověď lépe vidět než popsat/i.test(faqText)
-    && /ukázky vybereme až při přípravě/i.test(faqText));
-  check('Stránka neslibuje pevný program ani polovinu vysílání', /Není to program/i.test(mainText)
+  check('Ukázky jsou podmíněné užitečností pro odpověď', /Kde to pomůže, Alex ukáže svůj postup na obrazovce/i.test(mainText));
+  check('Stránka neslibuje pevný program ani polovinu vysílání', /O čem se budeme bavit/i.test(mainText)
     && !/polovinu vysílání|připravené checkpointy|šest okruhů/i.test(mainText));
   check('Stránka neslibuje konkrétní aplikaci dema', !/postavíme (?:aplikaci|appku)|vyrobíme (?:aplikaci|appku)/i.test(mainText));
 
@@ -117,11 +114,10 @@ function check(name, condition, detail = '') {
     && /ARIBENA/.test(mainText)
     && await page.locator('.guest-links a').count() === 3);
 
-  const questionsText = await page.locator('.question-grid').innerText();
-  check('Stránka používá čtyři otevřené otázky místo harmonogramu', await page.locator('.question-grid article').count() === 4
-    && /z nápadu vznikne dobrá aplikace/i.test(questionsText)
-    && /Co má být nastavené v projektu/i.test(questionsText)
-    && /Alexova systému.*převzít jako první/i.test(questionsText)
+  const questionsText = await page.locator('.question-list').innerText();
+  check('Stránka uvádí témata místo harmonogramu', /co vlastně stavět/i.test(questionsText)
+    && /Co nastavit v projektu/i.test(questionsText)
+    && /Alexova systému.*vynechat/i.test(questionsText)
     && !/18:\d{2}/.test(questionsText));
   check('Stránka neopakuje samostatnou sekci o formátu', await page.locator('.format').count() === 0);
 
@@ -131,9 +127,13 @@ function check(name, condition, detail = '') {
   check('Přepínač barevného režimu funguje', themeBefore !== themeAfter);
 
   check('Mobil v úvodu neduplikuje registrační tlačítko', await page.locator('.sticky-register').isHidden());
-  await page.locator('#registrace').scrollIntoViewIfNeeded();
+  await page.locator('.question-band').evaluate(element => element.scrollIntoView({ block: 'start', behavior: 'instant' }));
   await page.waitForTimeout(100);
   check('Mobilní sticky registrace se ukáže až po odscrollování hero CTA', await page.locator('.sticky-register').isVisible());
+  await page.locator('.registration-actions').scrollIntoViewIfNeeded();
+  await page.waitForTimeout(100);
+  check('Mobilní sticky registrace neduplikuje závěrečné tlačítko', await page.locator('.sticky-register').isHidden()
+    && await page.locator('.registration-actions [data-registration-link]').isVisible());
   check('Stránka nemá vlastní JS chyby', consoleErrors.length === 0, consoleErrors.join(' | '));
 
   const widths = [320, 390, 744, 1024, 1440, 1920];

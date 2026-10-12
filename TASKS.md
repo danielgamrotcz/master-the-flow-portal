@@ -1,6 +1,6 @@
 # Projektové úkoly
 
-Aktualizováno: 2026-10-11
+Aktualizováno: 2026-10-12
 
 Backlog není souhlas začít; Ready vyžaduje schválení a WIP limit je jeden.
 Review obsahuje čerstvé cílené E2E důkazy, Done přijetí. Task neautorizuje
@@ -24,7 +24,32 @@ _Žádné položky._
 
 ## Review
 
-_Žádné položky._
+### TASK-005 — Minimalistická revize stránky rozhovoru
+
+- Started: 2026-10-12
+- Owner: Codex
+- Výsledek: kratší text bez opakování, klidnější rozvržení a čitelné mobilní i desktopové zobrazení. Fotografie zůstává čtvercová v oranžové sekci, akce skrytá v portálu.
+
+#### Verification
+
+- [x] Registrace, termín, dostupnost záznamu, název série a Alexův profil zachované.
+- [x] Text a délka stránky zkrácené; odstraněné opakování, číslované panely a dekorativní registrační karta.
+- [x] Světlý i tmavý režim, mobil, desktop, klávesnice a registrační tlačítka vizuálně i funkčně ověřené.
+- [x] Čerstvé cílené E2E a nezávislá acceptance kontrola dokončené.
+- [x] Název a úvod veřejného Google Forms sladěné s webem; otázky i automatizace zachované.
+
+#### Evidence
+
+- Cílené E2E: `tests/e2e-vibe-coding-live.js` — 29/29 — prošlo lokálně.
+- Celá lokální sada `tests/run-all.sh`: 17 scénářů prošlo, 2 selhaly mimo rozsah změny. `e2e-slovnicek` hlásí termíny s `mentions: 0` (ověřeno i v datech HEAD). `google-forms-attendees` selže na zařazení testovacího profilu a následně na `Object.keys(undefined)`; test i jeho jediný načítaný skript `tools/google_forms_attendees.gs` jsou beze změny oproti HEAD. Tyto části nebyly opravovány.
+- Syntaxe změněných JS a `git diff --check` — prošlo.
+- Vizuální kontrola: 390 × 844 a 1440 × 900, světlý i tmavý režim; E2E šířky 320 až 1920 px — prošlo.
+- Hlavní text: 281 → 157 slov. Čtvercový portrét pouze v oranžové sekci, registrace zachovaná, žádné nové sliby ukázek.
+- Verifier: `/root/minimal_landing_acceptance` — completed — VERIFIED.
+- Post-review snapshot: nezměněn — HTML `51f960f…`, CSS `9faabe4…`, JS `c4f7c9f…`, E2E `f1d8ea4…`.
+- Formulář: veřejně ověřen název „Vibe coding nezačíná promptem | Alex Trejtnar“ a série „Rozhovory Master the Flow“. Bez testovací registrace či rozesílání pozvánek.
+- ExecPlan: nepoužit; krátká změna v jedné session.
+- Release této revize: neproveden; webové úpravy jsou zatím lokální.
 
 ## Done
 
