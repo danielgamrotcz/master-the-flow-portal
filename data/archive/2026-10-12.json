@@ -1,0 +1,145 @@
+{
+  "date": "2026-10-12",
+  "generated_at": "2026-10-14T07:16:44Z",
+  "stats": {
+    "messages": 9,
+    "groups": 4,
+    "members": 5
+  },
+  "cards": [
+    {
+      "id": "2026-10-12-01",
+      "type": "NÁSTROJE",
+      "level": "Začátečník",
+      "topics": [
+        "AI nástroje",
+        "Produktivita",
+        "Fokus"
+      ],
+      "title": "Čistší LinkedIn s Feed Cleanerem",
+      "excerpt": "Jeden z členů používá už skoro rok rozšíření LinkedIn Feed Cleaner a považuje ho za jednu ze svých nejlepších investic do digitálního minimalismu. Z feedu mu odstraní propagovaný obsah i příspěvky, které lidé, které sleduje, jen lajkovali.",
+      "body": "Rozšíření LinkedIn Feed Cleaner skrývá reklamy, doporučené i propagované příspěvky. Umí také filtrovat obsah podle klíčových slov. Jeden člen si od března platí PRO verzi za 24 dolarů ročně. Nejvíc oceňuje, že mu ve feedu zůstává hlavně obsah, který sami zveřejnili lidé z jeho sítě.\n\nDalší člen zmínil vlastní rozšíření. Skrývá propagované a nekvalitní AI příspěvky a zároveň ho brzdí v bezmyšlenkovitém scrollování. V následné debatě se ale názory na soulad podobných rozšíření s podmínkami LinkedInu lišily. Jasný závěr z ní nevzešel.",
+      "read_minutes": 1,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "10:51",
+        "11:43",
+        "13:06"
+      ],
+      "links": [
+        "https://chromewebstore.google.com/detail/linkedin-feed-cleaner-hid/pbndhpnajpcnaijjacmknamlpjmfgpkh"
+      ],
+      "source_date": "2026-10-12",
+      "images": [
+        {
+          "file": "52f42b8a-6499-4fce-a775-936cd26c8a49-17bd5d38ad95abbf.jpg",
+          "w": 371,
+          "h": 727,
+          "desc": "Panel rozšíření „Feed Cleaner“ uvádí 228 skrytých příspěvků za dnešek. Aktivní jsou filtry doporučených příspěvků, propagovaného obsahu a aktivit, vlastní filtr klíčových slov je vypnutý a seznam skrytých lidí je prázdný."
+        }
+      ]
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-09-18-01",
+    "type": "INSIGHT",
+    "level": "Expert",
+    "topics": [
+      "AI nástroje",
+      "Automatizace",
+      "Workflow"
+    ],
+    "title": "Oddělený WhatsApp účet pro Hermes agenta",
+    "excerpt": "Ve skupině se objevil návrh připojit Hermes agenta přes samostatný WhatsApp účet s novým telefonním číslem. Agent by mohl fungovat ve skupině, aniž by měl přístup k osobnímu WhatsAppu.",
+    "body": "Diskuze se točila kolem zapojení agenta Hermes do WhatsApp skupiny. Nejjednodušší by bylo agenta schválit a využít administrátorské účty. Jeden z členů navrhl založit nový WhatsApp účet na samostatném telefonním čísle a přes něj agenta přidat do skupiny. Tím by se práce agenta ve skupině oddělila od osobního WhatsApp účtu, ke kterému by agent neměl přístup.",
+    "read_minutes": 1,
+    "source_group": "vibe-coding",
+    "source_msg_times": [
+      "14:46"
+    ],
+    "links": [],
+    "source_date": "2026-09-18",
+    "resurfaced_from": "2026-09-18"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "master-the-flow-—-hlavní",
+        "name": "Master the Flow — hlavní",
+        "messages": [
+          {
+            "time": "17:34",
+            "author": "Daniel",
+            "text": "Přidali jste se nedávno? Máme portál, kde najdete sumarizace toho, co se ve skupině řešilo od března 2026.\n👉 https://mastertheflow.cz/\nHeslo je „MTF2026“ (bez uvozovek)"
+          }
+        ]
+      },
+      {
+        "slug": "inspirace--diskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "10:51",
+            "author": "člen komunity",
+            "text": "Už téměř rok používám rozšíření do prohlížeče: LinkedIn Feed Cleaner a za mě je to jedna z nejlepších věcí, která LinkedIn potkala. 😊\nRozšíření dokáže z feedu odstranit promoted a sponsored příspěvky a v jedné z novějších verzí přibyla i skvělá funkce, která odfiltruje příspěvky, které lidé, jež sledujete, pouze lajkovali. Ve výsledku tak vidíte především obsah, který lidé ve vaší síti skutečně sami publikovali, a ne to, co vám LinkedIn algoritmus neustále podsouvá.\nOd března mám dokonce zaplacenou PRO verzi za 24 USD ročně a rozhodně nelituju. Za mě jedna z nejlepších investic do digitálního minimalismu. 👍\nS autorem Nikolasem nejsem nijak spojený, jen rád doporučím něco, co mi opravdu funguje.\nhttps://chromewebstore.google.com/detail/linkedin-feed-cleaner-hid/pbndhpnajpcnaijjacmknamlpjmfgpkh\n[kontext odkazu: Stránka v Internetovém obchodě Chrome představuje rozšíření „LinkedIn Feed Cleaner“, které skrývá reklamy, doporučené a propagované příspěvky a umožňuje filtrování podle klíčových slov. Rozšíření má hodnocení 4,2 z 5 z 8 hodnocení, 187 uživatelů a nabízí bezplatnou i placenou verzi od 2,99 USD měsíčně.]",
+            "images": [
+              {
+                "file": "52f42b8a-6499-4fce-a775-936cd26c8a49-17bd5d38ad95abbf.jpg",
+                "w": 371,
+                "h": 727,
+                "desc": "Panel rozšíření „Feed Cleaner“ uvádí 228 skrytých příspěvků za dnešek. Aktivní jsou filtry doporučených příspěvků, propagovaného obsahu a aktivit, vlastní filtr klíčových slov je vypnutý a seznam skrytých lidí je prázdný."
+              }
+            ]
+          },
+          {
+            "time": "11:43",
+            "author": "člen komunity",
+            "text": "To je super nápad. Já mám svoje vlastní rozšíření, co mi označuje/schovává promoted a různé AI-slop příspěvky a brzdí mě ve scrollování. Ale odfiltrovat ty liky je bezva možnost, to vyzkouším. Jinak je dobré zmínit, že, každé takové rozšíření je proti LI podmínkám. Ale Claude mi v deep reserarch řekl, že riziko, že by to Li řešil u mé appky, je minimální , pokud nejde o systematický hromadný scraping."
+          },
+          {
+            "time": "13:06",
+            "author": "člen komunity",
+            "text": "Dokud ta aplikace neslouží pro automatizované ovládání, není to v zásadě problém 👌🏼"
+          }
+        ]
+      },
+      {
+        "slug": "vibe-coding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "11:17",
+            "author": "člen komunity",
+            "text": "Kdo to psal, to je overengineeting se developingu 😃"
+          },
+          {
+            "time": "11:18",
+            "author": "člen komunity",
+            "text": "..overengineering SW..."
+          },
+          {
+            "time": "11:27",
+            "author": "člen komunity",
+            "text": "Psal to očividně Claude při nějaké hodně slabé chvilce... z toho textu mě po pár řádcích bolí hlava.\nProsím, pojďme si říct, že podobné výstupy sem sdílet nebudeme, tohle tu reálně nikomu nic nepřinese.\nJe to trochu podobné, jako včerejší LI téma ve vedlejší skupině – největší přidanou hodnotu tady (aspoň pro mě) mají osobní zkušenosti, konkrétní use-cases jak vy něco používáte. Případně konkrétní případy, kde jste se zasekli a potřebujete pomoct."
+          },
+          {
+            "time": "12:45",
+            "author": "člen komunity",
+            "text": "A mě zrovna (jestli je to rekce na hooky) přijdou dost užitečný 😂🙈 hned jsem si z toho něco vzal.\nText me nijak neurazí. Asi proto ze se mnou Claude komunikuje při vývoji úplně stejným jazykem. 😀"
+          }
+        ]
+      },
+      {
+        "slug": "webináře--workshopy",
+        "name": "Webináře & Workshopy",
+        "messages": [
+          {
+            "time": "16:48",
+            "author": "Daniel",
+            "text": "🥊 *Další prompt tě nespasí.*\nLovable, Codex, coding agenti. Zkoušíš, opravuješ, ale výsledek pořád není ono?\n*21. 10. v 18:00 jde na řadu Vibecoding s Alexem Trejtnarem.* Budu se ptát, jak přemýšlí nad tím, co staví, a co dělá jinak. Uvidíš mu pod ruce. A můžeš se ptát, na co chceš.\nA pokud znáš Alexe, víš, že to bude pecka.\nŽivě. Online. Zdarma.\n*Zaregistruj se a přijď si pro odpovědi 👇*\nhttps://mastertheflow.cz/rozhovory/1-vibe-coding-s-alexem/\nP. S. Budeme ve studiu. Obraz, zvuk, žádná druhá liga. 🥊\n[kontext odkazu: Stránka zve na první díl živého rozhovoru „Vibecoding“ o práci s AI programovacími agenty, formulaci problémů a ověřování výsledků. Bezplatná akce pro registrované proběhne 21. října 2026 od 18:00 do 20:00 přes Google Meet a má kapacitu 98 lidí.]"
+          }
+        ]
+      }
+    ]
+  }
+}
