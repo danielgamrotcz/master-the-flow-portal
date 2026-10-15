@@ -1994,6 +1994,17 @@
       "date": "2026-10-13",
       "card_count": 0,
       "topics": []
+    },
+    {
+      "date": "2026-10-14",
+      "card_count": 2,
+      "topics": [
+        "Automatizace",
+        "Produktivita",
+        "AI nástroje",
+        "Google",
+        "Workflow"
+      ]
     }
   ]
 }

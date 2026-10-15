@@ -2032,6 +2032,41 @@
       "why": "Používá se pro firemní weby, blogy, magazíny a internetové obchody.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "ram",
+      "term": "RAM",
+      "cat": "pc",
+      "match": [
+        "RAM",
+        "operační paměť",
+        "operační paměti"
+      ],
+      "short": "Rychlá pracovní paměť, ve které počítač drží spuštěné programy a jejich data.",
+      "plain": "RAM využívají spuštěné aplikace, otevřené dokumenty i operační systém. Když se zaplní, počítač začne přesouvat data na disk a může výrazně zpomalit.",
+      "why": "Narazíte na ni ve specifikacích počítačů a ve Správci úloh, když hledáte příčinu zpomalení.",
+      "related": [],
+      "source": "auto"
+    },
+    {
+      "slug": "swap",
+      "term": "Swap",
+      "cat": "pc",
+      "match": [
+        "swap",
+        "swapu",
+        "swapem",
+        "swapovat",
+        "swapuje",
+        "swapování",
+        "stránkovací soubor",
+        "stránkovacího souboru"
+      ],
+      "short": "Místo na disku, které počítač používá jako pracovní paměť při zaplnění RAM.",
+      "plain": "Swap je vyhrazené místo na disku, kam systém dočasně přesouvá data z RAM. Disk je pomalejší než RAM, takže při častém přesouvání může počítač reagovat se zpožděním. Ve Windows se mu říká také stránkovací soubor.",
+      "why": "Narazíte na něj při řešení zaplněné paměti, zamrzání aplikací nebo pomalých reakcí počítače.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }

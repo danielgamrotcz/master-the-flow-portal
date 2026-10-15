@@ -1,0 +1,291 @@
+{
+  "date": "2026-10-14",
+  "generated_at": "2026-10-15T06:43:00Z",
+  "stats": {
+    "messages": 42,
+    "groups": 2,
+    "members": 5
+  },
+  "cards": [
+    {
+      "id": "2026-10-14-01",
+      "type": "NÁSTROJE",
+      "level": "Pokročilý",
+      "topics": [
+        "AI nástroje",
+        "Produktivita",
+        "Workflow"
+      ],
+      "title": "RAM jako limit AI aplikací",
+      "excerpt": "Členové porovnávali, jak jejich počítače zvládají současně spuštěný ChatGPT, Claude, Chrome a další aplikace. Někomu se počítač zpomaluje už při 24 GB RAM, jinému využití paměti na stroji s 32 GB dosahuje 90 %.",
+      "body": "Na notebooku s 24 GB RAM se při současném spuštění Claude Desktop, ChatGPT a Chromu zpomalují reakce, hlavně když využití paměti míří ke 100 %. Jiný člen hlásil zhruba 90% využití i na notebooku s 32 GB RAM a Windows 11. Restartuje ho jednou za jeden až dva týdny.\n\nDesktop se 64 GB RAM při podobné práci využíval asi 45 až 50 % paměti. Část zátěže přebírala grafická karta. Při hledání příčiny padla kontrola procesů na pozadí, swapu a rychlosti SSD. Podle další zkušenosti mohou procesy na pozadí zabírat 40 až 60 % paměti a postupně se duplikovat.",
+      "read_minutes": 2,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "15:28",
+        "15:39",
+        "16:49",
+        "17:00",
+        "21:39",
+        "21:53"
+      ],
+      "links": [],
+      "source_date": "2026-10-14"
+    },
+    {
+      "id": "2026-10-14-02",
+      "type": "NÁSTROJE",
+      "level": "Expert",
+      "topics": [
+        "Google",
+        "AI nástroje",
+        "Automatizace",
+        "Workflow"
+      ],
+      "title": "Gemini z G2A v praxi",
+      "excerpt": "Komunita řešila výrazně levnější roční aktivaci Gemini přes G2A a propojení přes CLIProxyAPI. Zkušenosti se lišily. Někomu aktivace fungovala, jiný dostal už použitý kód.",
+      "body": "Jeden člen koupil přes G2A roční aktivaci Google Gemini za 3 až 10 dolarů. Vyzkoušel ji na osobním Google účtu, ne na firemním. Další měl pět aktivací a používal je přes CLIProxyAPI, které zrovna nasazoval i do Paperclipu. Jiný účastník ale zaplatil 180 Kč za kód, který Google označil jako už použitý. Ostatní mu doporučili reklamaci u G2A nebo chargeback. Člen s vlastní pozitivní zkušeností dodal, že G2A v podobných případech peníze vrací, i když některý klíč může být nefunkční.",
+      "read_minutes": 2,
+      "source_group": "vibe-coding",
+      "source_msg_times": [
+        "17:42",
+        "17:43",
+        "17:50",
+        "18:13",
+        "18:36",
+        "20:30"
+      ],
+      "links": [
+        "https://www.g2a.com/google-ai-gemini-pro-12-months-gemini-activation-link-global-i10000510949007"
+      ],
+      "source_date": "2026-10-14"
+    }
+  ],
+  "resurfacing": null,
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspirace--diskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "15:10",
+            "author": "člen komunity",
+            "text": "jak jste na tom s kapacitou výkonu vašeho PC nebo NTP při spuštění AI?\nDo teď mi vždy Intel core i7 + 16 MB stačilo s rezervou, nikdy mi notebook nezamrzl za ty dva roky, co ho mám. Ale dnes jsem se dostal na strop RAM a Claude, který běží v cloudu, mi normálně zamrzl při výkonu úlohy (práce se soubory na disku)."
+          },
+          {
+            "time": "15:14",
+            "author": "člen komunity",
+            "text": "Nepoužívám notebook ale desktop a protože řeším SEO už roky mám 64 MB RAM :-) A zatím v pohodě. Mám takový, možná radikální, názor, že na notebooku se pořádně nedá pracovat. Ale možná je to moc boomer názor :-)"
+          },
+          {
+            "time": "15:14",
+            "author": "člen komunity",
+            "text": "právě proto také přemýšlím, že přejdu na mini PC aspon s 32 MB"
+          },
+          {
+            "time": "15:15",
+            "author": "člen komunity",
+            "text": "Jsem na tom stejně jako Ty - 16 GB RAM a neustále 88 % apod.\nChatGPT work v Chrome + Google disk"
+          },
+          {
+            "time": "15:15",
+            "author": "člen komunity",
+            "text": "Já mám ještě dotaz na speech-to-text. Máte někdo zkušenosti s beey.io?🙏"
+          },
+          {
+            "time": "15:15",
+            "author": "člen komunity",
+            "text": "Dáví smysl, oni jsou silný notebooky, ale těch 16 MB mi přijde málo."
+          },
+          {
+            "time": "15:16",
+            "author": "člen komunity",
+            "text": "Je"
+          },
+          {
+            "time": "15:28",
+            "author": "člen komunity",
+            "text": "spotřeba paměti strojem se bude jen zvětšovat a problém se bude jen zhošovat. Vývojáři se to nesnaží moc optimalizovat.... Máš velký štěstí, že v prohlížeči nemáš skoro nic otevřeného, takže to ještě jde. Vyzkoušeno, pokud se Win dostanou k 90% RAM začne to špatné a obvykle procesor nedělá nic jiného než přesouvá operační pamět na disk a zpět....Takže s 16GB se dá při troše opatrnosti fungovat, ale bude se to zhoršovat, jak aplikace bobtnají.  Proto jsem pořídit 32GB RAM. Macbook pracuje s pamětí výrazně lépe."
+          },
+          {
+            "time": "15:39",
+            "author": "člen komunity",
+            "text": "Mám v práci notebook s Ubuntu Intel I5 a 24 GB RAM a při souběžném využívání Claude desktop a ChatGPT desktop aplikace (+ samozřejmě Google Chrome) mam nyní občas také problém.\nPřipadne mi, že zrovna v ChatGPT při složitější / komplexní úloze skokově vzroste spotřebovaná paměť nad 8 GB…\nVýsledek je stejný jako u PC s Win, když se spotřebovaná RAM blíží ke 100 %. Pomalé reakce PC"
+          },
+          {
+            "time": "16:49",
+            "author": "člen komunity",
+            "text": "Já si schválně pořídil notebook s 32GB a jsem stejně za chvíli na 90%. Je to past, přijde mi, že si ty appky (u mě instance Chrome, Claude a Antigravity) stejně vezmou vždycky tolik, kolik je k dispozici, nenažranci... Cca 1x za týden až dva restartuju PC (Windows 11)."
+          },
+          {
+            "time": "17:00",
+            "author": "člen komunity",
+            "text": "Mám PC s 64GB a při podobné práci jedu tak na 45-50%, ale část si pak při zvýšené zátěži převezme grafická karta."
+          },
+          {
+            "time": "17:05",
+            "author": "člen komunity",
+            "text": "Pořídila jsem si schválně novy notebook s 32 GB, ale obávám se, že by to chtělo těch 64 GB a klasické PC."
+          },
+          {
+            "time": "17:16",
+            "author": "člen komunity",
+            "text": "Jo, pravidelný restart je super i na Linuxu 😎"
+          },
+          {
+            "time": "21:39",
+            "author": "člen komunity",
+            "text": "ty app dle toho grafu mají jen cca 25% RAM... přišlo mi to divné\nNemáte v tom stroji i HDD a něm swap? případně není SSD pomalé - zksute nějaký benchmark .. linux distra třeba live ubuntu má \"disk\" utility a ta má benhcmark\nDal jsem váš prtscrn + text CC a říká:\nPokud je systém už na 88 % RAM, Windows začne swapovat na disk a zamrzne cokoli, co zrovna pracuje. Takže zamrzl ne proto, že by Claude byl náročný, ale proto, že byl poslední, kdo si řekl o paměť, když už žádná nebyla.\nSoučet procesů na screenshotu je asi 4,6 GB, ale 88 % z 16 GB je ~14 GB. Zbytek bude Chrome s taby, Windows samotný, Norton, případně WSL/Docker nebo jiné věci níž v seznamu, které nejsou vidět.\nCo s tím\n16 GB je dnes pro „běžný vývojářský desktop s pěti Electron apkami“ na hraně. Pokud je notebook rozšiřitelný, 32 GB je nejlevnější a nejúčinnější upgrade, co existuje.\nKrátkodobě: nenechávat běžet ChatGPT + Claude + Notion + WhatsApp jako desktop apky, použít web v jednom prohlížeči (sdílí paměť), nebo je zavřít, když nejsou potřeba. Dvě instance Claude naráz taky není nutné.\nZkontrolovat velikost stránkovacího souboru – Windows na SSD swapuje celkem snesitelně, ale když je swap malý nebo vypnutý, systém zamrzá místo zpomalení.\nSeřadit Správce úloh podle paměti a podívat se, co je nad těmi 700 MB – ten screenshot ukazuje jen druhou ligu."
+          },
+          {
+            "time": "21:44",
+            "author": "člen komunity",
+            "text": "Naštěstí jsem koupil 32GB ještě před lety a na PC mám 64 GB kvuli práci velké DB na lokále..\nnepsouštím lokální modely z CPU(RAM)  takže se tam pohodlně vejdu.\nBTW: Překvapilo mě že se mi začal sekat muj RPI5 s 8GB RAM při přehrávání 4K streamu. Mám na něm i CC, AGY, Codex ( dne stojí tolik že se mi nový kupovat nechce)   a měl jsem zrovna spuštěné autoamtické ulohy na všech na jednou pak jsem pocítil zpomalení jinak ne."
+          },
+          {
+            "time": "21:53",
+            "author": "člen komunity",
+            "text": "to co neni vypsané, jsou background processes, kde najdete další kusy běžícího SW (Codex, CC, chrome, antivir apod) a pak jsou tam zaparkované věci, které se defaultně spouštějí při startu a jen  na něco čekají. Spousta z nich časem umře, a controler si nastatuje nový process, takže jsou tam multiplkovaní. Viz ten sceen shot 40-60% paměti okupují nějaké background procesy, proto je dobré pravidelně restartovat. A čas od času pročistit windows applications a startup."
+          }
+        ]
+      },
+      {
+        "slug": "vibe-coding",
+        "name": "Vibe Coding",
+        "messages": [
+          {
+            "time": "16:35",
+            "author": "člen komunity",
+            "text": "Sorry, ale to je hrozný blábol ty Hooky, sw engineer by vzdal po první větě."
+          },
+          {
+            "time": "16:38",
+            "author": "člen komunity",
+            "text": "člen komunity, jdi s tímhle už DO PRDELE! Já jsem ráda, že člen komunity s náma sdílí know-how. A tahle skupina má podporovat. I to, co jste napsal, se dá říct: Tohle bych udělal jinak, takhle bych k tomu přistoupil já…"
+          },
+          {
+            "time": "17:18",
+            "author": "člen komunity",
+            "text": "Je opravdu nutné reagovat takto vulgárně? Na autora jsem se předem ptal bez odpovědi a dotyčný vystupuje pod přezdívkou, aniž by se pod text podepsal. Zkusme se držet věcné debaty bez zbytečných emocí 🙂"
+          },
+          {
+            "time": "17:19",
+            "author": "člen komunity",
+            "text": "Ano, zkusme se držet věcné debaty a začněte u sebe. Tohle je poněkolikátý. Kdy hodnotíte a urážíte vy v první řadě. Je úplně jedno, kdo je autorem. Zameťte před svým prahem."
+          },
+          {
+            "time": "17:20",
+            "author": "člen komunity",
+            "text": "A dodám jednu věc. Přijďte na osobní setkání na show and tell do Prahy, pojďte mi říct svý argumenty osobně. Moc ráda si je poslechnu. A pak Vás smetu ze stolu, protože neumíte držet věcnou argumentaci. Přijďte, těším se na tohle."
+          },
+          {
+            "time": "17:21",
+            "author": "člen komunity",
+            "text": "Myslím, že pointa byla člen komunity trochu jinde... Spíš v tom, že Váš už druhý příspěvek v diskuzi nebyl podporující, ale z mého pohledu spíše zesměšňující... Od člen komunity tam navíc máte i návod, jak to říci lépe... A vlastně nás všechny obohatit o to, jak na to kouká SW engineer... Což vlastně nevíme..."
+          },
+          {
+            "time": "17:26",
+            "author": "člen komunity",
+            "text": "Věcná diskuze se obvykle pozná podle argumentů, ne podle vyhrožování ‚smetením ze stolu‘. Pokud se debata vrátí k faktům a bez vulgarit, rád se k ní vyjádřím kdekoliv. Cirkus a dokazování ega ale přenechám jiným."
+          },
+          {
+            "time": "17:27",
+            "author": "člen komunity",
+            "text": "Takže přijdete? Skvělé. Přijdu taky 🙂 Moc ráda poznám člověka, který shazuje ostatní."
+          },
+          {
+            "time": "17:28",
+            "author": "člen komunity",
+            "text": "​Kritika a jiný úhel pohledu bývají pro posun přínosnější než tichý souhlas. Nemám ambici nikomu nic vnucovat, nabídl jsem pragmatický pohled na věc. Ať se daří"
+          },
+          {
+            "time": "17:30",
+            "author": "člen komunity",
+            "text": "Tak teď nevím, kdo tady řeší to ego... člen komunity, zkusím to znovu.\nBudeme moc rádi, když nám řeknete, jak by na to koukal SW inženýr. Opravdu a upřímně. To nás může posunout mnohem dál, než váš názor o tom, co vy považujete za blábol... Naše (moje stejně jako vaše názory jsou totiž dost subjektivní)\nJste SW inženýr?"
+          },
+          {
+            "time": "17:31",
+            "author": "člen komunity",
+            "text": "Vaše vulgarity a domýšlení cizích úmyslů nejsou argumenty, ale jen důkaz, že vám docházejí fakta 🙂"
+          },
+          {
+            "time": "17:33",
+            "author": "člen komunity",
+            "text": "Odhlédněme od dojmů a nálepek. Pokud se chceme posunout, předložte konkrétní technické argumenty, data nebo metriky – k těm se rád vyjádřím."
+          },
+          {
+            "time": "17:33",
+            "author": "Daniel",
+            "text": "Ok, zastavme to pls. Chci ten kanál jako inspiraci. Tohle už trošku přechází do osobní roviny, řešme si to, prosím, přes soukromé zprávy.\nTa komunikace jiného názoru je za mě nešťastná a budu moc rád, pokud sem budeme házet to, co děláme, co nám funguje, co jsme vytvořili, prosby o podporu a doporučení apod. Výsledkem toho může být zpětná vazba, názor s doporučením, právě podpora. Ne osobní útoky.\nDíky moc."
+          },
+          {
+            "time": "17:36",
+            "author": "člen komunity",
+            "text": "Budu rád a jestli je autorem nějaký člen komunity (nepodepsal se) tak se mu omlouvám jestli jsem se ho dotkl."
+          },
+          {
+            "time": "17:42",
+            "author": "člen komunity",
+            "text": "Google Gemini na rok za ~150 Kč místo 6 600 Kč (úspora přes 95 %)\n​Běžně stojí Google AI Premium kolem 550 Kč měsíčně (~6 600 Kč/rok), na G2A se dá aktivační odkaz sehnat za 3–10 $.\n​Po potvrzení máte oficiálně aktivovaný Google Gemini. Jelikož je zdroj pravděpodobně z Indie, částka se zobrazuje v rupiích. Testováno na osobním Google účtu (na firemním ne). Primárně to není určeno k prodloužení stávajícího plánu, ale můžete vyzkoušet – u aktivních účtů se teď běžně nabízí 12 až 18 měsíců bez doplatku.\n​Odkaz (ověřený prodejce Betterthanretail, 98 % feedback, 8 000+ prodejů):\nhttps://www.g2a.com/google-ai-gemini-pro-12-months-gemini-activation-link-global-i10000510949007"
+          },
+          {
+            "time": "17:43",
+            "author": "člen komunity",
+            "text": "Mám jich 5, doporučuju. :)"
+          },
+          {
+            "time": "17:45",
+            "author": "člen komunity",
+            "text": "Přes co je používáte? :)"
+          },
+          {
+            "time": "17:50",
+            "author": "člen komunity",
+            "text": "CLIProxyAPI"
+          },
+          {
+            "time": "17:50",
+            "author": "člen komunity",
+            "text": "Teď to nasazuju do Paperclipu na testovačku."
+          },
+          {
+            "time": "17:50",
+            "author": "člen komunity",
+            "text": "Gemini 3.8 Flash je přes AGY brutálně rychlá. 500 TPS často."
+          },
+          {
+            "time": "18:13",
+            "author": "člen komunity",
+            "text": "Tak jsem prisel o 180 kc kod nefunguje google tvrdi ze uz byl vyuzit. Tak na gemini kaslu chtel sjem ho zkusit, ale evidentne mi neni souzeno"
+          },
+          {
+            "time": "18:36",
+            "author": "člen komunity",
+            "text": "Reklamačku platby kartou (Chargeback u svojí banky)? Nejlepší je kartou přes PayPal pokud má obchod PayPal, PayPal přenáší důkazní břemeno vždy na obchodníka a věří téměř vždy zákazníkovi."
+          },
+          {
+            "time": "18:44",
+            "author": "člen komunity",
+            "text": "O ty penize mi nejde rikal jsem si ze bych gemini otestoval ve svem stroji… zatim tam mam propojeneho clauda, codex a zatim nez dorazi silnejsi mac mini jeden maly model"
+          },
+          {
+            "time": "20:30",
+            "author": "člen komunity",
+            "text": "To g2a funguje a primo oni vam to normalne vrati, jsou velky a tyhle cucky resi bez prutahu. Rovnou si pak kupte novej, taky to Gemini tam odsud mam a koupil jsem to i obema detem. Obcas ten klic clovek trefi blbe, zrovna na vas sedla smula. Druhy pujde."
+          },
+          {
+            "time": "21:06",
+            "author": "člen komunity",
+            "text": "Diky za tip, tohle je super!"
+          },
+          {
+            "time": "21:25",
+            "author": "člen komunity",
+            "text": "a mohla bych je vidět? :D ( Paní Jechová)\njj přešel jsem z cursoru a bez hooku něco nejde, claude si jen pořád dokola psal pravidla kašlal na ně obzvláště po komprimaci kontextu"
+          }
+        ]
+      }
+    ]
+  }
+}

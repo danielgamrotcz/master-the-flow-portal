@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-11",
+  "generated_at": "2026-10-15",
   "source": {
-    "daily_notes": 31,
+    "daily_notes": 34,
     "range": [
       "2026-08-30",
-      "2026-10-10"
+      "2026-10-14"
     ]
   },
   "categories": [
@@ -70,10 +70,10 @@
       "source": "hand",
       "starter": null,
       "search": "agent model, ktery nejen odpovida, ale sam dela kroky, dokud neni hotovo. bezny chat odpovi a ceka. agent misto toho pracuje ve smycce, precte soubor, spusti prikaz, podiva se na vysledek, opravi se a pokracuje. sam se rozhoduje, jaky krok udela dalsi. tohle je rozdil mezi „poradi mi“ a „udela to za me“. agent agenta agentem agenti agentu agenticke agenticky agentic",
-      "mentions": 34,
-      "days": 9,
+      "mentions": 35,
+      "days": 10,
       "first_seen": "2026-08-31",
-      "last_seen": "2026-10-02",
+      "last_seen": "2026-10-12",
       "card_hits": 46
     },
     {
@@ -265,10 +265,10 @@
       "source": "hand",
       "starter": null,
       "search": "automatizace postup, ktery po nastaveni bezi bez vas. nastavite jednou a pak uz to jede samo, bud v urceny cas, nebo kdyz nastane nejaka udalost. typicky neco, co byste jinak delali porad dokola. ve skupine to byva stahovani prepisu z nahravek, ranni souhrn do poznamek nebo hlidani, jestli neco nespadlo. vetsina projektu, ktere tady lidi ukazuji, zacala jako otrava, kterou je nebavilo delat rucne. automatizace automatizaci automatizovat automatizovane",
-      "mentions": 18,
-      "days": 10,
+      "mentions": 19,
+      "days": 11,
       "first_seen": "2026-09-01",
-      "last_seen": "2026-10-08",
+      "last_seen": "2026-10-12",
       "card_hits": 24
     },
     {
@@ -392,10 +392,10 @@
       "source": "hand",
       "starter": 5,
       "search": "claude code claude, ktery bezi v terminalu a sam pracuje se soubory ve vasem projektu. neni to chat v prohlizeci. claude code bezi u vas na pocitaci, vidi slozku s projektem, umi soubory cist i menit, spoustet prikazy a overovat si vysledek. spousti se v terminalu napsanim claude. ve skupine se casto zkracuje na cc. vetsina projektu, ktere tady lidi ukazuji, vznikla presne timhle. claude code claude codu claudecode cc",
-      "mentions": 23,
-      "days": 8,
+      "mentions": 29,
+      "days": 10,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-04",
+      "last_seen": "2026-10-14",
       "card_hits": 121
     },
     {
@@ -493,11 +493,11 @@
       "source": "hand",
       "starter": null,
       "search": "codex kodovaci nastroj od openai, konkurence claude code. nastroj, ktery podobne jako claude code umi pracovat s kodem v projektu. ve skupine se pravidelne srovnavaji, vysledek se lisi podle typu ukolu.  codex codexu codex",
-      "mentions": 22,
-      "days": 7,
+      "mentions": 27,
+      "days": 10,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-08",
-      "card_hits": 31
+      "last_seen": "2026-10-14",
+      "card_hits": 32
     },
     {
       "slug": "commit",
@@ -626,10 +626,10 @@
       "source": "hand",
       "starter": null,
       "search": "cursor editor kodu s vestavenou ai. vypada jako klasicky editor, ale umi psat a upravovat kod na pozadani primo v souboru. alternativa ke claude code pro ty, kdo chteji videt kod pred sebou v okne.  cursor cursoru cursor",
-      "mentions": 7,
-      "days": 1,
+      "mentions": 8,
+      "days": 2,
       "first_seen": "2026-09-13",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-10-14",
       "card_hits": 19
     },
     {
@@ -657,7 +657,7 @@
       "days": 2,
       "first_seen": "2026-10-06",
       "last_seen": "2026-10-10",
-      "card_hits": 2
+      "card_hits": 3
     },
     {
       "slug": "deploy",
@@ -732,10 +732,10 @@
       "source": "hand",
       "starter": null,
       "search": "docker krabice, ve ktere program bezi oddeleny od zbytku pocitace. docker spusti aplikaci v izolovanem prostredi, ktere ma vlastni obsah a nevidi na zbytek systemu. pouziva se, aby vec bezela vsude stejne, a taky jako bezpecnostni hranice. ve skupine pada hlavne jako odpoved na otazku, jak pustit ai agenta tak, aby nemohl sahnout na cokoli mimo projekt. docker dockeru dockeru kontejner kontejneru",
-      "mentions": 0,
-      "days": 0,
-      "first_seen": null,
-      "last_seen": null,
+      "mentions": 1,
+      "days": 1,
+      "first_seen": "2026-10-14",
+      "last_seen": "2026-10-14",
       "card_hits": 5
     },
     {
@@ -980,10 +980,10 @@
       "source": "auto",
       "starter": null,
       "search": "google antigravity vyvojove prostredi googlu pro praci na kodu s ai agenty. google antigravity je vyvojove prostredi pro praci na kodu s ai agenty. verze 2.0 podporuje pripojeni k mcp serverum. dostupnost a limity se lisi podle google uctu a predplatneho. narazite na nej pri porovnavani nastroju pro vibe coding nebo pri vyberu osobniho ci firemniho predplatneho googlu. google antigravity antigravity anti gravity antigravity 2.0",
-      "mentions": 12,
-      "days": 2,
+      "mentions": 13,
+      "days": 3,
       "first_seen": "2026-09-11",
-      "last_seen": "2026-09-12",
+      "last_seen": "2026-10-14",
       "card_hits": 7
     },
     {
@@ -1152,10 +1152,10 @@
       "source": "hand",
       "starter": null,
       "search": "hook automaticka pojistka, ktera se spusti sama, bez vyzadani. hook je pravidlo navazane na udalost. kdyz nastane, akce probehne sama, i kdyz jste na ni davno zapomneli. typicky se pouziva jako kontrola, napriklad zablokovat ulozeni, kdyz v kodu zustal pristupovy klic. rozdil proti skillu je jednoduchy. skill si zavolate, hook se ozve sam. hook hooku hooky hooku hooks",
-      "mentions": 3,
-      "days": 1,
+      "mentions": 13,
+      "days": 4,
       "first_seen": "2026-09-13",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-10-14",
       "card_hits": 7
     },
     {
@@ -1278,10 +1278,10 @@
       "source": "hand",
       "starter": 4,
       "search": "kontext vsechno, co model v danou chvili vi o vasem zadani. kontext je souhrn toho, co ma model po ruce. vase zpravy, jeho odpovedi, obsah souboru, ktere si precetl, a instrukce, ktere dostal. kdyz mu nahazite vsechno, co vas napadne, utopi se v tom. min informaci, ale trefnejsich, funguje lip. odtud ta rada psat strucne. kdyz do zadani nahazite pet nesouvisejicich veci, vysledek bude horsi, nez kdybyste rekli jednu. kontext kontextu kontextem",
-      "mentions": 60,
-      "days": 21,
+      "mentions": 65,
+      "days": 24,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-14",
       "card_hits": 51
     },
     {
@@ -1409,10 +1409,10 @@
       "source": "hand",
       "starter": null,
       "search": "lokalni model model bezici primo na vasem pocitaci misto v cloudu. misto posilani dotazu na internet bezi model primo u vas. data neopusti vas stroj, takze se to hodi na citlive veci. zaplatite za to vykonem, potrebujete silnejsi pocitac a vysledky byvaji slabsi nez u velkych cloudovych modelu. resi se hlavne u prepisu a u dat, ktera nesmi ven. lokalni model lokalne lokalni modely lokalniho modelu",
-      "mentions": 6,
-      "days": 5,
+      "mentions": 7,
+      "days": 6,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-06",
+      "last_seen": "2026-10-14",
       "card_hits": 28
     },
     {
@@ -1435,11 +1435,11 @@
       "source": "hand",
       "starter": null,
       "search": "markdown formatovani textu pomoci obycejnych znaku. jednoduchy zapis, kde hvezdicky udelaji tucne pismo a mrizky nadpisy. zustava to citelny text. soubor otevrete cimkoli a word na to nepotrebujete. v tomhle formatu jsou poznamky v obsidianu i instrukce v claude.md. markdown markdownu .md md soubor",
-      "mentions": 16,
-      "days": 4,
+      "mentions": 17,
+      "days": 5,
       "first_seen": "2026-09-13",
-      "last_seen": "2026-10-10",
-      "card_hits": 19
+      "last_seen": "2026-10-11",
+      "card_hits": 20
     },
     {
       "slug": "mcp",
@@ -1512,10 +1512,10 @@
       "source": "hand",
       "starter": 2,
       "search": "model konkretni verze ai, kterou zrovna pouzivate. modelu je vic a lisi se silou, rychlosti a cenou. silnejsi zvladne slozite zadani, ale je pomalejsi a drazsi. slabsi odbavi rutinu skoro hned. kdyz nekdo ve skupine pise, ze neco jede na opusu a neco na sonnetu, mluvi presne o tehle volbe. volba modelu je hlavni paka na to, kolik za praci s ai zaplatite. model modelu modely modelu modelem",
-      "mentions": 47,
-      "days": 12,
+      "mentions": 49,
+      "days": 13,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-06",
+      "last_seen": "2026-10-14",
       "card_hits": 97
     },
     {
@@ -1637,10 +1637,10 @@
       "source": "hand",
       "starter": null,
       "search": "notion poznamky, databaze a wiki v jednom, ulozene v cloudu. nastroj na organizaci informaci, kde se michaji dokumenty s tabulkami a databazemi. na rozdil od obsidianu obsah lezi u poskytovatele, ne u vas na disku.  notion notionu notion",
-      "mentions": 7,
-      "days": 4,
+      "mentions": 8,
+      "days": 5,
       "first_seen": "2026-08-31",
-      "last_seen": "2026-10-02",
+      "last_seen": "2026-10-14",
       "card_hits": 14
     },
     {
@@ -1740,11 +1740,11 @@
       "source": "hand",
       "starter": null,
       "search": "open source software s verejne dostupnym kodem, ktery smi kdokoli cist a upravovat. u open source projektu je videt, jak je udelany uvnitr. kdokoli si ho muze stahnout, prohlednout, upravit a vetsinou i pouzit zdarma. podminky urcuje licence, bezna a hodne volna je licence mit.  open source opensource open-source otevreny zdrojovy kod",
-      "mentions": 7,
-      "days": 5,
+      "mentions": 8,
+      "days": 6,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-09-30",
-      "card_hits": 14
+      "last_seen": "2026-10-11",
+      "card_hits": 15
     },
     {
       "slug": "openrouter",
@@ -1961,10 +1961,10 @@
       "source": "hand",
       "starter": 3,
       "search": "prompt zadani, ktere modelu napisete. prompt je text, kterym modelu rikate, co ma udelat. zadna kouzelna formulka v tom neni. nejlip funguje obycejny jasny popis toho, co chcete, pro koho to je a jak ma vysledek vypadat. vetsina zklamani z ai pochazi z vagniho zadani, ne ze slabeho modelu. napsat „shrn mi to“ a „shrn mi to do peti bodu pro kolegu, ktery u toho nebyl“ da uplne jiny vysledek. prompt promptu prompty promptu promptem promptovani promptovat",
-      "mentions": 6,
-      "days": 4,
+      "mentions": 9,
+      "days": 5,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-06",
+      "last_seen": "2026-10-12",
       "card_hits": 33
     },
     {
@@ -2036,6 +2036,28 @@
       "first_seen": "2026-09-30",
       "last_seen": "2026-09-30",
       "card_hits": 2
+    },
+    {
+      "slug": "ram",
+      "term": "RAM",
+      "category": "pc",
+      "short": "Rychlá pracovní paměť, ve které počítač drží spuštěné programy a jejich data.",
+      "plain": "RAM využívají spuštěné aplikace, otevřené dokumenty i operační systém. Když se zaplní, počítač začne přesouvat data na disk a může výrazně zpomalit.",
+      "why": "Narazíte na ni ve specifikacích počítačů a ve Správci úloh, když hledáte příčinu zpomalení.",
+      "related": [],
+      "aliases": [
+        "RAM",
+        "operační paměť",
+        "operační paměti"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "ram rychla pracovni pamet, ve ktere pocitac drzi spustene programy a jejich data. ram vyuzivaji spustene aplikace, otevrene dokumenty i operacni system. kdyz se zaplni, pocitac zacne presouvat data na disk a muze vyrazne zpomalit. narazite na ni ve specifikacich pocitacu a ve spravci uloh, kdyz hledate pricinu zpomaleni. ram operacni pamet operacni pameti",
+      "mentions": 14,
+      "days": 1,
+      "first_seen": "2026-10-14",
+      "last_seen": "2026-10-14",
+      "card_hits": 6
     },
     {
       "slug": "raspberry-pi",
@@ -2214,10 +2236,10 @@
       "source": "hand",
       "starter": null,
       "search": "scraping automaticke vytahovani dat z webovych stranek. program projde stranku a vytahne z ni udaje, ktere by clovek jinak vypisoval rucne. weby se proti tomu casto brani, proto na to existuji specializovane nastroje. nejcasteji u srovnavani nabidek a sbirani recenzi. scraping scraper scrapovat scrapovani playwright apify firecrawl",
-      "mentions": 0,
-      "days": 0,
-      "first_seen": null,
-      "last_seen": null,
+      "mentions": 1,
+      "days": 1,
+      "first_seen": "2026-10-12",
+      "last_seen": "2026-10-12",
       "card_hits": 4
     },
     {
@@ -2474,6 +2496,33 @@
       "card_hits": 5
     },
     {
+      "slug": "swap",
+      "term": "Swap",
+      "category": "pc",
+      "short": "Místo na disku, které počítač používá jako pracovní paměť při zaplnění RAM.",
+      "plain": "Swap je vyhrazené místo na disku, kam systém dočasně přesouvá data z RAM. Disk je pomalejší než RAM, takže při častém přesouvání může počítač reagovat se zpožděním. Ve Windows se mu říká také stránkovací soubor.",
+      "why": "Narazíte na něj při řešení zaplněné paměti, zamrzání aplikací nebo pomalých reakcí počítače.",
+      "related": [],
+      "aliases": [
+        "swap",
+        "swapu",
+        "swapem",
+        "swapovat",
+        "swapuje",
+        "swapování",
+        "stránkovací soubor",
+        "stránkovacího souboru"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "swap misto na disku, ktere pocitac pouziva jako pracovni pamet pri zaplneni ram. swap je vyhrazene misto na disku, kam system docasne presouva data z ram. disk je pomalejsi nez ram, takze pri castem presouvani muze pocitac reagovat se zpozdenim. ve windows se mu rika take strankovaci soubor. narazite na nej pri reseni zaplnene pameti, zamrzani aplikaci nebo pomalych reakci pocitace. swap swapu swapem swapovat swapuje swapovani strankovaci soubor strankovaciho souboru",
+      "mentions": 7,
+      "days": 1,
+      "first_seen": "2026-10-14",
+      "last_seen": "2026-10-14",
+      "card_hits": 0
+    },
+    {
       "slug": "tailscale",
       "term": "Tailscale",
       "category": "nastroje",
@@ -2644,10 +2693,10 @@
       "source": "hand",
       "starter": 1,
       "search": "vibe coding staveni aplikaci tak, ze popisujete, co chcete, a kod pise ai. vy rikate, co ma vec delat, ai pise kod a vy vysledek zkousite a usmernujete. programovat umet nemusite. staci umet popsat, co chcete, a poznat, kdy vysledek nesedi. jede se po malych kouscich, protoze velky skok se spatne kontroluje a chyba se v nem hur hleda. kolem tohohle vznikla cela komunita. je to nejcastejsi pojem ve skupine vubec. vibe coding vibe codingu vibecoding vibe kodovani",
-      "mentions": 32,
-      "days": 17,
+      "mentions": 45,
+      "days": 20,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-14",
       "card_hits": 50
     },
     {
