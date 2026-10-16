@@ -2005,6 +2005,20 @@
         "Google",
         "Workflow"
       ]
+    },
+    {
+      "date": "2026-10-15",
+      "card_count": 3,
+      "topics": [
+        "Dokumentace",
+        "Hooky",
+        "AI nástroje",
+        "Databáze",
+        "Automatizace",
+        "Subagenti",
+        "Claude Code",
+        "Produktivita"
+      ]
     }
   ]
 }

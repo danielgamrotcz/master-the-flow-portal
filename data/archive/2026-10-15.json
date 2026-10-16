@@ -1,0 +1,101 @@
+{
+  "date": "2026-10-15",
+  "generated_at": "2026-10-16T00:06:27Z",
+  "stats": {
+    "messages": 5,
+    "groups": 1,
+    "members": 3
+  },
+  "cards": [
+    {
+      "id": "2026-10-15-01",
+      "type": "UKÁZKA",
+      "level": "Expert",
+      "topics": [
+        "Claude Code",
+        "Dokumentace",
+        "Automatizace",
+        "Hooky"
+      ],
+      "title": "Claude Document Gate pro převod dokumentů",
+      "excerpt": "Jeden člen vytvořil hook, který před odesláním promptu převede podporované dokumenty do Markdownu. Umí také volitelně maskovat citlivé údaje pomocí regulárních výrazů.",
+      "body": "Claude Document Gate před odesláním promptu zkontroluje, jestli obsahuje soubor. Podporovaný dokument lokálně zpracuje Python skript přes Microsoft MarkItDown a výsledek vrátí do stejné session. Základní sanitace maskuje rodná čísla, telefonní čísla a e-maily. V souboru config.json ji lze vypnout.\n\nŘešení používá socket ve WSL a pojmenovanou pipe ve Windows. Podle autora funguje v grafickém rozhraní bez potíží. V Claude Code pod WSL ale po zablokování zůstane původní prompt. Připravovaná beta verze MOD Pluginu má problém vyřešit bez blokování.",
+      "read_minutes": 1,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "00:35"
+      ],
+      "links": [
+        "https://github.com/Erozaxx/claude-document-gate"
+      ],
+      "source_date": "2026-10-15"
+    },
+    {
+      "id": "2026-10-15-02",
+      "type": "NÁSTROJE",
+      "level": "Pokročilý",
+      "topics": [
+        "Dokumentace",
+        "AI nástroje",
+        "Produktivita"
+      ],
+      "title": "MarkItDown převádí dokumenty do Markdownu",
+      "excerpt": "Microsoft MarkItDown převádí PDF, DOCX a další formáty včetně odkazů na YouTube do Markdownu. Jeden člen ho používá hlavně pro dokumenty, se kterými pracuje delší dobu.",
+      "body": "Člen komunity popsal Microsoft MarkItDown jako udržovaný nástroj pro převod různých souborů do Markdownu. Zajímají ho hlavně PDF a DOCX, podle jeho zprávy ale zvládá i odkazy na YouTube. Používá ho třeba pro převod softwarové dokumentace, se kterou bude pracovat delší dobu. Z jeho zkušenosti Markdown při další práci šetří tokeny. MarkItDown také zapojil do vlastního hooku, který dokumenty automaticky zpracuje před předáním Claudu.",
+      "read_minutes": 1,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "00:35"
+      ],
+      "links": [],
+      "source_date": "2026-10-15"
+    },
+    {
+      "id": "2026-10-15-03",
+      "type": "NÁSTROJE",
+      "level": "Expert",
+      "topics": [
+        "Subagenti",
+        "Databáze",
+        "AI nástroje"
+      ],
+      "title": "ZBook při desítkách paralelních agentů",
+      "excerpt": "Jeden z členů popsal svou zkušenost s HP ZBookem s 64 GB RAM. Na pracovním notebooku současně provozuje agentické týmy, Docker, databáze i virtuální servery.",
+      "body": "Člen používá HP ZBook s 64 GB RAM a grafickou kartou NVIDIA RTX A500 se 4 GB paměti. Podle svých zkušeností na něm paralelně provozuje dva agentické týmy Codexu, celkem v průměru 16 až 25 agentů. Zároveň mu běží Docker, virtuální servery, databáze a další virtuální Windows v Hyper-V. Ani při této zátěži nemá problém s výkonem. Zpráva popisuje konkrétní hardwarovou konfiguraci a její reálné pracovní zatížení, nejde o obecné srovnání notebooků.",
+      "read_minutes": 1,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "09:08",
+        "13:21"
+      ],
+      "links": [],
+      "source_date": "2026-10-15"
+    }
+  ],
+  "resurfacing": null,
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspirace--diskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "00:35",
+            "author": "člen komunity",
+            "text": "https://github.com/Erozaxx/claude-document-gate\nDneska sem cetl o microsoft/markitdown, coz je repo, ktere umi prevest ruzne soubory na .md files od Microsoftu. A to treba i YT URLs apod. Me slo spis o PDF, docx atd... setri to tokeny kdyz je to v .md, nekdy kdyz vim ze s nima budu pracovat dyl tak si to na .md prevedu (dokumentace k SW apod.), ale tohle je super, navic udrzovany nekym jinym.\nAle protoze sem linej, tak sem si povidal po ceste domu autem s ChatGPT a za tu hodku a pul (kolony) sem dal dohromady tuto. Funguje to tak, ze je to hook, ktery se pousti pred poslanim promptu do modelu. Pokud prompt obsahuje soubor, projede ho Python skriptem (3.10 min) a pokud je to podporovanej dokument prozene ho automaticky tim Markitdownem. Zaroven to udela zakladni (jen regexovou) sanitaci RC, Tel. C. mailu apod. A pak to foukne zpatky claudovi do te sessiony pomoc message to session (na WSL do socketu, na widlich do pojmenovany pajpy)\nSanitace jde pripadne vypnout v config.json.\nDokumentace tam je.\nFunguje to fajne, v GUI code uplne na pohodu, v Claude Code ve WSLku mi stve ze mi tam zustane ten poslanej prompt (to je chovani hooku kdyz zablokuje prompt), tak si ted pisu jeste verzi, co bude MOD Plugin (ale to je zatim beta), ten to resi pomoci javascript modu a ten to poresi bez toho blokovani.\nEnjoy\n[kontext odkazu: Veřejný repozitář „Claude Document Gate“ obsahuje hook pro Claude Code, který lokálně převádí dokumenty PDF a Office do Markdownu pomocí Microsoft MarkItDown a volitelně maskuje citlivé údaje. Dokumentace popisuje instalaci pro Windows, WSL a Linux, konfiguraci, podporované formáty, zabezpečení a omezení.]"
+          },
+          {
+            "time": "09:08",
+            "author": "člen komunity",
+            "text": "Neni notebook jako notebook. Mám HP ZBook s 64 GB RAM a s graf kartou 4GB NVIDIA RTX A500, a běžím na tom paralelně dva agentické Codex týmy (v průměru 16-25 agentů paralelně), docker v virtuál servery a databází, plus další Windows virtuál v Hyper-V a nemám problém."
+          },
+          {
+            "time": "13:21",
+            "author": "člen komunity",
+            "text": "Slušný. 🙂"
+          }
+        ]
+      }
+    ]
+  }
+}
