@@ -104,6 +104,7 @@ function check(name, condition, detail = '') {
     && new Set(registrationHrefs).size === 1
     && registrationHrefs[0].startsWith('https://docs.google.com/forms/d/e/')
     && !registrationHrefs[0].includes('FORM_ID_PENDING'));
+  check('Landing page neslibuje limit ani zbývající místa', !/\b98\b|kapacit|zbývá|obsazen/i.test(mainText));
 
   const publicHrefs = await page.locator('a').evaluateAll(links => links.map(link => link.href));
   check('Veřejná stránka neodhaluje Meet, stream, kalendář ani záznam', !publicHrefs.some(href => /meet\.google\.com|(?:youtube\.com|youtu\.be)(?:\/|$)|calendar\.google\.com|drive\.google\.com|\.ics(?:$|\?)/.test(href))

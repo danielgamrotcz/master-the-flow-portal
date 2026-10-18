@@ -49,8 +49,8 @@ const form = {
   setDescription: value => calls.push(['formDescription', value]),
   getItems: () => [{ getTitle: () => 'Jméno a příjmení', asTextItem: () => ({ setRequired: value => calls.push(['nameRequired', value]) }) }],
   getDestinationId: () => 'response-sheet-fixture',
-  setCustomClosedFormMessage: () => {},
-  setAcceptingResponses: () => {},
+  setCustomClosedFormMessage: message => calls.push(['closedMessage', message]),
+  setAcceptingResponses: value => calls.push(['accepting', value]),
   isAcceptingResponses: () => true,
 };
 
@@ -142,14 +142,16 @@ check('Reconciliation používá stejný zámek jako submit trigger',
 calls.length = 0;
 const sentBeforeInstall = sent.length;
 vm.runInContext('installVibeCodingLiveRegistrationAutomation()', context);
-check('Potvrzení formuláře neslibuje místo před ověřením kapacity', calls.some(call => call[0] === 'confirmation'
-  && /až po potvrzení e-mailem/.test(call[1]) && /98/.test(call[1])));
+check('Potvrzení formuláře neuvádí kapacitu ani čekání na uvolnění místa', calls.some(call => call[0] === 'confirmation'
+  && /Potvrzení s pozvánkou/.test(call[1]) && !/98|kapacit|místo platí/i.test(call[1])));
 check('Potvrzení nabízí postup při nedoručení pozvánky', calls.some(call => call[0] === 'confirmation'
   && /e-mailem/.test(call[1]) && /spam/.test(call[1]) && /daniel@gamrot\.cz/.test(call[1])));
 check('Instalace vytvoří submit a reconciliation trigger', calls.filter(call => call[0] === 'trigger').length === 2
   && calls.some(call => call[1] === 'onVibeCodingLiveFormSubmit')
   && calls.some(call => call[1] === 'reconcileVibeCodingLiveRegistrations' && call[2] === 6));
 check('Příprava a instalace nerozesílají staré registrace', sent.length === sentBeforeInstall);
+check('Instalace ponechá formulář otevřený a uzavírací text bez kapacity', calls.some(call => call[0] === 'accepting' && call[1] === true)
+  && calls.some(call => call[0] === 'closedMessage' && !/98|kapacit|obsazen/i.test(call[1])));
 check('Migrace uloží stabilní iCalUID', scriptProperties.get('VIBE_CODING_LIVE_EVENT_ICAL_ID') === 'event-fixture@google.com');
 check('Migrace nastaví konec 20:00 a jméno jako nepovinné', calls.some(c => c[0] === 'time' && c[2] === Date.parse('2026-10-21T18:00:00Z'))
   && calls.some(c => c[0] === 'nameRequired' && c[1] === false));
@@ -170,6 +172,15 @@ try { vm.runInContext('onVibeCodingLiveFormSubmit(__event)', context); } catch {
 check('Neplatný odkaz zastaví odeslání', badLinkRejected && sent.length === sentBeforeOld);
 
 check('Skript neobsahuje veřejný webhook ani export e-mailů', !/UrlFetchApp|webhook/i.test(source));
+check('Skript nevytváří nová odmítnutí po 98 lidech', !/živá kapacita je naplněná|všech 98 míst/i.test(source));
+
+const historicalDecline = responseFor('historical-decline@example.test');
+scriptProperties.set('VIBE_CODING_LIVE_FULL_' + historicalDecline.getId(), 'historical');
+context.__event.response = historicalDecline;
+const sentBeforeHistoricalDecline = sent.length;
+vm.runInContext('onVibeCodingLiveFormSubmit(__event)', context);
+check('Historicky odmítnutá odpověď se po odstranění limitu nereplayuje', sent.length === sentBeforeHistoricalDecline
+  && !guests.includes('historical-decline@example.test'));
 
 console.log(failures === 0 ? '\nVIBE CODING LIVE GOOGLE AUTOMATIZACE: VŠE PROŠLO' : `\n${failures} TESTŮ AUTOMATIZACE SELHALO`);
 process.exit(failures === 0 ? 0 : 1);
