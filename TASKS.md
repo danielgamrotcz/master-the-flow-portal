@@ -237,6 +237,37 @@ _Žádné položky._
 
 ## Review
 
+### TASK-014 — Formát vysílání na landing page
+
+- Started: 2026-10-18
+- Owner: Codex
+- Výsledek: veřejná landing page už neslibuje Google Meet; uvádí živé online
+  vysílání a zachovává odkaz až po registraci.
+- Scope: landing page a cílený regresní test. Bez změny formuláře, potvrzovacích
+  e-mailů, kalendáře, registrační automatizace a streamového odkazu.
+- Release scope: 2026-10-18 — Daniel výslovně schválil commit, push na `main`
+  a produkční deploy na Cloudflare Pages.
+- Režim: contained; implementace v dočasném čistém worktree kvůli nesouvisející
+  rozpracované změně `tools/build_glossary.py` v hlavním checkoutu.
+
+#### Verification
+
+- [x] Veřejný fakt „Kde“ uvádí živé online vysílání a odkaz po registraci.
+- [x] Landing page neobsahuje YouTube ani jiný streamový odkaz.
+- [x] Cílené automatické a browserové kontroly prošly.
+
+#### Evidence
+
+- `node --check tests/e2e-vibe-coding-live.js` — prošlo.
+- `e2e-vibe-coding-live.js` proti lokálnímu Wrangleru — 37/37 prošlo; kontroluje
+  také registrační CTA, absenci Meetu a streamových odkazů a layout od telefonu
+  po desktop.
+- `git diff --check` — prošlo.
+- Verifier: `/root/landing_format_recheck` — completed — VERIFIED WITH WARNINGS
+- Post-review snapshot před releasem: landing page `29818d7f…`, E2E
+  `70e5f311…`; TASK-014 je v Review.
+- ExecPlan: nepoužit; krátká změna v jedné session.
+
 ### TASK-007 — První díl v části Rozhovory
 
 - Started: 2026-10-12

@@ -63,7 +63,9 @@ function check(name, condition, detail = '') {
     interview: /18:00–19:30 rozhovor/.test(mainText),
     audienceQuestions: /19:30–20:00 otázky a odpovědi diváků/.test(mainText),
     oldDurationAbsent: !/90 minut/i.test(mainText),
-    place: /Google Meet/.test(mainText),
+    place: /Živé online vysílání/.test(mainText),
+    accessAfterRegistration: /odkaz po registraci/i.test(mainText),
+    oldPlaceAbsent: !/Google Meet/i.test(mainText),
     price: /Zdarma/i.test(mainText),
     recording: /Záznam (?:pošleme všem registrovaným|dostanou všichni registrovaní)/i.test(mainText),
   };
@@ -104,7 +106,7 @@ function check(name, condition, detail = '') {
     && !registrationHrefs[0].includes('FORM_ID_PENDING'));
 
   const publicHrefs = await page.locator('a').evaluateAll(links => links.map(link => link.href));
-  check('Veřejná stránka neodhaluje Meet, kalendář ani záznam', !publicHrefs.some(href => /meet\.google\.com|calendar\.google\.com|drive\.google\.com|\.ics(?:$|\?)/.test(href))
+  check('Veřejná stránka neodhaluje Meet, stream, kalendář ani záznam', !publicHrefs.some(href => /meet\.google\.com|(?:youtube\.com|youtu\.be)(?:\/|$)|calendar\.google\.com|drive\.google\.com|\.ics(?:$|\?)/.test(href))
     && await page.locator('[data-calendar], .meet-link, .calendar-actions').count() === 0,
   publicHrefs.join(' | '));
   check('Eventová data neodhalují Meet ani záznam', !portalEvent?.links
