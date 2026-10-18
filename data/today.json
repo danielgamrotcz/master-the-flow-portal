@@ -1,31 +1,14 @@
 {
-  "date": "2026-10-16",
-  "generated_at": "2026-10-17T00:01:31Z",
+  "date": "2026-10-17",
+  "generated_at": "2026-10-18T05:15:49Z",
   "stats": {
-    "messages": 2,
-    "groups": 1,
-    "members": 2
+    "messages": 0,
+    "groups": 0,
+    "members": 0
   },
   "cards": [],
   "resurfacing": null,
   "transcript": {
-    "groups": [
-      {
-        "slug": "inspirace--diskuze",
-        "name": "Inspirace & Diskuze",
-        "messages": [
-          {
-            "time": "10:30",
-            "author": "člen komunity",
-            "text": "Můžu se prosím zeptat na čem tenhle set up pracuje? Co řeší? Díky"
-          },
-          {
-            "time": "10:35",
-            "author": "člen komunity",
-            "text": "Vývoj softwaru/aplikací (webové, mobilní Android/Apple, backendy, testy, vlastní framework, experimenty...). 🙂"
-          }
-        ]
-      }
-    ]
+    "groups": []
   }
 }
