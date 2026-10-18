@@ -10,10 +10,10 @@ const VIBE_CODING_LIVE = {
   confirmationMessage: 'Odpověď jsme přijali. Potvrzení s pozvánkou vám přijde e-mailem. Když zprávu nenajdete, zkontrolujte spam nebo napište na daniel@gamrot.cz.',
   activationProperty: 'VIBE_CODING_LIVE_ACTIVATED_AT',
   eventIdProperty: 'VIBE_CODING_LIVE_EVENT_ICAL_ID',
-  meetUrlProperty: 'VIBE_CODING_LIVE_MEET_URL',
+  streamUrlProperty: 'VIBE_CODING_LIVE_STREAM_URL',
   deliveryActivationProperty: 'VIBE_CODING_LIVE_EMAIL_ACTIVATED_AT',
   closedMessage: 'Registrace jsou nyní uzavřené. Děkujeme za zájem.',
-  formDescription: 'Rozhovory Master the Flow · 1. díl\n21. října 2026, 18:00–20:00 · Google Meet · zdarma\n\n18:00–19:30 rozhovor, 19:30–20:00 otázky a odpovědi diváků.\n\nŽivý rozhovor Daniela Gamrota s Alexem Trejtnarem. Vibecoding vás učí každý. Přemýšlet málokdo.\n\nK registraci stačí e-mail. Ostatní otázky jsou nepovinné. Po registraci vám přijde potvrzení s odkazem na připojení a pozvánka do kalendáře. Záznam dostanou všichni registrovaní.\n\nÚdaje použiji pouze k organizaci této akce a zaslání záznamu. Odpovědi z formuláře se nebudou zveřejňovat. Formulář provozuje Google.',
+  formDescription: 'Rozhovory Master the Flow · 1. díl\n21. října 2026, 18:00–20:00 · živé online vysílání · zdarma\n\n18:00–19:30 rozhovor, 19:30–20:00 otázky a odpovědi diváků.\n\nŽivý rozhovor Daniela Gamrota s Alexem Trejtnarem. Vibecoding vás učí každý. Přemýšlet málokdo.\n\nK registraci stačí e-mail. Ostatní otázky jsou nepovinné. Po registraci vám přijde potvrzení s odkazem na připojení a pozvánka do kalendáře. Záznam dostanou všichni registrovaní.\n\nÚdaje použiji pouze k organizaci této akce a zaslání záznamu. Odpovědi z formuláře se nebudou zveřejňovat. Formulář provozuje Google.',
 };
 
 function normalizeVibeCodingLiveEmail_(value) {
@@ -85,10 +85,10 @@ function vibeCodingLiveDeliveryKey_(response) {
   return 'VIBE_CODING_LIVE_SENT_' + id;
 }
 
-function vibeCodingLiveMeetUrl_() {
-  const url = PropertiesService.getScriptProperties().getProperty(VIBE_CODING_LIVE.meetUrlProperty) || '';
-  if (!/^https:\/\/meet\.google\.com\/[a-z]{3}-[a-z]{4}-[a-z]{3}$/.test(url)) {
-    throw new Error('Chybí platný soukromý odkaz Google Meet v Script Properties.');
+function vibeCodingLiveStreamUrl_() {
+  const url = PropertiesService.getScriptProperties().getProperty(VIBE_CODING_LIVE.streamUrlProperty) || '';
+  if (!/^https:\/\/(?:www\.)?youtube\.com\/live\/[A-Za-z0-9_-]{11}(?:\?feature=share)?$/.test(url)) {
+    throw new Error('Chybí platný neveřejný odkaz YouTube streamu v Script Properties.');
   }
   return url;
 }
@@ -109,7 +109,7 @@ function inviteVibeCodingLiveGuest_(response) {
     if (properties.getProperty('VIBE_CODING_LIVE_FULL_' + response.getId())) return false;
     const event = vibeCodingLiveEvent_();
     if (event.getEndTime().getTime() !== VIBE_CODING_LIVE.eventEndMs) throw new Error('Calendar událost má nesprávný konec.');
-    const meetUrl = vibeCodingLiveMeetUrl_();
+    const streamUrl = vibeCodingLiveStreamUrl_();
     if (MailApp.getRemainingDailyQuota() < 1) throw new Error('Denní limit e-mailů je vyčerpaný; registrace čeká na opakování.');
     protectVibeCodingLiveGuestPrivacy_(event);
     const alreadyInvited = event.getGuestList(true)
@@ -119,7 +119,7 @@ function inviteVibeCodingLiveGuest_(response) {
     MailApp.sendEmail({
       to: email,
       subject: 'Registrace potvrzena: Vibecoding s Alexem · 21. října v 18:00',
-      body: 'Děkuji za registraci.\n\nVibecoding s Alexem\nStředa 21. října 2026, 18:00–20:00 (Praha)\n18:00–19:30 rozhovor\n19:30–20:00 otázky a odpovědi diváků\n\nPřipojení přes Google Meet:\n' + meetUrl + '\n\nUdálost je připravená také v kalendáři. Odkaz na připojení si prosím uschovejte.\nZáznam dostanou všichni registrovaní.\n\nTěším se na viděnou.\nDaniel Gamrot\nMaster the Flow',
+      body: 'Děkuji za registraci.\n\nVibecoding s Alexem\nStředa 21. října 2026, 18:00–20:00 (Praha)\n18:00–19:30 rozhovor\n19:30–20:00 otázky a odpovědi diváků\n\nŽivý stream na YouTube:\n' + streamUrl + '\n\nUdálost je připravená také v kalendáři. Odkaz na připojení si prosím uschovejte.\nZáznam dostanou všichni registrovaní.\n\nTěším se na viděnou.\nDaniel Gamrot\nMaster the Flow',
       name: 'Daniel Gamrot · Master the Flow',
     });
     // Zápis až po úspěšném odeslání. MailApp a Properties nejsou atomická transakce.
@@ -158,7 +158,7 @@ function prepareVibeCodingLiveDelivery() {
   const lock = LockService.getScriptLock();
   lock.waitLock(30000);
   try {
-    vibeCodingLiveMeetUrl_();
+    vibeCodingLiveStreamUrl_();
     MailApp.getRemainingDailyQuota(); // Vyžádá oprávnění i bez odeslání e-mailu.
     const properties = PropertiesService.getScriptProperties();
     const event = vibeCodingLiveEvent_();
@@ -215,7 +215,7 @@ function verifyVibeCodingLiveRegistrationAutomation() {
     eventIdConfigured: !!properties.getProperty(VIBE_CODING_LIVE.eventIdProperty),
     correctTitle: event.getTitle() === VIBE_CODING_LIVE.eventTitle,
     correctEnd: event.getEndTime().getTime() === VIBE_CODING_LIVE.eventEndMs,
-    meetConfigured: !!vibeCodingLiveMeetUrl_(),
+    streamConfigured: !!vibeCodingLiveStreamUrl_(),
     emailActivated: Number(properties.getProperty(VIBE_CODING_LIVE.deliveryActivationProperty)) > 0,
     remainingEmailQuota: MailApp.getRemainingDailyQuota(),
     responseSheetLinked: !!FormApp.openById(VIBE_CODING_LIVE.formId).getDestinationId(),

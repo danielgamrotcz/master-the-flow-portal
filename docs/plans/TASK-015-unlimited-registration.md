@@ -8,7 +8,6 @@ Odstranit pevný limit 98 ze všech vrstev registračního toku. Veřejná strá
 
 - automatický replay dříve odmítnutých odpovědí,
 - mazání historického ledgeru nebo markerů `VIBE_CODING_LIVE_FULL_*`,
-- změna platformy a obsahu e-mailu s odkazem na připojení,
 - commit, push, deploy a živá změna Google Formu bez samostatného souhlasu.
 
 ## Implementace

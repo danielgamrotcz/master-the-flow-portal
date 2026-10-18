@@ -242,7 +242,7 @@ _Žádné položky._
 - Started: 2026-10-18
 - Owner: Codex
 - Výsledek: registrace se nezavře po 98 lidech a veřejná stránka ukazuje pouze čerstvý počet registrovaných bez kapacity či zbývajících míst.
-- Scope: landing page, anonymní count API, registrační a count Apps Script, potvrzení formuláře a regresní testy. Bez replaye dříve odmítnutých registrací, mazání historického ledgeru, změny obsahu pozvánky nebo živého zásahu bez samostatného potvrzení.
+- Scope: landing page, anonymní count API, registrační a count Apps Script, potvrzení formuláře, YouTube odkaz v pozvánce a regresní testy. Bez replaye dříve odmítnutých registrací, mazání historického ledgeru nebo živého zásahu bez samostatného potvrzení.
 - Režim: critical/coordinated; TASK-015 vědomě nahrazuje kapacitní chování TASK-012 a TASK-013, jejich historii nemaže.
 - Release scope: 2026-10-18 — Daniel výslovně schválil commit, push a produkční deploy; živou změnu Apps Scriptu provede ručně podle přesného verzovaného zdroje.
 - ExecPlan: [docs/plans/TASK-015-unlimited-registration.md](docs/plans/TASK-015-unlimited-registration.md)

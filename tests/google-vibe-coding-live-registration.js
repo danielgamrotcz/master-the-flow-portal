@@ -56,7 +56,7 @@ const form = {
 
 const scriptProperties = new Map([['VIBE_CODING_LIVE_ACTIVATED_AT', '2000']]);
 scriptProperties.set('VIBE_CODING_LIVE_EMAIL_ACTIVATED_AT', '2000');
-scriptProperties.set('VIBE_CODING_LIVE_MEET_URL', 'https://meet.google.com/aaa-bbbb-ccc');
+scriptProperties.set('VIBE_CODING_LIVE_STREAM_URL', 'https://youtube.com/live/AbCdEfGhI12?feature=share');
 scriptProperties.set('VIBE_CODING_LIVE_SEATS_V1', '[]');
 const context = vm.createContext({
   Utilities: { DigestAlgorithm: { SHA_256: 'sha256' }, Charset: { UTF_8: 'utf8' },
@@ -98,7 +98,7 @@ check('Soukromí hostů se nastaví před pozvánkou', privacyCalls === 'see:fal
 check('Nový e-mail se normalizuje a pozve právě jednou', calls.filter(call => call[0] === 'addGuest').length === 1
   && calls.find(call => call[0] === 'addGuest')[1] === 'new.guest@example.test');
 check('Nová registrace dostane samostatný potvrzovací e-mail', sent.length === 1 && sent[0].to === 'new.guest@example.test');
-check('E-mail obsahuje Meet a správný čas, nikoli seznam hostů', sent[0].body.includes('https://meet.google.com/aaa-bbbb-ccc')
+check('E-mail obsahuje YouTube stream a správný čas, nikoli seznam hostů', sent[0].body.includes('https://youtube.com/live/AbCdEfGhI12?feature=share')
   && sent[0].body.includes('18:00–20:00') && !sent[0].cc && !sent[0].bcc && !sent[0].body.includes('owner@example.test'));
 check('Trigger používá zámek', calls.some(call => call[0] === 'lock') && calls.some(call => call[0] === 'unlock'));
 
@@ -165,7 +165,7 @@ context.__event.response = responseFor('old-cutover@example.test');
 vm.runInContext('onVibeCodingLiveFormSubmit(__event)', context);
 check('Nový mailový cutover blokuje zpětné rozesílání', sent.length === sentBeforeOld);
 scriptProperties.set('VIBE_CODING_LIVE_EMAIL_ACTIVATED_AT', '2000');
-scriptProperties.set('VIBE_CODING_LIVE_MEET_URL', 'https://untrusted.example.test');
+scriptProperties.set('VIBE_CODING_LIVE_STREAM_URL', 'https://untrusted.example.test');
 context.__event.response = responseFor('invalid-link@example.test');
 let badLinkRejected = false;
 try { vm.runInContext('onVibeCodingLiveFormSubmit(__event)', context); } catch { badLinkRejected = true; }

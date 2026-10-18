@@ -25,7 +25,7 @@ const legacyLedger = JSON.stringify(['legacy-hash']);
 const properties = new Map([
   ['VIBE_CODING_LIVE_EMAIL_ACTIVATED_AT', '1'],
   ['VIBE_CODING_LIVE_EVENT_ICAL_ID', 'fixture'],
-  ['VIBE_CODING_LIVE_MEET_URL', 'https://meet.google.com/aaa-bbbb-ccc'],
+  ['VIBE_CODING_LIVE_STREAM_URL', 'https://youtube.com/live/AbCdEfGhI12?feature=share'],
   ['VIBE_CODING_SYNC_SECRET', 'fixture-only'],
   ['VIBE_CODING_LIVE_ACTIVATED_AT', '1'],
   ['VIBE_CODING_LIVE_SEATS_V1', legacyLedger],
@@ -75,7 +75,7 @@ for (const item of [...responses.slice(1)].reverse()) assert.equal(invite(item),
 assert.equal(guests.length, 101);
 assert.equal(new Set(guests).size, 101);
 assert.equal(sent.length, 101);
-assert.ok(sent.every(message => message.body.includes('meet.google.com')));
+assert.ok(sent.every(message => message.body.includes('youtube.com/live/AbCdEfGhI12')));
 assert.equal(accepting, false, 'pozvánkový trigger nemění stav formuláře');
 
 invite(responses[99]);
