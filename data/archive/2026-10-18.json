@@ -1,0 +1,277 @@
+{
+  "date": "2026-10-18",
+  "generated_at": "2026-10-19T00:04:14Z",
+  "stats": {
+    "messages": 30,
+    "groups": 2,
+    "members": 5
+  },
+  "cards": [
+    {
+      "id": "2026-10-18-01",
+      "type": "UKÁZKA",
+      "level": "Pokročilý",
+      "topics": [
+        "AI nástroje",
+        "Automatizace",
+        "Workflow"
+      ],
+      "title": "Hlasový Jarvis nad second brainem a CRM",
+      "excerpt": "Jeden člen ukázal vlastní hlasové řešení, přes které za jízdy pracuje s agenty. Propojil second-brain aplikaci, frontend CRM a hlas od Microsoftu. Systém se ale občas zacyklí nebo narazí na chybějící oprávnění.",
+      "body": "Řešení vznikalo za pochodu. Člen popsal Claudovi, jak má vypadat, a od té doby systém průběžně upravuje. Agenti dostávají úkoly hlasem a hlasem také odpovídají. Člen to využívá hlavně v autě. Navenek je vidět vlastní second-brain aplikace a samostatný frontend CRM. Systém má pořád mezery. Nejčastěji se zastaví kvůli chybějícím oprávněním nebo se zacyklí. Člen si také čas od času projde namluvený obsah a upraví slovník, aby výsledný text zněl foneticky lépe.",
+      "read_minutes": 1,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "17:10",
+        "17:12",
+        "17:13",
+        "17:14",
+        "17:18",
+        "17:19"
+      ],
+      "links": [],
+      "source_date": "2026-10-18"
+    },
+    {
+      "id": "2026-10-18-02",
+      "type": "INSIGHT",
+      "level": "Expert",
+      "topics": [
+        "Automatizace",
+        "Workflow",
+        "Obsidian",
+        "Produktivita"
+      ],
+      "title": "Asynchronní zadávání agentům přes diktafon",
+      "excerpt": "V diskuzi zazněly dvě možnosti, jak pracovat bez čekání u monitoru. Hlasová poznámka se buď přes Claude uloží do Obsidianu, nebo na Macu spustí novou pracovní relaci agenta.",
+      "body": "Jeden člen diktuje do Voice Memos na iOS nebo macOS. Claude nahrávku zpracuje a uloží ji jako poznámku do Obsidian vaultu. Další člen pracuje asynchronně. Voice memo z iPhonu dorazí do Macu mini, kde běží tmux. Systém rozpozná požadavek na novou session a agent se pustí do práce. Člen výsledek zkontroluje až za pár minut, desítky minut nebo hodin. Agent mezitím může pracovat s jeho second brainem a poznámkami. Diktování a pozdější přečtení výsledku mu připadá rychlejší než průběžný hlasový rozhovor.",
+      "read_minutes": 1,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "17:08",
+        "17:16"
+      ],
+      "links": [],
+      "source_date": "2026-10-18"
+    },
+    {
+      "id": "2026-10-18-03",
+      "type": "INSIGHT",
+      "level": "Pokročilý",
+      "topics": [
+        "ChatGPT",
+        "AI nástroje",
+        "Workflow",
+        "Produktivita"
+      ],
+      "title": "Hlasový brainstorming mezi ChatGPT a Claudem",
+      "excerpt": "Jeden člen propojuje hlasový režim ChatGPT s další prací v Claudu. Rozhovor zakončí shrnutím do souboru v Markdownu, který pak použije jako zadání pro další úkol.",
+      "body": "Při jízdě autem nebo na procházce člen nahlas brainstormuje v hlasovém režimu ChatGPT. Na konci si nechá vytvořit shrnutí v souboru Markdown. Ten pak předá Claudu jako zadání nového úkolu. ChatGPT tak obstará hlasový brainstorming a Claude naváže na textový výstup.",
+      "read_minutes": 1,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "18:11"
+      ],
+      "links": [],
+      "source_date": "2026-10-18"
+    },
+    {
+      "id": "2026-10-18-04",
+      "type": "NÁSTROJE",
+      "level": "Pokročilý",
+      "topics": [
+        "ChatGPT",
+        "AI nástroje",
+        "Workflow",
+        "Vibe Coding"
+      ],
+      "title": "Codex Voice a Claude Talk v češtině",
+      "excerpt": "Členové měli s českým hlasovým režimem Claude Talk různé zkušenosti. U OpenAI chválili přirozené používání voice-to-code i ovládání agentů v aplikaci ChatGPT/Codex.",
+      "body": "Jeden člen popsal hodinovou jízdu, během které s Claude Talk česky řešil problém. Na konci měl hotovo nebo připravené handoffy pro další agenty. Pak mu Talk přešel do angličtiny. Jinému členovi čeština dál fungovala, i když s přízvukem, takže zkušenosti se lišily. Zaznělo také, že Claude funguje přes CarPlay, ale bez češtiny. U OpenAI členové rozlišovali voice mode na webu a aplikaci ChatGPT/Codex, kde se podle nich agenti dobře řídí. Další člen viděl živou ukázku přirozeného českého voice-to-code použití v Codexu.",
+      "read_minutes": 1,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "17:33",
+        "17:44",
+        "17:47",
+        "18:17",
+        "18:26",
+        "22:03"
+      ],
+      "links": [],
+      "source_date": "2026-10-18"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-10-03-01",
+    "type": "NÁSTROJE",
+    "level": "Pokročilý",
+    "topics": [
+      "AI nástroje",
+      "Meeting",
+      "Dokumentace"
+    ],
+    "title": "Plaud při hovorech a v hluku",
+    "excerpt": "Jeden vývojář popsal, že Plaud používá k nahrávání telefonních hovorů, ze kterých vyplynou úkoly nebo podklady pro zaškolení. Oceňuje také nahrávání v zasedačkách, na přednáškách a v rušném prostředí.",
+    "body": "Jeden vývojář nahrává hovory přes Plaud a telefon při tom přepne na reproduktor. Používá ho hlavně u hovorů, ze kterých vzejdou úkoly, nebo při zaškolování k novým funkcím. Podle něj Plaud dobře funguje i v zasedačce, na rušném místě nebo při přednášce. Pro srovnání zmínil vestavěné nahrávání hovorů na Pixelu 8. Jeho kvalita je podle něj velmi špatná a nahrávce se těžko rozumí. Telefon navíc vždy oznámí, že se hovor nahrává.",
+    "read_minutes": 1,
+    "source_group": "inspirace--diskuze",
+    "source_msg_times": [
+      "10:21"
+    ],
+    "links": [],
+    "source_date": "2026-10-03",
+    "resurfaced_from": "2026-10-03"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspirace--diskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "15:48",
+            "author": "člen komunity",
+            "text": "Ahoj komunito. Každý den přemýšlím nad zjednodušením a vylepšením „mé práce“ s Claude Code. Diktování textu je již samozřejmostí. Díky, @člen komunity.\nMám skill na čtení výstupu. Nic-moc. Není tam interakce. Optimální by bylo řešení alá Jarvis v Iron Man.\nDnes mi Claude našel tento projekt.\nhttps://voicemode.dev/\nZnáte to? Používáte to někdo?\nPřemýšlíte nad takovouhle interakci někdo? 🚀\nDěkuji 🙏🏻\n[kontext odkazu: Web projektu „VoiceMode“, který umožňuje hlasové ovládání Claude Code a dalších AI programovacích asistentů. Nabízí lokální a bezplatné řešení pro Linux, macOS a Windows přes WSL, návody k instalaci jako plugin či MCP server a odkazy na dokumentaci, GitHub a podcast.]"
+          },
+          {
+            "time": "16:37",
+            "author": "člen komunity",
+            "text": "Přibliž mi pls člen komunity, jak to využíváš v praxi? Jarvise znám nějak, ale není mi jasný přínos tady přesně. A zatím nevyužívám 🙂 A jen potřebuju reálnej příklad, jak s tím pracuješ ty třeba."
+          },
+          {
+            "time": "16:58",
+            "author": "člen komunity",
+            "text": "Pokud tomu správně rozumím po nějakým researchi, rozdíl oproti Uttero je v tom, že se se mnou Claude kontinuálně baví.\nJá třeba svůj nápad hodím přes Apple zkratku do Obsidianu a pracuju si s ním dál po své ose, sama nebo s Claude.\nAle ráda mrknu, jak s tím někdo funguje, zajímá mě případný use case. Mně to zatím funguje takto."
+          },
+          {
+            "time": "17:03",
+            "author": "člen komunity",
+            "text": "S tímto nástrojem zatím nepracuju. Chci ho zkusit, ale nejdřív jsem chtěl vědět zda už někdo tady nemá zkušenosti."
+          },
+          {
+            "time": "17:04",
+            "author": "člen komunity",
+            "text": "Ja jarvise mam, pouzivam hals od microsoftu. Protoze porad jezdim v aute zadavan agentum praci hlasem a oni mi hlasen odpovidaji"
+          },
+          {
+            "time": "17:08",
+            "author": "člen komunity",
+            "text": "Diky za sdílení tvého postupu.\nNěco podobného mam taky. Inspiroval mě k tomu Dan. Nadiktuju do Voice Memos (Diktafon) na iOS nebo macOS, Claude to zpracuje a vloží do Obsidian vault jako poznámku.\nToto co hledám teď má být interaktivní způsob práce s AI. Nechci být omezen na koukání do monitoru a hlavně čtení výstupu z AI."
+          },
+          {
+            "time": "17:09",
+            "author": "člen komunity",
+            "text": "To je vlastní appka?"
+          },
+          {
+            "time": "17:10",
+            "author": "člen komunity",
+            "text": "Je to cim dal tim chytrejsi a stale se to s myma korekcema samo vylepsuje"
+          },
+          {
+            "time": "17:10",
+            "author": "člen komunity",
+            "text": "Jen obcas se zasekne"
+          },
+          {
+            "time": "17:12",
+            "author": "člen komunity",
+            "text": "Vetsinou na tom ze na neco nema prava, nebo proto ze se zacykli, vznika to dost zivelne, ale je to postavene na tom co mi ukazal Dan. Tak jsem to claudivi nadiktoval a ted uz ho jen koriguji. Snazim se to udelat vice interaktivni, ale uz ted je to super pomoc"
+          },
+          {
+            "time": "17:13",
+            "author": "člen komunity",
+            "text": "A co Codex Voice mode? Nebo i ChatGPT Voice na webu? To je hodně dobrá nativní funkce, tam má podle mě OpenAI ještě dost navrch před Anthropic"
+          },
+          {
+            "time": "17:13",
+            "author": "člen komunity",
+            "text": "Vlastni secondbrain apka je jen to co je videt"
+          },
+          {
+            "time": "17:14",
+            "author": "člen komunity",
+            "text": "Ta druha apka je frontend crm ktery mi postavil. - ta ikona lozku s kostickama"
+          },
+          {
+            "time": "17:16",
+            "author": "Daniel",
+            "text": "Ty jo, já to mám postavené tak, že si s ním nechci moc povídat. Protože když jo, jsem u kompu a diktuju a čtu (je to rychlejší, než vykecávání).\nKdyž vím, co chci zadat, dám voice memo v iPhone → jde to do Mac mini, kde běží tmux → tam se rozpozná, že má otevřít novou session → maká → já pak po pár minutách, desítkách minut, hodinách… checknu výsledek.\nZa tím stojí, že si sahá do second brainu, poznámek apod."
+          },
+          {
+            "time": "17:18",
+            "author": "člen komunity",
+            "text": "Ja to udelal takhle protoze jezdim porad autem. Ma to porad diry, ale jinak to je presne stejny zaklad, jen obsidian proste nemam cas resit a tak mi to vse sumiruje a cte hlasen tondy od microsoftu"
+          },
+          {
+            "time": "17:19",
+            "author": "člen komunity",
+            "text": "Jednou za cas si cte co namluvil a upravuje slovnik pro to aby text znel co nejlepe foneticky"
+          },
+          {
+            "time": "17:33",
+            "author": "člen komunity",
+            "text": "Zhruba do konce minulého týdne se s Claudem dalo mluvit česky přes jejich nativní voice mode Talk.\nBylo to super. Na začátku hodinové jízdy autem jsem mu řekl, co potřebuju vyřešit a klabosili jsme o tom. Na konci cesty bylo hotovo nebo zpracované handoffy pro partu jiných agentů.\nTeď to jde dál anglicky. Což mě při řízení moc nebaví. To soustředění je přeci jen potřeba větší."
+          },
+          {
+            "time": "17:44",
+            "author": "člen komunity",
+            "text": "Co si pamatuji, tak si to chválila @člen komunity, jak si pro vývoj (voice-to-code) povídá s agentem/y přirozeně v češtině (překlad do AJ je mentálně náročnější) a bylo to v Codexu."
+          },
+          {
+            "time": "17:47",
+            "author": "Daniel",
+            "text": "Viděl jsem to i živě. Fakt si s tím povídá! 🙂"
+          },
+          {
+            "time": "18:11",
+            "author": "člen komunity",
+            "text": "Ten voice mode v ChatGPT je pecka a v  Claudu mi fakt chybí. Někdy to delam tak, ze si při jizde autem nebo prochazce nahlas brainstormuju ve voice modu s ChatGPT, a nakonci rozhovoru ho pozadam ať hodi shrnuti  do md souboru, se kterym pak muze dal pracovat i Claude jako se zadanim noveho ukolu."
+          },
+          {
+            "time": "18:14",
+            "author": "člen komunity",
+            "text": "🤔 No vlastně, jak to tady čtu, tak jaký AI-gate (cross models) doporučujete...?"
+          },
+          {
+            "time": "18:15",
+            "author": "člen komunity",
+            "text": "Claude uz toto ale taky umi, nebo ne?"
+          },
+          {
+            "time": "18:17",
+            "author": "člen komunity",
+            "text": "Claude uz je i v aute pres Carplay, bohuzel ne cesky."
+          },
+          {
+            "time": "18:25",
+            "author": "člen komunity",
+            "text": "Umí. A do minulého týdne to uměl i česky (měl trochu přízvuk, ale bylo roztomilé). Teď už zase češtinu tvrdošíjně odmítá"
+          },
+          {
+            "time": "18:26",
+            "author": "člen komunity",
+            "text": "Aha, tak to jsem mozna v nejake jine vlne - se mnou dal mluvi cesky s prizvukem"
+          },
+          {
+            "time": "22:03",
+            "author": "člen komunity",
+            "text": "No on je ještě rozdíl mezi voice modem v ChatGPT webu a v ChatGPT/Codex aplikaci, kde se přes to skvěle řídí agenti."
+          }
+        ]
+      },
+      {
+        "slug": "webináře--workshopy",
+        "name": "Webináře & Workshopy",
+        "messages": [
+          {
+            "time": "14:19",
+            "author": "Daniel",
+            "text": "Hlásím, že středeční živý rozhovor s @člen komunityem nebude… Nebude přes Google Meet.\nBudeme z toho totiž dělat sestřihy, pokud to tedy kamery nahrají. Tak chceme top kvalitu a jak mi zkušenější říkali: „Meet, to si děláš zadek?“\nLink na stream, kde bude možné i komunikovat a posílat otázky, pošlu registrovaným v úterý nebo nejpozději během středečního poledne. Tak sledujte e-mail, prosím.\nJe nás už 58 i se mnou a s člen komunity, tak super!\nA otázky, které posíláte dopředu, to vše krásně učesávají a dávají tomu pro mě zajímavé obrysy.\nKdybyste rádi dorazili na online, tak tady registrace: https://mastertheflow.cz/rozhovory/1-vibe-coding-s-alexem/\nJe to zdarma. 😉\n[kontext odkazu: Stránka zve na první díl živého rozhovoru „Vibecoding“ o práci s AI programovacími agenty, formulaci problémů a ověřování výsledků. Bezplatná akce pro registrované proběhne 21. října 2026 od 18:00 do 20:00 přes Google Meet a má kapacitu 98 lidí.]"
+          }
+        ]
+      }
+    ]
+  }
+}
