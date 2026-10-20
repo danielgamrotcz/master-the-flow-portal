@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-19",
+  "generated_at": "2026-10-20T00:04:48Z",
+  "stats": {
+    "messages": 1,
+    "groups": 1,
+    "members": 1
+  },
+  "cards": [],
+  "resurfacing": null,
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspirace--diskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "08:14",
+            "author": "člen komunity",
+            "text": "Ano, taky mluvíme česky. Se silným přízvukem a občas komolí slova. Akorát to nemá všechny nastavení a nástroje jako Claude Code"
+          }
+        ]
+      }
+    ]
+  }
+}
