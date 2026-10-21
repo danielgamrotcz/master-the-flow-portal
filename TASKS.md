@@ -20,7 +20,31 @@ _Žádné položky._
 
 ## In Progress
 
-_Žádné položky._
+### TASK-016 — Uzavření rozhovoru s Alexem
+
+- Started: 2026-10-21
+- Owner: Codex
+- Výsledek: uzavřené registrace, proběhlý rozhovor a informace „Záznam připravujeme“ na landing page i v událostech portálu.
+- Scope: landing, event data, odpovídající testy, uzavření Google Forms. Odkaz na záznam nesmí být zveřejněn. Merge obou historií, commit, push a produkční deploy výslovně schválené.
+- ExecPlan: [docs/plans/TASK-016-close-alex-interview.md](docs/plans/TASK-016-close-alex-interview.md)
+
+#### Verification
+
+- [x] Landing ani portál nenabízejí registraci, stav je Proběhlo a záznam se připravuje.
+- [x] Google formulář je skutečně uzavřený i přes původní veřejný odkaz.
+- [x] Žádný odkaz na stream nebo záznam nebyl zveřejněn.
+- [ ] Cílené E2E, responzivita, rapid security, secrets a nezávislá acceptance.
+- [ ] Commit, push, deploy a produkční kontrola stejné verze.
+
+#### Evidence
+
+- Verifier: `/root/alex_archive_acceptance` — completed — PARTIALLY VERIFIED
+- Post-review snapshot: nezměněn — event e6114f30, landing d6356075, testy 3ac1ec2e/f06989e3/db49a983; životní cyklus In Progress kvůli produkčnímu release.
+- ExecPlan: docs/plans/TASK-016-close-alex-interview.md
+- Připojený Chrome: landing 320/390/744/1024/1440/1920 bez overflow; mobilní ovládání tématu, hlavní banner, proběhlá karta a detail bez registrace i videa prošly.
+- Syntax tří JS, diff-check a nezávislý Node kontrakt portálu prošly; ostatní eventy a medailonek zachované.
+- Kanonická sada exit 1: Chromium nespustil sandbox; google-forms-attendees selhává stejně na baseline. API a Google registrační/count testy prošly; archived-groups prošel. Není vydáváno za úplný E2E success.
+- Rapid security: pouze statický obsah a data; žádná změna auth, veřejného API, CSP, middleware, dependencies ani HTML sinků. Žádný potvrzený blocker v tomto diffu. Živý formulář uzavřen přes UI bez práce s odpověďmi.
 
 ## Blocked
 

@@ -8,12 +8,12 @@
       "date": "2026-10-21",
       "time_from": "18:00",
       "time_to": "20:00",
-      "location": "Online, odkaz přijde po registraci",
-      "short": "Živý rozhovor s Alexem Trejtnarem o tom, co rozhoduje před prvním promptem a jak si postavit workflow, které drží pohromadě.",
-      "description": "Vibecoding vás učí každý. Přemýšlet málokdo. S Alexem Trejtnarem o tom, jak uvidět problém, zadat práci AI, ověřit výsledek a používat ho v praxi. Alex podle potřeby nasdílí obrazovku. Záznam dostanou všichni registrovaní.",
+      "location": "Online",
+      "short": "Rozhovor s Alexem Trejtnarem proběhl 21. října. Záznam připravujeme. Registrace jsou uzavřené.",
+      "description": "Rozhovor s Alexem Trejtnarem proběhl 21. října 2026. Mluvili jsme o tom, jak uvidět problém, zadat práci AI, ověřit výsledek a používat ho v praxi. Registrace jsou uzavřené. Záznam připravujeme.",
       "program": null,
-      "registration_url": "https://docs.google.com/forms/d/e/1FAIpQLSeavG37wav2Bb0KeigdLCVToTIPhlXvWU5a8O7ONAxWm0_mUw/viewform?usp=publish-editor",
-      "registration_page_url": "/rozhovory/1-vibe-coding-s-alexem/",
+      "registration_url": null,
+      "registration_page_url": null,
       "portal_hidden": false,
       "is_paid": false,
       "price": null,
@@ -21,7 +21,7 @@
       "detail_url": "/rozhovory/1-vibe-coding-s-alexem/",
       "recording_url": null,
       "recording_password": null,
-      "status": null
+      "status": "Proběhlo"
     },
     {
       "id": "evt-2026-09-22-ai-ktera-mi-fakt-funguje",

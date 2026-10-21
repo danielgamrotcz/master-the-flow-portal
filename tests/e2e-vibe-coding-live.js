@@ -35,10 +35,12 @@ function check(name, condition, detail = '') {
 
   const eventData = JSON.parse(require('fs').readFileSync(require('path').join(__dirname, '..', 'data', 'events.json'), 'utf8'));
   const portalEvent = eventData.events.find(event => event.id === 'evt-2026-10-21-vibe-coding-nezacina-promptem');
-  check('Portálová karta má správný termín a interní registrační cestu', portalEvent?.date === '2026-10-21'
+  check('Portálová karta má správný termín a detail bez registrace', portalEvent?.date === '2026-10-21'
     && portalEvent?.time_from === '18:00'
     && portalEvent?.time_to === '20:00'
-    && portalEvent?.registration_page_url === episodePath
+    && portalEvent?.registration_page_url === null
+    && portalEvent?.registration_url === null
+    && portalEvent?.status === 'Proběhlo'
     && portalEvent?.detail_url === episodePath
     && portalEvent?.portal_hidden === false
     && portalEvent?.is_paid === false);
@@ -63,23 +65,16 @@ function check(name, condition, detail = '') {
     interview: /18:00–19:30 rozhovor/.test(mainText),
     audienceQuestions: /19:30–20:00 otázky a odpovědi diváků/.test(mainText),
     oldDurationAbsent: !/90 minut/i.test(mainText),
-    place: /Živé online vysílání/.test(mainText),
-    accessAfterRegistration: /odkaz po registraci/i.test(mainText),
-    oldPlaceAbsent: !/Google Meet/i.test(mainText),
-    price: /Zdarma/i.test(mainText),
-    recording: /Záznam (?:pošleme všem registrovaným|dostanou všichni registrovaní)/i.test(mainText),
+    place: /Online/.test(mainText),
+    registrationClosed: /Registrace jsou uzavřené/.test(mainText),
+    oldPlaceAbsent: !/Google Meet|odkaz po registraci/i.test(mainText),
+    completed: /Proběhlo/.test(mainText),
+    recording: /Záznam připravujeme/i.test(mainText),
   };
-  check('Závazné údaje jsou konzistentní', Object.values(facts).every(Boolean), JSON.stringify(facts));
-  check('Živá účast nabízí vlastní otázky bez povinné přípravy', /Přijďte s vlastní otázkou/.test(mainText)
-    && /Na otázky bude prostor i během vysílání/.test(mainText)
-    && /Bez instalace a připraveného projektu/.test(mainText));
-  const recordingPlacement = await page.locator('.registration-actions').evaluate(element => {
-    const button = element.querySelector('[data-registration-link]');
-    const note = element.querySelector('.registration-note');
-    return Boolean(button && note && /Záznam dostanou všichni registrovaní/.test(note.textContent)
-      && note.getBoundingClientRect().top >= button.getBoundingClientRect().bottom);
-  });
-  check('Záznam je zachovaný jako doplňková informace pod registračním tlačítkem', recordingPlacement);
+  check('Archivní údaje jsou konzistentní', Object.values(facts).every(Boolean), JSON.stringify(facts));
+  check('Úvod i závěr uvádějí připravovaný záznam', /Záznam připravujeme/.test(await page.locator('.hero').innerText())
+    && /Záznam připravujeme/.test(await page.locator('#registration-title').innerText()));
+  check('Stránka už nezve na budoucí rozhovor', !/Přijďte s vlastní otázkou|Na otázky bude prostor|Pozvánka do kalendáře|Chci pozvánku|O čem se budeme bavit/.test(mainText));
   const startingPoint = {
     lovable: /Lovable/.test(mainText),
     codingAgent: /coding agenta/i.test(mainText),
@@ -93,17 +88,14 @@ function check(name, condition, detail = '') {
   check('Alexova odbornost není postavená na shazování Daniela', /20 let digitalizuje firmy/i.test(mainText)
     && /Učí jejich týmy, jak o AI přemýšlet/i.test(mainText)
     && !/Mám to stejně|Nejsem vývojář|dál než (?:já|ten můj)|Co dělá jinak než já|co mi při stavění aplikací nefunguje|méně pokročil|o (?:několik|pár) úrovní přede mnou|teprve začínám|Daniel[^.]{0,80}(?:bastlí|nezvládá|trvá déle)/i.test(publicCopy));
-  check('Ukázky jsou podmíněné užitečností pro odpověď', /Alex podle potřeby nasdílí obrazovku/i.test(mainText));
-  check('Stránka neslibuje pevný program ani polovinu vysílání', /O čem se budeme bavit/i.test(mainText)
+  check('Témata mají archivní formulaci', /O čem jsme mluvili/.test(mainText));
+  check('Stránka neslibuje pevný program ani polovinu vysílání', /O čem jsme mluvili/i.test(mainText)
     && !/polovinu vysílání|připravené checkpointy|šest okruhů/i.test(mainText));
   check('Stránka neslibuje konkrétní aplikaci dema', !/postavíme (?:aplikaci|appku)|vyrobíme (?:aplikaci|appku)/i.test(mainText));
 
-  const registrationLinks = page.locator('[data-registration-link]');
-  const registrationHrefs = await registrationLinks.evaluateAll(links => links.map(link => link.href));
-  check('Všechna tři registrační CTA vedou na tentýž publikovaný formulář', await registrationLinks.count() === 3
-    && new Set(registrationHrefs).size === 1
-    && registrationHrefs[0].startsWith('https://docs.google.com/forms/d/e/')
-    && !registrationHrefs[0].includes('FORM_ID_PENDING'));
+  // Trvalý archivní invariant: po skončení nesmí návrat ani starý odkaz obnovit CTA.
+  check('Registrace ani sticky CTA nejsou v DOM', await page.locator('[data-registration-link], .sticky-register, a[href*="docs.google.com/forms"]').count() === 0);
+  check('Archiv neobsahuje živá počítadla registrací', await page.locator('[data-registration-availability]').count() === 0);
   check('Landing page neslibuje limit ani zbývající místa', !/\b98\b|kapacit|zbývá|obsazen/i.test(mainText));
 
   const publicHrefs = await page.locator('a').evaluateAll(links => links.map(link => link.href));
@@ -112,7 +104,8 @@ function check(name, condition, detail = '') {
   publicHrefs.join(' | '));
   check('Eventová data neodhalují Meet ani záznam', !portalEvent?.links
     && portalEvent?.recording_url === null
-    && portalEvent?.location === 'Online, odkaz přijde po registraci');
+    && portalEvent?.location === 'Online'
+    && portalEvent?.recording_password === null);
 
   check('Landing page ani data této akce neobsahují dlouhou pomlčku', !pageMarkup.includes('—')
     && !JSON.stringify(portalEvent).includes('—'));
@@ -142,7 +135,7 @@ function check(name, condition, detail = '') {
   check('Alexův medailonek odpovídá jeho dodanému textu', await page.locator('.guest-copy > p').innerText() === guestBio
     && await page.locator('.guest-links a').count() === 3);
 
-  const questionsText = await page.locator('.question-list').innerText();
+  const questionsText = (await page.locator('.question-list').innerText()).replace(/\s+/g, ' ');
   check('Stránka uvádí témata místo harmonogramu', /uvidět problém/i.test(questionsText)
     && /Alexova systému práce s agentem/i.test(questionsText)
     && /ověřit a používat/i.test(questionsText)
@@ -157,14 +150,10 @@ function check(name, condition, detail = '') {
   const themeAfter = await page.locator('html').getAttribute('data-theme');
   check('Přepínač barevného režimu funguje', themeBefore !== themeAfter);
 
-  check('Mobil v úvodu neduplikuje registrační tlačítko', await page.locator('.sticky-register').isHidden());
   await page.locator('.question-band').evaluate(element => element.scrollIntoView({ block: 'start', behavior: 'instant' }));
-  await page.waitForTimeout(100);
-  check('Mobilní sticky registrace se ukáže až po odscrollování hero CTA', await page.locator('.sticky-register').isVisible());
+  check('Odscrollování neobnoví sticky registraci', await page.locator('.sticky-register').count() === 0);
   await page.locator('.registration-actions').scrollIntoViewIfNeeded();
-  await page.waitForTimeout(100);
-  check('Mobilní sticky registrace neduplikuje závěrečné tlačítko', await page.locator('.sticky-register').isHidden()
-    && await page.locator('.registration-actions [data-registration-link]').isVisible());
+  check('Závěrečné tlačítko vrací na portál', await page.locator('.registration-actions a').getAttribute('href') === '/');
   check('Stránka nemá vlastní JS chyby', consoleErrors.length === 0, consoleErrors.join(' | '));
 
   const widths = [320, 390, 744, 1024, 1440, 1920];
