@@ -1,6 +1,6 @@
 # Projektové úkoly
 
-Aktualizováno: 2026-10-18
+Aktualizováno: 2026-10-21
 
 Backlog není souhlas začít; Ready vyžaduje schválení a WIP limit je jeden.
 Review obsahuje čerstvé cílené E2E důkazy, Done přijetí. Task neautorizuje
@@ -23,37 +23,6 @@ _Žádné položky._
 _Žádné položky._
 
 ## Blocked
-
-### TASK-016 — Uzavření rozhovoru s Alexem
-
-- Started: 2026-10-21
-- Owner: Codex
-- Výsledek: uzavřené registrace, proběhlý rozhovor a informace „Záznam připravujeme“ na landing page i v událostech portálu.
-- Scope: landing, event data, odpovídající testy, uzavření Google Forms. Odkaz na záznam nesmí být zveřejněn. Merge obou historií, commit, push a produkční deploy výslovně schválené.
-- ExecPlan: [docs/plans/TASK-016-close-alex-interview.md](docs/plans/TASK-016-close-alex-interview.md)
-
-#### Verification
-
-- [x] Landing ani portál nenabízejí registraci, stav je Proběhlo a záznam se připravuje.
-- [x] Google formulář je skutečně uzavřený i přes původní veřejný odkaz.
-- [x] Žádný odkaz na stream nebo záznam nebyl zveřejněn.
-- [ ] Cílené E2E, responzivita, rapid security, secrets a nezávislá acceptance.
-- [ ] Commit, push, deploy a produkční kontrola stejné verze.
-
-#### Evidence
-
-- Verifier: `/root/alex_archive_acceptance` — completed — PARTIALLY VERIFIED
-- Post-review snapshot: nezměněn — event e6114f30, landing d6356075, testy 3ac1ec2e/f06989e3/db49a983; životní cyklus Blocked pouze kvůli potvrzení přihlášení Cloudflare.
-- ExecPlan: docs/plans/TASK-016-close-alex-interview.md
-- Připojený Chrome: landing 320/390/744/1024/1440/1920 bez overflow; mobilní ovládání tématu, hlavní banner, proběhlá karta a detail bez registrace i videa prošly.
-- Syntax tří JS, diff-check a nezávislý Node kontrakt portálu prošly; ostatní eventy a medailonek zachované.
-- Kanonická sada exit 1: Chromium nespustil sandbox; google-forms-attendees selhává stejně na baseline. API a Google registrační/count testy prošly; archived-groups prošel. Není vydáváno za úplný E2E success.
-- Rapid security: pouze statický obsah a data; žádná změna auth, veřejného API, CSP, middleware, dependencies ani HTML sinků. Žádný potvrzený blocker v tomto diffu. Živý formulář uzavřen přes UI bez práce s odpověďmi.
-- Release: implementační commit `79057917de7ebb254e19da0f379915b4c8ab89f7` pushnutý na origin/main; čerstvý ls-remote shodu potvrdil.
-- Blocked: 2026-10-21 — Cloudflare CLI nemá aktivní přihlášení. U běžného Google přihlášení čeká explicitní potvrzení tlačítka, které stránka spojuje se souhlasem s podmínkami. Po souhlasu obnovit vypršelý OAuth a dokončit deploy.
-- Last safe state: Google Forms uzavřen, webový obsah je jen na GitHubu. Žádný production deploy této změny zatím. Čistý export `/private/tmp/mtf-alex-release-usnlo433` odpovídá implementačnímu commitu.
-- Resume from: pokračovat TASK-016 v pracovní kopii, obnovit OAuth, nasadit čistý export a ověřit veřejnou landing i portal events. Neotevírat formulář ani neodesílat registraci.
-
 
 ### TASK-013 — Pevný limit 98 míst
 
@@ -267,6 +236,40 @@ _Žádné položky._
 - Produkce: deployment `6b77342e`, source `63e76bd`. HTML/CSS/JS na `https://mastertheflow.cz/live/vibe-coding/` mají HTTP 200 a přesně odpovídají releasu; E2E 31/31 prošlo.
 
 ## Review
+
+### TASK-016 — Uzavření rozhovoru s Alexem
+
+- Started: 2026-10-21
+- Owner: Codex
+- Výsledek: uzavřené registrace, proběhlý rozhovor a informace „Záznam připravujeme“ na landing page i v událostech portálu.
+- Scope: landing, event data, odpovídající testy, uzavření Google Forms. Odkaz na záznam nesmí být zveřejněn. Merge obou historií, commit, push a produkční deploy výslovně schválené.
+- ExecPlan: [docs/plans/TASK-016-close-alex-interview.md](docs/plans/TASK-016-close-alex-interview.md)
+
+#### Verification
+
+- [x] Landing ani portál nenabízejí registraci, stav je Proběhlo a záznam se připravuje.
+- [x] Google formulář je skutečně uzavřený i přes původní veřejný odkaz.
+- [x] Žádný odkaz na stream nebo záznam nebyl zveřejněn.
+- [x] Cílené scénáře v připojeném Chromu, responzivita, rapid security, staged secrets a nezávislá acceptance; automatická E2E sada má níže uvedené omezení.
+- [x] Commit, push, deploy a produkční kontrola stejné implementační verze.
+
+#### Evidence
+
+- Verifier: `/root/alex_release_verify` — completed — VERIFIED pro produkční uzavření rozhovoru. Předchozí lokální verifier `/root/alex_archive_acceptance` — completed — PARTIALLY VERIFIED kvůli E2E prostředí.
+- Post-review snapshot: nezměněn — event e6114f30, landing d6356075, testy 3ac1ec2e/f06989e3/db49a983. Životní cyklus Review, čeká Danielovo přijetí; žádný aktivní blocker.
+- ExecPlan: docs/plans/TASK-016-close-alex-interview.md
+- Připojený Chrome: landing 320/390/744/1024/1440/1920 bez overflow; mobilní ovládání tématu, hlavní banner, proběhlá karta a detail bez registrace i videa prošly.
+- Syntax tří JS, diff-check a nezávislý Node kontrakt portálu prošly; ostatní eventy a medailonek zachované.
+- Kanonická sada exit 1: Chromium nespustil sandbox; google-forms-attendees selhává stejně na baseline. API a Google registrační/count testy prošly; archived-groups prošel. Není vydáváno za úplný E2E success.
+- Rapid security: pouze statický obsah a data; žádná změna auth, veřejného API, CSP, middleware, dependencies ani HTML sinků. Žádný potvrzený blocker v tomto diffu. Živý formulář uzavřen přes UI bez práce s odpověďmi.
+- Release: implementační commit `79057917de7ebb254e19da0f379915b4c8ab89f7` pushnutý na origin/main; čerstvý ls-remote shodu potvrdil.
+- Resumed: 2026-10-21 — Daniel výslovně potvrdil přihlášení Cloudflare. Pokračuje pouze dříve schválený deploy a produkční kontrola.
+
+- Produkce: Cloudflare Pages `fa2a7342-4be9-4001-b98e-6308446a705d`, branch main, source `7905791`, nasazeno z čistého Git exportu.
+- Čerstvá veřejná kontrola: landing a events.json HTTP 200 a byte-shodné s releasem; vlastní OG PNG veřejné a shodné, stará URL přesměrovává. Chrome ověřil hlavní banner bez registrace, archivní kartu a detail bez form/video odkazů. Google Forms zůstává uzavřen i anonymním GET.
+- Přihlášení Cloudflare uživatelem potvrzené a dokončené. Žádný e-mail, pozvánka ani syntetická registrace nebyly odeslány.
+- Původní checkout zůstává kvůli oprávněním na b300de5 s uživatelským slovníčkem beze změny; GitHub obsahuje spojenou historii a release. Další práci zahajovat kontrolou čerstvosti.
+
 
 ### TASK-015 — Registrace bez pevné kapacity
 
