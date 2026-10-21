@@ -21,24 +21,22 @@ const assert = require('assert/strict');
   assert.equal((await payload()).registeredCount, null);
   assert.equal((await get({ env })).headers.get('cache-control'), 'no-store');
   assert.equal((await send('{"registeredCount":3}', 'wrong')).status, 401);
-  for (const value of [-1, 1.1, '5', null, 10001]) assert.equal((await send(JSON.stringify({ registeredCount: value }))).status, 400);
+  for (const value of [-1, 1.1, '5', null, Number.MAX_SAFE_INTEGER + 1]) assert.equal((await send(JSON.stringify({ registeredCount: value }))).status, 400);
   assert.equal((await send('{"registeredCount":3,"email":"private@example.test"}')).status, 400);
   assert.equal((await send('x'.repeat(129))).status, 413);
   assert.equal((await send('{')).status, 400);
-  for (const count of [0, 1, 94, 97, 98, 101]) {
+  for (const count of [0, 1, 98, 101, 10001]) {
     assert.equal((await send(JSON.stringify({ registeredCount: count }))).status, 200);
     const result = await payload();
     assert.equal(result.registeredCount, count);
-    assert.equal(result.remaining, Math.max(0, 98 - count));
-    assert.equal(result.capacity, 98);
     assert.deepEqual(Object.keys(JSON.parse(stored)).sort(), ['registeredCount', 'updatedAt']);
-    assert.deepEqual(Object.keys(result).sort(), ['capacity', 'registeredCount', 'remaining', 'updatedAt']);
+    assert.deepEqual(Object.keys(result).sort(), ['registeredCount', 'updatedAt']);
   }
   for (const updatedAt of [new Date(Date.now() - 16 * 60000).toISOString(), 'bad-date', new Date(Date.now() + 120000).toISOString()]) {
     stored = JSON.stringify({ registeredCount: 42, updatedAt });
-    assert.equal((await payload()).remaining, null);
+    assert.equal((await payload()).registeredCount, null);
   }
   stored = '{bad'; assert.equal((await payload()).registeredCount, null);
   assert.equal((await get({ env: {} }).then(response => response.json())).registeredCount, null);
-  console.log('PASS: ochrana zápisu, allowlist, limity, deduplikovaný snapshot, kapacita a čerstvost API');
+  console.log('PASS: ochrana zápisu, allowlist, count-only snapshot bez kapacity a čerstvost API');
 })().catch(error => { console.error(error); process.exit(1); });

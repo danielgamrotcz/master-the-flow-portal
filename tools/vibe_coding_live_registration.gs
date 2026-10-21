@@ -7,15 +7,13 @@ const VIBE_CODING_LIVE = {
   eventStartMs: Date.parse('2026-10-21T16:00:00Z'),
   eventEndMs: Date.parse('2026-10-21T18:00:00Z'),
   emailQuestionTitles: ['E-mail', 'E‑mail'],
-  confirmationMessage: 'Odpověď jsme přijali. Místo na živém rozhovoru platí až po potvrzení e-mailem. Kapacita je 98 lidí. Pokud se právě naplnila, dáme vám vědět. Když zprávu nenajdete, zkontrolujte spam nebo napište na daniel@gamrot.cz.',
+  confirmationMessage: 'Odpověď jsme přijali. Potvrzení s pozvánkou vám přijde e-mailem. Když zprávu nenajdete, zkontrolujte spam nebo napište na daniel@gamrot.cz.',
   activationProperty: 'VIBE_CODING_LIVE_ACTIVATED_AT',
   eventIdProperty: 'VIBE_CODING_LIVE_EVENT_ICAL_ID',
-  meetUrlProperty: 'VIBE_CODING_LIVE_MEET_URL',
+  streamUrlProperty: 'VIBE_CODING_LIVE_STREAM_URL',
   deliveryActivationProperty: 'VIBE_CODING_LIVE_EMAIL_ACTIVATED_AT',
-  capacity: 98,
-  seatsProperty: 'VIBE_CODING_LIVE_SEATS_V1',
-  closedMessage: 'Všech 98 míst na živý rozhovor je obsazených. Registrace jsou uzavřené. Děkujeme za zájem.',
-  formDescription: 'Rozhovory Master the Flow · 1. díl\n21. října 2026, 18:00–20:00 · Google Meet · zdarma\n\n18:00–19:30 rozhovor, 19:30–20:00 otázky a odpovědi diváků.\n\nŽivý rozhovor Daniela Gamrota s Alexem Trejtnarem. Vibecoding vás učí každý. Přemýšlet málokdo.\n\nK registraci stačí e-mail. Ostatní otázky jsou nepovinné. Po registraci vám přijde potvrzení s odkazem na připojení a pozvánka do kalendáře. Záznam dostanou všichni registrovaní.\n\nÚdaje použiji pouze k organizaci této akce a zaslání záznamu. Odpovědi z formuláře se nebudou zveřejňovat. Formulář provozuje Google.',
+  closedMessage: 'Registrace jsou nyní uzavřené. Děkujeme za zájem.',
+  formDescription: 'Rozhovory Master the Flow · 1. díl\n21. října 2026, 18:00–20:00 · živé online vysílání · zdarma\n\n18:00–19:30 rozhovor, 19:30–20:00 otázky a odpovědi diváků.\n\nŽivý rozhovor Daniela Gamrota s Alexem Trejtnarem. Vibecoding vás učí každý. Přemýšlet málokdo.\n\nK registraci stačí e-mail. Ostatní otázky jsou nepovinné. Po registraci vám přijde potvrzení s odkazem na připojení a pozvánka do kalendáře. Záznam dostanou všichni registrovaní.\n\nÚdaje použiji pouze k organizaci této akce a zaslání záznamu. Odpovědi z formuláře se nebudou zveřejňovat. Formulář provozuje Google.',
 };
 
 function normalizeVibeCodingLiveEmail_(value) {
@@ -23,63 +21,17 @@ function normalizeVibeCodingLiveEmail_(value) {
   return /^[^\s@,;<>]+@[^\s@,;<>]+\.[^\s@,;<>]+$/.test(email) ? email : '';
 }
 
-function vibeCodingSeatHash_(email) {
-  return Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, email, Utilities.Charset.UTF_8)
-    .map(byte => ('0' + ((byte + 256) % 256).toString(16)).slice(-2)).join('');
-}
-
-function vibeCodingResponseSeats_(form, response) {
-  const responses = form.getResponses();
-  if (response && !responses.some(item => item.getId() === response.getId())) responses.push(response);
-  responses.sort((a, b) => a.getTimestamp().getTime() - b.getTimestamp().getTime()
-    || String(a.getId()).localeCompare(String(b.getId())));
-  const hashes = new Set();
-  responses.forEach(item => {
-    let email;
-    try { email = vibeCodingLiveEmailFromResponse_(item); } catch { return; }
-    hashes.add(vibeCodingSeatHash_(email));
-  });
-  return [...hashes];
-}
-
-// Volat pouze pod společným ScriptLock. Již rezervované místo se nikdy
-// neuvolní pouhým smazáním odpovědi nebo chybou při odesílání e-mailu.
-function refreshVibeCodingSeatsLocked_(form, response) {
-  const properties = PropertiesService.getScriptProperties();
-  const raw = properties.getProperty(VIBE_CODING_LIVE.seatsProperty);
-  if (!raw) throw new Error('Pevný limit míst zatím není aktivovaný.');
-  const seats = JSON.parse(raw);
-  if (!Array.isArray(seats) || seats.length > VIBE_CODING_LIVE.capacity
-      || seats.some(value => typeof value !== 'string' || !/^[a-f0-9]{64}$/.test(value))
-      || new Set(seats).size !== seats.length) throw new Error('Neplatný registr míst.');
-  const reserved = new Set(seats);
-  vibeCodingResponseSeats_(form, response).forEach(hash => {
-    if (reserved.size < VIBE_CODING_LIVE.capacity) reserved.add(hash);
-  });
-  if (reserved.size !== seats.length) properties.setProperty(VIBE_CODING_LIVE.seatsProperty, JSON.stringify([...reserved]));
-  if (reserved.size >= VIBE_CODING_LIVE.capacity) {
-    form.setCustomClosedFormMessage(VIBE_CODING_LIVE.closedMessage);
-    form.setAcceptingResponses(false);
-  }
-  return reserved;
-}
-
-// Jednorázová, opakovatelná aktivace. Neodesílá e-maily ani pozvánky.
-function activateVibeCodingCapacity() {
+// Jednorázová, opakovatelná aktivace. Neodesílá e-maily ani pozvánky a
+// nemaže historický kapacitní ledger ani odmítací markery.
+function activateVibeCodingUnlimitedRegistration() {
   const lock = LockService.getScriptLock();
   lock.waitLock(30000);
   try {
     const form = FormApp.openById(VIBE_CODING_LIVE.formId);
-    const properties = PropertiesService.getScriptProperties();
-    if (!properties.getProperty(VIBE_CODING_LIVE.seatsProperty)) {
-      const hashes = vibeCodingResponseSeats_(form);
-      if (hashes.length > VIBE_CODING_LIVE.capacity) throw new Error('Stávající registrace překračují kapacitu; nutná ruční kontrola.');
-      properties.setProperty(VIBE_CODING_LIVE.seatsProperty, JSON.stringify(hashes));
-    }
     form.setConfirmationMessage(VIBE_CODING_LIVE.confirmationMessage);
     form.setCustomClosedFormMessage(VIBE_CODING_LIVE.closedMessage);
-    const seats = refreshVibeCodingSeatsLocked_(form);
-    console.log(JSON.stringify({ capacity: VIBE_CODING_LIVE.capacity, reserved: seats.size, acceptingResponses: form.isAcceptingResponses() }));
+    form.setAcceptingResponses(true);
+    console.log(JSON.stringify({ acceptingResponses: form.isAcceptingResponses() }));
   } finally { lock.releaseLock(); }
 }
 
@@ -133,10 +85,10 @@ function vibeCodingLiveDeliveryKey_(response) {
   return 'VIBE_CODING_LIVE_SENT_' + id;
 }
 
-function vibeCodingLiveMeetUrl_() {
-  const url = PropertiesService.getScriptProperties().getProperty(VIBE_CODING_LIVE.meetUrlProperty) || '';
-  if (!/^https:\/\/meet\.google\.com\/[a-z]{3}-[a-z]{4}-[a-z]{3}$/.test(url)) {
-    throw new Error('Chybí platný soukromý odkaz Google Meet v Script Properties.');
+function vibeCodingLiveStreamUrl_() {
+  const url = PropertiesService.getScriptProperties().getProperty(VIBE_CODING_LIVE.streamUrlProperty) || '';
+  if (!/^https:\/\/(?:www\.)?youtube\.com\/live\/[A-Za-z0-9_-]{11}(?:\?feature=share)?$/.test(url)) {
+    throw new Error('Chybí platný neveřejný odkaz YouTube streamu v Script Properties.');
   }
   return url;
 }
@@ -152,23 +104,12 @@ function inviteVibeCodingLiveGuest_(response) {
     if (!Number.isSafeInteger(cutover) || cutover <= 0) throw new Error('E-mailové doručování není aktivované.');
     if (response.getTimestamp().getTime() < cutover) return false;
     if (properties.getProperty(deliveryKey)) return false;
-    const declinedKey = 'VIBE_CODING_LIVE_FULL_' + response.getId();
-    if (properties.getProperty(declinedKey)) return false;
-    const reserved = refreshVibeCodingSeatsLocked_(FormApp.openById(VIBE_CODING_LIVE.formId), response);
-    if (!reserved.has(vibeCodingSeatHash_(email))) {
-      if (MailApp.getRemainingDailyQuota() < 1) throw new Error('Denní limit e-mailů je vyčerpaný.');
-      MailApp.sendEmail({
-        to: email,
-        subject: 'Vibecoding s Alexem: živá kapacita je naplněná',
-        body: 'Děkuji za zájem o rozhovor. Při odesílání vaší registrace se naplnilo všech 98 míst. Místo na živém vysílání vám proto nemohu potvrdit.\n\nDaniel Gamrot\nMaster the Flow',
-        name: 'Daniel Gamrot · Master the Flow',
-      });
-      properties.setProperty(declinedKey, String(Date.now()));
-      return false;
-    }
+    // Starší odmítnutí před odstraněním limitu nereplayujeme. Nové registrace
+    // už tento marker nevytvářejí a projdou bez kapacitní větve.
+    if (properties.getProperty('VIBE_CODING_LIVE_FULL_' + response.getId())) return false;
     const event = vibeCodingLiveEvent_();
     if (event.getEndTime().getTime() !== VIBE_CODING_LIVE.eventEndMs) throw new Error('Calendar událost má nesprávný konec.');
-    const meetUrl = vibeCodingLiveMeetUrl_();
+    const streamUrl = vibeCodingLiveStreamUrl_();
     if (MailApp.getRemainingDailyQuota() < 1) throw new Error('Denní limit e-mailů je vyčerpaný; registrace čeká na opakování.');
     protectVibeCodingLiveGuestPrivacy_(event);
     const alreadyInvited = event.getGuestList(true)
@@ -178,7 +119,7 @@ function inviteVibeCodingLiveGuest_(response) {
     MailApp.sendEmail({
       to: email,
       subject: 'Registrace potvrzena: Vibecoding s Alexem · 21. října v 18:00',
-      body: 'Děkuji za registraci.\n\nVibecoding s Alexem\nStředa 21. října 2026, 18:00–20:00 (Praha)\n18:00–19:30 rozhovor\n19:30–20:00 otázky a odpovědi diváků\n\nPřipojení přes Google Meet:\n' + meetUrl + '\n\nUdálost je připravená také v kalendáři. Odkaz na připojení si prosím uschovejte.\nZáznam dostanou všichni registrovaní.\n\nTěším se na viděnou.\nDaniel Gamrot\nMaster the Flow',
+      body: 'Děkuji za registraci.\n\nVibecoding s Alexem\nStředa 21. října 2026, 18:00–20:00 (Praha)\n18:00–19:30 rozhovor\n19:30–20:00 otázky a odpovědi diváků\n\nŽivý stream na YouTube:\n' + streamUrl + '\n\nUdálost je připravená také v kalendáři. Odkaz na připojení si prosím uschovejte.\nZáznam dostanou všichni registrovaní.\n\nTěším se na viděnou.\nDaniel Gamrot\nMaster the Flow',
       name: 'Daniel Gamrot · Master the Flow',
     });
     // Zápis až po úspěšném odeslání. MailApp a Properties nejsou atomická transakce.
@@ -217,7 +158,7 @@ function prepareVibeCodingLiveDelivery() {
   const lock = LockService.getScriptLock();
   lock.waitLock(30000);
   try {
-    vibeCodingLiveMeetUrl_();
+    vibeCodingLiveStreamUrl_();
     MailApp.getRemainingDailyQuota(); // Vyžádá oprávnění i bez odeslání e-mailu.
     const properties = PropertiesService.getScriptProperties();
     const event = vibeCodingLiveEvent_();
@@ -248,6 +189,8 @@ function installVibeCodingLiveRegistrationAutomation() {
     properties.setProperty(VIBE_CODING_LIVE.activationProperty, String(Date.now()));
   }
   form.setConfirmationMessage(VIBE_CODING_LIVE.confirmationMessage);
+  form.setCustomClosedFormMessage(VIBE_CODING_LIVE.closedMessage);
+  form.setAcceptingResponses(true);
   protectVibeCodingLiveGuestPrivacy_(vibeCodingLiveEvent_());
 
   const managedHandlers = new Set([
@@ -272,7 +215,7 @@ function verifyVibeCodingLiveRegistrationAutomation() {
     eventIdConfigured: !!properties.getProperty(VIBE_CODING_LIVE.eventIdProperty),
     correctTitle: event.getTitle() === VIBE_CODING_LIVE.eventTitle,
     correctEnd: event.getEndTime().getTime() === VIBE_CODING_LIVE.eventEndMs,
-    meetConfigured: !!vibeCodingLiveMeetUrl_(),
+    streamConfigured: !!vibeCodingLiveStreamUrl_(),
     emailActivated: Number(properties.getProperty(VIBE_CODING_LIVE.deliveryActivationProperty)) > 0,
     remainingEmailQuota: MailApp.getRemainingDailyQuota(),
     responseSheetLinked: !!FormApp.openById(VIBE_CODING_LIVE.formId).getDestinationId(),
@@ -280,6 +223,7 @@ function verifyVibeCodingLiveRegistrationAutomation() {
     guestsCanInviteOthers: event.guestsCanInviteOthers(),
     guestsCanModify: event.guestsCanModify(),
     guestsCanSeeGuests: event.guestsCanSeeGuests(),
+    acceptingResponses: FormApp.openById(VIBE_CODING_LIVE.formId).isAcceptingResponses(),
     managedTriggerCount: managedTriggers.length,
   };
   console.log(JSON.stringify(result));

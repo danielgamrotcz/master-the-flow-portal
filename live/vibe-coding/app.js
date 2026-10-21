@@ -36,42 +36,23 @@
 
   const availability = [...document.querySelectorAll('[data-registration-availability]')];
   if (availability.length) {
-    const capacity = 98;
-    const registrationLinks = [...document.querySelectorAll('[data-registration-link]')]
-      .map(element => ({ element, href: element.getAttribute('href'), text: element.textContent }));
     const maxAge = 15 * 60 * 1000;
     let pending = false;
     let timer;
     function renderCount(data) {
       const count = data && data.registeredCount;
       const age = data ? Date.now() - Date.parse(data.updatedAt) : NaN;
-      const valid = Number.isSafeInteger(count) && count >= 0 && count <= 10000
-        && data.capacity === capacity && Number.isFinite(age) && age >= -60000 && age <= maxAge;
-      // Nedostupnost dat po zjištěném vyprodání nesmí znovu otevřít CTA.
-      if (valid) for (const { element, href, text } of registrationLinks) {
-        if (count >= capacity) {
-          element.removeAttribute('href');
-          element.setAttribute('role', 'link');
-          element.setAttribute('aria-disabled', 'true');
-          element.textContent = 'Kapacita naplněna';
-        } else {
-          element.setAttribute('href', href);
-          element.removeAttribute('role');
-          element.removeAttribute('aria-disabled');
-          element.textContent = text;
-        }
-      }
+      const valid = Number.isSafeInteger(count) && count >= 0
+        && Number.isFinite(age) && age >= -60000 && age <= maxAge;
       for (const element of availability) {
         element.replaceChildren();
         if (!valid) {
-          element.textContent = 'Kapacita 98 lidí. Aktuální obsazenost teď není dostupná.';
+          element.textContent = 'Aktuální počet registrovaných teď není dostupný.';
           continue;
         }
-        const remaining = Math.max(0, capacity - count);
         const strong = document.createElement('strong');
-        strong.textContent = remaining === 0 ? 'Živá kapacita je naplněná' : remaining === 1
-          ? 'Zbývá 1 místo' : remaining <= 4 ? `Zbývají ${remaining} místa` : `Zbývá ${remaining} míst`;
-        element.append(strong, document.createTextNode(` · Přihlášeno ${count} z ${capacity}`));
+        strong.textContent = `Přihlášeno: ${count}`;
+        element.append(strong);
       }
     }
     async function refreshCount() {

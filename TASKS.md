@@ -1,6 +1,6 @@
 # Projektové úkoly
 
-Aktualizováno: 2026-10-12
+Aktualizováno: 2026-10-18
 
 Backlog není souhlas začít; Ready vyžaduje schválení a WIP limit je jeden.
 Review obsahuje čerstvé cílené E2E důkazy, Done přijetí. Task neautorizuje
@@ -236,6 +236,69 @@ _Žádné položky._
 - Produkce: deployment `6b77342e`, source `63e76bd`. HTML/CSS/JS na `https://mastertheflow.cz/live/vibe-coding/` mají HTTP 200 a přesně odpovídají releasu; E2E 31/31 prošlo.
 
 ## Review
+
+### TASK-015 — Registrace bez pevné kapacity
+
+- Started: 2026-10-18
+- Owner: Codex
+- Výsledek: registrace se nezavře po 98 lidech a veřejná stránka ukazuje pouze čerstvý počet registrovaných bez kapacity či zbývajících míst.
+- Scope: landing page, anonymní count API, registrační a count Apps Script, potvrzení formuláře, YouTube odkaz v pozvánce a regresní testy. Bez replaye dříve odmítnutých registrací, mazání historického ledgeru nebo živého zásahu bez samostatného potvrzení.
+- Režim: critical/coordinated; TASK-015 vědomě nahrazuje kapacitní chování TASK-012 a TASK-013, jejich historii nemaže.
+- Release scope: 2026-10-18 — Daniel výslovně schválil commit, push a produkční deploy; živou změnu Apps Scriptu provede ručně podle přesného verzovaného zdroje.
+- ExecPlan: [docs/plans/TASK-015-unlimited-registration.md](docs/plans/TASK-015-unlimited-registration.md)
+- Review: lokální implementace a nezávislá acceptance dokončené. Živá produkce a Google Form stále používají původní zdroj; commit, push, deploy a živá Google aktivace nejsou autorizované.
+- Last safe state: změna je pouze v čistém dočasném worktree proti baseline `5cbe29d`; historický ledger a odmítací markery zůstávají beze změny.
+- Resume from: koordinovaný živý cutover Apps Script/Form + web release až po samostatném potvrzení; bez replaye historických odmítnutí a bez syntetické registrace.
+
+#### Verification
+
+- [x] API zveřejňuje pouze čerstvý anonymní počet a timestamp.
+- [x] Web nikde neuvádí kapacitu ani zbývající místa a CTA zůstává aktivní.
+- [x] Google skripty formulář nezavírají a count odpovídá aktuálním unikátním registracím bez historicky odmítnutých odpovědí.
+- [x] Cílené testy, lokální E2E, rapid security a nezávislá acceptance prošly.
+- [ ] Živá Google aktivace, produkční release a produkční kontrola dokončené.
+
+#### Evidence
+
+- Impact mapa: `/root/unlimited_registration_impact` dokončena; web, API, Apps Script a testy musí být změněné koordinovaně.
+- Baseline: `5cbe29d`, shodný s čerstvým `origin/main`. Produkční API 2026-10-18 vracelo 69 registrací a kapacitu 98; Google Form byl otevřený, ale stále obsahoval kapacitní texty.
+- Cílené jednotkové a mock testy: API, invitation, count a unlimited invariant — exit 0. Mock ověřil 101 čerstvých registrací, deduplikaci, retry, pokles countu po smazání a žádný replay historického `FULL_*` markeru.
+- Lokální Wrangler + Playwright: rozhovorový E2E a registrační E2E — exit 0; CTA zůstává aktivní při 98, 101, stale datech i výpadku, 30s obnova, čtyři viewporty a oba motivy.
+- Rapid security proti `5cbe29d`: žádný potvrzený nový nález. Secret, konstantní porovnání, allowlist, 128B limit, rate limit, `no-store` a count-only hranice zachované; žádné PII neopouští Google.
+- Plná sada proti správnému lokálnímu serveru — exit 1 kvůli chybějícímu `.dev.vars` pro privátní E2E a dříve evidovanému selhání `google-forms-attendees`; všechny testy dotčeného toku v témže běhu prošly.
+- Nezávislá acceptance: první průchod našel replay historicky odmítnutých odpovědí; po opravě druhý průchod `VERIFIED` bez blockeru. Asset hash `e30a38b`, `git diff --check` a syntaxe prošly.
+- Manuální pixelová kontrola: NOT TESTED — spravovaná browser policy zablokovala otevření localhostu; behaviorální Playwright layout kontrola prošla.
+
+### TASK-014 — Formát vysílání na landing page
+
+- Started: 2026-10-18
+- Owner: Codex
+- Výsledek: veřejná landing page už neslibuje Google Meet; uvádí živé online
+  vysílání a zachovává odkaz až po registraci.
+- Scope: landing page a cílený regresní test. Bez změny formuláře, potvrzovacích
+  e-mailů, kalendáře, registrační automatizace a streamového odkazu.
+- Release scope: 2026-10-18 — Daniel výslovně schválil commit, push na `main`
+  a produkční deploy na Cloudflare Pages.
+- Režim: contained; implementace v dočasném čistém worktree kvůli nesouvisející
+  rozpracované změně `tools/build_glossary.py` v hlavním checkoutu.
+
+#### Verification
+
+- [x] Veřejný fakt „Kde“ uvádí živé online vysílání a odkaz po registraci.
+- [x] Landing page neobsahuje YouTube ani jiný streamový odkaz.
+- [x] Cílené automatické a browserové kontroly prošly.
+
+#### Evidence
+
+- `node --check tests/e2e-vibe-coding-live.js` — prošlo.
+- `e2e-vibe-coding-live.js` proti lokálnímu Wrangleru — 37/37 prošlo; kontroluje
+  také registrační CTA, absenci Meetu a streamových odkazů a layout od telefonu
+  po desktop.
+- `git diff --check` — prošlo.
+- Verifier: `/root/landing_format_recheck` — completed — VERIFIED WITH WARNINGS
+- Post-review snapshot před releasem: landing page `29818d7f…`, E2E
+  `70e5f311…`; TASK-014 je v Review.
+- ExecPlan: nepoužit; krátká změna v jedné session.
 
 ### TASK-007 — První díl v části Rozhovory
 
