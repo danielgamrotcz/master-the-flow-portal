@@ -20,6 +20,10 @@ _Žádné položky._
 
 ## In Progress
 
+_Žádné položky._
+
+## Blocked
+
 ### TASK-016 — Uzavření rozhovoru s Alexem
 
 - Started: 2026-10-21
@@ -39,14 +43,17 @@ _Žádné položky._
 #### Evidence
 
 - Verifier: `/root/alex_archive_acceptance` — completed — PARTIALLY VERIFIED
-- Post-review snapshot: nezměněn — event e6114f30, landing d6356075, testy 3ac1ec2e/f06989e3/db49a983; životní cyklus In Progress kvůli produkčnímu release.
+- Post-review snapshot: nezměněn — event e6114f30, landing d6356075, testy 3ac1ec2e/f06989e3/db49a983; životní cyklus Blocked pouze kvůli potvrzení přihlášení Cloudflare.
 - ExecPlan: docs/plans/TASK-016-close-alex-interview.md
 - Připojený Chrome: landing 320/390/744/1024/1440/1920 bez overflow; mobilní ovládání tématu, hlavní banner, proběhlá karta a detail bez registrace i videa prošly.
 - Syntax tří JS, diff-check a nezávislý Node kontrakt portálu prošly; ostatní eventy a medailonek zachované.
 - Kanonická sada exit 1: Chromium nespustil sandbox; google-forms-attendees selhává stejně na baseline. API a Google registrační/count testy prošly; archived-groups prošel. Není vydáváno za úplný E2E success.
 - Rapid security: pouze statický obsah a data; žádná změna auth, veřejného API, CSP, middleware, dependencies ani HTML sinků. Žádný potvrzený blocker v tomto diffu. Živý formulář uzavřen přes UI bez práce s odpověďmi.
+- Release: implementační commit `79057917de7ebb254e19da0f379915b4c8ab89f7` pushnutý na origin/main; čerstvý ls-remote shodu potvrdil.
+- Blocked: 2026-10-21 — Cloudflare CLI nemá aktivní přihlášení. U běžného Google přihlášení čeká explicitní potvrzení tlačítka, které stránka spojuje se souhlasem s podmínkami. Po souhlasu obnovit vypršelý OAuth a dokončit deploy.
+- Last safe state: Google Forms uzavřen, webový obsah je jen na GitHubu. Žádný production deploy této změny zatím. Čistý export `/private/tmp/mtf-alex-release-usnlo433` odpovídá implementačnímu commitu.
+- Resume from: pokračovat TASK-016 v pracovní kopii, obnovit OAuth, nasadit čistý export a ověřit veřejnou landing i portal events. Neotevírat formulář ani neodesílat registraci.
 
-## Blocked
 
 ### TASK-013 — Pevný limit 98 míst
 

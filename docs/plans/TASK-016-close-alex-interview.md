@@ -1,6 +1,6 @@
 # TASK-016 — Uzavření rozhovoru s Alexem
 
-Stav: In Progress
+Stav: Blocked
 Poslední checkpoint: 2026-10-21
 Tracker: ../../TASKS.md, TASK-016
 
@@ -58,5 +58,13 @@ google-forms-attendees. Rapid security diff nemá potvrzený blocker.
 Cloudflare CLI dosud nepřihlášené; připraven OAuth jen account:read,
 user:read a pages:write v odděleném dočasném configu. Žádný deploy zatím.
 
+Implementační commit 79057917de7ebb254e19da0f379915b4c8ab89f7 pushnutý;
+ls-remote shodný. Čistý deploy export /private/tmp/mtf-alex-release-usnlo433.
+Cloudflare přihlášení vyžaduje potvrzení tlačítka s uvedeným souhlasem
+s podmínkami. Asynchronní otázka čeká na Daniela; OAuth timeout není login.
+Po potvrzení restartovat autorizaci a nasadit zkontrolovaný čistý export.
+Původní checkout b300de5 je stále beze změny a není synchronizovaný s releasem.
 
-Aktuální SHA-256 trackeru: 4c00108e5cfd5141f63fb7d579ee1c5b63c7a5ed87ef99fc5eeb00b9b6c6d48f
+
+
+Aktuální SHA-256 trackeru: d19a1d602555bc75b55235b34f2c4b876f187c7d5c4f741d17d7d814003ccef4
