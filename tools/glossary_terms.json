@@ -2067,6 +2067,25 @@
       "why": "Narazíte na něj při řešení zaplněné paměti, zamrzání aplikací nebo pomalých reakcí počítače.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "konektor",
+      "term": "Konektor",
+      "cat": "ai",
+      "match": [
+        "konektor",
+        "konektoru",
+        "konektorem",
+        "konektory",
+        "konektorů",
+        "konektorům",
+        "konektorech"
+      ],
+      "short": "Připravené propojení, přes které může AI asistent pracovat s další aplikací nebo službou.",
+      "plain": "Konektor propojí AI asistenta s další aplikací nebo službou. Asistent tak může třeba poslat výsledek e-mailem.",
+      "why": "Narazíte na něj při propojování AI asistenta s e-mailem nebo dalšími aplikacemi.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }

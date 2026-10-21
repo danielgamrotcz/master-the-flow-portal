@@ -1,12 +1,35 @@
 {
-  "date": "2026-10-19",
-  "generated_at": "2026-10-20T00:04:48Z",
+  "date": "2026-10-20",
+  "generated_at": "2026-10-21T00:01:36Z",
   "stats": {
-    "messages": 1,
-    "groups": 1,
+    "messages": 4,
+    "groups": 2,
     "members": 1
   },
-  "cards": [],
+  "cards": [
+    {
+      "id": "2026-10-20-01",
+      "type": "NÁSTROJE",
+      "level": "Pokročilý",
+      "topics": [
+        "AI nástroje",
+        "Email",
+        "Workflow"
+      ],
+      "title": "Čeština a konektory AI v CarPlay",
+      "excerpt": "Členové popsali, že AI asistent někdy míchá češtinu s angličtinou a data nebo čísla čte anglicky. V CarPlay dokázal použít konektory a poslat výsledek řešení e-mailem, i když později tvrdil, že to neumí.",
+      "body": "Jeden člen si všiml češtiny s anglickým přízvukem a anglické výslovnosti dat a čísel. Další uvedl, že po upozornění se asistent přepne zpět do češtiny, i když předtím tvrdil, že česky neumí.\n\nPodobně nekonzistentní byl i při práci v autě. Přes CarPlay pomohl vyřešit problém a na požádání poslal výsledek e-mailem. O půl dne později tvrdil, že to neumí, ale pak to znovu zvládl. Konektory tedy fungují, asistent ale své možnosti popisuje nespolehlivě.",
+      "read_minutes": 1,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "16:56",
+        "17:25",
+        "17:28"
+      ],
+      "links": [],
+      "source_date": "2026-10-20"
+    }
+  ],
   "resurfacing": null,
   "transcript": {
     "groups": [
@@ -15,9 +38,30 @@
         "name": "Inspirace & Diskuze",
         "messages": [
           {
-            "time": "08:14",
+            "time": "16:56",
             "author": "člen komunity",
-            "text": "Ano, taky mluvíme česky. Se silným přízvukem a občas komolí slova. Akorát to nemá všechny nastavení a nástroje jako Claude Code"
+            "text": "Так jo, dneska na mě taky mluvil napůl česky, napůl anglicky, třeba datumy a čísla četl anglicky a jinak mluvil česky s anglickým přízvukem. No ale co je zajímavější, tak i v CarPlay umí používat konektory."
+          },
+          {
+            "time": "17:25",
+            "author": "člen komunity",
+            "text": "Taky se mi to obcas stava, ale staci mu rict, aby data a cisla rekl cesky a on to hned napravi. A kdyz mi rekl, ze cesky neumi tak jsem mu pripomnel ze jsme uz takhle komunikovali a on se srovna. Je jako dite, trochu si vymysli, ale kdyz ho upozornite, prestane blbnout, nenechte se osidit a mejte s nim trpelivost 😉."
+          },
+          {
+            "time": "17:28",
+            "author": "člen komunity",
+            "text": "V aute jsme vyresili problem a po me prosbe mi to poslal do mailu. O pul dne pozdeji me zkusil presvedcit, ze to neumi. Ale pak to zase zvladl…"
+          }
+        ]
+      },
+      {
+        "slug": "webináře--workshopy",
+        "name": "Webináře & Workshopy",
+        "messages": [
+          {
+            "time": "17:29",
+            "author": "člen komunity",
+            "text": "Co je spatneho na meet?"
           }
         ]
       }
