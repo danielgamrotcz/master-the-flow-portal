@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-21",
+  "generated_at": "2026-10-22T00:04:27Z",
+  "stats": {
+    "messages": 6,
+    "groups": 1,
+    "members": 2
+  },
+  "cards": [],
+  "resurfacing": null,
+  "transcript": {
+    "groups": [
+      {
+        "slug": "webináře--workshopy",
+        "name": "Webináře & Workshopy",
+        "messages": [
+          {
+            "time": "09:06",
+            "author": "člen komunity",
+            "text": "také by mě zajímalo oni sdíleli jen ten \"vibe\" z něj"
+          },
+          {
+            "time": "10:27",
+            "author": "Daniel",
+            "text": "Vůbec nic. Jen jsme to probírali s lidmi ze studia a mají s ním pro live streamy a sestřihy nic moc zkušenosti. Proto YT. Ale meet je v poho a pro další akce budeme používat dál."
+          },
+          {
+            "time": "15:27",
+            "author": "Daniel",
+            "text": "🚨 🚨 🚨\nZa dvě a půl hodiny vysíláme. Pokud chcete pozvánku, položit otázky dopředu a pak i dostat výstupy na mail, hoďte nám sem přihlášku: https://mastertheflow.cz/rozhovory/1-vibe-coding-s-alexem/\nA pokud nechcete a chcete se jen přidat, tak tím, že to máme na YT (místo Meet), tak to máme bez omezení, skočte v 18:00 rovnou sem: https://www.youtube.com/live/SQ4VtvYf8E4?si=CFphJ9bUVXDFtz5Q\n[kontext odkazu: Stránka zve na první díl živého rozhovoru „Vibecoding“ o práci s AI programovacími agenty, formulaci problémů a ověřování výsledků. Bezplatná akce pro registrované proběhne 21. října 2026 od 18:00 do 20:00 přes Google Meet a má kapacitu 98 lidí.]"
+          },
+          {
+            "time": "16:51",
+            "author": "člen komunity",
+            "text": "Akurát musím preč, ale ak to ostane na YouTube tak O.K. 👍"
+          },
+          {
+            "time": "16:59",
+            "author": "člen komunity",
+            "text": "Je možné klást otázky online během hovoru? Jak a kdy?"
+          },
+          {
+            "time": "16:59",
+            "author": "člen komunity",
+            "text": "A kde?"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,67 +1,48 @@
 {
-  "date": "2026-10-20",
-  "generated_at": "2026-10-21T00:01:36Z",
+  "date": "2026-10-21",
+  "generated_at": "2026-10-22T00:04:27Z",
   "stats": {
-    "messages": 4,
-    "groups": 2,
-    "members": 1
+    "messages": 6,
+    "groups": 1,
+    "members": 2
   },
-  "cards": [
-    {
-      "id": "2026-10-20-01",
-      "type": "NÁSTROJE",
-      "level": "Pokročilý",
-      "topics": [
-        "AI nástroje",
-        "Email",
-        "Workflow"
-      ],
-      "title": "Čeština a konektory AI v CarPlay",
-      "excerpt": "Členové popsali, že AI asistent někdy míchá češtinu s angličtinou a data nebo čísla čte anglicky. V CarPlay dokázal použít konektory a poslat výsledek řešení e-mailem, i když později tvrdil, že to neumí.",
-      "body": "Jeden člen si všiml češtiny s anglickým přízvukem a anglické výslovnosti dat a čísel. Další uvedl, že po upozornění se asistent přepne zpět do češtiny, i když předtím tvrdil, že česky neumí.\n\nPodobně nekonzistentní byl i při práci v autě. Přes CarPlay pomohl vyřešit problém a na požádání poslal výsledek e-mailem. O půl dne později tvrdil, že to neumí, ale pak to znovu zvládl. Konektory tedy fungují, asistent ale své možnosti popisuje nespolehlivě.",
-      "read_minutes": 1,
-      "source_group": "inspirace--diskuze",
-      "source_msg_times": [
-        "16:56",
-        "17:25",
-        "17:28"
-      ],
-      "links": [],
-      "source_date": "2026-10-20"
-    }
-  ],
+  "cards": [],
   "resurfacing": null,
   "transcript": {
     "groups": [
-      {
-        "slug": "inspirace--diskuze",
-        "name": "Inspirace & Diskuze",
-        "messages": [
-          {
-            "time": "16:56",
-            "author": "člen komunity",
-            "text": "Так jo, dneska na mě taky mluvil napůl česky, napůl anglicky, třeba datumy a čísla četl anglicky a jinak mluvil česky s anglickým přízvukem. No ale co je zajímavější, tak i v CarPlay umí používat konektory."
-          },
-          {
-            "time": "17:25",
-            "author": "člen komunity",
-            "text": "Taky se mi to obcas stava, ale staci mu rict, aby data a cisla rekl cesky a on to hned napravi. A kdyz mi rekl, ze cesky neumi tak jsem mu pripomnel ze jsme uz takhle komunikovali a on se srovna. Je jako dite, trochu si vymysli, ale kdyz ho upozornite, prestane blbnout, nenechte se osidit a mejte s nim trpelivost 😉."
-          },
-          {
-            "time": "17:28",
-            "author": "člen komunity",
-            "text": "V aute jsme vyresili problem a po me prosbe mi to poslal do mailu. O pul dne pozdeji me zkusil presvedcit, ze to neumi. Ale pak to zase zvladl…"
-          }
-        ]
-      },
       {
         "slug": "webináře--workshopy",
         "name": "Webináře & Workshopy",
         "messages": [
           {
-            "time": "17:29",
+            "time": "09:06",
             "author": "člen komunity",
-            "text": "Co je spatneho na meet?"
+            "text": "také by mě zajímalo oni sdíleli jen ten \"vibe\" z něj"
+          },
+          {
+            "time": "10:27",
+            "author": "Daniel",
+            "text": "Vůbec nic. Jen jsme to probírali s lidmi ze studia a mají s ním pro live streamy a sestřihy nic moc zkušenosti. Proto YT. Ale meet je v poho a pro další akce budeme používat dál."
+          },
+          {
+            "time": "15:27",
+            "author": "Daniel",
+            "text": "🚨 🚨 🚨\nZa dvě a půl hodiny vysíláme. Pokud chcete pozvánku, položit otázky dopředu a pak i dostat výstupy na mail, hoďte nám sem přihlášku: https://mastertheflow.cz/rozhovory/1-vibe-coding-s-alexem/\nA pokud nechcete a chcete se jen přidat, tak tím, že to máme na YT (místo Meet), tak to máme bez omezení, skočte v 18:00 rovnou sem: https://www.youtube.com/live/SQ4VtvYf8E4?si=CFphJ9bUVXDFtz5Q\n[kontext odkazu: Stránka zve na první díl živého rozhovoru „Vibecoding“ o práci s AI programovacími agenty, formulaci problémů a ověřování výsledků. Bezplatná akce pro registrované proběhne 21. října 2026 od 18:00 do 20:00 přes Google Meet a má kapacitu 98 lidí.]"
+          },
+          {
+            "time": "16:51",
+            "author": "člen komunity",
+            "text": "Akurát musím preč, ale ak to ostane na YouTube tak O.K. 👍"
+          },
+          {
+            "time": "16:59",
+            "author": "člen komunity",
+            "text": "Je možné klást otázky online během hovoru? Jak a kdy?"
+          },
+          {
+            "time": "16:59",
+            "author": "člen komunity",
+            "text": "A kde?"
           }
         ]
       }
