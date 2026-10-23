@@ -20,6 +20,12 @@ function formResponse(submittedEmail, answers) {
 
 const legacyResponses = [];
 const picnicResponses = [];
+// Keep profile tests inside the publication window regardless of today's date.
+let fixtureNow = Date.parse('2026-08-28T12:00:00Z');
+class FixtureDate extends Date {
+  constructor(...args) { super(...(args.length ? args : [fixtureNow])); }
+  static now() { return fixtureNow; }
+}
 const context = vm.createContext({
   FormApp: {
     openById: id => ({ getResponses: () => id === 'PICNIC_TEST_FORM' ? picnicResponses : legacyResponses }),
@@ -29,7 +35,7 @@ const context = vm.createContext({
   },
   Map,
   Set,
-  Date,
+  Date: FixtureDate,
   String,
   Object,
 });
@@ -174,6 +180,12 @@ legacyResponses.push(formResponse('long@example.test', {
 }));
 result = payload();
 check('Příliš dlouhý popis se bezpečně zkrátí', result.attendees[0].bio.length === 1200 && result.attendees[0].bio.endsWith('…'), String(result.attendees[0].bio.length));
+
+fixtureNow = vm.runInContext('Number(ATTENDEE_SYNC.publishUntil) + 1', context);
+result = payload();
+check('Po skončení zveřejňování se profily ani počty registrací neexportují',
+  result.attendees.length === 0 && result.registeredCount === 0
+  && result.officialRegisteredCount === 0 && result.picnicRegisteredCount === 0);
 
 console.log(failures === 0 ? '\nGOOGLE FORMS SYNC: VŠE PROŠLO' : `\n${failures} TESTŮ GOOGLE FORMS SYNC SELHALO`);
 process.exit(failures === 0 ? 0 : 1);
