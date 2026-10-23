@@ -29,10 +29,12 @@ _Žádné položky._
 - Oprávnění: Daniel schválil provedení všech potřebných oprav a navržených bezpečnostních úprav včetně obnovy produkčního provozu. Bez force push, resetu a hromadného rozesílání.
 - ExecPlan: [docs/plans/TASK-017-card-publication-security.md](docs/plans/TASK-017-card-publication-security.md)
 
-- Resumed: 2026-10-23 — Daniel rozšířil technická oprávnění. Fetch již zapisuje do .git; OAuth a Chromium se ověřují znovu. Zachovat obě historie a uživatelské změny.
-- Last safe state: Cloudflare fail closed ověřen, lokální opravy a 74 syntetických testů prošly. Push tajemství přesunuto mimo repozitář; produkční rotace a release neproběhly.
-- Independent verification: `/root/publication_security_frozen_review` dokončen; PARTIALLY VERIFIED pro celkovou obnovu. Zmrazený lokální snapshot prošel bez nového potvrzeného blokujícího nálezu; produkční acceptance zůstává otevřená.
-- Resume from: povolit technický přístup a navázat přes ExecPlan; nic nepublikovat ze starého checkoutu.
+- Resumed: 2026-10-23 — rozšířená oprávnění umožnila fetch, commit a bezpečné sjednocení historie; Wrangler OAuth je obnoven.
+- Resumed: 2026-10-23 — Daniel výslovně potvrdil a schválil všechny čtyři falešné nálezy i dokončení obnovy. Pokračuje cílený commit/push, rotace a nasazení.
+- Last safe state: Cloudflare fail closed ověřen; obě historie spojeny. Pravidelný retry sám pushnul merge 70730d6, deploy selhal před obnovou OAuth. Lokální test commit 0fcd7c5 čeká; WhatsApp publikační opravy jsou staged bez rozpracované migrace. Cards job dočasně odregistrován z launchd, plist zachován; před dokončením obnovit.
+- Resume from: po rozhodnutí potvrdit snapshot, dokončit cílený commit/push, rotaci a deploy; poté obnovit cards job a ověřit skutečný launchd i produkci. Nic neodesílat členům jen kvůli testu.
+- Independent verification: `/root/recovery_acceptance` — completed — PARTIALLY VERIFIED. Lokální publikační kontrakty VERIFIED, celkový release ještě bez produkčního důkazu.
+- Post-review snapshot: 12 stabilních souborů, oba HEAD a indexy shodné; /private/tmp/mtf-resume-review-snapshot.json, SHA-256 5040ed49ac5c8bd39e8bf6b322caffc7838e3a5ab01220dfa4ba0192bc6c9602.
 
 #### Verification
 
