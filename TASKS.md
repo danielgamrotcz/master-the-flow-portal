@@ -24,28 +24,6 @@ _Žádné položky._
 
 ## Blocked
 
-### TASK-017 — Obnova publikace karet a zabezpečení portálu
-
-- Started: 2026-10-23
-- Owner: Codex
-- Výsledek: automatika bezpečně publikuje digest a náhledy; chráněná data a tajemství zůstávají neveřejná.
-- Scope: Cloudflare fail closed, obnova Git a Wrangleru, hlavičky náhledů, bezpečná publikace a rotace push tajemství; zachovat slovníček i rozpracovanou OpenAI migraci.
-- Oprávnění: Daniel schválil potřebné opravy, commit/push/deploy, rotaci a obnovu provozu; následně výslovně přijal všechny čtyři scanner false positive. Bez force push, resetu a hromadných notifikací.
-- ExecPlan: [docs/plans/TASK-017-card-publication-security.md](docs/plans/TASK-017-card-publication-security.md)
-- Blocked: 2026-10-23 — původní cards job dosud není registrován v launchd; bootstrap v sandboxu opakovaně končí chybou 5. Uživatel požádán o jediný bootstrap příkaz v běžném Terminálu na Mac mini. Plist, původní plán a pending zůstávají zachované.
-- Last safe state: produkce c09e20e4 ze schváleného commitu 1aadc7c je úspěšně nasazená; push tajemství rotované, 31/31 produkčních HTTP kontrol a členský desktop / 390 px detail prošly. WhatsApp opravy 9c422dc i portál pushnuté. Žádná testovací notifikace členům.
-- Resume from: ověřit registraci původního jobu, spustit skutečný launchd průchod, ověřit zdrojové počty a dokončení pending. Není potřeba další schválení oprav ani rotaci opakovat.
-- Independent verification: `/root/recovery_acceptance` — completed — PARTIALLY VERIFIED celkově; kontrolovaný produkční release VERIFIED. Nezávislý Cloudflare GET potvrdil deploy, commit, fail closed i bindingy.
-- Post-review snapshot: 12 stabilních souborů shodných; /private/tmp/mtf-release-implementation-snapshot.json, SHA-256 c9ebc39386213ee42def9c1445389eeeb1f3363e3f584bb658cee761f693d620. Následně se mění jen task/plán.
-
-#### Verification
-
-- [x] Production i preview fail closed, bindingy zachované.
-- [x] Obě Git historie zachované; cílené opravy commitnuté a pushnuté bez uživatelské migrace/slovníčku.
-- [x] Hlavičky, ignore, bezpečná publikace a produkční rotace tajemství ověřené.
-- [x] Lokální regrese, 31 produkčních HTTP kontrol a členský detail desktop / 390 px prošly; nezávislá release kontrola dokončena.
-- [ ] Skutečný launchd průchod, úplnost digestu vůči zdrojovým zprávám a automatický provoz. Plná automatická browserová E2E, fyzický dotyk a offline scénář neověřeny.
-
 ### TASK-013 — Pevný limit 98 míst
 
 - Started: 2026-10-12
@@ -258,6 +236,33 @@ _Žádné položky._
 - Produkce: deployment `6b77342e`, source `63e76bd`. HTML/CSS/JS na `https://mastertheflow.cz/live/vibe-coding/` mají HTTP 200 a přesně odpovídají releasu; E2E 31/31 prošlo.
 
 ## Review
+
+### TASK-017 — Obnova publikace karet a zabezpečení portálu
+
+- Started: 2026-10-23
+- Owner: Codex
+- Review: 2026-10-23 — publikační cesta obnovena a nezávisle ověřena.
+- Výsledek: původní launchd generátor znovu běží podle zachovaného rozvrhu; skutečný běh bezpečně dokončil push i produkční deploy.
+- Scope: Cloudflare fail closed, Git a Wrangler, bezpečná publikace, hlavičky náhledů a rotace push tajemství. Uživatelský slovníček i OpenAI migrace zachované.
+- Oprávnění: Daniel schválil opravy, commit/push/deploy, rotaci a obnovu provozu i čtyři ověřené scanner false positive. Bootstrap provedl mimo sandbox. Bez force push a hromadných notifikací.
+- ExecPlan: [docs/plans/TASK-017-card-publication-security.md](docs/plans/TASK-017-card-publication-security.md)
+
+#### Verification
+
+- [x] Skutečný původní launchd job: registrovaný, zachovaný rozvrh, exit 0, úspěšný push/deploy, pending=false, prázdný čítač selhání.
+- [x] Čerstvý bezpečný snapshot: 0 zdrojových zpráv pro 22. 10., synchronizace po konci dne, shoda s digestem; index stabilní a konzistentní s archivem.
+- [x] Produkce odpovídá pushnutému commitu; členský přístup a anonymní odmítnutí, cache, hlavičky a náhledy prošly.
+- [x] Push tajemství rotované, soukromý loader a oprávnění ověřené; production/preview fail closed a původní KV/D1 zachované.
+- [x] Uživatelský slovníček, obě historie a rozpracovaná OpenAI migrace zachované.
+- Omezení: další přirozeně naplánovaný běh a nový neprázdný den zatím nepozorovány. Plná browserová E2E blokovaná MachPort; fyzický dotyk, offline a skutečné doručení push nebyly ověřeny.
+
+#### Evidence
+
+- Verifier: /root/recovery_acceptance — completed — VERIFIED
+- Post-review snapshot: 12/12 zdrojů a 3/3 provozních důkazů shodných; /private/tmp/mtf-operational-final-snapshot.json, SHA-256 2ed6e5bd2be7b519ffdbc29e2c516218d576a9ce37a658406602fa6d27720317. Následně se mění jen tracker/plán.
+- ExecPlan: docs/plans/TASK-017-card-publication-security.md
+- Produkce: 5e37161c-f412-4b6c-82f9-1e38d58bf31d, success, commit 3f6c1ae447f1f7583164b77e642deb0683cd1b35; původní launchd run 1, exit 0, dokončeno 23. 10. 2026 pro digest z 22. 10.
+- Čerstvé kontroly: 14/14 produkčních smoke po launchd deployi; předchozích 31/31 HTTP a Chrome desktop / 390 px platí pro nezměněné runtime soubory. Lokální 74 unit, 19 publikačních a 30 negativních bezpečnostních kontrol prošly.
 
 ### TASK-016 — Uzavření rozhovoru s Alexem
 
