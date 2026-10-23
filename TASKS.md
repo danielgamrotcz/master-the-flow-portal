@@ -1,6 +1,6 @@
 # Projektové úkoly
 
-Aktualizováno: 2026-10-12
+Aktualizováno: 2026-10-23
 
 Backlog není souhlas začít; Ready vyžaduje schválení a WIP limit je jeden.
 Review obsahuje čerstvé cílené E2E důkazy, Done přijetí. Task neautorizuje
@@ -20,7 +20,26 @@ _Žádné položky._
 
 ## In Progress
 
-_Žádné položky._
+### TASK-017 — Obnova publikace karet a zabezpečení portálu
+
+- Started: 2026-10-23
+- Owner: Codex
+- Výsledek: automatika publikuje aktuální digest a náhledy, chráněná data zůstávají za bránou a provozní tajemství se nezveřejňují.
+- Scope: Cloudflare fail closed, bezpečná obnova Git a Wrangleru, ignore pravidla, hlavičky náhledů, publikace a push tajemství. Zachovat rozpracovaný slovníček a OpenAI migraci.
+- Oprávnění: Daniel schválil provedení všech potřebných oprav a navržených bezpečnostních úprav včetně obnovy produkčního provozu. Bez force push, resetu a hromadného rozesílání.
+- ExecPlan: [docs/plans/TASK-017-card-publication-security.md](docs/plans/TASK-017-card-publication-security.md)
+
+- Resumed: 2026-10-23 — Daniel rozšířil technická oprávnění. Fetch již zapisuje do .git; OAuth a Chromium se ověřují znovu. Zachovat obě historie a uživatelské změny.
+- Last safe state: Cloudflare fail closed ověřen, lokální opravy a 74 syntetických testů prošly. Push tajemství přesunuto mimo repozitář; produkční rotace a release neproběhly.
+- Independent verification: `/root/publication_security_frozen_review` dokončen; PARTIALLY VERIFIED pro celkovou obnovu. Zmrazený lokální snapshot prošel bez nového potvrzeného blokujícího nálezu; produkční acceptance zůstává otevřená.
+- Resume from: povolit technický přístup a navázat přes ExecPlan; nic nepublikovat ze starého checkoutu.
+
+#### Verification
+
+- [x] Fail closed ověřený pro production i preview.
+- [ ] Git historie sjednocena bez ztráty práce a publikace ověřena v launchd.
+- [ ] Bezpečnostní hlavičky, ignore a rotace push tajemství ověřeny.
+- [ ] Lokální a produkční scénáře prošly; nezávislá acceptance dokončena.
 
 ## Blocked
 

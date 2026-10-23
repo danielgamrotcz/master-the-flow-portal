@@ -4,6 +4,16 @@
 import { loadCard } from '../_carddata.js';
 
 const ID_RE = /^\d{4}-\d{2}-\d{2}-\d{2}$/;
+// _headers applies only to static assets, not this generated HTML response.
+const SECURITY_HEADERS = {
+  'Content-Security-Policy': "default-src 'none'; img-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'",
+  'X-Frame-Options': 'DENY',
+  'X-Content-Type-Options': 'nosniff',
+  // A share ticket in the query string must not become a Referer elsewhere.
+  'Referrer-Policy': 'no-referrer',
+  'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=()',
+};
 
 function esc(s) {
   return String(s || '')
@@ -16,7 +26,10 @@ export async function onRequestGet({ params, request, env }) {
   const origin = new URL(request.url).origin;
 
   if (!ID_RE.test(id)) {
-    return Response.redirect(origin + '/', 302);
+    return new Response(null, {
+      status: 302,
+      headers: { ...SECURITY_HEADERS, Location: origin + '/', 'Cache-Control': 'no-store' },
+    });
   }
 
   // Archiv je za bránou, proto přes ASSETS a ne přes fetch na vlastní origin.
@@ -71,6 +84,7 @@ export async function onRequestGet({ params, request, env }) {
 
   return new Response(html, {
     headers: {
+      ...SECURITY_HEADERS,
       'Content-Type': 'text/html; charset=utf-8',
       // Odpověď se share ticketem je credential-bearing a nesmí do sdílené
       // cache. Běžný OG teaser bez ticketu zůstává krátce cacheovatelný.

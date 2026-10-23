@@ -1,6 +1,10 @@
 .wrangler/
 node_modules/
 .dev.vars
+.dev.vars.*
+.env
+.env.*
+!.env.example
 **/.wrangler/
 card-whatsapp-bridge.png
 __pycache__/
