@@ -109,20 +109,17 @@ function check(name, cond, detail = '') {
   check('Pražský sraz je označený jako proběhlý', (await srazCard.locator('.event-badge-status').innerText()).trim() === 'Proběhlo');
   check('Ukončený sraz nenabízí registraci', await srazCard.locator('.event-card-register').count() === 0);
   const interviewId = 'evt-2026-10-21-vibe-coding-nezacina-promptem';
-  // Akce zůstává viditelná i po skončení, kdy se přesune mezi minulé.
-  const interviewUpcoming = Date.now() <= Date.parse('2026-10-21T20:00:00+02:00');
-  check('Rozhovor je ve správném přehledu akcí',
-    await page.locator(`#events-${interviewUpcoming ? 'upcoming' : 'past'} .event-card[data-event-id="${interviewId}"]`).count() === 1);
-  check('Banner propaguje rozhovor jen do konce akce',
-    await page.locator(`#event-teaser [data-event-id="${interviewId}"]`).count() === (interviewUpcoming ? 1 : 0));
-  if (interviewUpcoming) {
-    check('Banner používá krátký název rozhovoru',
-      await page.locator(`#event-teaser [data-event-id="${interviewId}"] .event-teaser-title`).innerText() === 'Vibecoding s Alexem');
-    const registration = page.locator('#event-teaser .event-teaser-row')
-      .filter({ has: page.locator(`[data-event-id="${interviewId}"]`) }).locator('.event-teaser-register');
-    check('Registrace z banneru vede na stránku rozhovoru',
-      await registration.getAttribute('href') === '/rozhovory/1-vibe-coding-s-alexem/');
-  }
+  const interviewCard = page.locator(`#events-past .event-card[data-event-id="${interviewId}"]`);
+  check('Rozhovor je mezi proběhlými akcemi', await interviewCard.count() === 1);
+  check('Rozhovor má stav Proběhlo a připravovaný záznam', await interviewCard.locator('.event-badge-status').innerText() === 'Proběhlo'
+    && /Záznam připravujeme/.test(await interviewCard.innerText()));
+  check('Rozhovor nenabízí registraci na kartě ani v hlavním banneru', await interviewCard.locator('.event-card-register').count() === 0
+    && await page.locator(`#event-teaser [data-event-id="${interviewId}"]`).count() === 0);
+  await interviewCard.click();
+  check('Detail rozhovoru potvrzuje uzavření a přípravu záznamu', /Registrace jsou uzavřené/.test(await page.locator('#event-ov-content').innerText())
+    && /Záznam připravujeme/.test(await page.locator('#event-ov-content').innerText())
+    && await page.locator('#event-ov-content a').evaluateAll(links => links.every(a => !/docs\.google\.com\/forms|youtube\.com|youtu\.be/.test(a.href))));
+  await page.locator('#event-overlay-close').click();
 
   // ===== 4c. Slovníček: zavíratelný proužek jen s nadcházejícími srazy =====
   // Očekávání se odvozuje z events.json. Pevný seznam začal oprávněně padat
@@ -130,7 +127,8 @@ function check(name, cond, detail = '') {
   const eventData = JSON.parse(require('fs').readFileSync(
     require('path').join(__dirname, '..', 'data', 'events.json'), 'utf8'));
   const interview = eventData.events.find(event => event.id === interviewId);
-  check('Rozhovor je v datech výslovně odkrytý', interview?.portal_hidden === false);
+  check('Rozhovor je odkrytý archiv bez registračních a záznamových cílů', interview?.portal_hidden === false
+    && interview?.status === 'Proběhlo' && interview.registration_url === null && interview.registration_page_url === null && interview.recording_url === null);
   const pragueMeetup = eventData.events.find(event => event.id === 'evt-2026-08-29-sraz');
   check('Data pražského srazu ruší oba registrační cíle', pragueMeetup?.status === 'Proběhlo'
     && pragueMeetup.registration_url === null

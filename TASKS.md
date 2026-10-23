@@ -256,6 +256,103 @@ _Žádné položky._
 
 ## Review
 
+### TASK-016 — Uzavření rozhovoru s Alexem
+
+- Started: 2026-10-21
+- Owner: Codex
+- Výsledek: uzavřené registrace, proběhlý rozhovor a informace „Záznam připravujeme“ na landing page i v událostech portálu.
+- Scope: landing, event data, odpovídající testy, uzavření Google Forms. Odkaz na záznam nesmí být zveřejněn. Merge obou historií, commit, push a produkční deploy výslovně schválené.
+- ExecPlan: [docs/plans/TASK-016-close-alex-interview.md](docs/plans/TASK-016-close-alex-interview.md)
+
+#### Verification
+
+- [x] Landing ani portál nenabízejí registraci, stav je Proběhlo a záznam se připravuje.
+- [x] Google formulář je skutečně uzavřený i přes původní veřejný odkaz.
+- [x] Žádný odkaz na stream nebo záznam nebyl zveřejněn.
+- [x] Cílené scénáře v připojeném Chromu, responzivita, rapid security, staged secrets a nezávislá acceptance; automatická E2E sada má níže uvedené omezení.
+- [x] Commit, push, deploy a produkční kontrola stejné implementační verze.
+
+#### Evidence
+
+- Verifier: `/root/alex_release_verify` — completed — VERIFIED pro produkční uzavření rozhovoru. Předchozí lokální verifier `/root/alex_archive_acceptance` — completed — PARTIALLY VERIFIED kvůli E2E prostředí.
+- Post-review snapshot: nezměněn — event e6114f30, landing d6356075, testy 3ac1ec2e/f06989e3/db49a983. Životní cyklus Review, čeká Danielovo přijetí; žádný aktivní blocker.
+- ExecPlan: docs/plans/TASK-016-close-alex-interview.md
+- Připojený Chrome: landing 320/390/744/1024/1440/1920 bez overflow; mobilní ovládání tématu, hlavní banner, proběhlá karta a detail bez registrace i videa prošly.
+- Syntax tří JS, diff-check a nezávislý Node kontrakt portálu prošly; ostatní eventy a medailonek zachované.
+- Kanonická sada exit 1: Chromium nespustil sandbox; google-forms-attendees selhává stejně na baseline. API a Google registrační/count testy prošly; archived-groups prošel. Není vydáváno za úplný E2E success.
+- Rapid security: pouze statický obsah a data; žádná změna auth, veřejného API, CSP, middleware, dependencies ani HTML sinků. Žádný potvrzený blocker v tomto diffu. Živý formulář uzavřen přes UI bez práce s odpověďmi.
+- Release: implementační commit `79057917de7ebb254e19da0f379915b4c8ab89f7` pushnutý na origin/main; čerstvý ls-remote shodu potvrdil.
+- Resumed: 2026-10-21 — Daniel výslovně potvrdil přihlášení Cloudflare. Pokračuje pouze dříve schválený deploy a produkční kontrola.
+
+- Produkce: Cloudflare Pages `fa2a7342-4be9-4001-b98e-6308446a705d`, branch main, source `7905791`, nasazeno z čistého Git exportu.
+- Čerstvá veřejná kontrola: landing a events.json HTTP 200 a byte-shodné s releasem; vlastní OG PNG veřejné a shodné, stará URL přesměrovává. Chrome ověřil hlavní banner bez registrace, archivní kartu a detail bez form/video odkazů. Google Forms zůstává uzavřen i anonymním GET.
+- Přihlášení Cloudflare uživatelem potvrzené a dokončené. Žádný e-mail, pozvánka ani syntetická registrace nebyly odeslány.
+- Původní checkout zůstává kvůli oprávněním na b300de5 s uživatelským slovníčkem beze změny; GitHub obsahuje spojenou historii a release. Další práci zahajovat kontrolou čerstvosti.
+
+
+### TASK-015 — Registrace bez pevné kapacity
+
+- Started: 2026-10-18
+- Owner: Codex
+- Výsledek: registrace se nezavře po 98 lidech a veřejná stránka ukazuje pouze čerstvý počet registrovaných bez kapacity či zbývajících míst.
+- Scope: landing page, anonymní count API, registrační a count Apps Script, potvrzení formuláře, YouTube odkaz v pozvánce a regresní testy. Bez replaye dříve odmítnutých registrací, mazání historického ledgeru nebo živého zásahu bez samostatného potvrzení.
+- Režim: critical/coordinated; TASK-015 vědomě nahrazuje kapacitní chování TASK-012 a TASK-013, jejich historii nemaže.
+- Release scope: 2026-10-18 — Daniel výslovně schválil commit, push a produkční deploy; živou změnu Apps Scriptu provede ručně podle přesného verzovaného zdroje.
+- ExecPlan: [docs/plans/TASK-015-unlimited-registration.md](docs/plans/TASK-015-unlimited-registration.md)
+- Review: lokální implementace a nezávislá acceptance dokončené. Živá produkce a Google Form stále používají původní zdroj; commit, push, deploy a živá Google aktivace nejsou autorizované.
+- Last safe state: změna je pouze v čistém dočasném worktree proti baseline `5cbe29d`; historický ledger a odmítací markery zůstávají beze změny.
+- Resume from: koordinovaný živý cutover Apps Script/Form + web release až po samostatném potvrzení; bez replaye historických odmítnutí a bez syntetické registrace.
+
+#### Verification
+
+- [x] API zveřejňuje pouze čerstvý anonymní počet a timestamp.
+- [x] Web nikde neuvádí kapacitu ani zbývající místa a CTA zůstává aktivní.
+- [x] Google skripty formulář nezavírají a count odpovídá aktuálním unikátním registracím bez historicky odmítnutých odpovědí.
+- [x] Cílené testy, lokální E2E, rapid security a nezávislá acceptance prošly.
+- [ ] Živá Google aktivace, produkční release a produkční kontrola dokončené.
+
+#### Evidence
+
+- Impact mapa: `/root/unlimited_registration_impact` dokončena; web, API, Apps Script a testy musí být změněné koordinovaně.
+- Baseline: `5cbe29d`, shodný s čerstvým `origin/main`. Produkční API 2026-10-18 vracelo 69 registrací a kapacitu 98; Google Form byl otevřený, ale stále obsahoval kapacitní texty.
+- Cílené jednotkové a mock testy: API, invitation, count a unlimited invariant — exit 0. Mock ověřil 101 čerstvých registrací, deduplikaci, retry, pokles countu po smazání a žádný replay historického `FULL_*` markeru.
+- Lokální Wrangler + Playwright: rozhovorový E2E a registrační E2E — exit 0; CTA zůstává aktivní při 98, 101, stale datech i výpadku, 30s obnova, čtyři viewporty a oba motivy.
+- Rapid security proti `5cbe29d`: žádný potvrzený nový nález. Secret, konstantní porovnání, allowlist, 128B limit, rate limit, `no-store` a count-only hranice zachované; žádné PII neopouští Google.
+- Plná sada proti správnému lokálnímu serveru — exit 1 kvůli chybějícímu `.dev.vars` pro privátní E2E a dříve evidovanému selhání `google-forms-attendees`; všechny testy dotčeného toku v témže běhu prošly.
+- Nezávislá acceptance: první průchod našel replay historicky odmítnutých odpovědí; po opravě druhý průchod `VERIFIED` bez blockeru. Asset hash `e30a38b`, `git diff --check` a syntaxe prošly.
+- Manuální pixelová kontrola: NOT TESTED — spravovaná browser policy zablokovala otevření localhostu; behaviorální Playwright layout kontrola prošla.
+
+### TASK-014 — Formát vysílání na landing page
+
+- Started: 2026-10-18
+- Owner: Codex
+- Výsledek: veřejná landing page už neslibuje Google Meet; uvádí živé online
+  vysílání a zachovává odkaz až po registraci.
+- Scope: landing page a cílený regresní test. Bez změny formuláře, potvrzovacích
+  e-mailů, kalendáře, registrační automatizace a streamového odkazu.
+- Release scope: 2026-10-18 — Daniel výslovně schválil commit, push na `main`
+  a produkční deploy na Cloudflare Pages.
+- Režim: contained; implementace v dočasném čistém worktree kvůli nesouvisející
+  rozpracované změně `tools/build_glossary.py` v hlavním checkoutu.
+
+#### Verification
+
+- [x] Veřejný fakt „Kde“ uvádí živé online vysílání a odkaz po registraci.
+- [x] Landing page neobsahuje YouTube ani jiný streamový odkaz.
+- [x] Cílené automatické a browserové kontroly prošly.
+
+#### Evidence
+
+- `node --check tests/e2e-vibe-coding-live.js` — prošlo.
+- `e2e-vibe-coding-live.js` proti lokálnímu Wrangleru — 37/37 prošlo; kontroluje
+  také registrační CTA, absenci Meetu a streamových odkazů a layout od telefonu
+  po desktop.
+- `git diff --check` — prošlo.
+- Verifier: `/root/landing_format_recheck` — completed — VERIFIED WITH WARNINGS
+- Post-review snapshot před releasem: landing page `29818d7f…`, E2E
+  `70e5f311…`; TASK-014 je v Review.
+- ExecPlan: nepoužit; krátká změna v jedné session.
+
 ### TASK-007 — První díl v části Rozhovory
 
 - Started: 2026-10-12

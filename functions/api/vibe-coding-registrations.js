@@ -1,10 +1,9 @@
 import { rateLimit, ipKey } from './_ratelimit.js';
 
 const KEY = 'event:2026-10-21:registration-count';
-const CAPACITY = 98;
 const MAX_AGE_MS = 15 * 60 * 1000;
 const headers = { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' };
-const validCount = value => Number.isSafeInteger(value) && value >= 0 && value <= 10000;
+const validCount = value => Number.isSafeInteger(value) && value >= 0;
 const json = (data, status = 200) => Response.json(data, { status, headers });
 
 async function equalSecret(a, b) {
@@ -17,14 +16,13 @@ async function equalSecret(a, b) {
 }
 
 export async function onRequestGet({ env }) {
-  const unknown = { capacity: CAPACITY, registeredCount: null, remaining: null, updatedAt: null };
+  const unknown = { registeredCount: null, updatedAt: null };
   try {
     const raw = env.MTF_DATA ? await env.MTF_DATA.get(KEY) : null;
     const data = raw ? JSON.parse(raw) : null;
     const age = data ? Date.now() - Date.parse(data.updatedAt) : NaN;
     if (!data || !validCount(data.registeredCount) || !Number.isFinite(age) || age < -60000 || age > MAX_AGE_MS) return json(unknown);
-    return json({ capacity: CAPACITY, registeredCount: data.registeredCount,
-      remaining: Math.max(0, CAPACITY - data.registeredCount), updatedAt: data.updatedAt });
+    return json({ registeredCount: data.registeredCount, updatedAt: data.updatedAt });
   } catch { return json(unknown); }
 }
 

@@ -1,4 +1,4 @@
-// Synchronizace přidělených míst. Při naplnění zavře formulář; neposílá pozvánky.
+// Synchronizace aktuálního počtu unikátních registrací. Nemění stav formuláře.
 const VIBE_COUNT = {
   formId: '1NE0ISDvtJ51sGkHSJPlodY3pOwyK8hrfhMFz-79ce60',
   endpoint: 'https://mastertheflow.cz/api/vibe-coding-registrations',
@@ -9,18 +9,23 @@ function syncVibeCodingRegistrationCount() {
   const lock = LockService.getScriptLock();
   lock.waitLock(30000);
   try {
-    const reserved = refreshVibeCodingSeatsLocked_(FormApp.openById(VIBE_COUNT.formId));
-    const secret = PropertiesService.getScriptProperties().getProperty(VIBE_COUNT.secretProperty);
+    const emails = new Set();
+    const properties = PropertiesService.getScriptProperties();
+    FormApp.openById(VIBE_COUNT.formId).getResponses().forEach(response => {
+      if (properties.getProperty('VIBE_CODING_LIVE_FULL_' + response.getId())) return;
+      try { emails.add(vibeCodingLiveEmailFromResponse_(response)); } catch { /* Neplatná odpověď se nepočítá. */ }
+    });
+    const secret = properties.getProperty(VIBE_COUNT.secretProperty);
     if (!secret) throw new Error('Chybí konfigurace synchronizace počtu.');
     const result = UrlFetchApp.fetch(VIBE_COUNT.endpoint, {
       method: 'post', contentType: 'application/json',
       headers: { 'x-attendees-secret': secret },
-      payload: JSON.stringify({ registeredCount: reserved.size }),
+      payload: JSON.stringify({ registeredCount: emails.size }),
       muteHttpExceptions: true, followRedirects: false,
     });
     if (result.getResponseCode() !== 200) throw new Error('Synchronizace počtu selhala: HTTP ' + result.getResponseCode());
-    console.log('Synchronizováno přidělených míst: ' + reserved.size);
-    return reserved.size;
+    console.log('Synchronizováno registrací: ' + emails.size);
+    return emails.size;
   } finally { lock.releaseLock(); }
 }
 
