@@ -20,30 +20,31 @@ _Žádné položky._
 
 ## In Progress
 
+_Žádné položky._
+
+## Blocked
+
 ### TASK-017 — Obnova publikace karet a zabezpečení portálu
 
 - Started: 2026-10-23
 - Owner: Codex
-- Výsledek: automatika publikuje aktuální digest a náhledy, chráněná data zůstávají za bránou a provozní tajemství se nezveřejňují.
-- Scope: Cloudflare fail closed, bezpečná obnova Git a Wrangleru, ignore pravidla, hlavičky náhledů, publikace a push tajemství. Zachovat rozpracovaný slovníček a OpenAI migraci.
-- Oprávnění: Daniel schválil provedení všech potřebných oprav a navržených bezpečnostních úprav včetně obnovy produkčního provozu. Bez force push, resetu a hromadného rozesílání.
+- Výsledek: automatika bezpečně publikuje digest a náhledy; chráněná data a tajemství zůstávají neveřejná.
+- Scope: Cloudflare fail closed, obnova Git a Wrangleru, hlavičky náhledů, bezpečná publikace a rotace push tajemství; zachovat slovníček i rozpracovanou OpenAI migraci.
+- Oprávnění: Daniel schválil potřebné opravy, commit/push/deploy, rotaci a obnovu provozu; následně výslovně přijal všechny čtyři scanner false positive. Bez force push, resetu a hromadných notifikací.
 - ExecPlan: [docs/plans/TASK-017-card-publication-security.md](docs/plans/TASK-017-card-publication-security.md)
-
-- Resumed: 2026-10-23 — rozšířená oprávnění umožnila fetch, commit a bezpečné sjednocení historie; Wrangler OAuth je obnoven.
-- Resumed: 2026-10-23 — Daniel výslovně potvrdil a schválil všechny čtyři falešné nálezy i dokončení obnovy. Pokračuje cílený commit/push, rotace a nasazení.
-- Last safe state: Cloudflare fail closed ověřen; obě historie spojeny. Pravidelný retry sám pushnul merge 70730d6, deploy selhal před obnovou OAuth. Lokální test commit 0fcd7c5 čeká; WhatsApp publikační opravy jsou staged bez rozpracované migrace. Cards job dočasně odregistrován z launchd, plist zachován; před dokončením obnovit.
-- Resume from: po rozhodnutí potvrdit snapshot, dokončit cílený commit/push, rotaci a deploy; poté obnovit cards job a ověřit skutečný launchd i produkci. Nic neodesílat členům jen kvůli testu.
-- Independent verification: `/root/recovery_acceptance` — completed — PARTIALLY VERIFIED. Lokální publikační kontrakty VERIFIED, celkový release ještě bez produkčního důkazu.
-- Post-review snapshot: 12 stabilních souborů, oba HEAD a indexy shodné; /private/tmp/mtf-resume-review-snapshot.json, SHA-256 5040ed49ac5c8bd39e8bf6b322caffc7838e3a5ab01220dfa4ba0192bc6c9602.
+- Blocked: 2026-10-23 — původní cards job dosud není registrován v launchd; bootstrap v sandboxu opakovaně končí chybou 5. Uživatel požádán o jediný bootstrap příkaz v běžném Terminálu na Mac mini. Plist, původní plán a pending zůstávají zachované.
+- Last safe state: produkce c09e20e4 ze schváleného commitu 1aadc7c je úspěšně nasazená; push tajemství rotované, 31/31 produkčních HTTP kontrol a členský desktop / 390 px detail prošly. WhatsApp opravy 9c422dc i portál pushnuté. Žádná testovací notifikace členům.
+- Resume from: ověřit registraci původního jobu, spustit skutečný launchd průchod, ověřit zdrojové počty a dokončení pending. Není potřeba další schválení oprav ani rotaci opakovat.
+- Independent verification: `/root/recovery_acceptance` — completed — PARTIALLY VERIFIED celkově; kontrolovaný produkční release VERIFIED. Nezávislý Cloudflare GET potvrdil deploy, commit, fail closed i bindingy.
+- Post-review snapshot: 12 stabilních souborů shodných; /private/tmp/mtf-release-implementation-snapshot.json, SHA-256 c9ebc39386213ee42def9c1445389eeeb1f3363e3f584bb658cee761f693d620. Následně se mění jen task/plán.
 
 #### Verification
 
-- [x] Fail closed ověřený pro production i preview.
-- [ ] Git historie sjednocena bez ztráty práce a publikace ověřena v launchd.
-- [ ] Bezpečnostní hlavičky, ignore a rotace push tajemství ověřeny.
-- [ ] Lokální a produkční scénáře prošly; nezávislá acceptance dokončena.
-
-## Blocked
+- [x] Production i preview fail closed, bindingy zachované.
+- [x] Obě Git historie zachované; cílené opravy commitnuté a pushnuté bez uživatelské migrace/slovníčku.
+- [x] Hlavičky, ignore, bezpečná publikace a produkční rotace tajemství ověřené.
+- [x] Lokální regrese, 31 produkčních HTTP kontrol a členský detail desktop / 390 px prošly; nezávislá release kontrola dokončena.
+- [ ] Skutečný launchd průchod, úplnost digestu vůči zdrojovým zprávám a automatický provoz. Plná automatická browserová E2E, fyzický dotyk a offline scénář neověřeny.
 
 ### TASK-013 — Pevný limit 98 míst
 
