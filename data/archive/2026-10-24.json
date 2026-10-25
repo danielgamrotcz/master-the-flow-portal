@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-24",
+  "generated_at": "2026-10-25T00:05:03Z",
+  "stats": {
+    "messages": 14,
+    "groups": 1,
+    "members": 5
+  },
+  "cards": [
+    {
+      "id": "2026-10-24-01",
+      "type": "NÁSTROJE",
+      "level": "Začátečník",
+      "topics": [
+        "AI nástroje",
+        "Produktivita",
+        "Workflow"
+      ],
+      "title": "První zkušenosti s GrogBotem",
+      "excerpt": "GrogBot testují dva členové a první zkušenosti mají pozitivní. Oceňují, že se snadno používá, zároveň se ale obávají závislosti na jedné platformě.",
+      "body": "Jeden člen testuje GrogBot první měsíc. Podle něj je uživatelsky velmi přívětivý a funguje skvěle. Druhý člen si při vlastním testování zatím také nemůže stěžovat. Objevila se ale obava z možného uzamčení do jedné platformy. Člen, který ji zmínil, by v takovém případě dal přednost řešení od Anthropicu před řešením spojeným s Elonem Muskem. Další účastníci s ním souhlasili.",
+      "read_minutes": 1,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "11:19",
+        "12:25",
+        "12:47",
+        "12:49"
+      ],
+      "links": [],
+      "source_date": "2026-10-24"
+    },
+    {
+      "id": "2026-10-24-02",
+      "type": "UKÁZKA",
+      "level": "Pokročilý",
+      "topics": [
+        "Automatizace",
+        "Workflow",
+        "Produktivita"
+      ],
+      "title": "SMS jako vstup pro úkoly a kalendář",
+      "excerpt": "Jeden člen popsal, jak si propojil SMS s úkoly a kalendářem. Používá seznam povolených kontaktů a návrhy událostí před uložením schvaluje.",
+      "body": "V popsaném workflow spouštějí SMS dvě automatizace. Člen má seznam kontaktů, z jejichž zpráv se mohou vytvářet úkoly. Systém mu také posílá návrhy událostí do kalendáře. Bez kontroly se ale nezapíšou, každý návrh musí nejdřív schválit. V diskuzi se pak ptal na další možnosti využití SMS integrace, žádné potvrzené odpovědi ani konkrétní scénáře ale nezazněly.",
+      "read_minutes": 1,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "15:25"
+      ],
+      "links": [],
+      "source_date": "2026-10-24"
+    }
+  ],
+  "resurfacing": {
+    "id": "2026-10-04-02",
+    "type": "UKÁZKA",
+    "level": "Expert",
+    "topics": [
+      "AI nástroje",
+      "Automatizace",
+      "ChatGPT",
+      "Databáze"
+    ],
+    "title": "Vlastní dohled nad vývojem glykémie",
+    "excerpt": "Člen představil vlastní HW a SW systém, který propojuje data ze senzoru Dexcom G7 a inzulinové pumpy Tandem. Nabízí vlastní grafy, predikce, upozornění a vhledy, které podle autora běžně používané aplikace neposkytují.",
+    "body": "Systém vznikl po několika kolech práce s Claude Cowork a běží na Raspberry Pi. Data z Tandem Source a Dexcomu ukládá do SQLite, ukazuje podrobný vývoj glykémie a přes Pushover posílá upozornění do mobilu. Claude analyzuje trendy. ChatGPT podle člena komunity vymodeloval v OpenSCADu kryt fyzického tlačítka a navrhl zapojení elektroniky. Úspěšnost predikcí člen odhaduje zhruba na 65 %. Delší předpovědi se podle něj skoro nedají převést do algoritmu. Největší přínos proto vidí večer, kdy systém odhaduje vývoj přes noc. Řešení nenahrazuje doporučení lékaře ani alarmy z pumpy, jen je doplňuje.",
+    "read_minutes": 2,
+    "source_group": "inspirace--diskuze",
+    "source_msg_times": [
+      "10:07",
+      "10:14",
+      "10:15",
+      "10:20",
+      "10:23"
+    ],
+    "links": [],
+    "source_date": "2026-10-04",
+    "images": [
+      {
+        "file": "a5a15054-cdd4-40d2-891c-8a133c2eba11-bde9406cb0663861.jpg",
+        "w": 1280,
+        "h": 960,
+        "desc": "Velké červené tlačítko s průsvitným krytem je osazené na černé krabičce s několika bočními otvory. Zařízení leží na ploše se vzorem nepravidelných kamenů."
+      }
+    ],
+    "resurfaced_from": "2026-10-04"
+  },
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspirace--diskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "11:00",
+            "author": "Daniel",
+            "text": "Na tohle jsem zvědavý. Mega zjednodušení pro hodně lidí."
+          },
+          {
+            "time": "11:11",
+            "author": "člen komunity",
+            "text": "Zatím jen v USA a z cekacky údajně k dispozici? Taky jsem zvědavá a zjednodušení vítám."
+          },
+          {
+            "time": "11:19",
+            "author": "člen komunity",
+            "text": "Testuju první měsíc GrogBota a je uživatelsky velice přívětivý a funguje skvěle. Cesta je jasná, půjde to tímto směrem. Osobně vnímám problém zamknutí se do jedné platformy. Když už k tomu dojde tak bych byl raději zamknutý u antropiku než u Muska."
+          },
+          {
+            "time": "12:25",
+            "author": "člen komunity",
+            "text": "Taky testuju a zatim si nemůžu stěžovat… 👍🏼 a jinak s Muskem souhlas… 🙈😁"
+          },
+          {
+            "time": "12:43",
+            "author": "člen komunity",
+            "text": "Uvažuji nad tím už pár týdnů.\nPředplatné přímo nebo přes Cursor? Které?\nDěkuji za rady."
+          },
+          {
+            "time": "12:46",
+            "author": "člen komunity",
+            "text": "https://cs.wikipedia.org/wiki/Grok"
+          },
+          {
+            "time": "12:47",
+            "author": "člen komunity",
+            "text": "Muska nemusím a Grokovi neverim, tak si počkám z principu na řešení od Anthropicu."
+          },
+          {
+            "time": "12:49",
+            "author": "člen komunity",
+            "text": "Vidím to úplně stejně"
+          },
+          {
+            "time": "13:00",
+            "author": "člen komunity",
+            "text": "Nejmenší je tuším to za 30 USD nebo eur. Ted nevim. A ano pres cursor. Spojili to dohromady."
+          },
+          {
+            "time": "13:10",
+            "author": "člen komunity",
+            "text": "Ok. Děkuji"
+          },
+          {
+            "time": "15:25",
+            "author": "člen komunity",
+            "text": "Mate nekdo napojene sms? Premyslim jak je lepe integrovat zatim mam seznam kontaltu od kterych se mi muzou delat ukoly a ode vsech mi chodi navrhy na udalosti v kalendari ale musim je schvalovat. Mate tam jeste neco jineho jak je vyuzit?"
+          },
+          {
+            "time": "18:19",
+            "author": "člen komunity",
+            "text": "Už dostal někdo bota Claude Duet?"
+          },
+          {
+            "time": "19:09",
+            "author": "člen komunity",
+            "text": "Podle moho se k CD dosnaneme jen pres VPN, funguje jen v US"
+          }
+        ]
+      }
+    ]
+  }
+}

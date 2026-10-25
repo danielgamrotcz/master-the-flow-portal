@@ -2086,6 +2086,24 @@
       "why": "Narazíte na něj při propojování AI asistenta s e-mailem nebo dalšími aplikacemi.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "platform-lock-in",
+      "term": "Platform lock-in",
+      "cat": "nastroje",
+      "match": [
+        "platform lock-in",
+        "platformního lock-inu",
+        "lock-in",
+        "lock-inu",
+        "zamknutí do jedné platformy",
+        "uzamčení do jedné platformy"
+      ],
+      "short": "Platform lock-in je závislost na jedné službě, ze které se později obtížně přechází jinam.",
+      "plain": "Vzniká, když máte data, pracovní postupy nebo placené funkce navázané na jednu službu. Přechod jinam pak může znamenat převod dat, změnu návyků nebo nové předplatné.",
+      "why": "Narazíte na něj třeba při rozhodování, zda si AI nástroj předplatit přímo, nebo přes jinou službu, jako je Cursor.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }
