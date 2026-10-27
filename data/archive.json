@@ -2086,6 +2086,18 @@
       "date": "2026-10-25",
       "card_count": 0,
       "topics": []
+    },
+    {
+      "date": "2026-10-26",
+      "card_count": 5,
+      "topics": [
+        "AI nástroje",
+        "Prompting",
+        "Automatizace",
+        "Claude Code",
+        "Produktivita",
+        "Workflow"
+      ]
     }
   ]
 }
