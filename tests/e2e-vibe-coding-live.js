@@ -25,7 +25,7 @@ function check(name, condition, detail = '') {
       && target.origin === new URL(BASE).origin && target.pathname === episodePath && target.search === '?src=pozvanka');
   }
   await page.goto(`${BASE}/live/vibe-coding/?src=pozvanka#registrace`, { waitUntil: 'networkidle' });
-  check('Přesměrování v prohlížeči zachová odkaz na registraci', page.url() === `${BASE}${episodePath}?src=pozvanka#registrace`);
+  check('Přesměrování v prohlížeči zachová historický fragment', page.url() === `${BASE}${episodePath}?src=pozvanka#registrace`);
   const response = await page.goto(`${BASE}${episodePath}`, { waitUntil: 'networkidle' });
   check('Stránka vrací úspěšnou odpověď', response && response.ok(), String(response && response.status()));
   check('Stránka je veřejná bez přístupové brány', await page.locator('#gate').count() === 0);
@@ -60,36 +60,23 @@ function check(name, condition, detail = '') {
   check('Akce používá název série rozhovorů a číslo prvního dílu', Object.values(naming).every(Boolean), JSON.stringify(naming));
   const facts = {
     date: /21\. října 2026/.test(mainText),
-    day: /středa/i.test(mainText),
-    time: /18:00–20:00/.test(mainText),
-    interview: /18:00–19:30 rozhovor/.test(mainText),
-    audienceQuestions: /19:30–20:00 otázky a odpovědi diváků/.test(mainText),
-    oldDurationAbsent: !/90 minut/i.test(mainText),
-    place: /Online/.test(mainText),
-    registrationClosed: /Registrace jsou uzavřené/.test(mainText),
-    oldPlaceAbsent: !/Google Meet|odkaz po registraci/i.test(mainText),
-    completed: /Proběhlo/.test(mainText),
-    recording: /Záznam připravujeme/i.test(mainText),
+    duration: /1 hodina 50 minut/.test(mainText),
+    completed: /natočeno/.test(mainText),
+    scheduleAbsent: !/18:00|19:30|20:00|středa|Registrace jsou uzavřené/.test(mainText),
+    outcomes: /smysluplný problém/.test(mainText) && /zadat práci AI/.test(mainText) && /výsledek opravdu funguje/.test(mainText),
   };
-  check('Archivní údaje jsou konzistentní', Object.values(facts).every(Boolean), JSON.stringify(facts));
-  check('Úvod i závěr uvádějí připravovaný záznam', /Záznam připravujeme/.test(await page.locator('.hero').innerText())
-    && /Záznam připravujeme/.test(await page.locator('#registration-title').innerText()));
+  check('Archivní úvod uvádí skutečný přínos, datum a délku bez starého harmonogramu', Object.values(facts).every(Boolean), JSON.stringify(facts));
+  const resourceTargets = await page.locator('.hero .resource-card').evaluateAll(links => links.map(a => a.getAttribute('href')));
+  check('Všechny tři zdroje jsou přímo v úvodu', JSON.stringify(resourceTargets) === JSON.stringify([
+    'https://www.youtube.com/watch?v=SQ4VtvYf8E4', 'materialy.html', 'prepis.html',
+  ]));
+  check('Přepis je jasně označený jako automatický', /Automatický přepis bez úplné kontroly poslechem/.test(mainText));
   check('Stránka už nezve na budoucí rozhovor', !/Přijďte s vlastní otázkou|Na otázky bude prostor|Pozvánka do kalendáře|Chci pozvánku|O čem se budeme bavit/.test(mainText));
-  const startingPoint = {
-    lovable: /Lovable/.test(mainText),
-    codingAgent: /coding agenta/i.test(mainText),
-    desiredOutput: /výsledek není ono/i.test(mainText),
-  };
-  check('Stránka vychází ze zkušenosti s coding nástroji', Object.values(startingPoint).every(Boolean), JSON.stringify(startingPoint));
-  check('Nosná otázka odpovídá Alexovu tématu přemýšlení', /Vibecoding vás učí každý\. Přemýšlet málokdo\./.test(mainText)
-    && /Jak uvidět problém dřív, než začnete zadávat/.test(mainText)
-    && /Jak výsledek ověřit a používat v praxi/.test(mainText));
-  check('Alexův setup není vydáván za povinnost', /Co si vzít z Alexova systému práce s agentem/.test(mainText));
   check('Alexova odbornost není postavená na shazování Daniela', /20 let digitalizuje firmy/i.test(mainText)
     && /Učí jejich týmy, jak o AI přemýšlet/i.test(mainText)
     && !/Mám to stejně|Nejsem vývojář|dál než (?:já|ten můj)|Co dělá jinak než já|co mi při stavění aplikací nefunguje|méně pokročil|o (?:několik|pár) úrovní přede mnou|teprve začínám|Daniel[^.]{0,80}(?:bastlí|nezvládá|trvá déle)/i.test(publicCopy));
-  check('Témata mají archivní formulaci', /O čem jsme mluvili/.test(mainText));
-  check('Stránka neslibuje pevný program ani polovinu vysílání', /O čem jsme mluvili/i.test(mainText)
+  check('Témata pomáhají vybrat část záznamu', /Vyberte si téma/.test(mainText));
+  check('Stránka neslibuje pevný program ani polovinu vysílání', /Vyberte si téma/i.test(mainText)
     && !/polovinu vysílání|připravené checkpointy|šest okruhů/i.test(mainText));
   check('Stránka neslibuje konkrétní aplikaci dema', !/postavíme (?:aplikaci|appku)|vyrobíme (?:aplikaci|appku)/i.test(mainText));
 
@@ -99,11 +86,12 @@ function check(name, condition, detail = '') {
   check('Landing page neslibuje limit ani zbývající místa', !/\b98\b|kapacit|zbývá|obsazen/i.test(mainText));
 
   const publicHrefs = await page.locator('a').evaluateAll(links => links.map(link => link.href));
-  check('Veřejná stránka neodhaluje Meet, stream, kalendář ani záznam', !publicHrefs.some(href => /meet\.google\.com|(?:youtube\.com|youtu\.be)(?:\/|$)|calendar\.google\.com|drive\.google\.com|\.ics(?:$|\?)/.test(href))
+  check('Veřejná stránka obsahuje schválené video, bez Meet a kalendáře', publicHrefs.some(href => href.includes('youtube.com/watch?v=SQ4VtvYf8E4'))
+    && !publicHrefs.some(href => /meet\.google\.com|calendar\.google\.com|drive\.google\.com|\.ics(?:$|\?)/.test(href))
     && await page.locator('[data-calendar], .meet-link, .calendar-actions').count() === 0,
   publicHrefs.join(' | '));
-  check('Eventová data neodhalují Meet ani záznam', !portalEvent?.links
-    && portalEvent?.recording_url === null
+  check('Eventová data odkazují na schválené video a podklady', portalEvent?.links?.length === 3
+    && portalEvent?.recording_url === 'https://www.youtube.com/watch?v=SQ4VtvYf8E4'
     && portalEvent?.location === 'Online'
     && portalEvent?.recording_password === null);
 
@@ -135,14 +123,13 @@ function check(name, condition, detail = '') {
   check('Alexův medailonek odpovídá jeho dodanému textu', await page.locator('.guest-copy > p').innerText() === guestBio
     && await page.locator('.guest-links a').count() === 3);
 
-  const questionsText = (await page.locator('.question-list').innerText()).replace(/\s+/g, ' ');
-  check('Stránka uvádí témata místo harmonogramu', /uvidět problém/i.test(questionsText)
-    && /Alexova systému práce s agentem/i.test(questionsText)
-    && /ověřit a používat/i.test(questionsText)
-    && !/18:\d{2}/.test(questionsText));
-  check('Stránka neopakuje samostatnou sekci o formátu', await page.locator('.format').count() === 0);
-  check('Minimalistický rozsah nepřidává propagaci kurzu', await page.locator('main > section').count() === 4
-    && await page.locator('.question-list li').count() === 3
+  const chapterLinks = await page.locator('.question-list a').evaluateAll(links => links.map(a => a.href));
+  check('Šest konkrétních témat vede na doložená místa záznamu', JSON.stringify(chapterLinks) === JSON.stringify([
+    968, 2135, 2928, 4479, 5173, 5914,
+  ].map(t => `https://www.youtube.com/watch?v=SQ4VtvYf8E4&t=${t}s`)));
+  check('Podklady předcházejí profilu hosta', await page.locator('.resource-grid').evaluate(el => Boolean(el.compareDocumentPosition(document.querySelector('.guest-band')) & Node.DOCUMENT_POSITION_FOLLOWING)));
+  check('Minimalistický rozsah nepřidává propagaci kurzu', await page.locator('main > section').count() === 3
+    && await page.locator('.question-list li').count() === 6
     && !/leden 2027|do 15 lidí|Novum Organon/.test(mainText));
 
   const themeBefore = await page.locator('html').getAttribute('data-theme');
@@ -152,8 +139,9 @@ function check(name, condition, detail = '') {
 
   await page.locator('.question-band').evaluate(element => element.scrollIntoView({ block: 'start', behavior: 'instant' }));
   check('Odscrollování neobnoví sticky registraci', await page.locator('.sticky-register').count() === 0);
-  await page.locator('.registration-actions').scrollIntoViewIfNeeded();
-  check('Závěrečné tlačítko vrací na portál', await page.locator('.registration-actions a').getAttribute('href') === '/');
+  await page.locator('#registrace').scrollIntoViewIfNeeded();
+  check('Starý fragment vede k podkladům a přepis lze stáhnout', await page.locator('#registrace .resource-card').count() === 3
+    && await page.locator('a[download][href="prepis.txt"]').count() === 1);
   check('Stránka nemá vlastní JS chyby', consoleErrors.length === 0, consoleErrors.join(' | '));
 
   const widths = [320, 390, 744, 1024, 1440, 1920];
@@ -167,7 +155,7 @@ function check(name, condition, detail = '') {
         const rect = document.querySelector('h1').getBoundingClientRect();
         return rect.left >= 0 && rect.right <= window.innerWidth;
       })(),
-      actions: [...document.querySelectorAll('.hero-actions a')].every(element => {
+      actions: [...document.querySelectorAll('.resource-card')].every(element => {
         const rect = element.getBoundingClientRect();
         return rect.left >= 0 && rect.right <= window.innerWidth;
       }),

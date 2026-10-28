@@ -24,6 +24,35 @@ _Žádné položky._
 
 ## Blocked
 
+### TASK-018 — Záznam rozhovoru s Alexem a navazující materiály
+
+- Closure: 2026-10-28 — Daniel výslovně schválil cílený commit 18 souborů a push main do origin. Odeslání do WhatsAppu výslovně odložil; bez nového pokynu jej neobnovovat. Webový výsledek zůstává ověřený.
+- Started: 2026-10-28
+- Owner: Codex
+- Resumed: 2026-10-28 — Daniel výslovně schválil konkrétní OAuth rozsah, nasazení a dokončení sdílení.
+- Výsledek: veřejná stránka i portál zpřístupňují původní YouTube záznam, Alexův materiál a časovaný přepis. YouTube má finální popis a14 kapitol.
+- Scope: první rozhovor a jeho veřejné podklady; jiné akce, registrace, auth a cizí slovníček beze změny. Bez commitu a pushnutí.
+- ExecPlan: [docs/plans/TASK-018-alex-recording.md](docs/plans/TASK-018-alex-recording.md)
+- Blocked: 2026-10-28 — pouze odeslání do skupiny: nativní WhatsApp nemá dostupné okno a WhatsApp Web není přihlášený. Daniel dostal otázku otevřít WhatsApp na Mini nebo poslat text sám.
+- Last safe state: Production5ef70fe5-fa28-43bc-8eb5-80c417e97094 nasazená a nezávisle ověřená. YouTube finální odkazy/14 kapitol/čeština ověřené. Změny jsou i v původním checkoutu. Žádný commit, push ani zpráva.
+- Resume from: ExecPlan — dokončit pouze autorizované sdílení. Neopakovat deploy ani YouTube editaci.
+
+#### Verification
+
+- [x] Obsah, odkazy, přesnost285 bloků přepisu a původ materiálu ověřené.
+- [x] Nevizuální technické kontrakty a úzké bezpečnostní review prošly.
+- [x] Nezávislá lokální i produkční acceptance a readback dokončené.
+- [x] YouTube metadata včetně živých odkazů uložená a veřejně ověřená.
+- [ ] Zpráva do WhatsApp skupiny odeslaná.
+
+#### Evidence
+
+- Verifier: `/root/alex_production_acceptance` — completed — VERIFIED pro web a YouTube; celý úkol PARTIALLY VERIFIED pouze kvůli zprávě.
+- Post-review snapshot: implementace nezměněná — šest runtime SHA256 v release-manifest.json souhlasí s custom doménou i Pages URL. Materiály a TXT byte-exact zdrojům, ostatních osm akcí a OG karta beze změny.
+- ExecPlan: docs/plans/TASK-018-alex-recording.md
+- Produkce: https://mastertheflow.cz/rozhovory/1-vibe-coding-s-alexem/ — HTTP200 a shoda s release.
+- UI/vizuál a browser E2E: NOT TESTED. WhatsApp: NOT SENT. Deploy: VERIFIED.
+
 ### TASK-013 — Pevný limit 98 míst
 
 - Started: 2026-10-12
@@ -236,6 +265,30 @@ _Žádné položky._
 - Produkce: deployment `6b77342e`, source `63e76bd`. HTML/CSS/JS na `https://mastertheflow.cz/live/vibe-coding/` mají HTTP 200 a přesně odpovídají releasu; E2E 31/31 prošlo.
 
 ## Review
+
+### TASK-019 — Stránka rozhovoru jako rozcestník k záznamu
+
+- Started: 2026-10-28
+- Owner: Codex
+- Review: 2026-10-28 — nasazeno a nezávisle ověřeno; čeká na přijetí Daniela.
+- Výsledek: lidé mají hned přístup k videu, materiálům a přepisu, konkrétní témata s časovými odkazy a žádný předakční harmonogram.
+- Scope: stránka prvního rozhovoru, její CSS a související testy. Daniel výslovně zadal revizi podle předchozího review; nasazení v rámci pokračujícího schváleného publikačního úkolu. Bez commitu/pushnutí, úprav ostatních akcí, materiálů, přepisu, YouTube a cizího slovníčku.
+- ExecPlan: [docs/plans/TASK-019-alex-archive-navigation.md](docs/plans/TASK-019-alex-archive-navigation.md)
+
+#### Verification
+
+- [x] Tři přímé volby, šest zdrojově doložených témat, archivní formulace a žádný harmonogram.
+- [x] Původní podklady, starý fragment, medailonek, metadata a ostatní akce zachované.
+- [x] Čerstvé technické kontroly, nezávislá acceptance a produkční readback.
+
+#### Evidence
+
+- Verifier: `/root/alex_archive_revision_verify` — completed — VERIFIED pro obsahovou acceptance i produkční HTTP readback.
+- Post-review snapshot: všech pět implementačních a testovacích hashů i devět chráněných souborů souhlasí; změněny následně pouze lifecycle dokumenty. Sedm runtime souborů byte-exact na obou veřejných hostech.
+- ExecPlan: docs/plans/TASK-019-alex-archive-navigation.md
+- Produkce: https://mastertheflow.cz/rozhovory/1-vibe-coding-s-alexem/; Pages abed1953. HTTP200, tři zdroje, šest časových odkazů a správný CSS fingerprint.
+- Kontroly: nevizuální kontrakt, syntaxe obou změněných E2E souborů a diff-check PASS. Anonymní chráněná data403/empty na obou hostech. UI/vizuál, browser E2E a úplný poslech NOT TESTED.
+- Release je schválený pracovní snapshot nad13fdf0ee, nikoli nový Git commit. Bez commitu a pushnutí.
 
 ### TASK-017 — Obnova publikace karet a zabezpečení portálu
 

@@ -21,8 +21,8 @@ const BASE = process.env.MTF_BASE || 'http://localhost:8788';
         await page.evaluate(() => window.dispatchEvent(new Event('pageshow')));
         await page.locator('#registrace').scrollIntoViewIfNeeded();
         assert.equal(await page.locator('[data-registration-link], [data-registration-availability], .sticky-register, a[href*="docs.google.com/forms"]').count(), 0);
-        assert.match(await page.locator('#registrace').innerText(), /Registrace jsou uzavřené/);
-        assert.match(await page.locator('#registrace').innerText(), /Záznam připravujeme/);
+        assert.equal(await page.locator('#registrace .resource-card').count(), 3);
+        assert.match((await page.locator('#registrace').innerText()).replace(/\s+/g, ' '), /Přehrát záznam/);
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `overflow ${width}/${theme}`);
       }
     }

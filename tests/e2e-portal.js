@@ -111,14 +111,14 @@ function check(name, cond, detail = '') {
   const interviewId = 'evt-2026-10-21-vibe-coding-nezacina-promptem';
   const interviewCard = page.locator(`#events-past .event-card[data-event-id="${interviewId}"]`);
   check('Rozhovor je mezi proběhlými akcemi', await interviewCard.count() === 1);
-  check('Rozhovor má stav Proběhlo a připravovaný záznam', await interviewCard.locator('.event-badge-status').innerText() === 'Proběhlo'
-    && /Záznam připravujeme/.test(await interviewCard.innerText()));
+  check('Rozhovor má stav Proběhlo a dostupný záznam', await interviewCard.locator('.event-badge-status').innerText() === 'Proběhlo'
+    && /Záznam rozhovoru/.test(await interviewCard.innerText()));
   check('Rozhovor nenabízí registraci na kartě ani v hlavním banneru', await interviewCard.locator('.event-card-register').count() === 0
     && await page.locator(`#event-teaser [data-event-id="${interviewId}"]`).count() === 0);
   await interviewCard.click();
-  check('Detail rozhovoru potvrzuje uzavření a přípravu záznamu', /Registrace jsou uzavřené/.test(await page.locator('#event-ov-content').innerText())
-    && /Záznam připravujeme/.test(await page.locator('#event-ov-content').innerText())
-    && await page.locator('#event-ov-content a').evaluateAll(links => links.every(a => !/docs\.google\.com\/forms|youtube\.com|youtu\.be/.test(a.href))));
+  check('Detail rozhovoru nabízí záznam i podklady a registrace je uzavřená', /Registrace jsou uzavřené/.test(await page.locator('#event-ov-content').innerText())
+    && /Alexovy materiály/.test(await page.locator('#event-ov-content').innerText())
+    && await page.locator('#event-ov-content a').evaluateAll(links => links.some(a => a.href === 'https://www.youtube.com/watch?v=SQ4VtvYf8E4') && links.every(a => !/docs\.google\.com\/forms/.test(a.href))));
   await page.locator('#event-overlay-close').click();
 
   // ===== 4c. Slovníček: zavíratelný proužek jen s nadcházejícími srazy =====
@@ -127,8 +127,8 @@ function check(name, cond, detail = '') {
   const eventData = JSON.parse(require('fs').readFileSync(
     require('path').join(__dirname, '..', 'data', 'events.json'), 'utf8'));
   const interview = eventData.events.find(event => event.id === interviewId);
-  check('Rozhovor je odkrytý archiv bez registračních a záznamových cílů', interview?.portal_hidden === false
-    && interview?.status === 'Proběhlo' && interview.registration_url === null && interview.registration_page_url === null && interview.recording_url === null);
+  check('Rozhovor je odkrytý archiv se záznamem a bez registračních cílů', interview?.portal_hidden === false
+    && interview?.status === 'Proběhlo' && interview.registration_url === null && interview.registration_page_url === null && interview.recording_url === 'https://www.youtube.com/watch?v=SQ4VtvYf8E4');
   const pragueMeetup = eventData.events.find(event => event.id === 'evt-2026-08-29-sraz');
   check('Data pražského srazu ruší oba registrační cíle', pragueMeetup?.status === 'Proběhlo'
     && pragueMeetup.registration_url === null

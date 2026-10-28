@@ -416,15 +416,20 @@ function showToast(msg) {
 /* ===== CARD LINKS ===== */
 // Klikatelné odkazy v rozbalené kartě. Jen http(s), escapované, otevírají nové okno.
 function renderCardLinks(card) {
-  const links = Array.isArray(card.links)
-    ? [...new Set(card.links.filter(u => typeof u === 'string' && /^https?:\/\//i.test(u)))]
-    : [];
+  const seen = new Set();
+  const links = (Array.isArray(card.links) ? card.links : []).flatMap(item => {
+    const url = typeof item === 'string' ? item : item?.url;
+    if (typeof url !== 'string' || !/^https?:\/\//i.test(url) || seen.has(url)) return [];
+    let hostname;
+    try { hostname = new URL(url).hostname.replace(/^www\./, ''); } catch { return []; }
+    seen.add(url);
+    const label = typeof item?.label === 'string' && item.label.trim() ? item.label : hostname;
+    return [{ url, label }];
+  });
   if (!links.length) return '';
-  const items = links.map(u => {
-    let label;
-    try { label = new URL(u).hostname.replace(/^www\./, ''); } catch { label = u; }
-    return `<a class="card-link" href="${esc(u)}" target="_blank" rel="noopener noreferrer nofollow">${esc(label)}</a>`;
-  }).join('');
+  const items = links.map(({ url, label }) =>
+    `<a class="card-link" href="${esc(url)}" target="_blank" rel="noopener noreferrer nofollow">${esc(label)}</a>`
+  ).join('');
   return `<div class="card-links"><span class="card-links-label">Odkazy</span>${items}</div>`;
 }
 

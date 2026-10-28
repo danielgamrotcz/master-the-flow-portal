@@ -2,7 +2,7 @@
 const ORIGIN = 'https://mastertheflow.cz';
 const ID_RE = /^evt-\d{4}-\d{2}-\d{2}-[a-z0-9-]+$/;
 const DESIGNS = {
-  'evt-2026-10-21-vibe-coding-nezacina-promptem': { lines: ['Vibecoding', 's Alexem.'], label: 'ROZHOVORY · 1. DÍL' },
+  'evt-2026-10-21-vibe-coding-nezacina-promptem': { lines: ['Vibecoding', 's Alexem.'], label: 'ROZHOVORY · 1. DÍL', description: 'Záznam rozhovoru · Alexovy materiály · Časovaný přepis · Master the Flow' },
   'evt-2026-09-22-ai-ktera-mi-fakt-funguje': { lines: ['AI, která mi', 'fakt funguje.'] },
   'evt-2026-08-29-sraz': { lines: ['Sraz v Praze.'] },
   'evt-2026-08-14-sraz-olomouc': { lines: ['Sraz v Olomouci.'] },
@@ -33,6 +33,7 @@ function projectEvent(event) {
     id: event.id, title: String(event.title), date,
     time: time ? `${time}${end ? '–' + end : ''}` : '',
     label: design.label || (event.type === 'SHOW-AND-TELL' ? 'SHOW & TELL' : String(event.type)),
+    description: design.description || '',
     lines: design.lines, subtitle: design.subtitle || '',
     pagePath: localPage || `/akce/${event.id}/`, landing: Boolean(localPage),
     imagePath: `/event-cards/${event.id}.png`,

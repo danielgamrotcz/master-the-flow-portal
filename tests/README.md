@@ -15,6 +15,7 @@ Vznikly při přestavbě 17. 7. 2026 (audit → fáze 1+2 + brand vrstva). Hlíd
 - `privacy-public-data.js` — verzovaná veřejná JSON data neobsahují e-maily mimo výslovně povolený kontaktní údaj
 - `security-regressions.js` — negativní a pozitivní auth scénáře pro chat corpus, tracking, push subscription a cache policy
 - `card-security-headers.js` — syntetická kontrola bezpečnostních hlaviček generovaných náhledů, escapování a soukromí share ticketů
+- `interview-recording.js` — nevizuální kontrakt záznamu, bezpečných pojmenovaných odkazů, uzavřené registrace a přesného přepisu
 - `e2e-event-cards.js` — samostatný veřejný PNG, OG/Twitter metadata a sdílecí
   URL každé akce, soukromí veřejné projekce, tlačítko sdílení a zachování brány
 - `sraz-asset-versions.js` — shoda sedmimístných cache hashů CSS a JavaScriptu

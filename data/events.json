@@ -9,8 +9,8 @@
       "time_from": "18:00",
       "time_to": "20:00",
       "location": "Online",
-      "short": "Rozhovor s Alexem Trejtnarem proběhl 21. října. Záznam připravujeme. Registrace jsou uzavřené.",
-      "description": "Rozhovor s Alexem Trejtnarem proběhl 21. října 2026. Mluvili jsme o tom, jak uvidět problém, zadat práci AI, ověřit výsledek a používat ho v praxi. Registrace jsou uzavřené. Záznam připravujeme.",
+      "short": "Záznam rozhovoru s Alexem Trejtnarem, jeho materiály a časovaný přepis jsou dostupné.",
+      "description": "Jak vybrat smysluplný problém, zadat práci AI, ověřit výsledek a bezpečně jej pustit do praxe. Rozhovor z 21. října 2026 má záznam na YouTube s kapitolami, Alexův přehled postupu a nástrojů i časovaný automatický přepis bez úplné kontroly poslechem. Registrace jsou uzavřené.",
       "program": null,
       "registration_url": null,
       "registration_page_url": null,
@@ -19,8 +19,22 @@
       "price": null,
       "discount_code": null,
       "detail_url": "/rozhovory/1-vibe-coding-s-alexem/",
-      "recording_url": null,
+      "recording_url": "https://www.youtube.com/watch?v=SQ4VtvYf8E4",
       "recording_password": null,
+      "links": [
+        {
+          "url": "https://mastertheflow.cz/rozhovory/1-vibe-coding-s-alexem/materialy.html",
+          "label": "Alexovy materiály"
+        },
+        {
+          "url": "https://mastertheflow.cz/rozhovory/1-vibe-coding-s-alexem/prepis.html",
+          "label": "Časovaný přepis"
+        },
+        {
+          "url": "https://mastertheflow.cz/rozhovory/1-vibe-coding-s-alexem/prepis.txt",
+          "label": "Přepis ke stažení (TXT)"
+        }
+      ],
       "status": "Proběhlo"
     },
     {
