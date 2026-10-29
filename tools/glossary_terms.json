@@ -2104,6 +2104,22 @@
       "why": "Narazíte na něj třeba při rozhodování, zda si AI nástroj předplatit přímo, nebo přes jinou službu, jako je Cursor.",
       "related": [],
       "source": "auto"
+    },
+    {
+      "slug": "double-opt-in",
+      "term": "Double opt-in",
+      "cat": "data",
+      "match": [
+        "double opt-in",
+        "double opt in",
+        "double optinu",
+        "double opt-inu"
+      ],
+      "short": "Dvoufázové přihlášení k odběru, při kterém potvrdíte e-mailovou adresu kliknutím na odkaz v ověřovací zprávě.",
+      "plain": "Po zadání adresy vám přijde ověřovací e-mail s odkazem. Odběr se aktivuje až po kliknutí, což omezuje přihlášení cizích nebo chybně zadaných adres.",
+      "why": "Narazíte na něj při nastavování newsletteru nebo přihlašovacího formuláře.",
+      "related": [],
+      "source": "auto"
     }
   ]
 }

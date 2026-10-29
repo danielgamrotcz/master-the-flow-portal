@@ -1,0 +1,292 @@
+{
+  "date": "2026-10-28",
+  "generated_at": "2026-10-29T01:03:30Z",
+  "stats": {
+    "messages": 27,
+    "groups": 1,
+    "members": 6
+  },
+  "cards": [
+    {
+      "id": "2026-10-28-01",
+      "type": "NÁSTROJE",
+      "level": "Pokročilý",
+      "topics": [
+        "Email",
+        "Automatizace",
+        "AI nástroje"
+      ],
+      "title": "Sendy s Amazon SES pro newslettery",
+      "excerpt": "Jeden člen používá Sendy s Amazon SES už několik let. Nastavení je podle něj techničtější, provoz ale vyjde výrazně levněji než u běžných newsletterových služeb.",
+      "body": "Sendy je samoobslužná platforma pro newslettery napojená na Amazon SES. Jeden člen ji používá dlouhodobě a vychází ho velmi levně. Úvodní nastavení ale může být pro začátečníka technicky náročné. V diskuzi zaznělo, že nasazení se dá objednat jako služba. Jiný člen postupně přechází na Resend a vlastní nástroje. Sendy bere jako alternativu ke službám s měsíčním poplatkem. Pro složitější automatizace, měření a personalizaci produktů ale členové stále považují za lepší hotové platformy, jako je Ecomail.",
+      "read_minutes": 1,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "11:34",
+        "11:36",
+        "11:45"
+      ],
+      "links": [
+        "https://sendy.co/"
+      ],
+      "source_date": "2026-10-28"
+    },
+    {
+      "id": "2026-10-28-02",
+      "type": "INSIGHT",
+      "level": "Pokročilý",
+      "topics": [
+        "Email",
+        "Vibe Coding",
+        "Claude Code",
+        "Automatizace"
+      ],
+      "title": "Vlastní newsletter versus hotová platforma",
+      "excerpt": "Podle zkušeností z diskuze lze jednoduchý newsletter rychle postavit pomocí Claude a napojit třeba na Resend. U složitějších automatizací nebo v týmu s různou technickou úrovní ale dává větší smysl hotová platforma.",
+      "body": "V diskuzi se oddělily dvě různé situace. U klasického newsletteru může vlastní řešení obsahovat šablony, formuláře, odhlašovací stránku i double opt-in. Podle jednoho člena umí Claude řadu těchto částí sám zahrnout do plánu. U složitějšího e-shopu mají hotové platformy pořád navrch v automatizaci, měření a personalizaci produktů. Další člen zůstává u MailerLite, protože s nástrojem pracuje víc lidí s různými IT dovednostmi. U konektorů do Claude také zaznělo, že se vyplatí kontrolovat a omezovat jejich oprávnění.",
+      "read_minutes": 2,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "11:45",
+        "11:47",
+        "12:02",
+        "12:07"
+      ],
+      "links": [],
+      "source_date": "2026-10-28"
+    },
+    {
+      "id": "2026-10-28-03",
+      "type": "NÁSTROJE",
+      "level": "Začátečník",
+      "topics": [
+        "Email",
+        "Automatizace",
+        "MCP"
+      ],
+      "title": "Limity MailerLite v českém provozu",
+      "excerpt": "MailerLite členům funguje, v Česku ale narazili na několik problémů. Zmínili placenou lokalizaci double opt-in, dřívější potíže s WordPressem a drahou migraci.",
+      "body": "Jedna členka si musí platit MailerLite, aby potvrzovací e-mail pro double opt-in nechodil anglicky. Jiná popsala dřívější problémy s napojením na WordPress. Před půl rokem si spočítala náklady na přesun, ale vyšly příliš vysoko. Přijala proto 50% slevu a migraci odložila. Další tým používá MailerLite přes MCP v Claude. Vlastní řešení zatím nechce, protože s newsletterem pracuje více lidí s různou úrovní technických znalostí.",
+      "read_minutes": 1,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "11:41",
+        "11:46",
+        "12:02"
+      ],
+      "links": [],
+      "source_date": "2026-10-28"
+    },
+    {
+      "id": "2026-10-28-04",
+      "type": "NÁSTROJE",
+      "level": "Pokročilý",
+      "topics": [
+        "Claude Code",
+        "AI nástroje",
+        "Dokumentace"
+      ],
+      "title": "Rodokmen pro genealogii v Claude Code",
+      "excerpt": "Člen komunity doporučil veřejný nástroj Rodokmen, který se mu osvědčil. Pomáhá s genealogickým pátráním, čtením matrik a tvorbou rodinného webu.",
+      "body": "Rodokmen je veřejný repozitář pro práci v Claude Code. Podle dokumentace pomáhá s genealogickým výzkumem, čtením matrik a tvorbou rodinného webu. Najdete v něm informace o instalaci, podporovaných archivech, pracovním postupu, ochraně soukromí a omezeních přesnosti AI. Člen, který odkaz sdílel, nástroj stručně zhodnotil slovy „za mě super“. Další zkušenosti s nasazením ani přesností v diskuzi nezazněly.",
+      "read_minutes": 1,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "11:51"
+      ],
+      "links": [
+        "https://github.com/sarsonj/rodokmen-skill"
+      ],
+      "source_date": "2026-10-28"
+    },
+    {
+      "id": "2026-10-28-05",
+      "type": "UKÁZKA",
+      "level": "Expert",
+      "topics": [
+        "Email",
+        "Automatizace",
+        "Databáze"
+      ],
+      "title": "Rozpracovaný český Mlain Mailer",
+      "excerpt": "Vývojář sdílel rozpracovaný nástroj pro e-mailový marketing, který si české firmy mohou hostovat samy. Projekt odložil, protože mu současné služby stačí a na další vývoj nemá čas.",
+      "body": "Mlain Mailer je rozpracovaný self-hostovaný nástroj pro správu e-mailového marketingu. Ve veřejném repozitáři najdete správu kontaktů a segmentů, kampaně, české skloňování oslovení, transakční e-maily, reporty, kontrolu doručitelnosti a nástroje pro GDPR. Vývojář uvedl, že projekt ještě není hotový a přímé napojení na Resend by se muselo doplnit. Současné nástroje mu zatím stačí, takže další vývoj pro něj nemá prioritu.",
+      "read_minutes": 1,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "12:17"
+      ],
+      "links": [
+        "https://github.com/nc-mill/Mlain-Mailer"
+      ],
+      "source_date": "2026-10-28"
+    },
+    {
+      "id": "2026-10-28-06",
+      "type": "UKÁZKA",
+      "level": "Začátečník",
+      "topics": [
+        "Email",
+        "Workflow",
+        "Dokumentace"
+      ],
+      "title": "Newsletter v bezplatném Kitu",
+      "excerpt": "Po vyzkoušení několika variant vznikl newsletter v bezplatné verzi Kitu. Autorka pak s komunitou sdílela obrázkový přehled a později i čitelnější PDF.",
+      "body": "Členka během dne zjišťovala možnosti pro vlastní newsletter a nakonec zvolila bezplatnou verzi Kitu. Výsledek a shrnutí architektury nejdřív sdílela jako obrázek, potom i jako PDF, protože obrázek nemusel být dobře čitelný. Přepis neobsahuje podrobnosti z přiloženého dokumentu, takže z něj nejde spolehlivě zjistit konkrétní komponenty ani způsob jejich propojení.",
+      "read_minutes": 1,
+      "source_group": "inspirace--diskuze",
+      "source_msg_times": [
+        "18:02",
+        "18:08"
+      ],
+      "links": [],
+      "source_date": "2026-10-28"
+    }
+  ],
+  "resurfacing": null,
+  "transcript": {
+    "groups": [
+      {
+        "slug": "inspirace--diskuze",
+        "name": "Inspirace & Diskuze",
+        "messages": [
+          {
+            "time": "11:31",
+            "author": "člen komunity",
+            "text": "Ahojte, vy, kteří máte postavený web a na něm přihlášení k newsletteru. Postavili jste si na to svůj nástroj (pak jen hledám hinty, co neopomenout při stavbě), nebo využíváte služby typu Mailchimp, Ecomail apod.? Díky moc :)"
+          },
+          {
+            "time": "11:34",
+            "author": "člen komunity",
+            "text": "Používám už roky službu https://sendy.co/ napojenou na amazon SES. Je to trochu technické pro začátek na nastavení ale brutálně levné proti ostatním službám.\nTransakční emaily dneska spíš řeším přes vlastní “nástroj”.\n[kontext odkazu: Web produktu Sendy, samoobslužné platformy pro e-mailové newslettery využívající Amazon SES. Nabízí jednorázovou licenci za 69 USD a odesílání za 1,6 USD na 10 000 e-mailů, včetně editoru, reportů, segmentace, automatizace a volitelného AI asistenta.]"
+          },
+          {
+            "time": "11:36",
+            "author": "člen komunity",
+            "text": "Mrknu na to, děkuju. Dělám si teďkom research a črtám si architekturu."
+          },
+          {
+            "time": "11:36",
+            "author": "člen komunity",
+            "text": "Jo, Sendy je super a nasazení případně mají i jako službu (zároveň to není nic, co by Claude nezvládl).\nJá teď postupně překlápím vše na Resend + vlastní nástroje, složitější věc typu eshop se složitějšími automatizacemi a personalizací bych pořád stavěl na Ecomailu."
+          },
+          {
+            "time": "11:37",
+            "author": "člen komunity",
+            "text": "Mám právní newsletter na mailerlitu www.cinkova.cz"
+          },
+          {
+            "time": "11:39",
+            "author": "člen komunity",
+            "text": "Ale vadí mi tam některá omezení"
+          },
+          {
+            "time": "11:40",
+            "author": "člen komunity",
+            "text": "Mám také mailer lite. Zatím, mám teď nějakou slevu na rok a počítám, že za rok to budu dávat jinam;)"
+          },
+          {
+            "time": "11:40",
+            "author": "člen komunity",
+            "text": "Omezení jakýho typu pls?"
+          },
+          {
+            "time": "11:41",
+            "author": "člen komunity",
+            "text": "Migrovat pryč - co vám tam nesedí?"
+          },
+          {
+            "time": "11:41",
+            "author": "člen komunity",
+            "text": "Třeba ohledně double opt in potřebuji placenou verzi pro češtinu, aby ověřovací email k odběru nepřišel v angličtině. A podobně. Takže si to holt zaplatím."
+          },
+          {
+            "time": "11:42",
+            "author": "člen komunity",
+            "text": "S ecomailem jsem se neskamarádila, ač snaha byla."
+          },
+          {
+            "time": "11:45",
+            "author": "člen komunity",
+            "text": "Klasický newsletter mi dneska už vůbec nedává smysl stavět na něčem s měsíčním fee (Sendy je one-time payment + to, co \"proposíláte\" přes Amazon SES, takže nula nula nic)\nNástroj na tvorbu šablon mi za chvilku postavil Claude (posílám screenshot), zapojit to do Sendy, nebo ještě lépe nástroje typu Resend je věc pár příkazů.\nTo, kde jsou nástroje jako Ecomail pořád hodně silné, jsou pokročilé automatizace, měření a personalizace na úrovni produktů. To se vibecoduje trochu hůř 😀"
+          },
+          {
+            "time": "11:46",
+            "author": "člen komunity",
+            "text": "Já   chtěla přecházet, protože to zlobilo v jednu dobu s wordpressem, ale když jsem si spočítala - před půl rokem - náklady na přesun, tak by to bylo docela drahé, takže mi dali 50% slevu, protože fakt byl opruz, jak to nešlo a říkám si, že za rok, dva si to přesunu třeba na něco nového;), teď jsem někde viděla nějaky tip, kde už si to vyřešili, vše v jednom asi 3000 za rok, včetně fakturování atd., ale teď za boha nemohu najít, jak se to jmenuje, něco na o..."
+          },
+          {
+            "time": "11:47",
+            "author": "člen komunity",
+            "text": "Skoro si myslím, že CC prompt \"Postav mi jednoduchý newsletter nástroj s napojením do Resendu a mého webu\" bude stačit. On se vás na věci typu formuláře, spešl odhlašovací stránka, double opt-in, (…) doptá\nU těhle obecně velmi rozšířených nástrojů mě poslední dobou fascinuje, co všechno si Claude naplánuje sám, aniž bych mu to explicitně říkal. Často i věci, na který bych sám zapomněl"
+          },
+          {
+            "time": "11:48",
+            "author": "člen komunity",
+            "text": "Supr, chci si postavit něco svého. Další nástroj v napojení mě neláká právě. Tak je supr to sdílení tu, pomůže mi to 🙂"
+          },
+          {
+            "time": "11:50",
+            "author": "člen komunity",
+            "text": "Zrovna tady naštěstí není až tolik míst, kde to rozbít – určitě jich je vlastně mnohem míň než při skládání pluginů do Wordpressu 😀"
+          },
+          {
+            "time": "11:51",
+            "author": "člen komunity",
+            "text": "Genealogie, nevím, zda to zde bylo, ale za mě super https://github.com/sarsonj/rodokmen-skill\n[kontext odkazu: Veřejný repozitář nástroje „Rodokmen“ pro Claude Code, který pomáhá s genealogickým výzkumem, čtením matrik a tvorbou rodinného webu. Dokumentace popisuje instalaci, podporované archivy, pracovní postup, ochranu soukromí a omezení přesnosti AI.]"
+          },
+          {
+            "time": "11:53",
+            "author": "člen komunity",
+            "text": "Jaký na to předpokládáte rozpočet...? 🤔"
+          },
+          {
+            "time": "12:02",
+            "author": "člen komunity",
+            "text": "Máme mailerlite, používám ho s MCP do Claude.\nPsát si vlastní řešení zatim nechci, protože nás to používá víc s různou úrovní znalostí a IT schopností."
+          },
+          {
+            "time": "12:07",
+            "author": "člen komunity",
+            "text": "Ty konektory jsou fajn. Jen je dobré mrknout na oprávnění a některé věci povypinat."
+          },
+          {
+            "time": "12:17",
+            "author": "člen komunity",
+            "text": "Zkoušel jsem. Ne teda přímo resend, to se dá určitě dopsat. Mam to rozdělané a nemam na to čas. Mlain Mailer\nhttps://github.com/nc-mill/Mlain-Mailer\nNemam na to čas = problém není tak velký aby stalo za to ho řešit a současné nástroje jsou dostačující. 😅\n[kontext odkazu: Veřejný repozitář „Mlain Mailer“, samostatně hostovaného nástroje pro e-mailový marketing českých firem. Podporuje správu kontaktů a segmentů, kampaně, české skloňování oslovení, transakční e-maily, reporty, kontrolu doručitelnosti a nástroje pro GDPR.]"
+          },
+          {
+            "time": "12:53",
+            "author": "člen komunity",
+            "text": "@člen komunity BTW. https://github.com/cloudflare/security-audit-skill\n[kontext odkazu: Veřejný repozitář nástroje „security-audit“ pro vícefázové bezpečnostní audity zdrojového kódu pomocí programovacích agentů. Proces zahrnuje průzkum architektury, hledání zranitelností, nezávislé ověřování nálezů, strojově čitelné výstupy a tvorbu závěrečných reportů.]"
+          },
+          {
+            "time": "12:53",
+            "author": "člen komunity",
+            "text": "Na formuláře na webu používám Resend a na newslettery zatím Mailerlite."
+          },
+          {
+            "time": "17:23",
+            "author": "člen komunity",
+            "text": "Microsoft graph"
+          },
+          {
+            "time": "18:02",
+            "author": "člen komunity",
+            "text": "Díky za dnešní debatu tu. Nakonec newsletter postavený v Kitu ve free verzi. Hodila jsem sem nějaký souhrn, třeba to někomu pomůže, nebo taky ne :)\nA kdyby někoho cokoliv napadlo, jsem jedno ucho :) díky moc."
+          },
+          {
+            "time": "18:03",
+            "author": "člen komunity",
+            "text": "Na odesilani nejistejsi, funguje spolehlive. Pouzivat nrjskou sluzbu dnesla nedava smysl. Priprave emailu je otazka stroje a odeslani zajisti microsoft graph"
+          },
+          {
+            "time": "18:08",
+            "author": "člen komunity",
+            "text": "[soubor: Tady ještě v pdf. Protože to pngéčko nemusí být úplně košér na čtení :)] newsletter-stavba-a4"
+          }
+        ]
+      }
+    ]
+  }
+}

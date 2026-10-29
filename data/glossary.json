@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-25",
+  "generated_at": "2026-10-29",
   "source": {
-    "daily_notes": 41,
+    "daily_notes": 44,
     "range": [
       "2026-08-30",
-      "2026-10-24"
+      "2026-10-28"
     ]
   },
   "categories": [
@@ -70,11 +70,11 @@
       "source": "hand",
       "starter": null,
       "search": "agent model, ktery nejen odpovida, ale sam dela kroky, dokud neni hotovo. bezny chat odpovi a ceka. agent misto toho pracuje ve smycce, precte soubor, spusti prikaz, podiva se na vysledek, opravi se a pokracuje. sam se rozhoduje, jaky krok udela dalsi. tohle je rozdil mezi „poradi mi“ a „udela to za me“. agent agenta agentem agenti agentu agenticke agenticky agentic",
-      "mentions": 46,
-      "days": 12,
+      "mentions": 48,
+      "days": 14,
       "first_seen": "2026-08-31",
-      "last_seen": "2026-10-18",
-      "card_hits": 50
+      "last_seen": "2026-10-28",
+      "card_hits": 51
     },
     {
       "slug": "agents-md",
@@ -163,11 +163,11 @@
       "source": "hand",
       "starter": null,
       "search": "anonymizace odstraneni udaju, podle kterych by slo poznat konkretni lidi. z textu nebo dat se vymazou nebo nahradi jmena a dalsi identifikatory tak, aby zustal obsah, ale zmizela vazba na osoby.  anonymizace anonymizovat anonymizovany anonymizovane",
-      "mentions": 1,
-      "days": 1,
+      "mentions": 3,
+      "days": 3,
       "first_seen": "2026-09-07",
-      "last_seen": "2026-09-07",
-      "card_hits": 1
+      "last_seen": "2026-10-27",
+      "card_hits": 2
     },
     {
       "slug": "api",
@@ -265,11 +265,11 @@
       "source": "hand",
       "starter": null,
       "search": "automatizace postup, ktery po nastaveni bezi bez vas. nastavite jednou a pak uz to jede samo, bud v urceny cas, nebo kdyz nastane nejaka udalost. typicky neco, co byste jinak delali porad dokola. ve skupine to byva stahovani prepisu z nahravek, ranni souhrn do poznamek nebo hlidani, jestli neco nespadlo. vetsina projektu, ktere tady lidi ukazuji, zacala jako otrava, kterou je nebavilo delat rucne. automatizace automatizaci automatizovat automatizovane",
-      "mentions": 19,
-      "days": 11,
+      "mentions": 21,
+      "days": 12,
       "first_seen": "2026-09-01",
-      "last_seen": "2026-10-12",
-      "card_hits": 24
+      "last_seen": "2026-10-28",
+      "card_hits": 25
     },
     {
       "slug": "brain-dump",
@@ -392,11 +392,11 @@
       "source": "hand",
       "starter": 5,
       "search": "claude code claude, ktery bezi v terminalu a sam pracuje se soubory ve vasem projektu. neni to chat v prohlizeci. claude code bezi u vas na pocitaci, vidi slozku s projektem, umi soubory cist i menit, spoustet prikazy a overovat si vysledek. spousti se v terminalu napsanim claude. ve skupine se casto zkracuje na cc. vetsina projektu, ktere tady lidi ukazuji, vznikla presne timhle. claude code claude codu claudecode cc",
-      "mentions": 37,
-      "days": 13,
+      "mentions": 45,
+      "days": 15,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-19",
-      "card_hits": 122
+      "last_seen": "2026-10-28",
+      "card_hits": 123
     },
     {
       "slug": "claude-md",
@@ -441,10 +441,10 @@
       "source": "hand",
       "starter": null,
       "search": "cli ovladani programu psanim prikazu. command line interface, tedy program bez oken a tlacitek, ktery se ovlada napsanymi prikazy. vyhoda je, ze se da snadno zautomatizovat a zopakovat, protoze prikaz se da ulozit a pustit znovu. vyhoda proti klikani je, ze prikaz se da ulozit a pustit znovu. odtud vede cesta k automatizaci. cli",
-      "mentions": 4,
-      "days": 4,
+      "mentions": 6,
+      "days": 5,
       "first_seen": "2026-09-07",
-      "last_seen": "2026-10-06",
+      "last_seen": "2026-10-26",
       "card_hits": 20
     },
     {
@@ -468,10 +468,10 @@
       "source": "hand",
       "starter": null,
       "search": "cloudflare pages a vercel sluzby, kde se da web zdarma vypustit na internet. vezmou hotove soubory webu a rozmisti je po svete, aby se rychle nacitaly. u malych projektu to obvykle nic nestoji. portal master the flow bezi na cloudflare pages.  cloudflare vercel netlify cloudflare vercel",
-      "mentions": 1,
-      "days": 1,
+      "mentions": 2,
+      "days": 2,
       "first_seen": "2026-09-07",
-      "last_seen": "2026-09-07",
+      "last_seen": "2026-10-28",
       "card_hits": 7
     },
     {
@@ -626,7 +626,7 @@
       "source": "hand",
       "starter": null,
       "search": "cursor editor kodu s vestavenou ai. vypada jako klasicky editor, ale umi psat a upravovat kod na pozadani primo v souboru. alternativa ke claude code pro ty, kdo chteji videt kod pred sebou v okne.  cursor cursoru cursor",
-      "mentions": 12,
+      "mentions": 13,
       "days": 3,
       "first_seen": "2026-09-13",
       "last_seen": "2026-10-24",
@@ -657,7 +657,7 @@
       "days": 2,
       "first_seen": "2026-10-06",
       "last_seen": "2026-10-10",
-      "card_hits": 3
+      "card_hits": 4
     },
     {
       "slug": "deploy",
@@ -682,11 +682,11 @@
       "source": "hand",
       "starter": null,
       "search": "deploy a nasazeni vypusteni hotove verze ven, aby ji videli ostatni. dokud projekt bezi jen u vas na pocitaci, vidite ho jen vy. nasazeni znamena prenest ho na server, kde je dostupny na internetu. do te doby je to soukroma hracka. dokud nenasadite, nikdo to neuvidi, ani kdyz to mate hotove tyden. deploy deploynout nasazeni nasadit nasazuje deployment",
-      "mentions": 3,
-      "days": 1,
+      "mentions": 4,
+      "days": 2,
       "first_seen": "2026-09-21",
-      "last_seen": "2026-09-21",
-      "card_hits": 12
+      "last_seen": "2026-10-28",
+      "card_hits": 13
     },
     {
       "slug": "dictate-keyboard",
@@ -737,6 +737,29 @@
       "first_seen": "2026-10-14",
       "last_seen": "2026-10-15",
       "card_hits": 6
+    },
+    {
+      "slug": "double-opt-in",
+      "term": "Double opt-in",
+      "category": "data",
+      "short": "Dvoufázové přihlášení k odběru, při kterém potvrdíte e-mailovou adresu kliknutím na odkaz v ověřovací zprávě.",
+      "plain": "Po zadání adresy vám přijde ověřovací e-mail s odkazem. Odběr se aktivuje až po kliknutí, což omezuje přihlášení cizích nebo chybně zadaných adres.",
+      "why": "Narazíte na něj při nastavování newsletteru nebo přihlašovacího formuláře.",
+      "related": [],
+      "aliases": [
+        "double opt-in",
+        "double opt in",
+        "double optinu",
+        "double opt-inu"
+      ],
+      "source": "auto",
+      "starter": null,
+      "search": "double opt-in dvoufazove prihlaseni k odberu, pri kterem potvrdite e-mailovou adresu kliknutim na odkaz v overovaci zprave. po zadani adresy vam prijde overovaci e-mail s odkazem. odber se aktivuje az po kliknuti, coz omezuje prihlaseni cizich nebo chybne zadanych adres. narazite na nej pri nastavovani newsletteru nebo prihlasovaciho formulare. double opt-in double opt in double optinu double opt-inu",
+      "mentions": 5,
+      "days": 1,
+      "first_seen": "2026-10-28",
+      "last_seen": "2026-10-28",
+      "card_hits": 0
     },
     {
       "slug": "second-brain",
@@ -856,10 +879,10 @@
       "source": "hand",
       "starter": null,
       "search": "gdpr evropska pravidla pro nakladani s osobnimi udaji. urcuji, co se smi delat s udaji o lidech, jak dlouho se smi drzet a co musite dotycnym rict. tyka se to i malych projektu, pokud v nich figuruji data realnych osob. pripomina se pokazde, kdyz se resi nahravani schuzek nebo posilani firemnich dat do cloudu. gdpr",
-      "mentions": 4,
-      "days": 1,
+      "mentions": 5,
+      "days": 2,
       "first_seen": "2026-09-01",
-      "last_seen": "2026-09-01",
+      "last_seen": "2026-10-28",
       "card_hits": 3
     },
     {
@@ -957,10 +980,10 @@
       "source": "hand",
       "starter": null,
       "search": "github web, kam se git projekty ukladaji online, aby sly sdilet a zalohovat. github je sluzba, kde vas projekt bydli na internetu. diky tomu se k nemu dostanete z vic pocitacu, mate ho zalohovany a muzete ho ukazat ostatnim. git a github jsou dve ruzne veci. git je ten system, github je jedno z mist, kde muze projekt bydlet. kdyz nekdo ve skupine sdili projekt, obvykle sdili odkaz na github. github githubu github.com githubu",
-      "mentions": 9,
-      "days": 8,
+      "mentions": 13,
+      "days": 10,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-18",
+      "last_seen": "2026-10-28",
       "card_hits": 24
     },
     {
@@ -1278,10 +1301,10 @@
       "source": "auto",
       "starter": null,
       "search": "konektor pripravene propojeni, pres ktere muze ai asistent pracovat s dalsi aplikaci nebo sluzbou. konektor propoji ai asistenta s dalsi aplikaci nebo sluzbou. asistent tak muze treba poslat vysledek e-mailem. narazite na nej pri propojovani ai asistenta s e-mailem nebo dalsimi aplikacemi. konektor konektoru konektorem konektory konektoru konektorum konektorech",
-      "mentions": 7,
-      "days": 3,
+      "mentions": 11,
+      "days": 4,
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-20",
+      "last_seen": "2026-10-28",
       "card_hits": 10
     },
     {
@@ -1304,10 +1327,10 @@
       "source": "hand",
       "starter": 4,
       "search": "kontext vsechno, co model v danou chvili vi o vasem zadani. kontext je souhrn toho, co ma model po ruce. vase zpravy, jeho odpovedi, obsah souboru, ktere si precetl, a instrukce, ktere dostal. kdyz mu nahazite vsechno, co vas napadne, utopi se v tom. min informaci, ale trefnejsich, funguje lip. odtud ta rada psat strucne. kdyz do zadani nahazite pet nesouvisejicich veci, vysledek bude horsi, nez kdybyste rekli jednu. kontext kontextu kontextem",
-      "mentions": 70,
-      "days": 28,
+      "mentions": 80,
+      "days": 31,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-21",
+      "last_seen": "2026-10-28",
       "card_hits": 51
     },
     {
@@ -1359,10 +1382,10 @@
       "source": "hand",
       "starter": null,
       "search": "limity a rate limit strop, kolik toho smite za dane obdobi pouzit. kazdy tarif ma hranici, kolik prace do nej za hodinu nebo tyden vejde. kdyz ji vycerpate, musite chvili pockat, nez se limit obnovi. silnejsi modely limit spotrebovavaji rychleji nez slabsi. odtud rady pracovat mimo spicku nebo prepnout na slabsi model na rutinu. rate limit limit limity limitu limitu limitem",
-      "mentions": 36,
-      "days": 9,
+      "mentions": 35,
+      "days": 8,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-24",
+      "last_seen": "2026-10-15",
       "card_hits": 38
     },
     {
@@ -1435,11 +1458,11 @@
       "source": "hand",
       "starter": null,
       "search": "lokalni model model bezici primo na vasem pocitaci misto v cloudu. misto posilani dotazu na internet bezi model primo u vas. data neopusti vas stroj, takze se to hodi na citlive veci. zaplatite za to vykonem, potrebujete silnejsi pocitac a vysledky byvaji slabsi nez u velkych cloudovych modelu. resi se hlavne u prepisu a u dat, ktera nesmi ven. lokalni model lokalne lokalni modely lokalniho modelu",
-      "mentions": 8,
-      "days": 7,
+      "mentions": 13,
+      "days": 8,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-15",
-      "card_hits": 29
+      "last_seen": "2026-10-26",
+      "card_hits": 30
     },
     {
       "slug": "markdown",
@@ -1485,10 +1508,10 @@
       "source": "hand",
       "starter": null,
       "search": "mcp zpusob, jak claudovi zpristupnit vase dalsi aplikace. model sam o sobe vidi jen to, co mu napisete. pres mcp se k nemu da pripojit kalendar, e-mail, databaze nebo interni system a on s nimi pak umi pracovat. hotova napojeni se daji nainstalovat, psat je nikdo nemusi. zkratka znamena model context protocol a je to otevreny standard od anthropicu, takze jedno napojeni funguje ve vic nastrojich. kdyz nekdo ve skupine napise, ze si k tomu pripojil gmail nebo notion, mluvi o tomhle. mcp",
-      "mentions": 21,
-      "days": 6,
+      "mentions": 22,
+      "days": 7,
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-18",
+      "last_seen": "2026-10-28",
       "card_hits": 30
     },
     {
@@ -1538,11 +1561,11 @@
       "source": "hand",
       "starter": 2,
       "search": "model konkretni verze ai, kterou zrovna pouzivate. modelu je vic a lisi se silou, rychlosti a cenou. silnejsi zvladne slozite zadani, ale je pomalejsi a drazsi. slabsi odbavi rutinu skoro hned. kdyz nekdo ve skupine pise, ze neco jede na opusu a neco na sonnetu, mluvi presne o tehle volbe. volba modelu je hlavni paka na to, kolik za praci s ai zaplatite. model modelu modely modelu modelem",
-      "mentions": 52,
-      "days": 15,
+      "mentions": 71,
+      "days": 17,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-18",
-      "card_hits": 97
+      "last_seen": "2026-10-27",
+      "card_hits": 101
     },
     {
       "slug": "model-agnosticky",
@@ -1766,11 +1789,11 @@
       "source": "hand",
       "starter": null,
       "search": "open source software s verejne dostupnym kodem, ktery smi kdokoli cist a upravovat. u open source projektu je videt, jak je udelany uvnitr. kdokoli si ho muze stahnout, prohlednout, upravit a vetsinou i pouzit zdarma. podminky urcuje licence, bezna a hodne volna je licence mit.  open source opensource open-source otevreny zdrojovy kod",
-      "mentions": 8,
-      "days": 6,
+      "mentions": 11,
+      "days": 8,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-11",
-      "card_hits": 15
+      "last_seen": "2026-10-27",
+      "card_hits": 16
     },
     {
       "slug": "openrouter",
@@ -1915,7 +1938,7 @@
       "days": 2,
       "first_seen": "2026-09-27",
       "last_seen": "2026-10-24",
-      "card_hits": 0
+      "card_hits": 1
     },
     {
       "slug": "plaud",
@@ -2012,11 +2035,11 @@
       "source": "hand",
       "starter": 3,
       "search": "prompt zadani, ktere modelu napisete. prompt je text, kterym modelu rikate, co ma udelat. zadna kouzelna formulka v tom neni. nejlip funguje obycejny jasny popis toho, co chcete, pro koho to je a jak ma vysledek vypadat. vetsina zklamani z ai pochazi z vagniho zadani, ne ze slabeho modelu. napsat „shrn mi to“ a „shrn mi to do peti bodu pro kolegu, ktery u toho nebyl“ da uplne jiny vysledek. prompt promptu prompty promptu promptem promptovani promptovat",
-      "mentions": 13,
-      "days": 6,
+      "mentions": 17,
+      "days": 8,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-15",
-      "card_hits": 34
+      "last_seen": "2026-10-28",
+      "card_hits": 35
     },
     {
       "slug": "prototyp",
@@ -2104,11 +2127,11 @@
       "source": "auto",
       "starter": null,
       "search": "ram rychla pracovni pamet, ve ktere pocitac drzi spustene programy a jejich data. ram vyuzivaji spustene aplikace, otevrene dokumenty i operacni system. kdyz se zaplni, pocitac zacne presouvat data na disk a muze vyrazne zpomalit. narazite na ni ve specifikacich pocitacu a ve spravci uloh, kdyz hledate pricinu zpomaleni. ram operacni pamet operacni pameti",
-      "mentions": 15,
-      "days": 2,
+      "mentions": 16,
+      "days": 3,
       "first_seen": "2026-10-14",
-      "last_seen": "2026-10-15",
-      "card_hits": 8
+      "last_seen": "2026-10-26",
+      "card_hits": 9
     },
     {
       "slug": "raspberry-pi",
@@ -2204,11 +2227,11 @@
       "source": "hand",
       "starter": null,
       "search": "repozitar slozka projektu, kterou hlida git. zkracene repo. repozitar je jeden projekt i s celou svoji historii.  repozitar repozitare repozitari repozitaru repo repa",
-      "mentions": 8,
-      "days": 6,
+      "mentions": 12,
+      "days": 8,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-15",
-      "card_hits": 15
+      "last_seen": "2026-10-28",
+      "card_hits": 16
     },
     {
       "slug": "reseller",
@@ -2258,11 +2281,11 @@
       "source": "hand",
       "starter": null,
       "search": "sandbox ohraniceny prostor, ze ktereho program nemuze ven. bezpecnostni pojistka, ktera programu dovoli sahnout jen na to, co mu vyslovne povolite. kdyz se neco pokazi, skoda zustane uvnitr.  sandbox sandboxu sandboxing izolace",
-      "mentions": 0,
-      "days": 0,
-      "first_seen": null,
-      "last_seen": null,
-      "card_hits": 3
+      "mentions": 1,
+      "days": 1,
+      "first_seen": "2026-10-26",
+      "last_seen": "2026-10-26",
+      "card_hits": 4
     },
     {
       "slug": "scraping",
@@ -2338,11 +2361,11 @@
       "source": "hand",
       "starter": null,
       "search": "server pocitac, ktery bezi nepretrzite a obsluhuje ostatni. server je stroj, jehoz jedina prace je cekat na dotazy a odpovidat na ne. muze to byt obri stroj v datovem centru i obycejny pocitac doma, ktery nikdy nevypinate.  server serveru servery serveru serveri",
-      "mentions": 9,
-      "days": 6,
+      "mentions": 10,
+      "days": 7,
       "first_seen": "2026-09-01",
-      "last_seen": "2026-10-18",
-      "card_hits": 17
+      "last_seen": "2026-10-27",
+      "card_hits": 18
     },
     {
       "slug": "session",
@@ -2393,11 +2416,11 @@
       "source": "hand",
       "starter": null,
       "search": "skill balicek instrukci pro postup, ktery delate opakovane. skill je ulozeny navod, jak presne nejakou praci udelat. misto abyste postup popisovali pokazde znovu, napisete lomitko a jeho jmeno, treba /review, a claude vi, co ma delat a v jakem poradi. hodi se na rutinu, kterou delate porad stejne. priprava podkladu, kontrola pred vypustenim ven, uklizeni poznamek. skill skillu skilly skillu skills",
-      "mentions": 2,
-      "days": 2,
+      "mentions": 12,
+      "days": 4,
       "first_seen": "2026-09-11",
-      "last_seen": "2026-10-18",
-      "card_hits": 48
+      "last_seen": "2026-10-28",
+      "card_hits": 49
     },
     {
       "slug": "skript",
@@ -2421,11 +2444,11 @@
       "source": "hand",
       "starter": null,
       "search": "skript maly program, ktery za vas udela serii kroku. soubor s posloupnosti prikazu, ktere se spusti jednim zavolanim. typicky neco, co byste jinak delali rucne porad dokola, treba prejmenovat stovku souboru nebo stahnout a zpracovat data.  skript skriptu skripty skriptu script",
-      "mentions": 1,
-      "days": 1,
+      "mentions": 3,
+      "days": 2,
       "first_seen": "2026-09-27",
-      "last_seen": "2026-09-27",
-      "card_hits": 26
+      "last_seen": "2026-10-27",
+      "card_hits": 27
     },
     {
       "slug": "soniox",
@@ -2694,11 +2717,11 @@
       "source": "hand",
       "starter": null,
       "search": "transkripce a diarizace prevod mluveni na text a rozliseni, kdo z mluvcich mluvi. transkripce udela z nahravky text. diarizace k tomu prida, ktery usek rekl ktery mluvci. u schuzek byva ta druha vec dulezitejsi nez samotny prepis.  transkripce prepis prepisu prepisy diarizace",
-      "mentions": 31,
-      "days": 6,
+      "mentions": 33,
+      "days": 7,
       "first_seen": "2026-09-11",
-      "last_seen": "2026-10-03",
-      "card_hits": 51
+      "last_seen": "2026-10-26",
+      "card_hits": 52
     },
     {
       "slug": "uttero",
@@ -2840,10 +2863,10 @@
       "source": "auto",
       "starter": null,
       "search": "wordpress system pro tvorbu a spravu webu pres administraci, sablony a doplnky. ve wordpressu muzete pres webovou administraci upravovat stranky a publikovat obsah. vzhled menite pomoci sablon a funkce rozsirujete doplnky. system, sablony i doplnky je potreba pravidelne aktualizovat. pouziva se pro firemni weby, blogy, magaziny a internetove obchody. wordpress wordpressu wordpressem wp",
-      "mentions": 7,
-      "days": 3,
+      "mentions": 10,
+      "days": 4,
       "first_seen": "2026-09-10",
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-28",
       "card_hits": 2
     },
     {
@@ -2865,11 +2888,11 @@
       "source": "hand",
       "starter": null,
       "search": "workflow ustaleny postup, jak neco delate od zacatku do konce. sled kroku, ktery vede od zadani k vysledku. nemusi byt zautomatizovany. workflow je i to, kdyz vite, ze po nahravce vzdycky nasleduje prepis, pak shrnuti a nakonec ulozeni do poznamek. ve skupine se sdili spis workflow nez jednotlive nastroje. nastroj se da vymenit, postup zustava. workflow workflowu workflows",
-      "mentions": 21,
-      "days": 12,
+      "mentions": 23,
+      "days": 14,
       "first_seen": "2026-08-30",
-      "last_seen": "2026-10-18",
-      "card_hits": 55
+      "last_seen": "2026-10-26",
+      "card_hits": 56
     },
     {
       "slug": "yolo",
